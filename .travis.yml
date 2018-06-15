@@ -7,54 +7,101 @@
 
 ################################################################################################################################################################
 
-sudo: required
+branches:
+
+    only:
+
+        - /^\d+\.\d+(\.\d+)?(-\S*)?$/
+        - master
+        - dev
+
+os:
+
+    - linux
+
+sudo: false
+
+services:
+
+    - docker
 
 language: cpp
 
-os:
-    - linux
-
-services:
-    - docker
-
-# before_install:
-#     - |
-#         if test "$TRAVIS_OS_NAME" == "osx"; then
-#         brew update
-#         brew install lcov
-#         fi
-#     - |
-#         if test "$TRAVIS_OS_NAME" == "linux"; then
-#             if test "$CXX" == "g++" ; then
-#                 sudo apt-get install -qq g++-4.8
-#                 export CXX="g++-4.8"
-#             fi
-#         fi
-
-script:
-    - docker build --tag open-space-collective/library-math ./tools/docker/environment/
-    # - npm link
-    # - npm install -g yo
-    # - mkdir testbuild && cd testbuild
-    # - expect -f ../travis/yo_cpp
-    # - mkdir build && cd build
-    # - cmake ..
-    # - make VERBOSE=1
-    # - make test
-    # - expect -f ../../travis/yo_cpp_class
-    # - cmake ..
-    # - make VERBOSE=1
-    # - make test
-
-# after_success:
-#     # Creating report
-#     - cmake -DBUILD_CODE_COVERAGE=ON ..
-#     - make coverage
-#     # Uploading report to CodeCov
-#     - bash <(curl -s https://codecov.io/bash) -X gcov -y ../../.codecov.yml || echo "Codecov did not collect coverage reports"
-
 env:
+
     global:
+
         - LANG="en_US.UTF-8"
+
+stages:
+
+    - test
+    - coverage
+    - name: deploy
+      if: tag =~ ^\d+\.\d+(\.\d+)?(-\S*)?$
+
+jobs:
+
+    include:
+
+        - stage: test
+
+          script:
+
+                # Pull Docker image from repository
+                
+                - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+                - docker pull openspacecollective/library-io:latest || true
+
+                # Run tests
+
+                - ./tools/ci/test.sh
+
+        - stage: coverage
+        
+          script:
+
+                # Pull Docker image from repository
+                
+                - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+                - docker pull openspacecollective/library-io:latest || true
+
+                # Run coverage
+
+                - ./tools/ci/coverage.sh
+        
+        - stage: deploy
+
+          script:
+
+                # Pull Docker image from repository
+                
+                - echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
+                - docker pull openspacecollective/library-io:latest || true
+
+                # Generate and deploy documentation
+
+                - ./tools/ci/documentation.sh
+
+                # Generate and deploy binaries
+
+                - ./tools/ci/binaries.sh
+
+          before_deploy:
+
+                - echo "Deploying binaries to GitHub Releases..."
+
+          deploy:
+
+                provider: releases
+                api_key: ${GITHUB_API_KEY}
+                file_glob: true
+                file:
+                    - ./bin/*
+                    - ./lib/*
+                skip_cleanup: true
+                on:
+                    branch: master
+                    tags: true
 
 ################################################################################################################################################################
