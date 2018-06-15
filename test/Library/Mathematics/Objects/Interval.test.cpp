@@ -428,9 +428,10 @@ TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 
 // }
 
-// TEST (Library_Mathematics_Objects_Interval, GenerateArrayWithSize)
+// TEST (Library_Mathematics_Objects_Interval, generateArrayWithSize)
 // {
 
+//     using library::core::types::Size ;
 //     using library::core::types::Real ;
 //     using library::math::obj::Interval ;
 

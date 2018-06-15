@@ -167,7 +167,7 @@ T                               Interval<T>::getUpperBound                  ( ) 
 // }
 
 //                                 template <class T>
-// ctnr::Array<T>                  Interval<T>::generateArrayWithSize          (   const   uint&                       aStepCount                                  ) const
+// ctnr::Array<T>                  Interval<T>::generateArrayWithSize          (   const   types::Size&                anArraySize                                 ) const
 // {
 //     return ctnr::Array<T>::Empty() ; // [TBI]
 // }
