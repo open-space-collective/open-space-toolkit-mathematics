@@ -2,7 +2,7 @@
 
 Geometry, curve fitting, optimization.
 
-[![Build Status](https://travis-ci.org/open-space-collective/library-mathematics.svg?branch=master)](https://travis-ci.org/open-space-collective/library-mathematics)
+[![Build Status](https://travis-ci.com/open-space-collective/library-mathematics.svg?branch=master)](https://travis-ci.com/open-space-collective/library-mathematics)
 [![Code Coverage](https://codecov.io/gh/open-space-collective/library-mathematics/branch/master/graph/badge.svg)](https://codecov.io/gh/open-space-collective/library-mathematics)
 [![Documentation](https://readthedocs.org/projects/docs/badge/?version=latest)](https://open-space-collective.github.io/library-mathematics)
 
