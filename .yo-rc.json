@@ -3,7 +3,7 @@
     "projectName": "Library",
     "projectDescription": "Mathematics library.",
     "projectPath": "Library/Mathematics",
-    "projectPackage": "library-math",
+    "projectPackage": "library-mathematics",
     "projectLicense": "TBD",
     "authorName": "Lucas Brémond",
     "authorEmail": "contact@open-space-collective.org",
