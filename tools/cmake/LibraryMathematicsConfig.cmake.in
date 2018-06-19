@@ -9,8 +9,8 @@
 
 SET (LibraryMathematics_ROOT_DIR ${LibraryMathematics_ROOT_DIR} @CMAKE_INSTALL_PREFIX@)
 
-FIND_PATH (LibraryMathematics_INCLUDE_DIR "Library/Mathematics/Utilities/Version.hpp" PATHS ${LibraryMathematics_ROOT_DIR} PATH_SUFFIXES "include" NO_DEFAULT_PATH)
-FIND_LIBRARY (LibraryMathematics_LIBRARY NAMES "liblibrary-math.so" PATHS ${LibraryMathematics_ROOT_DIR} PATH_SUFFIXES "lib" NO_DEFAULT_PATH)
+FIND_PATH (LibraryMathematics_INCLUDE_DIR "Library/Mathematics/Objects.hpp" PATHS ${LibraryMathematics_ROOT_DIR} PATH_SUFFIXES "include" NO_DEFAULT_PATH)
+FIND_LIBRARY (LibraryMathematics_LIBRARY NAMES "liblibrary-mathematics.so" PATHS ${LibraryMathematics_ROOT_DIR} PATH_SUFFIXES "lib" NO_DEFAULT_PATH)
 
 # MESSAGE (STATUS "LibraryMathematics_ROOT_DIR = ${LibraryMathematics_ROOT_DIR}")
 # MESSAGE (STATUS "LibraryMathematics_INCLUDE_DIR = ${LibraryMathematics_INCLUDE_DIR}")
