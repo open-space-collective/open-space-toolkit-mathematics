@@ -27,6 +27,47 @@ if [[ "$(docker images -q ${image_name} 2> /dev/null)" == "" ]]; then
 
 fi
 
+options=""
+command="/bin/bash"
+
+# Setup linked mode
+
+if [[ ! -z $1 ]] && [[ $1 == "--link" ]]; then
+
+    options=""
+    command=""
+
+    # Library :: Core
+
+    library_core_directory="${project_directory}/../library-core"
+
+    if [[ ! -d ${library_core_directory} ]]
+    then
+
+        echo "Library :: Core directory [${library_core_directory}s] cannot be found."
+
+        exit 1
+
+    fi
+
+    options="${options} \
+    --volume=${library_core_directory}:/mnt/library-core:ro"
+
+    command=" \
+    rm -rf /usr/local/include/Library/Core; \
+    rm -f /usr/local/lib/liblibrary-core.so*; \
+    cp -as /mnt/library-core/include/Library/Core /usr/local/include/Library/Core; \
+    cp -as /mnt/library-core/src/Library/Core/* /usr/local/include/Library/Core/; \
+    ln -s /mnt/library-core/lib/liblibrary-core.so /usr/local/lib/; \
+    ln -s /mnt/library-core/lib/liblibrary-core.so.2018 /usr/local/lib/;"
+
+    # Output
+
+    command="${command} \
+    /bin/bash"
+
+fi
+
 # Run Docker container
 
 docker run \
@@ -34,6 +75,7 @@ docker run \
 -it \
 --rm \
 --privileged \
+${options} \
 --volume="${project_directory}:/app:rw" \
 --volume="/app/build" \
 --volume="${script_directory}/helpers/build.sh:/app/build/build.sh:ro" \
@@ -42,6 +84,6 @@ docker run \
 --volume="${script_directory}/helpers/clean.sh:/app/build/clean.sh:ro" \
 --workdir="/app/build" \
 "${image_name}" \
-"/bin/bash"
+/bin/bash -c "${command}"
 
 ################################################################################################################################################################
