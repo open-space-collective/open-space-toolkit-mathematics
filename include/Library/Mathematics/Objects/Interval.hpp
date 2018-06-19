@@ -347,7 +347,7 @@ class Interval
         /// @brief              Constructs an interval from a given string
         ///
         /// @code
-        ///                     Interval<Real> interval = Interval::Parse("[0.0, 1.0]") ; // [0.0, 1.0]
+        ///                     Interval<Real> interval = Interval<Real>::Parse("[0.0, 1.0]") ; // [0.0, 1.0]
         /// @endcode
         ///
         /// @param              [in] aString A string
