@@ -1,0 +1,804 @@
+\hypertarget{classlibrary_1_1math_1_1obj_1_1_interval}{}\section{library\+:\+:math\+:\+:obj\+:\+:Interval$<$ T $>$ Class Template Reference}
+\label{classlibrary_1_1math_1_1obj_1_1_interval}\index{library\+::math\+::obj\+::\+Interval$<$ T $>$@{library\+::math\+::obj\+::\+Interval$<$ T $>$}}
+
+
+Set of numbers with the property that any number that lies between two numbers in the set is also included in the set.  
+
+
+
+
+{\ttfamily \#include $<$Interval.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1}{Type} \{ \newline
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1aec0fc0100c4fc1ce4eea230c3dc10360}{Type\+::\+Undefined}, 
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1a03f4a47830f97377a35321051685071e}{Type\+::\+Closed}, 
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1ac3bf447eabe632720a3aa1a7ce401274}{Type\+::\+Open}, 
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1ab5e08f9173f660e791d3ba99ff8281d7}{Type\+::\+Half\+Open\+Left}, 
+\newline
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1a484f1b37e0208f622a1e6f7a3ff8c2c3}{Type\+::\+Half\+Open\+Right}
+ \}\begin{DoxyCompactList}\small\item\em \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} type. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_ad3c3506ca4e90506ab1ea25a18fc5cd7}{Interval} (const T \&a\+Lower\+Bound, const T \&an\+Upper\+Bound, const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1}{Interval\+::\+Type} \&an\+Interval\+Type)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a99b12768e33b75bf87ab656b92c03e98}{operator==} (const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} \&an\+Interval) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a5ca4c08ba0aff1ea42ea3804d51e02cf}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} \&an\+Interval) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a2de37bb9d7b97ae7892188c26c99b6fb}{is\+Defined} () const
+\begin{DoxyCompactList}\small\item\em Check if interval$<$\+Real$>$ is defined. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a0e9997639f0c415f4f7fe8dcb58e13a8}{is\+Degenerate} () const
+\begin{DoxyCompactList}\small\item\em Check if interval$<$\+Real$>$ is degenerate, i.\+e. its lower and upper bounds are the equal. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a5c02f1b4c3a6913a2eb0893d5c3b9925}{is\+Intersecting\+With} (const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} \&an\+Interval) const
+\begin{DoxyCompactList}\small\item\em Check if interval$<$\+Real$>$ is intersecting with another interval. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_af100f4b53dc3211efde2733c19e458c3}{contains} (const T \&a\+Value) const
+\begin{DoxyCompactList}\small\item\em Check if interval contains value. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a3bace75e3cfb5f5c737e642c08572d25}{contains} (const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} \&an\+Interval) const
+\begin{DoxyCompactList}\small\item\em Check if interval contains another interval. \end{DoxyCompactList}\item 
+const T \& \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_ada0dc68134cfacd5a0e959b492cea534}{access\+Lower\+Bound} () const
+\begin{DoxyCompactList}\small\item\em Get reference to lower bound. \end{DoxyCompactList}\item 
+const T \& \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a99692ee706ae6de7cd274ceae3644138}{access\+Upper\+Bound} () const
+\begin{DoxyCompactList}\small\item\em Get reference to upper bound. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1}{Interval\+::\+Type} \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a881ab7e17883b4f1553d7e8ba9cc7656}{get\+Type} () const
+\begin{DoxyCompactList}\small\item\em Get interval type. \end{DoxyCompactList}\item 
+T \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a4e01721016dd02dddc93fb012ff7d5b3}{get\+Lower\+Bound} () const
+\begin{DoxyCompactList}\small\item\em Get lower bound. \end{DoxyCompactList}\item 
+T \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a97d09e9c5e7f67b6ddf162af01a8066e}{get\+Upper\+Bound} () const
+\begin{DoxyCompactList}\small\item\em Get upper bound. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a2f23ca14d71c454417270218132423de}{get\+Intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} \&an\+Interval) const
+\begin{DoxyCompactList}\small\item\em Get intersecting interval with another interval. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a4183db388b6a63429a031d3687b20ecf}{get\+Union\+With} (const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} \&an\+Interval) const
+\begin{DoxyCompactList}\small\item\em Get union interval with another interval. \end{DoxyCompactList}\item 
+ctnr\+::\+Array$<$ T $>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aef3fddb9522a6e976499436e156bfe1d}{generate\+Array\+With\+Step} (const T \&a\+Step) const
+\begin{DoxyCompactList}\small\item\em Generate array from a given step. \end{DoxyCompactList}\item 
+ctnr\+::\+Array$<$ T $>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a250e05a1f463f107952b437e5ff4f4d2}{generate\+Array\+With\+Size} (const types\+::\+Size \&an\+Array\+Size) const
+\begin{DoxyCompactList}\small\item\em Generate array with a given size. \end{DoxyCompactList}\item 
+types\+::\+String \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aedaaa7c1b22246a1bf387e070d17f47f}{get\+String} () const
+\begin{DoxyCompactList}\small\item\em Get serialized interval. \end{DoxyCompactList}\item 
+void \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a4dfb117d5a9c23bd32a3631fcf3686ec}{set\+Type} (const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1}{Interval\+::\+Type} \&a\+Type)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} type setter. \end{DoxyCompactList}\item 
+void \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a5ceb8fb56f920193c8b18346992b5d02}{set\+Lower\+Bound} (const T \&a\+Lower\+Bound)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} lower bound setter. \end{DoxyCompactList}\item 
+void \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a9c6b857d9fad97969635f669428c2b48}{set\+Upper\+Bound} (const T \&an\+Upper\+Bound)
+\begin{DoxyCompactList}\small\item\em \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} upper bound setter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a415849a8c5306d6811612a842a5d0a40}{Undefined} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined interval. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Closed} (const T \&a\+Lower\+Bound, const T \&an\+Upper\+Bound)
+\begin{DoxyCompactList}\small\item\em Constructs a closed interval. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_add0e1114a0c153da7a928fd059a08919}{Open} (const T \&a\+Lower\+Bound, const T \&an\+Upper\+Bound)
+\begin{DoxyCompactList}\small\item\em Constructs an open interval. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a7e706c1e5133c731645e7633a9d763bd}{Half\+Open\+Left} (const T \&a\+Lower\+Bound, const T \&an\+Upper\+Bound)
+\begin{DoxyCompactList}\small\item\em Constructs an half-\/open left interval. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a1a15d0518cc69fa3e442fc39c0622477}{Half\+Open\+Right} (const T \&a\+Lower\+Bound, const T \&an\+Upper\+Bound)
+\begin{DoxyCompactList}\small\item\em Constructs an half-\/open right interval. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a9ed15c38ee04880a1aba75defa086a79}{Parse} (const types\+::\+String \&a\+String)
+\begin{DoxyCompactList}\small\item\em Constructs an interval from a given string. \end{DoxyCompactList}\item 
+static types\+::\+String \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a64a1850152db9b95c9824c71378d9f40}{String\+From\+Type} (const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1}{Interval\+::\+Type} \&an\+Interval\+Type)
+\begin{DoxyCompactList}\small\item\em Converts interval type to string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class U $>$ }\\std\+::ostream \& \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a3aa32afa8cb5d85eeb45540b0bf5657b}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ U $>$ \&an\+Interval)
+\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$\newline
+class library\+::math\+::obj\+::\+Interval$<$ T $>$}
+
+Set of numbers with the property that any number that lies between two numbers in the set is also included in the set. 
+
+https\+://en.wikipedia.\+org/wiki/\+Interval\+\_\+(mathematics) 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1}\label{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!Type@{Type}}
+\index{Type@{Type}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+enum \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1}{library\+::math\+::obj\+::\+Interval\+::\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} type. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Undefined@{Undefined}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!Undefined@{Undefined}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1aec0fc0100c4fc1ce4eea230c3dc10360}\label{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1aec0fc0100c4fc1ce4eea230c3dc10360}} 
+Undefined&Undefined interval type. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Closed@{Closed}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!Closed@{Closed}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1a03f4a47830f97377a35321051685071e}\label{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1a03f4a47830f97377a35321051685071e}} 
+Closed&Closed interval type \mbox{[}a, b\mbox{]}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Open@{Open}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!Open@{Open}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1ac3bf447eabe632720a3aa1a7ce401274}\label{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1ac3bf447eabe632720a3aa1a7ce401274}} 
+Open&Open interval type \mbox{]}a, b\mbox{[}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Half\+Open\+Left@{Half\+Open\+Left}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!Half\+Open\+Left@{Half\+Open\+Left}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1ab5e08f9173f660e791d3ba99ff8281d7}\label{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1ab5e08f9173f660e791d3ba99ff8281d7}} 
+Half\+Open\+Left&Half-\/open left interval type \mbox{]}a, b\mbox{]}. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Half\+Open\+Right@{Half\+Open\+Right}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!Half\+Open\+Right@{Half\+Open\+Right}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1a484f1b37e0208f622a1e6f7a3ff8c2c3}\label{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1a484f1b37e0208f622a1e6f7a3ff8c2c3}} 
+Half\+Open\+Right&Half-\/open right interval type \mbox{[}a, b\mbox{[}. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_ad3c3506ca4e90506ab1ea25a18fc5cd7}\label{classlibrary_1_1math_1_1obj_1_1_interval_ad3c3506ca4e90506ab1ea25a18fc5cd7}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!Interval@{Interval}}
+\index{Interval@{Interval}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{Interval()}{Interval()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} (\begin{DoxyParamCaption}\item[{const T \&}]{a\+Lower\+Bound,  }\item[{const T \&}]{an\+Upper\+Bound,  }\item[{const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$\+::\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1}{Type} \&}]{an\+Interval\+Type }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}
+Interval<Real> interval(0.0, 1.0, \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1a03f4a47830f97377a35321051685071e}{Interval::Type::Closed}) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Lower\+Bound} & A lower bound \\
+\hline
+\mbox{\tt in}  & {\em an\+Upper\+Bound} & An upper bound \\
+\hline
+\mbox{\tt in}  & {\em an\+Interval\+Type} & An interval type \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_ada0dc68134cfacd5a0e959b492cea534}\label{classlibrary_1_1math_1_1obj_1_1_interval_ada0dc68134cfacd5a0e959b492cea534}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!access\+Lower\+Bound@{access\+Lower\+Bound}}
+\index{access\+Lower\+Bound@{access\+Lower\+Bound}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{access\+Lower\+Bound()}{accessLowerBound()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+const T\& \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::access\+Lower\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get reference to lower bound. 
+
+
+\begin{DoxyCode}
+Interval<Real> interval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0) ;
+interval.accessLowerBound() ; \textcolor{comment}{// &0.0}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to lower bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a99692ee706ae6de7cd274ceae3644138}\label{classlibrary_1_1math_1_1obj_1_1_interval_a99692ee706ae6de7cd274ceae3644138}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!access\+Upper\+Bound@{access\+Upper\+Bound}}
+\index{access\+Upper\+Bound@{access\+Upper\+Bound}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{access\+Upper\+Bound()}{accessUpperBound()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+const T\& \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::access\+Upper\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get reference to upper bound. 
+
+
+\begin{DoxyCode}
+Interval<Real> interval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0) ;
+interval.accessUpperBound() ; \textcolor{comment}{// &1.0}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to upper bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}\label{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!Closed@{Closed}}
+\index{Closed@{Closed}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{Closed()}{Closed()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+static \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$T$>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::Closed (\begin{DoxyParamCaption}\item[{const T \&}]{a\+Lower\+Bound,  }\item[{const T \&}]{an\+Upper\+Bound }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a closed interval. 
+
+
+\begin{DoxyCode}
+Interval<Real> interval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0) ; \textcolor{comment}{// [0.0, 1.0]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Closed interval 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_af100f4b53dc3211efde2733c19e458c3}\label{classlibrary_1_1math_1_1obj_1_1_interval_af100f4b53dc3211efde2733c19e458c3}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!contains@{contains}}
+\index{contains@{contains}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+bool \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::contains (\begin{DoxyParamCaption}\item[{const T \&}]{a\+Value }\end{DoxyParamCaption}) const}
+
+
+
+Check if interval contains value. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0).contains(0.5) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Value} & A value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if interval contains value 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a3bace75e3cfb5f5c737e642c08572d25}\label{classlibrary_1_1math_1_1obj_1_1_interval_a3bace75e3cfb5f5c737e642c08572d25}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!contains@{contains}}
+\index{contains@{contains}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+bool \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$ \&}]{an\+Interval }\end{DoxyParamCaption}) const}
+
+
+
+Check if interval contains another interval. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0).contains(
+      \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_add0e1114a0c153da7a928fd059a08919}{Interval<Real>::Open}(0.2, 0.8)) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Interval} & An interval \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if interval contains another interval 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a250e05a1f463f107952b437e5ff4f4d2}\label{classlibrary_1_1math_1_1obj_1_1_interval_a250e05a1f463f107952b437e5ff4f4d2}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!generate\+Array\+With\+Size@{generate\+Array\+With\+Size}}
+\index{generate\+Array\+With\+Size@{generate\+Array\+With\+Size}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{generate\+Array\+With\+Size()}{generateArrayWithSize()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+ctnr\+::\+Array$<$T$>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::generate\+Array\+With\+Size (\begin{DoxyParamCaption}\item[{const types\+::\+Size \&}]{an\+Array\+Size }\end{DoxyParamCaption}) const}
+
+
+
+Generate array with a given size. 
+
+
+\begin{DoxyCode}
+Interval<Real> interval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0) ;
+Array<Real> array = interval.generateArrayWithSize(3) ; \textcolor{comment}{// [0.0, 0.5, 1.0]}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Array\+Size} & An array size \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array of values 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_aef3fddb9522a6e976499436e156bfe1d}\label{classlibrary_1_1math_1_1obj_1_1_interval_aef3fddb9522a6e976499436e156bfe1d}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!generate\+Array\+With\+Step@{generate\+Array\+With\+Step}}
+\index{generate\+Array\+With\+Step@{generate\+Array\+With\+Step}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{generate\+Array\+With\+Step()}{generateArrayWithStep()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+ctnr\+::\+Array$<$T$>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::generate\+Array\+With\+Step (\begin{DoxyParamCaption}\item[{const T \&}]{a\+Step }\end{DoxyParamCaption}) const}
+
+
+
+Generate array from a given step. 
+
+
+\begin{DoxyCode}
+Interval<Real> interval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0) ;
+Array<Real> array = interval.generateArrayWithStep(0.5) ; \textcolor{comment}{// [0.0, 0.5, 1.0]}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Step} & A step \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array of values 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a2f23ca14d71c454417270218132423de}\label{classlibrary_1_1math_1_1obj_1_1_interval_a2f23ca14d71c454417270218132423de}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!get\+Intersection\+With@{get\+Intersection\+With}}
+\index{get\+Intersection\+With@{get\+Intersection\+With}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{get\+Intersection\+With()}{getIntersectionWith()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$T$>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::get\+Intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$ \&}]{an\+Interval }\end{DoxyParamCaption}) const}
+
+
+
+Get intersecting interval with another interval. 
+
+
+\begin{DoxyCode}
+Interval<Real> firstInterval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0) ;
+Interval<Real> secondInterval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.5, 1.5) ;
+Interval<Real> intersection = firstInterval.getIntersectionWith(secondInterval) ; \textcolor{comment}{// [0.5, 1.0]}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Interval} & An interval \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Intersecting interval 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a4e01721016dd02dddc93fb012ff7d5b3}\label{classlibrary_1_1math_1_1obj_1_1_interval_a4e01721016dd02dddc93fb012ff7d5b3}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!get\+Lower\+Bound@{get\+Lower\+Bound}}
+\index{get\+Lower\+Bound@{get\+Lower\+Bound}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{get\+Lower\+Bound()}{getLowerBound()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+T \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::get\+Lower\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get lower bound. 
+
+
+\begin{DoxyCode}
+Interval<Real> interval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0) ;
+interval.getLowerBound() ; \textcolor{comment}{// 0.0}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Lower bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_aedaaa7c1b22246a1bf387e070d17f47f}\label{classlibrary_1_1math_1_1obj_1_1_interval_aedaaa7c1b22246a1bf387e070d17f47f}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!get\+String@{get\+String}}
+\index{get\+String@{get\+String}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{get\+String()}{getString()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+types\+::\+String \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::get\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get serialized interval. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a7e706c1e5133c731645e7633a9d763bd}{Interval<Real>::HalfOpenLeft}(0.0, 1.0).getString() ; \textcolor{comment}{// ]0.0, 1.0]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Serialized interval 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a881ab7e17883b4f1553d7e8ba9cc7656}\label{classlibrary_1_1math_1_1obj_1_1_interval_a881ab7e17883b4f1553d7e8ba9cc7656}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1}{Interval\+::\+Type} \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get interval type. 
+
+
+\begin{DoxyCode}
+Interval<Real> interval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0) ;
+interval.getType() ; \textcolor{comment}{// Interval<Real>::Type::Closed}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a4183db388b6a63429a031d3687b20ecf}\label{classlibrary_1_1math_1_1obj_1_1_interval_a4183db388b6a63429a031d3687b20ecf}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!get\+Union\+With@{get\+Union\+With}}
+\index{get\+Union\+With@{get\+Union\+With}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{get\+Union\+With()}{getUnionWith()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$T$>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::get\+Union\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$ \&}]{an\+Interval }\end{DoxyParamCaption}) const}
+
+
+
+Get union interval with another interval. 
+
+
+\begin{DoxyCode}
+Interval<Real> firstInterval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0) ;
+Interval<Real> secondInterval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.5, 1.5) ;
+Interval<Real> \textcolor{keyword}{union }= firstInterval.\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a4183db388b6a63429a031d3687b20ecf}{getUnionWith}(secondInterval) ; \textcolor{comment}{// [0.0, 1.5]}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Interval} & An interval \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Union interval 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a97d09e9c5e7f67b6ddf162af01a8066e}\label{classlibrary_1_1math_1_1obj_1_1_interval_a97d09e9c5e7f67b6ddf162af01a8066e}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!get\+Upper\+Bound@{get\+Upper\+Bound}}
+\index{get\+Upper\+Bound@{get\+Upper\+Bound}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{get\+Upper\+Bound()}{getUpperBound()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+T \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::get\+Upper\+Bound (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get upper bound. 
+
+
+\begin{DoxyCode}
+Interval<Real> interval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0) ;
+interval.getUpperBound() ; \textcolor{comment}{// 1.0}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Upper bound 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a7e706c1e5133c731645e7633a9d763bd}\label{classlibrary_1_1math_1_1obj_1_1_interval_a7e706c1e5133c731645e7633a9d763bd}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!Half\+Open\+Left@{Half\+Open\+Left}}
+\index{Half\+Open\+Left@{Half\+Open\+Left}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{Half\+Open\+Left()}{HalfOpenLeft()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+static \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$T$>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::Half\+Open\+Left (\begin{DoxyParamCaption}\item[{const T \&}]{a\+Lower\+Bound,  }\item[{const T \&}]{an\+Upper\+Bound }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an half-\/open left interval. 
+
+
+\begin{DoxyCode}
+Interval<Real> interval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a7e706c1e5133c731645e7633a9d763bd}{Interval<Real>::HalfOpenLeft}(0.0, 1.0) ; \textcolor{comment}{// ]0.0,
+       1.0]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Half-\/open left interval 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a1a15d0518cc69fa3e442fc39c0622477}\label{classlibrary_1_1math_1_1obj_1_1_interval_a1a15d0518cc69fa3e442fc39c0622477}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!Half\+Open\+Right@{Half\+Open\+Right}}
+\index{Half\+Open\+Right@{Half\+Open\+Right}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{Half\+Open\+Right()}{HalfOpenRight()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+static \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$T$>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::Half\+Open\+Right (\begin{DoxyParamCaption}\item[{const T \&}]{a\+Lower\+Bound,  }\item[{const T \&}]{an\+Upper\+Bound }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an half-\/open right interval. 
+
+
+\begin{DoxyCode}
+Interval<Real> interval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a1a15d0518cc69fa3e442fc39c0622477}{Interval<Real>::HalfOpenRight}(0.0, 1.0) ; \textcolor{comment}{// [0.0,
+       1.0[}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Half-\/open right interval 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a2de37bb9d7b97ae7892188c26c99b6fb}\label{classlibrary_1_1math_1_1obj_1_1_interval_a2de37bb9d7b97ae7892188c26c99b6fb}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+bool \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if interval$<$\+Real$>$ is defined. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0).isDefined() ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if interval$<$\+Real$>$ is defined 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a0e9997639f0c415f4f7fe8dcb58e13a8}\label{classlibrary_1_1math_1_1obj_1_1_interval_a0e9997639f0c415f4f7fe8dcb58e13a8}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!is\+Degenerate@{is\+Degenerate}}
+\index{is\+Degenerate@{is\+Degenerate}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{is\+Degenerate()}{isDegenerate()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+bool \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::is\+Degenerate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if interval$<$\+Real$>$ is degenerate, i.\+e. its lower and upper bounds are the equal. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(1.0, 1.0).isDegenerate() ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if interval$<$\+Real$>$ is degenerate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a5c02f1b4c3a6913a2eb0893d5c3b9925}\label{classlibrary_1_1math_1_1obj_1_1_interval_a5c02f1b4c3a6913a2eb0893d5c3b9925}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!is\+Intersecting\+With@{is\+Intersecting\+With}}
+\index{is\+Intersecting\+With@{is\+Intersecting\+With}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{is\+Intersecting\+With()}{isIntersectingWith()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+bool \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::is\+Intersecting\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$ \&}]{an\+Interval }\end{DoxyParamCaption}) const}
+
+
+
+Check if interval$<$\+Real$>$ is intersecting with another interval. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0).isIntersectingWith(
+      \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.5, 1.5)) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Interval} & An interval \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if intervals are intersecting 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_add0e1114a0c153da7a928fd059a08919}\label{classlibrary_1_1math_1_1obj_1_1_interval_add0e1114a0c153da7a928fd059a08919}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!Open@{Open}}
+\index{Open@{Open}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{Open()}{Open()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+static \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$T$>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::Open (\begin{DoxyParamCaption}\item[{const T \&}]{a\+Lower\+Bound,  }\item[{const T \&}]{an\+Upper\+Bound }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an open interval. 
+
+
+\begin{DoxyCode}
+Interval<Real> interval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_add0e1114a0c153da7a928fd059a08919}{Interval<Real>::Open}(0.0, 1.0) ; \textcolor{comment}{// ]0.0, 1.0[}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Open interval 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a5ca4c08ba0aff1ea42ea3804d51e02cf}\label{classlibrary_1_1math_1_1obj_1_1_interval_a5ca4c08ba0aff1ea42ea3804d51e02cf}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+bool \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$ \&}]{an\+Interval }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0) != \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_add0e1114a0c153da7a928fd059a08919}{Interval<Real>::Open}(0.0, 1.0
+      ) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Interval} & An interval \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if intervals are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a99b12768e33b75bf87ab656b92c03e98}\label{classlibrary_1_1math_1_1obj_1_1_interval_a99b12768e33b75bf87ab656b92c03e98}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+bool \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$ \&}]{an\+Interval }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0, 1.0) == \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_aae8bb2b89af450729338d48563def4d7}{Interval<Real>::Closed}(0.0,
+       1.0) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Interval} & An interval \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if intervals are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a9ed15c38ee04880a1aba75defa086a79}\label{classlibrary_1_1math_1_1obj_1_1_interval_a9ed15c38ee04880a1aba75defa086a79}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!Parse@{Parse}}
+\index{Parse@{Parse}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+static \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$T$>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::Parse (\begin{DoxyParamCaption}\item[{const types\+::\+String \&}]{a\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an interval from a given string. 
+
+
+\begin{DoxyCode}
+Interval<Real> interval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a9ed15c38ee04880a1aba75defa086a79}{Interval<Real>::Parse}(\textcolor{stringliteral}{"[0.0, 1.0]"}) ; \textcolor{comment}{// [0.0, 1.0]}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+String} & A string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a5ceb8fb56f920193c8b18346992b5d02}\label{classlibrary_1_1math_1_1obj_1_1_interval_a5ceb8fb56f920193c8b18346992b5d02}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!set\+Lower\+Bound@{set\+Lower\+Bound}}
+\index{set\+Lower\+Bound@{set\+Lower\+Bound}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{set\+Lower\+Bound()}{setLowerBound()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::set\+Lower\+Bound (\begin{DoxyParamCaption}\item[{const T \&}]{a\+Lower\+Bound }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} lower bound setter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Lower\+Bound} & A lower bound \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a4dfb117d5a9c23bd32a3631fcf3686ec}\label{classlibrary_1_1math_1_1obj_1_1_interval_a4dfb117d5a9c23bd32a3631fcf3686ec}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!set\+Type@{set\+Type}}
+\index{set\+Type@{set\+Type}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{set\+Type()}{setType()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::set\+Type (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$\+::\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1}{Type} \&}]{a\+Type }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} type setter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Type} & An interval type \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a9c6b857d9fad97969635f669428c2b48}\label{classlibrary_1_1math_1_1obj_1_1_interval_a9c6b857d9fad97969635f669428c2b48}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!set\+Upper\+Bound@{set\+Upper\+Bound}}
+\index{set\+Upper\+Bound@{set\+Upper\+Bound}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{set\+Upper\+Bound()}{setUpperBound()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::set\+Upper\+Bound (\begin{DoxyParamCaption}\item[{const T \&}]{an\+Upper\+Bound }\end{DoxyParamCaption})}
+
+
+
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval} upper bound setter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Upper\+Bound} & An upper bound \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a64a1850152db9b95c9824c71378d9f40}\label{classlibrary_1_1math_1_1obj_1_1_interval_a64a1850152db9b95c9824c71378d9f40}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!String\+From\+Type@{String\+From\+Type}}
+\index{String\+From\+Type@{String\+From\+Type}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{String\+From\+Type()}{StringFromType()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+static types\+::\+String \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::String\+From\+Type (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ T $>$\+::\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1}{Type} \&}]{an\+Interval\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Converts interval type to string. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a64a1850152db9b95c9824c71378d9f40}{Interval<Real>::StringFromType}(
+      \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1a03f4a47830f97377a35321051685071e}{Interval<Real>::Type::Closed}) ; \textcolor{comment}{// "Closed"}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Interval\+Type} & An interval type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a415849a8c5306d6811612a842a5d0a40}\label{classlibrary_1_1math_1_1obj_1_1_interval_a415849a8c5306d6811612a842a5d0a40}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+static \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$T$>$ \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{library\+::math\+::obj\+::\+Interval}$<$ T $>$\+::Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined interval. 
+
+
+\begin{DoxyCode}
+Interval<Real> interval = \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_a415849a8c5306d6811612a842a5d0a40}{Interval<Real>::Undefined}() ; \textcolor{comment}{// Undefined}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined interval 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1obj_1_1_interval_a3aa32afa8cb5d85eeb45540b0bf5657b}\label{classlibrary_1_1math_1_1obj_1_1_interval_a3aa32afa8cb5d85eeb45540b0bf5657b}} 
+\index{library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!library\+::math\+::obj\+::\+Interval@{library\+::math\+::obj\+::\+Interval}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+template$<$class U $>$ \\
+std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval}{Interval}$<$ U $>$ \&}]{an\+Interval }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator. 
+
+
+\begin{DoxyCode}
+Interval<Real> interval(0.0, 1.0, \hyperlink{classlibrary_1_1math_1_1obj_1_1_interval_abc7177f1c446d8273e70c989953667d1a03f4a47830f97377a35321051685071e}{Interval::Type::Closed}) ;
+std::cout << interval ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em an\+Interval} & An interval \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An output stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Objects/\hyperlink{_interval_8hpp}{Interval.\+hpp}\end{DoxyCompactItemize}

@@ -1,4 +1,5 @@
-# Library :: Mathematics
+Library :: Mathematics
+======================
 
 Geometry, curve fitting, optimization.
 
@@ -148,7 +149,7 @@ Manually:
 
 ## Dependencies
 
-The **IO** library internally uses the following dependencies:
+The **Mathematics** library internally uses the following dependencies:
 
 | Name        | Version | License                | Link                                                                                                   |
 |-------------|---------|------------------------|--------------------------------------------------------------------------------------------------------|
