@@ -296,10 +296,10 @@ types::String                   Interval<T>::StringFromType                 (   
             return "Open" ;
 
         case Interval<T>::Type::HalfOpenLeft:
-            return "HalfOpenLeft" ;
+            return "Half Open Left" ;
 
         case Interval<T>::Type::HalfOpenRight:
-            return "HalfOpenRight" ;
+            return "Half Open Right" ;
 
     }
 
