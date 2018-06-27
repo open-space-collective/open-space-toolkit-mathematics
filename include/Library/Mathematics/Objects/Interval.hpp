@@ -265,12 +265,12 @@ class Interval
         /// @brief              Get serialized interval
         ///
         /// @code
-        ///                     Interval<Real>::HalfOpenLeft(0.0, 1.0).getString() ; // ]0.0, 1.0]
+        ///                     Interval<Real>::HalfOpenLeft(0.0, 1.0).toString() ; // ]0.0, 1.0]
         /// @endcode
         ///
         /// @return             Serialized interval
 
-        types::String           getString                                   ( ) const ;
+        types::String           toString                                    ( ) const ;
 
         /// @brief              Interval type setter
         ///

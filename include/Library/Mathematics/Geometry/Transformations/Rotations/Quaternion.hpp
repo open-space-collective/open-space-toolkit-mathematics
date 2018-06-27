@@ -10,6 +10,7 @@
 #ifndef __Library_Mathematics_Geometry_Transformations_Rotations_Quaternion__
 #define __Library_Mathematics_Geometry_Transformations_Rotations_Quaternion__
 
+#include <Library/Mathematics/Geometry/Angle.hpp>
 #include <Library/Mathematics/Objects/Vector.hpp>
 #include <Library/Core/Types/String.hpp>
 #include <Library/Core/Types/Real.hpp>
@@ -33,6 +34,11 @@ using library::core::types::Real ;
 using library::core::types::String ;
 using library::math::obj::Vector3d ;
 using library::math::obj::Vector4d ;
+using library::math::geom::Angle ;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class RotationVector ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -202,6 +208,19 @@ class Quaternion
         /// @return             True if quaternion is unitary
 
         bool                    isUnitary                                   ( ) const ;
+
+        /// @brief              Check if quaternion is near a given quaternion
+        ///
+        /// @code
+        ///                     Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0 + 1e-19), Angle::Radians(1e-6)) ; // True
+        /// @endcode
+        ///
+        /// @param              [in] aQuaternion A quaternion
+        /// @param              [in] anAngularTolerance An angular tolerance
+        /// @return             True if quaternions are near each other
+
+        bool                    isNear                                      (   const   Quaternion&                 aQuaternion,
+                                                                                const   Angle&                      anAngularTolerance                          ) const ;
 
         /// @brief              Get reference to first component of vector part
         ///
@@ -431,6 +450,17 @@ class Quaternion
                                                                                 const   Real&                       aSecondComponent,
                                                                                 const   Real&                       aThirdComponent,
                                                                                 const   Real&                       aFourthComponent                            ) ;
+
+        /// @brief              Constructs a quaternion from a rotation vector
+        ///
+        /// @code
+        ///                     Quaternion quaternion = Quaternion::RotationVector(RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(0.0))) ; // [0.0, 0.0, 0.0, 1.0]
+        /// @endcode
+        ///
+        /// @param              [in] aRotationVector A rotation vector
+        /// @return             Quaternion
+
+        static Quaternion       RotationVector                              (   const   rot::RotationVector&        aRotationVector                             ) ;
 
         /// @brief              Constructs a quaternion from a string
         ///

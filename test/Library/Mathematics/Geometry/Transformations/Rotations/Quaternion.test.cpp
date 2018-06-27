@@ -7,7 +7,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
+#include <Library/Mathematics/Geometry/Angle.hpp>
 
 #include <Global.test.hpp>
 
@@ -226,6 +228,49 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, IsUnita
     {
 
         EXPECT_ANY_THROW(Quaternion::Undefined().isUnitary()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, IsNear)
+{
+
+    using library::math::geom::Angle ;
+    using library::math::geom::trf::rot::Quaternion ;
+    
+    {
+
+        EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0).isNear(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0), Angle::Zero())) ;
+        EXPECT_TRUE(Quaternion::XYZS(0.0, 1.0, 0.0, 0.0).isNear(Quaternion::XYZS(0.0, 1.0, 0.0, 0.0), Angle::Zero())) ;
+        EXPECT_TRUE(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0).isNear(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), Angle::Zero())) ;
+        EXPECT_TRUE(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Zero())) ;
+
+        EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0).isNear(Quaternion::XYZS(1.0 + 1e-6, 0.0, 0.0, 0.0).normalize(), Angle::Radians(1e-6))) ;
+        EXPECT_TRUE(Quaternion::XYZS(0.0, 1.0, 0.0, 0.0).isNear(Quaternion::XYZS(0.0, 1.0 + 1e-6, 0.0, 0.0).normalize(), Angle::Radians(1e-6))) ;
+        EXPECT_TRUE(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0).isNear(Quaternion::XYZS(0.0, 0.0, 1.0 + 1e-6, 0.0).normalize(), Angle::Radians(1e-6))) ;
+        EXPECT_TRUE(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0 + 1e-6).normalize(), Angle::Radians(1e-6))) ;
+
+    }
+
+    {
+
+        EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0).isNear(Quaternion::XYZS(1.0 + 1e-6, 0.0, 0.0, 0.0).normalize(), Angle::Radians(0.0))) ;
+        EXPECT_TRUE(Quaternion::XYZS(0.0, 1.0, 0.0, 0.0).isNear(Quaternion::XYZS(0.0, 1.0 + 1e-6, 0.0, 0.0).normalize(), Angle::Radians(0.0))) ;
+        EXPECT_TRUE(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0).isNear(Quaternion::XYZS(0.0, 0.0, 1.0 + 1e-6, 0.0).normalize(), Angle::Radians(0.0))) ;
+        EXPECT_TRUE(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0 + 1e-6).normalize(), Angle::Radians(0.0))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Quaternion::Undefined().isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Degrees(0.0))) ;
+        EXPECT_ANY_THROW(Quaternion::Undefined().isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.1), Angle::Degrees(0.0))) ;
+        
+        EXPECT_ANY_THROW(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).isNear(Quaternion::Undefined(), Angle::Degrees(0.0))) ;
+        EXPECT_ANY_THROW(Quaternion::XYZS(0.0, 0.0, 0.0, 1.1).isNear(Quaternion::Undefined(), Angle::Degrees(0.0))) ;
+
+        EXPECT_ANY_THROW(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Undefined())) ;
 
     }
 
@@ -608,6 +653,29 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, XYZS)
 
 }
 
+TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, RotationVector)
+{
+
+    using library::core::types::Real ;
+    using library::math::geom::Angle ;
+    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::trf::rot::Quaternion ;
+    
+    {
+
+        EXPECT_TRUE(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS).isNear(Quaternion::RotationVector(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(0.0))), Angle::Radians(Real::Epsilon()))) ;
+        EXPECT_TRUE(Quaternion(0.0, 0.0, 1.0, 0.0, Quaternion::Format::XYZS).isNear(Quaternion::RotationVector(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(180.0))), Angle::Radians(Real::Epsilon()))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Quaternion::RotationVector(RotationVector::Undefined())) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Parse)
 {
 
@@ -618,6 +686,15 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Parse)
         EXPECT_NO_THROW(Quaternion::Parse("[0.0, 0.0, 0.0, 1.0]", Quaternion::Format::XYZS)) ;
         EXPECT_EQ(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS), Quaternion::Parse("[0.0, 0.0, 0.0, 1.0]", Quaternion::Format::XYZS)) ;
         EXPECT_EQ(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS), Quaternion::Parse("[1.0, 0.0, 0.0, 0.0]", Quaternion::Format::SXYZ)) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Quaternion::Parse("")) ;
+        EXPECT_ANY_THROW(Quaternion::Parse("[]")) ;
+        EXPECT_ANY_THROW(Quaternion::Parse("[0.0, 0.0, 0.0]")) ;
+        EXPECT_ANY_THROW(Quaternion::Parse("[0.0, 0.0, 0.0, 0.0, 1.0]")) ;
 
     }
 

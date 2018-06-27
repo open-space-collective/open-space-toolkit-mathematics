@@ -1,14 +1,19 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           Library/Mathematics/Transformations/Rotations/RotationVector.hpp
+/// @file           Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Transformations_Rotations_RotationVector__
-#define __Library_Mathematics_Transformations_Rotations_RotationVector__
+#ifndef __Library_Mathematics_Geometry_Transformations_Rotations_RotationVector__
+#define __Library_Mathematics_Geometry_Transformations_Rotations_RotationVector__
+
+#include <Library/Mathematics/Geometry/Angle.hpp>
+#include <Library/Mathematics/Objects/Vector.hpp>
+#include <Library/Core/Types/String.hpp>
+#include <Library/Core/Types/Real.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -25,7 +30,130 @@ namespace rot
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+using library::core::types::Real ;
+using library::core::types::String ;
+using library::math::obj::Vector3d ;
+using library::math::geom::Angle ;
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Quaternion ;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/// @brief                      Rotation vector
+///
+/// @ref                        https://en.wikipedia.org/wiki/Axis–angle_representation#Rotation_vector
+
+class RotationVector
+{
+
+    public:
+
+        /// @brief              Constructor
+        ///
+        /// @param              [in] anAxis A rotation axis
+        /// @param              [in] anAngle A rotation angle
+
+                                RotationVector                              (   const   Vector3d&                   anAxis,
+                                                                                const   Angle&                      anAngle                                     ) ;
+
+        /// @brief              Equal to operator
+        ///
+        /// @code
+        ///                     RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)) == RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)) ; // True
+        /// @endcode
+        ///
+        /// @param              [in] aRotationVector A rotation vector
+        /// @return             True if rotation vectors are equal
+
+        bool                    operator ==                                 (   const   RotationVector&             aRotationVector                             ) const ;
+
+        /// @brief              Not equal to operator
+        ///
+        /// @code
+        ///                     RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)) != RotationVector(Vector3d(1.0, 0.0, 0.0), Angle::Degrees(90.0)) ; // True
+        /// @endcode
+        ///
+        /// @param              [in] aRotationVector A rotation vector
+        /// @return             True if rotation vectors not are equal
+
+        bool                    operator !=                                 (   const   RotationVector&             aRotationVector                             ) const ;
+
+        /// @brief              Output stream operator
+        ///
+        /// @code
+        ///                     std::cout << RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)) ;
+        /// @endcode
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] aRotationVector A rotation vector
+        /// @return             An output stream
+
+        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
+                                                                                const   RotationVector&             aRotationVector                             ) ;
+
+        /// @brief              Check if rotation vector is defined
+        ///
+        /// @code
+        ///                     RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)).isDefined() ; // True
+        /// @endcode
+        ///
+        /// @return             True if rotation vector is defined
+
+        bool                    isDefined                                   ( ) const ;
+
+        /// @brief              Get rotation axis
+        ///
+        /// @return             Rotation axis
+
+        Vector3d                getAxis                                     ( ) const ;
+
+        /// @brief              Get rotation angle
+        ///
+        /// @return             Rotation angle
+        
+        Angle                   getAngle                                    ( ) const ;
+
+        /// @brief              Constructs an undefined rotation vector
+        ///
+        /// @code
+        ///                     RotationVector rotationVector = RotationVector::Undefined() ; // Undefined
+        /// @endcode
+        ///
+        /// @return             Undefined rotation vector
+
+        static RotationVector   Undefined                                   ( ) ;
+
+        /// @brief              Constructs a unit rotation vector
+        ///
+        /// @code
+        ///                     RotationVector rotationVector = RotationVector::Unit() ;
+        /// @endcode
+        ///
+        /// @return             Unit rotation vector
+
+        static RotationVector   Unit                                        ( ) ;
+
+        /// @brief              Constructs a rotation vector from a quaternion
+        ///
+        /// @code
+        ///                     RotationVector rotationVector = RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)) ;
+        /// @endcode
+        ///
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             Rotation vector
+
+        static RotationVector   Quaternion                                  (   const   rot::Quaternion&            aQuaternion                                 ) ;
+
+    private:
+
+        Vector3d                axis_ ;
+        Angle                   angle_ ;
+
+                                RotationVector                              ( ) ;
+
+} ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

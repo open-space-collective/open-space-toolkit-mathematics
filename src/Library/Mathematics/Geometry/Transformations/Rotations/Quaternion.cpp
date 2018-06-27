@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -130,10 +131,10 @@ std::ostream&                   operator <<                                 (   
 
     library::core::utils::Print::Header(anOutputStream, "Quaternion") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "X:" << (aQuaternion.isDefined() ? String::Format("{:d}", aQuaternion.x_) : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Y:" << (aQuaternion.isDefined() ? String::Format("{:d}", aQuaternion.y_) : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Z:" << (aQuaternion.isDefined() ? String::Format("{:d}", aQuaternion.z_) : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "S:" << (aQuaternion.isDefined() ? String::Format("{:d}", aQuaternion.s_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "X:" << (aQuaternion.isDefined() ? String::Format("{}", aQuaternion.x_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Y:" << (aQuaternion.isDefined() ? String::Format("{}", aQuaternion.y_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Z:" << (aQuaternion.isDefined() ? String::Format("{}", aQuaternion.z_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "S:" << (aQuaternion.isDefined() ? String::Format("{}", aQuaternion.s_) : "Undefined") ;
 
     library::core::utils::Print::Footer(anOutputStream) ;
 
@@ -155,6 +156,31 @@ bool                            Quaternion::isUnitary                       ( ) 
     }
     
     return std::abs(((x_ * x_) + (y_ * y_) + (z_ * z_) + (s_ * s_)) - 1.0) <= Real::Epsilon() ;
+
+}
+
+bool                            Quaternion::isNear                          (   const   Quaternion&                 aQuaternion,
+                                                                                const   Angle&                      anAngularTolerance                          ) const
+{
+
+    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
+    {
+        throw library::core::error::runtime::Undefined("Quaternion") ;
+    }
+
+    if (!anAngularTolerance.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Angular tolerance") ;
+    }
+
+    if ((!this->isUnitary()) || (!aQuaternion.isUnitary()))
+    {
+        throw library::core::error::RuntimeError("Quaternion is not unitary.") ;
+    }
+
+    const Quaternion deltaQuaternion = (*this) / aQuaternion ;
+    
+    return (2.0 * std::acos(deltaQuaternion.s_)) <= anAngularTolerance.inRadians().abs() ;
 
 }
 
@@ -499,16 +525,42 @@ Quaternion                      Quaternion::XYZS                            (   
     return Quaternion(aFirstComponent, aSecondComponent, aThirdComponent, aFourthComponent, Quaternion::Format::XYZS) ;
 }
 
+Quaternion                      Quaternion::RotationVector                  (   const   rot::RotationVector&        aRotationVector                             )
+{
+
+    if (!aRotationVector.isDefined())
+	{
+		throw library::core::error::runtime::Undefined("Rotation Vector") ;
+	}
+
+    const Real rotationAngle_rad = aRotationVector.getAngle().inRadians() ;
+
+    const Vector3d vectorPart = std::sin(rotationAngle_rad / 2.0) * aRotationVector.getAxis() ;
+    const Real scalarPart = std::cos(rotationAngle_rad / 2.0) ;
+
+    return Quaternion(vectorPart, scalarPart).normalize() ;
+
+}
+
 Quaternion                      Quaternion::Parse                           (   const   String&                     aString,
                                                                                 const   Quaternion::Format&         aFormat                                     )
 {
+
+    using library::math::obj::VectorXd ;
 
     if (aString.isEmpty())
     {
         throw library::core::error::runtime::Undefined("String") ;
     }
 
-    return Quaternion(Vector4d::Parse(aString), aFormat) ;
+    VectorXd vector = VectorXd::Parse(aString) ;
+
+    if (vector.size() != 4)
+    {
+        throw library::core::error::RuntimeError("Vector size is not 4.") ;
+    }
+
+    return Quaternion(vector, aFormat) ;
 
 }
 

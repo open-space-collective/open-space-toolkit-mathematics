@@ -173,7 +173,7 @@ T                               Interval<T>::getUpperBound                  ( ) 
 // }
 
 //                                 template <class T>
-// types::String                   Interval<T>::getString                      ( ) const
+// types::String                   Interval<T>::toString                      ( ) const
 // {
 
 //     if (!this->isDefined())
@@ -185,16 +185,16 @@ T                               Interval<T>::getUpperBound                  ( ) 
 //     {
 
 //         case Interval<T>::Type::Closed:
-//             return "[" + lowerBound_.getString() + ", " + upperBound_.getString() + "]" ;
+//             return "[" + lowerBound_.toString() + ", " + upperBound_.toString() + "]" ;
 
 //         case Interval<T>::Type::Open:
-//             return "]" + lowerBound_.getString() + ", " + upperBound_.getString() + "[" ;
+//             return "]" + lowerBound_.toString() + ", " + upperBound_.toString() + "[" ;
 
 //         case Interval<T>::Type::HalfOpenLeft:
-//             return "]" + lowerBound_.getString() + ", " + upperBound_.getString() + "]" ;
+//             return "]" + lowerBound_.toString() + ", " + upperBound_.toString() + "]" ;
 
 //         case Interval<T>::Type::HalfOpenRight:
-//             return "[" + lowerBound_.getString() + ", " + upperBound_.getString() + "[" ;
+//             return "[" + lowerBound_.toString() + ", " + upperBound_.toString() + "[" ;
 
 //         default:
 //             break ;

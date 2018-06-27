@@ -1,0 +1,145 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/// @project        Library/Mathematics
+/// @file           Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.cpp
+/// @author         Lucas Brémond <lucas@loftorbital.com>
+/// @license        TBD
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
+#include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
+
+#include <Library/Core/Error.hpp>
+#include <Library/Core/Utilities.hpp>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace library
+{
+namespace math
+{
+namespace geom
+{
+namespace trf
+{
+namespace rot
+{
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+                                RotationVector::RotationVector              (   const   Vector3d&                   anAxis,
+                                                                                const   Angle&                      anAngle                                     )
+                                :   axis_(anAxis.normalized()),
+                                    angle_(anAngle)
+{
+
+    if (anAxis.norm() != 1.0)
+    {
+        throw library::core::error::RuntimeError("Axis is not unitary.") ;
+    }
+
+}
+
+bool                            RotationVector::operator ==                 (   const   RotationVector&             aRotationVector                             ) const
+{
+
+    if ((!this->isDefined()) || (!aRotationVector.isDefined()))
+    {
+        return false ;
+    }
+    
+    return ((axis_ ==  aRotationVector.axis_) && (angle_ ==  aRotationVector.angle_))
+        || ((axis_ == -aRotationVector.axis_) && (angle_ == -aRotationVector.angle_)) ;
+
+}
+
+bool                            RotationVector::operator !=                 (   const   RotationVector&             aRotationVector                             ) const
+{
+    return !((*this) == aRotationVector) ;
+}
+
+std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
+                                                                                const   RotationVector&             aRotationVector                             )
+{
+
+    library::core::utils::Print::Header(anOutputStream, "Rotation Vector") ;
+
+    library::core::utils::Print::Line(anOutputStream) << "Axis:" << (aRotationVector.isDefined() ? aRotationVector.getAxis().toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Angle:" << (aRotationVector.isDefined() ? aRotationVector.getAngle().toString() : "Undefined") ;
+
+    library::core::utils::Print::Footer(anOutputStream) ;
+
+    return anOutputStream ;
+
+}
+
+bool                            RotationVector::isDefined                   ( ) const
+{
+    return axis_.isDefined() && angle_.isDefined() ;
+}
+
+Vector3d                        RotationVector::getAxis                     ( ) const
+{
+    return axis_ ;
+}
+
+Angle                           RotationVector::getAngle                    ( ) const
+{
+    return angle_ ;
+}
+
+RotationVector                  RotationVector::Undefined                   ( )
+{
+    return RotationVector() ;
+}
+
+RotationVector                  RotationVector::Unit                        ( )
+{
+    return RotationVector({ 0.0, 0.0, 0.0 }, Angle::Zero()) ;
+}
+
+RotationVector                  RotationVector::Quaternion                  (   const   rot::Quaternion&            aQuaternion                                 )
+{
+
+    if (!aQuaternion.isDefined())
+	{
+		throw library::core::error::runtime::Undefined("Quaternion") ;
+	}
+
+	if (!aQuaternion.isUnitary())
+	{
+		throw library::core::error::RuntimeError("Quaternion is not unitary.") ;
+	}
+
+	if (aQuaternion == rot::Quaternion::Unit())
+	{
+		return RotationVector::Unit() ;
+	}
+
+	const Vector3d axis = (aQuaternion.getVectorPart() / (1.0 - aQuaternion.s() * aQuaternion.s()).sqrt()).normalized() ;
+    const Angle angle = Angle::Radians(2.0 * std::acos(aQuaternion.s())) ;
+
+	return RotationVector(axis, angle) ;
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                                RotationVector::RotationVector              ( )
+                                :   axis_(Vector3d::Undefined()),
+                                    angle_(Angle::Undefined())
+{
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+}
+}
+}
+}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
