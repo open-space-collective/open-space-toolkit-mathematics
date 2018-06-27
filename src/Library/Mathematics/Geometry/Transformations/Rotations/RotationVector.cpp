@@ -31,11 +31,11 @@ namespace rot
 
                                 RotationVector::RotationVector              (   const   Vector3d&                   anAxis,
                                                                                 const   Angle&                      anAngle                                     )
-                                :   axis_(anAxis.normalized()),
+                                :   axis_(anAxis.isDefined() ? anAxis.normalized() : Vector3d::Undefined()),
                                     angle_(anAngle)
 {
 
-    if (anAxis.norm() != 1.0)
+    if (anAxis.isDefined() && (anAxis.norm() != 1.0))
     {
         throw library::core::error::RuntimeError("Axis is not unitary.") ;
     }
@@ -48,6 +48,11 @@ bool                            RotationVector::operator ==                 (   
     if ((!this->isDefined()) || (!aRotationVector.isDefined()))
     {
         return false ;
+    }
+
+    if (angle_.isZero() && aRotationVector.angle_.isZero())
+    {
+        return true ;
     }
     
     return ((axis_ ==  aRotationVector.axis_) && (angle_ ==  aRotationVector.angle_))
@@ -82,12 +87,26 @@ bool                            RotationVector::isDefined                   ( ) 
 
 Vector3d                        RotationVector::getAxis                     ( ) const
 {
+
+    if (!this->isDefined())
+	{
+		throw library::core::error::runtime::Undefined("Rotation vector") ;
+	}
+    
     return axis_ ;
+
 }
 
 Angle                           RotationVector::getAngle                    ( ) const
 {
+
+    if (!this->isDefined())
+	{
+		throw library::core::error::runtime::Undefined("Rotation vector") ;
+	}
+    
     return angle_ ;
+
 }
 
 RotationVector                  RotationVector::Undefined                   ( )
@@ -97,7 +116,7 @@ RotationVector                  RotationVector::Undefined                   ( )
 
 RotationVector                  RotationVector::Unit                        ( )
 {
-    return RotationVector({ 0.0, 0.0, 0.0 }, Angle::Zero()) ;
+    return RotationVector({ 0.0, 0.0, 1.0 }, Angle::Zero()) ;
 }
 
 RotationVector                  RotationVector::Quaternion                  (   const   rot::Quaternion&            aQuaternion                                 )

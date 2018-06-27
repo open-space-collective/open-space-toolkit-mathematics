@@ -268,6 +268,18 @@ bool                            Angle::isDefined                            ( ) 
     return value_.isDefined() && (unit_ != Angle::Unit::Undefined) ;
 }
 
+bool                            Angle::isZero                               ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Angle") ;
+    }
+
+    return value_ == 0.0 ;
+
+}
+
 Angle::Unit                     Angle::getUnit                              ( ) const
 {
 

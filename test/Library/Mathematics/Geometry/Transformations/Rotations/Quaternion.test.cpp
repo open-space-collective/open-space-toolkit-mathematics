@@ -171,7 +171,11 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, StreamO
     
     {
 
-        FAIL() ;
+        testing::internal::CaptureStdout() ;
+
+        EXPECT_NO_THROW(std::cout << Quaternion::XYZS(0.0, 0.0, 0.0, 1.0) << std::endl) ;
+
+        EXPECT_FALSE(testing::internal::GetCapturedStdout().empty()) ;
 
     }
 
@@ -266,7 +270,7 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, IsNear)
 
         EXPECT_ANY_THROW(Quaternion::Undefined().isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Degrees(0.0))) ;
         EXPECT_ANY_THROW(Quaternion::Undefined().isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.1), Angle::Degrees(0.0))) ;
-        
+
         EXPECT_ANY_THROW(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).isNear(Quaternion::Undefined(), Angle::Degrees(0.0))) ;
         EXPECT_ANY_THROW(Quaternion::XYZS(0.0, 0.0, 0.0, 1.1).isNear(Quaternion::Undefined(), Angle::Degrees(0.0))) ;
 

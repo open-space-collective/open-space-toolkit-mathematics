@@ -98,6 +98,8 @@ class Angle
                                                                                 const   Angle&                      anAngle                                     ) ;
 
         bool                    isDefined                                   ( ) const ;
+        
+        bool                    isZero                                      ( ) const ;
 
         Angle::Unit             getUnit                                     ( ) const ;
 
