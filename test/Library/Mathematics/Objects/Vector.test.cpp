@@ -29,7 +29,7 @@ TEST (Library_Mathematics_Objects_Vector2i, Constructor)
 
 }
 
-TEST (Library_Mathematics_Objects_Vector2i, GetString)
+TEST (Library_Mathematics_Objects_Vector2i, ToString)
 {
 
     using library::math::obj::Vector2i ;
@@ -38,7 +38,7 @@ TEST (Library_Mathematics_Objects_Vector2i, GetString)
 
         Vector2i vector(1, 2) ;
 
-        EXPECT_EQ("[1, 2]", vector.getString()) ;
+        EXPECT_EQ("[1, 2]", vector.toString()) ;
 
     }
 
@@ -93,7 +93,7 @@ TEST (Library_Mathematics_Objects_Vector3i, Constructor)
 
 }
 
-TEST (Library_Mathematics_Objects_Vector3i, GetString)
+TEST (Library_Mathematics_Objects_Vector3i, ToString)
 {
 
     using library::math::obj::Vector3i ;
@@ -102,7 +102,7 @@ TEST (Library_Mathematics_Objects_Vector3i, GetString)
 
         Vector3i vector(1, 2, 3) ;
 
-        EXPECT_EQ("[1, 2, 3]", vector.getString(0)) ;
+        EXPECT_EQ("[1, 2, 3]", vector.toString(0)) ;
 
     }
 
@@ -156,7 +156,7 @@ TEST (Library_Mathematics_Objects_Vector2d, Constructor)
 
 }
 
-TEST (Library_Mathematics_Objects_Vector2d, GetString)
+TEST (Library_Mathematics_Objects_Vector2d, ToString)
 {
 
     using library::math::obj::Vector2d ;
@@ -165,7 +165,7 @@ TEST (Library_Mathematics_Objects_Vector2d, GetString)
 
         Vector2d vector(1.0, 2.0) ;
 
-        EXPECT_EQ("[1.000000, 2.000000]", vector.getString()) ;
+        EXPECT_EQ("[1.000000, 2.000000]", vector.toString()) ;
 
     }
 
@@ -250,7 +250,7 @@ TEST (Library_Mathematics_Objects_Vector3d, Constructor)
 
 }
 
-TEST (Library_Mathematics_Objects_Vector3d, GetString)
+TEST (Library_Mathematics_Objects_Vector3d, ToString)
 {
 
     using library::math::obj::Vector3d ;
@@ -259,7 +259,7 @@ TEST (Library_Mathematics_Objects_Vector3d, GetString)
 
         Vector3d vector(1.0, 2.0, 3.0) ;
 
-        EXPECT_EQ("[1.000000, 2.000000, 3.000000]", vector.getString()) ;
+        EXPECT_EQ("[1.000000, 2.000000, 3.000000]", vector.toString()) ;
 
     }
 
@@ -315,7 +315,7 @@ TEST (Library_Mathematics_Objects_Vector4d, Constructor)
 
 }
 
-TEST (Library_Mathematics_Objects_Vector4d, GetString)
+TEST (Library_Mathematics_Objects_Vector4d, ToString)
 {
 
     using library::math::obj::Vector4d ;
@@ -324,8 +324,36 @@ TEST (Library_Mathematics_Objects_Vector4d, GetString)
 
         Vector4d vector(1.0, 2.0, 3.0, 4.0) ;
 
-        EXPECT_EQ("[1.000000, 2.000000, 3.000000, 4.000000]", vector.getString()) ;
+        EXPECT_EQ("[1.000000, 2.000000, 3.000000, 4.000000]", vector.toString()) ;
 
+    }
+
+}
+
+TEST (Library_Mathematics_Objects_Vector4d, Parse)
+{
+
+    using library::math::obj::Vector4d ;
+
+    {
+
+        Vector4d vector = Vector4d::Parse("[1.000000, 2.000000, 3.000000, 4.000000]") ;
+
+        EXPECT_EQ(4, vector.size()) ;
+
+        EXPECT_EQ(1.0, vector(0)) ;
+        EXPECT_EQ(2.0, vector(1)) ;
+        EXPECT_EQ(3.0, vector(2)) ;
+        EXPECT_EQ(4.0, vector(3)) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Vector4d::Parse("")) ;
+        EXPECT_ANY_THROW(Vector4d::Parse("[]")) ;
+        EXPECT_ANY_THROW(Vector4d::Parse("1.000000, 2.000000, 3.000000, 4.000000, 5.000000")) ;
+        
     }
 
 }
@@ -387,7 +415,7 @@ TEST (Library_Mathematics_Objects_VectorXd, Constructor)
 
 }
 
-TEST (Library_Mathematics_Objects_VectorXd, GetString)
+TEST (Library_Mathematics_Objects_VectorXd, ToString)
 {
 
     using library::math::obj::VectorXd ;
@@ -402,7 +430,36 @@ TEST (Library_Mathematics_Objects_VectorXd, GetString)
         vector(3) = 4.0 ;
         vector(4) = 5.0 ;
 
-        EXPECT_EQ("[1.000000, 2.000000, 3.000000, 4.000000, 5.000000]", vector.getString()) ;
+        EXPECT_EQ("[1.000000, 2.000000, 3.000000, 4.000000, 5.000000]", vector.toString()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Objects_VectorXd, Parse)
+{
+
+    using library::math::obj::VectorXd ;
+
+    {
+
+        VectorXd vector = VectorXd::Parse("[1.000000, 2.000000, 3.000000, 4.000000, 5.000000]") ;
+
+        EXPECT_EQ(5, vector.size()) ;
+
+        EXPECT_EQ(1.0, vector(0)) ;
+        EXPECT_EQ(2.0, vector(1)) ;
+        EXPECT_EQ(3.0, vector(2)) ;
+        EXPECT_EQ(4.0, vector(3)) ;
+        EXPECT_EQ(5.0, vector(4)) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(VectorXd::Parse("")) ;
+        EXPECT_ANY_THROW(VectorXd::Parse("[]")) ;
+        EXPECT_ANY_THROW(VectorXd::Parse("1.000000, 2.000000, 3.000000, 4.000000, 5.000000")) ;
 
     }
 

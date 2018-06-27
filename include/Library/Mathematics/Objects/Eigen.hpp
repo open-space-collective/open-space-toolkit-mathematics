@@ -57,7 +57,7 @@ bool                            isInf                                       ( ) 
 
 }
 
-std::string                     getString                                   (           uint                        aPrecision                                  =   15 ) const
+std::string                     toString                                    (           uint                        aPrecision                                  =   15 ) const
 {
 
     std::string string ;
@@ -220,6 +220,55 @@ static Matrix<Scalar, Dynamic, Dynamic> Inf                                 (   
 
     return matrix ;
 
+}
+
+static Matrix<Scalar, Dynamic, 1> Parse                                     (   const   std::string&                aString                                     )
+{
+
+    if ((aString.length() < 3) || ((aString.at(0) != '[') || (aString.at(aString.length() - 1) != ']')))
+    {
+        throw std::runtime_error("Cannot parse [" + aString + "] to vector.") ;
+    }
+
+    std::string stringWithoutBrackets = aString.substr(1, aString.size() - 2) ;
+
+    Index elementCount = 0 ;
+
+    {
+
+        std::istringstream stringStream(stringWithoutBrackets) ;
+    
+        std::string token ;
+
+        while (getline(stringStream, token, ','))
+        {
+            elementCount++ ;
+        }
+
+    }
+
+    Matrix<Scalar, Dynamic, 1> components(elementCount) ;
+
+    {
+
+        std::istringstream stringStream(stringWithoutBrackets) ;
+    
+        std::string token ;
+        Index elementIndex = 0 ;
+
+        while (getline(stringStream, token, ','))
+        {
+            
+            components(elementIndex) = atof(token.data()) ;
+
+            elementIndex++ ;
+
+        }
+
+    }
+
+    return components ;
+    
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
