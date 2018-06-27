@@ -12,6 +12,20 @@
 
 #include <Library/Core/Types/String.hpp>
 
+#define EIGEN_MATRIXBASE_PLUGIN "Library/Mathematics/Objects/Eigen.hpp"
+
+// Disable Eigen warnings
+
+#pragma GCC diagnostic push // Save diagnostic state
+
+#pragma GCC diagnostic ignored "-Wshadow"
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wint-in-bool-context"
+
+#include <Eigen/Core>
+
+#pragma GCC diagnostic pop // Turn the warnings back on
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace library
@@ -20,6 +34,34 @@ namespace math
 {
 namespace obj
 {
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using Vector2i = Eigen::Vector2i ;
+using Vector3i = Eigen::Vector3i ;
+using Vector4i = Eigen::Vector4i ;
+
+using VectorXi = Eigen::VectorXi ;
+
+using Vector2d = Eigen::Vector2d ;
+using Vector3d = Eigen::Vector3d ;
+using Vector4d = Eigen::Vector4d ;
+
+using VectorXd = Eigen::VectorXd ;
+
+using RowVectorXd = Eigen::RowVectorXd ;
+
+using Matrix2i = Eigen::Matrix2i ;
+using Matrix3i = Eigen::Matrix3i ;
+using Matrix4i = Eigen::Matrix4i ;
+
+using MatrixXi = Eigen::MatrixXi ;
+
+using Matrix2d = Eigen::Matrix2d ;
+using Matrix3d = Eigen::Matrix3d ;
+using Matrix4d = Eigen::Matrix4d ;
+
+using MatrixXd = Eigen::MatrixXd ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
