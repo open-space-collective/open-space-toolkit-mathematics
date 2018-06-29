@@ -366,7 +366,7 @@ String                          Angle::toString                             ( ) 
         throw library::core::error::runtime::Undefined("Angle") ;
     }
 
-    return value_.getString() + " [" + Angle::SymbolFromUnit(unit_) + "]" ;
+    return value_.toString() + " [" + Angle::SymbolFromUnit(unit_) + "]" ;
 
 }
 
