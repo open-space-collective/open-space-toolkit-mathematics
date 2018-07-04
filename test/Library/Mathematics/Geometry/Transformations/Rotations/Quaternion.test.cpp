@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationMatrix.hpp>
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
 #include <Library/Mathematics/Geometry/Angle.hpp>
@@ -675,6 +676,65 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Rotatio
     {
 
         EXPECT_ANY_THROW(Quaternion::RotationVector(RotationVector::Undefined())) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, RotationMatrix)
+{
+
+    using library::core::types::Real ;
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::trf::rot::RotationMatrix ;
+    using library::math::geom::trf::rot::Quaternion ;
+    
+    {
+
+        EXPECT_TRUE(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS).isNear(Quaternion::RotationMatrix(RotationMatrix::Unit()), Angle::Radians(Real::Epsilon()))) ;
+
+    }
+
+    {
+
+        for (auto angleDeg = 0.0; angleDeg <= 720.0; angleDeg += 5.0)
+        {
+
+            const Angle angle = Angle::Degrees(angleDeg) ;
+
+            for (auto axisIdx = 0; axisIdx < 100; ++axisIdx)
+            {
+
+                const Vector3d axis = Vector3d(std::cos(axisIdx), std::sin(axisIdx), std::cos(axisIdx) * std::sin(axisIdx)).normalized() ;
+
+                const RotationVector rotationVector_A_B = RotationVector(axis, angle) ;
+
+                const RotationMatrix rotationMatrix_A_B = RotationMatrix::RotationVector(rotationVector_A_B) ;
+
+                const Quaternion quaternion_A_B = Quaternion::RotationMatrix(rotationMatrix_A_B) ;
+
+                EXPECT_TRUE(rotationMatrix_A_B.accessMatrix().isApprox(RotationMatrix::Quaternion(quaternion_A_B).accessMatrix(), 1e-14)) ;
+
+                for (auto vectorIdx = 0; vectorIdx < 100; ++vectorIdx)
+                {
+
+                    const Vector3d vector_B = Vector3d(std::cos(axisIdx), std::sin(axisIdx), std::cos(axisIdx) * std::sin(axisIdx)).normalized() ;
+
+                    EXPECT_TRUE((quaternion_A_B * vector_B).isApprox((rotationMatrix_A_B * vector_B), 1e-14)) ;
+
+                }
+
+            }
+
+        }
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Quaternion::RotationMatrix(RotationMatrix::Undefined())) ;
 
     }
 

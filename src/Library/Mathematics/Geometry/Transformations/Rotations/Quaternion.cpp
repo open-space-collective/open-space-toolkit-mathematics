@@ -7,11 +7,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationMatrix.hpp>
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
 
 #include <Library/Core/Error.hpp>
 #include <Library/Core/Utilities.hpp>
+#include <iostream>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -117,11 +119,11 @@ Quaternion                      Quaternion::operator /                      (   
     }
     
     if (aQuaternion.norm() < Real::Epsilon())
-	{
-		throw library::core::error::RuntimeError("Cannot divide by quaternion with zero norm.") ;
-	}
+    {
+        throw library::core::error::RuntimeError("Cannot divide by quaternion with zero norm.") ;
+    }
 
-	return this->crossMultiply(aQuaternion.toInverse()) ;
+    return this->crossMultiply(aQuaternion.toInverse()) ;
 
 }
 
@@ -179,7 +181,12 @@ bool                            Quaternion::isNear                          (   
     }
 
     const Quaternion deltaQuaternion = (*this) / aQuaternion ;
-    
+
+    if ((deltaQuaternion.s_ > 1.0) && (std::abs(deltaQuaternion.s_ - 1.0) < Real::Epsilon()))
+    {
+        return true ;
+    }
+
     return (2.0 * std::acos(deltaQuaternion.s_)) <= anAngularTolerance.inRadians().abs() ;
 
 }
@@ -355,9 +362,9 @@ Quaternion                      Quaternion::crossMultiply                   (   
     const Real& rightScalarPart = aQuaternion.s_ ;
 
     const Vector3d vectorPart = (rightScalarPart * leftVectorPart) + (leftScalarPart * rightVectorPart) - leftVectorPart.cross(rightVectorPart) ;
-	const Real scalarPart = (leftScalarPart * rightScalarPart) - leftVectorPart.dot(rightVectorPart) ;
+    const Real scalarPart = (leftScalarPart * rightScalarPart) - leftVectorPart.dot(rightVectorPart) ;
 
-	return Quaternion(vectorPart, scalarPart) ;
+    return Quaternion(vectorPart, scalarPart) ;
 
 }
 
@@ -376,7 +383,7 @@ Quaternion                      Quaternion::dotMultiply                     (   
     const Real& rightScalarPart = aQuaternion.s_ ;
 
     const Vector3d vectorPart = (rightScalarPart * leftVectorPart) + (leftScalarPart * rightVectorPart) + leftVectorPart.cross(rightVectorPart) ;
-	const Real scalarPart = (leftScalarPart * rightScalarPart) - leftVectorPart.dot(rightVectorPart) ;
+    const Real scalarPart = (leftScalarPart * rightScalarPart) - leftVectorPart.dot(rightVectorPart) ;
 
     return Quaternion(vectorPart, scalarPart) ;
 
@@ -396,11 +403,11 @@ Vector3d                        Quaternion::rotateVector                    (   
     }
 
     if (!this->isUnitary())
-	{
+    {
         throw library::core::error::RuntimeError("Quaternion with norm [{}] is not unitary.", this->norm()) ;
-	}
+    }
 
-	return this->crossMultiply(Quaternion(aVector, 0.0)).crossMultiply(this->toConjugate()).getVectorPart() ;
+    return this->crossMultiply(Quaternion(aVector, 0.0)).crossMultiply(this->toConjugate()).getVectorPart() ;
 
 }
 
@@ -528,10 +535,12 @@ Quaternion                      Quaternion::XYZS                            (   
 Quaternion                      Quaternion::RotationVector                  (   const   rot::RotationVector&        aRotationVector                             )
 {
 
+    /// @ref Markley F. L.: Fundamentals of Spacecraft Attitude Determination and Control, 45
+
     if (!aRotationVector.isDefined())
-	{
-		throw library::core::error::runtime::Undefined("Rotation Vector") ;
-	}
+    {
+        throw library::core::error::runtime::Undefined("Rotation Vector") ;
+    }
 
     const Real rotationAngle_rad = aRotationVector.getAngle().inRadians() ;
 
@@ -539,6 +548,81 @@ Quaternion                      Quaternion::RotationVector                  (   
     const Real scalarPart = std::cos(rotationAngle_rad / 2.0) ;
 
     return Quaternion(vectorPart, scalarPart).normalize() ;
+
+}
+
+Quaternion                      Quaternion::RotationMatrix                  (   const   rot::RotationMatrix&        aRotationMatrix                             )
+{
+
+    /// @ref Markley F. L.: Fundamentals of Spacecraft Attitude Determination and Control, 48
+    /// @note Should we use this method instead? https://d3cw3dd2w32x2b.cloudfront.net/wp-content/uploads/2015/01/matrix-to-quat.pdf
+
+    if (!aRotationMatrix.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+    }
+
+    const double trace = aRotationMatrix.accessMatrix().trace() ;
+    
+    const double rotationMatrix_11 = aRotationMatrix(0, 0) ;
+    const double rotationMatrix_12 = aRotationMatrix(0, 1) ;
+    const double rotationMatrix_13 = aRotationMatrix(0, 2) ;
+    
+    const double rotationMatrix_21 = aRotationMatrix(1, 0) ;
+    const double rotationMatrix_22 = aRotationMatrix(1, 1) ;
+    const double rotationMatrix_23 = aRotationMatrix(1, 2) ;
+
+    const double rotationMatrix_31 = aRotationMatrix(2, 0) ;
+    const double rotationMatrix_32 = aRotationMatrix(2, 1) ;
+    const double rotationMatrix_33 = aRotationMatrix(2, 2) ;
+
+    double x ;
+    double y ;
+    double z ;
+    double s ;
+
+    if ((trace >= rotationMatrix_11) && (trace >= rotationMatrix_22) && (trace >= rotationMatrix_33))
+    {
+
+        x = rotationMatrix_23 - rotationMatrix_32 ;
+        y = rotationMatrix_31 - rotationMatrix_13 ;
+        z = rotationMatrix_12 - rotationMatrix_21 ;
+        s = 1.0 + trace ;
+
+    }
+    else if ((rotationMatrix_11 >= trace) && (rotationMatrix_11 >= rotationMatrix_22) && (rotationMatrix_11 >= rotationMatrix_33))
+    {
+
+        x = 1.0 + 2.0 * rotationMatrix_11 - trace ;
+        y = rotationMatrix_12 + rotationMatrix_21 ;
+        z = rotationMatrix_13 + rotationMatrix_31 ;
+        s = rotationMatrix_23 - rotationMatrix_32 ;
+
+    }
+    else if ((rotationMatrix_22 >= rotationMatrix_11) && (rotationMatrix_22 >= trace) && (rotationMatrix_22 >= rotationMatrix_33))
+    {
+
+        x = rotationMatrix_21 + rotationMatrix_12 ;
+        y = 1.0 + 2.0 * rotationMatrix_22 - trace ;
+        z = rotationMatrix_23 + rotationMatrix_32 ;
+        s = rotationMatrix_31 - rotationMatrix_13 ;
+
+    }
+    else if ((rotationMatrix_33 >= rotationMatrix_11) && (rotationMatrix_33 >= rotationMatrix_22) && (rotationMatrix_33 >= trace))
+    {
+
+        x = rotationMatrix_31 + rotationMatrix_13 ;
+        y = rotationMatrix_32 + rotationMatrix_23 ;
+        z = 1.0 + 2.0 * rotationMatrix_33 - trace ;
+        s = rotationMatrix_12 - rotationMatrix_21 ;
+
+    }
+    else
+    {
+        throw library::core::error::RuntimeError("Rotation matrix cannot be converted into quaternion.") ;
+    }
+
+    return Quaternion::XYZS(x, y, z, s).normalize() ;
 
 }
 

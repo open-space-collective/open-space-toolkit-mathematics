@@ -67,7 +67,7 @@ std::ostream&                   operator <<                                 (   
 
     library::core::utils::Print::Line(anOutputStream) << "Type:" << Interval<U>::StringFromType(anInterval.type_) ;
     library::core::utils::Print::Line(anOutputStream) << "Lower Bound:" << anInterval.lowerBound_ ;
-    library::core::utils::Print::Line(anOutputStream) << "Upper Bound:" << anInterval.lowerBound_ ;
+    library::core::utils::Print::Line(anOutputStream) << "Upper Bound:" << anInterval.upperBound_ ;
 
     library::core::utils::Print::Footer(anOutputStream) ;
 

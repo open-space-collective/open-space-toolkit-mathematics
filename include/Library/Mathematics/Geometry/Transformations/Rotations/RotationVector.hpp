@@ -38,6 +38,7 @@ using library::math::geom::Angle ;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Quaternion ;
+class RotationMatrix ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -145,6 +146,17 @@ class RotationVector
         /// @return             Rotation vector
 
         static RotationVector   Quaternion                                  (   const   rot::Quaternion&            aQuaternion                                 ) ;
+
+        /// @brief              Constructs a rotation vector from a rotation matrix
+        ///
+        /// @code
+        ///                     RotationVector rotationVector = RotationVector::RotationMatrix(RotationMatrix::Unit()) ;
+        /// @endcode
+        ///
+        /// @param              [in] aRotationMatrix A rotation matrix
+        /// @return             Rotation vector
+
+        static RotationVector   RotationMatrix                              (   const   rot::RotationMatrix&        aRotationMatrix                             ) ;
 
     private:
 

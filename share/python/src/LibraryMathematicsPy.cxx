@@ -20,17 +20,17 @@
 BOOST_PYTHON_MODULE (LibraryMathematicsPy)
 {
 
-	// boost::numpy::initialize() ;
+    // boost::numpy::initialize() ;
 
-	// boost::python::numeric::array::set_module_and_type("numpy", "ndarray") ;
+    // boost::python::numeric::array::set_module_and_type("numpy", "ndarray") ;
 
-	// SetupEigenConverters() ;
+    // SetupEigenConverters() ;
 
-	boost::python::object package = boost::python::scope() ;
-	
-	package.attr("__path__") = "Library" ;
+    boost::python::object package = boost::python::scope() ;
+    
+    package.attr("__path__") = "Library" ;
 
-	LibraryMathematicsPy_Types() ;
+    LibraryMathematicsPy_Types() ;
 
 }
 

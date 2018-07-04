@@ -8,6 +8,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
+#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationMatrix.hpp>
 #include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -35,9 +36,9 @@ namespace rot
                                     angle_(anAngle)
 {
 
-    if (anAxis.isDefined() && (anAxis.norm() != 1.0))
+    if (anAxis.isDefined() && (std::abs(anAxis.norm() - 1.0) > Real::Epsilon()))
     {
-        throw library::core::error::RuntimeError("Axis is not unitary.") ;
+        throw library::core::error::RuntimeError("Axis with norm [{}] is not unitary.", anAxis.norm()) ;
     }
 
 }
@@ -89,9 +90,9 @@ Vector3d                        RotationVector::getAxis                     ( ) 
 {
 
     if (!this->isDefined())
-	{
-		throw library::core::error::runtime::Undefined("Rotation vector") ;
-	}
+    {
+        throw library::core::error::runtime::Undefined("Rotation vector") ;
+    }
     
     return axis_ ;
 
@@ -101,9 +102,9 @@ Angle                           RotationVector::getAngle                    ( ) 
 {
 
     if (!this->isDefined())
-	{
-		throw library::core::error::runtime::Undefined("Rotation vector") ;
-	}
+    {
+        throw library::core::error::runtime::Undefined("Rotation vector") ;
+    }
     
     return angle_ ;
 
@@ -123,24 +124,50 @@ RotationVector                  RotationVector::Quaternion                  (   
 {
 
     if (!aQuaternion.isDefined())
-	{
-		throw library::core::error::runtime::Undefined("Quaternion") ;
-	}
+    {
+        throw library::core::error::runtime::Undefined("Quaternion") ;
+    }
 
-	if (!aQuaternion.isUnitary())
-	{
-		throw library::core::error::RuntimeError("Quaternion is not unitary.") ;
-	}
+    if (!aQuaternion.isUnitary())
+    {
+        throw library::core::error::RuntimeError("Quaternion is not unitary.") ;
+    }
 
-	if (aQuaternion == rot::Quaternion::Unit())
-	{
-		return RotationVector::Unit() ;
-	}
+    if (aQuaternion == rot::Quaternion::Unit())
+    {
+        return RotationVector::Unit() ;
+    }
 
-	const Vector3d axis = (aQuaternion.getVectorPart() / (1.0 - aQuaternion.s() * aQuaternion.s()).sqrt()).normalized() ;
+    const Vector3d axis = (aQuaternion.getVectorPart() / (1.0 - aQuaternion.s() * aQuaternion.s()).sqrt()).normalized() ;
     const Angle angle = Angle::Radians(2.0 * std::acos(aQuaternion.s())) ;
 
-	return RotationVector(axis, angle) ;
+    return RotationVector(axis, angle) ;
+
+}
+
+RotationVector                  RotationVector::RotationMatrix              (   const   rot::RotationMatrix&        aRotationMatrix                             )
+{
+
+    if (!aRotationMatrix.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+    }
+
+    const Angle angle = Angle::Radians(std::acos((aRotationMatrix.accessMatrix().trace() - 1.0) / 2.0)) ;
+
+    if (angle.inRadians().abs() < Real::Epsilon())
+    {   
+        return RotationVector(Vector3d::X(), angle) ;
+    }
+
+    const double x = aRotationMatrix(1, 2) - aRotationMatrix(2, 1) ;
+    const double y = aRotationMatrix(2, 0) - aRotationMatrix(0, 2) ;
+    const double z = aRotationMatrix(0, 1) - aRotationMatrix(1, 0) ;
+
+    // const Vector3d axis = (1.0 / (2.0 * std::sin(angle.inRadians()))) * Vector3d(x, y, z) ;
+    const Vector3d axis = Vector3d(x, y, z).normalized() ;
+
+    return RotationVector(axis, angle) ;
 
 }
 
