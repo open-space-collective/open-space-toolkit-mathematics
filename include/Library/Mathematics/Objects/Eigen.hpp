@@ -12,6 +12,7 @@
 
 #include <Library/Core/Types/String.hpp>
 
+#include <sstream>
 #include <limits>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -85,7 +86,15 @@ std::string                     toString                                    (   
             }
             else
             {
-                string += std::to_string(this->operator()(row, col)) ;
+
+                std::ostringstream stringStream ;
+
+                stringStream.precision(aPrecision) ;
+
+                stringStream << std::fixed << this->operator()(row, col) ;
+                
+                string += stringStream.str() ;
+
             }
 
             if (col != (this->cols() - 1))

@@ -165,7 +165,11 @@ TEST (Library_Mathematics_Objects_Vector2d, ToString)
 
         Vector2d vector(1.0, 2.0) ;
 
-        EXPECT_EQ("[1.000000, 2.000000]", vector.toString()) ;
+        EXPECT_EQ("[1, 2]", vector.toString(0)) ;
+        EXPECT_EQ("[1.0, 2.0]", vector.toString(1)) ;
+        EXPECT_EQ("[1.00, 2.00]", vector.toString(2)) ;
+        
+        EXPECT_EQ("[1.000000000000000, 2.000000000000000]", vector.toString()) ;
 
     }
 
@@ -259,7 +263,11 @@ TEST (Library_Mathematics_Objects_Vector3d, ToString)
 
         Vector3d vector(1.0, 2.0, 3.0) ;
 
-        EXPECT_EQ("[1.000000, 2.000000, 3.000000]", vector.toString()) ;
+        EXPECT_EQ("[1, 2, 3]", vector.toString(0)) ;
+        EXPECT_EQ("[1.0, 2.0, 3.0]", vector.toString(1)) ;
+        EXPECT_EQ("[1.00, 2.00, 3.00]", vector.toString(2)) ;
+
+        EXPECT_EQ("[1.000000000000000, 2.000000000000000, 3.000000000000000]", vector.toString()) ;
 
     }
 
@@ -324,7 +332,11 @@ TEST (Library_Mathematics_Objects_Vector4d, ToString)
 
         Vector4d vector(1.0, 2.0, 3.0, 4.0) ;
 
-        EXPECT_EQ("[1.000000, 2.000000, 3.000000, 4.000000]", vector.toString()) ;
+        EXPECT_EQ("[1, 2, 3, 4]", vector.toString(0)) ;
+        EXPECT_EQ("[1.0, 2.0, 3.0, 4.0]", vector.toString(1)) ;
+        EXPECT_EQ("[1.00, 2.00, 3.00, 4.00]", vector.toString(2)) ;
+        
+        EXPECT_EQ("[1.000000000000000, 2.000000000000000, 3.000000000000000, 4.000000000000000]", vector.toString()) ;
 
     }
 
@@ -430,7 +442,11 @@ TEST (Library_Mathematics_Objects_VectorXd, ToString)
         vector(3) = 4.0 ;
         vector(4) = 5.0 ;
 
-        EXPECT_EQ("[1.000000, 2.000000, 3.000000, 4.000000, 5.000000]", vector.toString()) ;
+        EXPECT_EQ("[1, 2, 3, 4, 5]", vector.toString(0)) ;
+        EXPECT_EQ("[1.0, 2.0, 3.0, 4.0, 5.0]", vector.toString(1)) ;
+        EXPECT_EQ("[1.00, 2.00, 3.00, 4.00, 5.00]", vector.toString(2)) ;
+        
+        EXPECT_EQ("[1.000000000000000, 2.000000000000000, 3.000000000000000, 4.000000000000000, 5.000000000000000]", vector.toString()) ;
 
     }
 

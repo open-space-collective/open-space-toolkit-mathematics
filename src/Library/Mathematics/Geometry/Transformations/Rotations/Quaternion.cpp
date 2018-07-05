@@ -133,10 +133,10 @@ std::ostream&                   operator <<                                 (   
 
     library::core::utils::Print::Header(anOutputStream, "Quaternion") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "X:" << (aQuaternion.isDefined() ? String::Format("{}", aQuaternion.x_) : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Y:" << (aQuaternion.isDefined() ? String::Format("{}", aQuaternion.y_) : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Z:" << (aQuaternion.isDefined() ? String::Format("{}", aQuaternion.z_) : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "S:" << (aQuaternion.isDefined() ? String::Format("{}", aQuaternion.s_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "X:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.x_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Y:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.y_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Z:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.z_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "S:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.s_) : "Undefined") ;
 
     library::core::utils::Print::Footer(anOutputStream) ;
 

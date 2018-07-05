@@ -144,43 +144,46 @@ TEST (Library_Mathematics_Objects_Interval, IsDegenerate)
         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).isDegenerate()) ;
         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).isDegenerate()) ;
 
-        EXPECT_FALSE(Interval<Real>(Real::Undefined(), 1.0, Interval<Real>::Type::Closed).isDegenerate()) ;
-        EXPECT_FALSE(Interval<Real>(0.0, Real::Undefined(), Interval<Real>::Type::Open).isDegenerate()) ;
-        EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Undefined).isDegenerate()) ;
+    }
 
-        EXPECT_FALSE(Interval<Real>::Undefined().isDegenerate()) ;
+    {
+
+        EXPECT_ANY_THROW(Interval<Real>::Undefined().isDegenerate()) ;
+
+        EXPECT_ANY_THROW(Interval<Real>(Real::Undefined(), 1.0, Interval<Real>::Type::Closed).isDegenerate()) ;
+        EXPECT_ANY_THROW(Interval<Real>(0.0, Real::Undefined(), Interval<Real>::Type::Open).isDegenerate()) ;
 
     }
 
 }
 
-// TEST (Library_Mathematics_Objects_Interval, IsIntersectingWith)
-// {
+TEST (Library_Mathematics_Objects_Interval, IsIntersectingWith)
+{
 
-//     using library::core::types::Real ;
-//     using library::math::obj::Interval ;
+    using library::core::types::Real ;
+    using library::math::obj::Interval ;
 
-//     {
+    {
 
-//         FAIL() ;
+        FAIL() ;
 
-//     }
+    }
 
-// }
+}
 
-// TEST (Library_Mathematics_Objects_Interval, Contains)
-// {
+TEST (Library_Mathematics_Objects_Interval, Contains)
+{
 
-//     using library::core::types::Real ;
-//     using library::math::obj::Interval ;
+    using library::core::types::Real ;
+    using library::math::obj::Interval ;
 
-//     {
+    {
 
-//         FAIL() ;
+        FAIL() ;
 
-//     }
+    }
 
-// }
+}
 
 TEST (Library_Mathematics_Objects_Interval, AccessLowerBound)
 {
@@ -217,15 +220,15 @@ TEST (Library_Mathematics_Objects_Interval, AccessLowerBound)
 
     {
 
-        EXPECT_FALSE(Interval<Real>::Undefined().accessLowerBound().isDefined()) ;
+        Interval<Real> interval(0.0, 1.0, Interval<Real>::Type::Closed) ;
+
+        EXPECT_EQ(&interval.accessLowerBound(), &interval.accessLowerBound()) ;
 
     }
 
     {
 
-        Interval<Real> interval(0.0, 1.0, Interval<Real>::Type::Closed) ;
-
-        EXPECT_EQ(&interval.accessLowerBound(), &interval.accessLowerBound()) ;
+        EXPECT_ANY_THROW(Interval<Real>::Undefined().accessLowerBound()) ;
 
     }
 
@@ -266,15 +269,15 @@ TEST (Library_Mathematics_Objects_Interval, AccessUpperBound)
 
     {
 
-        EXPECT_FALSE(Interval<Real>::Undefined().accessUpperBound().isDefined()) ;
+        Interval<Real> interval(0.0, 1.0, Interval<Real>::Type::Closed) ;
+
+        EXPECT_EQ(&interval.accessUpperBound(), &interval.accessUpperBound()) ;
 
     }
 
     {
 
-        Interval<Real> interval(0.0, 1.0, Interval<Real>::Type::Closed) ;
-
-        EXPECT_EQ(&interval.accessUpperBound(), &interval.accessUpperBound()) ;
+        EXPECT_ANY_THROW(Interval<Real>::Undefined().accessUpperBound()) ;
 
     }
 
@@ -288,7 +291,6 @@ TEST (Library_Mathematics_Objects_Interval, GetType)
 
     {
 
-        EXPECT_EQ(Interval<Real>::Type::Undefined, Interval<Real>(0.0, 1.0, Interval<Real>::Type::Undefined).getType()) ;
         EXPECT_EQ(Interval<Real>::Type::Closed, Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).getType()) ;
         EXPECT_EQ(Interval<Real>::Type::Open, Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).getType()) ;
         EXPECT_EQ(Interval<Real>::Type::HalfOpenLeft, Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).getType()) ;
@@ -298,7 +300,7 @@ TEST (Library_Mathematics_Objects_Interval, GetType)
 
     {
 
-        EXPECT_EQ(Interval<Real>::Type::Undefined, Interval<Real>::Undefined().getType()) ;
+        EXPECT_ANY_THROW(Interval<Real>::Undefined().getType()) ;
 
     }
 
@@ -339,7 +341,7 @@ TEST (Library_Mathematics_Objects_Interval, GetLowerBound)
 
     {
 
-        EXPECT_FALSE(Interval<Real>::Undefined().getLowerBound().isDefined()) ;
+        EXPECT_ANY_THROW(Interval<Real>::Undefined().getLowerBound()) ;
 
     }
 
@@ -380,7 +382,7 @@ TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 
     {
 
-        EXPECT_FALSE(Interval<Real>::Undefined().getUpperBound().isDefined()) ;
+        EXPECT_ANY_THROW(Interval<Real>::Undefined().getUpperBound()) ;
 
     }
 
@@ -428,7 +430,7 @@ TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 
 // }
 
-// TEST (Library_Mathematics_Objects_Interval, generateArrayWithSize)
+// TEST (Library_Mathematics_Objects_Interval, GenerateArrayWithSize)
 // {
 
 //     using library::core::types::Size ;
@@ -504,7 +506,7 @@ TEST (Library_Mathematics_Objects_Interval, SetType)
 
     {
 
-        EXPECT_NO_THROW(Interval<Real>::Undefined().setType(Interval<Real>::Type::Closed)) ;
+        EXPECT_ANY_THROW(Interval<Real>::Undefined().setType(Interval<Real>::Type::Closed)) ;
 
     }
 
@@ -530,31 +532,7 @@ TEST (Library_Mathematics_Objects_Interval, SetLowerBound)
 
     {
 
-        Interval<Real> interval(Real::Undefined(), Real::Undefined(), Interval<Real>::Type::Closed) ;
-
-        EXPECT_FALSE(interval.getLowerBound().isDefined()) ;
-
-        interval.setLowerBound(1.0) ;
-
-        EXPECT_EQ(1.0, interval.getLowerBound()) ;
-
-    }
-
-    {
-
-        Interval<Real> interval(0.0, Real::Undefined(), Interval<Real>::Type::Closed) ;
-
-        EXPECT_EQ(0.0, interval.getLowerBound()) ;
-
-        interval.setLowerBound(1.0) ;
-
-        EXPECT_EQ(1.0, interval.getLowerBound()) ;
-
-    }
-
-    {
-
-        EXPECT_NO_THROW(Interval<Real>::Undefined().setLowerBound(1.0)) ;
+        EXPECT_ANY_THROW(Interval<Real>::Undefined().setLowerBound(1.0)) ;
 
     }
 
@@ -590,31 +568,7 @@ TEST (Library_Mathematics_Objects_Interval, SetUpperBound)
 
     {
 
-        Interval<Real> interval(Real::Undefined(), Real::Undefined(), Interval<Real>::Type::Closed) ;
-
-        EXPECT_FALSE(interval.getUpperBound().isDefined()) ;
-
-        interval.setUpperBound(1.0) ;
-
-        EXPECT_EQ(1.0, interval.getUpperBound()) ;
-
-    }
-
-    {
-
-        Interval<Real> interval(Real::Undefined(), 0.0, Interval<Real>::Type::Closed) ;
-
-        EXPECT_EQ(0.0, interval.getUpperBound()) ;
-
-        interval.setUpperBound(1.0) ;
-
-        EXPECT_EQ(1.0, interval.getUpperBound()) ;
-
-    }
-
-    {
-
-        EXPECT_NO_THROW(Interval<Real>::Undefined().setUpperBound(1.0)) ;
+        EXPECT_ANY_THROW(Interval<Real>::Undefined().setUpperBound(1.0)) ;
 
     }
 
