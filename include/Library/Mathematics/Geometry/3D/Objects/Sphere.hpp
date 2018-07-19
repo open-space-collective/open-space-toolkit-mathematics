@@ -10,8 +10,8 @@
 #ifndef __Library_Mathematics_Geometry_3D_Objects_Sphere__
 #define __Library_Mathematics_Geometry_3D_Objects_Sphere__
 
+#include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
-#include <Library/Mathematics/Objects/Vector.hpp>
 #include <Library/Core/Types/Real.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -30,8 +30,8 @@ namespace objects
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using library::core::types::Real ;
-using library::math::obj::Vector3d ;
 using library::math::geom::d3::Object ;
+using library::math::geom::d3::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -53,13 +53,13 @@ class Sphere : public Object
         /// @param              [in] aCenter A sphere center
         /// @param              [in] aRadius A sphere radius
 
-                                Sphere                                      (   const   Vector3d&                   aCenter,
+                                Sphere                                      (   const   Point&                      aCenter,
                                                                                 const   Real&                       aRadius                                     ) ;
 
         /// @brief              Equal to operator
         ///
         /// @code
-        ///                     Sphere(Vector3d::Zero(), 1.0) == Sphere(Vector3d::Zero(), 1.0) ; // True
+        ///                     Sphere(Point::Origin(), 1.0) == Sphere(Point::Origin(), 1.0) ; // True
         /// @endcode
         ///
         /// @param              [in] aSphere A sphere
@@ -70,7 +70,7 @@ class Sphere : public Object
         /// @brief              Not equal to operator
         ///
         /// @code
-        ///                     Sphere(Vector3d::Zero(), 1.0) != Sphere(2.0) ; // True
+        ///                     Sphere(Point::Origin(), 1.0) != Sphere(2.0) ; // True
         /// @endcode
         ///
         /// @param              [in] aSphere A sphere
@@ -81,7 +81,7 @@ class Sphere : public Object
         /// @brief              Output stream operator
         ///
         /// @code
-        ///                     std::cout << Sphere(Vector3d::Zero(), 1.0) ;
+        ///                     std::cout << Sphere(Point::Origin(), 1.0) ;
         /// @endcode
         ///
         /// @param              [in] anOutputStream An output stream
@@ -94,7 +94,7 @@ class Sphere : public Object
         /// @brief              Check if sphere is defined
         ///
         /// @code
-        ///                     Sphere(Vector3d::Zero(), 1.0).isDefined() ; // True
+        ///                     Sphere(Point::Origin(), 1.0).isDefined() ; // True
         /// @endcode
         ///
         /// @return             True if sphere is defined
@@ -104,7 +104,7 @@ class Sphere : public Object
         /// @brief              Check if sphere is unitary, i.e. its radius is equal to 1.0
         ///
         /// @code
-        ///                     Sphere(Vector3d::Zero(), 1.0).isUnitary() ; // True
+        ///                     Sphere(Point::Origin(), 1.0).isUnitary() ; // True
         /// @endcode
         ///
         /// @return             True if sphere is unitary
@@ -114,17 +114,17 @@ class Sphere : public Object
         /// @brief              Get sphere center
         ///
         /// @code
-        ///                     Sphere(Vector3d::Zero(), 1.0).getCenter() ; // [0.0, 0.0, 0.0]
+        ///                     Sphere(Point::Origin(), 1.0).getCenter() ; // [0.0, 0.0, 0.0]
         /// @endcode
         ///
         /// @return             Sphere center
 
-        Vector3d                getCenter                                   ( ) const ;
+        Point                   getCenter                                   ( ) const ;
 
         /// @brief              Get sphere radius
         ///
         /// @code
-        ///                     Sphere(Vector3d::Zero(), 1.0).getRadius() ; // 1.0
+        ///                     Sphere(Point::Origin(), 1.0).getRadius() ; // 1.0
         /// @endcode
         ///
         /// @return             Sphere radius
@@ -151,11 +151,11 @@ class Sphere : public Object
         ///
         /// @return             Unit sphere
 
-        static Sphere           Unit                                        (   const   Vector3d&                   aCenter                                     ) ;
+        static Sphere           Unit                                        (   const   Point&                      aCenter                                     ) ;
 
     private:
 
-        Vector3d                center_ ;
+        Point                   center_ ;
         Real                    radius_ ;
 
 } ;

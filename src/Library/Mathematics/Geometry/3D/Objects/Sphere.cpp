@@ -27,7 +27,7 @@ namespace objects
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                Sphere::Sphere                              (   const   Vector3d&                   aCenter,
+                                Sphere::Sphere                              (   const   Point&                      aCenter,
                                                                                 const   Real&                       aRadius                                     )
                                 :   Object(),
                                     center_(aCenter),
@@ -66,8 +66,8 @@ std::ostream&                   operator <<                                 (   
 
     library::core::utils::Print::Header(anOutputStream, "Sphere") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Center:" << (aSphere.isDefined() ? aSphere.center_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Radius:" << (aSphere.isDefined() ? aSphere.radius_.toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Center:" << (aSphere.center_.isDefined() ? aSphere.center_.toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Radius:" << (aSphere.radius_.isDefined() ? aSphere.radius_.toString() : "Undefined") ;
 
     library::core::utils::Print::Footer(anOutputStream) ;
 
@@ -92,7 +92,7 @@ bool                            Sphere::isUnitary                           ( ) 
 
 }
 
-Vector3d                        Sphere::getCenter                           ( ) const
+Point                           Sphere::getCenter                           ( ) const
 {
 
     if (!this->isDefined())
@@ -118,10 +118,10 @@ Real                            Sphere::getRadius                           ( ) 
 
 Sphere                          Sphere::Undefined                           ( )
 {
-    return Sphere(Vector3d::Undefined(), Real::Undefined()) ;
+    return Sphere(Point::Undefined(), Real::Undefined()) ;
 }
 
-Sphere                          Sphere::Unit                                (   const   Vector3d&                   aCenter                                     )
+Sphere                          Sphere::Unit                                (   const   Point&                      aCenter                                     )
 {
     return Sphere(aCenter, 1.0) ;
 }

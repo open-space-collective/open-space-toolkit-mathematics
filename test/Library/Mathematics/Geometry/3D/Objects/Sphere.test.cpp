@@ -149,12 +149,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, IsUnitary)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, GetCenter)
 {
 
-    using library::math::obj::Vector3d ;
+    using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Sphere ;
     
     {
 
-        EXPECT_EQ(Vector3d(1.0, 2.0, 3.0), Sphere({ 1.0, 2.0, 3.0 }, 4.0).getCenter()) ;
+        EXPECT_EQ(Point(1.0, 2.0, 3.0), Sphere({ 1.0, 2.0, 3.0 }, 4.0).getCenter()) ;
 
     }
 

@@ -11,8 +11,8 @@
 #define __Library_Mathematics_Geometry_3D_Objects_Ellipsoid__
 
 #include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
-#include <Library/Mathematics/Objects/Vector.hpp>
 #include <Library/Core/Types/Real.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -31,8 +31,8 @@ namespace objects
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using library::core::types::Real ;
-using library::math::obj::Vector3d ;
 using library::math::geom::d3::Object ;
+using library::math::geom::d3::objects::Point ;
 using library::math::geom::trf::rot::Quaternion ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -49,19 +49,25 @@ class Ellipsoid : public Object
         /// @brief              Constructor
         ///
         /// @code
-        ///                     Ellipsoid ellipsoid({ 0.0, 0.0, 0.0 }, 1.0) ;
+        ///                     Ellipsoid ellipsoid({ 0.0, 0.0, 0.0 }, 1.0, 2.0, 3.0) ;
         /// @endcode
         ///
         /// @param              [in] aCenter An ellipsoid center
-        /// @param              [in] aRadius An ellipsoid radius
+        /// @param              [in] aFirstPrincipalSemiAxis An ellipsoid first principal semi-axis
+        /// @param              [in] aSecondPrincipalSemiAxis An ellipsoid second principal semi-axis
+        /// @param              [in] aThirdPrincipalSemiAxis An ellipsoid third principal semi-axis
+        /// @param              [in] (optional) anOrientation An ellipsoid orientation
 
-                                Ellipsoid                                   (   const   Vector3d&                   aCenter,
-                                                                                const   Real&                       aRadius                                     ) ;
+                                Ellipsoid                                   (   const   Point&                      aCenter,
+                                                                                const   Real&                       aFirstPrincipalSemiAxis,
+                                                                                const   Real&                       aSecondPrincipalSemiAxis,
+                                                                                const   Real&                       aThirdPrincipalSemiAxis,
+                                                                                const   Quaternion&                 anOrientation                               =   Quaternion::Unit() ) ;
 
         /// @brief              Equal to operator
         ///
         /// @code
-        ///                     Ellipsoid(Vector3d::Zero(), 1.0) == Ellipsoid(Vector3d::Zero(), 1.0) ; // True
+        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) == Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) ; // True
         /// @endcode
         ///
         /// @param              [in] anEllipsoid An ellipsoid
@@ -72,7 +78,7 @@ class Ellipsoid : public Object
         /// @brief              Not equal to operator
         ///
         /// @code
-        ///                     Ellipsoid(Vector3d::Zero(), 1.0) != Ellipsoid(2.0) ; // True
+        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) != Ellipsoid(2.0, 1.0, 3.0) ; // True
         /// @endcode
         ///
         /// @param              [in] anEllipsoid An ellipsoid
@@ -83,7 +89,7 @@ class Ellipsoid : public Object
         /// @brief              Output stream operator
         ///
         /// @code
-        ///                     std::cout << Ellipsoid(Vector3d::Zero(), 1.0) ;
+        ///                     std::cout << Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) ;
         /// @endcode
         ///
         /// @param              [in] anOutputStream An output stream
@@ -96,42 +102,62 @@ class Ellipsoid : public Object
         /// @brief              Check if ellipsoid is defined
         ///
         /// @code
-        ///                     Ellipsoid(Vector3d::Zero(), 1.0).isDefined() ; // True
+        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).isDefined() ; // True
         /// @endcode
         ///
         /// @return             True if ellipsoid is defined
 
         virtual bool            isDefined                                   ( ) const override ;
 
-        /// @brief              Check if ellipsoid is unitary, i.e. its radius is equal to 1.0
-        ///
-        /// @code
-        ///                     Ellipsoid(Vector3d::Zero(), 1.0).isUnitary() ; // True
-        /// @endcode
-        ///
-        /// @return             True if ellipsoid is unitary
-
-        bool                    isUnitary                                   ( ) const ;
-
         /// @brief              Get ellipsoid center
         ///
         /// @code
-        ///                     Ellipsoid(Vector3d::Zero(), 1.0).getCenter() ; // [0.0, 0.0, 0.0]
+        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).getCenter() ; // [0.0, 0.0, 0.0]
         /// @endcode
         ///
         /// @return             Ellipsoid center
 
-        Vector3d                getCenter                                   ( ) const ;
+        Point                   getCenter                                   ( ) const ;
 
-        /// @brief              Get ellipsoid radius
+        /// @brief              Get ellipsoid first principal semi-axis
         ///
         /// @code
-        ///                     Ellipsoid(Vector3d::Zero(), 1.0).getRadius() ; // 1.0
+        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).getRadius() ; // 1.0
         /// @endcode
         ///
-        /// @return             Ellipsoid radius
+        /// @return             Ellipsoid first principal semi-axis
 
-        Real                    getRadius                                   ( ) const ;
+        Real                    getFirstPrincipalSemiAxis                   ( ) const ;
+
+        /// @brief              Get ellipsoid second principal semi-axis
+        ///
+        /// @code
+        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).getRadius() ; // 2.0
+        /// @endcode
+        ///
+        /// @return             Ellipsoid second principal semi-axis
+
+        Real                    getSecondPrincipalSemiAxis                  ( ) const ;
+
+        /// @brief              Get ellipsoid third principal semi-axis
+        ///
+        /// @code
+        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).getRadius() ; // 3.0
+        /// @endcode
+        ///
+        /// @return             Ellipsoid third principal semi-axis
+
+        Real                    getThirdPrincipalSemiAxis                   ( ) const ;
+
+        /// @brief              Get ellipsoid orientation
+        ///
+        /// @code
+        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0, Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)).getRadius() ; // Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)
+        /// @endcode
+        ///
+        /// @return             Ellipsoid orientation
+
+        Quaternion              getOrientation                              ( ) const ;
 
         /// @brief              Constructs an undefined ellipsoid
         ///
@@ -145,7 +171,7 @@ class Ellipsoid : public Object
 
     private:
 
-        Vector3d                center_ ;
+        Point                   center_ ;
 
         Real                    a_ ;
         Real                    b_ ;
