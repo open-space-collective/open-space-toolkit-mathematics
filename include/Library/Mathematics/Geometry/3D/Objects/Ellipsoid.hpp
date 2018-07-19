@@ -64,6 +64,12 @@ class Ellipsoid : public Object
                                                                                 const   Real&                       aThirdPrincipalSemiAxis,
                                                                                 const   Quaternion&                 anOrientation                               =   Quaternion::Unit() ) ;
 
+        /// @brief              Clone ellipsoid
+        ///
+        /// @return             Pointer to cloned ellipsoid
+
+        virtual Ellipsoid*      clone                                       ( ) const override ;
+
         /// @brief              Equal to operator
         ///
         /// @code

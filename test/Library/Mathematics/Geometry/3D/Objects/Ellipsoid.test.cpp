@@ -33,6 +33,19 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Constructor)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Clone)
+{
+
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    {
+
+        EXPECT_NO_THROW(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).clone()) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, EqualToOperator)
 {
 

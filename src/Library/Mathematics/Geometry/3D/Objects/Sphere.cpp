@@ -36,6 +36,11 @@ namespace objects
 
 }
 
+Sphere*                         Sphere::clone                               ( ) const
+{
+    return new Sphere(*this) ;
+}
+
 bool                            Sphere::operator ==                         (   const   Sphere&                     aSphere                                     ) const
 {
 

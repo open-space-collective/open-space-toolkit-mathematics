@@ -38,6 +38,12 @@ class Object
 
         virtual                 ~Object                                     ( ) = 0 ;
 
+        /// @brief              Clone object (pure virtual)
+        ///
+        /// @return             Pointer to cloned object
+
+        virtual Object*         clone                                       ( ) const = 0 ;
+
         /// @brief              Check if object is defined
         ///
         /// @return             True if object is defined

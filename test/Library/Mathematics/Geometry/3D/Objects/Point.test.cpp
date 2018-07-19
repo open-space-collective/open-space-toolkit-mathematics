@@ -33,6 +33,19 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, Constructor)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Point, Clone)
+{
+
+    using library::math::geom::d3::objects::Point ;
+
+    {
+
+        EXPECT_NO_THROW(Point(1.0, 2.0, 3.0).clone()) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Point, EqualToOperator)
 {
 

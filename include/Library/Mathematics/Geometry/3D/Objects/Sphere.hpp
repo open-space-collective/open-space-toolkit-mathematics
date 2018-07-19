@@ -56,6 +56,12 @@ class Sphere : public Object
                                 Sphere                                      (   const   Point&                      aCenter,
                                                                                 const   Real&                       aRadius                                     ) ;
 
+        /// @brief              Clone sphere
+        ///
+        /// @return             Pointer to cloned sphere
+
+        virtual Sphere*         clone                                       ( ) const override ;
+
         /// @brief              Equal to operator
         ///
         /// @code

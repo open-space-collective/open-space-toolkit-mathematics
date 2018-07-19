@@ -26,6 +26,19 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Constructor)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Clone)
+{
+
+    using library::math::geom::d3::objects::Sphere ;
+
+    {
+
+        EXPECT_NO_THROW(Sphere({ 1.0, 2.0, 3.0 }, 4.0).clone()) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, EqualToOperator)
 {
 

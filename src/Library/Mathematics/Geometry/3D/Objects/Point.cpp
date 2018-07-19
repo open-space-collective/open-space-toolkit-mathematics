@@ -43,6 +43,11 @@ namespace objects
 
 }
 
+Point*                          Point::clone                                ( ) const
+{
+    return new Point(*this) ;
+}
+
 std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Point&                      aPoint                                      )
 {

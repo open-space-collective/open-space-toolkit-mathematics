@@ -68,6 +68,12 @@ class Point : public Object, public Vector3d
 
                                 Point                                       (   const   Vector3d&                   aVector                                     ) ;
 
+        /// @brief              Clone point
+        ///
+        /// @return             Pointer to cloned point
+
+        virtual Point*          clone                                       ( ) const override ;
+
         /// @brief              Output stream operator
         ///
         /// @code

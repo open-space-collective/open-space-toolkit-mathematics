@@ -57,6 +57,11 @@ namespace objects
 
 }
 
+Ellipsoid*                      Ellipsoid::clone                            ( ) const
+{
+    return new Ellipsoid(*this) ;
+}
+
 bool                            Ellipsoid::operator ==                      (   const   Ellipsoid&                  anEllipsoid                                 ) const
 {
 
