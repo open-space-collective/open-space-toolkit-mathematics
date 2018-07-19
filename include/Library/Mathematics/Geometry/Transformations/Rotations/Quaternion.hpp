@@ -14,6 +14,7 @@
 #include <Library/Mathematics/Objects/Vector.hpp>
 #include <Library/Core/Types/String.hpp>
 #include <Library/Core/Types/Real.hpp>
+#include <Library/Core/Types/Integer.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -30,6 +31,7 @@ namespace rot
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+using library::core::types::Integer ;
 using library::core::types::Real ;
 using library::core::types::String ;
 using library::math::obj::Vector3d ;
@@ -378,9 +380,11 @@ class Quaternion
         /// @endcode
         ///
         /// @param              [in] (optional) aFormat A quaternion format
+        /// @param              [in] (optional) aPrecision A quaternion precision
         /// @return             String representation
 
-        String                  toString                                    (   const   Quaternion::Format&         aFormat                                     =   Quaternion::Format::XYZS ) const ;
+        String                  toString                                    (   const   Quaternion::Format&         aFormat                                     =   Quaternion::Format::XYZS,
+                                                                                const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const ;
 
         /// @brief              Normalize quaternion
         ///

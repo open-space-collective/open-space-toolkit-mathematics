@@ -416,11 +416,11 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, ToConju
     
     {
 
-        EXPECT_EQ(Quaternion::XYZS(-1.0, -2.0, -3.0, +4.0).toConjugate(), Quaternion::XYZS(+1.0, +2.0, +3.0, +4.0).toConjugate()) ;
-        EXPECT_EQ(Quaternion::XYZS(+1.0, +2.0, +3.0, +4.0).toConjugate(), Quaternion::XYZS(-1.0, -2.0, -3.0, +4.0).toConjugate()) ;
+        EXPECT_EQ(Quaternion::XYZS(-1.0, -2.0, -3.0, +4.0), Quaternion::XYZS(+1.0, +2.0, +3.0, +4.0).toConjugate()) ;
+        EXPECT_EQ(Quaternion::XYZS(+1.0, +2.0, +3.0, +4.0), Quaternion::XYZS(-1.0, -2.0, -3.0, +4.0).toConjugate()) ;
 
-        EXPECT_EQ(Quaternion::XYZS(-1.0, -2.0, -3.0, -4.0).toConjugate(), Quaternion::XYZS(+1.0, +2.0, +3.0, -4.0).toConjugate()) ;
-        EXPECT_EQ(Quaternion::XYZS(+1.0, +2.0, +3.0, -4.0).toConjugate(), Quaternion::XYZS(-1.0, -2.0, -3.0, -4.0).toConjugate()) ;
+        EXPECT_EQ(Quaternion::XYZS(-1.0, -2.0, -3.0, -4.0), Quaternion::XYZS(+1.0, +2.0, +3.0, -4.0).toConjugate()) ;
+        EXPECT_EQ(Quaternion::XYZS(+1.0, +2.0, +3.0, -4.0), Quaternion::XYZS(-1.0, -2.0, -3.0, -4.0).toConjugate()) ;
 
     }
 
@@ -564,8 +564,22 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, ToStrin
     
     {
 
-        EXPECT_EQ("[0.000000, 0.000000, 0.000000, 1.000000]", Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).toString(Quaternion::Format::XYZS)) ;
-        EXPECT_EQ("[1.000000, 0.000000, 0.000000, 0.000000]", Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).toString(Quaternion::Format::SXYZ)) ;
+        EXPECT_EQ("[0.0, 0.0, 0.0, 1.0]", Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).toString(Quaternion::Format::XYZS)) ;
+        EXPECT_EQ("[1.0, 0.0, 0.0, 0.0]", Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).toString(Quaternion::Format::SXYZ)) ;
+
+    }
+
+    {
+
+        EXPECT_EQ("[0.00000, 0.00000, 0.00000, 1.00000]", Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).toString(Quaternion::Format::XYZS, 5)) ;
+        EXPECT_EQ("[1.00000, 0.00000, 0.00000, 0.00000]", Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).toString(Quaternion::Format::SXYZ, 5)) ;
+
+    }
+
+    {
+
+        EXPECT_EQ("[0.1, 0.1, 0.1, 0.9]", Quaternion::XYZS(0.1, 0.1, 0.1, 0.9).toString(Quaternion::Format::XYZS)) ;
+        EXPECT_EQ("[0.9, 0.1, 0.1, 0.1]", Quaternion::XYZS(0.1, 0.1, 0.1, 0.9).toString(Quaternion::Format::SXYZ)) ;
 
     }
 

@@ -58,7 +58,66 @@ bool                            isInf                                       ( ) 
 
 }
 
-std::string                     toString                                    (           uint                        aPrecision                                  =   15 ) const
+static std::string              ScalarToString                              (           int                         aScalar,
+                                                                                        int                         aPrecision                                  )
+{
+
+    (void) aPrecision ;
+    
+    return std::to_string(aScalar) ;
+
+}
+
+static std::string              ScalarToString                              (           double                      aScalar,
+                                                                                        int                         aPrecision                                  )
+{
+    
+    std::string scalarString ;
+
+    double integerPart ;
+    
+    if ((aPrecision < 0) && (std::modf(aScalar, &integerPart) == 0.0)) // If scalar is integer
+    {
+
+        scalarString += std::to_string(aScalar) ;
+
+        scalarString.erase(scalarString.find_last_not_of('0') + 1, std::string::npos) ;
+
+        scalarString += "0" ;
+
+    }
+    else
+    {
+
+        std::ostringstream stringStream ;
+
+        if (aPrecision >= 0)
+        {
+
+            stringStream.precision(aPrecision) ;
+
+            stringStream << std::fixed << aScalar ;
+
+        }
+        else
+        {
+            stringStream << aScalar ;
+        }
+
+        scalarString = stringStream.str() ;
+
+        if ((aPrecision < 0) && (scalarString.length() > 2) && (scalarString[scalarString.length() - 2] != '.'))
+        {
+            scalarString.erase(scalarString.find_last_not_of('0') + 1, std::string::npos) ;
+        }
+
+    }
+
+    return scalarString ;
+
+}
+
+std::string                     toString                                    (           int                         aPrecision                                  =   -1 ) const
 {
 
     std::string string ;
@@ -76,25 +135,19 @@ std::string                     toString                                    (   
         for (auto col = 0; col < this->cols(); ++col)
         {
 
-            if (std::isnan(this->operator()(row, col)))
+            const Scalar& value = this->operator()(row, col) ;
+
+            if (std::isnan(value))
             {
                 string += "NaN" ;
             }
-            else if (std::isinf(this->operator()(row, col)))
+            else if (std::isinf(value))
             {
                 string += "Inf" ;
             }
             else
             {
-
-                std::ostringstream stringStream ;
-
-                stringStream.precision(aPrecision) ;
-
-                stringStream << std::fixed << this->operator()(row, col) ;
-                
-                string += stringStream.str() ;
-
+                string += ScalarToString(value, aPrecision) ;
             }
 
             if (col != (this->cols() - 1))

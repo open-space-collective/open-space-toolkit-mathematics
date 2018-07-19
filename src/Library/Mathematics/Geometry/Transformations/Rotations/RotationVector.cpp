@@ -14,6 +14,8 @@
 #include <Library/Core/Error.hpp>
 #include <Library/Core/Utilities.hpp>
 
+#include <iostream>
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace library
@@ -133,12 +135,21 @@ RotationVector                  RotationVector::Quaternion                  (   
         throw library::core::error::RuntimeError("Quaternion is not unitary.") ;
     }
 
-    if (aQuaternion == rot::Quaternion::Unit())
+    // if (aQuaternion.isNear(rot::Quaternion::Unit(), Angle::Radians(Real::Epsilon())))
+    // {
+    //     return RotationVector::Unit() ;
+    // }
+
+    // std::cout << "aQuaternion = " << aQuaternion.toString() << std::endl ;
+    // std::cout << "1.0 - aQuaternion.s() * aQuaternion.s() = " << (1.0 - aQuaternion.s() * aQuaternion.s()).toString() << std::endl ;
+
+    if ((1.0 - aQuaternion.s() * aQuaternion.s()).abs() < Real::Epsilon())
     {
         return RotationVector::Unit() ;
     }
 
     const Vector3d axis = (aQuaternion.getVectorPart() / (1.0 - aQuaternion.s() * aQuaternion.s()).sqrt()).normalized() ;
+    
     const Angle angle = Angle::Radians(2.0 * std::acos(aQuaternion.s())) ;
 
     return RotationVector(axis, angle) ;

@@ -438,7 +438,8 @@ Vector4d                        Quaternion::toVector                        (   
 
 }
 
-String                          Quaternion::toString                        (   const   Quaternion::Format&         aFormat                                     ) const
+String                          Quaternion::toString                        (   const   Quaternion::Format&         aFormat,
+                                                                                const   Integer&                    aPrecision                                  ) const
 {
 
     if (!this->isDefined())
@@ -446,7 +447,7 @@ String                          Quaternion::toString                        (   
         throw library::core::error::runtime::Undefined("Quaternion") ;
     }
 
-    return this->toVector(aFormat).toString() ;
+    return aPrecision.isDefined() ? this->toVector(aFormat).toString(aPrecision) : this->toVector(aFormat).toString() ;
 
 }
 
