@@ -239,6 +239,10 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Con
 
 // }
 
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, RX)
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, RY)
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, RZ)
+
 // TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Quaternion)
 // {
 

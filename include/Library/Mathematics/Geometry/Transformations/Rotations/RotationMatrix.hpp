@@ -212,6 +212,39 @@ class RotationMatrix
 
         static RotationMatrix   Unit                                        ( ) ;
 
+        /// @brief              Constructs a rotation matrix representing a rotation around the X-axis
+        ///
+        /// @code
+        ///                     RotationMatrix rotationMatrix = RotationMatrix::RX(Angle::Degrees(30.0)) ;
+        /// @endcode
+        ///
+        /// @param              [in] aRotationAngle A rotation angle
+        /// @return             Rotation matrix
+        
+        static RotationMatrix   RX                                          (   const   Angle&                      aRotationAngle                              ) ;
+
+        /// @brief              Constructs a rotation matrix representing a rotation around the Y-axis
+        ///
+        /// @code
+        ///                     RotationMatrix rotationMatrix = RotationMatrix::RY(Angle::Degrees(30.0)) ;
+        /// @endcode
+        ///
+        /// @param              [in] aRotationAngle A rotation angle
+        /// @return             Rotation matrix
+        
+        static RotationMatrix   RY                                          (   const   Angle&                      aRotationAngle                              ) ;
+
+        /// @brief              Constructs a rotation matrix representing a rotation around the Z-axis
+        ///
+        /// @code
+        ///                     RotationMatrix rotationMatrix = RotationMatrix::RZ(Angle::Degrees(30.0)) ;
+        /// @endcode
+        ///
+        /// @param              [in] aRotationAngle A rotation angle
+        /// @return             Rotation matrix
+        
+        static RotationMatrix   RZ                                          (   const   Angle&                      aRotationAngle                              ) ;
+
         /// @brief              Constructs a rotation matrix from row vectors
         ///
         /// @code

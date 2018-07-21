@@ -260,6 +260,66 @@ RotationMatrix                  RotationMatrix::Unit                        ( )
     return RotationMatrix(Matrix3d::Identity()) ;
 }
 
+RotationMatrix                  RotationMatrix::RX                          (   const   Angle&                      aRotationAngle                              )
+{
+
+    if (!aRotationAngle.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Rotation angle") ;
+    }
+
+    const Real rotationAngle_rad = aRotationAngle.inRadians() ;
+
+    Matrix3d matrix ;
+    
+    matrix << 1.0, 0.0,                             0.0,
+              0.0, +std::cos(rotationAngle_rad), +std::sin(rotationAngle_rad),
+              0.0, -std::sin(rotationAngle_rad), +std::cos(rotationAngle_rad) ;                                                                            
+
+    return RotationMatrix(matrix) ;
+
+}
+
+RotationMatrix                  RotationMatrix::RY                          (   const   Angle&                      aRotationAngle                              )
+{
+
+    if (!aRotationAngle.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Rotation angle") ;
+    }
+
+    const Real rotationAngle_rad = aRotationAngle.inRadians() ;
+
+    Matrix3d matrix ;
+    
+    matrix << +std::cos(rotationAngle_rad), 0.0, -std::sin(rotationAngle_rad),
+              0.0,                          1.0, 0.0,
+              +std::sin(rotationAngle_rad), 0.0, +std::cos(rotationAngle_rad) ;
+
+    return RotationMatrix(matrix) ;
+
+}
+
+RotationMatrix                  RotationMatrix::RZ                          (   const   Angle&                      aRotationAngle                              )
+{
+
+    if (!aRotationAngle.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Rotation angle") ;
+    }
+
+    const Real rotationAngle_rad = aRotationAngle.inRadians() ;
+
+    Matrix3d matrix ;
+    
+    matrix << +std::cos(rotationAngle_rad), +std::sin(rotationAngle_rad), 0.0,
+              -std::sin(rotationAngle_rad), +std::cos(rotationAngle_rad), 0.0,
+              0.0,                          0.0,                          1.0 ;
+
+    return RotationMatrix(matrix) ;
+
+}
+
 RotationMatrix                  RotationMatrix::Rows                        (   const   Vector3d&                   aFirstRow,
                                                                                 const   Vector3d&                   aSecondRow,
                                                                                 const   Vector3d&                   aThirdRow                                   )
