@@ -571,8 +571,8 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, ToStrin
 
     {
 
-        EXPECT_EQ("[0.00000, 0.00000, 0.00000, 1.00000]", Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).toString(Quaternion::Format::XYZS, 5)) ;
-        EXPECT_EQ("[1.00000, 0.00000, 0.00000, 0.00000]", Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).toString(Quaternion::Format::SXYZ, 5)) ;
+        EXPECT_EQ("[0.00000, 0.00000, 0.00000, 1.00000]", Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).toString(5, Quaternion::Format::XYZS)) ;
+        EXPECT_EQ("[1.00000, 0.00000, 0.00000, 0.00000]", Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).toString(5, Quaternion::Format::SXYZ)) ;
 
     }
 
@@ -618,6 +618,19 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Conjuga
 }
 
 TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Inverse)
+{
+
+    using library::math::geom::trf::rot::Quaternion ;
+    
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Rectify)
 {
 
     using library::math::geom::trf::rot::Quaternion ;

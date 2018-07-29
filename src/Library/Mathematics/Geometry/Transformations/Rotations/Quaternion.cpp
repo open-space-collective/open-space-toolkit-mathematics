@@ -438,8 +438,20 @@ Vector4d                        Quaternion::toVector                        (   
 
 }
 
-String                          Quaternion::toString                        (   const   Quaternion::Format&         aFormat,
-                                                                                const   Integer&                    aPrecision                                  ) const
+String                          Quaternion::toString                        (   const   Quaternion::Format&         aFormat                                     ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Quaternion") ;
+    }
+
+    return this->toVector(aFormat).toString() ;
+
+}
+
+String                          Quaternion::toString                        (   const   Integer&                    aPrecision,
+                                                                                const   Quaternion::Format&         aFormat                                     ) const
 {
 
     if (!this->isDefined())
@@ -510,6 +522,28 @@ Quaternion&                     Quaternion::inverse                         ( )
     y_ = -y_ / reducedNorm ;
     z_ = -z_ / reducedNorm ;
     s_ = +s_ / reducedNorm ;
+
+    return *this ;
+
+}
+
+Quaternion&                     Quaternion::rectify                         ( )
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Quaternion") ;
+    }
+
+    if (s_ < 0.0)
+    {
+
+        x_ = -x_ ;
+        y_ = -y_ ;
+        z_ = -z_ ;
+        s_ = -s_ ;
+
+    }
 
     return *this ;
 

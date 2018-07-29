@@ -148,9 +148,15 @@ RotationVector                  RotationVector::Quaternion                  (   
         return RotationVector::Unit() ;
     }
 
+    // if (aQuaternion.s() < 0.0)
+    // {
+    //     return RotationVector::Quaternion(Quaternion(aQuaternion).rectify()) ;
+    // }
+
     const Vector3d axis = (aQuaternion.getVectorPart() / (1.0 - aQuaternion.s() * aQuaternion.s()).sqrt()).normalized() ;
     
-    const Angle angle = Angle::Radians(2.0 * std::acos(aQuaternion.s())) ;
+    // const Angle angle = Angle::Radians(2.0 * std::acos(aQuaternion.s())) ;
+    const Angle angle = Angle::Radians(2.0 * std::atan2(aQuaternion.getVectorPart().norm(), aQuaternion.s())) ;
 
     return RotationVector(axis, angle) ;
 

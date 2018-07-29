@@ -379,12 +379,14 @@ class Quaternion
         ///                     Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).toString() ; // "[0.0, 0.0, 0.0, 1.0]"
         /// @endcode
         ///
-        /// @param              [in] (optional) aFormat A quaternion format
         /// @param              [in] (optional) aPrecision A quaternion precision
+        /// @param              [in] (optional) aFormat A quaternion format
         /// @return             String representation
 
-        String                  toString                                    (   const   Quaternion::Format&         aFormat                                     =   Quaternion::Format::XYZS,
-                                                                                const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const ;
+        String                  toString                                    (   const   Quaternion::Format&         aFormat                                     ) const ;
+
+        String                  toString                                    (   const   Integer&                    aPrecision                                  =   Integer::Undefined(),
+                                                                                const   Quaternion::Format&         aFormat                                     =   Quaternion::Format::XYZS ) const ;
 
         /// @brief              Normalize quaternion
         ///
@@ -418,6 +420,17 @@ class Quaternion
         /// @return             Reference to quaternion
 
         Quaternion&             inverse                                    ( ) ;
+
+        /// @brief              Rectify quaternion (enforce positive scalar part)
+        ///
+        /// @code
+        ///                     Quaternion quaternion = Quaternion::XYZS(0.0, 0.0, -0.70710678118, -0.70710678118) ; // [0.0, 0.0, -0.70710678118, -0.70710678118]
+        ///                     quaternion.rectify() ; // [0.0, 0.0, 0.70710678118, 0.70710678118]
+        /// @endcode
+        ///
+        /// @return             Reference to quaternion
+
+        Quaternion&             rectify                                     ( ) ;
 
         /// @brief              Constructs an undefined quaternion
         ///

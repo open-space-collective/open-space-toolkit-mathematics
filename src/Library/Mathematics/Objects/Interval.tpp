@@ -115,6 +115,11 @@ bool                            Interval<T>::isIntersectingWith             (   
 bool                            Interval<T>::contains                       (   const   T&                          aValue                                      ) const
 {
 
+    if (!aValue.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Value") ;
+    }
+
     if (!this->isDefined())
     {
         throw library::core::error::runtime::Undefined("Interval") ;
@@ -148,6 +153,11 @@ bool                            Interval<T>::contains                       (   
                                 template <class T>
 bool                            Interval<T>::contains                       (   const   Interval&                   anInterval                                  ) const
 {
+
+    if (!anInterval.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
     
     if (!this->isDefined())
     {

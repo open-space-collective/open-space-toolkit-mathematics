@@ -101,15 +101,19 @@ static std::string              ScalarToString                              (   
         }
         else
         {
+
+            stringStream.precision(15) ;
+            
             stringStream << aScalar ;
+
         }
 
         scalarString = stringStream.str() ;
 
-        if ((aPrecision < 0) && (scalarString.length() > 2) && (scalarString[scalarString.length() - 2] != '.'))
-        {
-            scalarString.erase(scalarString.find_last_not_of('0') + 1, std::string::npos) ;
-        }
+        // if ((aPrecision < 0) && (scalarString.length() > 2) && (scalarString[scalarString.length() - 2] != '.'))
+        // {
+        //     scalarString.erase(scalarString.find_last_not_of('0') + 1, std::string::npos) ;
+        // }
 
     }
 
