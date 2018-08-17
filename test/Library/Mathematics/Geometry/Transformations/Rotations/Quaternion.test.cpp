@@ -139,31 +139,31 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, NotEqua
 
 }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, MultiplicationOperator)
-{
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, MultiplicationOperator)
+// {
 
-    using library::math::geom::trf::rot::Quaternion ;
+//     using library::math::geom::trf::rot::Quaternion ;
     
-    {
+//     {
 
-        FAIL() ;
+//         FAIL() ;
 
-    }
+//     }
 
-}
+// }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, DivisionOperator)
-{
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, DivisionOperator)
+// {
 
-    using library::math::geom::trf::rot::Quaternion ;
+//     using library::math::geom::trf::rot::Quaternion ;
     
-    {
+//     {
 
-        FAIL() ;
+//         FAIL() ;
 
-    }
+//     }
 
-}
+// }
 
 TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, StreamOperator)
 {
@@ -396,18 +396,18 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, GetScal
 
 }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, ToNormalized)
-{
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, ToNormalized)
+// {
 
-    using library::math::geom::trf::rot::Quaternion ;
+//     using library::math::geom::trf::rot::Quaternion ;
     
-    {
+//     {
 
-        FAIL() ;
+//         FAIL() ;
 
-    }
+//     }
 
-}
+// }
 
 TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, ToConjugate)
 {
@@ -432,109 +432,109 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, ToConju
 
 }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, ToInverse)
-{
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, ToInverse)
+// {
 
-    using library::math::geom::trf::rot::Quaternion ;
+//     using library::math::geom::trf::rot::Quaternion ;
     
-    {
+//     {
 
-        FAIL() ;
+//         FAIL() ;
 
-    }
+//     }
 
-}
+// }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Pow)
-{
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Pow)
+// {
 
-    using library::math::geom::trf::rot::Quaternion ;
+//     using library::math::geom::trf::rot::Quaternion ;
     
-    {
+//     {
 
-        FAIL() ;
+//         FAIL() ;
 
-    }
+//     }
 
-}
+// }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Exp)
-{
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Exp)
+// {
 
-    using library::math::geom::trf::rot::Quaternion ;
+//     using library::math::geom::trf::rot::Quaternion ;
     
-    {
+//     {
 
-        FAIL() ;
+//         FAIL() ;
 
-    }
+//     }
 
-}
+// }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Log)
-{
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Log)
+// {
 
-    using library::math::geom::trf::rot::Quaternion ;
+//     using library::math::geom::trf::rot::Quaternion ;
     
-    {
+//     {
 
-        FAIL() ;
+//         FAIL() ;
 
-    }
+//     }
 
-}
+// }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Norm)
-{
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Norm)
+// {
 
-    using library::math::geom::trf::rot::Quaternion ;
+//     using library::math::geom::trf::rot::Quaternion ;
     
-    {
+//     {
 
-        FAIL() ;
+//         FAIL() ;
 
-    }
+//     }
 
-}
+// }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, CrossMultiply)
-{
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, CrossMultiply)
+// {
 
-    using library::math::geom::trf::rot::Quaternion ;
+//     using library::math::geom::trf::rot::Quaternion ;
     
-    {
+//     {
 
-        FAIL() ;
+//         FAIL() ;
 
-    }
+//     }
 
-}
+// }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, DotMultiply)
-{
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, DotMultiply)
+// {
 
-    using library::math::geom::trf::rot::Quaternion ;
+//     using library::math::geom::trf::rot::Quaternion ;
     
-    {
+//     {
 
-        FAIL() ;
+//         FAIL() ;
 
-    }
+//     }
 
-}
+// }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, RotateVector)
-{
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, RotateVector)
+// {
 
-    using library::math::geom::trf::rot::Quaternion ;
+//     using library::math::geom::trf::rot::Quaternion ;
     
-    {
+//     {
 
-        FAIL() ;
+//         FAIL() ;
 
-    }
+//     }
 
-}
+// }
 
 TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, ToVector)
 {
@@ -591,57 +591,57 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, ToStrin
 
 }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Normalize)
-{
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Normalize)
+// {
 
-    using library::math::geom::trf::rot::Quaternion ;
+//     using library::math::geom::trf::rot::Quaternion ;
     
-    {
+//     {
 
-        FAIL() ;
+//         FAIL() ;
 
-    }
+//     }
 
-}
+// }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Conjugate)
-{
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Conjugate)
+// {
 
-    using library::math::geom::trf::rot::Quaternion ;
+//     using library::math::geom::trf::rot::Quaternion ;
     
-    {
+//     {
 
-        FAIL() ;
+//         FAIL() ;
 
-    }
+//     }
 
-}
+// }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Inverse)
-{
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Inverse)
+// {
 
-    using library::math::geom::trf::rot::Quaternion ;
+//     using library::math::geom::trf::rot::Quaternion ;
     
-    {
+//     {
 
-        FAIL() ;
+//         FAIL() ;
 
-    }
+//     }
 
-}
+// }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Rectify)
-{
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Rectify)
+// {
 
-    using library::math::geom::trf::rot::Quaternion ;
+//     using library::math::geom::trf::rot::Quaternion ;
     
-    {
+//     {
 
-        FAIL() ;
+//         FAIL() ;
 
-    }
+//     }
 
-}
+// }
 
 TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Undefined)
 {
