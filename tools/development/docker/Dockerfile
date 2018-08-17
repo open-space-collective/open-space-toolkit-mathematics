@@ -7,16 +7,19 @@
 
 ################################################################################################################################################################
 
-FROM openspacecollective/library-core:0.1.2
+FROM openspacecollective/library-core:0.1.5
 
 LABEL maintainer="lucas@loftorbital.com"
 
 # Arguments
 
-ARG version
 ARG cpu_count=1
 
 # Dependencies
+
+## NumPy
+
+RUN pip3 install numpy
 
 ## Eigen [3.3.4]
 
@@ -31,25 +34,20 @@ RUN mkdir /tmp/eigen \
     && make install \
     && rm -rf /tmp/eigen
 
-## Library :: Core [master]
+## Library :: Core [0.1.5]
 
-RUN pushd /tmp > /dev/null \
-    && git clone https://github.com/open-space-collective/library-core.git \
-    && cd library-core \
-    && mkdir build \
-    && cd build \
-    && cmake -DBUILD_UNIT_TESTS=OFF .. \
-    && make -j ${cpu_count} \
-    && make install \
+RUN mkdir -p /tmp/library-core \
+    && pushd /tmp/library-core > /dev/null \
+    && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.5/library-core-0.1.5-1.x86_64-runtime.rpm \
+    && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.5/library-core-0.1.5-1.x86_64-devel.rpm \
+    && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.5/library-core-0.1.5-1.x86_64-python.rpm \
+    && dnf install -y ./*.rpm \
     && rm -rf /tmp/library-core \
     && popd > /dev/null
 
-## NumPy
-
-RUN pip install --upgrade pip \
-    && pip install numpy
-
 # Labels
+
+ARG version
 
 ENV version ${version}
 

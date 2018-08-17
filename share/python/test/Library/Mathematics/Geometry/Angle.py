@@ -3,28 +3,22 @@
 ################################################################################################################################################################
 
 # @project        Library/Mathematics
-# @file           Library/Mathematics/LibraryMathematicsPy/Types.test.py
+# @file           LibraryMathematicsPy/Geometry/Angle.py
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        TBD
 
 ################################################################################################################################################################
 
-# Types
+from Library.Core import Types
 
-from LibraryMathematicsPy import Types
+from LibraryMathematicsPy import Geometry
 
-## Integer
+Angle = Geometry.Angle
 
-assert Types.Integer(0) == 0
-assert Types.Integer(123) == 123
-assert Types.Integer(+123) == +123
-assert Types.Integer(-123) == -123
+################################################################################################################################################################
 
-assert Types.Integer(0).getString() == "0"
-assert Types.Integer(123).getString() == "123"
-assert Types.Integer(+123).getString() == "123"
-assert Types.Integer(-123).getString() == "-123"
+angle = Angle(0.0, Angle.Unit.Degree)
 
-## Real
+print('angle:', angle)
 
 ################################################################################################################################################################

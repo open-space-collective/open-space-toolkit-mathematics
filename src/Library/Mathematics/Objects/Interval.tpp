@@ -67,7 +67,7 @@ std::ostream&                   operator <<                                 (   
 
     library::core::utils::Print::Line(anOutputStream) << "Type:" << Interval<U>::StringFromType(anInterval.type_) ;
     library::core::utils::Print::Line(anOutputStream) << "Lower Bound:" << anInterval.lowerBound_ ;
-    library::core::utils::Print::Line(anOutputStream) << "Upper Bound:" << anInterval.lowerBound_ ;
+    library::core::utils::Print::Line(anOutputStream) << "Upper Bound:" << anInterval.upperBound_ ;
 
     library::core::utils::Print::Footer(anOutputStream) ;
 
@@ -84,68 +84,153 @@ bool                            Interval<T>::isDefined                      ( ) 
                                 template <class T>
 bool                            Interval<T>::isDegenerate                   ( ) const
 {
-    return this->isDefined() && (lowerBound_ == upperBound_) ;
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
+
+    return lowerBound_ == upperBound_ ;
+
 }
 
-//                                 template <class T>
-// bool                            Interval<T>::isIntersectingWith             (   const   Interval&                   anInterval                                  ) const
-// {
+                                template <class T>
+bool                            Interval<T>::isIntersectingWith             (   const   Interval&                   anInterval                                  ) const
+{
 
-//     switch (type_)
-//     {
-//         // [TBI]
-//     }
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
 
-//     // return this->contains(anInterval.lowerBound_)
-//     //     || this->contains(anInterval.upperBound_)
-//     //     || anInterval.contains(lowerBound_)
-//     //     || anInterval.contains(upperBound_)
-//     //     || (*this) == anInterval ;
+    return this->contains(anInterval.lowerBound_)
+        || this->contains(anInterval.upperBound_)
+        || anInterval.contains(lowerBound_)
+        || anInterval.contains(upperBound_)
+        || (*this) == anInterval ;
 
-//     return false ;
+}
 
-// }
+                                template <class T>
+bool                            Interval<T>::contains                       (   const   T&                          aValue                                      ) const
+{
 
-//                                 template <class T>
-// bool                            Interval<T>::contains                       (   const   T&                          aValue                                      ) const
-// {
-//     return false ; // [TBI]
-// }
+    if (!aValue.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Value") ;
+    }
 
-//                                 template <class T>
-// bool                            Interval<T>::contains                       (   const   Interval&                   anInterval                                  ) const
-// {
-//     return false ; // [TBI]
-// }
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
+
+    switch (type_)
+    {
+
+        case Interval<T>::Type::Closed:
+            return (lowerBound_ <= aValue) && (aValue <= upperBound_) ;
+
+        case Interval<T>::Type::Open:
+            return (lowerBound_ < aValue) && (aValue < upperBound_) ;
+
+        case Interval<T>::Type::HalfOpenLeft:
+            return (lowerBound_ < aValue) && (aValue <= upperBound_) ;
+
+        case Interval<T>::Type::HalfOpenRight:
+            return (lowerBound_ <= aValue) && (aValue < upperBound_) ;
+
+        default:
+            throw library::core::error::runtime::Wrong("Type") ;
+            break ;
+
+    }
+    
+    return false ;
+
+}
+
+                                template <class T>
+bool                            Interval<T>::contains                       (   const   Interval&                   anInterval                                  ) const
+{
+
+    if (!anInterval.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
+    
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
+
+    return this->contains(anInterval.lowerBound_) && this->contains(anInterval.upperBound_) ;
+
+}
 
                                 template <class T>
 const T&                        Interval<T>::accessLowerBound               ( ) const
 {
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
+    
     return lowerBound_ ;
+
 }
 
                                 template <class T>
 const T&                        Interval<T>::accessUpperBound               ( ) const
 {
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
+    
     return upperBound_ ;
+
 }
 
                                 template <class T>
 typename Interval<T>::Type      Interval<T>::getType                        ( ) const
 {
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
+    
     return type_ ;
+
 }
 
                                 template <class T>
 T                               Interval<T>::getLowerBound                  ( ) const
 {
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
+    
     return lowerBound_ ;
+
 }
 
                                 template <class T>
 T                               Interval<T>::getUpperBound                  ( ) const
 {
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
+    
     return upperBound_ ;
+
 }
 
 //                                 template <class T>
@@ -173,7 +258,7 @@ T                               Interval<T>::getUpperBound                  ( ) 
 // }
 
 //                                 template <class T>
-// types::String                   Interval<T>::getString                      ( ) const
+// types::String                   Interval<T>::toString                      ( ) const
 // {
 
 //     if (!this->isDefined())
@@ -185,16 +270,16 @@ T                               Interval<T>::getUpperBound                  ( ) 
 //     {
 
 //         case Interval<T>::Type::Closed:
-//             return "[" + lowerBound_.getString() + ", " + upperBound_.getString() + "]" ;
+//             return "[" + lowerBound_.toString() + ", " + upperBound_.toString() + "]" ;
 
 //         case Interval<T>::Type::Open:
-//             return "]" + lowerBound_.getString() + ", " + upperBound_.getString() + "[" ;
+//             return "]" + lowerBound_.toString() + ", " + upperBound_.toString() + "[" ;
 
 //         case Interval<T>::Type::HalfOpenLeft:
-//             return "]" + lowerBound_.getString() + ", " + upperBound_.getString() + "]" ;
+//             return "]" + lowerBound_.toString() + ", " + upperBound_.toString() + "]" ;
 
 //         case Interval<T>::Type::HalfOpenRight:
-//             return "[" + lowerBound_.getString() + ", " + upperBound_.getString() + "[" ;
+//             return "[" + lowerBound_.toString() + ", " + upperBound_.toString() + "[" ;
 
 //         default:
 //             break ;
@@ -210,12 +295,24 @@ T                               Interval<T>::getUpperBound                  ( ) 
                                 template <class T>
 void                            Interval<T>::setType                        (   const   Interval<T>::Type&          aType                                       )
 {
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
+
     type_ = aType ;
+
 }
 
                                 template <class T>
 void                            Interval<T>::setLowerBound                  (   const   T&                          aLowerBound                                 )
 {
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
 
     if (aLowerBound.isDefined() && upperBound_.isDefined() && (aLowerBound > upperBound_))
     {
@@ -229,6 +326,11 @@ void                            Interval<T>::setLowerBound                  (   
                                 template <class T>
 void                            Interval<T>::setUpperBound                  (   const   T&                          anUpperBound                                )
 {
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
 
     if (anUpperBound.isDefined() && lowerBound_.isDefined() && (anUpperBound < lowerBound_))
     {

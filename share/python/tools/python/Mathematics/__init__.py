@@ -1,1 +1,1 @@
-from LibraryMathematicsPy import *
+from .LibraryMathematicsPy import *

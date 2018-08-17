@@ -104,27 +104,27 @@ class Interval
         friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Interval<U>&                anInterval                                  ) ;
 
-        /// @brief              Check if interval<Real> is defined
+        /// @brief              Check if interval is defined
         ///
         /// @code
         ///                     Interval<Real>::Closed(0.0, 1.0).isDefined() ; // True
         /// @endcode
         ///
-        /// @return             True if interval<Real> is defined
+        /// @return             True if interval is defined
 
         bool                    isDefined                                   ( ) const ;
 
-        /// @brief              Check if interval<Real> is degenerate, i.e. its lower and upper bounds are the equal
+        /// @brief              Check if interval is degenerate, i.e. its lower and upper bounds are the equal
         ///
         /// @code
         ///                     Interval<Real>::Closed(1.0, 1.0).isDegenerate() ; // True
         /// @endcode
         ///
-        /// @return             True if interval<Real> is degenerate
+        /// @return             True if interval is degenerate
 
         bool                    isDegenerate                                ( ) const ;
 
-        /// @brief              Check if interval<Real> is intersecting with another interval
+        /// @brief              Check if interval is intersecting with another interval
         ///
         /// @code
         ///                     Interval<Real>::Closed(0.0, 1.0).isIntersectingWith(Interval<Real>::Closed(0.5, 1.5)) ; // True
@@ -265,12 +265,12 @@ class Interval
         /// @brief              Get serialized interval
         ///
         /// @code
-        ///                     Interval<Real>::HalfOpenLeft(0.0, 1.0).getString() ; // ]0.0, 1.0]
+        ///                     Interval<Real>::HalfOpenLeft(0.0, 1.0).toString() ; // ]0.0, 1.0]
         /// @endcode
         ///
         /// @return             Serialized interval
 
-        types::String           getString                                   ( ) const ;
+        types::String           toString                                    ( ) const ;
 
         /// @brief              Interval type setter
         ///
