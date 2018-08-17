@@ -1,55 +1,25 @@
+#!/bin/bash
+
 ################################################################################################################################################################
 
 # @project        Library/Mathematics
-# @file           .gitignore
+# @file           tools/development/exec.sh
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        TBD
 
 ################################################################################################################################################################
 
-# Operating Systems
+script_directory="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-## Mac OS
+# Setup environment
 
-**/.DS_Store
+source "${script_directory}/../.env"
 
-# Editors
+# Exec Docker container
 
-## Visual Studio Code
-
-.vscode/
-*.code-workspace
-
-## Sublime Text
-
-*.sublime-workspace
-*.sublime-project
-
-# Project
-
-## Common
-
-!.gitignore
-!.gitkeep
-
-## Binaries
-
-bin/*
-lib/*
-build/
-*.so*
-*.a
-*.exe*
-*.rpm*
-
-## Documentation
-
-docs/html/
-docs/latex/
-
-## Misc.
-
-tmp/
-__pycache__
+docker exec \
+-it \
+${container_name} \
+/bin/bash
 
 ################################################################################################################################################################

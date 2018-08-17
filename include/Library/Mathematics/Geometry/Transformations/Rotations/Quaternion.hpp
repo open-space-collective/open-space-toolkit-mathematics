@@ -225,45 +225,45 @@ class Quaternion
         bool                    isNear                                      (   const   Quaternion&                 aQuaternion,
                                                                                 const   Angle&                      anAngularTolerance                          ) const ;
 
-        /// @brief              Get reference to first component of vector part
+        /// @brief              Get first component of vector part
         ///
         /// @code
         ///                     Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).x() ; // &0.0
         /// @endcode
         ///
-        /// @return             Reference to first component of vector part
+        /// @return             First component of vector part
 
-        const Real&             x                                           ( ) const ;
+        Real                    x                                           ( ) const ;
 
-        /// @brief              Get reference to second component of vector part
+        /// @brief              Get second component of vector part
         ///
         /// @code
         ///                     Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).y() ; // &0.0
         /// @endcode
         ///
-        /// @return             Reference to second component of vector part
+        /// @return             Second component of vector part
 
-        const Real&             y                                           ( ) const ;
+        Real                    y                                           ( ) const ;
 
-        /// @brief              Get reference to third component of vector part
+        /// @brief              Get third component of vector part
         ///
         /// @code
         ///                     Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).z() ; // &0.0
         /// @endcode
         ///
-        /// @return             Reference to third component of vector part
+        /// @return             Third component of vector part
 
-        const Real&             z                                           ( ) const ;
+        Real                    z                                           ( ) const ;
 
-        /// @bref               Get reference to scalar part
+        /// @bref               Get scalar part
         ///
         /// @code
         ///                     Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).s() ; // &1.0
         /// @endcode
         ///
-        /// @return             Reference to scalar part
+        /// @return             Scalar part
 
-        const Real&             s                                           ( ) const ;
+        Real                    s                                           ( ) const ;
 
         /// @brief              Get vector part
         ///

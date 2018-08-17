@@ -1,55 +1,14 @@
+# coding=utf-8
+
 ################################################################################################################################################################
 
 # @project        Library/Mathematics
-# @file           .gitignore
+# @file           LibraryMathematicsPy/Geometry/Transformations.py
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        TBD
 
 ################################################################################################################################################################
 
-# Operating Systems
-
-## Mac OS
-
-**/.DS_Store
-
-# Editors
-
-## Visual Studio Code
-
-.vscode/
-*.code-workspace
-
-## Sublime Text
-
-*.sublime-workspace
-*.sublime-project
-
-# Project
-
-## Common
-
-!.gitignore
-!.gitkeep
-
-## Binaries
-
-bin/*
-lib/*
-build/
-*.so*
-*.a
-*.exe*
-*.rpm*
-
-## Documentation
-
-docs/html/
-docs/latex/
-
-## Misc.
-
-tmp/
-__pycache__
+from .Transformations import Rotations
 
 ################################################################################################################################################################

@@ -191,7 +191,7 @@ bool                            Quaternion::isNear                          (   
 
 }
 
-const Real&                     Quaternion::x                               ( ) const
+Real                            Quaternion::x                               ( ) const
 {
 
     if (!this->isDefined())
@@ -203,7 +203,7 @@ const Real&                     Quaternion::x                               ( ) 
 
 }
 
-const Real&                     Quaternion::y                               ( ) const
+Real                            Quaternion::y                               ( ) const
 {
 
     if (!this->isDefined())
@@ -215,7 +215,7 @@ const Real&                     Quaternion::y                               ( ) 
 
 }
 
-const Real&                     Quaternion::z                               ( ) const
+Real                            Quaternion::z                               ( ) const
 {
 
     if (!this->isDefined())
@@ -227,7 +227,7 @@ const Real&                     Quaternion::z                               ( ) 
 
 }
 
-const Real&                     Quaternion::s                               ( ) const
+Real                            Quaternion::s                               ( ) const
 {
 
     if (!this->isDefined())

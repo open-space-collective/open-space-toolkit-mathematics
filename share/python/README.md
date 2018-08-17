@@ -1,0 +1,2 @@
+Library :: Mathematics :: Python Bindings
+=========================================
