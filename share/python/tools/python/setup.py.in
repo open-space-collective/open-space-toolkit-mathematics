@@ -11,14 +11,14 @@ setuptools.setup(
     description="Fundamental types, containers and utilities.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url = "https://github.com/open-space-collective/library-core",
+    url = "https://github.com/open-space-collective/library-mathematics",
     classifiers=(
         "Development Status :: 3 - Alpha",
         "Programming Language :: Python :: 3",
         # "License :: OSI Approved :: MIT License",
         "Operating System :: POSIX :: Linux"
     ),
-    keywords="open-space-collective core",
+    keywords="open-space-collective mathematics",
     packages=setuptools.find_packages(),
-    package_data={"": ["${CMAKE_CURRENT_BINARY_DIR}/${LIBRARY_NAME}/LibraryCorePy.so", "${CMAKE_CURRENT_BINARY_DIR}/${LIBRARY_NAME}/liblibrary-core.so.0"]}
+    package_data={"": ["${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_PATH}/LibraryMathematicsPy.so", "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_PATH}/liblibrary-mathematics.so.0"]}
 )
