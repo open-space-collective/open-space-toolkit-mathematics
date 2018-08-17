@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['type',['Type',['../classlibrary_1_1math_1_1obj_1_1_interval.html#abc7177f1c446d8273e70c989953667d1',1,'library::math::obj::Interval']]]
+  ['format',['Format',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a2ca851b117657819310fe5a9b9e5d681',1,'library::math::geom::trf::rot::Quaternion']]]
 ];

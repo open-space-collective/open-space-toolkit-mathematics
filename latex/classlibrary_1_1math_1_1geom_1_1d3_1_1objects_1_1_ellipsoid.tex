@@ -1,0 +1,330 @@
+\hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{}\section{library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Ellipsoid Class Reference}
+\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
+
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid}.  
+
+
+
+
+{\ttfamily \#include $<$Ellipsoid.\+hpp$>$}
+
+Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Ellipsoid\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}{Ellipsoid} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Center, const Real \&a\+First\+Principal\+Semi\+Axis, const Real \&a\+Second\+Principal\+Semi\+Axis, const Real \&a\+Third\+Principal\+Semi\+Axis, const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&an\+Orientation=\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_aa7cb20c2918d117edb85073bffb3a381}{Quaternion\+::\+Unit}())
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} $\ast$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a8982455e000708f1b7e4caf728e7ad40}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Clone ellipsoid. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a259ca94e493d1e8694292aaa579ae1e7}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&an\+Ellipsoid) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_af6e0b91e6de57a4fa4c027442613d91b}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&an\+Ellipsoid) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_adb42c2c7734c27dcb16d947fc5c9d76d}{is\+Defined} () const override
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid is defined. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a646be2506950d250db0fb6610979bb46}{get\+Center} () const
+\begin{DoxyCompactList}\small\item\em Get ellipsoid center. \end{DoxyCompactList}\item 
+Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a8219b05b4c6afcd71e915d10b6129baf}{get\+First\+Principal\+Semi\+Axis} () const
+\begin{DoxyCompactList}\small\item\em Get ellipsoid first principal semi-\/axis. \end{DoxyCompactList}\item 
+Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_abdc2cc0bed7d473f0d4f572afd0de054}{get\+Second\+Principal\+Semi\+Axis} () const
+\begin{DoxyCompactList}\small\item\em Get ellipsoid second principal semi-\/axis. \end{DoxyCompactList}\item 
+Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a62b97423985083db726d34eced6b58ae}{get\+Third\+Principal\+Semi\+Axis} () const
+\begin{DoxyCompactList}\small\item\em Get ellipsoid third principal semi-\/axis. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a8d426da587827eff577de4edb58ae417}{get\+Orientation} () const
+\begin{DoxyCompactList}\small\item\em Get ellipsoid orientation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_affcef36f736e6d21a0246a149b8fb688}{Undefined} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined ellipsoid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a95f4f6dc4d64843c673c7ac965468a2c}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&an\+Ellipsoid)
+\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid}. 
+
+https\+://en.wikipedia.\+org/wiki/\+Ellipsoid 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!Ellipsoid@{Ellipsoid}}
+\index{Ellipsoid@{Ellipsoid}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
+\subsubsection{\texorpdfstring{Ellipsoid()}{Ellipsoid()}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::\+Ellipsoid (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Center,  }\item[{const Real \&}]{a\+First\+Principal\+Semi\+Axis,  }\item[{const Real \&}]{a\+Second\+Principal\+Semi\+Axis,  }\item[{const Real \&}]{a\+Third\+Principal\+Semi\+Axis,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{an\+Orientation = {\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_aa7cb20c2918d117edb85073bffb3a381}{Quaternion\+::\+Unit}()} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}{Ellipsoid} ellipsoid(\{ 0.0, 0.0, 0.0 \}, 1.0, 2.0, 3.0) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Center} & An ellipsoid center \\
+\hline
+\mbox{\tt in}  & {\em a\+First\+Principal\+Semi\+Axis} & An ellipsoid first principal semi-\/axis \\
+\hline
+\mbox{\tt in}  & {\em a\+Second\+Principal\+Semi\+Axis} & An ellipsoid second principal semi-\/axis \\
+\hline
+\mbox{\tt in}  & {\em a\+Third\+Principal\+Semi\+Axis} & An ellipsoid third principal semi-\/axis \\
+\hline
+\mbox{\tt in}  & {\em (optional)} & an\+Orientation An ellipsoid orientation \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a8982455e000708f1b7e4caf728e7ad40}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a8982455e000708f1b7e4caf728e7ad40}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!clone@{clone}}
+\index{clone@{clone}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} $\ast$ library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone ellipsoid. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned ellipsoid 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a1a784c6b359e0eb97cd34fabc42f2f3f}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a646be2506950d250db0fb6610979bb46}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a646be2506950d250db0fb6610979bb46}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!get\+Center@{get\+Center}}
+\index{get\+Center@{get\+Center}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
+\subsubsection{\texorpdfstring{get\+Center()}{getCenter()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get ellipsoid center. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}{Ellipsoid}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0, 2.0, 3.0).getCenter() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} center 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a8219b05b4c6afcd71e915d10b6129baf}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a8219b05b4c6afcd71e915d10b6129baf}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!get\+First\+Principal\+Semi\+Axis@{get\+First\+Principal\+Semi\+Axis}}
+\index{get\+First\+Principal\+Semi\+Axis@{get\+First\+Principal\+Semi\+Axis}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
+\subsubsection{\texorpdfstring{get\+First\+Principal\+Semi\+Axis()}{getFirstPrincipalSemiAxis()}}
+{\footnotesize\ttfamily Real library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::get\+First\+Principal\+Semi\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get ellipsoid first principal semi-\/axis. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}{Ellipsoid}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0, 2.0, 3.0).getRadius() ; \textcolor{comment}{// 1.0}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} first principal semi-\/axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a8d426da587827eff577de4edb58ae417}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a8d426da587827eff577de4edb58ae417}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!get\+Orientation@{get\+Orientation}}
+\index{get\+Orientation@{get\+Orientation}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
+\subsubsection{\texorpdfstring{get\+Orientation()}{getOrientation()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::get\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get ellipsoid orientation. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}{Ellipsoid}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0, 2.0, 3.0, \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_afff9523c7dcbfbbc521736121e62ad41}{Quaternion::XYZS}(0.0, 0.0, 
+      0.0, 1.0)).getRadius() ; \textcolor{comment}{// Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} orientation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_abdc2cc0bed7d473f0d4f572afd0de054}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_abdc2cc0bed7d473f0d4f572afd0de054}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!get\+Second\+Principal\+Semi\+Axis@{get\+Second\+Principal\+Semi\+Axis}}
+\index{get\+Second\+Principal\+Semi\+Axis@{get\+Second\+Principal\+Semi\+Axis}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
+\subsubsection{\texorpdfstring{get\+Second\+Principal\+Semi\+Axis()}{getSecondPrincipalSemiAxis()}}
+{\footnotesize\ttfamily Real library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::get\+Second\+Principal\+Semi\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get ellipsoid second principal semi-\/axis. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}{Ellipsoid}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0, 2.0, 3.0).getRadius() ; \textcolor{comment}{// 2.0}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} second principal semi-\/axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a62b97423985083db726d34eced6b58ae}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a62b97423985083db726d34eced6b58ae}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!get\+Third\+Principal\+Semi\+Axis@{get\+Third\+Principal\+Semi\+Axis}}
+\index{get\+Third\+Principal\+Semi\+Axis@{get\+Third\+Principal\+Semi\+Axis}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
+\subsubsection{\texorpdfstring{get\+Third\+Principal\+Semi\+Axis()}{getThirdPrincipalSemiAxis()}}
+{\footnotesize\ttfamily Real library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::get\+Third\+Principal\+Semi\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get ellipsoid third principal semi-\/axis. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}{Ellipsoid}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0, 2.0, 3.0).getRadius() ; \textcolor{comment}{// 3.0}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} third principal semi-\/axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_adb42c2c7734c27dcb16d947fc5c9d76d}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_adb42c2c7734c27dcb16d947fc5c9d76d}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if ellipsoid is defined. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}{Ellipsoid}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0, 2.0, 3.0).isDefined() ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if ellipsoid is defined 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a2216442e322f0c3ca5f01a4efa22baf7}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_af6e0b91e6de57a4fa4c027442613d91b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_af6e0b91e6de57a4fa4c027442613d91b}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}{Ellipsoid}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0, 2.0, 3.0) != \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}{Ellipsoid}(2.0, 1.0, 3.0) ; \textcolor{comment}{//
+       True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoids not are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a259ca94e493d1e8694292aaa579ae1e7}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a259ca94e493d1e8694292aaa579ae1e7}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}{Ellipsoid}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0, 2.0, 3.0) == \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}{Ellipsoid}(
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0, 2.0, 3.0) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoids are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_affcef36f736e6d21a0246a149b8fb688}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_affcef36f736e6d21a0246a149b8fb688}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
+\subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined ellipsoid. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}{Ellipsoid} ellipsoid = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_affcef36f736e6d21a0246a149b8fb688}{Ellipsoid::Undefined}() ; \textcolor{comment}{// Undefined}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined ellipsoid 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a95f4f6dc4d64843c673c7ac965468a2c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a95f4f6dc4d64843c673c7ac965468a2c}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator. 
+
+
+\begin{DoxyCode}
+std::cout << \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}{Ellipsoid}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0, 2.0, 3.0) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An output stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_ellipsoid_8hpp}{Ellipsoid.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_ellipsoid_8cpp}{Ellipsoid.\+cpp}\end{DoxyCompactItemize}

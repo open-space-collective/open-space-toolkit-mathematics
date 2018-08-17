@@ -16,7 +16,6 @@ var classlibrary_1_1math_1_1obj_1_1_interval =
     [ "generateArrayWithStep", "classlibrary_1_1math_1_1obj_1_1_interval.html#aef3fddb9522a6e976499436e156bfe1d", null ],
     [ "getIntersectionWith", "classlibrary_1_1math_1_1obj_1_1_interval.html#a2f23ca14d71c454417270218132423de", null ],
     [ "getLowerBound", "classlibrary_1_1math_1_1obj_1_1_interval.html#a4e01721016dd02dddc93fb012ff7d5b3", null ],
-    [ "getString", "classlibrary_1_1math_1_1obj_1_1_interval.html#aedaaa7c1b22246a1bf387e070d17f47f", null ],
     [ "getType", "classlibrary_1_1math_1_1obj_1_1_interval.html#a881ab7e17883b4f1553d7e8ba9cc7656", null ],
     [ "getUnionWith", "classlibrary_1_1math_1_1obj_1_1_interval.html#a4183db388b6a63429a031d3687b20ecf", null ],
     [ "getUpperBound", "classlibrary_1_1math_1_1obj_1_1_interval.html#a97d09e9c5e7f67b6ddf162af01a8066e", null ],
@@ -28,5 +27,6 @@ var classlibrary_1_1math_1_1obj_1_1_interval =
     [ "setLowerBound", "classlibrary_1_1math_1_1obj_1_1_interval.html#a5ceb8fb56f920193c8b18346992b5d02", null ],
     [ "setType", "classlibrary_1_1math_1_1obj_1_1_interval.html#a4dfb117d5a9c23bd32a3631fcf3686ec", null ],
     [ "setUpperBound", "classlibrary_1_1math_1_1obj_1_1_interval.html#a9c6b857d9fad97969635f669428c2b48", null ],
+    [ "toString", "classlibrary_1_1math_1_1obj_1_1_interval.html#ad75c400daf533c35bc91da8c50b00a9e", null ],
     [ "operator<<", "classlibrary_1_1math_1_1obj_1_1_interval.html#a3aa32afa8cb5d85eeb45540b0bf5657b", null ]
 ];

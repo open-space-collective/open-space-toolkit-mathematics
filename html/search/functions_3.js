@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['halfopenleft',['HalfOpenLeft',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a7e706c1e5133c731645e7633a9d763bd',1,'library::math::obj::Interval']]],
-  ['halfopenright',['HalfOpenRight',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a1a15d0518cc69fa3e442fc39c0622477',1,'library::math::obj::Interval']]]
+  ['ellipsoid',['Ellipsoid',['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html#aae81fe0edc7f0e8d4590ea89ae73cb14',1,'library::math::geom::d3::objects::Ellipsoid']]],
+  ['exp',['exp',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a171373818023a1c013891d4297360542',1,'library::math::geom::trf::rot::Quaternion']]]
 ];

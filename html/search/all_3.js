@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['generatearraywithsize',['generateArrayWithSize',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a250e05a1f463f107952b437e5ff4f4d2',1,'library::math::obj::Interval']]],
-  ['generatearraywithstep',['generateArrayWithStep',['../classlibrary_1_1math_1_1obj_1_1_interval.html#aef3fddb9522a6e976499436e156bfe1d',1,'library::math::obj::Interval']]],
-  ['getintersectionwith',['getIntersectionWith',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a2f23ca14d71c454417270218132423de',1,'library::math::obj::Interval']]],
-  ['getlowerbound',['getLowerBound',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a4e01721016dd02dddc93fb012ff7d5b3',1,'library::math::obj::Interval']]],
-  ['getstring',['getString',['../classlibrary_1_1math_1_1obj_1_1_interval.html#aedaaa7c1b22246a1bf387e070d17f47f',1,'library::math::obj::Interval']]],
-  ['gettype',['getType',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a881ab7e17883b4f1553d7e8ba9cc7656',1,'library::math::obj::Interval']]],
-  ['getunionwith',['getUnionWith',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a4183db388b6a63429a031d3687b20ecf',1,'library::math::obj::Interval']]],
-  ['getupperbound',['getUpperBound',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a97d09e9c5e7f67b6ddf162af01a8066e',1,'library::math::obj::Interval']]]
+  ['eigen_2ehpp',['Eigen.hpp',['../_eigen_8hpp.html',1,'']]],
+  ['eigen_5fmatrixbase_5fplugin',['EIGEN_MATRIXBASE_PLUGIN',['../_vector_8hpp.html#afc792de073c9a00a2f3739a451be4312',1,'Vector.hpp']]],
+  ['ellipsoid',['Ellipsoid',['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html',1,'library::math::geom::d3::objects::Ellipsoid'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html#aae81fe0edc7f0e8d4590ea89ae73cb14',1,'library::math::geom::d3::objects::Ellipsoid::Ellipsoid()']]],
+  ['ellipsoid_2ecpp',['Ellipsoid.cpp',['../_ellipsoid_8cpp.html',1,'']]],
+  ['ellipsoid_2ehpp',['Ellipsoid.hpp',['../_ellipsoid_8hpp.html',1,'']]],
+  ['eulerangle_2ehpp',['EulerAngle.hpp',['../_euler_angle_8hpp.html',1,'']]],
+  ['exp',['exp',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a171373818023a1c013891d4297360542',1,'library::math::geom::trf::rot::Quaternion']]]
 ];

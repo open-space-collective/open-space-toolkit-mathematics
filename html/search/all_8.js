@@ -1,8 +1,13 @@
 var searchData=
 [
-  ['objects_2ehpp',['Objects.hpp',['../_objects_8hpp.html',1,'']]],
-  ['open',['Open',['../classlibrary_1_1math_1_1obj_1_1_interval.html#add0e1114a0c153da7a928fd059a08919',1,'library::math::obj::Interval::Open(const T &amp;aLowerBound, const T &amp;anUpperBound)'],['../classlibrary_1_1math_1_1obj_1_1_interval.html#abc7177f1c446d8273e70c989953667d1ac3bf447eabe632720a3aa1a7ce401274',1,'library::math::obj::Interval::Open()']]],
-  ['operator_21_3d',['operator!=',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a5ca4c08ba0aff1ea42ea3804d51e02cf',1,'library::math::obj::Interval']]],
-  ['operator_3c_3c',['operator&lt;&lt;',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a3aa32afa8cb5d85eeb45540b0bf5657b',1,'library::math::obj::Interval']]],
-  ['operator_3d_3d',['operator==',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a99b12768e33b75bf87ab656b92c03e98',1,'library::math::obj::Interval']]]
+  ['d3',['d3',['../namespacelibrary_1_1math_1_1geom_1_1d3.html',1,'library::math::geom']]],
+  ['geom',['geom',['../namespacelibrary_1_1math_1_1geom.html',1,'library::math']]],
+  ['library_20_3a_3a_20mathematics',['Library :: Mathematics',['../index.html',1,'']]],
+  ['library',['library',['../namespacelibrary.html',1,'']]],
+  ['log',['log',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a9bcc04be5d0b9128860c9e494abbf5ee',1,'library::math::geom::trf::rot::Quaternion']]],
+  ['math',['math',['../namespacelibrary_1_1math.html',1,'library']]],
+  ['obj',['obj',['../namespacelibrary_1_1math_1_1obj.html',1,'library::math']]],
+  ['objects',['objects',['../namespacelibrary_1_1math_1_1geom_1_1d3_1_1objects.html',1,'library::math::geom::d3']]],
+  ['rot',['rot',['../namespacelibrary_1_1math_1_1geom_1_1trf_1_1rot.html',1,'library::math::geom::trf']]],
+  ['trf',['trf',['../namespacelibrary_1_1math_1_1geom_1_1trf.html',1,'library::math::geom']]]
 ];

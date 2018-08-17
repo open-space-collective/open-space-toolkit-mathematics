@@ -1,9 +1,23 @@
 var searchData=
 [
-  ['interval',['Interval',['../classlibrary_1_1math_1_1obj_1_1_interval.html',1,'library::math::obj::Interval&lt; T &gt;'],['../classlibrary_1_1math_1_1obj_1_1_interval.html#ad3c3506ca4e90506ab1ea25a18fc5cd7',1,'library::math::obj::Interval::Interval()']]],
-  ['interval_2ehpp',['Interval.hpp',['../_interval_8hpp.html',1,'']]],
-  ['interval_2etpp',['Interval.tpp',['../_interval_8tpp.html',1,'']]],
-  ['isdefined',['isDefined',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a2de37bb9d7b97ae7892188c26c99b6fb',1,'library::math::obj::Interval']]],
-  ['isdegenerate',['isDegenerate',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a0e9997639f0c415f4f7fe8dcb58e13a8',1,'library::math::obj::Interval']]],
-  ['isintersectingwith',['isIntersectingWith',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a5c02f1b4c3a6913a2eb0893d5c3b9925',1,'library::math::obj::Interval']]]
+  ['generatearraywithsize',['generateArrayWithSize',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a250e05a1f463f107952b437e5ff4f4d2',1,'library::math::obj::Interval']]],
+  ['generatearraywithstep',['generateArrayWithStep',['../classlibrary_1_1math_1_1obj_1_1_interval.html#aef3fddb9522a6e976499436e156bfe1d',1,'library::math::obj::Interval']]],
+  ['getangle',['getAngle',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector.html#acdf847eca416fae6725c74f7676d5c27',1,'library::math::geom::trf::rot::RotationVector']]],
+  ['getaxis',['getAxis',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector.html#aa48533e0801b1b190dfe51bf94f1a9ab',1,'library::math::geom::trf::rot::RotationVector']]],
+  ['getcenter',['getCenter',['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html#a646be2506950d250db0fb6610979bb46',1,'library::math::geom::d3::objects::Ellipsoid::getCenter()'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html#a871367ab75aa46194a6b8ddc8a45967f',1,'library::math::geom::d3::objects::Sphere::getCenter()']]],
+  ['getcolumnat',['getColumnAt',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix.html#a637e10366c51b6e2137b1454522c5c07',1,'library::math::geom::trf::rot::RotationMatrix']]],
+  ['getfirstprincipalsemiaxis',['getFirstPrincipalSemiAxis',['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html#a8219b05b4c6afcd71e915d10b6129baf',1,'library::math::geom::d3::objects::Ellipsoid']]],
+  ['getintersectionwith',['getIntersectionWith',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a2f23ca14d71c454417270218132423de',1,'library::math::obj::Interval']]],
+  ['getlowerbound',['getLowerBound',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a4e01721016dd02dddc93fb012ff7d5b3',1,'library::math::obj::Interval']]],
+  ['getorientation',['getOrientation',['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html#a8d426da587827eff577de4edb58ae417',1,'library::math::geom::d3::objects::Ellipsoid']]],
+  ['getradius',['getRadius',['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html#a48cfc72b6eec9a953fb837a13e1df45e',1,'library::math::geom::d3::objects::Sphere']]],
+  ['getrowat',['getRowAt',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix.html#a71dca1f50f8073256ff69bb365c3a772',1,'library::math::geom::trf::rot::RotationMatrix']]],
+  ['getscalarpart',['getScalarPart',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#ac9560aa15c9c4682dd571983bf3f4ab6',1,'library::math::geom::trf::rot::Quaternion']]],
+  ['getsecondprincipalsemiaxis',['getSecondPrincipalSemiAxis',['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html#abdc2cc0bed7d473f0d4f572afd0de054',1,'library::math::geom::d3::objects::Ellipsoid']]],
+  ['getthirdprincipalsemiaxis',['getThirdPrincipalSemiAxis',['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html#a62b97423985083db726d34eced6b58ae',1,'library::math::geom::d3::objects::Ellipsoid']]],
+  ['gettype',['getType',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a881ab7e17883b4f1553d7e8ba9cc7656',1,'library::math::obj::Interval']]],
+  ['getunionwith',['getUnionWith',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a4183db388b6a63429a031d3687b20ecf',1,'library::math::obj::Interval']]],
+  ['getunit',['getUnit',['../classlibrary_1_1math_1_1geom_1_1_angle.html#a68d7f79c9c8111f4f3f4b44d0a9eea99',1,'library::math::geom::Angle']]],
+  ['getupperbound',['getUpperBound',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a97d09e9c5e7f67b6ddf162af01a8066e',1,'library::math::obj::Interval']]],
+  ['getvectorpart',['getVectorPart',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a3f51bfc8976d79f8d4efb7d32d5a422b',1,'library::math::geom::trf::rot::Quaternion']]]
 ];

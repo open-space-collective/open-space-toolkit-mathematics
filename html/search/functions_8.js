@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['undefined',['Undefined',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a415849a8c5306d6811612a842a5d0a40',1,'library::math::obj::Interval']]]
+  ['normalize',['normalize',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a54cc89da4b3f36d7037b940c141e07ce',1,'library::math::geom::trf::rot::Quaternion']]]
 ];

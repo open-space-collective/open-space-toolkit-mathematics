@@ -1,0 +1,210 @@
+\hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{}\section{library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Point Class Reference}
+\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}\index{library\+::math\+::geom\+::d3\+::objects\+::\+Point@{library\+::math\+::geom\+::d3\+::objects\+::\+Point}}
+
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point}.  
+
+
+
+
+{\ttfamily \#include $<$Point.\+hpp$>$}
+
+Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Point\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a617e690ab6091af3de729cee337e309e}{Point} (const Real \&a\+First\+Coordinate, const Real \&a\+Second\+Coordinate, const Real \&a\+Third\+Coordinate)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_aa247b14e8237860aafa86bee66f074e0}{Point} (const Vector3d \&a\+Vector)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} $\ast$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a32aa1e233c6ac5341605961f6bf0f210}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Clone point. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a9874289efeb457ada4b32d7eb1e012f6}{is\+Defined} () const override
+\begin{DoxyCompactList}\small\item\em Check if point is defined. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a7c4c9c71f9b29b85925d8a7ed4943501}{Undefined} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined point. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Origin} ()
+\begin{DoxyCompactList}\small\item\em Constructs a point at origin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ac6c8450721254f3cefdea7dcdd5f5001}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point)
+\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point}. 
+
+https\+://en.wikipedia.\+org/wiki/\+Point\+\_\+(geometry) 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a617e690ab6091af3de729cee337e309e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a617e690ab6091af3de729cee337e309e}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Point@{library\+::math\+::geom\+::d3\+::objects\+::\+Point}!Point@{Point}}
+\index{Point@{Point}!library\+::math\+::geom\+::d3\+::objects\+::\+Point@{library\+::math\+::geom\+::d3\+::objects\+::\+Point}}
+\subsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d3\+::objects\+::\+Point\+::\+Point (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+First\+Coordinate,  }\item[{const Real \&}]{a\+Second\+Coordinate,  }\item[{const Real \&}]{a\+Third\+Coordinate }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a617e690ab6091af3de729cee337e309e}{Point} point(0.0, 0.0, 0.0) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+First\+Coordinate} & A first coordinate \\
+\hline
+\mbox{\tt in}  & {\em a\+Second\+Coordinate} & A second coordinate \\
+\hline
+\mbox{\tt in}  & {\em a\+Third\+Coordinate} & A third coordinate \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_aa247b14e8237860aafa86bee66f074e0}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_aa247b14e8237860aafa86bee66f074e0}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Point@{library\+::math\+::geom\+::d3\+::objects\+::\+Point}!Point@{Point}}
+\index{Point@{Point}!library\+::math\+::geom\+::d3\+::objects\+::\+Point@{library\+::math\+::geom\+::d3\+::objects\+::\+Point}}
+\subsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d3\+::objects\+::\+Point\+::\+Point (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Vector }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a617e690ab6091af3de729cee337e309e}{Point} point(\{ 0.0, 0.0, 0.0 \}) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Vector} & A position vector \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a32aa1e233c6ac5341605961f6bf0f210}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a32aa1e233c6ac5341605961f6bf0f210}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Point@{library\+::math\+::geom\+::d3\+::objects\+::\+Point}!clone@{clone}}
+\index{clone@{clone}!library\+::math\+::geom\+::d3\+::objects\+::\+Point@{library\+::math\+::geom\+::d3\+::objects\+::\+Point}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} $\ast$ library\+::math\+::geom\+::d3\+::objects\+::\+Point\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone point. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned point 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a1a784c6b359e0eb97cd34fabc42f2f3f}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a9874289efeb457ada4b32d7eb1e012f6}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a9874289efeb457ada4b32d7eb1e012f6}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Point@{library\+::math\+::geom\+::d3\+::objects\+::\+Point}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d3\+::objects\+::\+Point@{library\+::math\+::geom\+::d3\+::objects\+::\+Point}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Point\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if point is defined. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a617e690ab6091af3de729cee337e309e}{Point}(Vector3d::Zero(), 1.0).isDefined() ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if point is defined 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a2216442e322f0c3ca5f01a4efa22baf7}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Point@{library\+::math\+::geom\+::d3\+::objects\+::\+Point}!Origin@{Origin}}
+\index{Origin@{Origin}!library\+::math\+::geom\+::d3\+::objects\+::\+Point@{library\+::math\+::geom\+::d3\+::objects\+::\+Point}}
+\subsubsection{\texorpdfstring{Origin()}{Origin()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} library\+::math\+::geom\+::d3\+::objects\+::\+Point\+::\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a point at origin. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a617e690ab6091af3de729cee337e309e}{Point} point = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} at origin 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a7c4c9c71f9b29b85925d8a7ed4943501}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a7c4c9c71f9b29b85925d8a7ed4943501}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Point@{library\+::math\+::geom\+::d3\+::objects\+::\+Point}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!library\+::math\+::geom\+::d3\+::objects\+::\+Point@{library\+::math\+::geom\+::d3\+::objects\+::\+Point}}
+\subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} library\+::math\+::geom\+::d3\+::objects\+::\+Point\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined point. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a617e690ab6091af3de729cee337e309e}{Point} point = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a7c4c9c71f9b29b85925d8a7ed4943501}{Point::Undefined}() ; \textcolor{comment}{// Undefined}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined point 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ac6c8450721254f3cefdea7dcdd5f5001}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ac6c8450721254f3cefdea7dcdd5f5001}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Point@{library\+::math\+::geom\+::d3\+::objects\+::\+Point}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!library\+::math\+::geom\+::d3\+::objects\+::\+Point@{library\+::math\+::geom\+::d3\+::objects\+::\+Point}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator. 
+
+
+\begin{DoxyCode}
+std::cout << \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a617e690ab6091af3de729cee337e309e}{Point}(0.0, 0.0, 0.0) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An output stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_point_8hpp}{Point.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_point_8cpp}{Point.\+cpp}\end{DoxyCompactItemize}

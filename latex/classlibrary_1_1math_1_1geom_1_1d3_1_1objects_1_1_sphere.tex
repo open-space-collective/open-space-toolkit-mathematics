@@ -1,0 +1,303 @@
+\hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{}\section{library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Sphere Class Reference}
+\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere}.  
+
+
+
+
+{\ttfamily \#include $<$Sphere.\+hpp$>$}
+
+Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Sphere\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Center, const Real \&a\+Radius)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} $\ast$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a58370a8ff15b7c5a48cf4ffec5be3015}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Clone sphere. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_ace12dcb88802f002f5797077130c4b98}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&a\+Sphere) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a127131c48a3bfe342508630cfd399fae}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&a\+Sphere) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a0598bd75f8a34e07a3ad36cf10a7f098}{is\+Defined} () const override
+\begin{DoxyCompactList}\small\item\em Check if sphere is defined. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a5ec4120b51da519ec14e8bded930b742}{is\+Unitary} () const
+\begin{DoxyCompactList}\small\item\em Check if sphere is unitary, i.\+e. its radius is equal to 1.\+0. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a871367ab75aa46194a6b8ddc8a45967f}{get\+Center} () const
+\begin{DoxyCompactList}\small\item\em Get sphere center. \end{DoxyCompactList}\item 
+Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a48cfc72b6eec9a953fb837a13e1df45e}{get\+Radius} () const
+\begin{DoxyCompactList}\small\item\em Get sphere radius. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a777600f8814a2879e925909f30cfe9c4}{Undefined} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined sphere. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a5464ea9145425db63dedbd896d6c97b0}{Unit} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Center)
+\begin{DoxyCompactList}\small\item\em Constructs a unit sphere. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_abb141c02e081d1acce5f0d840276a5dd}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&a\+Sphere)
+\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere}. 
+
+https\+://en.wikipedia.\+org/wiki/\+Sphere 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!Sphere@{Sphere}}
+\index{Sphere@{Sphere}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+\subsubsection{\texorpdfstring{Sphere()}{Sphere()}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::\+Sphere (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Center,  }\item[{const Real \&}]{a\+Radius }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere} sphere(\{ 0.0, 0.0, 0.0 \}, 1.0) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Center} & A sphere center \\
+\hline
+\mbox{\tt in}  & {\em a\+Radius} & A sphere radius \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a58370a8ff15b7c5a48cf4ffec5be3015}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a58370a8ff15b7c5a48cf4ffec5be3015}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!clone@{clone}}
+\index{clone@{clone}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} $\ast$ library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone sphere. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned sphere 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a1a784c6b359e0eb97cd34fabc42f2f3f}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a871367ab75aa46194a6b8ddc8a45967f}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a871367ab75aa46194a6b8ddc8a45967f}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!get\+Center@{get\+Center}}
+\index{get\+Center@{get\+Center}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+\subsubsection{\texorpdfstring{get\+Center()}{getCenter()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get sphere center. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0).getCenter() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} center 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a48cfc72b6eec9a953fb837a13e1df45e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a48cfc72b6eec9a953fb837a13e1df45e}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!get\+Radius@{get\+Radius}}
+\index{get\+Radius@{get\+Radius}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+\subsubsection{\texorpdfstring{get\+Radius()}{getRadius()}}
+{\footnotesize\ttfamily Real library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::get\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get sphere radius. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0).getRadius() ; \textcolor{comment}{// 1.0}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} radius 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a0598bd75f8a34e07a3ad36cf10a7f098}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a0598bd75f8a34e07a3ad36cf10a7f098}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if sphere is defined. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0).isDefined() ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if sphere is defined 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a2216442e322f0c3ca5f01a4efa22baf7}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a5ec4120b51da519ec14e8bded930b742}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a5ec4120b51da519ec14e8bded930b742}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!is\+Unitary@{is\+Unitary}}
+\index{is\+Unitary@{is\+Unitary}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+\subsubsection{\texorpdfstring{is\+Unitary()}{isUnitary()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::is\+Unitary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if sphere is unitary, i.\+e. its radius is equal to 1.\+0. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0).isUnitary() ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if sphere is unitary 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a127131c48a3bfe342508630cfd399fae}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a127131c48a3bfe342508630cfd399fae}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&}]{a\+Sphere }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0) != \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere}(2.0) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Sphere} & A sphere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if spheres not are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_ace12dcb88802f002f5797077130c4b98}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_ace12dcb88802f002f5797077130c4b98}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&}]{a\+Sphere }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0) == \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0) ; \textcolor{comment}{//
+       True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Sphere} & A sphere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if spheres are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a777600f8814a2879e925909f30cfe9c4}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a777600f8814a2879e925909f30cfe9c4}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+\subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined sphere. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere} sphere = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a777600f8814a2879e925909f30cfe9c4}{Sphere::Undefined}() ; \textcolor{comment}{// Undefined}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined sphere 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a5464ea9145425db63dedbd896d6c97b0}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a5464ea9145425db63dedbd896d6c97b0}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!Unit@{Unit}}
+\index{Unit@{Unit}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+\subsubsection{\texorpdfstring{Unit()}{Unit()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::\+Unit (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Center }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a unit sphere. 
+
+https\+://en.wikipedia.\+org/wiki/\+Unit\+\_\+sphere
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere} sphere = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a5464ea9145425db63dedbd896d6c97b0}{Sphere::Unit}(\{ 0.0, 0.0, 0.0 \}) ;
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Unit sphere 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_abb141c02e081d1acce5f0d840276a5dd}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_abb141c02e081d1acce5f0d840276a5dd}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&}]{a\+Sphere }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator. 
+
+
+\begin{DoxyCode}
+std::cout << \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em a\+Sphere} & A sphere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An output stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_sphere_8hpp}{Sphere.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_sphere_8cpp}{Sphere.\+cpp}\end{DoxyCompactItemize}

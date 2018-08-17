@@ -1,0 +1,598 @@
+\hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{}\section{library\+:\+:math\+:\+:geom\+:\+:trf\+:\+:rot\+:\+:Rotation\+Matrix Class Reference}
+\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+
+
+Rotation matrix.  
+
+
+
+
+{\ttfamily \#include $<$Rotation\+Matrix.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{Rotation\+Matrix} (const Matrix3d \&a\+Matrix)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a77fcfc0ab8ee5a5a47320a2315201461}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \&a\+Rotation\+Matrix) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a28996f6b0def32867b58931e1c804b4f}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \&a\+Rotation\+Matrix) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a3c96da7d3e74ab43f2cce4a65bfc934a}{operator$\ast$} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \&a\+Rotation\+Matrix) const
+\begin{DoxyCompactList}\small\item\em Matrix multiplication operator. \end{DoxyCompactList}\item 
+Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_af4da3ca7389c4126aaf984b6f4340972}{operator$\ast$} (const Vector3d \&a\+Vector) const
+\begin{DoxyCompactList}\small\item\em Vector multiplication operator. \end{DoxyCompactList}\item 
+double \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a55edc4e5e8514623bd60f2473ec6e93d}{operator()} (const Index \&a\+Row\+Index, const Index \&a\+Column\+Index) const
+\begin{DoxyCompactList}\small\item\em Index function operator. \end{DoxyCompactList}\item 
+double \& \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a09a9da15d503894cf85e47c0b7238a77}{operator()} (const Index \&a\+Row\+Index, const Index \&a\+Column\+Index)
+\begin{DoxyCompactList}\small\item\em Index function operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aa5034776af47fc1eacb77359cef04550}{is\+Defined} () const
+\begin{DoxyCompactList}\small\item\em Check if rotation matrix is defined. \end{DoxyCompactList}\item 
+const Matrix3d \& \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a957387a407da1658fa63dc6692254175}{access\+Matrix} () const
+\item 
+Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a71dca1f50f8073256ff69bb365c3a772}{get\+Row\+At} (const Index \&a\+Row\+Index) const
+\begin{DoxyCompactList}\small\item\em Get row at index. \end{DoxyCompactList}\item 
+Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a637e10366c51b6e2137b1454522c5c07}{get\+Column\+At} (const Index \&a\+Column\+Index) const
+\begin{DoxyCompactList}\small\item\em Get column at index. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aafb93f71d64ff383a58a9b9c4816a117}{to\+Transposed} () const
+\begin{DoxyCompactList}\small\item\em Get transposed rotation matrix. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_ad289d307f62b26ab7e1340698388789a}{transpose} ()
+\begin{DoxyCompactList}\small\item\em Transpose rotation matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a0d1a95670bf9a5ae6bb2ac1bdee0294f}{Undefined} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined rotation matrix. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aac59b7dafc34767d24d0934f4b86bef0}{Unit} ()
+\begin{DoxyCompactList}\small\item\em Constructs a unit rotation matrix. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_afe1aa8480e121065aa0c35fdf273811c}{RX} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&a\+Rotation\+Angle)
+\begin{DoxyCompactList}\small\item\em Constructs a rotation matrix representing a rotation around the X-\/axis. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a165cef74c455c3651bd33cb2a86d2a93}{RY} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&a\+Rotation\+Angle)
+\begin{DoxyCompactList}\small\item\em Constructs a rotation matrix representing a rotation around the Y-\/axis. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a357a0cf34802e55ac7221d5d1fd839c9}{RZ} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&a\+Rotation\+Angle)
+\begin{DoxyCompactList}\small\item\em Constructs a rotation matrix representing a rotation around the Z-\/axis. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a25edc11452f7979746bed675e662eb2c}{Rows} (const Vector3d \&a\+First\+Row, const Vector3d \&a\+Second\+Row, const Vector3d \&a\+Third\+Row)
+\begin{DoxyCompactList}\small\item\em Constructs a rotation matrix from row vectors. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a5f5385bb26c6a64d869030d7f3bf7b4d}{Columns} (const Vector3d \&a\+First\+Column, const Vector3d \&a\+Second\+Column, const Vector3d \&a\+Third\+Column)
+\begin{DoxyCompactList}\small\item\em Constructs a rotation matrix from column vectors. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aba9c64b7b25d9819358c0caba6c388e2}{Quaternion} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{rot\+::\+Quaternion} \&a\+Quaternion)
+\begin{DoxyCompactList}\small\item\em Constructs a rotation matrix from a quaternion. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aeace0bbd2b718443514a5f10aca3a904}{Rotation\+Vector} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector}{rot\+::\+Rotation\+Vector} \&a\+Rotation\+Vector)
+\begin{DoxyCompactList}\small\item\em Constructs a rotation matrix from a rotation vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aa9ed0897a6219331deeb7750017a0df9}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \&a\+Rotation\+Matrix)
+\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Rotation matrix. 
+
+https\+://en.wikipedia.\+org/wiki/\+Rotation\+\_\+matrix 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!Rotation\+Matrix@{Rotation\+Matrix}}
+\index{Rotation\+Matrix@{Rotation\+Matrix}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{Rotation\+Matrix()}{RotationMatrix()}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::\+Rotation\+Matrix (\begin{DoxyParamCaption}\item[{const Matrix3d \&}]{a\+Matrix }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Matrix} & A matrix \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a957387a407da1658fa63dc6692254175}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a957387a407da1658fa63dc6692254175}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!access\+Matrix@{access\+Matrix}}
+\index{access\+Matrix@{access\+Matrix}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{access\+Matrix()}{accessMatrix()}}
+{\footnotesize\ttfamily const Matrix3d \& library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::access\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a5f5385bb26c6a64d869030d7f3bf7b4d}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a5f5385bb26c6a64d869030d7f3bf7b4d}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!Columns@{Columns}}
+\index{Columns@{Columns}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{Columns()}{Columns()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::\+Columns (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+First\+Column,  }\item[{const Vector3d \&}]{a\+Second\+Column,  }\item[{const Vector3d \&}]{a\+Third\+Column }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rotation matrix from column vectors. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix} rotationMatrix = \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a5f5385bb26c6a64d869030d7f3bf7b4d}{RotationMatrix::Columns}(
+      \hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d}(1.0, 0.0, 0.0), \hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d}(1.0, 0.0, 0.0), \hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d}(1.0, 0.0, 0.0)) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+First\+Column} & A first column \\
+\hline
+\mbox{\tt in}  & {\em a\+Second\+Column} & A second column \\
+\hline
+\mbox{\tt in}  & {\em a\+Third\+Column} & A third column \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a637e10366c51b6e2137b1454522c5c07}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a637e10366c51b6e2137b1454522c5c07}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!get\+Column\+At@{get\+Column\+At}}
+\index{get\+Column\+At@{get\+Column\+At}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{get\+Column\+At()}{getColumnAt()}}
+{\footnotesize\ttfamily Vector3d library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::get\+Column\+At (\begin{DoxyParamCaption}\item[{const Index \&}]{a\+Column\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Get column at index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Column\+Index} & Index of column \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Column at index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a71dca1f50f8073256ff69bb365c3a772}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a71dca1f50f8073256ff69bb365c3a772}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!get\+Row\+At@{get\+Row\+At}}
+\index{get\+Row\+At@{get\+Row\+At}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{get\+Row\+At()}{getRowAt()}}
+{\footnotesize\ttfamily Vector3d library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::get\+Row\+At (\begin{DoxyParamCaption}\item[{const Index \&}]{a\+Row\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Get row at index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Row\+Index} & Index of row \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Row at index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aa5034776af47fc1eacb77359cef04550}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aa5034776af47fc1eacb77359cef04550}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if rotation matrix is defined. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix}(\hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d}(0.0, 0.0, 1.0), \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle_a64aa53e8420aeb6f671d86c65c370bc8}{Angle::Degrees}(90.0)).isDefined
+      () ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if rotation matrix is defined 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a28996f6b0def32867b58931e1c804b4f}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a28996f6b0def32867b58931e1c804b4f}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \&}]{a\+Rotation\+Matrix }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix}(...) != \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix}(...) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Rotation\+Matrix} & A rotation matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if rotation matrices not are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a55edc4e5e8514623bd60f2473ec6e93d}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a55edc4e5e8514623bd60f2473ec6e93d}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!operator()@{operator()}}
+\index{operator()@{operator()}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::operator() (\begin{DoxyParamCaption}\item[{const Index \&}]{a\+Row\+Index,  }\item[{const Index \&}]{a\+Column\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Index function operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix} rotationMatrix = \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aac59b7dafc34767d24d0934f4b86bef0}{RotationMatrix::Unit}() ;
+\textcolor{keywordtype}{double} value\_00 = rotationMatrix(0, 0) ; \textcolor{comment}{// 1.0}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Row\+Index} & A row index \\
+\hline
+\mbox{\tt in}  & {\em a\+Column\+Index} & A column index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value at index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a09a9da15d503894cf85e47c0b7238a77}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a09a9da15d503894cf85e47c0b7238a77}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!operator()@{operator()}}
+\index{operator()@{operator()}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{operator()()}{operator()()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double \& library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::operator() (\begin{DoxyParamCaption}\item[{const Index \&}]{a\+Row\+Index,  }\item[{const Index \&}]{a\+Column\+Index }\end{DoxyParamCaption})}
+
+
+
+Index function operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix} rotationMatrix = \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aac59b7dafc34767d24d0934f4b86bef0}{RotationMatrix::Unit}() ;
+rotationMatrix(0, 0) = 0.0 ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Row\+Index} & A row index \\
+\hline
+\mbox{\tt in}  & {\em a\+Column\+Index} & A column index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference of value at index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a3c96da7d3e74ab43f2cce4a65bfc934a}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a3c96da7d3e74ab43f2cce4a65bfc934a}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \&}]{a\+Rotation\+Matrix }\end{DoxyParamCaption}) const}
+
+
+
+Matrix multiplication operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix} rotationMatrix\_A\_B = ... ;
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix} rotationMatrix\_B\_C = ... ;
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix} rotationMatrix\_A\_C = rotationMatrix\_A\_B * rotationMatrix\_B\_C ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Rotation\+Matrix} & A rotation matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_af4da3ca7389c4126aaf984b6f4340972}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_af4da3ca7389c4126aaf984b6f4340972}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector3d library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Vector }\end{DoxyParamCaption}) const}
+
+
+
+Vector multiplication operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix} rotationMatrix\_B\_A = ... ;
+\hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d} vector\_A = ... ;
+\hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d} vector\_B = rotationMatrix\_B\_A * vector\_A ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Vector} & A vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a77fcfc0ab8ee5a5a47320a2315201461}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a77fcfc0ab8ee5a5a47320a2315201461}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \&}]{a\+Rotation\+Matrix }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix}(...) == \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix}(...) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Rotation\+Matrix} & A rotation matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if rotation matrices are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aba9c64b7b25d9819358c0caba6c388e2}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aba9c64b7b25d9819358c0caba6c388e2}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::\+Quaternion (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{rot\+::\+Quaternion} \&}]{a\+Quaternion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rotation matrix from a quaternion. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix} rotationMatrix = \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aba9c64b7b25d9819358c0caba6c388e2}{RotationMatrix::Quaternion}(
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_afff9523c7dcbfbbc521736121e62ad41}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.0)) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aeace0bbd2b718443514a5f10aca3a904}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aeace0bbd2b718443514a5f10aca3a904}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!Rotation\+Vector@{Rotation\+Vector}}
+\index{Rotation\+Vector@{Rotation\+Vector}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{Rotation\+Vector()}{RotationVector()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::\+Rotation\+Vector (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector}{rot\+::\+Rotation\+Vector} \&}]{a\+Rotation\+Vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rotation matrix from a rotation vector. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix} rotationMatrix = \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aeace0bbd2b718443514a5f10aca3a904}{RotationMatrix::RotationVector}(
+      \hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d}(0.0, 0.0, 1.0), \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle_a64aa53e8420aeb6f671d86c65c370bc8}{Angle::Degrees}(90.0)) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Rotation\+Vector} & A rotation vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a25edc11452f7979746bed675e662eb2c}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a25edc11452f7979746bed675e662eb2c}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!Rows@{Rows}}
+\index{Rows@{Rows}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{Rows()}{Rows()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::\+Rows (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+First\+Row,  }\item[{const Vector3d \&}]{a\+Second\+Row,  }\item[{const Vector3d \&}]{a\+Third\+Row }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rotation matrix from row vectors. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix} rotationMatrix = \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a25edc11452f7979746bed675e662eb2c}{RotationMatrix::Rows}(
+      \hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d}(1.0, 0.0, 0.0), \hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d}(1.0, 0.0, 0.0), \hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d}(1.0, 0.0, 0.0)) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+First\+Row} & A first row \\
+\hline
+\mbox{\tt in}  & {\em a\+Second\+Row} & A second row \\
+\hline
+\mbox{\tt in}  & {\em a\+Third\+Row} & A third row \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_afe1aa8480e121065aa0c35fdf273811c}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_afe1aa8480e121065aa0c35fdf273811c}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!RX@{RX}}
+\index{RX@{RX}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{R\+X()}{RX()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::\+RX (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&}]{a\+Rotation\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rotation matrix representing a rotation around the X-\/axis. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix} rotationMatrix = \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_afe1aa8480e121065aa0c35fdf273811c}{RotationMatrix::RX}(
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle_a64aa53e8420aeb6f671d86c65c370bc8}{Angle::Degrees}(30.0)) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Rotation\+Angle} & A rotation angle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a165cef74c455c3651bd33cb2a86d2a93}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a165cef74c455c3651bd33cb2a86d2a93}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!RY@{RY}}
+\index{RY@{RY}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{R\+Y()}{RY()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::\+RY (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&}]{a\+Rotation\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rotation matrix representing a rotation around the Y-\/axis. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix} rotationMatrix = \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a165cef74c455c3651bd33cb2a86d2a93}{RotationMatrix::RY}(
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle_a64aa53e8420aeb6f671d86c65c370bc8}{Angle::Degrees}(30.0)) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Rotation\+Angle} & A rotation angle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a357a0cf34802e55ac7221d5d1fd839c9}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a357a0cf34802e55ac7221d5d1fd839c9}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!RZ@{RZ}}
+\index{RZ@{RZ}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{R\+Z()}{RZ()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::\+RZ (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&}]{a\+Rotation\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rotation matrix representing a rotation around the Z-\/axis. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix} rotationMatrix = \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a357a0cf34802e55ac7221d5d1fd839c9}{RotationMatrix::RZ}(
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle_a64aa53e8420aeb6f671d86c65c370bc8}{Angle::Degrees}(30.0)) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Rotation\+Angle} & A rotation angle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aafb93f71d64ff383a58a9b9c4816a117}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aafb93f71d64ff383a58a9b9c4816a117}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!to\+Transposed@{to\+Transposed}}
+\index{to\+Transposed@{to\+Transposed}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{to\+Transposed()}{toTransposed()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::to\+Transposed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get transposed rotation matrix. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix}(...).toTransposed() ;
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Transposed rotation matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_ad289d307f62b26ab7e1340698388789a}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_ad289d307f62b26ab7e1340698388789a}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!transpose@{transpose}}
+\index{transpose@{transpose}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{transpose()}{transpose()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \& library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::transpose (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Transpose rotation matrix. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix}(...).transpose() ;
+\end{DoxyCode}
+ \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a0d1a95670bf9a5ae6bb2ac1bdee0294f}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a0d1a95670bf9a5ae6bb2ac1bdee0294f}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined rotation matrix. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix} rotationMatrix = \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a0d1a95670bf9a5ae6bb2ac1bdee0294f}{RotationMatrix::Undefined}() ; \textcolor{comment}{//
+       Undefined}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined rotation matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aac59b7dafc34767d24d0934f4b86bef0}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aac59b7dafc34767d24d0934f4b86bef0}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!Unit@{Unit}}
+\index{Unit@{Unit}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{Unit()}{Unit()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a unit rotation matrix. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix} rotationMatrix = \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aac59b7dafc34767d24d0934f4b86bef0}{RotationMatrix::Unit}() ;
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Unit rotation matrix 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aa9ed0897a6219331deeb7750017a0df9}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aa9ed0897a6219331deeb7750017a0df9}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \&}]{a\+Rotation\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator. 
+
+
+\begin{DoxyCode}
+std::cout << \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a667d2c05aa5b0cc88775938d11164cdc}{RotationMatrix}(...) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em a\+Rotation\+Matrix} & A rotation matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An output stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Geometry/\+Transformations/\+Rotations/\hyperlink{_rotation_matrix_8hpp}{Rotation\+Matrix.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/\+Transformations/\+Rotations/\hyperlink{_rotation_matrix_8cpp}{Rotation\+Matrix.\+cpp}\end{DoxyCompactItemize}
