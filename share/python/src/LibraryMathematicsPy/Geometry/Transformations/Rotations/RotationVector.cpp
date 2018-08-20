@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           LibraryMathematicsPy/Geometry/Transformations/Rotations/RotationVector.hpp
+/// @file           LibraryMathematicsPy/Geometry/Transformations/Rotations/RotationVector.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
@@ -33,6 +33,7 @@ inline void                     LibraryMathematicsPy_Geometry_Transformations_Ro
         .def(self_ns::str(self_ns::self))
 
         .def("isDefined", &RotationVector::isDefined)
+        
         .def("getAxis", &RotationVector::getAxis)
         .def("getAngle", &RotationVector::getAngle)
         .def("Undefined", &RotationVector::Undefined)

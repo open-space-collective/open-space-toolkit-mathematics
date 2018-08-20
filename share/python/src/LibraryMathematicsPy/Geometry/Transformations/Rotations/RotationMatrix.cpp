@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           LibraryMathematicsPy/Geometry/Transformations/Rotations/RotationMatrix.hpp
+/// @file           LibraryMathematicsPy/Geometry/Transformations/Rotations/RotationMatrix.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 

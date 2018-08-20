@@ -7,7 +7,7 @@
 
 ################################################################################################################################################################
 
-FROM openspacecollective/library-core:0.1.5
+FROM openspacecollective/library-core:0.1.6
 
 LABEL maintainer="lucas@loftorbital.com"
 
@@ -34,13 +34,12 @@ RUN mkdir /tmp/eigen \
     && make install \
     && rm -rf /tmp/eigen
 
-## Library :: Core [0.1.7]
+## Library :: Core [0.1.8]
 
 RUN mkdir -p /tmp/library-core \
     && pushd /tmp/library-core > /dev/null \
-    && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.7/library-core-0.1.7-1.x86_64-runtime.rpm \
-    && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.7/library-core-0.1.7-1.x86_64-devel.rpm \
-    && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.7/library-core-0.1.7-1.x86_64-python.rpm \
+    && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.8/library-core-0.1.8-1.x86_64-runtime.rpm \
+    && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.8/library-core-0.1.8-1.x86_64-devel.rpm \
     && dnf install -y ./*.rpm \
     && rm -rf /tmp/library-core \
     && popd > /dev/null

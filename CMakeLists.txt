@@ -252,7 +252,7 @@ ELSE ()
     MESSAGE (SEND_ERROR "[Eigen 3] not found.")
 ENDIF ()
 
-### Library :: Core [master]
+### Library :: Core [0.1]
 
 FIND_PACKAGE ("LibraryCore" "0.1" REQUIRED)
 

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           LibraryMathematicsPy/Geometry/Angle.hpp
+/// @file           LibraryMathematicsPy/Geometry/Angle.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
@@ -47,9 +47,6 @@ inline void                     LibraryMathematicsPy_Geometry_Angle         ( )
         .def("inDegrees", +[] (const Angle& anAngle) -> Real { return anAngle.inDegrees() ; })
         .def("inArcminutes", +[] (const Angle& anAngle) -> Real { return anAngle.inArcminutes() ; })
         .def("inArcseconds", +[] (const Angle& anAngle) -> Real { return anAngle.inArcseconds() ; })
-        // .def("inDegrees", &Angle::inDegrees)
-        // .def("inArcminutes", &Angle::inArcminutes)
-        // .def("inArcseconds", &Angle::inArcseconds)
         .def("inRevolutions", &Angle::inRevolutions)
         .def("toString", &Angle::toString)
         
