@@ -5,7 +5,7 @@ Geometry, curve fitting, optimization.
 
 [![Build Status](https://travis-ci.com/open-space-collective/library-mathematics.svg?branch=master)](https://travis-ci.com/open-space-collective/library-mathematics)
 [![Code Coverage](https://codecov.io/gh/open-space-collective/library-mathematics/branch/master/graph/badge.svg)](https://codecov.io/gh/open-space-collective/library-mathematics)
-[![Documentation](https://media.readthedocs.org/static/projects/badges/passing-flat.svg)](https://open-space-collective.github.io/library-mathematics)
+[![Documentation](https://img.shields.io/readthedocs/pip/stable.svg)](https://open-space-collective.github.io/library-mathematics)
 
 ## Warning
 
