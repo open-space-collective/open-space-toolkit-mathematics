@@ -59,7 +59,7 @@ if [[ ! -z $1 ]] && [[ $1 == "--link" ]]; then
     cp -as /mnt/library-core/include/Library/Core /usr/local/include/Library/Core; \
     cp -as /mnt/library-core/src/Library/Core/* /usr/local/include/Library/Core/; \
     ln -s /mnt/library-core/lib/liblibrary-core.so /usr/local/lib/; \
-    ln -s /mnt/library-core/lib/liblibrary-core.so.2018 /usr/local/lib/;"
+    ln -s /mnt/library-core/lib/liblibrary-core.so.0 /usr/local/lib/;"
 
     # Output
 
