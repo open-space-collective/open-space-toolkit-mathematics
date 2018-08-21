@@ -38,10 +38,9 @@ inline void                     LibraryMathematicsPy_Geometry_Transformations_Ro
 
 		.def(self / self)
 
-        .def("__str__", +[] (const Quaternion& aQuaternion) -> std::string { return aQuaternion.toString() ; })
-        .def("__repr__", +[] (const Quaternion& aQuaternion) -> std::string { return aQuaternion.toString() ; })
-
         .def(self_ns::str(self_ns::self))
+        
+        .def("__repr__", +[] (const Quaternion& aQuaternion) -> std::string { return aQuaternion.toString() ; })
 
         .def("isDefined", &Quaternion::isDefined)
         .def("isUnitary", &Quaternion::isUnitary)

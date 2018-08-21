@@ -1,56 +1,18 @@
 ################################################################################################################################################################
 
 # @project        Library/Mathematics
-# @file           .gitignore
+# @file           tools/python/docker/Dockerfile
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        TBD
 
 ################################################################################################################################################################
 
-# Operating Systems
+FROM jupyter/scipy-notebook:latest
 
-## Mac OS
+LABEL maintainer="lucas@loftorbital.com"
 
-**/.DS_Store
+USER root
 
-# Editors
-
-## Visual Studio Code
-
-.vscode/
-*.code-workspace
-
-## Sublime Text
-
-*.sublime-workspace
-*.sublime-project
-
-# Project
-
-## Common
-
-!.gitignore
-!.gitkeep
-
-## Binaries
-
-bin/*
-lib/*
-build/
-*.so*
-*.a
-*.exe*
-*.rpm*
-
-## Documentation
-
-docs/html/
-docs/latex/
-
-## Misc.
-
-tmp/
-__pycache__
-.ipynb_checkpoints
+RUN pip install --index-url https://test.pypi.org/simple/ LibraryCorePy==0.1.7
 
 ################################################################################################################################################################

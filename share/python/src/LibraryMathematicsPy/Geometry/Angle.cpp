@@ -11,6 +11,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_Angle_toString_overloads, library::math::geom::Angle::toString, 0, 1)
+
 inline void                     LibraryMathematicsPy_Geometry_Angle         ( )
 {
 
@@ -28,27 +30,31 @@ inline void                     LibraryMathematicsPy_Geometry_Angle         ( )
 
         .def(self + self)
         .def(self - self)
-        .def(self * double())
-        .def(self / double())
 
-		// +=
-        // -=
-        // *=
-        // /=
+        .def(self * other<Real>())
+        .def(self / other<Real>())
+
+        .def(self += self)
+        .def(self -= self)
+
+        .def(self *= other<Real>())
+        .def(self /= other<Real>())
 
         .def(self_ns::str(self_ns::self))
+
+        .def("__repr__", +[] (const Angle& anAngle) -> std::string { return anAngle.toString() ; })
 
         .def("isDefined", &Angle::isDefined)
         .def("isZero", &Angle::isZero)
         
         .def("getUnit", &Angle::getUnit)
-        .def("in", &Angle::in)
+        .def("inUnit", &Angle::in)
         .def("inRadians", +[] (const Angle& anAngle) -> Real { return anAngle.inRadians() ; })
         .def("inDegrees", +[] (const Angle& anAngle) -> Real { return anAngle.inDegrees() ; })
         .def("inArcminutes", +[] (const Angle& anAngle) -> Real { return anAngle.inArcminutes() ; })
         .def("inArcseconds", +[] (const Angle& anAngle) -> Real { return anAngle.inArcseconds() ; })
         .def("inRevolutions", &Angle::inRevolutions)
-        .def("toString", &Angle::toString)
+        .def("toString", &Angle::toString, LibraryMathematicsPy_Geometry_Angle_toString_overloads())
         
         .def("Undefined", &Angle::Undefined).staticmethod("Undefined")
         .def("Zero", &Angle::Zero).staticmethod("Zero")
