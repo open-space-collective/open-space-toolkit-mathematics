@@ -11,8 +11,10 @@
 #define __Library_Mathematics_Geometry_Angle__
 
 #include <Library/Mathematics/Objects/Vector.hpp>
+
 #include <Library/Core/Types/String.hpp>
 #include <Library/Core/Types/Real.hpp>
+#include <Library/Core/Types/Integer.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -25,8 +27,10 @@ namespace geom
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+using library::core::types::Integer ;
 using library::core::types::Real ;
 using library::core::types::String ;
+
 using library::math::obj::Vector3d ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -127,7 +131,7 @@ class Angle
 
         Real                    inRevolutions                               ( ) const ;
 
-        String                  toString                                    ( ) const ;
+        String                  toString                                    (   const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const ;
                                                                                 
         static Angle            Undefined                                   ( ) ;
 

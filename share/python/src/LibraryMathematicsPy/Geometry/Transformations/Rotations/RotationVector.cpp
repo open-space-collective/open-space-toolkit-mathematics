@@ -31,6 +31,7 @@ inline void                     LibraryMathematicsPy_Geometry_Transformations_Ro
         .def(self != self)
 
         .def(self_ns::str(self_ns::self))
+        .def(self_ns::repr(self_ns::self))
 
         .def("isDefined", &RotationVector::isDefined)
         
