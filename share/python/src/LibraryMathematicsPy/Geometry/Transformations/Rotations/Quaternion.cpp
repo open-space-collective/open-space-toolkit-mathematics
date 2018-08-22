@@ -13,6 +13,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_Transformations_Rotations_Quaternion_toString_overloads, library::math::geom::trf::rot::Quaternion::toString, 0, 2)
+
 inline void                     LibraryMathematicsPy_Geometry_Transformations_Rotations_Quaternion ( )
 {
 
@@ -64,6 +66,7 @@ inline void                     LibraryMathematicsPy_Geometry_Transformations_Ro
         .def("rotateVector", &Quaternion::rotateVector)
         .def("toVector", &Quaternion::toVector)
         .def("toString", +[] (const Quaternion& aQuaternion, const Quaternion::Format aFormat) -> String { return aQuaternion.toString(aFormat) ; })
+        // .def("toString", &Quaternion::toString(), LibraryMathematicsPy_Geometry_Transformations_Rotations_Quaternion_toString_overloads())
 
         .def("normalize", +[] (Quaternion& aQuaternion) -> void { aQuaternion.normalize() ; })
         .def("conjugate", +[] (Quaternion& aQuaternion) -> void { aQuaternion.conjugate() ; })
