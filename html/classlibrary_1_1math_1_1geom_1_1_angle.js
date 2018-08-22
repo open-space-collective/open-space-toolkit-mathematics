@@ -34,7 +34,7 @@ var classlibrary_1_1math_1_1geom_1_1_angle =
     [ "operator/", "classlibrary_1_1math_1_1geom_1_1_angle.html#a05e6ef8f52d0da3b32645268024bf8a4", null ],
     [ "operator/=", "classlibrary_1_1math_1_1geom_1_1_angle.html#af5be3a64b8fca052be8467dfdf7cdc79", null ],
     [ "operator==", "classlibrary_1_1math_1_1geom_1_1_angle.html#a6c0aa98d818f36737ccb56b9958a3aca", null ],
-    [ "toString", "classlibrary_1_1math_1_1geom_1_1_angle.html#aa70999f4e5b848719d846346126eb18d", null ],
+    [ "toString", "classlibrary_1_1math_1_1geom_1_1_angle.html#af4feebe3517548c328808fb36403996d", null ],
     [ "operator*", "classlibrary_1_1math_1_1geom_1_1_angle.html#af699984b24759466957ecddaa7e61fc9", null ],
     [ "operator<<", "classlibrary_1_1math_1_1geom_1_1_angle.html#a0846b77ee3281e8a559197c3c3208eed", null ]
 ];
