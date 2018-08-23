@@ -12,6 +12,7 @@
 
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
+
 #include <Library/Core/Types/Real.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -30,6 +31,7 @@ namespace objects
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using library::core::types::Real ;
+
 using library::math::geom::d3::Object ;
 using library::math::geom::d3::objects::Point ;
 
@@ -76,7 +78,7 @@ class Sphere : public Object
         /// @brief              Not equal to operator
         ///
         /// @code
-        ///                     Sphere(Point::Origin(), 1.0) != Sphere(2.0) ; // True
+        ///                     Sphere(Point::Origin(), 1.0) != Sphere(Point::Origin(), 2.0) ; // True
         /// @endcode
         ///
         /// @param              [in] aSphere A sphere

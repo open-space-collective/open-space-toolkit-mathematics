@@ -30,12 +30,9 @@ namespace ctnr = library::core::ctnr ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @brief                      Set of numbers with the property that any number that lies between two numbers in the set is also included in the set
-///
-/// @ref                        https://en.wikipedia.org/wiki/Interval_(mathematics)
+/// @brief                      Interval base (used to avoid having a templated enum)
 
-template <class T>
-class Interval
+class IntervalBase
 {
 
     public:
@@ -52,6 +49,18 @@ class Interval
             HalfOpenRight       ///< Half-open right interval type [a, b[
 
         } ;
+
+} ;
+
+/// @brief                      Set of numbers with the property that any number that lies between two numbers in the set is also included in the set
+///
+/// @ref                        https://en.wikipedia.org/wiki/Interval_(mathematics)
+
+template <class T>
+class Interval : public IntervalBase
+{
+
+    public:
 
         /// @brief              Constructor
         ///

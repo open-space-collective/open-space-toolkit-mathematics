@@ -48,6 +48,40 @@ Point*                          Point::clone                                ( ) 
     return new Point(*this) ;
 }
 
+Point                           Point::operator +                           (   const   Vector3d&                   aVector                                     ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (!aVector.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Vector") ;
+    }
+    
+    return Point(this->Vector3d::operator + (aVector)) ;
+
+}
+
+Point                           Point::operator -                           (   const   Vector3d&                   aVector                                     ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (!aVector.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Vector") ;
+    }
+    
+    return Point(this->Vector3d::operator - (aVector)) ;
+
+}
+
 std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Point&                      aPoint                                      )
 {

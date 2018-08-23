@@ -46,6 +46,50 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, Clone)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Point, AdditionOperator)
+{
+
+    using library::math::obj::Vector3d ;
+    using library::math::geom::d3::objects::Point ;
+
+    {
+
+        EXPECT_EQ(Point(1.0, 2.0, 3.0), Point(1.0, 2.0, 3.0) + Vector3d(0.0, 0.0, 0.0)) ;
+        EXPECT_EQ(Point(2.0, 2.0, 3.0), Point(1.0, 2.0, 3.0) + Vector3d(1.0, 0.0, 0.0)) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Point::Undefined() + Vector3d(0.0, 0.0, 0.0)) ;
+        EXPECT_ANY_THROW(Point(1.0, 2.0, 3.0) + Vector3d::Undefined()) ;
+        
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Point, SubtractionOperator)
+{
+
+    using library::math::obj::Vector3d ;
+    using library::math::geom::d3::objects::Point ;
+
+    {
+
+        EXPECT_EQ(Point(1.0, 2.0, 3.0), Point(1.0, 2.0, 3.0) - Vector3d(0.0, 0.0, 0.0)) ;
+        EXPECT_EQ(Point(0.0, 2.0, 3.0), Point(1.0, 2.0, 3.0) - Vector3d(1.0, 0.0, 0.0)) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Point::Undefined() - Vector3d(0.0, 0.0, 0.0)) ;
+        EXPECT_ANY_THROW(Point(1.0, 2.0, 3.0) - Vector3d::Undefined()) ;
+        
+    }
+    
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Point, EqualToOperator)
 {
 

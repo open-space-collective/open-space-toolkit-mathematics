@@ -13,6 +13,7 @@
 #include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
+
 #include <Library/Core/Types/Real.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -31,6 +32,7 @@ namespace objects
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using library::core::types::Real ;
+
 using library::math::geom::d3::Object ;
 using library::math::geom::d3::objects::Point ;
 using library::math::geom::trf::rot::Quaternion ;

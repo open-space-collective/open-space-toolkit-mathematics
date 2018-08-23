@@ -12,6 +12,7 @@
 
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
 #include <Library/Mathematics/Objects/Vector.hpp>
+
 #include <Library/Core/Types/Real.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -30,6 +31,7 @@ namespace objects
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using library::core::types::Real ;
+
 using library::math::obj::Vector3d ;
 using library::math::geom::d3::Object ;
 
@@ -73,6 +75,28 @@ class Point : public Object, public Vector3d
         /// @return             Pointer to cloned point
 
         virtual Point*          clone                                       ( ) const override ;
+
+        /// @brief              Addition operator: translate point along vector
+        ///
+        /// @code
+        ///                     Point B = Point(0.0, 0.0, 0.0) + Vector3d(0.0, 0.0, 1.0) ; // [0.0, 0.0, 1.0]
+        /// @encode
+        ///
+        /// @param              [in] aVector A translation vector
+        /// @return             A point
+
+        Point                   operator +                                  (   const   Vector3d&                   aVector                                     ) const ;
+
+        /// @brief              Subtraction operator: translate point along opposite vector
+        ///
+        /// @code
+        ///                     Point B = Point(0.0, 0.0, 1.0) - Vector3d(0.0, 0.0, 1.0) ; // [0.0, 0.0, 0.0]
+        /// @encode
+        ///
+        /// @param              [in] aVector A translation vector
+        /// @return             A point
+
+        Point                   operator -                                  (   const   Vector3d&                   aVector                                     ) const ;
 
         /// @brief              Output stream operator
         ///
