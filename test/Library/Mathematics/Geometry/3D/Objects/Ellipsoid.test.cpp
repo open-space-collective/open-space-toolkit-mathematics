@@ -8,6 +8,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 
 #include <Global.test.hpp>
 
@@ -154,11 +155,103 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IsDefined)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects)
 {
 
+    using library::core::types::Real ;
+
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Segment ;
     using library::math::geom::d3::objects::Ellipsoid ;
+
+    // Segment
 
     {
 
-        FAIL() ;
+        {
+
+            const Ellipsoid ellipsoid = { Point::Origin(), 1.0, 2.0, 3.0 } ;
+
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10.0, -3.0, 0.0 }, { +10.0, -3.0, 0.0 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10.0, -2.1, 0.0 }, { +10.0, -2.1, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10.0, -2.0, 0.0 }, { +10.0, -2.0, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10.0, -1.0, 0.0 }, { +10.0, -1.0, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10.0, +0.0, 0.0 }, { +10.0, +0.0, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10.0, +1.0, 0.0 }, { +10.0, +1.0, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10.0, +2.0, 0.0 }, { +10.0, +2.0, 0.0 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10.0, +2.1, 0.0 }, { +10.0, +2.1, 0.0 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10.0, +3.0, 0.0 }, { +10.0, +3.0, 0.0 }))) ;
+
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -2.0, -10.0, 0.0 }, { -2.0, +10.0, 0.0 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -1.1, -10.0, 0.0 }, { -1.1, +10.0, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -1.0, -10.0, 0.0 }, { -1.0, +10.0, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ +0.0, -10.0, 0.0 }, { +0.0, +10.0, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ +1.0, -10.0, 0.0 }, { +1.0, +10.0, 0.0 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ +1.1, -10.0, 0.0 }, { +1.1, +10.0, 0.0 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ +2.0, -10.0, 0.0 }, { +2.0, +10.0, 0.0 }))) ;
+
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10.0, 0.0, -4.0 }, { +10.0, 0.0, -4.0 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10.0, 0.0, -3.1 }, { +10.0, 0.0, -3.1 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10.0, 0.0, -3.0 }, { +10.0, 0.0, -3.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10.0, 0.0, -2.0 }, { +10.0, 0.0, -2.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10.0, 0.0, -1.0 }, { +10.0, 0.0, -1.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10.0, 0.0, +0.0 }, { +10.0, 0.0, +0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10.0, 0.0, +1.0 }, { +10.0, 0.0, +1.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10.0, 0.0, +2.0 }, { +10.0, 0.0, +2.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10.0, 0.0, +3.0 }, { +10.0, 0.0, +3.0 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10.0, 0.0, +3.1 }, { +10.0, 0.0, +3.1 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10.0, 0.0, +4.0 }, { +10.0, 0.0, +4.0 }))) ;
+
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10.0, 0.0, 0.0 }, { -1.1, 0.0, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10.0, 0.0, 0.0 }, { -1.0, 0.0, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10.0, 0.0, 0.0 }, { -0.9, 0.0, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ +10.0, 0.0, 0.0 }, { +0.9, 0.0, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ +10.0, 0.0, 0.0 }, { +1.0, 0.0, 0.0 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ +10.0, 0.0, 0.0 }, { +1.1, 0.0, 0.0 }))) ;
+
+        }
+
+        {
+
+            const Real equatorialRadius_m = 6378136.3 ;
+            const Real polarRadius_m = equatorialRadius_m * (1.0 - 0.003352810664747) ;
+    
+            const Ellipsoid ellipsoid = { Point::Origin(), equatorialRadius_m, equatorialRadius_m, polarRadius_m } ;
+
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10000e3, -7000e3, 0.0 }, { +10000e3, -7000e3, 0.0 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10000e3, -equatorialRadius_m - 0.1, 0.0 }, { +10000e3, -equatorialRadius_m - 0.1, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10000e3, -equatorialRadius_m, 0.0 }, { +10000e3, -equatorialRadius_m, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10000e3, -equatorialRadius_m + 0.1, 0.0 }, { +10000e3, -equatorialRadius_m + 0.1, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10000e3, +0.0, 0.0 }, { +10000e3, +0.0, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10000e3, +equatorialRadius_m - 0.1, 0.0 }, { +10000e3, +equatorialRadius_m - 0.1, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10000e3, +equatorialRadius_m, 0.0 }, { +10000e3, +equatorialRadius_m, 0.0 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10000e3, +equatorialRadius_m + 0.1, 0.0 }, { +10000e3, +equatorialRadius_m + 0.1, 0.0 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10000e3, +7000e3, 0.0 }, { +10000e3, +7000e3, 0.0 }))) ;
+
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -7000e3, -10000e3, 0.0 }, { -7000e3, +10000e3, 0.0 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -equatorialRadius_m - 0.1, -10000e3, 0.0 }, { -equatorialRadius_m - 0.1, +10000e3, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -equatorialRadius_m, -10000e3, 0.0 }, { -equatorialRadius_m, +10000e3, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -equatorialRadius_m + 0.1, -10000e3, 0.0 }, { -equatorialRadius_m + 0.1, +10000e3, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ +0.0, -10000e3, 0.0 }, { +0.0, +10000e3, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ +equatorialRadius_m - 0.1, -10000e3, 0.0 }, { +equatorialRadius_m - 0.1, +10000e3, 0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ +equatorialRadius_m, -10000e3, 0.0 }, { +equatorialRadius_m, +10000e3, 0.0 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ +equatorialRadius_m + 0.1, -10000e3, 0.0 }, { +equatorialRadius_m + 0.1, +10000e3, 0.0 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ +7000e3, -10000e3, 0.0 }, { +7000e3, +10000e3, 0.0 }))) ;
+
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10000e3, 0.0, -7000e3 }, { +10000e3, 0.0, -7000e3 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10000e3, 0.0, -polarRadius_m - 0.1 }, { +10000e3, 0.0, -polarRadius_m - 0.1 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10000e3, 0.0, -polarRadius_m }, { +10000e3, 0.0, -polarRadius_m }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10000e3, 0.0, -polarRadius_m + 0.1 }, { +10000e3, 0.0, -polarRadius_m + 0.1 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10000e3, 0.0, +0.0 }, { +10000e3, 0.0, +0.0 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10000e3, 0.0, +polarRadius_m - 0.1 }, { +10000e3, 0.0, +polarRadius_m - 0.1 }))) ;
+            EXPECT_TRUE(ellipsoid.intersects(Segment({ -10000e3, 0.0, +polarRadius_m }, { +10000e3, 0.0, +polarRadius_m }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10000e3, 0.0, +polarRadius_m + 0.1 }, { +10000e3, 0.0, +polarRadius_m + 0.1 }))) ;
+            EXPECT_FALSE(ellipsoid.intersects(Segment({ -10000e3, 0.0, +7000e3 }, { +10000e3, 0.0, +7000e3 }))) ;
+
+        }
+
+        {
+            
+            EXPECT_ANY_THROW(Ellipsoid(Point::Origin(), 1.0, 1.0, 1.0).intersects(Segment::Undefined())) ;
+
+        }
 
     }
 
@@ -320,6 +413,32 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetOrientation)
 }
 
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetMatrix)
+{
+
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Translate)
+{
+
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Rotate)
 {
 
     using library::math::geom::d3::objects::Ellipsoid ;

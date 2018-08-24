@@ -198,6 +198,32 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, GetRadius)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Translate)
+{
+
+    using library::math::geom::d3::objects::Sphere ;
+
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Rotate)
+{
+
+    using library::math::geom::d3::objects::Sphere ;
+
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Undefined)
 {
 

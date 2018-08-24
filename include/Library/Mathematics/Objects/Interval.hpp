@@ -257,7 +257,8 @@ class Interval : public IntervalBase
         /// @param              [in] aStep A step
         /// @return             Array of values
 
-        ctnr::Array<T>          generateArrayWithStep                       (   const   T&                          aStep                                       ) const ;
+        template <class U>
+        ctnr::Array<T>          generateArrayWithStep                       (   const   U&                          aStep                                       ) const ;
 
         /// @brief              Generate array with a given size
         ///

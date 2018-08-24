@@ -121,6 +121,40 @@ Real                            Sphere::getRadius                           ( ) 
 
 }
 
+void                            Sphere::translate                           (   const   Vector3d&                   aTranslation                                )
+{
+
+    if (!aTranslation.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Translation") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Sphere") ;
+    }
+
+    center_ += aTranslation ;
+
+}
+        
+void                            Sphere::rotate                              (   const   Quaternion&                 aRotation                                   )
+{
+
+    if (!aRotation.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Rotation") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Sphere") ;
+    }
+
+    // Do nothing
+
+}
+
 Sphere                          Sphere::Undefined                           ( )
 {
     return Sphere(Point::Undefined(), Real::Undefined()) ;

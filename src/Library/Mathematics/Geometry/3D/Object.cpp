@@ -35,6 +35,68 @@ namespace d3
 
 }
 
+bool                            Object::operator ==                         (   const   Object&                     anObject                                    ) const
+{
+
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Segment ;
+    using library::math::geom::d3::objects::Sphere ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    if ((!this->isDefined()) && (!anObject.isDefined()))
+    {
+        return false ;
+    }
+
+    if (typeid(*this) != typeid(anObject))
+    {
+        return false ;
+    }
+
+    if (const Point* objectPtr = dynamic_cast<const Point*>(this))
+    {
+
+        if (const Point* otherObjectPtr = dynamic_cast<const Point*>(&anObject))
+        {
+            return (*objectPtr) == (*otherObjectPtr) ;
+        }
+
+    }
+
+    if (const Segment* objectPtr = dynamic_cast<const Segment*>(this))
+    {
+
+        if (const Segment* otherObjectPtr = dynamic_cast<const Segment*>(&anObject))
+        {
+            return (*objectPtr) == (*otherObjectPtr) ;
+        }
+
+    }
+
+    if (const Sphere* objectPtr = dynamic_cast<const Sphere*>(this))
+    {
+
+        if (const Sphere* otherObjectPtr = dynamic_cast<const Sphere*>(&anObject))
+        {
+            return (*objectPtr) == (*otherObjectPtr) ;
+        }
+
+    }
+
+    if (const Ellipsoid* objectPtr = dynamic_cast<const Ellipsoid*>(this))
+    {
+
+        if (const Ellipsoid* otherObjectPtr = dynamic_cast<const Ellipsoid*>(&anObject))
+        {
+            return (*objectPtr) == (*otherObjectPtr) ;
+        }
+
+    }
+
+    return false ;
+
+}
+
 bool                            Object::intersects                          (   const   Object&                     anObject                                    ) const
 {
 

@@ -259,6 +259,32 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetLength)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Translate)
+{
+
+    using library::math::geom::d3::objects::Segment ;
+
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Rotate)
+{
+
+    using library::math::geom::d3::objects::Segment ;
+
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Undefined)
 {
 

@@ -48,6 +48,23 @@ Point*                          Point::clone                                ( ) 
     return new Point(*this) ;
 }
 
+bool                            Point::operator ==                          (   const   Point&                      aPoint                                      ) const
+{
+
+    if ((!this->isDefined()) && (!aPoint.isDefined()))
+    {
+        return false ;
+    }
+
+    return this->Vector3d::operator == (aPoint) ;
+
+}
+
+bool                            Point::operator !=                          (   const   Point&                      aPoint                                      ) const
+{
+    return !((*this) == aPoint) ;
+}
+
 Point                           Point::operator +                           (   const   Vector3d&                   aVector                                     ) const
 {
 
@@ -116,6 +133,40 @@ std::ostream&                   operator <<                                 (   
 bool                            Point::isDefined                            ( ) const
 {
     return Vector3d::isDefined() ;
+}
+
+void                            Point::translate                            (   const   Vector3d&                   aTranslation                                )
+{
+
+    if (!aTranslation.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Translation") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    (*this) += aTranslation ;
+
+}
+        
+void                            Point::rotate                               (   const   Quaternion&                 aRotation                                   )
+{
+
+    if (!aRotation.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Rotation") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    // Do nothing
+
 }
 
 Point                           Point::Undefined                            ( )

@@ -182,6 +182,42 @@ Real                            Segment::getLength                          ( ) 
 
 }
 
+void                            Segment::translate                          (   const   Vector3d&                   aTranslation                                )
+{
+
+    if (!aTranslation.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Translation") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Segment") ;
+    }
+
+    firstPoint_ += aTranslation ;
+    secondPoint_ += aTranslation ;
+
+}
+        
+void                            Segment::rotate                             (   const   Quaternion&                 aRotation                                   )
+{
+
+    if (!aRotation.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Rotation") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Segment") ;
+    }
+
+    firstPoint_ = aRotation * firstPoint_ ;
+    secondPoint_ = aRotation * secondPoint_ ;
+
+}
+
 Segment                         Segment::Undefined                          ( )
 {
     return Segment(Point::Undefined(), Point::Undefined()) ;

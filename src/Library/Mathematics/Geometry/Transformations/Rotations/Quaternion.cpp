@@ -127,6 +127,39 @@ Quaternion                      Quaternion::operator /                      (   
 
 }
 
+Quaternion&                     Quaternion::operator *=                     (   const   Quaternion&                 aQuaternion                                 )
+{
+
+    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
+    {
+        throw library::core::error::runtime::Undefined("Quaternion") ;
+    }
+
+    (*this) = this->crossMultiply(aQuaternion) ; // [TBI] This is a shortcut... could be optimized
+
+    return *this ;
+
+}
+
+Quaternion&                     Quaternion::operator /=                     (   const   Quaternion&                 aQuaternion                                 )
+{
+
+    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
+    {
+        throw library::core::error::runtime::Undefined("Quaternion") ;
+    }
+    
+    if (aQuaternion.norm() < Real::Epsilon())
+    {
+        throw library::core::error::RuntimeError("Cannot divide by quaternion with zero norm.") ;
+    }
+
+    (*this) = this->crossMultiply(aQuaternion.toInverse()) ; // [TBI] This is a shortcut... could be optimized
+
+    return *this ;
+
+}
+
 std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Quaternion&                 aQuaternion                                 )
 {

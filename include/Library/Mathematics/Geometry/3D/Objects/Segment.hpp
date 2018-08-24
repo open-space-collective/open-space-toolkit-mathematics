@@ -199,6 +199,18 @@ class Segment : public Object
 
         Real                    getLength                                   ( ) const ;
 
+        /// @brief              Translate segment
+        ///
+        /// @param              [in] aTranslation A translation vector
+
+        virtual void            translate                                   (   const   Vector3d&                   aTranslation                                ) override ;
+
+        /// @brief              Rotate segment
+        ///
+        /// @param              [in] aRotation A rotation quaternion
+        
+        virtual void            rotate                                      (   const   Quaternion&                 aRotation                                   ) override ;
+
         /// @brief              Constructs an undefined segment
         ///
         /// @code

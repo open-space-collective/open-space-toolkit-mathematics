@@ -227,6 +227,18 @@ class Ellipsoid : public Object
 
         Matrix3d                getMatrix                                   ( ) const ;
 
+        /// @brief              Translate ellipsoid
+        ///
+        /// @param              [in] aTranslation A translation vector
+
+        virtual void            translate                                   (   const   Vector3d&                   aTranslation                                ) override ;
+
+        /// @brief              Rotate ellipsoid
+        ///
+        /// @param              [in] aRotation A rotation quaternion
+        
+        virtual void            rotate                                      (   const   Quaternion&                 aRotation                                   ) override ;
+
         /// @brief              Constructs an undefined ellipsoid
         ///
         /// @code

@@ -76,6 +76,20 @@ class Point : public Object, public Vector3d
 
         virtual Point*          clone                                       ( ) const override ;
 
+        /// @brief              Equal to operator
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             True if points are equal
+
+        bool                    operator ==                                 (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Not equal to operator
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             True if points not are equal
+
+        bool                    operator !=                                 (   const   Point&                      aPoint                                      ) const ;
+
         /// @brief              Addition operator: translate point along vector
         ///
         /// @code
@@ -131,6 +145,18 @@ class Point : public Object, public Vector3d
         /// @return             True if point is defined
 
         virtual bool            isDefined                                   ( ) const override ;
+
+        /// @brief              Translate point
+        ///
+        /// @param              [in] aTranslation A translation vector
+
+        virtual void            translate                                   (   const   Vector3d&                   aTranslation                                ) override ;
+
+        /// @brief              Rotate point
+        ///
+        /// @param              [in] aRotation A rotation quaternion
+        
+        virtual void            rotate                                      (   const   Quaternion&                 aRotation                                   ) override ;
 
         /// @brief              Constructs an undefined point
         ///

@@ -12,6 +12,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
+#include <Library/Mathematics/Objects/Vector.hpp>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 namespace library
 {
 namespace math
@@ -20,6 +25,11 @@ namespace geom
 {
 namespace d3
 {
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+using library::math::obj::Vector3d ;
+using library::math::geom::trf::rot::Quaternion ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -47,6 +57,10 @@ class Object
         /// @return             Pointer to cloned object
 
         virtual Object*         clone                                       ( ) const = 0 ;
+
+        bool                    operator ==                                 (   const   Object&                     anObject                                    ) const ;
+
+        bool                    operator !=                                 (   const   Object&                     anObject                                    ) const ;
 
         /// @brief              Check if object is defined
         ///
@@ -81,6 +95,10 @@ class Object
         virtual bool            contains                                    (   const   Object&                     anObject                                    ) const ;
 
         virtual Intersection    computeIntersectionWith                     (   const   Object&                     anObject                                    ) const ;
+
+        virtual void            translate                                   (   const   Vector3d&                   aTranslation                                ) = 0 ;
+        
+        virtual void            rotate                                      (   const   Quaternion&                 aRotation                                   ) = 0 ;
 
 } ;
 

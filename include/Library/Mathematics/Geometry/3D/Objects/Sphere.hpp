@@ -141,6 +141,18 @@ class Sphere : public Object
 
         Real                    getRadius                                   ( ) const ;
 
+        /// @brief              Translate sphere
+        ///
+        /// @param              [in] aTranslation A translation vector
+
+        virtual void            translate                                   (   const   Vector3d&                   aTranslation                                ) override ;
+
+        /// @brief              Rotate sphere
+        ///
+        /// @param              [in] aRotation A rotation quaternion
+        
+        virtual void            rotate                                      (   const   Quaternion&                 aRotation                                   ) override ;
+
         /// @brief              Constructs an undefined sphere
         ///
         /// @code

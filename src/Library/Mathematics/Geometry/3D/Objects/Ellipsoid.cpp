@@ -145,12 +145,14 @@ bool                            Ellipsoid::intersects                       (   
     const Real a0 = diff.dot(matDiff) - 1.0 ;
 
     const Real discriminant = (a1 * a1) - (a0 * a2) ;
+
+    static const Real tolerance = 1e-25 ; // [TBM] Tolerance parameter should be dynamic
     
-    if (discriminant < 0.0) // No intersection
+    if (discriminant < -tolerance) // No real roots
     {
         return false ;
     }
-    else if (discriminant > 0.0)
+    else if (discriminant > tolerance) // Two real roots
     {
     
         const Real discriminantRoot = std::sqrt(discriminant) ;
@@ -181,7 +183,7 @@ bool                            Ellipsoid::intersects                       (   
         }
 
     }
-    else
+    else // One real root
     {
 
         const Real t0 = -a1 / a2 ;
@@ -364,6 +366,40 @@ Matrix3d                        Ellipsoid::getMatrix                        ( ) 
     } ;
 
 	return tensorProduct(firstRatio, firstRatio) + tensorProduct(secondRatio, secondRatio) + tensorProduct(thirdRatio, thirdRatio) ;
+
+}
+
+void                            Ellipsoid::translate                        (   const   Vector3d&                   aTranslation                                )
+{
+
+    if (!aTranslation.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Translation") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+    }
+
+    center_ += aTranslation ;
+
+}
+        
+void                            Ellipsoid::rotate                           (   const   Quaternion&                 aRotation                                   )
+{
+
+    if (!aRotation.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Rotation") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+    }
+
+    q_ *= aRotation ;
 
 }
 

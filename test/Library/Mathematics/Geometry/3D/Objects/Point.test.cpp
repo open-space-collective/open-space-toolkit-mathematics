@@ -195,6 +195,32 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, IsDefined)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Point, Translate)
+{
+
+    using library::math::geom::d3::objects::Point ;
+
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Point, Rotate)
+{
+
+    using library::math::geom::d3::objects::Point ;
+
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Point, Undefined)
 {
 

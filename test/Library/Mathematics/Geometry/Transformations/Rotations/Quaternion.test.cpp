@@ -165,6 +165,32 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, NotEqua
 
 // }
 
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, MultiplicationAssignmentOperator)
+// {
+
+//     using library::math::geom::trf::rot::Quaternion ;
+    
+//     {
+
+//         FAIL() ;
+
+//     }
+
+// }
+
+// TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, DivisionAssignmentOperator)
+// {
+
+//     using library::math::geom::trf::rot::Quaternion ;
+    
+//     {
+
+//         FAIL() ;
+
+//     }
+
+// }
+
 TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, StreamOperator)
 {
 
