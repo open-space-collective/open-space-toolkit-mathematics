@@ -87,6 +87,20 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, SubtractionOperator)
         EXPECT_ANY_THROW(Point(1.0, 2.0, 3.0) - Vector3d::Undefined()) ;
         
     }
+
+    {
+
+        EXPECT_EQ(Vector3d(1.0, 2.0, 3.0), Point(1.0, 2.0, 3.0) - Point(0.0, 0.0, 0.0)) ;
+        EXPECT_EQ(Vector3d(0.0, 2.0, 3.0), Point(1.0, 2.0, 3.0) - Point(1.0, 0.0, 0.0)) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Point::Undefined() - Point(0.0, 0.0, 0.0)) ;
+        EXPECT_ANY_THROW(Point(1.0, 2.0, 3.0) - Point::Undefined()) ;
+        
+    }
     
 }
 

@@ -39,6 +39,8 @@ using library::math::geom::d3::objects::Point ;
 
 /// @brief                      Sphere
 ///
+///                             A sphere is a perfectly round geometrical object in three-dimensional space that is the surface of a completely round ball.
+///
 /// @ref                        https://en.wikipedia.org/wiki/Sphere
 
 class Sphere : public Object

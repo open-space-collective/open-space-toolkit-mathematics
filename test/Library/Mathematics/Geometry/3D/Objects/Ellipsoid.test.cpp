@@ -151,6 +151,32 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IsDefined)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects)
+{
+
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Contains)
+{
+
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetCenter)
 {
 
@@ -228,6 +254,45 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetThirdPrincipalSemiAx
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetFirstAxis)
+{
+
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetSecondAxis)
+{
+
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetThirdAxis)
+{
+
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetOrientation)
 {
 
@@ -249,6 +314,19 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetOrientation)
     {
 
         EXPECT_ANY_THROW(Ellipsoid::Undefined().getOrientation()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetMatrix)
+{
+
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    {
+
+        FAIL() ;
 
     }
 

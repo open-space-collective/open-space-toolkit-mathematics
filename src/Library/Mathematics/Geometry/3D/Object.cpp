@@ -7,7 +7,15 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
+#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
+
+#include <Library/Core/Error.hpp>
+#include <Library/Core/Utilities.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -24,6 +32,126 @@ namespace d3
 
                                 Object::~Object                             ( )
 {
+
+}
+
+bool                            Object::intersects                          (   const   Object&                     anObject                                    ) const
+{
+
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Segment ;
+    using library::math::geom::d3::objects::Sphere ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    if (!anObject.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Object") ;
+    }
+
+    // Segment
+
+    if (const Segment* segmentPtr = dynamic_cast<const Segment*>(this))
+    {
+
+        // if (const Segment* otherSegmentPtr = dynamic_cast<const Segment*>(&anObject))
+        // {
+        //     return segmentPtr->intersects(*otherSegmentPtr) ;
+        // }
+
+        if (const Ellipsoid* otherEllipsoidPtr = dynamic_cast<const Ellipsoid*>(&anObject))
+        {
+            return segmentPtr->intersects(*otherEllipsoidPtr) ;
+        }
+
+    }
+
+    // Ellipsoid
+
+    if (const Ellipsoid* ellipsoidPtr = dynamic_cast<const Ellipsoid*>(this))
+    {
+
+        if (const Segment* otherSegmentPtr = dynamic_cast<const Segment*>(&anObject))
+        {
+            return ellipsoidPtr->intersects(*otherSegmentPtr) ;
+        }
+
+        // if (const Ellipsoid* otherEllipsoidPtr = dynamic_cast<const Ellipsoid*>(&anObject))
+        // {
+        //     return ellipsoidPtr->intersects(*otherEllipsoidPtr) ;
+        // }
+
+    }
+
+    throw library::core::error::runtime::ToBeImplemented("Object :: intersects") ;
+
+    return false ;
+
+}
+
+bool                            Object::contains                            (   const   Object&                     anObject                                    ) const
+{
+
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Segment ;
+    using library::math::geom::d3::objects::Sphere ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    if (!anObject.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Object") ;
+    }
+
+    // Segment
+
+    if (const Segment* segmentPtr = dynamic_cast<const Segment*>(this))
+    {
+
+        // if (const Segment* otherSegmentPtr = dynamic_cast<const Segment*>(&anObject))
+        // {
+        //     return segmentPtr->contains(*otherSegmentPtr) ;
+        // }
+
+        // if (const Ellipsoid* otherEllipsoidPtr = dynamic_cast<const Ellipsoid*>(&anObject))
+        // {
+        //     return segmentPtr->contains(*otherEllipsoidPtr) ;
+        // }
+
+    }
+
+    // Ellipsoid
+
+    if (const Ellipsoid* ellipsoidPtr = dynamic_cast<const Ellipsoid*>(this))
+    {
+
+        if (const Segment* otherSegmentPtr = dynamic_cast<const Segment*>(&anObject))
+        {
+            return ellipsoidPtr->contains(*otherSegmentPtr) ;
+        }
+
+        // if (const Ellipsoid* otherEllipsoidPtr = dynamic_cast<const Ellipsoid*>(&anObject))
+        // {
+        //     return ellipsoidPtr->contains(*otherEllipsoidPtr) ;
+        // }
+
+    }
+
+    throw library::core::error::runtime::ToBeImplemented("Object :: contains") ;
+
+    return false ;
+
+}
+        
+Intersection                    Object::computeIntersectionWith             (   const   Object&                     anObject                                    ) const
+{
+
+    if (!anObject.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Object") ;
+    }
+
+    throw library::core::error::runtime::ToBeImplemented("Object :: computeIntersectionWith") ;
+
+    return Intersection::Undefined() ;
 
 }
 

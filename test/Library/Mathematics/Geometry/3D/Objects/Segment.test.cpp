@@ -159,6 +159,32 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IsDegenerate)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects)
+{
+
+    using library::math::geom::d3::objects::Segment ;
+
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Contains)
+{
+
+    using library::math::geom::d3::objects::Segment ;
+
+    {
+
+        FAIL() ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetCenter)
 {
 

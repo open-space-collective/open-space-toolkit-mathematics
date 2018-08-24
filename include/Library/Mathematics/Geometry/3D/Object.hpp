@@ -23,6 +23,10 @@ namespace d3
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+class Intersection ;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /// @brief                      3D object
 
 class Object
@@ -49,6 +53,34 @@ class Object
         /// @return             True if object is defined
 
         virtual bool            isDefined                                   ( ) const = 0 ;
+
+        /// @brief              Check if object intersects another object
+        ///
+        /// @code
+        ///                     Unique<Object> objectUPtr = ... ;
+        ///                     Unique<Object> anotherObjectUPtr = ... ;
+        ///                     objectUPtr->intersects(*anotherObjectUPtr) ;
+        /// @endcode
+        ///
+        /// @param              [in] anObject An object
+        /// @return             True if object intersects another object
+        
+        virtual bool            intersects                                  (   const   Object&                     anObject                                    ) const ;
+
+        /// @brief              Check if object contains another object
+        ///
+        /// @code
+        ///                     Unique<Object> objectUPtr = ... ;
+        ///                     Unique<Object> anotherObjectUPtr = ... ;
+        ///                     objectUPtr->contains(*anotherObjectUPtr) ;
+        /// @endcode
+        ///
+        /// @param              [in] anObject An object
+        /// @return             True if object contains another object
+
+        virtual bool            contains                                    (   const   Object&                     anObject                                    ) const ;
+
+        virtual Intersection    computeIntersectionWith                     (   const   Object&                     anObject                                    ) const ;
 
 } ;
 

@@ -81,6 +81,23 @@ Point                           Point::operator -                           (   
     return Point(this->Vector3d::operator - (aVector)) ;
 
 }
+        
+Vector3d                        Point::operator -                           (   const   Point&                      aPoint                                      ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (!aPoint.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    return this->Vector3d::operator - (aPoint) ;
+
+}
 
 std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Point&                      aPoint                                      )

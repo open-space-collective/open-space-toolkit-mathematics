@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -90,6 +91,31 @@ bool                            Segment::isDegenerate                       ( ) 
     return firstPoint_ == secondPoint_ ;
 
 }
+
+// bool                            Segment::intersects                         (   const   Segment&                    aSegment                                    ) const
+// {
+    
+// }
+
+// bool                            Segment::intersects                         (   const   Sphere&                     aSphere                                     ) const
+// {
+//     return aSphere.intersects(*this) ;
+// }
+
+bool                            Segment::intersects                         (   const   Ellipsoid&                  anEllipsoid                                 ) const
+{
+    return anEllipsoid.intersects(*this) ;
+}
+
+// bool                            Segment::contains                           (   const   Point&                      aPoint                                      ) const
+// {
+
+// }
+
+// bool                            Segment::contains                           (   const   PointSet&                   aPointSet                                   ) const
+// {
+
+// }
 
 Point                           Segment::getFirstPoint                      ( ) const
 {

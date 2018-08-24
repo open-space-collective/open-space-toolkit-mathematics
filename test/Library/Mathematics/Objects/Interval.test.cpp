@@ -157,7 +157,7 @@ TEST (Library_Mathematics_Objects_Interval, IsDegenerate)
 
 }
 
-// TEST (Library_Mathematics_Objects_Interval, IsIntersectingWith)
+// TEST (Library_Mathematics_Objects_Interval, Intersects)
 // {
 
 //     using library::core::types::Real ;

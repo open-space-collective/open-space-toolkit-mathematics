@@ -37,6 +37,10 @@ using library::math::geom::d3::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+class Ellipsoid ;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /// @brief                      Segment
 ///
 /// @ref                        
@@ -118,6 +122,32 @@ class Segment : public Object
         /// @return             True if segment is degenerate
 
         bool                    isDegenerate                                ( ) const ;
+
+        /// @brief              Check if segment intersects ellipsoid
+        ///
+        /// @code
+        ///                     Segment segment = ... ;
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     segment.intersects(ellipsoid) ;
+        /// @endcode
+        ///
+        /// @param              [in] anEllipsoid An ellipsoid
+        /// @return             True if segment intersects ellipsoid
+        
+        bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
+
+        /// @brief              Check if segment contains point
+        ///
+        /// @code
+        ///                     Segment segment = ... ;
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     segment.contains(ellipsoid) ;
+        /// @endcode
+        ///
+        /// @param              [in] anEllipsoid An ellipsoid
+        /// @return             True if segment contains point
+
+        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
 
         /// @brief              Get segment first point
         ///

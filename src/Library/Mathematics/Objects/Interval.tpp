@@ -95,7 +95,7 @@ bool                            Interval<T>::isDegenerate                   ( ) 
 }
 
                                 template <class T>
-bool                            Interval<T>::isIntersectingWith             (   const   Interval&                   anInterval                                  ) const
+bool                            Interval<T>::intersects                     (   const   Interval&                   anInterval                                  ) const
 {
 
     if (!this->isDefined())

@@ -33,9 +33,14 @@ namespace objects
 
 using library::core::types::Real ;
 
+using library::math::obj::Matrix3d ;
 using library::math::geom::d3::Object ;
 using library::math::geom::d3::objects::Point ;
 using library::math::geom::trf::rot::Quaternion ;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Segment ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -117,6 +122,45 @@ class Ellipsoid : public Object
 
         virtual bool            isDefined                                   ( ) const override ;
 
+        /// @brief              Check if ellipsoid intersects segment
+        ///
+        /// @code
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     Segment segment = ... ;
+        ///                     ellipsoid.intersects(segment) ;
+        /// @endcode
+        ///
+        /// @param              [in] aSegment A segment
+        /// @return             True if ellipsoid intersects segment
+        
+        bool                    intersects                                  (   const   Segment&                    aSegment                                    ) const ;
+
+        /// @brief              Check if ellipsoid contains point
+        ///
+        /// @code
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     Point point = ... ;
+        ///                     ellipsoid.contains(point) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             True if ellipsoid contains point
+
+        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Check if ellipsoid contains segment
+        ///
+        /// @code
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     Segment segment = ... ;
+        ///                     ellipsoid.contains(segment) ;
+        /// @endcode
+        ///
+        /// @param              [in] aSegment A segment
+        /// @return             True if ellipsoid contains segment
+
+        bool                    contains                                    (   const   Segment&                    aSegment                                    ) const ;
+
         /// @brief              Get ellipsoid center
         ///
         /// @code
@@ -157,6 +201,12 @@ class Ellipsoid : public Object
 
         Real                    getThirdPrincipalSemiAxis                   ( ) const ;
 
+        Vector3d                getFirstAxis                                ( ) const ;
+
+        Vector3d                getSecondAxis                               ( ) const ;
+
+        Vector3d                getThirdAxis                                ( ) const ;
+
         /// @brief              Get ellipsoid orientation
         ///
         /// @code
@@ -166,6 +216,16 @@ class Ellipsoid : public Object
         /// @return             Ellipsoid orientation
 
         Quaternion              getOrientation                              ( ) const ;
+
+        /// @brief              Get ellipsoid matrix
+        ///
+        /// @code
+        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0, Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)).getMatrix() ;
+        /// @endcode
+        ///
+        /// @return             Ellipsoid matrix
+
+        Matrix3d                getMatrix                                   ( ) const ;
 
         /// @brief              Constructs an undefined ellipsoid
         ///

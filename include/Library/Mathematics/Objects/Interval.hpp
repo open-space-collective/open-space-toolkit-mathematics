@@ -136,13 +136,13 @@ class Interval : public IntervalBase
         /// @brief              Check if interval is intersecting with another interval
         ///
         /// @code
-        ///                     Interval<Real>::Closed(0.0, 1.0).isIntersectingWith(Interval<Real>::Closed(0.5, 1.5)) ; // True
+        ///                     Interval<Real>::Closed(0.0, 1.0).intersects(Interval<Real>::Closed(0.5, 1.5)) ; // True
         /// @endcode
         ///
         /// @param              [in] anInterval An interval
         /// @return             True if intervals are intersecting
 
-        bool                    isIntersectingWith                          (   const   Interval&                   anInterval                                  ) const ;
+        bool                    intersects                                  (   const   Interval&                   anInterval                                  ) const ;
 
         /// @brief              Check if interval contains value
         ///

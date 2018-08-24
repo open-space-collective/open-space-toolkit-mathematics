@@ -79,7 +79,7 @@ class Point : public Object, public Vector3d
         /// @brief              Addition operator: translate point along vector
         ///
         /// @code
-        ///                     Point B = Point(0.0, 0.0, 0.0) + Vector3d(0.0, 0.0, 1.0) ; // [0.0, 0.0, 1.0]
+        ///                     Point(0.0, 0.0, 0.0) + Vector3d(0.0, 0.0, 1.0) ; // [0.0, 0.0, 1.0]
         /// @encode
         ///
         /// @param              [in] aVector A translation vector
@@ -90,13 +90,24 @@ class Point : public Object, public Vector3d
         /// @brief              Subtraction operator: translate point along opposite vector
         ///
         /// @code
-        ///                     Point B = Point(0.0, 0.0, 1.0) - Vector3d(0.0, 0.0, 1.0) ; // [0.0, 0.0, 0.0]
+        ///                     Point(0.0, 0.0, 1.0) - Vector3d(0.0, 0.0, 1.0) ; // [0.0, 0.0, 0.0]
         /// @encode
         ///
         /// @param              [in] aVector A translation vector
         /// @return             A point
 
         Point                   operator -                                  (   const   Vector3d&                   aVector                                     ) const ;
+
+        /// @brief              Subtraction operator: get translation vector between two points
+        ///
+        /// @code
+        ///                     Point(0.0, 0.0, 1.0) - Point(0.0, 0.0, 0.0)  ; // [0.0, 0.0, 1.0]
+        /// @encode
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             A translation vector
+
+        Vector3d                operator -                                  (   const   Point&                      aPoint                                      ) const ;
 
         /// @brief              Output stream operator
         ///
