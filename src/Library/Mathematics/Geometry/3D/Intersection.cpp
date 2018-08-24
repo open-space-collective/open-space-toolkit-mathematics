@@ -64,7 +64,7 @@ Intersection&                   Intersection::operator =                    (   
 
     }
 
-    return (*this) ;
+    return *this ;
 
 }
 
