@@ -1,30 +1,28 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           LibraryMathematicsPy/Geometry.cpp
+/// @file           LibraryMathematicsPy/Geometry/3D.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <LibraryMathematicsPy/Geometry/Transformations.cpp>
-#include <LibraryMathematicsPy/Geometry/3D.cpp>
-#include <LibraryMathematicsPy/Geometry/Angle.cpp>
+#include <LibraryMathematicsPy/Geometry/3D/Objects.cpp>
+#include <LibraryMathematicsPy/Geometry/3D/Object.cpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     LibraryMathematicsPy_Geometry               ( )
+inline void                     LibraryMathematicsPy_Geometry_3D            ( )
 {
     
-    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Geometry")))) ;
+    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Geometry.3D")))) ;
     
-    boost::python::scope().attr("Geometry") = module ;
+    boost::python::scope().attr("3D") = module ;
     
     boost::python::scope scope = module ;
     
-    LibraryMathematicsPy_Geometry_Angle() ;
-    LibraryMathematicsPy_Geometry_3D() ;
-    LibraryMathematicsPy_Geometry_Transformations() ;
+    LibraryMathematicsPy_Geometry_3D_Object() ;
+    LibraryMathematicsPy_Geometry_3D_Objects() ;
 
 }
 

@@ -1,30 +1,37 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           LibraryMathematicsPy/Geometry.cpp
+/// @file           LibraryMathematicsPy/Geometry/3D/Object.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <LibraryMathematicsPy/Geometry/Transformations.cpp>
-#include <LibraryMathematicsPy/Geometry/3D.cpp>
-#include <LibraryMathematicsPy/Geometry/Angle.cpp>
+#include <Library/Mathematics/Geometry/3D/Object.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     LibraryMathematicsPy_Geometry               ( )
+inline void                     LibraryMathematicsPy_Geometry_3D_Object     ( )
 {
-    
-    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Geometry")))) ;
-    
-    boost::python::scope().attr("Geometry") = module ;
-    
-    boost::python::scope scope = module ;
-    
-    LibraryMathematicsPy_Geometry_Angle() ;
-    LibraryMathematicsPy_Geometry_3D() ;
-    LibraryMathematicsPy_Geometry_Transformations() ;
+
+    using namespace boost::python ;
+
+    using library::math::geom::d3::Object ;
+
+    scope in_Object = class_<Object, boost::noncopyable>("Object", no_init)
+
+        .def(self == self)
+        .def(self != self)
+
+        .def("isDefined", &Object::isDefined)
+        .def("intersects", &Object::intersects)
+        .def("contains", &Object::contains)
+
+        // .def("computeIntersectionWith", &Object::computeIntersectionWith)
+        .def("translate", &Object::translate)
+        .def("rotate", &Object::rotate)
+
+    ;
 
 }
 

@@ -97,6 +97,11 @@ bool                            Object::operator ==                         (   
 
 }
 
+bool                            Object::operator !=                         (   const   Object&                     anObject                                    ) const
+{
+    return !((*this) == anObject) ;
+}
+
 bool                            Object::intersects                          (   const   Object&                     anObject                                    ) const
 {
 
