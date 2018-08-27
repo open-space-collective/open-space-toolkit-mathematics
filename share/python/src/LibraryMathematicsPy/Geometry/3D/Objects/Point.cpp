@@ -38,6 +38,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Point (
         .def("__repr__", +[] (const Point& aPoint) -> std::string { return aPoint.toString() ; })
         
         .def("isDefined", &Point::isDefined)
+        .def("isNear", &Point::isNear)
 
         .def("translate", &Point::translate)
         .def("rotate", &Point::rotate)

@@ -107,10 +107,40 @@ bool                            Segment::intersects                         (   
     return anEllipsoid.intersects(*this) ;
 }
 
-// bool                            Segment::contains                           (   const   Point&                      aPoint                                      ) const
-// {
+bool                            Segment::contains                           (   const   Point&                      aPoint                                      ) const
+{
 
-// }
+    if (!aPoint.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Segment") ;
+    }
+
+    if (this->isDegenerate())
+    {
+        return firstPoint_ == aPoint ;
+    }
+
+    const Vector3d AB = secondPoint_ - firstPoint_ ;
+    const Vector3d AC = aPoint - firstPoint_ ;
+
+    if (AB.cross(AC).squaredNorm() == 0.0) // Points are aligned
+    {
+
+        const Real K_AC = AB.dot(AC) ;
+        const Real K_AB = AB.dot(AB) ;
+
+        return (0.0 <= K_AC) && (K_AC <= K_AB) ; // C between A and B
+
+    }
+
+    return false ;
+
+}
 
 // bool                            Segment::contains                           (   const   PointSet&                   aPointSet                                   ) const
 // {
@@ -213,8 +243,10 @@ void                            Segment::rotate                             (   
         throw library::core::error::runtime::Undefined("Segment") ;
     }
 
-    firstPoint_ = aRotation * firstPoint_ ;
-    secondPoint_ = aRotation * secondPoint_ ;
+    const Point center = this->getCenter() ;
+
+    firstPoint_ = center + aRotation * (firstPoint_ - center) ;
+    secondPoint_ = center + aRotation * (secondPoint_ - center) ;
 
 }
 

@@ -34,6 +34,7 @@ using library::core::types::Real ;
 
 using library::math::obj::Vector3d ;
 using library::math::geom::d3::Object ;
+using library::math::geom::trf::rot::Quaternion ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -139,12 +140,25 @@ class Point : public Object, public Vector3d
         /// @brief              Check if point is defined
         ///
         /// @code
-        ///                     Point(Vector3d::Zero(), 1.0).isDefined() ; // True
+        ///                     Point(0.0, 0.0, 0.0).isDefined() ; // True
         /// @endcode
         ///
         /// @return             True if point is defined
 
         virtual bool            isDefined                                   ( ) const override ;
+
+        /// @brief              Check if point is near another point
+        ///
+        /// @code
+        ///                     Point(0.0, 0.0, 0.0).isNear(Point(0.0, 0.0, 0.0), 1e-15) ; // True
+        /// @endcode
+        ///
+        /// @param              [in] aPoint A point
+        /// @param              [in] aTolerance A tolerance
+        /// @return             True if point is near another point
+
+        bool                    isNear                                      (   const   Point&                      aPoint,
+                                                                                const   Real&                       aTolerance                                  ) const ;
 
         /// @brief              Translate point
         ///

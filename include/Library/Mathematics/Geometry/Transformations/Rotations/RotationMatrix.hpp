@@ -158,6 +158,10 @@ class RotationMatrix
 
         bool                    isDefined                                   ( ) const ;
 
+        /// @brief              Access underlying rotation matrix
+        ///
+        /// @return             Reference to underlying rotation matrix
+
         const Matrix3d&         accessMatrix                                ( ) const ;
 
         /// @brief              Get row at index
@@ -173,6 +177,12 @@ class RotationMatrix
         /// @return             Column at index
 
         Vector3d                getColumnAt                                 (   const   Index&                      aColumnIndex                                ) const ;
+
+        /// @brief              Get underlying rotation matrix
+        ///
+        /// @return             Underlying rotation matrix
+
+        Matrix3d                getMatrix                                   ( ) const ;
 
         /// @brief              Get transposed rotation matrix
         ///

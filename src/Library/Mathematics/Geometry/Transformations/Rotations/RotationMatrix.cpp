@@ -224,6 +224,18 @@ Vector3d                        RotationMatrix::getColumnAt                 (   
 
 }
 
+Matrix3d                        RotationMatrix::getMatrix                   ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+    }
+
+    return matrix_ ;
+
+}
+
 RotationMatrix                  RotationMatrix::toTransposed                ( ) const
 {
 

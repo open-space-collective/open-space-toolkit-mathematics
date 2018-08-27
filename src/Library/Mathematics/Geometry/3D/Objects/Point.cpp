@@ -135,6 +135,29 @@ bool                            Point::isDefined                            ( ) 
     return Vector3d::isDefined() ;
 }
 
+bool                            Point::isNear                               (   const   Point&                      aPoint,
+                                                                                const   Real&                       aTolerance                                  ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (!aPoint.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (!aTolerance.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Tolerance") ;
+    }
+
+    return (this->Vector3d::operator - (aPoint)).norm() <= aTolerance ;
+
+}
+
 void                            Point::translate                            (   const   Vector3d&                   aTranslation                                )
 {
 

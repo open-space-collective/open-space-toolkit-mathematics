@@ -72,9 +72,19 @@ bool                            Ellipsoid::operator ==                      (   
         return false ;
     }
 
-    // [TBI] Check for invariants after rotation
+    if (center_ == anEllipsoid.center_)
+    {
 
-    return (center_ == anEllipsoid.center_) && (a_ == anEllipsoid.a_) && (b_ == anEllipsoid.b_) && (c_ == anEllipsoid.c_) && (q_ == anEllipsoid.q_) ;
+        if ((a_ == anEllipsoid.a_) && (b_ == anEllipsoid.b_) && (c_ == anEllipsoid.c_) && (q_ == anEllipsoid.q_))
+        {
+            return true ;
+        }
+
+        return this->getMatrix().isApprox(anEllipsoid.getMatrix(), Real::Epsilon()) ;
+
+    }
+
+    return false ;
 
 }
 

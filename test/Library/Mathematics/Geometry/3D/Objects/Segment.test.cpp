@@ -7,6 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 
 #include <Global.test.hpp>
@@ -163,10 +165,58 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects)
 {
 
     using library::math::geom::d3::objects::Segment ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    // Point
 
     {
 
-        FAIL() ;
+        // [TBI]
+
+    }
+
+    // PointSet
+
+    {
+
+        // [TBI]
+
+    }
+
+    // Segment
+
+    {
+
+        // [TBI]
+
+    }
+
+    // Sphere
+
+    {
+
+        // [TBI]
+
+    }
+
+    // Ellipsoid
+
+    {
+
+        {
+
+            // See: Library_Mathematics_Geometry_3D_Objects_Ellipsoid.Intersects
+
+            SUCCEED() ;
+
+        }
+
+        {
+
+            EXPECT_ANY_THROW(Segment::Undefined().intersects(Ellipsoid::Undefined())) ;
+            EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).intersects(Ellipsoid::Undefined())) ;
+
+        }
 
     }
 
@@ -175,12 +225,71 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Contains)
 {
 
+    using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Segment ;
+
+    // Point
 
     {
 
-        FAIL() ;
+        {
 
+            EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).contains(Point(0.0, 0.0, 0.0))) ;
+            EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(0.0, 0.0, 0.0))) ;
+            EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(0.0, 0.0, 1.0))) ;
+            EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(0.0, 0.0, 0.5))) ;
+
+        }
+
+        {
+
+            EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).contains(Point(0.0, 0.0, 0.1))) ;
+            EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(0.0, 0.0, 2.0))) ;
+            EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(0.0, 0.0, -1.0))) ;
+            EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(1.0, 0.0, 0.0))) ;
+
+        }
+
+        {
+
+            EXPECT_ANY_THROW(Segment::Undefined().contains(Point::Undefined())) ;
+            EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).contains(Point::Undefined())) ;
+            EXPECT_ANY_THROW(Segment::Undefined().contains(Point(0.0, 0.0, 0.0))) ;
+
+        }
+
+    }
+
+    // PointSet
+
+    {
+
+        // [TBI]
+        
+    }
+
+    // Segment
+
+    {
+
+        // [TBI]
+        
+    }
+
+    // Sphere
+
+    {
+
+        // [TBI]
+        
+    }
+
+    // Ellipsoid
+
+    {
+
+        // [TBI]
+        
     }
 
 }
@@ -262,11 +371,24 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetLength)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Translate)
 {
 
+    using library::math::obj::Vector3d ;
     using library::math::geom::d3::objects::Segment ;
 
     {
 
-        FAIL() ;
+        Segment segment = { { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 } } ;
+
+        segment.translate({ 4.0, 5.0, 6.0 }) ;
+
+        EXPECT_EQ(Segment({ 4.0, 5.0, 6.0 }, { 4.0, 5.0, 7.0 }), segment) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Segment::Undefined().translate(Vector3d::Undefined())) ;
+        EXPECT_ANY_THROW(Segment::Undefined().translate({ 0.0, 0.0, 0.0 })) ;
+        EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).translate(Vector3d::Undefined())) ;
 
     }
 
@@ -275,11 +397,31 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Translate)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Rotate)
 {
 
+    using library::core::types::Real ;
+
+    using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Segment ;
+    using library::math::geom::trf::rot::Quaternion ;
+    using library::math::geom::trf::rot::RotationVector ;
 
     {
 
-        FAIL() ;
+        Segment segment = { { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 } } ;
+
+        segment.rotate(Quaternion::RotationVector(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(90.0)))) ;
+
+        const Segment referenceSegment = { { 0.0, -0.5, +0.5 }, { 0.0, +0.5, +0.5 } } ;
+
+        EXPECT_TRUE(segment.getFirstPoint().isNear(referenceSegment.getFirstPoint(), Real::Epsilon())) ;
+        EXPECT_TRUE(segment.getSecondPoint().isNear(referenceSegment.getSecondPoint(), Real::Epsilon())) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Segment::Undefined().rotate(Quaternion::Undefined())) ;
+        EXPECT_ANY_THROW(Segment::Undefined().rotate(Quaternion::Unit())) ;
+        EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).rotate(Quaternion::Undefined())) ;
 
     }
 

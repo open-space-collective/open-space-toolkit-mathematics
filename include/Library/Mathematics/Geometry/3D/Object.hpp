@@ -97,6 +97,10 @@ class Object
         virtual Intersection    computeIntersectionWith                     (   const   Object&                     anObject                                    ) const ;
 
         virtual void            translate                                   (   const   Vector3d&                   aTranslation                                ) = 0 ;
+
+        /// @brief              Rotate object around its center, using passive transformation (alias)
+        ///
+        /// @param              [in] aRotation Rotation quaternion
         
         virtual void            rotate                                      (   const   Quaternion&                 aRotation                                   ) = 0 ;
 
