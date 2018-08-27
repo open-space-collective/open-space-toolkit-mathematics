@@ -15,9 +15,9 @@
 inline void                     LibraryMathematicsPy_Geometry_3D            ( )
 {
     
-    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Geometry.3D")))) ;
+    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Geometry.D3")))) ;
     
-    boost::python::scope().attr("3D") = module ;
+    boost::python::scope().attr("D3") = module ;
     
     boost::python::scope scope = module ;
     

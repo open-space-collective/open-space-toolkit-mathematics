@@ -33,7 +33,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Ellipso
         .def(self_ns::repr(self_ns::self))
         
         .def("isDefined", &Ellipsoid::isDefined)
-        .def("intersects", &Ellipsoid::intersects)
+        .def("intersectsSegment", +[] (const Ellipsoid& anEllipsoid, const Segment& aSegment) -> bool { return anEllipsoid.intersects(aSegment) ; })
         .def("containsPoint", +[] (const Ellipsoid& anEllipsoid, const Point& aPoint) -> bool { return anEllipsoid.contains(aPoint) ; })
         .def("containsSegment", +[] (const Ellipsoid& anEllipsoid, const Segment& aSegment) -> bool { return anEllipsoid.contains(aSegment) ; })
 
