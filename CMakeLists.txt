@@ -254,7 +254,15 @@ ENDIF ()
 
 ### Geometric Tools Engine [3.14]
 
-INCLUDE_DIRECTORIES ("/usr/local/include/Gte")
+FIND_PACKAGE ("GeometricToolsEngine" REQUIRED)
+
+IF (GTE_FOUND)
+    INCLUDE_DIRECTORIES (${GTE_INCLUDE_DIR})
+ELSE ()
+    MESSAGE (SEND_ERROR "[Geometric Tools Engine] not found.")
+ENDIF ()
+
+# INCLUDE_DIRECTORIES ("/usr/local/include/Gte")
 
 ### Library :: Core [0.1]
 
