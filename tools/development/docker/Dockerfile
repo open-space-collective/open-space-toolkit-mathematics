@@ -34,12 +34,12 @@ RUN mkdir /tmp/eigen \
     && make install \
     && rm -rf /tmp/eigen
 
-## Library :: Core [0.1.9]
+## Library :: Core [0.1.10]
 
 RUN mkdir -p /tmp/library-core \
     && pushd /tmp/library-core > /dev/null \
-    && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.9/library-core-0.1.9-1.x86_64-runtime.rpm \
-    && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.9/library-core-0.1.9-1.x86_64-devel.rpm \
+    && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.10/library-core-0.1.10-1.x86_64-runtime.rpm \
+    && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.10/library-core-0.1.10-1.x86_64-devel.rpm \
     && dnf install -y ./*.rpm \
     && rm -rf /tmp/library-core \
     && popd > /dev/null

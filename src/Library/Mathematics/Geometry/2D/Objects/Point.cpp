@@ -1,13 +1,13 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Objects/Point.cpp
+/// @file           Library/Mathematics/Geometry/2D/Objects/Point.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
+#include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
 
 #include <Library/Core/Error.hpp>
 #include <Library/Core/Utilities.hpp>
@@ -20,7 +20,7 @@ namespace math
 {
 namespace geom
 {
-namespace d3
+namespace d2
 {
 namespace objects
 {
@@ -28,17 +28,16 @@ namespace objects
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                                 Point::Point                                (   const   Real&                       aFirstCoordinate,
-                                                                                const   Real&                       aSecondCoordinate,
-                                                                                const   Real&                       aThirdCoordinate                            )
+                                                                                const   Real&                       aSecondCoordinate                           )
                                 :   Object(),
-                                    Vector3d(aFirstCoordinate, aSecondCoordinate, aThirdCoordinate)
+                                    Vector2d(aFirstCoordinate, aSecondCoordinate)
 {
     
 }
 
-                                Point::Point                                (   const   Vector3d&                   aVector                                     )
+                                Point::Point                                (   const   Vector2d&                   aVector                                     )
                                 :   Object(),
-                                    Vector3d(aVector)
+                                    Vector2d(aVector)
 {
 
 }
@@ -56,7 +55,7 @@ bool                            Point::operator ==                          (   
         return false ;
     }
 
-    return this->Vector3d::operator == (aPoint) ;
+    return this->Vector2d::operator == (aPoint) ;
 
 }
 
@@ -65,7 +64,7 @@ bool                            Point::operator !=                          (   
     return !((*this) == aPoint) ;
 }
 
-Point                           Point::operator +                           (   const   Vector3d&                   aVector                                     ) const
+Point                           Point::operator +                           (   const   Vector2d&                   aVector                                     ) const
 {
 
     if (!this->isDefined())
@@ -78,11 +77,11 @@ Point                           Point::operator +                           (   
         throw library::core::error::runtime::Undefined("Vector") ;
     }
     
-    return Point(this->Vector3d::operator + (aVector)) ;
+    return Point(this->Vector2d::operator + (aVector)) ;
 
 }
 
-Point                           Point::operator -                           (   const   Vector3d&                   aVector                                     ) const
+Point                           Point::operator -                           (   const   Vector2d&                   aVector                                     ) const
 {
 
     if (!this->isDefined())
@@ -95,11 +94,11 @@ Point                           Point::operator -                           (   
         throw library::core::error::runtime::Undefined("Vector") ;
     }
     
-    return Point(this->Vector3d::operator - (aVector)) ;
+    return Point(this->Vector2d::operator - (aVector)) ;
 
 }
         
-Vector3d                        Point::operator -                           (   const   Point&                      aPoint                                      ) const
+Vector2d                        Point::operator -                           (   const   Point&                      aPoint                                      ) const
 {
 
     if (!this->isDefined())
@@ -112,7 +111,7 @@ Vector3d                        Point::operator -                           (   
         throw library::core::error::runtime::Undefined("Point") ;
     }
 
-    return this->Vector3d::operator - (aPoint) ;
+    return this->Vector2d::operator - (aPoint) ;
 
 }
 
@@ -132,7 +131,7 @@ std::ostream&                   operator <<                                 (   
 
 bool                            Point::isDefined                            ( ) const
 {
-    return Vector3d::isDefined() ;
+    return Vector2d::isDefined() ;
 }
 
 bool                            Point::isNear                               (   const   Point&                      aPoint,
@@ -154,11 +153,11 @@ bool                            Point::isNear                               (   
         throw library::core::error::runtime::Undefined("Tolerance") ;
     }
 
-    return (this->Vector3d::operator - (aPoint)).norm() <= aTolerance ;
+    return (this->Vector2d::operator - (aPoint)).norm() <= aTolerance ;
 
 }
 
-void                            Point::translate                            (   const   Vector3d&                   aTranslation                                )
+void                            Point::translate                            (   const   Vector2d&                   aTranslation                                )
 {
 
     if (!aTranslation.isDefined())
@@ -174,32 +173,15 @@ void                            Point::translate                            (   
     (*this) += aTranslation ;
 
 }
-        
-void                            Point::rotate                               (   const   Quaternion&                 aRotation                                   )
-{
-
-    if (!aRotation.isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Rotation") ;
-    }
-
-    if (!this->isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Point") ;
-    }
-
-    // Do nothing
-
-}
 
 Point                           Point::Undefined                            ( )
 {
-    return Vector3d::Undefined() ;
+    return Vector2d::Undefined() ;
 }
 
 Point                           Point::Origin                               ( )
 {
-    return { 0.0, 0.0, 0.0 } ;
+    return { 0.0, 0.0 } ;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
