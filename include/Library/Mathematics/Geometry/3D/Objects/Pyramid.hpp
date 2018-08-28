@@ -50,7 +50,9 @@ class Pyramid : public Object
         /// @brief              Constructor
         ///
         /// @code
-        ///                     
+        ///                     Polygon base = ... ;
+        ///                     Point apex = { 0.0, 0.0, 1.0 } ;
+        ///                     Pyramid pyramid = { base, apex } ;
         /// @endcode
         ///
         /// @param              [in] aBase A pyramid base
@@ -67,10 +69,6 @@ class Pyramid : public Object
 
         /// @brief              Equal to operator
         ///
-        /// @code
-        ///                     
-        /// @endcode
-        ///
         /// @param              [in] aPyramid A pyramid
         /// @return             True if pyramids are equal
 
@@ -78,20 +76,12 @@ class Pyramid : public Object
 
         /// @brief              Not equal to operator
         ///
-        /// @code
-        ///                     
-        /// @endcode
-        ///
         /// @param              [in] aPyramid A pyramid
         /// @return             True if pyramids not are equal
 
         bool                    operator !=                                 (   const   Pyramid&                    aPyramid                                    ) const ;
 
         /// @brief              Output stream operator
-        ///
-        /// @code
-        ///                     std::cout << Pyramid(...) ;
-        /// @endcode
         ///
         /// @param              [in] anOutputStream An output stream
         /// @param              [in] aPyramid A pyramid
@@ -102,29 +92,17 @@ class Pyramid : public Object
 
         /// @brief              Check if pyramid is defined
         ///
-        /// @code
-        ///                     
-        /// @endcode
-        ///
         /// @return             True if pyramid is defined
 
         virtual bool            isDefined                                   ( ) const override ;
 
         /// @brief              Get pyramid base
         ///
-        /// @code
-        ///                     
-        /// @endcode
-        ///
         /// @return             Pyramid base
 
         Polygon                 getBase                                     ( ) const ;
 
         /// @brief              Get pyramid apex
-        ///
-        /// @code
-        ///                     
-        /// @endcode
         ///
         /// @return             Pyramid apex
 
@@ -143,10 +121,6 @@ class Pyramid : public Object
         virtual void            rotate                                      (   const   Quaternion&                 aRotation                                   ) override ;
 
         /// @brief              Constructs an undefined pyramid
-        ///
-        /// @code
-        ///                     Pyramid pyramid = Pyramid::Undefined() ; // Undefined
-        /// @endcode
         ///
         /// @return             Undefined pyramid
 
