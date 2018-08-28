@@ -12,6 +12,7 @@
 
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
+
 #include <Library/Core/Types/Real.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -30,12 +31,15 @@ namespace objects
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using library::core::types::Real ;
+
 using library::math::geom::d3::Object ;
 using library::math::geom::d3::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @brief                      Sphere
+///
+///                             A sphere is a perfectly round geometrical object in three-dimensional space that is the surface of a completely round ball.
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Sphere
 
@@ -76,7 +80,7 @@ class Sphere : public Object
         /// @brief              Not equal to operator
         ///
         /// @code
-        ///                     Sphere(Point::Origin(), 1.0) != Sphere(2.0) ; // True
+        ///                     Sphere(Point::Origin(), 1.0) != Sphere(Point::Origin(), 2.0) ; // True
         /// @endcode
         ///
         /// @param              [in] aSphere A sphere
@@ -136,6 +140,18 @@ class Sphere : public Object
         /// @return             Sphere radius
 
         Real                    getRadius                                   ( ) const ;
+
+        /// @brief              Translate sphere
+        ///
+        /// @param              [in] aTranslation A translation vector
+
+        virtual void            translate                                   (   const   Vector3d&                   aTranslation                                ) override ;
+
+        /// @brief              Rotate sphere
+        ///
+        /// @param              [in] aRotation A rotation quaternion
+        
+        virtual void            rotate                                      (   const   Quaternion&                 aRotation                                   ) override ;
 
         /// @brief              Constructs an undefined sphere
         ///

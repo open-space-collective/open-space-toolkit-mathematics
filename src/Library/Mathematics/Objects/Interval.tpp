@@ -95,7 +95,7 @@ bool                            Interval<T>::isDegenerate                   ( ) 
 }
 
                                 template <class T>
-bool                            Interval<T>::isIntersectingWith             (   const   Interval&                   anInterval                                  ) const
+bool                            Interval<T>::intersects                     (   const   Interval&                   anInterval                                  ) const
 {
 
     if (!this->isDefined())
@@ -245,11 +245,75 @@ T                               Interval<T>::getUpperBound                  ( ) 
 //     return Interval<T>::Undefined() ; // [TBI]
 // }
 
-//                                 template <class T>
-// ctnr::Array<T>                  Interval<T>::generateArrayWithStep          (   const   T&                          aStep                                       ) const
-// {
-//     return ctnr::Array<T>::Empty() ; // [TBI]
-// }
+                                template <class T>
+                                template <class U>
+ctnr::Array<T>                  Interval<T>::generateArrayWithStep          (   const   U&                          aStep                                       ) const
+{
+    
+    using library::core::types::Index ;
+    using library::core::types::Size ;
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
+
+    if (!aStep.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Step") ;
+    }
+    
+    if (aStep.isZero())
+    {
+        throw library::core::error::RuntimeError("Step is zero.") ;
+    }
+
+    ctnr::Array<T> grid = ctnr::Array<T>::Empty() ;
+
+    if (aStep.isPositive())
+    {
+
+        T value = this->accessLowerBound() ;
+
+        while (value <= this->accessUpperBound())
+        {
+            
+            grid.add(value) ;
+            
+            value += aStep ;
+        
+        }
+
+        if (grid.accessLast() < this->accessUpperBound())
+        {
+            grid.add(this->accessUpperBound()) ;
+        }
+
+    }
+    else
+    {
+
+        T value = this->accessUpperBound() ;
+
+        while (value >= this->accessLowerBound())
+        {
+            
+            grid.add(value) ;
+            
+            value += aStep ;
+        
+        }
+
+        if (grid.accessLast() > this->accessLowerBound())
+        {
+            grid.add(this->accessLowerBound()) ;
+        }
+
+    }
+
+    return grid ;
+    
+}
 
 //                                 template <class T>
 // ctnr::Array<T>                  Interval<T>::generateArrayWithSize          (   const   types::Size&                anArraySize                                 ) const

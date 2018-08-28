@@ -30,12 +30,9 @@ namespace ctnr = library::core::ctnr ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @brief                      Set of numbers with the property that any number that lies between two numbers in the set is also included in the set
-///
-/// @ref                        https://en.wikipedia.org/wiki/Interval_(mathematics)
+/// @brief                      Interval base (used to avoid having a templated enum)
 
-template <class T>
-class Interval
+class IntervalBase
 {
 
     public:
@@ -52,6 +49,18 @@ class Interval
             HalfOpenRight       ///< Half-open right interval type [a, b[
 
         } ;
+
+} ;
+
+/// @brief                      Set of numbers with the property that any number that lies between two numbers in the set is also included in the set
+///
+/// @ref                        https://en.wikipedia.org/wiki/Interval_(mathematics)
+
+template <class T>
+class Interval : public IntervalBase
+{
+
+    public:
 
         /// @brief              Constructor
         ///
@@ -127,13 +136,13 @@ class Interval
         /// @brief              Check if interval is intersecting with another interval
         ///
         /// @code
-        ///                     Interval<Real>::Closed(0.0, 1.0).isIntersectingWith(Interval<Real>::Closed(0.5, 1.5)) ; // True
+        ///                     Interval<Real>::Closed(0.0, 1.0).intersects(Interval<Real>::Closed(0.5, 1.5)) ; // True
         /// @endcode
         ///
         /// @param              [in] anInterval An interval
         /// @return             True if intervals are intersecting
 
-        bool                    isIntersectingWith                          (   const   Interval&                   anInterval                                  ) const ;
+        bool                    intersects                                  (   const   Interval&                   anInterval                                  ) const ;
 
         /// @brief              Check if interval contains value
         ///
@@ -248,7 +257,8 @@ class Interval
         /// @param              [in] aStep A step
         /// @return             Array of values
 
-        ctnr::Array<T>          generateArrayWithStep                       (   const   T&                          aStep                                       ) const ;
+        template <class U>
+        ctnr::Array<T>          generateArrayWithStep                       (   const   U&                          aStep                                       ) const ;
 
         /// @brief              Generate array with a given size
         ///

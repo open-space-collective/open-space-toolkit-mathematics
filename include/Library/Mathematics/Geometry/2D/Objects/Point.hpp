@@ -1,16 +1,16 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Objects/Point.hpp
+/// @file           Library/Mathematics/Geometry/2D/Objects/Point.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_3D_Objects_Point__
-#define __Library_Mathematics_Geometry_3D_Objects_Point__
+#ifndef __Library_Mathematics_Geometry_2D_Objects_Point__
+#define __Library_Mathematics_Geometry_2D_Objects_Point__
 
-#include <Library/Mathematics/Geometry/3D/Object.hpp>
+#include <Library/Mathematics/Geometry/2D/Object.hpp>
 #include <Library/Mathematics/Objects/Vector.hpp>
 
 #include <Library/Core/Types/Real.hpp>
@@ -23,7 +23,7 @@ namespace math
 {
 namespace geom
 {
-namespace d3
+namespace d2
 {
 namespace objects
 {
@@ -32,9 +32,8 @@ namespace objects
 
 using library::core::types::Real ;
 
-using library::math::obj::Vector3d ;
-using library::math::geom::d3::Object ;
-using library::math::geom::trf::rot::Quaternion ;
+using library::math::obj::Vector2d ;
+using library::math::geom::d2::Object ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -42,7 +41,7 @@ using library::math::geom::trf::rot::Quaternion ;
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Point_(geometry)
 
-class Point : public Object, public Vector3d
+class Point : public Object, public Vector2d
 {
 
     public:
@@ -50,26 +49,24 @@ class Point : public Object, public Vector3d
         /// @brief              Constructor
         ///
         /// @code
-        ///                     Point point(0.0, 0.0, 0.0) ;
+        ///                     Point point(0.0, 0.0) ;
         /// @endcode
         ///
         /// @param              [in] aFirstCoordinate A first coordinate
         /// @param              [in] aSecondCoordinate A second coordinate
-        /// @param              [in] aThirdCoordinate A third coordinate
 
                                 Point                                       (   const   Real&                       aFirstCoordinate,
-                                                                                const   Real&                       aSecondCoordinate,
-                                                                                const   Real&                       aThirdCoordinate                            ) ;
+                                                                                const   Real&                       aSecondCoordinate                           ) ;
 
         /// @brief              Constructor
         ///
         /// @code
-        ///                     Point point({ 0.0, 0.0, 0.0 }) ;
+        ///                     Point point({ 0.0, 0.0 }) ;
         /// @endcode
         ///
         /// @param              [in] aVector A position vector
 
-                                Point                                       (   const   Vector3d&                   aVector                                     ) ;
+                                Point                                       (   const   Vector2d&                   aVector                                     ) ;
 
         /// @brief              Clone point
         ///
@@ -94,40 +91,40 @@ class Point : public Object, public Vector3d
         /// @brief              Addition operator: translate point along vector
         ///
         /// @code
-        ///                     Point(0.0, 0.0, 0.0) + Vector3d(0.0, 0.0, 1.0) ; // [0.0, 0.0, 1.0]
+        ///                     Point(0.0, 0.0) + Vector2d(0.0, 1.0) ; // [0.0, 1.0]
         /// @encode
         ///
         /// @param              [in] aVector A translation vector
         /// @return             A point
 
-        Point                   operator +                                  (   const   Vector3d&                   aVector                                     ) const ;
+        Point                   operator +                                  (   const   Vector2d&                   aVector                                     ) const ;
 
         /// @brief              Subtraction operator: translate point along opposite vector
         ///
         /// @code
-        ///                     Point(0.0, 0.0, 1.0) - Vector3d(0.0, 0.0, 1.0) ; // [0.0, 0.0, 0.0]
+        ///                     Point(0.0, 1.0) - Vector2d(0.0, 1.0) ; // [0.0, 0.0]
         /// @encode
         ///
         /// @param              [in] aVector A translation vector
         /// @return             A point
 
-        Point                   operator -                                  (   const   Vector3d&                   aVector                                     ) const ;
+        Point                   operator -                                  (   const   Vector2d&                   aVector                                     ) const ;
 
         /// @brief              Subtraction operator: get translation vector between two points
         ///
         /// @code
-        ///                     Point(0.0, 0.0, 1.0) - Point(0.0, 0.0, 0.0)  ; // [0.0, 0.0, 1.0]
+        ///                     Point(0.0, 1.0) - Point(0.0, 0.0)  ; // [0.0, 1.0]
         /// @encode
         ///
         /// @param              [in] aPoint A point
         /// @return             A translation vector
 
-        Vector3d                operator -                                  (   const   Point&                      aPoint                                      ) const ;
+        Vector2d                operator -                                  (   const   Point&                      aPoint                                      ) const ;
 
         /// @brief              Output stream operator
         ///
         /// @code
-        ///                     std::cout << Point(0.0, 0.0, 0.0) ;
+        ///                     std::cout << Point(0.0, 0.0) ;
         /// @endcode
         ///
         /// @param              [in] anOutputStream An output stream
@@ -140,7 +137,7 @@ class Point : public Object, public Vector3d
         /// @brief              Check if point is defined
         ///
         /// @code
-        ///                     Point(0.0, 0.0, 0.0).isDefined() ; // True
+        ///                     Point(0.0, 0.0).isDefined() ; // True
         /// @endcode
         ///
         /// @return             True if point is defined
@@ -150,7 +147,7 @@ class Point : public Object, public Vector3d
         /// @brief              Check if point is near another point
         ///
         /// @code
-        ///                     Point(0.0, 0.0, 0.0).isNear(Point(0.0, 0.0, 0.0), 1e-15) ; // True
+        ///                     Point(0.0, 0.0).isNear(Point(0.0, 0.0), 1e-15) ; // True
         /// @endcode
         ///
         /// @param              [in] aPoint A point
@@ -164,13 +161,7 @@ class Point : public Object, public Vector3d
         ///
         /// @param              [in] aTranslation A translation vector
 
-        virtual void            translate                                   (   const   Vector3d&                   aTranslation                                ) override ;
-
-        /// @brief              Rotate point
-        ///
-        /// @param              [in] aRotation A rotation quaternion
-        
-        virtual void            rotate                                      (   const   Quaternion&                 aRotation                                   ) override ;
+        virtual void            translate                                   (   const   Vector2d&                   aTranslation                                ) override ;
 
         /// @brief              Constructs an undefined point
         ///
@@ -185,7 +176,7 @@ class Point : public Object, public Vector3d
         /// @brief              Constructs a point at origin
         ///
         /// @code
-        ///                     Point point = Point::Origin() ; // [0.0, 0.0, 0.0]
+        ///                     Point point = Point::Origin() ; // [0.0, 0.0]
         /// @endcode
         ///
         /// @return             Point at origin

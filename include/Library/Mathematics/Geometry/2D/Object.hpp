@@ -1,18 +1,17 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Object.hpp
+/// @file           Library/Mathematics/Geometry/2D/Object.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_3D_Object__
-#define __Library_Mathematics_Geometry_3D_Object__
+#ifndef __Library_Mathematics_Geometry_2D_Object__
+#define __Library_Mathematics_Geometry_2D_Object__
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
 #include <Library/Mathematics/Objects/Vector.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -23,21 +22,16 @@ namespace math
 {
 namespace geom
 {
-namespace d3
+namespace d2
 {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-using library::math::obj::Vector3d ;
-using library::math::geom::trf::rot::Quaternion ;
+using library::math::obj::Vector2d ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class Intersection ;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @brief                      3D object
+/// @brief                      2D object
 
 class Object
 {
@@ -94,15 +88,7 @@ class Object
 
         virtual bool            contains                                    (   const   Object&                     anObject                                    ) const ;
 
-        virtual Intersection    computeIntersectionWith                     (   const   Object&                     anObject                                    ) const ;
-
-        virtual void            translate                                   (   const   Vector3d&                   aTranslation                                ) = 0 ;
-
-        /// @brief              Rotate object around its center, using passive transformation (alias)
-        ///
-        /// @param              [in] aRotation Rotation quaternion
-        
-        virtual void            rotate                                      (   const   Quaternion&                 aRotation                                   ) = 0 ;
+        virtual void            translate                                   (   const   Vector2d&                   aTranslation                                ) = 0 ;
 
 } ;
 

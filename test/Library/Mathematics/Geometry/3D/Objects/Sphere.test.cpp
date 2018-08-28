@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
 
 #include <Global.test.hpp>
@@ -193,6 +194,62 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, GetRadius)
     {
 
         EXPECT_ANY_THROW(Sphere::Undefined().getRadius()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Translate)
+{
+
+    using library::math::obj::Vector3d ;
+    using library::math::geom::d3::objects::Sphere ;
+
+    {
+
+        Sphere sphere = { { 1.0, 2.0, 3.0 }, 4.0 } ;
+
+        sphere.translate({ 4.0, 5.0, 6.0 }) ;
+
+        EXPECT_EQ(Sphere({ 5.0, 7.0, 9.0 }, 4.0), sphere) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Sphere::Undefined().translate(Vector3d::Undefined())) ;
+        EXPECT_ANY_THROW(Sphere::Undefined().translate({ 0.0, 0.0, 0.0 })) ;
+        EXPECT_ANY_THROW(Sphere({ 1.0, 2.0, 3.0 }, 4.0).translate(Vector3d::Undefined())) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Rotate)
+{
+
+    using library::core::types::Real ;
+
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::objects::Sphere ;
+    using library::math::geom::trf::rot::Quaternion ;
+    using library::math::geom::trf::rot::RotationVector ;
+
+    {
+
+        Sphere sphere = { { 1.0, 2.0, 3.0 }, 4.0 } ;
+
+        sphere.rotate(Quaternion::RotationVector(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(90.0)))) ;
+
+        EXPECT_EQ(Sphere({ 1.0, 2.0, 3.0 }, 4.0), sphere) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Sphere::Undefined().rotate(Quaternion::Undefined())) ;
+        EXPECT_ANY_THROW(Sphere::Undefined().rotate(Quaternion::Unit())) ;
+        EXPECT_ANY_THROW(Sphere::Unit({ 1.0, 2.0, 3.0 }).rotate(Quaternion::Undefined())) ;
 
     }
 
