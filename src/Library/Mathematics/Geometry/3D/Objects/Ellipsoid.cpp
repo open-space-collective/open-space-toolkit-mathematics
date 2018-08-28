@@ -415,7 +415,7 @@ void                            Ellipsoid::rotate                           (   
 
 Ellipsoid                       Ellipsoid::Undefined                        ( )
 {
-    return Ellipsoid(Point::Undefined(), Real::Undefined(), Real::Undefined(), Real::Undefined(), Quaternion::Undefined()) ;
+    return { Point::Undefined(), Real::Undefined(), Real::Undefined(), Real::Undefined(), Quaternion::Undefined() } ;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -252,7 +252,7 @@ void                            Segment::rotate                             (   
 
 Segment                         Segment::Undefined                          ( )
 {
-    return Segment(Point::Undefined(), Point::Undefined()) ;
+    return { Point::Undefined(), Point::Undefined() } ;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

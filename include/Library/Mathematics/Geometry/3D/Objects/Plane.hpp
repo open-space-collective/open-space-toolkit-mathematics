@@ -109,6 +109,19 @@ class Plane : public Object
 
         virtual bool            isDefined                                   ( ) const override ;
 
+        /// @brief              Check if plane contains point
+        ///
+        /// @code
+        ///                     Point plane = ... ;
+        ///                     Point point = ... ;
+        ///                     plane.contains(point) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             True if plane contains point
+
+        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+
         /// @brief              Get plane point
         ///
         /// @code

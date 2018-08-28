@@ -157,12 +157,12 @@ void                            Sphere::rotate                              (   
 
 Sphere                          Sphere::Undefined                           ( )
 {
-    return Sphere(Point::Undefined(), Real::Undefined()) ;
+    return { Point::Undefined(), Real::Undefined() } ;
 }
 
 Sphere                          Sphere::Unit                                (   const   Point&                      aCenter                                     )
 {
-    return Sphere(aCenter, 1.0) ;
+    return { aCenter, 1.0 } ;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
