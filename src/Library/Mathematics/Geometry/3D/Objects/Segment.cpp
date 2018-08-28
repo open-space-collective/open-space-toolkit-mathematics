@@ -66,8 +66,8 @@ std::ostream&                   operator <<                                 (   
 
     library::core::utils::Print::Header(anOutputStream, "Segment") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "First point:" << (aSegment.firstPoint_.isDefined() ? aSegment.firstPoint_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Second point:" << (aSegment.secondPoint_.isDefined() ? aSegment.secondPoint_.toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "First point:"         << (aSegment.firstPoint_.isDefined() ? aSegment.firstPoint_.toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Second point:"        << (aSegment.secondPoint_.isDefined() ? aSegment.secondPoint_.toString() : "Undefined") ;
 
     library::core::utils::Print::Footer(anOutputStream) ;
 

@@ -8,6 +8,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 
 #include <Library/Core/Error.hpp>
 #include <Library/Core/Utilities.hpp>
@@ -76,6 +77,44 @@ std::ostream&                   operator <<                                 (   
 bool                            Pyramid::isDefined                          ( ) const
 {
     return base_.isDefined() && apex_.isDefined() ;
+}
+
+bool                            Pyramid::intersects                         (   const   Ellipsoid&                  anEllipsoid                                 ) const
+{
+
+    if (!anEllipsoid.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Pyramid") ;
+    }
+
+    throw library::core::error::runtime::ToBeImplemented("Pyramid") ;
+
+    return false ;
+
+}
+
+bool                            Pyramid::contains                           (   const   Ellipsoid&                  anEllipsoid                                 ) const
+{
+
+    if (!anEllipsoid.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Pyramid") ;
+    }
+
+    throw library::core::error::runtime::ToBeImplemented("Pyramid") ;
+
+    return false ;
+
 }
 
 Polygon                         Pyramid::getBase                            ( ) const

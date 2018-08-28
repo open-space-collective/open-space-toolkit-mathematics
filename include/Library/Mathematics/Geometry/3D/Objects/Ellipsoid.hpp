@@ -40,7 +40,10 @@ using library::math::geom::trf::rot::Quaternion ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+class Line ;
 class Segment ;
+class Plane ;
+class Pyramid ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -122,6 +125,19 @@ class Ellipsoid : public Object
 
         virtual bool            isDefined                                   ( ) const override ;
 
+        /// @brief              Check if ellipsoid intersects line
+        ///
+        /// @code
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     Line line = ... ;
+        ///                     ellipsoid.intersects(line) ;
+        /// @endcode
+        ///
+        /// @param              [in] aLine A line
+        /// @return             True if ellipsoid intersects line
+        
+        bool                    intersects                                  (   const   Line&                       aLine                                       ) const ;
+
         /// @brief              Check if ellipsoid intersects segment
         ///
         /// @code
@@ -134,6 +150,32 @@ class Ellipsoid : public Object
         /// @return             True if ellipsoid intersects segment
         
         bool                    intersects                                  (   const   Segment&                    aSegment                                    ) const ;
+
+        /// @brief              Check if ellipsoid intersects plane
+        ///
+        /// @code
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     Plane plane = ... ;
+        ///                     ellipsoid.intersects(plane) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPlane A plane
+        /// @return             True if ellipsoid intersects plane
+        
+        bool                    intersects                                  (   const   Plane&                      aPlane                                      ) const ;
+
+        /// @brief              Check if ellipsoid intersects pyramid
+        ///
+        /// @code
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     Pyramid pyramid = ... ;
+        ///                     ellipsoid.intersects(pyramid) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPyramid A pyramid
+        /// @return             True if ellipsoid intersects pyramid
+        
+        bool                    intersects                                  (   const   Pyramid&                    aPyramid                                    ) const ;
 
         /// @brief              Check if ellipsoid contains point
         ///

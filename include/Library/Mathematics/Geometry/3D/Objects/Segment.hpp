@@ -43,7 +43,10 @@ class Ellipsoid ;
 
 /// @brief                      Segment
 ///
-/// @ref                        
+///                             A segment is a part of a line that is bounded by two distinct end points,
+///                             and contains every point on the line between its endpoints.
+///
+/// @ref                        https://en.wikipedia.org/wiki/Line_segment
 
 class Segment : public Object
 {

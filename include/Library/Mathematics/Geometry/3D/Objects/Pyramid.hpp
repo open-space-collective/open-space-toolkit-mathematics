@@ -35,6 +35,10 @@ using library::math::geom::d3::objects::Polygon ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+class Ellipsoid ;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /// @brief                      Pyramid
 ///
 ///                             A pyramid is a polyhedron formed by connecting a polygonal base and a point, called the apex.
@@ -95,6 +99,32 @@ class Pyramid : public Object
         /// @return             True if pyramid is defined
 
         virtual bool            isDefined                                   ( ) const override ;
+
+        /// @brief              Check if pyramid intersects ellipsoid
+        ///
+        /// @code
+        ///                     Pyramid pyramid = ... ;
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     pyramid.intersects(ellipsoid) ;
+        /// @endcode
+        ///
+        /// @param              [in] anEllipsoid An ellipsoid
+        /// @return             True if pyramid intersects ellipsoid
+        
+        bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
+
+        /// @brief              Check if pyramid contains ellipsoid
+        ///
+        /// @code
+        ///                     Pyramid pyramid = ... ;
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     pyramid.contains(ellipsoid) ;
+        /// @endcode
+        ///
+        /// @param              [in] anEllipsoid An ellipsoid
+        /// @return             True if pyramid contains ellipsoid
+
+        bool                    contains                                    (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
 
         /// @brief              Get pyramid base
         ///

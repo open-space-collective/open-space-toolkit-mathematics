@@ -7,12 +7,18 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
 #include <Library/Mathematics/Objects/Interval.hpp>
 
 #include <Library/Core/Error.hpp>
 #include <Library/Core/Utilities.hpp>
+
+#include <Gte/Mathematics/GteIntrPlane3Ellipsoid3.h>
+#include <Gte/Mathematics/GteIntrSegment3Ellipsoid3.h>
+#include <Gte/Mathematics/GteIntrLine3Ellipsoid3.h>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -26,6 +32,13 @@ namespace d3
 {
 namespace objects
 {
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+gte::Vector3<double>            GteVectorFromVector3d                       (   const   Vector3d&                   aVector                                     )
+{
+    return { aVector.x(), aVector.y(), aVector.z() } ;
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -118,6 +131,41 @@ bool                            Ellipsoid::isDefined                        ( ) 
     return center_.isDefined() && a_.isDefined() && b_.isDefined() && c_.isDefined() && q_.isDefined() ;
 }
 
+bool                            Ellipsoid::intersects                       (   const   Line&                       aLine                                       ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+    }
+
+    if (!aLine.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Line") ;
+    }
+
+    // Line
+
+    const gte::Line3<double> segment = { GteVectorFromVector3d(aLine.getOrigin()), GteVectorFromVector3d(aLine.getDirection()) } ;
+
+    // Ellipsoid
+
+    const gte::Vector3<double> center = GteVectorFromVector3d(this->getCenter()) ;
+    const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+    const gte::Vector3<double> extent = { a_, b_, c_ } ;
+
+    const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
+
+    // Intersection
+
+    gte::TIQuery<double, gte::Line3<double>, gte::Ellipsoid3<double>> intersectionQuery ;
+
+    auto intersectionResult = intersectionQuery(segment, ellipsoid) ;
+
+    return intersectionResult.intersect ;
+
+}
+
 bool                            Ellipsoid::intersects                       (   const   Segment&                    aSegment                                    ) const
 {
 
@@ -132,6 +180,28 @@ bool                            Ellipsoid::intersects                       (   
     {
         throw library::core::error::runtime::Undefined("Segment") ;
     }
+
+    // // Does not work for some reason... most likely a bug w/ gte::TIQuery<double, gte::Segment3<double>, gte::Ellipsoid3<double>>
+
+    // // Segment
+
+    // const gte::Segment3<double> segment = { GteVectorFromVector3d(aSegment.getFirstPoint()), GteVectorFromVector3d(aSegment.getSecondPoint()) } ;
+
+    // // Ellipsoid
+
+    // const gte::Vector3<double> center = GteVectorFromVector3d(this->getCenter()) ;
+    // const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+    // const gte::Vector3<double> extent = { a_, b_, c_ } ;
+
+    // const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
+
+    // // Intersection
+
+    // gte::TIQuery<double, gte::Segment3<double>, gte::Ellipsoid3<double>> intersectionQuery ;
+
+    // auto intersectionResult = intersectionQuery(segment, ellipsoid) ;
+
+    // return intersectionResult.intersect ;
 
     if (aSegment.isDegenerate())
     {
@@ -211,6 +281,49 @@ bool                            Ellipsoid::intersects                       (   
 
     return false ;
 
+}
+
+bool                            Ellipsoid::intersects                       (   const   Plane&                      aPlane                                      ) const
+{
+
+    if (!aPlane.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Plane") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+    }
+
+    // Plane
+
+    const gte::Vector3<double> normal = GteVectorFromVector3d(aPlane.getNormalVector()) ;
+    const gte::Vector3<double> point = GteVectorFromVector3d(aPlane.getPoint()) ;
+
+    const gte::Plane3<double> plane = { normal, point } ;
+
+    // Ellipsoid
+
+    const gte::Vector3<double> center = GteVectorFromVector3d(this->getCenter()) ;
+    const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+    const gte::Vector3<double> extent = { a_, b_, c_ } ;
+
+    const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
+
+    // Intersection
+
+    gte::TIQuery<double, gte::Plane3<double>, gte::Ellipsoid3<double>> intersectionQuery ;
+
+    auto intersectionResult = intersectionQuery(plane, ellipsoid) ;
+
+    return intersectionResult.intersect ;
+
+}
+
+bool                            Ellipsoid::intersects                       (   const   Pyramid&                    aPyramid                                    ) const
+{
+    return aPyramid.intersects(*this) ;
 }
 
 bool                            Ellipsoid::contains                         (   const   Point&                      aPoint                                      ) const
