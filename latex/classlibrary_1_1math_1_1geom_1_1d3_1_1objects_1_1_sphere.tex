@@ -33,7 +33,11 @@ bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a5ec412
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a871367ab75aa46194a6b8ddc8a45967f}{get\+Center} () const
 \begin{DoxyCompactList}\small\item\em Get sphere center. \end{DoxyCompactList}\item 
 Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a48cfc72b6eec9a953fb837a13e1df45e}{get\+Radius} () const
-\begin{DoxyCompactList}\small\item\em Get sphere radius. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get sphere radius. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_af2a22ab0dc9331bddf358a9c24f8e7cf}{translate} (const Vector3d \&a\+Translation) override
+\begin{DoxyCompactList}\small\item\em Translate sphere. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a6eb8a0a7e27bf24d3f1101a6700f5247}{rotate} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Rotation) override
+\begin{DoxyCompactList}\small\item\em Rotate sphere. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -50,6 +54,8 @@ std\+::ostream \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_s
 
 \subsection{Detailed Description}
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere}. 
+
+A sphere is a perfectly round geometrical object in three-\/dimensional space that is the surface of a completely round ball.
 
 https\+://en.wikipedia.\+org/wiki/\+Sphere 
 
@@ -189,7 +195,8 @@ Not equal to operator.
 
 
 \begin{DoxyCode}
-\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0) != \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere}(2.0) ; \textcolor{comment}{// True}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 1.0) != \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_ab2a38e285c562e50bf350272c083986f}{Point::Origin}(), 2.0) ; \textcolor{comment}{//
+       True}
 \end{DoxyCode}
 
 
@@ -226,6 +233,44 @@ Equal to operator.
 \begin{DoxyReturn}{Returns}
 True if spheres are equal 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a6eb8a0a7e27bf24d3f1101a6700f5247}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a6eb8a0a7e27bf24d3f1101a6700f5247}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!rotate@{rotate}}
+\index{rotate@{rotate}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Rotate sphere. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Rotation} & A rotation quaternion \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aabefebc4960530ce6356c4445c5d490e}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_af2a22ab0dc9331bddf358a9c24f8e7cf}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_af2a22ab0dc9331bddf358a9c24f8e7cf}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!translate@{translate}}
+\index{translate@{translate}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+\subsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::translate (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Translation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Translate sphere. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Translation} & A translation vector \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a989723a27a7d5f6739e45ea695a6c7ed}{library\+::math\+::geom\+::d3\+::\+Object}.
+
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a777600f8814a2879e925909f30cfe9c4}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a777600f8814a2879e925909f30cfe9c4}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!Undefined@{Undefined}}
 \index{Undefined@{Undefined}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}

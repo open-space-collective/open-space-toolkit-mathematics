@@ -1,0 +1,181 @@
+\hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{}\section{library\+:\+:math\+:\+:geom\+:\+:d2\+:\+:Object Class Reference}
+\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
+
+
+2D object  
+
+
+
+
+{\ttfamily \#include $<$Object.\+hpp$>$}
+
+Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d2\+:\+:Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a35b722f64aded8d8e660074a23af237a}{Object} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a092ca69d924f7226fceeb35f5532887c}{$\sim$\+Object} ()=0
+\begin{DoxyCompactList}\small\item\em Destructor (pure virtual) \end{DoxyCompactList}\item 
+virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} $\ast$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a5c26ae4120edb24f6463d65a9cef247d}{clone} () const =0
+\begin{DoxyCompactList}\small\item\em Clone object (pure virtual) \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a97aeb08c0dbe7f803188ae335f6b0e7a}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} \&an\+Object) const
+\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a538fa27124314cddf9705cf35a3efc08}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} \&an\+Object) const
+\item 
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ae9506254971168a3ca63e1923556b70d}{is\+Defined} () const =0
+\begin{DoxyCompactList}\small\item\em Check if object is defined. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a22819b510e52283c19c4ed947e0cba97}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} \&an\+Object) const
+\begin{DoxyCompactList}\small\item\em Check if object intersects another object. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a7bc14e621db51aec72eff0fa5da295ac}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} \&an\+Object) const
+\begin{DoxyCompactList}\small\item\em Check if object contains another object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a00a8bec981c21c0298af86c495fe4341}{translate} (const Vector2d \&a\+Translation)=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+2D object 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a35b722f64aded8d8e660074a23af237a}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a35b722f64aded8d8e660074a23af237a}} 
+\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!Object@{Object}}
+\index{Object@{Object}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
+\subsubsection{\texorpdfstring{Object()}{Object()}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d2\+::\+Object\+::\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a092ca69d924f7226fceeb35f5532887c}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a092ca69d924f7226fceeb35f5532887c}} 
+\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!````~Object@{$\sim$\+Object}}
+\index{````~Object@{$\sim$\+Object}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
+\subsubsection{\texorpdfstring{$\sim$\+Object()}{~Object()}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d2\+::\+Object\+::$\sim$\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Destructor (pure virtual) 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a5c26ae4120edb24f6463d65a9cef247d}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a5c26ae4120edb24f6463d65a9cef247d}} 
+\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!clone@{clone}}
+\index{clone@{clone}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object}$\ast$ library\+::math\+::geom\+::d2\+::\+Object\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Clone object (pure virtual) 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned object 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a15bbbe7e468a50d6059e2df946175e1c}{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_aa6b55bdbf5a0ce9ec8bc91ca79de3569}{library\+::math\+::geom\+::d2\+::objects\+::\+Point}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a7bc14e621db51aec72eff0fa5da295ac}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a7bc14e621db51aec72eff0fa5da295ac}} 
+\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!contains@{contains}}
+\index{contains@{contains}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::\+Object\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} \&}]{an\+Object }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if object contains another object. 
+
+
+\begin{DoxyCode}
+Unique<Object> objectUPtr = ... ;
+Unique<Object> anotherObjectUPtr = ... ;
+objectUPtr->contains(*anotherObjectUPtr) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Object} & An object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if object contains another object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a22819b510e52283c19c4ed947e0cba97}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a22819b510e52283c19c4ed947e0cba97}} 
+\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::\+Object\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} \&}]{an\+Object }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if object intersects another object. 
+
+
+\begin{DoxyCode}
+Unique<Object> objectUPtr = ... ;
+Unique<Object> anotherObjectUPtr = ... ;
+objectUPtr->intersects(*anotherObjectUPtr) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Object} & An object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if object intersects another object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ae9506254971168a3ca63e1923556b70d}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ae9506254971168a3ca63e1923556b70d}} 
+\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily virtual bool library\+::math\+::geom\+::d2\+::\+Object\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if object is defined. 
+
+\begin{DoxyReturn}{Returns}
+True if object is defined 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_ac90251968d8eb11df82e28f6cf095e5c}{library\+::math\+::geom\+::d2\+::objects\+::\+Point}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a83e0962f91f0732048e156ad634faaea}{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a538fa27124314cddf9705cf35a3efc08}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a538fa27124314cddf9705cf35a3efc08}} 
+\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::\+Object\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} \&}]{an\+Object }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a97aeb08c0dbe7f803188ae335f6b0e7a}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a97aeb08c0dbe7f803188ae335f6b0e7a}} 
+\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::\+Object\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} \&}]{an\+Object }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a00a8bec981c21c0298af86c495fe4341}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a00a8bec981c21c0298af86c495fe4341}} 
+\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!translate@{translate}}
+\index{translate@{translate}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
+\subsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily virtual void library\+::math\+::geom\+::d2\+::\+Object\+::translate (\begin{DoxyParamCaption}\item[{const Vector2d \&}]{a\+Translation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a8e17705a1762fdfdcbed68881afca245}{library\+::math\+::geom\+::d2\+::objects\+::\+Point}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ae5494a1f838d3c325899b6c46237bca8}{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Geometry/2\+D/\hyperlink{2_d_2_object_8hpp}{Object.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/2\+D/\hyperlink{2_d_2_object_8cpp}{Object.\+cpp}\end{DoxyCompactItemize}

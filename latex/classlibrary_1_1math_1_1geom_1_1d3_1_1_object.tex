@@ -12,7 +12,7 @@
 Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:Object\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=1.530055cm]{classlibrary_1_1math_1_1geom_1_1d3_1_1_object}
+\includegraphics[height=0.653061cm]{classlibrary_1_1math_1_1geom_1_1d3_1_1_object}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -24,8 +24,22 @@ virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_addfda217130395
 \begin{DoxyCompactList}\small\item\em Destructor (pure virtual) \end{DoxyCompactList}\item 
 virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object}{Object} $\ast$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a1a784c6b359e0eb97cd34fabc42f2f3f}{clone} () const =0
 \begin{DoxyCompactList}\small\item\em Clone object (pure virtual) \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a7a68a18bae9709a8cbba5036fd5ad3a0}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object}{Object} \&an\+Object) const
+\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aebd8708ac1608c0b64ce73b415d5256b}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object}{Object} \&an\+Object) const
+\item 
 virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a2216442e322f0c3ca5f01a4efa22baf7}{is\+Defined} () const =0
-\begin{DoxyCompactList}\small\item\em Check if object is defined. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Check if object is defined. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a98c37b46f2fdc5f22bc123a757dcf73e}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object}{Object} \&an\+Object) const
+\begin{DoxyCompactList}\small\item\em Check if object intersects another object. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_abaf45bf02ca165ba7bf685b24f5f97ef}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object}{Object} \&an\+Object) const
+\begin{DoxyCompactList}\small\item\em Check if object contains another object. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_ad0e609afe46a20412d8dbff6e0214203}{compute\+Intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object}{Object} \&an\+Object) const
+\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a989723a27a7d5f6739e45ea695a6c7ed}{translate} (const Vector3d \&a\+Translation)=0
+\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aabefebc4960530ce6356c4445c5d490e}{rotate} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Rotation)=0
+\begin{DoxyCompactList}\small\item\em Rotate object around its center, using passive transformation (alias) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -70,8 +84,66 @@ Pointer to cloned object
 \end{DoxyReturn}
 
 
-Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a32aa1e233c6ac5341605961f6bf0f210}{library\+::math\+::geom\+::d3\+::objects\+::\+Point}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a8982455e000708f1b7e4caf728e7ad40}{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a58370a8ff15b7c5a48cf4ffec5be3015}{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}.
+Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a8982455e000708f1b7e4caf728e7ad40}{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a32aa1e233c6ac5341605961f6bf0f210}{library\+::math\+::geom\+::d3\+::objects\+::\+Point}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_a2dad7a1309d367e388fdf6a8141557da}{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a589ad56339616f362cee84a2ecab61a4}{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a58370a8ff15b7c5a48cf4ffec5be3015}{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a7d58c19912afc64421c74d8272cf2271}{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a7ceb970c35968551600e2380795a0a4c}{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}.
 
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_ad0e609afe46a20412d8dbff6e0214203}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_ad0e609afe46a20412d8dbff6e0214203}} 
+\index{library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}!compute\+Intersection\+With@{compute\+Intersection\+With}}
+\index{compute\+Intersection\+With@{compute\+Intersection\+With}!library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}}
+\subsubsection{\texorpdfstring{compute\+Intersection\+With()}{computeIntersectionWith()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::\+Object\+::compute\+Intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object}{Object} \&}]{an\+Object }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_abaf45bf02ca165ba7bf685b24f5f97ef}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_abaf45bf02ca165ba7bf685b24f5f97ef}} 
+\index{library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}!contains@{contains}}
+\index{contains@{contains}!library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::\+Object\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object}{Object} \&}]{an\+Object }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if object contains another object. 
+
+
+\begin{DoxyCode}
+Unique<Object> objectUPtr = ... ;
+Unique<Object> anotherObjectUPtr = ... ;
+objectUPtr->contains(*anotherObjectUPtr) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Object} & An object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if object contains another object 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a98c37b46f2fdc5f22bc123a757dcf73e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a98c37b46f2fdc5f22bc123a757dcf73e}} 
+\index{library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::\+Object\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object}{Object} \&}]{an\+Object }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if object intersects another object. 
+
+
+\begin{DoxyCode}
+Unique<Object> objectUPtr = ... ;
+Unique<Object> anotherObjectUPtr = ... ;
+objectUPtr->intersects(*anotherObjectUPtr) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Object} & An object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if object intersects another object 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a2216442e322f0c3ca5f01a4efa22baf7}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a2216442e322f0c3ca5f01a4efa22baf7}} 
 \index{library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}!is\+Defined@{is\+Defined}}
 \index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}}
@@ -87,11 +159,52 @@ True if object is defined
 \end{DoxyReturn}
 
 
-Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_adb42c2c7734c27dcb16d947fc5c9d76d}{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a0598bd75f8a34e07a3ad36cf10a7f098}{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a9874289efeb457ada4b32d7eb1e012f6}{library\+::math\+::geom\+::d3\+::objects\+::\+Point}.
+Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a9874289efeb457ada4b32d7eb1e012f6}{library\+::math\+::geom\+::d3\+::objects\+::\+Point}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_adb42c2c7734c27dcb16d947fc5c9d76d}{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_a9fc4d76853843f90e2574cc1b25d6a7a}{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a70a29c3822e4859a2e8cd4a52e1b26f5}{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a0598bd75f8a34e07a3ad36cf10a7f098}{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a349eca33d7ce6a379bc7f0c9367e459f}{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a151515bf70e661c008023672e716e10a}{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aebd8708ac1608c0b64ce73b415d5256b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aebd8708ac1608c0b64ce73b415d5256b}} 
+\index{library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::\+Object\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object}{Object} \&}]{an\+Object }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a7a68a18bae9709a8cbba5036fd5ad3a0}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a7a68a18bae9709a8cbba5036fd5ad3a0}} 
+\index{library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::\+Object\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object}{Object} \&}]{an\+Object }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aabefebc4960530ce6356c4445c5d490e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aabefebc4960530ce6356c4445c5d490e}} 
+\index{library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}!rotate@{rotate}}
+\index{rotate@{rotate}!library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily virtual void library\+::math\+::geom\+::d3\+::\+Object\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Rotate object around its center, using passive transformation (alias) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Rotation} & Rotation quaternion \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_abe9ead973befc80360179629fc96027a}{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a9d1693e80bd013a09334b9b7233abc2f}{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a4e3c9900e358664fbdfe4d82c7fe40c1}{library\+::math\+::geom\+::d3\+::objects\+::\+Point}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a6eb8a0a7e27bf24d3f1101a6700f5247}{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a06b022532e8477f4c4197e497113af99}{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a8dea00fbd8b29b1ac15574601cc1015b}{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_a9c0c40a85f57ad69a59adc354181eec0}{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a989723a27a7d5f6739e45ea695a6c7ed}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a989723a27a7d5f6739e45ea695a6c7ed}} 
+\index{library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}!translate@{translate}}
+\index{translate@{translate}!library\+::math\+::geom\+::d3\+::\+Object@{library\+::math\+::geom\+::d3\+::\+Object}}
+\subsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily virtual void library\+::math\+::geom\+::d3\+::\+Object\+::translate (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Translation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a7ef605ac9ab20b5bd47ade8603ee6e09}{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a9a6b09a627c59fd2f2f3bd01a5afea22}{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_a7525be2cff259addc949a3aa05a715c7}{library\+::math\+::geom\+::d3\+::objects\+::\+Point}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_af2a22ab0dc9331bddf358a9c24f8e7cf}{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a8a8514a9db12bea021014ce38a6db3b5}{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a58e3829c1a2f96a571eebe0996850984}{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_aa0c2e161c936e39addcd783237d68090}{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}.
 
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\+Library/\+Mathematics/\+Geometry/3\+D/\hyperlink{_object_8hpp}{Object.\+hpp}\item 
-src/\+Library/\+Mathematics/\+Geometry/3\+D/\hyperlink{_object_8cpp}{Object.\+cpp}\end{DoxyCompactItemize}
+include/\+Library/\+Mathematics/\+Geometry/3\+D/\hyperlink{3_d_2_object_8hpp}{Object.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/3\+D/\hyperlink{3_d_2_object_8cpp}{Object.\+cpp}\end{DoxyCompactItemize}

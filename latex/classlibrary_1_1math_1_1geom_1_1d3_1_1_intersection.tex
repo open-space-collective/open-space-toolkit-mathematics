@@ -1,0 +1,299 @@
+\hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{}\section{library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:Intersection Class Reference}
+\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+
+
+3D intersection  
+
+
+
+
+{\ttfamily \#include $<$Intersection.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05}{Type} \{ \newline
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05aec0fc0100c4fc1ce4eea230c3dc10360}{Type\+::\+Undefined}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05ace2c8aed9c2fa0cfbed56cbda4d8bf07}{Type\+::\+Empty}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a2a3cd5946cfd317eb99c3d32e35e2d4c}{Type\+::\+Point}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05aaedf8f48dfa5b704b6c12b415707a1da}{Type\+::\+Point\+Set}, 
+\newline
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a4803e6b9e63dabf04de980788d6a13c4}{Type\+::\+Line}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a9406e3c325bfc9873426e5eda4ba6e18}{Type\+::\+Ray}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a4b77e2a9d8e9cfc299f504b32d6e3d2b}{Type\+::\+Segment}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a0d3adee051531c15b3509b4d4d75ce7b}{Type\+::\+Plane}, 
+\newline
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05ab7095f057db3fefa7325ad93a04e14fd}{Type\+::\+Sphere}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05aeee5397cecd880d16ef7244819aa383d}{Type\+::\+Ellipsoid}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a10b4eb76294b70d7fd6df997ff06edb1}{Type\+::\+Complex}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_ab800dbab95076a1d7ae47bd9d0887da3}{Intersection} (const Array$<$ Unique$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object}{Object} $>$$>$ \&an\+Object\+Array)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a6eacd360660163afafb78178d25ad714}{Intersection} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \&an\+Intersection)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_af2c13f6bc69d8271600d0f30848dd64b}{$\sim$\+Intersection} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a41ca5e5ac6fe7bc3f26f516acde56be8}{operator=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \&an\+Intersection)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a4205e2dcace3faa8abfeb829423d0baf}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \&an\+Intersection) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a8e3e47ed63f5c539cc39625b512c4b9e}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \&an\+Intersection) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a746fc547529ce91a99412597eb5ae559}{is\+Defined} () const
+\begin{DoxyCompactList}\small\item\em Check if intersection is defined. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_aad021013a517375d56e2110792ad7b07}{is\+Empty} () const
+\begin{DoxyCompactList}\small\item\em Check if intersection is empty. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05}{Intersection\+::\+Type} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_aead6925dc35a2f6aec30373ca1556600}{get\+Type} () const
+\begin{DoxyCompactList}\small\item\em Get intersection type. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a6ce0af0ff5c24a4b56c264d2d3d6e59b}{Undefined} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined intersection. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_af0f1aed5c97a5142a4b20cb8edcb78e0}{Empty} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty intersection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+3D intersection 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05}} 
+\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Type@{Type}}
+\index{Type@{Type}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+\subsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05}{library\+::math\+::geom\+::d3\+::\+Intersection\+::\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Undefined@{Undefined}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Undefined@{Undefined}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05aec0fc0100c4fc1ce4eea230c3dc10360}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05aec0fc0100c4fc1ce4eea230c3dc10360}} 
+Undefined&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Empty@{Empty}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Empty@{Empty}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05ace2c8aed9c2fa0cfbed56cbda4d8bf07}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05ace2c8aed9c2fa0cfbed56cbda4d8bf07}} 
+Empty&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Point@{Point}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Point@{Point}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a2a3cd5946cfd317eb99c3d32e35e2d4c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a2a3cd5946cfd317eb99c3d32e35e2d4c}} 
+Point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Point\+Set@{Point\+Set}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Point\+Set@{Point\+Set}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05aaedf8f48dfa5b704b6c12b415707a1da}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05aaedf8f48dfa5b704b6c12b415707a1da}} 
+Point\+Set&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Line@{Line}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Line@{Line}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a4803e6b9e63dabf04de980788d6a13c4}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a4803e6b9e63dabf04de980788d6a13c4}} 
+Line&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ray@{Ray}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Ray@{Ray}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a9406e3c325bfc9873426e5eda4ba6e18}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a9406e3c325bfc9873426e5eda4ba6e18}} 
+Ray&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Segment@{Segment}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Segment@{Segment}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a4b77e2a9d8e9cfc299f504b32d6e3d2b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a4b77e2a9d8e9cfc299f504b32d6e3d2b}} 
+Segment&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Plane@{Plane}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Plane@{Plane}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a0d3adee051531c15b3509b4d4d75ce7b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a0d3adee051531c15b3509b4d4d75ce7b}} 
+Plane&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Sphere@{Sphere}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Sphere@{Sphere}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05ab7095f057db3fefa7325ad93a04e14fd}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05ab7095f057db3fefa7325ad93a04e14fd}} 
+Sphere&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Ellipsoid@{Ellipsoid}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Ellipsoid@{Ellipsoid}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05aeee5397cecd880d16ef7244819aa383d}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05aeee5397cecd880d16ef7244819aa383d}} 
+Ellipsoid&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Complex@{Complex}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Complex@{Complex}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a10b4eb76294b70d7fd6df997ff06edb1}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05a10b4eb76294b70d7fd6df997ff06edb1}} 
+Complex&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_ab800dbab95076a1d7ae47bd9d0887da3}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_ab800dbab95076a1d7ae47bd9d0887da3}} 
+\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Intersection@{Intersection}}
+\index{Intersection@{Intersection}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+\subsubsection{\texorpdfstring{Intersection()}{Intersection()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d3\+::\+Intersection\+::\+Intersection (\begin{DoxyParamCaption}\item[{const Array$<$ Unique$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object}{Object} $>$$>$ \&}]{an\+Object\+Array }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Object\+Array} & An array of objects \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a6eacd360660163afafb78178d25ad714}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a6eacd360660163afafb78178d25ad714}} 
+\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Intersection@{Intersection}}
+\index{Intersection@{Intersection}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+\subsubsection{\texorpdfstring{Intersection()}{Intersection()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d3\+::\+Intersection\+::\+Intersection (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \&}]{an\+Intersection }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Intersection} & An intersection \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_af2c13f6bc69d8271600d0f30848dd64b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_af2c13f6bc69d8271600d0f30848dd64b}} 
+\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!````~Intersection@{$\sim$\+Intersection}}
+\index{````~Intersection@{$\sim$\+Intersection}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+\subsubsection{\texorpdfstring{$\sim$\+Intersection()}{~Intersection()}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d3\+::\+Intersection\+::$\sim$\+Intersection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_af0f1aed5c97a5142a4b20cb8edcb78e0}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_af0f1aed5c97a5142a4b20cb8edcb78e0}} 
+\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Empty@{Empty}}
+\index{Empty@{Empty}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+\subsubsection{\texorpdfstring{Empty()}{Empty()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::\+Intersection\+::\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an empty intersection. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_ab800dbab95076a1d7ae47bd9d0887da3}{Intersection} intersection = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_af0f1aed5c97a5142a4b20cb8edcb78e0}{Intersection::Empty}() ;
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Empty intersection 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_aead6925dc35a2f6aec30373ca1556600}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_aead6925dc35a2f6aec30373ca1556600}} 
+\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05}{Intersection\+::\+Type} library\+::math\+::geom\+::d3\+::\+Intersection\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get intersection type. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a746fc547529ce91a99412597eb5ae559}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a746fc547529ce91a99412597eb5ae559}} 
+\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::\+Intersection\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if intersection is defined. 
+
+\begin{DoxyReturn}{Returns}
+True if intersection is defined 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_aad021013a517375d56e2110792ad7b07}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_aad021013a517375d56e2110792ad7b07}} 
+\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::\+Intersection\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if intersection is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if intersection is empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a8e3e47ed63f5c539cc39625b512c4b9e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a8e3e47ed63f5c539cc39625b512c4b9e}} 
+\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::\+Intersection\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \&}]{an\+Intersection }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Intersection} & An intersection \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if intersections not are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a41ca5e5ac6fe7bc3f26f516acde56be8}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a41ca5e5ac6fe7bc3f26f516acde56be8}} 
+\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!operator=@{operator=}}
+\index{operator=@{operator=}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \& library\+::math\+::geom\+::d3\+::\+Intersection\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \&}]{an\+Intersection }\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Intersection} & An intersection \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to intersection 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a4205e2dcace3faa8abfeb829423d0baf}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a4205e2dcace3faa8abfeb829423d0baf}} 
+\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::\+Intersection\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \&}]{an\+Intersection }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Intersection} & An intersection \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if intersections are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a6ce0af0ff5c24a4b56c264d2d3d6e59b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a6ce0af0ff5c24a4b56c264d2d3d6e59b}} 
+\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+\subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::\+Intersection\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined intersection. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_ab800dbab95076a1d7ae47bd9d0887da3}{Intersection} intersection = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a6ce0af0ff5c24a4b56c264d2d3d6e59b}{Intersection::Undefined}() ; \textcolor{comment}{// Undefined}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined intersection 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Geometry/3\+D/\hyperlink{_intersection_8hpp}{Intersection.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/3\+D/\hyperlink{_intersection_8cpp}{Intersection.\+cpp}\end{DoxyCompactItemize}

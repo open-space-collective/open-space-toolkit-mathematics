@@ -33,6 +33,10 @@ Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_a6
 \begin{DoxyCompactList}\small\item\em Multiplication operator (quaternion) \end{DoxyCompactList}\item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_ac0907a730ef9a96e7c06ce930e86d033}{operator/} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Quaternion) const
 \begin{DoxyCompactList}\small\item\em Division operator (quaternion) \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_a4420c173a2311521b7b6c1556793cf8b}{operator$\ast$=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Quaternion)
+\begin{DoxyCompactList}\small\item\em Multiplication assignment operator (quaternion) \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_aadd92f2fb9ee7628556fc82dba97313e}{operator/=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Quaternion)
+\begin{DoxyCompactList}\small\item\em Division assignment operator (quaternion) \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_a0d74102b65b5fdb0cd92f37455cf8c66}{is\+Defined} () const
 \begin{DoxyCompactList}\small\item\em Check if quaternion is defined. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_aa5e8e0dc04aa0ac976106c823b61d911}{is\+Unitary} () const
@@ -479,6 +483,27 @@ This operator uses transform\+Vector
 \begin{DoxyReturn}{Returns}
 A vector 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_a4420c173a2311521b7b6c1556793cf8b}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_a4420c173a2311521b7b6c1556793cf8b}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Quaternion }\end{DoxyParamCaption})}
+
+
+
+Multiplication assignment operator (quaternion) 
+
+\begin{DoxyNote}{Note}
+This operator uses cross multiplication
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to quaternion 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_ac0907a730ef9a96e7c06ce930e86d033}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_ac0907a730ef9a96e7c06ce930e86d033}} 
 \index{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion}!operator/@{operator/}}
 \index{operator/@{operator/}!library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion}}
@@ -507,6 +532,27 @@ This is equivalent to multiplying with the inverse
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 A quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_aadd92f2fb9ee7628556fc82dba97313e}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_aadd92f2fb9ee7628556fc82dba97313e}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion\+::operator/= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Quaternion }\end{DoxyParamCaption})}
+
+
+
+Division assignment operator (quaternion) 
+
+\begin{DoxyNote}{Note}
+This is equivalent to multiplying with the inverse
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to quaternion 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_aa3ab0b3893007c45e5cc8ed5e1d16ef0}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_aa3ab0b3893007c45e5cc8ed5e1d16ef0}} 
 \index{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion}!operator==@{operator==}}

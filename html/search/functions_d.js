@@ -1,6 +1,7 @@
 var searchData=
 [
   ['s',['s',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a7b5045b46500d4f20e98ff29a9ed4c88',1,'library::math::geom::trf::rot::Quaternion']]],
+  ['segment',['Segment',['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a5562342d1edf2f52e37ce1bc138ee7d7',1,'library::math::geom::d3::objects::Segment']]],
   ['setlowerbound',['setLowerBound',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a5ceb8fb56f920193c8b18346992b5d02',1,'library::math::obj::Interval']]],
   ['settype',['setType',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a4dfb117d5a9c23bd32a3631fcf3686ec',1,'library::math::obj::Interval']]],
   ['setupperbound',['setUpperBound',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a9c6b857d9fad97969635f669428c2b48',1,'library::math::obj::Interval']]],

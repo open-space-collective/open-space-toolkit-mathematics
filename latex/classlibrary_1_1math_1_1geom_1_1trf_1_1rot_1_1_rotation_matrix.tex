@@ -29,11 +29,13 @@ double \& \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_mat
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aa5034776af47fc1eacb77359cef04550}{is\+Defined} () const
 \begin{DoxyCompactList}\small\item\em Check if rotation matrix is defined. \end{DoxyCompactList}\item 
 const Matrix3d \& \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a957387a407da1658fa63dc6692254175}{access\+Matrix} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Access underlying rotation matrix. \end{DoxyCompactList}\item 
 Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a71dca1f50f8073256ff69bb365c3a772}{get\+Row\+At} (const Index \&a\+Row\+Index) const
 \begin{DoxyCompactList}\small\item\em Get row at index. \end{DoxyCompactList}\item 
 Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a637e10366c51b6e2137b1454522c5c07}{get\+Column\+At} (const Index \&a\+Column\+Index) const
 \begin{DoxyCompactList}\small\item\em Get column at index. \end{DoxyCompactList}\item 
+Matrix3d \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a34bb5fed2819a1b6f446ecc7ddf7ffd3}{get\+Matrix} () const
+\begin{DoxyCompactList}\small\item\em Get underlying rotation matrix. \end{DoxyCompactList}\item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_aafb93f71d64ff383a58a9b9c4816a117}{to\+Transposed} () const
 \begin{DoxyCompactList}\small\item\em Get transposed rotation matrix. \end{DoxyCompactList}\item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_ad289d307f62b26ab7e1340698388789a}{transpose} ()
@@ -96,6 +98,13 @@ Constructor.
 \subsubsection{\texorpdfstring{access\+Matrix()}{accessMatrix()}}
 {\footnotesize\ttfamily const Matrix3d \& library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::access\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+
+
+Access underlying rotation matrix. 
+
+\begin{DoxyReturn}{Returns}
+Reference to underlying rotation matrix 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a5f5385bb26c6a64d869030d7f3bf7b4d}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a5f5385bb26c6a64d869030d7f3bf7b4d}} 
 \index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!Columns@{Columns}}
 \index{Columns@{Columns}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
@@ -142,6 +151,19 @@ Get column at index.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Column at index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a34bb5fed2819a1b6f446ecc7ddf7ffd3}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a34bb5fed2819a1b6f446ecc7ddf7ffd3}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!get\+Matrix@{get\+Matrix}}
+\index{get\+Matrix@{get\+Matrix}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}}
+\subsubsection{\texorpdfstring{get\+Matrix()}{getMatrix()}}
+{\footnotesize\ttfamily Matrix3d library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix\+::get\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get underlying rotation matrix. 
+
+\begin{DoxyReturn}{Returns}
+Underlying rotation matrix 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a71dca1f50f8073256ff69bb365c3a772}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix_a71dca1f50f8073256ff69bb365c3a772}} 
 \index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Matrix}!get\+Row\+At@{get\+Row\+At}}

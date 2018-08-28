@@ -8,5 +8,7 @@ var classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere =
     [ "isUnitary", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html#a5ec4120b51da519ec14e8bded930b742", null ],
     [ "operator!=", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html#a127131c48a3bfe342508630cfd399fae", null ],
     [ "operator==", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html#ace12dcb88802f002f5797077130c4b98", null ],
+    [ "rotate", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html#a6eb8a0a7e27bf24d3f1101a6700f5247", null ],
+    [ "translate", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html#af2a22ab0dc9331bddf358a9c24f8e7cf", null ],
     [ "operator<<", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html#abb141c02e081d1acce5f0d840276a5dd", null ]
 ];

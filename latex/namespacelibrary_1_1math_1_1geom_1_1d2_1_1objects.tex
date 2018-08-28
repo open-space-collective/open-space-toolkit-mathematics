@@ -1,0 +1,99 @@
+\hypertarget{namespacelibrary_1_1math_1_1geom_1_1d2_1_1objects}{}\section{library\+:\+:math\+:\+:geom\+:\+:d2\+:\+:objects Namespace Reference}
+\label{namespacelibrary_1_1math_1_1geom_1_1d2_1_1objects}\index{library\+::math\+::geom\+::d2\+::objects@{library\+::math\+::geom\+::d2\+::objects}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point}. \end{DoxyCompactList}\item 
+class \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{namespacelibrary_1_1math_1_1geom_1_1d2_1_1objects_ae30b1eff05d5f215ad21e6849d8a2c69}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&a\+Point)
+\item 
+std\+::ostream \& \hyperlink{namespacelibrary_1_1math_1_1geom_1_1d2_1_1objects_a05ccd19c10d636afb7c5beab29e70e84}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} \&a\+Polygon)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacelibrary_1_1math_1_1geom_1_1d2_1_1objects_ae30b1eff05d5f215ad21e6849d8a2c69}\label{namespacelibrary_1_1math_1_1geom_1_1d2_1_1objects_ae30b1eff05d5f215ad21e6849d8a2c69}} 
+\index{library\+::math\+::geom\+::d2\+::objects@{library\+::math\+::geom\+::d2\+::objects}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!library\+::math\+::geom\+::d2\+::objects@{library\+::math\+::geom\+::d2\+::objects}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::ostream\& library\+::math\+::geom\+::d2\+::objects\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+                        Point(0.0, 0.0) + \hyperlink{namespacelibrary_1_1math_1_1obj_a2fa27512c4f4b07db35d602cfdd2c293}{Vector2d}(0.0, 1.0) ; \textcolor{comment}{// [0.0, 1.0]}
+    @encode
+   
+    @param              [in] aVector A translation vector
+    @\textcolor{keywordflow}{return}             A point
+
+Point                   operator +                                  (   \textcolor{keyword}{const}   
+      \hyperlink{namespacelibrary_1_1math_1_1obj_a2fa27512c4f4b07db35d602cfdd2c293}{Vector2d}&                   aVector                                     ) \textcolor{keyword}{const} ;
+
+    @brief              Subtraction \textcolor{keyword}{operator}: translate point along opposite vector
+   
+    @code
+                        Point(0.0, 1.0) - \hyperlink{namespacelibrary_1_1math_1_1obj_a2fa27512c4f4b07db35d602cfdd2c293}{Vector2d}(0.0, 1.0) ; \textcolor{comment}{// [0.0, 0.0]}
+    @encode
+   
+    @param              [in] aVector A translation vector
+    @\textcolor{keywordflow}{return}             A point
+
+Point                   operator -                                  (   \textcolor{keyword}{const}   
+      \hyperlink{namespacelibrary_1_1math_1_1obj_a2fa27512c4f4b07db35d602cfdd2c293}{Vector2d}&                   aVector                                     ) \textcolor{keyword}{const} ;
+
+    @brief              Subtraction \textcolor{keyword}{operator}: \textcolor{keyword}{get} translation vector between two points
+   
+    @code
+                        Point(0.0, 1.0) - Point(0.0, 0.0)  ; \textcolor{comment}{// [0.0, 1.0]}
+    @encode
+   
+    @param              [in] aPoint A point
+    @\textcolor{keywordflow}{return}             A translation vector
+
+\hyperlink{namespacelibrary_1_1math_1_1obj_a2fa27512c4f4b07db35d602cfdd2c293}{Vector2d}                operator -                                  (   \textcolor{keyword}{const}   Point&             
+               aPoint                                      ) \textcolor{keyword}{const} ;
+
+    @brief              Output stream \textcolor{keyword}{operator}
+   
+    @code
+                        std::cout << Point(0.0, 0.0) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An output stream 
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacelibrary_1_1math_1_1geom_1_1d2_1_1objects_a05ccd19c10d636afb7c5beab29e70e84}\label{namespacelibrary_1_1math_1_1geom_1_1d2_1_1objects_a05ccd19c10d636afb7c5beab29e70e84}} 
+\index{library\+::math\+::geom\+::d2\+::objects@{library\+::math\+::geom\+::d2\+::objects}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!library\+::math\+::geom\+::d2\+::objects@{library\+::math\+::geom\+::d2\+::objects}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::ostream\& library\+::math\+::geom\+::d2\+::objects\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} \&}]{a\+Polygon }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}
+std::cout << Polygon(...) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em a\+Polygon} & A polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An output stream 
+\end{DoxyReturn}

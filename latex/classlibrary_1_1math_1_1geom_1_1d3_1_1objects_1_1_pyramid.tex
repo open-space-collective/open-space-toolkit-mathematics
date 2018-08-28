@@ -1,0 +1,295 @@
+\hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{}\section{library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Pyramid Class Reference}
+\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}\index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid}.  
+
+
+
+
+{\ttfamily \#include $<$Pyramid.\+hpp$>$}
+
+Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Pyramid\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_aafaaeed187584040b306b7de7ee57fd4}{Pyramid} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon} \&a\+Base, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&an\+Apex)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} $\ast$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a7d58c19912afc64421c74d8272cf2271}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Clone pyramid. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_adfb99bef5bd74a3b0fe75dcf0c61bd61}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&a\+Pyramid) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a2067ce77436b89472125b37446bb6e3d}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&a\+Pyramid) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a349eca33d7ce6a379bc7f0c9367e459f}{is\+Defined} () const override
+\begin{DoxyCompactList}\small\item\em Check if pyramid is defined. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a247e3c188d7919b2043e59d46b67c2ef}{get\+Base} () const
+\begin{DoxyCompactList}\small\item\em Get pyramid base. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_af24d52592c3154d633f694411d11396c}{get\+Apex} () const
+\begin{DoxyCompactList}\small\item\em Get pyramid apex. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a8a8514a9db12bea021014ce38a6db3b5}{translate} (const Vector3d \&a\+Translation) override
+\begin{DoxyCompactList}\small\item\em Translate pyramid. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a06b022532e8477f4c4197e497113af99}{rotate} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Rotation) override
+\begin{DoxyCompactList}\small\item\em Rotate pyramid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a254e7635e0c9f75da8502f98207e6dfe}{Undefined} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined pyramid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_aca232624b87596ca043f7507c27f4358}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&a\+Pyramid)
+\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid}. 
+
+A pyramid is a polyhedron formed by connecting a polygonal base and a point, called the apex. Each base edge and apex form a triangle, called a lateral face.
+
+https\+://en.wikipedia.\+org/wiki/\+Pyramid\+\_\+(geometry) 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_aafaaeed187584040b306b7de7ee57fd4}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_aafaaeed187584040b306b7de7ee57fd4}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!Pyramid@{Pyramid}}
+\index{Pyramid@{Pyramid}!library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+\subsubsection{\texorpdfstring{Pyramid()}{Pyramid()}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::\+Pyramid (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon} \&}]{a\+Base,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{an\+Apex }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Base} & A pyramid base \\
+\hline
+\mbox{\tt in}  & {\em an\+Apex} & A pyramid apex \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a7d58c19912afc64421c74d8272cf2271}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a7d58c19912afc64421c74d8272cf2271}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!clone@{clone}}
+\index{clone@{clone}!library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid}$\ast$ library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone pyramid. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned pyramid 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a1a784c6b359e0eb97cd34fabc42f2f3f}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_af24d52592c3154d633f694411d11396c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_af24d52592c3154d633f694411d11396c}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!get\+Apex@{get\+Apex}}
+\index{get\+Apex@{get\+Apex}!library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+\subsubsection{\texorpdfstring{get\+Apex()}{getApex()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::get\+Apex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get pyramid apex. 
+
+
+\begin{DoxyCode}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} apex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a247e3c188d7919b2043e59d46b67c2ef}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a247e3c188d7919b2043e59d46b67c2ef}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!get\+Base@{get\+Base}}
+\index{get\+Base@{get\+Base}!library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+\subsubsection{\texorpdfstring{get\+Base()}{getBase()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon} library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::get\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get pyramid base. 
+
+
+\begin{DoxyCode}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} base 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a349eca33d7ce6a379bc7f0c9367e459f}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a349eca33d7ce6a379bc7f0c9367e459f}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily virtual bool library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if pyramid is defined. 
+
+
+\begin{DoxyCode}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if pyramid is defined 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a2216442e322f0c3ca5f01a4efa22baf7}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a2067ce77436b89472125b37446bb6e3d}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a2067ce77436b89472125b37446bb6e3d}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&}]{a\+Pyramid }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Pyramid} & A pyramid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if pyramids not are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_adfb99bef5bd74a3b0fe75dcf0c61bd61}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_adfb99bef5bd74a3b0fe75dcf0c61bd61}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&}]{a\+Pyramid }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Pyramid} & A pyramid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if pyramids are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a06b022532e8477f4c4197e497113af99}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a06b022532e8477f4c4197e497113af99}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!rotate@{rotate}}
+\index{rotate@{rotate}!library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily virtual void library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Rotate pyramid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Rotation} & A rotation quaternion \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aabefebc4960530ce6356c4445c5d490e}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a8a8514a9db12bea021014ce38a6db3b5}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a8a8514a9db12bea021014ce38a6db3b5}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!translate@{translate}}
+\index{translate@{translate}!library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+\subsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily virtual void library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::translate (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Translation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Translate pyramid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Translation} & A translation vector \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a989723a27a7d5f6739e45ea695a6c7ed}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a254e7635e0c9f75da8502f98207e6dfe}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a254e7635e0c9f75da8502f98207e6dfe}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+\subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined pyramid. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_aafaaeed187584040b306b7de7ee57fd4}{Pyramid} pyramid = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a254e7635e0c9f75da8502f98207e6dfe}{Pyramid::Undefined}() ; \textcolor{comment}{// Undefined}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined pyramid 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_aca232624b87596ca043f7507c27f4358}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_aca232624b87596ca043f7507c27f4358}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&}]{a\+Pyramid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator. 
+
+
+\begin{DoxyCode}
+std::cout << \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_aafaaeed187584040b306b7de7ee57fd4}{Pyramid}(...) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em a\+Pyramid} & A pyramid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An output stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_pyramid_8hpp}{Pyramid.\+hpp}\end{DoxyCompactItemize}

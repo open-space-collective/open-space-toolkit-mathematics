@@ -1,0 +1,240 @@
+\hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{}\section{library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Polygon Class Reference}
+\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}\index{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}}
+
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon}.  
+
+
+
+
+{\ttfamily \#include $<$Polygon.\+hpp$>$}
+
+Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Polygon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon} $\ast$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_a2dad7a1309d367e388fdf6a8141557da}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_ac8aa92cf9ed3cbcd063df07ce3a89f60}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon} \&a\+Polygon) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_adaa065fdf80585b0d929151efe07212e}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon} \&a\+Polygon) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_a9fc4d76853843f90e2574cc1b25d6a7a}{is\+Defined} () const override
+\begin{DoxyCompactList}\small\item\em Check if polygon is defined. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_aa0c2e161c936e39addcd783237d68090}{translate} (const Vector3d \&a\+Translation) override
+\begin{DoxyCompactList}\small\item\em Translate polygon. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_a9c0c40a85f57ad69a59adc354181eec0}{rotate} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Rotation) override
+\begin{DoxyCompactList}\small\item\em Rotate polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_aba08898d8cb7ac1623bb56a2eee8962d}{Undefined} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_ae57177a1fae265be31aca4cdcd6add82}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon} \&a\+Polygon)
+\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon}. 
+
+A polygon is a plane figure that is bounded by a finite chain of straight line segments closing in a loop to form a closed polygonal chain or circuit. These segments are called its edges, and the points where two edges meet are the polygon\textquotesingle{}s vertices.
+
+https\+://en.wikipedia.\+org/wiki/\+Polygon 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_a2dad7a1309d367e388fdf6a8141557da}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_a2dad7a1309d367e388fdf6a8141557da}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}!clone@{clone}}
+\index{clone@{clone}!library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon}$\ast$ library\+::math\+::geom\+::d3\+::objects\+::\+Polygon\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Base} & A polygon base \\
+\hline
+\mbox{\tt in}  & {\em an\+Apex} & A polygon apex Clone polygon\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to cloned polygon 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a1a784c6b359e0eb97cd34fabc42f2f3f}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_a9fc4d76853843f90e2574cc1b25d6a7a}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_a9fc4d76853843f90e2574cc1b25d6a7a}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily virtual bool library\+::math\+::geom\+::d3\+::objects\+::\+Polygon\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if polygon is defined. 
+
+
+\begin{DoxyCode}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if polygon is defined 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a2216442e322f0c3ca5f01a4efa22baf7}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_adaa065fdf80585b0d929151efe07212e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_adaa065fdf80585b0d929151efe07212e}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Polygon\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon} \&}]{a\+Polygon }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Polygon} & A polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if polygons not are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_ac8aa92cf9ed3cbcd063df07ce3a89f60}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_ac8aa92cf9ed3cbcd063df07ce3a89f60}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Polygon\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon} \&}]{a\+Polygon }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Polygon} & A polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if polygons are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_a9c0c40a85f57ad69a59adc354181eec0}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_a9c0c40a85f57ad69a59adc354181eec0}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}!rotate@{rotate}}
+\index{rotate@{rotate}!library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily virtual void library\+::math\+::geom\+::d3\+::objects\+::\+Polygon\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Rotate polygon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Rotation} & A rotation quaternion \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aabefebc4960530ce6356c4445c5d490e}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_aa0c2e161c936e39addcd783237d68090}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_aa0c2e161c936e39addcd783237d68090}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}!translate@{translate}}
+\index{translate@{translate}!library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{translate()}{translate()}}
+{\footnotesize\ttfamily virtual void library\+::math\+::geom\+::d3\+::objects\+::\+Polygon\+::translate (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Translation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Translate polygon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Translation} & A translation vector \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a989723a27a7d5f6739e45ea695a6c7ed}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_aba08898d8cb7ac1623bb56a2eee8962d}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_aba08898d8cb7ac1623bb56a2eee8962d}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon} library\+::math\+::geom\+::d3\+::objects\+::\+Polygon\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined polygon. 
+
+
+\begin{DoxyCode}
+Polygon polygon = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_aba08898d8cb7ac1623bb56a2eee8962d}{Polygon::Undefined}() ; \textcolor{comment}{// Undefined}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined polygon 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_ae57177a1fae265be31aca4cdcd6add82}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_ae57177a1fae265be31aca4cdcd6add82}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!library\+::math\+::geom\+::d3\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d3\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon} \&}]{a\+Polygon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator. 
+
+
+\begin{DoxyCode}
+std::cout << Polygon(...) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em a\+Polygon} & A polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+An output stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{3_d_2_objects_2_polygon_8hpp}{Polygon.\+hpp}\end{DoxyCompactItemize}

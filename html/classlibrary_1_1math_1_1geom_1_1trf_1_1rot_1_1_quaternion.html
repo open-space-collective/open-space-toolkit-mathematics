@@ -124,6 +124,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac0907a730ef9a96e7c06ce930e86d033"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html">Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#ac0907a730ef9a96e7c06ce930e86d033">operator/</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html">Quaternion</a> &amp;aQuaternion) const</td></tr>
 <tr class="memdesc:ac0907a730ef9a96e7c06ce930e86d033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Division operator (quaternion)  <a href="#ac0907a730ef9a96e7c06ce930e86d033">More...</a><br /></td></tr>
 <tr class="separator:ac0907a730ef9a96e7c06ce930e86d033"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4420c173a2311521b7b6c1556793cf8b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html">Quaternion</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a4420c173a2311521b7b6c1556793cf8b">operator*=</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html">Quaternion</a> &amp;aQuaternion)</td></tr>
+<tr class="memdesc:a4420c173a2311521b7b6c1556793cf8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplication assignment operator (quaternion)  <a href="#a4420c173a2311521b7b6c1556793cf8b">More...</a><br /></td></tr>
+<tr class="separator:a4420c173a2311521b7b6c1556793cf8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadd92f2fb9ee7628556fc82dba97313e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html">Quaternion</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#aadd92f2fb9ee7628556fc82dba97313e">operator/=</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html">Quaternion</a> &amp;aQuaternion)</td></tr>
+<tr class="memdesc:aadd92f2fb9ee7628556fc82dba97313e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Division assignment operator (quaternion)  <a href="#aadd92f2fb9ee7628556fc82dba97313e">More...</a><br /></td></tr>
+<tr class="separator:aadd92f2fb9ee7628556fc82dba97313e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d74102b65b5fdb0cd92f37455cf8c66"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a0d74102b65b5fdb0cd92f37455cf8c66">isDefined</a> () const</td></tr>
 <tr class="memdesc:a0d74102b65b5fdb0cd92f37455cf8c66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if quaternion is defined.  <a href="#a0d74102b65b5fdb0cd92f37455cf8c66">More...</a><br /></td></tr>
 <tr class="separator:a0d74102b65b5fdb0cd92f37455cf8c66"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -649,6 +655,34 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a4420c173a2311521b7b6c1556793cf8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4420c173a2311521b7b6c1556793cf8b">&#9670;&nbsp;</a></span>operator*=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html">Quaternion</a> &amp; library::math::geom::trf::rot::Quaternion::operator*= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html">Quaternion</a> &amp;&#160;</td>
+          <td class="paramname"><em>aQuaternion</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Multiplication assignment operator (quaternion) </p>
+<dl class="section note"><dt>Note</dt><dd>This operator uses cross multiplication</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aQuaternion</td><td>A quaternion </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to quaternion </dd></dl>
+
+</div>
+</div>
 <a id="ac0907a730ef9a96e7c06ce930e86d033"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac0907a730ef9a96e7c06ce930e86d033">&#9670;&nbsp;</a></span>operator/()</h2>
 
@@ -674,6 +708,34 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A quaternion </dd></dl>
+
+</div>
+</div>
+<a id="aadd92f2fb9ee7628556fc82dba97313e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadd92f2fb9ee7628556fc82dba97313e">&#9670;&nbsp;</a></span>operator/=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html">Quaternion</a> &amp; library::math::geom::trf::rot::Quaternion::operator/= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html">Quaternion</a> &amp;&#160;</td>
+          <td class="paramname"><em>aQuaternion</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Division assignment operator (quaternion) </p>
+<dl class="section note"><dt>Note</dt><dd>This is equivalent to multiplying with the inverse</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aQuaternion</td><td>A quaternion </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to quaternion </dd></dl>
 
 </div>
 </div>

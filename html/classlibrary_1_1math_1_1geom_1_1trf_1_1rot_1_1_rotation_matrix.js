@@ -3,6 +3,7 @@ var classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix =
     [ "RotationMatrix", "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix.html#a667d2c05aa5b0cc88775938d11164cdc", null ],
     [ "accessMatrix", "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix.html#a957387a407da1658fa63dc6692254175", null ],
     [ "getColumnAt", "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix.html#a637e10366c51b6e2137b1454522c5c07", null ],
+    [ "getMatrix", "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix.html#a34bb5fed2819a1b6f446ecc7ddf7ffd3", null ],
     [ "getRowAt", "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix.html#a71dca1f50f8073256ff69bb365c3a772", null ],
     [ "isDefined", "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix.html#aa5034776af47fc1eacb77359cef04550", null ],
     [ "operator!=", "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix.html#a28996f6b0def32867b58931e1c804b4f", null ],
