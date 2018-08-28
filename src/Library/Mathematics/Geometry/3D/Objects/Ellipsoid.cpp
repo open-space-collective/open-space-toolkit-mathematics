@@ -10,14 +10,18 @@
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
 #include <Library/Mathematics/Objects/Interval.hpp>
 
 #include <Library/Core/Error.hpp>
 #include <Library/Core/Utilities.hpp>
 
+// #include <Gte/Mathematics/GteIntrEllipsoid3Ellipsoid3.h>
+// #include <Gte/Mathematics/GteIntrHalfspace3Ellipsoid3.h>
 #include <Gte/Mathematics/GteIntrPlane3Ellipsoid3.h>
 #include <Gte/Mathematics/GteIntrSegment3Ellipsoid3.h>
+#include <Gte/Mathematics/GteIntrRay3Ellipsoid3.h>
 #include <Gte/Mathematics/GteIntrLine3Ellipsoid3.h>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -159,6 +163,41 @@ bool                            Ellipsoid::intersects                       (   
     // Intersection
 
     gte::TIQuery<double, gte::Line3<double>, gte::Ellipsoid3<double>> intersectionQuery ;
+
+    auto intersectionResult = intersectionQuery(segment, ellipsoid) ;
+
+    return intersectionResult.intersect ;
+
+}
+
+bool                            Ellipsoid::intersects                       (   const   Ray&                        aRay                                        ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+    }
+
+    if (!aRay.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ray") ;
+    }
+
+    // Ray
+
+    const gte::Ray3<double> segment = { GteVectorFromVector3d(aRay.getOrigin()), GteVectorFromVector3d(aRay.getDirection()) } ;
+
+    // Ellipsoid
+
+    const gte::Vector3<double> center = GteVectorFromVector3d(this->getCenter()) ;
+    const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+    const gte::Vector3<double> extent = { a_, b_, c_ } ;
+
+    const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
+
+    // Intersection
+
+    gte::TIQuery<double, gte::Ray3<double>, gte::Ellipsoid3<double>> intersectionQuery ;
 
     auto intersectionResult = intersectionQuery(segment, ellipsoid) ;
 

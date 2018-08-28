@@ -41,7 +41,11 @@ using library::math::geom::trf::rot::Quaternion ;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class Line ;
+class Ray ;
 class Segment ;
+class Plane ;
+class Polygon ;
+class Sphere ;
 class Plane ;
 class Pyramid ;
 
@@ -137,6 +141,19 @@ class Ellipsoid : public Object
         /// @return             True if ellipsoid intersects line
         
         bool                    intersects                                  (   const   Line&                       aLine                                       ) const ;
+
+        /// @brief              Check if ellipsoid intersects ray
+        ///
+        /// @code
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     Ray ray = ... ;
+        ///                     ellipsoid.intersects(ray) ;
+        /// @endcode
+        ///
+        /// @param              [in] aRay A ray
+        /// @return             True if ellipsoid intersects ray
+        
+        bool                    intersects                                  (   const   Ray&                        aRay                                        ) const ;
 
         /// @brief              Check if ellipsoid intersects segment
         ///
