@@ -89,7 +89,7 @@ class RotationVector
         ///
         /// @param              [in] anOutputStream An output stream
         /// @param              [in] aRotationVector A rotation vector
-        /// @return             An output stream
+        /// @return             A reference to output stream
 
         friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   RotationVector&             aRotationVector                             ) ;

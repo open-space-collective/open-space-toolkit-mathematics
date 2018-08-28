@@ -107,7 +107,7 @@ class Ellipsoid : public Object
         ///
         /// @param              [in] anOutputStream An output stream
         /// @param              [in] anEllipsoid An ellipsoid
-        /// @return             An output stream
+        /// @return             A reference to output stream
 
         friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Ellipsoid&                  anEllipsoid                                 ) ;

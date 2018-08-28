@@ -143,7 +143,7 @@ class RotationMatrix
         ///
         /// @param              [in] anOutputStream An output stream
         /// @param              [in] aRotationMatrix A rotation matrix
-        /// @return             An output stream
+        /// @return             A reference to output stream
 
         friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   RotationMatrix&             aRotationMatrix                             ) ;

@@ -205,7 +205,7 @@ class Quaternion
         ///
         /// @param              [in] anOutputStream An output stream
         /// @param              [in] aQuaternion A quaternion
-        /// @return             An output stream
+        /// @return             A reference to output stream
 
         friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Quaternion&                 aQuaternion                                 ) ;

@@ -129,7 +129,7 @@ class Point : public Object, public Vector2d
         ///
         /// @param              [in] anOutputStream An output stream
         /// @param              [in] aPoint A point
-        /// @return             An output stream
+        /// @return             A reference to output stream
 
         friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Point&                      aPoint                                      ) ;

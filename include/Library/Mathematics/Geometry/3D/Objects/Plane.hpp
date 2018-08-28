@@ -94,7 +94,7 @@ class Plane : public Object
         ///
         /// @param              [in] anOutputStream An output stream
         /// @param              [in] aPlane A plane
-        /// @return             An output stream
+        /// @return             A reference to output stream
 
         friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Plane&                      aPlane                                      ) ;

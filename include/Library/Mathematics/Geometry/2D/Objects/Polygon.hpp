@@ -117,7 +117,7 @@ class Polygon : public Object
         ///
         /// @param              [in] anOutputStream An output stream
         /// @param              [in] aPolygon A polygon
-        /// @return             An output stream
+        /// @return             A reference to output stream
 
         friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Polygon&                    aPolygon                                    ) ;

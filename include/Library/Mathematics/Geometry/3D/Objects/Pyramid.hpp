@@ -95,7 +95,7 @@ class Pyramid : public Object
         ///
         /// @param              [in] anOutputStream An output stream
         /// @param              [in] aPyramid A pyramid
-        /// @return             An output stream
+        /// @return             A reference to output stream
 
         friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Pyramid&                    aPyramid                                    ) ;

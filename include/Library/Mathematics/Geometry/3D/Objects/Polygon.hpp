@@ -54,14 +54,22 @@ class Polygon : public Object
         /// @brief              Constructor
         ///
         /// @code
-        ///                     
+        ///                     Polygon2d polygon2d = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        ///                     Point origin = { 1.0, 2.0, 3.0 } ;
+        ///                     Vector3d xAxis = { 1.0, 0.0, 0.0 } ;
+        ///                     Vector3d yAxis = { 0.0, 1.0, 0.0 } ;
+        ///                     Polygon polygon = { polygon2d, origin, xAxis, yAxis } ;
         /// @endcode
         ///
-        /// @param              [in] aBase A polygon base
-        /// @param              [in] anApex A polygon apex
+        /// @param              [in] aPolygon A 2D polygon
+        /// @param              [in] anOrigin An origin
+        /// @param              [in] aXAxis A X axis
+        /// @param              [in] aYAxis A Y axis
 
-                                // Polygon                                     (   const   Polygon2d&                  aPolygon,
-                                //                                                 const   Point&                      anApex                                      ) ;
+                                Polygon                                     (   const   Polygon2d&                  aPolygon,
+                                                                                const   Point&                      anOrigin,
+                                                                                const   Vector3d&                   aXAxis,
+                                                                                const   Vector3d&                   aYAxis                                      ) ;
 
         /// @brief              Clone polygon
         ///
@@ -71,20 +79,12 @@ class Polygon : public Object
 
         /// @brief              Equal to operator
         ///
-        /// @code
-        ///                     
-        /// @endcode
-        ///
         /// @param              [in] aPolygon A polygon
         /// @return             True if polygons are equal
 
         bool                    operator ==                                 (   const   Polygon&                    aPolygon                                    ) const ;
 
         /// @brief              Not equal to operator
-        ///
-        /// @code
-        ///                     
-        /// @endcode
         ///
         /// @param              [in] aPolygon A polygon
         /// @return             True if polygons not are equal
@@ -93,26 +93,48 @@ class Polygon : public Object
 
         /// @brief              Output stream operator
         ///
-        /// @code
-        ///                     std::cout << Polygon(...) ;
-        /// @endcode
-        ///
         /// @param              [in] anOutputStream An output stream
         /// @param              [in] aPolygon A polygon
-        /// @return             An output stream
+        /// @return             A reference to output stream
 
         friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Polygon&                    aPolygon                                    ) ;
 
         /// @brief              Check if polygon is defined
         ///
-        /// @code
-        ///                     
-        /// @endcode
-        ///
         /// @return             True if polygon is defined
 
         virtual bool            isDefined                                   ( ) const override ;
+
+        /// @brief              Get polygon 2D polygon
+        ///
+        /// @return             Polygon 2D polygon
+
+        Polygon2d               getPolygon2d                                ( ) const ;
+
+        /// @brief              Get polygon origin
+        ///
+        /// @return             Polygon origin
+
+        Point                   getOrigin                                   ( ) const ;
+
+        /// @brief              Get polygon X axis
+        ///
+        /// @return             Polygon X axis
+
+        Vector3d                getXAxis                                    ( ) const ;
+
+        /// @brief              Get polygon Y axis
+        ///
+        /// @return             Polygon Y axis
+
+        Vector3d                getYAxis                                    ( ) const ;
+
+        /// @brief              Get polygon normal vector
+        ///
+        /// @return             Polygon normal vector
+
+        Vector3d                getNormalVector                             ( ) const ;
 
         /// @brief              Translate polygon
         ///
@@ -128,10 +150,6 @@ class Polygon : public Object
 
         /// @brief              Constructs an undefined polygon
         ///
-        /// @code
-        ///                     Polygon polygon = Polygon::Undefined() ; // Undefined
-        /// @endcode
-        ///
         /// @return             Undefined polygon
 
         static Polygon          Undefined                                   ( ) ;
@@ -139,7 +157,11 @@ class Polygon : public Object
     private:
 
         Polygon2d               polygon_ ;
-        // Transformation          transformation_ ;
+
+        Point                   origin_ ;
+
+        Vector3d                xAxis_ ;
+        Vector3d                yAxis_ ;
 
 } ;
 

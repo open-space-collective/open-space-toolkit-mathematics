@@ -98,7 +98,7 @@ class Segment : public Object
         ///
         /// @param              [in] anOutputStream An output stream
         /// @param              [in] aSegment A segment
-        /// @return             An output stream
+        /// @return             A reference to output stream
 
         friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Segment&                    aSegment                                    ) ;

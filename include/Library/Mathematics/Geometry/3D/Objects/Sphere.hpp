@@ -96,7 +96,7 @@ class Sphere : public Object
         ///
         /// @param              [in] anOutputStream An output stream
         /// @param              [in] aSphere A sphere
-        /// @return             An output stream
+        /// @return             A reference to output stream
 
         friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Sphere&                     aSphere                                     ) ;
