@@ -129,6 +129,19 @@ class Ellipsoid : public Object
         
         bool                    intersects                                  (   const   Point&                      aPoint                                      ) const ;
 
+        /// @brief              Check if ellipsoid intersects point set
+        ///
+        /// @code
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     PointSet pointSet = ... ;
+        ///                     ellipsoid.intersects(pointSet) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             True if ellipsoid intersects point set
+        
+        bool                    intersects                                  (   const   PointSet&                   aPointSet                                   ) const ;
+
         /// @brief              Check if ellipsoid intersects line
         ///
         /// @code
@@ -233,6 +246,19 @@ class Ellipsoid : public Object
 
         bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
 
+        /// @brief              Check if ellipsoid contains point set
+        ///
+        /// @code
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     PointSet pointSet = ... ;
+        ///                     ellipsoid.contains(pointSet) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             True if ellipsoid contains point set
+
+        bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
+
         /// @brief              Check if ellipsoid contains segment
         ///
         /// @code
@@ -259,7 +285,7 @@ class Ellipsoid : public Object
         /// @brief              Get ellipsoid first principal semi-axis
         ///
         /// @code
-        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).getRadius() ; // 1.0
+        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).getFirstPrincipalSemiAxis() ; // 1.0
         /// @endcode
         ///
         /// @return             Ellipsoid first principal semi-axis
@@ -269,7 +295,7 @@ class Ellipsoid : public Object
         /// @brief              Get ellipsoid second principal semi-axis
         ///
         /// @code
-        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).getRadius() ; // 2.0
+        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).getSecondPrincipalSemiAxis() ; // 2.0
         /// @endcode
         ///
         /// @return             Ellipsoid second principal semi-axis
@@ -279,7 +305,7 @@ class Ellipsoid : public Object
         /// @brief              Get ellipsoid third principal semi-axis
         ///
         /// @code
-        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).getRadius() ; // 3.0
+        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).getThirdPrincipalSemiAxis() ; // 3.0
         /// @endcode
         ///
         /// @return             Ellipsoid third principal semi-axis
@@ -307,7 +333,7 @@ class Ellipsoid : public Object
         /// @brief              Get ellipsoid orientation
         ///
         /// @code
-        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0, Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)).getRadius() ; // Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)
+        ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0, Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)).getOrientation() ; // Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)
         /// @endcode
         ///
         /// @return             Ellipsoid orientation

@@ -15,6 +15,7 @@
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/PointSet.hpp>
 
 #include <Global.test.hpp>
 
@@ -196,6 +197,34 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Point)
         EXPECT_ANY_THROW(Ellipsoid::Undefined().intersects(Point::Undefined())) ;
         EXPECT_ANY_THROW(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).intersects(Point::Undefined())) ;
         EXPECT_ANY_THROW(Ellipsoid::Undefined().intersects(Point(0.0, 0.0, 0.0))) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_PointSet)
+{
+
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::PointSet ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    {
+
+        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).intersects(PointSet({ { +5.0, +2.0, +3.0 }, { -3.0, +2.0, +3.0 }, { +1.0, +7.0, +3.0 }, { +1.0, -3.0, +3.0 }, { +1.0, +2.0, +9.0 }, { +1.0, +2.0, -3.0 } }))) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Ellipsoid(Point::Origin(), 4.0, 5.0, 6.0).intersects(PointSet::Empty())) ;
+        
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Ellipsoid::Undefined().intersects(PointSet::Empty())) ;
+        EXPECT_ANY_THROW(Ellipsoid::Undefined().intersects(PointSet({ { +5.0, +2.0, +3.0 }, { +5.0, +2.0, +3.0 } }))) ;
 
     }
 
@@ -705,6 +734,34 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Contains_Point)
         EXPECT_ANY_THROW(Ellipsoid::Undefined().contains(Point::Undefined())) ;
         EXPECT_ANY_THROW(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).contains(Point::Undefined())) ;
         EXPECT_ANY_THROW(Ellipsoid::Undefined().contains(Point(0.0, 0.0, 0.0))) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Contains_PointSet)
+{
+
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::PointSet ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    {
+
+        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).contains(PointSet({ { +5.0, +2.0, +3.0 }, { -3.0, +2.0, +3.0 }, { +1.0, +7.0, +3.0 }, { +1.0, -3.0, +3.0 }, { +1.0, +2.0, +9.0 }, { +1.0, +2.0, -3.0 } }))) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Ellipsoid(Point::Origin(), 4.0, 5.0, 6.0).contains(PointSet::Empty())) ;
+        
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Ellipsoid::Undefined().contains(PointSet::Empty())) ;
+        EXPECT_ANY_THROW(Ellipsoid::Undefined().contains(PointSet({ { +5.0, +2.0, +3.0 }, { +5.0, +2.0, +3.0 } }))) ;
 
     }
 

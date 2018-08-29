@@ -128,6 +128,11 @@ bool                            Ellipsoid::intersects                       (   
     return this->contains(aPoint) ;
 }
 
+bool                            Ellipsoid::intersects                       (   const   PointSet&                   aPointSet                                   ) const
+{
+    return this->contains(aPointSet) ;
+}
+
 bool                            Ellipsoid::intersects                       (   const   Line&                       aLine                                       ) const
 {
 
@@ -448,10 +453,17 @@ bool                            Ellipsoid::contains                         (   
 
 }
 
-// bool                            Ellipsoid::contains                         (   const   PointSet&                   aPointSet                                   ) const
-// {
+bool                            Ellipsoid::contains                         (   const   PointSet&                   aPointSet                                   ) const
+{
 
-// }
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+    }
+    
+    return (!aPointSet.isEmpty()) && std::all_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
+
+}
 
 bool                            Ellipsoid::contains                         (   const   Segment&                    aSegment                                    ) const
 {
