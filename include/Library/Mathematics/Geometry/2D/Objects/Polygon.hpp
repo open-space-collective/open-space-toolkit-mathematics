@@ -129,6 +129,14 @@ class Polygon : public Object
 
         Array<Point>            getVertices                                 ( ) const ;
 
+        /// @brief              Get string representation
+        ///
+        /// @param              [in] aFormat A format
+        /// @return             String representation
+
+        virtual String          toString                                    (   const   Object::Format&             aFormat                                     =   Object::Format::Standard,
+                                                                                const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const override ;
+
         /// @brief              Print polygon
         ///
         /// @param              [in] anOutputStream An output stream

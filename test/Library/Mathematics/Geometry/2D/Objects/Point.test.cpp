@@ -222,6 +222,84 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, IsNear)
 
 }
 
+TEST (Library_Mathematics_Geometry_2D_Objects_Point, DistanceTo)
+{
+    
+    using library::core::types::Real ;
+    
+    using library::math::geom::d2::objects::Point ;
+    
+    {
+
+        EXPECT_EQ(0.0, Point(0.0, 0.0).distanceTo(Point(0.0, 0.0))) ;
+        
+        EXPECT_EQ(0.0, Point(+1.0, +1.0).distanceTo(Point(+1.0, +1.0))) ;
+        EXPECT_EQ(0.0, Point(-1.0, -1.0).distanceTo(Point(-1.0, -1.0))) ;
+        
+        EXPECT_EQ(1.0, Point(0.0, 0.0).distanceTo(Point(+1.0, 0.0))) ;
+        EXPECT_EQ(1.0, Point(0.0, 0.0).distanceTo(Point(0.0, +1.0))) ;
+
+        EXPECT_EQ(1.0, Point(0.0, 0.0).distanceTo(Point(-1.0, 0.0))) ;
+        EXPECT_EQ(1.0, Point(0.0, 0.0).distanceTo(Point(0.0, -1.0))) ;
+
+        EXPECT_EQ(1.0, Point(+1.0, 0.0).distanceTo(Point(0.0, 0.0))) ;
+        EXPECT_EQ(1.0, Point(0.0, +1.0).distanceTo(Point(0.0, 0.0))) ;
+
+        EXPECT_EQ(1.0, Point(-1.0, 0.0).distanceTo(Point(0.0, 0.0))) ;
+        EXPECT_EQ(1.0, Point(0.0, -1.0).distanceTo(Point(0.0, 0.0))) ;
+
+        EXPECT_EQ(2.0, Point(0.0, 0.0).distanceTo(Point(+2.0, 0.0))) ;
+        EXPECT_EQ(2.0, Point(0.0, 0.0).distanceTo(Point(0.0, +2.0))) ;
+
+        EXPECT_EQ(2.0, Point(0.0, 0.0).distanceTo(Point(-2.0, 0.0))) ;
+        EXPECT_EQ(2.0, Point(0.0, 0.0).distanceTo(Point(0.0, -2.0))) ;
+
+        EXPECT_EQ(2.0, Point(+2.0, 0.0).distanceTo(Point(0.0, 0.0))) ;
+        EXPECT_EQ(2.0, Point(0.0, +2.0).distanceTo(Point(0.0, 0.0))) ;
+
+        EXPECT_EQ(2.0, Point(-2.0, 0.0).distanceTo(Point(0.0, 0.0))) ;
+        EXPECT_EQ(2.0, Point(0.0, -2.0).distanceTo(Point(0.0, 0.0))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Point::Undefined().distanceTo(Point::Undefined())) ;
+        EXPECT_ANY_THROW(Point(0.0, 0.0).distanceTo(Point::Undefined())) ;
+        EXPECT_ANY_THROW(Point::Undefined().distanceTo(Point(0.0, 0.0))) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_2D_Objects_Point, ToString)
+{
+
+    using library::math::geom::d2::objects::Point ;
+
+    {
+
+        EXPECT_EQ("[1.0, 2.0]", Point(1.0, 2.0).toString()) ;
+        EXPECT_EQ("[1.0, 2.0]", Point(1.0, 2.0).toString(Point::Format::Standard)) ;
+        EXPECT_EQ("POINT(1.0 2.0)", Point(1.0, 2.0).toString(Point::Format::WKT)) ;
+
+    }
+
+    {
+
+        EXPECT_EQ("[1.0000000000, 2.0000000000]", Point(1.0, 2.0).toString(Point::Format::Standard, 10)) ;
+        EXPECT_EQ("POINT(1.0000000000 2.0000000000)", Point(1.0, 2.0).toString(Point::Format::WKT, 10)) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Point::Undefined().toString()) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, Translate)
 {
 

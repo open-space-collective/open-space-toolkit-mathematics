@@ -144,6 +144,21 @@ class Point : public Object, public Vector2d
         bool                    isNear                                      (   const   Point&                      aPoint,
                                                                                 const   Real&                       aTolerance                                  ) const ;
 
+        /// @brief              Get distance to another point
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             Distance to point
+
+        Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;    
+
+        /// @brief              Get string representation
+        ///
+        /// @param              [in] aFormat A format
+        /// @return             String representation
+
+        virtual String          toString                                    (   const   Object::Format&             aFormat                                     =   Object::Format::Standard,
+                                                                                const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const override ;
+
         /// @brief              Print point
         ///
         /// @param              [in] anOutputStream An output stream

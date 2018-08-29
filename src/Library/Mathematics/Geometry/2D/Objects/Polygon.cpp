@@ -15,6 +15,7 @@
 #include <Library/Core/Error.hpp>
 #include <Library/Core/Utilities.hpp>
 
+#include <boost/geometry/io/wkt/wkt.hpp>
 #include <boost/geometry/geometries/polygon.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
 #include <boost/geometry.hpp>
@@ -66,6 +67,9 @@ class Polygon::Impl
         Array<Point>            getInnerRingVerticesAt                      (   const   Index&                      aRingIndex                                  ) const ;
         
         Array<Point>            getVertices                                 ( ) const ;
+
+        String                  toString                                    (   const   Object::Format&             aFormat,
+                                                                                const   Integer&                    aPrecision                                  ) const ;
         
         void                    translate                                   (   const   Vector2d&                   aTranslation                                ) ;
 
@@ -181,6 +185,42 @@ Array<Point>                    Polygon::Impl::getVertices                  ( ) 
     }
 
     return vertices ;
+
+}
+
+String                          Polygon::Impl::toString                     (   const   Object::Format&             aFormat,
+                                                                                const   Integer&                    aPrecision                                  ) const
+{
+
+    switch (aFormat)
+    {
+
+        case Object::Format::Standard:
+        case Object::Format::WKT:
+        {
+
+            std::stringstream stringStream ;
+
+            if (aPrecision.isDefined())
+            {
+                stringStream << std::fixed << std::setprecision(aPrecision) << boost::geometry::wkt(polygon_) ;
+            }
+            else
+            {
+                stringStream << boost::geometry::wkt(polygon_) ;
+            }
+
+            return stringStream.str() ;
+
+        }
+
+        default:
+            throw library::core::error::runtime::Wrong("Format") ;
+            break ;
+
+    }
+
+    return String::Empty() ;
 
 }
 
@@ -336,6 +376,19 @@ void                            Polygon::print                              (   
     }
 
     displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+
+}
+
+String                          Polygon::toString                           (   const   Object::Format&             aFormat,
+                                                                                const   Integer&                    aPrecision                                  ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->toString(aFormat, aPrecision) ;
 
 }
 
