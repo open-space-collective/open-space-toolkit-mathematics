@@ -7,8 +7,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
@@ -17,7 +19,7 @@
 #include <Library/Core/Error.hpp>
 #include <Library/Core/Utilities.hpp>
 
-// #include <Gte/Mathematics/GteIntrEllipsoid3Ellipsoid3.h>
+#include <Gte/Mathematics/GteIntrEllipsoid3Ellipsoid3.h>
 // #include <Gte/Mathematics/GteIntrHalfspace3Ellipsoid3.h>
 #include <Gte/Mathematics/GteIntrPlane3Ellipsoid3.h>
 #include <Gte/Mathematics/GteIntrSegment3Ellipsoid3.h>
@@ -110,29 +112,14 @@ bool                            Ellipsoid::operator !=                      (   
     return !((*this) == anEllipsoid) ;
 }
 
-std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Ellipsoid&                  anEllipsoid                                 )
-{
-
-    library::core::utils::Print::Header(anOutputStream, "Ellipsoid") ;
-
-    library::core::utils::Print::Line(anOutputStream) << "Center:" << (anEllipsoid.center_.isDefined() ? anEllipsoid.center_.toString() : "Undefined") ;
-
-    library::core::utils::Print::Line(anOutputStream) << "First principal semi-axis:" << (anEllipsoid.a_.isDefined() ? anEllipsoid.a_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Second principal semi-axis:" << (anEllipsoid.b_.isDefined() ? anEllipsoid.b_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Third principal semi-axis:" << (anEllipsoid.c_.isDefined() ? anEllipsoid.c_.toString() : "Undefined") ;
-
-    library::core::utils::Print::Line(anOutputStream) << "Orientation:" << (anEllipsoid.q_.isDefined() ? anEllipsoid.q_.toString() : "Undefined") ;
-
-    library::core::utils::Print::Footer(anOutputStream) ;
-
-    return anOutputStream ;
-
-}
-
 bool                            Ellipsoid::isDefined                        ( ) const
 {
     return center_.isDefined() && a_.isDefined() && b_.isDefined() && c_.isDefined() && q_.isDefined() ;
+}
+
+bool                            Ellipsoid::intersects                       (   const   Point&                      aPoint                                      ) const
+{
+    return this->contains(aPoint) ;
 }
 
 bool                            Ellipsoid::intersects                       (   const   Line&                       aLine                                       ) const
@@ -154,7 +141,7 @@ bool                            Ellipsoid::intersects                       (   
 
     // Ellipsoid
 
-    const gte::Vector3<double> center = GteVectorFromVector3d(this->getCenter()) ;
+    const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
     const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
     const gte::Vector3<double> extent = { a_, b_, c_ } ;
 
@@ -189,7 +176,7 @@ bool                            Ellipsoid::intersects                       (   
 
     // Ellipsoid
 
-    const gte::Vector3<double> center = GteVectorFromVector3d(this->getCenter()) ;
+    const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
     const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
     const gte::Vector3<double> extent = { a_, b_, c_ } ;
 
@@ -228,7 +215,7 @@ bool                            Ellipsoid::intersects                       (   
 
     // // Ellipsoid
 
-    // const gte::Vector3<double> center = GteVectorFromVector3d(this->getCenter()) ;
+    // const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
     // const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
     // const gte::Vector3<double> extent = { a_, b_, c_ } ;
 
@@ -255,7 +242,7 @@ bool                            Ellipsoid::intersects                       (   
 
     const Matrix3d M = this->getMatrix() ;
 
-    const Vector3d diff = segmentCenter - this->getCenter() ;
+    const Vector3d diff = segmentCenter - center_ ;
     const Vector3d matDir = M * segmentDirection ;
     const Vector3d matDiff = M * diff ;
     
@@ -325,6 +312,9 @@ bool                            Ellipsoid::intersects                       (   
 bool                            Ellipsoid::intersects                       (   const   Plane&                      aPlane                                      ) const
 {
 
+    // https://file.scirp.org/pdf/AM20121100009_89014420.pdf
+    // https://www.researchgate.net/publication/312384498_Intersection_of_an_Ellipsoid_and_a_Plane
+
     if (!aPlane.isDefined())
     {
         throw library::core::error::runtime::Undefined("Plane") ;
@@ -344,7 +334,7 @@ bool                            Ellipsoid::intersects                       (   
 
     // Ellipsoid
 
-    const gte::Vector3<double> center = GteVectorFromVector3d(this->getCenter()) ;
+    const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
     const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
     const gte::Vector3<double> extent = { a_, b_, c_ } ;
 
@@ -359,6 +349,62 @@ bool                            Ellipsoid::intersects                       (   
     return intersectionResult.intersect ;
 
 }
+
+// bool                            Ellipsoid::intersects                       (   const   Sphere&                     aSphere                                     ) const
+// {
+
+//     if (!aSphere.isDefined())
+//     {
+//         throw library::core::error::runtime::Undefined("Sphere") ;
+//     }
+
+//     if (!this->isDefined())
+//     {
+//         throw library::core::error::runtime::Undefined("Ellipsoid") ;
+//     }
+
+//     return this->intersects(Ellipsoid(aSphere.getCenter(), aSphere.getRadius(), aSphere.getRadius(), aSphere.getRadius())) ;
+
+// }
+
+// bool                            Ellipsoid::intersects                       (   const   Ellipsoid&                  anEllipsoid                                 ) const
+// {
+
+//     if (!anEllipsoid.isDefined())
+//     {
+//         throw library::core::error::runtime::Undefined("Ellipsoid") ;
+//     }
+
+//     if (!this->isDefined())
+//     {
+//         throw library::core::error::runtime::Undefined("Ellipsoid") ;
+//     }
+
+//     // Ellipsoid
+
+//     const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
+//     const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+//     const gte::Vector3<double> extent = { a_, b_, c_ } ;
+
+//     const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
+
+//     // Another ellipsoid
+
+//     const gte::Vector3<double> anotherCenter = GteVectorFromVector3d(anEllipsoid.center_) ;
+//     const std::array<gte::Vector3<double>, 3> anotherAxes = { GteVectorFromVector3d(anEllipsoid.getFirstAxis()), GteVectorFromVector3d(anEllipsoid.getSecondAxis()), GteVectorFromVector3d(anEllipsoid.getThirdAxis()) } ;
+//     const gte::Vector3<double> anotherExtent = { anEllipsoid.a_, anEllipsoid.b_, anEllipsoid.c_ } ;
+
+//     const gte::Ellipsoid3<double> anotherEllipsoid = { anotherCenter, anotherAxes, anotherExtent } ;
+
+//     // Intersection
+
+//     gte::TIQuery<double, gte::Ellipsoid3<double>, gte::Ellipsoid3<double>> intersectionQuery ;
+
+//     auto intersectionResult = intersectionQuery(ellipsoid, anotherEllipsoid) ;
+
+//     return intersectionResult.intersect ;
+
+// }
 
 bool                            Ellipsoid::intersects                       (   const   Pyramid&                    aPyramid                                    ) const
 {
@@ -528,6 +574,41 @@ Matrix3d                        Ellipsoid::getMatrix                        ( ) 
     } ;
 
 	return tensorProduct(firstRatio, firstRatio) + tensorProduct(secondRatio, secondRatio) + tensorProduct(thirdRatio, thirdRatio) ;
+
+}
+
+Intersection                    Ellipsoid::intersectionWith                 (   const   Ray&                        aRay                                        ) const
+{
+
+    if (!aRay.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ray") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+    }
+
+    return Intersection::Undefined() ;
+    
+}
+
+void                            Ellipsoid::print                            (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           ) const
+{
+
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Ellipsoid") : void () ;
+
+    library::core::utils::Print::Line(anOutputStream) << "Center:"              << (center_.isDefined() ? center_.toString() : "Undefined") ;
+
+    library::core::utils::Print::Line(anOutputStream) << "First principal semi-axis:" << (a_.isDefined() ? a_.toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Second principal semi-axis:" << (b_.isDefined() ? b_.toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Third principal semi-axis:" << (c_.isDefined() ? c_.toString() : "Undefined") ;
+
+    library::core::utils::Print::Line(anOutputStream) << "Orientation:"         << (q_.isDefined() ? q_.toString() : "Undefined") ;
+
+    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 

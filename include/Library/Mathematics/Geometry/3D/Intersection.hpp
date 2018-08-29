@@ -106,6 +106,19 @@ class Intersection
 
         bool                    operator !=                                 (   const   Intersection&               anIntersection                              ) const ;
 
+        /// @brief              Output stream operator
+        ///
+        /// @code
+        ///                     std::cout << Intersection(...) ;
+        /// @endcode
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] anIntersection An intersection
+        /// @return             A reference to output stream
+
+        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
+                                                                                const   Intersection&               anIntersection                              ) ;
+
         /// @brief              Check if intersection is defined
         ///
         /// @return             True if intersection is defined
@@ -143,6 +156,12 @@ class Intersection
         /// @return             Empty intersection
 
         static Intersection     Empty                                       ( ) ;
+
+        /// @brief              Converts intersection type to string
+        ///
+        /// @return             String
+
+        static String           StringFromType                              (   const   Intersection::Type&         aType                                       ) ;
 
     private:
 

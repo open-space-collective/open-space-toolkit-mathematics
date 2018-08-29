@@ -91,19 +91,6 @@ class Line : public Object
 
         bool                    operator !=                                 (   const   Line&                       aLine                                       ) const ;
 
-        /// @brief              Output stream operator
-        ///
-        /// @code
-        ///                     std::cout << Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
-        /// @endcode
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] aLine A line
-        /// @return             A reference to output stream
-
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Line&                       aLine                                       ) ;
-
         /// @brief              Check if line is defined
         ///
         /// @code
@@ -172,6 +159,14 @@ class Line : public Object
         /// @return             Line direction
 
         Vector3d                getDirection                                ( ) const ;
+
+        /// @brief              Print line
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const override ;
 
         /// @brief              Translate line
         ///

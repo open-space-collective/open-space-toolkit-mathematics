@@ -46,7 +46,6 @@ class Segment ;
 class Plane ;
 class Polygon ;
 class Sphere ;
-class Plane ;
 class Pyramid ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -106,19 +105,6 @@ class Ellipsoid : public Object
 
         bool                    operator !=                                 (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
 
-        /// @brief              Output stream operator
-        ///
-        /// @code
-        ///                     std::cout << Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) ;
-        /// @endcode
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] anEllipsoid An ellipsoid
-        /// @return             A reference to output stream
-
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Ellipsoid&                  anEllipsoid                                 ) ;
-
         /// @brief              Check if ellipsoid is defined
         ///
         /// @code
@@ -128,6 +114,19 @@ class Ellipsoid : public Object
         /// @return             True if ellipsoid is defined
 
         virtual bool            isDefined                                   ( ) const override ;
+
+        /// @brief              Check if ellipsoid intersects point
+        ///
+        /// @code
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     Point point = ... ;
+        ///                     ellipsoid.intersects(point) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             True if ellipsoid intersects point
+        
+        bool                    intersects                                  (   const   Point&                      aPoint                                      ) const ;
 
         /// @brief              Check if ellipsoid intersects line
         ///
@@ -180,6 +179,32 @@ class Ellipsoid : public Object
         /// @return             True if ellipsoid intersects plane
         
         bool                    intersects                                  (   const   Plane&                      aPlane                                      ) const ;
+
+        /// @brief              Check if ellipsoid intersects sphere
+        ///
+        /// @code
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     Sphere sphere = ... ;
+        ///                     ellipsoid.intersects(sphere) ;
+        /// @endcode
+        ///
+        /// @param              [in] aSphere A sphere
+        /// @return             True if ellipsoid intersects sphere
+        
+        bool                    intersects                                  (   const   Sphere&                     aSphere                                     ) const ;
+
+        /// @brief              Check if ellipsoid intersects ellipsoid
+        ///
+        /// @code
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     Ellipsoid anotherEllipsoid = ... ;
+        ///                     ellipsoid.intersects(anotherEllipsoid) ;
+        /// @endcode
+        ///
+        /// @param              [in] anEllipsoid An ellipsoid
+        /// @return             True if ellipsoid intersects ellipsoid
+        
+        bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
 
         /// @brief              Check if ellipsoid intersects pyramid
         ///
@@ -260,9 +285,21 @@ class Ellipsoid : public Object
 
         Real                    getThirdPrincipalSemiAxis                   ( ) const ;
 
+        /// @brief              Get ellipsoid first axis
+        ///
+        /// @return             Ellipsoid first axis
+
         Vector3d                getFirstAxis                                ( ) const ;
 
+        /// @brief              Get ellipsoid second axis
+        ///
+        /// @return             Ellipsoid second axis
+
         Vector3d                getSecondAxis                               ( ) const ;
+
+        /// @brief              Get ellipsoid third axis
+        ///
+        /// @return             Ellipsoid third axis
 
         Vector3d                getThirdAxis                                ( ) const ;
 
@@ -285,6 +322,21 @@ class Ellipsoid : public Object
         /// @return             Ellipsoid matrix
 
         Matrix3d                getMatrix                                   ( ) const ;
+
+        /// @brief              Compute intersection of ellipsoid with ray
+        ///
+        /// @param              [in] aRay A ray
+        /// @return             Intersection of ellipsoid with ray
+
+        Intersection            intersectionWith                            (   const   Ray&                        aRay                                        ) const ;
+
+        /// @brief              Print ellipsoid
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const override ;
 
         /// @brief              Translate ellipsoid
         ///

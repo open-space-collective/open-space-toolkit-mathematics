@@ -59,21 +59,6 @@ bool                            Pyramid::operator !=                        (   
     return !((*this) == aPyramid) ;
 }
 
-std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Pyramid&                    aPyramid                                    )
-{
-
-    library::core::utils::Print::Header(anOutputStream, "Pyramid") ;
-
-    library::core::utils::Print::Line(anOutputStream) << "Base:"                << aPyramid.base_ ;
-    library::core::utils::Print::Line(anOutputStream) << "Apex:"                << (aPyramid.apex_.isDefined() ? aPyramid.apex_.toString() : "Undefined") ;
-
-    library::core::utils::Print::Footer(anOutputStream) ;
-
-    return anOutputStream ;
-
-}
-
 bool                            Pyramid::isDefined                          ( ) const
 {
     return base_.isDefined() && apex_.isDefined() ;
@@ -138,6 +123,22 @@ Point                           Pyramid::getApex                            ( ) 
     }
 
     return apex_ ;
+
+}
+
+void                            Pyramid::print                              (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           ) const
+{
+
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Pyramid") : void () ;
+
+    library::core::utils::Print::Line(anOutputStream) << "Apex:"                << (apex_.isDefined() ? apex_.toString() : "Undefined") ;
+    
+    library::core::utils::Print::Separator(anOutputStream, "Base:") ;
+
+    base_.print(anOutputStream, false) ;
+
+    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 

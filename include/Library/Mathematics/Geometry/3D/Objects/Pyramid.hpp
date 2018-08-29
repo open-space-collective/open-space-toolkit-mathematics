@@ -35,6 +35,12 @@ using library::math::geom::d3::objects::Polygon ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+class Line ;
+class Ray ;
+class Segment ;
+class Plane ;
+class Polygon ;
+class Sphere ;
 class Ellipsoid ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -85,15 +91,6 @@ class Pyramid : public Object
 
         bool                    operator !=                                 (   const   Pyramid&                    aPyramid                                    ) const ;
 
-        /// @brief              Output stream operator
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] aPyramid A pyramid
-        /// @return             A reference to output stream
-
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Pyramid&                    aPyramid                                    ) ;
-
         /// @brief              Check if pyramid is defined
         ///
         /// @return             True if pyramid is defined
@@ -137,6 +134,14 @@ class Pyramid : public Object
         /// @return             Pyramid apex
 
         Point                   getApex                                     ( ) const ;
+
+        /// @brief              Print pyramid
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const override ;
 
         /// @brief              Translate pyramid
         ///

@@ -91,15 +91,6 @@ class Polygon : public Object
 
         bool                    operator !=                                 (   const   Polygon&                    aPolygon                                    ) const ;
 
-        /// @brief              Output stream operator
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] aPolygon A polygon
-        /// @return             A reference to output stream
-
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Polygon&                    aPolygon                                    ) ;
-
         /// @brief              Check if polygon is defined
         ///
         /// @return             True if polygon is defined
@@ -135,6 +126,14 @@ class Polygon : public Object
         /// @return             Polygon normal vector
 
         Vector3d                getNormalVector                             ( ) const ;
+
+        /// @brief              Print polygon
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const override ;
 
         /// @brief              Translate polygon
         ///

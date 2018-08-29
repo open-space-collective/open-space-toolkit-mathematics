@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 
@@ -69,21 +70,6 @@ bool                            Ray::operator ==                            (   
 bool                            Ray::operator !=                            (   const   Ray&                        aRay                                        ) const
 {
     return !((*this) == aRay) ;
-}
-
-std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Ray&                        aRay                                        )
-{
-
-    library::core::utils::Print::Header(anOutputStream, "Ray") ;
-
-    library::core::utils::Print::Line(anOutputStream) << "Origin:"              << (aRay.origin_.isDefined() ? aRay.origin_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Direction:"           << (aRay.direction_.isDefined() ? aRay.direction_.toString() : "Undefined") ;
-
-    library::core::utils::Print::Footer(anOutputStream) ;
-
-    return anOutputStream ;
-
 }
 
 bool                            Ray::isDefined                              ( ) const
@@ -156,6 +142,24 @@ Vector3d                        Ray::getDirection                           ( ) 
     }
     
     return direction_ ;
+
+}
+
+Intersection                    Ray::intersectionWith                       (   const   Ellipsoid&                  anEllipsoid                                 ) const
+{
+    return anEllipsoid.intersectionWith(*this) ;
+}
+
+void                            Ray::print                                  (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           ) const
+{
+
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Ray") : void () ;
+
+    library::core::utils::Print::Line(anOutputStream) << "Origin:"              << (origin_.isDefined() ? origin_.toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Direction:"           << (direction_.isDefined() ? direction_.toString() : "Undefined") ;
+
+    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 

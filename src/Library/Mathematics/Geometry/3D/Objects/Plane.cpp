@@ -63,21 +63,6 @@ bool                            Plane::operator !=                          (   
     return !((*this) == aPlane) ;
 }
 
-std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Plane&                      aPlane                                      )
-{
-
-    library::core::utils::Print::Header(anOutputStream, "Plane") ;
-
-    library::core::utils::Print::Line(anOutputStream) << "Point:"               << (aPlane.point_.isDefined() ? aPlane.point_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Normal vector:"       << (aPlane.normal_.isDefined() ? aPlane.normal_.toString() : "Undefined") ;
-
-    library::core::utils::Print::Footer(anOutputStream) ;
-
-    return anOutputStream ;
-
-}
-
 bool                            Plane::isDefined                            ( ) const
 {
     return point_.isDefined() && normal_.isDefined() ;
@@ -116,6 +101,19 @@ Vector3d                        Plane::getNormalVector                      ( ) 
     }
 
     return normal_ ;
+
+}
+
+void                            Plane::print                                (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           ) const
+{
+
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Plane") : void () ;
+
+    library::core::utils::Print::Line(anOutputStream) << "Point:"               << (point_.isDefined() ? point_.toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Normal vector:"       << (normal_.isDefined() ? normal_.toString() : "Undefined") ;
+
+    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 

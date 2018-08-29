@@ -84,25 +84,6 @@ bool                            Polygon::operator !=                        (   
     return !((*this) == aPolygon) ;
 }
 
-std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Polygon&                    aPolygon                                    )
-{
-
-    library::core::utils::Print::Header(anOutputStream, "Polygon") ;
-
-    library::core::utils::Print::Line(anOutputStream) << "Origin:"              << (aPolygon.origin_.isDefined() ? aPolygon.origin_.toString() : "Undefined") ;
-
-    library::core::utils::Print::Line(anOutputStream) << "X axis:"              << (aPolygon.xAxis_.isDefined() ? aPolygon.xAxis_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Y axis:"              << (aPolygon.yAxis_.isDefined() ? aPolygon.yAxis_.toString() : "Undefined") ;
-
-    library::core::utils::Print::Line(anOutputStream) << aPolygon.polygon_ ;
-
-    library::core::utils::Print::Footer(anOutputStream) ;
-
-    return anOutputStream ;
-
-}
-
 bool                            Polygon::isDefined                          ( ) const
 {
     return polygon_.isDefined() && origin_.isDefined() && xAxis_.isDefined() && yAxis_.isDefined() ;
@@ -165,6 +146,25 @@ Vector3d                        Polygon::getNormalVector                    ( ) 
     }
 
     return xAxis_.cross(yAxis_) ;
+
+}
+
+void                            Polygon::print                              (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           ) const
+{
+
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Polygon") : void () ;
+
+    library::core::utils::Print::Line(anOutputStream) << "Origin:"              << (origin_.isDefined() ? origin_.toString() : "Undefined") ;
+
+    library::core::utils::Print::Line(anOutputStream) << "X axis:"              << (xAxis_.isDefined() ? xAxis_.toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Y axis:"              << (yAxis_.isDefined() ? yAxis_.toString() : "Undefined") ;
+
+    library::core::utils::Print::Separator(anOutputStream, "Polygon") ;
+
+    polygon_.print(anOutputStream, false) ;
+
+    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 

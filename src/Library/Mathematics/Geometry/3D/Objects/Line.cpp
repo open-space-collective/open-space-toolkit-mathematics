@@ -76,21 +76,6 @@ bool                            Line::operator !=                           (   
     return !((*this) == aLine) ;
 }
 
-std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Line&                       aLine                                       )
-{
-
-    library::core::utils::Print::Header(anOutputStream, "Line") ;
-
-    library::core::utils::Print::Line(anOutputStream) << "Origin:"              << (aLine.origin_.isDefined() ? aLine.origin_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Direction:"           << (aLine.direction_.isDefined() ? aLine.direction_.toString() : "Undefined") ;
-
-    library::core::utils::Print::Footer(anOutputStream) ;
-
-    return anOutputStream ;
-
-}
-
 bool                            Line::isDefined                             ( ) const
 {
     return origin_.isDefined() && direction_.isDefined() ;
@@ -159,6 +144,19 @@ Vector3d                        Line::getDirection                       ( ) con
     }
     
     return direction_ ;
+
+}
+
+void                            Line::print                                 (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           ) const
+{
+
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Line") : void () ;
+
+    library::core::utils::Print::Line(anOutputStream) << "Origin:"              << (origin_.isDefined() ? origin_.toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Direction:"           << (direction_.isDefined() ? direction_.toString() : "Undefined") ;
+
+    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 

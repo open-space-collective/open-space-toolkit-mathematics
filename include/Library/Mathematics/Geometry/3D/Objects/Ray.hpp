@@ -97,19 +97,6 @@ class Ray : public Object
 
         bool                    operator !=                                 (   const   Ray&                        aRay                                        ) const ;
 
-        /// @brief              Output stream operator
-        ///
-        /// @code
-        ///                     std::cout << Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
-        /// @endcode
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] aRay A ray
-        /// @return             A reference to output stream
-
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Ray&                        aRay                                        ) ;
-
         /// @brief              Check if ray is defined
         ///
         /// @code
@@ -178,6 +165,21 @@ class Ray : public Object
         /// @return             Ray direction
 
         Vector3d                getDirection                                ( ) const ;
+
+        /// @brief              Compute intersection of ray with ellipsoid
+        ///
+        /// @param              [in] anEllipsoid An ellipsoid
+        /// @return             Intersection of ray with ellipsoid
+
+        Intersection            intersectionWith                            (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
+
+        /// @brief              Print ray
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const override ;
 
         /// @brief              Translate ray
         ///

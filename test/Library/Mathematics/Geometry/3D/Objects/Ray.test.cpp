@@ -8,6 +8,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
+#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 
@@ -278,6 +279,28 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, GetDirection)
     {
 
         EXPECT_ANY_THROW(Ray::Undefined().getDirection()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Ellipsoid)
+{
+
+    using library::math::geom::d3::objects::Ray ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+    
+    {
+
+        // See: Library_Mathematics_Geometry_3D_Objects_Ellipsoid.IntersectionWith_Ray
+
+        SUCCEED() ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Ray::Undefined().intersectionWith(Ellipsoid::Undefined())) ;
 
     }
 

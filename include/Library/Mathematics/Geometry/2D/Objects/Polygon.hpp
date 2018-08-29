@@ -109,19 +109,6 @@ class Polygon : public Object
 
         bool                    operator !=                                 (   const   Polygon&                    aPolygon                                    ) const ;
 
-        /// @brief              Output stream operator
-        ///
-        /// @code
-        ///                     std::cout << Polygon(...) ;
-        /// @endcode
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] aPolygon A polygon
-        /// @return             A reference to output stream
-
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Polygon&                    aPolygon                                    ) ;
-
         /// @brief              Check if polygon is defined
         ///
         /// @code
@@ -141,6 +128,14 @@ class Polygon : public Object
         /// @return             Polygon vertices
 
         Array<Point>            getVertices                                 ( ) const ;
+
+        /// @brief              Print polygon
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const override ;
 
         /// @brief              Translate polygon
         ///

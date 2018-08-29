@@ -124,19 +124,6 @@ class Point : public Object, public Vector3d
 
         Vector3d                operator -                                  (   const   Point&                      aPoint                                      ) const ;
 
-        /// @brief              Output stream operator
-        ///
-        /// @code
-        ///                     std::cout << Point(0.0, 0.0, 0.0) ;
-        /// @endcode
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] aPoint A point
-        /// @return             A reference to output stream
-
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Point&                      aPoint                                      ) ;
-
         /// @brief              Check if point is defined
         ///
         /// @code
@@ -159,6 +146,14 @@ class Point : public Object, public Vector3d
 
         bool                    isNear                                      (   const   Point&                      aPoint,
                                                                                 const   Real&                       aTolerance                                  ) const ;
+
+        /// @brief              Print point
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const override ;
 
         /// @brief              Translate point
         ///

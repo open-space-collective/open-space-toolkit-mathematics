@@ -9,6 +9,7 @@
 
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationMatrix.hpp>
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
+#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
@@ -160,6 +161,41 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IsDefined)
     {
 
         EXPECT_FALSE(Ellipsoid::Undefined().isDefined()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Point)
+{
+
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+
+    {
+
+        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).intersects(Point(+5.0, +2.0, +3.0))) ;
+        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).intersects(Point(-3.0, +2.0, +3.0))) ;
+
+        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).intersects(Point(+1.0, +7.0, +3.0))) ;
+        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).intersects(Point(+1.0, -3.0, +3.0))) ;
+
+        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).intersects(Point(+1.0, +2.0, +9.0))) ;
+        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).intersects(Point(+1.0, +2.0, -3.0))) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Ellipsoid(Point::Origin(), 4.0, 5.0, 6.0).intersects(Point::Origin())) ;
+        
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Ellipsoid::Undefined().intersects(Point::Undefined())) ;
+        EXPECT_ANY_THROW(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).intersects(Point::Undefined())) ;
+        EXPECT_ANY_THROW(Ellipsoid::Undefined().intersects(Point(0.0, 0.0, 0.0))) ;
 
     }
 
@@ -901,6 +937,32 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetMatrix)
     {
 
         EXPECT_ANY_THROW(Ellipsoid::Undefined().getMatrix()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
+{
+
+    using library::math::geom::d3::objects::Ray ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+    using library::math::geom::d3::Intersection ;
+
+    {
+
+        const Ray ray = { { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } } ;
+        const Ellipsoid ellipsoid = { { 0.0, 0.0, 0.0 }, 1.0, 2.0, 3.0 } ;
+
+        const Intersection intersection = ellipsoid.intersectionWith(ray) ;
+
+        std::cout << "intersection = " << intersection << std::endl ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Ellipsoid::Undefined().intersectionWith(Ray::Undefined())) ;
 
     }
 

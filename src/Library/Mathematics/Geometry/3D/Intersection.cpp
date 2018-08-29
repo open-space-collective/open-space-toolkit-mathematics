@@ -94,6 +94,27 @@ bool                            Intersection::operator !=                   (   
     return !((*this) == anIntersection) ;
 }
 
+std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
+                                                                                const   Intersection&               anIntersection                              )
+{
+
+    library::core::utils::Print::Header(anOutputStream, "Intersection") ;
+
+    library::core::utils::Print::Line(anOutputStream) << "Type:"                << Intersection::StringFromType(anIntersection.type_) ;
+
+    library::core::utils::Print::Separator(anOutputStream, "Objects") ;
+
+    for (const auto& objectUPtr : anIntersection.objects_)
+    {
+        anOutputStream << (*objectUPtr) ;
+    }
+
+    library::core::utils::Print::Footer(anOutputStream) ;
+
+    return anOutputStream ;
+
+}
+
 bool                            Intersection::isDefined                     ( ) const
 {
     return type_ != Intersection::Type::Undefined ;
@@ -123,6 +144,55 @@ Intersection                    Intersection::Undefined                     ( )
 Intersection                    Intersection::Empty                         ( )
 {
     return Intersection(Array<Unique<Object>>::Empty()) ;
+}
+
+String                          Intersection::StringFromType                (   const   Intersection::Type&         aType                                       )
+{
+
+    switch (aType)
+    {
+
+        case Intersection::Type::Undefined:
+            return "Undefined" ;
+
+        case Intersection::Type::Empty:
+            return "Empty" ;
+
+        case Intersection::Type::Point:
+            return "Point" ;
+
+        case Intersection::Type::PointSet:
+            return "PointSet" ;
+
+        case Intersection::Type::Line:
+            return "Line" ;
+
+        case Intersection::Type::Ray:
+            return "Ray" ;
+
+        case Intersection::Type::Segment:
+            return "Segment" ;
+
+        case Intersection::Type::Plane:
+            return "Plane" ;
+
+        case Intersection::Type::Sphere:
+            return "Sphere" ;
+
+        case Intersection::Type::Ellipsoid:
+            return "Ellipsoid" ;
+
+        case Intersection::Type::Complex:
+            return "Complex" ;
+
+        default:
+            throw library::core::error::runtime::Wrong("Type") ;
+            break ;
+
+    }
+
+    return String::Empty() ;
+
 }
 
 Intersection::Type              Intersection::TypeFromObjects               (   const   Array<Unique<Object>>&      anObjectArray                               )

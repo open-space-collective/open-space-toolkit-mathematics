@@ -116,20 +116,6 @@ Vector3d                        Point::operator -                           (   
 
 }
 
-std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Point&                      aPoint                                      )
-{
-
-    library::core::utils::Print::Header(anOutputStream, "Point") ;
-
-    library::core::utils::Print::Line(anOutputStream) << "Coordinates:" << (aPoint.isDefined() ? aPoint.toString() : "Undefined") ;
-
-    library::core::utils::Print::Footer(anOutputStream) ;
-
-    return anOutputStream ;
-
-}
-
 bool                            Point::isDefined                            ( ) const
 {
     return Vector3d::isDefined() ;
@@ -155,6 +141,18 @@ bool                            Point::isNear                               (   
     }
 
     return (this->Vector3d::operator - (aPoint)).norm() <= aTolerance ;
+
+}
+
+void                            Point::print                                (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           ) const
+{
+
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Point") : void () ;
+
+    library::core::utils::Print::Line(anOutputStream) << "Coordinates:"         << (this->isDefined() ? this->toString() : "Undefined") ;
+
+    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 

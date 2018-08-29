@@ -77,6 +77,16 @@ bool                            Object::operator !=                         (   
     return !((*this) == anObject) ;
 }
 
+std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
+                                                                                const   Object&                     anObject                                    )
+{
+
+    anObject.print(anOutputStream, true) ;
+
+    return anOutputStream ;
+
+}
+
 bool                            Object::intersects                          (   const   Object&                     anObject                                    ) const
 {
 

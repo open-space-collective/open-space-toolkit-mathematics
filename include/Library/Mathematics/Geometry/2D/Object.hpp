@@ -56,6 +56,15 @@ class Object
 
         bool                    operator !=                                 (   const   Object&                     anObject                                    ) const ;
 
+        /// @brief              Output stream operator
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] anObject An object
+        /// @return             A reference to output stream
+
+        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
+                                                                                const   Object&                     anObject                                    ) ;
+
         /// @brief              Check if object is defined
         ///
         /// @return             True if object is defined
@@ -87,6 +96,18 @@ class Object
         /// @return             True if object contains another object
 
         virtual bool            contains                                    (   const   Object&                     anObject                                    ) const ;
+
+        /// @brief              Print object
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const = 0 ;
+
+        /// @brief              Translate object
+        ///
+        /// @param              [in] aTranslation Translation vector
 
         virtual void            translate                                   (   const   Vector2d&                   aTranslation                                ) = 0 ;
 

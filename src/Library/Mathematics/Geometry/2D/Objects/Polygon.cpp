@@ -273,57 +273,6 @@ bool                            Polygon::operator !=                        (   
     return !((*this) == aPolygon) ;
 }
 
-std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Polygon&                    aPolygon                                    )
-{
-
-    library::core::utils::Print::Header(anOutputStream, "Polygon") ;
-
-    library::core::utils::Print::Separator(anOutputStream, "Outer Ring") ;
-
-    if (aPolygon.implUPtr_ != nullptr)
-    {
-
-        for (const auto& point : aPolygon.implUPtr_->getOuterRingVertices())
-        {
-            library::core::utils::Print::Line(anOutputStream) << String::Format("- {}", point.toString()) ;
-        }
-
-    }
-    else
-    {
-        library::core::utils::Print::Line(anOutputStream) << "Undefined" ;
-    }
-    
-    library::core::utils::Print::Separator(anOutputStream, "Inner Rings") ;
-
-    if (aPolygon.implUPtr_ != nullptr)
-    {
-
-        for (Index innerRingIndex = 0; innerRingIndex < aPolygon.implUPtr_->getInnerRingCount(); ++innerRingIndex)
-        {
-
-            library::core::utils::Print::Separator(anOutputStream, String::Format("Inner Ring @ {}", innerRingIndex)) ;
-
-            for (const auto& point : aPolygon.implUPtr_->getInnerRingVerticesAt(innerRingIndex))
-            {
-                library::core::utils::Print::Line(anOutputStream) << String::Format("- {}", point.toString()) ;
-            }
-
-        }
-
-    }
-    else
-    {
-        library::core::utils::Print::Line(anOutputStream) << "Undefined" ;
-    }
-
-    library::core::utils::Print::Footer(anOutputStream) ;
-
-    return anOutputStream ;
-
-}
-
 bool                            Polygon::isDefined                          ( ) const
 {
     return (implUPtr_ != nullptr) && implUPtr_->isDefined() ;
@@ -338,6 +287,55 @@ Array<Point>                    Polygon::getVertices                        ( ) 
     }
 
     return implUPtr_->getVertices() ;
+
+}
+
+void                            Polygon::print                              (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           ) const
+{
+
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Polygon") : void () ;
+
+    library::core::utils::Print::Separator(anOutputStream, "Outer Ring") ;
+
+    if (implUPtr_ != nullptr)
+    {
+
+        for (const auto& point : implUPtr_->getOuterRingVertices())
+        {
+            library::core::utils::Print::Line(anOutputStream) << String::Format("- {}", point.toString()) ;
+        }
+
+    }
+    else
+    {
+        library::core::utils::Print::Line(anOutputStream) << "Undefined" ;
+    }
+    
+    library::core::utils::Print::Separator(anOutputStream, "Inner Rings") ;
+
+    if (implUPtr_ != nullptr)
+    {
+
+        for (Index innerRingIndex = 0; innerRingIndex < implUPtr_->getInnerRingCount(); ++innerRingIndex)
+        {
+
+            library::core::utils::Print::Separator(anOutputStream, String::Format("Inner Ring @ {}", innerRingIndex)) ;
+
+            for (const auto& point : implUPtr_->getInnerRingVerticesAt(innerRingIndex))
+            {
+                library::core::utils::Print::Line(anOutputStream) << String::Format("- {}", point.toString()) ;
+            }
+
+        }
+
+    }
+    else
+    {
+        library::core::utils::Print::Line(anOutputStream) << "Undefined" ;
+    }
+
+    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 

@@ -13,6 +13,8 @@
 #include <Library/Mathematics/Geometry/3D/Objects/Polygon.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
@@ -42,6 +44,8 @@ bool                            Object::operator ==                         (   
 {
 
     using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Line ;
+    using library::math::geom::d3::objects::Ray ;
     using library::math::geom::d3::objects::Segment ;
     using library::math::geom::d3::objects::Plane ;
     using library::math::geom::d3::objects::Polygon ;
@@ -59,6 +63,8 @@ bool                            Object::operator ==                         (   
         return false ;
     }
 
+    // Point
+
     if (const Point* objectPtr = dynamic_cast<const Point*>(this))
     {
 
@@ -68,6 +74,32 @@ bool                            Object::operator ==                         (   
         }
 
     }
+
+    // Line
+
+    if (const Line* objectPtr = dynamic_cast<const Line*>(this))
+    {
+
+        if (const Line* otherObjectPtr = dynamic_cast<const Line*>(&anObject))
+        {
+            return (*objectPtr) == (*otherObjectPtr) ;
+        }
+
+    }
+
+    // Ray
+
+    if (const Ray* objectPtr = dynamic_cast<const Ray*>(this))
+    {
+
+        if (const Ray* otherObjectPtr = dynamic_cast<const Ray*>(&anObject))
+        {
+            return (*objectPtr) == (*otherObjectPtr) ;
+        }
+
+    }
+
+    // Segment
 
     if (const Segment* objectPtr = dynamic_cast<const Segment*>(this))
     {
@@ -79,6 +111,8 @@ bool                            Object::operator ==                         (   
 
     }
 
+    // Plane
+
     if (const Plane* objectPtr = dynamic_cast<const Plane*>(this))
     {
 
@@ -88,6 +122,8 @@ bool                            Object::operator ==                         (   
         }
 
     }
+
+    // Polygon
 
     if (const Polygon* objectPtr = dynamic_cast<const Polygon*>(this))
     {
@@ -99,6 +135,8 @@ bool                            Object::operator ==                         (   
 
     }
 
+    // Sphere
+
     if (const Sphere* objectPtr = dynamic_cast<const Sphere*>(this))
     {
 
@@ -109,6 +147,8 @@ bool                            Object::operator ==                         (   
 
     }
 
+    // Ellipsoid
+
     if (const Ellipsoid* objectPtr = dynamic_cast<const Ellipsoid*>(this))
     {
 
@@ -118,6 +158,8 @@ bool                            Object::operator ==                         (   
         }
 
     }
+
+    // Pyramid
 
     if (const Pyramid* objectPtr = dynamic_cast<const Pyramid*>(this))
     {
@@ -140,10 +182,22 @@ bool                            Object::operator !=                         (   
     return !((*this) == anObject) ;
 }
 
+std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
+                                                                                const   Object&                     anObject                                    )
+{
+
+    anObject.print(anOutputStream, true) ;
+
+    return anOutputStream ;
+
+}
+
 bool                            Object::intersects                          (   const   Object&                     anObject                                    ) const
 {
 
     using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Line ;
+    using library::math::geom::d3::objects::Ray ;
     using library::math::geom::d3::objects::Segment ;
     using library::math::geom::d3::objects::Plane ;
     using library::math::geom::d3::objects::Polygon ;
@@ -154,6 +208,40 @@ bool                            Object::intersects                          (   
     if (!anObject.isDefined())
     {
         throw library::core::error::runtime::Undefined("Object") ;
+    }
+
+    // Line
+
+    if (const Line* objectPtr = dynamic_cast<const Line*>(this))
+    {
+
+        // if (const Line* otherObjectPtr = dynamic_cast<const Line*>(&anObject))
+        // {
+        //     return objectPtr->intersects(*otherObjectPtr) ;
+        // }
+
+        if (const Ellipsoid* otherObjectPtr = dynamic_cast<const Ellipsoid*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+    }
+
+    // Ray
+
+    if (const Ray* objectPtr = dynamic_cast<const Ray*>(this))
+    {
+
+        // if (const Ray* otherObjectPtr = dynamic_cast<const Ray*>(&anObject))
+        // {
+        //     return objectPtr->intersects(*otherObjectPtr) ;
+        // }
+
+        if (const Ellipsoid* otherObjectPtr = dynamic_cast<const Ellipsoid*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
     }
 
     // Segment
@@ -225,9 +313,14 @@ bool                            Object::contains                            (   
 {
 
     using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Line ;
+    using library::math::geom::d3::objects::Ray ;
     using library::math::geom::d3::objects::Segment ;
+    using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::objects::Polygon ;
     using library::math::geom::d3::objects::Sphere ;
     using library::math::geom::d3::objects::Ellipsoid ;
+    using library::math::geom::d3::objects::Pyramid ;
 
     if (!anObject.isDefined())
     {
@@ -282,15 +375,53 @@ bool                            Object::contains                            (   
 
 }
         
-Intersection                    Object::computeIntersectionWith             (   const   Object&                     anObject                                    ) const
+Intersection                    Object::intersectionWith                    (   const   Object&                     anObject                                    ) const
 {
+
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Line ;
+    using library::math::geom::d3::objects::Ray ;
+    using library::math::geom::d3::objects::Segment ;
+    using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::objects::Polygon ;
+    using library::math::geom::d3::objects::Sphere ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+    using library::math::geom::d3::objects::Pyramid ;
 
     if (!anObject.isDefined())
     {
         throw library::core::error::runtime::Undefined("Object") ;
     }
 
-    throw library::core::error::runtime::ToBeImplemented("Object :: computeIntersectionWith") ;
+    // Ray
+
+    if (const Ray* objectPtr = dynamic_cast<const Ray*>(this))
+    {
+
+        // Ellipsoid
+
+        if (const Ellipsoid* otherObjectPtr = dynamic_cast<const Ellipsoid*>(&anObject))
+        {
+            return objectPtr->intersectionWith(*otherObjectPtr) ;
+        }
+
+    }
+
+    // Ellipsoid
+
+    if (const Ellipsoid* objectPtr = dynamic_cast<const Ellipsoid*>(this))
+    {
+
+        // Ray
+
+        if (const Ray* otherObjectPtr = dynamic_cast<const Ray*>(&anObject))
+        {
+            return objectPtr->intersectionWith(*otherObjectPtr) ;
+        }
+
+    }
+
+    throw library::core::error::runtime::ToBeImplemented("Object :: intersectionWith") ;
 
     return Intersection::Undefined() ;
 
