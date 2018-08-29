@@ -114,6 +114,42 @@ Size                            PointSet::getSize                           ( ) 
     return points_.size() ;
 }
 
+Point                           PointSet::getPointClosestTo                 (   const   Point&                      aPoint                                      ) const
+{
+
+    if (!aPoint.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (this->isEmpty())
+    {
+        throw library::core::error::runtime::Undefined("Point set") ;
+    }
+
+    Point const* pointPtr = nullptr ;
+    Real minDistance = Real::Undefined() ;
+
+    for (const auto& point : points_)
+    {
+
+        const Real distance = (point - aPoint).squaredNorm() ;
+
+        if ((!minDistance.isDefined()) || (distance < minDistance))
+        {
+
+            pointPtr = &point ;
+
+            minDistance = distance ;
+
+        }
+
+    }
+
+    return *pointPtr ;
+
+}
+
 void                            PointSet::print                             (           std::ostream&               anOutputStream,
                                                                                         bool                        displayDecorators                           ) const
 {

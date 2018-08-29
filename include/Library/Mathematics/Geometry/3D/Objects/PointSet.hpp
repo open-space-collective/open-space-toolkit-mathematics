@@ -151,6 +151,13 @@ class PointSet : public Object
 
         Size                    getSize                                     ( ) const ;
 
+        /// @brief              Get point closest to another point
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             Closest point
+
+        Point                   getPointClosestTo                           (   const   Point&                      aPoint                                      ) const ;
+
         /// @brief              Print point
         ///
         /// @param              [in] anOutputStream An output stream

@@ -360,9 +360,11 @@ class Ellipsoid : public Object
         /// @brief              Compute intersection of ellipsoid with ray
         ///
         /// @param              [in] aRay A ray
+        /// @param              [in] onlyInSight (option) If true, only return intersection points that are in sight
         /// @return             Intersection of ellipsoid with ray
 
-        Intersection            intersectionWith                            (   const   Ray&                        aRay                                        ) const ;
+        Intersection            intersectionWith                            (   const   Ray&                        aRay,
+                                                                                const   bool                        onlyInSight                                 =   false ) const ;
 
         /// @brief              Compute intersection of ellipsoid with segment
         ///

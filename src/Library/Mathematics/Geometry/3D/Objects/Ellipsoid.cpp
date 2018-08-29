@@ -650,7 +650,8 @@ Intersection                    Ellipsoid::intersectionWith                 (   
     
 }
 
-Intersection                    Ellipsoid::intersectionWith                 (   const   Ray&                        aRay                                        ) const
+Intersection                    Ellipsoid::intersectionWith                 (   const   Ray&                        aRay,
+                                                                                const   bool                        onlyInSight                                 ) const
 {
 
     using library::math::geom::d3::objects::PointSet ;

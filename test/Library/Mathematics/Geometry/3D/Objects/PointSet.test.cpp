@@ -227,6 +227,30 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, GetSize)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, GetPointClosestTo)
+{
+
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::PointSet ;
+
+    {
+
+        EXPECT_EQ(Point(0.0, 0.0, 0.0), PointSet({ { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }, { 0.0, 0.0, 2.0 } }).getPointClosestTo({ 0.0, 0.0, 0.0 })) ;
+        EXPECT_EQ(Point(0.0, 0.0, 1.0), PointSet({ { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }, { 0.0, 0.0, 2.0 } }).getPointClosestTo({ 0.0, 0.0, 1.0 })) ;
+        EXPECT_EQ(Point(0.0, 0.0, 2.0), PointSet({ { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }, { 0.0, 0.0, 2.0 } }).getPointClosestTo({ 0.0, 0.0, 2.0 })) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(PointSet::Empty().getPointClosestTo(Point::Undefined())) ;
+        EXPECT_ANY_THROW(PointSet::Empty().getPointClosestTo(Point::Origin())) ;
+        EXPECT_ANY_THROW(PointSet({ { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }, { 0.0, 0.0, 2.0 } }).getPointClosestTo(Point::Undefined())) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, ConstIterator)
 {
 

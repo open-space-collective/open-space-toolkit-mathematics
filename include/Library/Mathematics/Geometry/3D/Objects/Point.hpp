@@ -147,6 +147,13 @@ class Point : public Object, public Vector3d
         bool                    isNear                                      (   const   Point&                      aPoint,
                                                                                 const   Real&                       aTolerance                                  ) const ;
 
+        /// @brief              Get distance to another point
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             Distance to point
+
+        Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;
+
         /// @brief              Print point
         ///
         /// @param              [in] anOutputStream An output stream

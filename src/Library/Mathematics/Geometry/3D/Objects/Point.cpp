@@ -144,6 +144,23 @@ bool                            Point::isNear                               (   
 
 }
 
+Real                            Point::distanceTo                           (   const   Point&                      aPoint                                      ) const
+{
+
+    if (!aPoint.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    return ((*this) - aPoint).norm() ;
+
+}
+
 void                            Point::print                                (           std::ostream&               anOutputStream,
                                                                                         bool                        displayDecorators                           ) const
 {
