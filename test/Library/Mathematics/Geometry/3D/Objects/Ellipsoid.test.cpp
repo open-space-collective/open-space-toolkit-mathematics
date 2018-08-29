@@ -1131,6 +1131,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::Intersection ;
 
+    // onlyInSight = false
+
     {
 
         const Ray ray = { { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } } ;
@@ -1218,6 +1220,98 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
         const Ellipsoid ellipsoid = { { 0.0, 0.0, 0.0 }, 1.0, 2.0, 3.0 } ;
 
         const Intersection intersection = ellipsoid.intersectionWith(ray) ;
+
+        EXPECT_TRUE(intersection.isEmpty()) ;
+
+    }
+
+    // onlyInSight = true
+
+    {
+
+        const Ray ray = { { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } } ;
+        const Ellipsoid ellipsoid = { { 0.0, 0.0, 0.0 }, 1.0, 2.0, 3.0 } ;
+
+        const Intersection intersection = ellipsoid.intersectionWith(ray, true) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.is<Point>()) ;
+
+        const Point point = intersection.as<Point>() ;
+
+        EXPECT_TRUE(point.isNear(Point(1.0, 0.0, 0.0), Real::Epsilon())) ;
+
+    }
+
+    {
+
+        const Ray ray = { { 0.0, 0.0, -4.0 }, { 0.0, 0.0, 1.0 } } ;
+        const Ellipsoid ellipsoid = { { 0.0, 0.0, 0.0 }, 1.0, 2.0, 3.0 } ;
+
+        const Intersection intersection = ellipsoid.intersectionWith(ray, true) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.is<Point>()) ;
+
+        const Point point = intersection.as<Point>() ;
+
+        EXPECT_TRUE(point.isNear(Point(0.0, 0.0, -3.0), Real::Epsilon())) ;
+
+    }
+
+    {
+
+        const Ray ray = { { 0.0, 0.0, +4.0 }, { 0.0, 0.0, 1.0 } } ;
+        const Ellipsoid ellipsoid = { { 0.0, 0.0, 0.0 }, 1.0, 2.0, 3.0 } ;
+
+        const Intersection intersection = ellipsoid.intersectionWith(ray, true) ;
+
+        EXPECT_TRUE(intersection.isEmpty()) ;
+
+    }
+
+    {
+
+        const Ray ray = { { 0.0, 0.0, +3.0 }, { 1.0, 0.0, 0.0 } } ;
+        const Ellipsoid ellipsoid = { { 0.0, 0.0, 0.0 }, 1.0, 2.0, 3.0 } ;
+
+        const Intersection intersection = ellipsoid.intersectionWith(ray, true) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.is<Point>()) ;
+
+        const Point point = intersection.as<Point>() ;
+
+        EXPECT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), Real::Epsilon())) ;
+
+    }
+
+    {
+
+        const Ray ray = { { 0.0, 0.0, -3.0 }, { 1.0, 0.0, 0.0 } } ;
+        const Ellipsoid ellipsoid = { { 0.0, 0.0, 0.0 }, 1.0, 2.0, 3.0 } ;
+
+        const Intersection intersection = ellipsoid.intersectionWith(ray, true) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.is<Point>()) ;
+
+        const Point point = intersection.as<Point>() ;
+
+        EXPECT_TRUE(point.isNear(Point(0.0, 0.0, -3.0), Real::Epsilon())) ;
+
+    }
+
+    {
+
+        const Ray ray = { { 0.0, +3.0, 0.0 }, { 1.0, 0.0, 0.0 } } ;
+        const Ellipsoid ellipsoid = { { 0.0, 0.0, 0.0 }, 1.0, 2.0, 3.0 } ;
+
+        const Intersection intersection = ellipsoid.intersectionWith(ray, true) ;
 
         EXPECT_TRUE(intersection.isEmpty()) ;
 

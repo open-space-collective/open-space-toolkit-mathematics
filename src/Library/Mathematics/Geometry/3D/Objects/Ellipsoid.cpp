@@ -713,7 +713,16 @@ Intersection                    Ellipsoid::intersectionWith                 (   
                 
                 if (this->contains(secondPoint))
                 {
-                    return Intersection::PointSet(PointSet({ firstPoint, secondPoint })) ;
+
+                    const PointSet pointSet = { { firstPoint, secondPoint } } ;
+
+                    if (onlyInSight)
+                    {
+                        return Intersection::Point(pointSet.getPointClosestTo(aRay.getOrigin())) ;
+                    }
+                    
+                    return Intersection::PointSet(pointSet) ;
+
                 }
 
                 return Intersection::Point(firstPoint) ;
