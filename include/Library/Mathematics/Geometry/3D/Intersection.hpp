@@ -14,7 +14,11 @@
 
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/PointSet.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
 
@@ -38,10 +42,6 @@ using library::core::types::Unique ;
 using library::core::ctnr::Array ;
 
 using library::math::geom::d3::Object ;
-using library::math::geom::d3::objects::Point ;
-using library::math::geom::d3::objects::Segment ;
-using library::math::geom::d3::objects::Sphere ;
-using library::math::geom::d3::objects::Ellipsoid ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -131,11 +131,45 @@ class Intersection
 
         bool                    isEmpty                                     ( ) const ;
 
+        /// @brief              Returns true is intersection can be converted to underlying object
+        ///
+        /// @return             True is intersection can be converted to underlying object
+
+        template <class Type>
+        bool                    is                                          ( ) const
+        {
+            return (!objects_.isEmpty()) && (dynamic_cast<const Type*>(objects_.accessFirst().get()) != nullptr) ;
+        }
+
         /// @brief              Get intersection type
         ///
         /// @return             Intersection type
 
         Intersection::Type      getType                                     ( ) const ;
+
+        /// @brief              Access intersection as its underlying object
+        ///
+        /// @return             Reference to underlying object
+
+        template <class Type>
+        const Type&             as                                          ( ) const
+        {
+
+            if (objects_.isEmpty())
+            {
+                throw library::core::error::RuntimeError("Cannot convert intersection: it is empty.") ;
+            }
+
+            const Type* objectPtr = dynamic_cast<const Type*>(objects_.accessFirst().get()) ;
+
+            if (objectPtr == nullptr)
+            {
+                throw library::core::error::RuntimeError("Cannot convert intersection: wrong type.") ;
+            }
+
+            return *objectPtr ;
+
+        }
 
         /// @brief              Constructs an undefined intersection
         ///
@@ -157,6 +191,26 @@ class Intersection
 
         static Intersection     Empty                                       ( ) ;
 
+        /// @brief              Constructs a point intersection
+        ///
+        /// @code
+        ///                     Intersection intersection = Intersection::Point(Point(0.0, 0.0, 0.0)) ;
+        /// @endcode
+        ///
+        /// @return             Point intersection
+
+        static Intersection     Point                                       (   const   objects::Point&             aPoint                                      ) ;
+
+        /// @brief              Constructs a point set intersection
+        ///
+        /// @code
+        ///                     Intersection intersection = Intersection::PointSet({ Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0) }) ;
+        /// @endcode
+        ///
+        /// @return             Point set intersection
+
+        static Intersection     PointSet                                    (   const   objects::PointSet&          aPointSet                                   ) ;
+
         /// @brief              Converts intersection type to string
         ///
         /// @return             String
@@ -168,6 +222,11 @@ class Intersection
         Intersection::Type      type_ ;
 
         Array<Unique<Object>>   objects_ ;
+
+                                Intersection                                ( ) ;
+
+                                Intersection                                (   const   Intersection::Type&         aType,
+                                                                                const   Array<Unique<Object>>&      anObjectArray                               ) ;
 
         static Intersection::Type TypeFromObjects                           (   const   Array<Unique<Object>>&      anObjectArray                               ) ;
 

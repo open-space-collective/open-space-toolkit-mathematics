@@ -40,6 +40,7 @@ using library::math::geom::trf::rot::Quaternion ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+class PointSet ;
 class Line ;
 class Ray ;
 class Segment ;
@@ -323,12 +324,26 @@ class Ellipsoid : public Object
 
         Matrix3d                getMatrix                                   ( ) const ;
 
+        /// @brief              Compute intersection of ellipsoid with line
+        ///
+        /// @param              [in] aLine A line
+        /// @return             Intersection of ellipsoid with line
+
+        Intersection            intersectionWith                            (   const   Line&                       aLine                                       ) const ;
+
         /// @brief              Compute intersection of ellipsoid with ray
         ///
         /// @param              [in] aRay A ray
         /// @return             Intersection of ellipsoid with ray
 
         Intersection            intersectionWith                            (   const   Ray&                        aRay                                        ) const ;
+
+        /// @brief              Compute intersection of ellipsoid with segment
+        ///
+        /// @param              [in] aSegment A segment
+        /// @return             Intersection of ellipsoid with segment
+
+        Intersection            intersectionWith                            (   const   Segment&                    aSegment                                    ) const ;
 
         /// @brief              Print ellipsoid
         ///

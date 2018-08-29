@@ -14,6 +14,7 @@
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/PointSet.hpp>
 #include <Library/Mathematics/Objects/Interval.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -44,6 +45,11 @@ namespace objects
 gte::Vector3<double>            GteVectorFromVector3d                       (   const   Vector3d&                   aVector                                     )
 {
     return { aVector.x(), aVector.y(), aVector.z() } ;
+}
+
+Vector3d                        Vector3dFromGteVector                       (   const   gte::Vector3<double>&       aVector                                     )
+{
+    return { aVector[0], aVector[1], aVector[2] } ;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -577,8 +583,65 @@ Matrix3d                        Ellipsoid::getMatrix                        ( ) 
 
 }
 
+Intersection                    Ellipsoid::intersectionWith                 (   const   Line&                       aLine                                       ) const
+{
+
+    using library::math::geom::d3::objects::PointSet ;
+
+    if (!aLine.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Line") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+    }
+
+    // Line
+
+    const gte::Line3<double> segment = { GteVectorFromVector3d(aLine.getOrigin()), GteVectorFromVector3d(aLine.getDirection()) } ;
+
+    // Ellipsoid
+
+    const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
+    const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+    const gte::Vector3<double> extent = { a_, b_, c_ } ;
+
+    const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
+
+    // Intersection
+
+    gte::FIQuery<double, gte::Line3<double>, gte::Ellipsoid3<double>> intersectionQuery ;
+
+    auto intersectionResult = intersectionQuery(segment, ellipsoid) ;
+
+    if (intersectionResult.intersect)
+    {
+
+        if (intersectionResult.numIntersections == 1)
+        {
+            return Intersection::Point(Vector3dFromGteVector(intersectionResult.point[0])) ;
+        }
+        else if (intersectionResult.numIntersections == 2)
+        {
+            return Intersection::PointSet(PointSet({ Point(Vector3dFromGteVector(intersectionResult.point[0])), Point(Vector3dFromGteVector(intersectionResult.point[1])) })) ;
+        }
+        else
+        {
+            throw library::core::error::RuntimeError("Intersection algorithm has failed.") ;
+        }
+
+    }
+    
+    return Intersection::Empty() ;
+    
+}
+
 Intersection                    Ellipsoid::intersectionWith                 (   const   Ray&                        aRay                                        ) const
 {
+
+    using library::math::geom::d3::objects::PointSet ;
 
     if (!aRay.isDefined())
     {
@@ -590,7 +653,162 @@ Intersection                    Ellipsoid::intersectionWith                 (   
         throw library::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
-    return Intersection::Undefined() ;
+    // Ray
+
+    const gte::Ray3<double> segment = { GteVectorFromVector3d(aRay.getOrigin()), GteVectorFromVector3d(aRay.getDirection()) } ;
+
+    // Ellipsoid
+
+    const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
+    const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+    const gte::Vector3<double> extent = { a_, b_, c_ } ;
+
+    const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
+
+    // Intersection
+
+    gte::FIQuery<double, gte::Ray3<double>, gte::Ellipsoid3<double>> intersectionQuery ;
+
+    auto intersectionResult = intersectionQuery(segment, ellipsoid) ;
+
+    if (intersectionResult.intersect)
+    {
+
+        if (intersectionResult.numIntersections == 1)
+        {
+
+            const Point point = Vector3dFromGteVector(intersectionResult.point[0]) ;
+
+            if (this->contains(point))
+            {
+                return Intersection::Point(point) ;
+            }
+            
+            return Intersection::Empty() ;
+
+        }
+        else if (intersectionResult.numIntersections == 2)
+        {
+
+            const Point firstPoint = Vector3dFromGteVector(intersectionResult.point[0]) ;
+            const Point secondPoint = Vector3dFromGteVector(intersectionResult.point[1]) ;
+
+            // The following code is a temporary workaround... as GTE is apparently considering ellipsoids as solid bodies
+
+            if (this->contains(firstPoint))
+            {
+                
+                if (this->contains(secondPoint))
+                {
+                    return Intersection::PointSet(PointSet({ firstPoint, secondPoint })) ;
+                }
+
+                return Intersection::Point(firstPoint) ;
+                
+            }
+            else if (this->contains(secondPoint))
+            {
+                return Intersection::Point(secondPoint) ;
+            }
+
+            return Intersection::Empty() ;
+            
+        }
+        else
+        {
+            throw library::core::error::RuntimeError("Intersection algorithm has failed.") ;
+        }
+
+    }
+    
+    return Intersection::Empty() ;
+    
+}
+
+Intersection                    Ellipsoid::intersectionWith                 (   const   Segment&                    aSegment                                    ) const
+{
+
+    using library::math::geom::d3::objects::PointSet ;
+
+    if (!aSegment.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Segment") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+    }
+
+    // Segment
+
+    const gte::Segment3<double> segment = { GteVectorFromVector3d(aSegment.getFirstPoint()), GteVectorFromVector3d(aSegment.getSecondPoint()) } ; ;
+
+    // Ellipsoid
+
+    const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
+    const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+    const gte::Vector3<double> extent = { a_, b_, c_ } ;
+
+    const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
+
+    // Intersection
+
+    gte::FIQuery<double, gte::Segment3<double>, gte::Ellipsoid3<double>> intersectionQuery ;
+
+    auto intersectionResult = intersectionQuery(segment, ellipsoid) ;
+
+    if (intersectionResult.intersect)
+    {
+
+        if (intersectionResult.numIntersections == 1)
+        {
+            
+            const Point point = Vector3dFromGteVector(intersectionResult.point[0]) ;
+
+            if (this->contains(point))
+            {
+                return Intersection::Point(point) ;
+            }
+            
+            return Intersection::Empty() ;
+
+        }
+        else if (intersectionResult.numIntersections == 2)
+        {
+            
+            const Point firstPoint = Vector3dFromGteVector(intersectionResult.point[0]) ;
+            const Point secondPoint = Vector3dFromGteVector(intersectionResult.point[1]) ;
+
+            // The following code is a temporary workaround... as GTE is apparently considering ellipsoids as solid bodies
+
+            if (this->contains(firstPoint))
+            {
+                
+                if (this->contains(secondPoint))
+                {
+                    return Intersection::PointSet(PointSet({ firstPoint, secondPoint })) ;
+                }
+
+                return Intersection::Point(firstPoint) ;
+                
+            }
+            else if (this->contains(secondPoint))
+            {
+                return Intersection::Point(secondPoint) ;
+            }
+
+            return Intersection::Empty() ;
+
+        }
+        else
+        {
+            throw library::core::error::RuntimeError("Intersection algorithm has failed.") ;
+        }
+
+    }
+    
+    return Intersection::Empty() ;
     
 }
 

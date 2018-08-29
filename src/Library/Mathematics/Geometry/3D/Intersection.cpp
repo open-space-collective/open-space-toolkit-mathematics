@@ -102,11 +102,16 @@ std::ostream&                   operator <<                                 (   
 
     library::core::utils::Print::Line(anOutputStream) << "Type:"                << Intersection::StringFromType(anIntersection.type_) ;
 
-    library::core::utils::Print::Separator(anOutputStream, "Objects") ;
-
-    for (const auto& objectUPtr : anIntersection.objects_)
+    if (!anIntersection.objects_.isEmpty())
     {
-        anOutputStream << (*objectUPtr) ;
+
+        library::core::utils::Print::Separator(anOutputStream, "Objects") ;
+
+        for (const auto& objectUPtr : anIntersection.objects_)
+        {
+            anOutputStream << (*objectUPtr) ;
+        }
+
     }
 
     library::core::utils::Print::Footer(anOutputStream) ;
@@ -133,7 +138,7 @@ Intersection::Type              Intersection::getType                       ( ) 
 Intersection                    Intersection::Undefined                     ( )
 {
     
-    Intersection intersection = { Array<Unique<Object>>::Empty() } ;
+    Intersection intersection ;
 
     intersection.type_ = Intersection::Type::Undefined ;
 
@@ -144,6 +149,32 @@ Intersection                    Intersection::Undefined                     ( )
 Intersection                    Intersection::Empty                         ( )
 {
     return Intersection(Array<Unique<Object>>::Empty()) ;
+}
+
+Intersection                    Intersection::Point                         (   const   objects::Point&             aPoint                                      )
+{
+
+    Intersection intersection ;
+
+    intersection.type_ = Intersection::Type::Point ;
+
+    intersection.objects_.emplace_back(Unique<Object>(aPoint.clone())) ;
+
+    return intersection ;
+
+}
+
+Intersection                    Intersection::PointSet                      (   const   objects::PointSet&          aPointSet                                   )
+{
+
+    Intersection intersection ;
+
+    intersection.type_ = Intersection::Type::PointSet ;
+    
+    intersection.objects_.emplace_back(Unique<Object>(aPointSet.clone())) ;
+
+    return intersection ;
+
 }
 
 String                          Intersection::StringFromType                (   const   Intersection::Type&         aType                                       )
@@ -195,6 +226,13 @@ String                          Intersection::StringFromType                (   
 
 }
 
+                                Intersection::Intersection                  ( )
+                                :   type_(Intersection::Type::Undefined),
+                                    objects_(Array<Unique<Object>>::Empty())
+{
+
+}
+
 Intersection::Type              Intersection::TypeFromObjects               (   const   Array<Unique<Object>>&      anObjectArray                               )
 {
 
@@ -228,29 +266,29 @@ Intersection::Type              Intersection::TypeFromObjects               (   
 Intersection::Type              Intersection::TypeFromObject                (   const   Unique<Object>&             anObjectUPtr                                )
 {
 
-    if (dynamic_cast<const Point*>(anObjectUPtr.get()))
+    if (dynamic_cast<const objects::Point*>(anObjectUPtr.get()))
     {
         return Intersection::Type::Point ;
     }
 
-    // if (dynamic_cast<PointSet*>(anObjectUPtr.get()))
+    // if (dynamic_cast<const objects::PointSet*>(anObjectUPtr.get()))
     // {
     //     return Intersection::Type::PointSet ;
     // }
 
     // [TBI]
 
-    if (dynamic_cast<Segment*>(anObjectUPtr.get()))
+    if (dynamic_cast<const objects::Segment*>(anObjectUPtr.get()))
     {
         return Intersection::Type::Segment ;
     }
 
-    if (dynamic_cast<Sphere*>(anObjectUPtr.get()))
+    if (dynamic_cast<const objects::Sphere*>(anObjectUPtr.get()))
     {
         return Intersection::Type::Sphere ;
     }
 
-    if (dynamic_cast<Ellipsoid*>(anObjectUPtr.get()))
+    if (dynamic_cast<const objects::Ellipsoid*>(anObjectUPtr.get()))
     {
         return Intersection::Type::Ellipsoid ;
     }

@@ -47,6 +47,60 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, Clone)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Point, EqualToOperator)
+{
+
+    using library::math::geom::d3::objects::Point ;
+    
+    {
+
+        EXPECT_TRUE(Point(1.0, 2.0, 3.0) == Point(1.0, 2.0, 3.0)) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Point(1.0, 2.0, 3.0) == Point(1.0, 2.0, 4.0)) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Point(1.0, 2.0, 3.0) == Point::Undefined()) ;
+        EXPECT_FALSE(Point::Undefined() == Point(1.0, 2.0, 3.0)) ;
+        EXPECT_FALSE(Point::Undefined() == Point::Undefined()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Point, NotEqualToOperator)
+{
+
+    using library::math::geom::d3::objects::Point ;
+
+    {
+
+        EXPECT_TRUE(Point(1.0, 2.0, 3.0) != Point(1.0, 2.0, 4.0)) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Point(1.0, 2.0, 3.0) != Point(1.0, 2.0, 3.0)) ;
+
+    }
+
+    {
+
+        EXPECT_TRUE(Point(1.0, 2.0, 3.0) != Point::Undefined()) ;
+        EXPECT_TRUE(Point::Undefined() != Point(1.0, 2.0, 3.0)) ;
+        EXPECT_TRUE(Point::Undefined() != Point::Undefined()) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Point, AdditionOperator)
 {
 
@@ -103,60 +157,6 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, SubtractionOperator)
         
     }
     
-}
-
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, EqualToOperator)
-{
-
-    using library::math::geom::d3::objects::Point ;
-    
-    {
-
-        EXPECT_TRUE(Point(1.0, 2.0, 3.0) == Point(1.0, 2.0, 3.0)) ;
-
-    }
-
-    {
-
-        EXPECT_FALSE(Point(1.0, 2.0, 3.0) == Point(1.0, 2.0, 4.0)) ;
-
-    }
-
-    {
-
-        EXPECT_FALSE(Point(1.0, 2.0, 3.0) == Point::Undefined()) ;
-        EXPECT_FALSE(Point::Undefined() == Point(1.0, 2.0, 3.0)) ;
-        EXPECT_FALSE(Point::Undefined() == Point::Undefined()) ;
-
-    }
-
-}
-
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, NotEqualToOperator)
-{
-
-    using library::math::geom::d3::objects::Point ;
-
-    {
-
-        EXPECT_TRUE(Point(1.0, 2.0, 3.0) != Point(1.0, 2.0, 4.0)) ;
-
-    }
-
-    {
-
-        EXPECT_FALSE(Point(1.0, 2.0, 3.0) != Point(1.0, 2.0, 3.0)) ;
-
-    }
-
-    {
-
-        EXPECT_TRUE(Point(1.0, 2.0, 3.0) != Point::Undefined()) ;
-        EXPECT_TRUE(Point::Undefined() != Point(1.0, 2.0, 3.0)) ;
-        EXPECT_TRUE(Point::Undefined() != Point::Undefined()) ;
-
-    }
-
 }
 
 TEST (Library_Mathematics_Geometry_3D_Objects_Point, StreamOperator)
