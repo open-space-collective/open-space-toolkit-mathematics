@@ -103,6 +103,19 @@ class LineString : public Object
 
         bool                    isEmpty                                     ( ) const ;
 
+        /// @brief              Check if line string is near another line string
+        ///
+        /// @code
+        ///                     LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).isNear(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1e-15 } }), 1e-15) ; // True
+        /// @endcode
+        ///
+        /// @param              [in] aLineString A line string
+        /// @param              [in] aTolerance A tolerance
+        /// @return             True if line string is near another line string
+
+        bool                    isNear                                      (   const   LineString&                 aLineString,
+                                                                                const   Real&                       aTolerance                                  ) const ;
+
         /// @brief              Get point count
         ///
         /// @return             Point count

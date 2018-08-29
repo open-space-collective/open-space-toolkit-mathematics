@@ -149,7 +149,6 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, IsDefined)
     {
 
         EXPECT_FALSE(PointSet::Empty().isDefined()) ;
-        EXPECT_FALSE(PointSet({}).isDefined()) ;
 
     }
 
@@ -170,7 +169,6 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, IsEmpty)
     {
 
         EXPECT_TRUE(PointSet::Empty().isEmpty()) ;
-        EXPECT_TRUE(PointSet({}).isEmpty()) ;
 
     }
 

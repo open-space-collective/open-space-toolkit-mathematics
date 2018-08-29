@@ -1,32 +1,28 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           LibraryMathematicsPy/Geometry.cpp
+/// @file           LibraryMathematicsPy/Geometry/2D.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <LibraryMathematicsPy/Geometry/Transformations.cpp>
-#include <LibraryMathematicsPy/Geometry/3D.cpp>
-#include <LibraryMathematicsPy/Geometry/2D.cpp>
-#include <LibraryMathematicsPy/Geometry/Angle.cpp>
+#include <LibraryMathematicsPy/Geometry/2D/Objects.cpp>
+#include <LibraryMathematicsPy/Geometry/2D/Object.cpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     LibraryMathematicsPy_Geometry               ( )
+inline void                     LibraryMathematicsPy_Geometry_2D            ( )
 {
     
-    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Geometry")))) ;
+    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Geometry.D2")))) ;
     
-    boost::python::scope().attr("Geometry") = module ;
+    boost::python::scope().attr("D2") = module ;
     
     boost::python::scope scope = module ;
     
-    LibraryMathematicsPy_Geometry_Angle() ;
-    LibraryMathematicsPy_Geometry_2D() ;
-    LibraryMathematicsPy_Geometry_3D() ;
-    LibraryMathematicsPy_Geometry_Transformations() ;
+    LibraryMathematicsPy_Geometry_2D_Object() ;
+    LibraryMathematicsPy_Geometry_2D_Objects() ;
 
 }
 
