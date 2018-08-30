@@ -103,7 +103,7 @@ Point                           LineString::getPointClosestTo               (   
 
     if (this->isEmpty())
     {
-        throw library::core::error::runtime::Undefined("Point set") ;
+        throw library::core::error::runtime::Undefined("Line string") ;
     }
 
     Point const* pointPtr = nullptr ;
@@ -206,7 +206,7 @@ void                            LineString::print                           (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Point Set") : void () ;
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Line string") : void () ;
 
     for (const auto& point : points_)
     {
