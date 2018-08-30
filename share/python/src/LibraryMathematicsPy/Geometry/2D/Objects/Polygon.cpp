@@ -25,6 +25,8 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Polygon
 
     scope in_Polygon = class_<Polygon, bases<Object>>("Polygon", init<const Array<Point>&, const Array<Array<Point>>&>())
 
+        .def(init<const Array<Point>&>())
+
         .def(self == self)
         .def(self != self)
 

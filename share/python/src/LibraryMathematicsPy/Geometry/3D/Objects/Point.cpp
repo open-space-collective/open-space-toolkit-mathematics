@@ -24,8 +24,9 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Point (
     using library::math::geom::d3::Object ;
     using library::math::geom::d3::objects::Point ;
 
-    // scope in_Point = class_<Point, bases<Object, Vector3d>>("Point", init<const Real&, const Real&, const Real&>()) // Does not work for some reason
     scope in_Point = class_<Point, bases<Object>>("Point", init<const Real&, const Real&, const Real&>())
+
+        .def(init<const Vector3d&>())
 
         .def(self == self)
         .def(self != self)

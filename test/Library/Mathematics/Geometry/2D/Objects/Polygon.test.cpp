@@ -67,7 +67,59 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Constructor)
 
     {
 
-        EXPECT_NO_THROW(Polygon({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 }})) ;
+        EXPECT_NO_THROW(Polygon({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } })) ;
+
+    }
+
+    {
+
+        const Array<Point> pointArray = Array<Point>::Empty() ;
+
+        EXPECT_NO_THROW(Polygon polygon(pointArray) ;) ;
+
+    }
+
+    {
+
+        const Array<Point> pointArray = { { 0.0, 0.0 } } ;
+
+        EXPECT_ANY_THROW(Polygon polygon(pointArray) ;) ;
+
+    }
+
+    {
+
+        const Array<Point> pointArray = { { 0.0, 0.0 }, { 0.0, 1.0 } } ;
+
+        EXPECT_ANY_THROW(Polygon polygon(pointArray) ;) ;
+
+    }
+
+    {
+
+        const Array<Point> outerRing =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Array<Array<Point>> innerRings =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.5 },
+                { 0.5, 0.5 },
+                { 0.5, 0.0 }
+            },
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.1 }
+            }
+        } ;
+
+        EXPECT_ANY_THROW(Polygon polygon(outerRing, innerRings) ;) ;
 
     }
 
@@ -456,7 +508,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Translate)
 
         polygon.translate({ 4.0, 5.0 }) ;
 
-        EXPECT_EQ(Polygon({ { 4.0, 5.0 }, { 4.0, 6.0 }, { 5.0, 6.0 }, { 5.0, 5.0 }}), polygon) ;
+        EXPECT_EQ(Polygon({ { 4.0, 5.0 }, { 4.0, 6.0 }, { 5.0, 6.0 }, { 5.0, 5.0 } }), polygon) ;
 
     }
 

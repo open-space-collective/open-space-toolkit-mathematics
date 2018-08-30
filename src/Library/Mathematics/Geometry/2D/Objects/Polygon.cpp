@@ -107,6 +107,11 @@ class Polygon::Impl
     for (const auto& innerRing : anInnerRingArray) // [TBM] This is temporary, should construct inline instead
     {
 
+        if (innerRing.getSize() < 3)
+        {
+            throw library::core::error::RuntimeError("At least 3 points are necessary to define an inner ring.") ;
+        }
+
         Polygon::Impl::BoostRing ring ;
 
         for (const auto& innerRingPoint : innerRing)
@@ -328,6 +333,11 @@ void                            Polygon::Impl::translate                    (   
 
 Polygon::Impl::BoostPolygon     Polygon::Impl::BoostPolygonFromPoints       (   const   Array<Point>&               aPointArray                                 )
 {
+
+    if ((!aPointArray.isEmpty()) && (aPointArray.getSize() < 3))
+    {
+        throw library::core::error::RuntimeError("At least 3 points are necessary to define a polygon.") ;
+    }
 
     Polygon::Impl::BoostPolygon polygon ;
 

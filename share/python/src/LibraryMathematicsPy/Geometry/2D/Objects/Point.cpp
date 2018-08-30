@@ -7,6 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <LibraryMathematicsPy/Utilities/IterableConverter.hpp>
+
 #include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -47,6 +49,15 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Point (
         .def("Undefined", &Point::Undefined).staticmethod("Undefined")
         .def("Origin", &Point::Origin).staticmethod("Origin")
 
+    ;
+
+    using library::core::ctnr::Array ;
+
+    IterableConverter()
+
+        .from_python<Array<Point>>()
+        .to_python<Array<Point>>()
+        
     ;
 
 }
