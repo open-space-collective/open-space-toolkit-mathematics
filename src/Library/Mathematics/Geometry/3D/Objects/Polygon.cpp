@@ -41,17 +41,7 @@ namespace objects
     if (xAxis_.isDefined() && yAxis_.isDefined())
     {
 
-        if (xAxis_.squaredNorm() != 1.0)
-        {
-            throw library::core::error::runtime::Wrong("X axis") ;
-        }
-
-        if (yAxis_.squaredNorm() != 1.0)
-        {
-            throw library::core::error::runtime::Wrong("Y axis") ;
-        }
-
-        if (xAxis_.dot(yAxis_) != 0.0)
+        if (std::abs(xAxis_.dot(yAxis_)) > Real::Epsilon())
         {
             throw library::core::error::RuntimeError("X and Y axes are not orthogonal.") ;
         }
@@ -146,6 +136,111 @@ Vector3d                        Polygon::getNormalVector                    ( ) 
     }
 
     return xAxis_.cross(yAxis_) ;
+
+}
+
+Size                            Polygon::getEdgeCount                       ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+    
+    return polygon_.getEdgeCount() ;
+
+}
+
+Size                            Polygon::getVertexCount                     ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+    
+    return polygon_.getVertexCount() ;
+
+}
+
+Segment                         Polygon::getEdgeAt                          (   const   Index                       anEdgeIndex                                 ) const
+{
+
+    using Point2d = library::math::geom::d2::objects::Point ;
+    using Segment2d = library::math::geom::d2::objects::Segment ;
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    const Segment2d edge2d = polygon_.getEdgeAt(anEdgeIndex) ;
+
+    const Point2d& firstVertex2d = edge2d.getFirstPoint() ;
+    const Point2d& secondVertex2d = edge2d.getSecondPoint() ;
+
+    const Point firstVertex = origin_ + ((firstVertex2d.x() * xAxis_) + (firstVertex2d.y() * yAxis_)) ;
+    const Point secondVertex = origin_ + ((secondVertex2d.x() * xAxis_) + (secondVertex2d.y() * yAxis_)) ;
+
+    return { firstVertex, secondVertex } ;
+
+}
+
+Point                           Polygon::getVertexAt                        (   const   Index                       aVertexIndex                                ) const
+{
+
+    using Point2d = library::math::geom::d2::objects::Point ;
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    const Point2d vertex2d = polygon_.getVertexAt(aVertexIndex) ;
+
+    return origin_ + ((vertex2d.x() * xAxis_) + (vertex2d.y() * yAxis_)) ;
+
+}
+
+Array<Segment>                  Polygon::getEdges                           ( ) const
+{
+
+    using Point2d = library::math::geom::d2::objects::Point ;
+
+    Array<Segment> edges = Array<Segment>::Empty() ;
+
+    edges.reserve(polygon_.getEdgeCount()) ;
+
+    for (const auto& edge2d : polygon_.getEdges())
+    {
+        
+        const Point2d& firstVertex2d = edge2d.getFirstPoint() ;
+        const Point2d& secondVertex2d = edge2d.getSecondPoint() ;
+
+        const Point firstVertex = origin_ + ((firstVertex2d.x() * xAxis_) + (firstVertex2d.y() * yAxis_)) ;
+        const Point secondVertex = origin_ + ((secondVertex2d.x() * xAxis_) + (secondVertex2d.y() * yAxis_)) ;
+
+        edges.add(Segment(firstVertex, secondVertex)) ;
+
+    }
+
+    return edges ;
+
+}
+
+Array<Point>                    Polygon::getVertices                        ( ) const
+{
+
+    Array<Point> vertices = Array<Point>::Empty() ;
+
+    vertices.reserve(polygon_.getVertexCount()) ;
+
+    for (const auto& vertex2d : polygon_.getVertices())
+    {
+        vertices.add(origin_ + ((vertex2d.x() * xAxis_) + (vertex2d.y() * yAxis_))) ;
+    }
+
+    return vertices ;
 
 }
 

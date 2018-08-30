@@ -130,7 +130,14 @@ bool                            Ellipsoid::intersects                       (   
 
 bool                            Ellipsoid::intersects                       (   const   PointSet&                   aPointSet                                   ) const
 {
-    return this->contains(aPointSet) ;
+    
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+    }
+    
+    return (!aPointSet.isEmpty()) && std::any_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
+
 }
 
 bool                            Ellipsoid::intersects                       (   const   Line&                       aLine                                       ) const
@@ -692,12 +699,12 @@ Intersection                    Ellipsoid::intersectionWith                 (   
 
             const Point point = Vector3dFromGteVector(intersectionResult.point[0]) ;
 
-            if (this->contains(point))
+            if ((point == aRay.getOrigin()) && (!this->contains(point))) // Discard ray origin, if returned by Gte
             {
-                return Intersection::Point(point) ;
+                return Intersection::Empty() ;
             }
-            
-            return Intersection::Empty() ;
+
+            return Intersection::Point(point) ;
 
         }
         else if (intersectionResult.numIntersections == 2)
@@ -706,34 +713,24 @@ Intersection                    Ellipsoid::intersectionWith                 (   
             const Point firstPoint = Vector3dFromGteVector(intersectionResult.point[0]) ;
             const Point secondPoint = Vector3dFromGteVector(intersectionResult.point[1]) ;
 
-            // The following code is a temporary workaround... as GTE is apparently considering ellipsoids as solid bodies
+            const PointSet pointSet = { { firstPoint, secondPoint } } ;
 
-            if (this->contains(firstPoint))
+            if ((firstPoint == aRay.getOrigin()) || (secondPoint == aRay.getOrigin()))
             {
-                
-                if (this->contains(secondPoint))
+
+                if ((firstPoint == aRay.getOrigin()) && (!this->contains(firstPoint))) // Discard ray origin, if returned by Gte
                 {
-
-                    const PointSet pointSet = { { firstPoint, secondPoint } } ;
-
-                    if (onlyInSight)
-                    {
-                        return Intersection::Point(pointSet.getPointClosestTo(aRay.getOrigin())) ;
-                    }
-                    
-                    return Intersection::PointSet(pointSet) ;
-
+                    return Intersection::Point(secondPoint) ;
                 }
 
-                return Intersection::Point(firstPoint) ;
-                
-            }
-            else if (this->contains(secondPoint))
-            {
-                return Intersection::Point(secondPoint) ;
+                if ((secondPoint == aRay.getOrigin()) && (!this->contains(secondPoint))) // Discard ray origin, if returned by Gte
+                {
+                    return Intersection::Point(firstPoint) ;
+                }
+
             }
 
-            return Intersection::Empty() ;
+            return onlyInSight ? Intersection::Point(pointSet.getPointClosestTo(aRay.getOrigin())) : Intersection::PointSet(pointSet) ;
             
         }
         else
@@ -788,12 +785,12 @@ Intersection                    Ellipsoid::intersectionWith                 (   
             
             const Point point = Vector3dFromGteVector(intersectionResult.point[0]) ;
 
-            if (this->contains(point))
+            if ((point == aSegment.getFirstPoint() || (point == aSegment.getSecondPoint())) && (!this->contains(point))) // Discard segment points, if returned by Gte
             {
-                return Intersection::Point(point) ;
+                return Intersection::Empty() ;
             }
-            
-            return Intersection::Empty() ;
+
+            return Intersection::Point(point) ;
 
         }
         else if (intersectionResult.numIntersections == 2)
@@ -802,25 +799,60 @@ Intersection                    Ellipsoid::intersectionWith                 (   
             const Point firstPoint = Vector3dFromGteVector(intersectionResult.point[0]) ;
             const Point secondPoint = Vector3dFromGteVector(intersectionResult.point[1]) ;
 
-            // The following code is a temporary workaround... as GTE is apparently considering ellipsoids as solid bodies
-
-            if (this->contains(firstPoint))
+            if ((firstPoint == aSegment.getFirstPoint()) || (secondPoint == aSegment.getFirstPoint()) || (firstPoint == aSegment.getSecondPoint()) || (secondPoint == aSegment.getSecondPoint())) // Discard segment points, if returned by Gte
             {
-                
-                if (this->contains(secondPoint))
+
+                if ((firstPoint == aSegment.getFirstPoint()) && (!this->contains(firstPoint)))
                 {
-                    return Intersection::PointSet(PointSet({ firstPoint, secondPoint })) ;
+
+                    if ((secondPoint == aSegment.getSecondPoint()) && (!this->contains(secondPoint)))
+                    {
+                        return Intersection::Empty() ;
+                    }
+
+                    return Intersection::Point(secondPoint) ;
+
                 }
 
-                return Intersection::Point(firstPoint) ;
-                
-            }
-            else if (this->contains(secondPoint))
-            {
-                return Intersection::Point(secondPoint) ;
+                if ((firstPoint == aSegment.getSecondPoint()) && (!this->contains(firstPoint)))
+                {
+
+                    if ((secondPoint == aSegment.getFirstPoint()) && (!this->contains(secondPoint)))
+                    {
+                        return Intersection::Empty() ;
+                    }
+
+                    return Intersection::Point(secondPoint) ;
+
+                }
+
+                if ((secondPoint == aSegment.getFirstPoint()) && (!this->contains(secondPoint)))
+                {
+
+                    if ((firstPoint == aSegment.getSecondPoint()) && (!this->contains(firstPoint)))
+                    {
+                        return Intersection::Empty() ;
+                    }
+
+                    return Intersection::Point(firstPoint) ;
+
+                }
+
+                if ((secondPoint == aSegment.getSecondPoint()) && (!this->contains(secondPoint)))
+                {
+
+                    if ((firstPoint == aSegment.getFirstPoint()) && (!this->contains(firstPoint)))
+                    {
+                        return Intersection::Empty() ;
+                    }
+
+                    return Intersection::Point(firstPoint) ;
+
+                }
+
             }
 
-            return Intersection::Empty() ;
+            return Intersection::PointSet(PointSet({ firstPoint, secondPoint })) ;
 
         }
         else
@@ -832,6 +864,12 @@ Intersection                    Ellipsoid::intersectionWith                 (   
     
     return Intersection::Empty() ;
     
+}
+
+Intersection                    Ellipsoid::intersectionWith                 (   const   Pyramid&                    aPyramid,
+                                                                                const   bool                        onlyInSight                                 ) const
+{
+    return aPyramid.intersectionWith(*this, onlyInSight) ;
 }
 
 void                            Ellipsoid::print                            (           std::ostream&               anOutputStream,

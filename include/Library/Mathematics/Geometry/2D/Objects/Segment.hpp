@@ -1,17 +1,17 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Objects/Segment.hpp
+/// @file           Library/Mathematics/Geometry/2D/Objects/Segment.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_3D_Objects_Segment__
-#define __Library_Mathematics_Geometry_3D_Objects_Segment__
+#ifndef __Library_Mathematics_Geometry_2D_Objects_Segment__
+#define __Library_Mathematics_Geometry_2D_Objects_Segment__
 
-#include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <Library/Mathematics/Geometry/3D/Object.hpp>
+#include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
+#include <Library/Mathematics/Geometry/2D/Object.hpp>
 
 #include <Library/Core/Types/Real.hpp>
 
@@ -23,7 +23,7 @@ namespace math
 {
 namespace geom
 {
-namespace d3
+namespace d2
 {
 namespace objects
 {
@@ -32,12 +32,12 @@ namespace objects
 
 using library::core::types::Real ;
 
-using library::math::geom::d3::Object ;
-using library::math::geom::d3::objects::Point ;
+using library::math::geom::d2::Object ;
+using library::math::geom::d2::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-class Ellipsoid ;
+class PointSet ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -56,7 +56,7 @@ class Segment : public Object
         /// @brief              Constructor
         ///
         /// @code
-        ///                     Segment segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
+        ///                     Segment segment({ 0.0, 0.0 }, { 0.0, 1.0 }) ;
         /// @endcode
         ///
         /// @param              [in] aFirstPoint A first point
@@ -74,7 +74,7 @@ class Segment : public Object
         /// @brief              Equal to operator
         ///
         /// @code
-        ///                     Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) == Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ; // True
+        ///                     Segment({ 0.0, 0.0 }, { 0.0, 1.0 }) == Segment({ 0.0, 0.0 }, { 0.0, 1.0 }) ; // True
         /// @endcode
         ///
         /// @param              [in] aSegment A segment
@@ -85,7 +85,7 @@ class Segment : public Object
         /// @brief              Not equal to operator
         ///
         /// @code
-        ///                     Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) != Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 2.0 }) ; // True
+        ///                     Segment({ 0.0, 0.0 }, { 0.0, 1.0 }) != Segment({ 0.0, 0.0 }, { 0.0, 2.0 }) ; // True
         /// @endcode
         ///
         /// @param              [in] aSegment A segment
@@ -96,7 +96,7 @@ class Segment : public Object
         /// @brief              Check if segment is defined
         ///
         /// @code
-        ///                     Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).isDefined() ; // True
+        ///                     Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).isDefined() ; // True
         /// @endcode
         ///
         /// @return             True if segment is defined
@@ -106,25 +106,12 @@ class Segment : public Object
         /// @brief              Check if segment is degenerate, i.e. its length is zero
         ///
         /// @code
-        ///                     Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).isDegenerate() ; // True
+        ///                     Segment({ 0.0, 0.0 }, { 0.0, 0.0 }).isDegenerate() ; // True
         /// @endcode
         ///
         /// @return             True if segment is degenerate
 
         bool                    isDegenerate                                ( ) const ;
-
-        /// @brief              Check if segment intersects ellipsoid
-        ///
-        /// @code
-        ///                     Segment segment = ... ;
-        ///                     Ellipsoid ellipsoid = ... ;
-        ///                     segment.intersects(ellipsoid) ;
-        /// @endcode
-        ///
-        /// @param              [in] anEllipsoid An ellipsoid
-        /// @return             True if segment intersects ellipsoid
-        
-        bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
 
         /// @brief              Check if segment contains point
         ///
@@ -134,15 +121,28 @@ class Segment : public Object
         ///                     segment.contains(point) ;
         /// @endcode
         ///
-        /// @param              [in] aPoint An point
+        /// @param              [in] aPoint A point
         /// @return             True if segment contains point
 
         bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
 
+        /// @brief              Check if segment contains point set
+        ///
+        /// @code
+        ///                     Segment segment = ... ;
+        ///                     PointSet pointSet = ... ;
+        ///                     segment.contains(pointSet) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             True if segment contains point set
+
+        bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
+
         /// @brief              Get segment first point
         ///
         /// @code
-        ///                     Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getFirstPoint() ; // [0.0, 0.0, 0.0]
+        ///                     Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).getFirstPoint() ; // [0.0, 0.0]
         /// @endcode
         ///
         /// @return             Segment first point
@@ -152,7 +152,7 @@ class Segment : public Object
         /// @brief              Get segment second point
         ///
         /// @code
-        ///                     Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getSecondPoint() ; // [0.0, 0.0, 1.0]
+        ///                     Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).getSecondPoint() ; // [0.0, 1.0]
         /// @endcode
         ///
         /// @return             Segment second point
@@ -162,7 +162,7 @@ class Segment : public Object
         /// @brief              Get segment center
         ///
         /// @code
-        ///                     Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 2.0 }).getCenter() ; // [0.0, 0.0, 1.0]
+        ///                     Segment({ 0.0, 0.0 }, { 0.0, 2.0 }).getCenter() ; // [0.0, 1.0]
         /// @endcode
         ///
         /// @return             Segment center
@@ -172,22 +172,30 @@ class Segment : public Object
         /// @brief              Get segment direction
         ///
         /// @code
-        ///                     Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 2.0 }).getDirection() ; // [0.0, 0.0, 1.0]
+        ///                     Segment({ 0.0, 0.0 }, { 0.0, 2.0 }).getDirection() ; // [0.0, 1.0]
         /// @endcode
         ///
         /// @return             Segment direction
 
-        Vector3d                getDirection                                ( ) const ;
+        Vector2d                getDirection                                ( ) const ;
 
         /// @brief              Get segment length
         ///
         /// @code
-        ///                     Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 2.0 }).getLength() ; // 2.0
+        ///                     Segment({ 0.0, 0.0 }, { 0.0, 2.0 }).getLength() ; // 2.0
         /// @endcode
         ///
         /// @return             Segment length
 
         Real                    getLength                                   ( ) const ;
+
+        /// @brief              Get string representation
+        ///
+        /// @param              [in] aFormat A format
+        /// @return             String representation
+
+        virtual String          toString                                    (   const   Object::Format&             aFormat                                     =   Object::Format::Standard,
+                                                                                const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const override ;
 
         /// @brief              Print segment
         ///
@@ -201,13 +209,7 @@ class Segment : public Object
         ///
         /// @param              [in] aTranslation A translation vector
 
-        virtual void            translate                                   (   const   Vector3d&                   aTranslation                                ) override ;
-
-        /// @brief              Rotate segment
-        ///
-        /// @param              [in] aRotation A rotation quaternion
-        
-        virtual void            rotate                                      (   const   Quaternion&                 aRotation                                   ) override ;
+        virtual void            translate                                   (   const   Vector2d&                   aTranslation                                ) override ;
 
         /// @brief              Constructs an undefined segment
         ///

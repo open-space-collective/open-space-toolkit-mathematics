@@ -161,6 +161,7 @@ TEST (Library_Mathematics_Objects_Interval, IsDegenerate)
 // {
 
 //     using library::core::types::Real ;
+
 //     using library::math::obj::Interval ;
 
 //     {
@@ -175,6 +176,7 @@ TEST (Library_Mathematics_Objects_Interval, IsDegenerate)
 // {
 
 //     using library::core::types::Real ;
+
 //     using library::math::obj::Interval ;
 
 //     {
@@ -794,6 +796,7 @@ TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 // {
 
 //     using library::core::types::Real ;
+
 //     using library::math::obj::Interval ;
 
 //     {
@@ -808,6 +811,7 @@ TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 // {
 
 //     using library::core::types::Real ;
+
 //     using library::math::obj::Interval ;
 
 //     {
@@ -822,6 +826,7 @@ TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 // {
 
 //     using library::core::types::Real ;
+
 //     using library::math::obj::Interval ;
 
 //     {
@@ -832,25 +837,59 @@ TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 
 // }
 
-// TEST (Library_Mathematics_Objects_Interval, GenerateArrayWithSize)
-// {
+TEST (Library_Mathematics_Objects_Interval, GenerateArrayWithSize)
+{
 
-//     using library::core::types::Size ;
-//     using library::core::types::Real ;
-//     using library::math::obj::Interval ;
+    using library::core::types::Size ;
+    using library::core::types::Real ;
+    using library::core::ctnr::Array ;
 
-//     {
+    using library::math::obj::Interval ;
 
-//         FAIL() ;
+    {
 
-//     }
+        const Interval<Real> interval = { 0.0, 1.0, Interval<Real>::Type::Closed } ;
 
-// }
+        const Array<Real> array = interval.generateArrayWithSize(3) ;
+
+        EXPECT_EQ(Array<Real>({ 0.0, 0.5, 1.0 }), array) ;
+
+    }
+
+    {
+
+        const Interval<Real> interval = { 0.0, 1.0, Interval<Real>::Type::Closed } ;
+
+        const Array<Real> array = interval.generateArrayWithSize(5) ;
+
+        EXPECT_EQ(Array<Real>({ 0.0, 0.25, 0.5, 0.75, 1.0 }), array) ;
+
+    }
+
+    {
+
+        const Interval<Real> interval = { 0.0, 1.0, Interval<Real>::Type::Closed } ;
+
+        const Array<Real> array = interval.generateArrayWithSize(2) ;
+
+        EXPECT_EQ(Array<Real>({ 0.0, 1.0 }), array) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).generateArrayWithSize(0)) ;
+        EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).generateArrayWithSize(1)) ;
+
+    }
+
+}
 
 // TEST (Library_Mathematics_Objects_Interval, ToString)
 // {
 
 //     using library::core::types::Real ;
+
 //     using library::math::obj::Interval ;
 
 //     {
@@ -1078,6 +1117,7 @@ TEST (Library_Mathematics_Objects_Interval, HalfOpenRight)
 // {
 
 //     using library::core::types::Real ;
+
 //     using library::math::obj::Interval ;
 
 //     {

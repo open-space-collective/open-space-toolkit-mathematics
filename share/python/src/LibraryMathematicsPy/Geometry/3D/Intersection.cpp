@@ -37,6 +37,9 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Intersection ( 
         .def(self == self)
         .def(self != self)
 
+        .def(self_ns::str(self_ns::self))
+        .def(self_ns::repr(self_ns::self))
+
         .def("isDefined", &Intersection::isDefined)
         .def("isEmpty", &Intersection::isEmpty)
 

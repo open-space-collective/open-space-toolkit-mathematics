@@ -8,6 +8,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <Library/Mathematics/Geometry/2D/Objects/LineString.hpp>
+#include <Library/Mathematics/Geometry/2D/Objects/Segment.hpp>
 
 #include <Library/Core/Error.hpp>
 #include <Library/Core/Utilities.hpp>
@@ -249,6 +250,18 @@ void                            LineString::translate                       (   
 LineString                      LineString::Empty                           ( )
 {
     return { Array<Point>::Empty() } ;
+}
+
+LineString                      LineString::Segment                         (   const   objects::Segment&           aSegment                                    )
+{
+
+    if (!aSegment.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Segment") ;
+    }
+
+    return { { aSegment.getFirstPoint(), aSegment.getSecondPoint() } } ;
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

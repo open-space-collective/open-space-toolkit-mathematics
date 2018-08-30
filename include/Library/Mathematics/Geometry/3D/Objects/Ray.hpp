@@ -169,9 +169,11 @@ class Ray : public Object
         /// @brief              Compute intersection of ray with ellipsoid
         ///
         /// @param              [in] anEllipsoid An ellipsoid
+        /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
         /// @return             Intersection of ray with ellipsoid
 
-        Intersection            intersectionWith                            (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
+        Intersection            intersectionWith                            (   const   Ellipsoid&                  anEllipsoid,
+                                                                                const   bool                        onlyInSight                                 =   false ) const ;
 
         /// @brief              Print ray
         ///

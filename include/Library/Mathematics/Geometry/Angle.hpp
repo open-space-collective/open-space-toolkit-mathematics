@@ -31,6 +31,7 @@ using library::core::types::Integer ;
 using library::core::types::Real ;
 using library::core::types::String ;
 
+using library::math::obj::Vector2d ;
 using library::math::obj::Vector3d ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -137,6 +138,12 @@ class Angle
 
         static Angle            Zero                                        ( ) ;
 
+        static Angle            HalfPi                                      ( ) ;
+        
+        static Angle            Pi                                          ( ) ;
+
+        static Angle            TwoPi                                       ( ) ;
+
         static Angle            Radians                                     (   const   Real&                       aValue                                      ) ;
         
         static Angle            Degrees                                     (   const   Real&                       aValue                                      ) ;
@@ -146,6 +153,12 @@ class Angle
         static Angle            Arcseconds                                  (   const   Real&                       aValue                                      ) ;
 
         static Angle            Revolutions                                 (   const   Real&                       aValue                                      ) ;
+
+        static Angle            Between                                     (   const   Vector2d&                   aFirstVector,
+                                                                                const   Vector2d&                   aSecondVector                               ) ;
+        
+        static Angle            Between                                     (   const   Vector3d&                   aFirstVector,
+                                                                                const   Vector3d&                   aSecondVector                               ) ;
         
         static Angle            Parse                                       (   const   String&                     aString                                     ) ;
 

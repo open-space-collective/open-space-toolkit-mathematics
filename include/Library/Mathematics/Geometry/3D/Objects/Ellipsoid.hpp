@@ -36,6 +36,7 @@ using library::core::types::Real ;
 using library::math::obj::Matrix3d ;
 using library::math::geom::d3::Object ;
 using library::math::geom::d3::objects::Point ;
+using library::math::geom::d3::Intersection ;
 using library::math::geom::trf::rot::Quaternion ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -360,7 +361,7 @@ class Ellipsoid : public Object
         /// @brief              Compute intersection of ellipsoid with ray
         ///
         /// @param              [in] aRay A ray
-        /// @param              [in] onlyInSight (option) If true, only return intersection points that are in sight
+        /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
         /// @return             Intersection of ellipsoid with ray
 
         Intersection            intersectionWith                            (   const   Ray&                        aRay,
@@ -372,6 +373,15 @@ class Ellipsoid : public Object
         /// @return             Intersection of ellipsoid with segment
 
         Intersection            intersectionWith                            (   const   Segment&                    aSegment                                    ) const ;
+
+        /// @brief              Compute intersection of ellipsoid with pyramid
+        ///
+        /// @param              [in] aPyramid A pyramid
+        /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
+        /// @return             Intersection of ellipsoid with pyramid
+
+        Intersection            intersectionWith                            (   const   Pyramid&                    aPyramid,
+                                                                                const   bool                        onlyInSight                                 =   false ) const ;
 
         /// @brief              Print ellipsoid
         ///

@@ -315,11 +315,30 @@ ctnr::Array<T>                  Interval<T>::generateArrayWithStep          (   
     
 }
 
-//                                 template <class T>
-// ctnr::Array<T>                  Interval<T>::generateArrayWithSize          (   const   types::Size&                anArraySize                                 ) const
-// {
-//     return ctnr::Array<T>::Empty() ; // [TBI]
-// }
+                                template <class T>
+ctnr::Array<T>                  Interval<T>::generateArrayWithSize          (   const   types::Size&                anArraySize                                 ) const
+{
+
+    if (anArraySize < 2)
+    {
+        throw library::core::error::runtime::Wrong("Array size") ;
+    }
+
+    const T step = (this->accessUpperBound() - this->accessLowerBound()) / static_cast<T>(anArraySize - 1) ;
+
+    ctnr::Array<T> array(anArraySize, T::Undefined()) ;
+
+    T value = T::Undefined() ;
+    typename ctnr::Array<T>::Iterator arrayIt ;
+
+    for (arrayIt = array.begin(), value = this->accessLowerBound(); arrayIt != array.end(); ++arrayIt, value += step)
+    {
+        *arrayIt = value ;
+    }
+
+    return array ;
+    
+}
 
 //                                 template <class T>
 // types::String                   Interval<T>::toString                      ( ) const

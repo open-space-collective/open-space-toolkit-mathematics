@@ -8,6 +8,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <Library/Mathematics/Geometry/2D/Objects/LineString.hpp>
+#include <Library/Mathematics/Geometry/2D/Objects/Segment.hpp>
 
 #include <Global.test.hpp>
 
@@ -316,6 +317,20 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, Empty)
 
         EXPECT_NO_THROW(LineString::Empty()) ;
         EXPECT_FALSE(LineString::Empty().isDefined()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_2D_Objects_LineString, Segment)
+{
+
+    using library::math::geom::d2::objects::Segment ;
+    using library::math::geom::d2::objects::LineString ;
+    
+    {
+
+        EXPECT_EQ(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 } }), LineString::Segment(Segment({ 0.0, 0.0 }, { 0.0, 1.0 }))) ;
 
     }
 

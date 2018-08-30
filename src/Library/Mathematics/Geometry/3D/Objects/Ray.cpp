@@ -145,9 +145,10 @@ Vector3d                        Ray::getDirection                           ( ) 
 
 }
 
-Intersection                    Ray::intersectionWith                       (   const   Ellipsoid&                  anEllipsoid                                 ) const
+Intersection                    Ray::intersectionWith                       (   const   Ellipsoid&                  anEllipsoid,
+                                                                                const   bool                        onlyInSight                                 ) const
 {
-    return anEllipsoid.intersectionWith(*this) ;
+    return anEllipsoid.intersectionWith(*this, onlyInSight) ;
 }
 
 void                            Ray::print                                  (           std::ostream&               anOutputStream,

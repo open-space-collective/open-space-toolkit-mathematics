@@ -10,6 +10,7 @@
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationMatrix.hpp>
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
@@ -212,6 +213,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_PointSet)
     {
 
         EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).intersects(PointSet({ { +5.0, +2.0, +3.0 }, { -3.0, +2.0, +3.0 }, { +1.0, +7.0, +3.0 }, { +1.0, -3.0, +3.0 }, { +1.0, +2.0, +9.0 }, { +1.0, +2.0, -3.0 } }))) ;
+        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).intersects(PointSet({ { 0.0, 0.0, 0.0 }, { +1.0, +2.0, -3.0 } }))) ;
 
     }
 
@@ -704,6 +706,30 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Plane)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Pyramid)
+{
+
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+    using library::math::geom::d3::objects::Pyramid ;
+
+    {
+
+        // See: Library_Mathematics_Geometry_3D_Objects_Pyramid.Intersects_Ellipsoid
+
+        SUCCEED() ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Ellipsoid::Undefined().intersects(Pyramid::Undefined())) ;
+        EXPECT_ANY_THROW(Ellipsoid(Point::Origin(), 1.0, 1.0, 1.0).intersects(Pyramid::Undefined())) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Contains_Point)
 {
 
@@ -1171,6 +1197,63 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
 
     {
 
+        const Ray ray = { { 0.0, 0.0, -10.0 }, { 0.0, 0.0, 1.0 } } ;
+        const Ellipsoid ellipsoid = { { 0.0, 0.0, 0.0 }, 1.0, 2.0, 3.0 } ;
+
+        const Intersection intersection = ellipsoid.intersectionWith(ray) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.is<PointSet>()) ;
+
+        const PointSet pointSet = intersection.as<PointSet>() ;
+
+        EXPECT_EQ(2, pointSet.getSize()) ;
+
+        EXPECT_TRUE(pointSet.isNear(PointSet({ { 0.0, 0.0, -3.0 }, { 0.0, 0.0, +3.0 } }), 1e-10)) ;
+
+    }
+
+    {
+
+        const Ray ray = { { 0.0, 0.0, -100.0 }, { 0.0, 0.0, 1.0 } } ;
+        const Ellipsoid ellipsoid = { { 0.0, 0.0, 0.0 }, 1.0, 2.0, 3.0 } ;
+
+        const Intersection intersection = ellipsoid.intersectionWith(ray) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.is<PointSet>()) ;
+
+        const PointSet pointSet = intersection.as<PointSet>() ;
+
+        EXPECT_EQ(2, pointSet.getSize()) ;
+
+        EXPECT_TRUE(pointSet.isNear(PointSet({ { 0.0, 0.0, -3.0 }, { 0.0, 0.0, +3.0 } }), 1e-10)) ;
+
+    }
+
+    {
+
+        const Ray ray = { { 0.0, 0.0, -1000.0 }, { 0.0, 0.0, 1.0 } } ;
+        const Ellipsoid ellipsoid = { { 0.0, 0.0, 0.0 }, 1.0, 2.0, 3.0 } ;
+
+        const Intersection intersection = ellipsoid.intersectionWith(ray) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.is<PointSet>()) ;
+
+        const PointSet pointSet = intersection.as<PointSet>() ;
+
+        EXPECT_EQ(2, pointSet.getSize()) ;
+
+        EXPECT_TRUE(pointSet.isNear(PointSet({ { 0.0, 0.0, -3.0 }, { 0.0, 0.0, +3.0 } }), 1e-5)) ;
+
+    }
+
+    {
+
         const Ray ray = { { 0.0, 0.0, +4.0 }, { 0.0, 0.0, 1.0 } } ;
         const Ellipsoid ellipsoid = { { 0.0, 0.0, 0.0 }, 1.0, 2.0, 3.0 } ;
 
@@ -1501,6 +1584,30 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Segmen
     {
 
         EXPECT_ANY_THROW(Ellipsoid::Undefined().intersectionWith(Segment::Undefined())) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Pyramid)
+{
+
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+    using library::math::geom::d3::objects::Pyramid ;
+
+    {
+
+        // See: Library_Mathematics_Geometry_3D_Objects_Pyramid.IntersectionWith_Ellipsoid
+
+        SUCCEED() ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Ellipsoid::Undefined().intersectionWith(Pyramid::Undefined())) ;
+        EXPECT_ANY_THROW(Ellipsoid(Point::Origin(), 1.0, 1.0, 1.0).intersectionWith(Pyramid::Undefined())) ;
 
     }
 

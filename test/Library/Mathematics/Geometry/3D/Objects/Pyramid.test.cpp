@@ -8,7 +8,9 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
+#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 
 #include <Global.test.hpp>
 
@@ -172,6 +174,36 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IsDefined)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Intersects_Ellipsoid)
+{
+
+    using library::math::obj::Vector3d ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Polygon ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+    using library::math::geom::d3::objects::Pyramid ;
+    
+    {
+
+        const Polygon base = { { { { -0.1, -0.1 }, { +0.1, -0.1 }, { +0.1, +0.1 }, { -0.1, +0.1 } } }, { -1.0, 0.0, 1.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+
+        const Pyramid pyramid = { base, apex } ;
+
+        const Ellipsoid ellipsoid = { { 0.0, 0.0, 10.0 }, 5.0, 5.0, 5.0 } ;
+
+        EXPECT_TRUE(pyramid.intersects(ellipsoid)) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Pyramid::Undefined().intersects(Ellipsoid::Undefined())) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, GetBase)
 {
 
@@ -217,6 +249,48 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, GetApex)
     {
 
         EXPECT_ANY_THROW(Pyramid::Undefined().getApex()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IntersectionWith_Ellipsoid)
+{
+
+    using library::math::obj::Vector3d ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::PointSet ;
+    using library::math::geom::d3::objects::Polygon ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+    using library::math::geom::d3::objects::Pyramid ;
+    using library::math::geom::d3::Intersection ;
+    
+    {
+
+        const Polygon base = { { { { -0.1, -0.1 }, { +0.1, -0.1 }, { +0.1, +0.1 }, { -0.1, +0.1 } } }, { 0.0, 0.0, 1.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+
+        const Pyramid pyramid = { base, apex } ;
+
+        const Ellipsoid ellipsoid = { { 0.0, 0.0, 10.0 }, 5.0, 5.0, 5.0 } ;
+
+        const Intersection intersection = pyramid.intersectionWith(ellipsoid, true, 8) ;
+
+        std::cout << intersection << std::endl ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+        EXPECT_FALSE(intersection.isEmpty()) ;
+        EXPECT_TRUE(intersection.is<PointSet>()) ;
+
+        const PointSet pointSet = intersection.as<PointSet>() ;
+
+        EXPECT_EQ(8, pointSet.getSize()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Pyramid::Undefined().intersectionWith(Ellipsoid::Undefined())) ;
 
     }
 

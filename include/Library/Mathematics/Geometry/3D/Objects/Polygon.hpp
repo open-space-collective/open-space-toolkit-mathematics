@@ -11,9 +11,14 @@
 #define __Library_Mathematics_Geometry_3D_Objects_Polygon__
 
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Polygon.hpp>
+
+#include <Library/Core/Containers/Array.hpp>
+#include <Library/Core/Types/Size.hpp>
+#include <Library/Core/Types/Index.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -30,10 +35,14 @@ namespace objects
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-using Polygon2d = library::math::geom::d2::objects::Polygon ;
+using library::core::ctnr::Index ;
+using library::core::ctnr::Size ;
+using library::core::ctnr::Array ;
 
+using Polygon2d = library::math::geom::d2::objects::Polygon ;
 using library::math::geom::d3::Object ;
 using library::math::geom::d3::objects::Point ;
+using library::math::geom::d3::objects::Segment ;
 using library::math::geom::d3::objects::Plane ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -126,6 +135,44 @@ class Polygon : public Object
         /// @return             Polygon normal vector
 
         Vector3d                getNormalVector                             ( ) const ;
+
+        /// @brief              Get edge count
+        ///
+        /// @return             Edge count
+
+        Size                    getEdgeCount                                ( ) const ;
+
+        /// @brief              Get vertex count
+        ///
+        /// @return             Vertex count
+
+        Size                    getVertexCount                              ( ) const ;
+
+        /// @brief              Get edge at index
+        ///
+        /// @param              [in] anEdgeIndex An edge index
+        /// @return             Edge (segment)
+
+        Segment                 getEdgeAt                                   (   const   Index                       anEdgeIndex                                 ) const ;
+
+        /// @brief              Get vertex at index
+        ///
+        /// @param              [in] aVertexIndex A vertex index
+        /// @return             Vertex
+
+        Point                   getVertexAt                                 (   const   Index                       aVertexIndex                                ) const ;
+
+        /// @brief              Get polygon edges
+        ///
+        /// @return             Polygon edges
+
+        Array<Segment>          getEdges                                    ( ) const ;
+
+        /// @brief              Get polygon vertices
+        ///
+        /// @return             Polygon vertices
+
+        Array<Point>            getVertices                                 ( ) const ;
 
         /// @brief              Print polygon
         ///

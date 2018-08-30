@@ -44,6 +44,10 @@ using library::math::geom::d2::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+class Segment ;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /// @brief                      Line string
 
 class LineString : public Object
@@ -172,6 +176,17 @@ class LineString : public Object
         /// @return             Empty line string
 
         static LineString       Empty                                       ( ) ;
+
+        /// @brief              Constructs a line string from a segment
+        ///
+        /// @code
+        ///                     Segment segment = { { 0.0, 0.0 }, { 0.0, 1.0 } } ;
+        ///                     LineString lineString = LineString::Segment(segment) ;
+        /// @endcode
+        ///
+        /// @return             Line string
+
+        static LineString       Segment                                     (   const   objects::Segment&           aSegment                                    ) ;
 
     private:
 

@@ -23,6 +23,9 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Object     ( )
         .def(self == self)
         .def(self != self)
 
+        .def(self_ns::str(self_ns::self))
+        .def(self_ns::repr(self_ns::self))
+
         .def("isDefined", &Object::isDefined)
         .def("intersects", &Object::intersects)
         .def("contains", &Object::contains)
