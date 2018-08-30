@@ -108,6 +108,15 @@ class Intersection
 
         bool                    operator !=                                 (   const   Intersection&               anIntersection                              ) const ;
 
+        /// @brief              Addition operator (intersection concatenation)
+        ///
+        ///                     Concatenate (merge) intersection with another intersection.
+        ///
+        /// @param              [in] anIntersection An intersection
+        /// @return             Concatenated intersection
+        
+        Intersection            operator +                                  (   const   Intersection&               anIntersection                              ) const ;
+
         /// @brief              Output stream operator
         ///
         /// @code

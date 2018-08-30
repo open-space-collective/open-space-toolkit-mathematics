@@ -43,6 +43,9 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Point (
         .def("isDefined", &Point::isDefined)
         .def("isNear", &Point::isNear)
         
+        .def("x", +[] (const Point& aPoint) -> double { return aPoint.x() ; })
+        .def("y", +[] (const Point& aPoint) -> double { return aPoint.y() ; })
+        .def("z", +[] (const Point& aPoint) -> double { return aPoint.z() ; })
         .def("distanceTo", &Point::distanceTo)
 
         .def("translate", &Point::translate)
@@ -52,6 +55,9 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Point (
         .def("Origin", &Point::Origin).staticmethod("Origin")
 
     ;
+
+    implicitly_convertible<Point, Vector3d>() ;
+    implicitly_convertible<Vector3d, Point>() ;
 
     using library::core::ctnr::Array ;
 

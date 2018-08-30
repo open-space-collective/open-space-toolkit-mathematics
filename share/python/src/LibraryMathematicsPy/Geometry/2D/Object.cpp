@@ -36,6 +36,14 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Object     ( )
 
     ;
 
+    enum_<Object::Format>("Format")
+    
+        .value("Undefined", Object::Format::Undefined)
+        .value("Standard", Object::Format::Standard)
+        .value("WKT", Object::Format::WKT)
+    
+    ;
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

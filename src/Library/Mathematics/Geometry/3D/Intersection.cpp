@@ -94,6 +94,27 @@ bool                            Intersection::operator !=                   (   
     return !((*this) == anIntersection) ;
 }
 
+Intersection                    Intersection::operator +                    (   const   Intersection&               anIntersection                              ) const
+{
+
+    if ((!this->isDefined()) || (!anIntersection.isDefined()))
+    {
+        throw library::core::error::runtime::Undefined("Intersection") ;
+    }
+
+    Intersection intersection ;
+
+    intersection.type_ = Intersection::Type::Complex ;
+
+    intersection.objects_.reserve(objects_.getSize() + anIntersection.objects_.getSize()) ;
+    
+    std::transform(objects_.begin(), objects_.end(), std::back_inserter(intersection.objects_), [] (const Unique<Object>& anObjectUPtr) -> Unique<Object> { return Unique<Object>(anObjectUPtr->clone()) ; }) ;
+    std::transform(anIntersection.objects_.begin(), anIntersection.objects_.end(), std::back_inserter(intersection.objects_), [] (const Unique<Object>& anObjectUPtr) -> Unique<Object> { return Unique<Object>(anObjectUPtr->clone()) ; }) ;
+
+    return intersection ;
+
+}
+
 std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Intersection&               anIntersection                              )
 {
@@ -132,7 +153,14 @@ bool                            Intersection::isEmpty                       ( ) 
 
 Intersection::Type              Intersection::getType                       ( ) const
 {
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Intersection") ;
+    }
+    
     return type_ ;
+
 }
 
 Intersection                    Intersection::Undefined                     ( )

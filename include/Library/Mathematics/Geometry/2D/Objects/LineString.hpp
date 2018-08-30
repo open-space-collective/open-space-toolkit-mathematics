@@ -47,6 +47,10 @@ class Segment ;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @brief                      Line string
+///
+///                             A line string is a connected series of line segments.
+///
+/// @ref                        https://en.wikipedia.org/wiki/Polygonal_chain
 
 class LineString : public Object
 {

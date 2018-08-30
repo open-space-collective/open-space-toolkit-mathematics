@@ -10,6 +10,7 @@
 #ifndef __Library_Mathematics_Geometry_2D_Objects_Polygon__
 #define __Library_Mathematics_Geometry_2D_Objects_Polygon__
 
+#include <Library/Mathematics/Geometry/2D/Objects/LineString.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Segment.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/2D/Object.hpp>
@@ -42,12 +43,13 @@ using library::core::ctnr::Array ;
 using library::math::geom::d2::Object ;
 using library::math::geom::d2::objects::Point ;
 using library::math::geom::d2::objects::Segment ;
+using library::math::geom::d2::objects::LineString ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @brief                      Polygon
 ///
-///                             A polygon is a plane figure that is bounded by a finite chain of straight line segments closing in a loop
+///                             A plane figure that is bounded by a finite chain of straight line segments closing in a loop
 ///                             to form a closed polygonal chain or circuit.
 ///                             These segments are called its edges, and the points where two edges meet are the polygon's vertices.
 ///
@@ -58,6 +60,10 @@ class Polygon : public Object
 
     public:
 
+        typedef                 Point                                           Vertex ;
+        typedef                 Segment                                         Edge ;
+        typedef                 LineString                                      Ring ;
+
         /// @brief              Constructor
         ///
         /// @param              [in] anOuterRing An outer ring
@@ -65,6 +71,14 @@ class Polygon : public Object
 
                                 Polygon                                     (   const   Array<Point>&               anOuterRing,
                                                                                 const   Array<Array<Point>>&        anInnerRingArray                            =   Array<Array<Point>>::Empty() ) ;
+
+        /// @brief              Constructor
+        ///
+        /// @param              [in] anOuterRing An outer ring
+        /// @param              [in] anInnerRingArray An array of inner rings
+
+                                Polygon                                     (   const   Polygon::Ring&              anOuterRing,
+                                                                                const   Array<Polygon::Ring>&       anInnerRingArray                            =   Array<Polygon::Ring>::Empty() ) ;
 
         /// @brief              Copy constructor
         ///
@@ -109,6 +123,12 @@ class Polygon : public Object
 
         virtual bool            isDefined                                   ( ) const override ;
 
+        /// @brief              Get number of inner rings
+        ///
+        /// @return             Number of inner rings
+
+        Size                    getInnerRingCount                           ( ) const ;
+
         /// @brief              Get edge count
         ///
         /// @return             Edge count
@@ -121,31 +141,43 @@ class Polygon : public Object
 
         Size                    getVertexCount                              ( ) const ;
 
+        /// @brief              Get outer ring
+        ///
+        /// @return             Outer ring
+
+        Polygon::Ring           getOuterRing                                ( ) const ;
+
+        /// @brief              Get inner ring at index
+        ///
+        /// @return             Inner ring at index
+
+        Polygon::Ring           getInnerRingAt                              (   const   Index&                      anInnerRingIndex                            ) const ;
+
         /// @brief              Get edge at index
         ///
         /// @param              [in] anEdgeIndex An edge index
         /// @return             Edge (segment)
 
-        Segment                 getEdgeAt                                   (   const   Index                       anEdgeIndex                                 ) const ;
+        Polygon::Edge           getEdgeAt                                   (   const   Index                       anEdgeIndex                                 ) const ;
 
         /// @brief              Get vertex at index
         ///
         /// @param              [in] aVertexIndex A vertex index
         /// @return             Vertex
 
-        Point                   getVertexAt                                 (   const   Index                       aVertexIndex                                ) const ;
+        Polygon::Vertex         getVertexAt                                 (   const   Index                       aVertexIndex                                ) const ;
 
         /// @brief              Get polygon edges
         ///
         /// @return             Polygon edges
 
-        Array<Segment>          getEdges                                    ( ) const ;
+        Array<Polygon::Edge>    getEdges                                    ( ) const ;
 
         /// @brief              Get polygon vertices
         ///
         /// @return             Polygon vertices
 
-        Array<Point>            getVertices                                 ( ) const ;
+        Array<Polygon::Vertex>  getVertices                                 ( ) const ;
 
         /// @brief              Get string representation
         ///

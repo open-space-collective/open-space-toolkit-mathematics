@@ -264,7 +264,8 @@ Intersection                    Pyramid::intersectionWith                   (   
         throw library::core::error::runtime::Undefined("Pyramid") ;
     }
 
-    Array<Point> intersectionPoints = Array<Point>::Empty() ;
+    Array<Point> firstIntersectionPoints = Array<Point>::Empty() ;
+    Array<Point> secondIntersectionPoints = Array<Point>::Empty() ;
 
     for (const auto& ray : this->getRaysOfLateralFaces(aDiscretizationLevel))
     {
@@ -276,17 +277,32 @@ Intersection                    Pyramid::intersectionWith                   (   
 
             if (intersection.is<Point>())
             {
-                intersectionPoints.add(intersection.as<Point>()) ;
+                firstIntersectionPoints.add(intersection.as<Point>()) ;
             }
             else if (intersection.is<PointSet>())
             {
 
                 const PointSet& pointSet = intersection.as<PointSet>() ;
 
+                bool secondIntersectionPointAdded = false ;
+
                 for (const auto& point : pointSet)
                 {
-                    intersectionPoints.add(point) ;
-                }               
+
+                    if (!secondIntersectionPointAdded)
+                    {
+                        
+                        secondIntersectionPoints.add(point) ;
+
+                        secondIntersectionPointAdded = true ;
+
+                    }
+                    else
+                    {
+                        firstIntersectionPoints.add(point) ;
+                    }
+
+                }
 
             }
 
@@ -294,9 +310,17 @@ Intersection                    Pyramid::intersectionWith                   (   
 
     }
 
-    if (!intersectionPoints.isEmpty())
+    if ((!firstIntersectionPoints.isEmpty()) && (!secondIntersectionPoints.isEmpty()) && (!onlyInSight))
     {
-        return Intersection::LineString(LineString(intersectionPoints)) ;
+        return Intersection::LineString(LineString(firstIntersectionPoints)) + Intersection::LineString(LineString(secondIntersectionPoints)) ;
+    }
+    else if (!firstIntersectionPoints.isEmpty())
+    {
+        return Intersection::LineString(LineString(firstIntersectionPoints)) ;
+    }
+    else if (!secondIntersectionPoints.isEmpty())
+    {
+        return Intersection::LineString(LineString(secondIntersectionPoints)) ;
     }
 
     return Intersection::Empty() ;
