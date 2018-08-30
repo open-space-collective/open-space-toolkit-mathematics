@@ -7,7 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// #include <LibraryMathematicsPy/Geometry/3D/Objects/Pyramid.cpp>
+#include <LibraryMathematicsPy/Geometry/3D/Objects/Pyramid.cpp>
 // #include <LibraryMathematicsPy/Geometry/3D/Objects/Cone.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Ellipsoid.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Sphere.cpp>
@@ -34,13 +34,15 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects    ( )
     LibraryMathematicsPy_Geometry_3D_Objects_Point() ;
     LibraryMathematicsPy_Geometry_3D_Objects_PointSet() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Line() ;
-    LibraryMathematicsPy_Geometry_3D_Objects_LineString() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Ray() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Segment() ;
+    LibraryMathematicsPy_Geometry_3D_Objects_LineString() ;
+    // LibraryMathematicsPy_Geometry_3D_Objects_MultiLineString() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Plane() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Polygon() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Sphere() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Ellipsoid() ;
+    LibraryMathematicsPy_Geometry_3D_Objects_Pyramid() ;
 
 }
 
