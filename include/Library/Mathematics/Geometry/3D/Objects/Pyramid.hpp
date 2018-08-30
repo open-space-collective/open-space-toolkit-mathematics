@@ -11,8 +11,13 @@
 #define __Library_Mathematics_Geometry_3D_Objects_Pyramid__
 
 #include <Library/Mathematics/Geometry/3D/Objects/Polygon.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
+
+#include <Library/Core/Containers/Array.hpp>
+#include <Library/Core/Types/Size.hpp>
+#include <Library/Core/Types/Index.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -29,9 +34,25 @@ namespace objects
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+using library::core::ctnr::Index ;
+using library::core::ctnr::Size ;
+using library::core::ctnr::Array ;
+
 using library::math::geom::d3::Object ;
 using library::math::geom::d3::objects::Point ;
+using library::math::geom::d3::objects::Ray ;
 using library::math::geom::d3::objects::Polygon ;
+using library::math::geom::d3::Intersection ;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class Line ;
+class Ray ;
+class Segment ;
+class Plane ;
+class Polygon ;
+class Sphere ;
+class Ellipsoid ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -50,7 +71,9 @@ class Pyramid : public Object
         /// @brief              Constructor
         ///
         /// @code
-        ///                     
+        ///                     Polygon base = ... ;
+        ///                     Point apex = { 0.0, 0.0, 1.0 } ;
+        ///                     Pyramid pyramid = { base, apex } ;
         /// @endcode
         ///
         /// @param              [in] aBase A pyramid base
@@ -67,10 +90,6 @@ class Pyramid : public Object
 
         /// @brief              Equal to operator
         ///
-        /// @code
-        ///                     
-        /// @endcode
-        ///
         /// @param              [in] aPyramid A pyramid
         /// @return             True if pyramids are equal
 
@@ -78,43 +97,46 @@ class Pyramid : public Object
 
         /// @brief              Not equal to operator
         ///
-        /// @code
-        ///                     
-        /// @endcode
-        ///
         /// @param              [in] aPyramid A pyramid
         /// @return             True if pyramids not are equal
 
         bool                    operator !=                                 (   const   Pyramid&                    aPyramid                                    ) const ;
 
-        /// @brief              Output stream operator
-        ///
-        /// @code
-        ///                     std::cout << Pyramid(...) ;
-        /// @endcode
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] aPyramid A pyramid
-        /// @return             An output stream
-
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Pyramid&                    aPyramid                                    ) ;
-
         /// @brief              Check if pyramid is defined
-        ///
-        /// @code
-        ///                     
-        /// @endcode
         ///
         /// @return             True if pyramid is defined
 
         virtual bool            isDefined                                   ( ) const override ;
 
-        /// @brief              Get pyramid base
+        /// @brief              Check if pyramid intersects ellipsoid
         ///
         /// @code
-        ///                     
+        ///                     Pyramid pyramid = ... ;
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     pyramid.intersects(ellipsoid) ;
         /// @endcode
+        ///
+        /// @param              [in] anEllipsoid An ellipsoid
+        /// @param              [in] aDiscretizationLevel (optional) The polygonal discretization level
+        /// @return             True if pyramid intersects ellipsoid
+        
+        bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid,
+                                                                                const   Size                        aDiscretizationLevel                        =   40 ) const ;
+
+        /// @brief              Check if pyramid contains ellipsoid
+        ///
+        /// @code
+        ///                     Pyramid pyramid = ... ;
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     pyramid.contains(ellipsoid) ;
+        /// @endcode
+        ///
+        /// @param              [in] anEllipsoid An ellipsoid
+        /// @return             True if pyramid contains ellipsoid
+
+        bool                    contains                                    (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
+
+        /// @brief              Get pyramid base
         ///
         /// @return             Pyramid base
 
@@ -122,13 +144,57 @@ class Pyramid : public Object
 
         /// @brief              Get pyramid apex
         ///
-        /// @code
-        ///                     
-        /// @endcode
-        ///
         /// @return             Pyramid apex
 
         Point                   getApex                                     ( ) const ;
+
+        /// @brief              Get number of lateral faces
+        ///
+        /// @return             Number of lateral faces
+
+        Size                    getLateralFaceCount                         ( ) const ;
+
+        /// @brief              Get lateral face at index
+        ///
+        /// @param              [in] aLateralFaceIndex A lateral face index
+        /// @return             Lateral face
+
+        Polygon                 getLateralFaceAt                            (   const   Index                       aLateralFaceIndex                           ) const ;
+
+        /// @brief              Get rays of lateral face at index
+        ///
+        /// @param              [in] aLateralFaceIndex A lateral face index
+        /// @param              [in] aRayCount A number of rays (at least 2)
+        /// @return             Array of rays
+
+        Array<Ray>              getRaysOfLateralFaceAt                      (   const   Index                       aLateralFaceIndex,
+                                                                                const   Size                        aRayCount                                   =   2 ) const ;
+
+        /// @brief              Get rays of lateral faces
+        ///
+        /// @param              [in] aRayCount A number of rays (at least face count)
+        /// @return             Array of rays
+
+        Array<Ray>              getRaysOfLateralFaces                       (   const   Size                        aRayCount                                   =   0 ) const ;
+
+        /// @brief              Compute intersection of pyramid with ellipsoid
+        ///
+        /// @param              [in] anEllipsoid An ellipsoid
+        /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
+        /// @param              [in] aDiscretizationLevel (optional) The polygonal discretization level
+        /// @return             Intersection of pyramid with ellipsoid
+
+        Intersection            intersectionWith                            (   const   Ellipsoid&                  anEllipsoid,
+                                                                                const   bool                        onlyInSight                                 =   false,
+                                                                                const   Size                        aDiscretizationLevel                        =   40 ) const ;
+
+        /// @brief              Print pyramid
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const override ;
 
         /// @brief              Translate pyramid
         ///
@@ -143,10 +209,6 @@ class Pyramid : public Object
         virtual void            rotate                                      (   const   Quaternion&                 aRotation                                   ) override ;
 
         /// @brief              Constructs an undefined pyramid
-        ///
-        /// @code
-        ///                     Pyramid pyramid = Pyramid::Undefined() ; // Undefined
-        /// @endcode
         ///
         /// @return             Undefined pyramid
 

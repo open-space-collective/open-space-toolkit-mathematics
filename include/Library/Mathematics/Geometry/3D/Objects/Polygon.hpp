@@ -11,9 +11,14 @@
 #define __Library_Mathematics_Geometry_3D_Objects_Polygon__
 
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Polygon.hpp>
+
+#include <Library/Core/Containers/Array.hpp>
+#include <Library/Core/Types/Size.hpp>
+#include <Library/Core/Types/Index.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -30,10 +35,14 @@ namespace objects
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-using Polygon2d = library::math::geom::d2::objects::Polygon ;
+using library::core::ctnr::Index ;
+using library::core::ctnr::Size ;
+using library::core::ctnr::Array ;
 
+using Polygon2d = library::math::geom::d2::objects::Polygon ;
 using library::math::geom::d3::Object ;
 using library::math::geom::d3::objects::Point ;
+using library::math::geom::d3::objects::Segment ;
 using library::math::geom::d3::objects::Plane ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -54,14 +63,22 @@ class Polygon : public Object
         /// @brief              Constructor
         ///
         /// @code
-        ///                     
+        ///                     Polygon2d polygon2d = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        ///                     Point origin = { 1.0, 2.0, 3.0 } ;
+        ///                     Vector3d xAxis = { 1.0, 0.0, 0.0 } ;
+        ///                     Vector3d yAxis = { 0.0, 1.0, 0.0 } ;
+        ///                     Polygon polygon = { polygon2d, origin, xAxis, yAxis } ;
         /// @endcode
         ///
-        /// @param              [in] aBase A polygon base
-        /// @param              [in] anApex A polygon apex
+        /// @param              [in] aPolygon A 2D polygon
+        /// @param              [in] anOrigin An origin
+        /// @param              [in] aXAxis A X axis
+        /// @param              [in] aYAxis A Y axis
 
-                                // Polygon                                     (   const   Polygon2d&                  aPolygon,
-                                //                                                 const   Point&                      anApex                                      ) ;
+                                Polygon                                     (   const   Polygon2d&                  aPolygon,
+                                                                                const   Point&                      anOrigin,
+                                                                                const   Vector3d&                   aXAxis,
+                                                                                const   Vector3d&                   aYAxis                                      ) ;
 
         /// @brief              Clone polygon
         ///
@@ -71,10 +88,6 @@ class Polygon : public Object
 
         /// @brief              Equal to operator
         ///
-        /// @code
-        ///                     
-        /// @endcode
-        ///
         /// @param              [in] aPolygon A polygon
         /// @return             True if polygons are equal
 
@@ -82,37 +95,92 @@ class Polygon : public Object
 
         /// @brief              Not equal to operator
         ///
-        /// @code
-        ///                     
-        /// @endcode
-        ///
         /// @param              [in] aPolygon A polygon
         /// @return             True if polygons not are equal
 
         bool                    operator !=                                 (   const   Polygon&                    aPolygon                                    ) const ;
 
-        /// @brief              Output stream operator
-        ///
-        /// @code
-        ///                     std::cout << Polygon(...) ;
-        /// @endcode
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] aPolygon A polygon
-        /// @return             An output stream
-
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Polygon&                    aPolygon                                    ) ;
-
         /// @brief              Check if polygon is defined
-        ///
-        /// @code
-        ///                     
-        /// @endcode
         ///
         /// @return             True if polygon is defined
 
         virtual bool            isDefined                                   ( ) const override ;
+
+        /// @brief              Get polygon 2D polygon
+        ///
+        /// @return             Polygon 2D polygon
+
+        Polygon2d               getPolygon2d                                ( ) const ;
+
+        /// @brief              Get polygon origin
+        ///
+        /// @return             Polygon origin
+
+        Point                   getOrigin                                   ( ) const ;
+
+        /// @brief              Get polygon X axis
+        ///
+        /// @return             Polygon X axis
+
+        Vector3d                getXAxis                                    ( ) const ;
+
+        /// @brief              Get polygon Y axis
+        ///
+        /// @return             Polygon Y axis
+
+        Vector3d                getYAxis                                    ( ) const ;
+
+        /// @brief              Get polygon normal vector
+        ///
+        /// @return             Polygon normal vector
+
+        Vector3d                getNormalVector                             ( ) const ;
+
+        /// @brief              Get edge count
+        ///
+        /// @return             Edge count
+
+        Size                    getEdgeCount                                ( ) const ;
+
+        /// @brief              Get vertex count
+        ///
+        /// @return             Vertex count
+
+        Size                    getVertexCount                              ( ) const ;
+
+        /// @brief              Get edge at index
+        ///
+        /// @param              [in] anEdgeIndex An edge index
+        /// @return             Edge (segment)
+
+        Segment                 getEdgeAt                                   (   const   Index                       anEdgeIndex                                 ) const ;
+
+        /// @brief              Get vertex at index
+        ///
+        /// @param              [in] aVertexIndex A vertex index
+        /// @return             Vertex
+
+        Point                   getVertexAt                                 (   const   Index                       aVertexIndex                                ) const ;
+
+        /// @brief              Get polygon edges
+        ///
+        /// @return             Polygon edges
+
+        Array<Segment>          getEdges                                    ( ) const ;
+
+        /// @brief              Get polygon vertices
+        ///
+        /// @return             Polygon vertices
+
+        Array<Point>            getVertices                                 ( ) const ;
+
+        /// @brief              Print polygon
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const override ;
 
         /// @brief              Translate polygon
         ///
@@ -128,10 +196,6 @@ class Polygon : public Object
 
         /// @brief              Constructs an undefined polygon
         ///
-        /// @code
-        ///                     Polygon polygon = Polygon::Undefined() ; // Undefined
-        /// @endcode
-        ///
         /// @return             Undefined polygon
 
         static Polygon          Undefined                                   ( ) ;
@@ -139,7 +203,11 @@ class Polygon : public Object
     private:
 
         Polygon2d               polygon_ ;
-        // Transformation          transformation_ ;
+
+        Point                   origin_ ;
+
+        Vector3d                xAxis_ ;
+        Vector3d                yAxis_ ;
 
 } ;
 

@@ -353,6 +353,86 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 
 }
 
+TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ToString)
+{
+
+    using library::core::ctnr::Array ;
+    
+    using library::math::obj::Vector2d ;
+    using library::math::geom::d2::objects::Point ;
+    using library::math::geom::d2::objects::Polygon ;
+
+    {
+
+        const Array<Point> vertices =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0))", Polygon(vertices).toString()) ;
+        EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0))", Polygon(vertices).toString(Polygon::Format::Standard)) ;
+        EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0))", Polygon(vertices).toString(Polygon::Format::WKT)) ;
+
+    }
+
+    {
+
+        const Array<Point> vertices =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        EXPECT_EQ("POLYGON((0.0000000000 0.0000000000,0.0000000000 1.0000000000,1.0000000000 1.0000000000,1.0000000000 0.0000000000,0.0000000000 0.0000000000))", Polygon(vertices).toString(Polygon::Format::Standard, 10)) ;
+        EXPECT_EQ("POLYGON((0.0000000000 0.0000000000,0.0000000000 1.0000000000,1.0000000000 1.0000000000,1.0000000000 0.0000000000,0.0000000000 0.0000000000))", Polygon(vertices).toString(Polygon::Format::WKT, 10)) ;
+
+    }
+
+    {
+
+        const Array<Point> outerRing =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Array<Array<Point>> innerRings =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.5 },
+                { 0.5, 0.5 },
+                { 0.5, 0.0 }
+            },
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.1 },
+                { 0.1, 0.1 },
+                { 0.1, 0.0 }
+            }
+        } ;
+
+        EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0 0.5,0.5 0.5,0.5 0,0 0),(0 0,0 0.1,0.1 0.1,0.1 0,0 0))", Polygon(outerRing, innerRings).toString()) ;
+        EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0 0.5,0.5 0.5,0.5 0,0 0),(0 0,0 0.1,0.1 0.1,0.1 0,0 0))", Polygon(outerRing, innerRings).toString(Polygon::Format::Standard)) ;
+        EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0 0.5,0.5 0.5,0.5 0,0 0),(0 0,0 0.1,0.1 0.1,0.1 0,0 0))", Polygon(outerRing, innerRings).toString(Polygon::Format::WKT)) ;
+        
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Polygon::Undefined().toString()) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Translate)
 {
 

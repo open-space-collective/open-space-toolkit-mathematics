@@ -107,7 +107,7 @@ class Interval : public IntervalBase
         ///
         /// @param              [in] anOutputStream An output stream
         /// @param              [in] anInterval An interval
-        /// @return             An output stream
+        /// @return             A reference to output stream
 
         template <class U>
         friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,

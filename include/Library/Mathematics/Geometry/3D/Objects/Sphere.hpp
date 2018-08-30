@@ -88,19 +88,6 @@ class Sphere : public Object
 
         bool                    operator !=                                 (   const   Sphere&                     aSphere                                     ) const ;
 
-        /// @brief              Output stream operator
-        ///
-        /// @code
-        ///                     std::cout << Sphere(Point::Origin(), 1.0) ;
-        /// @endcode
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] aSphere A sphere
-        /// @return             An output stream
-
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Sphere&                     aSphere                                     ) ;
-
         /// @brief              Check if sphere is defined
         ///
         /// @code
@@ -140,6 +127,14 @@ class Sphere : public Object
         /// @return             Sphere radius
 
         Real                    getRadius                                   ( ) const ;
+
+        /// @brief              Print sphere
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const override ;
 
         /// @brief              Translate sphere
         ///

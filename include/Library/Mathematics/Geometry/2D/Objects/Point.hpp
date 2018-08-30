@@ -121,19 +121,6 @@ class Point : public Object, public Vector2d
 
         Vector2d                operator -                                  (   const   Point&                      aPoint                                      ) const ;
 
-        /// @brief              Output stream operator
-        ///
-        /// @code
-        ///                     std::cout << Point(0.0, 0.0) ;
-        /// @endcode
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] aPoint A point
-        /// @return             An output stream
-
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Point&                      aPoint                                      ) ;
-
         /// @brief              Check if point is defined
         ///
         /// @code
@@ -156,6 +143,29 @@ class Point : public Object, public Vector2d
 
         bool                    isNear                                      (   const   Point&                      aPoint,
                                                                                 const   Real&                       aTolerance                                  ) const ;
+
+        /// @brief              Get distance to another point
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             Distance to point
+
+        Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;    
+
+        /// @brief              Get string representation
+        ///
+        /// @param              [in] aFormat A format
+        /// @return             String representation
+
+        virtual String          toString                                    (   const   Object::Format&             aFormat                                     =   Object::Format::Standard,
+                                                                                const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const override ;
+
+        /// @brief              Print point
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const override ;
 
         /// @brief              Translate point
         ///

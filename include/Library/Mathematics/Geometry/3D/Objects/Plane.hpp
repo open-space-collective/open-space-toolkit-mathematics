@@ -86,19 +86,6 @@ class Plane : public Object
 
         bool                    operator !=                                 (   const   Plane&                      aPlane                                      ) const ;
 
-        /// @brief              Output stream operator
-        ///
-        /// @code
-        ///                     std::cout << Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
-        /// @endcode
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] aPlane A plane
-        /// @return             An output stream
-
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Plane&                      aPlane                                      ) ;
-
         /// @brief              Check if plane is defined
         ///
         /// @code
@@ -108,6 +95,19 @@ class Plane : public Object
         /// @return             True if plane is defined
 
         virtual bool            isDefined                                   ( ) const override ;
+
+        /// @brief              Check if plane contains point
+        ///
+        /// @code
+        ///                     Point plane = ... ;
+        ///                     Point point = ... ;
+        ///                     plane.contains(point) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             True if plane contains point
+
+        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
 
         /// @brief              Get plane point
         ///
@@ -128,6 +128,14 @@ class Plane : public Object
         /// @return             Plane normal vector
 
         Vector3d                getNormalVector                             ( ) const ;
+
+        /// @brief              Print plane
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const override ;
 
         /// @brief              Translate plane
         ///

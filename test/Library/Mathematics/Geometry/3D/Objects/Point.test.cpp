@@ -47,6 +47,60 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, Clone)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Point, EqualToOperator)
+{
+
+    using library::math::geom::d3::objects::Point ;
+    
+    {
+
+        EXPECT_TRUE(Point(1.0, 2.0, 3.0) == Point(1.0, 2.0, 3.0)) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Point(1.0, 2.0, 3.0) == Point(1.0, 2.0, 4.0)) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Point(1.0, 2.0, 3.0) == Point::Undefined()) ;
+        EXPECT_FALSE(Point::Undefined() == Point(1.0, 2.0, 3.0)) ;
+        EXPECT_FALSE(Point::Undefined() == Point::Undefined()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Point, NotEqualToOperator)
+{
+
+    using library::math::geom::d3::objects::Point ;
+
+    {
+
+        EXPECT_TRUE(Point(1.0, 2.0, 3.0) != Point(1.0, 2.0, 4.0)) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Point(1.0, 2.0, 3.0) != Point(1.0, 2.0, 3.0)) ;
+
+    }
+
+    {
+
+        EXPECT_TRUE(Point(1.0, 2.0, 3.0) != Point::Undefined()) ;
+        EXPECT_TRUE(Point::Undefined() != Point(1.0, 2.0, 3.0)) ;
+        EXPECT_TRUE(Point::Undefined() != Point::Undefined()) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Point, AdditionOperator)
 {
 
@@ -103,60 +157,6 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, SubtractionOperator)
         
     }
     
-}
-
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, EqualToOperator)
-{
-
-    using library::math::geom::d3::objects::Point ;
-    
-    {
-
-        EXPECT_TRUE(Point(1.0, 2.0, 3.0) == Point(1.0, 2.0, 3.0)) ;
-
-    }
-
-    {
-
-        EXPECT_FALSE(Point(1.0, 2.0, 3.0) == Point(1.0, 2.0, 4.0)) ;
-
-    }
-
-    {
-
-        EXPECT_FALSE(Point(1.0, 2.0, 3.0) == Point::Undefined()) ;
-        EXPECT_FALSE(Point::Undefined() == Point(1.0, 2.0, 3.0)) ;
-        EXPECT_FALSE(Point::Undefined() == Point::Undefined()) ;
-
-    }
-
-}
-
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, NotEqualToOperator)
-{
-
-    using library::math::geom::d3::objects::Point ;
-
-    {
-
-        EXPECT_TRUE(Point(1.0, 2.0, 3.0) != Point(1.0, 2.0, 4.0)) ;
-
-    }
-
-    {
-
-        EXPECT_FALSE(Point(1.0, 2.0, 3.0) != Point(1.0, 2.0, 3.0)) ;
-
-    }
-
-    {
-
-        EXPECT_TRUE(Point(1.0, 2.0, 3.0) != Point::Undefined()) ;
-        EXPECT_TRUE(Point::Undefined() != Point(1.0, 2.0, 3.0)) ;
-        EXPECT_TRUE(Point::Undefined() != Point::Undefined()) ;
-
-    }
-
 }
 
 TEST (Library_Mathematics_Geometry_3D_Objects_Point, StreamOperator)
@@ -218,6 +218,64 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, IsNear)
         EXPECT_ANY_THROW(Point(0.0, 0.0, 0.0).isNear(Point::Undefined(), 1e-15)) ;
         EXPECT_ANY_THROW(Point::Undefined().isNear(Point(0.0, 0.0, 0.0), 1e-15)) ;
         EXPECT_ANY_THROW(Point(0.0, 0.0, 0.0).isNear(Point(0.0, 0.0, 0.0), Real::Undefined())) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Point, DistanceTo)
+{
+    
+    using library::core::types::Real ;
+    
+    using library::math::geom::d3::objects::Point ;
+    
+    {
+
+        EXPECT_EQ(0.0, Point(0.0, 0.0, 0.0).distanceTo(Point(0.0, 0.0, 0.0))) ;
+        
+        EXPECT_EQ(0.0, Point(+1.0, +1.0, +1.0).distanceTo(Point(+1.0, +1.0, +1.0))) ;
+        EXPECT_EQ(0.0, Point(-1.0, -1.0, -1.0).distanceTo(Point(-1.0, -1.0, -1.0))) ;
+        
+        EXPECT_EQ(1.0, Point(0.0, 0.0, 0.0).distanceTo(Point(+1.0, 0.0, 0.0))) ;
+        EXPECT_EQ(1.0, Point(0.0, 0.0, 0.0).distanceTo(Point(0.0, +1.0, 0.0))) ;
+        EXPECT_EQ(1.0, Point(0.0, 0.0, 0.0).distanceTo(Point(0.0, 0.0, +1.0))) ;
+
+        EXPECT_EQ(1.0, Point(0.0, 0.0, 0.0).distanceTo(Point(-1.0, 0.0, 0.0))) ;
+        EXPECT_EQ(1.0, Point(0.0, 0.0, 0.0).distanceTo(Point(0.0, -1.0, 0.0))) ;
+        EXPECT_EQ(1.0, Point(0.0, 0.0, 0.0).distanceTo(Point(0.0, 0.0, -1.0))) ;
+
+        EXPECT_EQ(1.0, Point(+1.0, 0.0, 0.0).distanceTo(Point(0.0, 0.0, 0.0))) ;
+        EXPECT_EQ(1.0, Point(0.0, +1.0, 0.0).distanceTo(Point(0.0, 0.0, 0.0))) ;
+        EXPECT_EQ(1.0, Point(0.0, 0.0, +1.0).distanceTo(Point(0.0, 0.0, 0.0))) ;
+
+        EXPECT_EQ(1.0, Point(-1.0, 0.0, 0.0).distanceTo(Point(0.0, 0.0, 0.0))) ;
+        EXPECT_EQ(1.0, Point(0.0, -1.0, 0.0).distanceTo(Point(0.0, 0.0, 0.0))) ;
+        EXPECT_EQ(1.0, Point(0.0, 0.0, -1.0).distanceTo(Point(0.0, 0.0, 0.0))) ;
+
+        EXPECT_EQ(2.0, Point(0.0, 0.0, 0.0).distanceTo(Point(+2.0, 0.0, 0.0))) ;
+        EXPECT_EQ(2.0, Point(0.0, 0.0, 0.0).distanceTo(Point(0.0, +2.0, 0.0))) ;
+        EXPECT_EQ(2.0, Point(0.0, 0.0, 0.0).distanceTo(Point(0.0, 0.0, +2.0))) ;
+
+        EXPECT_EQ(2.0, Point(0.0, 0.0, 0.0).distanceTo(Point(-2.0, 0.0, 0.0))) ;
+        EXPECT_EQ(2.0, Point(0.0, 0.0, 0.0).distanceTo(Point(0.0, -2.0, 0.0))) ;
+        EXPECT_EQ(2.0, Point(0.0, 0.0, 0.0).distanceTo(Point(0.0, 0.0, -2.0))) ;
+
+        EXPECT_EQ(2.0, Point(+2.0, 0.0, 0.0).distanceTo(Point(0.0, 0.0, 0.0))) ;
+        EXPECT_EQ(2.0, Point(0.0, +2.0, 0.0).distanceTo(Point(0.0, 0.0, 0.0))) ;
+        EXPECT_EQ(2.0, Point(0.0, 0.0, +2.0).distanceTo(Point(0.0, 0.0, 0.0))) ;
+
+        EXPECT_EQ(2.0, Point(-2.0, 0.0, 0.0).distanceTo(Point(0.0, 0.0, 0.0))) ;
+        EXPECT_EQ(2.0, Point(0.0, -2.0, 0.0).distanceTo(Point(0.0, 0.0, 0.0))) ;
+        EXPECT_EQ(2.0, Point(0.0, 0.0, -2.0).distanceTo(Point(0.0, 0.0, 0.0))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Point::Undefined().distanceTo(Point::Undefined())) ;
+        EXPECT_ANY_THROW(Point(0.0, 0.0, 0.0).distanceTo(Point::Undefined())) ;
+        EXPECT_ANY_THROW(Point::Undefined().distanceTo(Point(0.0, 0.0, 0.0))) ;
 
     }
 

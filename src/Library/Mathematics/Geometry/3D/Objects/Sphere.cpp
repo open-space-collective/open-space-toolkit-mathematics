@@ -65,21 +65,6 @@ bool                            Sphere::operator !=                         (   
 
 }
 
-std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Sphere&                     aSphere                                     )
-{
-
-    library::core::utils::Print::Header(anOutputStream, "Sphere") ;
-
-    library::core::utils::Print::Line(anOutputStream) << "Center:" << (aSphere.center_.isDefined() ? aSphere.center_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Radius:" << (aSphere.radius_.isDefined() ? aSphere.radius_.toString() : "Undefined") ;
-
-    library::core::utils::Print::Footer(anOutputStream) ;
-
-    return anOutputStream ;
-
-}
-
 bool                            Sphere::isDefined                           ( ) const
 {
     return center_.isDefined() && radius_.isDefined() ;
@@ -121,6 +106,19 @@ Real                            Sphere::getRadius                           ( ) 
 
 }
 
+void                            Sphere::print                               (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           ) const
+{
+
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Sphere") : void () ;
+
+    library::core::utils::Print::Line(anOutputStream) << "Center:"              << (center_.isDefined() ? center_.toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Radius:"              << (radius_.isDefined() ? radius_.toString() : "Undefined") ;
+
+    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+
+}
+
 void                            Sphere::translate                           (   const   Vector3d&                   aTranslation                                )
 {
 
@@ -157,12 +155,12 @@ void                            Sphere::rotate                              (   
 
 Sphere                          Sphere::Undefined                           ( )
 {
-    return Sphere(Point::Undefined(), Real::Undefined()) ;
+    return { Point::Undefined(), Real::Undefined() } ;
 }
 
 Sphere                          Sphere::Unit                                (   const   Point&                      aCenter                                     )
 {
-    return Sphere(aCenter, 1.0) ;
+    return { aCenter, 1.0 } ;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -7,6 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <LibraryMathematicsPy/Utilities/IterableConverter.hpp>
+
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -39,6 +41,8 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Point (
         
         .def("isDefined", &Point::isDefined)
         .def("isNear", &Point::isNear)
+        
+        .def("distanceTo", &Point::distanceTo)
 
         .def("translate", &Point::translate)
         .def("rotate", &Point::rotate)
@@ -46,6 +50,15 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Point (
         .def("Undefined", &Point::Undefined).staticmethod("Undefined")
         .def("Origin", &Point::Origin).staticmethod("Origin")
 
+    ;
+
+    using library::core::ctnr::Array ;
+
+    IterableConverter()
+
+        .from_python<Array<Point>>()
+        .to_python<Array<Point>>()
+        
     ;
 
 }

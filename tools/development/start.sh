@@ -75,6 +75,7 @@ docker run \
 -it \
 --rm \
 --privileged \
+--env="cpu_count=${cpu_count}" \
 ${options} \
 --volume="${project_directory}:/app:rw" \
 --volume="${script_directory}/helpers/build.sh:/app/build/build.sh:ro" \

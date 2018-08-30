@@ -60,21 +60,6 @@ bool                            Segment::operator !=                        (   
     return !((*this) == aSegment) ;
 }
 
-std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Segment&                    aSegment                                    )
-{
-
-    library::core::utils::Print::Header(anOutputStream, "Segment") ;
-
-    library::core::utils::Print::Line(anOutputStream) << "First point:" << (aSegment.firstPoint_.isDefined() ? aSegment.firstPoint_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Second point:" << (aSegment.secondPoint_.isDefined() ? aSegment.secondPoint_.toString() : "Undefined") ;
-
-    library::core::utils::Print::Footer(anOutputStream) ;
-
-    return anOutputStream ;
-
-}
-
 bool                            Segment::isDefined                          ( ) const
 {
     return firstPoint_.isDefined() && secondPoint_.isDefined() ;
@@ -212,6 +197,19 @@ Real                            Segment::getLength                          ( ) 
 
 }
 
+void                            Segment::print                              (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           ) const
+{
+
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Segment") : void () ;
+
+    library::core::utils::Print::Line(anOutputStream) << "First point:"         << (firstPoint_.isDefined() ? firstPoint_.toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Second point:"        << (secondPoint_.isDefined() ? secondPoint_.toString() : "Undefined") ;
+
+    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+
+}
+
 void                            Segment::translate                          (   const   Vector3d&                   aTranslation                                )
 {
 
@@ -252,7 +250,7 @@ void                            Segment::rotate                             (   
 
 Segment                         Segment::Undefined                          ( )
 {
-    return Segment(Point::Undefined(), Point::Undefined()) ;
+    return { Point::Undefined(), Point::Undefined() } ;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

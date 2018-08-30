@@ -10,10 +10,13 @@
 #ifndef __Library_Mathematics_Geometry_2D_Objects_Polygon__
 #define __Library_Mathematics_Geometry_2D_Objects_Polygon__
 
+#include <Library/Mathematics/Geometry/2D/Objects/Segment.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/2D/Object.hpp>
 
 #include <Library/Core/Containers/Array.hpp>
+#include <Library/Core/Types/Size.hpp>
+#include <Library/Core/Types/Index.hpp>
 #include <Library/Core/Types/Unique.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -32,10 +35,13 @@ namespace objects
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using library::core::types::Unique ;
+using library::core::ctnr::Index ;
+using library::core::ctnr::Size ;
 using library::core::ctnr::Array ;
 
 using library::math::geom::d2::Object ;
 using library::math::geom::d2::objects::Point ;
+using library::math::geom::d2::objects::Segment ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -53,10 +59,6 @@ class Polygon : public Object
     public:
 
         /// @brief              Constructor
-        ///
-        /// @code
-        ///                     
-        /// @endcode
         ///
         /// @param              [in] anOuterRing An outer ring
         /// @param              [in] anInnerRingArray An array of inner rings
@@ -89,10 +91,6 @@ class Polygon : public Object
 
         /// @brief              Equal to operator
         ///
-        /// @code
-        ///                     
-        /// @endcode
-        ///
         /// @param              [in] aPolygon A polygon
         /// @return             True if polygons are equal
 
@@ -100,47 +98,70 @@ class Polygon : public Object
 
         /// @brief              Not equal to operator
         ///
-        /// @code
-        ///                     
-        /// @endcode
-        ///
         /// @param              [in] aPolygon A polygon
         /// @return             True if polygons not are equal
 
         bool                    operator !=                                 (   const   Polygon&                    aPolygon                                    ) const ;
 
-        /// @brief              Output stream operator
-        ///
-        /// @code
-        ///                     std::cout << Polygon(...) ;
-        /// @endcode
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] aPolygon A polygon
-        /// @return             An output stream
-
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Polygon&                    aPolygon                                    ) ;
-
         /// @brief              Check if polygon is defined
-        ///
-        /// @code
-        ///                     
-        /// @endcode
         ///
         /// @return             True if polygon is defined
 
         virtual bool            isDefined                                   ( ) const override ;
 
-        /// @brief              Get polygon vertices
+        /// @brief              Get edge count
         ///
-        /// @code
-        ///                     
-        /// @endcode
+        /// @return             Edge count
+
+        Size                    getEdgeCount                                ( ) const ;
+
+        /// @brief              Get vertex count
+        ///
+        /// @return             Vertex count
+
+        Size                    getVertexCount                              ( ) const ;
+
+        /// @brief              Get edge at index
+        ///
+        /// @param              [in] anEdgeIndex An edge index
+        /// @return             Edge (segment)
+
+        Segment                 getEdgeAt                                   (   const   Index                       anEdgeIndex                                 ) const ;
+
+        /// @brief              Get vertex at index
+        ///
+        /// @param              [in] aVertexIndex A vertex index
+        /// @return             Vertex
+
+        Point                   getVertexAt                                 (   const   Index                       aVertexIndex                                ) const ;
+
+        /// @brief              Get polygon edges
+        ///
+        /// @return             Polygon edges
+
+        Array<Segment>          getEdges                                    ( ) const ;
+
+        /// @brief              Get polygon vertices
         ///
         /// @return             Polygon vertices
 
         Array<Point>            getVertices                                 ( ) const ;
+
+        /// @brief              Get string representation
+        ///
+        /// @param              [in] aFormat A format
+        /// @return             String representation
+
+        virtual String          toString                                    (   const   Object::Format&             aFormat                                     =   Object::Format::Standard,
+                                                                                const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const override ;
+
+        /// @brief              Print polygon
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const override ;
 
         /// @brief              Translate polygon
         ///

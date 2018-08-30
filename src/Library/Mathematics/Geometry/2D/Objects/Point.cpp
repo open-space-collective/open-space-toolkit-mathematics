@@ -115,20 +115,6 @@ Vector2d                        Point::operator -                           (   
 
 }
 
-std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Point&                      aPoint                                      )
-{
-
-    library::core::utils::Print::Header(anOutputStream, "Point") ;
-
-    library::core::utils::Print::Line(anOutputStream) << "Coordinates:" << (aPoint.isDefined() ? aPoint.toString() : "Undefined") ;
-
-    library::core::utils::Print::Footer(anOutputStream) ;
-
-    return anOutputStream ;
-
-}
-
 bool                            Point::isDefined                            ( ) const
 {
     return Vector2d::isDefined() ;
@@ -154,6 +140,63 @@ bool                            Point::isNear                               (   
     }
 
     return (this->Vector2d::operator - (aPoint)).norm() <= aTolerance ;
+
+}
+
+Real                            Point::distanceTo                           (   const   Point&                      aPoint                                      ) const
+{
+
+    if (!aPoint.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    return ((*this) - aPoint).norm() ;
+
+}
+
+String                          Point::toString                             (   const   Object::Format&             aFormat,
+                                                                                const   Integer&                    aPrecision                                  ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    switch (aFormat)
+    {
+
+        case Object::Format::Standard:
+            return String::Format("[{}, {}]", Real(this->x()).toString(aPrecision), Real(this->y()).toString(aPrecision)) ;
+
+        case Object::Format::WKT:
+            return String::Format("POINT({} {})", Real(this->x()).toString(aPrecision), Real(this->y()).toString(aPrecision)) ;
+
+        default:
+            throw library::core::error::runtime::Wrong("Format") ;
+            break ;
+
+    }
+
+    return String::Empty() ;
+   
+}
+
+void                            Point::print                                (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           ) const
+{
+
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Point") : void () ;
+
+    library::core::utils::Print::Line(anOutputStream) << "Coordinates:"         << (this->isDefined() ? this->toString() : "Undefined") ;
+
+    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 

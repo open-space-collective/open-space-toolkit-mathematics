@@ -62,6 +62,15 @@ class Object
 
         bool                    operator !=                                 (   const   Object&                     anObject                                    ) const ;
 
+        /// @brief              Output stream operator
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] anObject An object
+        /// @return             A reference to output stream
+
+        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
+                                                                                const   Object&                     anObject                                    ) ;
+
         /// @brief              Check if object is defined
         ///
         /// @return             True if object is defined
@@ -94,7 +103,30 @@ class Object
 
         virtual bool            contains                                    (   const   Object&                     anObject                                    ) const ;
 
-        virtual Intersection    computeIntersectionWith                     (   const   Object&                     anObject                                    ) const ;
+        /// @brief              Compute intersection of object with another object
+        ///
+        /// @code
+        ///                     Unique<Object> objectUPtr = ... ;
+        ///                     Unique<Object> anotherObjectUPtr = ... ;
+        ///                     Intersection intersection = objectUPtr->intersectionWith(*anotherObjectUPtr) ;
+        /// @endcode
+        ///
+        /// @param              [in] anObject An object
+        /// @return             Intersection of object with another object
+
+        virtual Intersection    intersectionWith                            (   const   Object&                     anObject                                    ) const ;
+
+        /// @brief              Print object
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const = 0 ;
+
+        /// @brief              Translate object
+        ///
+        /// @param              [in] aTranslation Translation vector
 
         virtual void            translate                                   (   const   Vector3d&                   aTranslation                                ) = 0 ;
 

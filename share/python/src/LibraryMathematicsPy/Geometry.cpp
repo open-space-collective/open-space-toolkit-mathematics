@@ -9,6 +9,7 @@
 
 #include <LibraryMathematicsPy/Geometry/Transformations.cpp>
 #include <LibraryMathematicsPy/Geometry/3D.cpp>
+#include <LibraryMathematicsPy/Geometry/2D.cpp>
 #include <LibraryMathematicsPy/Geometry/Angle.cpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -23,6 +24,7 @@ inline void                     LibraryMathematicsPy_Geometry               ( )
     boost::python::scope scope = module ;
     
     LibraryMathematicsPy_Geometry_Angle() ;
+    LibraryMathematicsPy_Geometry_2D() ;
     LibraryMathematicsPy_Geometry_3D() ;
     LibraryMathematicsPy_Geometry_Transformations() ;
 

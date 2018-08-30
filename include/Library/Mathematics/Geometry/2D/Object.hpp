@@ -14,6 +14,9 @@
 
 #include <Library/Mathematics/Objects/Vector.hpp>
 
+#include <Library/Core/Types/String.hpp>
+#include <Library/Core/Types/Integer.hpp>
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace library
@@ -27,6 +30,9 @@ namespace d2
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+using library::core::types::Integer ;
+using library::core::types::String ;
+
 using library::math::obj::Vector2d ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -37,6 +43,15 @@ class Object
 {
 
     public:
+
+        enum class Format
+        {
+
+            Undefined,          ///< Undefined format
+            Standard,           ///< Standard format
+            WKT                 ///< Well-Known Text (WKT) format
+
+        } ;
 
         /// @brief              Default constructor
 
@@ -55,6 +70,15 @@ class Object
         bool                    operator ==                                 (   const   Object&                     anObject                                    ) const ;
 
         bool                    operator !=                                 (   const   Object&                     anObject                                    ) const ;
+
+        /// @brief              Output stream operator
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] anObject An object
+        /// @return             A reference to output stream
+
+        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
+                                                                                const   Object&                     anObject                                    ) ;
 
         /// @brief              Check if object is defined
         ///
@@ -87,6 +111,26 @@ class Object
         /// @return             True if object contains another object
 
         virtual bool            contains                                    (   const   Object&                     anObject                                    ) const ;
+
+        /// @brief              Get string representation
+        ///
+        /// @param              [in] aFormat A format
+        /// @return             String representation
+
+        virtual String          toString                                    (   const   Object::Format&             aFormat                                     =   Object::Format::Standard,
+                                                                                const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const = 0 ;
+
+        /// @brief              Print object
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const = 0 ;
+
+        /// @brief              Translate object
+        ///
+        /// @param              [in] aTranslation Translation vector
 
         virtual void            translate                                   (   const   Vector2d&                   aTranslation                                ) = 0 ;
 

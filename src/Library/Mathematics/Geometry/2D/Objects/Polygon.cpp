@@ -15,6 +15,7 @@
 #include <Library/Core/Error.hpp>
 #include <Library/Core/Utilities.hpp>
 
+#include <boost/geometry/io/wkt/wkt.hpp>
 #include <boost/geometry/geometries/polygon.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
 #include <boost/geometry.hpp>
@@ -65,7 +66,22 @@ class Polygon::Impl
 
         Array<Point>            getInnerRingVerticesAt                      (   const   Index&                      aRingIndex                                  ) const ;
         
+        Size                    getEdgeCount                                ( ) const ;
+
+        Size                    getOuterRingEdgeCount                       ( ) const ;
+
+        Size                    getVertexCount                              ( ) const ;
+
+        Segment                 getEdgeAt                                   (   const   Index                       anEdgeIndex                                 ) const ;
+
+        Point                   getVertexAt                                 (   const   Index                       aVertexIndex                                ) const ;
+
+        Array<Segment>          getEdges                                    ( ) const ;
+
         Array<Point>            getVertices                                 ( ) const ;
+
+        String                  toString                                    (   const   Object::Format&             aFormat,
+                                                                                const   Integer&                    aPrecision                                  ) const ;
         
         void                    translate                                   (   const   Vector2d&                   aTranslation                                ) ;
 
@@ -162,6 +178,83 @@ Array<Point>                    Polygon::Impl::getInnerRingVerticesAt       (   
 
 }
 
+Size                            Polygon::Impl::getEdgeCount                 ( ) const
+{
+
+    Size edgeCount = boost::geometry::num_points(polygon_.outer()) - 1 ;
+
+    for (const auto& innerRing : polygon_.inners())
+    {
+        edgeCount += boost::geometry::num_points(innerRing) - 1 ;
+    }
+
+    return edgeCount ;
+
+}
+
+Size                            Polygon::Impl::getOuterRingEdgeCount        ( ) const
+{
+    return boost::geometry::num_points(polygon_.outer()) - 1 ;
+}
+
+Size                            Polygon::Impl::getVertexCount               ( ) const
+{
+    return boost::geometry::num_points(polygon_) - (1 + this->getInnerRingCount()) ;
+}
+
+Segment                         Polygon::Impl::getEdgeAt                    (   const   Index                       anEdgeIndex                                 ) const
+{
+
+    if (anEdgeIndex >= this->getEdgeCount())
+    {
+        throw library::core::error::runtime::Wrong("Edge index") ;
+    }
+
+    if (anEdgeIndex >= this->getOuterRingEdgeCount())
+    {
+        throw library::core::error::runtime::ToBeImplemented("Inner ring edge access.") ;
+    }
+
+    const Point firstVertex = this->getVertexAt(anEdgeIndex) ;
+    const Point secondVertex = (anEdgeIndex != (this->getOuterRingEdgeCount() - 1)) ? this->getVertexAt(anEdgeIndex + 1) : this->getVertexAt(0) ;
+
+    return { firstVertex, secondVertex } ;
+
+}
+
+Point                           Polygon::Impl::getVertexAt                  (   const   Index                       aVertexIndex                                ) const
+{
+
+    if (aVertexIndex >= (boost::geometry::num_points(polygon_) - 1))
+    {
+        throw library::core::error::runtime::Wrong("Vertex index") ;
+    }
+
+    if (aVertexIndex >= (polygon_.outer().size() - 1))
+    {
+        throw library::core::error::runtime::ToBeImplemented("Inner ring vertex access.") ;
+    }
+
+    return { boost::geometry::get<0>(polygon_.outer().at(aVertexIndex)), boost::geometry::get<1>(polygon_.outer().at(aVertexIndex)) } ;
+
+}
+
+Array<Segment>                  Polygon::Impl::getEdges                     ( ) const
+{
+
+    Array<Segment> edges = Array<Segment>::Empty() ;
+
+    edges.reserve(this->getEdgeCount()) ;
+
+    for (Index edgeIndex = 0; edgeIndex < this->getEdgeCount(); ++edgeIndex)
+    {
+        edges.add(this->getEdgeAt(edgeIndex)) ;
+    }
+
+    return edges ;
+
+}
+
 Array<Point>                    Polygon::Impl::getVertices                  ( ) const
 {
 
@@ -181,6 +274,42 @@ Array<Point>                    Polygon::Impl::getVertices                  ( ) 
     }
 
     return vertices ;
+
+}
+
+String                          Polygon::Impl::toString                     (   const   Object::Format&             aFormat,
+                                                                                const   Integer&                    aPrecision                                  ) const
+{
+
+    switch (aFormat)
+    {
+
+        case Object::Format::Standard:
+        case Object::Format::WKT:
+        {
+
+            std::stringstream stringStream ;
+
+            if (aPrecision.isDefined())
+            {
+                stringStream << std::fixed << std::setprecision(aPrecision) << boost::geometry::wkt(polygon_) ;
+            }
+            else
+            {
+                stringStream << boost::geometry::wkt(polygon_) ;
+            }
+
+            return stringStream.str() ;
+
+        }
+
+        default:
+            throw library::core::error::runtime::Wrong("Format") ;
+            break ;
+
+    }
+
+    return String::Empty() ;
 
 }
 
@@ -273,18 +402,95 @@ bool                            Polygon::operator !=                        (   
     return !((*this) == aPolygon) ;
 }
 
-std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Polygon&                    aPolygon                                    )
+bool                            Polygon::isDefined                          ( ) const
+{
+    return (implUPtr_ != nullptr) && implUPtr_->isDefined() ;
+}
+
+Size                            Polygon::getEdgeCount                       ( ) const
 {
 
-    library::core::utils::Print::Header(anOutputStream, "Polygon") ;
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->getEdgeCount() ;
+
+}
+
+Size                            Polygon::getVertexCount                     ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->getVertexCount() ;
+
+}
+
+Segment                         Polygon::getEdgeAt                          (   const   Index                       anEdgeIndex                                 ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->getEdgeAt(anEdgeIndex) ;
+
+}
+
+Point                           Polygon::getVertexAt                        (   const   Index                       aVertexIndex                                ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->getVertexAt(aVertexIndex) ;
+
+}
+
+Array<Segment>                  Polygon::getEdges                           ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->getEdges() ;
+
+}
+
+Array<Point>                    Polygon::getVertices                        ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->getVertices() ;
+
+}
+
+void                            Polygon::print                              (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           ) const
+{
+
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Polygon") : void () ;
 
     library::core::utils::Print::Separator(anOutputStream, "Outer Ring") ;
 
-    if (aPolygon.implUPtr_ != nullptr)
+    if (implUPtr_ != nullptr)
     {
 
-        for (const auto& point : aPolygon.implUPtr_->getOuterRingVertices())
+        for (const auto& point : implUPtr_->getOuterRingVertices())
         {
             library::core::utils::Print::Line(anOutputStream) << String::Format("- {}", point.toString()) ;
         }
@@ -297,15 +503,15 @@ std::ostream&                   operator <<                                 (   
     
     library::core::utils::Print::Separator(anOutputStream, "Inner Rings") ;
 
-    if (aPolygon.implUPtr_ != nullptr)
+    if (implUPtr_ != nullptr)
     {
 
-        for (Index innerRingIndex = 0; innerRingIndex < aPolygon.implUPtr_->getInnerRingCount(); ++innerRingIndex)
+        for (Index innerRingIndex = 0; innerRingIndex < implUPtr_->getInnerRingCount(); ++innerRingIndex)
         {
 
             library::core::utils::Print::Separator(anOutputStream, String::Format("Inner Ring @ {}", innerRingIndex)) ;
 
-            for (const auto& point : aPolygon.implUPtr_->getInnerRingVerticesAt(innerRingIndex))
+            for (const auto& point : implUPtr_->getInnerRingVerticesAt(innerRingIndex))
             {
                 library::core::utils::Print::Line(anOutputStream) << String::Format("- {}", point.toString()) ;
             }
@@ -318,18 +524,12 @@ std::ostream&                   operator <<                                 (   
         library::core::utils::Print::Line(anOutputStream) << "Undefined" ;
     }
 
-    library::core::utils::Print::Footer(anOutputStream) ;
-
-    return anOutputStream ;
+    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
-bool                            Polygon::isDefined                          ( ) const
-{
-    return (implUPtr_ != nullptr) && implUPtr_->isDefined() ;
-}
-
-Array<Point>                    Polygon::getVertices                        ( ) const
+String                          Polygon::toString                           (   const   Object::Format&             aFormat,
+                                                                                const   Integer&                    aPrecision                                  ) const
 {
 
     if (!this->isDefined())
@@ -337,7 +537,7 @@ Array<Point>                    Polygon::getVertices                        ( ) 
         throw library::core::error::runtime::Undefined("Polygon") ;
     }
 
-    return implUPtr_->getVertices() ;
+    return implUPtr_->toString(aFormat, aPrecision) ;
 
 }
 

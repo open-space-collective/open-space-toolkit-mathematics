@@ -43,7 +43,10 @@ class Ellipsoid ;
 
 /// @brief                      Segment
 ///
-/// @ref                        
+///                             A segment is a part of a line that is bounded by two distinct end points,
+///                             and contains every point on the line between its endpoints.
+///
+/// @ref                        https://en.wikipedia.org/wiki/Line_segment
 
 class Segment : public Object
 {
@@ -90,19 +93,6 @@ class Segment : public Object
 
         bool                    operator !=                                 (   const   Segment&                    aSegment                                    ) const ;
 
-        /// @brief              Output stream operator
-        ///
-        /// @code
-        ///                     std::cout << Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
-        /// @endcode
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] aSegment A segment
-        /// @return             An output stream
-
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Segment&                    aSegment                                    ) ;
-
         /// @brief              Check if segment is defined
         ///
         /// @code
@@ -140,11 +130,11 @@ class Segment : public Object
         ///
         /// @code
         ///                     Segment segment = ... ;
-        ///                     Ellipsoid ellipsoid = ... ;
-        ///                     segment.contains(ellipsoid) ;
+        ///                     Point point = ... ;
+        ///                     segment.contains(point) ;
         /// @endcode
         ///
-        /// @param              [in] anEllipsoid An ellipsoid
+        /// @param              [in] aPoint An point
         /// @return             True if segment contains point
 
         bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
@@ -198,6 +188,14 @@ class Segment : public Object
         /// @return             Segment length
 
         Real                    getLength                                   ( ) const ;
+
+        /// @brief              Print segment
+        ///
+        /// @param              [in] anOutputStream An output stream
+        /// @param              [in] (optional) displayDecorators If true, display decorators
+
+        virtual void            print                                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           =   true ) const override ;
 
         /// @brief              Translate segment
         ///

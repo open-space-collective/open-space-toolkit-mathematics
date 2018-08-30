@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <LibraryMathematicsPy/Geometry/3D/Intersection.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Object.cpp>
 
@@ -23,6 +24,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D            ( )
     
     LibraryMathematicsPy_Geometry_3D_Object() ;
     LibraryMathematicsPy_Geometry_3D_Objects() ;
+    LibraryMathematicsPy_Geometry_3D_Intersection() ;
 
 }
 

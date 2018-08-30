@@ -32,7 +32,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Segment
         .def("isDefined", &Segment::isDefined)
         .def("isDegenerate", &Segment::isDegenerate)
         .def("intersectsEllipsoid", +[] (const Segment& aSegment, const Ellipsoid& anEllipsoid) -> bool { return aSegment.intersects(anEllipsoid) ; })
-        // .def("contains", &Segment::contains)
+        .def("containsPoint", +[] (const Segment& aSegment, const Point& aPoint) -> bool { return aSegment.contains(aPoint) ; })
 
         .def("getFirstPoint", &Segment::getFirstPoint)
         .def("getSecondPoint", &Segment::getSecondPoint)
