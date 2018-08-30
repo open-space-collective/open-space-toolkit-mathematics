@@ -177,6 +177,19 @@ Intersection                    Intersection::PointSet                      (   
 
 }
 
+Intersection                    Intersection::LineString                    (   const   objects::LineString&        aLineString                                 )
+{
+
+    Intersection intersection ;
+
+    intersection.type_ = Intersection::Type::LineString ;
+    
+    intersection.objects_.emplace_back(Unique<Object>(aLineString.clone())) ;
+
+    return intersection ;
+
+}
+
 String                          Intersection::StringFromType                (   const   Intersection::Type&         aType                                       )
 {
 
@@ -197,6 +210,9 @@ String                          Intersection::StringFromType                (   
 
         case Intersection::Type::Line:
             return "Line" ;
+
+        case Intersection::Type::LineString:
+            return "LineString" ;
 
         case Intersection::Type::Ray:
             return "Ray" ;

@@ -72,7 +72,8 @@ bool                            Pyramid::isDefined                          ( ) 
     return base_.isDefined() && apex_.isDefined() ;
 }
 
-bool                            Pyramid::intersects                         (   const   Ellipsoid&                  anEllipsoid                                 ) const
+bool                            Pyramid::intersects                         (   const   Ellipsoid&                  anEllipsoid,
+                                                                                const   Size                        aDiscretizationLevel                        ) const
 {
 
     if (!anEllipsoid.isDefined())
@@ -85,7 +86,15 @@ bool                            Pyramid::intersects                         (   
         throw library::core::error::runtime::Undefined("Pyramid") ;
     }
 
-    throw library::core::error::runtime::ToBeImplemented("Pyramid") ;
+    for (const auto& ray : this->getRaysOfLateralFaces(aDiscretizationLevel)) // [TBM] Could be improved by calculating rays on the fly
+    {
+
+        if (ray.intersects(anEllipsoid))
+        {
+            return true ;
+        }
+
+    }
 
     return false ;
 
@@ -157,30 +166,20 @@ Polygon                         Pyramid::getLateralFaceAt                   (   
     }
 
     const Segment baseEdge = base_.getEdgeAt(aLateralFaceIndex) ;
-    // std::cout << "baseEdge = " << baseEdge << std::endl ;
 
     const Vector3d firstDirection = (baseEdge.getFirstPoint() - apex_).normalized() ;
-    // std::cout << "firstDirection = " << firstDirection << std::endl ;
     const Vector3d secondDirection = (baseEdge.getSecondPoint() - apex_).normalized() ;
-    // std::cout << "secondDirection = " << secondDirection << std::endl ;
 
     const Vector3d firstAxis = firstDirection ;
-    // std::cout << "firstAxis = " << firstAxis << std::endl ;
     const Vector3d secondAxis = (firstAxis.cross(secondDirection)).cross(firstAxis).normalized() ;
-    // std::cout << "secondAxis = " << secondAxis << std::endl ;
 
     const Vector3d baseEdgeVector = baseEdge.getSecondPoint() - baseEdge.getFirstPoint() ;
-    // std::cout << "baseEdgeVector = " << baseEdgeVector << std::endl ;
 
     const Point2d firstPolygonPoint = { 0.0, 0.0 } ;
-    // std::cout << "firstPolygonPoint = " << firstPolygonPoint << std::endl ;
     const Point2d secondPolygonPoint = { (baseEdge.getFirstPoint() - apex_).norm(), 0.0 } ;
-    // std::cout << "secondPolygonPoint = " << secondPolygonPoint << std::endl ;
     const Point2d thirdPolygonPoint = secondPolygonPoint + Point2d { baseEdgeVector.dot(firstAxis), baseEdgeVector.dot(secondAxis) } ;
-    // std::cout << "thirdPolygonPoint = " << thirdPolygonPoint << std::endl ;
 
     const Polygon2d polygon = { { firstPolygonPoint, secondPolygonPoint, thirdPolygonPoint } } ;
-    // std::cout << "polygon = " << polygon << std::endl ;
 
     return { polygon, apex_, firstAxis, secondAxis } ;
 
@@ -199,22 +198,22 @@ Array<Ray>                      Pyramid::getRaysOfLateralFaceAt             (   
         throw library::core::error::runtime::Wrong("Ray count") ;
     }
 
-    const Polygon lateralFace = this->getLateralFaceAt(aLateralFaceIndex) ;
+    const Segment baseEdge = base_.getEdgeAt(aLateralFaceIndex) ;
 
-    const Ray firstRay = { apex_, (lateralFace.getVertexAt(1) - apex_).normalized() } ;
-    const Ray secondRay = { apex_, (lateralFace.getVertexAt(2) - apex_).normalized() } ;
+    const Vector3d firstRayDirection = (baseEdge.getFirstPoint() - apex_).normalized() ;
+    const Vector3d secondRayDirection = (baseEdge.getSecondPoint() - apex_).normalized() ;
 
-    const Vector3d rotationAxis = firstRay.getDirection().cross(secondRay.getDirection()).normalized() ;
+    const Vector3d rotationAxis = firstRayDirection.cross(secondRayDirection).normalized() ;
 
-    const Angle angleBetweenRays = Angle::Between(firstRay.getDirection(), secondRay.getDirection()) ;
-// std::cout << "angleBetweenRays = " << std::endl << angleBetweenRays << std::endl ;
+    const Angle angleBetweenRays = Angle::Between(firstRayDirection, secondRayDirection) ;
+
     Array<Ray> rays = Array<Ray>::Empty() ;
 
     for (const auto& angle_rad : Interval<Real>::Closed(0.0, angleBetweenRays.inRadians()).generateArrayWithSize(aRayCount))
     {
 
-        const Ray ray = { firstRay.getOrigin(), Quaternion::RotationVector(RotationVector(rotationAxis, Angle::Radians(angle_rad))).conjugate() * firstRay.getDirection() } ;
-// std::cout << "ray @ " << aLateralFaceIndex << " / " << Angle::Radians(angle_rad).inDegrees().toString() << " [deg] = " << std::endl << ray << std::endl ;
+        const Ray ray = { apex_, Quaternion::RotationVector(RotationVector(rotationAxis, Angle::Radians(angle_rad))).conjugate() * firstRayDirection } ;
+
         rays.emplace_back(ray) ;
 
     }
@@ -238,13 +237,13 @@ Array<Ray>                      Pyramid::getRaysOfLateralFaces              (   
     for (Index lateralFaceIndex = 0; lateralFaceIndex < this->getLateralFaceCount(); ++lateralFaceIndex)
     {
 
+        const Array<Ray> lateralFaceRays = this->getRaysOfLateralFaceAt(lateralFaceIndex, lateralRayCount) ;
+
         // [TBM] Double counting rays
         
-        rays.add(this->getRaysOfLateralFaceAt(lateralFaceIndex, lateralRayCount)) ;
+        rays.add(lateralFaceRays) ;
 
     }
-
-    // std::cout << "Pyramid::getRaysOfLateralFaces :: rays " << std::endl << rays << std::endl ;
 
     return rays ;
 
@@ -269,9 +268,9 @@ Intersection                    Pyramid::intersectionWith                   (   
 
     for (const auto& ray : this->getRaysOfLateralFaces(aDiscretizationLevel))
     {
-// std::cout << "Pyramid::intersectionWith :: ray " << std::endl << ray << std::endl ;
+
         const Intersection intersection = ray.intersectionWith(anEllipsoid, onlyInSight) ;
-// std::cout << "intersection " << std::endl << intersection << std::endl ;
+
         if (!intersection.isEmpty())
         {
 
@@ -297,7 +296,7 @@ Intersection                    Pyramid::intersectionWith                   (   
 
     if (!intersectionPoints.isEmpty())
     {
-        return Intersection::PointSet(PointSet(intersectionPoints)) ;
+        return Intersection::LineString(LineString(intersectionPoints)) ;
     }
 
     return Intersection::Empty() ;

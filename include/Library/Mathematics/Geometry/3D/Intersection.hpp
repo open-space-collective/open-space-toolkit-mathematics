@@ -17,6 +17,7 @@
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/LineString.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/PointSet.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
@@ -60,6 +61,7 @@ class Intersection
             Point,
             PointSet,
             Line,
+            LineString,
             Ray,
             Segment,
             Plane,
@@ -131,9 +133,9 @@ class Intersection
 
         bool                    isEmpty                                     ( ) const ;
 
-        /// @brief              Returns true is intersection can be converted to underlying object
+        /// @brief              Returns true if intersection can be converted to underlying object
         ///
-        /// @return             True is intersection can be converted to underlying object
+        /// @return             True if intersection can be converted to underlying object
 
         template <class Type>
         bool                    is                                          ( ) const
@@ -210,6 +212,16 @@ class Intersection
         /// @return             Point set intersection
 
         static Intersection     PointSet                                    (   const   objects::PointSet&          aPointSet                                   ) ;
+
+        /// @brief              Constructs a line string intersection
+        ///
+        /// @code
+        ///                     Intersection intersection = Intersection::LineString({ Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0), Point(1.0, 0.0, 1.0) }) ;
+        /// @endcode
+        ///
+        /// @return             Line string intersection
+
+        static Intersection     LineString                                  (   const   objects::LineString&        aLineString                                 ) ;
 
         /// @brief              Converts intersection type to string
         ///

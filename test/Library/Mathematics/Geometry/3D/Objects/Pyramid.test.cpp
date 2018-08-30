@@ -185,7 +185,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Intersects_Ellipsoid)
     
     {
 
-        const Polygon base = { { { { -0.1, -0.1 }, { +0.1, -0.1 }, { +0.1, +0.1 }, { -0.1, +0.1 } } }, { -1.0, 0.0, 1.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
+        const Polygon base = { { { { -0.1, -0.1 }, { +0.1, -0.1 }, { +0.1, +0.1 }, { -0.1, +0.1 } } }, { 0.0, 0.0, 1.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
         const Point apex = { 0.0, 0.0, 0.0 } ;
 
         const Pyramid pyramid = { base, apex } ;
@@ -198,7 +198,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Intersects_Ellipsoid)
 
     {
 
-        EXPECT_FALSE(Pyramid::Undefined().intersects(Ellipsoid::Undefined())) ;
+        EXPECT_ANY_THROW(Pyramid::Undefined().intersects(Ellipsoid::Undefined())) ;
 
     }
 
@@ -257,9 +257,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, GetApex)
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IntersectionWith_Ellipsoid)
 {
 
+    using library::core::types::Real ;
+    
     using library::math::obj::Vector3d ;
     using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
+    using library::math::geom::d3::objects::LineString ;
     using library::math::geom::d3::objects::Polygon ;
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Pyramid ;
@@ -276,15 +278,29 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IntersectionWith_Ellipsoi
 
         const Intersection intersection = pyramid.intersectionWith(ellipsoid, true, 8) ;
 
-        std::cout << intersection << std::endl ;
-
         EXPECT_TRUE(intersection.isDefined()) ;
         EXPECT_FALSE(intersection.isEmpty()) ;
-        EXPECT_TRUE(intersection.is<PointSet>()) ;
+        EXPECT_TRUE(intersection.is<LineString>()) ;
 
-        const PointSet pointSet = intersection.as<PointSet>() ;
+        const LineString intersectionLineString = intersection.as<LineString>() ;
 
-        EXPECT_EQ(8, pointSet.getSize()) ;
+        EXPECT_EQ(8, intersectionLineString.getPointCount()) ;
+
+        const LineString referenceLineString = 
+        {
+            {
+                { -0.505129425743498, -0.505129425743498, 5.05129425743498 },
+                { -0.505129425743498,  0.505129425743499, 5.05129425743498 },
+                { -0.505129425743498,  0.505129425743498, 5.05129425743498 },
+                {  0.505129425743499,  0.505129425743498, 5.05129425743498 },
+                {  0.505129425743498,  0.505129425743498, 5.05129425743498 },
+                {  0.505129425743498, -0.505129425743499, 5.05129425743498 },
+                {  0.505129425743498, -0.505129425743498, 5.05129425743498 },
+                { -0.505129425743499, -0.505129425743498, 5.05129425743498 }
+            }
+        } ;
+
+        EXPECT_TRUE(intersectionLineString.isNear(referenceLineString, 1e-10)) ;
 
     }
 

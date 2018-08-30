@@ -117,9 +117,11 @@ class Pyramid : public Object
         /// @endcode
         ///
         /// @param              [in] anEllipsoid An ellipsoid
+        /// @param              [in] aDiscretizationLevel (optional) The polygonal discretization level
         /// @return             True if pyramid intersects ellipsoid
         
-        bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
+        bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid,
+                                                                                const   Size                        aDiscretizationLevel                        =   40 ) const ;
 
         /// @brief              Check if pyramid contains ellipsoid
         ///

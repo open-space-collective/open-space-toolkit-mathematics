@@ -15,6 +15,7 @@
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Plane.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Segment.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Ray.cpp>
+#include <LibraryMathematicsPy/Geometry/3D/Objects/LineString.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Line.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/PointSet.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Point.cpp>
@@ -33,6 +34,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects    ( )
     LibraryMathematicsPy_Geometry_3D_Objects_Point() ;
     LibraryMathematicsPy_Geometry_3D_Objects_PointSet() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Line() ;
+    LibraryMathematicsPy_Geometry_3D_Objects_LineString() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Ray() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Segment() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Plane() ;

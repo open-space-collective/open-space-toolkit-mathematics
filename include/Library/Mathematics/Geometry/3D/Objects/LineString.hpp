@@ -1,17 +1,17 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           Library/Mathematics/Geometry/2D/Objects/LineString.hpp
+/// @file           Library/Mathematics/Geometry/3D/Objects/LineString.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_2D_Objects_LineString__
-#define __Library_Mathematics_Geometry_2D_Objects_LineString__
+#ifndef __Library_Mathematics_Geometry_3D_Objects_LineString__
+#define __Library_Mathematics_Geometry_3D_Objects_LineString__
 
-#include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
-#include <Library/Mathematics/Geometry/2D/Object.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
+#include <Library/Mathematics/Geometry/3D/Object.hpp>
 
 #include <Library/Core/Containers/Array.hpp>
 #include <Library/Core/Types/Size.hpp>
@@ -25,7 +25,7 @@ namespace math
 {
 namespace geom
 {
-namespace d2
+namespace d3
 {
 namespace objects
 {
@@ -36,9 +36,9 @@ using library::core::types::Index ;
 using library::core::types::Size ;
 using library::core::ctnr::Array ;
 
-using library::math::obj::Vector2d ;
-using library::math::geom::d2::Object ;
-using library::math::geom::d2::objects::Point ;
+using library::math::obj::Vector3d ;
+using library::math::geom::d3::Object ;
+using library::math::geom::d3::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -58,7 +58,7 @@ class LineString : public Object
         /// @brief              Constructor
         ///
         /// @code
-        ///                     LineString lineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) ;
+        ///                     LineString lineString({ { 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }, { 1.0, 0.0, 1.0 } }) ;
         /// @endcode
         ///
         /// @param              [in] aPointArray A point array
@@ -108,7 +108,7 @@ class LineString : public Object
         /// @brief              Check if line string is near another line string
         ///
         /// @code
-        ///                     LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).isNear(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1e-15 } }), 1e-15) ; // True
+        ///                     LineString({ { 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }, { 1.0, 0.0, 1.0 } }).isNear(LineString({ { 0.0, 0.0, 0.0 }, { 0.0, 1.0, 1e-15 }, { 1.0, 0.0, 1.0 } }), 1e-15) ; // True
         /// @endcode
         ///
         /// @param              [in] aLineString A line string
@@ -130,14 +130,6 @@ class LineString : public Object
         /// @return             Closest point
 
         Point                   getPointClosestTo                           (   const   Point&                      aPoint                                      ) const ;
-
-        /// @brief              Get string representation
-        ///
-        /// @param              [in] aFormat A format
-        /// @return             String representation
-
-        virtual String          toString                                    (   const   Object::Format&             aFormat                                     =   Object::Format::Standard,
-                                                                                const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const override ;
 
         /// @brief              Print point
         ///
@@ -163,7 +155,13 @@ class LineString : public Object
         ///
         /// @param              [in] aTranslation A translation vector
 
-        virtual void            translate                                   (   const   Vector2d&                   aTranslation                                ) override ;
+        virtual void            translate                                   (   const   Vector3d&                   aTranslation                                ) override ;
+
+        /// @brief              Rotate line string
+        ///
+        /// @param              [in] aRotation A rotation quaternion
+        
+        virtual void            rotate                                      (   const   Quaternion&                 aRotation                                   ) override ;
 
         /// @brief              Constructs an empty line string
         ///
@@ -178,7 +176,7 @@ class LineString : public Object
         /// @brief              Constructs a line string from a segment
         ///
         /// @code
-        ///                     Segment segment = { { 0.0, 0.0 }, { 0.0, 1.0 } } ;
+        ///                     Segment segment = { { 0.0, 0.0, 0.0 }, { 0.0, 1.0, 2.0 } } ;
         ///                     LineString lineString = LineString::Segment(segment) ;
         /// @endcode
         ///
