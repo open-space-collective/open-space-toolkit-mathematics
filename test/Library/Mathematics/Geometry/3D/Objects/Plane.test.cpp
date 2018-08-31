@@ -362,7 +362,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Rotate)
         const Plane referencePlane = { { 1.0, 2.0, 3.0 }, { 0.0, 1.0, 0.0 } } ;
 
         EXPECT_TRUE(plane.getPoint().isNear(referencePlane.getPoint(), Real::Epsilon())) ;
-        EXPECT_TRUE(plane.getNormalVector().isApprox(referencePlane.getNormalVector(), Real::Epsilon())) ;
+        EXPECT_TRUE(plane.getNormalVector().isNear(referencePlane.getNormalVector(), Real::Epsilon())) ;
 
     }
 

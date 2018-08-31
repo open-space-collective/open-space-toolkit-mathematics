@@ -166,10 +166,10 @@ std::ostream&                   operator <<                                 (   
 
     library::core::utils::Print::Header(anOutputStream, "Quaternion") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "X:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.x_) : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Y:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.y_) : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Z:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.z_) : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "S:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.s_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "X:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.x_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Y:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.y_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Z:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.z_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "S:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.s_) : "Undefined") ;
 
     library::core::utils::Print::Footer(anOutputStream) ;
 
@@ -208,19 +208,7 @@ bool                            Quaternion::isNear                          (   
         throw library::core::error::runtime::Undefined("Angular tolerance") ;
     }
 
-    if ((!this->isUnitary()) || (!aQuaternion.isUnitary()))
-    {
-        throw library::core::error::RuntimeError("Quaternion is not unitary.") ;
-    }
-
-    const Quaternion deltaQuaternion = (*this) / aQuaternion ;
-
-    if ((deltaQuaternion.s_ > 1.0) && (std::abs(deltaQuaternion.s_ - 1.0) < Real::Epsilon()))
-    {
-        return true ;
-    }
-
-    return (2.0 * std::acos(deltaQuaternion.s_)) <= anAngularTolerance.inRadians().abs() ;
+    return this->angularDifferenceWith(aQuaternion).inRadians(0.0, Real::TwoPi()) <= anAngularTolerance.inRadians(0.0, Real::TwoPi()) ;
 
 }
 
@@ -280,7 +268,7 @@ Vector3d                        Quaternion::getVectorPart                   ( ) 
         throw library::core::error::runtime::Undefined("Quaternion") ;
     }
 
-    return Vector3d(x_, y_, z_) ;
+    return { x_, y_, z_ } ;
 
 }
 
@@ -397,7 +385,7 @@ Quaternion                      Quaternion::crossMultiply                   (   
     const Vector3d vectorPart = (rightScalarPart * leftVectorPart) + (leftScalarPart * rightVectorPart) - leftVectorPart.cross(rightVectorPart) ;
     const Real scalarPart = (leftScalarPart * rightScalarPart) - leftVectorPart.dot(rightVectorPart) ;
 
-    return Quaternion(vectorPart, scalarPart) ;
+    return { vectorPart, scalarPart } ;
 
 }
 
@@ -418,7 +406,7 @@ Quaternion                      Quaternion::dotMultiply                     (   
     const Vector3d vectorPart = (rightScalarPart * leftVectorPart) + (leftScalarPart * rightVectorPart) + leftVectorPart.cross(rightVectorPart) ;
     const Real scalarPart = (leftScalarPart * rightScalarPart) - leftVectorPart.dot(rightVectorPart) ;
 
-    return Quaternion(vectorPart, scalarPart) ;
+    return { vectorPart, scalarPart } ;
 
 }
 
@@ -597,7 +585,7 @@ Angle                           Quaternion::angularDifferenceWith           (   
 
     const Quaternion deltaQuaternion = ((*this) / aQuaternion).normalize() ;
 
-    return Angle::Radians(2.0 * std::acos(deltaQuaternion.s_)) ;
+    return Angle::Radians(2.0 * std::acos(std::abs(deltaQuaternion.s_))) ;
 
 }
 

@@ -105,7 +105,7 @@ bool                            Ellipsoid::operator ==                      (   
             return true ;
         }
 
-        return this->getMatrix().isApprox(anEllipsoid.getMatrix(), Real::Epsilon()) ;
+        return this->getMatrix().isNear(anEllipsoid.getMatrix(), Real::Epsilon()) ;
 
     }
 

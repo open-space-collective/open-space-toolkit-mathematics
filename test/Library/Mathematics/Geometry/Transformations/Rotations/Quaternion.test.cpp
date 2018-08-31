@@ -679,6 +679,8 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Angular
 
         EXPECT_EQ(Angle::Zero(), Quaternion::Unit().angularDifferenceWith(Quaternion::Unit())) ;
         EXPECT_EQ(Angle::Pi(), Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).angularDifferenceWith(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0))) ;
+        
+        EXPECT_EQ(Angle::Zero(), Quaternion::XYZS(-0.707716822367268, -0.000523120993000198, -0.706495803466267, -0.000552600541000209).angularDifferenceWith(Quaternion::XYZS(0.707716822554873, 0.000523120132547009, 0.706495803279188, 0.000552600268546972))) ;
 
     }
 
@@ -791,14 +793,14 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Rotatio
 
                 const Quaternion quaternion_A_B = Quaternion::RotationMatrix(rotationMatrix_A_B) ;
 
-                EXPECT_TRUE(rotationMatrix_A_B.accessMatrix().isApprox(RotationMatrix::Quaternion(quaternion_A_B).accessMatrix(), 1e-14)) ;
+                EXPECT_TRUE(rotationMatrix_A_B.accessMatrix().isNear(RotationMatrix::Quaternion(quaternion_A_B).accessMatrix(), 1e-14)) ;
 
                 for (auto vectorIdx = 0; vectorIdx < 100; ++vectorIdx)
                 {
 
                     const Vector3d vector_B = Vector3d(std::cos(axisIdx), std::sin(axisIdx), std::cos(axisIdx) * std::sin(axisIdx)).normalized() ;
 
-                    EXPECT_TRUE((quaternion_A_B * vector_B).isApprox((rotationMatrix_A_B * vector_B), 1e-14)) ;
+                    EXPECT_TRUE((quaternion_A_B * vector_B).isNear((rotationMatrix_A_B * vector_B), 1e-14)) ;
 
                 }
 

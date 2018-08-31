@@ -393,9 +393,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, Rotate)
         const Polygon referencePolygon = { referencePolygon2d, referenceOrigin, referenceXAxis, referenceYAxis } ;
 
         EXPECT_TRUE(polygon.getOrigin().isNear(referencePolygon.getOrigin(), Real::Epsilon())) ;
-        EXPECT_TRUE(polygon.getXAxis().isApprox(referencePolygon.getXAxis(), Real::Epsilon())) ;
-        EXPECT_TRUE(polygon.getYAxis().isApprox(referencePolygon.getYAxis(), Real::Epsilon())) ;
-        EXPECT_TRUE(polygon.getNormalVector().isApprox(referencePolygon.getNormalVector(), Real::Epsilon())) ;
+        EXPECT_TRUE(polygon.getXAxis().isNear(referencePolygon.getXAxis(), Real::Epsilon())) ;
+        EXPECT_TRUE(polygon.getYAxis().isNear(referencePolygon.getYAxis(), Real::Epsilon())) ;
+        EXPECT_TRUE(polygon.getNormalVector().isNear(referencePolygon.getNormalVector(), Real::Epsilon())) ;
 
     }
 

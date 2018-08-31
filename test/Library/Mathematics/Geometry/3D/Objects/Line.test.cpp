@@ -328,7 +328,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, Rotate)
         const Line referenceLine = { { 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
 
         EXPECT_TRUE(line.getOrigin().isNear(referenceLine.getOrigin(), Real::Epsilon())) ;
-        EXPECT_TRUE(line.getDirection().isApprox(referenceLine.getDirection(), Real::Epsilon())) ;
+        EXPECT_TRUE(line.getDirection().isNear(referenceLine.getDirection(), Real::Epsilon())) ;
 
     }
 

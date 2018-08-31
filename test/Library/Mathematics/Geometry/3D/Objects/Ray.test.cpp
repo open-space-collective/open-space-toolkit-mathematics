@@ -351,7 +351,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Rotate)
         const Ray referenceRay = { { 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
 
         EXPECT_TRUE(ray.getOrigin().isNear(referenceRay.getOrigin(), Real::Epsilon())) ;
-        EXPECT_TRUE(ray.getDirection().isApprox(referenceRay.getDirection(), Real::Epsilon())) ;
+        EXPECT_TRUE(ray.getDirection().isNear(referenceRay.getDirection(), Real::Epsilon())) ;
 
     }
 
