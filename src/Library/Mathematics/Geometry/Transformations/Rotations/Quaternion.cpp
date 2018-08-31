@@ -630,24 +630,24 @@ Quaternion                      Quaternion::RotationMatrix                  (   
         throw library::core::error::runtime::Undefined("Rotation matrix") ;
     }
 
-    const double trace = aRotationMatrix.accessMatrix().trace() ;
+    const Real trace = aRotationMatrix.accessMatrix().trace() ;
     
-    const double rotationMatrix_11 = aRotationMatrix(0, 0) ;
-    const double rotationMatrix_12 = aRotationMatrix(0, 1) ;
-    const double rotationMatrix_13 = aRotationMatrix(0, 2) ;
+    const Real rotationMatrix_11 = aRotationMatrix(0, 0) ;
+    const Real rotationMatrix_12 = aRotationMatrix(0, 1) ;
+    const Real rotationMatrix_13 = aRotationMatrix(0, 2) ;
     
-    const double rotationMatrix_21 = aRotationMatrix(1, 0) ;
-    const double rotationMatrix_22 = aRotationMatrix(1, 1) ;
-    const double rotationMatrix_23 = aRotationMatrix(1, 2) ;
+    const Real rotationMatrix_21 = aRotationMatrix(1, 0) ;
+    const Real rotationMatrix_22 = aRotationMatrix(1, 1) ;
+    const Real rotationMatrix_23 = aRotationMatrix(1, 2) ;
 
-    const double rotationMatrix_31 = aRotationMatrix(2, 0) ;
-    const double rotationMatrix_32 = aRotationMatrix(2, 1) ;
-    const double rotationMatrix_33 = aRotationMatrix(2, 2) ;
+    const Real rotationMatrix_31 = aRotationMatrix(2, 0) ;
+    const Real rotationMatrix_32 = aRotationMatrix(2, 1) ;
+    const Real rotationMatrix_33 = aRotationMatrix(2, 2) ;
 
-    double x ;
-    double y ;
-    double z ;
-    double s ;
+    Real x = Real::Undefined() ;
+    Real y = Real::Undefined() ;
+    Real z = Real::Undefined() ;
+    Real s = Real::Undefined() ;
 
     if ((trace >= rotationMatrix_11) && (trace >= rotationMatrix_22) && (trace >= rotationMatrix_33))
     {
