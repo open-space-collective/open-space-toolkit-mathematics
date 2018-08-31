@@ -356,6 +356,37 @@ TEST (Library_Mathematics_Objects_Vector4d, Constructor)
 
 }
 
+TEST (Library_Mathematics_Objects_Vector4d, IsNear)
+{
+
+    using library::math::obj::Vector4d ;
+
+    {
+
+        const Vector4d vector(1.0, 2.0, 3.0, 4.0) ;
+
+        EXPECT_TRUE(vector.isNear(vector, 0.0)) ;
+
+    }
+
+    {
+
+        const Vector4d firstVector(1.0, 2.0, 3.0, 4.0) ;
+        const Vector4d secondVector(2.0, 2.0, 3.0, 4.0) ;
+
+        EXPECT_TRUE(firstVector.isNear(secondVector, 1.0)) ;
+        EXPECT_FALSE(firstVector.isNear(secondVector, 0.0)) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Vector4d::NaN().isNear(Vector4d::NaN(), 0.0)) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Objects_Vector4d, ToString)
 {
 
@@ -469,6 +500,67 @@ TEST (Library_Mathematics_Objects_VectorXd, Constructor)
         EXPECT_FALSE(vector.isDefined()) ;
         EXPECT_FALSE(vector.isNaN()) ;
         EXPECT_TRUE(vector.isInf()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Objects_VectorXd, IsNear)
+{
+
+    using library::math::obj::VectorXd ;
+
+    {
+
+        VectorXd vector(5) ;
+
+        vector(0) = 1.0 ;
+        vector(1) = 2.0 ;
+        vector(2) = 3.0 ;
+        vector(3) = 4.0 ;
+        vector(4) = 5.0 ;
+
+        EXPECT_TRUE(vector.isNear(vector, 0.0)) ;
+
+    }
+
+    {
+
+        VectorXd firstVector(2) ;
+
+        firstVector(0) = 1.0 ;
+        firstVector(1) = 2.0 ;
+
+        VectorXd secondVector(2) ;
+
+        secondVector(0) = 1.1 ;
+        secondVector(1) = 2.0 ;
+
+        EXPECT_TRUE(firstVector.isNear(secondVector, 1.0)) ;
+        EXPECT_FALSE(firstVector.isNear(secondVector, 0.0)) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(VectorXd::NaN(3).isNear(VectorXd::NaN(3), 0.0)) ;
+
+    }
+
+    {
+
+        VectorXd firstVector(2) ;
+
+        firstVector(0) = 1.0 ;
+        firstVector(1) = 2.0 ;
+
+        VectorXd secondVector(3) ;
+
+        secondVector(0) = 1.1 ;
+        secondVector(1) = 2.0 ;
+        secondVector(2) = 3.0 ;
+
+        EXPECT_ANY_THROW(firstVector.isNear(secondVector, 1.0)) ;
 
     }
 

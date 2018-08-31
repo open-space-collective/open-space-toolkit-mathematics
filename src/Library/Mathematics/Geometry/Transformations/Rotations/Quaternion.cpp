@@ -595,7 +595,7 @@ Angle                           Quaternion::angularDifferenceWith           (   
         throw library::core::error::RuntimeError("Quaternion is not unitary.") ;
     }
 
-    const Quaternion deltaQuaternion = (*this) / aQuaternion ;
+    const Quaternion deltaQuaternion = ((*this) / aQuaternion).normalize() ;
 
     return Angle::Radians(2.0 * std::acos(deltaQuaternion.s_)) ;
 
