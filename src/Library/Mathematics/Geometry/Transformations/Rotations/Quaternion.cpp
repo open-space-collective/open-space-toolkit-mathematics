@@ -582,14 +582,33 @@ Quaternion&                     Quaternion::rectify                         ( )
 
 }
 
+Angle                           Quaternion::angularDifferenceWith           (   const   Quaternion&                 aQuaternion                                 ) const
+{
+
+    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
+    {
+        throw library::core::error::runtime::Undefined("Quaternion") ;
+    }
+
+    if ((!this->isUnitary()) || (!aQuaternion.isUnitary()))
+    {
+        throw library::core::error::RuntimeError("Quaternion is not unitary.") ;
+    }
+
+    const Quaternion deltaQuaternion = (*this) / aQuaternion ;
+
+    return Angle::Radians(2.0 * std::acos(deltaQuaternion.s_)) ;
+
+}
+
 Quaternion                      Quaternion::Undefined                       ( )
 {
-    return Quaternion(Real::Undefined(), Real::Undefined(), Real::Undefined(), Real::Undefined(), Quaternion::Format::XYZS) ;
+    return { Real::Undefined(), Real::Undefined(), Real::Undefined(), Real::Undefined(), Quaternion::Format::XYZS } ;
 }
 
 Quaternion                      Quaternion::Unit                            ( )
 {
-    return Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS) ;
+    return { 0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS } ;
 }
 
 Quaternion                      Quaternion::XYZS                            (   const   Real&                       aFirstComponent,
@@ -597,7 +616,7 @@ Quaternion                      Quaternion::XYZS                            (   
                                                                                 const   Real&                       aThirdComponent,
                                                                                 const   Real&                       aFourthComponent                            )
 {
-    return Quaternion(aFirstComponent, aSecondComponent, aThirdComponent, aFourthComponent, Quaternion::Format::XYZS) ;
+    return { aFirstComponent, aSecondComponent, aThirdComponent, aFourthComponent, Quaternion::Format::XYZS } ;
 }
 
 Quaternion                      Quaternion::RotationVector                  (   const   rot::RotationVector&        aRotationVector                             )
@@ -712,7 +731,7 @@ Quaternion                      Quaternion::Parse                           (   
         throw library::core::error::RuntimeError("Vector size is not 4.") ;
     }
 
-    return Quaternion(vector, aFormat) ;
+    return { vector, aFormat } ;
 
 }
 

@@ -669,6 +669,29 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, ToStrin
 
 // }
 
+TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, AngularDifferenceWith)
+{
+
+    using library::math::geom::Angle ;
+    using library::math::geom::trf::rot::Quaternion ;
+    
+    {
+
+        EXPECT_EQ(Angle::Zero(), Quaternion::Unit().angularDifferenceWith(Quaternion::Unit())) ;
+        EXPECT_EQ(Angle::Pi(), Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).angularDifferenceWith(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Quaternion::Undefined().angularDifferenceWith(Quaternion::Undefined())) ;
+        EXPECT_ANY_THROW(Quaternion::Unit().angularDifferenceWith(Quaternion::Undefined())) ;
+        EXPECT_ANY_THROW(Quaternion::Undefined().angularDifferenceWith(Quaternion::Unit())) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_Transformations_Rotations_Quaternion, Undefined)
 {
 

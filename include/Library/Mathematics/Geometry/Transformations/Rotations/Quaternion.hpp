@@ -12,6 +12,7 @@
 
 #include <Library/Mathematics/Geometry/Angle.hpp>
 #include <Library/Mathematics/Objects/Vector.hpp>
+
 #include <Library/Core/Types/String.hpp>
 #include <Library/Core/Types/Real.hpp>
 #include <Library/Core/Types/Integer.hpp>
@@ -34,6 +35,7 @@ namespace rot
 using library::core::types::Integer ;
 using library::core::types::Real ;
 using library::core::types::String ;
+
 using library::math::obj::Vector3d ;
 using library::math::obj::Vector4d ;
 using library::math::geom::Angle ;
@@ -449,6 +451,17 @@ class Quaternion
         /// @return             Reference to quaternion
 
         Quaternion&             rectify                                     ( ) ;
+
+        /// @brief              Get angular difference with quaternion
+        ///
+        /// @code
+        ///                     Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).angularDifferenceWith(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)) ; // 0.0 [rad]
+        /// @endcode
+        ///
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             Angular difference
+
+        Angle                   angularDifferenceWith                       (   const   Quaternion&                 aQuaternion                                 ) const ;
 
         /// @brief              Constructs an undefined quaternion
         ///
