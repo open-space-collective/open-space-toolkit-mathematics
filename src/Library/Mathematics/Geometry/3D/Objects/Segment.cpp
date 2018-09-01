@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 
@@ -210,12 +211,12 @@ void                            Segment::print                              (   
 
 }
 
-void                            Segment::translate                          (   const   Vector3d&                   aTranslation                                )
+void                            Segment::applyTransformation                (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aTranslation.isDefined())
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Translation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
@@ -223,28 +224,8 @@ void                            Segment::translate                          (   
         throw library::core::error::runtime::Undefined("Segment") ;
     }
 
-    firstPoint_ += aTranslation ;
-    secondPoint_ += aTranslation ;
-
-}
-        
-void                            Segment::rotate                             (   const   Quaternion&                 aRotation                                   )
-{
-
-    if (!aRotation.isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Rotation") ;
-    }
-
-    if (!this->isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Segment") ;
-    }
-
-    const Point center = this->getCenter() ;
-
-    firstPoint_ = center + aRotation * (firstPoint_ - center) ;
-    secondPoint_ = center + aRotation * (secondPoint_ - center) ;
+    firstPoint_.applyTransformation(aTransformation) ;
+    secondPoint_.applyTransformation(aTransformation) ;
 
 }
 

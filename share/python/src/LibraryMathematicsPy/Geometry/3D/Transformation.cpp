@@ -1,27 +1,27 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           LibraryMathematicsPy/Geometry/2D/Transformation.cpp
+/// @file           LibraryMathematicsPy/Geometry/3D/Transformation.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     LibraryMathematicsPy_Geometry_2D_Transformation ( )
+inline void                     LibraryMathematicsPy_Geometry_3D_Transformation ( )
 {
 
     using namespace boost::python ;
 
-    using library::math::obj::Vector2d ;
-    using library::math::obj::Matrix3d ;
-    using library::math::geom::d2::objects::Point ;
-    using library::math::geom::d2::Transformation ;
+    using library::math::obj::Vector3d ;
+    using library::math::obj::Matrix4d ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::Transformation ;
 
-    scope in_Transformation = class_<Transformation>("Transformation", init<const Matrix3d&>())
+    scope in_Transformation = class_<Transformation>("Transformation", init<const Matrix4d&>())
 
         .def(self == self)
         .def(self != self)
@@ -35,7 +35,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Transformation 
         .def("getMatrix", &Transformation::getMatrix)
         .def("getInverse", &Transformation::getInverse)
         .def("applyToPoint", + [] (const Transformation& aTransformation, const Point& aPoint) -> Point { return aTransformation.applyTo(aPoint) ; })
-        .def("applyToVector", + [] (const Transformation& aTransformation, const Vector2d& aVector) -> Vector2d { return aTransformation.applyTo(aVector) ; })
+        .def("applyToVector", + [] (const Transformation& aTransformation, const Vector3d& aVector) -> Vector3d { return aTransformation.applyTo(aVector) ; })
         
         .def("Undefined", &Transformation::Undefined).staticmethod("Undefined")
         .def("Identity", &Transformation::Identity).staticmethod("Identity")

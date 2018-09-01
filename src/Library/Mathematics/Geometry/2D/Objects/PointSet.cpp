@@ -241,11 +241,7 @@ void                            PointSet::applyTransformation               (   
 
     for (auto& point : points_)
     {
-
-        const Point transformedPoint = aTransformation.applyTo(point) ;
-
-        points.insert(transformedPoint) ;
-
+        points.insert(aTransformation.applyTo(point)) ;
     }
 
     points_ = points ;

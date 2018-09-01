@@ -47,9 +47,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Point (
         .def("y", +[] (const Point& aPoint) -> double { return aPoint.y() ; })
         .def("z", +[] (const Point& aPoint) -> double { return aPoint.z() ; })
         .def("distanceTo", &Point::distanceTo)
-
-        .def("translate", &Point::translate)
-        .def("rotate", &Point::rotate)
+        .def("applyTransformation", &Point::applyTransformation)
 
         .def("Undefined", &Point::Undefined).staticmethod("Undefined")
         .def("Origin", &Point::Origin).staticmethod("Origin")

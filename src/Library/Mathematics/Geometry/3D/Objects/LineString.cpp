@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/LineString.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 
@@ -154,40 +155,23 @@ LineString::ConstIterator       LineString::end                             ( ) 
     return points_.end() ;
 }
 
-void                            LineString::translate                       (   const   Vector3d&                   aTranslation                                )
+void                            LineString::applyTransformation             (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aTranslation.isDefined())
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Translation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("LineString") ;
+        throw library::core::error::runtime::Undefined("Line string") ;
     }
 
     for (auto& point : points_)
     {
-        point.translate(aTranslation) ;
+        point.applyTransformation(aTransformation) ;
     }
-
-}
-
-void                            LineString::rotate                          (   const   Quaternion&                 aRotation                                   )
-{
-
-    if (!aRotation.isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Rotation") ;
-    }
-
-    if (!this->isDefined())
-    {
-        throw library::core::error::runtime::Undefined("LineString") ;
-    }
-
-    throw library::core::error::runtime::ToBeImplemented("LineString :: rotate") ;
 
 }
 

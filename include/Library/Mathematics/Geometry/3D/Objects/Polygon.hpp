@@ -11,6 +11,7 @@
 #define __Library_Mathematics_Geometry_3D_Objects_Polygon__
 
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/LineString.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
@@ -43,6 +44,7 @@ using Polygon2d = library::math::geom::d2::objects::Polygon ;
 using library::math::geom::d3::Object ;
 using library::math::geom::d3::objects::Point ;
 using library::math::geom::d3::objects::Segment ;
+using library::math::geom::d3::objects::LineString ;
 using library::math::geom::d3::objects::Plane ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -59,6 +61,10 @@ class Polygon : public Object
 {
 
     public:
+
+        typedef                 Point                                           Vertex ;
+        typedef                 Segment                                         Edge ;
+        typedef                 LineString                                      Ring ;
 
         /// @brief              Constructor
         ///
@@ -105,6 +111,15 @@ class Polygon : public Object
         /// @return             True if polygon is defined
 
         virtual bool            isDefined                                   ( ) const override ;
+
+        /// @brief              Check if polygon is near another polygon
+        ///
+        /// @param              [in] aPolygon A polygon
+        /// @param              [in] aTolerance A tolerance
+        /// @return             True if polygon is near another polygon
+
+        bool                    isNear                                      (   const   Polygon&                    aPolygon,
+                                                                                const   Real&                       aTolerance                                  ) const ;
 
         /// @brief              Get polygon 2D polygon
         ///
@@ -153,26 +168,26 @@ class Polygon : public Object
         /// @param              [in] anEdgeIndex An edge index
         /// @return             Edge (segment)
 
-        Segment                 getEdgeAt                                   (   const   Index                       anEdgeIndex                                 ) const ;
+        Polygon::Edge           getEdgeAt                                   (   const   Index                       anEdgeIndex                                 ) const ;
 
         /// @brief              Get vertex at index
         ///
         /// @param              [in] aVertexIndex A vertex index
         /// @return             Vertex
 
-        Point                   getVertexAt                                 (   const   Index                       aVertexIndex                                ) const ;
+        Polygon::Vertex         getVertexAt                                 (   const   Index                       aVertexIndex                                ) const ;
 
         /// @brief              Get polygon edges
         ///
         /// @return             Polygon edges
 
-        Array<Segment>          getEdges                                    ( ) const ;
+        Array<Polygon::Edge>    getEdges                                    ( ) const ;
 
         /// @brief              Get polygon vertices
         ///
         /// @return             Polygon vertices
 
-        Array<Point>            getVertices                                 ( ) const ;
+        Array<Polygon::Vertex>  getVertices                                 ( ) const ;
 
         /// @brief              Print polygon
         ///
@@ -182,17 +197,11 @@ class Polygon : public Object
         virtual void            print                                       (           std::ostream&               anOutputStream,
                                                                                         bool                        displayDecorators                           =   true ) const override ;
 
-        /// @brief              Translate polygon
+        /// @brief              Apply transformation to polygon
         ///
-        /// @param              [in] aTranslation A translation vector
+        /// @param              [in] aTransformation A transformation
 
-        virtual void            translate                                   (   const   Vector3d&                   aTranslation                                ) override ;
-
-        /// @brief              Rotate polygon
-        ///
-        /// @param              [in] aRotation A rotation quaternion
-        
-        virtual void            rotate                                      (   const   Quaternion&                 aRotation                                   ) override ;
+        virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) override ;
 
         /// @brief              Constructs an undefined polygon
         ///

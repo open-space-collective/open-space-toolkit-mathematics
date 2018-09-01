@@ -7,6 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationMatrix.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
@@ -26,6 +28,8 @@
 #include <Gte/Mathematics/GteIntrSegment3Ellipsoid3.h>
 #include <Gte/Mathematics/GteIntrRay3Ellipsoid3.h>
 #include <Gte/Mathematics/GteIntrLine3Ellipsoid3.h>
+
+#include <Eigen/Eigenvalues>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -884,18 +888,24 @@ void                            Ellipsoid::print                            (   
     library::core::utils::Print::Line(anOutputStream) << "Second principal semi-axis:" << (b_.isDefined() ? b_.toString() : "Undefined") ;
     library::core::utils::Print::Line(anOutputStream) << "Third principal semi-axis:" << (c_.isDefined() ? c_.toString() : "Undefined") ;
 
+    library::core::utils::Print::Line(anOutputStream) << "First axis:"          << (q_.isDefined() ? this->getFirstAxis().toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Second axis:"         << (q_.isDefined() ? this->getSecondAxis().toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Third axis:"          << (q_.isDefined() ? this->getThirdAxis().toString() : "Undefined") ;
+
     library::core::utils::Print::Line(anOutputStream) << "Orientation:"         << (q_.isDefined() ? q_.toString() : "Undefined") ;
 
     displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
-void                            Ellipsoid::translate                        (   const   Vector3d&                   aTranslation                                )
+void                            Ellipsoid::applyTransformation              (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aTranslation.isDefined())
+    using library::math::geom::trf::rot::RotationMatrix ;
+
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Translation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
@@ -903,24 +913,32 @@ void                            Ellipsoid::translate                        (   
         throw library::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
-    center_ += aTranslation ;
-
-}
-        
-void                            Ellipsoid::rotate                           (   const   Quaternion&                 aRotation                                   )
-{
-
-    if (!aRotation.isDefined())
+    if (aTransformation.isIdentity())
     {
-        throw library::core::error::runtime::Undefined("Rotation") ;
+        return ;
     }
 
-    if (!this->isDefined())
+    center_.applyTransformation(aTransformation) ;
+
+    const Matrix3d rotationMatrix = aTransformation.getMatrix().block<3, 3>(0, 0).inverse() ;
+    const Matrix3d transformedMatrix = rotationMatrix.transpose() * this->getMatrix() * rotationMatrix ;
+
+    Eigen::SelfAdjointEigenSolver<Matrix3d> eigenSolver(transformedMatrix) ;
+
+    if (eigenSolver.info() != Eigen::Success)
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw library::core::error::RuntimeError("Eigen vector calculation has failed.") ;
     }
 
-    q_ *= aRotation ;
+    a_ = std::sqrt(1.0 / eigenSolver.eigenvalues()(0)) ;
+    b_ = std::sqrt(1.0 / eigenSolver.eigenvalues()(1)) ;
+    c_ = std::sqrt(1.0 / eigenSolver.eigenvalues()(2)) ;
+
+    const Vector3d firstAxis = eigenSolver.eigenvectors().col(0) ;
+    const Vector3d secondAxis = eigenSolver.eigenvectors().col(1) ;
+    const Vector3d thirdAxis = firstAxis.cross(secondAxis) ;
+
+    q_ = Quaternion::RotationMatrix(RotationMatrix::Columns(firstAxis, secondAxis, thirdAxis)).conjugate() ;
 
 }
 

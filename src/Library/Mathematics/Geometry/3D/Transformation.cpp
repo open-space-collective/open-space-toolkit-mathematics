@@ -1,13 +1,14 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           Library/Mathematics/Geometry/2D/Transformation.cpp
+/// @file           Library/Mathematics/Geometry/3D/Transformation.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
+#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationMatrix.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 
 #include <Library/Core/Containers/Map.hpp>
 #include <Library/Core/Containers/Pair.hpp>
@@ -24,12 +25,12 @@ namespace math
 {
 namespace geom
 {
-namespace d2
+namespace d3
 {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                Transformation::Transformation              (   const   Matrix3d&                   aMatrix                                     )
+                                Transformation::Transformation              (   const   Matrix4d&                   aMatrix                                     )
                                 :   type_(Transformation::TypeOfMatrix(aMatrix)),
                                     matrix_(aMatrix)
 {
@@ -64,7 +65,7 @@ Transformation                  Transformation::operator *                  (   
     
 }
 
-Vector3d                        Transformation::operator *                  (   const   Vector3d&                   aVector                                     ) const
+Vector4d                        Transformation::operator *                  (   const   Vector4d&                   aVector                                     ) const
 {
 
     if (!aVector.isDefined())
@@ -238,7 +239,7 @@ Transformation::Type            Transformation::getType                     ( ) 
 
 }
 
-Matrix3d                        Transformation::getMatrix                   ( ) const
+Matrix4d                        Transformation::getMatrix                   ( ) const
 {
 
     if (!this->isDefined())
@@ -264,31 +265,19 @@ Transformation                  Transformation::getInverse                  ( ) 
 
 Point                           Transformation::applyTo                     (   const   Point&                      aPoint                                      ) const
 {
-    return { (matrix_ * Vector3d(aPoint.x(), aPoint.y(), 1.0)).head<2>() } ;
+    return { (matrix_ * Vector4d(aPoint.x(), aPoint.y(), aPoint.z(), 1.0)).head<3>() } ;
 }
 
-Vector2d                        Transformation::applyTo                     (   const   Vector2d&                   aVector                                     ) const
+Vector3d                        Transformation::applyTo                     (   const   Vector3d&                   aVector                                     ) const
 {
-    return Vector2d { (matrix_ * Vector3d(aVector.x(), aVector.y(), 0.0)).head<2>() } ;
+    return Vector3d { (matrix_ * Vector4d(aVector.x(), aVector.y(), aVector.z(), 0.0)).head<3>() } ;
 }
-
-// Unique<Object>                  Transformation::applyTo                     (   const   Unique<Object>&             anObject                                    ) const
-// {
-
-//     if (!this->isDefined())
-//     {
-//         throw library::core::error::runtime::Undefined("Transformation") ;
-//     }
-
-    
-
-// }
 
 void                            Transformation::print                       (           std::ostream&               anOutputStream,
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "2D :: Transformation") : void () ;
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "3D :: Transformation") : void () ;
 
     library::core::utils::Print::Line(anOutputStream) << "Type"                 << Transformation::StringFromType(type_) ;
 
@@ -298,15 +287,15 @@ void                            Transformation::print                       (   
 
 Transformation                  Transformation::Undefined                   ( )
 {
-    return { Transformation::Type::Undefined, Matrix3d::Undefined() } ;
+    return { Transformation::Type::Undefined, Matrix4d::Undefined() } ;
 }
 
 Transformation                  Transformation::Identity                    ( )
 {
-    return { Transformation::Type::Identity, Matrix3d::Identity() } ;
+    return { Transformation::Type::Identity, Matrix4d::Identity() } ;
 }
 
-Transformation                  Transformation::Translation                 (   const   Vector2d&                   aTranslationVector                          )
+Transformation                  Transformation::Translation                 (   const   Vector3d&                   aTranslationVector                          )
 {
 
     if (!aTranslationVector.isDefined())
@@ -314,43 +303,39 @@ Transformation                  Transformation::Translation                 (   
         throw library::core::error::runtime::Undefined("Translation vector") ;
     }
 
-    Matrix3d transformationMatrix ;
+    Matrix4d transformationMatrix ;
 
-    transformationMatrix << 1.0, 0.0, aTranslationVector.x(),
-                            0.0, 1.0, aTranslationVector.y(),
-                            0.0, 0.0, 1.0 ;
+    transformationMatrix << 1.0, 0.0, 0.0, aTranslationVector.x(),
+                            0.0, 1.0, 0.0, aTranslationVector.y(),
+                            0.0, 0.0, 1.0, aTranslationVector.z(),
+                            0.0, 0.0, 0.0, 1.0 ;
     
     return { Transformation::Type::Translation, transformationMatrix } ;
 
 }
 
-Transformation                  Transformation::Rotation                    (   const   Angle&                      aRotationAngle                              )
+Transformation                  Transformation::Rotation                    (   const   RotationVector&             aRotationVector                             )
 {
 
-    if (!aRotationAngle.isDefined())
+    using library::math::geom::trf::rot::RotationMatrix ;
+
+    if (!aRotationVector.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation angle") ;
+        throw library::core::error::runtime::Undefined("Rotation vector") ;
     }
 
-    const Real rotationAngle_rad = aRotationAngle.inRadians() ;
+    Matrix4d transformationMatrix = Matrix4d::Identity() ;
 
-    const Real cosRotationAngle = std::cos(rotationAngle_rad) ;
-    const Real sinRotationAngle = std::sin(rotationAngle_rad) ;
-
-    Matrix3d transformationMatrix ;
-
-    transformationMatrix << +cosRotationAngle, -sinRotationAngle, 0.0,
-                            +sinRotationAngle, +cosRotationAngle, 0.0,
-                            0.0,               0.0,               1.0 ;
+    transformationMatrix.block<3, 3>(0, 0) = RotationMatrix::RotationVector(aRotationVector).getMatrix().transpose() ;
     
     return { Transformation::Type::Rotation, transformationMatrix } ;
 
 }
 
 Transformation                  Transformation::RotationAround              (   const   Point&                      aPoint,
-                                                                                const   Angle&                      aRotationAngle                              )
+                                                                                const   RotationVector&             aRotationVector                             )
 {
-    return Transformation::Translation(Vector2d(aPoint)) * Transformation::Rotation(aRotationAngle) * Transformation::Translation(-Vector2d(aPoint)) ;
+    return Transformation::Translation(Vector3d(aPoint)) * Transformation::Rotation(aRotationVector) * Transformation::Translation(-Vector3d(aPoint)) ;
 }
 
 String                          Transformation::StringFromType              (   const   Transformation::Type&       aType                                       )
@@ -393,7 +378,7 @@ String                          Transformation::StringFromType              (   
 
 }
 
-Transformation::Type            Transformation::TypeOfMatrix                (   const   Matrix3d&                   aMatrix                                     )
+Transformation::Type            Transformation::TypeOfMatrix                (   const   Matrix4d&                   aMatrix                                     )
 {
 
     if (!aMatrix.isDefined())
@@ -401,7 +386,7 @@ Transformation::Type            Transformation::TypeOfMatrix                (   
         return Transformation::Type::Undefined ;
     }
 
-    if (aMatrix == Matrix3d::Identity())
+    if (aMatrix == Matrix4d::Identity())
     {
         return Transformation::Type::Identity ;
     }
@@ -417,7 +402,7 @@ Transformation::Type            Transformation::TypeOfMatrix                (   
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                                 Transformation::Transformation              (   const   Transformation::Type&       aType,
-                                                                                const   Matrix3d&                   aMatrix                                     )
+                                                                                const   Matrix4d&                   aMatrix                                     )
                                 :   type_(aType),
                                     matrix_(aMatrix)
 {

@@ -10,6 +10,7 @@
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
@@ -342,31 +343,13 @@ void                            Pyramid::print                              (   
     displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
-
-void                            Pyramid::translate                          (   const   Vector3d&                   aTranslation                                )
-{
-
-    if (!aTranslation.isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Translation") ;
-    }
-
-    if (!this->isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Pyramid") ;
-    }
-
-    base_.translate(aTranslation) ;
-    apex_.translate(aTranslation) ;
-
-}
         
-void                            Pyramid::rotate                             (   const   Quaternion&                 aRotation                                   )
+void                            Pyramid::applyTransformation                (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aRotation.isDefined())
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
@@ -374,10 +357,8 @@ void                            Pyramid::rotate                             (   
         throw library::core::error::runtime::Undefined("Pyramid") ;
     }
 
-    throw library::core::error::runtime::ToBeImplemented("Pyramid :: rotate") ;
-
-    // xAxis_ = aRotation * xAxis_ ;
-    // yAxis_ = aRotation * yAxis_ ;
+    base_.applyTransformation(aTransformation) ;
+    apex_.applyTransformation(aTransformation) ;
 
 }
 

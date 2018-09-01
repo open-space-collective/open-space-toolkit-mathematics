@@ -34,8 +34,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Plane (
 
         .def("getPoint", &Plane::getPoint)
         .def("getNormalVector", &Plane::getNormalVector)
-        .def("translate", &Plane::translate)
-        .def("rotate", &Plane::rotate)
+        .def("applyTransformation", &Plane::applyTransformation)
         
         .def("Undefined", &Plane::Undefined).staticmethod("Undefined")
 

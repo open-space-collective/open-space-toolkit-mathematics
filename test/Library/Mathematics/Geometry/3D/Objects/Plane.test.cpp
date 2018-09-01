@@ -8,6 +8,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
 
 #include <Global.test.hpp>
@@ -317,49 +318,38 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, GetNormalVector)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Translate)
+TEST (Library_Mathematics_Geometry_3D_Objects_Plane, ApplyTransformation)
 {
+    
+    using library::core::types::Real ;
 
     using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::Transformation ;
+    using library::math::geom::trf::rot::RotationVector ;
+
+    // Translation
 
     {
 
         Plane plane = { { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 } } ;
 
-        plane.translate({ 4.0, 5.0, 6.0 }) ;
+        plane.applyTransformation(Transformation::Translation({ 4.0, 5.0, 6.0 })) ;
 
         EXPECT_EQ(Plane({ 4.0, 5.0, 6.0 }, { 0.0, 0.0, 1.0 }), plane) ;
 
     }
 
-    {
-
-        EXPECT_ANY_THROW(Plane::Undefined().translate(Vector3d::Undefined())) ;
-        EXPECT_ANY_THROW(Plane::Undefined().translate({ 0.0, 0.0, 0.0 })) ;
-        EXPECT_ANY_THROW(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).translate(Vector3d::Undefined())) ;
-
-    }
-
-}
-
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Rotate)
-{
-
-    using library::core::types::Real ;
-
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Plane ;
-    using library::math::geom::trf::rot::Quaternion ;
-    using library::math::geom::trf::rot::RotationVector ;
+    // Rotation
 
     {
 
-        Plane plane = { { 1.0, 2.0, 3.0 }, { 0.0, 0.0, 1.0 } } ;
+        Plane plane = { { 1.0, 3.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
 
-        plane.rotate(Quaternion::RotationVector(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(90.0)))) ;
+        plane.applyTransformation(Transformation::Rotation(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(90.0)))) ;
 
-        const Plane referencePlane = { { 1.0, 2.0, 3.0 }, { 0.0, 1.0, 0.0 } } ;
+        const Plane referencePlane = { { 1.0, 0.0, 3.0 }, { 0.0, 0.0, 1.0 } } ;
 
         EXPECT_TRUE(plane.getPoint().isNear(referencePlane.getPoint(), Real::Epsilon())) ;
         EXPECT_TRUE(plane.getNormalVector().isNear(referencePlane.getNormalVector(), Real::Epsilon())) ;
@@ -368,9 +358,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Rotate)
 
     {
 
-        EXPECT_ANY_THROW(Plane::Undefined().rotate(Quaternion::Undefined())) ;
-        EXPECT_ANY_THROW(Plane::Undefined().rotate(Quaternion::Unit())) ;
-        EXPECT_ANY_THROW(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).rotate(Quaternion::Undefined())) ;
+        EXPECT_ANY_THROW(Plane::Undefined().applyTransformation(Transformation::Undefined())) ;
+        EXPECT_ANY_THROW(Plane::Undefined().applyTransformation(Transformation::Identity())) ;
+        EXPECT_ANY_THROW(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).applyTransformation(Transformation::Undefined())) ;
 
     }
 

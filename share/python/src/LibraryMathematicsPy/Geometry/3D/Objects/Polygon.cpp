@@ -31,14 +31,14 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Polygon
         .def(self_ns::repr(self_ns::self))
         
         .def("isDefined", &Polygon::isDefined)
+        .def("isNear", &Polygon::isNear)
 
         .def("getPolygon2d", &Polygon::getPolygon2d)
         .def("getOrigin", &Polygon::getOrigin)
         .def("getXAxis", &Polygon::getXAxis)
         .def("getYAxis", &Polygon::getYAxis)
         .def("getNormalVector", &Polygon::getNormalVector)
-        .def("translate", &Polygon::translate)
-        .def("rotate", &Polygon::rotate)
+        .def("applyTransformation", &Polygon::applyTransformation)
         
         .def("Undefined", &Polygon::Undefined).staticmethod("Undefined")
 

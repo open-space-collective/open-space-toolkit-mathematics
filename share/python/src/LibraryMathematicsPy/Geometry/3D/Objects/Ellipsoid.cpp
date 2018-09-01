@@ -67,8 +67,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Ellipso
         .def("intersectionWithRay", +[] (const Ellipsoid& anEllipsoid, const Ray& aRay) -> Intersection { return anEllipsoid.intersectionWith(aRay) ; })
         .def("intersectionWithRay", +[] (const Ellipsoid& anEllipsoid, const Ray& aRay, const bool onlyInSight) -> Intersection { return anEllipsoid.intersectionWith(aRay, onlyInSight) ; })
         .def("intersectionWithSegment", +[] (const Ellipsoid& anEllipsoid, const Segment& aSegment) -> Intersection { return anEllipsoid.intersectionWith(aSegment) ; })
-        .def("translate", &Ellipsoid::translate)
-        .def("rotate", &Ellipsoid::rotate)
+        .def("applyTransformation", &Ellipsoid::applyTransformation)
         
         .def("Undefined", &Ellipsoid::Undefined).staticmethod("Undefined")
 

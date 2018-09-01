@@ -39,8 +39,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Segment
         .def("getCenter", &Segment::getCenter)
         .def("getDirection", &Segment::getDirection)
         .def("getLength", &Segment::getLength)
-        .def("translate", &Segment::translate)
-        .def("rotate", &Segment::rotate)
+        .def("applyTransformation", &Segment::applyTransformation)
         
         .def("Undefined", &Segment::Undefined).staticmethod("Undefined")
 

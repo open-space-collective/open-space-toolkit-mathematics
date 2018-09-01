@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 
@@ -281,53 +282,46 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, DistanceTo)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, Translate)
+TEST (Library_Mathematics_Geometry_3D_Objects_Point, ApplyTransformation)
 {
+
+    using library::core::types::Real ;
 
     using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::Transformation ;
+    using library::math::geom::trf::rot::RotationVector ;
+
+    // Translation
 
     {
 
         Point point = { 1.0, 2.0, 3.0 } ;
 
-        point.translate({ 4.0, 5.0, 6.0 }) ;
+        point.applyTransformation(Transformation::Translation({ 4.0, 5.0, 6.0 })) ;
 
-        EXPECT_EQ(Point(5.0, 7.0, 9.0), point) ;
+        EXPECT_TRUE(point.isNear(Point(5.0, 7.0, 9.0), Real::Epsilon())) ;
+
+    }
+
+    // Rotation
+
+    {
+
+        Point point = { 1.0, 2.0, 0.0 } ;
+
+        point.applyTransformation(Transformation::Rotation(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(90.0)))) ;
+
+        EXPECT_TRUE(point.isNear(Point(1.0, 0.0, 2.0), Real::Epsilon())) ;
 
     }
 
     {
 
-        EXPECT_ANY_THROW(Point::Undefined().translate(Vector3d::Undefined())) ;
-        EXPECT_ANY_THROW(Point::Undefined().translate({ 0.0, 0.0, 0.0 })) ;
-        EXPECT_ANY_THROW(Point(0.0, 0.0, 0.0).translate(Vector3d::Undefined())) ;
-
-    }
-
-}
-
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, Rotate)
-{
-
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::trf::rot::Quaternion ;
-
-    {
-
-        Point point = { 1.0, 2.0, 3.0 } ;
-
-        point.rotate(Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).normalize()) ;
-
-        EXPECT_EQ(Point(1.0, 2.0, 3.0), point) ;
-
-    }
-
-    {
-
-        EXPECT_ANY_THROW(Point::Undefined().rotate(Quaternion::Undefined())) ;
-        EXPECT_ANY_THROW(Point::Undefined().rotate(Quaternion::Unit())) ;
-        EXPECT_ANY_THROW(Point(0.0, 0.0, 0.0).rotate(Quaternion::Undefined())) ;
+        EXPECT_ANY_THROW(Point::Undefined().applyTransformation(Transformation::Undefined())) ;
+        EXPECT_ANY_THROW(Point::Undefined().applyTransformation(Transformation::Identity())) ;
+        EXPECT_ANY_THROW(Point(0.0, 0.0, 0.0).applyTransformation(Transformation::Undefined())) ;
 
     }
 

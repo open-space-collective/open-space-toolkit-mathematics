@@ -56,8 +56,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Pyramid
         .def("intersectionWithEllipsoid", +[] (const Pyramid& anPyramid, const Ellipsoid& anEllipsoid) -> Intersection { return anPyramid.intersectionWith(anEllipsoid) ; })
         .def("intersectionWithEllipsoid", +[] (const Pyramid& anPyramid, const Ellipsoid& anEllipsoid, const bool onlyInSight) -> Intersection { return anPyramid.intersectionWith(anEllipsoid, onlyInSight) ; })
         .def("intersectionWithEllipsoid", +[] (const Pyramid& anPyramid, const Ellipsoid& anEllipsoid, const bool onlyInSight, const Size aDiscretizationLevel) -> Intersection { return anPyramid.intersectionWith(anEllipsoid, onlyInSight, aDiscretizationLevel) ; })
-        .def("translate", &Pyramid::translate)
-        .def("rotate", &Pyramid::rotate)
+        .def("applyTransformation", &Pyramid::applyTransformation)
         
         .def("Undefined", &Pyramid::Undefined).staticmethod("Undefined")
 

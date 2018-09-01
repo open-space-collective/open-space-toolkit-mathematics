@@ -39,8 +39,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Ray ( )
         .def("getOrigin", &Ray::getOrigin)
         .def("getDirection", &Ray::getDirection)
         .def("intersectionWithEllipsoid", +[] (const Ray& aRay, const Ellipsoid& anEllipsoid) -> Intersection { return aRay.intersectionWith(anEllipsoid) ; })
-        .def("translate", &Ray::translate)
-        .def("rotate", &Ray::rotate)
+        .def("applyTransformation", &Ray::applyTransformation)
         
         .def("Undefined", &Ray::Undefined).staticmethod("Undefined")
 

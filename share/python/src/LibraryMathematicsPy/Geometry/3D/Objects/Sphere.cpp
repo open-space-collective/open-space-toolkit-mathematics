@@ -35,8 +35,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Sphere 
 
         .def("getCenter", &Sphere::getCenter)
         .def("getRadius", &Sphere::getRadius)
-        .def("translate", &Sphere::translate)
-        .def("rotate", &Sphere::rotate)
+        .def("applyTransformation", &Sphere::applyTransformation)
         
         .def("Undefined", &Sphere::Undefined).staticmethod("Undefined")
         .def("Unit", &Sphere::Unit).staticmethod("Unit")
