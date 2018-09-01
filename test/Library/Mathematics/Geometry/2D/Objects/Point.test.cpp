@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
 
 #include <Global.test.hpp>
@@ -300,17 +301,20 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, ToString)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Point, Translate)
+TEST (Library_Mathematics_Geometry_2D_Objects_Point, ApplyTransformation)
 {
 
     using library::math::obj::Vector2d ;
     using library::math::geom::d2::objects::Point ;
+    using library::math::geom::d2::Transformation ;
+
+    // Translation
 
     {
 
         Point point = { 1.0, 2.0 } ;
 
-        point.translate({ 4.0, 5.0 }) ;
+        point.applyTransformation(Transformation::Translation({ 4.0, 5.0 })) ;
 
         EXPECT_EQ(Point(5.0, 7.0), point) ;
 
@@ -318,9 +322,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, Translate)
 
     {
 
-        EXPECT_ANY_THROW(Point::Undefined().translate(Vector2d::Undefined())) ;
-        EXPECT_ANY_THROW(Point::Undefined().translate({ 0.0, 0.0 })) ;
-        EXPECT_ANY_THROW(Point(0.0, 0.0).translate(Vector2d::Undefined())) ;
+        EXPECT_ANY_THROW(Point::Undefined().applyTransformation(Transformation::Undefined())) ;
+        EXPECT_ANY_THROW(Point::Undefined().applyTransformation(Transformation::Identity())) ;
+        EXPECT_ANY_THROW(Point(0.0, 0.0).applyTransformation(Transformation::Undefined())) ;
 
     }
 

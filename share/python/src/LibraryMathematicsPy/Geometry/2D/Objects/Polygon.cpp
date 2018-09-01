@@ -47,7 +47,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Polygon
         .def("getEdges", &Polygon::getEdges)
         .def("getVertices", &Polygon::getVertices)
         .def("toString", &Polygon::toString, LibraryMathematicsPy_Geometry_2D_Objects_Polygon_toString_overloads())
-        .def("translate", &Polygon::translate)
+        .def("applyTransformation", &Polygon::applyTransformation)
         
         .def("Undefined", &Polygon::Undefined).staticmethod("Undefined")
 

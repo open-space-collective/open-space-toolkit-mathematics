@@ -185,11 +185,11 @@ class PointSet : public Object
 
         PointSet::ConstIterator end                                         ( ) const ;
 
-        /// @brief              Translate point set
+        /// @brief              Apply transformation to point set
         ///
-        /// @param              [in] aTranslation A translation vector
+        /// @param              [in] aTransformation A transformation
 
-        virtual void            translate                                   (   const   Vector2d&                   aTranslation                                ) override ;
+        virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) override ;
 
         /// @brief              Constructs an empty point set
         ///

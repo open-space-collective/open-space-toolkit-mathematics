@@ -39,7 +39,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_LineStr
         .def("getPointCount", &LineString::getPointCount)
         .def("getPointClosestTo", &LineString::getPointClosestTo)
         .def("toString", &LineString::toString, LibraryMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads())
-        .def("translate", &LineString::translate)
+        .def("applyTransformation", &LineString::applyTransformation)
         
         .def("Empty", &LineString::Empty).staticmethod("Empty")
 

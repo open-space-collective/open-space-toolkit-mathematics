@@ -195,11 +195,11 @@ class Polygon : public Object
         virtual void            print                                       (           std::ostream&               anOutputStream,
                                                                                         bool                        displayDecorators                           =   true ) const override ;
 
-        /// @brief              Translate polygon
+        /// @brief              Apply transformation to polygon
         ///
-        /// @param              [in] aTranslation A translation vector
+        /// @param              [in] aTransformation A transformation
 
-        virtual void            translate                                   (   const   Vector2d&                   aTranslation                                ) override ;
+        virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) override ;
 
         /// @brief              Constructs an undefined polygon
         ///

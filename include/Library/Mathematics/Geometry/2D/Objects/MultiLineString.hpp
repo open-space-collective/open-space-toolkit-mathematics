@@ -46,7 +46,7 @@ using library::math::geom::d2::objects::LineString ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @brief                      Line string
+/// @brief                      Multi Line string
 
 class MultiLineString : public Object
 {
@@ -65,49 +65,49 @@ class MultiLineString : public Object
 
                                 MultiLineString                             (   const   Array<LineString>&          aLineStringArray                            ) ;
 
-        /// @brief              Clone line string
+        /// @brief              Clone multi line string
         ///
-        /// @return             Pointer to cloned line string
+        /// @return             Pointer to cloned multi line string
 
         virtual MultiLineString* clone                                      ( ) const override ;
 
         /// @brief              Equal to operator
         ///
-        /// @param              [in] aMultiLineString A multi line string
-        /// @return             True if multi line strings are equal
+        /// @param              [in] aMultiLineString A multi multi line string
+        /// @return             True if multi multi line strings are equal
 
         bool                    operator ==                                 (   const   MultiLineString&            aMultiLineString                            ) const ;
 
         /// @brief              Not equal to operator
         ///
-        /// @param              [in] aMultiLineString A multi line string
-        /// @return             True if multi line strings not are equal
+        /// @param              [in] aMultiLineString A multi multi line string
+        /// @return             True if multi multi line strings not are equal
 
         bool                    operator !=                                 (   const   MultiLineString&            aMultiLineString                            ) const ;
 
-        /// @brief              Check if multi line string is defined
+        /// @brief              Check if multi multi line string is defined
         ///
         /// @code
         ///                     MultiLineString(0.0, 0.0).isDefined() ; // True
         /// @endcode
         ///
-        /// @return             True if multi line string is defined
+        /// @return             True if multi multi line string is defined
 
         virtual bool            isDefined                                   ( ) const override ;
 
-        /// @brief              Check if multi line string is empty
+        /// @brief              Check if multi multi line string is empty
         ///
         /// @code
         ///                     MultiLineString::Empty().isEmpty() ; // True
         /// @endcode
         ///
-        /// @return             True if multi line string is empty
+        /// @return             True if multi multi line string is empty
 
         bool                    isEmpty                                     ( ) const ;
 
-        /// @brief              Get line string count
+        /// @brief              Get multi line string count
         ///
-        /// @return             Line string count
+        /// @return             multi Line string count
 
         Size                    getLineStringCount                          ( ) const ;
 
@@ -152,19 +152,19 @@ class MultiLineString : public Object
 
         MultiLineString::ConstIterator end                                  ( ) const ;
 
-        /// @brief              Translate line string
+        /// @brief              Apply transformation to multi line string
         ///
-        /// @param              [in] aTranslation A translation vector
+        /// @param              [in] aTransformation A transformation
 
-        virtual void            translate                                   (   const   Vector2d&                   aTranslation                                ) override ;
+        virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) override ;
 
-        /// @brief              Constructs an empty line string
+        /// @brief              Constructs an empty multi line string
         ///
         /// @code
         ///                     MultiLineString multiLineString = MultiLineString::Empty() ;
         /// @endcode
         ///
-        /// @return             Empty line string
+        /// @return             Empty multi line string
 
         static MultiLineString  Empty                                       ( ) ;
 

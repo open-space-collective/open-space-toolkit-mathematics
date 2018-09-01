@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 
 #include <Library/Core/Types/String.hpp>
@@ -16,9 +17,12 @@
 #include <Library/Core/Utilities.hpp>
 
 #include <boost/geometry/io/wkt/wkt.hpp>
+#include <boost/geometry/strategies/transform/matrix_transformers.hpp>
+#include <boost/geometry/strategies/transform.hpp>
 #include <boost/geometry/geometries/polygon.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
 #include <boost/geometry.hpp>
+#include <boost/numeric/ublas/matrix.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -87,7 +91,7 @@ class Polygon::Impl
         String                  toString                                    (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const ;
         
-        void                    translate                                   (   const   Vector2d&                   aTranslation                                ) ;
+        void                    applyTransformation                         (   const   Transformation&             aTransformation                             ) ;
 
     private:
 
@@ -352,14 +356,20 @@ String                          Polygon::Impl::toString                     (   
 
 }
 
-void                            Polygon::Impl::translate                    (   const   Vector2d&                   aTranslation                                )
+void                            Polygon::Impl::applyTransformation          (   const   Transformation&             aTransformation                             )
 {
+
+    using library::math::obj::Matrix3d ;
 
     Polygon::Impl::BoostPolygon transformedPolygon ;
 
-    boost::geometry::strategy::transform::translate_transformer<double, 2, 2> translate(aTranslation.x(), aTranslation.y()) ;
-    
-    boost::geometry::transform(polygon_, transformedPolygon, translate) ;
+    const Matrix3d transformationMatrix = aTransformation.getMatrix() ;
+
+    const boost::geometry::strategy::transform::matrix_transformer<double, 2, 2> transform = { transformationMatrix(0, 0), transformationMatrix(0, 1), transformationMatrix(0, 2),
+                                                                                               transformationMatrix(1, 0), transformationMatrix(1, 1), transformationMatrix(1, 2),
+                                                                                               transformationMatrix(2, 0), transformationMatrix(2, 1), transformationMatrix(2, 2) } ;
+
+    boost::geometry::transform(polygon_, transformedPolygon, transform) ;
 
     polygon_ = transformedPolygon ;
 
@@ -621,12 +631,12 @@ String                          Polygon::toString                           (   
 
 }
 
-void                            Polygon::translate                          (   const   Vector2d&                   aTranslation                                )
+void                            Polygon::applyTransformation                (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aTranslation.isDefined())
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Translation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
@@ -634,7 +644,7 @@ void                            Polygon::translate                          (   
         throw library::core::error::runtime::Undefined("Polygon") ;
     }
 
-    implUPtr_->translate(aTranslation) ;
+    implUPtr_->applyTransformation(aTransformation) ;
 
 }
 

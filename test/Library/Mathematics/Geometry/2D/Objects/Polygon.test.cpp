@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 
 #include <Global.test.hpp>
@@ -969,13 +970,16 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ToString)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Translate)
+TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ApplyTransformation)
 {
 
     using library::core::ctnr::Array ;
     
     using library::math::obj::Vector2d ;
     using library::math::geom::d2::objects::Polygon ;
+    using library::math::geom::d2::Transformation ;
+
+    // Translation
 
     {
 
@@ -989,7 +993,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Translate)
 
         Polygon polygon = { vertices } ;
 
-        polygon.translate({ 4.0, 5.0 }) ;
+        polygon.applyTransformation(Transformation::Translation({ 4.0, 5.0 })) ;
 
         EXPECT_EQ(Polygon({ { 4.0, 5.0 }, { 4.0, 6.0 }, { 5.0, 6.0 }, { 5.0, 5.0 } }), polygon) ;
 
@@ -1005,9 +1009,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Translate)
             { 1.0, 0.0 }
         } ;
 
-        EXPECT_ANY_THROW(Polygon::Undefined().translate(Vector2d::Undefined())) ;
-        EXPECT_ANY_THROW(Polygon::Undefined().translate({ 0.0, 0.0 })) ;
-        EXPECT_ANY_THROW(Polygon(vertices).translate(Vector2d::Undefined())) ;
+        EXPECT_ANY_THROW(Polygon::Undefined().applyTransformation(Transformation::Undefined())) ;
+        EXPECT_ANY_THROW(Polygon::Undefined().applyTransformation(Transformation::Identity())) ;
+        EXPECT_ANY_THROW(Polygon(vertices).applyTransformation(Transformation::Undefined())) ;
 
     }
 

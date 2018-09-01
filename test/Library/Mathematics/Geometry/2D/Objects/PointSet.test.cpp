@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/PointSet.hpp>
 
 #include <Global.test.hpp>
@@ -309,18 +310,21 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, ConstIterator)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, Translate)
+TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, ApplyTransformation)
 {
 
     using library::math::obj::Vector2d ;
     using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::objects::PointSet ;
+    using library::math::geom::d2::Transformation ;
+
+    // Translation
 
     {
 
         PointSet pointSet = { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } } } ;
 
-        pointSet.translate({ 4.0, 5.0 }) ;
+        pointSet.applyTransformation(Transformation::Translation({ 4.0, 5.0 })) ;
 
         EXPECT_EQ(PointSet({ { 4.0, 5.0 }, { 4.0, 6.0 }, { 4.0, 7.0 } }), pointSet) ;
 
@@ -328,7 +332,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, Translate)
 
     {
 
-        EXPECT_ANY_THROW(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }).translate(Vector2d::Undefined())) ;
+        EXPECT_ANY_THROW(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }).applyTransformation(Transformation::Undefined())) ;
 
     }
 

@@ -1,0 +1,307 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/// @project        Library/Mathematics
+/// @file           Library/Mathematics/Geometry/2D/Transformation.cpp
+/// @author         Lucas Brémond <lucas@loftorbital.com>
+/// @license        TBD
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
+
+#include <Library/Core/Error.hpp>
+#include <Library/Core/Utilities.hpp>
+
+#include <Eigen/Geometry>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+namespace library
+{
+namespace math
+{
+namespace geom
+{
+namespace d2
+{
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                                Transformation::Transformation              (   const   Matrix3d&                   aMatrix                                     )
+                                :   type_(Transformation::TypeOfMatrix(aMatrix)),
+                                    matrix_(aMatrix)
+{
+
+}
+
+bool                            Transformation::operator ==                 (   const   Transformation&             aTransformation                             ) const
+{
+
+    if ((!this->isDefined()) || (!aTransformation.isDefined()))
+    {
+        return false ;
+    }
+
+    return matrix_ == aTransformation.matrix_ ;
+
+}
+
+bool                            Transformation::operator !=                 (   const   Transformation&             aTransformation                             ) const
+{
+    return !((*this) == aTransformation) ;
+}
+
+Transformation                  Transformation::operator *                  (   const   Transformation&             aTransformation                             ) const
+{
+    
+    Transformation transformation = { *this } ;
+
+    transformation *= aTransformation ;
+
+    return transformation ;
+    
+}
+
+Vector3d                        Transformation::operator *                  (   const   Vector3d&                   aVector                                     ) const
+{
+
+    if (!aVector.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Vector") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Transformation") ;
+    }
+
+    return matrix_ * aVector ;
+
+}
+
+Transformation&                 Transformation::operator *=                 (   const   Transformation&             aTransformation                             )
+{
+
+    if (!aTransformation.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Transformation") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Transformation") ;
+    }
+
+    matrix_ *= aTransformation.matrix_ ;
+
+    type_ = Transformation::TypeOfMatrix(matrix_) ;
+
+    return *this ;
+
+}
+
+std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
+                                                                                const   Transformation&             aTransformation                             )
+{
+
+    aTransformation.print(anOutputStream, true) ;
+
+    return anOutputStream ;
+
+}
+
+bool                            Transformation::isDefined                   ( ) const
+{
+    return type_ != Transformation::Type::Undefined ;
+}
+
+Transformation::Type            Transformation::getType                     ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Transformation") ;
+    }
+    
+    return type_ ;
+
+}
+
+Matrix3d                        Transformation::getMatrix                   ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Transformation") ;
+    }
+
+    return matrix_ ;
+
+}
+
+Transformation                  Transformation::getInverse                  ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Transformation") ;
+    }
+    
+    return { type_, matrix_.inverse() } ;
+
+}
+
+Point                           Transformation::applyTo                     (   const   Point&                      aPoint                                      ) const
+{
+    return { (matrix_ * Vector3d(aPoint.x(), aPoint.y(), 1.0)).head<2>() } ;
+}
+
+Vector2d                        Transformation::applyTo                     (   const   Vector2d&                   aVector                                     ) const
+{
+    return Vector2d { (matrix_ * Vector3d(aVector.x(), aVector.y(), 0.0)).head<2>() } ;
+}
+
+// Unique<Object>                  Transformation::applyTo                     (   const   Unique<Object>&             anObject                                    ) const
+// {
+
+//     if (!this->isDefined())
+//     {
+//         throw library::core::error::runtime::Undefined("Transformation") ;
+//     }
+
+    
+
+// }
+
+void                            Transformation::print                       (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           ) const
+{
+
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "2D :: Transformation") : void () ;
+
+    library::core::utils::Print::Separator(anOutputStream, "Outer Ring") ;
+
+    library::core::utils::Print::Line(anOutputStream) << "Type"                 << Transformation::StringFromType(type_) ;
+
+    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+
+}
+
+Transformation                  Transformation::Undefined                   ( )
+{
+    return { Transformation::Type::Undefined, Matrix3d::Undefined() } ;
+}
+
+Transformation                  Transformation::Identity                    ( )
+{
+    return { Transformation::Type::Identity, Matrix3d::Identity() } ;
+}
+
+Transformation                  Transformation::Translation                 (   const   Vector2d&                   aTranslationVector                          )
+{
+
+    if (!aTranslationVector.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Translation vector") ;
+    }
+
+    Matrix3d transformationMatrix ;
+
+    transformationMatrix << 1.0, 0.0, aTranslationVector.x(),
+                            0.0, 1.0, aTranslationVector.y(),
+                            0.0, 0.0, 1.0 ;
+    
+    return { Transformation::Type::Translation, transformationMatrix } ;
+
+}
+
+Transformation                  Transformation::Rotation                    (   const   Angle&                      aRotationAngle                              )
+{
+
+    if (!aRotationAngle.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Rotation angle") ;
+    }
+
+    const Real rotationAngle_rad = aRotationAngle.inRadians() ;
+
+    const Real cosRotationAngle = std::cos(rotationAngle_rad) ;
+    const Real sinRotationAngle = std::sin(rotationAngle_rad) ;
+
+    Matrix3d transformationMatrix ;
+
+    transformationMatrix << +cosRotationAngle, -sinRotationAngle, 0.0,
+                            +sinRotationAngle, +cosRotationAngle, 0.0,
+                            0.0,               0.0,               1.0 ;
+    
+    return { Transformation::Type::Rotation, transformationMatrix } ;
+
+}
+
+String                          Transformation::StringFromType              (   const   Transformation::Type&       aType                                       )
+{
+
+    switch (aType)
+    {
+
+        case Transformation::Type::Undefined:
+            return "Undefined" ;
+
+        case Transformation::Type::Identity:
+            return "Identity" ;
+
+        case Transformation::Type::Translation:
+            return "Translation" ;
+
+        case Transformation::Type::Rotation:
+            return "Rotation" ;
+        
+        default:
+            throw library::core::error::runtime::Wrong("Type") ;
+            break ;
+        
+    }
+
+    return String::Empty() ;
+
+}
+
+Transformation::Type            Transformation::TypeOfMatrix                (   const   Matrix3d&                   aMatrix                                     )
+{
+
+    if (!aMatrix.isDefined())
+    {
+        return Transformation::Type::Undefined ;
+    }
+
+    if (aMatrix == Matrix3d::Identity())
+    {
+        return Transformation::Type::Identity ;
+    }
+
+    // [TBI] ...
+
+    throw library::core::error::RuntimeError("Cannot identify transformation type.") ;
+
+    return Transformation::Type::Undefined ;
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+                                Transformation::Transformation              (   const   Transformation::Type&       aType,
+                                                                                const   Matrix3d&                   aMatrix                                     )
+                                :   type_(aType),
+                                    matrix_(aMatrix)
+{
+
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+}
+}
+}
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

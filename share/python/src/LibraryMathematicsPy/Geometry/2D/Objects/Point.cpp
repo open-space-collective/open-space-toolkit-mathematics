@@ -49,8 +49,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Point (
         .def("y", +[] (const Point& aPoint) -> double { return aPoint.y() ; })
         .def("distanceTo", &Point::distanceTo)
         .def("toString", &Point::toString, LibraryMathematicsPy_Geometry_2D_Objects_Point_toString_overloads())
-
-        .def("translate", &Point::translate)
+        .def("applyTransformation", &Point::applyTransformation)
 
         .def("Undefined", &Point::Undefined).staticmethod("Undefined")
         .def("Origin", &Point::Origin).staticmethod("Origin")

@@ -30,6 +30,10 @@ namespace d2
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+class Transformation ;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 using library::core::types::Integer ;
 using library::core::types::String ;
 
@@ -128,11 +132,11 @@ class Object
         virtual void            print                                       (           std::ostream&               anOutputStream,
                                                                                         bool                        displayDecorators                           =   true ) const = 0 ;
 
-        /// @brief              Translate object
+        /// @brief              Apply transformation to object
         ///
-        /// @param              [in] aTranslation Translation vector
+        /// @param              [in] aTransformation A transformation
 
-        virtual void            translate                                   (   const   Vector2d&                   aTranslation                                ) = 0 ;
+        virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) = 0 ;
 
 } ;
 

@@ -39,7 +39,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Segment
         .def("getDirection", &Segment::getDirection)
         .def("getLength", &Segment::getLength)
         .def("toString", &Segment::toString, LibraryMathematicsPy_Geometry_2D_Objects_Segment_toString_overloads())
-        .def("translate", &Segment::translate)
+        .def("applyTransformation", &Segment::applyTransformation)
         
         .def("Undefined", &Segment::Undefined).staticmethod("Undefined")
 

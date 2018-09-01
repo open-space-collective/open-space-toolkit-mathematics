@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -200,12 +201,12 @@ void                            Point::print                                (   
 
 }
 
-void                            Point::translate                            (   const   Vector2d&                   aTranslation                                )
+void                            Point::applyTransformation                  (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aTranslation.isDefined())
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Translation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
@@ -213,7 +214,7 @@ void                            Point::translate                            (   
         throw library::core::error::runtime::Undefined("Point") ;
     }
 
-    (*this) += aTranslation ;
+    (*this) = aTransformation.applyTo(*this) ;
 
 }
 

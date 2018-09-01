@@ -31,8 +31,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Object     ( )
         .def("contains", &Object::contains)
         
         .def("toString", &Object::toString)
-
-        .def("translate", &Object::translate)
+        .def("applyTransformation", &Object::applyTransformation)
 
     ;
 

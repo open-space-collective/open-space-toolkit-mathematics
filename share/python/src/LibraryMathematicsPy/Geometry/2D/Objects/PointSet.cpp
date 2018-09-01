@@ -39,7 +39,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_PointSe
         .def("getSize", &PointSet::getSize)
         .def("getPointClosestTo", &PointSet::getPointClosestTo)
         .def("toString", &PointSet::toString, LibraryMathematicsPy_Geometry_2D_Objects_PointSet_toString_overloads())
-        .def("translate", &PointSet::translate)
+        .def("applyTransformation", &PointSet::applyTransformation)
         
         .def("Empty", &PointSet::Empty).staticmethod("Empty")
 
