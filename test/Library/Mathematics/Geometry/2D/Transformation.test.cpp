@@ -209,6 +209,19 @@
 
 // }
 
+// TEST (Library_Mathematics_Geometry_2D_Transformation, RotationAround)
+// {
+    
+//     using library::math::geom::d2::Transformation ;
+
+//     {
+
+//         FAIL() ;
+
+//     }
+
+// }
+
 // TEST (Library_Mathematics_Geometry_2D_Transformation, StringFromType)
 // {
     

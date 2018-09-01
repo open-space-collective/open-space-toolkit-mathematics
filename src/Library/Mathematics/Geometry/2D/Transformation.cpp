@@ -9,6 +9,8 @@
 
 #include <Library/Mathematics/Geometry/2D/Transformation.hpp>
 
+#include <Library/Core/Containers/Map.hpp>
+#include <Library/Core/Containers/Pair.hpp>
 #include <Library/Core/Error.hpp>
 #include <Library/Core/Utilities.hpp>
 
@@ -82,6 +84,9 @@ Vector3d                        Transformation::operator *                  (   
 Transformation&                 Transformation::operator *=                 (   const   Transformation&             aTransformation                             )
 {
 
+    using library::core::ctnr::Pair ;
+    using library::core::ctnr::Map ;
+
     if (!aTransformation.isDefined())
     {
         throw library::core::error::runtime::Undefined("Transformation") ;
@@ -92,9 +97,85 @@ Transformation&                 Transformation::operator *=                 (   
         throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
-    matrix_ *= aTransformation.matrix_ ;
+    static const Map<Pair<Transformation::Type, Transformation::Type>, Transformation::Type> TypeCompositionMap =
+    {
 
-    type_ = Transformation::TypeOfMatrix(matrix_) ;
+        { { Transformation::Type::Undefined,        Transformation::Type::Undefined },      Transformation::Type::Undefined },
+        { { Transformation::Type::Undefined,        Transformation::Type::Identity },       Transformation::Type::Undefined },
+        { { Transformation::Type::Undefined,        Transformation::Type::Translation },    Transformation::Type::Undefined },
+        { { Transformation::Type::Undefined,        Transformation::Type::Rotation },       Transformation::Type::Undefined },
+        { { Transformation::Type::Undefined,        Transformation::Type::Reflection },     Transformation::Type::Undefined },
+        { { Transformation::Type::Undefined,        Transformation::Type::Scaling },        Transformation::Type::Undefined },
+        { { Transformation::Type::Undefined,        Transformation::Type::Shear },          Transformation::Type::Undefined },
+        { { Transformation::Type::Undefined,        Transformation::Type::Affine },         Transformation::Type::Undefined },
+
+        { { Transformation::Type::Identity,         Transformation::Type::Undefined },      Transformation::Type::Undefined },
+        { { Transformation::Type::Identity,         Transformation::Type::Identity },       Transformation::Type::Identity },
+        { { Transformation::Type::Identity,         Transformation::Type::Translation },    Transformation::Type::Translation },
+        { { Transformation::Type::Identity,         Transformation::Type::Rotation },       Transformation::Type::Rotation },
+        { { Transformation::Type::Identity,         Transformation::Type::Reflection },     Transformation::Type::Reflection },
+        { { Transformation::Type::Identity,         Transformation::Type::Scaling },        Transformation::Type::Scaling },
+        { { Transformation::Type::Identity,         Transformation::Type::Shear },          Transformation::Type::Shear },
+        { { Transformation::Type::Identity,         Transformation::Type::Affine },         Transformation::Type::Affine },
+        
+        { { Transformation::Type::Translation,      Transformation::Type::Undefined },      Transformation::Type::Undefined },
+        { { Transformation::Type::Translation,      Transformation::Type::Identity },       Transformation::Type::Translation },
+        { { Transformation::Type::Translation,      Transformation::Type::Translation },    Transformation::Type::Translation },
+        { { Transformation::Type::Translation,      Transformation::Type::Rotation },       Transformation::Type::Affine },
+        { { Transformation::Type::Translation,      Transformation::Type::Reflection },     Transformation::Type::Affine },
+        { { Transformation::Type::Translation,      Transformation::Type::Scaling },        Transformation::Type::Affine },
+        { { Transformation::Type::Translation,      Transformation::Type::Shear },          Transformation::Type::Affine },
+        { { Transformation::Type::Translation,      Transformation::Type::Affine },         Transformation::Type::Affine },
+        
+        { { Transformation::Type::Rotation,         Transformation::Type::Undefined },      Transformation::Type::Undefined },
+        { { Transformation::Type::Rotation,         Transformation::Type::Identity },       Transformation::Type::Rotation },
+        { { Transformation::Type::Rotation,         Transformation::Type::Translation },    Transformation::Type::Affine },
+        { { Transformation::Type::Rotation,         Transformation::Type::Rotation },       Transformation::Type::Rotation },
+        { { Transformation::Type::Rotation,         Transformation::Type::Reflection },     Transformation::Type::Affine },
+        { { Transformation::Type::Rotation,         Transformation::Type::Scaling },        Transformation::Type::Affine },
+        { { Transformation::Type::Rotation,         Transformation::Type::Shear },          Transformation::Type::Affine },
+        { { Transformation::Type::Rotation,         Transformation::Type::Affine },         Transformation::Type::Affine },
+        
+        { { Transformation::Type::Reflection,       Transformation::Type::Undefined },      Transformation::Type::Undefined },
+        { { Transformation::Type::Reflection,       Transformation::Type::Identity },       Transformation::Type::Reflection },
+        { { Transformation::Type::Reflection,       Transformation::Type::Translation },    Transformation::Type::Affine },
+        { { Transformation::Type::Reflection,       Transformation::Type::Rotation },       Transformation::Type::Affine },
+        { { Transformation::Type::Reflection,       Transformation::Type::Reflection },     Transformation::Type::Affine },     
+        { { Transformation::Type::Reflection,       Transformation::Type::Scaling },        Transformation::Type::Affine },
+        { { Transformation::Type::Reflection,       Transformation::Type::Shear },          Transformation::Type::Affine },
+        { { Transformation::Type::Reflection,       Transformation::Type::Affine },         Transformation::Type::Affine },
+        
+        { { Transformation::Type::Scaling,          Transformation::Type::Undefined },      Transformation::Type::Undefined },
+        { { Transformation::Type::Scaling,          Transformation::Type::Identity },       Transformation::Type::Scaling },
+        { { Transformation::Type::Scaling,          Transformation::Type::Translation },    Transformation::Type::Affine },
+        { { Transformation::Type::Scaling,          Transformation::Type::Rotation },       Transformation::Type::Affine },
+        { { Transformation::Type::Scaling,          Transformation::Type::Reflection },     Transformation::Type::Affine },
+        { { Transformation::Type::Scaling,          Transformation::Type::Scaling },        Transformation::Type::Scaling },
+        { { Transformation::Type::Scaling,          Transformation::Type::Shear },          Transformation::Type::Affine },
+        { { Transformation::Type::Scaling,          Transformation::Type::Affine },         Transformation::Type::Affine },
+        
+        { { Transformation::Type::Shear,            Transformation::Type::Undefined },      Transformation::Type::Undefined },
+        { { Transformation::Type::Shear,            Transformation::Type::Identity },       Transformation::Type::Shear },
+        { { Transformation::Type::Shear,            Transformation::Type::Translation },    Transformation::Type::Affine },
+        { { Transformation::Type::Shear,            Transformation::Type::Rotation },       Transformation::Type::Affine },
+        { { Transformation::Type::Shear,            Transformation::Type::Reflection },     Transformation::Type::Affine },
+        { { Transformation::Type::Shear,            Transformation::Type::Scaling },        Transformation::Type::Affine },
+        { { Transformation::Type::Shear,            Transformation::Type::Shear },          Transformation::Type::Affine },
+        { { Transformation::Type::Shear,            Transformation::Type::Affine },         Transformation::Type::Affine },
+        
+        { { Transformation::Type::Affine,           Transformation::Type::Undefined },      Transformation::Type::Undefined },
+        { { Transformation::Type::Affine,           Transformation::Type::Identity },       Transformation::Type::Affine },
+        { { Transformation::Type::Affine,           Transformation::Type::Translation },    Transformation::Type::Affine },
+        { { Transformation::Type::Affine,           Transformation::Type::Rotation },       Transformation::Type::Affine },
+        { { Transformation::Type::Affine,           Transformation::Type::Reflection },     Transformation::Type::Affine },
+        { { Transformation::Type::Affine,           Transformation::Type::Scaling },        Transformation::Type::Affine },
+        { { Transformation::Type::Affine,           Transformation::Type::Shear },          Transformation::Type::Affine },
+        { { Transformation::Type::Affine,           Transformation::Type::Affine },         Transformation::Type::Affine }
+
+    } ;
+
+    type_ = TypeCompositionMap.at({ type_, aTransformation.type_ }) ;
+    matrix_ *= aTransformation.matrix_ ;
 
     return *this ;
 
@@ -238,6 +319,12 @@ Transformation                  Transformation::Rotation                    (   
 
 }
 
+Transformation                  Transformation::RotationAround              (   const   Point&                      aPoint,
+                                                                                const   Angle&                      aRotationAngle                              )
+{
+    return Transformation::Translation(Vector2d(aPoint)) * Transformation::Rotation(aRotationAngle) * Transformation::Translation(-Vector2d(aPoint)) ;
+}
+
 String                          Transformation::StringFromType              (   const   Transformation::Type&       aType                                       )
 {
 
@@ -255,6 +342,18 @@ String                          Transformation::StringFromType              (   
 
         case Transformation::Type::Rotation:
             return "Rotation" ;
+
+        case Transformation::Type::Reflection:
+            return "Reflection" ;
+
+        case Transformation::Type::Scaling:
+            return "Scaling" ;
+
+        case Transformation::Type::Shear:
+            return "Shear" ;
+
+        case Transformation::Type::Affine:
+            return "Affine" ;
         
         default:
             throw library::core::error::runtime::Wrong("Type") ;

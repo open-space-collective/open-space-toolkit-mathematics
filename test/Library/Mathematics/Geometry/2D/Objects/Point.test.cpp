@@ -304,7 +304,10 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, ToString)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, ApplyTransformation)
 {
 
+    using library::core::types::Real ;
+    
     using library::math::obj::Vector2d ;
+    using library::math::geom::Angle ;
     using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::Transformation ;
 
@@ -316,7 +319,31 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, ApplyTransformation)
 
         point.applyTransformation(Transformation::Translation({ 4.0, 5.0 })) ;
 
-        EXPECT_EQ(Point(5.0, 7.0), point) ;
+        EXPECT_TRUE(point.isNear(Point(5.0, 7.0), Real::Epsilon())) << point ;
+
+    }
+
+    // Rotation
+
+    {
+
+        Point point = { +1.0, +2.0 } ;
+
+        point.applyTransformation(Transformation::Rotation(Angle::Degrees(90.0))) ;
+
+        EXPECT_TRUE(point.isNear(Point(-2.0, +1.0), Real::Epsilon())) << point ;
+
+    }
+
+    // Rotation Around
+
+    {
+
+        Point point = { +1.0, +2.0 } ;
+
+        point.applyTransformation(Transformation::RotationAround(point, Angle::Degrees(90.0))) ;
+
+        EXPECT_TRUE(point.isNear(Point(+1.0, +2.0), Real::Epsilon())) << point ;
 
     }
 

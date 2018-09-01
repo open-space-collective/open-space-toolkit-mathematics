@@ -41,6 +41,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Transformation 
         .def("Identity", &Transformation::Identity).staticmethod("Identity")
         .def("Translation", &Transformation::Translation).staticmethod("Translation")
         .def("Rotation", &Transformation::Rotation).staticmethod("Rotation")
+        .def("RotationAround", &Transformation::RotationAround).staticmethod("RotationAround")
         
         .def("StringFromType", &Transformation::StringFromType).staticmethod("StringFromType")
         .def("TypeOfMatrix", &Transformation::TypeOfMatrix).staticmethod("TypeOfMatrix")

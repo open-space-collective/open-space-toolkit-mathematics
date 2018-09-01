@@ -54,7 +54,11 @@ class Transformation
             Undefined,
             Identity,
             Translation,
-            Rotation
+            Rotation,
+            Reflection,
+            Scaling,
+            Shear,
+            Affine
 
         } ;
 
@@ -106,6 +110,9 @@ class Transformation
         static Transformation   Translation                                 (   const   Vector2d&                   aTranslationVector                          ) ;
         
         static Transformation   Rotation                                    (   const   Angle&                      aRotationAngle                              ) ;
+
+        static Transformation   RotationAround                              (   const   Point&                      aPoint,
+                                                                                const   Angle&                      aRotationAngle                              ) ;
 
         static String           StringFromType                              (   const   Transformation::Type&       aType                                       ) ;
 
