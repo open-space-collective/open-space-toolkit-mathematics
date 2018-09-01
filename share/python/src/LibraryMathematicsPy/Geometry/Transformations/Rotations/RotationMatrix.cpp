@@ -27,6 +27,8 @@ inline void                     LibraryMathematicsPy_Geometry_Transformations_Ro
 
     scope in_RotationMatrix = class_<RotationMatrix>("RotationMatrix", init<Matrix3d>())
 
+        .def(init<const Real&, const Real&, const Real&, const Real&, const Real&, const Real&, const Real&, const Real&, const Real&>())
+
         .def(self == self)
         .def(self != self)
 

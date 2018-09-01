@@ -8,6 +8,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 
@@ -164,12 +165,12 @@ void                            Ray::print                                  (   
 
 }
 
-void                            Ray::translate                              (   const   Vector3d&                   aTranslation                                )
+void                            Ray::applyTransformation                    (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aTranslation.isDefined())
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Translation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
@@ -177,24 +178,8 @@ void                            Ray::translate                              (   
         throw library::core::error::runtime::Undefined("Ray") ;
     }
 
-    origin_ += aTranslation ;
-
-}
-        
-void                            Ray::rotate                                 (   const   Quaternion&                 aRotation                                   )
-{
-
-    if (!aRotation.isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Rotation") ;
-    }
-
-    if (!this->isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Ray") ;
-    }
-
-    direction_ = aRotation * direction_ ;
+    origin_.applyTransformation(aTransformation) ;
+    direction_ = aTransformation.applyTo(direction_) ;
 
 }
 

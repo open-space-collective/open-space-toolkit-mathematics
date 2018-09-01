@@ -58,6 +58,31 @@ bool                            isInf                                       ( ) 
 
 }
 
+bool                            isNear                                      (   const   Derived&                    aMatrix,
+                                                                                const   RealScalar                  aTolerance                                  ) const
+{
+
+    if (!this->isDefined() || (!aMatrix.isDefined()))
+    {
+        throw std::runtime_error("Object is undefined.") ;
+    }
+
+    if (this->size() != aMatrix.size())
+    {
+        throw std::runtime_error("Cannot compare objects of different size.") ;
+    }
+    
+    return ((*this) - aMatrix).norm() <= aTolerance ;
+
+}
+
+// template <typename OtherDerived>
+// inline RealScalar               isNear                                      (   const   MatrixBase<OtherDerived>&   aMatrix,
+//                                                                                 const   RealScalar                  aTolerance                                  ) const
+// {
+//     return (this->derived() - aMatrix).norm() <= (aTolerance * aTolerance) ;
+// }
+
 static std::string              ScalarToString                              (           int                         aScalar,
                                                                                         int                         aPrecision                                  )
 {

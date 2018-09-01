@@ -24,8 +24,9 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Point (
     using library::math::geom::d3::Object ;
     using library::math::geom::d3::objects::Point ;
 
-    // scope in_Point = class_<Point, bases<Object, Vector3d>>("Point", init<const Real&, const Real&, const Real&>()) // Does not work for some reason
     scope in_Point = class_<Point, bases<Object>>("Point", init<const Real&, const Real&, const Real&>())
+
+        .def(init<const Vector3d&>())
 
         .def(self == self)
         .def(self != self)
@@ -42,15 +43,19 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Point (
         .def("isDefined", &Point::isDefined)
         .def("isNear", &Point::isNear)
         
+        .def("x", +[] (const Point& aPoint) -> double { return aPoint.x() ; })
+        .def("y", +[] (const Point& aPoint) -> double { return aPoint.y() ; })
+        .def("z", +[] (const Point& aPoint) -> double { return aPoint.z() ; })
         .def("distanceTo", &Point::distanceTo)
-
-        .def("translate", &Point::translate)
-        .def("rotate", &Point::rotate)
+        .def("applyTransformation", &Point::applyTransformation)
 
         .def("Undefined", &Point::Undefined).staticmethod("Undefined")
         .def("Origin", &Point::Origin).staticmethod("Origin")
 
     ;
+
+    implicitly_convertible<Point, Vector3d>() ;
+    implicitly_convertible<Vector3d, Point>() ;
 
     using library::core::ctnr::Array ;
 

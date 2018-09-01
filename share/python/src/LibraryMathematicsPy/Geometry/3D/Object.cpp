@@ -31,8 +31,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Object     ( )
         .def("contains", &Object::contains)
 
         // .def("intersectionWith", &Object::intersectionWith)
-        .def("translate", &Object::translate)
-        .def("rotate", &Object::rotate)
+        .def("applyTransformation", &Object::applyTransformation)
 
     ;
 

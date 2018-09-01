@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Polygon.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -77,6 +78,48 @@ bool                            Polygon::operator !=                        (   
 bool                            Polygon::isDefined                          ( ) const
 {
     return polygon_.isDefined() && origin_.isDefined() && xAxis_.isDefined() && yAxis_.isDefined() ;
+}
+
+bool                            Polygon::isNear                             (   const   Polygon&                    aPolygon,
+                                                                                const   Real&                       aTolerance                                  ) const
+{
+
+    if (!aPolygon.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    if (!aTolerance.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Tolerance") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    if (this->getVertexCount() != aPolygon.getVertexCount())
+    {
+        return false ;
+    }
+
+    const Array<Polygon::Vertex> firstVertices = this->getVertices() ;
+    const Array<Polygon::Vertex> secondVertices = aPolygon.getVertices() ;
+
+    // for (auto vertexTuple : library::core::ctnr::iterators::Zip(this->getVertices(), aPolygon.getVertices()))
+    for (auto vertexTuple : library::core::ctnr::iterators::Zip(firstVertices, secondVertices))
+    {
+
+        if (!std::get<0>(vertexTuple).isNear(std::get<1>(vertexTuple), aTolerance))
+        {
+            return false ;
+        }
+
+    }
+
+    return true ;
+
 }
 
 Polygon2d                       Polygon::getPolygon2d                       ( ) const
@@ -163,7 +206,7 @@ Size                            Polygon::getVertexCount                     ( ) 
 
 }
 
-Segment                         Polygon::getEdgeAt                          (   const   Index                       anEdgeIndex                                 ) const
+Polygon::Edge                   Polygon::getEdgeAt                          (   const   Index                       anEdgeIndex                                 ) const
 {
 
     using Point2d = library::math::geom::d2::objects::Point ;
@@ -186,7 +229,7 @@ Segment                         Polygon::getEdgeAt                          (   
 
 }
 
-Point                           Polygon::getVertexAt                        (   const   Index                       aVertexIndex                                ) const
+Polygon::Vertex                 Polygon::getVertexAt                        (   const   Index                       aVertexIndex                                ) const
 {
 
     using Point2d = library::math::geom::d2::objects::Point ;
@@ -202,12 +245,12 @@ Point                           Polygon::getVertexAt                        (   
 
 }
 
-Array<Segment>                  Polygon::getEdges                           ( ) const
+Array<Polygon::Edge>            Polygon::getEdges                           ( ) const
 {
 
     using Point2d = library::math::geom::d2::objects::Point ;
 
-    Array<Segment> edges = Array<Segment>::Empty() ;
+    Array<Polygon::Edge> edges = Array<Polygon::Edge>::Empty() ;
 
     edges.reserve(polygon_.getEdgeCount()) ;
 
@@ -220,7 +263,7 @@ Array<Segment>                  Polygon::getEdges                           ( ) 
         const Point firstVertex = origin_ + ((firstVertex2d.x() * xAxis_) + (firstVertex2d.y() * yAxis_)) ;
         const Point secondVertex = origin_ + ((secondVertex2d.x() * xAxis_) + (secondVertex2d.y() * yAxis_)) ;
 
-        edges.add(Segment(firstVertex, secondVertex)) ;
+        edges.add(Polygon::Edge(firstVertex, secondVertex)) ;
 
     }
 
@@ -228,10 +271,10 @@ Array<Segment>                  Polygon::getEdges                           ( ) 
 
 }
 
-Array<Point>                    Polygon::getVertices                        ( ) const
+Array<Polygon::Vertex>          Polygon::getVertices                        ( ) const
 {
 
-    Array<Point> vertices = Array<Point>::Empty() ;
+    Array<Polygon::Vertex> vertices = Array<Polygon::Vertex>::Empty() ;
 
     vertices.reserve(polygon_.getVertexCount()) ;
 
@@ -263,12 +306,12 @@ void                            Polygon::print                              (   
 
 }
 
-void                            Polygon::translate                          (   const   Vector3d&                   aTranslation                                )
+void                            Polygon::applyTransformation                (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aTranslation.isDefined())
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Translation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
@@ -276,25 +319,12 @@ void                            Polygon::translate                          (   
         throw library::core::error::runtime::Undefined("Polygon") ;
     }
 
-    origin_ += aTranslation ;
-
-}
-        
-void                            Polygon::rotate                             (   const   Quaternion&                 aRotation                                   )
-{
-
-    if (!aRotation.isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Rotation") ;
-    }
-
-    if (!this->isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Polygon") ;
-    }
-
-    xAxis_ = aRotation * xAxis_ ;
-    yAxis_ = aRotation * yAxis_ ;
+    // polygon_ = aTransformation.applyTo(polygon_) ;
+    
+    origin_ = aTransformation.applyTo(origin_) ;
+    
+    xAxis_ = aTransformation.applyTo(xAxis_) ;
+    yAxis_ = aTransformation.applyTo(yAxis_) ;
 
 }
 

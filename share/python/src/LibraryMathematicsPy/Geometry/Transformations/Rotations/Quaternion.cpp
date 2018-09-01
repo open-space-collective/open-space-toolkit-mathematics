@@ -67,11 +67,11 @@ inline void                     LibraryMathematicsPy_Geometry_Transformations_Ro
         .def("toVector", &Quaternion::toVector)
         .def("toString", +[] (const Quaternion& aQuaternion, const Quaternion::Format aFormat) -> String { return aQuaternion.toString(aFormat) ; })
         // .def("toString", &Quaternion::toString(), LibraryMathematicsPy_Geometry_Transformations_Rotations_Quaternion_toString_overloads())
-
         .def("normalize", +[] (Quaternion& aQuaternion) -> void { aQuaternion.normalize() ; })
         .def("conjugate", +[] (Quaternion& aQuaternion) -> void { aQuaternion.conjugate() ; })
         .def("inverse", +[] (Quaternion& aQuaternion) -> void { aQuaternion.inverse() ; })
         .def("rectify", +[] (Quaternion& aQuaternion) -> void { aQuaternion.rectify() ; })
+        .def("angularDifferenceWith", &Quaternion::angularDifferenceWith)
 
         .def("Undefined", &Quaternion::Undefined).staticmethod("Undefined")
         .def("Unit", &Quaternion::Unit).staticmethod("Unit")

@@ -167,11 +167,11 @@ class Point : public Object, public Vector2d
         virtual void            print                                       (           std::ostream&               anOutputStream,
                                                                                         bool                        displayDecorators                           =   true ) const override ;
 
-        /// @brief              Translate point
+        /// @brief              Apply transformation to point
         ///
-        /// @param              [in] aTranslation A translation vector
+        /// @param              [in] aTransformation A transformation
 
-        virtual void            translate                                   (   const   Vector2d&                   aTranslation                                ) override ;
+        virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) override ;
 
         /// @brief              Constructs an undefined point
         ///

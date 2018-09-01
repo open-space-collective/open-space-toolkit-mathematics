@@ -31,9 +31,16 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Object     ( )
         .def("contains", &Object::contains)
         
         .def("toString", &Object::toString)
+        .def("applyTransformation", &Object::applyTransformation)
 
-        .def("translate", &Object::translate)
+    ;
 
+    enum_<Object::Format>("Format")
+    
+        .value("Undefined", Object::Format::Undefined)
+        .value("Standard", Object::Format::Standard)
+        .value("WKT", Object::Format::WKT)
+    
     ;
 
 }

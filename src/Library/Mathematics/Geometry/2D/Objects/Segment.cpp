@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/LineString.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Segment.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/PointSet.hpp>
@@ -231,12 +232,12 @@ void                            Segment::print                              (   
 
 }
 
-void                            Segment::translate                          (   const   Vector2d&                   aTranslation                                )
+void                            Segment::applyTransformation                (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aTranslation.isDefined())
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Translation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
@@ -244,8 +245,8 @@ void                            Segment::translate                          (   
         throw library::core::error::runtime::Undefined("Segment") ;
     }
 
-    firstPoint_ += aTranslation ;
-    secondPoint_ += aTranslation ;
+    firstPoint_.applyTransformation(aTransformation) ;
+    secondPoint_.applyTransformation(aTransformation) ;
 
 }
 

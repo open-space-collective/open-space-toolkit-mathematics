@@ -36,8 +36,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_LineStr
 
         .def("getPointCount", &LineString::getPointCount)
         .def("getPointClosestTo", &LineString::getPointClosestTo)
-        .def("translate", &LineString::translate)
-        .def("rotate", &LineString::rotate)
+        .def("applyTransformation", &LineString::applyTransformation)
         
         .def("Empty", &LineString::Empty).staticmethod("Empty")
 

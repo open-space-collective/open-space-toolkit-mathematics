@@ -9,6 +9,7 @@
 
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 
@@ -312,41 +313,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IntersectionWith_Ellipsoi
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Translate)
-{
-
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Pyramid ;
-
-    {
-
-        const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-        const Point apex = { 0.0, 0.0, 1.0 } ;
-
-        Pyramid pyramid = { base, apex } ;
-
-        pyramid.translate({ 4.0, 5.0, 6.0 }) ;
-
-        EXPECT_EQ(Pyramid({ { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 4.0, 5.0, 6.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } }, { 4.0, 5.0, 7.0 } }), pyramid) ;
-
-    }
-
-    {
-
-        const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-        const Point apex = { 0.0, 0.0, 1.0 } ;
-
-        EXPECT_ANY_THROW(Pyramid::Undefined().translate(Vector3d::Undefined())) ;
-        EXPECT_ANY_THROW(Pyramid::Undefined().translate({ 0.0, 0.0, 0.0 })) ;
-        EXPECT_ANY_THROW(Pyramid(base, apex).translate(Vector3d::Undefined())) ;
-
-    }
-
-}
-
-TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Rotate)
+TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, ApplyTransformation)
 {
 
     using library::core::types::Real ;
@@ -356,23 +323,53 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Rotate)
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
     using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::trf::rot::Quaternion ;
+    using library::math::geom::d3::Transformation ;
     using library::math::geom::trf::rot::RotationVector ;
 
-    // {
-
-    //     FAIL() ;
-
-    // }
+    // Translation
 
     {
 
         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
         const Point apex = { 0.0, 0.0, 1.0 } ;
 
-        EXPECT_ANY_THROW(Pyramid::Undefined().rotate(Quaternion::Undefined())) ;
-        EXPECT_ANY_THROW(Pyramid::Undefined().rotate(Quaternion::Unit())) ;
-        EXPECT_ANY_THROW(Pyramid(base, apex).rotate(Quaternion::Undefined())) ;
+        Pyramid pyramid = { base, apex } ;
+
+        pyramid.applyTransformation(Transformation::Translation({ 4.0, 5.0, 6.0 })) ;
+
+        EXPECT_EQ(Pyramid({ { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 4.0, 5.0, 6.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } }, { 4.0, 5.0, 7.0 } }), pyramid) ;
+
+    }
+
+    // Rotation
+
+    {
+
+        const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 2.0, 0.0 }, { 0.0, 0.0, 1.0 }, { 1.0, 0.0, 0.0 } } ;
+        const Point apex = { 0.0, 1.0, 0.0 } ;
+
+        Pyramid pyramid = { base, apex } ;
+
+        pyramid.applyTransformation(Transformation::Rotation(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(90.0)))) ;
+
+        const Polygon referenceBase = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 2.0 }, { 0.0, -1.0, 0.0 }, { 1.0, 0.0, 0.0 } } ;
+        const Point referenceApex = { 0.0, 0.0, 1.0 } ;
+
+        const Pyramid referencePyramid = { referenceBase, referenceApex } ;
+
+        EXPECT_TRUE(pyramid.getBase().isNear(referencePyramid.getBase(), Real::Epsilon())) << referencePyramid.getBase() << pyramid.getBase() ;
+        EXPECT_TRUE(pyramid.getApex().isNear(referencePyramid.getApex(), Real::Epsilon())) << referencePyramid.getApex().toString() << pyramid.getApex().toString() ;
+        
+    }
+
+    {
+
+        const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
+        const Point apex = { 0.0, 0.0, 1.0 } ;
+
+        EXPECT_ANY_THROW(Pyramid::Undefined().applyTransformation(Transformation::Undefined())) ;
+        EXPECT_ANY_THROW(Pyramid::Undefined().applyTransformation(Transformation::Identity())) ;
+        EXPECT_ANY_THROW(Pyramid(base, apex).applyTransformation(Transformation::Undefined())) ;
 
     }
 

@@ -151,17 +151,11 @@ class LineString : public Object
 
         LineString::ConstIterator end                                       ( ) const ;
 
-        /// @brief              Translate line string
+        /// @brief              Apply transformation to line string
         ///
-        /// @param              [in] aTranslation A translation vector
+        /// @param              [in] aTransformation A transformation
 
-        virtual void            translate                                   (   const   Vector3d&                   aTranslation                                ) override ;
-
-        /// @brief              Rotate line string
-        ///
-        /// @param              [in] aRotation A rotation quaternion
-        
-        virtual void            rotate                                      (   const   Quaternion&                 aRotation                                   ) override ;
+        virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) override ;
 
         /// @brief              Constructs an empty line string
         ///

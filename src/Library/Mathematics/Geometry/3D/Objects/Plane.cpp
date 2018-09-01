@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -117,12 +118,12 @@ void                            Plane::print                                (   
 
 }
 
-void                            Plane::translate                            (   const   Vector3d&                   aTranslation                                )
+void                            Plane::applyTransformation                  (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aTranslation.isDefined())
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Translation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
@@ -130,24 +131,8 @@ void                            Plane::translate                            (   
         throw library::core::error::runtime::Undefined("Plane") ;
     }
 
-    point_ += aTranslation ;
-
-}
-        
-void                            Plane::rotate                               (   const   Quaternion&                 aRotation                                   )
-{
-
-    if (!aRotation.isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Rotation") ;
-    }
-
-    if (!this->isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Plane") ;
-    }
-
-    normal_ = aRotation * normal_ ;
+    point_.applyTransformation(aTransformation) ;
+    normal_ = aTransformation.applyTo(normal_) ;
 
 }
 

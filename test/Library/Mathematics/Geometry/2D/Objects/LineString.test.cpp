@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/LineString.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Segment.hpp>
 
@@ -283,26 +284,29 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, ConstIterator)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, Translate)
+TEST (Library_Mathematics_Geometry_2D_Objects_LineString, ApplyTransformation)
 {
 
     using library::math::obj::Vector2d ;
     using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::objects::LineString ;
+    using library::math::geom::d2::Transformation ;
+
+    // Translation
 
     {
 
         LineString lineString = { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } } } ;
 
-        lineString.translate({ 4.0, 5.0 }) ;
+        lineString.applyTransformation(Transformation::Translation({ 4.0, 5.0 })) ;
 
-        EXPECT_EQ(LineString({ { 4.0, 5.0 }, { 4.0, 6.0 }, { 5.0, 5.0 } }), lineString) ;
+        EXPECT_EQ(LineString({ { 4.0, 5.0 }, { 4.0, 6.0 }, { 5.0, 5.0 } }), lineString) << lineString ;
 
     }
 
     {
 
-        EXPECT_ANY_THROW(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).translate(Vector2d::Undefined())) ;
+        EXPECT_ANY_THROW(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).applyTransformation(Transformation::Undefined())) ;
 
     }
 

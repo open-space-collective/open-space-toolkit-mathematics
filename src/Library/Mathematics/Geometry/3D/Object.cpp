@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
@@ -16,7 +17,6 @@
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -415,6 +415,20 @@ Intersection                    Object::intersectionWith                    (   
         // Ray
 
         if (const Ray* otherObjectPtr = dynamic_cast<const Ray*>(&anObject))
+        {
+            return objectPtr->intersectionWith(*otherObjectPtr) ;
+        }
+
+    }
+
+    // Pyramid
+
+    if (const Pyramid* objectPtr = dynamic_cast<const Pyramid*>(this))
+    {
+
+        // Ellipsoid
+
+        if (const Ellipsoid* otherObjectPtr = dynamic_cast<const Ellipsoid*>(&anObject))
         {
             return objectPtr->intersectionWith(*otherObjectPtr) ;
         }

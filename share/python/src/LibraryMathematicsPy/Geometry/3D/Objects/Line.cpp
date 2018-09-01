@@ -37,8 +37,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Line ( 
 
         .def("getOrigin", &Line::getOrigin)
         .def("getDirection", &Line::getDirection)
-        .def("translate", &Line::translate)
-        .def("rotate", &Line::rotate)
+        .def("applyTransformation", &Line::applyTransformation)
         
         .def("Undefined", &Line::Undefined).staticmethod("Undefined")
 

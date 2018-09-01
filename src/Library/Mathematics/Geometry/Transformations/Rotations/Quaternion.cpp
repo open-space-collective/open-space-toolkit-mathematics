@@ -166,10 +166,10 @@ std::ostream&                   operator <<                                 (   
 
     library::core::utils::Print::Header(anOutputStream, "Quaternion") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "X:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.x_) : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Y:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.y_) : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Z:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.z_) : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "S:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.s_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "X:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.x_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Y:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.y_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Z:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.z_) : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "S:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.s_) : "Undefined") ;
 
     library::core::utils::Print::Footer(anOutputStream) ;
 
@@ -208,19 +208,7 @@ bool                            Quaternion::isNear                          (   
         throw library::core::error::runtime::Undefined("Angular tolerance") ;
     }
 
-    if ((!this->isUnitary()) || (!aQuaternion.isUnitary()))
-    {
-        throw library::core::error::RuntimeError("Quaternion is not unitary.") ;
-    }
-
-    const Quaternion deltaQuaternion = (*this) / aQuaternion ;
-
-    if ((deltaQuaternion.s_ > 1.0) && (std::abs(deltaQuaternion.s_ - 1.0) < Real::Epsilon()))
-    {
-        return true ;
-    }
-
-    return (2.0 * std::acos(deltaQuaternion.s_)) <= anAngularTolerance.inRadians().abs() ;
+    return this->angularDifferenceWith(aQuaternion).inRadians(0.0, Real::TwoPi()) <= anAngularTolerance.inRadians(0.0, Real::TwoPi()) ;
 
 }
 
@@ -280,7 +268,7 @@ Vector3d                        Quaternion::getVectorPart                   ( ) 
         throw library::core::error::runtime::Undefined("Quaternion") ;
     }
 
-    return Vector3d(x_, y_, z_) ;
+    return { x_, y_, z_ } ;
 
 }
 
@@ -397,7 +385,7 @@ Quaternion                      Quaternion::crossMultiply                   (   
     const Vector3d vectorPart = (rightScalarPart * leftVectorPart) + (leftScalarPart * rightVectorPart) - leftVectorPart.cross(rightVectorPart) ;
     const Real scalarPart = (leftScalarPart * rightScalarPart) - leftVectorPart.dot(rightVectorPart) ;
 
-    return Quaternion(vectorPart, scalarPart) ;
+    return { vectorPart, scalarPart } ;
 
 }
 
@@ -418,7 +406,7 @@ Quaternion                      Quaternion::dotMultiply                     (   
     const Vector3d vectorPart = (rightScalarPart * leftVectorPart) + (leftScalarPart * rightVectorPart) + leftVectorPart.cross(rightVectorPart) ;
     const Real scalarPart = (leftScalarPart * rightScalarPart) - leftVectorPart.dot(rightVectorPart) ;
 
-    return Quaternion(vectorPart, scalarPart) ;
+    return { vectorPart, scalarPart } ;
 
 }
 
@@ -582,14 +570,33 @@ Quaternion&                     Quaternion::rectify                         ( )
 
 }
 
+Angle                           Quaternion::angularDifferenceWith           (   const   Quaternion&                 aQuaternion                                 ) const
+{
+
+    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
+    {
+        throw library::core::error::runtime::Undefined("Quaternion") ;
+    }
+
+    if ((!this->isUnitary()) || (!aQuaternion.isUnitary()))
+    {
+        throw library::core::error::RuntimeError("Quaternion is not unitary.") ;
+    }
+
+    const Quaternion deltaQuaternion = ((*this) / aQuaternion).normalize() ;
+
+    return Angle::Radians(2.0 * std::acos(std::abs(deltaQuaternion.s_))) ;
+
+}
+
 Quaternion                      Quaternion::Undefined                       ( )
 {
-    return Quaternion(Real::Undefined(), Real::Undefined(), Real::Undefined(), Real::Undefined(), Quaternion::Format::XYZS) ;
+    return { Real::Undefined(), Real::Undefined(), Real::Undefined(), Real::Undefined(), Quaternion::Format::XYZS } ;
 }
 
 Quaternion                      Quaternion::Unit                            ( )
 {
-    return Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS) ;
+    return { 0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS } ;
 }
 
 Quaternion                      Quaternion::XYZS                            (   const   Real&                       aFirstComponent,
@@ -597,7 +604,7 @@ Quaternion                      Quaternion::XYZS                            (   
                                                                                 const   Real&                       aThirdComponent,
                                                                                 const   Real&                       aFourthComponent                            )
 {
-    return Quaternion(aFirstComponent, aSecondComponent, aThirdComponent, aFourthComponent, Quaternion::Format::XYZS) ;
+    return { aFirstComponent, aSecondComponent, aThirdComponent, aFourthComponent, Quaternion::Format::XYZS } ;
 }
 
 Quaternion                      Quaternion::RotationVector                  (   const   rot::RotationVector&        aRotationVector                             )
@@ -630,24 +637,24 @@ Quaternion                      Quaternion::RotationMatrix                  (   
         throw library::core::error::runtime::Undefined("Rotation matrix") ;
     }
 
-    const double trace = aRotationMatrix.accessMatrix().trace() ;
+    const Real trace = aRotationMatrix.accessMatrix().trace() ;
     
-    const double rotationMatrix_11 = aRotationMatrix(0, 0) ;
-    const double rotationMatrix_12 = aRotationMatrix(0, 1) ;
-    const double rotationMatrix_13 = aRotationMatrix(0, 2) ;
+    const Real rotationMatrix_11 = aRotationMatrix(0, 0) ;
+    const Real rotationMatrix_12 = aRotationMatrix(0, 1) ;
+    const Real rotationMatrix_13 = aRotationMatrix(0, 2) ;
     
-    const double rotationMatrix_21 = aRotationMatrix(1, 0) ;
-    const double rotationMatrix_22 = aRotationMatrix(1, 1) ;
-    const double rotationMatrix_23 = aRotationMatrix(1, 2) ;
+    const Real rotationMatrix_21 = aRotationMatrix(1, 0) ;
+    const Real rotationMatrix_22 = aRotationMatrix(1, 1) ;
+    const Real rotationMatrix_23 = aRotationMatrix(1, 2) ;
 
-    const double rotationMatrix_31 = aRotationMatrix(2, 0) ;
-    const double rotationMatrix_32 = aRotationMatrix(2, 1) ;
-    const double rotationMatrix_33 = aRotationMatrix(2, 2) ;
+    const Real rotationMatrix_31 = aRotationMatrix(2, 0) ;
+    const Real rotationMatrix_32 = aRotationMatrix(2, 1) ;
+    const Real rotationMatrix_33 = aRotationMatrix(2, 2) ;
 
-    double x ;
-    double y ;
-    double z ;
-    double s ;
+    Real x = Real::Undefined() ;
+    Real y = Real::Undefined() ;
+    Real z = Real::Undefined() ;
+    Real s = Real::Undefined() ;
 
     if ((trace >= rotationMatrix_11) && (trace >= rotationMatrix_22) && (trace >= rotationMatrix_33))
     {
@@ -712,7 +719,7 @@ Quaternion                      Quaternion::Parse                           (   
         throw library::core::error::RuntimeError("Vector size is not 4.") ;
     }
 
-    return Quaternion(vector, aFormat) ;
+    return { vector, aFormat } ;
 
 }
 

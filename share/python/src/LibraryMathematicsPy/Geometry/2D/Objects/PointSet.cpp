@@ -11,6 +11,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_2D_Objects_PointSet_toString_overloads, library::math::geom::d2::objects::PointSet::toString, 0, 2)
+
 inline void                     LibraryMathematicsPy_Geometry_2D_Objects_PointSet ( )
 {
 
@@ -36,8 +38,8 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_PointSe
 
         .def("getSize", &PointSet::getSize)
         .def("getPointClosestTo", &PointSet::getPointClosestTo)
-        .def("toString", &PointSet::toString)
-        .def("translate", &PointSet::translate)
+        .def("toString", &PointSet::toString, LibraryMathematicsPy_Geometry_2D_Objects_PointSet_toString_overloads())
+        .def("applyTransformation", &PointSet::applyTransformation)
         
         .def("Empty", &PointSet::Empty).staticmethod("Empty")
 

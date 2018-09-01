@@ -33,32 +33,78 @@ namespace rot
                                 :   matrix_(aMatrix)
 {
 
-    if ((aMatrix.col(0).norm() - 1.0) > Real::Epsilon())
+    if ((matrix_.col(0).norm() - 1.0) > Real::Epsilon())
     {
         throw library::core::error::RuntimeError("First column is not unitary.") ;
     }
 
-    if ((aMatrix.col(1).norm() - 1.0) > Real::Epsilon())
+    if ((matrix_.col(1).norm() - 1.0) > Real::Epsilon())
     {
         throw library::core::error::RuntimeError("Second column is not unitary.") ;
     }
 
-    if ((aMatrix.col(3).norm() - 1.0) > Real::Epsilon())
+    if ((matrix_.col(2).norm() - 1.0) > Real::Epsilon())
     {
         throw library::core::error::RuntimeError("Third column is not unitary.") ;
     }
 
-    if (std::abs(aMatrix.col(0).dot(aMatrix.col(1))) > Real::Epsilon())
+    if (std::abs(matrix_.col(0).dot(matrix_.col(1))) > Real::Epsilon())
     {
         throw library::core::error::RuntimeError("First and second columns are not orthogonal.") ;
     }
 
-    if (std::abs(aMatrix.col(1).dot(aMatrix.col(3))) > Real::Epsilon())
+    if (std::abs(matrix_.col(1).dot(matrix_.col(2))) > Real::Epsilon())
     {
         throw library::core::error::RuntimeError("Second and third columns are not orthogonal.") ;
     }
 
-    if (std::abs(aMatrix.col(3).dot(aMatrix.col(0))) > Real::Epsilon())
+    if (std::abs(matrix_.col(2).dot(matrix_.col(0))) > Real::Epsilon())
+    {
+        throw library::core::error::RuntimeError("First and third columns are not orthogonal.") ;
+    }
+
+}
+
+                                RotationMatrix::RotationMatrix              (   const   Real&                       aFirstCoefficient,
+                                                                                const   Real&                       aSecondCoefficient,
+                                                                                const   Real&                       aThirdCoefficient,
+                                                                                const   Real&                       aFourthCoefficient,
+                                                                                const   Real&                       aFifthCoefficient,
+                                                                                const   Real&                       aSixthCoefficient,
+                                                                                const   Real&                       aSeventhCoefficient,
+                                                                                const   Real&                       aEighthCoefficient,
+                                                                                const   Real&                       aNinthCoefficient                           )
+                                :   matrix_((Matrix3d() <<  aFirstCoefficient, aSecondCoefficient, aThirdCoefficient,
+                                                            aFourthCoefficient, aFifthCoefficient, aSixthCoefficient,
+                                                            aSeventhCoefficient, aEighthCoefficient, aNinthCoefficient).finished())
+{
+
+    if ((matrix_.col(0).norm() - 1.0) > Real::Epsilon())
+    {
+        throw library::core::error::RuntimeError("First column is not unitary.") ;
+    }
+
+    if ((matrix_.col(1).norm() - 1.0) > Real::Epsilon())
+    {
+        throw library::core::error::RuntimeError("Second column is not unitary.") ;
+    }
+
+    if ((matrix_.col(2).norm() - 1.0) > Real::Epsilon())
+    {
+        throw library::core::error::RuntimeError("Third column is not unitary.") ;
+    }
+
+    if (std::abs(matrix_.col(0).dot(matrix_.col(1))) > Real::Epsilon())
+    {
+        throw library::core::error::RuntimeError("First and second columns are not orthogonal.") ;
+    }
+
+    if (std::abs(matrix_.col(1).dot(matrix_.col(2))) > Real::Epsilon())
+    {
+        throw library::core::error::RuntimeError("Second and third columns are not orthogonal.") ;
+    }
+
+    if (std::abs(matrix_.col(2).dot(matrix_.col(0))) > Real::Epsilon())
     {
         throw library::core::error::RuntimeError("First and third columns are not orthogonal.") ;
     }

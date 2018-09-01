@@ -9,6 +9,7 @@
 
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 
@@ -306,60 +307,49 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Ellipsoid)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Translate)
+TEST (Library_Mathematics_Geometry_3D_Objects_Ray, ApplyTransformation)
 {
 
+    using library::core::types::Real ;
+
     using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Ray ;
+    using library::math::geom::d3::Transformation ;
+    using library::math::geom::trf::rot::RotationVector ;
+
+    // Translation
 
     {
 
         Ray ray = { { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 } } ;
 
-        ray.translate({ 4.0, 5.0, 6.0 }) ;
+        ray.applyTransformation(Transformation::Translation({ 4.0, 5.0, 6.0 })) ;
 
         EXPECT_EQ(Ray({ 4.0, 5.0, 6.0 }, { 0.0, 0.0, 1.0 }), ray) ;
 
     }
 
-    {
-
-        EXPECT_ANY_THROW(Ray::Undefined().translate(Vector3d::Undefined())) ;
-        EXPECT_ANY_THROW(Ray::Undefined().translate({ 0.0, 0.0, 0.0 })) ;
-        EXPECT_ANY_THROW(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).translate(Vector3d::Undefined())) ;
-
-    }
-
-}
-
-TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Rotate)
-{
-
-    using library::core::types::Real ;
-
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::trf::rot::Quaternion ;
-    using library::math::geom::trf::rot::RotationVector ;
+    // Rotation
 
     {
 
-        Ray ray = { { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 } } ;
+        Ray ray = { { 0.0, 0.5, 0.0 }, { 0.0, 0.0, +1.0 } } ;
 
-        ray.rotate(Quaternion::RotationVector(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(90.0)))) ;
+        ray.applyTransformation(Transformation::Rotation(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(90.0)))) ;
 
-        const Ray referenceRay = { { 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
+        const Ray referenceRay = { { 0.0, 0.0, 0.5 }, { 0.0, -1.0, 0.0 } } ;
 
         EXPECT_TRUE(ray.getOrigin().isNear(referenceRay.getOrigin(), Real::Epsilon())) ;
-        EXPECT_TRUE(ray.getDirection().isApprox(referenceRay.getDirection(), Real::Epsilon())) ;
+        EXPECT_TRUE(ray.getDirection().isNear(referenceRay.getDirection(), Real::Epsilon())) ;
 
     }
 
     {
 
-        EXPECT_ANY_THROW(Ray::Undefined().rotate(Quaternion::Undefined())) ;
-        EXPECT_ANY_THROW(Ray::Undefined().rotate(Quaternion::Unit())) ;
-        EXPECT_ANY_THROW(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).rotate(Quaternion::Undefined())) ;
+        EXPECT_ANY_THROW(Ray::Undefined().applyTransformation(Transformation::Undefined())) ;
+        EXPECT_ANY_THROW(Ray::Undefined().applyTransformation(Transformation::Identity())) ;
+        EXPECT_ANY_THROW(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).applyTransformation(Transformation::Undefined())) ;
 
     }
 

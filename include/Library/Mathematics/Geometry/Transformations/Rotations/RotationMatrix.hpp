@@ -59,6 +59,28 @@ class RotationMatrix
 
                                 RotationMatrix                              (   const   Matrix3d&                   aMatrix                                     ) ;
 
+        /// @brief              Constructor
+        ///
+        /// @param              [in] aFirstCoefficient A first coefficient
+        /// @param              [in] aSecondCoefficient A second coefficient
+        /// @param              [in] aThirdCoefficient A third coefficient
+        /// @param              [in] aFourthCoefficient A fourth coefficient
+        /// @param              [in] aFifthCoefficient A fifth coefficient
+        /// @param              [in] aSixthCoefficient A sixth coefficient
+        /// @param              [in] aSeventhCoefficient A seventh coefficient
+        /// @param              [in] aEighthCoefficient A eighth coefficient
+        /// @param              [in] aNinthCoefficient A ninth coefficient
+
+                                RotationMatrix                              (   const   Real&                       aFirstCoefficient,
+                                                                                const   Real&                       aSecondCoefficient,
+                                                                                const   Real&                       aThirdCoefficient,
+                                                                                const   Real&                       aFourthCoefficient,
+                                                                                const   Real&                       aFifthCoefficient,
+                                                                                const   Real&                       aSixthCoefficient,
+                                                                                const   Real&                       aSeventhCoefficient,
+                                                                                const   Real&                       aEighthCoefficient,
+                                                                                const   Real&                       aNinthCoefficient                           ) ;
+
         /// @brief              Equal to operator
         ///
         /// @code

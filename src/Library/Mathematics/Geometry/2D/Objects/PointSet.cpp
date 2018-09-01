@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/PointSet.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -223,30 +224,24 @@ PointSet::ConstIterator         PointSet::end                               ( ) 
     return points_.end() ;
 }
 
-void                            PointSet::translate                         (   const   Vector2d&                   aTranslation                                )
+void                            PointSet::applyTransformation               (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aTranslation.isDefined())
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Translation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("PointSet") ;
+        throw library::core::error::runtime::Undefined("Point set") ;
     }
 
     PointSet::Container points ;
 
     for (auto& point : points_)
     {
-
-        Point translatedPoint = point ;
-
-        translatedPoint.translate(aTranslation) ;
-
-        points.insert(translatedPoint) ;
-
+        points.insert(aTransformation.applyTo(point)) ;
     }
 
     points_ = points ;

@@ -47,6 +47,10 @@ class Segment ;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @brief                      Line string
+///
+///                             A line string is a connected series of line segments.
+///
+/// @ref                        https://en.wikipedia.org/wiki/Polygonal_chain
 
 class LineString : public Object
 {
@@ -159,11 +163,11 @@ class LineString : public Object
 
         LineString::ConstIterator end                                       ( ) const ;
 
-        /// @brief              Translate line string
+        /// @brief              Apply transformation to line string
         ///
-        /// @param              [in] aTranslation A translation vector
+        /// @param              [in] aTransformation A transformation
 
-        virtual void            translate                                   (   const   Vector2d&                   aTranslation                                ) override ;
+        virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) override ;
 
         /// @brief              Constructs an empty line string
         ///

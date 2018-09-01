@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/LineString.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 
@@ -275,43 +276,45 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, ConstIterator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_LineString, Translate)
+TEST (Library_Mathematics_Geometry_3D_Objects_LineString, ApplyTransformation)
 {
 
+    using library::core::types::Real ;
+
     using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::LineString ;
+    using library::math::geom::d3::Transformation ;
+    using library::math::geom::trf::rot::RotationVector ;
+
+    // Translation
 
     {
 
         LineString lineString = { { { 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }, { 1.0, 0.0, 1.0 } } } ;
 
-        lineString.translate({ 4.0, 5.0, 6.0 }) ;
+        lineString.applyTransformation(Transformation::Translation({ 4.0, 5.0, 6.0 })) ;
 
         EXPECT_EQ(LineString({ { 4.0, 5.0, 6.0 }, { 4.0, 6.0, 6.0 }, { 5.0, 5.0, 7.0 } }), lineString) ;
 
     }
 
+    // Rotation
+
     {
 
-        EXPECT_ANY_THROW(LineString({ { 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }, { 1.0, 0.0, 1.0 } }).translate(Vector3d::Undefined())) ;
+        // [TBI]
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(LineString({ { 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }, { 1.0, 0.0, 1.0 } }).applyTransformation(Transformation::Undefined())) ;
 
     }
 
 }
-
-// TEST (Library_Mathematics_Geometry_3D_Objects_LineString, Rotate)
-// {
-
-//     using library::math::geom::d3::objects::LineString ;
-
-//     {
-
-//         FAIL() ;
-
-//     }
-
-// }
 
 TEST (Library_Mathematics_Geometry_3D_Objects_LineString, Empty)
 {

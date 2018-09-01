@@ -36,8 +36,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_PointSe
 
         .def("getSize", &PointSet::getSize)
         .def("getPointClosestTo", &PointSet::getPointClosestTo)
-        .def("translate", &PointSet::translate)
-        .def("rotate", &PointSet::rotate)
+        .def("applyTransformation", &PointSet::applyTransformation)
         
         .def("Empty", &PointSet::Empty).staticmethod("Empty")
 

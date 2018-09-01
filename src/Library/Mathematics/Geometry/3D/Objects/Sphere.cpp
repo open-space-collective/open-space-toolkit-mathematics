@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -119,12 +120,12 @@ void                            Sphere::print                               (   
 
 }
 
-void                            Sphere::translate                           (   const   Vector3d&                   aTranslation                                )
+void                            Sphere::applyTransformation                 (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aTranslation.isDefined())
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Translation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
@@ -132,24 +133,12 @@ void                            Sphere::translate                           (   
         throw library::core::error::runtime::Undefined("Sphere") ;
     }
 
-    center_ += aTranslation ;
-
-}
-        
-void                            Sphere::rotate                              (   const   Quaternion&                 aRotation                                   )
-{
-
-    if (!aRotation.isDefined())
+    if (!aTransformation.isRigid())
     {
-        throw library::core::error::runtime::Undefined("Rotation") ;
+        throw library::core::error::RuntimeError("Only rigid transformation is supported.") ;
     }
 
-    if (!this->isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Sphere") ;
-    }
-
-    // Do nothing
+    center_.applyTransformation(aTransformation) ;
 
 }
 

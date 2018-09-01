@@ -11,6 +11,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_2D_Objects_Segment_toString_overloads, library::math::geom::d2::objects::Segment::toString, 0, 2)
+
 inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Segment ( )
 {
 
@@ -36,8 +38,8 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Segment
         .def("getCenter", &Segment::getCenter)
         .def("getDirection", &Segment::getDirection)
         .def("getLength", &Segment::getLength)
-        .def("toString", &Segment::toString)
-        .def("translate", &Segment::translate)
+        .def("toString", &Segment::toString, LibraryMathematicsPy_Geometry_2D_Objects_Segment_toString_overloads())
+        .def("applyTransformation", &Segment::applyTransformation)
         
         .def("Undefined", &Segment::Undefined).staticmethod("Undefined")
 

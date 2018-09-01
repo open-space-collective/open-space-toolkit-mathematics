@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/LineString.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Segment.hpp>
 
@@ -103,7 +104,7 @@ Point                           LineString::getPointClosestTo               (   
 
     if (this->isEmpty())
     {
-        throw library::core::error::runtime::Undefined("Point set") ;
+        throw library::core::error::runtime::Undefined("Line string") ;
     }
 
     Point const* pointPtr = nullptr ;
@@ -139,7 +140,7 @@ String                          LineString::toString                        (   
         case Object::Format::Standard:
         {
 
-            String pointSetString = "[" ;
+            String lineStringString = "[" ;
 
             Index pointIndex = 0 ;
             const Size pointCount = this->getPointCount() ;
@@ -147,27 +148,27 @@ String                          LineString::toString                        (   
             for (const auto& point : points_)
             {
 
-                pointSetString += point.toString(Object::Format::Standard, aPrecision) ;
+                lineStringString += point.toString(Object::Format::Standard, aPrecision) ;
 
                 if ((pointIndex + 1) < pointCount)
                 {
-                    pointSetString += " -> " ;
+                    lineStringString += " -> " ;
                 }
 
                 pointIndex++ ;
 
             }
 
-            pointSetString += "]" ;
+            lineStringString += "]" ;
 
-            return pointSetString ;
+            return lineStringString ;
 
         }
 
         case Object::Format::WKT:
         {
 
-            String pointSetString = "LINESTRING(" ;
+            String lineStringString = "LINESTRING(" ;
 
             Index pointIndex = 0 ;
             const Size pointCount = this->getPointCount() ;
@@ -175,20 +176,20 @@ String                          LineString::toString                        (   
             for (const auto& point : points_)
             {
 
-                pointSetString += String::Format("{} {}", Real(point.x()).toString(aPrecision), Real(point.y()).toString(aPrecision)) ;
+                lineStringString += String::Format("{} {}", Real(point.x()).toString(aPrecision), Real(point.y()).toString(aPrecision)) ;
 
                 if ((pointIndex + 1) < pointCount)
                 {
-                    pointSetString += ", " ;
+                    lineStringString += ", " ;
                 }
 
                 pointIndex++ ;
 
             }
 
-            pointSetString += ")" ;
+            lineStringString += ")" ;
 
-            return pointSetString ;
+            return lineStringString ;
 
         }
 
@@ -206,7 +207,7 @@ void                            LineString::print                           (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Point Set") : void () ;
+    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Line string") : void () ;
 
     for (const auto& point : points_)
     {
@@ -227,22 +228,22 @@ LineString::ConstIterator       LineString::end                             ( ) 
     return points_.end() ;
 }
 
-void                            LineString::translate                       (   const   Vector2d&                   aTranslation                                )
+void                            LineString::applyTransformation             (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aTranslation.isDefined())
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Translation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("LineString") ;
+        throw library::core::error::runtime::Undefined("Line string") ;
     }
 
     for (auto& point : points_)
     {
-        point.translate(aTranslation) ;
+        point = aTransformation.applyTo(point) ;
     }
 
 }

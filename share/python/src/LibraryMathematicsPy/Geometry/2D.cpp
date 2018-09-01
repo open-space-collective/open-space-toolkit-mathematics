@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <LibraryMathematicsPy/Geometry/2D/Transformation.cpp>
 #include <LibraryMathematicsPy/Geometry/2D/Objects.cpp>
 #include <LibraryMathematicsPy/Geometry/2D/Object.cpp>
 
@@ -23,6 +24,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D            ( )
     
     LibraryMathematicsPy_Geometry_2D_Object() ;
     LibraryMathematicsPy_Geometry_2D_Objects() ;
+    LibraryMathematicsPy_Geometry_2D_Transformation() ;
 
 }
 

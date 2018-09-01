@@ -10,6 +10,7 @@
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
@@ -264,7 +265,8 @@ Intersection                    Pyramid::intersectionWith                   (   
         throw library::core::error::runtime::Undefined("Pyramid") ;
     }
 
-    Array<Point> intersectionPoints = Array<Point>::Empty() ;
+    Array<Point> firstIntersectionPoints = Array<Point>::Empty() ;
+    Array<Point> secondIntersectionPoints = Array<Point>::Empty() ;
 
     for (const auto& ray : this->getRaysOfLateralFaces(aDiscretizationLevel))
     {
@@ -276,17 +278,32 @@ Intersection                    Pyramid::intersectionWith                   (   
 
             if (intersection.is<Point>())
             {
-                intersectionPoints.add(intersection.as<Point>()) ;
+                firstIntersectionPoints.add(intersection.as<Point>()) ;
             }
             else if (intersection.is<PointSet>())
             {
 
                 const PointSet& pointSet = intersection.as<PointSet>() ;
 
+                bool secondIntersectionPointAdded = false ;
+
                 for (const auto& point : pointSet)
                 {
-                    intersectionPoints.add(point) ;
-                }               
+
+                    if (!secondIntersectionPointAdded)
+                    {
+                        
+                        secondIntersectionPoints.add(point) ;
+
+                        secondIntersectionPointAdded = true ;
+
+                    }
+                    else
+                    {
+                        firstIntersectionPoints.add(point) ;
+                    }
+
+                }
 
             }
 
@@ -294,9 +311,17 @@ Intersection                    Pyramid::intersectionWith                   (   
 
     }
 
-    if (!intersectionPoints.isEmpty())
+    if ((!firstIntersectionPoints.isEmpty()) && (!secondIntersectionPoints.isEmpty()) && (!onlyInSight))
     {
-        return Intersection::LineString(LineString(intersectionPoints)) ;
+        return Intersection::LineString(LineString(firstIntersectionPoints)) + Intersection::LineString(LineString(secondIntersectionPoints)) ;
+    }
+    else if (!firstIntersectionPoints.isEmpty())
+    {
+        return Intersection::LineString(LineString(firstIntersectionPoints)) ;
+    }
+    else if (!secondIntersectionPoints.isEmpty())
+    {
+        return Intersection::LineString(LineString(secondIntersectionPoints)) ;
     }
 
     return Intersection::Empty() ;
@@ -318,31 +343,13 @@ void                            Pyramid::print                              (   
     displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
-
-void                            Pyramid::translate                          (   const   Vector3d&                   aTranslation                                )
-{
-
-    if (!aTranslation.isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Translation") ;
-    }
-
-    if (!this->isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Pyramid") ;
-    }
-
-    base_.translate(aTranslation) ;
-    apex_.translate(aTranslation) ;
-
-}
         
-void                            Pyramid::rotate                             (   const   Quaternion&                 aRotation                                   )
+void                            Pyramid::applyTransformation                (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aRotation.isDefined())
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
@@ -350,10 +357,8 @@ void                            Pyramid::rotate                             (   
         throw library::core::error::runtime::Undefined("Pyramid") ;
     }
 
-    throw library::core::error::runtime::ToBeImplemented("Pyramid :: rotate") ;
-
-    // xAxis_ = aRotation * xAxis_ ;
-    // yAxis_ = aRotation * yAxis_ ;
+    base_.applyTransformation(aTransformation) ;
+    apex_.applyTransformation(aTransformation) ;
 
 }
 

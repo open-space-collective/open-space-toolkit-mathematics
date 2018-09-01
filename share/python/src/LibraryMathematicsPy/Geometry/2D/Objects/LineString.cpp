@@ -11,6 +11,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads, library::math::geom::d2::objects::LineString::toString, 0, 2)
+
 inline void                     LibraryMathematicsPy_Geometry_2D_Objects_LineString ( )
 {
 
@@ -36,12 +38,14 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_LineStr
 
         .def("getPointCount", &LineString::getPointCount)
         .def("getPointClosestTo", &LineString::getPointClosestTo)
-        .def("toString", &LineString::toString)
-        .def("translate", &LineString::translate)
+        .def("toString", &LineString::toString, LibraryMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads())
+        .def("applyTransformation", &LineString::applyTransformation)
         
         .def("Empty", &LineString::Empty).staticmethod("Empty")
 
-        .def("__iter__", boost::python::range(static_cast<LineString::ConstIterator (LineString::*)() const> (&LineString::begin), static_cast<LineString::ConstIterator (LineString::*)() const> (&LineString::end)))
+        .def("__len__", &LineString::getPointCount)
+        // .def("__getitem__", +[] (const LineString& aLineString, const size_t anIndex) -> const Point& { return aLineString.getPointAt(anIndex) ; }, return_internal_reference<>())
+        .def("__iter__", range(&LineString::begin, &LineString::end))
 
     ;
 

@@ -10,6 +10,7 @@
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationMatrix.hpp>
 #include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
@@ -885,7 +886,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetFirstAxis)
 
         EXPECT_EQ(Vector3d(1.0, 0.0, 0.0), Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).getFirstAxis()) ;
 
-        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0, Quaternion::RotationVector(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(45.0)))).getFirstAxis().isApprox(Vector3d(1.0, 1.0, 0.0).normalized(), Real::Epsilon())) ;
+        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0, Quaternion::RotationVector(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(45.0)))).getFirstAxis().isNear(Vector3d(1.0, 1.0, 0.0).normalized(), Real::Epsilon())) ;
 
     }
 
@@ -912,7 +913,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetSecondAxis)
 
         EXPECT_EQ(Vector3d(0.0, 1.0, 0.0), Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).getSecondAxis()) ;
 
-        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0, Quaternion::RotationVector(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(45.0)))).getSecondAxis().isApprox(Vector3d(-1.0, 1.0, 0.0).normalized(), Real::Epsilon())) ;
+        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0, Quaternion::RotationVector(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(45.0)))).getSecondAxis().isNear(Vector3d(-1.0, 1.0, 0.0).normalized(), Real::Epsilon())) ;
 
     }
 
@@ -939,7 +940,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetThirdAxis)
 
         EXPECT_EQ(Vector3d(0.0, 0.0, 1.0), Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).getThirdAxis()) ;
 
-        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0, Quaternion::RotationVector(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(45.0)))).getThirdAxis().isApprox(Vector3d(0.0, -1.0, 1.0).normalized(), Real::Epsilon())) ;
+        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0, Quaternion::RotationVector(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(45.0)))).getThirdAxis().isNear(Vector3d(0.0, -1.0, 1.0).normalized(), Real::Epsilon())) ;
 
     }
 
@@ -997,7 +998,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetMatrix)
                                     0.0,                1.0 / (5.0 * 5.0),  0.0,
                                     0.0,                0.0,                1.0 / (6.0 * 6.0) ;
 
-        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).getMatrix().isApprox(referenceEllipsoidMatrix, Real::Epsilon())) ;
+        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).getMatrix().isNear(referenceEllipsoidMatrix, Real::Epsilon())) ;
 
     }
 
@@ -1013,7 +1014,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetMatrix)
 
         referenceEllipsoidMatrix = referenceRotationMatrix.transpose() * referenceEllipsoidMatrix * referenceRotationMatrix ;
 
-        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0, Quaternion::RotationVector(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(45.0)))).getMatrix().isApprox(referenceEllipsoidMatrix, Real::Epsilon())) ;
+        EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0, Quaternion::RotationVector(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(45.0)))).getMatrix().isNear(referenceEllipsoidMatrix, Real::Epsilon())) ;
 
     }
 
@@ -1613,57 +1614,50 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Pyrami
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Translate)
-{
-
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-
-    {
-
-        Ellipsoid ellipsoid = { { 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0 } ;
-
-        ellipsoid.translate({ 4.0, 5.0, 6.0 }) ;
-
-        EXPECT_EQ(Ellipsoid({ 5.0, 7.0, 9.0 }, 4.0, 5.0, 6.0), ellipsoid) ;
-
-    }
-
-    {
-
-        EXPECT_ANY_THROW(Ellipsoid::Undefined().translate(Vector3d::Undefined())) ;
-        EXPECT_ANY_THROW(Ellipsoid::Undefined().translate({ 0.0, 0.0, 0.0 })) ;
-        EXPECT_ANY_THROW(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).translate(Vector3d::Undefined())) ;
-
-    }
-
-}
-
-TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Rotate)
+TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, ApplyTransformation)
 {
 
     using library::core::types::Real ;
 
+    using library::math::obj::Vector3d ;
     using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Ellipsoid ;
+    using library::math::geom::d3::Transformation ;
     using library::math::geom::trf::rot::Quaternion ;
     using library::math::geom::trf::rot::RotationVector ;
+
+    // Translation
 
     {
 
         Ellipsoid ellipsoid = { { 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0 } ;
 
-        ellipsoid.rotate(Quaternion::RotationVector(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(90.0)))) ;
+        ellipsoid.applyTransformation(Transformation::Translation({ 4.0, 5.0, 6.0 })) ;
 
-        EXPECT_EQ(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 6.0, 5.0), ellipsoid) ;
+        EXPECT_EQ(Ellipsoid({ 5.0, 7.0, 9.0 }, 4.0, 5.0, 6.0), ellipsoid) << ellipsoid ;
+
+    }
+
+    // Rotation
+
+    {
+
+        Ellipsoid ellipsoid = { { 1.0, 3.0, 0.0 }, 4.0, 5.0, 6.0 } ;
+
+        ellipsoid.applyTransformation(Transformation::Rotation(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(90.0)))) ;
+
+        const Ellipsoid referenceEllipsoid = { { 1.0, 0.0, 3.0 }, 4.0, 6.0, 5.0 } ;
+
+        EXPECT_TRUE(ellipsoid.getCenter().isNear(referenceEllipsoid.getCenter(), Real::Epsilon())) << referenceEllipsoid.getCenter().toString() << ellipsoid.getCenter().toString() ;
+        EXPECT_TRUE(ellipsoid.getMatrix().isNear(referenceEllipsoid.getMatrix(), Real::Epsilon())) << referenceEllipsoid.getMatrix().toString() << ellipsoid.getMatrix().toString() ;
 
     }
 
     {
 
-        EXPECT_ANY_THROW(Ellipsoid::Undefined().rotate(Quaternion::Undefined())) ;
-        EXPECT_ANY_THROW(Ellipsoid::Undefined().rotate(Quaternion::Unit())) ;
-        EXPECT_ANY_THROW(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).rotate(Quaternion::Undefined())) ;
+        EXPECT_ANY_THROW(Ellipsoid::Undefined().applyTransformation(Transformation::Undefined())) ;
+        EXPECT_ANY_THROW(Ellipsoid::Undefined().applyTransformation(Transformation::Identity())) ;
+        EXPECT_ANY_THROW(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).applyTransformation(Transformation::Undefined())) ;
 
     }
 

@@ -34,6 +34,12 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Con
 
     // {
 
+
+
+    // }
+
+    // {
+
     //     EXPECT_ANY_THROW(RotationMatrix({ 0.0, 0.0, 0.9 }, Angle::Degrees(45.0))) ;
     //     EXPECT_ANY_THROW(RotationMatrix({ 0.0, 0.0, 1.1 }, Angle::Degrees(45.0))) ;
 

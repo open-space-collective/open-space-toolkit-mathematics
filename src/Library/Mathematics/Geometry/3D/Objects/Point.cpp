@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -173,12 +174,12 @@ void                            Point::print                                (   
 
 }
 
-void                            Point::translate                            (   const   Vector3d&                   aTranslation                                )
+void                            Point::applyTransformation                  (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aTranslation.isDefined())
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Translation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
@@ -186,24 +187,7 @@ void                            Point::translate                            (   
         throw library::core::error::runtime::Undefined("Point") ;
     }
 
-    (*this) += aTranslation ;
-
-}
-        
-void                            Point::rotate                               (   const   Quaternion&                 aRotation                                   )
-{
-
-    if (!aRotation.isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Rotation") ;
-    }
-
-    if (!this->isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Point") ;
-    }
-
-    // Do nothing
+    (*this) = aTransformation.applyTo(*this) ;
 
 }
 

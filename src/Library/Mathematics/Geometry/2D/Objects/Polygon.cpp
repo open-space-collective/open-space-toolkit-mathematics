@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 
 #include <Library/Core/Types/String.hpp>
@@ -16,9 +17,12 @@
 #include <Library/Core/Utilities.hpp>
 
 #include <boost/geometry/io/wkt/wkt.hpp>
+#include <boost/geometry/strategies/transform/matrix_transformers.hpp>
+#include <boost/geometry/strategies/transform.hpp>
 #include <boost/geometry/geometries/polygon.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
 #include <boost/geometry.hpp>
+#include <boost/numeric/ublas/matrix.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,9 +66,9 @@ class Polygon::Impl
 
         Size                    getInnerRingCount                           ( ) const ;
 
-        Array<Point>            getOuterRingVertices                        ( ) const ;
+        Array<Polygon::Vertex>  getOuterRingVertices                        ( ) const ;
 
-        Array<Point>            getInnerRingVerticesAt                      (   const   Index&                      aRingIndex                                  ) const ;
+        Array<Polygon::Vertex>  getInnerRingVerticesAt                      (   const   Index&                      aRingIndex                                  ) const ;
         
         Size                    getEdgeCount                                ( ) const ;
 
@@ -72,18 +76,22 @@ class Polygon::Impl
 
         Size                    getVertexCount                              ( ) const ;
 
-        Segment                 getEdgeAt                                   (   const   Index                       anEdgeIndex                                 ) const ;
+        Polygon::Ring           getOuterRing                                ( ) const ;
 
-        Point                   getVertexAt                                 (   const   Index                       aVertexIndex                                ) const ;
+        Polygon::Ring           getInnerRingAt                              (   const   Index&                      anInnerRingIndex                            ) const ;
 
-        Array<Segment>          getEdges                                    ( ) const ;
+        Polygon::Edge           getEdgeAt                                   (   const   Index                       anEdgeIndex                                 ) const ;
 
-        Array<Point>            getVertices                                 ( ) const ;
+        Polygon::Vertex         getVertexAt                                 (   const   Index                       aVertexIndex                                ) const ;
+
+        Array<Polygon::Edge>    getEdges                                    ( ) const ;
+
+        Array<Polygon::Vertex>  getVertices                                 ( ) const ;
 
         String                  toString                                    (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const ;
         
-        void                    translate                                   (   const   Vector2d&                   aTranslation                                ) ;
+        void                    applyTransformation                         (   const   Transformation&             aTransformation                             ) ;
 
     private:
 
@@ -104,8 +112,13 @@ class Polygon::Impl
                                 :   polygon_(Polygon::Impl::BoostPolygonFromPoints(anOuterRing))
 {
 
-    for (const auto& innerRing : anInnerRingArray) // [TBM] This is temporary, should construct inline instead
+    for (const auto& innerRing : anInnerRingArray) // [TBM] This is temporary, should be constructed inline instead
     {
+
+        if (innerRing.getSize() < 3)
+        {
+            throw library::core::error::RuntimeError("At least 3 points are necessary to define an inner ring.") ;
+        }
 
         Polygon::Impl::BoostRing ring ;
 
@@ -113,6 +126,8 @@ class Polygon::Impl
         {
             boost::geometry::append(ring, Polygon::Impl::BoostPoint(innerRingPoint.x(), innerRingPoint.y())) ;
         }
+
+        boost::geometry::correct(ring) ;
 
         polygon_.inners().push_back(ring) ;
 
@@ -135,10 +150,10 @@ Size                            Polygon::Impl::getInnerRingCount            ( ) 
     return polygon_.inners().size() ;
 }
 
-Array<Point>                    Polygon::Impl::getOuterRingVertices         ( ) const
+Array<Polygon::Vertex>          Polygon::Impl::getOuterRingVertices         ( ) const
 {
 
-    if (polygon_.outer().size() == 0)
+    if (polygon_.outer().empty())
     {
         return Array<Point>::Empty() ;
     }
@@ -154,7 +169,7 @@ Array<Point>                    Polygon::Impl::getOuterRingVertices         ( ) 
 
 }
 
-Array<Point>                    Polygon::Impl::getInnerRingVerticesAt       (   const   Index&                      aRingIndex                                  ) const
+Array<Polygon::Vertex>          Polygon::Impl::getInnerRingVerticesAt       (   const   Index&                      aRingIndex                                  ) const
 {
 
     if (aRingIndex >= this->getInnerRingCount())
@@ -162,7 +177,7 @@ Array<Point>                    Polygon::Impl::getInnerRingVerticesAt       (   
         throw library::core::error::RuntimeError("Inner ring index [{}] out of bounds [{}].", aRingIndex, this->getInnerRingCount()) ;
     }
 
-    if (polygon_.inners().at(aRingIndex).size() == 0)
+    if (polygon_.inners().at(aRingIndex).empty())
     {
         return Array<Point>::Empty() ;
     }
@@ -202,7 +217,35 @@ Size                            Polygon::Impl::getVertexCount               ( ) 
     return boost::geometry::num_points(polygon_) - (1 + this->getInnerRingCount()) ;
 }
 
-Segment                         Polygon::Impl::getEdgeAt                    (   const   Index                       anEdgeIndex                                 ) const
+Polygon::Ring                   Polygon::Impl::getOuterRing                 ( ) const
+{
+
+    Array<Point> ringVertices = this->getOuterRingVertices() ;
+
+    if (!ringVertices.isEmpty())
+    {
+        ringVertices.add(ringVertices[0]) ;
+    }
+    
+    return { ringVertices } ;
+
+}
+
+Polygon::Ring                   Polygon::Impl::getInnerRingAt               (   const   Index&                      anInnerRingIndex                            ) const
+{
+
+    Array<Point> ringVertices = this->getInnerRingVerticesAt(anInnerRingIndex) ;
+
+    if (!ringVertices.isEmpty())
+    {
+        ringVertices.add(ringVertices[0]) ;
+    }
+    
+    return { ringVertices } ;
+
+}
+
+Polygon::Edge                   Polygon::Impl::getEdgeAt                    (   const   Index                       anEdgeIndex                                 ) const
 {
 
     if (anEdgeIndex >= this->getEdgeCount())
@@ -222,7 +265,7 @@ Segment                         Polygon::Impl::getEdgeAt                    (   
 
 }
 
-Point                           Polygon::Impl::getVertexAt                  (   const   Index                       aVertexIndex                                ) const
+Polygon::Vertex                 Polygon::Impl::getVertexAt                  (   const   Index                       aVertexIndex                                ) const
 {
 
     if (aVertexIndex >= (boost::geometry::num_points(polygon_) - 1))
@@ -239,10 +282,10 @@ Point                           Polygon::Impl::getVertexAt                  (   
 
 }
 
-Array<Segment>                  Polygon::Impl::getEdges                     ( ) const
+Array<Polygon::Edge>            Polygon::Impl::getEdges                     ( ) const
 {
 
-    Array<Segment> edges = Array<Segment>::Empty() ;
+    Array<Polygon::Edge> edges = Array<Polygon::Edge>::Empty() ;
 
     edges.reserve(this->getEdgeCount()) ;
 
@@ -255,10 +298,10 @@ Array<Segment>                  Polygon::Impl::getEdges                     ( ) 
 
 }
 
-Array<Point>                    Polygon::Impl::getVertices                  ( ) const
+Array<Polygon::Vertex>          Polygon::Impl::getVertices                  ( ) const
 {
 
-    Array<Point> vertices = Array<Point>::Empty() ;
+    Array<Polygon::Vertex> vertices = Array<Polygon::Vertex>::Empty() ;
 
     for (const auto& vertex : this->getOuterRingVertices())
     {
@@ -313,14 +356,20 @@ String                          Polygon::Impl::toString                     (   
 
 }
 
-void                            Polygon::Impl::translate                    (   const   Vector2d&                   aTranslation                                )
+void                            Polygon::Impl::applyTransformation          (   const   Transformation&             aTransformation                             )
 {
+
+    using library::math::obj::Matrix3d ;
 
     Polygon::Impl::BoostPolygon transformedPolygon ;
 
-    boost::geometry::strategy::transform::translate_transformer<double, 2, 2> translate(aTranslation.x(), aTranslation.y()) ;
-    
-    boost::geometry::transform(polygon_, transformedPolygon, translate) ;
+    const Matrix3d transformationMatrix = aTransformation.getMatrix() ;
+
+    const boost::geometry::strategy::transform::matrix_transformer<double, 2, 2> transform = { transformationMatrix(0, 0), transformationMatrix(0, 1), transformationMatrix(0, 2),
+                                                                                               transformationMatrix(1, 0), transformationMatrix(1, 1), transformationMatrix(1, 2),
+                                                                                               transformationMatrix(2, 0), transformationMatrix(2, 1), transformationMatrix(2, 2) } ;
+
+    boost::geometry::transform(polygon_, transformedPolygon, transform) ;
 
     polygon_ = transformedPolygon ;
 
@@ -328,6 +377,11 @@ void                            Polygon::Impl::translate                    (   
 
 Polygon::Impl::BoostPolygon     Polygon::Impl::BoostPolygonFromPoints       (   const   Array<Point>&               aPointArray                                 )
 {
+
+    if ((!aPointArray.isEmpty()) && (aPointArray.getSize() < 3))
+    {
+        throw library::core::error::RuntimeError("At least 3 points are necessary to define a polygon.") ;
+    }
 
     Polygon::Impl::BoostPolygon polygon ;
 
@@ -407,6 +461,18 @@ bool                            Polygon::isDefined                          ( ) 
     return (implUPtr_ != nullptr) && implUPtr_->isDefined() ;
 }
 
+Size                            Polygon::getInnerRingCount                  ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->getInnerRingCount() ;
+
+}
+
 Size                            Polygon::getEdgeCount                       ( ) const
 {
 
@@ -431,7 +497,31 @@ Size                            Polygon::getVertexCount                     ( ) 
 
 }
 
-Segment                         Polygon::getEdgeAt                          (   const   Index                       anEdgeIndex                                 ) const
+Polygon::Ring                   Polygon::getOuterRing                       ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->getOuterRing() ;
+    
+}
+
+Polygon::Ring                   Polygon::getInnerRingAt                     (   const   Index&                      anInnerRingIndex                            ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->getInnerRingAt(anInnerRingIndex) ;
+    
+}
+
+Polygon::Edge                   Polygon::getEdgeAt                          (   const   Index                       anEdgeIndex                                 ) const
 {
 
     if (!this->isDefined())
@@ -443,7 +533,7 @@ Segment                         Polygon::getEdgeAt                          (   
 
 }
 
-Point                           Polygon::getVertexAt                        (   const   Index                       aVertexIndex                                ) const
+Polygon::Vertex                 Polygon::getVertexAt                        (   const   Index                       aVertexIndex                                ) const
 {
 
     if (!this->isDefined())
@@ -455,7 +545,7 @@ Point                           Polygon::getVertexAt                        (   
 
 }
 
-Array<Segment>                  Polygon::getEdges                           ( ) const
+Array<Polygon::Edge>            Polygon::getEdges                           ( ) const
 {
 
     if (!this->isDefined())
@@ -467,7 +557,7 @@ Array<Segment>                  Polygon::getEdges                           ( ) 
 
 }
 
-Array<Point>                    Polygon::getVertices                        ( ) const
+Array<Polygon::Vertex>          Polygon::getVertices                        ( ) const
 {
 
     if (!this->isDefined())
@@ -541,12 +631,12 @@ String                          Polygon::toString                           (   
 
 }
 
-void                            Polygon::translate                          (   const   Vector2d&                   aTranslation                                )
+void                            Polygon::applyTransformation                (   const   Transformation&             aTransformation                             )
 {
 
-    if (!aTranslation.isDefined())
+    if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Translation") ;
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
@@ -554,7 +644,7 @@ void                            Polygon::translate                          (   
         throw library::core::error::runtime::Undefined("Polygon") ;
     }
 
-    implUPtr_->translate(aTranslation) ;
+    implUPtr_->applyTransformation(aTransformation) ;
 
 }
 

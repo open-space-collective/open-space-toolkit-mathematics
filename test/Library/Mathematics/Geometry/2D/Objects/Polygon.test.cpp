@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 
 #include <Global.test.hpp>
@@ -18,12 +19,11 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Constructor)
 
     using library::core::ctnr::Array ;
     
-    using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::objects::Polygon ;
 
     {
 
-        const Array<Point> vertices =
+        const Array<Polygon::Vertex> vertices =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -37,7 +37,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Constructor)
 
     {
 
-        const Array<Point> outerRing =
+        const Array<Polygon::Vertex> outerRing =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -45,7 +45,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Constructor)
             { 1.0, 0.0 }
         } ;
 
-        const Array<Array<Point>> innerRings =
+        const Array<Array<Polygon::Vertex>> innerRings =
         {
             {
                 { 0.0, 0.0 },
@@ -67,7 +67,59 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Constructor)
 
     {
 
-        EXPECT_NO_THROW(Polygon({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 }})) ;
+        EXPECT_NO_THROW(Polygon({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } })) ;
+
+    }
+
+    {
+
+        const Array<Polygon::Vertex> vertexArray = Array<Polygon::Vertex>::Empty() ;
+
+        EXPECT_NO_THROW(Polygon polygon(vertexArray) ;) ;
+
+    }
+
+    {
+
+        const Array<Polygon::Vertex> vertexArray = { { 0.0, 0.0 } } ;
+
+        EXPECT_ANY_THROW(Polygon polygon(vertexArray) ;) ;
+
+    }
+
+    {
+
+        const Array<Polygon::Vertex> vertexArray = { { 0.0, 0.0 }, { 0.0, 1.0 } } ;
+
+        EXPECT_ANY_THROW(Polygon polygon(vertexArray) ;) ;
+
+    }
+
+    {
+
+        const Array<Polygon::Vertex> outerRing =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Array<Array<Polygon::Vertex>> innerRings =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.5 },
+                { 0.5, 0.5 },
+                { 0.5, 0.0 }
+            },
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.1 }
+            }
+        } ;
+
+        EXPECT_ANY_THROW(Polygon polygon(outerRing, innerRings) ;) ;
 
     }
 
@@ -78,12 +130,11 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Clone)
 
     using library::core::ctnr::Array ;
     
-    using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::objects::Polygon ;
 
     {
 
-        const Array<Point> vertices =
+        const Array<Polygon::Vertex> vertices =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -102,12 +153,11 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, EqualToOperator)
 
     using library::core::ctnr::Array ;
     
-    using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::objects::Polygon ;
     
     {
 
-        const Array<Point> vertices =
+        const Array<Polygon::Vertex> vertices =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -121,7 +171,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, EqualToOperator)
 
     {
 
-        const Array<Point> vertices_A =
+        const Array<Polygon::Vertex> vertices_A =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -129,7 +179,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, EqualToOperator)
             { 1.0, 0.0 }
         } ;
 
-        const Array<Point> vertices_B =
+        const Array<Polygon::Vertex> vertices_B =
         {
             { 1.0, 0.0 },
             { 0.0, 0.0 },
@@ -143,7 +193,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, EqualToOperator)
 
     {
 
-        const Array<Point> vertices_A =
+        const Array<Polygon::Vertex> vertices_A =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -151,7 +201,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, EqualToOperator)
             { 1.0, 0.0 }
         } ;
 
-        const Array<Point> vertices_B =
+        const Array<Polygon::Vertex> vertices_B =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -165,7 +215,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, EqualToOperator)
 
     {
 
-        const Array<Point> vertices =
+        const Array<Polygon::Vertex> vertices =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -186,12 +236,11 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, NotEqualToOperator)
 
     using library::core::ctnr::Array ;
     
-    using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::objects::Polygon ;
     
     {
 
-        const Array<Point> vertices =
+        const Array<Polygon::Vertex> vertices =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -205,7 +254,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, NotEqualToOperator)
 
     {
 
-        const Array<Point> vertices_A =
+        const Array<Polygon::Vertex> vertices_A =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -213,7 +262,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, NotEqualToOperator)
             { 1.0, 0.0 }
         } ;
 
-        const Array<Point> vertices_B =
+        const Array<Polygon::Vertex> vertices_B =
         {
             { 1.0, 0.0 },
             { 0.0, 0.0 },
@@ -227,7 +276,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, NotEqualToOperator)
 
     {
 
-        const Array<Point> vertices_A =
+        const Array<Polygon::Vertex> vertices_A =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -235,7 +284,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, NotEqualToOperator)
             { 1.0, 0.0 }
         } ;
 
-        const Array<Point> vertices_B =
+        const Array<Polygon::Vertex> vertices_B =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -249,7 +298,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, NotEqualToOperator)
 
     {
 
-        const Array<Point> vertices =
+        const Array<Polygon::Vertex> vertices =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -270,14 +319,13 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, StreamOperator)
 
     using library::core::ctnr::Array ;
     
-    using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::objects::Polygon ;
     
     {
 
         testing::internal::CaptureStdout() ;
 
-        const Array<Point> vertices =
+        const Array<Polygon::Vertex> vertices =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -298,12 +346,11 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IsDefined)
 
     using library::core::ctnr::Array ;
     
-    using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::objects::Polygon ;
     
     {
 
-        const Array<Point> vertices =
+        const Array<Polygon::Vertex> vertices =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -323,17 +370,508 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IsDefined)
 
 }
 
+TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingCount)
+{
+
+    using library::core::ctnr::Array ;
+
+    using library::math::geom::d2::objects::Polygon ;
+
+    {
+
+        const Array<Polygon::Vertex> vertices =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Polygon polygon = { vertices } ;
+
+        EXPECT_EQ(0, polygon.getInnerRingCount()) ;
+
+    }
+
+    {
+
+        const Array<Polygon::Vertex> outerRing =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Array<Array<Polygon::Vertex>> innerRings =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.5 },
+                { 0.5, 0.5 },
+                { 0.5, 0.0 }
+            },
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.1 },
+                { 0.1, 0.1 },
+                { 0.1, 0.0 }
+            }
+        } ;
+
+        const Polygon polygon = { outerRing, innerRings } ;
+
+        EXPECT_EQ(2, polygon.getInnerRingCount()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Polygon::Undefined().getInnerRingCount()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetEdgeCount)
+{
+
+    using library::core::ctnr::Array ;
+
+    using library::math::geom::d2::objects::Polygon ;
+
+    {
+
+        const Array<Polygon::Vertex> vertices =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Polygon polygon = { vertices } ;
+
+        EXPECT_EQ(4, polygon.getEdgeCount()) ;
+
+    }
+
+    {
+
+        const Array<Polygon::Vertex> outerRing =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Array<Array<Polygon::Vertex>> innerRings =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.5 },
+                { 0.5, 0.5 },
+                { 0.5, 0.0 }
+            },
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.1 },
+                { 0.1, 0.1 },
+                { 0.1, 0.0 }
+            }
+        } ;
+
+        const Polygon polygon = { outerRing, innerRings } ;
+
+        EXPECT_EQ(12, polygon.getEdgeCount()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Polygon::Undefined().getEdgeCount()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertexCount)
+{
+
+    using library::core::ctnr::Array ;
+
+    using library::math::geom::d2::objects::Polygon ;
+
+    {
+
+        const Array<Polygon::Vertex> vertices =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Polygon polygon = { vertices } ;
+
+        EXPECT_EQ(4, polygon.getVertexCount()) ;
+
+    }
+
+    {
+
+        const Array<Polygon::Vertex> outerRing =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Array<Array<Polygon::Vertex>> innerRings =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.5 },
+                { 0.5, 0.5 },
+                { 0.5, 0.0 }
+            },
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.1 },
+                { 0.1, 0.1 },
+                { 0.1, 0.0 }
+            }
+        } ;
+
+        const Polygon polygon = { outerRing, innerRings } ;
+
+        EXPECT_EQ(12, polygon.getVertexCount()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Polygon::Undefined().getVertexCount()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetOuterRing)
+{
+
+    using library::core::ctnr::Array ;
+
+    using library::math::geom::d2::objects::Polygon ;
+
+    {
+
+        const Array<Polygon::Vertex> vertices =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Polygon polygon = { vertices } ;
+
+        const Polygon::Ring referenceOuterRing =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 1.0 },
+                { 1.0, 1.0 },
+                { 1.0, 0.0 },
+                { 0.0, 0.0 }
+            }
+        } ;
+
+        EXPECT_EQ(referenceOuterRing, polygon.getOuterRing()) ;
+
+    }
+
+    {
+
+        const Array<Polygon::Vertex> outerRing =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Array<Array<Polygon::Vertex>> innerRings =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.5 },
+                { 0.5, 0.5 },
+                { 0.5, 0.0 }
+            },
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.1 },
+                { 0.1, 0.1 },
+                { 0.1, 0.0 }
+            }
+        } ;
+
+        const Polygon polygon = { outerRing, innerRings } ;
+
+        const Polygon::Ring referenceOuterRing =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 1.0 },
+                { 1.0, 1.0 },
+                { 1.0, 0.0 },
+                { 0.0, 0.0 }
+            }
+        } ;
+
+        EXPECT_EQ(referenceOuterRing, polygon.getOuterRing()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Polygon::Undefined().getOuterRing()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingAt)
+{
+
+    using library::core::ctnr::Array ;
+
+    using library::math::geom::d2::objects::Polygon ;
+
+    {
+
+        const Array<Polygon::Vertex> vertices =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Polygon polygon = { vertices } ;
+
+        EXPECT_ANY_THROW(polygon.getInnerRingAt(0)) ;
+
+    }
+
+    {
+
+        const Array<Polygon::Vertex> outerRing =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Array<Array<Polygon::Vertex>> innerRings =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.5 },
+                { 0.5, 0.5 },
+                { 0.5, 0.0 }
+            },
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.1 },
+                { 0.1, 0.1 },
+                { 0.1, 0.0 }
+            }
+        } ;
+
+        const Polygon polygon = { outerRing, innerRings } ;
+
+        const Polygon::Ring referenceFirstInnerRing =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.5 },
+                { 0.5, 0.5 },
+                { 0.5, 0.0 },
+                { 0.0, 0.0 }
+            }
+        } ;
+
+        EXPECT_EQ(referenceFirstInnerRing, polygon.getInnerRingAt(0)) ;
+
+        const Polygon::Ring referenceSecondInnerRing =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 0.1 },
+                { 0.1, 0.1 },
+                { 0.1, 0.0 },
+                { 0.0, 0.0 }
+            }
+        } ;
+
+        EXPECT_EQ(referenceSecondInnerRing, polygon.getInnerRingAt(1)) ;
+        
+        EXPECT_ANY_THROW(polygon.getInnerRingAt(2)) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Polygon::Undefined().getInnerRingAt(0)) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetEdgeAt)
+{
+
+    using library::core::ctnr::Array ;
+
+    using library::math::geom::d2::objects::Polygon ;
+
+    {
+
+        const Array<Polygon::Vertex> vertices =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Polygon polygon = { vertices } ;
+
+        EXPECT_EQ(Polygon::Edge({ 0.0, 0.0 }, { 0.0, 1.0 }), polygon.getEdgeAt(0)) ;
+        EXPECT_EQ(Polygon::Edge({ 0.0, 1.0 }, { 1.0, 1.0 }), polygon.getEdgeAt(1)) ;
+        EXPECT_EQ(Polygon::Edge({ 1.0, 1.0 }, { 1.0, 0.0 }), polygon.getEdgeAt(2)) ;
+        EXPECT_EQ(Polygon::Edge({ 1.0, 0.0 }, { 0.0, 0.0 }), polygon.getEdgeAt(3)) ;
+
+        EXPECT_ANY_THROW(polygon.getEdgeAt(4)) ;
+
+    }
+
+    {
+
+        // [TBI] Inner ring support
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Polygon::Undefined().getEdgeAt(0)) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertexAt)
+{
+
+    using library::core::ctnr::Array ;
+
+    using library::math::geom::d2::objects::Polygon ;
+
+    {
+
+        const Array<Polygon::Vertex> vertices =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Polygon polygon = { vertices } ;
+
+        EXPECT_EQ(Polygon::Vertex(0.0, 0.0), polygon.getVertexAt(0)) ;
+        EXPECT_EQ(Polygon::Vertex(0.0, 1.0), polygon.getVertexAt(1)) ;
+        EXPECT_EQ(Polygon::Vertex(1.0, 1.0), polygon.getVertexAt(2)) ;
+        EXPECT_EQ(Polygon::Vertex(1.0, 0.0), polygon.getVertexAt(3)) ;
+
+        EXPECT_ANY_THROW(polygon.getVertexAt(4)) ;
+
+    }
+
+    {
+
+        // [TBI] Inner ring support
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Polygon::Undefined().getVertexAt(0)) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetEdges)
+{
+
+    using library::core::ctnr::Array ;
+
+    using library::math::geom::d2::objects::Polygon ;
+
+    {
+
+        const Array<Polygon::Vertex> vertices =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Polygon polygon = { vertices } ;
+
+        const Array<Polygon::Edge> referencePolygonEdges =
+        {
+            Polygon::Edge({ 0.0, 0.0 }, { 0.0, 1.0 }),
+            Polygon::Edge({ 0.0, 1.0 }, { 1.0, 1.0 }),
+            Polygon::Edge({ 1.0, 1.0 }, { 1.0, 0.0 }),
+            Polygon::Edge({ 1.0, 0.0 }, { 0.0, 0.0 })
+        } ;
+
+        EXPECT_EQ(referencePolygonEdges, polygon.getEdges()) ;
+
+    }
+
+    {
+
+        // [TBI] Inner ring support
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Polygon::Undefined().getEdges()) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 {
 
     using library::core::ctnr::Array ;
     
-    using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::objects::Polygon ;
 
     {
 
-        const Array<Point> vertices =
+        const Array<Polygon::Vertex> vertices =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -359,12 +897,11 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ToString)
     using library::core::ctnr::Array ;
     
     using library::math::obj::Vector2d ;
-    using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::objects::Polygon ;
 
     {
 
-        const Array<Point> vertices =
+        const Array<Polygon::Vertex> vertices =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -380,7 +917,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ToString)
 
     {
 
-        const Array<Point> vertices =
+        const Array<Polygon::Vertex> vertices =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -395,7 +932,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ToString)
 
     {
 
-        const Array<Point> outerRing =
+        const Array<Polygon::Vertex> outerRing =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -403,7 +940,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ToString)
             { 1.0, 0.0 }
         } ;
 
-        const Array<Array<Point>> innerRings =
+        const Array<Array<Polygon::Vertex>> innerRings =
         {
             {
                 { 0.0, 0.0 },
@@ -433,18 +970,20 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ToString)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Translate)
+TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ApplyTransformation)
 {
 
     using library::core::ctnr::Array ;
     
     using library::math::obj::Vector2d ;
-    using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::objects::Polygon ;
+    using library::math::geom::d2::Transformation ;
+
+    // Translation
 
     {
 
-        const Array<Point> vertices =
+        const Array<Polygon::Vertex> vertices =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -454,15 +993,15 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Translate)
 
         Polygon polygon = { vertices } ;
 
-        polygon.translate({ 4.0, 5.0 }) ;
+        polygon.applyTransformation(Transformation::Translation({ 4.0, 5.0 })) ;
 
-        EXPECT_EQ(Polygon({ { 4.0, 5.0 }, { 4.0, 6.0 }, { 5.0, 6.0 }, { 5.0, 5.0 }}), polygon) ;
+        EXPECT_EQ(Polygon({ { 4.0, 5.0 }, { 4.0, 6.0 }, { 5.0, 6.0 }, { 5.0, 5.0 } }), polygon) ;
 
     }
 
     {
 
-        const Array<Point> vertices =
+        const Array<Polygon::Vertex> vertices =
         {
             { 0.0, 0.0 },
             { 0.0, 1.0 },
@@ -470,9 +1009,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Translate)
             { 1.0, 0.0 }
         } ;
 
-        EXPECT_ANY_THROW(Polygon::Undefined().translate(Vector2d::Undefined())) ;
-        EXPECT_ANY_THROW(Polygon::Undefined().translate({ 0.0, 0.0 })) ;
-        EXPECT_ANY_THROW(Polygon(vertices).translate(Vector2d::Undefined())) ;
+        EXPECT_ANY_THROW(Polygon::Undefined().applyTransformation(Transformation::Undefined())) ;
+        EXPECT_ANY_THROW(Polygon::Undefined().applyTransformation(Transformation::Identity())) ;
+        EXPECT_ANY_THROW(Polygon(vertices).applyTransformation(Transformation::Undefined())) ;
 
     }
 
