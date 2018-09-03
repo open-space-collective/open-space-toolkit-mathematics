@@ -74,7 +74,9 @@ String \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_a7e2
 \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_a596228c41391cbba85ca425d9c7c3dbd}{inverse} ()
 \begin{DoxyCompactList}\small\item\em Inverse quaternion. \end{DoxyCompactList}\item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_a41cbb9a19380bd08110455190a0a9770}{rectify} ()
-\begin{DoxyCompactList}\small\item\em Rectify quaternion (enforce positive scalar part) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Rectify quaternion (enforce positive scalar part) \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_a82c585870a5c5833ae8869c8e193d94a}{angular\+Difference\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Quaternion) const
+\begin{DoxyCompactList}\small\item\em Get angular difference with quaternion. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -208,6 +210,31 @@ Constructor.
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_a82c585870a5c5833ae8869c8e193d94a}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_a82c585870a5c5833ae8869c8e193d94a}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion}!angular\+Difference\+With@{angular\+Difference\+With}}
+\index{angular\+Difference\+With@{angular\+Difference\+With}!library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{angular\+Difference\+With()}{angularDifferenceWith()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion\+::angular\+Difference\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Quaternion }\end{DoxyParamCaption}) const}
+
+
+
+Get angular difference with quaternion. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_afff9523c7dcbfbbc521736121e62ad41}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.0).\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_a82c585870a5c5833ae8869c8e193d94a}{angularDifferenceWith}(
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_afff9523c7dcbfbbc521736121e62ad41}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.0)) ; \textcolor{comment}{// 0.0 [rad]}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Angular difference 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_a4c584b96ce248b069a85adb1c5abd74c}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion_a4c584b96ce248b069a85adb1c5abd74c}} 
 \index{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion}!conjugate@{conjugate}}
 \index{conjugate@{conjugate}!library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::trf\+::rot\+::\+Quaternion}}
@@ -984,7 +1011,7 @@ std::cout << \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternio
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-An output stream 
+A reference to output stream 
 \end{DoxyReturn}
 
 

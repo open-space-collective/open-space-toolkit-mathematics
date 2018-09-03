@@ -1,10 +1,24 @@
 \hypertarget{_ellipsoid_8cpp}{}\section{src/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\+Ellipsoid.cpp File Reference}
 \label{_ellipsoid_8cpp}\index{src/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\+Ellipsoid.\+cpp@{src/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\+Ellipsoid.\+cpp}}
+{\ttfamily \#include $<$Library/\+Mathematics/\+Geometry/\+Transformations/\+Rotations/\+Rotation\+Matrix.\+hpp$>$}\newline
+{\ttfamily \#include $<$Library/\+Mathematics/\+Geometry/3\+D/\+Transformation.\+hpp$>$}\newline
+{\ttfamily \#include $<$Library/\+Mathematics/\+Geometry/3\+D/\+Intersection.\+hpp$>$}\newline
+{\ttfamily \#include $<$Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\+Pyramid.\+hpp$>$}\newline
 {\ttfamily \#include $<$Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\+Ellipsoid.\+hpp$>$}\newline
+{\ttfamily \#include $<$Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\+Sphere.\+hpp$>$}\newline
 {\ttfamily \#include $<$Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\+Segment.\+hpp$>$}\newline
+{\ttfamily \#include $<$Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\+Ray.\+hpp$>$}\newline
+{\ttfamily \#include $<$Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\+Line.\+hpp$>$}\newline
+{\ttfamily \#include $<$Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\+Point\+Set.\+hpp$>$}\newline
 {\ttfamily \#include $<$Library/\+Mathematics/\+Objects/\+Interval.\+hpp$>$}\newline
 {\ttfamily \#include $<$Library/\+Core/\+Error.\+hpp$>$}\newline
 {\ttfamily \#include $<$Library/\+Core/\+Utilities.\+hpp$>$}\newline
+{\ttfamily \#include $<$Gte/\+Mathematics/\+Gte\+Intr\+Ellipsoid3\+Ellipsoid3.\+h$>$}\newline
+{\ttfamily \#include $<$Gte/\+Mathematics/\+Gte\+Intr\+Plane3\+Ellipsoid3.\+h$>$}\newline
+{\ttfamily \#include $<$Gte/\+Mathematics/\+Gte\+Intr\+Segment3\+Ellipsoid3.\+h$>$}\newline
+{\ttfamily \#include $<$Gte/\+Mathematics/\+Gte\+Intr\+Ray3\+Ellipsoid3.\+h$>$}\newline
+{\ttfamily \#include $<$Gte/\+Mathematics/\+Gte\+Intr\+Line3\+Ellipsoid3.\+h$>$}\newline
+{\ttfamily \#include $<$Eigen/\+Eigenvalues$>$}\newline
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,7 +35,9 @@
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::ostream \& \hyperlink{namespacelibrary_1_1math_1_1geom_1_1d3_1_1objects_afec709c8a129bead70ffe69d72138f20}{library\+::math\+::geom\+::d3\+::objects\+::operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const Ellipsoid \&an\+Ellipsoid)
+gte\+::\+Vector3$<$ double $>$ \hyperlink{namespacelibrary_1_1math_1_1geom_1_1d3_1_1objects_ab253aeb9c4d372b3379e95e15711a98f}{library\+::math\+::geom\+::d3\+::objects\+::\+Gte\+Vector\+From\+Vector3d} (const Vector3d \&a\+Vector)
+\item 
+Vector3d \hyperlink{namespacelibrary_1_1math_1_1geom_1_1d3_1_1objects_a17fdd18d6c2bcacf17c9c1716f99609c}{library\+::math\+::geom\+::d3\+::objects\+::\+Vector3d\+From\+Gte\+Vector} (const gte\+::\+Vector3$<$ double $>$ \&a\+Vector)
 \end{DoxyCompactItemize}
 
 

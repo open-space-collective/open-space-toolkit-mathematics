@@ -15,10 +15,21 @@ Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d2\+:\+:objects\+:\+:Po
 \includegraphics[height=2.000000cm]{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}
 \end{center}
 \end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a1559cddbcb23d41f2be9e389b0ccd127}{Vertex}
+\item 
+typedef \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment}{Segment} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a17e3083d71685e16f3244298e6f44ad9}{Edge}
+\item 
+typedef \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string}{Line\+String} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa543e7078b73e1d307ca8317d765cd9c}{Ring}
+\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ad2a0b0bcd5301dbcd9e2fa101fbd220b}{Polygon} (const Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} $>$ \&an\+Outer\+Ring, const Array$<$ Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} $>$$>$ \&an\+Inner\+Ring\+Array=Array$<$ Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} $>$$>$\+::Empty())
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa4027d2fb87cf861743dddade057f73d}{Polygon} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa543e7078b73e1d307ca8317d765cd9c}{Polygon\+::\+Ring} \&an\+Outer\+Ring, const Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa543e7078b73e1d307ca8317d765cd9c}{Polygon\+::\+Ring} $>$ \&an\+Inner\+Ring\+Array=Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa543e7078b73e1d307ca8317d765cd9c}{Polygon\+::\+Ring} $>$\+::Empty())
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a6384fadfb81c792d137693e8f0dd14f9}{Polygon} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} \&a\+Polygon)
 \begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
@@ -34,34 +45,70 @@ bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a904fe
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a83e0962f91f0732048e156ad634faaea}{is\+Defined} () const override
 \begin{DoxyCompactList}\small\item\em Check if polygon is defined. \end{DoxyCompactList}\item 
-Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} $>$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_acc13539129eb98b4b77ebd33ad002d4f}{get\+Vertices} () const
+Size \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a20d245deda49667f0418591d7772d53d}{get\+Inner\+Ring\+Count} () const
+\begin{DoxyCompactList}\small\item\em Get number of inner rings. \end{DoxyCompactList}\item 
+Size \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ac01b8f978e663f09ef0f7a91de7720ce}{get\+Edge\+Count} () const
+\begin{DoxyCompactList}\small\item\em Get edge count. \end{DoxyCompactList}\item 
+Size \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aece2a526c36bbd641588e9742228fb08}{get\+Vertex\+Count} () const
+\begin{DoxyCompactList}\small\item\em Get vertex count. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa543e7078b73e1d307ca8317d765cd9c}{Polygon\+::\+Ring} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a3074bceaa8841e79c843d46377195a0d}{get\+Outer\+Ring} () const
+\begin{DoxyCompactList}\small\item\em Get outer ring. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa543e7078b73e1d307ca8317d765cd9c}{Polygon\+::\+Ring} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ad6014927b89b109098b60861213ea9ed}{get\+Inner\+Ring\+At} (const Index \&an\+Inner\+Ring\+Index) const
+\begin{DoxyCompactList}\small\item\em Get inner ring at index. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a17e3083d71685e16f3244298e6f44ad9}{Polygon\+::\+Edge} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a92d93fe3b0f2d2b17b393475f3e1c090}{get\+Edge\+At} (const Index an\+Edge\+Index) const
+\begin{DoxyCompactList}\small\item\em Get edge at index. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a1559cddbcb23d41f2be9e389b0ccd127}{Polygon\+::\+Vertex} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a3d592373be3ef2a722cfd70935f47832}{get\+Vertex\+At} (const Index a\+Vertex\+Index) const
+\begin{DoxyCompactList}\small\item\em Get vertex at index. \end{DoxyCompactList}\item 
+Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a17e3083d71685e16f3244298e6f44ad9}{Polygon\+::\+Edge} $>$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a22fbf3d4f9553311497d20b9495841a7}{get\+Edges} () const
+\begin{DoxyCompactList}\small\item\em Get polygon edges. \end{DoxyCompactList}\item 
+Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a1559cddbcb23d41f2be9e389b0ccd127}{Polygon\+::\+Vertex} $>$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ae73d59e0e0bb5d13bd69e2924e602e20}{get\+Vertices} () const
 \begin{DoxyCompactList}\small\item\em Get polygon vertices. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ae5494a1f838d3c325899b6c46237bca8}{translate} (const Vector2d \&a\+Translation) override
-\begin{DoxyCompactList}\small\item\em Translate polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual String \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_acef17857f29323e985fba23441ed1171}{to\+String} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17}{Object\+::\+Format} \&a\+Format=\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}, const Integer \&a\+Precision=Integer\+::\+Undefined()) const override
+\begin{DoxyCompactList}\small\item\em Get string representation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a028ca7818387654ed1aab1584cee6cc5}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print polygon. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a920b30eb110c7164f65754979da17638}{apply\+Transformation} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a86e2c184f51c1e93fce5a786457b9fc3}{Undefined} ()
 \begin{DoxyCompactList}\small\item\em Constructs an undefined polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Friends}
-\begin{DoxyCompactItemize}
-\item 
-std\+::ostream \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ae57177a1fae265be31aca4cdcd6add82}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} \&a\+Polygon)
-\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon}. 
 
-A polygon is a plane figure that is bounded by a finite chain of straight line segments closing in a loop to form a closed polygonal chain or circuit. These segments are called its edges, and the points where two edges meet are the polygon\textquotesingle{}s vertices.
+A plane figure that is bounded by a finite chain of straight line segments closing in a loop to form a closed polygonal chain or circuit. These segments are called its edges, and the points where two edges meet are the polygon\textquotesingle{}s vertices.
 
 https\+://en.wikipedia.\+org/wiki/\+Polygon 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a17e3083d71685e16f3244298e6f44ad9}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a17e3083d71685e16f3244298e6f44ad9}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!Edge@{Edge}}
+\index{Edge@{Edge}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{Edge}{Edge}}
+{\footnotesize\ttfamily typedef \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment}{Segment} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a17e3083d71685e16f3244298e6f44ad9}{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::\+Edge}}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa543e7078b73e1d307ca8317d765cd9c}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa543e7078b73e1d307ca8317d765cd9c}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!Ring@{Ring}}
+\index{Ring@{Ring}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{Ring}{Ring}}
+{\footnotesize\ttfamily typedef \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string}{Line\+String} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa543e7078b73e1d307ca8317d765cd9c}{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::\+Ring}}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a1559cddbcb23d41f2be9e389b0ccd127}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a1559cddbcb23d41f2be9e389b0ccd127}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{Vertex}{Vertex}}
+{\footnotesize\ttfamily typedef \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a1559cddbcb23d41f2be9e389b0ccd127}{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::\+Vertex}}
+
+
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ad2a0b0bcd5301dbcd9e2fa101fbd220b}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ad2a0b0bcd5301dbcd9e2fa101fbd220b}} 
 \index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!Polygon@{Polygon}}
 \index{Polygon@{Polygon}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
-\subsubsection{\texorpdfstring{Polygon()}{Polygon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{Polygon()}{Polygon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::\+Polygon (\begin{DoxyParamCaption}\item[{const Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} $>$ \&}]{an\+Outer\+Ring,  }\item[{const Array$<$ Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} $>$$>$ \&}]{an\+Inner\+Ring\+Array = {\ttfamily Array$<$Array$<$\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point}$>$$>$\+:\+:Empty()} }\end{DoxyParamCaption})}
 
 
@@ -69,9 +116,21 @@ https\+://en.wikipedia.\+org/wiki/\+Polygon
 Constructor. 
 
 
-\begin{DoxyCode}
-\end{DoxyCode}
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Outer\+Ring} & An outer ring \\
+\hline
+\mbox{\tt in}  & {\em an\+Inner\+Ring\+Array} & An array of inner rings \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa4027d2fb87cf861743dddade057f73d}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa4027d2fb87cf861743dddade057f73d}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!Polygon@{Polygon}}
+\index{Polygon@{Polygon}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{Polygon()}{Polygon()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::\+Polygon (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa543e7078b73e1d307ca8317d765cd9c}{Polygon\+::\+Ring} \&}]{an\+Outer\+Ring,  }\item[{const Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa543e7078b73e1d307ca8317d765cd9c}{Polygon\+::\+Ring} $>$ \&}]{an\+Inner\+Ring\+Array = {\ttfamily Array$<$~\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa543e7078b73e1d307ca8317d765cd9c}{Polygon\+::\+Ring}~$>$\+:\+:Empty()} }\end{DoxyParamCaption})}
 
+
+
+Constructor. 
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -83,7 +142,7 @@ Constructor.
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a6384fadfb81c792d137693e8f0dd14f9}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a6384fadfb81c792d137693e8f0dd14f9}} 
 \index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!Polygon@{Polygon}}
 \index{Polygon@{Polygon}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
-\subsubsection{\texorpdfstring{Polygon()}{Polygon()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{Polygon()}{Polygon()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::\+Polygon (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} \&}]{a\+Polygon }\end{DoxyParamCaption})}
 
 
@@ -108,6 +167,25 @@ Destructor (virtual)
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a920b30eb110c7164f65754979da17638}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a920b30eb110c7164f65754979da17638}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!apply\+Transformation@{apply\+Transformation}}
+\index{apply\+Transformation@{apply\+Transformation}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{apply\+Transformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to polygon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a289589fb6e9e7a2c4ca4976a1544def5}{library\+::math\+::geom\+::d2\+::\+Object}.
+
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a15bbbe7e468a50d6059e2df946175e1c}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a15bbbe7e468a50d6059e2df946175e1c}} 
 \index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!clone@{clone}}
 \index{clone@{clone}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
@@ -125,20 +203,129 @@ Pointer to cloned polygon
 
 Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a5c26ae4120edb24f6463d65a9cef247d}{library\+::math\+::geom\+::d2\+::\+Object}.
 
-\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_acc13539129eb98b4b77ebd33ad002d4f}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_acc13539129eb98b4b77ebd33ad002d4f}} 
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a92d93fe3b0f2d2b17b393475f3e1c090}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a92d93fe3b0f2d2b17b393475f3e1c090}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!get\+Edge\+At@{get\+Edge\+At}}
+\index{get\+Edge\+At@{get\+Edge\+At}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{get\+Edge\+At()}{getEdgeAt()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a17e3083d71685e16f3244298e6f44ad9}{Polygon\+::\+Edge} library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::get\+Edge\+At (\begin{DoxyParamCaption}\item[{const Index}]{an\+Edge\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Get edge at index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Edge\+Index} & An edge index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Edge (segment) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ac01b8f978e663f09ef0f7a91de7720ce}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ac01b8f978e663f09ef0f7a91de7720ce}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!get\+Edge\+Count@{get\+Edge\+Count}}
+\index{get\+Edge\+Count@{get\+Edge\+Count}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{get\+Edge\+Count()}{getEdgeCount()}}
+{\footnotesize\ttfamily Size library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::get\+Edge\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get edge count. 
+
+\begin{DoxyReturn}{Returns}
+Edge count 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a22fbf3d4f9553311497d20b9495841a7}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a22fbf3d4f9553311497d20b9495841a7}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!get\+Edges@{get\+Edges}}
+\index{get\+Edges@{get\+Edges}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{get\+Edges()}{getEdges()}}
+{\footnotesize\ttfamily Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a17e3083d71685e16f3244298e6f44ad9}{Polygon\+::\+Edge} $>$ library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::get\+Edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get polygon edges. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} edges 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ad6014927b89b109098b60861213ea9ed}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ad6014927b89b109098b60861213ea9ed}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!get\+Inner\+Ring\+At@{get\+Inner\+Ring\+At}}
+\index{get\+Inner\+Ring\+At@{get\+Inner\+Ring\+At}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{get\+Inner\+Ring\+At()}{getInnerRingAt()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa543e7078b73e1d307ca8317d765cd9c}{Polygon\+::\+Ring} library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::get\+Inner\+Ring\+At (\begin{DoxyParamCaption}\item[{const Index \&}]{an\+Inner\+Ring\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Get inner ring at index. 
+
+\begin{DoxyReturn}{Returns}
+Inner ring at index 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a20d245deda49667f0418591d7772d53d}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a20d245deda49667f0418591d7772d53d}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!get\+Inner\+Ring\+Count@{get\+Inner\+Ring\+Count}}
+\index{get\+Inner\+Ring\+Count@{get\+Inner\+Ring\+Count}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{get\+Inner\+Ring\+Count()}{getInnerRingCount()}}
+{\footnotesize\ttfamily Size library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::get\+Inner\+Ring\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get number of inner rings. 
+
+\begin{DoxyReturn}{Returns}
+Number of inner rings 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a3074bceaa8841e79c843d46377195a0d}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a3074bceaa8841e79c843d46377195a0d}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!get\+Outer\+Ring@{get\+Outer\+Ring}}
+\index{get\+Outer\+Ring@{get\+Outer\+Ring}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{get\+Outer\+Ring()}{getOuterRing()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa543e7078b73e1d307ca8317d765cd9c}{Polygon\+::\+Ring} library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::get\+Outer\+Ring (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get outer ring. 
+
+\begin{DoxyReturn}{Returns}
+Outer ring 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a3d592373be3ef2a722cfd70935f47832}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a3d592373be3ef2a722cfd70935f47832}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!get\+Vertex\+At@{get\+Vertex\+At}}
+\index{get\+Vertex\+At@{get\+Vertex\+At}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{get\+Vertex\+At()}{getVertexAt()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a1559cddbcb23d41f2be9e389b0ccd127}{Polygon\+::\+Vertex} library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::get\+Vertex\+At (\begin{DoxyParamCaption}\item[{const Index}]{a\+Vertex\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Get vertex at index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Vertex\+Index} & A vertex index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aece2a526c36bbd641588e9742228fb08}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aece2a526c36bbd641588e9742228fb08}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!get\+Vertex\+Count@{get\+Vertex\+Count}}
+\index{get\+Vertex\+Count@{get\+Vertex\+Count}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{get\+Vertex\+Count()}{getVertexCount()}}
+{\footnotesize\ttfamily Size library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::get\+Vertex\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get vertex count. 
+
+\begin{DoxyReturn}{Returns}
+Vertex count 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ae73d59e0e0bb5d13bd69e2924e602e20}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ae73d59e0e0bb5d13bd69e2924e602e20}} 
 \index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!get\+Vertices@{get\+Vertices}}
 \index{get\+Vertices@{get\+Vertices}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
 \subsubsection{\texorpdfstring{get\+Vertices()}{getVertices()}}
-{\footnotesize\ttfamily Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} $>$ library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::get\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a1559cddbcb23d41f2be9e389b0ccd127}{Polygon\+::\+Vertex} $>$ library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::get\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
 Get polygon vertices. 
-
-
-\begin{DoxyCode}
-\end{DoxyCode}
-
 
 \begin{DoxyReturn}{Returns}
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} vertices 
@@ -152,11 +339,6 @@ Get polygon vertices.
 
 
 Check if polygon is defined. 
-
-
-\begin{DoxyCode}
-\end{DoxyCode}
-
 
 \begin{DoxyReturn}{Returns}
 True if polygon is defined 
@@ -174,11 +356,6 @@ Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ae9506254971
 
 
 Not equal to operator. 
-
-
-\begin{DoxyCode}
-\end{DoxyCode}
-
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -217,11 +394,6 @@ Reference to polygon
 Equal to operator. 
 
 
-\begin{DoxyCode}
-\end{DoxyCode}
-
-
-
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em a\+Polygon} & A polygon \\
 \hline
@@ -229,24 +401,48 @@ Equal to operator.
 \begin{DoxyReturn}{Returns}
 True if polygons are equal 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ae5494a1f838d3c325899b6c46237bca8}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ae5494a1f838d3c325899b6c46237bca8}} 
-\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!translate@{translate}}
-\index{translate@{translate}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
-\subsubsection{\texorpdfstring{translate()}{translate()}}
-{\footnotesize\ttfamily void library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::translate (\begin{DoxyParamCaption}\item[{const Vector2d \&}]{a\+Translation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a028ca7818387654ed1aab1584cee6cc5}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a028ca7818387654ed1aab1584cee6cc5}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!print@{print}}
+\index{print@{print}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Translate polygon. 
+Print polygon. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em a\+Translation} & A translation vector \\
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em (optional)} & display\+Decorators If true, display decorators \\
 \hline
 \end{DoxyParams}
 
 
-Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a00a8bec981c21c0298af86c495fe4341}{library\+::math\+::geom\+::d2\+::\+Object}.
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a834bbf59cf1c483d1dc7b0966b1e1ab3}{library\+::math\+::geom\+::d2\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_acef17857f29323e985fba23441ed1171}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_acef17857f29323e985fba23441ed1171}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily String library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::to\+String (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17}{Object\+::\+Format} \&}]{a\+Format = {\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}},  }\item[{const Integer \&}]{a\+Precision = {\ttfamily Integer\+:\+:Undefined()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get string representation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Format} & A format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_acdd76b3637732a249536b609dbe3f0eb}{library\+::math\+::geom\+::d2\+::\+Object}.
 
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a86e2c184f51c1e93fce5a786457b9fc3}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a86e2c184f51c1e93fce5a786457b9fc3}} 
 \index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!Undefined@{Undefined}}
@@ -269,36 +465,7 @@ Undefined polygon
 \end{DoxyReturn}
 
 
-\subsection{Friends And Related Function Documentation}
-\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ae57177a1fae265be31aca4cdcd6add82}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ae57177a1fae265be31aca4cdcd6add82}} 
-\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
-\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
-{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} \&}]{a\+Polygon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
-
-
-
-Output stream operator. 
-
-
-\begin{DoxyCode}
-std::cout << \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ad2a0b0bcd5301dbcd9e2fa101fbd220b}{Polygon}(...) ;
-\end{DoxyCode}
-
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
-\hline
-\mbox{\tt in}  & {\em a\+Polygon} & A polygon \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-An output stream 
-\end{DoxyReturn}
-
-
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
 include/\+Library/\+Mathematics/\+Geometry/2\+D/\+Objects/\hyperlink{2_d_2_objects_2_polygon_8hpp}{Polygon.\+hpp}\item 
-src/\+Library/\+Mathematics/\+Geometry/2\+D/\+Objects/\hyperlink{_polygon_8cpp}{Polygon.\+cpp}\end{DoxyCompactItemize}
+src/\+Library/\+Mathematics/\+Geometry/2\+D/\+Objects/\hyperlink{2_d_2_objects_2_polygon_8cpp}{Polygon.\+cpp}\end{DoxyCompactItemize}

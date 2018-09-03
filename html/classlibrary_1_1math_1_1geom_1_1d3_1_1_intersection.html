@@ -81,6 +81,7 @@ $(document).ready(function(){initNavTree('classlibrary_1_1math_1_1geom_1_1d3_1_1
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">library::math::geom::d3::Intersection Class Reference</div>  </div>
@@ -101,11 +102,12 @@ Public Types</h2></td></tr>
 <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05aaedf8f48dfa5b704b6c12b415707a1da">Type::PointSet</a>, 
 <br />
 &#160;&#160;<a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05a4803e6b9e63dabf04de980788d6a13c4">Type::Line</a>, 
+<a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05a2e321465690359abbb020a3619b1c937">Type::LineString</a>, 
 <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05a9406e3c325bfc9873426e5eda4ba6e18">Type::Ray</a>, 
 <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05a4b77e2a9d8e9cfc299f504b32d6e3d2b">Type::Segment</a>, 
-<a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05a0d3adee051531c15b3509b4d4d75ce7b">Type::Plane</a>, 
 <br />
-&#160;&#160;<a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05ab7095f057db3fefa7325ad93a04e14fd">Type::Sphere</a>, 
+&#160;&#160;<a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05a0d3adee051531c15b3509b4d4d75ce7b">Type::Plane</a>, 
+<a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05ab7095f057db3fefa7325ad93a04e14fd">Type::Sphere</a>, 
 <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05aeee5397cecd880d16ef7244819aa383d">Type::Ellipsoid</a>, 
 <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05a10b4eb76294b70d7fd6df997ff06edb1">Type::Complex</a>
 <br />
@@ -132,15 +134,26 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8e3e47ed63f5c539cc39625b512c4b9e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a8e3e47ed63f5c539cc39625b512c4b9e">operator!=</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a> &amp;anIntersection) const</td></tr>
 <tr class="memdesc:a8e3e47ed63f5c539cc39625b512c4b9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not equal to operator.  <a href="#a8e3e47ed63f5c539cc39625b512c4b9e">More...</a><br /></td></tr>
 <tr class="separator:a8e3e47ed63f5c539cc39625b512c4b9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b71d1b2a6429a893a8737a4d02c2da6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a2b71d1b2a6429a893a8737a4d02c2da6">operator+</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a> &amp;anIntersection) const</td></tr>
+<tr class="memdesc:a2b71d1b2a6429a893a8737a4d02c2da6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Addition operator (intersection concatenation)  <a href="#a2b71d1b2a6429a893a8737a4d02c2da6">More...</a><br /></td></tr>
+<tr class="separator:a2b71d1b2a6429a893a8737a4d02c2da6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a746fc547529ce91a99412597eb5ae559"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a746fc547529ce91a99412597eb5ae559">isDefined</a> () const</td></tr>
 <tr class="memdesc:a746fc547529ce91a99412597eb5ae559"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if intersection is defined.  <a href="#a746fc547529ce91a99412597eb5ae559">More...</a><br /></td></tr>
 <tr class="separator:a746fc547529ce91a99412597eb5ae559"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad021013a517375d56e2110792ad7b07"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#aad021013a517375d56e2110792ad7b07">isEmpty</a> () const</td></tr>
 <tr class="memdesc:aad021013a517375d56e2110792ad7b07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if intersection is empty.  <a href="#aad021013a517375d56e2110792ad7b07">More...</a><br /></td></tr>
 <tr class="separator:aad021013a517375d56e2110792ad7b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e7c3d0568a6c9a29ba3503751166932"><td class="memTemplParams" colspan="2">template&lt;class Type &gt; </td></tr>
+<tr class="memitem:a9e7c3d0568a6c9a29ba3503751166932"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a9e7c3d0568a6c9a29ba3503751166932">is</a> () const</td></tr>
+<tr class="memdesc:a9e7c3d0568a6c9a29ba3503751166932"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if intersection can be converted to underlying object.  <a href="#a9e7c3d0568a6c9a29ba3503751166932">More...</a><br /></td></tr>
+<tr class="separator:a9e7c3d0568a6c9a29ba3503751166932"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aead6925dc35a2f6aec30373ca1556600"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05">Intersection::Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#aead6925dc35a2f6aec30373ca1556600">getType</a> () const</td></tr>
 <tr class="memdesc:aead6925dc35a2f6aec30373ca1556600"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get intersection type.  <a href="#aead6925dc35a2f6aec30373ca1556600">More...</a><br /></td></tr>
 <tr class="separator:aead6925dc35a2f6aec30373ca1556600"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a018842f95665de8a388f0b7cd48410a6"><td class="memTemplParams" colspan="2">template&lt;class Type &gt; </td></tr>
+<tr class="memitem:a018842f95665de8a388f0b7cd48410a6"><td class="memTemplItemLeft" align="right" valign="top">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05">Type</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a018842f95665de8a388f0b7cd48410a6">as</a> () const</td></tr>
+<tr class="memdesc:a018842f95665de8a388f0b7cd48410a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access intersection as its underlying object.  <a href="#a018842f95665de8a388f0b7cd48410a6">More...</a><br /></td></tr>
+<tr class="separator:a018842f95665de8a388f0b7cd48410a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -150,6 +163,24 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af0f1aed5c97a5142a4b20cb8edcb78e0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#af0f1aed5c97a5142a4b20cb8edcb78e0">Empty</a> ()</td></tr>
 <tr class="memdesc:af0f1aed5c97a5142a4b20cb8edcb78e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an empty intersection.  <a href="#af0f1aed5c97a5142a4b20cb8edcb78e0">More...</a><br /></td></tr>
 <tr class="separator:af0f1aed5c97a5142a4b20cb8edcb78e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5155cc245bd2bf96a4296b0a8319c709"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a5155cc245bd2bf96a4296b0a8319c709">Point</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point.html">objects::Point</a> &amp;aPoint)</td></tr>
+<tr class="memdesc:a5155cc245bd2bf96a4296b0a8319c709"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a point intersection.  <a href="#a5155cc245bd2bf96a4296b0a8319c709">More...</a><br /></td></tr>
+<tr class="separator:a5155cc245bd2bf96a4296b0a8319c709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a562d64d802f6fcd181f1122393642605"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a562d64d802f6fcd181f1122393642605">PointSet</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set.html">objects::PointSet</a> &amp;aPointSet)</td></tr>
+<tr class="memdesc:a562d64d802f6fcd181f1122393642605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a point set intersection.  <a href="#a562d64d802f6fcd181f1122393642605">More...</a><br /></td></tr>
+<tr class="separator:a562d64d802f6fcd181f1122393642605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa546d0185512a4c093a705a4c96f8960"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#aa546d0185512a4c093a705a4c96f8960">LineString</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string.html">objects::LineString</a> &amp;aLineString)</td></tr>
+<tr class="memdesc:aa546d0185512a4c093a705a4c96f8960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a line string intersection.  <a href="#aa546d0185512a4c093a705a4c96f8960">More...</a><br /></td></tr>
+<tr class="separator:aa546d0185512a4c093a705a4c96f8960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7294c6aa40d2353f1f4d7d6019c9dbdc"><td class="memItemLeft" align="right" valign="top">static String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a7294c6aa40d2353f1f4d7d6019c9dbdc">StringFromType</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05">Intersection::Type</a> &amp;aType)</td></tr>
+<tr class="memdesc:a7294c6aa40d2353f1f4d7d6019c9dbdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts intersection type to string.  <a href="#a7294c6aa40d2353f1f4d7d6019c9dbdc">More...</a><br /></td></tr>
+<tr class="separator:a7294c6aa40d2353f1f4d7d6019c9dbdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a8ff783039001be6a871338148f4f2919"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a8ff783039001be6a871338148f4f2919">operator&lt;&lt;</a> (std::ostream &amp;anOutputStream, const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a> &amp;anIntersection)</td></tr>
+<tr class="memdesc:a8ff783039001be6a871338148f4f2919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output stream operator.  <a href="#a8ff783039001be6a871338148f4f2919">More...</a><br /></td></tr>
+<tr class="separator:a8ff783039001be6a871338148f4f2919"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>3D intersection </p>
@@ -179,6 +210,7 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a3465d607fd42380f350598e055271b05a2a3cd5946cfd317eb99c3d32e35e2d4c"></a>Point&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3465d607fd42380f350598e055271b05aaedf8f48dfa5b704b6c12b415707a1da"></a>PointSet&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3465d607fd42380f350598e055271b05a4803e6b9e63dabf04de980788d6a13c4"></a>Line&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3465d607fd42380f350598e055271b05a2e321465690359abbb020a3619b1c937"></a>LineString&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3465d607fd42380f350598e055271b05a9406e3c325bfc9873426e5eda4ba6e18"></a>Ray&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3465d607fd42380f350598e055271b05a4b77e2a9d8e9cfc299f504b32d6e3d2b"></a>Segment&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a3465d607fd42380f350598e055271b05a0d3adee051531c15b3509b4d4d75ce7b"></a>Plane&#160;</td><td class="fielddoc"></td></tr>
@@ -262,6 +294,36 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a018842f95665de8a388f0b7cd48410a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a018842f95665de8a388f0b7cd48410a6">&#9670;&nbsp;</a></span>as()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05">Type</a>&amp; library::math::geom::d3::Intersection::as </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Access intersection as its underlying object. </p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to underlying object </dd></dl>
+
+</div>
+</div>
 <a id="af0f1aed5c97a5142a4b20cb8edcb78e0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af0f1aed5c97a5142a4b20cb8edcb78e0">&#9670;&nbsp;</a></span>Empty()</h2>
 
@@ -310,6 +372,36 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a9e7c3d0568a6c9a29ba3503751166932"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e7c3d0568a6c9a29ba3503751166932">&#9670;&nbsp;</a></span>is()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Type &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool library::math::geom::d3::Intersection::is </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns true if intersection can be converted to underlying object. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if intersection can be converted to underlying object </dd></dl>
+
+</div>
+</div>
 <a id="a746fc547529ce91a99412597eb5ae559"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a746fc547529ce91a99412597eb5ae559">&#9670;&nbsp;</a></span>isDefined()</h2>
 
@@ -350,6 +442,35 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aa546d0185512a4c093a705a4c96f8960"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa546d0185512a4c093a705a4c96f8960">&#9670;&nbsp;</a></span>LineString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a> library::math::geom::d3::Intersection::LineString </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string.html">objects::LineString</a> &amp;&#160;</td>
+          <td class="paramname"><em>aLineString</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a line string intersection. </p>
+<div class="fragment"><div class="line"><a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#ab800dbab95076a1d7ae47bd9d0887da3">Intersection</a> intersection = <a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#aa546d0185512a4c093a705a4c96f8960">Intersection::LineString</a>({ <a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a5155cc245bd2bf96a4296b0a8319c709">Point</a>(0.0, 0.0, 0.0), <a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a5155cc245bd2bf96a4296b0a8319c709">Point</a>(1.0, 0.0, 0.0), <a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a5155cc245bd2bf96a4296b0a8319c709">Point</a>(1.0, 0.0, 1.0) }) ;</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Line string intersection </dd></dl>
+
+</div>
+</div>
 <a id="a8e3e47ed63f5c539cc39625b512c4b9e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8e3e47ed63f5c539cc39625b512c4b9e">&#9670;&nbsp;</a></span>operator!=()</h2>
 
@@ -374,6 +495,34 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if intersections not are equal </dd></dl>
+
+</div>
+</div>
+<a id="a2b71d1b2a6429a893a8737a4d02c2da6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b71d1b2a6429a893a8737a4d02c2da6">&#9670;&nbsp;</a></span>operator+()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a> library::math::geom::d3::Intersection::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a> &amp;&#160;</td>
+          <td class="paramname"><em>anIntersection</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Addition operator (intersection concatenation) </p>
+<p>Concatenate (merge) intersection with another intersection.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">anIntersection</td><td>An intersection </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Concatenated intersection </dd></dl>
 
 </div>
 </div>
@@ -431,6 +580,93 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a5155cc245bd2bf96a4296b0a8319c709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5155cc245bd2bf96a4296b0a8319c709">&#9670;&nbsp;</a></span>Point()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a> library::math::geom::d3::Intersection::Point </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point.html">objects::Point</a> &amp;&#160;</td>
+          <td class="paramname"><em>aPoint</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a point intersection. </p>
+<div class="fragment"><div class="line"><a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#ab800dbab95076a1d7ae47bd9d0887da3">Intersection</a> intersection = <a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a5155cc245bd2bf96a4296b0a8319c709">Intersection::Point</a>(<a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a5155cc245bd2bf96a4296b0a8319c709">Point</a>(0.0, 0.0, 0.0)) ;</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Point intersection </dd></dl>
+
+</div>
+</div>
+<a id="a562d64d802f6fcd181f1122393642605"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a562d64d802f6fcd181f1122393642605">&#9670;&nbsp;</a></span>PointSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a> library::math::geom::d3::Intersection::PointSet </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set.html">objects::PointSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>aPointSet</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructs a point set intersection. </p>
+<div class="fragment"><div class="line"><a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#ab800dbab95076a1d7ae47bd9d0887da3">Intersection</a> intersection = <a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a562d64d802f6fcd181f1122393642605">Intersection::PointSet</a>({ <a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a5155cc245bd2bf96a4296b0a8319c709">Point</a>(0.0, 0.0, 0.0), <a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a5155cc245bd2bf96a4296b0a8319c709">Point</a>(1.0, 0.0, 0.0) }) ;</div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Point set intersection </dd></dl>
+
+</div>
+</div>
+<a id="a7294c6aa40d2353f1f4d7d6019c9dbdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7294c6aa40d2353f1f4d7d6019c9dbdc">&#9670;&nbsp;</a></span>StringFromType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">String library::math::geom::d3::Intersection::StringFromType </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05">Intersection::Type</a> &amp;&#160;</td>
+          <td class="paramname"><em>aType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Converts intersection type to string. </p>
+<dl class="section return"><dt>Returns</dt><dd>String </dd></dl>
+
+</div>
+</div>
 <a id="a6ce0af0ff5c24a4b56c264d2d3d6e59b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6ce0af0ff5c24a4b56c264d2d3d6e59b">&#9670;&nbsp;</a></span>Undefined()</h2>
 
@@ -456,6 +692,53 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Constructs an undefined intersection. </p>
 <div class="fragment"><div class="line"><a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#ab800dbab95076a1d7ae47bd9d0887da3">Intersection</a> intersection = <a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a6ce0af0ff5c24a4b56c264d2d3d6e59b">Intersection::Undefined</a>() ; <span class="comment">// Undefined</span></div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Undefined intersection </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a8ff783039001be6a871338148f4f2919"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ff783039001be6a871338148f4f2919">&#9670;&nbsp;</a></span>operator<<</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>anOutputStream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a> &amp;&#160;</td>
+          <td class="paramname"><em>anIntersection</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Output stream operator. </p>
+<div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#ab800dbab95076a1d7ae47bd9d0887da3">Intersection</a>(...) ;</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">anIntersection</td><td>An intersection </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to output stream </dd></dl>
 
 </div>
 </div>

@@ -1,6 +1,7 @@
 var classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment =
 [
     [ "Segment", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a5562342d1edf2f52e37ce1bc138ee7d7", null ],
+    [ "applyTransformation", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a63c7017391bcc0e67f4d97311e7ebdb2", null ],
     [ "clone", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a589ad56339616f362cee84a2ecab61a4", null ],
     [ "contains", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#aabdbcd6bbfbe9350fe53f1b3563b5652", null ],
     [ "getCenter", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a6788da2dd6ee48ded2da197c01ea7f3d", null ],
@@ -13,7 +14,5 @@ var classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment =
     [ "isDegenerate", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a11324bd27db3ef9d931fdee763246759", null ],
     [ "operator!=", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#ad408a3c17a4048183c4b646ec6cf91e9", null ],
     [ "operator==", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#af6b462e74438f79ec6162fdefdfcb887", null ],
-    [ "rotate", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a9d1693e80bd013a09334b9b7233abc2f", null ],
-    [ "translate", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a9a6b09a627c59fd2f2f3bd01a5afea22", null ],
-    [ "operator<<", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a769c800b35f5bfd6979e7372e402ef1b", null ]
+    [ "print", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a2d3c1a17842ee4ee83cffda33911291d", null ]
 ];

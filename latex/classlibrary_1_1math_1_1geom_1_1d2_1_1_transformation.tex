@@ -1,0 +1,311 @@
+\hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{}\section{library\+:\+:math\+:\+:geom\+:\+:d2\+:\+:Transformation Class Reference}
+\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+
+
+{\ttfamily \#include $<$Transformation.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348}{Type} \{ \newline
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348aec0fc0100c4fc1ce4eea230c3dc10360}{Type\+::\+Undefined}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348ac9c5c65fb4af9cf90eb99b3b84424189}{Type\+::\+Identity}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348a6dd08874f83507e9c7b23f1a46b7fa7c}{Type\+::\+Translation}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348af1a42bd417390fc63b030a519624607a}{Type\+::\+Rotation}, 
+\newline
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348abc967dc2d57e6eff184a821bf7577a80}{Type\+::\+Scaling}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348aaea1e492943ccbad7ee270ec1e064758}{Type\+::\+Reflection}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348a02414922b70cc0f9d7c841b0c70a0f94}{Type\+::\+Shear}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348a5b525aab6e200981a842101f1bcbafc6}{Type\+::\+Affine}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a6f284b8a89b0a6db0d5bd4fb13bf2d38}{Transformation} (const Matrix3d \&a\+Matrix)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a57ebdbb1a7932034cb476bd0121a0684}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&a\+Transformation) const
+\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a0bed1d102c4ae75658866188efad2adb}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&a\+Transformation) const
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a99ef3b4a579cbd907570369d2245990e}{operator$\ast$} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&a\+Transformation) const
+\item 
+Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_ab005b2e28c9b568a3bd2e758f6fb5fef}{operator$\ast$} (const Vector3d \&a\+Vector) const
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a62ca803480460ca6e743efd8db0ab3e6}{operator$\ast$=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&a\+Transformation)
+\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_add16e2f819cc7ea5bbee198ba18a8d14}{is\+Defined} () const
+\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a9bc03558ea96a68987591aeae20d8468}{is\+Identity} () const
+\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af30ebcdee91e0bc20d6b87557cd80111}{is\+Rigid} () const
+\begin{DoxyCompactList}\small\item\em Returns true if transformation is rigid. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348}{Transformation\+::\+Type} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a295309ae952d473473540a5647a168c4}{get\+Type} () const
+\item 
+Matrix3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_aad810cf9245ff4eea64b206cbce86e1b}{get\+Matrix} () const
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a17f1e24ee5a53d546dcaa4139b7c4ef0}{get\+Inverse} () const
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a03f3bc115d7db05f3351ae9095a69b65}{apply\+To} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&a\+Point) const
+\item 
+Vector2d \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a0592b1f7d778cbd70917af69b347dc64}{apply\+To} (const Vector2d \&a\+Vector) const
+\item 
+Unique$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} $>$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a630589d56afe574df3bc37c5cd9a6209}{apply\+To} (const Unique$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} $>$ \&an\+Object) const
+\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a39eab30cef450921059006ee72a8f8e8}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const
+\begin{DoxyCompactList}\small\item\em Print transformation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a6d0773c77cff2399817231630c21526c}{Undefined} ()
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a49b82aa6caa2bf4626e37233c5e4b4df}{Identity} ()
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a1e4b212d847c33e459a466fcac022340}{Translation} (const Vector2d \&a\+Translation\+Vector)
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a579b2f9b2adae54cf4082aac81d5136a}{Rotation} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&a\+Rotation\+Angle)
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_ab5ad2ddbeb32ba146b47b4b48b40ff1c}{Rotation\+Around} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&a\+Point, const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&a\+Rotation\+Angle)
+\item 
+static String \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a669dfc4a980aa3911215efb62ed1fa5b}{String\+From\+Type} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348}{Transformation\+::\+Type} \&a\+Type)
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348}{Transformation\+::\+Type} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a57acee01fdaf48464a09cb193622872c}{Type\+Of\+Matrix} (const Matrix3d \&a\+Matrix)
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_afb2829e106dc4aeab1c706d1eaa357e8}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&a\+Transformation)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Type@{Type}}
+\index{Type@{Type}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348}{library\+::math\+::geom\+::d2\+::\+Transformation\+::\+Type}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Undefined@{Undefined}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Undefined@{Undefined}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348aec0fc0100c4fc1ce4eea230c3dc10360}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348aec0fc0100c4fc1ce4eea230c3dc10360}} 
+Undefined&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Identity@{Identity}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Identity@{Identity}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348ac9c5c65fb4af9cf90eb99b3b84424189}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348ac9c5c65fb4af9cf90eb99b3b84424189}} 
+Identity&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Translation@{Translation}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Translation@{Translation}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348a6dd08874f83507e9c7b23f1a46b7fa7c}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348a6dd08874f83507e9c7b23f1a46b7fa7c}} 
+Translation&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rotation@{Rotation}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Rotation@{Rotation}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348af1a42bd417390fc63b030a519624607a}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348af1a42bd417390fc63b030a519624607a}} 
+Rotation&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Scaling@{Scaling}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Scaling@{Scaling}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348abc967dc2d57e6eff184a821bf7577a80}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348abc967dc2d57e6eff184a821bf7577a80}} 
+Scaling&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Reflection@{Reflection}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Reflection@{Reflection}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348aaea1e492943ccbad7ee270ec1e064758}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348aaea1e492943ccbad7ee270ec1e064758}} 
+Reflection&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Shear@{Shear}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Shear@{Shear}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348a02414922b70cc0f9d7c841b0c70a0f94}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348a02414922b70cc0f9d7c841b0c70a0f94}} 
+Shear&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Affine@{Affine}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Affine@{Affine}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348a5b525aab6e200981a842101f1bcbafc6}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348a5b525aab6e200981a842101f1bcbafc6}} 
+Affine&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a6f284b8a89b0a6db0d5bd4fb13bf2d38}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a6f284b8a89b0a6db0d5bd4fb13bf2d38}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Transformation@{Transformation}}
+\index{Transformation@{Transformation}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{Transformation()}{Transformation()}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d2\+::\+Transformation\+::\+Transformation (\begin{DoxyParamCaption}\item[{const Matrix3d \&}]{a\+Matrix }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Matrix} & A transformation matrix \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a03f3bc115d7db05f3351ae9095a69b65}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a03f3bc115d7db05f3351ae9095a69b65}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!apply\+To@{apply\+To}}
+\index{apply\+To@{apply\+To}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{apply\+To()}{applyTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} library\+::math\+::geom\+::d2\+::\+Transformation\+::apply\+To (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a0592b1f7d778cbd70917af69b347dc64}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a0592b1f7d778cbd70917af69b347dc64}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!apply\+To@{apply\+To}}
+\index{apply\+To@{apply\+To}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{apply\+To()}{applyTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Vector2d library\+::math\+::geom\+::d2\+::\+Transformation\+::apply\+To (\begin{DoxyParamCaption}\item[{const Vector2d \&}]{a\+Vector }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a630589d56afe574df3bc37c5cd9a6209}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a630589d56afe574df3bc37c5cd9a6209}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!apply\+To@{apply\+To}}
+\index{apply\+To@{apply\+To}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{apply\+To()}{applyTo()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Unique$<$\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object}$>$ library\+::math\+::geom\+::d2\+::\+Transformation\+::apply\+To (\begin{DoxyParamCaption}\item[{const Unique$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} $>$ \&}]{an\+Object }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a17f1e24ee5a53d546dcaa4139b7c4ef0}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a17f1e24ee5a53d546dcaa4139b7c4ef0}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!get\+Inverse@{get\+Inverse}}
+\index{get\+Inverse@{get\+Inverse}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{get\+Inverse()}{getInverse()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} library\+::math\+::geom\+::d2\+::\+Transformation\+::get\+Inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_aad810cf9245ff4eea64b206cbce86e1b}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_aad810cf9245ff4eea64b206cbce86e1b}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!get\+Matrix@{get\+Matrix}}
+\index{get\+Matrix@{get\+Matrix}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{get\+Matrix()}{getMatrix()}}
+{\footnotesize\ttfamily Matrix3d library\+::math\+::geom\+::d2\+::\+Transformation\+::get\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a295309ae952d473473540a5647a168c4}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a295309ae952d473473540a5647a168c4}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{get\+Type()}{getType()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348}{Transformation\+::\+Type} library\+::math\+::geom\+::d2\+::\+Transformation\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a49b82aa6caa2bf4626e37233c5e4b4df}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a49b82aa6caa2bf4626e37233c5e4b4df}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Identity@{Identity}}
+\index{Identity@{Identity}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{Identity()}{Identity()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} library\+::math\+::geom\+::d2\+::\+Transformation\+::\+Identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_add16e2f819cc7ea5bbee198ba18a8d14}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_add16e2f819cc7ea5bbee198ba18a8d14}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::\+Transformation\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a9bc03558ea96a68987591aeae20d8468}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a9bc03558ea96a68987591aeae20d8468}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!is\+Identity@{is\+Identity}}
+\index{is\+Identity@{is\+Identity}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{is\+Identity()}{isIdentity()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::\+Transformation\+::is\+Identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af30ebcdee91e0bc20d6b87557cd80111}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af30ebcdee91e0bc20d6b87557cd80111}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!is\+Rigid@{is\+Rigid}}
+\index{is\+Rigid@{is\+Rigid}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{is\+Rigid()}{isRigid()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::\+Transformation\+::is\+Rigid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if transformation is rigid. 
+
+A rigid transformation preserves distances and angles. It is either a translation, a rotation, or a reflection.
+
+https\+://en.wikipedia.\+org/wiki/\+Rigid\+\_\+transformation
+
+\begin{DoxyReturn}{Returns}
+True if transformation is rigid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a0bed1d102c4ae75658866188efad2adb}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a0bed1d102c4ae75658866188efad2adb}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::\+Transformation\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&}]{a\+Transformation }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a99ef3b4a579cbd907570369d2245990e}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a99ef3b4a579cbd907570369d2245990e}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} library\+::math\+::geom\+::d2\+::\+Transformation\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&}]{a\+Transformation }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_ab005b2e28c9b568a3bd2e758f6fb5fef}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_ab005b2e28c9b568a3bd2e758f6fb5fef}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector3d library\+::math\+::geom\+::d2\+::\+Transformation\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Vector }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a62ca803480460ca6e743efd8db0ab3e6}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a62ca803480460ca6e743efd8db0ab3e6}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \& library\+::math\+::geom\+::d2\+::\+Transformation\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&}]{a\+Transformation }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a57ebdbb1a7932034cb476bd0121a0684}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a57ebdbb1a7932034cb476bd0121a0684}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::\+Transformation\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&}]{a\+Transformation }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a39eab30cef450921059006ee72a8f8e8}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a39eab30cef450921059006ee72a8f8e8}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!print@{print}}
+\index{print@{print}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d2\+::\+Transformation\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print transformation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a579b2f9b2adae54cf4082aac81d5136a}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a579b2f9b2adae54cf4082aac81d5136a}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{Rotation()}{Rotation()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} library\+::math\+::geom\+::d2\+::\+Transformation\+::\+Rotation (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&}]{a\+Rotation\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_ab5ad2ddbeb32ba146b47b4b48b40ff1c}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_ab5ad2ddbeb32ba146b47b4b48b40ff1c}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Rotation\+Around@{Rotation\+Around}}
+\index{Rotation\+Around@{Rotation\+Around}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{Rotation\+Around()}{RotationAround()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} library\+::math\+::geom\+::d2\+::\+Transformation\+::\+Rotation\+Around (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&}]{a\+Point,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&}]{a\+Rotation\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a669dfc4a980aa3911215efb62ed1fa5b}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a669dfc4a980aa3911215efb62ed1fa5b}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!String\+From\+Type@{String\+From\+Type}}
+\index{String\+From\+Type@{String\+From\+Type}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{String\+From\+Type()}{StringFromType()}}
+{\footnotesize\ttfamily String library\+::math\+::geom\+::d2\+::\+Transformation\+::\+String\+From\+Type (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348}{Transformation\+::\+Type} \&}]{a\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a1e4b212d847c33e459a466fcac022340}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a1e4b212d847c33e459a466fcac022340}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Translation@{Translation}}
+\index{Translation@{Translation}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{Translation()}{Translation()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} library\+::math\+::geom\+::d2\+::\+Transformation\+::\+Translation (\begin{DoxyParamCaption}\item[{const Vector2d \&}]{a\+Translation\+Vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a57acee01fdaf48464a09cb193622872c}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a57acee01fdaf48464a09cb193622872c}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Type\+Of\+Matrix@{Type\+Of\+Matrix}}
+\index{Type\+Of\+Matrix@{Type\+Of\+Matrix}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{Type\+Of\+Matrix()}{TypeOfMatrix()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_af2a94a7be48a51e9cc40f3075040d348}{Transformation\+::\+Type} library\+::math\+::geom\+::d2\+::\+Transformation\+::\+Type\+Of\+Matrix (\begin{DoxyParamCaption}\item[{const Matrix3d \&}]{a\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a6d0773c77cff2399817231630c21526c}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_a6d0773c77cff2399817231630c21526c}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} library\+::math\+::geom\+::d2\+::\+Transformation\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_afb2829e106dc4aeab1c706d1eaa357e8}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation_afb2829e106dc4aeab1c706d1eaa357e8}} 
+\index{library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!library\+::math\+::geom\+::d2\+::\+Transformation@{library\+::math\+::geom\+::d2\+::\+Transformation}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Geometry/2\+D/\hyperlink{2_d_2_transformation_8hpp}{Transformation.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/2\+D/\hyperlink{2_d_2_transformation_8cpp}{Transformation.\+cpp}\end{DoxyCompactItemize}

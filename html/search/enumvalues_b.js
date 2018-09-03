@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['xyzs',['XYZS',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a2ca851b117657819310fe5a9b9e5d681a11c51ecd5dc6f86ba3c1ae79e21482f5',1,'library::math::geom::trf::rot::Quaternion']]]
+  ['translation',['Translation',['../classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation.html#af2a94a7be48a51e9cc40f3075040d348a6dd08874f83507e9c7b23f1a46b7fa7c',1,'library::math::geom::d2::Transformation::Translation()'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation.html#a25f1dc99d391174bf82a7132d08b2fc1a6dd08874f83507e9c7b23f1a46b7fa7c',1,'library::math::geom::d3::Transformation::Translation()']]]
 ];

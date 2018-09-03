@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['rotationmatrix_2ecpp',['RotationMatrix.cpp',['../_rotation_matrix_8cpp.html',1,'']]],
-  ['rotationmatrix_2ehpp',['RotationMatrix.hpp',['../_rotation_matrix_8hpp.html',1,'']]],
-  ['rotationvector_2ecpp',['RotationVector.cpp',['../_rotation_vector_8cpp.html',1,'']]],
-  ['rotationvector_2ehpp',['RotationVector.hpp',['../_rotation_vector_8hpp.html',1,'']]]
+  ['quaternion_2ecpp',['Quaternion.cpp',['../_quaternion_8cpp.html',1,'']]],
+  ['quaternion_2ehpp',['Quaternion.hpp',['../_quaternion_8hpp.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['quaternion',['Quaternion',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html',1,'library::math::geom::trf::rot']]]
+  ['multilinestring',['MultiLineString',['../classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html',1,'library::math::geom::d2::objects']]]
 ];

@@ -151,11 +151,12 @@ Manually:
 
 The **Mathematics** library internally uses the following dependencies:
 
-| Name        | Version | License                | Link                                                                                                   |
-|-------------|---------|------------------------|--------------------------------------------------------------------------------------------------------|
-| Boost       | 1.67.0  | Boost Software License | [boost.org](https://www.boost.org)                                                                     |
-| Eigen       | 3.3.4   | MPL2                   | [eigen.tuxfamily.org](http://eigen.tuxfamily.org/index.php)                                            |
-| Core        | master  | TBD                    | [github.com/open-space-collective/library-core](https://github.com/open-space-collective/library-core) |
+| Name                   | Version | License                | Link                                                                                                   |
+|------------------------|---------|------------------------|--------------------------------------------------------------------------------------------------------|
+| Boost                  | 1.67.0  | Boost Software License | [boost.org](https://www.boost.org)                                                                     |
+| Eigen                  | 3.3.4   | MPL2                   | [eigen.tuxfamily.org](http://eigen.tuxfamily.org/index.php)                                            |
+| Geometric Tools Engine | 3.14    | Boost Software License | [geometrictools.com](https://www.geometrictools.com)                                                   |
+| Core                   | master  | TBD                    | [github.com/open-space-collective/library-core](https://github.com/open-space-collective/library-core) |
 
 ## Contribution
 

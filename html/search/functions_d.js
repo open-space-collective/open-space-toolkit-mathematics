@@ -1,12 +1,4 @@
 var searchData=
 [
-  ['s',['s',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a7b5045b46500d4f20e98ff29a9ed4c88',1,'library::math::geom::trf::rot::Quaternion']]],
-  ['segment',['Segment',['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a5562342d1edf2f52e37ce1bc138ee7d7',1,'library::math::geom::d3::objects::Segment']]],
-  ['setlowerbound',['setLowerBound',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a5ceb8fb56f920193c8b18346992b5d02',1,'library::math::obj::Interval']]],
-  ['settype',['setType',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a4dfb117d5a9c23bd32a3631fcf3686ec',1,'library::math::obj::Interval']]],
-  ['setupperbound',['setUpperBound',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a9c6b857d9fad97969635f669428c2b48',1,'library::math::obj::Interval']]],
-  ['sphere',['Sphere',['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html#a55dccc8ea16ee55cd7694c26afa8ea39',1,'library::math::geom::d3::objects::Sphere']]],
-  ['stringfromtype',['StringFromType',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a64a1850152db9b95c9824c71378d9f40',1,'library::math::obj::Interval']]],
-  ['stringfromunit',['StringFromUnit',['../classlibrary_1_1math_1_1geom_1_1_angle.html#a5f3e35152926a4478d427dbc39ade11e',1,'library::math::geom::Angle']]],
-  ['symbolfromunit',['SymbolFromUnit',['../classlibrary_1_1math_1_1geom_1_1_angle.html#a06d1a87ebfc87b334d9fb6d408422fb9',1,'library::math::geom::Angle']]]
+  ['quaternion',['Quaternion',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#aa7f459a08f5af38b9f7676a6bf36a21c',1,'library::math::geom::trf::rot::Quaternion::Quaternion(const Real &amp;aFirstComponent, const Real &amp;aSecondComponent, const Real &amp;aThirdComponent, const Real &amp;aFourthComponent, const Quaternion::Format &amp;aFormat)'],['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#ab9274dd1d41ae63eedc732ee9f97f366',1,'library::math::geom::trf::rot::Quaternion::Quaternion(const Vector4d &amp;aVector, const Quaternion::Format &amp;aFormat)'],['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#aff8b584d7726acd9d9affd1e1a921180',1,'library::math::geom::trf::rot::Quaternion::Quaternion(const Vector3d &amp;aVectorPart, const Real &amp;aScalarPart)'],['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_matrix.html#aba9c64b7b25d9819358c0caba6c388e2',1,'library::math::geom::trf::rot::RotationMatrix::Quaternion()'],['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector.html#a63ba12aac718671383516a0adab25aec',1,'library::math::geom::trf::rot::RotationVector::Quaternion()']]]
 ];

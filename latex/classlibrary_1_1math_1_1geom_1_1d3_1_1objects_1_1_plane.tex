@@ -20,32 +20,29 @@ Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Pl
 \item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a81fe78a983e2cb6ee6ad9bfabd22c3a4}{Plane} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point, const Vector3d \&a\+Normal\+Vector)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} $\ast$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a7ceb970c35968551600e2380795a0a4c}{clone} () const override
+virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} $\ast$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a0b6a4ae7bef06f3995f8fd9d32a88870}{clone} () const override
 \begin{DoxyCompactList}\small\item\em Clone plane. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a9391589825cac1db971b39452b38f8ea}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&a\+Plane) const
 \begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a5dfafb90b0da2cc239092ea6c655ec2a}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&a\+Plane) const
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a151515bf70e661c008023672e716e10a}{is\+Defined} () const override
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_aafbc8274c270be143b2fa3dc46459f17}{is\+Defined} () const override
 \begin{DoxyCompactList}\small\item\em Check if plane is defined. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a7bb2f2a298461ee30c77ad653cfd195a}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if plane contains point. \end{DoxyCompactList}\item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a52f9167ca123019c4b303c19b696b886}{get\+Point} () const
 \begin{DoxyCompactList}\small\item\em Get plane point. \end{DoxyCompactList}\item 
 Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a9d34608a389d4c80dad6b6f58b82c0e4}{get\+Normal\+Vector} () const
 \begin{DoxyCompactList}\small\item\em Get plane normal vector. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a58e3829c1a2f96a571eebe0996850984}{translate} (const Vector3d \&a\+Translation) override
-\begin{DoxyCompactList}\small\item\em Translate plane. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a8dea00fbd8b29b1ac15574601cc1015b}{rotate} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Rotation) override
-\begin{DoxyCompactList}\small\item\em Rotate plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a2e43e82344b57898606f5c13ffc9dcc9}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print plane. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_ab3474aef2e9f8dd4f9e86da017522487}{apply\+Transformation} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a27a635007aaccdc55f2c5c12a8264c20}{Undefined} ()
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a582c0e5930dd4a458c557c866b0dae17}{Undefined} ()
 \begin{DoxyCompactList}\small\item\em Constructs an undefined plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Friends}
-\begin{DoxyCompactItemize}
-\item 
-std\+::ostream \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a32c25520bfef52e525ce88742a901b26}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&a\+Plane)
-\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -82,11 +79,30 @@ Constructor.
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a7ceb970c35968551600e2380795a0a4c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a7ceb970c35968551600e2380795a0a4c}} 
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_ab3474aef2e9f8dd4f9e86da017522487}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_ab3474aef2e9f8dd4f9e86da017522487}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}!apply\+Transformation@{apply\+Transformation}}
+\index{apply\+Transformation@{apply\+Transformation}!library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}}
+\subsubsection{\texorpdfstring{apply\+Transformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d3\+::objects\+::\+Plane\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to plane. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a5fc47b1ee5d9a28efc6010d3d1512470}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a0b6a4ae7bef06f3995f8fd9d32a88870}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a0b6a4ae7bef06f3995f8fd9d32a88870}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}!clone@{clone}}
 \index{clone@{clone}!library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}}
 \subsubsection{\texorpdfstring{clone()}{clone()}}
-{\footnotesize\ttfamily virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane}$\ast$ library\+::math\+::geom\+::d3\+::objects\+::\+Plane\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} $\ast$ library\+::math\+::geom\+::d3\+::objects\+::\+Plane\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -99,6 +115,32 @@ Pointer to cloned plane
 
 Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a1a784c6b359e0eb97cd34fabc42f2f3f}{library\+::math\+::geom\+::d3\+::\+Object}.
 
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a7bb2f2a298461ee30c77ad653cfd195a}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a7bb2f2a298461ee30c77ad653cfd195a}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}!contains@{contains}}
+\index{contains@{contains}!library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Plane\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if plane contains point. 
+
+
+\begin{DoxyCode}
+Point plane = ... ;
+Point point = ... ;
+plane.contains(point) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if plane contains point 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a9d34608a389d4c80dad6b6f58b82c0e4}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a9d34608a389d4c80dad6b6f58b82c0e4}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}!get\+Normal\+Vector@{get\+Normal\+Vector}}
 \index{get\+Normal\+Vector@{get\+Normal\+Vector}!library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}}
@@ -137,11 +179,11 @@ Get plane point.
 \begin{DoxyReturn}{Returns}
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} point 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a151515bf70e661c008023672e716e10a}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a151515bf70e661c008023672e716e10a}} 
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_aafbc8274c270be143b2fa3dc46459f17}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_aafbc8274c270be143b2fa3dc46459f17}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}!is\+Defined@{is\+Defined}}
 \index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}}
 \subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
-{\footnotesize\ttfamily virtual bool library\+::math\+::geom\+::d3\+::objects\+::\+Plane\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Plane\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -149,7 +191,7 @@ Check if plane is defined.
 
 
 \begin{DoxyCode}
-\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a81fe78a983e2cb6ee6ad9bfabd22c3a4}{Plane}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a151515bf70e661c008023672e716e10a}{isDefined}() ; \textcolor{comment}{// True}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a81fe78a983e2cb6ee6ad9bfabd22c3a4}{Plane}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_aafbc8274c270be143b2fa3dc46459f17}{isDefined}() ; \textcolor{comment}{// True}
 \end{DoxyCode}
 
 
@@ -210,49 +252,32 @@ Equal to operator.
 \begin{DoxyReturn}{Returns}
 True if planes are equal 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a8dea00fbd8b29b1ac15574601cc1015b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a8dea00fbd8b29b1ac15574601cc1015b}} 
-\index{library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}!rotate@{rotate}}
-\index{rotate@{rotate}!library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}}
-\subsubsection{\texorpdfstring{rotate()}{rotate()}}
-{\footnotesize\ttfamily virtual void library\+::math\+::geom\+::d3\+::objects\+::\+Plane\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a2e43e82344b57898606f5c13ffc9dcc9}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a2e43e82344b57898606f5c13ffc9dcc9}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}!print@{print}}
+\index{print@{print}!library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d3\+::objects\+::\+Plane\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Rotate plane. 
+Print plane. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em a\+Rotation} & A rotation quaternion \\
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em (optional)} & display\+Decorators If true, display decorators \\
 \hline
 \end{DoxyParams}
 
 
-Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aabefebc4960530ce6356c4445c5d490e}{library\+::math\+::geom\+::d3\+::\+Object}.
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aa166f4ce4d116a248f0fc861c75012ca}{library\+::math\+::geom\+::d3\+::\+Object}.
 
-\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a58e3829c1a2f96a571eebe0996850984}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a58e3829c1a2f96a571eebe0996850984}} 
-\index{library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}!translate@{translate}}
-\index{translate@{translate}!library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}}
-\subsubsection{\texorpdfstring{translate()}{translate()}}
-{\footnotesize\ttfamily virtual void library\+::math\+::geom\+::d3\+::objects\+::\+Plane\+::translate (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Translation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Translate plane. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em a\+Translation} & A translation vector \\
-\hline
-\end{DoxyParams}
-
-
-Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a989723a27a7d5f6739e45ea695a6c7ed}{library\+::math\+::geom\+::d3\+::\+Object}.
-
-\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a27a635007aaccdc55f2c5c12a8264c20}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a27a635007aaccdc55f2c5c12a8264c20}} 
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a582c0e5930dd4a458c557c866b0dae17}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a582c0e5930dd4a458c557c866b0dae17}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}!Undefined@{Undefined}}
 \index{Undefined@{Undefined}!library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}}
 \subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
-{\footnotesize\ttfamily static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} library\+::math\+::geom\+::d3\+::objects\+::\+Plane\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} library\+::math\+::geom\+::d3\+::objects\+::\+Plane\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -260,7 +285,7 @@ Constructs an undefined plane.
 
 
 \begin{DoxyCode}
-\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a81fe78a983e2cb6ee6ad9bfabd22c3a4}{Plane} plane = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a27a635007aaccdc55f2c5c12a8264c20}{Plane::Undefined}() ; \textcolor{comment}{// Undefined}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a81fe78a983e2cb6ee6ad9bfabd22c3a4}{Plane} plane = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a582c0e5930dd4a458c557c866b0dae17}{Plane::Undefined}() ; \textcolor{comment}{// Undefined}
 \end{DoxyCode}
 
 
@@ -269,35 +294,7 @@ Undefined plane
 \end{DoxyReturn}
 
 
-\subsection{Friends And Related Function Documentation}
-\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a32c25520bfef52e525ce88742a901b26}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a32c25520bfef52e525ce88742a901b26}} 
-\index{library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!library\+::math\+::geom\+::d3\+::objects\+::\+Plane@{library\+::math\+::geom\+::d3\+::objects\+::\+Plane}}
-\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
-{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&}]{a\+Plane }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
-
-
-
-Output stream operator. 
-
-
-\begin{DoxyCode}
-std::cout << \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane_a81fe78a983e2cb6ee6ad9bfabd22c3a4}{Plane}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;
-\end{DoxyCode}
-
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
-\hline
-\mbox{\tt in}  & {\em a\+Plane} & A plane \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-An output stream 
-\end{DoxyReturn}
-
-
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_plane_8hpp}{Plane.\+hpp}\end{DoxyCompactItemize}
+include/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_plane_8hpp}{Plane.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_plane_8cpp}{Plane.\+cpp}\end{DoxyCompactItemize}

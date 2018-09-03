@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['ellipsoid',['Ellipsoid',['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html#aae81fe0edc7f0e8d4590ea89ae73cb14',1,'library::math::geom::d3::objects::Ellipsoid']]],
-  ['empty',['Empty',['../classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#af0f1aed5c97a5142a4b20cb8edcb78e0',1,'library::math::geom::d3::Intersection']]],
-  ['exp',['exp',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a171373818023a1c013891d4297360542',1,'library::math::geom::trf::rot::Quaternion']]]
+  ['degrees',['Degrees',['../classlibrary_1_1math_1_1geom_1_1_angle.html#a64aa53e8420aeb6f671d86c65c370bc8',1,'library::math::geom::Angle']]],
+  ['distanceto',['distanceTo',['../classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html#a1615c904b4f5a1c406cdba97df6445d8',1,'library::math::geom::d2::objects::Point::distanceTo()'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point.html#a0108b685599f2684837d2898250c5a36',1,'library::math::geom::d3::objects::Point::distanceTo()']]]
 ];

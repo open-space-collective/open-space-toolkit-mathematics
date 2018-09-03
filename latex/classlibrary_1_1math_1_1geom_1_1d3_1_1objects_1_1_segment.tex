@@ -44,26 +44,23 @@ Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_af
 \begin{DoxyCompactList}\small\item\em Get segment direction. \end{DoxyCompactList}\item 
 Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a16b011c680e3102b8b44e6c88ffff81d}{get\+Length} () const
 \begin{DoxyCompactList}\small\item\em Get segment length. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a9a6b09a627c59fd2f2f3bd01a5afea22}{translate} (const Vector3d \&a\+Translation) override
-\begin{DoxyCompactList}\small\item\em Translate segment. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a9d1693e80bd013a09334b9b7233abc2f}{rotate} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Rotation) override
-\begin{DoxyCompactList}\small\item\em Rotate segment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a2d3c1a17842ee4ee83cffda33911291d}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print segment. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a63c7017391bcc0e67f4d97311e7ebdb2}{apply\+Transformation} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to segment. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a3b2505e9553ba0067f8184120c106602}{Undefined} ()
 \begin{DoxyCompactList}\small\item\em Constructs an undefined segment. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Friends}
-\begin{DoxyCompactItemize}
-\item 
-std\+::ostream \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a769c800b35f5bfd6979e7372e402ef1b}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&a\+Segment)
-\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment}. 
 
+A segment is a part of a line that is bounded by two distinct end points, and contains every point on the line between its endpoints.
 
+https\+://en.wikipedia.\+org/wiki/\+Line\+\_\+segment 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a5562342d1edf2f52e37ce1bc138ee7d7}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a5562342d1edf2f52e37ce1bc138ee7d7}} 
@@ -92,6 +89,25 @@ Constructor.
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a63c7017391bcc0e67f4d97311e7ebdb2}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a63c7017391bcc0e67f4d97311e7ebdb2}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}!apply\+Transformation@{apply\+Transformation}}
+\index{apply\+Transformation@{apply\+Transformation}!library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}}
+\subsubsection{\texorpdfstring{apply\+Transformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d3\+::objects\+::\+Segment\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to segment. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a5fc47b1ee5d9a28efc6010d3d1512470}{library\+::math\+::geom\+::d3\+::\+Object}.
+
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a589ad56339616f362cee84a2ecab61a4}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a589ad56339616f362cee84a2ecab61a4}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}!clone@{clone}}
 \index{clone@{clone}!library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}}
@@ -122,14 +138,14 @@ Check if segment contains point.
 
 \begin{DoxyCode}
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a5562342d1edf2f52e37ce1bc138ee7d7}{Segment} segment = ... ;
-Ellipsoid ellipsoid = ... ;
-segment.contains(ellipsoid) ;
+Point point = ... ;
+segment.contains(point) ;
 \end{DoxyCode}
 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\mbox{\tt in}  & {\em a\+Point} & An point \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -348,43 +364,26 @@ Equal to operator.
 \begin{DoxyReturn}{Returns}
 True if segments are equal 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a9d1693e80bd013a09334b9b7233abc2f}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a9d1693e80bd013a09334b9b7233abc2f}} 
-\index{library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}!rotate@{rotate}}
-\index{rotate@{rotate}!library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}}
-\subsubsection{\texorpdfstring{rotate()}{rotate()}}
-{\footnotesize\ttfamily void library\+::math\+::geom\+::d3\+::objects\+::\+Segment\+::rotate (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a2d3c1a17842ee4ee83cffda33911291d}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a2d3c1a17842ee4ee83cffda33911291d}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}!print@{print}}
+\index{print@{print}!library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d3\+::objects\+::\+Segment\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Rotate segment. 
+Print segment. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em a\+Rotation} & A rotation quaternion \\
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em (optional)} & display\+Decorators If true, display decorators \\
 \hline
 \end{DoxyParams}
 
 
-Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aabefebc4960530ce6356c4445c5d490e}{library\+::math\+::geom\+::d3\+::\+Object}.
-
-\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a9a6b09a627c59fd2f2f3bd01a5afea22}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a9a6b09a627c59fd2f2f3bd01a5afea22}} 
-\index{library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}!translate@{translate}}
-\index{translate@{translate}!library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}}
-\subsubsection{\texorpdfstring{translate()}{translate()}}
-{\footnotesize\ttfamily void library\+::math\+::geom\+::d3\+::objects\+::\+Segment\+::translate (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Translation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
-
-
-
-Translate segment. 
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em a\+Translation} & A translation vector \\
-\hline
-\end{DoxyParams}
-
-
-Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a989723a27a7d5f6739e45ea695a6c7ed}{library\+::math\+::geom\+::d3\+::\+Object}.
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aa166f4ce4d116a248f0fc861c75012ca}{library\+::math\+::geom\+::d3\+::\+Object}.
 
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a3b2505e9553ba0067f8184120c106602}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a3b2505e9553ba0067f8184120c106602}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}!Undefined@{Undefined}}
@@ -407,36 +406,7 @@ Undefined segment
 \end{DoxyReturn}
 
 
-\subsection{Friends And Related Function Documentation}
-\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a769c800b35f5bfd6979e7372e402ef1b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a769c800b35f5bfd6979e7372e402ef1b}} 
-\index{library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}!operator$<$$<$@{operator$<$$<$}}
-\index{operator$<$$<$@{operator$<$$<$}!library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}}
-\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
-{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&}]{a\+Segment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
-
-
-
-Output stream operator. 
-
-
-\begin{DoxyCode}
-std::cout << \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a5562342d1edf2f52e37ce1bc138ee7d7}{Segment}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;
-\end{DoxyCode}
-
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
-\hline
-\mbox{\tt in}  & {\em a\+Segment} & A segment \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-An output stream 
-\end{DoxyReturn}
-
-
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_segment_8hpp}{Segment.\+hpp}\item 
-src/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_segment_8cpp}{Segment.\+cpp}\end{DoxyCompactItemize}
+include/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{3_d_2_objects_2_segment_8hpp}{Segment.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{3_d_2_objects_2_segment_8cpp}{Segment.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,376 @@
+\hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}{}\section{library\+:\+:math\+:\+:geom\+:\+:d2\+:\+:objects\+:\+:Point\+Set Class Reference}
+\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} set.  
+
+
+
+
+{\ttfamily \#include $<$Point\+Set.\+hpp$>$}
+
+Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d2\+:\+:objects\+:\+:Point\+Set\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_1_1_hasher}{Hasher}
+\begin{DoxyCompactList}\small\item\em \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} hasher. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::unordered\+\_\+set$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point}, \hyperlink{structlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_1_1_hasher}{Point\+Set\+::\+Hasher} $>$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a4ad340e72ff6c1a80199804754cd1af9}{Container}
+\item 
+typedef Point\+Set\+::\+Container\+::const\+\_\+iterator \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ad4c4f52fdc966f0d2031402edefc9e98}{Const\+Iterator}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a1b27139683b5b3418188e3eae1385618}{Point\+Set} (const Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} $>$ \&a\+Point\+Array)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}{Point\+Set} $\ast$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ad867c4fb86734efe968a39c95eba53b3}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Clone point set. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a0e0187a6f35dadf000b69615b9b82cde}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}{Point\+Set} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a5c03cc2e46ae682725291ae02c5063cf}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}{Point\+Set} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a031a6b5688c65bce8f37af452c0f0959}{is\+Defined} () const override
+\begin{DoxyCompactList}\small\item\em Check if point set is defined. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_af81b5c7b407db5fc7021f71ab10497ea}{is\+Empty} () const
+\begin{DoxyCompactList}\small\item\em Check if point set is empty. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a8aba7c99e93720ba291abef2ded25cc7}{is\+Near} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}{Point\+Set} \&a\+Point\+Set, const Real \&a\+Tolerance) const
+\begin{DoxyCompactList}\small\item\em Check if point set is near another point set. \end{DoxyCompactList}\item 
+Size \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a7a0cfe0925906d863e0e89605344838d}{get\+Size} () const
+\begin{DoxyCompactList}\small\item\em Get size of point set. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a4d4944b034ead53d1b734fe74cd1bc60}{get\+Point\+Closest\+To} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Get point closest to another point. \end{DoxyCompactList}\item 
+virtual String \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a4eeece63192481627cb0f991a4eef1a4}{to\+String} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17}{Object\+::\+Format} \&a\+Format=\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}, const Integer \&a\+Precision=Integer\+::\+Undefined()) const override
+\begin{DoxyCompactList}\small\item\em Get string representation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a652098938854c19294b5df8e8634cc9a}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print point. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ad4c4f52fdc966f0d2031402edefc9e98}{Point\+Set\+::\+Const\+Iterator} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ae7e4ce8100cde825aa0d3c5cc092eef9}{begin} () const
+\begin{DoxyCompactList}\small\item\em Get begin const iterator. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ad4c4f52fdc966f0d2031402edefc9e98}{Point\+Set\+::\+Const\+Iterator} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a7ae46d64848d5dda85ea621bb0f24ef7}{end} () const
+\begin{DoxyCompactList}\small\item\em Get end const iterator. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_acfb8652fd1f17f101e7750a0b81452c0}{apply\+Transformation} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to point set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}{Point\+Set} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_af09fa6d8bce9f64b150c739e1ed7bfc6}{Empty} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty point set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} set. 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ad4c4f52fdc966f0d2031402edefc9e98}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ad4c4f52fdc966f0d2031402edefc9e98}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!Const\+Iterator@{Const\+Iterator}}
+\index{Const\+Iterator@{Const\+Iterator}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{Const\+Iterator}{ConstIterator}}
+{\footnotesize\ttfamily typedef Point\+Set\+::\+Container\+::const\+\_\+iterator \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ad4c4f52fdc966f0d2031402edefc9e98}{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::\+Const\+Iterator}}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a4ad340e72ff6c1a80199804754cd1af9}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a4ad340e72ff6c1a80199804754cd1af9}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!Container@{Container}}
+\index{Container@{Container}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{Container}{Container}}
+{\footnotesize\ttfamily typedef std\+::unordered\+\_\+set$<$\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point}, \hyperlink{structlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_1_1_hasher}{Point\+Set\+::\+Hasher}$>$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a4ad340e72ff6c1a80199804754cd1af9}{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::\+Container}}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a1b27139683b5b3418188e3eae1385618}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a1b27139683b5b3418188e3eae1385618}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!Point\+Set@{Point\+Set}}
+\index{Point\+Set@{Point\+Set}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{Point\+Set()}{PointSet()}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::\+Point\+Set (\begin{DoxyParamCaption}\item[{const Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} $>$ \&}]{a\+Point\+Array }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a1b27139683b5b3418188e3eae1385618}{PointSet} pointSet(\{ \{ 0.0, 0.0 \}, \{ 0.0, 1.0 \} \}) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point\+Array} & A point array \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_acfb8652fd1f17f101e7750a0b81452c0}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_acfb8652fd1f17f101e7750a0b81452c0}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!apply\+Transformation@{apply\+Transformation}}
+\index{apply\+Transformation@{apply\+Transformation}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{apply\+Transformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to point set. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a289589fb6e9e7a2c4ca4976a1544def5}{library\+::math\+::geom\+::d2\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ae7e4ce8100cde825aa0d3c5cc092eef9}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ae7e4ce8100cde825aa0d3c5cc092eef9}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!begin@{begin}}
+\index{begin@{begin}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ad4c4f52fdc966f0d2031402edefc9e98}{Point\+Set\+::\+Const\+Iterator} library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get begin const iterator. 
+
+\begin{DoxyReturn}{Returns}
+Begin const iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ad867c4fb86734efe968a39c95eba53b3}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ad867c4fb86734efe968a39c95eba53b3}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!clone@{clone}}
+\index{clone@{clone}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}{Point\+Set} $\ast$ library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone point set. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned point set 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a5c26ae4120edb24f6463d65a9cef247d}{library\+::math\+::geom\+::d2\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_af09fa6d8bce9f64b150c739e1ed7bfc6}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_af09fa6d8bce9f64b150c739e1ed7bfc6}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!Empty@{Empty}}
+\index{Empty@{Empty}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{Empty()}{Empty()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}{Point\+Set} library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an empty point set. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a1b27139683b5b3418188e3eae1385618}{PointSet} pointSet = \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_af09fa6d8bce9f64b150c739e1ed7bfc6}{PointSet::Empty}() ;
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Empty point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a7ae46d64848d5dda85ea621bb0f24ef7}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a7ae46d64848d5dda85ea621bb0f24ef7}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!end@{end}}
+\index{end@{end}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ad4c4f52fdc966f0d2031402edefc9e98}{Point\+Set\+::\+Const\+Iterator} library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get end const iterator. 
+
+\begin{DoxyReturn}{Returns}
+End const iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a4d4944b034ead53d1b734fe74cd1bc60}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a4d4944b034ead53d1b734fe74cd1bc60}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!get\+Point\+Closest\+To@{get\+Point\+Closest\+To}}
+\index{get\+Point\+Closest\+To@{get\+Point\+Closest\+To}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{get\+Point\+Closest\+To()}{getPointClosestTo()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::get\+Point\+Closest\+To (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Get point closest to another point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Closest point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a7a0cfe0925906d863e0e89605344838d}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a7a0cfe0925906d863e0e89605344838d}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!get\+Size@{get\+Size}}
+\index{get\+Size@{get\+Size}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{get\+Size()}{getSize()}}
+{\footnotesize\ttfamily Size library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get size of point set. 
+
+\begin{DoxyReturn}{Returns}
+Size of point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a031a6b5688c65bce8f37af452c0f0959}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a031a6b5688c65bce8f37af452c0f0959}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if point set is defined. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a1b27139683b5b3418188e3eae1385618}{PointSet}(0.0, 0.0).isDefined() ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if point set is defined 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ae9506254971168a3ca63e1923556b70d}{library\+::math\+::geom\+::d2\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_af81b5c7b407db5fc7021f71ab10497ea}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_af81b5c7b407db5fc7021f71ab10497ea}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if point set is empty. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_af09fa6d8bce9f64b150c739e1ed7bfc6}{PointSet::Empty}().\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_af81b5c7b407db5fc7021f71ab10497ea}{isEmpty}() ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if point set is empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a8aba7c99e93720ba291abef2ded25cc7}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a8aba7c99e93720ba291abef2ded25cc7}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!is\+Near@{is\+Near}}
+\index{is\+Near@{is\+Near}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{is\+Near()}{isNear()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::is\+Near (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}{Point\+Set} \&}]{a\+Point\+Set,  }\item[{const Real \&}]{a\+Tolerance }\end{DoxyParamCaption}) const}
+
+
+
+Check if point set is near another point set. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a1b27139683b5b3418188e3eae1385618}{PointSet}(\{ \{ 0.0, 0.0 \}, \{ 0.0, 1.0 \} \}).\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a8aba7c99e93720ba291abef2ded25cc7}{isNear}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a1b27139683b5b3418188e3eae1385618}{PointSet}(\{ \{ 0.0, 1e-15 \}, \{ 0.0, 1.0
+       \} \}), 1e-15) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\mbox{\tt in}  & {\em a\+Tolerance} & A tolerance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if point set is near another point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a5c03cc2e46ae682725291ae02c5063cf}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a5c03cc2e46ae682725291ae02c5063cf}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}{Point\+Set} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if point sets not are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a0e0187a6f35dadf000b69615b9b82cde}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a0e0187a6f35dadf000b69615b9b82cde}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}{Point\+Set} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if point sets are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a652098938854c19294b5df8e8634cc9a}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a652098938854c19294b5df8e8634cc9a}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!print@{print}}
+\index{print@{print}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a834bbf59cf1c483d1dc7b0966b1e1ab3}{library\+::math\+::geom\+::d2\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a4eeece63192481627cb0f991a4eef1a4}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a4eeece63192481627cb0f991a4eef1a4}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily String library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::to\+String (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17}{Object\+::\+Format} \&}]{a\+Format = {\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}},  }\item[{const Integer \&}]{a\+Precision = {\ttfamily Integer\+:\+:Undefined()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get string representation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Format} & A format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_acdd76b3637732a249536b609dbe3f0eb}{library\+::math\+::geom\+::d2\+::\+Object}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Geometry/2\+D/\+Objects/\hyperlink{2_d_2_objects_2_point_set_8hpp}{Point\+Set.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/2\+D/\+Objects/\hyperlink{2_d_2_objects_2_point_set_8cpp}{Point\+Set.\+cpp}\end{DoxyCompactItemize}

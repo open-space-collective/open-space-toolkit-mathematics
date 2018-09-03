@@ -78,7 +78,9 @@ $(document).ready(function(){initNavTree('classlibrary_1_1math_1_1geom_1_1d2_1_1
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">library::math::geom::d2::Object Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -95,11 +97,23 @@ Inheritance diagram for library::math::geom::d2::Object:</div>
  <div class="center">
   <img src="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.png" usemap="#library::math::geom::d2::Object_map" alt=""/>
   <map id="library::math::geom::d2::Object_map" name="library::math::geom::d2::Object_map">
-<area href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html" title="Point. " alt="library::math::geom::d2::objects::Point" shape="rect" coords="0,56,235,80"/>
-<area href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html" title="Polygon. " alt="library::math::geom::d2::objects::Polygon" shape="rect" coords="245,56,480,80"/>
+<area href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string.html" title="Line string. " alt="library::math::geom::d2::objects::LineString" shape="rect" coords="0,56,273,80"/>
+<area href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html" title="Multi Line string. " alt="library::math::geom::d2::objects::MultiLineString" shape="rect" coords="283,56,556,80"/>
+<area href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html" title="Point. " alt="library::math::geom::d2::objects::Point" shape="rect" coords="566,56,839,80"/>
+<area href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set.html" title="Point set. " alt="library::math::geom::d2::objects::PointSet" shape="rect" coords="849,56,1122,80"/>
+<area href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html" title="Polygon. " alt="library::math::geom::d2::objects::Polygon" shape="rect" coords="1132,56,1405,80"/>
+<area href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html" title="Segment. " alt="library::math::geom::d2::objects::Segment" shape="rect" coords="1415,56,1688,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ac8cd61dada4960cfee9a469231621b17"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#ac8cd61dada4960cfee9a469231621b17">Format</a> { <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#ac8cd61dada4960cfee9a469231621b17aec0fc0100c4fc1ce4eea230c3dc10360">Format::Undefined</a>, 
+<a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b">Format::Standard</a>, 
+<a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#ac8cd61dada4960cfee9a469231621b17a9ab05752e6beff2c783a6046ed592661">Format::WKT</a>
+ }</td></tr>
+<tr class="separator:ac8cd61dada4960cfee9a469231621b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a35b722f64aded8d8e660074a23af237a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#a35b722f64aded8d8e660074a23af237a">Object</a> ()=default</td></tr>
@@ -124,12 +138,56 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7bc14e621db51aec72eff0fa5da295ac"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#a7bc14e621db51aec72eff0fa5da295ac">contains</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html">Object</a> &amp;anObject) const</td></tr>
 <tr class="memdesc:a7bc14e621db51aec72eff0fa5da295ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if object contains another object.  <a href="#a7bc14e621db51aec72eff0fa5da295ac">More...</a><br /></td></tr>
 <tr class="separator:a7bc14e621db51aec72eff0fa5da295ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00a8bec981c21c0298af86c495fe4341"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#a00a8bec981c21c0298af86c495fe4341">translate</a> (const Vector2d &amp;aTranslation)=0</td></tr>
-<tr class="separator:a00a8bec981c21c0298af86c495fe4341"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdd76b3637732a249536b609dbe3f0eb"><td class="memItemLeft" align="right" valign="top">virtual String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#acdd76b3637732a249536b609dbe3f0eb">toString</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#ac8cd61dada4960cfee9a469231621b17">Object::Format</a> &amp;aFormat=<a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b">Object::Format::Standard</a>, const Integer &amp;aPrecision=Integer::Undefined()) const =0</td></tr>
+<tr class="memdesc:acdd76b3637732a249536b609dbe3f0eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get string representation.  <a href="#acdd76b3637732a249536b609dbe3f0eb">More...</a><br /></td></tr>
+<tr class="separator:acdd76b3637732a249536b609dbe3f0eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a834bbf59cf1c483d1dc7b0966b1e1ab3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#a834bbf59cf1c483d1dc7b0966b1e1ab3">print</a> (std::ostream &amp;anOutputStream, bool displayDecorators=true) const =0</td></tr>
+<tr class="memdesc:a834bbf59cf1c483d1dc7b0966b1e1ab3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print object.  <a href="#a834bbf59cf1c483d1dc7b0966b1e1ab3">More...</a><br /></td></tr>
+<tr class="separator:a834bbf59cf1c483d1dc7b0966b1e1ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a289589fb6e9e7a2c4ca4976a1544def5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#a289589fb6e9e7a2c4ca4976a1544def5">applyTransformation</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation.html">Transformation</a> &amp;aTransformation)=0</td></tr>
+<tr class="memdesc:a289589fb6e9e7a2c4ca4976a1544def5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply transformation to object.  <a href="#a289589fb6e9e7a2c4ca4976a1544def5">More...</a><br /></td></tr>
+<tr class="separator:a289589fb6e9e7a2c4ca4976a1544def5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a418df9bf4a73078f3d494edef1743f8d"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#a418df9bf4a73078f3d494edef1743f8d">operator&lt;&lt;</a> (std::ostream &amp;anOutputStream, const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html">Object</a> &amp;anObject)</td></tr>
+<tr class="memdesc:a418df9bf4a73078f3d494edef1743f8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output stream operator.  <a href="#a418df9bf4a73078f3d494edef1743f8d">More...</a><br /></td></tr>
+<tr class="separator:a418df9bf4a73078f3d494edef1743f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>2D object </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="ac8cd61dada4960cfee9a469231621b17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8cd61dada4960cfee9a469231621b17">&#9670;&nbsp;</a></span>Format</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#ac8cd61dada4960cfee9a469231621b17">library::math::geom::d2::Object::Format</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac8cd61dada4960cfee9a469231621b17aec0fc0100c4fc1ce4eea230c3dc10360"></a>Undefined&#160;</td><td class="fielddoc"><p>Undefined format. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b"></a>Standard&#160;</td><td class="fielddoc"><p>Standard format. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac8cd61dada4960cfee9a469231621b17a9ab05752e6beff2c783a6046ed592661"></a>WKT&#160;</td><td class="fielddoc"><p>Well-Known Text (WKT) format. </p>
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a35b722f64aded8d8e660074a23af237a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a35b722f64aded8d8e660074a23af237a">&#9670;&nbsp;</a></span>Object()</h2>
 
@@ -185,6 +243,42 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a289589fb6e9e7a2c4ca4976a1544def5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a289589fb6e9e7a2c4ca4976a1544def5">&#9670;&nbsp;</a></span>applyTransformation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void library::math::geom::d2::Object::applyTransformation </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation.html">Transformation</a> &amp;&#160;</td>
+          <td class="paramname"><em>aTransformation</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply transformation to object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aTransformation</td><td>A transformation </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a5cb71beeb4de3c2c1b84fbfb8546c935">library::math::geom::d2::objects::Segment</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a920b30eb110c7164f65754979da17638">library::math::geom::d2::objects::Polygon</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set.html#acfb8652fd1f17f101e7750a0b81452c0">library::math::geom::d2::objects::PointSet</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html#a71d3ef79dbffcd2568d1a2c6bad807d7">library::math::geom::d2::objects::Point</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string.html#abd9e77eb0e1d319e8f9af23ccb6dc0b4">library::math::geom::d2::objects::LineString</a>, and <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html#a6180a8b94ff175d6313a74ad4e680bc7">library::math::geom::d2::objects::MultiLineString</a>.</p>
+
+</div>
+</div>
 <a id="a5c26ae4120edb24f6463d65a9cef247d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c26ae4120edb24f6463d65a9cef247d">&#9670;&nbsp;</a></span>clone()</h2>
 
@@ -211,7 +305,7 @@ Public Member Functions</h2></td></tr>
 <p>Clone object (pure virtual) </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to cloned object </dd></dl>
 
-<p>Implemented in <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a15bbbe7e468a50d6059e2df946175e1c">library::math::geom::d2::objects::Polygon</a>, and <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html#aa6b55bdbf5a0ce9ec8bc91ca79de3569">library::math::geom::d2::objects::Point</a>.</p>
+<p>Implemented in <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a15bbbe7e468a50d6059e2df946175e1c">library::math::geom::d2::objects::Polygon</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set.html#ad867c4fb86734efe968a39c95eba53b3">library::math::geom::d2::objects::PointSet</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string.html#a5b503802b279c6c305fed6a07a893ad2">library::math::geom::d2::objects::LineString</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html#aa6b55bdbf5a0ce9ec8bc91ca79de3569">library::math::geom::d2::objects::Point</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html#a38054f0f0a2c198b5d3c76ef22562e30">library::math::geom::d2::objects::MultiLineString</a>, and <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a6149a3cf215b0b573d5bd4f25fad75e9">library::math::geom::d2::objects::Segment</a>.</p>
 
 </div>
 </div>
@@ -311,7 +405,7 @@ Public Member Functions</h2></td></tr>
 <p>Check if object is defined. </p>
 <dl class="section return"><dt>Returns</dt><dd>True if object is defined </dd></dl>
 
-<p>Implemented in <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html#ac90251968d8eb11df82e28f6cf095e5c">library::math::geom::d2::objects::Point</a>, and <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a83e0962f91f0732048e156ad634faaea">library::math::geom::d2::objects::Polygon</a>.</p>
+<p>Implemented in <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html#ac90251968d8eb11df82e28f6cf095e5c">library::math::geom::d2::objects::Point</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a83e0962f91f0732048e156ad634faaea">library::math::geom::d2::objects::Polygon</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set.html#a031a6b5688c65bce8f37af452c0f0959">library::math::geom::d2::objects::PointSet</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a2c366d74328cdce4a7e83a761a84dbc7">library::math::geom::d2::objects::Segment</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string.html#a2ef4a1e387ed463286fac7c93fd7b022">library::math::geom::d2::objects::LineString</a>, and <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html#a77de687b2c287226984e2614dafe744a">library::math::geom::d2::objects::MultiLineString</a>.</p>
 
 </div>
 </div>
@@ -351,8 +445,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a00a8bec981c21c0298af86c495fe4341"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00a8bec981c21c0298af86c495fe4341">&#9670;&nbsp;</a></span>translate()</h2>
+<a id="a834bbf59cf1c483d1dc7b0966b1e1ab3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a834bbf59cf1c483d1dc7b0966b1e1ab3">&#9670;&nbsp;</a></span>print()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -361,11 +455,21 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void library::math::geom::d2::Object::translate </td>
+          <td class="memname">virtual void library::math::geom::d2::Object::print </td>
           <td>(</td>
-          <td class="paramtype">const Vector2d &amp;&#160;</td>
-          <td class="paramname"><em>aTranslation</em></td><td>)</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>anOutputStream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>displayDecorators</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
   </td>
@@ -375,7 +479,110 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Implemented in <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html#a8e17705a1762fdfdcbed68881afca245">library::math::geom::d2::objects::Point</a>, and <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#ae5494a1f838d3c325899b6c46237bca8">library::math::geom::d2::objects::Polygon</a>.</p>
+<p>Print object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>displayDecorators If true, display decorators </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#abfe0b4983dcb9e26848d29a9b86d4b9c">library::math::geom::d2::objects::Segment</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a028ca7818387654ed1aab1584cee6cc5">library::math::geom::d2::objects::Polygon</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set.html#a652098938854c19294b5df8e8634cc9a">library::math::geom::d2::objects::PointSet</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html#a74bef6325d728e1cb6e70bac0b8d4601">library::math::geom::d2::objects::Point</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string.html#ae980ac86d1f2d8091151252aef2b6adc">library::math::geom::d2::objects::LineString</a>, and <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html#ab7854c1006501bf5159b890a662198b1">library::math::geom::d2::objects::MultiLineString</a>.</p>
+
+</div>
+</div>
+<a id="acdd76b3637732a249536b609dbe3f0eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdd76b3637732a249536b609dbe3f0eb">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual String library::math::geom::d2::Object::toString </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#ac8cd61dada4960cfee9a469231621b17">Object::Format</a> &amp;&#160;</td>
+          <td class="paramname"><em>aFormat</em> = <code><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b">Object::Format::Standard</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Integer &amp;&#160;</td>
+          <td class="paramname"><em>aPrecision</em> = <code>Integer::Undefined()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get string representation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aFormat</td><td>A format </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String representation </dd></dl>
+
+<p>Implemented in <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a6efb82e3e5e5d97214b827bc6f8574e3">library::math::geom::d2::objects::Segment</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#acef17857f29323e985fba23441ed1171">library::math::geom::d2::objects::Polygon</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set.html#a4eeece63192481627cb0f991a4eef1a4">library::math::geom::d2::objects::PointSet</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html#ae645a37f426dac123d566fb5511d595d">library::math::geom::d2::objects::Point</a>, <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string.html#a13c0a7c5b8da7724b5a2dd2933064768">library::math::geom::d2::objects::LineString</a>, and <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html#a71d1e434196bb8d67054ad28d8aa59a6">library::math::geom::d2::objects::MultiLineString</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a418df9bf4a73078f3d494edef1743f8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a418df9bf4a73078f3d494edef1743f8d">&#9670;&nbsp;</a></span>operator<<</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>anOutputStream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html">Object</a> &amp;&#160;</td>
+          <td class="paramname"><em>anObject</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Output stream operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">anObject</td><td>An object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A reference to output stream </dd></dl>
 
 </div>
 </div>

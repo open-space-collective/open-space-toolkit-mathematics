@@ -7,6 +7,7 @@ var classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion =
     [ "Quaternion", "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#aa7f459a08f5af38b9f7676a6bf36a21c", null ],
     [ "Quaternion", "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#ab9274dd1d41ae63eedc732ee9f97f366", null ],
     [ "Quaternion", "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#aff8b584d7726acd9d9affd1e1a921180", null ],
+    [ "angularDifferenceWith", "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a82c585870a5c5833ae8869c8e193d94a", null ],
     [ "conjugate", "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a4c584b96ce248b069a85adb1c5abd74c", null ],
     [ "exp", "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a171373818023a1c013891d4297360542", null ],
     [ "getScalarPart", "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#ac9560aa15c9c4682dd571983bf3f4ab6", null ],

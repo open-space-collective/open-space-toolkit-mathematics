@@ -1,0 +1,352 @@
+\hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{}\section{library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Line Class Reference}
+\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line}.  
+
+
+
+
+{\ttfamily \#include $<$Line.\+hpp$>$}
+
+Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Line\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}{Line} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&an\+Origin, const Vector3d \&a\+Direction)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} $\ast$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a55382b24007bccdae721176d0f73536f}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Clone line. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a2e5b0da1d652abbff16d7024f8eecb0a}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&a\+Line) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ae49d3224ab2f209f192bb3b1e152766e}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&a\+Line) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ab7b509259a32ac21c83bb14fcc7f83f3}{is\+Defined} () const override
+\begin{DoxyCompactList}\small\item\em Check if line is defined. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_af40668ee33a6cd265a4b3c3a9a53f294}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if line intersects point. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a2cc1edf1b60745c518fbf19f2ab0771c}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&an\+Ellipsoid) const
+\begin{DoxyCompactList}\small\item\em Check if line intersects ellipsoid. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a59b72a3a39134963f5165a03829b17aa}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if line contains point. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ad65178573d705ad21bdd54e7f4b7f104}{get\+Origin} () const
+\begin{DoxyCompactList}\small\item\em Get line origin. \end{DoxyCompactList}\item 
+Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_aa108a53227e4326188fe17a03c55f9cb}{get\+Direction} () const
+\begin{DoxyCompactList}\small\item\em Get line direction. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a6c2d2268fed2b9c461730fbcd4425d6e}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print line. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ae485ab541cbd10113eac30d1956fb4c0}{apply\+Transformation} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a6e80b434196ee84bc74154532989c18c}{Undefined} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line}. 
+
+https\+://en.wikipedia.\+org/wiki/\+Line\+\_\+(geometry) 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!Line@{Line}}
+\index{Line@{Line}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{Line()}{Line()}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::\+Line (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{an\+Origin,  }\item[{const Vector3d \&}]{a\+Direction }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}{Line} line(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Origin} & A line origin \\
+\hline
+\mbox{\tt in}  & {\em a\+Direction} & A line direction \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ae485ab541cbd10113eac30d1956fb4c0}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ae485ab541cbd10113eac30d1956fb4c0}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!apply\+Transformation@{apply\+Transformation}}
+\index{apply\+Transformation@{apply\+Transformation}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{apply\+Transformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to line. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a5fc47b1ee5d9a28efc6010d3d1512470}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a55382b24007bccdae721176d0f73536f}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a55382b24007bccdae721176d0f73536f}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!clone@{clone}}
+\index{clone@{clone}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} $\ast$ library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone line. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned line 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a1a784c6b359e0eb97cd34fabc42f2f3f}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a59b72a3a39134963f5165a03829b17aa}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a59b72a3a39134963f5165a03829b17aa}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!contains@{contains}}
+\index{contains@{contains}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if line contains point. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}{Line} line = ... ;
+Ellipsoid ellipsoid = ... ;
+line.contains(ellipsoid) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if line contains point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_aa108a53227e4326188fe17a03c55f9cb}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_aa108a53227e4326188fe17a03c55f9cb}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!get\+Direction@{get\+Direction}}
+\index{get\+Direction@{get\+Direction}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{get\+Direction()}{getDirection()}}
+{\footnotesize\ttfamily Vector3d library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get line direction. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}{Line}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_aa108a53227e4326188fe17a03c55f9cb}{getDirection}() ; \textcolor{comment}{// [0.0, 0.0, 1.0]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} direction 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ad65178573d705ad21bdd54e7f4b7f104}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ad65178573d705ad21bdd54e7f4b7f104}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!get\+Origin@{get\+Origin}}
+\index{get\+Origin@{get\+Origin}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{get\+Origin()}{getOrigin()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::get\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get line origin. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}{Line}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ad65178573d705ad21bdd54e7f4b7f104}{getOrigin}() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} origin 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_af40668ee33a6cd265a4b3c3a9a53f294}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_af40668ee33a6cd265a4b3c3a9a53f294}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if line intersects point. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}{Line} line = ... ;
+Point point = ... ;
+line.intersects(point) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Point} & An point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if line intersects point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a2cc1edf1b60745c518fbf19f2ab0771c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a2cc1edf1b60745c518fbf19f2ab0771c}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
+
+
+
+Check if line intersects ellipsoid. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}{Line} line = ... ;
+Ellipsoid ellipsoid = ... ;
+line.intersects(ellipsoid) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if line intersects ellipsoid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ab7b509259a32ac21c83bb14fcc7f83f3}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ab7b509259a32ac21c83bb14fcc7f83f3}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if line is defined. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}{Line}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ab7b509259a32ac21c83bb14fcc7f83f3}{isDefined}() ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if line is defined 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a2216442e322f0c3ca5f01a4efa22baf7}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ae49d3224ab2f209f192bb3b1e152766e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ae49d3224ab2f209f192bb3b1e152766e}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&}]{a\+Line }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}{Line}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) != \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}{Line}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 2.0 \}) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Line} & A line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if lines not are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a2e5b0da1d652abbff16d7024f8eecb0a}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a2e5b0da1d652abbff16d7024f8eecb0a}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&}]{a\+Line }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}{Line}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) == \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}{Line}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Line} & A line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if lines are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a6c2d2268fed2b9c461730fbcd4425d6e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a6c2d2268fed2b9c461730fbcd4425d6e}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!print@{print}}
+\index{print@{print}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print line. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aa166f4ce4d116a248f0fc861c75012ca}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a6e80b434196ee84bc74154532989c18c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a6e80b434196ee84bc74154532989c18c}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined line. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}{Line} line = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a6e80b434196ee84bc74154532989c18c}{Line::Undefined}() ; \textcolor{comment}{// Undefined}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined line 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_line_8hpp}{Line.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_line_8cpp}{Line.\+cpp}\end{DoxyCompactItemize}

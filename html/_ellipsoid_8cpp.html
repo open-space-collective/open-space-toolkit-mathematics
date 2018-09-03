@@ -84,11 +84,25 @@ $(document).ready(function(){initNavTree('_ellipsoid_8cpp.html','');});
 <div class="title">Ellipsoid.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="_ellipsoid_8hpp_source.html">Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_segment_8hpp_source.html">Library/Mathematics/Geometry/3D/Objects/Segment.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="_rotation_matrix_8hpp_source.html">Library/Mathematics/Geometry/Transformations/Rotations/RotationMatrix.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="3_d_2_transformation_8hpp_source.html">Library/Mathematics/Geometry/3D/Transformation.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_intersection_8hpp_source.html">Library/Mathematics/Geometry/3D/Intersection.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_pyramid_8hpp_source.html">Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_ellipsoid_8hpp_source.html">Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_sphere_8hpp_source.html">Library/Mathematics/Geometry/3D/Objects/Sphere.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="3_d_2_objects_2_segment_8hpp_source.html">Library/Mathematics/Geometry/3D/Objects/Segment.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_ray_8hpp_source.html">Library/Mathematics/Geometry/3D/Objects/Ray.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_line_8hpp_source.html">Library/Mathematics/Geometry/3D/Objects/Line.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="3_d_2_objects_2_point_set_8hpp_source.html">Library/Mathematics/Geometry/3D/Objects/PointSet.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="_interval_8hpp_source.html">Library/Mathematics/Objects/Interval.hpp</a>&gt;</code><br />
 <code>#include &lt;Library/Core/Error.hpp&gt;</code><br />
 <code>#include &lt;Library/Core/Utilities.hpp&gt;</code><br />
+<code>#include &lt;Gte/Mathematics/GteIntrEllipsoid3Ellipsoid3.h&gt;</code><br />
+<code>#include &lt;Gte/Mathematics/GteIntrPlane3Ellipsoid3.h&gt;</code><br />
+<code>#include &lt;Gte/Mathematics/GteIntrSegment3Ellipsoid3.h&gt;</code><br />
+<code>#include &lt;Gte/Mathematics/GteIntrRay3Ellipsoid3.h&gt;</code><br />
+<code>#include &lt;Gte/Mathematics/GteIntrLine3Ellipsoid3.h&gt;</code><br />
+<code>#include &lt;Eigen/Eigenvalues&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -105,8 +119,10 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afec709c8a129bead70ffe69d72138f20"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelibrary_1_1math_1_1geom_1_1d3_1_1objects.html#afec709c8a129bead70ffe69d72138f20">library::math::geom::d3::objects::operator&lt;&lt;</a> (std::ostream &amp;anOutputStream, const Ellipsoid &amp;anEllipsoid)</td></tr>
-<tr class="separator:afec709c8a129bead70ffe69d72138f20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab253aeb9c4d372b3379e95e15711a98f"><td class="memItemLeft" align="right" valign="top">gte::Vector3&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelibrary_1_1math_1_1geom_1_1d3_1_1objects.html#ab253aeb9c4d372b3379e95e15711a98f">library::math::geom::d3::objects::GteVectorFromVector3d</a> (const Vector3d &amp;aVector)</td></tr>
+<tr class="separator:ab253aeb9c4d372b3379e95e15711a98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17fdd18d6c2bcacf17c9c1716f99609c"><td class="memItemLeft" align="right" valign="top">Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelibrary_1_1math_1_1geom_1_1d3_1_1objects.html#a17fdd18d6c2bcacf17c9c1716f99609c">library::math::geom::d3::objects::Vector3dFromGteVector</a> (const gte::Vector3&lt; double &gt; &amp;aVector)</td></tr>
+<tr class="separator:a17fdd18d6c2bcacf17c9c1716f99609c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Library/Mathematics</p>

@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['radian',['Radian',['../classlibrary_1_1math_1_1geom_1_1_angle.html#ab593c4dafbb9a5c29fdbe114eaae8eaea50c62e3ca8d8ec8732a7f968a3bf2c7c',1,'library::math::geom::Angle']]],
-  ['ray',['Ray',['../classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05a9406e3c325bfc9873426e5eda4ba6e18',1,'library::math::geom::d3::Intersection']]],
-  ['revolution',['Revolution',['../classlibrary_1_1math_1_1geom_1_1_angle.html#ab593c4dafbb9a5c29fdbe114eaae8eaeaad09b2d48b2811c68e5a2bf421f7f2f2',1,'library::math::geom::Angle']]]
+  ['passive',['Passive',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_transformation.html#a67f77f4eb87098e589562cc4b4e46be4af80bc338b6146b566004a046f8137c85',1,'library::math::geom::trf::rot::Transformation']]],
+  ['plane',['Plane',['../classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05a0d3adee051531c15b3509b4d4d75ce7b',1,'library::math::geom::d3::Intersection']]],
+  ['point',['Point',['../classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05a2a3cd5946cfd317eb99c3d32e35e2d4c',1,'library::math::geom::d3::Intersection']]],
+  ['pointset',['PointSet',['../classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05aaedf8f48dfa5b704b6c12b415707a1da',1,'library::math::geom::d3::Intersection']]]
 ];

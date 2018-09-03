@@ -12,9 +12,17 @@
 Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d2\+:\+:Object\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}
+\includegraphics[height=0.664294cm]{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}
 \end{center}
 \end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17}{Format} \{ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aec0fc0100c4fc1ce4eea230c3dc10360}{Format\+::\+Undefined}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b}{Format\+::\+Standard}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17a9ab05752e6beff2c783a6046ed592661}{Format\+::\+W\+KT}
+ \}
+\end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -34,12 +42,44 @@ virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a22819b510
 \begin{DoxyCompactList}\small\item\em Check if object intersects another object. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a7bc14e621db51aec72eff0fa5da295ac}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} \&an\+Object) const
 \begin{DoxyCompactList}\small\item\em Check if object contains another object. \end{DoxyCompactList}\item 
-virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a00a8bec981c21c0298af86c495fe4341}{translate} (const Vector2d \&a\+Translation)=0
-\end{DoxyCompactItemize}
+virtual String \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_acdd76b3637732a249536b609dbe3f0eb}{to\+String} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17}{Object\+::\+Format} \&a\+Format=\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}, const Integer \&a\+Precision=Integer\+::\+Undefined()) const =0
+\begin{DoxyCompactList}\small\item\em Get string representation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a834bbf59cf1c483d1dc7b0966b1e1ab3}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const =0
+\begin{DoxyCompactList}\small\item\em Print object. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a289589fb6e9e7a2c4ca4976a1544def5}{apply\+Transformation} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&a\+Transformation)=0
+\begin{DoxyCompactList}\small\item\em Apply transformation to object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a418df9bf4a73078f3d494edef1743f8d}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} \&an\+Object)
+\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 2D object 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17}} 
+\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!Format@{Format}}
+\index{Format@{Format}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
+\subsubsection{\texorpdfstring{Format}{Format}}
+{\footnotesize\ttfamily enum \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17}{library\+::math\+::geom\+::d2\+::\+Object\+::\+Format}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Undefined@{Undefined}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!Undefined@{Undefined}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aec0fc0100c4fc1ce4eea230c3dc10360}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aec0fc0100c4fc1ce4eea230c3dc10360}} 
+Undefined&Undefined format. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Standard@{Standard}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!Standard@{Standard}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b}} 
+Standard&Standard format. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+KT@{W\+KT}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!W\+KT@{W\+KT}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17a9ab05752e6beff2c783a6046ed592661}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17a9ab05752e6beff2c783a6046ed592661}} 
+W\+KT&Well-\/\+Known Text (W\+KT) format. \\
+\hline
+
+\end{DoxyEnumFields}
+
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a35b722f64aded8d8e660074a23af237a}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a35b722f64aded8d8e660074a23af237a}} 
@@ -65,6 +105,25 @@ Destructor (pure virtual)
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a289589fb6e9e7a2c4ca4976a1544def5}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a289589fb6e9e7a2c4ca4976a1544def5}} 
+\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!apply\+Transformation@{apply\+Transformation}}
+\index{apply\+Transformation@{apply\+Transformation}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
+\subsubsection{\texorpdfstring{apply\+Transformation()}{applyTransformation()}}
+{\footnotesize\ttfamily virtual void library\+::math\+::geom\+::d2\+::\+Object\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Apply transformation to object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment_a5cb71beeb4de3c2c1b84fbfb8546c935}{library\+::math\+::geom\+::d2\+::objects\+::\+Segment}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a920b30eb110c7164f65754979da17638}{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_acfb8652fd1f17f101e7750a0b81452c0}{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a71d3ef79dbffcd2568d1a2c6bad807d7}{library\+::math\+::geom\+::d2\+::objects\+::\+Point}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_abd9e77eb0e1d319e8f9af23ccb6dc0b4}{library\+::math\+::geom\+::d2\+::objects\+::\+Line\+String}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string_a6180a8b94ff175d6313a74ad4e680bc7}{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Line\+String}.
+
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a5c26ae4120edb24f6463d65a9cef247d}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a5c26ae4120edb24f6463d65a9cef247d}} 
 \index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!clone@{clone}}
 \index{clone@{clone}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
@@ -80,7 +139,7 @@ Pointer to cloned object
 \end{DoxyReturn}
 
 
-Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a15bbbe7e468a50d6059e2df946175e1c}{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_aa6b55bdbf5a0ce9ec8bc91ca79de3569}{library\+::math\+::geom\+::d2\+::objects\+::\+Point}.
+Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a15bbbe7e468a50d6059e2df946175e1c}{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ad867c4fb86734efe968a39c95eba53b3}{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_a5b503802b279c6c305fed6a07a893ad2}{library\+::math\+::geom\+::d2\+::objects\+::\+Line\+String}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_aa6b55bdbf5a0ce9ec8bc91ca79de3569}{library\+::math\+::geom\+::d2\+::objects\+::\+Point}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string_a38054f0f0a2c198b5d3c76ef22562e30}{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Line\+String}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment_a6149a3cf215b0b573d5bd4f25fad75e9}{library\+::math\+::geom\+::d2\+::objects\+::\+Segment}.
 
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a7bc14e621db51aec72eff0fa5da295ac}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a7bc14e621db51aec72eff0fa5da295ac}} 
 \index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!contains@{contains}}
@@ -149,7 +208,7 @@ True if object is defined
 \end{DoxyReturn}
 
 
-Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_ac90251968d8eb11df82e28f6cf095e5c}{library\+::math\+::geom\+::d2\+::objects\+::\+Point}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a83e0962f91f0732048e156ad634faaea}{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}.
+Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_ac90251968d8eb11df82e28f6cf095e5c}{library\+::math\+::geom\+::d2\+::objects\+::\+Point}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a83e0962f91f0732048e156ad634faaea}{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a031a6b5688c65bce8f37af452c0f0959}{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment_a2c366d74328cdce4a7e83a761a84dbc7}{library\+::math\+::geom\+::d2\+::objects\+::\+Segment}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_a2ef4a1e387ed463286fac7c93fd7b022}{library\+::math\+::geom\+::d2\+::objects\+::\+Line\+String}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string_a77de687b2c287226984e2614dafe744a}{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Line\+String}.
 
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a538fa27124314cddf9705cf35a3efc08}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a538fa27124314cddf9705cf35a3efc08}} 
 \index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!operator"!=@{operator"!=}}
@@ -163,16 +222,72 @@ Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_poin
 \subsubsection{\texorpdfstring{operator==()}{operator==()}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::\+Object\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} \&}]{an\+Object }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a00a8bec981c21c0298af86c495fe4341}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a00a8bec981c21c0298af86c495fe4341}} 
-\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!translate@{translate}}
-\index{translate@{translate}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
-\subsubsection{\texorpdfstring{translate()}{translate()}}
-{\footnotesize\ttfamily virtual void library\+::math\+::geom\+::d2\+::\+Object\+::translate (\begin{DoxyParamCaption}\item[{const Vector2d \&}]{a\+Translation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a834bbf59cf1c483d1dc7b0966b1e1ab3}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a834bbf59cf1c483d1dc7b0966b1e1ab3}} 
+\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!print@{print}}
+\index{print@{print}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily virtual void library\+::math\+::geom\+::d2\+::\+Object\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
-Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a8e17705a1762fdfdcbed68881afca245}{library\+::math\+::geom\+::d2\+::objects\+::\+Point}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ae5494a1f838d3c325899b6c46237bca8}{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}.
+Print object. 
 
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment_abfe0b4983dcb9e26848d29a9b86d4b9c}{library\+::math\+::geom\+::d2\+::objects\+::\+Segment}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a028ca7818387654ed1aab1584cee6cc5}{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a652098938854c19294b5df8e8634cc9a}{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a74bef6325d728e1cb6e70bac0b8d4601}{library\+::math\+::geom\+::d2\+::objects\+::\+Point}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_ae980ac86d1f2d8091151252aef2b6adc}{library\+::math\+::geom\+::d2\+::objects\+::\+Line\+String}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string_ab7854c1006501bf5159b890a662198b1}{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Line\+String}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_acdd76b3637732a249536b609dbe3f0eb}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_acdd76b3637732a249536b609dbe3f0eb}} 
+\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily virtual String library\+::math\+::geom\+::d2\+::\+Object\+::to\+String (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17}{Object\+::\+Format} \&}]{a\+Format = {\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}},  }\item[{const Integer \&}]{a\+Precision = {\ttfamily Integer\+:\+:Undefined()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get string representation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Format} & A format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment_a6efb82e3e5e5d97214b827bc6f8574e3}{library\+::math\+::geom\+::d2\+::objects\+::\+Segment}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_acef17857f29323e985fba23441ed1171}{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a4eeece63192481627cb0f991a4eef1a4}{library\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_ae645a37f426dac123d566fb5511d595d}{library\+::math\+::geom\+::d2\+::objects\+::\+Point}, \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_a13c0a7c5b8da7724b5a2dd2933064768}{library\+::math\+::geom\+::d2\+::objects\+::\+Line\+String}, and \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string_a71d1e434196bb8d67054ad28d8aa59a6}{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Line\+String}.
+
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a418df9bf4a73078f3d494edef1743f8d}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a418df9bf4a73078f3d494edef1743f8d}} 
+\index{library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!library\+::math\+::geom\+::d2\+::\+Object@{library\+::math\+::geom\+::d2\+::\+Object}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object}{Object} \&}]{an\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em an\+Object} & An object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to output stream 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
