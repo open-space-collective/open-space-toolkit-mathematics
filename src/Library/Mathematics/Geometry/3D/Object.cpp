@@ -53,7 +53,7 @@ bool                            Object::operator ==                         (   
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Pyramid ;
 
-    if ((!this->isDefined()) && (!anObject.isDefined()))
+    if ((!this->isDefined()) || (!anObject.isDefined()))
     {
         return false ;
     }
