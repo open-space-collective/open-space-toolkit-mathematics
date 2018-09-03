@@ -51,7 +51,7 @@ Point*                          Point::clone                                ( ) 
 bool                            Point::operator ==                          (   const   Point&                      aPoint                                      ) const
 {
 
-    if ((!this->isDefined()) && (!aPoint.isDefined()))
+    if ((!this->isDefined()) || (!aPoint.isDefined()))
     {
         return false ;
     }

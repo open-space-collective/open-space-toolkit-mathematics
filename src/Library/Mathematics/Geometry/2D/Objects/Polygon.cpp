@@ -442,7 +442,7 @@ Polygon*                        Polygon::clone                              ( ) 
 bool                            Polygon::operator ==                        (   const   Polygon&                    aPolygon                                    ) const
 {
 
-    if ((!this->isDefined()) && (!aPolygon.isDefined()))
+    if ((!this->isDefined()) || (!aPolygon.isDefined()))
     {
         return false ;
     }

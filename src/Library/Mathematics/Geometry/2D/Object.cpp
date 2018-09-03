@@ -38,7 +38,7 @@ bool                            Object::operator ==                         (   
     using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::objects::Polygon ;
 
-    if ((!this->isDefined()) && (!anObject.isDefined()))
+    if ((!this->isDefined()) || (!anObject.isDefined()))
     {
         return false ;
     }
