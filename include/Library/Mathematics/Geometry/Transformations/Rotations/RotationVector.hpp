@@ -121,7 +121,7 @@ class RotationVector
         /// @brief              Convert rotation vector to its string representation
         ///
         /// @code
-        ///                     RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)).toString() ; // "[0.0, 0.0, 1.0] - 90.0 [deg]"
+        ///                     RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)).toString() ; // "[0.0, 0.0, 1.0] : 90.0 [deg]"
         /// @endcode
         ///
         /// @param              [in] (optional) aPrecision A precision
