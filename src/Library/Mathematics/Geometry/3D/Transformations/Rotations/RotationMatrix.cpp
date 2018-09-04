@@ -1,15 +1,15 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           Library/Mathematics/Geometry/Transformations/Rotations/RotationMatrix.cpp
+/// @file           Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationMatrix.hpp>
-#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
-#include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
 
 #include <Library/Core/Error.hpp>
 #include <Library/Core/Utilities.hpp>
@@ -21,6 +21,8 @@ namespace library
 namespace math
 {
 namespace geom
+{
+namespace d3
 {
 namespace trf
 {
@@ -589,6 +591,7 @@ RotationMatrix                  RotationMatrix::RotationVector              (   
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+}
 }
 }
 }

@@ -1,25 +1,25 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.test.cpp
+/// @file           Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
-#include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
 #include <Library/Mathematics/Geometry/Angle.hpp>
 
 #include <Global.test.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, Constructor)
+TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Constructor)
 {
 
     using library::math::geom::Angle ;
-    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -40,11 +40,11 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, Con
 
 }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, EqualToOperator)
+TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, EqualToOperator)
 {
 
     using library::math::geom::Angle ;
-    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
     
     {
 
@@ -78,11 +78,11 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, Equ
 
 }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, NotEqualToOperator)
+TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, NotEqualToOperator)
 {
 
     using library::math::geom::Angle ;
-    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -116,11 +116,11 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, Not
 
 }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, StreamOperator)
+TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, StreamOperator)
 {
 
     using library::math::geom::Angle ;
-    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
     
     {
 
@@ -134,12 +134,12 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, Str
 
 }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, IsDefined)
+TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, IsDefined)
 {
 
     using library::math::obj::Vector3d ;
     using library::math::geom::Angle ;
-    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
     
     {
 
@@ -157,12 +157,12 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, IsD
 
 }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, GetAxis)
+TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, GetAxis)
 {
 
     using library::math::obj::Vector3d ;
     using library::math::geom::Angle ;
-    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -180,11 +180,11 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, Get
 
 }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, GetAngle)
+TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, GetAngle)
 {
 
     using library::math::geom::Angle ;
-    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -209,11 +209,11 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, Get
 
 }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, ToString)
+TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, ToString)
 {
 
     using library::math::geom::Angle ;
-    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -253,10 +253,10 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, ToS
 
 }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, Undefined)
+TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Undefined)
 {
 
-    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
     
     {
 
@@ -267,11 +267,11 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, Und
 
 }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, Unit)
+TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Unit)
 {
 
     using library::math::geom::Angle ;
-    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
     
     {
 
@@ -282,13 +282,13 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, Uni
 
 }
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, Quaternion)
+TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Quaternion)
 {
 
     using library::core::types::Real ;
     using library::math::geom::Angle ;
-    using library::math::geom::trf::rot::Quaternion ;
-    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::d3::trf::rot::Quaternion ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
     
     {
 

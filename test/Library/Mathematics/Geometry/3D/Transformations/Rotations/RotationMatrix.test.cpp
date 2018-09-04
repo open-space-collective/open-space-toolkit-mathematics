@@ -1,26 +1,26 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           Library/Mathematics/Geometry/Transformations/Rotations/RotationMatrix.test.cpp
+/// @file           Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationMatrix.hpp>
-#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
-#include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
 #include <Library/Mathematics/Geometry/Angle.hpp>
 
 #include <Global.test.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Constructor)
+TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, Constructor)
 {
 
     using library::math::geom::Angle ;
-    using library::math::geom::trf::rot::RotationMatrix ;
+    using library::math::geom::d3::trf::rot::RotationMatrix ;
 
     // {
 
@@ -47,11 +47,11 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Con
 
 }
 
-// TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, EqualToOperator)
+// TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, EqualToOperator)
 // {
 
 //     using library::math::geom::Angle ;
-//     using library::math::geom::trf::rot::RotationMatrix ;
+//     using library::math::geom::d3::trf::rot::RotationMatrix ;
     
 //     {
 
@@ -85,11 +85,11 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Con
 
 // }
 
-// TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, NotEqualToOperator)
+// TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, NotEqualToOperator)
 // {
 
 //     using library::math::geom::Angle ;
-//     using library::math::geom::trf::rot::RotationMatrix ;
+//     using library::math::geom::d3::trf::rot::RotationMatrix ;
 
 //     {
 
@@ -123,11 +123,11 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Con
 
 // }
 
-// TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, StreamOperator)
+// TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, StreamOperator)
 // {
 
 //     using library::math::geom::Angle ;
-//     using library::math::geom::trf::rot::RotationMatrix ;
+//     using library::math::geom::d3::trf::rot::RotationMatrix ;
     
 //     {
 
@@ -141,12 +141,12 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Con
 
 // }
 
-// TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, IsDefined)
+// TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, IsDefined)
 // {
 
 //     using library::math::obj::Vector3d ;
 //     using library::math::geom::Angle ;
-//     using library::math::geom::trf::rot::RotationMatrix ;
+//     using library::math::geom::d3::trf::rot::RotationMatrix ;
     
 //     {
 
@@ -164,12 +164,12 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Con
 
 // }
 
-// TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, GetAxis)
+// TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, GetAxis)
 // {
 
 //     using library::math::obj::Vector3d ;
 //     using library::math::geom::Angle ;
-//     using library::math::geom::trf::rot::RotationMatrix ;
+//     using library::math::geom::d3::trf::rot::RotationMatrix ;
 
 //     {
 
@@ -187,11 +187,11 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Con
 
 // }
 
-// TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, GetAngle)
+// TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, GetAngle)
 // {
 
 //     using library::math::geom::Angle ;
-//     using library::math::geom::trf::rot::RotationMatrix ;
+//     using library::math::geom::d3::trf::rot::RotationMatrix ;
 
 //     {
 
@@ -216,10 +216,10 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Con
 
 // }
 
-// TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Undefined)
+// TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, Undefined)
 // {
 
-//     using library::math::geom::trf::rot::RotationMatrix ;
+//     using library::math::geom::d3::trf::rot::RotationMatrix ;
     
 //     {
 
@@ -230,11 +230,11 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Con
 
 // }
 
-// TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Unit)
+// TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, Unit)
 // {
 
 //     using library::math::geom::Angle ;
-//     using library::math::geom::trf::rot::RotationMatrix ;
+//     using library::math::geom::d3::trf::rot::RotationMatrix ;
     
 //     {
 
@@ -245,17 +245,17 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Con
 
 // }
 
-// TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, RX)
-// TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, RY)
-// TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, RZ)
+// TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, RX)
+// TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, RY)
+// TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, RZ)
 
-// TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationMatrix, Quaternion)
+// TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, Quaternion)
 // {
 
 //     using library::core::types::Real ;
 //     using library::math::geom::Angle ;
-//     using library::math::geom::trf::rot::Quaternion ;
-//     using library::math::geom::trf::rot::RotationMatrix ;
+//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using library::math::geom::d3::trf::rot::RotationMatrix ;
     
 //     {
 

@@ -1,14 +1,14 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp
+/// @file           Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_Transformations_Rotations_RotationVector__
-#define __Library_Mathematics_Geometry_Transformations_Rotations_RotationVector__
+#ifndef __Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector__
+#define __Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector__
 
 #include <Library/Mathematics/Geometry/Angle.hpp>
 #include <Library/Mathematics/Objects/Vector.hpp>
@@ -23,6 +23,8 @@ namespace library
 namespace math
 {
 namespace geom
+{
+namespace d3
 {
 namespace trf
 {
@@ -182,6 +184,7 @@ class RotationVector
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+}
 }
 }
 }

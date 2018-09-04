@@ -1,26 +1,26 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Library/Mathematics
-/// @file           LibraryMathematicsPy/Geometry/Transformations.cpp
+/// @file           LibraryMathematicsPy/Geometry/3D/Transformations.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        TBD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <LibraryMathematicsPy/Geometry/Transformations/Rotations.cpp>
+#include <LibraryMathematicsPy/Geometry/3D/Transformations/Rotations.cpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     LibraryMathematicsPy_Geometry_Transformations ( )
+inline void                     LibraryMathematicsPy_Geometry_3D_Transformations ( )
 {
     
-    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Geometry.Transformations")))) ;
+    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Geometry.D3.Transformations")))) ;
     
     boost::python::scope().attr("Transformations") = module ;
     
     boost::python::scope scope = module ;
     
-    LibraryMathematicsPy_Geometry_Transformations_Rotations() ;
+    LibraryMathematicsPy_Geometry_3D_Transformations_Rotations() ;
 
 }
 

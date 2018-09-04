@@ -21,6 +21,7 @@
 #pragma GCC diagnostic ignored "-Wshadow"
 #pragma GCC diagnostic ignored "-Wunused-parameter"
 #pragma GCC diagnostic ignored "-Wint-in-bool-context"
+#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
 
 #include <Eigen/Core>
 #include <Eigen/Geometry>

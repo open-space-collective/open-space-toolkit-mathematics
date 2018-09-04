@@ -286,7 +286,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, ApplyTransformation)
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::LineString ;
     using library::math::geom::d3::Transformation ;
-    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
 
     // Translation
 

@@ -3,7 +3,7 @@
 ################################################################################################################################################################
 
 # @project        Library/Mathematics
-# @file           LibraryMathematicsPy/Geometry/Transformations/Rotations.py
+# @file           LibraryMathematicsPy/Geometry/3D/Transformations/Rotations.py
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        TBD
 

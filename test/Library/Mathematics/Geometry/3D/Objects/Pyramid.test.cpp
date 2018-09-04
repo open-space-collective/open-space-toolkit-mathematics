@@ -7,7 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
@@ -324,7 +324,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, ApplyTransformation)
     using library::math::geom::d3::objects::Polygon ;
     using library::math::geom::d3::objects::Pyramid ;
     using library::math::geom::d3::Transformation ;
-    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
 
     // Translation
 

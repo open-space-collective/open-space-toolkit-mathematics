@@ -7,7 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationMatrix.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
@@ -29,7 +29,17 @@
 #include <Gte/Mathematics/GteIntrRay3Ellipsoid3.h>
 #include <Gte/Mathematics/GteIntrLine3Ellipsoid3.h>
 
+// Disable Eigen warnings
+
+#pragma GCC diagnostic push // Save diagnostic state
+
+#pragma GCC diagnostic ignored "-Wshadow"
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wint-in-bool-context"
+
 #include <Eigen/Eigenvalues>
+
+#pragma GCC diagnostic pop // Turn the warnings back on
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -901,7 +911,7 @@ void                            Ellipsoid::print                            (   
 void                            Ellipsoid::applyTransformation              (   const   Transformation&             aTransformation                             )
 {
 
-    using library::math::geom::trf::rot::RotationMatrix ;
+    using library::math::geom::d3::trf::rot::RotationMatrix ;
 
     if (!aTransformation.isDefined())
     {

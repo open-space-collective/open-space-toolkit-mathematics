@@ -10,7 +10,7 @@
 #ifndef __Library_Mathematics_Geometry_3D_Objects_Ellipsoid__
 #define __Library_Mathematics_Geometry_3D_Objects_Ellipsoid__
 
-#include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
 
@@ -37,7 +37,7 @@ using library::math::obj::Matrix3d ;
 using library::math::geom::d3::Object ;
 using library::math::geom::d3::objects::Point ;
 using library::math::geom::d3::Intersection ;
-using library::math::geom::trf::rot::Quaternion ;
+using library::math::geom::d3::trf::rot::Quaternion ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

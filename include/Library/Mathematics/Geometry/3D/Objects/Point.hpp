@@ -34,7 +34,7 @@ using library::core::types::Real ;
 
 using library::math::obj::Vector3d ;
 using library::math::geom::d3::Object ;
-using library::math::geom::trf::rot::Quaternion ;
+using library::math::geom::d3::trf::rot::Quaternion ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

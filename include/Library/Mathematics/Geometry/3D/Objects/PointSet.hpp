@@ -41,7 +41,7 @@ using library::core::ctnr::Array ;
 using library::math::obj::Vector3d ;
 using library::math::geom::d3::Object ;
 using library::math::geom::d3::objects::Point ;
-using library::math::geom::trf::rot::Quaternion ;
+using library::math::geom::d3::trf::rot::Quaternion ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
