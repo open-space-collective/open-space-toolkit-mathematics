@@ -7,15 +7,13 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationMatrix.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 
 #include <Library/Core/Containers/Map.hpp>
 #include <Library/Core/Containers/Pair.hpp>
 #include <Library/Core/Error.hpp>
 #include <Library/Core/Utilities.hpp>
-
-#include <Eigen/Geometry>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -317,7 +315,7 @@ Transformation                  Transformation::Translation                 (   
 Transformation                  Transformation::Rotation                    (   const   RotationVector&             aRotationVector                             )
 {
 
-    using library::math::geom::trf::rot::RotationMatrix ;
+    using library::math::geom::d3::trf::rot::RotationMatrix ;
 
     if (!aRotationVector.isDefined())
     {

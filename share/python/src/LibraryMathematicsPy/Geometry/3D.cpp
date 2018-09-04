@@ -8,6 +8,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <LibraryMathematicsPy/Geometry/3D/Intersection.cpp>
+#include <LibraryMathematicsPy/Geometry/3D/Transformations.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Transformation.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Object.cpp>
@@ -26,6 +27,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D            ( )
     LibraryMathematicsPy_Geometry_3D_Object() ;
     LibraryMathematicsPy_Geometry_3D_Objects() ;
     LibraryMathematicsPy_Geometry_3D_Transformation() ;
+    LibraryMathematicsPy_Geometry_3D_Transformations() ;
     LibraryMathematicsPy_Geometry_3D_Intersection() ;
 
 }

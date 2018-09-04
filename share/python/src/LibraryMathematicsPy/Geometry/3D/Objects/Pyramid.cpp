@@ -32,7 +32,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Pyramid
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Pyramid ;
     using library::math::geom::d3::Intersection ;
-    using library::math::geom::trf::rot::Quaternion ;
+    using library::math::geom::d3::trf::rot::Quaternion ;
 
     scope in_Pyramid = class_<Pyramid, bases<Object>>("Pyramid", init<const Polygon&, const Point&>())
 

@@ -3,7 +3,7 @@
 ################################################################################################################################################################
 
 # @project        Library/Mathematics
-# @file           LibraryMathematicsPy/Geometry/Transformations/Rotations/RotationVector.py
+# @file           LibraryMathematicsPy/Geometry/3D/Transformations/Rotations/RotationVector.py
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        TBD
 
@@ -16,8 +16,8 @@ from Library.Core import Types
 from LibraryMathematicsPy import Geometry
 
 Angle = Geometry.Angle
-Quaternion = Geometry.Transformations.Rotations.Quaternion
-RotationVector = Geometry.Transformations.Rotations.RotationVector
+Quaternion = Geometry.D3.Transformations.Rotations.Quaternion
+RotationVector = Geometry.D3.Transformations.Rotations.RotationVector
 
 ################################################################################################################################################################
 

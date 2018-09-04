@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/Transformations/Rotations/RotationVector.hpp>
-#include <Library/Mathematics/Geometry/Transformations/Rotations/Quaternion.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
@@ -191,8 +191,8 @@ Array<Ray>                      Pyramid::getRaysOfLateralFaceAt             (   
 {
 
     using library::math::obj::Interval ;
-    using library::math::geom::trf::rot::Quaternion ;
-    using library::math::geom::trf::rot::RotationVector ;
+    using library::math::geom::d3::trf::rot::Quaternion ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
 
     if (aRayCount < 2)
     {

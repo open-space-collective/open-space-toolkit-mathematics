@@ -16,8 +16,8 @@ from Library.Core import Types
 from LibraryMathematicsPy import Geometry
 
 Angle = Geometry.Angle
-Quaternion = Geometry.Transformations.Rotations.Quaternion
-RotationMatrix = Geometry.Transformations.Rotations.RotationMatrix
+Quaternion = Geometry.D3.Transformations.Rotations.Quaternion
+RotationMatrix = Geometry.D3.Transformations.Rotations.RotationMatrix
 
 ################################################################################################################################################################
 

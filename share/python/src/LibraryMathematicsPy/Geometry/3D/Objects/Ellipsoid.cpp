@@ -30,7 +30,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Ellipso
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Pyramid ;
     using library::math::geom::d3::Intersection ;
-    using library::math::geom::trf::rot::Quaternion ;
+    using library::math::geom::d3::trf::rot::Quaternion ;
 
     scope in_Ellipsoid = class_<Ellipsoid, bases<Object>>("Ellipsoid", init<const Point&, const Real&, const Real&, const Real&, const Quaternion&>())
 
