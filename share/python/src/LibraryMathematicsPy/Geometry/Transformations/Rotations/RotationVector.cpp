@@ -37,8 +37,9 @@ inline void                     LibraryMathematicsPy_Geometry_Transformations_Ro
         
         .def("getAxis", &RotationVector::getAxis)
         .def("getAngle", &RotationVector::getAngle)
-        .def("Undefined", &RotationVector::Undefined)
+        .def("toString", &RotationVector::toString)
 
+        .def("Undefined", &RotationVector::Undefined)
         .def("Unit", &RotationVector::Unit).staticmethod("Unit")
         .def("Quaternion", &RotationVector::Quaternion).staticmethod("Quaternion")
         .def("RotationMatrix", &RotationVector::RotationMatrix).staticmethod("RotationMatrix")

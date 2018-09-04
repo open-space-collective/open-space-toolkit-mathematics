@@ -12,6 +12,7 @@
 
 #include <Library/Mathematics/Geometry/Angle.hpp>
 #include <Library/Mathematics/Objects/Vector.hpp>
+
 #include <Library/Core/Types/String.hpp>
 #include <Library/Core/Types/Real.hpp>
 
@@ -32,6 +33,7 @@ namespace rot
 
 using library::core::types::Real ;
 using library::core::types::String ;
+
 using library::math::obj::Vector3d ;
 using library::math::geom::Angle ;
 
@@ -115,6 +117,17 @@ class RotationVector
         /// @return             Rotation angle
         
         Angle                   getAngle                                    ( ) const ;
+
+        /// @brief              Convert rotation vector to its string representation
+        ///
+        /// @code
+        ///                     RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)).toString() ; // "[0.0, 0.0, 1.0] : 90.0 [deg]"
+        /// @endcode
+        ///
+        /// @param              [in] (optional) aPrecision A precision
+        /// @return             String representation
+
+        String                  toString                                    (   const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const ;
 
         /// @brief              Constructs an undefined rotation vector
         ///
