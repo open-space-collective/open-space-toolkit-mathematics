@@ -55,7 +55,7 @@ var NAVTREEINDEX =
 "2_d_2_object_8cpp.html",
 "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html#ac3a7bf1647172166e83a016ca32669c3",
 "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon.html#add4c768333dd8a58e700b84c67ab1df1",
-"namespacelibrary_1_1math.html"
+"functions_q.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

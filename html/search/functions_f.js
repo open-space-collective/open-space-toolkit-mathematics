@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['s',['s',['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a7b5045b46500d4f20e98ff29a9ed4c88',1,'library::math::geom::trf::rot::Quaternion']]],
+  ['s',['s',['../classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a9dd9ab9d3e3474d5a7dd038bb4160a94',1,'library::math::geom::d3::trf::rot::Quaternion::s()'],['../classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_quaternion.html#a7b5045b46500d4f20e98ff29a9ed4c88',1,'library::math::geom::trf::rot::Quaternion::s()']]],
   ['segment',['Segment',['../classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string.html#a382892044a21b1b7e2717117adef35db',1,'library::math::geom::d2::objects::LineString::Segment()'],['../classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a44ba44fd5f02a02fe34c40223b38fa8f',1,'library::math::geom::d2::objects::Segment::Segment()'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string.html#a7fb1bcb80907e72aa55f0692ed2517f1',1,'library::math::geom::d3::objects::LineString::Segment()'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a5562342d1edf2f52e37ce1bc138ee7d7',1,'library::math::geom::d3::objects::Segment::Segment()']]],
   ['setlowerbound',['setLowerBound',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a5ceb8fb56f920193c8b18346992b5d02',1,'library::math::obj::Interval']]],
   ['settype',['setType',['../classlibrary_1_1math_1_1obj_1_1_interval.html#a4dfb117d5a9c23bd32a3631fcf3686ec',1,'library::math::obj::Interval']]],

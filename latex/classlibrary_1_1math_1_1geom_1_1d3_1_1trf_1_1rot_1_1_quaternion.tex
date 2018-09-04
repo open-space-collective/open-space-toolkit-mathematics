@@ -1,0 +1,1021 @@
+\hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{}\section{library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:trf\+:\+:rot\+:\+:Quaternion Class Reference}
+\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}.  
+
+
+
+
+{\ttfamily \#include $<$Quaternion.\+hpp$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}{Format} \{ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deeca11c51ecd5dc6f86ba3c1ae79e21482f5}{Format\+::\+X\+Y\+ZS}, 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deecabd514d63fd7944bc7d3718aeef3684be}{Format\+::\+S\+X\+YZ}
+ \}\begin{DoxyCompactList}\small\item\em \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} format. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} (const Real \&a\+First\+Component, const Real \&a\+Second\+Component, const Real \&a\+Third\+Component, const Real \&a\+Fourth\+Component, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}{Quaternion\+::\+Format} \&a\+Format)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a8f33fa2832808fa847967d2efdebd8b8}{Quaternion} (const Vector4d \&a\+Vector, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}{Quaternion\+::\+Format} \&a\+Format)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_abcedf5de1f18b273b274ae0ab28599b7}{Quaternion} (const Vector3d \&a\+Vector\+Part, const Real \&a\+Scalar\+Part)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a38dba43ef4dbd3aa664cc2534013de2c}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Quaternion) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ab4862c47d1ca9beed37023ec2db479f4}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Quaternion) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a7f09ef0c53cb1f2d68a5c0aa8fb9de56}{operator$\ast$} (const Vector3d \&a\+Vector) const
+\begin{DoxyCompactList}\small\item\em Multiplication operator (quaternion) \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_af2e72e5232106d28995dbddb1f1c2f16}{operator/} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Quaternion) const
+\begin{DoxyCompactList}\small\item\em Division operator (quaternion) \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ae6ac96798a047bdfedf344dfba6abafc}{operator$\ast$=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Quaternion)
+\begin{DoxyCompactList}\small\item\em Multiplication assignment operator (quaternion) \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_af3b5e885a6ea4700d9404a58860ff250}{operator/=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Quaternion)
+\begin{DoxyCompactList}\small\item\em Division assignment operator (quaternion) \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_adf3d76908b0b95dc3a0310de17ba18b5}{is\+Defined} () const
+\begin{DoxyCompactList}\small\item\em Check if quaternion is defined. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a648cc398273622634b43aab3472dfe09}{is\+Unitary} () const
+\begin{DoxyCompactList}\small\item\em Check if quaternion is unitary, i.\+e. its norm is equal to 1.\+0. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac335110e3bc152b22d76a2e980242619}{is\+Near} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Quaternion, const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&an\+Angular\+Tolerance) const
+\begin{DoxyCompactList}\small\item\em Check if quaternion is near a given quaternion. \end{DoxyCompactList}\item 
+Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ada0e80b8fe8015f8e8ab4398bba947e1}{x} () const
+\begin{DoxyCompactList}\small\item\em Get first component of vector part. \end{DoxyCompactList}\item 
+Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ab5cf19d1e8bb53d2d019c3949e0b428e}{y} () const
+\begin{DoxyCompactList}\small\item\em Get second component of vector part. \end{DoxyCompactList}\item 
+Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a855911876f8f59e446740071d0a8194a}{z} () const
+\begin{DoxyCompactList}\small\item\em Get third component of vector part. \end{DoxyCompactList}\item 
+Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a9dd9ab9d3e3474d5a7dd038bb4160a94}{s} () const
+\item 
+Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a5a00c3e85f0736ade6d887285afa16f9}{get\+Vector\+Part} () const
+\begin{DoxyCompactList}\small\item\em Get vector part. \end{DoxyCompactList}\item 
+Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a12376aa1c1f32800a14dc1939316a5ec}{get\+Scalar\+Part} () const
+\begin{DoxyCompactList}\small\item\em Get scalar part. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac04ce4d592fff9225fcc2947886218a1}{pow} (const Real \&a\+Value) const
+\begin{DoxyCompactList}\small\item\em Get normalized quaternion. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a6a5dda4ec1d00646bdda2bb9b00bc94c}{exp} () const
+\begin{DoxyCompactList}\small\item\em Get exponential. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa0127106b33fa0397b3b678ae143c21b}{log} () const
+\begin{DoxyCompactList}\small\item\em Get logarithm. \end{DoxyCompactList}\item 
+Vector4d \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_afc18082a537f4b6a7dbb151603963d19}{to\+Vector} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}{Quaternion\+::\+Format} \&a\+Format=\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deeca11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion\+::\+Format\+::\+X\+Y\+ZS}) const
+\begin{DoxyCompactList}\small\item\em Get quaternion norm. \end{DoxyCompactList}\item 
+String \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a92e9e07e4edb3cc77c308ec7f5888515}{to\+String} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}{Quaternion\+::\+Format} \&a\+Format) const
+\begin{DoxyCompactList}\small\item\em Convert quaternion to its string representation. \end{DoxyCompactList}\item 
+String \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aea4f081b98f86216e9ef8c64d87ed89e}{to\+String} (const Integer \&a\+Precision=Integer\+::\+Undefined(), const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}{Quaternion\+::\+Format} \&a\+Format=\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deeca11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion\+::\+Format\+::\+X\+Y\+ZS}) const
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a0432c2d7b73545a6a77207c116c0eec2}{normalize} ()
+\begin{DoxyCompactList}\small\item\em Normalize quaternion. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a2c27f0a46d1f156b8d05e0e9746b33f9}{conjugate} ()
+\begin{DoxyCompactList}\small\item\em Conjugate quaternion. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a9d35d28051651be52dde4f495f23cf7a}{inverse} ()
+\begin{DoxyCompactList}\small\item\em Inverse quaternion. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aad5bf4f7ab207b0c001680773d81071e}{rectify} ()
+\begin{DoxyCompactList}\small\item\em Rectify quaternion (enforce positive scalar part) \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a6b75e097378cd268927a0488cf9caf30}{angular\+Difference\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Quaternion) const
+\begin{DoxyCompactList}\small\item\em Get angular difference with quaternion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a618d43e30f188e3b251bd0a6b370d30f}{Undefined} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined quaternion. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a8076524c66a805b16dffc27efd11e245}{Unit} ()
+\begin{DoxyCompactList}\small\item\em Constructs a unit quaternion. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{X\+Y\+ZS} (const Real \&a\+First\+Component, const Real \&a\+Second\+Component, const Real \&a\+Third\+Component, const Real \&a\+Fourth\+Component)
+\begin{DoxyCompactList}\small\item\em Constructs a quaternion using the vector-\/scalar format. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a9e9bdb58d7c344ad3fc3b82d5b4fcd0a}{Rotation\+Vector} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector}{rot\+::\+Rotation\+Vector} \&a\+Rotation\+Vector)
+\begin{DoxyCompactList}\small\item\em Constructs a quaternion from a rotation vector. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac153a30d250d35c719e4678a5890a11f}{Rotation\+Matrix} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_matrix}{rot\+::\+Rotation\+Matrix} \&a\+Rotation\+Matrix)
+\begin{DoxyCompactList}\small\item\em Constructs a rquaternion from a rotation matrix. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_af56e135faf297a4b48baa5a2cc4f6b00}{Parse} (const String \&a\+String, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}{Quaternion\+::\+Format} \&a\+Format=\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deeca11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion\+::\+Format\+::\+X\+Y\+ZS})
+\begin{DoxyCompactList}\small\item\em Constructs a quaternion from a string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ab9414dc117f260055d0a1a565eb93708}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Quaternion)
+\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}. 
+
+Provide a convenient mathematical notation for representing orientations and rotations of objects in three dimensions. Compared to Euler angles they are simpler to compose and avoid the problem of gimbal lock. Compared to rotation matrices they are more compact, more numerically stable, and more efficient.
+
+https\+://en.wikipedia.\+org/wiki/\+Quaternion https\+://en.wikipedia.\+org/wiki/\+Quaternions\+\_\+and\+\_\+spatial\+\_\+rotation 
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!Format@{Format}}
+\index{Format@{Format}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{Format}{Format}}
+{\footnotesize\ttfamily enum \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::\+Format}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} format. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{X\+Y\+ZS@{X\+Y\+ZS}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!X\+Y\+ZS@{X\+Y\+ZS}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deeca11c51ecd5dc6f86ba3c1ae79e21482f5}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deeca11c51ecd5dc6f86ba3c1ae79e21482f5}} 
+X\+Y\+ZS&Vector-\/scalar format. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+X\+YZ@{S\+X\+YZ}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!S\+X\+YZ@{S\+X\+YZ}}}\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deecabd514d63fd7944bc7d3718aeef3684be}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deecabd514d63fd7944bc7d3718aeef3684be}} 
+S\+X\+YZ&Scalar-\/vector format. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+First\+Component,  }\item[{const Real \&}]{a\+Second\+Component,  }\item[{const Real \&}]{a\+Third\+Component,  }\item[{const Real \&}]{a\+Fourth\+Component,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}{Quaternion\+::\+Format} \&}]{a\+Format }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} quaternion = \{ 0.0, 0.0, 0.0, 0.1, \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deeca11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion::Format::XYZS} \} 
+      ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+First\+Component} & A first component \\
+\hline
+\mbox{\tt in}  & {\em a\+Second\+Component} & A second component \\
+\hline
+\mbox{\tt in}  & {\em a\+Third\+Component} & A third component \\
+\hline
+\mbox{\tt in}  & {\em a\+Fourth\+Component} & A fourth component \\
+\hline
+\mbox{\tt in}  & {\em a\+Format} & A quaternion format \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a8f33fa2832808fa847967d2efdebd8b8}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a8f33fa2832808fa847967d2efdebd8b8}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{const Vector4d \&}]{a\+Vector,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}{Quaternion\+::\+Format} \&}]{a\+Format }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} quaternion = \{ \hyperlink{namespacelibrary_1_1math_1_1obj_a5679bbebea773cc0d4ed6ec28eb79c03}{Vector4d}(0.0, 0.0, 0.0, 0.1), 
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deeca11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion::Format::XYZS} \} ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Vector} & A 4D vector \\
+\hline
+\mbox{\tt in}  & {\em a\+Format} & A quaternion format \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_abcedf5de1f18b273b274ae0ab28599b7}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_abcedf5de1f18b273b274ae0ab28599b7}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Vector\+Part,  }\item[{const Real \&}]{a\+Scalar\+Part }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} quaternion = \{ \hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d}(0.0, 0.0, 0.0), 1.0 \} ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Vector\+Part} & A vector part \\
+\hline
+\mbox{\tt in}  & {\em a\+Vector\+Part} & A scalar part \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a6b75e097378cd268927a0488cf9caf30}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a6b75e097378cd268927a0488cf9caf30}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!angular\+Difference\+With@{angular\+Difference\+With}}
+\index{angular\+Difference\+With@{angular\+Difference\+With}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{angular\+Difference\+With()}{angularDifferenceWith()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::angular\+Difference\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Quaternion }\end{DoxyParamCaption}) const}
+
+
+
+Get angular difference with quaternion. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.0).\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a6b75e097378cd268927a0488cf9caf30}{angularDifferenceWith}(
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.0)) ; \textcolor{comment}{// 0.0 [rad]}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Angular difference 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a2c27f0a46d1f156b8d05e0e9746b33f9}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a2c27f0a46d1f156b8d05e0e9746b33f9}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!conjugate@{conjugate}}
+\index{conjugate@{conjugate}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{conjugate()}{conjugate()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::conjugate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Conjugate quaternion. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} quaternion = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.70710678118, 0.70710678118) 
+      ; \textcolor{comment}{// [0.0, 0.0, 0.70710678118, 0.70710678118]}
+quaternion.conjugate() ; \textcolor{comment}{// [0.0, 0.0, -0.70710678118, 0.70710678118]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a6a5dda4ec1d00646bdda2bb9b00bc94c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a6a5dda4ec1d00646bdda2bb9b00bc94c}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!exp@{exp}}
+\index{exp@{exp}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{exp()}{exp()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::exp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get exponential. 
+
+
+\begin{DoxyCode}
+TBC...
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Exponential 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a12376aa1c1f32800a14dc1939316a5ec}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a12376aa1c1f32800a14dc1939316a5ec}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!get\+Scalar\+Part@{get\+Scalar\+Part}}
+\index{get\+Scalar\+Part@{get\+Scalar\+Part}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{get\+Scalar\+Part()}{getScalarPart()}}
+{\footnotesize\ttfamily Real library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::get\+Scalar\+Part (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get scalar part. 
+
+
+\begin{DoxyCode}
+Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).getScalarPart() ; \textcolor{comment}{// 1.0}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Scalar part 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a5a00c3e85f0736ade6d887285afa16f9}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a5a00c3e85f0736ade6d887285afa16f9}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!get\+Vector\+Part@{get\+Vector\+Part}}
+\index{get\+Vector\+Part@{get\+Vector\+Part}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{get\+Vector\+Part()}{getVectorPart()}}
+{\footnotesize\ttfamily Vector3d library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::get\+Vector\+Part (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get vector part. 
+
+
+\begin{DoxyCode}
+Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).getVectorPart() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Vector part 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a9d35d28051651be52dde4f495f23cf7a}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a9d35d28051651be52dde4f495f23cf7a}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!inverse@{inverse}}
+\index{inverse@{inverse}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{inverse()}{inverse()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inverse quaternion. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} quaternion = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.70710678118, 0.70710678118) 
+      ; \textcolor{comment}{// [0.0, 0.0, 0.70710678118, 0.70710678118]}
+quaternion.inverse() ; \textcolor{comment}{// [0.0, 0.0, -0.70710678118, 0.70710678118]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_adf3d76908b0b95dc3a0310de17ba18b5}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_adf3d76908b0b95dc3a0310de17ba18b5}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if quaternion is defined. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.0).\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_adf3d76908b0b95dc3a0310de17ba18b5}{isDefined}() ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if quaternion is defined 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac335110e3bc152b22d76a2e980242619}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac335110e3bc152b22d76a2e980242619}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!is\+Near@{is\+Near}}
+\index{is\+Near@{is\+Near}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{is\+Near()}{isNear()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::is\+Near (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Quaternion,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&}]{an\+Angular\+Tolerance }\end{DoxyParamCaption}) const}
+
+
+
+Check if quaternion is near a given quaternion. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.0).\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac335110e3bc152b22d76a2e980242619}{isNear}(
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.0 + 1e-19), \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle_a9f4a8ad6bfe63060c86c0f1fb2753cf7}{Angle::Radians}(1e-6)) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\mbox{\tt in}  & {\em an\+Angular\+Tolerance} & An angular tolerance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if quaternions are near each other 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a648cc398273622634b43aab3472dfe09}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a648cc398273622634b43aab3472dfe09}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!is\+Unitary@{is\+Unitary}}
+\index{is\+Unitary@{is\+Unitary}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{is\+Unitary()}{isUnitary()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::is\+Unitary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if quaternion is unitary, i.\+e. its norm is equal to 1.\+0. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.0).\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a648cc398273622634b43aab3472dfe09}{isUnitary}() ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if quaternion is unitary 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa0127106b33fa0397b3b678ae143c21b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa0127106b33fa0397b3b678ae143c21b}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!log@{log}}
+\index{log@{log}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get logarithm. 
+
+
+\begin{DoxyCode}
+TBC...
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Logarithm 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a0432c2d7b73545a6a77207c116c0eec2}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a0432c2d7b73545a6a77207c116c0eec2}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!normalize@{normalize}}
+\index{normalize@{normalize}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Normalize quaternion. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} quaternion = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.000000000000001) ; \textcolor{comment}{//
+       [0.0, 0.0, 0.0, 1.000000000000001]}
+quaternion.normalize() ; \textcolor{comment}{// [0.0, 0.0, 0.0, 1.0]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ab4862c47d1ca9beed37023ec2db479f4}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ab4862c47d1ca9beed37023ec2db479f4}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Quaternion }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.0) != \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(1.0, 0.0, 0.0, 0.0
+      ) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if quaternions not are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a7f09ef0c53cb1f2d68a5c0aa8fb9de56}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a7f09ef0c53cb1f2d68a5c0aa8fb9de56}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily Vector3d library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Vector }\end{DoxyParamCaption}) const}
+
+
+
+Multiplication operator (quaternion) 
+
+
+\begin{DoxyCode}
+                        \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} q\_B\_A = ... ;
+                        \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} q\_C\_B = ... ;
+                        \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} q\_C\_A = q\_C\_B * q\_B\_A ;
+    @encode
+   
+    @note               This \textcolor{keyword}{operator} uses cross multiplication
+   
+    @param              [in] aQuaternion A quaternion
+    @\textcolor{keywordflow}{return}             A quaternion
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion}              \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a7f09ef0c53cb1f2d68a5c0aa8fb9de56}{operator *                                  }
+      (   \textcolor{keyword}{const}   \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion}&                 aQuaternion                                 ) \textcolor{keyword}{const} ;
+
+    @brief              Multiplication operator (vector)
+   
+    Example:
+    @code                 
+                        \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} q\_B\_A = ... ;
+                        \hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d} v\_A = ... ;
+                        \hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d} v\_B = q\_B\_A * v\_A ;
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+This operator uses transform\+Vector
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Vector} & A vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ae6ac96798a047bdfedf344dfba6abafc}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ae6ac96798a047bdfedf344dfba6abafc}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Quaternion }\end{DoxyParamCaption})}
+
+
+
+Multiplication assignment operator (quaternion) 
+
+\begin{DoxyNote}{Note}
+This operator uses cross multiplication
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_af2e72e5232106d28995dbddb1f1c2f16}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_af2e72e5232106d28995dbddb1f1c2f16}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!operator/@{operator/}}
+\index{operator/@{operator/}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::operator/ (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Quaternion }\end{DoxyParamCaption}) const}
+
+
+
+Division operator (quaternion) 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} q\_A\_B = ... ;
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} q\_C\_B = ... ;
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} q\_C\_A = q\_C\_B / q\_A\_B ;
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+This is equivalent to multiplying with the inverse
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_af3b5e885a6ea4700d9404a58860ff250}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_af3b5e885a6ea4700d9404a58860ff250}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::operator/= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Quaternion }\end{DoxyParamCaption})}
+
+
+
+Division assignment operator (quaternion) 
+
+\begin{DoxyNote}{Note}
+This is equivalent to multiplying with the inverse
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a38dba43ef4dbd3aa664cc2534013de2c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a38dba43ef4dbd3aa664cc2534013de2c}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Quaternion }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.0) == \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.0
+      ) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if quaternions are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_af56e135faf297a4b48baa5a2cc4f6b00}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_af56e135faf297a4b48baa5a2cc4f6b00}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!Parse@{Parse}}
+\index{Parse@{Parse}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::\+Parse (\begin{DoxyParamCaption}\item[{const String \&}]{a\+String,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}{Quaternion\+::\+Format} \&}]{a\+Format = {\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deeca11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion\+::\+Format\+::\+X\+Y\+ZS}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a quaternion from a string. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} quaternion = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_af56e135faf297a4b48baa5a2cc4f6b00}{Quaternion::Parse}(\textcolor{stringliteral}{"[0.0, 0.0, 0.0, 1.0]"}) ; \textcolor{comment}{// [0.0,
+       0.0, 0.0, 1.0]}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+String} & A string \\
+\hline
+\mbox{\tt in}  & {\em (optional)} & a\+Format A quaternion format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac04ce4d592fff9225fcc2947886218a1}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac04ce4d592fff9225fcc2947886218a1}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!pow@{pow}}
+\index{pow@{pow}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{pow()}{pow()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::pow (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Value }\end{DoxyParamCaption}) const}
+
+
+
+Get normalized quaternion. 
+
+
+\begin{DoxyCode}
+                        \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.000000000000001).toNormalized() ;
+       \textcolor{comment}{// [0.0, 0.0, 0.0, 1.0]}
+    @encode
+   
+    @\textcolor{keywordflow}{return}             Normalized quaternion
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion}              toNormalized                                ( ) \textcolor{keyword}{const} ;
+
+    @brief              Get \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a2c27f0a46d1f156b8d05e0e9746b33f9}{conjugate} quaternion
+   
+    @code
+                        \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.70710678118, 0.70710678118).
+      toConjugate() ; \textcolor{comment}{// [0.0, 0.0, -0.70710678118, 0.70710678118]}
+    @encode
+   
+    @\textcolor{keywordflow}{return}             Conjugate quaternion
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion}              toConjugate                                 ( ) \textcolor{keyword}{const} ;
+
+    @brief              Get \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a9d35d28051651be52dde4f495f23cf7a}{inverse} quaternion
+   
+    @code
+                        \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.70710678118, 0.70710678118).toInverse(
+      ) ; \textcolor{comment}{// [0.0, 0.0, -0.70710678118, 0.70710678118]}
+    @encode
+   
+    @\textcolor{keywordflow}{return}             Inverse quaternion
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion}              toInverse                                   ( ) \textcolor{keyword}{const} ;
+
+    @brief              Get power
+   
+    @code
+                        TBC...
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Value} & A power value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Power 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aad5bf4f7ab207b0c001680773d81071e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aad5bf4f7ab207b0c001680773d81071e}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!rectify@{rectify}}
+\index{rectify@{rectify}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{rectify()}{rectify()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \& library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::rectify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Rectify quaternion (enforce positive scalar part) 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} quaternion = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, -0.70710678118, -0.70710678118
+      ) ; \textcolor{comment}{// [0.0, 0.0, -0.70710678118, -0.70710678118]}
+quaternion.rectify() ; \textcolor{comment}{// [0.0, 0.0, 0.70710678118, 0.70710678118]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac153a30d250d35c719e4678a5890a11f}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac153a30d250d35c719e4678a5890a11f}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!Rotation\+Matrix@{Rotation\+Matrix}}
+\index{Rotation\+Matrix@{Rotation\+Matrix}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{Rotation\+Matrix()}{RotationMatrix()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::\+Rotation\+Matrix (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_matrix}{rot\+::\+Rotation\+Matrix} \&}]{a\+Rotation\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rquaternion from a rotation matrix. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} quaternion = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac153a30d250d35c719e4678a5890a11f}{Quaternion::RotationMatrix}(
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_matrix_aeb5324151ee55348fa16c5fe78b036ed}{RotationMatrix::Unit}()) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Rotation\+Matrix} & A rotation matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} 
+\end{DoxyReturn}
+Markley F. L.\+: Fundamentals of Spacecraft Attitude Determination and Control, 48 \begin{DoxyNote}{Note}
+Should we use this method instead? \href{https://d3cw3dd2w32x2b.cloudfront.net/wp-content/uploads/2015/01/matrix-to-quat.pdf}{\tt https\+://d3cw3dd2w32x2b.\+cloudfront.\+net/wp-\/content/uploads/2015/01/matrix-\/to-\/quat.\+pdf} 
+\end{DoxyNote}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a9e9bdb58d7c344ad3fc3b82d5b4fcd0a}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a9e9bdb58d7c344ad3fc3b82d5b4fcd0a}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!Rotation\+Vector@{Rotation\+Vector}}
+\index{Rotation\+Vector@{Rotation\+Vector}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{Rotation\+Vector()}{RotationVector()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::\+Rotation\+Vector (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector}{rot\+::\+Rotation\+Vector} \&}]{a\+Rotation\+Vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a quaternion from a rotation vector. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} quaternion = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a9e9bdb58d7c344ad3fc3b82d5b4fcd0a}{Quaternion::RotationVector}(
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a9e9bdb58d7c344ad3fc3b82d5b4fcd0a}{RotationVector}(\hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d}(0.0, 0.0, 1.0), \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle_a64aa53e8420aeb6f671d86c65c370bc8}{Angle::Degrees}(0.0))) ; \textcolor{comment}{//
+       [0.0, 0.0, 0.0, 1.0]}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Rotation\+Vector} & A rotation vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} 
+\end{DoxyReturn}
+Markley F. L.\+: Fundamentals of Spacecraft Attitude Determination and Control, 45 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a9dd9ab9d3e3474d5a7dd038bb4160a94}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a9dd9ab9d3e3474d5a7dd038bb4160a94}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!s@{s}}
+\index{s@{s}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{s()}{s()}}
+{\footnotesize\ttfamily Real library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::s (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Get scalar part
+
+
+\begin{DoxyCode}
+Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).s() ; \textcolor{comment}{// &1.0}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Scalar part 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a92e9e07e4edb3cc77c308ec7f5888515}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a92e9e07e4edb3cc77c308ec7f5888515}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily String library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::to\+String (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}{Quaternion\+::\+Format} \&}]{a\+Format }\end{DoxyParamCaption}) const}
+
+
+
+Convert quaternion to its string representation. 
+
+
+\begin{DoxyCode}
+Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).toString() ; \textcolor{comment}{// "[0.0, 0.0, 0.0, 1.0]"}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em (optional)} & a\+Precision A quaternion precision \\
+\hline
+\mbox{\tt in}  & {\em (optional)} & a\+Format A quaternion format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aea4f081b98f86216e9ef8c64d87ed89e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aea4f081b98f86216e9ef8c64d87ed89e}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily String library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::to\+String (\begin{DoxyParamCaption}\item[{const Integer \&}]{a\+Precision = {\ttfamily Integer\+:\+:Undefined()},  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}{Quaternion\+::\+Format} \&}]{a\+Format = {\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deeca11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion\+::\+Format\+::\+X\+Y\+ZS}} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_afc18082a537f4b6a7dbb151603963d19}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_afc18082a537f4b6a7dbb151603963d19}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!to\+Vector@{to\+Vector}}
+\index{to\+Vector@{to\+Vector}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{to\+Vector()}{toVector()}}
+{\footnotesize\ttfamily Vector4d library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::to\+Vector (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deec}{Quaternion\+::\+Format} \&}]{a\+Format = {\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa86c54f6157891b2f1a517c672d6deeca11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion\+::\+Format\+::\+X\+Y\+ZS}} }\end{DoxyParamCaption}) const}
+
+
+
+Get quaternion norm. 
+
+
+\begin{DoxyCode}
+                        \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, -0.70710678118, 0.70710678118).norm() ; \textcolor{comment}{
+      // 1.0}
+    @encode
+   
+    @\textcolor{keywordflow}{return}             \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} norm
+
+Real                    norm                                        ( ) \textcolor{keyword}{const} ;
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion}              crossMultiply                               (   \textcolor{keyword}{const}   
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion}&                 aQuaternion                                 ) \textcolor{keyword}{const} ;
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion}              dotMultiply                                 (   \textcolor{keyword}{const}   
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion}&                 aQuaternion                                 ) \textcolor{keyword}{const} ;
+
+\hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d}                rotateVector                                (   \textcolor{keyword}{const}   
+      \hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d}&                   aVector                                     ) \textcolor{keyword}{const} ;
+
+    @brief              Convert quaternion to its vector representation
+   
+    @code
+                        Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).toVector() ; \textcolor{comment}{// [0.0, 0.0, 0.0, 1.0]}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em (optional)} & a\+Format A quaternion format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector representation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a618d43e30f188e3b251bd0a6b370d30f}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a618d43e30f188e3b251bd0a6b370d30f}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined quaternion. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} quaternion = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a618d43e30f188e3b251bd0a6b370d30f}{Quaternion::Undefined}() ; \textcolor{comment}{// Undefined}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a8076524c66a805b16dffc27efd11e245}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a8076524c66a805b16dffc27efd11e245}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!Unit@{Unit}}
+\index{Unit@{Unit}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{Unit()}{Unit()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a unit quaternion. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} quaternion = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a8076524c66a805b16dffc27efd11e245}{Quaternion::Unit}() ; \textcolor{comment}{// [0.0, 0.0, 0.0, 1.0]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Unit quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ada0e80b8fe8015f8e8ab4398bba947e1}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ada0e80b8fe8015f8e8ab4398bba947e1}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!x@{x}}
+\index{x@{x}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{x()}{x()}}
+{\footnotesize\ttfamily Real library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get first component of vector part. 
+
+
+\begin{DoxyCode}
+Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).x() ; \textcolor{comment}{// &0.0}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+First component of vector part 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!X\+Y\+ZS@{X\+Y\+ZS}}
+\index{X\+Y\+ZS@{X\+Y\+ZS}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{X\+Y\+Z\+S()}{XYZS()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::\+X\+Y\+ZS (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+First\+Component,  }\item[{const Real \&}]{a\+Second\+Component,  }\item[{const Real \&}]{a\+Third\+Component,  }\item[{const Real \&}]{a\+Fourth\+Component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a quaternion using the vector-\/scalar format. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a1b8794cce68c5ee86dd50f9ba53635fa}{Quaternion} quaternion = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.0) ; \textcolor{comment}{// [0.0, 0.0, 0.0,
+       1.0]}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+First\+Component} & A first component \\
+\hline
+\mbox{\tt in}  & {\em a\+Second\+Component} & A second component \\
+\hline
+\mbox{\tt in}  & {\em a\+Third\+Component} & A third component \\
+\hline
+\mbox{\tt in}  & {\em a\+Fourth\+Component} & A fourth component \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ab5cf19d1e8bb53d2d019c3949e0b428e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ab5cf19d1e8bb53d2d019c3949e0b428e}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!y@{y}}
+\index{y@{y}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{y()}{y()}}
+{\footnotesize\ttfamily Real library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get second component of vector part. 
+
+
+\begin{DoxyCode}
+Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).y() ; \textcolor{comment}{// &0.0}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Second component of vector part 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a855911876f8f59e446740071d0a8194a}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a855911876f8f59e446740071d0a8194a}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!z@{z}}
+\index{z@{z}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{z()}{z()}}
+{\footnotesize\ttfamily Real library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::z (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get third component of vector part. 
+
+
+\begin{DoxyCode}
+Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).z() ; \textcolor{comment}{// &0.0}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Third component of vector part 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ab9414dc117f260055d0a1a565eb93708}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ab9414dc117f260055d0a1a565eb93708}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Quaternion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator. 
+
+
+\begin{DoxyCode}
+std::cout << \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a006294eb483bcfc352c2dc36cf19ceec}{Quaternion::XYZS}(0.0, 0.0, 0.0, 1.0) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to output stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Geometry/3\+D/\+Transformations/\+Rotations/\hyperlink{3_d_2_transformations_2_rotations_2_quaternion_8hpp}{Quaternion.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/3\+D/\+Transformations/\+Rotations/\hyperlink{_quaternion_8cpp}{Quaternion.\+cpp}\end{DoxyCompactItemize}

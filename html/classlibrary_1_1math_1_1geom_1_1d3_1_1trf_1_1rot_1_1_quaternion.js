@@ -1,0 +1,37 @@
+var classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion =
+[
+    [ "Format", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#aa86c54f6157891b2f1a517c672d6deec", [
+      [ "XYZS", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#aa86c54f6157891b2f1a517c672d6deeca11c51ecd5dc6f86ba3c1ae79e21482f5", null ],
+      [ "SXYZ", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#aa86c54f6157891b2f1a517c672d6deecabd514d63fd7944bc7d3718aeef3684be", null ]
+    ] ],
+    [ "Quaternion", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a1b8794cce68c5ee86dd50f9ba53635fa", null ],
+    [ "Quaternion", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a8f33fa2832808fa847967d2efdebd8b8", null ],
+    [ "Quaternion", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#abcedf5de1f18b273b274ae0ab28599b7", null ],
+    [ "angularDifferenceWith", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a6b75e097378cd268927a0488cf9caf30", null ],
+    [ "conjugate", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a2c27f0a46d1f156b8d05e0e9746b33f9", null ],
+    [ "exp", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a6a5dda4ec1d00646bdda2bb9b00bc94c", null ],
+    [ "getScalarPart", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a12376aa1c1f32800a14dc1939316a5ec", null ],
+    [ "getVectorPart", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a5a00c3e85f0736ade6d887285afa16f9", null ],
+    [ "inverse", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a9d35d28051651be52dde4f495f23cf7a", null ],
+    [ "isDefined", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#adf3d76908b0b95dc3a0310de17ba18b5", null ],
+    [ "isNear", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#ac335110e3bc152b22d76a2e980242619", null ],
+    [ "isUnitary", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a648cc398273622634b43aab3472dfe09", null ],
+    [ "log", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#aa0127106b33fa0397b3b678ae143c21b", null ],
+    [ "normalize", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a0432c2d7b73545a6a77207c116c0eec2", null ],
+    [ "operator!=", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#ab4862c47d1ca9beed37023ec2db479f4", null ],
+    [ "operator*", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a7f09ef0c53cb1f2d68a5c0aa8fb9de56", null ],
+    [ "operator*=", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#ae6ac96798a047bdfedf344dfba6abafc", null ],
+    [ "operator/", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#af2e72e5232106d28995dbddb1f1c2f16", null ],
+    [ "operator/=", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#af3b5e885a6ea4700d9404a58860ff250", null ],
+    [ "operator==", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a38dba43ef4dbd3aa664cc2534013de2c", null ],
+    [ "pow", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#ac04ce4d592fff9225fcc2947886218a1", null ],
+    [ "rectify", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#aad5bf4f7ab207b0c001680773d81071e", null ],
+    [ "s", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a9dd9ab9d3e3474d5a7dd038bb4160a94", null ],
+    [ "toString", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a92e9e07e4edb3cc77c308ec7f5888515", null ],
+    [ "toString", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#aea4f081b98f86216e9ef8c64d87ed89e", null ],
+    [ "toVector", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#afc18082a537f4b6a7dbb151603963d19", null ],
+    [ "x", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#ada0e80b8fe8015f8e8ab4398bba947e1", null ],
+    [ "y", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#ab5cf19d1e8bb53d2d019c3949e0b428e", null ],
+    [ "z", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a855911876f8f59e446740071d0a8194a", null ],
+    [ "operator<<", "classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#ab9414dc117f260055d0a1a565eb93708", null ]
+];
