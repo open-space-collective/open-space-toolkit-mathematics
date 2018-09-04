@@ -112,6 +112,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acdf847eca416fae6725c74f7676d5c27"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlibrary_1_1math_1_1geom_1_1_angle.html">Angle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector.html#acdf847eca416fae6725c74f7676d5c27">getAngle</a> () const</td></tr>
 <tr class="memdesc:acdf847eca416fae6725c74f7676d5c27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get rotation angle.  <a href="#acdf847eca416fae6725c74f7676d5c27">More...</a><br /></td></tr>
 <tr class="separator:acdf847eca416fae6725c74f7676d5c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9da9879150e3103d7d67def6b44de7c9"><td class="memItemLeft" align="right" valign="top">String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector.html#a9da9879150e3103d7d67def6b44de7c9">toString</a> (const Integer &amp;aPrecision=Integer::Undefined()) const</td></tr>
+<tr class="memdesc:a9da9879150e3103d7d67def6b44de7c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert rotation vector to its string representation.  <a href="#a9da9879150e3103d7d67def6b44de7c9">More...</a><br /></td></tr>
+<tr class="separator:a9da9879150e3103d7d67def6b44de7c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -357,6 +360,33 @@ Friends</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Rotation vector </dd></dl>
+
+</div>
+</div>
+<a id="a9da9879150e3103d7d67def6b44de7c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9da9879150e3103d7d67def6b44de7c9">&#9670;&nbsp;</a></span>toString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">String library::math::geom::trf::rot::RotationVector::toString </td>
+          <td>(</td>
+          <td class="paramtype">const Integer &amp;&#160;</td>
+          <td class="paramname"><em>aPrecision</em> = <code>Integer::Undefined()</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert rotation vector to its string representation. </p>
+<div class="fragment"><div class="line"><a class="code" href="classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector.html#a32b1fab5e81bc24d777324daf5849205">RotationVector</a>(<a class="code" href="namespacelibrary_1_1math_1_1obj.html#a977e84e9bf317a4e7dd9d6d671d6da2f">Vector3d</a>(0.0, 0.0, 1.0), <a class="code" href="classlibrary_1_1math_1_1geom_1_1_angle.html#a64aa53e8420aeb6f671d86c65c370bc8">Angle::Degrees</a>(90.0)).toString() ; <span class="comment">// &quot;[0.0, 0.0, 1.0] : 90.0 [deg]&quot;</span></div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">(optional)</td><td>aPrecision A precision </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String representation </dd></dl>
 
 </div>
 </div>

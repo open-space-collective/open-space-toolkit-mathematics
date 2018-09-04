@@ -23,7 +23,9 @@ bool \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector_a
 Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector_aa48533e0801b1b190dfe51bf94f1a9ab}{get\+Axis} () const
 \begin{DoxyCompactList}\small\item\em Get rotation axis. \end{DoxyCompactList}\item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector_acdf847eca416fae6725c74f7676d5c27}{get\+Angle} () const
-\begin{DoxyCompactList}\small\item\em Get rotation angle. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get rotation angle. \end{DoxyCompactList}\item 
+String \hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector_a9da9879150e3103d7d67def6b44de7c9}{to\+String} (const Integer \&a\+Precision=Integer\+::\+Undefined()) const
+\begin{DoxyCompactList}\small\item\em Convert rotation vector to its string representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -213,6 +215,31 @@ Constructs a rotation vector from a rotation matrix.
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Rotation vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector_a9da9879150e3103d7d67def6b44de7c9}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector_a9da9879150e3103d7d67def6b44de7c9}} 
+\index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Vector@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Vector}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Vector@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Vector}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily String library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Vector\+::to\+String (\begin{DoxyParamCaption}\item[{const Integer \&}]{a\+Precision = {\ttfamily Integer\+:\+:Undefined()} }\end{DoxyParamCaption}) const}
+
+
+
+Convert rotation vector to its string representation. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector_a32b1fab5e81bc24d777324daf5849205}{RotationVector}(\hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d}(0.0, 0.0, 1.0), \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle_a64aa53e8420aeb6f671d86c65c370bc8}{Angle::Degrees}(90.0)).toString(
+      ) ; \textcolor{comment}{// "[0.0, 0.0, 1.0] : 90.0 [deg]"}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em (optional)} & a\+Precision A precision \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector_a2641dcca56e633f5639bbcb9dcb02fa2}\label{classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector_a2641dcca56e633f5639bbcb9dcb02fa2}} 
 \index{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Vector@{library\+::math\+::geom\+::trf\+::rot\+::\+Rotation\+Vector}!Undefined@{Undefined}}

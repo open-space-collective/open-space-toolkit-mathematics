@@ -116,8 +116,9 @@ var NAVTREEINDEX2 =
 "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector.html#a2fdd75f9cf902bad02ba57b85e754490":[4,0,0,0,0,2,0,2,4],
 "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector.html#a32b1fab5e81bc24d777324daf5849205":[4,0,0,0,0,2,0,2,0],
 "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector.html#a4123de2991fa1f5df0745a1e6b87d959":[4,0,0,0,0,2,0,2,3],
+"classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector.html#a9da9879150e3103d7d67def6b44de7c9":[4,0,0,0,0,2,0,2,6],
 "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector.html#aa48533e0801b1b190dfe51bf94f1a9ab":[4,0,0,0,0,2,0,2,2],
-"classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector.html#aa66ba2fd706a441ee39d06857842ecfe":[4,0,0,0,0,2,0,2,6],
+"classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector.html#aa66ba2fd706a441ee39d06857842ecfe":[4,0,0,0,0,2,0,2,7],
 "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector.html#abccc9155d16c64e0e079d64419f489bf":[4,0,0,0,0,2,0,2,5],
 "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_rotation_vector.html#acdf847eca416fae6725c74f7676d5c27":[4,0,0,0,0,2,0,2,1],
 "classlibrary_1_1math_1_1geom_1_1trf_1_1rot_1_1_transformation.html":[4,0,0,0,0,2,0,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "md_docs__tutorial.html#Examples":[2,1],
 "md_docs__tutorial.html#Setup":[2,0],
 "namespacelibrary.html":[3,0,0],
-"namespacelibrary.html":[4,0,0],
-"namespacelibrary_1_1math.html":[3,0,0,0]
+"namespacelibrary.html":[4,0,0]
 };
