@@ -103,12 +103,12 @@ Point                           Point::operator -                           (   
 Vector3d                        Point::operator -                           (   const   Point&                      aPoint                                      ) const
 {
 
-    if (!this->isDefined())
+    if (!aPoint.isDefined())
     {
         throw library::core::error::runtime::Undefined("Point") ;
     }
 
-    if (!aPoint.isDefined())
+    if (!this->isDefined())
     {
         throw library::core::error::runtime::Undefined("Point") ;
     }
@@ -126,22 +126,12 @@ bool                            Point::isNear                               (   
                                                                                 const   Real&                       aTolerance                                  ) const
 {
 
-    if (!this->isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Point") ;
-    }
-
-    if (!aPoint.isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Point") ;
-    }
-
     if (!aTolerance.isDefined())
     {
         throw library::core::error::runtime::Undefined("Tolerance") ;
     }
 
-    return (this->Vector3d::operator - (aPoint)).norm() <= aTolerance ;
+    return this->distanceTo(aPoint) <= aTolerance ;
 
 }
 
