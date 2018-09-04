@@ -209,6 +209,50 @@ TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, Get
 
 }
 
+TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, ToString)
+{
+
+    using library::math::geom::Angle ;
+    using library::math::geom::trf::rot::RotationVector ;
+
+    {
+
+        EXPECT_EQ("[1.0, 0.0, 0.0] : 0.0 [deg]", RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0)).toString()) ;
+
+        EXPECT_EQ("[0.0, 0.0, 1.0] : -30.0 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(-30.0)).toString()) ;
+        EXPECT_EQ("[0.0, 0.0, 1.0] : 30.0 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(+30.0)).toString()) ;
+        
+        EXPECT_EQ("[0.0, 0.0, 1.0] : -90.0 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(-90.0)).toString()) ;
+        EXPECT_EQ("[0.0, 0.0, 1.0] : 90.0 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(+90.0)).toString()) ;
+
+        EXPECT_EQ("[0.0, 0.0, 1.0] : -180.0 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(-180.0)).toString()) ;
+        EXPECT_EQ("[0.0, 0.0, 1.0] : 180.0 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(+180.0)).toString()) ;
+
+    }
+
+    {
+
+        EXPECT_EQ("[1.000, 0.000, 0.000] : 0.000 [deg]", RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0)).toString(3)) ;
+
+        EXPECT_EQ("[0.000, 0.000, 1.000] : -30.000 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(-30.0)).toString(3)) ;
+        EXPECT_EQ("[0.000, 0.000, 1.000] : 30.000 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(+30.0)).toString(3)) ;
+        
+        EXPECT_EQ("[0.000, 0.000, 1.000] : -90.000 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(-90.0)).toString(3)) ;
+        EXPECT_EQ("[0.000, 0.000, 1.000] : 90.000 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(+90.0)).toString(3)) ;
+
+        EXPECT_EQ("[0.000, 0.000, 1.000] : -180.000 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(-180.0)).toString(3)) ;
+        EXPECT_EQ("[0.000, 0.000, 1.000] : 180.000 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(+180.0)).toString(3)) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(RotationVector::Undefined().toString()) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_Transformations_Rotations_RotationVector, Undefined)
 {
 

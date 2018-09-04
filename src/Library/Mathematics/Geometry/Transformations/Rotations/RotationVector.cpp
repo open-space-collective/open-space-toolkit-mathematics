@@ -112,6 +112,18 @@ Angle                           RotationVector::getAngle                    ( ) 
 
 }
 
+String                          RotationVector::toString                    (   const   Integer&                    aPrecision                                  ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Rotation vector") ;
+    }
+
+    return String::Format("{} : {}", (aPrecision.isDefined() ? axis_.toString(aPrecision) : axis_.toString()), angle_.toString(aPrecision)) ;
+
+}
+
 RotationVector                  RotationVector::Undefined                   ( )
 {
     return RotationVector() ;
