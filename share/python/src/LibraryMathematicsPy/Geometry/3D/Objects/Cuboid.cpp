@@ -10,6 +10,8 @@
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Cuboid.hpp>
 
+#include <Library/Core/Types/Shared.hpp>
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Cuboid ( )
@@ -17,6 +19,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Cuboid 
 
     using namespace boost::python ;
 
+    using library::core::types::Shared ;
     using library::core::types::Real ;
 
     using library::math::obj::Vector3d ;
@@ -33,7 +36,24 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Cuboid 
     using library::math::geom::d3::Intersection ;
     using library::math::geom::d3::trf::rot::Quaternion ;
 
-    scope in_Cuboid = class_<Cuboid, bases<Object>>("Cuboid", init<const Point&, const std::array<Vector3d, 3>&, const std::array<Real, 3>&>())
+    scope in_Cuboid = class_<Cuboid, Shared<Cuboid>, bases<Object>>("Cuboid", no_init)
+
+        .def
+        (
+            "__init__",
+            make_constructor
+            (
+                +[] (const Point& aCenter, const boost::python::list& anAxisList, const boost::python::list& anExtent) -> Shared<Cuboid>
+                {
+
+                    const std::array<Vector3d, 3> axes = { boost::python::extract<Vector3d>(anAxisList[0]), boost::python::extract<Vector3d>(anAxisList[1]), boost::python::extract<Vector3d>(anAxisList[2]) } ;
+                    const std::array<Real, 3> extent = { boost::python::extract<Real>(anExtent[0]), boost::python::extract<Real>(anExtent[1]), boost::python::extract<Real>(anExtent[2]) } ;
+                    
+                    return std::make_shared<Cuboid>(aCenter, axes, extent) ;
+
+                }
+            )
+        )
 
         .def(self == self)
         .def(self != self)

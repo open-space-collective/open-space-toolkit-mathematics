@@ -183,7 +183,7 @@ void                            Point::applyTransformation                  (   
 
 Point                           Point::Undefined                            ( )
 {
-    return Vector3d::Undefined() ;
+    return { Vector3d::Undefined() } ;
 }
 
 Point                           Point::Origin                               ( )

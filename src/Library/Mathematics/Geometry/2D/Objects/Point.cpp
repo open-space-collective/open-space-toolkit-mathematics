@@ -210,7 +210,7 @@ void                            Point::applyTransformation                  (   
 
 Point                           Point::Undefined                            ( )
 {
-    return Vector2d::Undefined() ;
+    return { Vector2d::Undefined() } ;
 }
 
 Point                           Point::Origin                               ( )
