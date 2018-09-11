@@ -1,5 +1,7 @@
 var namespacelibrary_1_1math_1_1geom_1_1d3_1_1objects =
 [
+    [ "Composite", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite.html", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite" ],
+    [ "Cuboid", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid" ],
     [ "Ellipsoid", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid" ],
     [ "Line", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line.html", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line" ],
     [ "LineString", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string.html", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string" ],

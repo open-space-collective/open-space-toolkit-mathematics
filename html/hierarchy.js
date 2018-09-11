@@ -16,6 +16,8 @@ var hierarchy =
       [ "library::math::geom::d2::objects::Segment", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html", null ]
     ] ],
     [ "library::math::geom::d3::Object", "classlibrary_1_1math_1_1geom_1_1d3_1_1_object.html", [
+      [ "library::math::geom::d3::objects::Composite", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite.html", null ],
+      [ "library::math::geom::d3::objects::Cuboid", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html", null ],
       [ "library::math::geom::d3::objects::Ellipsoid", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html", null ],
       [ "library::math::geom::d3::objects::Line", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line.html", null ],
       [ "library::math::geom::d3::objects::LineString", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string.html", null ],

@@ -8,5 +8,5 @@ var searchData=
   ['vector4i',['Vector4i',['../namespacelibrary_1_1math_1_1obj.html#a5181dbb9520bc27fe956555569ef1271',1,'library::math::obj']]],
   ['vectorxd',['VectorXd',['../namespacelibrary_1_1math_1_1obj.html#a54fa1a789b235483252f0525f0abf579',1,'library::math::obj']]],
   ['vectorxi',['VectorXi',['../namespacelibrary_1_1math_1_1obj.html#a2cd4b891130c163c72ea6a546132cb2d',1,'library::math::obj']]],
-  ['vertex',['Vertex',['../classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a1559cddbcb23d41f2be9e389b0ccd127',1,'library::math::geom::d2::objects::Polygon::Vertex()'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon.html#a12c41d13f2128442c1a15b9eaa08e1d0',1,'library::math::geom::d3::objects::Polygon::Vertex()']]]
+  ['vertex',['Vertex',['../classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a1559cddbcb23d41f2be9e389b0ccd127',1,'library::math::geom::d2::objects::Polygon::Vertex()'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html#ad9600791c8ac7f1253dc94417ec12f3c',1,'library::math::geom::d3::objects::Cuboid::Vertex()'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon.html#a12c41d13f2128442c1a15b9eaa08e1d0',1,'library::math::geom::d3::objects::Polygon::Vertex()']]]
 ];

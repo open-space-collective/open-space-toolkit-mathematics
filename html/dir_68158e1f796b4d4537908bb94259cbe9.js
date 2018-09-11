@@ -1,5 +1,7 @@
 var dir_68158e1f796b4d4537908bb94259cbe9 =
 [
+    [ "Composite.cpp", "_composite_8cpp.html", null ],
+    [ "Cuboid.cpp", "_cuboid_8cpp.html", "_cuboid_8cpp" ],
     [ "Ellipsoid.cpp", "_ellipsoid_8cpp.html", "_ellipsoid_8cpp" ],
     [ "Line.cpp", "_line_8cpp.html", null ],
     [ "LineString.cpp", "3_d_2_objects_2_line_string_8cpp.html", null ],

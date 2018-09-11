@@ -1,0 +1,863 @@
+\hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{}\section{library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Cuboid Class Reference}
+\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid}.  
+
+
+
+
+{\ttfamily \#include $<$Cuboid.\+hpp$>$}
+
+Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Cuboid\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ad9600791c8ac7f1253dc94417ec12f3c}{Vertex}
+\item 
+typedef \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a743ee54e5fb8e2e649c254e69abed69c}{Edge}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Center, const std\+::array$<$ Vector3d, 3 $>$ \&a\+Axis\+Array, const std\+::array$<$ Real, 3 $>$ \&an\+Extent)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} $\ast$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae60199a546a4d4de479f891c3b1db05a}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Clone cuboid. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae458fddf898e938729f41d645f64cd34}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&a\+Cuboid) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a70172b03f3dc65fc6526116b04b5af73}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&a\+Cuboid) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac64560345dc021b569eed66004af96ee}{is\+Defined} () const override
+\begin{DoxyCompactList}\small\item\em Check if cuboid is defined. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ada78cbdc903bb25289a981d13ae2d2c5}{is\+Near} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&a\+Cuboid, const Real \&a\+Tolerance) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid is near another cuboid. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae83063d3b6416b327b6a297f322e2cd1}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects point. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac860b7abc830867b23019f37463334ac}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects point set. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a39646697bbc1c0598cf985faad5cd582}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&a\+Line) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects line. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1faf168d7d2f4879c27bc4723da03aa4}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} \&a\+Ray) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects ray. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_af171e9e8e392905f42e004ab1c8d5972}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects segment. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac064fe1f0ef33fd5bdab5aede2e671af}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&a\+Plane) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects plane. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aae03606f06dfb2e7c97d3c1aed7e28d5}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&a\+Sphere) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects sphere. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a98a8c049dac309e6f07e3417803f23b4}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&a\+Cuboid) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects cuboid. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae7861bd5d6f5132271cb4d76de63a5ba}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&a\+Pyramid) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects pyramid. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a4df75ac5e497a240dd593b32213dee52}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid contains point. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a7113ad052aa87e7ac691481ceaa6e452}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid contains point set. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a91907355c70e38c1877fd2c1ad4c8dba}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid contains segment. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a39e45db60ac6c6662235c94f16d0e3ea}{get\+Center} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid center. \end{DoxyCompactList}\item 
+Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a39291966f74c9fad884e80c71f30c8b3}{get\+First\+Axis} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid first axis. \end{DoxyCompactList}\item 
+Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a7586f3d62d4d51e1267466e7768f8754}{get\+Second\+Axis} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid second axis. \end{DoxyCompactList}\item 
+Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ab89bd1c2cd9a90b63eb0af4c817f0b2a}{get\+Third\+Axis} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid third axis. \end{DoxyCompactList}\item 
+Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae7a25e0b147cd1b0f2e3f7fadf98b8c3}{get\+First\+Extent} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid first extent. \end{DoxyCompactList}\item 
+Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a252d7954c3a1bf3edda6db0f4098b226}{get\+Second\+Extent} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid second extent. \end{DoxyCompactList}\item 
+Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1b1541558cfac6d90e0fd4d3c4dd7d96}{get\+Third\+Extent} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid third extent. \end{DoxyCompactList}\item 
+Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ad9600791c8ac7f1253dc94417ec12f3c}{Cuboid\+::\+Vertex} $>$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_adba483e8727feeaa99c3e4135831ce86}{get\+Vertices} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid vertices. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1f347ffdf70cb64bdbf236abd089715c}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&a\+Line) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of cuboid with line. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aa503c32d68da8de1f45eefd77cbd6a24}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} \&a\+Ray, const bool only\+In\+Sight=false) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of cuboid with ray. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a750d30e3ac694173878034f95e86cd60}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of cuboid with segment. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a39cb1353c26cf80e35abbda242ac2578}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&a\+Cuboid) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of cuboid with cuboid. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a127353762abd63e350dd290fd8c10e88}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&a\+Pyramid, const bool only\+In\+Sight=false) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of cuboid with pyramid. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a82f1700cef1777e918a5363a71278e99}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print cuboid. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a97a3057434b7c90891a5bdb1cd4b907c}{apply\+Transformation} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to cuboid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae87cb41a6038e58e17553daa8270abab}{Undefined} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined cuboid. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac13abaa04f53ab22888ea6c0f697fbc8}{Cube} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Center, const Real \&an\+Extent)
+\begin{DoxyCompactList}\small\item\em Constructs a a cube. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid}. 
+
+https\+://en.wikipedia.\+org/wiki/\+Cuboid 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a743ee54e5fb8e2e649c254e69abed69c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a743ee54e5fb8e2e649c254e69abed69c}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!Edge@{Edge}}
+\index{Edge@{Edge}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{Edge}{Edge}}
+{\footnotesize\ttfamily typedef \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a743ee54e5fb8e2e649c254e69abed69c}{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::\+Edge}}
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ad9600791c8ac7f1253dc94417ec12f3c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ad9600791c8ac7f1253dc94417ec12f3c}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{Vertex}{Vertex}}
+{\footnotesize\ttfamily typedef \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ad9600791c8ac7f1253dc94417ec12f3c}{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::\+Vertex}}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!Cuboid@{Cuboid}}
+\index{Cuboid@{Cuboid}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{Cuboid()}{Cuboid()}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::\+Cuboid (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Center,  }\item[{const std\+::array$<$ Vector3d, 3 $>$ \&}]{a\+Axis\+Array,  }\item[{const std\+::array$<$ Real, 3 $>$ \&}]{an\+Extent }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = \{ \{ 0.0, 0.0, 0.0 \}, \{ \{ 1.0, 0.0, 0.0 \}, \{ 0.0, 1.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \} \}, \{ 1
+      .0, 2.0, 3.0 \} \} ;
+\end{DoxyCode}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a97a3057434b7c90891a5bdb1cd4b907c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a97a3057434b7c90891a5bdb1cd4b907c}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!apply\+Transformation@{apply\+Transformation}}
+\index{apply\+Transformation@{apply\+Transformation}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{apply\+Transformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to cuboid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a5fc47b1ee5d9a28efc6010d3d1512470}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae60199a546a4d4de479f891c3b1db05a}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae60199a546a4d4de479f891c3b1db05a}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!clone@{clone}}
+\index{clone@{clone}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} $\ast$ library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone cuboid. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned cuboid 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a1a784c6b359e0eb97cd34fabc42f2f3f}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a4df75ac5e497a240dd593b32213dee52}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a4df75ac5e497a240dd593b32213dee52}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!contains@{contains}}
+\index{contains@{contains}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid contains point. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = ... ;
+Point point = ... ;
+cuboid.contains(point) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid contains point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a7113ad052aa87e7ac691481ceaa6e452}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a7113ad052aa87e7ac691481ceaa6e452}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!contains@{contains}}
+\index{contains@{contains}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid contains point set. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = ... ;
+PointSet pointSet = ... ;
+cuboid.contains(pointSet) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid contains point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a91907355c70e38c1877fd2c1ad4c8dba}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a91907355c70e38c1877fd2c1ad4c8dba}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!contains@{contains}}
+\index{contains@{contains}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid contains segment. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = ... ;
+Segment segment = ... ;
+cuboid.contains(segment) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid contains segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac13abaa04f53ab22888ea6c0f697fbc8}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac13abaa04f53ab22888ea6c0f697fbc8}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!Cube@{Cube}}
+\index{Cube@{Cube}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{Cube()}{Cube()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::\+Cube (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Center,  }\item[{const Real \&}]{an\+Extent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a a cube. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cube = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac13abaa04f53ab22888ea6c0f697fbc8}{Cuboid::Cube}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Cube 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a39e45db60ac6c6662235c94f16d0e3ea}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a39e45db60ac6c6662235c94f16d0e3ea}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+Center@{get\+Center}}
+\index{get\+Center@{get\+Center}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+Center()}{getCenter()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid center. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = \{ \{ 0.0, 0.0, 0.0 \}, \{ \{ 1.0, 0.0, 0.0 \}, \{ 0.0, 1.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \} \}, \{ 1
+      .0, 2.0, 3.0 \} \} ;
+cuboid.getCenter() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} center 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a39291966f74c9fad884e80c71f30c8b3}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a39291966f74c9fad884e80c71f30c8b3}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+First\+Axis@{get\+First\+Axis}}
+\index{get\+First\+Axis@{get\+First\+Axis}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+First\+Axis()}{getFirstAxis()}}
+{\footnotesize\ttfamily Vector3d library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+First\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid first axis. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} first axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae7a25e0b147cd1b0f2e3f7fadf98b8c3}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae7a25e0b147cd1b0f2e3f7fadf98b8c3}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+First\+Extent@{get\+First\+Extent}}
+\index{get\+First\+Extent@{get\+First\+Extent}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+First\+Extent()}{getFirstExtent()}}
+{\footnotesize\ttfamily Real library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+First\+Extent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid first extent. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} first extent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a7586f3d62d4d51e1267466e7768f8754}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a7586f3d62d4d51e1267466e7768f8754}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+Second\+Axis@{get\+Second\+Axis}}
+\index{get\+Second\+Axis@{get\+Second\+Axis}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+Second\+Axis()}{getSecondAxis()}}
+{\footnotesize\ttfamily Vector3d library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+Second\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid second axis. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} second axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a252d7954c3a1bf3edda6db0f4098b226}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a252d7954c3a1bf3edda6db0f4098b226}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+Second\+Extent@{get\+Second\+Extent}}
+\index{get\+Second\+Extent@{get\+Second\+Extent}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+Second\+Extent()}{getSecondExtent()}}
+{\footnotesize\ttfamily Real library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+Second\+Extent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid second extent. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} second extent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ab89bd1c2cd9a90b63eb0af4c817f0b2a}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ab89bd1c2cd9a90b63eb0af4c817f0b2a}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+Third\+Axis@{get\+Third\+Axis}}
+\index{get\+Third\+Axis@{get\+Third\+Axis}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+Third\+Axis()}{getThirdAxis()}}
+{\footnotesize\ttfamily Vector3d library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+Third\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid third axis. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} third axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1b1541558cfac6d90e0fd4d3c4dd7d96}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1b1541558cfac6d90e0fd4d3c4dd7d96}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+Third\+Extent@{get\+Third\+Extent}}
+\index{get\+Third\+Extent@{get\+Third\+Extent}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+Third\+Extent()}{getThirdExtent()}}
+{\footnotesize\ttfamily Real library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+Third\+Extent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid third extent. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} third extent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_adba483e8727feeaa99c3e4135831ce86}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_adba483e8727feeaa99c3e4135831ce86}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+Vertices@{get\+Vertices}}
+\index{get\+Vertices@{get\+Vertices}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+Vertices()}{getVertices()}}
+{\footnotesize\ttfamily Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ad9600791c8ac7f1253dc94417ec12f3c}{Cuboid\+::\+Vertex} $>$ library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid vertices. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} vertices 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1f347ffdf70cb64bdbf236abd089715c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1f347ffdf70cb64bdbf236abd089715c}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&}]{a\+Line }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of cuboid with line. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Line} & A line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of cuboid with line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aa503c32d68da8de1f45eefd77cbd6a24}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aa503c32d68da8de1f45eefd77cbd6a24}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} \&}]{a\+Ray,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of cuboid with ray. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Ray} & A ray \\
+\hline
+\mbox{\tt in}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of cuboid with ray 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a750d30e3ac694173878034f95e86cd60}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a750d30e3ac694173878034f95e86cd60}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of cuboid with segment. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of cuboid with segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a39cb1353c26cf80e35abbda242ac2578}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a39cb1353c26cf80e35abbda242ac2578}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&}]{a\+Cuboid }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of cuboid with cuboid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Segment} & A cuboid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of cuboid with cuboid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a127353762abd63e350dd290fd8c10e88}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a127353762abd63e350dd290fd8c10e88}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&}]{a\+Pyramid,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of cuboid with pyramid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Pyramid} & A pyramid \\
+\hline
+\mbox{\tt in}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of cuboid with pyramid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae83063d3b6416b327b6a297f322e2cd1}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae83063d3b6416b327b6a297f322e2cd1}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects point. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = ... ;
+Point point = ... ;
+cuboid.intersects(point) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac860b7abc830867b23019f37463334ac}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac860b7abc830867b23019f37463334ac}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects point set. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = ... ;
+PointSet pointSet = ... ;
+cuboid.intersects(pointSet) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a39646697bbc1c0598cf985faad5cd582}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a39646697bbc1c0598cf985faad5cd582}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&}]{a\+Line }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects line. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = ... ;
+Line line = ... ;
+cuboid.intersects(line) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Line} & A line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1faf168d7d2f4879c27bc4723da03aa4}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1faf168d7d2f4879c27bc4723da03aa4}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} \&}]{a\+Ray }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects ray. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = ... ;
+Ray ray = ... ;
+cuboid.intersects(ray) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Ray} & A ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects ray 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_af171e9e8e392905f42e004ab1c8d5972}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_af171e9e8e392905f42e004ab1c8d5972}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects segment. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = ... ;
+Segment segment = ... ;
+cuboid.intersects(segment) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac064fe1f0ef33fd5bdab5aede2e671af}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac064fe1f0ef33fd5bdab5aede2e671af}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects plane. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = ... ;
+Plane plane = ... ;
+cuboid.intersects(plane) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Plane} & A plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects plane 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aae03606f06dfb2e7c97d3c1aed7e28d5}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aae03606f06dfb2e7c97d3c1aed7e28d5}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&}]{a\+Sphere }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects sphere. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = ... ;
+Sphere sphere = ... ;
+cuboid.intersects(sphere) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Sphere} & A sphere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects sphere 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a98a8c049dac309e6f07e3417803f23b4}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a98a8c049dac309e6f07e3417803f23b4}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&}]{a\+Cuboid }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects cuboid. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = ... ;
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} anotherCuboid = ... ;
+cuboid.intersects(anotherCuboid) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Cuboid} & An cuboid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects cuboid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae7861bd5d6f5132271cb4d76de63a5ba}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae7861bd5d6f5132271cb4d76de63a5ba}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&}]{a\+Pyramid }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects pyramid. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = ... ;
+Pyramid pyramid = ... ;
+cuboid.intersects(pyramid) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Pyramid} & A pyramid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects pyramid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac64560345dc021b569eed66004af96ee}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac64560345dc021b569eed66004af96ee}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if cuboid is defined. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = \{ \{ 0.0, 0.0, 0.0 \}, \{ \{ 1.0, 0.0, 0.0 \}, \{ 0.0, 1.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \} \}, \{ 1
+      .0, 2.0, 3.0 \} \} ;
+cuboid.isDefined() ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if cuboid is defined 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a2216442e322f0c3ca5f01a4efa22baf7}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ada78cbdc903bb25289a981d13ae2d2c5}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ada78cbdc903bb25289a981d13ae2d2c5}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!is\+Near@{is\+Near}}
+\index{is\+Near@{is\+Near}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{is\+Near()}{isNear()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::is\+Near (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&}]{a\+Cuboid,  }\item[{const Real \&}]{a\+Tolerance }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid is near another cuboid. 
+
+
+\begin{DoxyCode}
+Point(0.0, 0.0, 0.0).isNear(Point(0.0, 0.0, 0.0), 1e-15) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Cuboid} & A cuboid \\
+\hline
+\mbox{\tt in}  & {\em a\+Tolerance} & A tolerance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid is near another cuboid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a70172b03f3dc65fc6526116b04b5af73}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a70172b03f3dc65fc6526116b04b5af73}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&}]{a\+Cuboid }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = \{ \{ 0.0, 0.0, 0.0 \}, \{ \{ 1.0, 0.0, 0.0 \}, \{ 0.0, 1.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \} \}, \{ 1
+      .0, 2.0, 3.0 \} \} ;
+cuboid != cuboid ; \textcolor{comment}{// False}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Cuboid} & An cuboid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboids not are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae458fddf898e938729f41d645f64cd34}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae458fddf898e938729f41d645f64cd34}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&}]{a\+Cuboid }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = \{ \{ 0.0, 0.0, 0.0 \}, \{ \{ 1.0, 0.0, 0.0 \}, \{ 0.0, 1.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \} \}, \{ 1
+      .0, 2.0, 3.0 \} \} ;
+cuboid == cuboid ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Cuboid} & An cuboid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboids are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a82f1700cef1777e918a5363a71278e99}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a82f1700cef1777e918a5363a71278e99}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!print@{print}}
+\index{print@{print}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print cuboid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aa166f4ce4d116a248f0fc861c75012ca}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae87cb41a6038e58e17553daa8270abab}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae87cb41a6038e58e17553daa8270abab}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} library\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined cuboid. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac42299f962fab284a76a46d4ea4e6fa2}{Cuboid} cuboid = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae87cb41a6038e58e17553daa8270abab}{Cuboid::Undefined}() ; \textcolor{comment}{// Undefined}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined cuboid 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_cuboid_8hpp}{Cuboid.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_cuboid_8cpp}{Cuboid.\+cpp}\end{DoxyCompactItemize}
