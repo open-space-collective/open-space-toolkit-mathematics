@@ -172,6 +172,44 @@ class Intersection
 
         bool                    isComplex                                   ( ) const ;
 
+        /// @brief              Returns true if intersection can be converted to underlying object
+        ///
+        ///                     Only valid if the intersection only contains one object.
+        ///
+        /// @return             True if intersection can be converted to underlying object
+
+        template <class Type>
+        bool                    is                                          ( ) const
+        {
+
+            if (!this->isDefined())
+            {
+                throw library::core::error::runtime::Undefined("Intersection") ;
+            }
+            
+            return composite_.is<Type>() ;
+
+        }
+
+        /// @brief              Access intersection as its underlying object
+        ///
+        ///                     Only valid if the intersection only contains one object.
+        ///
+        /// @return             Reference to underlying object
+
+        template <class Type>
+        const Type&             as                                          ( ) const
+        {
+
+            if (!this->isDefined())
+            {
+                throw library::core::error::runtime::Undefined("Intersection") ;
+            }
+
+            return composite_.as<Type>() ;
+
+        }
+
         /// @brief              Access composite object
         ///
         /// @return             Reference to composite object
