@@ -169,7 +169,7 @@ bool                            Ellipsoid::intersects                       (   
 
     // Line
 
-    const gte::Line3<double> segment = { GteVectorFromVector3d(aLine.getOrigin()), GteVectorFromVector3d(aLine.getDirection()) } ;
+    const gte::Line3<double> line = { GteVectorFromVector3d(aLine.getOrigin()), GteVectorFromVector3d(aLine.getDirection()) } ;
 
     // Ellipsoid
 
@@ -183,7 +183,7 @@ bool                            Ellipsoid::intersects                       (   
 
     gte::TIQuery<double, gte::Line3<double>, gte::Ellipsoid3<double>> intersectionQuery ;
 
-    auto intersectionResult = intersectionQuery(segment, ellipsoid) ;
+    auto intersectionResult = intersectionQuery(line, ellipsoid) ;
 
     return intersectionResult.intersect ;
 
@@ -204,7 +204,7 @@ bool                            Ellipsoid::intersects                       (   
 
     // Ray
 
-    const gte::Ray3<double> segment = { GteVectorFromVector3d(aRay.getOrigin()), GteVectorFromVector3d(aRay.getDirection()) } ;
+    const gte::Ray3<double> ray = { GteVectorFromVector3d(aRay.getOrigin()), GteVectorFromVector3d(aRay.getDirection()) } ;
 
     // Ellipsoid
 
@@ -218,7 +218,7 @@ bool                            Ellipsoid::intersects                       (   
 
     gte::TIQuery<double, gte::Ray3<double>, gte::Ellipsoid3<double>> intersectionQuery ;
 
-    auto intersectionResult = intersectionQuery(segment, ellipsoid) ;
+    auto intersectionResult = intersectionQuery(ray, ellipsoid) ;
 
     return intersectionResult.intersect ;
 

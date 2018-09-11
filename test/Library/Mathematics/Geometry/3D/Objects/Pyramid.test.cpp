@@ -281,9 +281,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IntersectionWith_Ellipsoi
 
         EXPECT_TRUE(intersection.isDefined()) ;
         EXPECT_FALSE(intersection.isEmpty()) ;
-        EXPECT_TRUE(intersection.is<LineString>()) ;
+        EXPECT_TRUE(intersection.accessComposite().is<LineString>()) ;
 
-        const LineString intersectionLineString = intersection.as<LineString>() ;
+        const LineString intersectionLineString = intersection.accessComposite().as<LineString>() ;
 
         EXPECT_EQ(8, intersectionLineString.getPointCount()) ;
 

@@ -1046,9 +1046,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Line)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<PointSet>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<PointSet>()) ;
 
-        const PointSet pointSet = intersection.as<PointSet>() ;
+        const PointSet pointSet = intersection.accessComposite().as<PointSet>() ;
 
         EXPECT_EQ(2, pointSet.getSize()) ;
 
@@ -1065,9 +1065,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Line)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<PointSet>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<PointSet>()) ;
 
-        const PointSet pointSet = intersection.as<PointSet>() ;
+        const PointSet pointSet = intersection.accessComposite().as<PointSet>() ;
 
         EXPECT_EQ(2, pointSet.getSize()) ;
 
@@ -1084,9 +1084,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Line)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<PointSet>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<PointSet>()) ;
 
-        const PointSet pointSet = intersection.as<PointSet>() ;
+        const PointSet pointSet = intersection.accessComposite().as<PointSet>() ;
 
         EXPECT_EQ(2, pointSet.getSize()) ;
 
@@ -1103,9 +1103,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Line)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<Point>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
 
-        const Point point = intersection.as<Point>() ;
+        const Point point = intersection.accessComposite().as<Point>() ;
 
         EXPECT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), Real::Epsilon())) ;
 
@@ -1120,9 +1120,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Line)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<Point>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
 
-        const Point point = intersection.as<Point>() ;
+        const Point point = intersection.accessComposite().as<Point>() ;
 
         EXPECT_TRUE(point.isNear(Point(0.0, 0.0, -3.0), Real::Epsilon())) ;
 
@@ -1169,9 +1169,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<Point>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
 
-        const Point point = intersection.as<Point>() ;
+        const Point point = intersection.accessComposite().as<Point>() ;
 
         EXPECT_TRUE(point.isNear(Point(1.0, 0.0, 0.0), Real::Epsilon())) ;
 
@@ -1186,9 +1186,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<PointSet>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<PointSet>()) ;
 
-        const PointSet pointSet = intersection.as<PointSet>() ;
+        const PointSet pointSet = intersection.accessComposite().as<PointSet>() ;
 
         EXPECT_EQ(2, pointSet.getSize()) ;
 
@@ -1205,9 +1205,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<PointSet>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<PointSet>()) ;
 
-        const PointSet pointSet = intersection.as<PointSet>() ;
+        const PointSet pointSet = intersection.accessComposite().as<PointSet>() ;
 
         EXPECT_EQ(2, pointSet.getSize()) ;
 
@@ -1224,9 +1224,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<PointSet>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<PointSet>()) ;
 
-        const PointSet pointSet = intersection.as<PointSet>() ;
+        const PointSet pointSet = intersection.accessComposite().as<PointSet>() ;
 
         EXPECT_EQ(2, pointSet.getSize()) ;
 
@@ -1243,9 +1243,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<PointSet>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<PointSet>()) ;
 
-        const PointSet pointSet = intersection.as<PointSet>() ;
+        const PointSet pointSet = intersection.accessComposite().as<PointSet>() ;
 
         EXPECT_EQ(2, pointSet.getSize()) ;
 
@@ -1273,9 +1273,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<Point>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
 
-        const Point point = intersection.as<Point>() ;
+        const Point point = intersection.accessComposite().as<Point>() ;
 
         EXPECT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), Real::Epsilon())) ;
 
@@ -1290,9 +1290,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<Point>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
 
-        const Point point = intersection.as<Point>() ;
+        const Point point = intersection.accessComposite().as<Point>() ;
 
         EXPECT_TRUE(point.isNear(Point(0.0, 0.0, -3.0), Real::Epsilon())) ;
 
@@ -1320,9 +1320,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<Point>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
 
-        const Point point = intersection.as<Point>() ;
+        const Point point = intersection.accessComposite().as<Point>() ;
 
         EXPECT_TRUE(point.isNear(Point(1.0, 0.0, 0.0), Real::Epsilon())) ;
 
@@ -1337,9 +1337,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<Point>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
 
-        const Point point = intersection.as<Point>() ;
+        const Point point = intersection.accessComposite().as<Point>() ;
 
         EXPECT_TRUE(point.isNear(Point(0.0, 0.0, -3.0), Real::Epsilon())) ;
 
@@ -1365,9 +1365,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<Point>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
 
-        const Point point = intersection.as<Point>() ;
+        const Point point = intersection.accessComposite().as<Point>() ;
 
         EXPECT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), Real::Epsilon())) ;
 
@@ -1382,9 +1382,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<Point>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
 
-        const Point point = intersection.as<Point>() ;
+        const Point point = intersection.accessComposite().as<Point>() ;
 
         EXPECT_TRUE(point.isNear(Point(0.0, 0.0, -3.0), Real::Epsilon())) ;
 
@@ -1429,9 +1429,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Segmen
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<Point>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
 
-        const Point point = intersection.as<Point>() ;
+        const Point point = intersection.accessComposite().as<Point>() ;
 
         EXPECT_TRUE(point.isNear(Point(1.0, 0.0, 0.0), Real::Epsilon())) ;
 
@@ -1446,9 +1446,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Segmen
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<Point>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
 
-        const Point point = intersection.as<Point>() ;
+        const Point point = intersection.accessComposite().as<Point>() ;
 
         EXPECT_TRUE(point.isNear(Point(1.0, 0.0, 0.0), Real::Epsilon())) ;
 
@@ -1463,9 +1463,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Segmen
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<Point>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
 
-        const Point point = intersection.as<Point>() ;
+        const Point point = intersection.accessComposite().as<Point>() ;
 
         EXPECT_TRUE(point.isNear(Point(-1.0, 0.0, 0.0), Real::Epsilon())) ;
 
@@ -1480,9 +1480,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Segmen
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<Point>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
 
-        const Point point = intersection.as<Point>() ;
+        const Point point = intersection.accessComposite().as<Point>() ;
 
         EXPECT_TRUE(point.isNear(Point(-1.0, 0.0, 0.0), Real::Epsilon())) ;
 
@@ -1497,9 +1497,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Segmen
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<PointSet>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<PointSet>()) ;
 
-        const PointSet pointSet = intersection.as<PointSet>() ;
+        const PointSet pointSet = intersection.accessComposite().as<PointSet>() ;
 
         EXPECT_EQ(2, pointSet.getSize()) ;
 
@@ -1516,9 +1516,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Segmen
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<PointSet>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<PointSet>()) ;
 
-        const PointSet pointSet = intersection.as<PointSet>() ;
+        const PointSet pointSet = intersection.accessComposite().as<PointSet>() ;
 
         EXPECT_EQ(2, pointSet.getSize()) ;
 
@@ -1535,9 +1535,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Segmen
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<Point>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
 
-        const Point point = intersection.as<Point>() ;
+        const Point point = intersection.accessComposite().as<Point>() ;
 
         EXPECT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), Real::Epsilon())) ;
 
@@ -1552,9 +1552,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Segmen
 
         EXPECT_TRUE(intersection.isDefined()) ;
 
-        ASSERT_TRUE(intersection.is<Point>()) ;
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
 
-        const Point point = intersection.as<Point>() ;
+        const Point point = intersection.accessComposite().as<Point>() ;
 
         EXPECT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), Real::Epsilon())) ;
 

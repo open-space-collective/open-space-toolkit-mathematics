@@ -69,6 +69,11 @@ bool                            PointSet::isNear                            (   
         return false ;
     }
 
+    if (this->getSize() != aPointSet.getSize())
+    {
+        return false ;
+    }
+
     PointSet::Container firstPointSetBuffer = points_ ;
     PointSet::Container secondPointSetBuffer = aPointSet.points_ ;
 
@@ -90,6 +95,8 @@ bool                            PointSet::isNear                            (   
                 foundClosestPoint = true ;
 
                 secondPointSetBuffer.erase(secondPointSetBufferIt) ;
+
+                break ;
 
             }
             

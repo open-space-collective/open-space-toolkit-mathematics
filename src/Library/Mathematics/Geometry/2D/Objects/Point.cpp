@@ -125,22 +125,12 @@ bool                            Point::isNear                               (   
                                                                                 const   Real&                       aTolerance                                  ) const
 {
 
-    if (!this->isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Point") ;
-    }
-
-    if (!aPoint.isDefined())
-    {
-        throw library::core::error::runtime::Undefined("Point") ;
-    }
-
     if (!aTolerance.isDefined())
     {
         throw library::core::error::runtime::Undefined("Tolerance") ;
     }
 
-    return (this->Vector2d::operator - (aPoint)).norm() <= aTolerance ;
+    return this->distanceTo(aPoint) <= aTolerance ;
 
 }
 
@@ -220,7 +210,7 @@ void                            Point::applyTransformation                  (   
 
 Point                           Point::Undefined                            ( )
 {
-    return Vector2d::Undefined() ;
+    return { Vector2d::Undefined() } ;
 }
 
 Point                           Point::Origin                               ( )

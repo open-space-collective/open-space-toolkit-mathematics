@@ -276,14 +276,14 @@ Intersection                    Pyramid::intersectionWith                   (   
         if (!intersection.isEmpty())
         {
 
-            if (intersection.is<Point>())
+            if (intersection.accessComposite().is<Point>())
             {
-                firstIntersectionPoints.add(intersection.as<Point>()) ;
+                firstIntersectionPoints.add(intersection.accessComposite().as<Point>()) ;
             }
-            else if (intersection.is<PointSet>())
+            else if (intersection.accessComposite().is<PointSet>())
             {
 
-                const PointSet& pointSet = intersection.as<PointSet>() ;
+                const PointSet& pointSet = intersection.accessComposite().as<PointSet>() ;
 
                 bool secondIntersectionPointAdded = false ;
 

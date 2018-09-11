@@ -8,14 +8,18 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Composite.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Polygon.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Cuboid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Polygon.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/LineString.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/PointSet.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
 
@@ -44,14 +48,18 @@ bool                            Object::operator ==                         (   
 {
 
     using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::PointSet ;
     using library::math::geom::d3::objects::Line ;
     using library::math::geom::d3::objects::Ray ;
     using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::objects::LineString ;
     using library::math::geom::d3::objects::Polygon ;
+    using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::objects::Cuboid ;
     using library::math::geom::d3::objects::Sphere ;
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Pyramid ;
+    using library::math::geom::d3::objects::Composite ;
 
     if ((!this->isDefined()) || (!anObject.isDefined()))
     {
@@ -69,6 +77,18 @@ bool                            Object::operator ==                         (   
     {
 
         if (const Point* otherObjectPtr = dynamic_cast<const Point*>(&anObject))
+        {
+            return (*objectPtr) == (*otherObjectPtr) ;
+        }
+
+    }
+
+    // PointSet
+
+    if (const PointSet* objectPtr = dynamic_cast<const PointSet*>(this))
+    {
+
+        if (const PointSet* otherObjectPtr = dynamic_cast<const PointSet*>(&anObject))
         {
             return (*objectPtr) == (*otherObjectPtr) ;
         }
@@ -111,12 +131,12 @@ bool                            Object::operator ==                         (   
 
     }
 
-    // Plane
+    // LineString
 
-    if (const Plane* objectPtr = dynamic_cast<const Plane*>(this))
+    if (const LineString* objectPtr = dynamic_cast<const LineString*>(this))
     {
 
-        if (const Plane* otherObjectPtr = dynamic_cast<const Plane*>(&anObject))
+        if (const LineString* otherObjectPtr = dynamic_cast<const LineString*>(&anObject))
         {
             return (*objectPtr) == (*otherObjectPtr) ;
         }
@@ -129,6 +149,30 @@ bool                            Object::operator ==                         (   
     {
 
         if (const Polygon* otherObjectPtr = dynamic_cast<const Polygon*>(&anObject))
+        {
+            return (*objectPtr) == (*otherObjectPtr) ;
+        }
+
+    }
+
+    // Plane
+
+    if (const Plane* objectPtr = dynamic_cast<const Plane*>(this))
+    {
+
+        if (const Plane* otherObjectPtr = dynamic_cast<const Plane*>(&anObject))
+        {
+            return (*objectPtr) == (*otherObjectPtr) ;
+        }
+
+    }
+
+    // Cuboid
+
+    if (const Cuboid* objectPtr = dynamic_cast<const Cuboid*>(this))
+    {
+
+        if (const Cuboid* otherObjectPtr = dynamic_cast<const Cuboid*>(&anObject))
         {
             return (*objectPtr) == (*otherObjectPtr) ;
         }
@@ -171,6 +215,21 @@ bool                            Object::operator ==                         (   
 
     }
 
+    // Composite
+
+    if (const Composite* objectPtr = dynamic_cast<const Composite*>(this))
+    {
+
+        if (const Composite* otherObjectPtr = dynamic_cast<const Composite*>(&anObject))
+        {
+            return (*objectPtr) == (*otherObjectPtr) ;
+        }
+
+    }
+
+    std::cout << (*this) << std::endl ;
+    std::cout << anObject << std::endl ;
+
     throw library::core::error::runtime::ToBeImplemented("Object :: operator ==") ;
 
     return false ;
@@ -196,14 +255,18 @@ bool                            Object::intersects                          (   
 {
 
     using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::PointSet ;
     using library::math::geom::d3::objects::Line ;
     using library::math::geom::d3::objects::Ray ;
     using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::objects::LineString ;
     using library::math::geom::d3::objects::Polygon ;
+    using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::objects::Cuboid ;
     using library::math::geom::d3::objects::Sphere ;
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Pyramid ;
+    using library::math::geom::d3::objects::Composite ;
 
     if (!anObject.isDefined())
     {
@@ -303,6 +366,9 @@ bool                            Object::intersects                          (   
 
     }
 
+    std::cout << (*this) << std::endl ;
+    std::cout << anObject << std::endl ;
+
     throw library::core::error::runtime::ToBeImplemented("Object :: intersects") ;
 
     return false ;
@@ -313,14 +379,18 @@ bool                            Object::contains                            (   
 {
 
     using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::PointSet ;
     using library::math::geom::d3::objects::Line ;
     using library::math::geom::d3::objects::Ray ;
     using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::objects::LineString ;
     using library::math::geom::d3::objects::Polygon ;
+    using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::objects::Cuboid ;
     using library::math::geom::d3::objects::Sphere ;
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Pyramid ;
+    using library::math::geom::d3::objects::Composite ;
 
     if (!anObject.isDefined())
     {
@@ -379,14 +449,18 @@ Intersection                    Object::intersectionWith                    (   
 {
 
     using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::PointSet ;
     using library::math::geom::d3::objects::Line ;
     using library::math::geom::d3::objects::Ray ;
     using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::objects::LineString ;
     using library::math::geom::d3::objects::Polygon ;
+    using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::objects::Cuboid ;
     using library::math::geom::d3::objects::Sphere ;
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Pyramid ;
+    using library::math::geom::d3::objects::Composite ;
 
     if (!anObject.isDefined())
     {
@@ -434,6 +508,9 @@ Intersection                    Object::intersectionWith                    (   
         }
 
     }
+
+    std::cout << (*this) << std::endl ;
+    std::cout << anObject << std::endl ;
 
     throw library::core::error::runtime::ToBeImplemented("Object :: intersectionWith") ;
 

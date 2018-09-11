@@ -7,10 +7,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <LibraryMathematicsPy/Geometry/3D/Objects/Composite.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Pyramid.cpp>
 // #include <LibraryMathematicsPy/Geometry/3D/Objects/Cone.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Ellipsoid.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Sphere.cpp>
+#include <LibraryMathematicsPy/Geometry/3D/Objects/Cuboid.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Polygon.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Plane.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Segment.cpp>
@@ -40,9 +42,11 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects    ( )
     // LibraryMathematicsPy_Geometry_3D_Objects_MultiLineString() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Plane() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Polygon() ;
+    LibraryMathematicsPy_Geometry_3D_Objects_Cuboid() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Sphere() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Ellipsoid() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Pyramid() ;
+    LibraryMathematicsPy_Geometry_3D_Objects_Composite() ;
 
 }
 
