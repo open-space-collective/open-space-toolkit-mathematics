@@ -107,8 +107,8 @@ bool                            Polygon::isNear                             (   
     const Array<Polygon::Vertex> firstVertices = this->getVertices() ;
     const Array<Polygon::Vertex> secondVertices = aPolygon.getVertices() ;
 
-    // for (auto vertexTuple : library::core::ctnr::iterators::Zip(this->getVertices(), aPolygon.getVertices()))
-    for (auto vertexTuple : library::core::ctnr::iterators::Zip(firstVertices, secondVertices))
+    // for (const auto vertexTuple : library::core::ctnr::iterators::Zip(this->getVertices(), aPolygon.getVertices()))
+    for (const auto vertexTuple : library::core::ctnr::iterators::Zip(firstVertices, secondVertices))
     {
 
         if (!std::get<0>(vertexTuple).isNear(std::get<1>(vertexTuple), aTolerance))

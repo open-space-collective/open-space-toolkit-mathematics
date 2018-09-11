@@ -25,6 +25,8 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Intersection ( 
     using library::math::geom::d3::objects::Line ;
     using library::math::geom::d3::objects::Ray ;
     using library::math::geom::d3::objects::Segment ;
+    using library::math::geom::d3::objects::LineString ;
+    using library::math::geom::d3::objects::Polygon ;
     using library::math::geom::d3::objects::Plane ;
     using library::math::geom::d3::objects::Sphere ;
     using library::math::geom::d3::objects::Ellipsoid ;
@@ -42,26 +44,11 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Intersection ( 
 
         .def("isDefined", &Intersection::isDefined)
         .def("isEmpty", &Intersection::isEmpty)
+        .def("isComplex", &Intersection::isComplex)
 
-        .def("isPoint", +[] (const Intersection& anIntersection) -> bool { return anIntersection.is<Point>() ; })
-        .def("isPointSet", +[] (const Intersection& anIntersection) -> bool { return anIntersection.is<PointSet>() ; })
-        .def("isLine", +[] (const Intersection& anIntersection) -> bool { return anIntersection.is<Line>() ; })
-        .def("isRay", +[] (const Intersection& anIntersection) -> bool { return anIntersection.is<Ray>() ; })
-        .def("isSegment", +[] (const Intersection& anIntersection) -> bool { return anIntersection.is<Segment>() ; })
-        .def("isPlane", +[] (const Intersection& anIntersection) -> bool { return anIntersection.is<Plane>() ; })
-        .def("isSphere", +[] (const Intersection& anIntersection) -> bool { return anIntersection.is<Sphere>() ; })
-        .def("isEllipsoid", +[] (const Intersection& anIntersection) -> bool { return anIntersection.is<Ellipsoid>() ; })
+        .def("accessComposite", &Intersection::accessComposite, return_value_policy<reference_existing_object>())
 
         .def("getType", &Intersection::getType)
-
-        .def("asPoint", +[] (const Intersection& anIntersection) -> Point { return anIntersection.as<Point>() ; })
-        .def("asPointSet", +[] (const Intersection& anIntersection) -> PointSet { return anIntersection.as<PointSet>() ; })
-        .def("asLine", +[] (const Intersection& anIntersection) -> Line { return anIntersection.as<Line>() ; })
-        .def("asRay", +[] (const Intersection& anIntersection) -> Ray { return anIntersection.as<Ray>() ; })
-        .def("asSegment", +[] (const Intersection& anIntersection) -> Segment { return anIntersection.as<Segment>() ; })
-        .def("asPlane", +[] (const Intersection& anIntersection) -> Plane { return anIntersection.as<Plane>() ; })
-        .def("asSphere", +[] (const Intersection& anIntersection) -> Sphere { return anIntersection.as<Sphere>() ; })
-        .def("asEllipsoid", +[] (const Intersection& anIntersection) -> Ellipsoid { return anIntersection.as<Ellipsoid>() ; })
         
         .def("Undefined", &Intersection::Undefined).staticmethod("Undefined")
         .def("Empty", &Intersection::Empty).staticmethod("Empty")

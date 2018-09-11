@@ -75,7 +75,7 @@ bool                            LineString::isNear                          (   
         return false ;
     }
 
-    for (auto pointTuple : library::core::ctnr::iterators::Zip(points_, aLineString.points_))
+    for (const auto pointTuple : library::core::ctnr::iterators::Zip(points_, aLineString.points_))
     {
 
         if (!std::get<0>(pointTuple).isNear(std::get<1>(pointTuple), aTolerance))

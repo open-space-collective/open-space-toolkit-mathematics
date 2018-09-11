@@ -12,19 +12,26 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Objects/Composite.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Cuboid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Polygon.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/LineString.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/LineString.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/PointSet.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
 
 #include <Library/Core/Containers/Array.hpp>
+#include <Library/Core/Types/Size.hpp>
+#include <Library/Core/Types/Index.hpp>
 #include <Library/Core/Types/Unique.hpp>
+#include <Library/Core/Error.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -40,9 +47,12 @@ namespace d3
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using library::core::types::Unique ;
+using library::core::types::Index ;
+using library::core::types::Size ;
 using library::core::ctnr::Array ;
 
 using library::math::geom::d3::Object ;
+using library::math::geom::d3::objects::Composite ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -61,12 +71,15 @@ class Intersection
             Point,
             PointSet,
             Line,
-            LineString,
             Ray,
             Segment,
+            LineString,
+            Polygon,
             Plane,
+            Cuboid,
             Sphere,
             Ellipsoid,
+            Pyramid,
             Complex
 
         } ;
@@ -75,7 +88,7 @@ class Intersection
         ///
         /// @param              [in] anObjectArray An array of objects
 
-                                Intersection                                (   const   Array<Unique<Object>>&      anObjectArray                               ) ;
+                                Intersection                                (           Array<Unique<Object>>&&     anObjectArray                               ) ;
 
         /// @brief              Copy constructor
         ///
@@ -117,6 +130,15 @@ class Intersection
         
         Intersection            operator +                                  (   const   Intersection&               anIntersection                              ) const ;
 
+        /// @brief              Addition assignment operator (intersection concatenation)
+        ///
+        ///                     Concatenate (merge) intersection with another intersection.
+        ///
+        /// @param              [in] anIntersection An intersection
+        /// @return             Reference to concatenated intersection
+
+        Intersection&           operator +=                                 (   const   Intersection&               anIntersection                              ) ;
+
         /// @brief              Output stream operator
         ///
         /// @code
@@ -142,45 +164,25 @@ class Intersection
 
         bool                    isEmpty                                     ( ) const ;
 
-        /// @brief              Returns true if intersection can be converted to underlying object
+        /// @brief              Check if intersection is complex
         ///
-        /// @return             True if intersection can be converted to underlying object
+        ///                     A complex intersection contains more than one object.
+        ///
+        /// @return             True if intersection is complex
 
-        template <class Type>
-        bool                    is                                          ( ) const
-        {
-            return (!objects_.isEmpty()) && (dynamic_cast<const Type*>(objects_.accessFirst().get()) != nullptr) ;
-        }
+        bool                    isComplex                                   ( ) const ;
+
+        /// @brief              Access composite object
+        ///
+        /// @return             Reference to composite object
+
+        const Composite&        accessComposite                             ( ) const ;
 
         /// @brief              Get intersection type
         ///
         /// @return             Intersection type
 
         Intersection::Type      getType                                     ( ) const ;
-
-        /// @brief              Access intersection as its underlying object
-        ///
-        /// @return             Reference to underlying object
-
-        template <class Type>
-        const Type&             as                                          ( ) const
-        {
-
-            if (objects_.isEmpty())
-            {
-                throw library::core::error::RuntimeError("Cannot convert intersection: it is empty.") ;
-            }
-
-            const Type* objectPtr = dynamic_cast<const Type*>(objects_.accessFirst().get()) ;
-
-            if (objectPtr == nullptr)
-            {
-                throw library::core::error::RuntimeError("Cannot convert intersection: wrong type.") ;
-            }
-
-            return *objectPtr ;
-
-        }
 
         /// @brief              Constructs an undefined intersection
         ///
@@ -242,7 +244,7 @@ class Intersection
 
         Intersection::Type      type_ ;
 
-        Array<Unique<Object>>   objects_ ;
+        Composite               composite_ ;
 
                                 Intersection                                ( ) ;
 

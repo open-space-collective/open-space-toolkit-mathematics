@@ -15,6 +15,8 @@
 #include <Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
 #include <Library/Mathematics/Objects/Vector.hpp>
 
+#include <Library/Core/Error.hpp>
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace library
@@ -45,7 +47,7 @@ class Object
 
     public:
 
-        /// @brief              Default constructor
+        /// @brief              Default constructor (default)
 
                                 Object                                      ( ) = default ;
 
@@ -88,6 +90,16 @@ class Object
 
         virtual bool            isDefined                                   ( ) const = 0 ;
 
+        /// @brief              Returns true if object can be converted to type
+        ///
+        /// @return             True if object can be converted to type
+
+        template <class Type>
+        bool                    is                                          ( ) const
+        {
+            return dynamic_cast<const Type*>(this) != nullptr ;
+        }
+
         /// @brief              Check if object intersects another object
         ///
         /// @code
@@ -113,6 +125,25 @@ class Object
         /// @return             True if object contains another object
 
         virtual bool            contains                                    (   const   Object&                     anObject                                    ) const ;
+
+        /// @brief              Access object as its underlying type
+        ///
+        /// @return             Reference to underlying type
+
+        template <class Type>
+        const Type&             as                                          ( ) const
+        {
+
+            const Type* objectPtr = dynamic_cast<const Type*>(this) ;
+
+            if (objectPtr == nullptr)
+            {
+                throw library::core::error::RuntimeError("Cannot convert object to underlying type.") ;
+            }
+
+            return *objectPtr ;
+
+        }
 
         /// @brief              Compute intersection of object with another object
         ///
