@@ -173,9 +173,9 @@ class Angle
 
         static Real             SIRatio                                     (   const   Angle::Unit&                aUnit                                       ) ;
 
-        static Real             ReduceRange                                 (   const    Real&                      aValue,
-                                                                                const    Real&                      aRangeLowerBound,
-                                                                                const    Real&                      aRangeUpperBound                            ) ;
+        static Real             ReduceRange                                 (   const   Real&                       aValue,
+                                                                                const   Real&                       aRangeLowerBound,
+                                                                                const   Real&                       aRangeUpperBound                            ) ;
 
 } ;
 

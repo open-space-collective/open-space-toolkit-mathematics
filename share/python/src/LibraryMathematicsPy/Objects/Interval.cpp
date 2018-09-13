@@ -38,6 +38,7 @@ inline void                     LibraryMathematicsPy_Objects_Interval       ( )
 
         .def("getLowerBound", &Interval<Real>::getLowerBound)
         .def("getUpperBound", &Interval<Real>::getUpperBound)
+        .def("toString", &Interval<Real>::toString)
 
         .def("Undefined", &Interval<Real>::Undefined).staticmethod("Undefined")
         .def("Closed", &Interval<Real>::Closed).staticmethod("Closed")
