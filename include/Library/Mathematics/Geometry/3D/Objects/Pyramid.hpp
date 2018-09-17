@@ -108,6 +108,21 @@ class Pyramid : public Object
 
         virtual bool            isDefined                                   ( ) const override ;
 
+        /// @brief              Check if pyramid intersects sphere
+        ///
+        /// @code
+        ///                     Pyramid pyramid = ... ;
+        ///                     Sphere sphere = ... ;
+        ///                     pyramid.intersects(sphere) ;
+        /// @endcode
+        ///
+        /// @param              [in] aSphere A sphere
+        /// @param              [in] aDiscretizationLevel (optional) The polygonal discretization level
+        /// @return             True if pyramid intersects sphere
+        
+        bool                    intersects                                  (   const   Sphere&                     aSphere,
+                                                                                const   Size                        aDiscretizationLevel                        =   40 ) const ;
+
         /// @brief              Check if pyramid intersects ellipsoid
         ///
         /// @code
@@ -176,6 +191,17 @@ class Pyramid : public Object
         /// @return             Array of rays
 
         Array<Ray>              getRaysOfLateralFaces                       (   const   Size                        aRayCount                                   =   0 ) const ;
+
+        /// @brief              Compute intersection of pyramid with sphere
+        ///
+        /// @param              [in] aSphere A sphere
+        /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
+        /// @param              [in] aDiscretizationLevel (optional) The polygonal discretization level
+        /// @return             Intersection of pyramid with sphere
+
+        Intersection            intersectionWith                            (   const   Sphere&                     aSphere,
+                                                                                const   bool                        onlyInSight                                 =   false,
+                                                                                const   Size                        aDiscretizationLevel                        =   40 ) const ;
 
         /// @brief              Compute intersection of pyramid with ellipsoid
         ///

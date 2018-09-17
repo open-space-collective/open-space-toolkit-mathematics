@@ -33,8 +33,20 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Sphere 
         .def("isDefined", &Sphere::isDefined)
         .def("isUnitary", &Sphere::isUnitary)
 
+        .def("intersectsPoint", +[] (const Sphere& aSphere, const Point& aPoint) -> bool { return aSphere.intersects(aPoint) ; })
+        .def("intersectsPointSet", +[] (const Sphere& aSphere, const PointSet& aPointSet) -> bool { return aSphere.intersects(aPointSet) ; })
+        .def("intersectsLine", +[] (const Sphere& aSphere, const Line& aLine) -> bool { return aSphere.intersects(aLine) ; })
+        .def("intersectsRay", +[] (const Sphere& aSphere, const Ray& aRay) -> bool { return aSphere.intersects(aRay) ; })
+        .def("intersectsSegment", +[] (const Sphere& aSphere, const Segment& aSegment) -> bool { return aSphere.intersects(aSegment) ; })
+        .def("intersectsPlane", +[] (const Sphere& aSphere, const Plane& aPlane) -> bool { return aSphere.intersects(aPlane) ; })
+        .def("containsPoint", +[] (const Sphere& aSphere, const Point& aPoint) -> bool { return aSphere.contains(aPoint) ; })
+        .def("containsPointSet", +[] (const Sphere& aSphere, const PointSet& aPointSet) -> bool { return aSphere.contains(aPointSet) ; })
+
         .def("getCenter", &Sphere::getCenter)
         .def("getRadius", &Sphere::getRadius)
+        .def("intersectionWithLine", +[] (const Sphere& aSphere, const Line& aLine) -> Intersection { return aSphere.intersectionWith(aLine) ; })
+        .def("intersectionWithRay", +[] (const Sphere& aSphere, const Ray& aRay) -> Intersection { return aSphere.intersectionWith(aRay) ; })
+        .def("intersectionWithRay", +[] (const Sphere& aSphere, const Ray& aRay, const bool onlyInSight) -> Intersection { return aSphere.intersectionWith(aRay, onlyInSight) ; })
         .def("applyTransformation", &Sphere::applyTransformation)
         
         .def("Undefined", &Sphere::Undefined).staticmethod("Undefined")

@@ -93,8 +93,8 @@ class Transformation
 
         /// @brief              Returns true if transformation is rigid
         ///
-        ///                     A rigid transformation preserves distances and angles.
-        ///                     It is either a translation, a rotation, or a reflection.
+        ///                     A rigid transformation preserves the Euclidean distance between every pair of points.
+        ///                     The rigid transformations include rotations, translations, reflections, or their combination.
         ///
         /// @ref                https://en.wikipedia.org/wiki/Rigid_transformation
         ///
@@ -135,13 +135,18 @@ class Transformation
 
         static Transformation::Type TypeOfMatrix                            (   const   Matrix4d&                   aMatrix                                     ) ;
 
+        static bool             IsRigid                                     (   const   Matrix4d&                   aMatrix                                     ) ;
+
     private:
 
         Transformation::Type    type_ ;
         Matrix4d                matrix_ ;
+        
+        bool                    isRigid_ ;
 
                                 Transformation                              (   const   Transformation::Type&       aType,
-                                                                                const   Matrix4d&                   aMatrix                                     ) ;
+                                                                                const   Matrix4d&                   aMatrix,
+                                                                                const   bool                        isRigid                                     ) ;
 
 } ;
 

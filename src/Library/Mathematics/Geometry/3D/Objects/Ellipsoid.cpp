@@ -56,12 +56,12 @@ namespace objects
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-gte::Vector3<double>            GteVectorFromVector3d                       (   const   Vector3d&                   aVector                                     )
+gte::Vector3<double>            EllipsoidGteVectorFromVector3d              (   const   Vector3d&                   aVector                                     )
 {
     return { aVector.x(), aVector.y(), aVector.z() } ;
 }
 
-Vector3d                        Vector3dFromGteVector                       (   const   gte::Vector3<double>&       aVector                                     )
+Vector3d                        EllipsoidVector3dFromGteVector              (   const   gte::Vector3<double>&       aVector                                     )
 {
     return { aVector[0], aVector[1], aVector[2] } ;
 }
@@ -169,12 +169,12 @@ bool                            Ellipsoid::intersects                       (   
 
     // Line
 
-    const gte::Line3<double> line = { GteVectorFromVector3d(aLine.getOrigin()), GteVectorFromVector3d(aLine.getDirection()) } ;
+    const gte::Line3<double> line = { EllipsoidGteVectorFromVector3d(aLine.getOrigin()), EllipsoidGteVectorFromVector3d(aLine.getDirection()) } ;
 
     // Ellipsoid
 
-    const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
-    const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+    const gte::Vector3<double> center = EllipsoidGteVectorFromVector3d(center_) ;
+    const std::array<gte::Vector3<double>, 3> axes = { EllipsoidGteVectorFromVector3d(this->getFirstAxis()), EllipsoidGteVectorFromVector3d(this->getSecondAxis()), EllipsoidGteVectorFromVector3d(this->getThirdAxis()) } ;
     const gte::Vector3<double> extent = { a_, b_, c_ } ;
 
     const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
@@ -204,12 +204,12 @@ bool                            Ellipsoid::intersects                       (   
 
     // Ray
 
-    const gte::Ray3<double> ray = { GteVectorFromVector3d(aRay.getOrigin()), GteVectorFromVector3d(aRay.getDirection()) } ;
+    const gte::Ray3<double> ray = { EllipsoidGteVectorFromVector3d(aRay.getOrigin()), EllipsoidGteVectorFromVector3d(aRay.getDirection()) } ;
 
     // Ellipsoid
 
-    const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
-    const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+    const gte::Vector3<double> center = EllipsoidGteVectorFromVector3d(center_) ;
+    const std::array<gte::Vector3<double>, 3> axes = { EllipsoidGteVectorFromVector3d(this->getFirstAxis()), EllipsoidGteVectorFromVector3d(this->getSecondAxis()), EllipsoidGteVectorFromVector3d(this->getThirdAxis()) } ;
     const gte::Vector3<double> extent = { a_, b_, c_ } ;
 
     const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
@@ -243,12 +243,12 @@ bool                            Ellipsoid::intersects                       (   
 
     // // Segment
 
-    // const gte::Segment3<double> segment = { GteVectorFromVector3d(aSegment.getFirstPoint()), GteVectorFromVector3d(aSegment.getSecondPoint()) } ;
+    // const gte::Segment3<double> segment = { EllipsoidGteVectorFromVector3d(aSegment.getFirstPoint()), EllipsoidGteVectorFromVector3d(aSegment.getSecondPoint()) } ;
 
     // // Ellipsoid
 
-    // const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
-    // const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+    // const gte::Vector3<double> center = EllipsoidGteVectorFromVector3d(center_) ;
+    // const std::array<gte::Vector3<double>, 3> axes = { EllipsoidGteVectorFromVector3d(this->getFirstAxis()), EllipsoidGteVectorFromVector3d(this->getSecondAxis()), EllipsoidGteVectorFromVector3d(this->getThirdAxis()) } ;
     // const gte::Vector3<double> extent = { a_, b_, c_ } ;
 
     // const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
@@ -359,15 +359,15 @@ bool                            Ellipsoid::intersects                       (   
 
     // Plane
 
-    const gte::Vector3<double> normal = GteVectorFromVector3d(aPlane.getNormalVector()) ;
-    const gte::Vector3<double> point = GteVectorFromVector3d(aPlane.getPoint()) ;
+    const gte::Vector3<double> normal = EllipsoidGteVectorFromVector3d(aPlane.getNormalVector()) ;
+    const gte::Vector3<double> point = EllipsoidGteVectorFromVector3d(aPlane.getPoint()) ;
 
     const gte::Plane3<double> plane = { normal, point } ;
 
     // Ellipsoid
 
-    const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
-    const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+    const gte::Vector3<double> center = EllipsoidGteVectorFromVector3d(center_) ;
+    const std::array<gte::Vector3<double>, 3> axes = { EllipsoidGteVectorFromVector3d(this->getFirstAxis()), EllipsoidGteVectorFromVector3d(this->getSecondAxis()), EllipsoidGteVectorFromVector3d(this->getThirdAxis()) } ;
     const gte::Vector3<double> extent = { a_, b_, c_ } ;
 
     const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
@@ -414,16 +414,16 @@ bool                            Ellipsoid::intersects                       (   
 
 //     // Ellipsoid
 
-//     const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
-//     const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+//     const gte::Vector3<double> center = EllipsoidGteVectorFromVector3d(center_) ;
+//     const std::array<gte::Vector3<double>, 3> axes = { EllipsoidGteVectorFromVector3d(this->getFirstAxis()), EllipsoidGteVectorFromVector3d(this->getSecondAxis()), EllipsoidGteVectorFromVector3d(this->getThirdAxis()) } ;
 //     const gte::Vector3<double> extent = { a_, b_, c_ } ;
 
 //     const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
 
 //     // Another ellipsoid
 
-//     const gte::Vector3<double> anotherCenter = GteVectorFromVector3d(anEllipsoid.center_) ;
-//     const std::array<gte::Vector3<double>, 3> anotherAxes = { GteVectorFromVector3d(anEllipsoid.getFirstAxis()), GteVectorFromVector3d(anEllipsoid.getSecondAxis()), GteVectorFromVector3d(anEllipsoid.getThirdAxis()) } ;
+//     const gte::Vector3<double> anotherCenter = EllipsoidGteVectorFromVector3d(anEllipsoid.center_) ;
+//     const std::array<gte::Vector3<double>, 3> anotherAxes = { EllipsoidGteVectorFromVector3d(anEllipsoid.getFirstAxis()), EllipsoidGteVectorFromVector3d(anEllipsoid.getSecondAxis()), EllipsoidGteVectorFromVector3d(anEllipsoid.getThirdAxis()) } ;
 //     const gte::Vector3<double> anotherExtent = { anEllipsoid.a_, anEllipsoid.b_, anEllipsoid.c_ } ;
 
 //     const gte::Ellipsoid3<double> anotherEllipsoid = { anotherCenter, anotherAxes, anotherExtent } ;
@@ -633,12 +633,12 @@ Intersection                    Ellipsoid::intersectionWith                 (   
 
     // Line
 
-    const gte::Line3<double> segment = { GteVectorFromVector3d(aLine.getOrigin()), GteVectorFromVector3d(aLine.getDirection()) } ;
+    const gte::Line3<double> segment = { EllipsoidGteVectorFromVector3d(aLine.getOrigin()), EllipsoidGteVectorFromVector3d(aLine.getDirection()) } ;
 
     // Ellipsoid
 
-    const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
-    const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+    const gte::Vector3<double> center = EllipsoidGteVectorFromVector3d(center_) ;
+    const std::array<gte::Vector3<double>, 3> axes = { EllipsoidGteVectorFromVector3d(this->getFirstAxis()), EllipsoidGteVectorFromVector3d(this->getSecondAxis()), EllipsoidGteVectorFromVector3d(this->getThirdAxis()) } ;
     const gte::Vector3<double> extent = { a_, b_, c_ } ;
 
     const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
@@ -654,11 +654,11 @@ Intersection                    Ellipsoid::intersectionWith                 (   
 
         if (intersectionResult.numIntersections == 1)
         {
-            return Intersection::Point(Vector3dFromGteVector(intersectionResult.point[0])) ;
+            return Intersection::Point(EllipsoidVector3dFromGteVector(intersectionResult.point[0])) ;
         }
         else if (intersectionResult.numIntersections == 2)
         {
-            return Intersection::PointSet(PointSet({ Point(Vector3dFromGteVector(intersectionResult.point[0])), Point(Vector3dFromGteVector(intersectionResult.point[1])) })) ;
+            return Intersection::PointSet(PointSet({ Point(EllipsoidVector3dFromGteVector(intersectionResult.point[0])), Point(EllipsoidVector3dFromGteVector(intersectionResult.point[1])) })) ;
         }
         else
         {
@@ -689,12 +689,12 @@ Intersection                    Ellipsoid::intersectionWith                 (   
 
     // Ray
 
-    const gte::Ray3<double> segment = { GteVectorFromVector3d(aRay.getOrigin()), GteVectorFromVector3d(aRay.getDirection()) } ;
+    const gte::Ray3<double> segment = { EllipsoidGteVectorFromVector3d(aRay.getOrigin()), EllipsoidGteVectorFromVector3d(aRay.getDirection()) } ;
 
     // Ellipsoid
 
-    const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
-    const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+    const gte::Vector3<double> center = EllipsoidGteVectorFromVector3d(center_) ;
+    const std::array<gte::Vector3<double>, 3> axes = { EllipsoidGteVectorFromVector3d(this->getFirstAxis()), EllipsoidGteVectorFromVector3d(this->getSecondAxis()), EllipsoidGteVectorFromVector3d(this->getThirdAxis()) } ;
     const gte::Vector3<double> extent = { a_, b_, c_ } ;
 
     const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
@@ -711,7 +711,7 @@ Intersection                    Ellipsoid::intersectionWith                 (   
         if (intersectionResult.numIntersections == 1)
         {
 
-            const Point point = Vector3dFromGteVector(intersectionResult.point[0]) ;
+            const Point point = EllipsoidVector3dFromGteVector(intersectionResult.point[0]) ;
 
             if ((point == aRay.getOrigin()) && (!this->contains(point))) // Discard ray origin, if returned by Gte
             {
@@ -724,8 +724,8 @@ Intersection                    Ellipsoid::intersectionWith                 (   
         else if (intersectionResult.numIntersections == 2)
         {
 
-            const Point firstPoint = Vector3dFromGteVector(intersectionResult.point[0]) ;
-            const Point secondPoint = Vector3dFromGteVector(intersectionResult.point[1]) ;
+            const Point firstPoint = EllipsoidVector3dFromGteVector(intersectionResult.point[0]) ;
+            const Point secondPoint = EllipsoidVector3dFromGteVector(intersectionResult.point[1]) ;
 
             const PointSet pointSet = { { firstPoint, secondPoint } } ;
 
@@ -775,12 +775,12 @@ Intersection                    Ellipsoid::intersectionWith                 (   
 
     // Segment
 
-    const gte::Segment3<double> segment = { GteVectorFromVector3d(aSegment.getFirstPoint()), GteVectorFromVector3d(aSegment.getSecondPoint()) } ; ;
+    const gte::Segment3<double> segment = { EllipsoidGteVectorFromVector3d(aSegment.getFirstPoint()), EllipsoidGteVectorFromVector3d(aSegment.getSecondPoint()) } ; ;
 
     // Ellipsoid
 
-    const gte::Vector3<double> center = GteVectorFromVector3d(center_) ;
-    const std::array<gte::Vector3<double>, 3> axes = { GteVectorFromVector3d(this->getFirstAxis()), GteVectorFromVector3d(this->getSecondAxis()), GteVectorFromVector3d(this->getThirdAxis()) } ;
+    const gte::Vector3<double> center = EllipsoidGteVectorFromVector3d(center_) ;
+    const std::array<gte::Vector3<double>, 3> axes = { EllipsoidGteVectorFromVector3d(this->getFirstAxis()), EllipsoidGteVectorFromVector3d(this->getSecondAxis()), EllipsoidGteVectorFromVector3d(this->getThirdAxis()) } ;
     const gte::Vector3<double> extent = { a_, b_, c_ } ;
 
     const gte::Ellipsoid3<double> ellipsoid = { center, axes, extent } ;
@@ -797,7 +797,7 @@ Intersection                    Ellipsoid::intersectionWith                 (   
         if (intersectionResult.numIntersections == 1)
         {
             
-            const Point point = Vector3dFromGteVector(intersectionResult.point[0]) ;
+            const Point point = EllipsoidVector3dFromGteVector(intersectionResult.point[0]) ;
 
             if ((point == aSegment.getFirstPoint() || (point == aSegment.getSecondPoint())) && (!this->contains(point))) // Discard segment points, if returned by Gte
             {
@@ -810,8 +810,8 @@ Intersection                    Ellipsoid::intersectionWith                 (   
         else if (intersectionResult.numIntersections == 2)
         {
             
-            const Point firstPoint = Vector3dFromGteVector(intersectionResult.point[0]) ;
-            const Point secondPoint = Vector3dFromGteVector(intersectionResult.point[1]) ;
+            const Point firstPoint = EllipsoidVector3dFromGteVector(intersectionResult.point[0]) ;
+            const Point secondPoint = EllipsoidVector3dFromGteVector(intersectionResult.point[1]) ;
 
             if ((firstPoint == aSegment.getFirstPoint()) || (secondPoint == aSegment.getFirstPoint()) || (firstPoint == aSegment.getSecondPoint()) || (secondPoint == aSegment.getSecondPoint())) // Discard segment points, if returned by Gte
             {

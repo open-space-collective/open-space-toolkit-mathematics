@@ -30,7 +30,8 @@ namespace d3
 
                                 Transformation::Transformation              (   const   Matrix4d&                   aMatrix                                     )
                                 :   type_(Transformation::TypeOfMatrix(aMatrix)),
-                                    matrix_(aMatrix)
+                                    matrix_(aMatrix),
+                                    isRigid_(Transformation::IsRigid(aMatrix))
 {
 
 }
@@ -175,6 +176,7 @@ Transformation&                 Transformation::operator *=                 (   
 
     type_ = TypeCompositionMap.at({ type_, aTransformation.type_ }) ;
     matrix_ *= aTransformation.matrix_ ;
+    isRigid_ = isRigid_ && aTransformation.isRigid_ ;
 
     return *this ;
 
@@ -197,31 +199,25 @@ bool                            Transformation::isDefined                   ( ) 
 
 bool                            Transformation::isIdentity                  ( ) const
 {
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Transformation") ;
+    }
+
     return type_ == Transformation::Type::Identity ;
+
 }
 
 bool                            Transformation::isRigid                     ( ) const
 {
 
-    switch (type_)
+    if (!this->isDefined())
     {
-
-        case Transformation::Type::Identity:
-        case Transformation::Type::Translation:
-        case Transformation::Type::Rotation:
-        case Transformation::Type::Reflection:
-            return true ;
-
-        case Transformation::Type::Undefined:
-        case Transformation::Type::Scaling:
-        case Transformation::Type::Shear:
-        case Transformation::Type::Affine:
-        default:
-            return false ;
-
+        throw library::core::error::runtime::Undefined("Transformation") ;
     }
 
-    return false ;
+    return isRigid_ ;
 
 }
 
@@ -257,7 +253,7 @@ Transformation                  Transformation::getInverse                  ( ) 
         throw library::core::error::runtime::Undefined("Transformation") ;
     }
     
-    return { type_, matrix_.inverse() } ;
+    return { type_, matrix_.inverse(), isRigid_ } ;
 
 }
 
@@ -285,12 +281,12 @@ void                            Transformation::print                       (   
 
 Transformation                  Transformation::Undefined                   ( )
 {
-    return { Transformation::Type::Undefined, Matrix4d::Undefined() } ;
+    return { Transformation::Type::Undefined, Matrix4d::Undefined(), false } ;
 }
 
 Transformation                  Transformation::Identity                    ( )
 {
-    return { Transformation::Type::Identity, Matrix4d::Identity() } ;
+    return { Transformation::Type::Identity, Matrix4d::Identity(), true } ;
 }
 
 Transformation                  Transformation::Translation                 (   const   Vector3d&                   aTranslationVector                          )
@@ -308,7 +304,7 @@ Transformation                  Transformation::Translation                 (   
                             0.0, 0.0, 1.0, aTranslationVector.z(),
                             0.0, 0.0, 0.0, 1.0 ;
     
-    return { Transformation::Type::Translation, transformationMatrix } ;
+    return { Transformation::Type::Translation, transformationMatrix, true } ;
 
 }
 
@@ -326,7 +322,7 @@ Transformation                  Transformation::Rotation                    (   
 
     transformationMatrix.block<3, 3>(0, 0) = RotationMatrix::RotationVector(aRotationVector).getMatrix().transpose() ;
     
-    return { Transformation::Type::Rotation, transformationMatrix } ;
+    return { Transformation::Type::Rotation, transformationMatrix, true } ;
 
 }
 
@@ -384,7 +380,7 @@ Transformation::Type            Transformation::TypeOfMatrix                (   
         return Transformation::Type::Undefined ;
     }
 
-    if (aMatrix == Matrix4d::Identity())
+    if (aMatrix.isIdentity())
     {
         return Transformation::Type::Identity ;
     }
@@ -397,12 +393,35 @@ Transformation::Type            Transformation::TypeOfMatrix                (   
 
 }
 
+bool                            Transformation::IsRigid                     (   const   Matrix4d&                   aMatrix                                     )
+{
+
+    using library::math::obj::Matrix3d ;
+
+    if (!aMatrix.isDefined())
+    {
+        return false ;
+    }
+
+    if ((aMatrix(3, 0) != 0.0) || (aMatrix(3, 1) != 0.0) || (aMatrix(3, 2) != 0.0) || (aMatrix(3, 3) != 1.0))
+    {
+        return false ;
+    }
+
+    const Matrix3d topLeftMatrix = aMatrix.topLeftCorner<3, 3>() ;
+
+    return (topLeftMatrix.transpose() * topLeftMatrix).isIdentity() ;
+    
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                                 Transformation::Transformation              (   const   Transformation::Type&       aType,
-                                                                                const   Matrix4d&                   aMatrix                                     )
+                                                                                const   Matrix4d&                   aMatrix,
+                                                                                const   bool                        isRigid                                     )
                                 :   type_(aType),
-                                    matrix_(aMatrix)
+                                    matrix_(aMatrix),
+                                    isRigid_(isRigid)
 {
 
 }

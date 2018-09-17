@@ -37,6 +37,7 @@ using library::math::geom::d3::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+class Sphere ;
 class Ellipsoid ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -112,6 +113,19 @@ class Segment : public Object
         /// @return             True if segment is degenerate
 
         bool                    isDegenerate                                ( ) const ;
+
+        /// @brief              Check if segment intersects sphere
+        ///
+        /// @code
+        ///                     Segment segment = ... ;
+        ///                     Sphere sphere = ... ;
+        ///                     segment.intersects(sphere) ;
+        /// @endcode
+        ///
+        /// @param              [in] aSphere A sphere
+        /// @return             True if segment intersects sphere
+        
+        bool                    intersects                                  (   const   Sphere&                     aSphere                                     ) const ;
 
         /// @brief              Check if segment intersects ellipsoid
         ///

@@ -9,6 +9,7 @@
 
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -92,10 +93,10 @@ bool                            Line::intersects                            (   
     
 // }
 
-// bool                            Line::intersects                            (   const   Sphere&                     aSphere                                     ) const
-// {
-//     return aSphere.intersects(*this) ;
-// }
+bool                            Line::intersects                            (   const   Sphere&                     aSphere                                     ) const
+{
+    return aSphere.intersects(*this) ;
+}
 
 bool                            Line::intersects                            (   const   Ellipsoid&                  anEllipsoid                                 ) const
 {

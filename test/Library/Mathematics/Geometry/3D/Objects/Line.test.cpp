@@ -10,6 +10,7 @@
 #include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
 
 #include <Global.test.hpp>
@@ -177,6 +178,29 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, Intersects_Point)
 
         EXPECT_ANY_THROW(Line::Undefined().intersects(Point::Undefined())) ;
         EXPECT_ANY_THROW(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersects(Point::Undefined())) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Line, Intersects_Sphere)
+{
+
+    using library::math::geom::d3::objects::Line ;
+    using library::math::geom::d3::objects::Sphere ;
+
+    {
+
+        // See: Library_Mathematics_Geometry_3D_Objects_Sphere.Intersects_Line
+
+        SUCCEED() ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Line::Undefined().intersects(Sphere::Undefined())) ;
+        EXPECT_ANY_THROW(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersects(Sphere::Undefined())) ;
 
     }
 

@@ -10,6 +10,7 @@
 #include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 
 #include <Global.test.hpp>
@@ -162,62 +163,47 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IsDegenerate)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects)
+TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Sphere)
+{
+
+    using library::math::geom::d3::objects::Segment ;
+    using library::math::geom::d3::objects::Sphere ;
+
+    {
+
+        // See: Library_Mathematics_Geometry_3D_Objects_Sphere.Intersects
+
+        SUCCEED() ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Segment::Undefined().intersects(Sphere::Undefined())) ;
+        EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).intersects(Sphere::Undefined())) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Ellipsoid)
 {
 
     using library::math::geom::d3::objects::Segment ;
     using library::math::geom::d3::objects::Ellipsoid ;
 
-    // Point
-
     {
 
-        // [TBI]
+        // See: Library_Mathematics_Geometry_3D_Objects_Ellipsoid.Intersects
+
+        SUCCEED() ;
 
     }
 
-    // PointSet
-
     {
 
-        // [TBI]
-
-    }
-
-    // Segment
-
-    {
-
-        // [TBI]
-
-    }
-
-    // Sphere
-
-    {
-
-        // [TBI]
-
-    }
-
-    // Ellipsoid
-
-    {
-
-        {
-
-            // See: Library_Mathematics_Geometry_3D_Objects_Ellipsoid.Intersects
-
-            SUCCEED() ;
-
-        }
-
-        {
-
-            EXPECT_ANY_THROW(Segment::Undefined().intersects(Ellipsoid::Undefined())) ;
-            EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).intersects(Ellipsoid::Undefined())) ;
-
-        }
+        EXPECT_ANY_THROW(Segment::Undefined().intersects(Ellipsoid::Undefined())) ;
+        EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).intersects(Ellipsoid::Undefined())) ;
 
     }
 

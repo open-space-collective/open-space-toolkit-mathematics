@@ -20,6 +20,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Ray ( )
     using library::math::geom::d3::Object ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Ray ;
+    using library::math::geom::d3::objects::Sphere ;
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::Intersection ;
 
@@ -33,6 +34,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Ray ( )
 
         .def("isDefined", &Ray::isDefined)
         .def("intersectsPoint", +[] (const Ray& aRay, const Point& aPoint) -> bool { return aRay.intersects(aPoint) ; })
+        .def("intersectsSphere", +[] (const Ray& aRay, const Sphere& aSphere) -> bool { return aRay.intersects(aSphere) ; })
         .def("intersectsEllipsoid", +[] (const Ray& aRay, const Ellipsoid& anEllipsoid) -> bool { return aRay.intersects(anEllipsoid) ; })
         .def("containsPoint", +[] (const Ray& aRay, const Point& aPoint) -> bool { return aRay.contains(aPoint) ; })
 

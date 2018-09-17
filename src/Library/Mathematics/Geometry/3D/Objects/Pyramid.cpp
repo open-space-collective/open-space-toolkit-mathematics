@@ -73,6 +73,34 @@ bool                            Pyramid::isDefined                          ( ) 
     return base_.isDefined() && apex_.isDefined() ;
 }
 
+bool                            Pyramid::intersects                         (   const   Sphere&                     aSphere,
+                                                                                const   Size                        aDiscretizationLevel                        ) const
+{
+
+    if (!aSphere.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Sphere") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Pyramid") ;
+    }
+
+    for (const auto& ray : this->getRaysOfLateralFaces(aDiscretizationLevel)) // [TBM] Could be improved by calculating rays on the fly
+    {
+
+        if (ray.intersects(aSphere))
+        {
+            return true ;
+        }
+
+    }
+
+    return false ;
+
+}
+
 bool                            Pyramid::intersects                         (   const   Ellipsoid&                  anEllipsoid,
                                                                                 const   Size                        aDiscretizationLevel                        ) const
 {
@@ -247,6 +275,84 @@ Array<Ray>                      Pyramid::getRaysOfLateralFaces              (   
     }
 
     return rays ;
+
+}
+
+Intersection                    Pyramid::intersectionWith                   (   const   Sphere&                     aSphere,
+                                                                                const   bool                        onlyInSight,
+                                                                                const   Size                        aDiscretizationLevel                        ) const
+{
+
+    if (!aSphere.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Sphere") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Pyramid") ;
+    }
+
+    Array<Point> firstIntersectionPoints = Array<Point>::Empty() ;
+    Array<Point> secondIntersectionPoints = Array<Point>::Empty() ;
+
+    for (const auto& ray : this->getRaysOfLateralFaces(aDiscretizationLevel))
+    {
+
+        const Intersection intersection = ray.intersectionWith(aSphere, onlyInSight) ;
+
+        if (!intersection.isEmpty())
+        {
+
+            if (intersection.accessComposite().is<Point>())
+            {
+                firstIntersectionPoints.add(intersection.accessComposite().as<Point>()) ;
+            }
+            else if (intersection.accessComposite().is<PointSet>())
+            {
+
+                const PointSet& pointSet = intersection.accessComposite().as<PointSet>() ;
+
+                bool secondIntersectionPointAdded = false ;
+
+                for (const auto& point : pointSet)
+                {
+
+                    if (!secondIntersectionPointAdded)
+                    {
+                        
+                        secondIntersectionPoints.add(point) ;
+
+                        secondIntersectionPointAdded = true ;
+
+                    }
+                    else
+                    {
+                        firstIntersectionPoints.add(point) ;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    if ((!firstIntersectionPoints.isEmpty()) && (!secondIntersectionPoints.isEmpty()) && (!onlyInSight))
+    {
+        return Intersection::LineString(LineString(firstIntersectionPoints)) + Intersection::LineString(LineString(secondIntersectionPoints)) ;
+    }
+    else if (!firstIntersectionPoints.isEmpty())
+    {
+        return Intersection::LineString(LineString(firstIntersectionPoints)) ;
+    }
+    else if (!secondIntersectionPoints.isEmpty())
+    {
+        return Intersection::LineString(LineString(secondIntersectionPoints)) ;
+    }
+
+    return Intersection::Empty() ;
 
 }
 

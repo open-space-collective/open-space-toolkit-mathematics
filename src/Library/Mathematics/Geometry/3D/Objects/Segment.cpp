@@ -9,6 +9,7 @@
 
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -83,10 +84,10 @@ bool                            Segment::isDegenerate                       ( ) 
     
 // }
 
-// bool                            Segment::intersects                         (   const   Sphere&                     aSphere                                     ) const
-// {
-//     return aSphere.intersects(*this) ;
-// }
+bool                            Segment::intersects                         (   const   Sphere&                     aSphere                                     ) const
+{
+    return aSphere.intersects(*this) ;
+}
 
 bool                            Segment::intersects                         (   const   Ellipsoid&                  anEllipsoid                                 ) const
 {

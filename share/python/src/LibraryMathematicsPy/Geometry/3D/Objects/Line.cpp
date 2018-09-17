@@ -20,6 +20,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Line ( 
     using library::math::geom::d3::Object ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Line ;
+    using library::math::geom::d3::objects::Sphere ;
     using library::math::geom::d3::objects::Ellipsoid ;
 
     scope in_Line = class_<Line, bases<Object>>("Line", init<const Point&, const Vector3d&>())
@@ -32,6 +33,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Line ( 
 
         .def("isDefined", &Line::isDefined)
         .def("intersectsPoint", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.intersects(aPoint) ; })
+        .def("intersectsSphere", +[] (const Line& aLine, const Sphere& aSphere) -> bool { return aLine.intersects(aSphere) ; })
         .def("intersectsEllipsoid", +[] (const Line& aLine, const Ellipsoid& anEllipsoid) -> bool { return aLine.intersects(anEllipsoid) ; })
         .def("containsPoint", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.contains(aPoint) ; })
 
