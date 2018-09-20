@@ -13,7 +13,9 @@
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
 #include <Library/Mathematics/Objects/Vector.hpp>
 
+#include <Library/Core/Types/String.hpp>
 #include <Library/Core/Types/Real.hpp>
+#include <Library/Core/Types/Integer.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -30,7 +32,9 @@ namespace objects
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+using library::core::types::Integer ;
 using library::core::types::Real ;
+using library::core::types::String ;
 
 using library::math::obj::Vector3d ;
 using library::math::geom::d3::Object ;
@@ -41,7 +45,7 @@ using library::math::geom::d3::Object ;
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Point_(geometry)
 
-class Point : public Object, public Vector3d
+class Point : public Object
 {
 
     public:
@@ -178,6 +182,13 @@ class Point : public Object, public Vector3d
         /// @return             Distance to point
 
         Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Get string representation
+        ///
+        /// @param              [in] (optional) aPrecision A precision
+        /// @return             String representation
+
+        String                  toString                                    (   const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const ;
 
         /// @brief              Print point
         ///

@@ -195,6 +195,18 @@ Real                            Point::distanceTo                           (   
 
 }
 
+String                          Point::toString                             (   const   Integer&                    aPrecision                                  ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    return aPrecision.isDefined() ? Vector3d(x_, y_, z_).toString(aPrecision) : Vector3d(x_, y_, z_).toString() ;
+
+}
+
 void                            Point::print                                (           std::ostream&               anOutputStream,
                                                                                         bool                        displayDecorators                           ) const
 {

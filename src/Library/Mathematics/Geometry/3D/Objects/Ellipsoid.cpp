@@ -274,12 +274,12 @@ bool                            Ellipsoid::intersects                       (   
     // https://www.geometrictools.com/GTEngine/Include/Mathematics/GteIntrSegment3Ellipsoid3.h
 
     const Vector3d segmentDirection = aSegment.getDirection() ;
-    const Vector3d segmentCenter = aSegment.getCenter() ;
+    const Vector3d segmentCenter = aSegment.getCenter().asVector() ;
     const Real segmentHalfLength = aSegment.getLength() / 2.0 ;
 
     const Matrix3d M = this->getMatrix() ;
 
-    const Vector3d diff = segmentCenter - center_ ;
+    const Vector3d diff = segmentCenter - center_.asVector() ;
     const Vector3d matDir = M * segmentDirection ;
     const Vector3d matDiff = M * diff ;
     
@@ -776,6 +776,11 @@ Intersection                    Ellipsoid::intersectionWith                 (   
     if (!this->isDefined())
     {
         throw library::core::error::runtime::Undefined("Ellipsoid") ;
+    }
+
+    if (aSegment.isDegenerate() && this->contains(aSegment.getFirstPoint()))
+    {
+        return Intersection::Point(aSegment.getFirstPoint()) ;
     }
 
     // Segment

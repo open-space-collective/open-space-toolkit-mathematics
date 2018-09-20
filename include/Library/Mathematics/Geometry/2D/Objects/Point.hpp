@@ -170,6 +170,7 @@ class Point : public Object
         /// @brief              Get string representation
         ///
         /// @param              [in] aFormat A format
+        /// @param              [in] (optional) aPrecision A precision
         /// @return             String representation
 
         virtual String          toString                                    (   const   Object::Format&             aFormat                                     =   Object::Format::Standard,

@@ -66,7 +66,7 @@ class PointSet : public Object
                 for (size_t i = 0; i < 3; ++i)
                 {
                     
-                    auto elem = *(aPoint.data() + i) ;
+                    auto elem = *(aPoint.asVector().data() + i) ;
 
                     seed ^= std::hash<double>()(elem) + 0x9e3779b9 + (seed << 6) + (seed >> 2) ;
 

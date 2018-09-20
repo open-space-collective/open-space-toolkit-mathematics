@@ -329,7 +329,7 @@ Transformation                  Transformation::Rotation                    (   
 Transformation                  Transformation::RotationAround              (   const   Point&                      aPoint,
                                                                                 const   RotationVector&             aRotationVector                             )
 {
-    return Transformation::Translation(Vector3d(aPoint)) * Transformation::Rotation(aRotationVector) * Transformation::Translation(-Vector3d(aPoint)) ;
+    return Transformation::Translation(aPoint.asVector()) * Transformation::Rotation(aRotationVector) * Transformation::Translation(-aPoint.asVector()) ;
 }
 
 String                          Transformation::StringFromType              (   const   Transformation::Type&       aType                                       )
