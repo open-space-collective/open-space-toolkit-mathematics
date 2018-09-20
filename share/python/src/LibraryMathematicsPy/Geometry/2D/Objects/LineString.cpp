@@ -44,7 +44,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_LineStr
         .def("Empty", &LineString::Empty).staticmethod("Empty")
 
         .def("__len__", &LineString::getPointCount)
-        // .def("__getitem__", +[] (const LineString& aLineString, const size_t anIndex) -> const Point& { return aLineString.getPointAt(anIndex) ; }, return_internal_reference<>())
+        .def("__getitem__", +[] (const LineString& aLineString, const size_t anIndex) -> const Point& { return aLineString.accessPointAt(anIndex) ; }, return_internal_reference<>())
         .def("__iter__", range(&LineString::begin, &LineString::end))
 
     ;

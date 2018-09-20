@@ -89,6 +89,18 @@ bool                            LineString::isNear                          (   
     
 }
 
+const Point&                    LineString::accessPointAt                   (   const   Index&                      anIndex                                     ) const
+{
+
+    if (anIndex >= points_.getSize())
+    {
+        throw library::core::error::RuntimeError("Point index [{}] out of bounds [0 - {}].", anIndex, points_.getSize()) ;
+    }
+    
+    return points_.at(anIndex) ;
+
+}
+
 Size                            LineString::getPointCount                   ( ) const
 {
     return points_.getSize() ;
