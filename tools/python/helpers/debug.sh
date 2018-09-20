@@ -19,9 +19,9 @@ gdb `which python`
 # gdb `which python` --args /home/jovyan/notebooks/A.py
 
 # set args /home/jovyan/notebooks/A.py
-# set args /app/share/python/test/Library/Mathematics/Geometry.py
-# set args /app/share/python/test/Library/Mathematics/Geometry/D2/Objects/Point.py
-# set args /app/share/python/test/test.py
+# set args /app/bindings/python/test/Library/Mathematics/Geometry.py
+# set args /app/bindings/python/test/Library/Mathematics/Geometry/D2/Objects/Point.py
+# set args /app/bindings/python/test/test.py
 
 popd > /dev/null
 
