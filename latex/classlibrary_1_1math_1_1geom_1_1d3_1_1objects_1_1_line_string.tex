@@ -37,6 +37,8 @@ bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string_a3
 \begin{DoxyCompactList}\small\item\em Check if line string is empty. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string_acbfb3f1c542793b9fa810ba8626633c4}{is\+Near} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string}{Line\+String} \&a\+Line\+String, const Real \&a\+Tolerance) const
 \begin{DoxyCompactList}\small\item\em Check if line string is near another line string. \end{DoxyCompactList}\item 
+const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string_a10bafe20bf12505dfe7dfb9c83ce1613}{access\+Point\+At} (const Index \&an\+Index) const
+\begin{DoxyCompactList}\small\item\em Access point at index. \end{DoxyCompactList}\item 
 Size \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string_ac635c796406d38f6f1019b64cab9b42c}{get\+Point\+Count} () const
 \begin{DoxyCompactList}\small\item\em Get point count. \end{DoxyCompactList}\item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string_a39cf8a2be15c3f1686ed855659ded104}{get\+Point\+Closest\+To} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
@@ -95,6 +97,19 @@ Constructor.
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string_a10bafe20bf12505dfe7dfb9c83ce1613}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string_a10bafe20bf12505dfe7dfb9c83ce1613}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line\+String@{library\+::math\+::geom\+::d3\+::objects\+::\+Line\+String}!access\+Point\+At@{access\+Point\+At}}
+\index{access\+Point\+At@{access\+Point\+At}!library\+::math\+::geom\+::d3\+::objects\+::\+Line\+String@{library\+::math\+::geom\+::d3\+::objects\+::\+Line\+String}}
+\subsubsection{\texorpdfstring{access\+Point\+At()}{accessPointAt()}}
+{\footnotesize\ttfamily const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \& library\+::math\+::geom\+::d3\+::objects\+::\+Line\+String\+::access\+Point\+At (\begin{DoxyParamCaption}\item[{const Index \&}]{an\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Access point at index. 
+
+\mbox{[}in\mbox{]} an\+Index A point index \begin{DoxyReturn}{Returns}
+Reference to point at index 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string_a8a20f45b2af9cc45dbf7aff9e5d4824e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string_a8a20f45b2af9cc45dbf7aff9e5d4824e}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Line\+String@{library\+::math\+::geom\+::d3\+::objects\+::\+Line\+String}!apply\+Transformation@{apply\+Transformation}}
 \index{apply\+Transformation@{apply\+Transformation}!library\+::math\+::geom\+::d3\+::objects\+::\+Line\+String@{library\+::math\+::geom\+::d3\+::objects\+::\+Line\+String}}
@@ -293,7 +308,7 @@ Not equal to operator.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if line strings not are equal 
+True if line strings are not equal 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string_ab413b3ed8f6f78697420f6c4c3b4d0e6}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string_ab413b3ed8f6f78697420f6c4c3b4d0e6}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Line\+String@{library\+::math\+::geom\+::d3\+::objects\+::\+Line\+String}!operator==@{operator==}}

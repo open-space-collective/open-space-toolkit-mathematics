@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['library_20_3a_3a_20mathematics',['Library :: Mathematics',['../index.html',1,'']]]
+  ['library_20▸_20mathematics',['Library ▸ Mathematics',['../index.html',1,'']]]
 ];

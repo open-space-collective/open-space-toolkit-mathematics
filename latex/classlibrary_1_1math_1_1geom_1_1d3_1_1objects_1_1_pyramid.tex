@@ -28,6 +28,8 @@ bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a2067c
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a84d92fa1416c288abb5e2616410aa40c}{is\+Defined} () const override
 \begin{DoxyCompactList}\small\item\em Check if pyramid is defined. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a704dca8e456461a59fe606bd5df06d20}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&a\+Sphere, const Size a\+Discretization\+Level=40) const
+\begin{DoxyCompactList}\small\item\em Check if pyramid intersects sphere. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a7a79fd414bea507272e6c88ed66eeba8}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&an\+Ellipsoid, const Size a\+Discretization\+Level=40) const
 \begin{DoxyCompactList}\small\item\em Check if pyramid intersects ellipsoid. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a32e8fd53701cd4d2c0c6b377ca7902c9}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&an\+Ellipsoid) const
@@ -44,6 +46,8 @@ Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} 
 \begin{DoxyCompactList}\small\item\em Get rays of lateral face at index. \end{DoxyCompactList}\item 
 Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} $>$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_ab73146c08e94315b9a7dc2392e450f79}{get\+Rays\+Of\+Lateral\+Faces} (const Size a\+Ray\+Count=0) const
 \begin{DoxyCompactList}\small\item\em Get rays of lateral faces. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a4f3d9b5270a86b462c33c0b1ddeee873}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&a\+Sphere, const bool only\+In\+Sight=false, const Size a\+Discretization\+Level=40) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of pyramid with sphere. \end{DoxyCompactList}\item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a299c41f4cbd61ec24799815dfd7c386d}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&an\+Ellipsoid, const bool only\+In\+Sight=false, const Size a\+Discretization\+Level=40) const
 \begin{DoxyCompactList}\small\item\em Compute intersection of pyramid with ellipsoid. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a150cd331b3dc6e36c74b37bc6988f019}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
@@ -250,10 +254,32 @@ Get rays of lateral faces.
 \begin{DoxyReturn}{Returns}
 Array of rays 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a4f3d9b5270a86b462c33c0b1ddeee873}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a4f3d9b5270a86b462c33c0b1ddeee873}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&}]{a\+Sphere,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false},  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily 40} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of pyramid with sphere. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Sphere} & A sphere \\
+\hline
+\mbox{\tt in}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\mbox{\tt in}  & {\em a\+Discretization\+Level} & (optional) The polygonal discretization level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of pyramid with sphere 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a299c41f4cbd61ec24799815dfd7c386d}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a299c41f4cbd61ec24799815dfd7c386d}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!intersection\+With@{intersection\+With}}
 \index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
-\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false},  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily 40} }\end{DoxyParamCaption}) const}
 
 
@@ -272,10 +298,38 @@ Compute intersection of pyramid with ellipsoid.
 \begin{DoxyReturn}{Returns}
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of pyramid with ellipsoid 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a704dca8e456461a59fe606bd5df06d20}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a704dca8e456461a59fe606bd5df06d20}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&}]{a\+Sphere,  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily 40} }\end{DoxyParamCaption}) const}
+
+
+
+Check if pyramid intersects sphere. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_aafaaeed187584040b306b7de7ee57fd4}{Pyramid} pyramid = ... ;
+Sphere sphere = ... ;
+pyramid.intersects(sphere) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Sphere} & A sphere \\
+\hline
+\mbox{\tt in}  & {\em a\+Discretization\+Level} & (optional) The polygonal discretization level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if pyramid intersects sphere 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a7a79fd414bea507272e6c88ed66eeba8}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a7a79fd414bea507272e6c88ed66eeba8}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid,  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily 40} }\end{DoxyParamCaption}) const}
 
 
@@ -333,7 +387,7 @@ Not equal to operator.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if pyramids not are equal 
+True if pyramids are not equal 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_adfb99bef5bd74a3b0fe75dcf0c61bd61}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_adfb99bef5bd74a3b0fe75dcf0c61bd61}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{library\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!operator==@{operator==}}

@@ -1,5 +1,5 @@
-Library :: Mathematics
-======================
+Library ▸ Mathematics
+=====================
 
 Geometry, curve fitting, optimization.
 
@@ -95,7 +95,17 @@ The **Mathematics** library exhibits the following structure:
 
 ## Documentation
 
-The documentation can be found [here](https://open-space-collective.github.io/library-mathematics).
+The documentation can be found here:
+
+- [C++](https://open-space-collective.github.io/library-mathematics)
+- [Python](./bindings/python/docs)
+
+## Tutorials
+
+Various tutorials are available here:
+
+- [C++](./tutorials/cpp)
+- [Python](./tutorials/python)
 
 ## Setup
 
@@ -111,7 +121,7 @@ Start the development environment:
 ./tools/development/start.sh
 ```
 
-This will also build the `openspacecollective/library-mathematics:latest` Docker image, if not present already.
+This will also build the `openspacecollective/library-mathematics:latest` Docker image, if not already.
 
 If installing Docker is not an option, please manually install the development tools (GCC, CMake) and the dependencies.
 The procedure should be similar to the one described in the [Dockerfile](./tools/development/docker/Dockerfile).

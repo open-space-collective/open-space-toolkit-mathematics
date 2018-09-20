@@ -27,7 +27,7 @@
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-<div id="topbanner"><a href="https://github.com/open-space-collective/library-mathematics" title="Library :: Mathematics"><i class="githublogo"></i></a></div>
+<div id="topbanner"><a href="https://github.com/open-space-collective/library-mathematics" title="Library ▸ Mathematics"><i class="githublogo"></i></a></div>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
@@ -120,6 +120,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a11324bd27db3ef9d931fdee763246759"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a11324bd27db3ef9d931fdee763246759">isDegenerate</a> () const</td></tr>
 <tr class="memdesc:a11324bd27db3ef9d931fdee763246759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if segment is degenerate, i.e. its length is zero.  <a href="#a11324bd27db3ef9d931fdee763246759">More...</a><br /></td></tr>
 <tr class="separator:a11324bd27db3ef9d931fdee763246759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9919183ce212b474e418685db50891fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a9919183ce212b474e418685db50891fc">intersects</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html">Sphere</a> &amp;aSphere) const</td></tr>
+<tr class="memdesc:a9919183ce212b474e418685db50891fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if segment intersects sphere.  <a href="#a9919183ce212b474e418685db50891fc">More...</a><br /></td></tr>
+<tr class="separator:a9919183ce212b474e418685db50891fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6d7eb00a6886d190c03e8b8e4220f33"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#af6d7eb00a6886d190c03e8b8e4220f33">intersects</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html">Ellipsoid</a> &amp;anEllipsoid) const</td></tr>
 <tr class="memdesc:af6d7eb00a6886d190c03e8b8e4220f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if segment intersects ellipsoid.  <a href="#af6d7eb00a6886d190c03e8b8e4220f33">More...</a><br /></td></tr>
 <tr class="separator:af6d7eb00a6886d190c03e8b8e4220f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -420,8 +423,35 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a9919183ce212b474e418685db50891fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9919183ce212b474e418685db50891fc">&#9670;&nbsp;</a></span>intersects() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool library::math::geom::d3::objects::Segment::intersects </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html">Sphere</a> &amp;&#160;</td>
+          <td class="paramname"><em>aSphere</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if segment intersects sphere. </p>
+<div class="fragment"><div class="line"><a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a5562342d1edf2f52e37ce1bc138ee7d7">Segment</a> segment = ... ;</div><div class="line">Sphere sphere = ... ;</div><div class="line">segment.intersects(sphere) ;</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aSphere</td><td>A sphere </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if segment intersects sphere </dd></dl>
+
+</div>
+</div>
 <a id="af6d7eb00a6886d190c03e8b8e4220f33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6d7eb00a6886d190c03e8b8e4220f33">&#9670;&nbsp;</a></span>intersects()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af6d7eb00a6886d190c03e8b8e4220f33">&#9670;&nbsp;</a></span>intersects() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -520,7 +550,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if segments not are equal </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if segments are not equal </dd></dl>
 
 </div>
 </div>

@@ -27,7 +27,7 @@
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-<div id="topbanner"><a href="https://github.com/open-space-collective/library-mathematics" title="Library :: Mathematics"><i class="githublogo"></i></a></div>
+<div id="topbanner"><a href="https://github.com/open-space-collective/library-mathematics" title="Library ▸ Mathematics"><i class="githublogo"></i></a></div>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
@@ -158,6 +158,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a9511c7844b5b8af0c8c7ad97454a5a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa532f2c9f56ee5aff63417283a930584"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation.html#a25f1dc99d391174bf82a7132d08b2fc1">Transformation::Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation.html#aa532f2c9f56ee5aff63417283a930584">TypeOfMatrix</a> (const Matrix4d &amp;aMatrix)</td></tr>
 <tr class="separator:aa532f2c9f56ee5aff63417283a930584"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa37987be864c3bf60167721c5c41eabc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation.html#aa37987be864c3bf60167721c5c41eabc">IsRigid</a> (const Matrix4d &amp;aMatrix)</td></tr>
+<tr class="separator:aa37987be864c3bf60167721c5c41eabc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -387,9 +389,35 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Returns true if transformation is rigid. </p>
-<p>A rigid transformation preserves distances and angles. It is either a translation, a rotation, or a reflection.</p>
+<p>A rigid transformation preserves the Euclidean distance between every pair of points. The rigid transformations include rotations, translations, reflections, or their combination.</p>
 <p>https://en.wikipedia.org/wiki/Rigid_transformation</p>
 <dl class="section return"><dt>Returns</dt><dd>True if transformation is rigid </dd></dl>
+
+</div>
+</div>
+<a id="aa37987be864c3bf60167721c5c41eabc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa37987be864c3bf60167721c5c41eabc">&#9670;&nbsp;</a></span>IsRigid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool library::math::geom::d3::Transformation::IsRigid </td>
+          <td>(</td>
+          <td class="paramtype">const Matrix4d &amp;&#160;</td>
+          <td class="paramname"><em>aMatrix</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

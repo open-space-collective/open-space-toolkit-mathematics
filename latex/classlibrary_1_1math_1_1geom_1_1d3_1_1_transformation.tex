@@ -68,6 +68,8 @@ static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation}{Transfo
 static String \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation_a9511c7844b5b8af0c8c7ad97454a5a96}{String\+From\+Type} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation_a25f1dc99d391174bf82a7132d08b2fc1}{Transformation\+::\+Type} \&a\+Type)
 \item 
 static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation_a25f1dc99d391174bf82a7132d08b2fc1}{Transformation\+::\+Type} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation_aa532f2c9f56ee5aff63417283a930584}{Type\+Of\+Matrix} (const Matrix4d \&a\+Matrix)
+\item 
+static bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation_aa37987be864c3bf60167721c5c41eabc}{Is\+Rigid} (const Matrix4d \&a\+Matrix)
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
@@ -196,13 +198,19 @@ Constructor.
 
 Returns true if transformation is rigid. 
 
-A rigid transformation preserves distances and angles. It is either a translation, a rotation, or a reflection.
+A rigid transformation preserves the Euclidean distance between every pair of points. The rigid transformations include rotations, translations, reflections, or their combination.
 
 https\+://en.wikipedia.\+org/wiki/\+Rigid\+\_\+transformation
 
 \begin{DoxyReturn}{Returns}
 True if transformation is rigid 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation_aa37987be864c3bf60167721c5c41eabc}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation_aa37987be864c3bf60167721c5c41eabc}} 
+\index{library\+::math\+::geom\+::d3\+::\+Transformation@{library\+::math\+::geom\+::d3\+::\+Transformation}!Is\+Rigid@{Is\+Rigid}}
+\index{Is\+Rigid@{Is\+Rigid}!library\+::math\+::geom\+::d3\+::\+Transformation@{library\+::math\+::geom\+::d3\+::\+Transformation}}
+\subsubsection{\texorpdfstring{Is\+Rigid()}{IsRigid()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::\+Transformation\+::\+Is\+Rigid (\begin{DoxyParamCaption}\item[{const Matrix4d \&}]{a\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation_ac231beeb8ada73eada915903af7c56b1}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation_ac231beeb8ada73eada915903af7c56b1}} 
 \index{library\+::math\+::geom\+::d3\+::\+Transformation@{library\+::math\+::geom\+::d3\+::\+Transformation}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!library\+::math\+::geom\+::d3\+::\+Transformation@{library\+::math\+::geom\+::d3\+::\+Transformation}}

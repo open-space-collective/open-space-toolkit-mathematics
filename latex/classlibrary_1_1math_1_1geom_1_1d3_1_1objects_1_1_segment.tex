@@ -30,6 +30,8 @@ virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segmen
 \begin{DoxyCompactList}\small\item\em Check if segment is defined. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a11324bd27db3ef9d931fdee763246759}{is\+Degenerate} () const
 \begin{DoxyCompactList}\small\item\em Check if segment is degenerate, i.\+e. its length is zero. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a9919183ce212b474e418685db50891fc}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&a\+Sphere) const
+\begin{DoxyCompactList}\small\item\em Check if segment intersects sphere. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_af6d7eb00a6886d190c03e8b8e4220f33}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&an\+Ellipsoid) const
 \begin{DoxyCompactList}\small\item\em Check if segment intersects ellipsoid. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_aabdbcd6bbfbe9350fe53f1b3563b5652}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
@@ -246,10 +248,36 @@ Get segment second point.
 \begin{DoxyReturn}{Returns}
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} second point 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a9919183ce212b474e418685db50891fc}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a9919183ce212b474e418685db50891fc}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Segment\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&}]{a\+Sphere }\end{DoxyParamCaption}) const}
+
+
+
+Check if segment intersects sphere. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a5562342d1edf2f52e37ce1bc138ee7d7}{Segment} segment = ... ;
+Sphere sphere = ... ;
+segment.intersects(sphere) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Sphere} & A sphere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if segment intersects sphere 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_af6d7eb00a6886d190c03e8b8e4220f33}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_af6d7eb00a6886d190c03e8b8e4220f33}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Segment\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
 
 
@@ -337,7 +365,7 @@ Not equal to operator.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if segments not are equal 
+True if segments are not equal 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_af6b462e74438f79ec6162fdefdfcb887}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_af6b462e74438f79ec6162fdefdfcb887}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}!operator==@{operator==}}

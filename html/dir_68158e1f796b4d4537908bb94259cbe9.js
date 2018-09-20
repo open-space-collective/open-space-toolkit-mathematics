@@ -12,5 +12,5 @@ var dir_68158e1f796b4d4537908bb94259cbe9 =
     [ "Pyramid.cpp", "_pyramid_8cpp.html", null ],
     [ "Ray.cpp", "_ray_8cpp.html", null ],
     [ "Segment.cpp", "3_d_2_objects_2_segment_8cpp.html", null ],
-    [ "Sphere.cpp", "_sphere_8cpp.html", null ]
+    [ "Sphere.cpp", "_sphere_8cpp.html", "_sphere_8cpp" ]
 ];

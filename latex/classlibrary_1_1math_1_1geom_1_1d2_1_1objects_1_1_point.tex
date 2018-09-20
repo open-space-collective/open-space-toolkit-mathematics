@@ -20,8 +20,6 @@ Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d2\+:\+:objects\+:\+:Po
 \item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a4998aefdf80bdfd967f21d49fa050398}{Point} (const Real \&a\+First\+Coordinate, const Real \&a\+Second\+Coordinate)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_af936e1d3646217e0e75b3100f937303c}{Point} (const Vector2d \&a\+Vector)
-\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
 virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} $\ast$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_aa6b55bdbf5a0ce9ec8bc91ca79de3569}{clone} () const override
 \begin{DoxyCompactList}\small\item\em Clone point. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_af5223d8e73deaf75ac248a5d43139628}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&a\+Point) const
@@ -32,6 +30,12 @@ virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_
 \begin{DoxyCompactList}\small\item\em Addition operator\+: translate point along vector. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_aeec1bab241792dc6b6091d9cac36d02e}{is\+Near} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&a\+Point, const Real \&a\+Tolerance) const
 \begin{DoxyCompactList}\small\item\em Check if point is near another point. \end{DoxyCompactList}\item 
+const Real \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_abaaa09e58c97324a44e9d60bcad63171}{x} () const
+\begin{DoxyCompactList}\small\item\em Get reference to first coordinate. \end{DoxyCompactList}\item 
+const Real \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a088e03daba1ed10a0a3e575ffd1d82fa}{y} () const
+\begin{DoxyCompactList}\small\item\em Get reference to second coordinate. \end{DoxyCompactList}\item 
+Vector2d \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a570cc81d15674537baa36e0e1b251612}{as\+Vector} () const
+\begin{DoxyCompactList}\small\item\em Get vector representation of point. \end{DoxyCompactList}\item 
 Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a1615c904b4f5a1c406cdba97df6445d8}{distance\+To} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Get distance to another point. \end{DoxyCompactList}\item 
 virtual String \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_ae645a37f426dac123d566fb5511d595d}{to\+String} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17}{Object\+::\+Format} \&a\+Format=\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}, const Integer \&a\+Precision=Integer\+::\+Undefined()) const override
@@ -46,7 +50,9 @@ virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_
 static \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a110a5bba9399abc5408f6c34306040c6}{Undefined} ()
 \begin{DoxyCompactList}\small\item\em Constructs an undefined point. \end{DoxyCompactList}\item 
 static \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_ac372ec5b87ab91d58dc515eda2f0fa75}{Origin} ()
-\begin{DoxyCompactList}\small\item\em Constructs a point at origin. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructs a point at origin. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a3b656a68cb1f75901dc44e109e6eca58}{Vector} (const Vector2d \&a\+Vector)
+\begin{DoxyCompactList}\small\item\em Constructs a point from a vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
 
@@ -59,7 +65,7 @@ https\+://en.wikipedia.\+org/wiki/\+Point\+\_\+(geometry)
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a4998aefdf80bdfd967f21d49fa050398}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a4998aefdf80bdfd967f21d49fa050398}} 
 \index{library\+::math\+::geom\+::d2\+::objects\+::\+Point@{library\+::math\+::geom\+::d2\+::objects\+::\+Point}!Point@{Point}}
 \index{Point@{Point}!library\+::math\+::geom\+::d2\+::objects\+::\+Point@{library\+::math\+::geom\+::d2\+::objects\+::\+Point}}
-\subsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{Point()}{Point()}}
 {\footnotesize\ttfamily library\+::math\+::geom\+::d2\+::objects\+::\+Point\+::\+Point (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+First\+Coordinate,  }\item[{const Real \&}]{a\+Second\+Coordinate }\end{DoxyParamCaption})}
 
 
@@ -68,7 +74,7 @@ Constructor.
 
 
 \begin{DoxyCode}
-\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a4998aefdf80bdfd967f21d49fa050398}{Point} point(0.0, 0.0) ;
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a4998aefdf80bdfd967f21d49fa050398}{Point} point = \{ 0.0, 0.0 \} ;
 \end{DoxyCode}
 
 
@@ -77,27 +83,6 @@ Constructor.
 \mbox{\tt in}  & {\em a\+First\+Coordinate} & A first coordinate \\
 \hline
 \mbox{\tt in}  & {\em a\+Second\+Coordinate} & A second coordinate \\
-\hline
-\end{DoxyParams}
-\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_af936e1d3646217e0e75b3100f937303c}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_af936e1d3646217e0e75b3100f937303c}} 
-\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point@{library\+::math\+::geom\+::d2\+::objects\+::\+Point}!Point@{Point}}
-\index{Point@{Point}!library\+::math\+::geom\+::d2\+::objects\+::\+Point@{library\+::math\+::geom\+::d2\+::objects\+::\+Point}}
-\subsubsection{\texorpdfstring{Point()}{Point()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily library\+::math\+::geom\+::d2\+::objects\+::\+Point\+::\+Point (\begin{DoxyParamCaption}\item[{const Vector2d \&}]{a\+Vector }\end{DoxyParamCaption})}
-
-
-
-Constructor. 
-
-
-\begin{DoxyCode}
-\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a4998aefdf80bdfd967f21d49fa050398}{Point} point(\{ 0.0, 0.0 \}) ;
-\end{DoxyCode}
-
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em a\+Vector} & A position vector \\
 \hline
 \end{DoxyParams}
 
@@ -122,6 +107,19 @@ Apply transformation to point.
 
 Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a289589fb6e9e7a2c4ca4976a1544def5}{library\+::math\+::geom\+::d2\+::\+Object}.
 
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a570cc81d15674537baa36e0e1b251612}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a570cc81d15674537baa36e0e1b251612}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point@{library\+::math\+::geom\+::d2\+::objects\+::\+Point}!as\+Vector@{as\+Vector}}
+\index{as\+Vector@{as\+Vector}!library\+::math\+::geom\+::d2\+::objects\+::\+Point@{library\+::math\+::geom\+::d2\+::objects\+::\+Point}}
+\subsubsection{\texorpdfstring{as\+Vector()}{asVector()}}
+{\footnotesize\ttfamily Vector2d library\+::math\+::geom\+::d2\+::objects\+::\+Point\+::as\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get vector representation of point. 
+
+\begin{DoxyReturn}{Returns}
+Vector representation of point 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_aa6b55bdbf5a0ce9ec8bc91ca79de3569}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_aa6b55bdbf5a0ce9ec8bc91ca79de3569}} 
 \index{library\+::math\+::geom\+::d2\+::objects\+::\+Point@{library\+::math\+::geom\+::d2\+::objects\+::\+Point}!clone@{clone}}
 \index{clone@{clone}!library\+::math\+::geom\+::d2\+::objects\+::\+Point@{library\+::math\+::geom\+::d2\+::objects\+::\+Point}}
@@ -258,7 +256,7 @@ Not equal to operator.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-True if points not are equal 
+True if points are not equal 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_af5223d8e73deaf75ac248a5d43139628}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_af5223d8e73deaf75ac248a5d43139628}} 
 \index{library\+::math\+::geom\+::d2\+::objects\+::\+Point@{library\+::math\+::geom\+::d2\+::objects\+::\+Point}!operator==@{operator==}}
@@ -332,6 +330,8 @@ Get string representation.
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em a\+Format} & A format \\
 \hline
+\mbox{\tt in}  & {\em (optional)} & a\+Precision A precision \\
+\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 String representation 
@@ -358,6 +358,63 @@ Constructs an undefined point.
 
 \begin{DoxyReturn}{Returns}
 Undefined point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a3b656a68cb1f75901dc44e109e6eca58}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a3b656a68cb1f75901dc44e109e6eca58}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point@{library\+::math\+::geom\+::d2\+::objects\+::\+Point}!Vector@{Vector}}
+\index{Vector@{Vector}!library\+::math\+::geom\+::d2\+::objects\+::\+Point@{library\+::math\+::geom\+::d2\+::objects\+::\+Point}}
+\subsubsection{\texorpdfstring{Vector()}{Vector()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} library\+::math\+::geom\+::d2\+::objects\+::\+Point\+::\+Vector (\begin{DoxyParamCaption}\item[{const Vector2d \&}]{a\+Vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a point from a vector. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a4998aefdf80bdfd967f21d49fa050398}{Point} point = \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a3b656a68cb1f75901dc44e109e6eca58}{Point::Vector}(\{ 0.0, 0.0 \}) ; \textcolor{comment}{// [0.0, 0.0]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_abaaa09e58c97324a44e9d60bcad63171}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_abaaa09e58c97324a44e9d60bcad63171}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point@{library\+::math\+::geom\+::d2\+::objects\+::\+Point}!x@{x}}
+\index{x@{x}!library\+::math\+::geom\+::d2\+::objects\+::\+Point@{library\+::math\+::geom\+::d2\+::objects\+::\+Point}}
+\subsubsection{\texorpdfstring{x()}{x()}}
+{\footnotesize\ttfamily const Real \& library\+::math\+::geom\+::d2\+::objects\+::\+Point\+::x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get reference to first coordinate. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a4998aefdf80bdfd967f21d49fa050398}{Point}(1.0, 2.0).x() ; \textcolor{comment}{// &1.0}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to first coordinate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a088e03daba1ed10a0a3e575ffd1d82fa}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a088e03daba1ed10a0a3e575ffd1d82fa}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Point@{library\+::math\+::geom\+::d2\+::objects\+::\+Point}!y@{y}}
+\index{y@{y}!library\+::math\+::geom\+::d2\+::objects\+::\+Point@{library\+::math\+::geom\+::d2\+::objects\+::\+Point}}
+\subsubsection{\texorpdfstring{y()}{y()}}
+{\footnotesize\ttfamily const Real \& library\+::math\+::geom\+::d2\+::objects\+::\+Point\+::y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get reference to second coordinate. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_a4998aefdf80bdfd967f21d49fa050398}{Point}(1.0, 2.0).y() ; \textcolor{comment}{// &2.0}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to second coordinate 
 \end{DoxyReturn}
 
 

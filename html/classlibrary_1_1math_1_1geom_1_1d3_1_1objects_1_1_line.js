@@ -7,6 +7,7 @@ var classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line =
     [ "getDirection", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line.html#aa108a53227e4326188fe17a03c55f9cb", null ],
     [ "getOrigin", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line.html#ad65178573d705ad21bdd54e7f4b7f104", null ],
     [ "intersects", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line.html#af40668ee33a6cd265a4b3c3a9a53f294", null ],
+    [ "intersects", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line.html#ab9b35d1e6276d927e9a54219855295ce", null ],
     [ "intersects", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line.html#a2cc1edf1b60745c518fbf19f2ab0771c", null ],
     [ "isDefined", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line.html#ab7b509259a32ac21c83bb14fcc7f83f3", null ],
     [ "operator!=", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line.html#ae49d3224ab2f209f192bb3b1e152766e", null ],
