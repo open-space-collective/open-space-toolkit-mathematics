@@ -1,5 +1,5 @@
-Library :: Mathematics
-======================
+Library ▸ Mathematics
+=====================
 
 Geometry, curve fitting, optimization.
 

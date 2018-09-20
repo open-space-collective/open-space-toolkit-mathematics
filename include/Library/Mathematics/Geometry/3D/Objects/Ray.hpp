@@ -93,7 +93,7 @@ class Ray : public Object
         /// @endcode
         ///
         /// @param              [in] aRay A ray
-        /// @return             True if rays not are equal
+        /// @return             True if rays are not equal
 
         bool                    operator !=                                 (   const   Ray&                        aRay                                        ) const ;
 

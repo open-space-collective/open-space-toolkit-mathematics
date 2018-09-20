@@ -259,7 +259,7 @@ Transformation                  Transformation::getInverse                  ( ) 
 
 Point                           Transformation::applyTo                     (   const   Point&                      aPoint                                      ) const
 {
-    return { (matrix_ * Vector4d(aPoint.x(), aPoint.y(), aPoint.z(), 1.0)).head<3>() } ;
+    return Point::Vector((matrix_ * Vector4d(aPoint.x(), aPoint.y(), aPoint.z(), 1.0)).head<3>()) ;
 }
 
 Vector3d                        Transformation::applyTo                     (   const   Vector3d&                   aVector                                     ) const

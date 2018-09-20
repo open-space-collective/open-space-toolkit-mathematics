@@ -43,12 +43,17 @@ namespace objects
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+gte::Vector3<double>            SphereGteVectorFromPoint                    (   const   Point&                      aPoint                                      )
+{
+    return { aPoint.x(), aPoint.y(), aPoint.z() } ;
+}
+
 gte::Vector3<double>            SphereGteVectorFromVector3d                 (   const   Vector3d&                   aVector                                     )
 {
     return { aVector.x(), aVector.y(), aVector.z() } ;
 }
 
-Vector3d                        SphereVector3dFromGteVector                 (   const   gte::Vector3<double>&       aVector                                     )
+Point                           SpherePointFromGteVector                    (   const   gte::Vector3<double>&       aVector                                     )
 {
     return { aVector[0], aVector[1], aVector[2] } ;
 }
@@ -142,11 +147,11 @@ bool                            Sphere::intersects                          (   
 
     // Line
 
-    const gte::Line3<double> line = { SphereGteVectorFromVector3d(aLine.getOrigin()), SphereGteVectorFromVector3d(aLine.getDirection()) } ;
+    const gte::Line3<double> line = { SphereGteVectorFromPoint(aLine.getOrigin()), SphereGteVectorFromVector3d(aLine.getDirection()) } ;
 
     // Sphere
 
-    const gte::Vector3<double> center = SphereGteVectorFromVector3d(center_) ;
+    const gte::Vector3<double> center = SphereGteVectorFromPoint(center_) ;
 
     const gte::Sphere3<double> sphere = { center, radius_ } ;
 
@@ -175,11 +180,11 @@ bool                            Sphere::intersects                          (   
 
     // Ray
 
-    const gte::Ray3<double> ray = { SphereGteVectorFromVector3d(aRay.getOrigin()), SphereGteVectorFromVector3d(aRay.getDirection()) } ;
+    const gte::Ray3<double> ray = { SphereGteVectorFromPoint(aRay.getOrigin()), SphereGteVectorFromVector3d(aRay.getDirection()) } ;
 
     // Sphere
 
-    const gte::Vector3<double> center = SphereGteVectorFromVector3d(center_) ;
+    const gte::Vector3<double> center = SphereGteVectorFromPoint(center_) ;
 
     const gte::Sphere3<double> sphere = { center, radius_ } ;
 
@@ -208,11 +213,11 @@ bool                            Sphere::intersects                          (   
 
     // Segment
 
-    const gte::Segment3<double> segment = { SphereGteVectorFromVector3d(aSegment.getFirstPoint()), SphereGteVectorFromVector3d(aSegment.getSecondPoint()) } ;
+    const gte::Segment3<double> segment = { SphereGteVectorFromPoint(aSegment.getFirstPoint()), SphereGteVectorFromPoint(aSegment.getSecondPoint()) } ;
 
     // Sphere
 
-    const gte::Vector3<double> center = SphereGteVectorFromVector3d(center_) ;
+    const gte::Vector3<double> center = SphereGteVectorFromPoint(center_) ;
 
     const gte::Sphere3<double> sphere = { center, radius_ } ;
 
@@ -242,13 +247,13 @@ bool                            Sphere::intersects                          (   
     // Plane
 
     const gte::Vector3<double> normal = SphereGteVectorFromVector3d(aPlane.getNormalVector()) ;
-    const gte::Vector3<double> point = SphereGteVectorFromVector3d(aPlane.getPoint()) ;
+    const gte::Vector3<double> point = SphereGteVectorFromPoint(aPlane.getPoint()) ;
 
     const gte::Plane3<double> plane = { normal, point } ;
 
     // Sphere
 
-    const gte::Vector3<double> center = SphereGteVectorFromVector3d(center_) ;
+    const gte::Vector3<double> center = SphereGteVectorFromPoint(center_) ;
 
     const gte::Sphere3<double> sphere = { center, radius_ } ;
 
@@ -339,11 +344,11 @@ Intersection                    Sphere::intersectionWith                    (   
 
     // Line
 
-    const gte::Line3<double> segment = { SphereGteVectorFromVector3d(aLine.getOrigin()), SphereGteVectorFromVector3d(aLine.getDirection()) } ;
+    const gte::Line3<double> segment = { SphereGteVectorFromPoint(aLine.getOrigin()), SphereGteVectorFromVector3d(aLine.getDirection()) } ;
 
     // Sphere
 
-    const gte::Vector3<double> center = SphereGteVectorFromVector3d(center_) ;
+    const gte::Vector3<double> center = SphereGteVectorFromPoint(center_) ;
 
     const gte::Sphere3<double> sphere = { center, radius_ } ;
 
@@ -358,11 +363,11 @@ Intersection                    Sphere::intersectionWith                    (   
 
         if (intersectionResult.numIntersections == 1)
         {
-            return Intersection::Point(SphereVector3dFromGteVector(intersectionResult.point[0])) ;
+            return Intersection::Point(SpherePointFromGteVector(intersectionResult.point[0])) ;
         }
         else if (intersectionResult.numIntersections == 2)
         {
-            return Intersection::PointSet(PointSet({ Point(SphereVector3dFromGteVector(intersectionResult.point[0])), Point(SphereVector3dFromGteVector(intersectionResult.point[1])) })) ;
+            return Intersection::PointSet(PointSet({ Point(SpherePointFromGteVector(intersectionResult.point[0])), Point(SpherePointFromGteVector(intersectionResult.point[1])) })) ;
         }
         else
         {
@@ -393,11 +398,11 @@ Intersection                    Sphere::intersectionWith                    (   
 
     // Ray
 
-    const gte::Ray3<double> segment = { SphereGteVectorFromVector3d(aRay.getOrigin()), SphereGteVectorFromVector3d(aRay.getDirection()) } ;
+    const gte::Ray3<double> segment = { SphereGteVectorFromPoint(aRay.getOrigin()), SphereGteVectorFromVector3d(aRay.getDirection()) } ;
 
     // Sphere
 
-    const gte::Vector3<double> center = SphereGteVectorFromVector3d(center_) ;
+    const gte::Vector3<double> center = SphereGteVectorFromPoint(center_) ;
 
     const gte::Sphere3<double> sphere = { center, radius_ } ;
 
@@ -413,7 +418,7 @@ Intersection                    Sphere::intersectionWith                    (   
         if (intersectionResult.numIntersections == 1)
         {
 
-            const Point point = SphereVector3dFromGteVector(intersectionResult.point[0]) ;
+            const Point point = SpherePointFromGteVector(intersectionResult.point[0]) ;
 
             if ((point == aRay.getOrigin()) && (!this->contains(point))) // Discard ray origin, if returned by Gte
             {
@@ -426,8 +431,8 @@ Intersection                    Sphere::intersectionWith                    (   
         else if (intersectionResult.numIntersections == 2)
         {
 
-            const Point firstPoint = SphereVector3dFromGteVector(intersectionResult.point[0]) ;
-            const Point secondPoint = SphereVector3dFromGteVector(intersectionResult.point[1]) ;
+            const Point firstPoint = SpherePointFromGteVector(intersectionResult.point[0]) ;
+            const Point secondPoint = SpherePointFromGteVector(intersectionResult.point[1]) ;
 
             const PointSet pointSet = { { firstPoint, secondPoint } } ;
 
@@ -477,11 +482,11 @@ Intersection                    Sphere::intersectionWith                    (   
 
     // Segment
 
-    const gte::Segment3<double> segment = { SphereGteVectorFromVector3d(aSegment.getFirstPoint()), SphereGteVectorFromVector3d(aSegment.getSecondPoint()) } ; ;
+    const gte::Segment3<double> segment = { SphereGteVectorFromPoint(aSegment.getFirstPoint()), SphereGteVectorFromPoint(aSegment.getSecondPoint()) } ; ;
 
     // Sphere
 
-    const gte::Vector3<double> center = SphereGteVectorFromVector3d(center_) ;
+    const gte::Vector3<double> center = SphereGteVectorFromPoint(center_) ;
 
     const gte::Sphere3<double> sphere = { center, radius_ } ;
 
@@ -497,7 +502,7 @@ Intersection                    Sphere::intersectionWith                    (   
         if (intersectionResult.numIntersections == 1)
         {
             
-            const Point point = SphereVector3dFromGteVector(intersectionResult.point[0]) ;
+            const Point point = SpherePointFromGteVector(intersectionResult.point[0]) ;
 
             if ((point == aSegment.getFirstPoint() || (point == aSegment.getSecondPoint())) && (!this->contains(point))) // Discard segment points, if returned by Gte
             {
@@ -510,8 +515,8 @@ Intersection                    Sphere::intersectionWith                    (   
         else if (intersectionResult.numIntersections == 2)
         {
             
-            const Point firstPoint = SphereVector3dFromGteVector(intersectionResult.point[0]) ;
-            const Point secondPoint = SphereVector3dFromGteVector(intersectionResult.point[1]) ;
+            const Point firstPoint = SpherePointFromGteVector(intersectionResult.point[0]) ;
+            const Point secondPoint = SpherePointFromGteVector(intersectionResult.point[1]) ;
 
             if ((firstPoint == aSegment.getFirstPoint()) || (secondPoint == aSegment.getFirstPoint()) || (firstPoint == aSegment.getSecondPoint()) || (secondPoint == aSegment.getSecondPoint())) // Discard segment points, if returned by Gte
             {

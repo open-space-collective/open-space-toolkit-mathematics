@@ -98,7 +98,7 @@ class Pyramid : public Object
         /// @brief              Not equal to operator
         ///
         /// @param              [in] aPyramid A pyramid
-        /// @return             True if pyramids not are equal
+        /// @return             True if pyramids are not equal
 
         bool                    operator !=                                 (   const   Pyramid&                    aPyramid                                    ) const ;
 

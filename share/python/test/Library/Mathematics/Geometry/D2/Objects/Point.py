@@ -3,7 +3,7 @@
 ################################################################################################################################################################
 
 # @project        Library/Mathematics
-# @file           LibraryMathematicsPy/Geometry/3D/Transformations/Rotations/RotationMatrix.py
+# @file           LibraryMathematicsPy/Geometry/2D/Objects/Point.py
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        TBD
 
@@ -11,29 +11,20 @@
 
 import numpy
 
-from Library.Core import Types
+import Library.Core as Core
+import LibraryMathematicsPy as Mathematics
 
-from LibraryMathematicsPy import Geometry
+Point = Mathematics.Geometry.D2.Objects.Point
 
-Angle = Geometry.Angle
-Quaternion = Geometry.Transformations.Rotations.Quaternion
-RotationMatrix = Geometry.Transformations.Rotations.RotationMatrix
+point = Point(0.0, 0.0)
+
+Point.Undefined()
+Point.Origin()
+
+print(point)
 
 ################################################################################################################################################################
 
-# isDefined
-# getRowAt
-# getColumnAt
-# toTransposed
-# transpose
-# Undefined
-# Unit
-# RX
-# RY
-# RZ
-# Rows
-# Columns
-# Quaternion
-# RotationVector
+
 
 ################################################################################################################################################################

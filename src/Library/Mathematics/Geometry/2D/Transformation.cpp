@@ -262,7 +262,7 @@ Transformation                  Transformation::getInverse                  ( ) 
 
 Point                           Transformation::applyTo                     (   const   Point&                      aPoint                                      ) const
 {
-    return { (matrix_ * Vector3d(aPoint.x(), aPoint.y(), 1.0)).head<2>() } ;
+    return Point::Vector((matrix_ * Vector3d(aPoint.x(), aPoint.y(), 1.0)).head<2>()) ;
 }
 
 Vector2d                        Transformation::applyTo                     (   const   Vector2d&                   aVector                                     ) const
@@ -348,7 +348,7 @@ Transformation                  Transformation::Rotation                    (   
 Transformation                  Transformation::RotationAround              (   const   Point&                      aPoint,
                                                                                 const   Angle&                      aRotationAngle                              )
 {
-    return Transformation::Translation(Vector2d(aPoint)) * Transformation::Rotation(aRotationAngle) * Transformation::Translation(-Vector2d(aPoint)) ;
+    return Transformation::Translation(aPoint.asVector()) * Transformation::Rotation(aRotationAngle) * Transformation::Translation(-aPoint.asVector()) ;
 }
 
 String                          Transformation::StringFromType              (   const   Transformation::Type&       aType                                       )

@@ -88,7 +88,7 @@ class Line : public Object
         /// @endcode
         ///
         /// @param              [in] aLine A line
-        /// @return             True if lines not are equal
+        /// @return             True if lines are not equal
 
         bool                    operator !=                                 (   const   Line&                       aLine                                       ) const ;
 

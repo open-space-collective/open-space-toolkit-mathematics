@@ -3,7 +3,7 @@
 ################################################################################################################################################################
 
 # @project        Library/Mathematics
-# @file           LibraryMathematicsPy/Geometry/Transformations.py
+# @file           LibraryMathematicsPy/Geometry/D3/__init__.py
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        TBD
 

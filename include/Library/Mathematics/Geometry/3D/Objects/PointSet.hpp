@@ -41,7 +41,6 @@ using library::core::ctnr::Array ;
 using library::math::obj::Vector3d ;
 using library::math::geom::d3::Object ;
 using library::math::geom::d3::objects::Point ;
-using library::math::geom::d3::trf::rot::Quaternion ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -108,7 +107,7 @@ class PointSet : public Object
         /// @brief              Not equal to operator
         ///
         /// @param              [in] aPointSet A point set
-        /// @return             True if point sets not are equal
+        /// @return             True if point sets are not equal
 
         bool                    operator !=                                 (   const   PointSet&                   aPointSet                                   ) const ;
 

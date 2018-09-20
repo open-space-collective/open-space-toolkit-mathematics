@@ -7,6 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <LibraryMathematicsPy/Utilities/IterableConverter.hpp>
+
 #include <Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
@@ -25,10 +27,10 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
     using library::math::obj::Vector4d ;
     using library::math::geom::d3::trf::rot::Quaternion ;
 
-    scope in_Quaternion = class_<Quaternion>("Quaternion", init<Real, Real, Real, Real, Quaternion::Format>())
+    scope in_Quaternion = class_<Quaternion>("Quaternion", init<const Real&, const Real&, const Real&, const Real&, const Quaternion::Format&>())
 
-        .def(init<Vector4d, Quaternion::Format>())
-        .def(init<Vector3d, Real>())
+        .def(init<const Vector4d&, const Quaternion::Format&>())
+        .def(init<const Vector3d&, const Real&>())
 
         .def(self == self)
         .def(self != self)
@@ -85,6 +87,15 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
         .value("XYZS", Quaternion::Format::XYZS)
         .value("SXYZ", Quaternion::Format::SXYZ)
     
+    ;
+
+    using library::core::ctnr::Array ;
+
+    IterableConverter()
+
+        .from_python<Array<Quaternion>>()
+        .to_python<Array<Quaternion>>()
+        
     ;
 
 }

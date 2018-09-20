@@ -98,7 +98,7 @@ class Composite : public Object
         /// @brief              Not equal to operator
         ///
         /// @param              [in] aComposite A composite object
-        /// @return             True if composites not are equal
+        /// @return             True if composites are not equal
 
         bool                    operator !=                                 (   const   Composite&                  aComposite                                  ) const ;
 

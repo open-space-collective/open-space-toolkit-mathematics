@@ -90,7 +90,7 @@ class Segment : public Object
         /// @endcode
         ///
         /// @param              [in] aSegment A segment
-        /// @return             True if segments not are equal
+        /// @return             True if segments are not equal
 
         bool                    operator !=                                 (   const   Segment&                    aSegment                                    ) const ;
 

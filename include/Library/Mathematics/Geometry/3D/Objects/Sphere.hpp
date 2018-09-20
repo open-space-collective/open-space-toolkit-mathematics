@@ -95,7 +95,7 @@ class Sphere : public Object
         /// @endcode
         ///
         /// @param              [in] aSphere A sphere
-        /// @return             True if spheres not are equal
+        /// @return             True if spheres are not equal
 
         bool                    operator !=                                 (   const   Sphere&                     aSphere                                     ) const ;
 

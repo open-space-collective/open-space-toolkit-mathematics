@@ -85,7 +85,7 @@ class LineString : public Object
         /// @brief              Not equal to operator
         ///
         /// @param              [in] aLineString A line string
-        /// @return             True if line strings not are equal
+        /// @return             True if line strings are not equal
 
         bool                    operator !=                                 (   const   LineString&                 aLineString                                 ) const ;
 

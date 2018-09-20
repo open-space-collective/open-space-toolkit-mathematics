@@ -103,7 +103,7 @@ class Ellipsoid : public Object
         /// @endcode
         ///
         /// @param              [in] anEllipsoid An ellipsoid
-        /// @return             True if ellipsoids not are equal
+        /// @return             True if ellipsoids are not equal
 
         bool                    operator !=                                 (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
 

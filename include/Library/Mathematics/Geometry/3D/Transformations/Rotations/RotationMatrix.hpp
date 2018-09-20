@@ -101,7 +101,7 @@ class RotationMatrix
         /// @endcode
         ///
         /// @param              [in] aRotationMatrix A rotation matrix
-        /// @return             True if rotation matrices not are equal
+        /// @return             True if rotation matrices are not equal
 
         bool                    operator !=                                 (   const   RotationMatrix&             aRotationMatrix                             ) const ;
 

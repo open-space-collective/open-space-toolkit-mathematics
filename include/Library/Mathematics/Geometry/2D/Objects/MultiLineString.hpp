@@ -81,7 +81,7 @@ class MultiLineString : public Object
         /// @brief              Not equal to operator
         ///
         /// @param              [in] aMultiLineString A multi multi line string
-        /// @return             True if multi multi line strings not are equal
+        /// @return             True if multi multi line strings are not equal
 
         bool                    operator !=                                 (   const   MultiLineString&            aMultiLineString                            ) const ;
 

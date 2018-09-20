@@ -187,6 +187,7 @@ Size                            Pyramid::getLateralFaceCount                ( ) 
 Polygon                         Pyramid::getLateralFaceAt                   (   const   Index                       aLateralFaceIndex                           ) const
 {
 
+    using library::math::obj::Vector2d ;
     using Point2d = library::math::geom::d2::objects::Point ;
 
     if (!this->isDefined())
@@ -206,7 +207,7 @@ Polygon                         Pyramid::getLateralFaceAt                   (   
 
     const Point2d firstPolygonPoint = { 0.0, 0.0 } ;
     const Point2d secondPolygonPoint = { (baseEdge.getFirstPoint() - apex_).norm(), 0.0 } ;
-    const Point2d thirdPolygonPoint = secondPolygonPoint + Point2d { baseEdgeVector.dot(firstAxis), baseEdgeVector.dot(secondAxis) } ;
+    const Point2d thirdPolygonPoint = secondPolygonPoint + Vector2d { baseEdgeVector.dot(firstAxis), baseEdgeVector.dot(secondAxis) } ;
 
     const Polygon2d polygon = { { firstPolygonPoint, secondPolygonPoint, thirdPolygonPoint } } ;
 

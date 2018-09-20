@@ -264,7 +264,7 @@ ENDIF ()
 
 # INCLUDE_DIRECTORIES ("/usr/local/include/Gte")
 
-### Library :: Core [0.1]
+### Library ▸ Core [0.1]
 
 FIND_PACKAGE ("LibraryCore" "0.1" REQUIRED)
 

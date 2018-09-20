@@ -27,12 +27,6 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, Constructor)
 
     }
 
-    {
-
-        EXPECT_NO_THROW(Point(Vector3d({ 1.0, 2.0, 3.0 }))) ;
-
-    }
-
 }
 
 TEST (Library_Mathematics_Geometry_3D_Objects_Point, Clone)
@@ -224,6 +218,26 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, IsNear)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Point, AsVector)
+{
+
+    using library::math::obj::Vector3d ;
+    using library::math::geom::d3::objects::Point ;
+
+    {
+
+        EXPECT_EQ(Vector3d(1.0, 2.0, 3.0), Point(1.0, 2.0, 3.0).asVector()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Point::Undefined().asVector()) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Point, DistanceTo)
 {
     
@@ -350,6 +364,21 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, Origin)
 
         EXPECT_NO_THROW(Point::Origin()) ;
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Point::Origin()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Point, Vector)
+{
+
+    using library::math::obj::Vector3d ;
+    using library::math::geom::d3::objects::Point ;
+    
+    {
+
+        EXPECT_NO_THROW(Point::Vector(Vector3d(1.0, 2.0, 3.0))) ;
+        EXPECT_EQ(Point(1.0, 2.0, 3.0), Point::Vector(Vector3d(1.0, 2.0, 3.0))) ;
 
     }
 

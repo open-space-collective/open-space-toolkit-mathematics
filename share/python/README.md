@@ -1,2 +1,2 @@
-Library :: Mathematics :: Python Bindings
-=========================================
+Library ▸ Mathematics ▸ Python Bindings
+=======================================

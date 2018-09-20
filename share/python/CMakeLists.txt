@@ -53,10 +53,14 @@ SET (Boost_USE_MULTITHREADED ON)
 UNSET (Boost_INCLUDE_DIR CACHE)
 UNSET (Boost_LIBRARY_DIRS CACHE)
 
-FIND_PACKAGE ("Boost" "1.67" COMPONENTS "python36" REQUIRED)
+FIND_PACKAGE ("Boost" "1.68" COMPONENTS "python36" "numpy36" REQUIRED)
 
 INCLUDE_DIRECTORIES (${Boost_INCLUDE_DIRS})
 LINK_DIRECTORIES (${Boost_LIBRARY_DIRS})
+
+### Eigen
+
+ADD_COMPILE_DEFINITIONS (EIGEN_MAX_STATIC_ALIGN_BYTES)
 
 ### Python
 
@@ -68,7 +72,7 @@ SET (PYTHON_LIBRARIES "/usr/lib64/libpython3.6m.so")
 
 ### NumPy
 
-SET (NUMPY_INCLUDE_DIR "/usr/local/lib64/python3.6/site-packages/numpy/core/include")
+SET (NUMPY_INCLUDE_DIR "/usr/lib64/python3.6/site-packages/numpy/core/include")
 
 ### Boost.NumPy Eigen
 

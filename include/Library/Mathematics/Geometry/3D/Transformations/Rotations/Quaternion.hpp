@@ -133,7 +133,7 @@ class Quaternion
         /// @endcode
         ///
         /// @param              [in] aQuaternion A quaternion
-        /// @return             True if quaternions not are equal
+        /// @return             True if quaternions are not equal
 
         bool                    operator !=                                 (   const   Quaternion&                 aQuaternion                                 ) const ;
 

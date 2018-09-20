@@ -7,6 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <LibraryMathematicsPy/Utilities/IterableConverter.hpp>
+
 #include <Library/Mathematics/Geometry/2D/Objects/Segment.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -43,6 +45,15 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Segment
         
         .def("Undefined", &Segment::Undefined).staticmethod("Undefined")
 
+    ;
+
+    using library::core::ctnr::Array ;
+
+    IterableConverter()
+
+        .from_python<Array<Segment>>()
+        .to_python<Array<Segment>>()
+        
     ;
 
 }

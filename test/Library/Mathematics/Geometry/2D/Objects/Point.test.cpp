@@ -17,18 +17,11 @@
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, Constructor)
 {
 
-    using library::math::obj::Vector2d ;
     using library::math::geom::d2::objects::Point ;
 
     {
 
         EXPECT_NO_THROW(Point(1.0, 2.0)) ;
-
-    }
-
-    {
-
-        EXPECT_NO_THROW(Point(Vector2d({ 1.0, 2.0 }))) ;
 
     }
 
@@ -223,6 +216,26 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, IsNear)
 
 }
 
+TEST (Library_Mathematics_Geometry_2D_Objects_Point, AsVector)
+{
+
+    using library::math::obj::Vector2d ;
+    using library::math::geom::d2::objects::Point ;
+
+    {
+
+        EXPECT_EQ(Vector2d(1.0, 2.0), Point(1.0, 2.0).asVector()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Point::Undefined().asVector()) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, DistanceTo)
 {
     
@@ -380,6 +393,21 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, Origin)
 
         EXPECT_NO_THROW(Point::Origin()) ;
         EXPECT_EQ(Point(0.0, 0.0), Point::Origin()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_2D_Objects_Point, Vector)
+{
+
+    using library::math::obj::Vector2d ;
+    using library::math::geom::d2::objects::Point ;
+    
+    {
+
+        EXPECT_NO_THROW(Point::Vector(Vector2d(1.0, 2.0))) ;
+        EXPECT_EQ(Point(1.0, 2.0), Point::Vector(Vector2d(1.0, 2.0))) ;
 
     }
 

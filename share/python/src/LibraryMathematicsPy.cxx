@@ -11,7 +11,6 @@
 #include <boost/python/numpy.hpp>
 
 #include <eigen_numpy.h>
-// or https://github.com/ethz-asl/kalibr/blob/master/Schweizer-Messer/numpy_eigen/include/numpy_eigen/NumpyEigenConverter.hpp ?
 
 #include <LibraryMathematicsPy/Objects.cpp>
 #include <LibraryMathematicsPy/Geometry.cpp>
@@ -21,11 +20,8 @@
 BOOST_PYTHON_MODULE (LibraryMathematicsPy)
 {
 
-    // Py_Initialize() ;
-    // boost::python::numpy::initialize() ;
-
-    // boost::numpy::initialize() ;
-    // boost::python::numeric::array::set_module_and_type("numpy", "ndarray") ;
+    Py_Initialize() ;
+    boost::python::numpy::initialize() ;
 
     SetupEigenConverters() ;
 
