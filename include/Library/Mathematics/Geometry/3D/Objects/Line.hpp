@@ -38,6 +38,7 @@ using library::math::geom::d3::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+class Sphere ;
 class Ellipsoid ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -87,7 +88,7 @@ class Line : public Object
         /// @endcode
         ///
         /// @param              [in] aLine A line
-        /// @return             True if lines not are equal
+        /// @return             True if lines are not equal
 
         bool                    operator !=                                 (   const   Line&                       aLine                                       ) const ;
 
@@ -113,6 +114,19 @@ class Line : public Object
         /// @return             True if line intersects point
         
         bool                    intersects                                  (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Check if line intersects sphere
+        ///
+        /// @code
+        ///                     Line line = ... ;
+        ///                     Sphere sphere = ... ;
+        ///                     line.intersects(sphere) ;
+        /// @endcode
+        ///
+        /// @param              [in] aSphere A sphere
+        /// @return             True if line intersects sphere
+        
+        bool                    intersects                                  (   const   Sphere&                     aSphere                                     ) const ;
 
         /// @brief              Check if line intersects ellipsoid
         ///

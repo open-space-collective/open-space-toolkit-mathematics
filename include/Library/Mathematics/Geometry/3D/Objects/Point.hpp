@@ -13,7 +13,9 @@
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
 #include <Library/Mathematics/Objects/Vector.hpp>
 
+#include <Library/Core/Types/String.hpp>
 #include <Library/Core/Types/Real.hpp>
+#include <Library/Core/Types/Integer.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -30,11 +32,12 @@ namespace objects
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+using library::core::types::Integer ;
 using library::core::types::Real ;
+using library::core::types::String ;
 
 using library::math::obj::Vector3d ;
 using library::math::geom::d3::Object ;
-using library::math::geom::d3::trf::rot::Quaternion ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -42,7 +45,7 @@ using library::math::geom::d3::trf::rot::Quaternion ;
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Point_(geometry)
 
-class Point : public Object, public Vector3d
+class Point : public Object
 {
 
     public:
@@ -61,16 +64,6 @@ class Point : public Object, public Vector3d
                                                                                 const   Real&                       aSecondCoordinate,
                                                                                 const   Real&                       aThirdCoordinate                            ) ;
 
-        /// @brief              Constructor
-        ///
-        /// @code
-        ///                     Point point({ 0.0, 0.0, 0.0 }) ;
-        /// @endcode
-        ///
-        /// @param              [in] aVector A position vector
-
-                                Point                                       (   const   Vector3d&                   aVector                                     ) ;
-
         /// @brief              Clone point
         ///
         /// @return             Pointer to cloned point
@@ -87,7 +80,7 @@ class Point : public Object, public Vector3d
         /// @brief              Not equal to operator
         ///
         /// @param              [in] aPoint A point
-        /// @return             True if points not are equal
+        /// @return             True if points are not equal
 
         bool                    operator !=                                 (   const   Point&                      aPoint                                      ) const ;
 
@@ -147,12 +140,55 @@ class Point : public Object, public Vector3d
         bool                    isNear                                      (   const   Point&                      aPoint,
                                                                                 const   Real&                       aTolerance                                  ) const ;
 
+        /// @brief              Get reference to first coordinate
+        ///
+        /// @code
+        ///                     Point(1.0, 2.0).x() ; // &1.0
+        /// @endcode
+        ///
+        /// @return             Reference to first coordinate
+
+        const Real&             x                                           ( ) const ;
+
+        /// @brief              Get reference to second coordinate
+        ///
+        /// @code
+        ///                     Point(1.0, 2.0).y() ; // &2.0
+        /// @endcode
+        ///
+        /// @return             Reference to second coordinate
+
+        const Real&             y                                           ( ) const ;
+
+        /// @brief              Get reference to third coordinate
+        ///
+        /// @code
+        ///                     Point(1.0, 2.0, 3.0).z() ; // &3.0
+        /// @endcode
+        ///
+        /// @return             Reference to third coordinate
+
+        const Real&             z                                           ( ) const ;
+
+        /// @brief              Get vector representation of point
+        ///
+        /// @return             Vector representation of point
+
+        Vector3d                asVector                                    ( ) const ;
+
         /// @brief              Get distance to another point
         ///
         /// @param              [in] aPoint A point
         /// @return             Distance to point
 
         Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Get string representation
+        ///
+        /// @param              [in] (optional) aPrecision A precision
+        /// @return             String representation
+
+        String                  toString                                    (   const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const ;
 
         /// @brief              Print point
         ///
@@ -187,6 +223,22 @@ class Point : public Object, public Vector3d
         /// @return             Point at origin
 
         static Point            Origin                                      ( ) ;
+
+        /// @brief              Constructs a point from a vector
+        ///
+        /// @code
+        ///                     Point point = Point::Vector({ 0.0, 0.0, 0.0 }) ; // [0.0, 0.0, 0.0]
+        /// @endcode
+        ///
+        /// @return             Point
+
+        static Point            Vector                                      (   const   Vector3d&                   aVector                                     ) ;
+
+    private:
+
+        Real                    x_ ;
+        Real                    y_ ;
+        Real                    z_ ;
 
 } ;
 

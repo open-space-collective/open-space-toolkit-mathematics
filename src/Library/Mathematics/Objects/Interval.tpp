@@ -340,40 +340,40 @@ ctnr::Array<T>                  Interval<T>::generateArrayWithSize          (   
     
 }
 
-//                                 template <class T>
-// types::String                   Interval<T>::toString                      ( ) const
-// {
+                                template <class T>
+types::String                   Interval<T>::toString                      ( ) const
+{
 
-//     if (!this->isDefined())
-//     {
-//         throw library::core::error::runtime::Undefined("Interval") ;
-//     }
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Interval") ;
+    }
 
-//     switch (type_)
-//     {
+    switch (type_)
+    {
 
-//         case Interval<T>::Type::Closed:
-//             return "[" + lowerBound_.toString() + ", " + upperBound_.toString() + "]" ;
+        case Interval<T>::Type::Closed:
+            return types::String::Format("[{}, {}]", lowerBound_.toString(), upperBound_.toString()) ;
 
-//         case Interval<T>::Type::Open:
-//             return "]" + lowerBound_.toString() + ", " + upperBound_.toString() + "[" ;
+        case Interval<T>::Type::Open:
+            return types::String::Format("]{}, {}[", lowerBound_.toString(), upperBound_.toString()) ;
 
-//         case Interval<T>::Type::HalfOpenLeft:
-//             return "]" + lowerBound_.toString() + ", " + upperBound_.toString() + "]" ;
+        case Interval<T>::Type::HalfOpenLeft:
+            return types::String::Format("]{}, {}]", lowerBound_.toString(), upperBound_.toString()) ;
 
-//         case Interval<T>::Type::HalfOpenRight:
-//             return "[" + lowerBound_.toString() + ", " + upperBound_.toString() + "[" ;
+        case Interval<T>::Type::HalfOpenRight:
+            return types::String::Format("[{}, {}[", lowerBound_.toString(), upperBound_.toString()) ;
 
-//         default:
-//             break ;
+        default:
+            break ;
 
-//     }
+    }
 
-//     throw library::core::error::runtime::Wrong("Type") ;
+    throw library::core::error::runtime::Wrong("Type") ;
     
-//     return types::String::Empty() ;
+    return types::String::Empty() ;
 
-// }
+}
 
                                 template <class T>
 void                            Interval<T>::setType                        (   const   Interval<T>::Type&          aType                                       )

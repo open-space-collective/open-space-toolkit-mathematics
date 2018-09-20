@@ -208,6 +208,32 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, IsNear)
 
 }
 
+TEST (Library_Mathematics_Geometry_2D_Objects_LineString, AccessPointAt)
+{
+
+    using library::math::geom::d2::objects::Point ;
+    using library::math::geom::d2::objects::LineString ;
+
+    {
+
+        EXPECT_EQ(Point(0.0, 0.0), LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 }, { 0.0, 0.0 } }).accessPointAt(0)) ;
+        EXPECT_EQ(Point(0.0, 1.0), LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 }, { 0.0, 0.0 } }).accessPointAt(1)) ;
+        EXPECT_EQ(Point(1.0, 0.0), LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 }, { 0.0, 0.0 } }).accessPointAt(2)) ;
+        EXPECT_EQ(Point(0.0, 0.0), LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 }, { 0.0, 0.0 } }).accessPointAt(3)) ;
+        
+        EXPECT_ANY_THROW(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 }, { 0.0, 0.0 } }).accessPointAt(5)) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(LineString::Empty().accessPointAt(0)) ;
+        EXPECT_ANY_THROW(LineString::Empty().accessPointAt(1)) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_2D_Objects_LineString, GetPointCount)
 {
 

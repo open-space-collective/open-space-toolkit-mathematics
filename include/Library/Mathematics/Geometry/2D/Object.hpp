@@ -12,8 +12,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Objects/Vector.hpp>
-
 #include <Library/Core/Types/String.hpp>
 #include <Library/Core/Types/Integer.hpp>
 
@@ -36,8 +34,6 @@ class Transformation ;
 
 using library::core::types::Integer ;
 using library::core::types::String ;
-
-using library::math::obj::Vector2d ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -71,7 +67,17 @@ class Object
 
         virtual Object*         clone                                       ( ) const = 0 ;
 
+        /// @brief              Not equal to operator
+        ///
+        /// @param              [in] anObject An object
+        /// @return             True if objects are equal
+
         bool                    operator ==                                 (   const   Object&                     anObject                                    ) const ;
+
+        /// @brief              Not equal to operator
+        ///
+        /// @param              [in] anObject An object
+        /// @return             True if objects are not equal
 
         bool                    operator !=                                 (   const   Object&                     anObject                                    ) const ;
 

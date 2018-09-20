@@ -11,6 +11,7 @@
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 
 #include <Global.test.hpp>
@@ -178,6 +179,29 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Intersects_Point)
 
         EXPECT_ANY_THROW(Ray::Undefined().intersects(Point::Undefined())) ;
         EXPECT_ANY_THROW(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersects(Point::Undefined())) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Intersects_Sphere)
+{
+
+    using library::math::geom::d3::objects::Ray ;
+    using library::math::geom::d3::objects::Sphere ;
+
+    {
+
+        // See: Library_Mathematics_Geometry_3D_Objects_Sphere.Intersects_Ray
+
+        SUCCEED() ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Ray::Undefined().intersects(Sphere::Undefined())) ;
+        EXPECT_ANY_THROW(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersects(Sphere::Undefined())) ;
 
     }
 

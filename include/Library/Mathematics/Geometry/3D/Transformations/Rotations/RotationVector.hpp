@@ -81,7 +81,7 @@ class RotationVector
         /// @endcode
         ///
         /// @param              [in] aRotationVector A rotation vector
-        /// @return             True if rotation vectors not are equal
+        /// @return             True if rotation vectors are not equal
 
         bool                    operator !=                                 (   const   RotationVector&             aRotationVector                             ) const ;
 

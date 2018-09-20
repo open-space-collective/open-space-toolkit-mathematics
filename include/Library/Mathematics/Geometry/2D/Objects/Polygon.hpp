@@ -113,7 +113,7 @@ class Polygon : public Object
         /// @brief              Not equal to operator
         ///
         /// @param              [in] aPolygon A polygon
-        /// @return             True if polygons not are equal
+        /// @return             True if polygons are not equal
 
         bool                    operator !=                                 (   const   Polygon&                    aPolygon                                    ) const ;
 

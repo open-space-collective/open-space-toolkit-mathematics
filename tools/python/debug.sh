@@ -28,7 +28,8 @@ if [[ ! -z $1 ]] && [[ $1 == "--link" ]]; then
     --volume="$(pwd)/../../../library-core/lib:/opt/library-core:ro" \
     --volume="$(pwd)/../../../library-mathematics/lib:/opt/library-mathematics:ro" \
     --volume="$(pwd)/../../lib:/opt/lib:ro" \
-    --volume="$(pwd)/../../share/python/notebooks:/home/jovyan/notebooks" \
+    --volume="$(pwd)/../../bindings/python/docs:/home/jovyan/docs" \
+    --volume="$(pwd)/../../tutorials/python/notebooks:/home/jovyan/notebooks" \
     --volume="$(pwd)/helpers:/home/jovyan/notebooks/helpers:ro" \
     --volume="$(pwd)/../../share/data:/app/share/data" \
     --workdir="/home/jovyan/notebooks" \
@@ -54,7 +55,8 @@ else
     --env="LD_LIBRARY_PATH=/usr/local/lib:/opt/conda/lib/python3.6/site-packages:/home/jovyan/lib" \
     --env="PYTHONPATH=/opt/conda/lib/python3.6/site-packages:/home/jovyan/lib" \
     --volume="$(pwd)/../../lib:/opt/lib:ro" \
-    --volume="$(pwd)/../../share/python/notebooks:/home/jovyan/notebooks" \
+    --volume="$(pwd)/../../bindings/python/docs:/home/jovyan/docs" \
+    --volume="$(pwd)/../../tutorials/python/notebooks:/home/jovyan/notebooks" \
     --volume="$(pwd)/helpers:/home/jovyan/notebooks/helpers:ro" \
     --volume="$(pwd)/../../share/data:/app/share/data" \
     --workdir="/home/jovyan/notebooks" \

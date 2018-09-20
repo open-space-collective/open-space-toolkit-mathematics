@@ -47,12 +47,17 @@ namespace objects
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+gte::Vector3<double>            CuboidGteVectorFromPoint                    (   const   Point&                      aPoint                                      )
+{
+    return { aPoint.x(), aPoint.y(), aPoint.z() } ;
+}
+
 gte::Vector3<double>            CuboidGteVectorFromVector3d                 (   const   Vector3d&                   aVector                                     )
 {
     return { aVector.x(), aVector.y(), aVector.z() } ;
 }
 
-Vector3d                        CuboidVector3dFromGteVector                 (   const   gte::Vector3<double>&       aVector                                     )
+Point                           CuboidPointFromGteVector                    (   const   gte::Vector3<double>&       aVector                                     )
 {
     return { aVector[0], aVector[1], aVector[2] } ;
 }
@@ -231,11 +236,11 @@ bool                            Cuboid::intersects                          (   
 
     // Line
 
-    const gte::Line3<double> line = { CuboidGteVectorFromVector3d(aLine.getOrigin()), CuboidGteVectorFromVector3d(aLine.getDirection()) } ;
+    const gte::Line3<double> line = { CuboidGteVectorFromPoint(aLine.getOrigin()), CuboidGteVectorFromVector3d(aLine.getDirection()) } ;
 
     // Cuboid
 
-    const gte::Vector3<double> center = CuboidGteVectorFromVector3d(center_) ;
+    const gte::Vector3<double> center = CuboidGteVectorFromPoint(center_) ;
     const std::array<gte::Vector3<double>, 3> axis = { CuboidGteVectorFromVector3d(axes_[0]), CuboidGteVectorFromVector3d(axes_[1]), CuboidGteVectorFromVector3d(axes_[2]) } ;
     const gte::Vector3<double> extent = { extent_[0], extent_[1], extent_[2] } ;
 
@@ -266,7 +271,7 @@ bool                            Cuboid::intersects                          (   
 
     // First cuboid
 
-    const gte::Vector3<double> firstCenter = CuboidGteVectorFromVector3d(center_) ;
+    const gte::Vector3<double> firstCenter = CuboidGteVectorFromPoint(center_) ;
     const std::array<gte::Vector3<double>, 3> firstAxis = { CuboidGteVectorFromVector3d(axes_[0]), CuboidGteVectorFromVector3d(axes_[1]), CuboidGteVectorFromVector3d(axes_[2]) } ;
     const gte::Vector3<double> firstExtent = { extent_[0], extent_[1], extent_[2] } ;
 
@@ -274,7 +279,7 @@ bool                            Cuboid::intersects                          (   
 
     // Second cuboid
 
-    const gte::Vector3<double> secondCenter = CuboidGteVectorFromVector3d(aCuboid.center_) ;
+    const gte::Vector3<double> secondCenter = CuboidGteVectorFromPoint(aCuboid.center_) ;
     const std::array<gte::Vector3<double>, 3> secondAxis = { CuboidGteVectorFromVector3d(aCuboid.axes_[0]), CuboidGteVectorFromVector3d(aCuboid.axes_[1]), CuboidGteVectorFromVector3d(aCuboid.axes_[2]) } ;
     const gte::Vector3<double> secondExtent = { aCuboid.extent_[0], aCuboid.extent_[1], aCuboid.extent_[2] } ;
 

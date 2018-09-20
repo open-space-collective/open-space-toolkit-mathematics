@@ -85,7 +85,7 @@ class LineString : public Object
         /// @brief              Not equal to operator
         ///
         /// @param              [in] aLineString A line string
-        /// @return             True if line strings not are equal
+        /// @return             True if line strings are not equal
 
         bool                    operator !=                                 (   const   LineString&                 aLineString                                 ) const ;
 
@@ -121,6 +121,13 @@ class LineString : public Object
 
         bool                    isNear                                      (   const   LineString&                 aLineString,
                                                                                 const   Real&                       aTolerance                                  ) const ;
+
+        /// @brief              Access point at index
+        ///
+        /// @brief              [in] anIndex A point index
+        /// @return             Reference to point at index
+
+        const Point&            accessPointAt                               (   const   Index&                      anIndex                                     ) const ;
 
         /// @brief              Get point count
         ///

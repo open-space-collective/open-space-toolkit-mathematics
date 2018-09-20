@@ -9,8 +9,8 @@
 
 #include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
-#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
+#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
@@ -776,6 +776,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Contains_PointSet)
     {
 
         EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).contains(PointSet({ { +5.0, +2.0, +3.0 }, { -3.0, +2.0, +3.0 }, { +1.0, +7.0, +3.0 }, { +1.0, -3.0, +3.0 }, { +1.0, +2.0, +9.0 }, { +1.0, +2.0, -3.0 } }))) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).contains(PointSet({ { +5.0, +2.0, +3.0 }, { -3.0, +2.0, +3.0 }, { +1.0, +7.0, +3.0 }, { +1.0, -3.0, +3.0 }, { +1.0, +2.0, +9.0 }, { 0.0, 0.0, 0.0 } }))) ;
 
     }
 

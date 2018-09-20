@@ -21,16 +21,17 @@ if [[ ! -z $1 ]] && [[ $1 == "--link" ]]; then
     --name="${container_name}-notebook" \
     -it \
     --rm \
-    --publish="8887:8888" \
+    --publish="${python_port}:8888" \
     --user="" \
     --env="JUPYTER_ENABLE_LAB=yes" \
     --env="LD_LIBRARY_PATH=/usr/local/lib:/opt/conda/lib/python3.6/site-packages:/home/jovyan/lib" \
     --env="PYTHONPATH=/opt/conda/lib/python3.6/site-packages:/home/jovyan/lib" \
-    --volume="$(pwd)/../../../library-core/lib:/opt/library-core:ro" \
-    --volume="$(pwd)/../../lib:/opt/lib:ro" \
-    --volume="$(pwd)/../../share/python/notebooks:/home/jovyan/notebooks" \
-    --volume="$(pwd)/../../share/data:/app/share/data" \
-    --workdir="/home/jovyan/notebooks" \
+    --volume="${library_core_directory}/lib:/opt/library-core:ro" \
+    --volume="${project_directory}/lib:/opt/lib:ro" \
+    --volume="${project_directory}/bindings/python/docs:/home/jovyan/docs" \
+    --volume="${project_directory}/tutorials/python/notebooks:/home/jovyan/tutorials" \
+    --volume="${project_directory}/share/data:/app/share/data" \
+    --workdir="/home/jovyan" \
     "${repository_name}/${project_name}-python" \
     bash -c "mkdir -p /opt/conda/lib/python3.6/site-packages/Library/Core \
     && ln -s /opt/library-core/liblibrary-core.so.0 /opt/conda/lib/python3.6/site-packages/Library/Core/liblibrary-core.so.0 \
@@ -48,16 +49,17 @@ else
     --name="${container_name}-notebook" \
     -it \
     --rm \
-    --publish="8887:8888" \
+    --publish="${python_port}:8888" \
     --user="" \
     --env="JUPYTER_ENABLE_LAB=yes" \
     --env="LD_LIBRARY_PATH=/usr/local/lib:/opt/conda/lib/python3.6/site-packages:/home/jovyan/lib" \
     --env="PYTHONPATH=/opt/conda/lib/python3.6/site-packages:/home/jovyan/lib" \
-    --volume="$(pwd)/../../../library-core/lib:/opt/library-core:ro" \
-    --volume="$(pwd)/../../lib:/opt/lib:ro" \
-    --volume="$(pwd)/../../share/python/notebooks:/home/jovyan/notebooks" \
-    --volume="$(pwd)/../../share/data:/app/share/data" \
-    --workdir="/home/jovyan/notebooks" \
+    --volume="${library_core_directory}/lib:/opt/library-core:ro" \
+    --volume="${project_directory}/lib:/opt/lib:ro" \
+    --volume="${project_directory}/bindings/python/docs:/home/jovyan/docs" \
+    --volume="${project_directory}/tutorials/python/notebooks:/home/jovyan/tutorials" \
+    --volume="${project_directory}/share/data:/app/share/data" \
+    --workdir="/home/jovyan" \
     "${repository_name}/${project_name}-python" \
     bash -c "mkdir -p /opt/conda/lib/python3.6/site-packages/Library/Mathematics \
     && ln -s /opt/lib/liblibrary-mathematics.so.0 /opt/conda/lib/python3.6/site-packages/Library/Mathematics/liblibrary-mathematics.so.0 \

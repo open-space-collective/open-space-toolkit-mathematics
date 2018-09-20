@@ -10,6 +10,7 @@
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -88,10 +89,10 @@ bool                            Ray::intersects                             (   
     
 // }
 
-// bool                            Ray::intersects                          (   const   Sphere&                     aSphere                                     ) const
-// {
-//     return aSphere.intersects(*this) ;
-// }
+bool                            Ray::intersects                          (   const   Sphere&                     aSphere                                     ) const
+{
+    return aSphere.intersects(*this) ;
+}
 
 bool                            Ray::intersects                             (   const   Ellipsoid&                  anEllipsoid                                 ) const
 {
@@ -144,6 +145,12 @@ Vector3d                        Ray::getDirection                           ( ) 
     
     return direction_ ;
 
+}
+
+Intersection                    Ray::intersectionWith                       (   const   Sphere&                     aSphere,
+                                                                                const   bool                        onlyInSight                                 ) const
+{
+    return aSphere.intersectionWith(*this, onlyInSight) ;
 }
 
 Intersection                    Ray::intersectionWith                       (   const   Ellipsoid&                  anEllipsoid,

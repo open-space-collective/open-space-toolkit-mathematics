@@ -82,7 +82,7 @@ class Plane : public Object
         /// @endcode
         ///
         /// @param              [in] aPlane A plane
-        /// @return             True if planes not are equal
+        /// @return             True if planes are not equal
 
         bool                    operator !=                                 (   const   Plane&                      aPlane                                      ) const ;
 

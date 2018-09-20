@@ -93,7 +93,7 @@ class Ray : public Object
         /// @endcode
         ///
         /// @param              [in] aRay A ray
-        /// @return             True if rays not are equal
+        /// @return             True if rays are not equal
 
         bool                    operator !=                                 (   const   Ray&                        aRay                                        ) const ;
 
@@ -120,6 +120,19 @@ class Ray : public Object
         
         bool                    intersects                                  (   const   Point&                      aPoint                                      ) const ;
 
+        /// @brief              Check if ray intersects sphere
+        ///
+        /// @code
+        ///                     Ray ray = ... ;
+        ///                     Sphere sphere = ... ;
+        ///                     ray.intersects(sphere) ;
+        /// @endcode
+        ///
+        /// @param              [in] anSphere A sphere
+        /// @return             True if ray intersects sphere
+        
+        bool                    intersects                                  (   const   Sphere&                     aSphere                                     ) const ;
+        
         /// @brief              Check if ray intersects ellipsoid
         ///
         /// @code
@@ -165,6 +178,15 @@ class Ray : public Object
         /// @return             Ray direction
 
         Vector3d                getDirection                                ( ) const ;
+
+        /// @brief              Compute intersection of ray with sphere
+        ///
+        /// @param              [in] aSphere A sphere
+        /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
+        /// @return             Intersection of ray with sphere
+
+        Intersection            intersectionWith                            (   const   Sphere&                     aSphere,
+                                                                                const   bool                        onlyInSight                                 =   false ) const ;
 
         /// @brief              Compute intersection of ray with ellipsoid
         ///

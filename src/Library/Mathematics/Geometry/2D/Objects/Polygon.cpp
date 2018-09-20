@@ -387,7 +387,7 @@ Polygon::Impl::BoostPolygon     Polygon::Impl::BoostPolygonFromPoints       (   
 
     for (const auto& point : aPointArray)
     {
-        boost::geometry::append(polygon, Polygon::Impl::BoostPoint(point(0), point(1))) ;
+        boost::geometry::append(polygon, Polygon::Impl::BoostPoint(point.x(), point.y())) ;
     }
 
     boost::geometry::correct(polygon) ;

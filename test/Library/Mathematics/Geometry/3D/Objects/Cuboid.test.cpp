@@ -1211,6 +1211,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Cube)
 {
 
     using library::math::obj::Vector3d ;
+    using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Cuboid ;
     
     {
@@ -1219,7 +1220,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Cube)
 
         EXPECT_TRUE(cube.isDefined()) ;
 
-        EXPECT_EQ(Vector3d(0.0, 0.0, 0.0), cube.getCenter()) ;
+        EXPECT_EQ(Point(0.0, 0.0, 0.0), cube.getCenter()) ;
 
     }
 

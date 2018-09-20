@@ -103,7 +103,7 @@ class Cuboid : public Object
         /// @endcode
         ///
         /// @param              [in] aCuboid An cuboid
-        /// @return             True if cuboids not are equal
+        /// @return             True if cuboids are not equal
 
         bool                    operator !=                                 (   const   Cuboid&                     aCuboid                                     ) const ;
 

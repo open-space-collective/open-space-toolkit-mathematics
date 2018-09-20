@@ -31,16 +31,10 @@ namespace objects
                                 Point::Point                                (   const   Real&                       aFirstCoordinate,
                                                                                 const   Real&                       aSecondCoordinate                           )
                                 :   Object(),
-                                    Vector2d(aFirstCoordinate, aSecondCoordinate)
+                                    x_(aFirstCoordinate),
+                                    y_(aSecondCoordinate)
 {
     
-}
-
-                                Point::Point                                (   const   Vector2d&                   aVector                                     )
-                                :   Object(),
-                                    Vector2d(aVector)
-{
-
 }
 
 Point*                          Point::clone                                ( ) const
@@ -56,7 +50,7 @@ bool                            Point::operator ==                          (   
         return false ;
     }
 
-    return this->Vector2d::operator == (aPoint) ;
+    return (x_ == aPoint.x_) && (y_ == aPoint.y_) ;
 
 }
 
@@ -77,9 +71,9 @@ Point                           Point::operator +                           (   
     {
         throw library::core::error::runtime::Undefined("Vector") ;
     }
-    
-    return Point(this->Vector2d::operator + (aVector)) ;
 
+    return { x_ + aVector.x(), y_ + aVector.y() } ;
+    
 }
 
 Point                           Point::operator -                           (   const   Vector2d&                   aVector                                     ) const
@@ -95,7 +89,7 @@ Point                           Point::operator -                           (   
         throw library::core::error::runtime::Undefined("Vector") ;
     }
     
-    return Point(this->Vector2d::operator - (aVector)) ;
+    return { x_ - aVector.x(), y_ - aVector.y() } ;
 
 }
         
@@ -112,13 +106,13 @@ Vector2d                        Point::operator -                           (   
         throw library::core::error::runtime::Undefined("Point") ;
     }
 
-    return this->Vector2d::operator - (aPoint) ;
+    return { x_ - aPoint.x_, y_ - aPoint.y_ } ;
 
 }
 
 bool                            Point::isDefined                            ( ) const
 {
-    return Vector2d::isDefined() ;
+    return x_.isDefined() && y_.isDefined() ;
 }
 
 bool                            Point::isNear                               (   const   Point&                      aPoint,
@@ -131,6 +125,42 @@ bool                            Point::isNear                               (   
     }
 
     return this->distanceTo(aPoint) <= aTolerance ;
+
+}
+
+const Real&                     Point::x                                    ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+    
+    return x_ ;
+
+}
+
+const Real&                     Point::y                                    ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+    
+    return y_ ;
+
+}
+
+Vector2d                        Point::asVector                             ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+    
+    return { x_, y_ } ;
 
 }
 
@@ -164,10 +194,10 @@ String                          Point::toString                             (   
     {
 
         case Object::Format::Standard:
-            return String::Format("[{}, {}]", Real(this->x()).toString(aPrecision), Real(this->y()).toString(aPrecision)) ;
+            return String::Format("[{}, {}]", x_.toString(aPrecision), y_.toString(aPrecision)) ;
 
         case Object::Format::WKT:
-            return String::Format("POINT({} {})", Real(this->x()).toString(aPrecision), Real(this->y()).toString(aPrecision)) ;
+            return String::Format("POINT({} {})", x_.toString(aPrecision), y_.toString(aPrecision)) ;
 
         default:
             throw library::core::error::runtime::Wrong("Format") ;
@@ -185,7 +215,8 @@ void                            Point::print                                (   
 
     displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Point") : void () ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Coordinates:"         << (this->isDefined() ? this->toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "X:"                   << (x_.isDefined() ? x_.toString() : "Undefined") ;
+    library::core::utils::Print::Line(anOutputStream) << "Y:"                   << (y_.isDefined() ? y_.toString() : "Undefined") ;
 
     displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
@@ -210,12 +241,17 @@ void                            Point::applyTransformation                  (   
 
 Point                           Point::Undefined                            ( )
 {
-    return { Vector2d::Undefined() } ;
+    return { Real::Undefined(), Real::Undefined() } ;
 }
 
 Point                           Point::Origin                               ( )
 {
     return { 0.0, 0.0 } ;
+}
+
+Point                           Point::Vector                               (   const   Vector2d&                   aVector                                     )
+{
+    return { aVector.x(), aVector.y() } ;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

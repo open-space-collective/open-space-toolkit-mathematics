@@ -283,6 +283,15 @@ bool                            Object::intersects                          (   
         //     return objectPtr->intersects(*otherObjectPtr) ;
         // }
 
+        // Sphere
+
+        if (const Sphere* otherObjectPtr = dynamic_cast<const Sphere*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+        // Ellipsoid
+
         if (const Ellipsoid* otherObjectPtr = dynamic_cast<const Ellipsoid*>(&anObject))
         {
             return objectPtr->intersects(*otherObjectPtr) ;
@@ -299,6 +308,15 @@ bool                            Object::intersects                          (   
         // {
         //     return objectPtr->intersects(*otherObjectPtr) ;
         // }
+
+        // Sphere
+
+        if (const Sphere* otherObjectPtr = dynamic_cast<const Sphere*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+        // Ellipsoid
 
         if (const Ellipsoid* otherObjectPtr = dynamic_cast<const Ellipsoid*>(&anObject))
         {
@@ -317,7 +335,51 @@ bool                            Object::intersects                          (   
         //     return objectPtr->intersects(*otherObjectPtr) ;
         // }
 
+        // Sphere
+
+        if (const Sphere* otherObjectPtr = dynamic_cast<const Sphere*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+        // Ellipsoid
+
         if (const Ellipsoid* otherObjectPtr = dynamic_cast<const Ellipsoid*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+    }
+
+    // Sphere
+
+    if (const Sphere* objectPtr = dynamic_cast<const Sphere*>(this))
+    {
+
+        // Line
+
+        if (const Line* otherObjectPtr = dynamic_cast<const Line*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+        // Segment
+
+        if (const Segment* otherObjectPtr = dynamic_cast<const Segment*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+        // Ray
+
+        if (const Ray* otherObjectPtr = dynamic_cast<const Ray*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+        // Pyramid
+
+        if (const Pyramid* otherObjectPtr = dynamic_cast<const Pyramid*>(&anObject))
         {
             return objectPtr->intersects(*otherObjectPtr) ;
         }
@@ -329,9 +391,23 @@ bool                            Object::intersects                          (   
     if (const Ellipsoid* objectPtr = dynamic_cast<const Ellipsoid*>(this))
     {
 
+        // Line
+
+        if (const Line* otherObjectPtr = dynamic_cast<const Line*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
         // Segment
 
         if (const Segment* otherObjectPtr = dynamic_cast<const Segment*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+        // Ray
+
+        if (const Ray* otherObjectPtr = dynamic_cast<const Ray*>(&anObject))
         {
             return objectPtr->intersects(*otherObjectPtr) ;
         }

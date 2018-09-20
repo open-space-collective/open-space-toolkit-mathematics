@@ -37,6 +37,17 @@ using library::math::geom::d3::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+class PointSet ;
+class Line ;
+class Ray ;
+class Segment ;
+class Plane ;
+class Polygon ;
+class Ellipsoid ;
+class Pyramid ;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /// @brief                      Sphere
 ///
 ///                             A sphere is a perfectly round geometrical object in three-dimensional space that is the surface of a completely round ball.
@@ -84,7 +95,7 @@ class Sphere : public Object
         /// @endcode
         ///
         /// @param              [in] aSphere A sphere
-        /// @return             True if spheres not are equal
+        /// @return             True if spheres are not equal
 
         bool                    operator !=                                 (   const   Sphere&                     aSphere                                     ) const ;
 
@@ -108,6 +119,136 @@ class Sphere : public Object
 
         bool                    isUnitary                                   ( ) const ;
 
+        /// @brief              Check if sphere intersects point
+        ///
+        /// @code
+        ///                     Sphere sphere = ... ;
+        ///                     Point point = ... ;
+        ///                     sphere.intersects(point) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             True if sphere intersects point
+        
+        bool                    intersects                                  (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Check if sphere intersects point set
+        ///
+        /// @code
+        ///                     Sphere sphere = ... ;
+        ///                     PointSet pointSet = ... ;
+        ///                     sphere.intersects(pointSet) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             True if sphere intersects point set
+        
+        bool                    intersects                                  (   const   PointSet&                   aPointSet                                   ) const ;
+
+        /// @brief              Check if sphere intersects line
+        ///
+        /// @code
+        ///                     Sphere sphere = ... ;
+        ///                     Line line = ... ;
+        ///                     sphere.intersects(line) ;
+        /// @endcode
+        ///
+        /// @param              [in] aLine A line
+        /// @return             True if sphere intersects line
+        
+        bool                    intersects                                  (   const   Line&                       aLine                                       ) const ;
+
+        /// @brief              Check if sphere intersects ray
+        ///
+        /// @code
+        ///                     Sphere sphere = ... ;
+        ///                     Ray ray = ... ;
+        ///                     sphere.intersects(ray) ;
+        /// @endcode
+        ///
+        /// @param              [in] aRay A ray
+        /// @return             True if sphere intersects ray
+        
+        bool                    intersects                                  (   const   Ray&                        aRay                                        ) const ;
+
+        /// @brief              Check if sphere intersects segment
+        ///
+        /// @code
+        ///                     Sphere sphere = ... ;
+        ///                     Segment segment = ... ;
+        ///                     sphere.intersects(segment) ;
+        /// @endcode
+        ///
+        /// @param              [in] aSegment A segment
+        /// @return             True if sphere intersects segment
+        
+        bool                    intersects                                  (   const   Segment&                    aSegment                                    ) const ;
+
+        /// @brief              Check if sphere intersects plane
+        ///
+        /// @code
+        ///                     Sphere sphere = ... ;
+        ///                     Plane plane = ... ;
+        ///                     sphere.intersects(plane) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPlane A plane
+        /// @return             True if sphere intersects plane
+        
+        bool                    intersects                                  (   const   Plane&                      aPlane                                      ) const ;
+
+        /// @brief              Check if sphere intersects ellipsoid
+        ///
+        /// @code
+        ///                     Sphere sphere = ... ;
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     sphere.intersects(ellipsoid) ;
+        /// @endcode
+        ///
+        /// @param              [in] anEllipsoid An ellipsoid
+        /// @return             True if sphere intersects ellipsoid
+        
+        bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
+
+        /// @brief              Check if sphere intersects pyramid
+        ///
+        /// @code
+        ///                     Sphere sphere = ... ;
+        ///                     Pyramid pyramid = ... ;
+        ///                     sphere.intersects(pyramid) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPyramid A pyramid
+        /// @return             True if sphere intersects pyramid
+        
+        bool                    intersects                                  (   const   Pyramid&                    aPyramid                                    ) const ;
+
+        /// @brief              Check if sphere contains point
+        ///
+        /// @code
+        ///                     Sphere sphere = ... ;
+        ///                     Point point = ... ;
+        ///                     sphere.contains(point) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             True if sphere contains point
+
+        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Check if sphere contains point set
+        ///
+        /// @code
+        ///                     Sphere sphere = ... ;
+        ///                     PointSet pointSet = ... ;
+        ///                     sphere.contains(pointSet) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             True if sphere contains point set
+
+        bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
+
         /// @brief              Get sphere center
         ///
         /// @code
@@ -127,6 +268,38 @@ class Sphere : public Object
         /// @return             Sphere radius
 
         Real                    getRadius                                   ( ) const ;
+
+        /// @brief              Compute intersection of sphere with line
+        ///
+        /// @param              [in] aLine A line
+        /// @return             Intersection of sphere with line
+
+        Intersection            intersectionWith                            (   const   Line&                       aLine                                       ) const ;
+
+        /// @brief              Compute intersection of sphere with ray
+        ///
+        /// @param              [in] aRay A ray
+        /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
+        /// @return             Intersection of sphere with ray
+
+        Intersection            intersectionWith                            (   const   Ray&                        aRay,
+                                                                                const   bool                        onlyInSight                                 =   false ) const ;
+
+        /// @brief              Compute intersection of sphere with segment
+        ///
+        /// @param              [in] aSegment A segment
+        /// @return             Intersection of sphere with segment
+
+        Intersection            intersectionWith                            (   const   Segment&                    aSegment                                    ) const ;
+
+        /// @brief              Compute intersection of sphere with pyramid
+        ///
+        /// @param              [in] aPyramid A pyramid
+        /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
+        /// @return             Intersection of sphere with pyramid
+
+        Intersection            intersectionWith                            (   const   Pyramid&                    aPyramid,
+                                                                                const   bool                        onlyInSight                                 =   false ) const ;
 
         /// @brief              Print sphere
         ///

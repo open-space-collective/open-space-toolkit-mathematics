@@ -117,7 +117,7 @@ class Intersection
         /// @brief              Not equal to operator
         ///
         /// @param              [in] anIntersection An intersection
-        /// @return             True if intersections not are equal
+        /// @return             True if intersections are not equal
 
         bool                    operator !=                                 (   const   Intersection&               anIntersection                              ) const ;
 

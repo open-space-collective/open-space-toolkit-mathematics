@@ -37,14 +37,14 @@ if [[ ! -z $1 ]] && [[ $1 == "--link" ]]; then
     options=""
     command=""
 
-    # Library :: Core
+    # Library ▸ Core
 
     library_core_directory="${project_directory}/../library-core"
 
     if [[ ! -d ${library_core_directory} ]]
     then
 
-        echo "Library :: Core directory [${library_core_directory}s] cannot be found."
+        echo "Library ▸ Core directory [${library_core_directory}s] cannot be found."
 
         exit 1
 

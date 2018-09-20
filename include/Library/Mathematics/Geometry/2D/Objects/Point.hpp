@@ -41,7 +41,7 @@ using library::math::geom::d2::Object ;
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Point_(geometry)
 
-class Point : public Object, public Vector2d
+class Point : public Object
 {
 
     public:
@@ -49,7 +49,7 @@ class Point : public Object, public Vector2d
         /// @brief              Constructor
         ///
         /// @code
-        ///                     Point point(0.0, 0.0) ;
+        ///                     Point point = { 0.0, 0.0 } ;
         /// @endcode
         ///
         /// @param              [in] aFirstCoordinate A first coordinate
@@ -57,16 +57,6 @@ class Point : public Object, public Vector2d
 
                                 Point                                       (   const   Real&                       aFirstCoordinate,
                                                                                 const   Real&                       aSecondCoordinate                           ) ;
-
-        /// @brief              Constructor
-        ///
-        /// @code
-        ///                     Point point({ 0.0, 0.0 }) ;
-        /// @endcode
-        ///
-        /// @param              [in] aVector A position vector
-
-                                Point                                       (   const   Vector2d&                   aVector                                     ) ;
 
         /// @brief              Clone point
         ///
@@ -84,7 +74,7 @@ class Point : public Object, public Vector2d
         /// @brief              Not equal to operator
         ///
         /// @param              [in] aPoint A point
-        /// @return             True if points not are equal
+        /// @return             True if points are not equal
 
         bool                    operator !=                                 (   const   Point&                      aPoint                                      ) const ;
 
@@ -144,6 +134,32 @@ class Point : public Object, public Vector2d
         bool                    isNear                                      (   const   Point&                      aPoint,
                                                                                 const   Real&                       aTolerance                                  ) const ;
 
+        /// @brief              Get reference to first coordinate
+        ///
+        /// @code
+        ///                     Point(1.0, 2.0).x() ; // &1.0
+        /// @endcode
+        ///
+        /// @return             Reference to first coordinate
+
+        const Real&             x                                           ( ) const ;
+
+        /// @brief              Get reference to second coordinate
+        ///
+        /// @code
+        ///                     Point(1.0, 2.0).y() ; // &2.0
+        /// @endcode
+        ///
+        /// @return             Reference to second coordinate
+
+        const Real&             y                                           ( ) const ;
+
+        /// @brief              Get vector representation of point
+        ///
+        /// @return             Vector representation of point
+
+        Vector2d                asVector                                    ( ) const ;
+
         /// @brief              Get distance to another point
         ///
         /// @param              [in] aPoint A point
@@ -154,6 +170,7 @@ class Point : public Object, public Vector2d
         /// @brief              Get string representation
         ///
         /// @param              [in] aFormat A format
+        /// @param              [in] (optional) aPrecision A precision
         /// @return             String representation
 
         virtual String          toString                                    (   const   Object::Format&             aFormat                                     =   Object::Format::Standard,
@@ -192,6 +209,21 @@ class Point : public Object, public Vector2d
         /// @return             Point at origin
 
         static Point            Origin                                      ( ) ;
+
+        /// @brief              Constructs a point from a vector
+        ///
+        /// @code
+        ///                     Point point = Point::Vector({ 0.0, 0.0 }) ; // [0.0, 0.0]
+        /// @endcode
+        ///
+        /// @return             Point
+
+        static Point            Vector                                      (   const   Vector2d&                   aVector                                     ) ;
+
+    private:
+
+        Real                    x_ ;
+        Real                    y_ ;
 
 } ;
 
