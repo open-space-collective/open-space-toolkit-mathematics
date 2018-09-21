@@ -392,25 +392,45 @@ Intersection                    Pyramid::intersectionWith                   (   
 
                 const PointSet& pointSet = intersection.accessComposite().as<PointSet>() ;
 
-                bool secondIntersectionPointAdded = false ;
+                const Point closestPointToApex = pointSet.getPointClosestTo(apex_) ;
+
+                firstIntersectionPoints.add(closestPointToApex) ;
 
                 for (const auto& point : pointSet)
                 {
 
-                    if (!secondIntersectionPointAdded)
+                    if (point != closestPointToApex)
                     {
-                        
+
                         secondIntersectionPoints.add(point) ;
 
-                        secondIntersectionPointAdded = true ;
+                        break ;
 
-                    }
-                    else
-                    {
-                        firstIntersectionPoints.add(point) ;
                     }
 
                 }
+
+                // firstIntersectionPoints.add(pointSet.getPointClosestTo(apex_)) ;
+
+                // bool secondIntersectionPointAdded = false ;
+
+                // for (const auto& point : pointSet)
+                // {
+
+                //     if (!secondIntersectionPointAdded)
+                //     {
+                        
+                //         secondIntersectionPoints.add(point) ;
+
+                //         secondIntersectionPointAdded = true ;
+
+                //     }
+                //     else
+                //     {
+                //         firstIntersectionPoints.add(point) ;
+                //     }
+
+                // }
 
             }
 

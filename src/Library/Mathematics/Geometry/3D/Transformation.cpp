@@ -274,6 +274,7 @@ void                            Transformation::print                       (   
     displayDecorators ? library::core::utils::Print::Header(anOutputStream, "3D :: Transformation") : void () ;
 
     library::core::utils::Print::Line(anOutputStream) << "Type"                 << Transformation::StringFromType(type_) ;
+    library::core::utils::Print::Line(anOutputStream) << "Matrix"               << matrix_ ;
 
     displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
