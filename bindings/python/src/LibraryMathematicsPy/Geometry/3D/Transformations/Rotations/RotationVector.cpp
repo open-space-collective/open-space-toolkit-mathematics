@@ -25,7 +25,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
     using library::math::geom::Angle ;
     using library::math::geom::d3::trf::rot::RotationVector ;
 
-    scope in_RotationVector = class_<RotationVector>("RotationVector", init<Vector3d, Angle>())
+    scope in_RotationVector = class_<RotationVector>("RotationVector", init<const Vector3d&, const Angle&>())
 
         .def(self == self)
         .def(self != self)
@@ -41,6 +41,9 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
 
         .def("Undefined", &RotationVector::Undefined)
         .def("Unit", &RotationVector::Unit).staticmethod("Unit")
+        .def("X", &RotationVector::X).staticmethod("X")
+        .def("Y", &RotationVector::Y).staticmethod("Y")
+        .def("Z", &RotationVector::Z).staticmethod("Z")
         .def("Quaternion", &RotationVector::Quaternion).staticmethod("Quaternion")
         .def("RotationMatrix", &RotationVector::RotationMatrix).staticmethod("RotationMatrix")
 

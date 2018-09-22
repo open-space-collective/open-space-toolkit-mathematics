@@ -282,6 +282,84 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, X)
+{
+
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
+    
+    {
+
+        EXPECT_NO_THROW(RotationVector::X(Angle::Degrees(45.0))) ;
+
+        const RotationVector rotationVector = RotationVector::X(Angle::Degrees(45.0)) ;
+
+        EXPECT_EQ(Vector3d::X(), rotationVector.getAxis()) ;
+        EXPECT_EQ(Angle::Degrees(45.0), rotationVector.getAngle()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(RotationVector::X(Angle::Undefined())) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Y)
+{
+
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
+    
+    {
+
+        EXPECT_NO_THROW(RotationVector::Y(Angle::Degrees(45.0))) ;
+
+        const RotationVector rotationVector = RotationVector::Y(Angle::Degrees(45.0)) ;
+
+        EXPECT_EQ(Vector3d::Y(), rotationVector.getAxis()) ;
+        EXPECT_EQ(Angle::Degrees(45.0), rotationVector.getAngle()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(RotationVector::Y(Angle::Undefined())) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Z)
+{
+
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
+    
+    {
+
+        EXPECT_NO_THROW(RotationVector::Z(Angle::Degrees(45.0))) ;
+
+        const RotationVector rotationVector = RotationVector::Z(Angle::Degrees(45.0)) ;
+
+        EXPECT_EQ(Vector3d::Z(), rotationVector.getAxis()) ;
+        EXPECT_EQ(Angle::Degrees(45.0), rotationVector.getAngle()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(RotationVector::Z(Angle::Undefined())) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Quaternion)
 {
 
