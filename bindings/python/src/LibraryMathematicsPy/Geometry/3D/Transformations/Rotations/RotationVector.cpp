@@ -18,6 +18,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
 
     using namespace boost::python ;
 
+    using library::core::types::Integer ;
     using library::core::types::Real ;
     using library::core::types::String ;
     
@@ -37,7 +38,8 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
         
         .def("getAxis", &RotationVector::getAxis)
         .def("getAngle", &RotationVector::getAngle)
-        .def("toString", &RotationVector::toString)
+        .def("toString", +[] (const RotationVector& aRotationVector) -> String { return aRotationVector.toString() ; })
+        .def("toString", +[] (const RotationVector& aRotationVector, const Integer& aPrecision) -> String { return aRotationVector.toString(aPrecision) ; })
 
         .def("Undefined", &RotationVector::Undefined)
         .def("Unit", &RotationVector::Unit).staticmethod("Unit")

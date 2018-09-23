@@ -223,23 +223,32 @@ Array<Ray>                      Pyramid::getRaysOfLateralFaceAt             (   
     using library::math::geom::d3::trf::rot::Quaternion ;
     using library::math::geom::d3::trf::rot::RotationVector ;
 
-    if (aRayCount < 2)
-    {
-        throw library::core::error::runtime::Wrong("Ray count") ;
-    }
+    // if (aRayCount < 2)
+    // {
+    //     throw library::core::error::RuntimeError("Ray count [{}] lower than 2.", aRayCount) ;
+    // }
 
     const Segment baseEdge = base_.getEdgeAt(aLateralFaceIndex) ;
 
     const Vector3d firstRayDirection = (baseEdge.getFirstPoint() - apex_).normalized() ;
     const Vector3d secondRayDirection = (baseEdge.getSecondPoint() - apex_).normalized() ;
 
+    if (firstRayDirection == secondRayDirection)
+    {
+        return { { apex_, firstRayDirection } } ;
+    }
+
     const Vector3d rotationAxis = firstRayDirection.cross(secondRayDirection).normalized() ;
 
     const Angle angleBetweenRays = Angle::Between(firstRayDirection, secondRayDirection) ;
 
+    const Array<Real> angles_rad = (aRayCount > 1) ? Interval<Real>::Closed(0.0, angleBetweenRays.inRadians()).generateArrayWithSize(aRayCount) : Array<Real> { 0.0 } ;
+
     Array<Ray> rays = Array<Ray>::Empty() ;
 
-    for (const auto& angle_rad : Interval<Real>::Closed(0.0, angleBetweenRays.inRadians()).generateArrayWithSize(aRayCount))
+    rays.reserve(angles_rad.getSize()) ;
+
+    for (const auto& angle_rad : angles_rad)
     {
 
         const Ray ray = { apex_, Quaternion::RotationVector(RotationVector(rotationAxis, Angle::Radians(angle_rad))).conjugate() * firstRayDirection } ;
@@ -257,7 +266,7 @@ Array<Ray>                      Pyramid::getRaysOfLateralFaces              (   
 
     if (aRayCount < this->getLateralFaceCount())
     {
-        throw library::core::error::runtime::Wrong("Ray count") ;
+        throw library::core::error::RuntimeError("Ray count [{}] lower than lateral face count [{}].", aRayCount, this->getLateralFaceCount()) ;
     }
 
     Size lateralRayCount = aRayCount / this->getLateralFaceCount() ;

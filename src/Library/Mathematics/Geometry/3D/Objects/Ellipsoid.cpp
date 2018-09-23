@@ -10,6 +10,7 @@
 #include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Cone.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
@@ -446,6 +447,11 @@ bool                            Ellipsoid::intersects                       (   
 bool                            Ellipsoid::intersects                       (   const   Pyramid&                    aPyramid                                    ) const
 {
     return aPyramid.intersects(*this) ;
+}
+
+bool                            Ellipsoid::intersects                       (   const   Cone&                       aCone                                       ) const
+{
+    return aCone.intersects(*this) ;
 }
 
 bool                            Ellipsoid::contains                         (   const   Point&                      aPoint                                      ) const
@@ -894,6 +900,12 @@ Intersection                    Ellipsoid::intersectionWith                 (   
                                                                                 const   bool                        onlyInSight                                 ) const
 {
     return aPyramid.intersectionWith(*this, onlyInSight) ;
+}
+
+Intersection                    Ellipsoid::intersectionWith                 (   const   Cone&                       aCone,
+                                                                                const   bool                        onlyInSight                                 ) const
+{
+    return aCone.intersectionWith(*this, onlyInSight) ;
 }
 
 void                            Ellipsoid::print                            (           std::ostream&               anOutputStream,

@@ -49,6 +49,7 @@ class Plane ;
 class Polygon ;
 class Sphere ;
 class Pyramid ;
+class Cone ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -234,6 +235,19 @@ class Ellipsoid : public Object
         
         bool                    intersects                                  (   const   Pyramid&                    aPyramid                                    ) const ;
 
+        /// @brief              Check if ellipsoid intersects cone
+        ///
+        /// @code
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     Cone cone = ... ;
+        ///                     ellipsoid.intersects(cone) ;
+        /// @endcode
+        ///
+        /// @param              [in] aCone A cone
+        /// @return             True if ellipsoid intersects cone
+        
+        bool                    intersects                                  (   const   Cone&                       aCone                                       ) const ;
+
         /// @brief              Check if ellipsoid contains point
         ///
         /// @code
@@ -381,6 +395,15 @@ class Ellipsoid : public Object
         /// @return             Intersection of ellipsoid with pyramid
 
         Intersection            intersectionWith                            (   const   Pyramid&                    aPyramid,
+                                                                                const   bool                        onlyInSight                                 =   false ) const ;
+
+        /// @brief              Compute intersection of ellipsoid with cone
+        ///
+        /// @param              [in] aCone A cone
+        /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
+        /// @return             Intersection of ellipsoid with cone
+
+        Intersection            intersectionWith                            (   const   Cone&                       aCone,
                                                                                 const   bool                        onlyInSight                                 =   false ) const ;
 
         /// @brief              Print ellipsoid

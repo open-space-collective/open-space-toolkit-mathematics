@@ -9,6 +9,7 @@
 
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Composite.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Cone.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
@@ -59,6 +60,7 @@ bool                            Object::operator ==                         (   
     using library::math::geom::d3::objects::Sphere ;
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Pyramid ;
+    using library::math::geom::d3::objects::Cone ;
     using library::math::geom::d3::objects::Composite ;
 
     if ((!this->isDefined()) || (!anObject.isDefined()))
@@ -215,6 +217,18 @@ bool                            Object::operator ==                         (   
 
     }
 
+    // Cone
+
+    if (const Cone* objectPtr = dynamic_cast<const Cone*>(this))
+    {
+
+        if (const Cone* otherObjectPtr = dynamic_cast<const Cone*>(&anObject))
+        {
+            return (*objectPtr) == (*otherObjectPtr) ;
+        }
+
+    }
+
     // Composite
 
     if (const Composite* objectPtr = dynamic_cast<const Composite*>(this))
@@ -266,6 +280,7 @@ bool                            Object::intersects                          (   
     using library::math::geom::d3::objects::Sphere ;
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Pyramid ;
+    using library::math::geom::d3::objects::Cone ;
     using library::math::geom::d3::objects::Composite ;
 
     if (!anObject.isDefined())
@@ -384,6 +399,13 @@ bool                            Object::intersects                          (   
             return objectPtr->intersects(*otherObjectPtr) ;
         }
 
+        // Cone
+
+        if (const Cone* otherObjectPtr = dynamic_cast<const Cone*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
     }
 
     // Ellipsoid
@@ -426,12 +448,47 @@ bool                            Object::intersects                          (   
             return objectPtr->intersects(*otherObjectPtr) ;
         }
 
+        // Cone
+
+        if (const Cone* otherObjectPtr = dynamic_cast<const Cone*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
     }
 
     // Pyramid
 
     if (const Pyramid* objectPtr = dynamic_cast<const Pyramid*>(this))
     {
+
+        // Sphere
+
+        if (const Sphere* otherObjectPtr = dynamic_cast<const Sphere*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+        // Ellipsoid
+
+        if (const Ellipsoid* otherObjectPtr = dynamic_cast<const Ellipsoid*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+    }
+
+    // Cone
+
+    if (const Cone* objectPtr = dynamic_cast<const Cone*>(this))
+    {
+
+        // Sphere
+
+        if (const Sphere* otherObjectPtr = dynamic_cast<const Sphere*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
 
         // Ellipsoid
 
@@ -466,6 +523,7 @@ bool                            Object::contains                            (   
     using library::math::geom::d3::objects::Sphere ;
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Pyramid ;
+    using library::math::geom::d3::objects::Cone ;
     using library::math::geom::d3::objects::Composite ;
 
     if (!anObject.isDefined())
@@ -536,6 +594,7 @@ Intersection                    Object::intersectionWith                    (   
     using library::math::geom::d3::objects::Sphere ;
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Pyramid ;
+    using library::math::geom::d3::objects::Cone ;
     using library::math::geom::d3::objects::Composite ;
 
     if (!anObject.isDefined())
@@ -557,6 +616,34 @@ Intersection                    Object::intersectionWith                    (   
 
     }
 
+    // Sphere
+
+    if (const Sphere* objectPtr = dynamic_cast<const Sphere*>(this))
+    {
+
+        // Ray
+
+        if (const Ray* otherObjectPtr = dynamic_cast<const Ray*>(&anObject))
+        {
+            return objectPtr->intersectionWith(*otherObjectPtr) ;
+        }
+
+        // Pyramid
+
+        if (const Pyramid* otherObjectPtr = dynamic_cast<const Pyramid*>(&anObject))
+        {
+            return objectPtr->intersectionWith(*otherObjectPtr) ;
+        }
+
+        // Cone
+
+        if (const Cone* otherObjectPtr = dynamic_cast<const Cone*>(&anObject))
+        {
+            return objectPtr->intersectionWith(*otherObjectPtr) ;
+        }
+
+    }
+
     // Ellipsoid
 
     if (const Ellipsoid* objectPtr = dynamic_cast<const Ellipsoid*>(this))
@@ -569,12 +656,54 @@ Intersection                    Object::intersectionWith                    (   
             return objectPtr->intersectionWith(*otherObjectPtr) ;
         }
 
+        // Pyramid
+
+        if (const Pyramid* otherObjectPtr = dynamic_cast<const Pyramid*>(&anObject))
+        {
+            return objectPtr->intersectionWith(*otherObjectPtr) ;
+        }
+
+        // Cone
+
+        if (const Cone* otherObjectPtr = dynamic_cast<const Cone*>(&anObject))
+        {
+            return objectPtr->intersectionWith(*otherObjectPtr) ;
+        }
+
     }
 
     // Pyramid
 
     if (const Pyramid* objectPtr = dynamic_cast<const Pyramid*>(this))
     {
+
+        // Sphere
+
+        if (const Sphere* otherObjectPtr = dynamic_cast<const Sphere*>(&anObject))
+        {
+            return objectPtr->intersectionWith(*otherObjectPtr) ;
+        }
+
+        // Ellipsoid
+
+        if (const Ellipsoid* otherObjectPtr = dynamic_cast<const Ellipsoid*>(&anObject))
+        {
+            return objectPtr->intersectionWith(*otherObjectPtr) ;
+        }
+
+    }
+
+    // Cone
+
+    if (const Cone* objectPtr = dynamic_cast<const Cone*>(this))
+    {
+
+        // Sphere
+
+        if (const Sphere* otherObjectPtr = dynamic_cast<const Sphere*>(&anObject))
+        {
+            return objectPtr->intersectionWith(*otherObjectPtr) ;
+        }
 
         // Ellipsoid
 

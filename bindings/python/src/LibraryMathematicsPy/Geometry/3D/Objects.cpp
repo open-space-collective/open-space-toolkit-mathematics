@@ -8,8 +8,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Composite.cpp>
+#include <LibraryMathematicsPy/Geometry/3D/Objects/Cone.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Pyramid.cpp>
-// #include <LibraryMathematicsPy/Geometry/3D/Objects/Cone.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Ellipsoid.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Sphere.cpp>
 #include <LibraryMathematicsPy/Geometry/3D/Objects/Cuboid.cpp>
@@ -46,6 +46,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects    ( )
     LibraryMathematicsPy_Geometry_3D_Objects_Sphere() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Ellipsoid() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Pyramid() ;
+    LibraryMathematicsPy_Geometry_3D_Objects_Cone() ;
     LibraryMathematicsPy_Geometry_3D_Objects_Composite() ;
 
 }

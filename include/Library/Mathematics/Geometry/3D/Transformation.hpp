@@ -46,6 +46,7 @@ using library::math::geom::Angle ;
 using library::math::geom::d3::Object ;
 using library::math::geom::d3::objects::Point ;
 using library::math::geom::d3::trf::rot::RotationVector ;
+using library::math::geom::d3::trf::rot::RotationMatrix ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -127,6 +128,8 @@ class Transformation
         static Transformation   Translation                                 (   const   Vector3d&                   aTranslationVector                          ) ;
         
         static Transformation   Rotation                                    (   const   RotationVector&             aRotationVector                             ) ;
+
+        static Transformation   Rotation                                    (   const   RotationMatrix&             aRotationMatrix                             ) ;
 
         static Transformation   RotationAround                              (   const   Point&                      aPoint,
                                                                                 const   RotationVector&             aRotationVector                             ) ;
