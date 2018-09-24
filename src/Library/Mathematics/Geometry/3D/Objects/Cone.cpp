@@ -61,7 +61,8 @@ bool                            Cone::operator ==                           (   
         return false ;
     }
 
-    return (apex_ == aCone.apex_) && (axis_ == aCone.axis_) && (angle_ == aCone.angle_) ;
+    return (apex_ == aCone.apex_)
+        && (((axis_ == aCone.axis_) && (angle_ == aCone.angle_)) || ((axis_ == -aCone.axis_) && (angle_ == Angle::Degrees(180.0) - aCone.angle_))) ;
 
 }
 
@@ -183,7 +184,7 @@ Array<Ray>                      Cone::getRaysOfLateralSurface               (   
 
     const Ray referenceRay = { apex_, Quaternion::RotationVector(RotationVector(referenceDirection, angle_)).toConjugate() * axis_ } ;
 
-    const Array<Real> angles_rad = (aRayCount > 1) ? Interval<Real>::Closed(0.0, 360.0).generateArrayWithSize(aRayCount) : Array<Real> { 0.0 } ;
+    const Array<Real> angles_rad = (aRayCount > 1) ? Interval<Real>::HalfOpenRight(0.0, 360.0).generateArrayWithSize(aRayCount) : Array<Real> { 0.0 } ;
 
     Array<Ray> rays = Array<Ray>::Empty() ;
 

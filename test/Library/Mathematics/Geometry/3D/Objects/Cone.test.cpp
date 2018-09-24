@@ -20,362 +20,475 @@
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Constructor)
 {
 
-    // using library::math::obj::Vector3d ;
-    // using library::math::geom::d3::objects::Point ;
-    // using library::math::geom::d3::objects::Polygon ;
-    // using library::math::geom::d3::objects::Cone ;
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Cone ;
 
-    // {
+    {
 
-    //     const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-    //     const Point apex = { 0.0, 0.0, 1.0 } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d axis = Vector3d::Z() ;
+        const Angle angle = Angle::Degrees(45.0) ;
 
-    //     EXPECT_NO_THROW(Cone(base, apex)) ;
+        EXPECT_NO_THROW(Cone(apex, axis, angle)) ;
 
-    // }
-
-    FAIL() ;
+    }
 
 }
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Clone)
-// {
+TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Clone)
+{
 
-//     using library::math::obj::Vector3d ;
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::Polygon ;
-//     using library::math::geom::d3::objects::Cone ;
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Cone ;
 
-//     {
+    {
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d axis = Vector3d::Z() ;
+        const Angle angle = Angle::Degrees(45.0) ;
 
-//         EXPECT_NO_THROW(Cone(base, apex).clone()) ;
+        EXPECT_NO_THROW(Cone(apex, axis, angle).clone()) ;
 
-//     }
+    }
 
-// }
+}
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cone, EqualToOperator)
-// {
+TEST (Library_Mathematics_Geometry_3D_Objects_Cone, EqualToOperator)
+{
 
-//     using library::math::obj::Vector3d ;
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::Polygon ;
-//     using library::math::geom::d3::objects::Cone ;
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Cone ;
     
-//     {
+    {
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d axis = Vector3d::Z() ;
+        const Angle angle = Angle::Degrees(45.0) ;
 
-//         EXPECT_TRUE(Cone(base, apex) == Cone(base, apex)) ;
+        EXPECT_TRUE(Cone(apex, axis, angle) == Cone(apex, axis, angle)) ;
 
-//     }
+    }
 
-//     {
+    {
 
-//         // [TBI] Implement similarities
+        const Point firstApex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d firstAxis = { +1.0, 0.0, 0.0 } ;
+        const Angle firstAngle = Angle::Degrees(135.0) ;
 
-//     }
+        const Cone firstCone = { firstApex, firstAxis, firstAngle } ;
 
-//     {
+        const Point secondApex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d secondXis = { -1.0, 0.0, 0.0 } ;
+        const Angle secondAngle = Angle::Degrees(45.0) ;
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        const Cone secondCone = { secondApex, secondXis, secondAngle } ;
 
-//         EXPECT_FALSE(Cone(base, apex) == Cone::Undefined()) ;
-//         EXPECT_FALSE(Cone::Undefined() == Cone(base, apex)) ;
-//         EXPECT_FALSE(Cone::Undefined() == Cone::Undefined()) ;
+        EXPECT_TRUE(firstCone == secondCone) ;
 
-//     }
+    }
 
-// }
+    {
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cone, NotEqualToOperator)
-// {
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d axis = Vector3d::Z() ;
+        const Angle angle = Angle::Degrees(45.0) ;
 
-//     using library::math::obj::Vector3d ;
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::Polygon ;
-//     using library::math::geom::d3::objects::Cone ;
+        EXPECT_FALSE(Cone(apex, axis, angle) == Cone::Undefined()) ;
+        EXPECT_FALSE(Cone::Undefined() == Cone(apex, axis, angle)) ;
+        EXPECT_FALSE(Cone::Undefined() == Cone::Undefined()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Cone, NotEqualToOperator)
+{
+
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Cone ;
     
-//     {
+    {
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d axis = Vector3d::Z() ;
+        const Angle angle = Angle::Degrees(45.0) ;
 
-//         EXPECT_FALSE(Cone(base, apex) != Cone(base, apex)) ;
+        EXPECT_FALSE(Cone(apex, axis, angle) != Cone(apex, axis, angle)) ;
 
-//     }
+    }
 
-//     {
+    {
 
-//         // [TBI] Implement similarities
+        const Point firstApex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d firstAxis = { +1.0, 0.0, 0.0 } ;
+        const Angle firstAngle = Angle::Degrees(135.0) ;
 
-//     }
+        const Cone firstCone = { firstApex, firstAxis, firstAngle } ;
 
-//     {
+        const Point secondApex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d secondXis = { -1.0, 0.0, 0.0 } ;
+        const Angle secondAngle = Angle::Degrees(45.0) ;
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        const Cone secondCone = { secondApex, secondXis, secondAngle } ;
 
-//         EXPECT_TRUE(Cone(base, apex) != Cone::Undefined()) ;
-//         EXPECT_TRUE(Cone::Undefined() != Cone(base, apex)) ;
-//         EXPECT_TRUE(Cone::Undefined() != Cone::Undefined()) ;
+        EXPECT_FALSE(firstCone != secondCone) ;
 
-//     }
+    }
 
-// }
+    {
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cone, StreamOperator)
-// {
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d axis = Vector3d::Z() ;
+        const Angle angle = Angle::Degrees(45.0) ;
 
-//     using library::math::obj::Vector3d ;
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::Polygon ;
-//     using library::math::geom::d3::objects::Cone ;
+        EXPECT_TRUE(Cone(apex, axis, angle) != Cone::Undefined()) ;
+        EXPECT_TRUE(Cone::Undefined() != Cone(apex, axis, angle)) ;
+        EXPECT_TRUE(Cone::Undefined() != Cone::Undefined()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Cone, StreamOperator)
+{
+
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Cone ;
     
-//     {
+    {
 
-//         testing::internal::CaptureStdout() ;
+        testing::internal::CaptureStdout() ;
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d axis = Vector3d::Z() ;
+        const Angle angle = Angle::Degrees(45.0) ;
 
-//         EXPECT_NO_THROW(std::cout << Cone(base, apex) << std::endl) ;
+        EXPECT_NO_THROW(std::cout << Cone(apex, axis, angle) << std::endl) ;
 
-//         EXPECT_FALSE(testing::internal::GetCapturedStdout().empty()) ;
+        EXPECT_FALSE(testing::internal::GetCapturedStdout().empty()) ;
 
-//     }
+    }
 
-// }
+}
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IsDefined)
-// {
+TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IsDefined)
+{
 
-//     using library::math::obj::Vector3d ;
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::Polygon ;
-//     using library::math::geom::d3::objects::Cone ;
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Cone ;
     
-//     {
+    {
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d axis = Vector3d::Z() ;
+        const Angle angle = Angle::Degrees(45.0) ;
 
-//         EXPECT_TRUE(Cone(base, apex).isDefined()) ;
+        EXPECT_TRUE(Cone(apex, axis, angle).isDefined()) ;
 
-//     }
+    }
 
-//     {
+    {
 
-//         EXPECT_FALSE(Cone::Undefined().isDefined()) ;
+        EXPECT_FALSE(Cone::Undefined().isDefined()) ;
 
-//     }
+    }
 
-// }
+}
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Intersects_Ellipsoid)
-// {
+TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Intersects_Ellipsoid)
+{
 
-//     using library::math::obj::Vector3d ;
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::Polygon ;
-//     using library::math::geom::d3::objects::Ellipsoid ;
-//     using library::math::geom::d3::objects::Cone ;
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+    using library::math::geom::d3::objects::Cone ;
     
-//     {
+    {
 
-//         const Polygon base = { { { { -0.1, -0.1 }, { +0.1, -0.1 }, { +0.1, +0.1 }, { -0.1, +0.1 } } }, { 0.0, 0.0, 1.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Point apex = { -10.0, 0.0, 10.0 } ;
+        const Vector3d axis = Vector3d::X() ;
+        const Angle angle = Angle::Degrees(10.0) ;
 
-//         const Cone cone = { base, apex } ;
+        const Cone cone = { apex, axis, angle } ;
 
-//         const Ellipsoid ellipsoid = { { 0.0, 0.0, 10.0 }, 5.0, 5.0, 5.0 } ;
+        const Ellipsoid ellipsoid = { { 0.0, 0.0, 10.0 }, 5.0, 5.0, 5.0 } ;
 
-//         EXPECT_TRUE(cone.intersects(ellipsoid)) ;
+        EXPECT_TRUE(cone.intersects(ellipsoid)) ;
 
-//     }
+    }
 
-//     {
+    {
 
-//         EXPECT_ANY_THROW(Cone::Undefined().intersects(Ellipsoid::Undefined())) ;
+        EXPECT_ANY_THROW(Cone::Undefined().intersects(Ellipsoid::Undefined())) ;
 
-//     }
+    }
 
-// }
+}
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetBase)
-// {
+TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetApex)
+{
 
-//     using library::math::obj::Vector3d ;
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::Polygon ;
-//     using library::math::geom::d3::objects::Cone ;
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Cone ;
     
-//     {
+    {
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d axis = Vector3d::Z() ;
+        const Angle angle = Angle::Degrees(45.0) ;
 
-//         EXPECT_EQ(base, Cone(base, apex).getBase()) ;
+        EXPECT_EQ(apex, Cone(apex, axis, angle).getApex()) ;
 
-//     }
+    }
 
-//     {
+    {
 
-//         EXPECT_ANY_THROW(Cone::Undefined().getBase()) ;
+        EXPECT_ANY_THROW(Cone::Undefined().getApex()) ;
 
-//     }
+    }
 
-// }
+}
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetApex)
-// {
+TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetAxis)
+{
 
-//     using library::math::obj::Vector3d ;
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::Polygon ;
-//     using library::math::geom::d3::objects::Cone ;
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Cone ;
     
-//     {
+    {
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d axis = Vector3d::Z() ;
+        const Angle angle = Angle::Degrees(45.0) ;
 
-//         EXPECT_EQ(apex, Cone(base, apex).getApex()) ;
+        EXPECT_EQ(axis, Cone(apex, axis, angle).getAxis()) ;
 
-//     }
+    }
 
-//     {
+    {
 
-//         EXPECT_ANY_THROW(Cone::Undefined().getApex()) ;
+        EXPECT_ANY_THROW(Cone::Undefined().getAxis()) ;
 
-//     }
+    }
 
-// }
+}
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IntersectionWith_Ellipsoid)
-// {
+TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetAngle)
+{
 
-//     using library::core::types::Real ;
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Cone ;
     
-//     using library::math::obj::Vector3d ;
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::LineString ;
-//     using library::math::geom::d3::objects::Polygon ;
-//     using library::math::geom::d3::objects::Ellipsoid ;
-//     using library::math::geom::d3::objects::Cone ;
-//     using library::math::geom::d3::Intersection ;
+    {
+
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d axis = Vector3d::Z() ;
+        const Angle angle = Angle::Degrees(45.0) ;
+
+        EXPECT_EQ(angle, Cone(apex, axis, angle).getAngle()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Cone::Undefined().getAngle()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetRaysOfLateralSurface)
+{
+
+    using library::core::types::Real ;
+    using library::core::ctnr::Array ;
     
-//     {
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Ray ;
+    using library::math::geom::d3::objects::Cone ;
+    
+    {
 
-//         const Polygon base = { { { { -0.1, -0.1 }, { +0.1, -0.1 }, { +0.1, +0.1 }, { -0.1, +0.1 } } }, { 0.0, 0.0, 1.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d axis = Vector3d::Z() ;
+        const Angle angle = Angle::Degrees(45.0) ;
 
-//         const Cone cone = { base, apex } ;
+        const Array<Ray> rays = Cone(apex, axis, angle).getRaysOfLateralSurface(4) ;
 
-//         const Ellipsoid ellipsoid = { { 0.0, 0.0, 10.0 }, 5.0, 5.0, 5.0 } ;
+        const Array<Ray> referenceRays =
+        {
+            { apex, { 0.707106781186548, 0.0, 0.707106781186547 } },
+            { apex, { 1.11022302462516e-16, 0.707106781186548, 0.707106781186547 } },
+            { apex, { -0.707106781186548, 8.65956056235493e-17, 0.707106781186547 } },
+            { apex, { -1.11022302462516e-16, -0.707106781186548, 0.707106781186547 } }
+        } ;
 
-//         const Intersection intersection = cone.intersectionWith(ellipsoid, true, 8) ;
+        EXPECT_TRUE
+        (
+            rays.isNear
+            (
+                referenceRays,
+                [] (const Ray& aFirstRay, const Ray& aSecondRay) -> bool
+                {
+                    
+                    return aFirstRay.getOrigin().isNear(aSecondRay.getOrigin(), Real::Epsilon())
+                        && aFirstRay.getDirection().isNear(aSecondRay.getDirection(), Real::Epsilon()) ;
 
-//         EXPECT_TRUE(intersection.isDefined()) ;
-//         EXPECT_FALSE(intersection.isEmpty()) ;
-//         EXPECT_TRUE(intersection.accessComposite().is<LineString>()) ;
+                }
+            )
+        ) ;
 
-//         const LineString intersectionLineString = intersection.accessComposite().as<LineString>() ;
+    }
 
-//         EXPECT_EQ(8, intersectionLineString.getPointCount()) ;
+    {
 
-//         const LineString referenceLineString = 
-//         {
-//             {
-//                 { -0.505129425743498, -0.505129425743498, 5.05129425743498 },
-//                 { -0.505129425743498,  0.505129425743499, 5.05129425743498 },
-//                 { -0.505129425743498,  0.505129425743498, 5.05129425743498 },
-//                 {  0.505129425743499,  0.505129425743498, 5.05129425743498 },
-//                 {  0.505129425743498,  0.505129425743498, 5.05129425743498 },
-//                 {  0.505129425743498, -0.505129425743499, 5.05129425743498 },
-//                 {  0.505129425743498, -0.505129425743498, 5.05129425743498 },
-//                 { -0.505129425743499, -0.505129425743498, 5.05129425743498 }
-//             }
-//         } ;
+        EXPECT_ANY_THROW(Cone::Undefined().getRaysOfLateralSurface()) ;
 
-//         EXPECT_TRUE(intersectionLineString.isNear(referenceLineString, 1e-10)) ;
+    }
 
-//     }
+}
 
-//     {
+TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IntersectionWith_Ellipsoid)
+{
 
-//         EXPECT_ANY_THROW(Cone::Undefined().intersectionWith(Ellipsoid::Undefined())) ;
+    using library::core::types::Real ;
+    
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::LineString ;
+    using library::math::geom::d3::objects::Ellipsoid ;
+    using library::math::geom::d3::objects::Cone ;
+    using library::math::geom::d3::Intersection ;
+    
+    {
 
-//     }
+        const Point apex = { 10.0, 0.0, 10.0 } ;
+        const Vector3d axis = { -1.0, 0.0, 0.0 } ;
+        const Angle angle = Angle::Degrees(10.0) ;
 
-// }
+        const Cone cone = { apex, axis, angle } ;
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cone, ApplyTransformation)
-// {
+        const Ellipsoid ellipsoid = { { 0.0, 0.0, 10.0 }, 5.0, 5.0, 5.0 } ;
 
-//     using library::core::types::Real ;
+        const Intersection intersection = cone.intersectionWith(ellipsoid, true, 4) ;
 
-//     using library::math::obj::Vector3d ;
-//     using library::math::geom::Angle ;
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::Polygon ;
-//     using library::math::geom::d3::objects::Cone ;
-//     using library::math::geom::d3::Transformation ;
-//     using library::math::geom::d3::trf::rot::RotationVector ;
+        EXPECT_TRUE(intersection.isDefined()) ;
+        EXPECT_FALSE(intersection.isEmpty()) ;
+        EXPECT_TRUE(intersection.accessComposite().is<LineString>()) ;
 
-//     // Translation
+        const LineString intersectionLineString = intersection.accessComposite().as<LineString>() ;
 
-//     {
+        EXPECT_EQ(4, intersectionLineString.getPointCount()) ;
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        const LineString referenceLineString = 
+        {
+            {
+                { 4.91908097261278, 0.895903111323379, 10.0 },
+                { 4.91908097261278, 0.0, 9.10409688867662 },
+                { 4.91908097261278, -0.895903111323379, 10.0 },
+                { 4.91908097261278, 0.0, 10.8959031113234 },
+            }
+        } ;
 
-//         Cone cone = { base, apex } ;
+        EXPECT_TRUE(intersectionLineString.isNear(referenceLineString, 1e-10)) ;
 
-//         cone.applyTransformation(Transformation::Translation({ 4.0, 5.0, 6.0 })) ;
+    }
 
-//         EXPECT_EQ(Cone({ { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 4.0, 5.0, 6.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } }, { 4.0, 5.0, 7.0 } }), cone) ;
+    {
 
-//     }
+        EXPECT_ANY_THROW(Cone::Undefined().intersectionWith(Ellipsoid::Undefined())) ;
 
-//     // Rotation
+    }
 
-//     {
+}
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 2.0, 0.0 }, { 0.0, 0.0, 1.0 }, { 1.0, 0.0, 0.0 } } ;
-//         const Point apex = { 0.0, 1.0, 0.0 } ;
+TEST (Library_Mathematics_Geometry_3D_Objects_Cone, ApplyTransformation)
+{
 
-//         Cone cone = { base, apex } ;
+    using library::core::types::Real ;
 
-//         cone.applyTransformation(Transformation::Rotation(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(90.0)))) ;
+    using library::math::obj::Vector3d ;
+    using library::math::geom::Angle ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Cone ;
+    using library::math::geom::d3::Transformation ;
+    using library::math::geom::d3::trf::rot::RotationVector ;
 
-//         const Polygon referenceBase = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 2.0 }, { 0.0, -1.0, 0.0 }, { 1.0, 0.0, 0.0 } } ;
-//         const Point referenceApex = { 0.0, 0.0, 1.0 } ;
+    // Translation
 
-//         const Cone referenceCone = { referenceBase, referenceApex } ;
+    {
 
-//         EXPECT_TRUE(cone.getBase().isNear(referenceCone.getBase(), Real::Epsilon())) << referenceCone.getBase() << cone.getBase() ;
-//         EXPECT_TRUE(cone.getApex().isNear(referenceCone.getApex(), Real::Epsilon())) << referenceCone.getApex().toString() << cone.getApex().toString() ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d axis = Vector3d::Z() ;
+        const Angle angle = Angle::Degrees(45.0) ;
+
+        Cone cone = { apex, axis, angle } ;
+
+        cone.applyTransformation(Transformation::Translation({ 4.0, 5.0, 6.0 })) ;
+
+        EXPECT_EQ(Cone({ 4.0, 5.0, 6.0 }, axis, angle), cone) ;
+
+    }
+
+    // Rotation
+
+    {
+
+        const Point apex = { 0.0, 1.0, 0.0 } ;
+        const Vector3d axis = { 0.0, 1.0, 0.0 } ;
+        const Angle angle = Angle::Degrees(45.0) ;
+
+        Cone cone = { apex, axis, angle } ;
+
+        cone.applyTransformation(Transformation::Rotation(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(90.0)))) ;
+
+        const Point referenceApex = { 0.0, 0.0, 1.0 } ;
+        const Vector3d referenceAxis = { 0.0, 0.0, 1.0 } ;
+        const Angle referenceAngle = Angle::Degrees(45.0) ;
+
+        const Cone referenceCone = { referenceApex, referenceAxis, referenceAngle } ;
+
+        EXPECT_TRUE(cone.getApex().isNear(referenceCone.getApex(), Real::Epsilon())) << referenceCone.getApex().toString() << cone.getApex().toString() ;
+        EXPECT_TRUE(cone.getAxis().isNear(referenceCone.getAxis(), Real::Epsilon())) << referenceCone.getAxis().toString() << cone.getAxis().toString() ;
+        EXPECT_TRUE(cone.getAngle().inDegrees().isNear(referenceCone.getAngle().inDegrees(), Real::Epsilon())) << referenceCone.getAngle().toString() << cone.getAngle().toString() ;
         
-//     }
+    }
 
-//     {
+    {
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+        const Vector3d axis = Vector3d::Z() ;
+        const Angle angle = Angle::Degrees(45.0) ;
 
-//         EXPECT_ANY_THROW(Cone::Undefined().applyTransformation(Transformation::Undefined())) ;
-//         EXPECT_ANY_THROW(Cone::Undefined().applyTransformation(Transformation::Identity())) ;
-//         EXPECT_ANY_THROW(Cone(base, apex).applyTransformation(Transformation::Undefined())) ;
+        EXPECT_ANY_THROW(Cone::Undefined().applyTransformation(Transformation::Undefined())) ;
+        EXPECT_ANY_THROW(Cone::Undefined().applyTransformation(Transformation::Identity())) ;
+        EXPECT_ANY_THROW(Cone(apex, axis, angle).applyTransformation(Transformation::Undefined())) ;
 
-//     }
+    }
 
-// }
+}
 
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Undefined)
 {
