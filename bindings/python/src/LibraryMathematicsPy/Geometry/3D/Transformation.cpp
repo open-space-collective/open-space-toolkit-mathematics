@@ -20,6 +20,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformation 
     using library::math::obj::Matrix4d ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::Transformation ;
+    using library::math::geom::d3::trf::rot::RotationMatrix ;
 
     scope in_Transformation = class_<Transformation>("Transformation", init<const Matrix4d&>())
 
@@ -40,7 +41,9 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformation 
         .def("Undefined", &Transformation::Undefined).staticmethod("Undefined")
         .def("Identity", &Transformation::Identity).staticmethod("Identity")
         .def("Translation", &Transformation::Translation).staticmethod("Translation")
-        .def("Rotation", &Transformation::Rotation).staticmethod("Rotation")
+        // .def("Rotation", &Transformation::Rotation).staticmethod("Rotation")
+        // .def("Rotation", +[] (const RotationVector& aRotationVector) -> Transformation { return Transformation::Rotation(aRotationVector) ; } )
+        .def("Rotation", +[] (const RotationMatrix& aRotationMatrix) -> Transformation { return Transformation::Rotation(aRotationMatrix) ; } )
         .def("RotationAround", &Transformation::RotationAround).staticmethod("RotationAround")
         
         .def("StringFromType", &Transformation::StringFromType).staticmethod("StringFromType")

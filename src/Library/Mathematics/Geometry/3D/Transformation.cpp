@@ -273,7 +273,11 @@ void                            Transformation::print                       (   
 
     displayDecorators ? library::core::utils::Print::Header(anOutputStream, "3D :: Transformation") : void () ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Type"                 << Transformation::StringFromType(type_) ;
+    library::core::utils::Print::Line(anOutputStream) << "Type:"                << Transformation::StringFromType(type_) ;
+    
+    library::core::utils::Print::Line(anOutputStream) << "Matrix:" ;
+
+    anOutputStream << matrix_ << std::endl ;
 
     displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
@@ -311,8 +315,6 @@ Transformation                  Transformation::Translation                 (   
 Transformation                  Transformation::Rotation                    (   const   RotationVector&             aRotationVector                             )
 {
 
-    using library::math::geom::d3::trf::rot::RotationMatrix ;
-
     if (!aRotationVector.isDefined())
     {
         throw library::core::error::runtime::Undefined("Rotation vector") ;
@@ -321,6 +323,22 @@ Transformation                  Transformation::Rotation                    (   
     Matrix4d transformationMatrix = Matrix4d::Identity() ;
 
     transformationMatrix.block<3, 3>(0, 0) = RotationMatrix::RotationVector(aRotationVector).getMatrix().transpose() ;
+    
+    return { Transformation::Type::Rotation, transformationMatrix, true } ;
+
+}
+
+Transformation                  Transformation::Rotation                    (   const   RotationMatrix&             aRotationMatrix                             )
+{
+
+    if (!aRotationMatrix.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+    }
+
+    Matrix4d transformationMatrix = Matrix4d::Identity() ;
+
+    transformationMatrix.block<3, 3>(0, 0) = aRotationMatrix.getMatrix().transpose() ;
     
     return { Transformation::Type::Rotation, transformationMatrix, true } ;
 

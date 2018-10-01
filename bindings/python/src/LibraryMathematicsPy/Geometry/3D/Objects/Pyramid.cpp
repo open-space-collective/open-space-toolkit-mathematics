@@ -43,9 +43,9 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Pyramid
         .def(self_ns::repr(self_ns::self))
         
         .def("isDefined", &Pyramid::isDefined)
-        .def("intersectsEllipsoid", +[] (const Pyramid& anPyramid, const Ellipsoid& anEllipsoid) -> bool { return anPyramid.intersects(anEllipsoid) ; })
-        .def("intersectsEllipsoid", +[] (const Pyramid& anPyramid, const Ellipsoid& anEllipsoid, const Size aDiscretizationLevel) -> bool { return anPyramid.intersects(anEllipsoid, aDiscretizationLevel) ; })
-        .def("containsEllipsoid", +[] (const Pyramid& anPyramid, const Ellipsoid& anEllipsoid) -> bool { return anPyramid.contains(anEllipsoid) ; })
+        .def("intersectsEllipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid) -> bool { return aPyramid.intersects(anEllipsoid) ; })
+        .def("intersectsEllipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid, const Size aDiscretizationLevel) -> bool { return aPyramid.intersects(anEllipsoid, aDiscretizationLevel) ; })
+        .def("containsEllipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid) -> bool { return aPyramid.contains(anEllipsoid) ; })
 
         .def("getBase", &Pyramid::getBase)
         .def("getApex", &Pyramid::getApex)
@@ -53,9 +53,9 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Pyramid
         .def("getLateralFaceAt", &Pyramid::getLateralFaceAt)
         .def("getRaysOfLateralFaceAt", &Pyramid::getRaysOfLateralFaceAt)
         .def("getRaysOfLateralFaces", &Pyramid::getRaysOfLateralFaces)
-        .def("intersectionWithEllipsoid", +[] (const Pyramid& anPyramid, const Ellipsoid& anEllipsoid) -> Intersection { return anPyramid.intersectionWith(anEllipsoid) ; })
-        .def("intersectionWithEllipsoid", +[] (const Pyramid& anPyramid, const Ellipsoid& anEllipsoid, const bool onlyInSight) -> Intersection { return anPyramid.intersectionWith(anEllipsoid, onlyInSight) ; })
-        .def("intersectionWithEllipsoid", +[] (const Pyramid& anPyramid, const Ellipsoid& anEllipsoid, const bool onlyInSight, const Size aDiscretizationLevel) -> Intersection { return anPyramid.intersectionWith(anEllipsoid, onlyInSight, aDiscretizationLevel) ; })
+        .def("intersectionWithEllipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid) -> Intersection { return aPyramid.intersectionWith(anEllipsoid) ; })
+        .def("intersectionWithEllipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid, const bool onlyInSight) -> Intersection { return aPyramid.intersectionWith(anEllipsoid, onlyInSight) ; })
+        .def("intersectionWithEllipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid, const bool onlyInSight, const Size aDiscretizationLevel) -> Intersection { return aPyramid.intersectionWith(anEllipsoid, onlyInSight, aDiscretizationLevel) ; })
         .def("applyTransformation", &Pyramid::applyTransformation)
         
         .def("Undefined", &Pyramid::Undefined).staticmethod("Undefined")

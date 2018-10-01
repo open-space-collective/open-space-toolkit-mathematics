@@ -126,12 +126,48 @@ String                          RotationVector::toString                    (   
 
 RotationVector                  RotationVector::Undefined                   ( )
 {
-    return RotationVector() ;
+    return {} ;
 }
 
 RotationVector                  RotationVector::Unit                        ( )
 {
-    return RotationVector({ 0.0, 0.0, 1.0 }, Angle::Zero()) ;
+    return { Vector3d::Z(), Angle::Zero() } ;
+}
+
+RotationVector                  RotationVector::X                           (   const   Angle&                      anAngle                                     )
+{
+
+    if (!anAngle.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Angle") ;
+    }
+
+    return { Vector3d::X(), anAngle } ;
+
+}
+
+RotationVector                  RotationVector::Y                           (   const   Angle&                      anAngle                                     )
+{
+
+    if (!anAngle.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Angle") ;
+    }
+
+    return { Vector3d::Y(), anAngle } ;
+
+}
+
+RotationVector                  RotationVector::Z                           (   const   Angle&                      anAngle                                     )
+{
+
+    if (!anAngle.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Angle") ;
+    }
+
+    return { Vector3d::Z(), anAngle } ;
+
 }
 
 RotationVector                  RotationVector::Quaternion                  (   const   rot::Quaternion&            aQuaternion                                 )

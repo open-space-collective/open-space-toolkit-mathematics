@@ -324,14 +324,43 @@ ctnr::Array<T>                  Interval<T>::generateArrayWithSize          (   
         throw library::core::error::runtime::Wrong("Array size") ;
     }
 
-    const T step = (this->accessUpperBound() - this->accessLowerBound()) / static_cast<T>(anArraySize - 1) ;
+    T step = T::Undefined() ;
+    T value = T::Undefined() ;
+
+    switch (type_)
+    {
+
+        case Interval<T>::Type::Closed:
+            step = (this->accessUpperBound() - this->accessLowerBound()) / static_cast<T>(anArraySize - 1) ;
+            value = this->accessLowerBound() ;
+            break ;
+
+        case Interval<T>::Type::Open:
+            step = (this->accessUpperBound() - this->accessLowerBound()) / static_cast<T>(anArraySize + 1) ;
+            value = this->accessLowerBound() + step ;
+            break ;
+
+        case Interval<T>::Type::HalfOpenLeft:
+            step = (this->accessUpperBound() - this->accessLowerBound()) / static_cast<T>(anArraySize) ;
+            value = this->accessLowerBound() + step ;
+            break ;
+
+        case Interval<T>::Type::HalfOpenRight:
+            step = (this->accessUpperBound() - this->accessLowerBound()) / static_cast<T>(anArraySize) ;
+            value = this->accessLowerBound() ;
+            break ;
+        
+        default:
+            throw library::core::error::runtime::Wrong("Type") ;
+            break ;
+
+    }
 
     ctnr::Array<T> array(anArraySize, T::Undefined()) ;
 
-    T value = T::Undefined() ;
     typename ctnr::Array<T>::Iterator arrayIt ;
 
-    for (arrayIt = array.begin(), value = this->accessLowerBound(); arrayIt != array.end(); ++arrayIt, value += step)
+    for (arrayIt = array.begin(); arrayIt != array.end(); ++arrayIt, value += step)
     {
         *arrayIt = value ;
     }

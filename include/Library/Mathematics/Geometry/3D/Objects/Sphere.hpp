@@ -45,6 +45,7 @@ class Plane ;
 class Polygon ;
 class Ellipsoid ;
 class Pyramid ;
+class Cone ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -223,6 +224,19 @@ class Sphere : public Object
         
         bool                    intersects                                  (   const   Pyramid&                    aPyramid                                    ) const ;
 
+        /// @brief              Check if sphere intersects cone
+        ///
+        /// @code
+        ///                     Sphere sphere = ... ;
+        ///                     Cone cone = ... ;
+        ///                     sphere.intersects(cone) ;
+        /// @endcode
+        ///
+        /// @param              [in] aCone A cone
+        /// @return             True if sphere intersects cone
+        
+        bool                    intersects                                  (   const   Cone&                       aCone                                       ) const ;
+
         /// @brief              Check if sphere contains point
         ///
         /// @code
@@ -299,6 +313,15 @@ class Sphere : public Object
         /// @return             Intersection of sphere with pyramid
 
         Intersection            intersectionWith                            (   const   Pyramid&                    aPyramid,
+                                                                                const   bool                        onlyInSight                                 =   false ) const ;
+
+        /// @brief              Compute intersection of sphere with cone
+        ///
+        /// @param              [in] aCone A cone
+        /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
+        /// @return             Intersection of sphere with cone
+
+        Intersection            intersectionWith                            (   const   Cone&                       aCone,
                                                                                 const   bool                        onlyInSight                                 =   false ) const ;
 
         /// @brief              Print sphere

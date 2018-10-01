@@ -288,7 +288,11 @@ void                            Transformation::print                       (   
 
     displayDecorators ? library::core::utils::Print::Header(anOutputStream, "2D :: Transformation") : void () ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Type"                 << Transformation::StringFromType(type_) ;
+    library::core::utils::Print::Line(anOutputStream) << "Type:"                << Transformation::StringFromType(type_) ;
+    
+    library::core::utils::Print::Line(anOutputStream) << "Matrix:" ;
+
+    anOutputStream << matrix_ << std::endl ;
 
     displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 

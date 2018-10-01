@@ -151,6 +151,39 @@ class RotationVector
 
         static RotationVector   Unit                                        ( ) ;
 
+        /// @brief              Constructs a rotation vector around X-axis
+        ///
+        /// @code
+        ///                     RotationVector rotationVector = RotationVector::X(Angle::Degrees(45.0)) ;
+        /// @endcode
+        ///
+        /// @param              [in] anAngle A rotation angle
+        /// @return             Rotation vector
+
+        static RotationVector   X                                           (   const   Angle&                      anAngle                                     ) ;
+
+        /// @brief              Constructs a rotation vector around Y-axis
+        ///
+        /// @code
+        ///                     RotationVector rotationVector = RotationVector::X(Angle::Degrees(45.0)) ;
+        /// @endcode
+        ///
+        /// @param              [in] anAngle A rotation angle
+        /// @return             Rotation vector
+
+        static RotationVector   Y                                           (   const   Angle&                      anAngle                                     ) ;
+
+        /// @brief              Constructs a rotation vector around Z-axis
+        ///
+        /// @code
+        ///                     RotationVector rotationVector = RotationVector::X(Angle::Degrees(45.0)) ;
+        /// @endcode
+        ///
+        /// @param              [in] anAngle A rotation angle
+        /// @return             Rotation vector
+
+        static RotationVector   Z                                           (   const   Angle&                      anAngle                                     ) ;
+
         /// @brief              Constructs a rotation vector from a quaternion
         ///
         /// @code
