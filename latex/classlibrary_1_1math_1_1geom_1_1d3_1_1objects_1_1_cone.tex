@@ -1,0 +1,382 @@
+\hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{}\section{library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Cone Class Reference}
+\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+
+
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone}.  
+
+
+
+
+{\ttfamily \#include $<$Cone.\+hpp$>$}
+
+Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Cone\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a06829024b976d32cccc97fa2ee774670}{Cone} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&an\+Apex, const Vector3d \&an\+Axis, const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&an\+Angle)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} $\ast$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a126e7d1918346a94032c6a925d24f045}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Clone cone. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a7535ef180acef7864bb3dfbb14952c7e}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} \&a\+Cone) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a046cbc1e10c11a61e02eb5b9af904eef}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} \&a\+Cone) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_aecfd56286894eb3f38789193a0768dc8}{is\+Defined} () const override
+\begin{DoxyCompactList}\small\item\em Check if cone is defined. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a2ea8fa813ee4cd54a626e3468dbd845d}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&a\+Sphere, const Size a\+Discretization\+Level=40) const
+\begin{DoxyCompactList}\small\item\em Check if cone intersects sphere. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a05d41bcaf9428143d55b0f9ef83ace8b}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&an\+Ellipsoid, const Size a\+Discretization\+Level=40) const
+\begin{DoxyCompactList}\small\item\em Check if cone intersects ellipsoid. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a891fae1fe31a2a6c118059755887694c}{get\+Apex} () const
+\begin{DoxyCompactList}\small\item\em Get cone apex. \end{DoxyCompactList}\item 
+Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a9072972e480ef73f77b2ae4a6a0d8b78}{get\+Axis} () const
+\begin{DoxyCompactList}\small\item\em Get cone axis. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a430aeb7c5f4855b01c929bbb9079596f}{get\+Angle} () const
+\begin{DoxyCompactList}\small\item\em Get cone angle. \end{DoxyCompactList}\item 
+Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} $>$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_ad1f23b6a553f9856ecdafd633580ca2a}{get\+Rays\+Of\+Lateral\+Surface} (const Size a\+Ray\+Count=0) const
+\begin{DoxyCompactList}\small\item\em Get rays of lateral surface. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_ab49a0077e48c73a22726ecededf5553a}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&a\+Sphere, const bool only\+In\+Sight=false, const Size a\+Discretization\+Level=40) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of cone with sphere. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a2231a2ee1cd5464f04f2126eaee0973f}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&an\+Ellipsoid, const bool only\+In\+Sight=false, const Size a\+Discretization\+Level=40) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of cone with ellipsoid. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a1da79fa433164204f677bf247ce35538}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print cone. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a838ecaabc29abd32666342a7582a4a3e}{apply\+Transformation} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to cone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_add91d1f26389385cca599be25cb18716}{Undefined} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined cone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone}. 
+
+A cone is a three-\/dimensional geometric shape that tapers smoothly from a flat circular base to a point called the apex.
+
+https\+://en.wikipedia.\+org/wiki/\+Cone 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a06829024b976d32cccc97fa2ee774670}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a06829024b976d32cccc97fa2ee774670}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!Cone@{Cone}}
+\index{Cone@{Cone}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{Cone()}{Cone()}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::\+Cone (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{an\+Apex,  }\item[{const Vector3d \&}]{an\+Axis,  }\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&}]{an\+Angle }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}
+Point apex = \{ 0.0, 0.0, 0.0 \} ;
+\hyperlink{namespacelibrary_1_1math_1_1obj_a977e84e9bf317a4e7dd9d6d671d6da2f}{Vector3d} axis = \{ 0.0, 0.0, 1.0 \} ;
+Angle angle = \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle_a64aa53e8420aeb6f671d86c65c370bc8}{Angle::Degrees}(15.0) ;
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a06829024b976d32cccc97fa2ee774670}{Cone} cone = \{ apex, axis, angle \} ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Apex} & A cone apex \\
+\hline
+\mbox{\tt in}  & {\em an\+Axis} & A cone axis \\
+\hline
+\mbox{\tt in}  & {\em an\+Angle} & A cone angle \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a838ecaabc29abd32666342a7582a4a3e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a838ecaabc29abd32666342a7582a4a3e}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!apply\+Transformation@{apply\+Transformation}}
+\index{apply\+Transformation@{apply\+Transformation}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{apply\+Transformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to cone. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a5fc47b1ee5d9a28efc6010d3d1512470}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a126e7d1918346a94032c6a925d24f045}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a126e7d1918346a94032c6a925d24f045}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!clone@{clone}}
+\index{clone@{clone}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} $\ast$ library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone cone. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned cone 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a1a784c6b359e0eb97cd34fabc42f2f3f}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a430aeb7c5f4855b01c929bbb9079596f}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a430aeb7c5f4855b01c929bbb9079596f}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!get\+Angle@{get\+Angle}}
+\index{get\+Angle@{get\+Angle}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{get\+Angle()}{getAngle()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cone angle. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} angle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a891fae1fe31a2a6c118059755887694c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a891fae1fe31a2a6c118059755887694c}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!get\+Apex@{get\+Apex}}
+\index{get\+Apex@{get\+Apex}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{get\+Apex()}{getApex()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::get\+Apex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cone apex. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} apex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a9072972e480ef73f77b2ae4a6a0d8b78}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a9072972e480ef73f77b2ae4a6a0d8b78}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!get\+Axis@{get\+Axis}}
+\index{get\+Axis@{get\+Axis}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{get\+Axis()}{getAxis()}}
+{\footnotesize\ttfamily Vector3d library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::get\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cone axis. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_ad1f23b6a553f9856ecdafd633580ca2a}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_ad1f23b6a553f9856ecdafd633580ca2a}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!get\+Rays\+Of\+Lateral\+Surface@{get\+Rays\+Of\+Lateral\+Surface}}
+\index{get\+Rays\+Of\+Lateral\+Surface@{get\+Rays\+Of\+Lateral\+Surface}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{get\+Rays\+Of\+Lateral\+Surface()}{getRaysOfLateralSurface()}}
+{\footnotesize\ttfamily Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} $>$ library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::get\+Rays\+Of\+Lateral\+Surface (\begin{DoxyParamCaption}\item[{const Size}]{a\+Ray\+Count = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+
+Get rays of lateral surface. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Ray\+Count} & A number of rays (at least face count) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array of rays 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_ab49a0077e48c73a22726ecededf5553a}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_ab49a0077e48c73a22726ecededf5553a}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&}]{a\+Sphere,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false},  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily 40} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of cone with sphere. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Sphere} & A sphere \\
+\hline
+\mbox{\tt in}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\mbox{\tt in}  & {\em a\+Discretization\+Level} & (optional) The polygonal discretization level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of cone with sphere 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a2231a2ee1cd5464f04f2126eaee0973f}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a2231a2ee1cd5464f04f2126eaee0973f}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false},  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily 40} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of cone with ellipsoid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\mbox{\tt in}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\mbox{\tt in}  & {\em a\+Discretization\+Level} & (optional) The polygonal discretization level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of cone with ellipsoid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a2ea8fa813ee4cd54a626e3468dbd845d}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a2ea8fa813ee4cd54a626e3468dbd845d}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&}]{a\+Sphere,  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily 40} }\end{DoxyParamCaption}) const}
+
+
+
+Check if cone intersects sphere. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a06829024b976d32cccc97fa2ee774670}{Cone} cone = ... ;
+Sphere sphere = ... ;
+cone.intersects(sphere) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Sphere} & A sphere \\
+\hline
+\mbox{\tt in}  & {\em a\+Discretization\+Level} & (optional) The polygonal discretization level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cone intersects sphere 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a05d41bcaf9428143d55b0f9ef83ace8b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a05d41bcaf9428143d55b0f9ef83ace8b}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid,  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily 40} }\end{DoxyParamCaption}) const}
+
+
+
+Check if cone intersects ellipsoid. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a06829024b976d32cccc97fa2ee774670}{Cone} cone = ... ;
+Ellipsoid ellipsoid = ... ;
+cone.intersects(ellipsoid) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\mbox{\tt in}  & {\em a\+Discretization\+Level} & (optional) The polygonal discretization level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cone intersects ellipsoid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_aecfd56286894eb3f38789193a0768dc8}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_aecfd56286894eb3f38789193a0768dc8}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if cone is defined. 
+
+\begin{DoxyReturn}{Returns}
+True if cone is defined 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a2216442e322f0c3ca5f01a4efa22baf7}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a046cbc1e10c11a61e02eb5b9af904eef}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a046cbc1e10c11a61e02eb5b9af904eef}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} \&}]{a\+Cone }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Cone} & A cone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cones are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a7535ef180acef7864bb3dfbb14952c7e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a7535ef180acef7864bb3dfbb14952c7e}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} \&}]{a\+Cone }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Cone} & A cone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cones are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a1da79fa433164204f677bf247ce35538}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_a1da79fa433164204f677bf247ce35538}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!print@{print}}
+\index{print@{print}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print cone. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_aa166f4ce4d116a248f0fc861c75012ca}{library\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_add91d1f26389385cca599be25cb18716}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone_add91d1f26389385cca599be25cb18716}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!library\+::math\+::geom\+::d3\+::objects\+::\+Cone@{library\+::math\+::geom\+::d3\+::objects\+::\+Cone}}
+\subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} library\+::math\+::geom\+::d3\+::objects\+::\+Cone\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined cone. 
+
+\begin{DoxyReturn}{Returns}
+Undefined cone 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_cone_8hpp}{Cone.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_cone_8cpp}{Cone.\+cpp}\end{DoxyCompactItemize}

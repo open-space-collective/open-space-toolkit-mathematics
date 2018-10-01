@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 549.019608
+%%BoundingBox: 0 0 500 588.235294
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,12 +19,12 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 0.910714 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 0.850000 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 14 def
+/rows 15 def
 /cols 2 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
@@ -175,6 +175,7 @@ boxfont setfont
 1 boundaspect scale
 (library::math::geom::d3::Object) cw
 (library::math::geom::d3::objects::Composite) cw
+(library::math::geom::d3::objects::Cone) cw
 (library::math::geom::d3::objects::Cuboid) cw
 (library::math::geom::d3::objects::Ellipsoid) cw
 (library::math::geom::d3::objects::Line) cw
@@ -198,8 +199,9 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (library::math::geom::d3::Object) 0.000000 13.000000 box
- (library::math::geom::d3::objects::Composite) 1.000000 12.000000 box
+ (library::math::geom::d3::Object) 0.000000 14.000000 box
+ (library::math::geom::d3::objects::Composite) 1.000000 13.000000 box
+ (library::math::geom::d3::objects::Cone) 1.000000 12.000000 box
  (library::math::geom::d3::objects::Cuboid) 1.000000 11.000000 box
  (library::math::geom::d3::objects::Ellipsoid) 1.000000 10.000000 box
  (library::math::geom::d3::objects::Line) 1.000000 9.000000 box
@@ -216,7 +218,9 @@ boundx scalefactor div boundy scalefactor div scale
 % ----- relations -----
 
 solid
-1 0.000000 12.250000 out
+1 0.000000 13.250000 out
+solid
+0 0.000000 13.500000 hedge
 solid
 0 0.000000 12.500000 hedge
 solid
@@ -244,4 +248,4 @@ solid
 solid
 0 0.000000 0.500000 hedge
 solid
-0.000000 13.000000 0.500000 vedge
+0.000000 14.000000 0.500000 vedge

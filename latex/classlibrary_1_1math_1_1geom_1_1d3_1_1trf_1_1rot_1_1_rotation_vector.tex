@@ -33,6 +33,12 @@ static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_
 \begin{DoxyCompactList}\small\item\em Constructs an undefined rotation vector. \end{DoxyCompactList}\item 
 static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector}{Rotation\+Vector} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_ae8dcd99b54ffcffee6906b526a8d2769}{Unit} ()
 \begin{DoxyCompactList}\small\item\em Constructs a unit rotation vector. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector}{Rotation\+Vector} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a6b4cb091dd380a071faa158cbdd1b7ea}{X} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&an\+Angle)
+\begin{DoxyCompactList}\small\item\em Constructs a rotation vector around X-\/axis. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector}{Rotation\+Vector} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a0fa2ba6e7806d5e72419f64f708518d4}{Y} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&an\+Angle)
+\begin{DoxyCompactList}\small\item\em Constructs a rotation vector around Y-\/axis. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector}{Rotation\+Vector} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a237e163d88d5c80ee8dcb3a6c68e0e4b}{Z} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&an\+Angle)
+\begin{DoxyCompactList}\small\item\em Constructs a rotation vector around Z-\/axis. \end{DoxyCompactList}\item 
 static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector}{Rotation\+Vector} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a6da4ed18679e28816896de413e04ed79}{Quaternion} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{rot\+::\+Quaternion} \&a\+Quaternion)
 \begin{DoxyCompactList}\small\item\em Constructs a rotation vector from a quaternion. \end{DoxyCompactList}\item 
 static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector}{Rotation\+Vector} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a397807ffe12bb72cd788660b83bdf7b3}{Rotation\+Matrix} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_matrix}{rot\+::\+Rotation\+Matrix} \&a\+Rotation\+Matrix)
@@ -279,6 +285,81 @@ Constructs a unit rotation vector.
 
 \begin{DoxyReturn}{Returns}
 Unit rotation vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a6b4cb091dd380a071faa158cbdd1b7ea}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a6b4cb091dd380a071faa158cbdd1b7ea}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Rotation\+Vector@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Rotation\+Vector}!X@{X}}
+\index{X@{X}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Rotation\+Vector@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Rotation\+Vector}}
+\subsubsection{\texorpdfstring{X()}{X()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector}{Rotation\+Vector} library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Rotation\+Vector\+::X (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&}]{an\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rotation vector around X-\/axis. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a49076a279f457fdb14c4a9d4d61e1738}{RotationVector} rotationVector = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a6b4cb091dd380a071faa158cbdd1b7ea}{RotationVector::X}(
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle_a64aa53e8420aeb6f671d86c65c370bc8}{Angle::Degrees}(45.0)) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Angle} & A rotation angle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a0fa2ba6e7806d5e72419f64f708518d4}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a0fa2ba6e7806d5e72419f64f708518d4}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Rotation\+Vector@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Rotation\+Vector}!Y@{Y}}
+\index{Y@{Y}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Rotation\+Vector@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Rotation\+Vector}}
+\subsubsection{\texorpdfstring{Y()}{Y()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector}{Rotation\+Vector} library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Rotation\+Vector\+::Y (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&}]{an\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rotation vector around Y-\/axis. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a49076a279f457fdb14c4a9d4d61e1738}{RotationVector} rotationVector = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a6b4cb091dd380a071faa158cbdd1b7ea}{RotationVector::X}(
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle_a64aa53e8420aeb6f671d86c65c370bc8}{Angle::Degrees}(45.0)) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Angle} & A rotation angle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a237e163d88d5c80ee8dcb3a6c68e0e4b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a237e163d88d5c80ee8dcb3a6c68e0e4b}} 
+\index{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Rotation\+Vector@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Rotation\+Vector}!Z@{Z}}
+\index{Z@{Z}!library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Rotation\+Vector@{library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Rotation\+Vector}}
+\subsubsection{\texorpdfstring{Z()}{Z()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector}{Rotation\+Vector} library\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Rotation\+Vector\+::Z (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle}{Angle} \&}]{an\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rotation vector around Z-\/axis. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a49076a279f457fdb14c4a9d4d61e1738}{RotationVector} rotationVector = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector_a6b4cb091dd380a071faa158cbdd1b7ea}{RotationVector::X}(
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1_angle_a64aa53e8420aeb6f671d86c65c370bc8}{Angle::Degrees}(45.0)) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Angle} & A rotation angle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation vector 
 \end{DoxyReturn}
 
 

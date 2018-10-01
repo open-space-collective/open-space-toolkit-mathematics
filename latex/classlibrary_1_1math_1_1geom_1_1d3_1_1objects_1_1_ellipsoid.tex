@@ -46,6 +46,8 @@ bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a4df
 \begin{DoxyCompactList}\small\item\em Check if ellipsoid intersects ellipsoid. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a05dc13a49a72cb23046ff5735072765b}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&a\+Pyramid) const
 \begin{DoxyCompactList}\small\item\em Check if ellipsoid intersects pyramid. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_ab48166cd354dbcbc667a11cf6ef19593}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} \&a\+Cone) const
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid intersects cone. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_ae54cb74c4e6445988ac4d78e00288dd2}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Check if ellipsoid contains point. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_af539fe9e2be122e3f994a48e7d308fd0}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&a\+Point\+Set) const
@@ -78,6 +80,8 @@ Matrix3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_
 \begin{DoxyCompactList}\small\item\em Compute intersection of ellipsoid with segment. \end{DoxyCompactList}\item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a84b3e80768ab52ba5c3b538eda77583c}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&a\+Pyramid, const bool only\+In\+Sight=false) const
 \begin{DoxyCompactList}\small\item\em Compute intersection of ellipsoid with pyramid. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a65d88f22d1eb931021ec78eda96055af}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} \&a\+Cone, const bool only\+In\+Sight=false) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of ellipsoid with cone. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_af912ba3948bd06ac517c727210082df3}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
 \begin{DoxyCompactList}\small\item\em Print ellipsoid. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a101408b676b518c0270ebabc55f288d2}{apply\+Transformation} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&a\+Transformation) override
@@ -399,7 +403,7 @@ Get ellipsoid third principal semi-\/axis.
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a5a043a5a0ad0c68771902824c9ea0190}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a5a043a5a0ad0c68771902824c9ea0190}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!intersection\+With@{intersection\+With}}
 \index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
-\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&}]{a\+Line }\end{DoxyParamCaption}) const}
 
 
@@ -417,7 +421,7 @@ Compute intersection of ellipsoid with line.
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a2a7c282ac6d4b54210582953e37c8ab5}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a2a7c282ac6d4b54210582953e37c8ab5}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!intersection\+With@{intersection\+With}}
 \index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
-\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} \&}]{a\+Ray,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false} }\end{DoxyParamCaption}) const}
 
 
@@ -437,7 +441,7 @@ Compute intersection of ellipsoid with ray.
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a28ba552ce19297c754a7ca17430c5716}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a28ba552ce19297c754a7ca17430c5716}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!intersection\+With@{intersection\+With}}
 \index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
-\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
 
 
@@ -455,7 +459,7 @@ Compute intersection of ellipsoid with segment.
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a84b3e80768ab52ba5c3b538eda77583c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a84b3e80768ab52ba5c3b538eda77583c}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!intersection\+With@{intersection\+With}}
 \index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
-\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&}]{a\+Pyramid,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false} }\end{DoxyParamCaption}) const}
 
 
@@ -472,10 +476,30 @@ Compute intersection of ellipsoid with pyramid.
 \begin{DoxyReturn}{Returns}
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of ellipsoid with pyramid 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a65d88f22d1eb931021ec78eda96055af}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a65d88f22d1eb931021ec78eda96055af}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} \&}]{a\+Cone,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of ellipsoid with cone. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Cone} & A cone \\
+\hline
+\mbox{\tt in}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of ellipsoid with cone 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_ab5fedfe26943a98263bfa441c259581b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_ab5fedfe26943a98263bfa441c259581b}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
 
 
@@ -501,7 +525,7 @@ True if ellipsoid intersects point
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a2058e665b70c0e883a6ca195fa97120e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a2058e665b70c0e883a6ca195fa97120e}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
 
 
@@ -527,7 +551,7 @@ True if ellipsoid intersects point set
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a50957c46fca340a2d20e1845f97f9131}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a50957c46fca340a2d20e1845f97f9131}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&}]{a\+Line }\end{DoxyParamCaption}) const}
 
 
@@ -553,7 +577,7 @@ True if ellipsoid intersects line
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a8346f54be39644c22a5a8728ac368832}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a8346f54be39644c22a5a8728ac368832}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} \&}]{a\+Ray }\end{DoxyParamCaption}) const}
 
 
@@ -579,7 +603,7 @@ True if ellipsoid intersects ray
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a6d447b106d193af47c6b201f7e01bd26}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a6d447b106d193af47c6b201f7e01bd26}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
 
 
@@ -605,7 +629,7 @@ True if ellipsoid intersects segment
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_ada79a3cf3bf68843a8313eb914c21a95}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_ada79a3cf3bf68843a8313eb914c21a95}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
 
 
@@ -631,7 +655,7 @@ True if ellipsoid intersects plane
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aa9d3833e3d2be95ff00d7af32fe9b15e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aa9d3833e3d2be95ff00d7af32fe9b15e}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&}]{a\+Sphere }\end{DoxyParamCaption}) const}
 
 
@@ -657,7 +681,7 @@ True if ellipsoid intersects sphere
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a4dfd1a3feba0ebed8a5adf89120ce53c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a4dfd1a3feba0ebed8a5adf89120ce53c}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
 
 
@@ -683,7 +707,7 @@ True if ellipsoid intersects ellipsoid
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a05dc13a49a72cb23046ff5735072765b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_a05dc13a49a72cb23046ff5735072765b}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&}]{a\+Pyramid }\end{DoxyParamCaption}) const}
 
 
@@ -705,6 +729,32 @@ ellipsoid.intersects(pyramid) ;
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True if ellipsoid intersects pyramid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_ab48166cd354dbcbc667a11cf6ef19593}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_ab48166cd354dbcbc667a11cf6ef19593}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} \&}]{a\+Cone }\end{DoxyParamCaption}) const}
+
+
+
+Check if ellipsoid intersects cone. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_aae81fe0edc7f0e8d4590ea89ae73cb14}{Ellipsoid} ellipsoid = ... ;
+Cone cone = ... ;
+ellipsoid.intersects(cone) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Cone} & A cone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoid intersects cone 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_adb42c2c7734c27dcb16d947fc5c9d76d}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid_adb42c2c7734c27dcb16d947fc5c9d76d}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid@{library\+::math\+::geom\+::d3\+::objects\+::\+Ellipsoid}!is\+Defined@{is\+Defined}}

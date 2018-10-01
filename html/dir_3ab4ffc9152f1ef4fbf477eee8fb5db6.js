@@ -3,6 +3,9 @@ var dir_3ab4ffc9152f1ef4fbf477eee8fb5db6 =
     [ "Composite.hpp", "_composite_8hpp.html", [
       [ "Composite", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite.html", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite" ]
     ] ],
+    [ "Cone.hpp", "_cone_8hpp.html", [
+      [ "Cone", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone.html", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone" ]
+    ] ],
     [ "Cuboid.hpp", "_cuboid_8hpp.html", [
       [ "Cuboid", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid" ]
     ] ],

@@ -46,6 +46,8 @@ bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_ad278cb
 \begin{DoxyCompactList}\small\item\em Check if sphere intersects ellipsoid. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a698e81554ca85819741fdfdcd123e8a1}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&a\+Pyramid) const
 \begin{DoxyCompactList}\small\item\em Check if sphere intersects pyramid. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a64889a39d7df049b119bda0eb922f949}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} \&a\+Cone) const
+\begin{DoxyCompactList}\small\item\em Check if sphere intersects cone. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a2780e2754d206379fbe2cdc06b799a2e}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Check if sphere contains point. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a75120c9d3ff75cd389ae9ccb98a4218b}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&a\+Point\+Set) const
@@ -62,6 +64,8 @@ Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a48cfc7
 \begin{DoxyCompactList}\small\item\em Compute intersection of sphere with segment. \end{DoxyCompactList}\item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_ac7a5e8323eca47f121a457b99fbf6627}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&a\+Pyramid, const bool only\+In\+Sight=false) const
 \begin{DoxyCompactList}\small\item\em Compute intersection of sphere with pyramid. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a392e154250dcef56f80e071f50e81809}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} \&a\+Cone, const bool only\+In\+Sight=false) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of sphere with cone. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_adc05fd7666ae15513e6aa9ec66a1ca9b}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
 \begin{DoxyCompactList}\small\item\em Print sphere. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_acb4ca3f037791f9f71bffc904a1bf961}{apply\+Transformation} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&a\+Transformation) override
@@ -238,7 +242,7 @@ Get sphere radius.
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a6cee64ab56c136802a08d7b5403b80ac}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a6cee64ab56c136802a08d7b5403b80ac}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!intersection\+With@{intersection\+With}}
 \index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
-\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
 {\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&}]{a\+Line }\end{DoxyParamCaption}) const}
 
 
@@ -256,7 +260,7 @@ Compute intersection of sphere with line.
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a2d142839c409faebccc36999d464e3bd}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a2d142839c409faebccc36999d464e3bd}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!intersection\+With@{intersection\+With}}
 \index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
-\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
 {\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} \&}]{a\+Ray,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false} }\end{DoxyParamCaption}) const}
 
 
@@ -276,7 +280,7 @@ Compute intersection of sphere with ray.
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a49323ca9a05b902b57011631eb0b5b57}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a49323ca9a05b902b57011631eb0b5b57}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!intersection\+With@{intersection\+With}}
 \index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
-\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
 {\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
 
 
@@ -294,7 +298,7 @@ Compute intersection of sphere with segment.
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_ac7a5e8323eca47f121a457b99fbf6627}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_ac7a5e8323eca47f121a457b99fbf6627}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!intersection\+With@{intersection\+With}}
 \index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
-\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
 {\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&}]{a\+Pyramid,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false} }\end{DoxyParamCaption}) const}
 
 
@@ -311,10 +315,30 @@ Compute intersection of sphere with pyramid.
 \begin{DoxyReturn}{Returns}
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of sphere with pyramid 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a392e154250dcef56f80e071f50e81809}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a392e154250dcef56f80e071f50e81809}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} \&}]{a\+Cone,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of sphere with cone. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Cone} & A cone \\
+\hline
+\mbox{\tt in}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of sphere with cone 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a4fba612ae266e54b1ce301831aef5219}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a4fba612ae266e54b1ce301831aef5219}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
 
 
@@ -340,7 +364,7 @@ True if sphere intersects point
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a3b92bc83fc458553437b7e2a50849859}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a3b92bc83fc458553437b7e2a50849859}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
 
 
@@ -366,7 +390,7 @@ True if sphere intersects point set
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a3740a954ea02ce23ff121a92f8902d92}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a3740a954ea02ce23ff121a92f8902d92}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&}]{a\+Line }\end{DoxyParamCaption}) const}
 
 
@@ -392,7 +416,7 @@ True if sphere intersects line
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a726c504380238289eb3a2faf80f3d472}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a726c504380238289eb3a2faf80f3d472}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} \&}]{a\+Ray }\end{DoxyParamCaption}) const}
 
 
@@ -418,7 +442,7 @@ True if sphere intersects ray
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_af2ec8951ba63bd6718588e491213fddf}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_af2ec8951ba63bd6718588e491213fddf}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
 
 
@@ -444,7 +468,7 @@ True if sphere intersects segment
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_aa0893ce62c0798552353338aad0b8da4}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_aa0893ce62c0798552353338aad0b8da4}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
 
 
@@ -470,7 +494,7 @@ True if sphere intersects plane
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_ad278cbe34b3fde84126202d772f9df27}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_ad278cbe34b3fde84126202d772f9df27}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
 
 
@@ -496,7 +520,7 @@ True if sphere intersects ellipsoid
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a698e81554ca85819741fdfdcd123e8a1}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a698e81554ca85819741fdfdcd123e8a1}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&}]{a\+Pyramid }\end{DoxyParamCaption}) const}
 
 
@@ -518,6 +542,32 @@ sphere.intersects(pyramid) ;
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True if sphere intersects pyramid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a64889a39d7df049b119bda0eb922f949}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a64889a39d7df049b119bda0eb922f949}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone}{Cone} \&}]{a\+Cone }\end{DoxyParamCaption}) const}
+
+
+
+Check if sphere intersects cone. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a55dccc8ea16ee55cd7694c26afa8ea39}{Sphere} sphere = ... ;
+Cone cone = ... ;
+sphere.intersects(cone) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Cone} & A cone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sphere intersects cone 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a0598bd75f8a34e07a3ad36cf10a7f098}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere_a0598bd75f8a34e07a3ad36cf10a7f098}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere@{library\+::math\+::geom\+::d3\+::objects\+::\+Sphere}!is\+Defined@{is\+Defined}}
