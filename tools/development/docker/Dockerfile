@@ -57,12 +57,12 @@ RUN mkdir /tmp/geometric-tools-engine \
  && rm -rf /tmp/geometric-tools-engine \
  && popd > /dev/null
 
-## Library ▸ Core [0.1.18]
+## Library ▸ Core [0.1.19]
 
 RUN mkdir -p /tmp/library-core \
  && pushd /tmp/library-core > /dev/null \
- && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.18/library-core-0.1.18-1.x86_64-runtime.rpm \
- && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.18/library-core-0.1.18-1.x86_64-devel.rpm \
+ && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.19/library-core-0.1.19-1.x86_64-runtime.rpm \
+ && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.19/library-core-0.1.19-1.x86_64-devel.rpm \
  && dnf install -y ./*.rpm \
  && rm -rf /tmp/library-core \
  && popd > /dev/null
