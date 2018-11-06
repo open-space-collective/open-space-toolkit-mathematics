@@ -12,6 +12,7 @@
 
 #include <Library/Mathematics/Geometry/2D/Objects/LineString.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Segment.hpp>
+#include <Library/Mathematics/Geometry/2D/Objects/PointSet.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/2D/Object.hpp>
 
@@ -32,6 +33,10 @@ namespace d2
 {
 namespace objects
 {
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+class MultiPolygon ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -123,6 +128,32 @@ class Polygon : public Object
 
         virtual bool            isDefined                                   ( ) const override ;
 
+        /// @brief              Check if polygon contains point
+        ///
+        /// @code
+        ///                     Polygon polygon = ... ;
+        ///                     Point point = ... ;
+        ///                     polygon.contains(point) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             True if polygon contains point
+
+        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Check if polygon contains point set
+        ///
+        /// @code
+        ///                     Polygon polygon = ... ;
+        ///                     PointSet pointSet = ... ;
+        ///                     polygon.contains(pointSet) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             True if polygon contains point set
+
+        bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
+
         /// @brief              Get number of inner rings
         ///
         /// @return             Number of inner rings
@@ -178,6 +209,20 @@ class Polygon : public Object
         /// @return             Polygon vertices
 
         Array<Polygon::Vertex>  getVertices                                 ( ) const ;
+
+        /// @brief              Compute intersection of polygon with polygon
+        ///
+        /// @param              [in] aPolygon A polygon
+        /// @return             Intersection of polygon with polygon
+
+        // Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
+
+        /// @brief              Compute union of polygon with polygon
+        ///
+        /// @param              [in] aPolygon A polygon
+        /// @return             A multi-polygon
+
+        MultiPolygon            unionWith                                   (   const   Polygon&                    aPolygon                                    ) const ;
 
         /// @brief              Get string representation
         ///

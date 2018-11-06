@@ -39,10 +39,10 @@ namespace objects
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-using boost::geometry::model::point ;
-using boost::geometry::model::polygon ;
-using boost::geometry::model::ring ;
 using boost::geometry::cs::cartesian ;
+using boost::geometry::model::point ;
+using boost::geometry::model::ring ;
+using boost::geometry::model::polygon ;
 
 using library::core::types::Index ;
 using library::core::types::Size ;
@@ -63,6 +63,10 @@ class Polygon::Impl
         bool                    operator ==                                 (   const   Polygon::Impl&              aPolygon                                    ) const ;
 
         bool                    isDefined                                   ( ) const ;
+
+        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+        
+        bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
 
         Size                    getInnerRingCount                           ( ) const ;
 
@@ -143,6 +147,31 @@ bool                            Polygon::Impl::operator ==                  (   
 bool                            Polygon::Impl::isDefined                    ( ) const
 {
     return polygon_.outer().size() >= 3 ;
+}
+
+bool                            Polygon::Impl::contains                     (   const   Point&                      aPoint                                      ) const
+{
+
+    try
+    {
+        return boost::geometry::covered_by(Polygon::Impl::BoostPoint(aPoint.x(), aPoint.y()), polygon_) ;
+    }
+    catch (const std::exception& anException)
+    {
+        throw library::core::error::RuntimeError("Error when checking if polygon contains point: [{}]", anException.what()) ;
+    }
+
+    return false ;
+
+}
+
+bool                            Polygon::Impl::contains                     (   const   PointSet&                   aPointSet                                   ) const
+{
+    
+    throw library::core::error::runtime::ToBeImplemented("Polygon::contains (PointSet&)") ;
+
+    return false ;
+    
 }
 
 Size                            Polygon::Impl::getInnerRingCount            ( ) const
@@ -459,6 +488,40 @@ bool                            Polygon::operator !=                        (   
 bool                            Polygon::isDefined                          ( ) const
 {
     return (implUPtr_ != nullptr) && implUPtr_->isDefined() ;
+}
+
+bool                            Polygon::contains                           (   const   Point&                      aPoint                                      ) const
+{
+
+    if (!aPoint.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->contains(aPoint) ;
+
+}
+
+bool                            Polygon::contains                           (   const   PointSet&                   aPointSet                                   ) const
+{
+
+    if (!aPointSet.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point set") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->contains(aPointSet) ;
+
 }
 
 Size                            Polygon::getInnerRingCount                  ( ) const

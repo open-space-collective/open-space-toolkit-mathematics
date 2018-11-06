@@ -7,7 +7,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Polygon.hpp>
+#include <Library/Mathematics/Geometry/2D/Objects/PointSet.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/2D/Object.hpp>
 
@@ -37,6 +39,7 @@ bool                            Object::operator ==                         (   
 
     using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::objects::Polygon ;
+    using library::math::geom::d2::objects::MultiPolygon ;
 
     if ((!this->isDefined()) || (!anObject.isDefined()))
     {
@@ -62,6 +65,16 @@ bool                            Object::operator ==                         (   
     {
 
         if (const Polygon* otherObjectPtr = dynamic_cast<const Polygon*>(&anObject))
+        {
+            return (*objectPtr) == (*otherObjectPtr) ;
+        }
+
+    }
+
+    if (const MultiPolygon* objectPtr = dynamic_cast<const MultiPolygon*>(this))
+    {
+
+        if (const MultiPolygon* otherObjectPtr = dynamic_cast<const MultiPolygon*>(&anObject))
         {
             return (*objectPtr) == (*otherObjectPtr) ;
         }
@@ -108,11 +121,55 @@ bool                            Object::contains                            (   
 {
 
     using library::math::geom::d2::objects::Point ;
+    using library::math::geom::d2::objects::PointSet ;
     using library::math::geom::d2::objects::Polygon ;
+    using library::math::geom::d2::objects::MultiPolygon ;
 
     if (!anObject.isDefined())
     {
         throw library::core::error::runtime::Undefined("Object") ;
+    }
+
+    // Polygon
+
+    if (const Polygon* objectPtr = dynamic_cast<const Polygon*>(this))
+    {
+
+        // Point
+
+        if (const Point* otherObjectPtr = dynamic_cast<const Point*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+        // PointSet
+
+        if (const PointSet* otherObjectPtr = dynamic_cast<const PointSet*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+    }
+
+    // MultiPolygon
+
+    if (const MultiPolygon* objectPtr = dynamic_cast<const MultiPolygon*>(this))
+    {
+
+        // Point
+
+        if (const Point* otherObjectPtr = dynamic_cast<const Point*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+        // PointSet
+
+        if (const PointSet* otherObjectPtr = dynamic_cast<const PointSet*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
     }
 
     throw library::core::error::runtime::ToBeImplemented("Object :: contains") ;
