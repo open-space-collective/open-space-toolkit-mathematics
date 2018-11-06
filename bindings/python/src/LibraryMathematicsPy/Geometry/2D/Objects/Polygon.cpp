@@ -23,6 +23,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Polygon
     using library::math::obj::Vector2d ;
     using library::math::geom::d2::Object ;
     using library::math::geom::d2::objects::Point ;
+    using library::math::geom::d2::objects::PointSet ;
     using library::math::geom::d2::objects::Polygon ;
 
     scope in_Polygon = class_<Polygon, bases<Object>>("Polygon", init<const Array<Point>&, const Array<Array<Point>>&>())
@@ -36,6 +37,8 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Polygon
         .def(self_ns::repr(self_ns::self))
         
         .def("isDefined", &Polygon::isDefined)
+        .def("containsPoint", +[] (const Polygon& aPolygon, const Point& aPoint) -> bool { return aPolygon.contains(aPoint) ; })
+        .def("containsPointSet", +[] (const Polygon& aPolygon, const PointSet& aPointSet) -> bool { return aPolygon.contains(aPointSet) ; })
 
         .def("getInnerRingCount", &Polygon::getInnerRingCount)
         .def("getEdgeCount", &Polygon::getEdgeCount)
