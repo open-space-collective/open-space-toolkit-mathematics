@@ -59,7 +59,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('2_d_2_object_8cpp.html','');});
+$(document).ready(function(){initNavTree('_multi_polygon_8hpp.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -78,20 +78,31 @@ $(document).ready(function(){initNavTree('2_d_2_object_8cpp.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a>  </div>
   <div class="headertitle">
-<div class="title">Object.cpp File Reference</div>  </div>
+<div class="title">MultiPolygon.hpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="_multi_polygon_8hpp_source.html">Library/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="2_d_2_objects_2_polygon_8hpp_source.html">Library/Mathematics/Geometry/2D/Objects/Polygon.hpp</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="2_d_2_objects_2_polygon_8hpp_source.html">Library/Mathematics/Geometry/2D/Objects/Polygon.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="2_d_2_objects_2_line_string_8hpp_source.html">Library/Mathematics/Geometry/2D/Objects/LineString.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="2_d_2_objects_2_segment_8hpp_source.html">Library/Mathematics/Geometry/2D/Objects/Segment.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="2_d_2_objects_2_point_set_8hpp_source.html">Library/Mathematics/Geometry/2D/Objects/PointSet.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="2_d_2_objects_2_point_8hpp_source.html">Library/Mathematics/Geometry/2D/Objects/Point.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="2_d_2_object_8hpp_source.html">Library/Mathematics/Geometry/2D/Object.hpp</a>&gt;</code><br />
-<code>#include &lt;Library/Core/Error.hpp&gt;</code><br />
-<code>#include &lt;Library/Core/Utilities.hpp&gt;</code><br />
-</div><table class="memberdecls">
+<code>#include &lt;Library/Core/Containers/Array.hpp&gt;</code><br />
+<code>#include &lt;Library/Core/Types/Size.hpp&gt;</code><br />
+<code>#include &lt;Library/Core/Types/Index.hpp&gt;</code><br />
+<code>#include &lt;Library/Core/Types/Unique.hpp&gt;</code><br />
+</div>
+<p><a href="_multi_polygon_8hpp_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon.html">library::math::geom::d2::objects::MultiPolygon</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multi-polygon.  <a href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacelibrary"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelibrary.html">library</a></td></tr>
@@ -102,11 +113,8 @@ Namespaces</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespacelibrary_1_1math_1_1geom_1_1d2"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelibrary_1_1math_1_1geom_1_1d2.html">library::math::geom::d2</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a6beada2a5f10daeb079c88a2de03750f"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelibrary_1_1math_1_1geom_1_1d2.html#a6beada2a5f10daeb079c88a2de03750f">library::math::geom::d2::operator&lt;&lt;</a> (std::ostream &amp;anOutputStream, const Object &amp;anObject)</td></tr>
-<tr class="separator:a6beada2a5f10daeb079c88a2de03750f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacelibrary_1_1math_1_1geom_1_1d2_1_1objects"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelibrary_1_1math_1_1geom_1_1d2_1_1objects.html">library::math::geom::d2::objects</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Library/Mathematics</p>
@@ -117,7 +125,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_f741251061e5c7c7ed48ab45c3348f11.html">Library</a></li><li class="navelem"><a class="el" href="dir_9aca3c1e5f03c29d53a07f1a3e27d184.html">Mathematics</a></li><li class="navelem"><a class="el" href="dir_671dbfec5ab3d1255a4d863f06dbc05c.html">Geometry</a></li><li class="navelem"><a class="el" href="dir_3b836dda7aad7cb3359c07210e64e33b.html">2D</a></li><li class="navelem"><a class="el" href="2_d_2_object_8cpp.html">Object.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_f3b5534f769798fe34f6616e7fe90e4d.html">Library</a></li><li class="navelem"><a class="el" href="dir_81d5dd9a407c5abe17df47d6e82b375f.html">Mathematics</a></li><li class="navelem"><a class="el" href="dir_c733ef2f266f29e9c74b47d4104c0bf8.html">Geometry</a></li><li class="navelem"><a class="el" href="dir_096331e3d47ec111804104874d175bd0.html">2D</a></li><li class="navelem"><a class="el" href="dir_7c94b8344f044baea26ebe3dfffedacf.html">Objects</a></li><li class="navelem"><a class="el" href="_multi_polygon_8hpp.html">MultiPolygon.hpp</a></li>
   </ul>
 </div>
 </body>

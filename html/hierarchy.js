@@ -10,6 +10,7 @@ var hierarchy =
     [ "library::math::geom::d2::Object", "classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html", [
       [ "library::math::geom::d2::objects::LineString", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string.html", null ],
       [ "library::math::geom::d2::objects::MultiLineString", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html", null ],
+      [ "library::math::geom::d2::objects::MultiPolygon", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon.html", null ],
       [ "library::math::geom::d2::objects::Point", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html", null ],
       [ "library::math::geom::d2::objects::PointSet", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set.html", null ],
       [ "library::math::geom::d2::objects::Polygon", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html", null ],

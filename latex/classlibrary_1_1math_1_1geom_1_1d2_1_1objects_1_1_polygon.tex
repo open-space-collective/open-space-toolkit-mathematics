@@ -45,6 +45,10 @@ bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a904fe
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a83e0962f91f0732048e156ad634faaea}{is\+Defined} () const override
 \begin{DoxyCompactList}\small\item\em Check if polygon is defined. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a9a59a791536ec6ca38fe75d378aadc8e}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if polygon contains point. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a750ce732c80c9efafa534fc3ae9d8a6f}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}{Point\+Set} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if polygon contains point set. \end{DoxyCompactList}\item 
 Size \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a20d245deda49667f0418591d7772d53d}{get\+Inner\+Ring\+Count} () const
 \begin{DoxyCompactList}\small\item\em Get number of inner rings. \end{DoxyCompactList}\item 
 Size \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ac01b8f978e663f09ef0f7a91de7720ce}{get\+Edge\+Count} () const
@@ -63,6 +67,8 @@ Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a1
 \begin{DoxyCompactList}\small\item\em Get polygon edges. \end{DoxyCompactList}\item 
 Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a1559cddbcb23d41f2be9e389b0ccd127}{Polygon\+::\+Vertex} $>$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ae73d59e0e0bb5d13bd69e2924e602e20}{get\+Vertices} () const
 \begin{DoxyCompactList}\small\item\em Get polygon vertices. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a813f6b937bddcefd06701200adbb8a5f}{union\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} \&a\+Polygon) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of polygon with polygon. \end{DoxyCompactList}\item 
 virtual String \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_acef17857f29323e985fba23441ed1171}{to\+String} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17}{Object\+::\+Format} \&a\+Format=\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}, const Integer \&a\+Precision=Integer\+::\+Undefined()) const override
 \begin{DoxyCompactList}\small\item\em Get string representation. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a028ca7818387654ed1aab1584cee6cc5}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
@@ -203,6 +209,58 @@ Pointer to cloned polygon
 
 Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a5c26ae4120edb24f6463d65a9cef247d}{library\+::math\+::geom\+::d2\+::\+Object}.
 
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a9a59a791536ec6ca38fe75d378aadc8e}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a9a59a791536ec6ca38fe75d378aadc8e}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!contains@{contains}}
+\index{contains@{contains}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if polygon contains point. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ad2a0b0bcd5301dbcd9e2fa101fbd220b}{Polygon} polygon = ... ;
+Point point = ... ;
+polygon.contains(point) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if polygon contains point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a750ce732c80c9efafa534fc3ae9d8a6f}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a750ce732c80c9efafa534fc3ae9d8a6f}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!contains@{contains}}
+\index{contains@{contains}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}{Point\+Set} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if polygon contains point set. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ad2a0b0bcd5301dbcd9e2fa101fbd220b}{Polygon} polygon = ... ;
+PointSet pointSet = ... ;
+polygon.contains(pointSet) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if polygon contains point set 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a92d93fe3b0f2d2b17b393475f3e1c090}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a92d93fe3b0f2d2b17b393475f3e1c090}} 
 \index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!get\+Edge\+At@{get\+Edge\+At}}
 \index{get\+Edge\+At@{get\+Edge\+At}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
@@ -462,6 +520,32 @@ Constructs an undefined polygon.
 
 \begin{DoxyReturn}{Returns}
 Undefined polygon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a813f6b937bddcefd06701200adbb8a5f}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a813f6b937bddcefd06701200adbb8a5f}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!union\+With@{union\+With}}
+\index{union\+With@{union\+With}!library\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{union\+With()}{unionWith()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} library\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::union\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} \&}]{a\+Polygon }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of polygon with polygon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Polygon} & A polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Intersection of polygon with polygon Compute union of polygon with polygon
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Polygon} & A polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A multi-\/polygon 
 \end{DoxyReturn}
 
 

@@ -1,0 +1,363 @@
+\hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{}\section{library\+:\+:math\+:\+:geom\+:\+:d2\+:\+:objects\+:\+:Multi\+Polygon Class Reference}
+\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+
+
+Multi-\/polygon.  
+
+
+
+
+{\ttfamily \#include $<$Multi\+Polygon.\+hpp$>$}
+
+Inheritance diagram for library\+:\+:math\+:\+:geom\+:\+:d2\+:\+:objects\+:\+:Multi\+Polygon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a10c2390027c64a8541efde7fcb2b282f}{Multi\+Polygon} (const Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} $>$ \&a\+Polygon\+Array=Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} $>$\+::Empty())
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a2a64713865d9b308dbfcb56c209fdf56}{Multi\+Polygon} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \&a\+Multi\+Polygon)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a4aa98e616ff0085fc1390bca368c984c}{$\sim$\+Multi\+Polygon} () override
+\begin{DoxyCompactList}\small\item\em Destructor (virtual) \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \& \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_abd2fa0b95f3b339dda6e4b8ccd321af0}{operator=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \&a\+Multi\+Polygon)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+virtual \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} $\ast$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a6dc8db614de9fb615491deb783fe7fcd}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Clone multi-\/polygon. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a3032f68e33b1bb90cbf021008124bccd}{operator==} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \&a\+Multi\+Polygon) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a7478631c89b146b6dcd4814a521c0200}{operator!=} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \&a\+Multi\+Polygon) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a9afa806e12102255fc5abf8a94106089}{is\+Defined} () const override
+\begin{DoxyCompactList}\small\item\em Check if multi-\/polygon is defined. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a9b11d0b3d9a341f541cebcd032227986}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if multi-\/polygon contains point. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a3a123cc4ebd6d157c1774176054617b6}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}{Point\+Set} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if multi-\/polygon contains point set. \end{DoxyCompactList}\item 
+Size \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_ac2a7a8791732ddd249a2bee8d476b7ae}{get\+Polygon\+Count} () const
+\begin{DoxyCompactList}\small\item\em Get number of polygons. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_ad27159b10d8cb05d9ed15f1dd2d3de1d}{union\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \&a\+Multi\+Polygon) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of multi-\/polygon with multi-\/polygon. \end{DoxyCompactList}\item 
+virtual String \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a598e024d69ca9a99d97cf7412b334869}{to\+String} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17}{Object\+::\+Format} \&a\+Format=\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}, const Integer \&a\+Precision=Integer\+::\+Undefined()) const override
+\begin{DoxyCompactList}\small\item\em Get string representation. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_aa1998e9d86d24edb61e978f397148d1c}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print multi-\/polygon. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_af4adcde904edd77d54236517652e4da1}{apply\+Transformation} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to multi-\/polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a92c7c7ece7479f0ac9a9b75546b69b20}{Undefined} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined multi-\/polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Multi-\/polygon. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a10c2390027c64a8541efde7fcb2b282f}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a10c2390027c64a8541efde7fcb2b282f}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!Multi\+Polygon@{Multi\+Polygon}}
+\index{Multi\+Polygon@{Multi\+Polygon}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{Multi\+Polygon()}{MultiPolygon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::\+Multi\+Polygon (\begin{DoxyParamCaption}\item[{const Array$<$ \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} $>$ \&}]{a\+Polygon\+Array = {\ttfamily Array$<$\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon}$>$\+:\+:Empty()} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Polygon\+Array} & An array of polygons \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a2a64713865d9b308dbfcb56c209fdf56}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a2a64713865d9b308dbfcb56c209fdf56}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!Multi\+Polygon@{Multi\+Polygon}}
+\index{Multi\+Polygon@{Multi\+Polygon}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{Multi\+Polygon()}{MultiPolygon()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::\+Multi\+Polygon (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \&}]{a\+Multi\+Polygon }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Multi\+Polygon} & A multi-\/polygon \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a4aa98e616ff0085fc1390bca368c984c}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a4aa98e616ff0085fc1390bca368c984c}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!````~Multi\+Polygon@{$\sim$\+Multi\+Polygon}}
+\index{````~Multi\+Polygon@{$\sim$\+Multi\+Polygon}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{$\sim$\+Multi\+Polygon()}{~MultiPolygon()}}
+{\footnotesize\ttfamily library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::$\sim$\+Multi\+Polygon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Destructor (virtual) 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_af4adcde904edd77d54236517652e4da1}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_af4adcde904edd77d54236517652e4da1}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!apply\+Transformation@{apply\+Transformation}}
+\index{apply\+Transformation@{apply\+Transformation}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{apply\+Transformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to multi-\/polygon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a289589fb6e9e7a2c4ca4976a1544def5}{library\+::math\+::geom\+::d2\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a6dc8db614de9fb615491deb783fe7fcd}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a6dc8db614de9fb615491deb783fe7fcd}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!clone@{clone}}
+\index{clone@{clone}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} $\ast$ library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone multi-\/polygon. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned multi-\/polygon 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a5c26ae4120edb24f6463d65a9cef247d}{library\+::math\+::geom\+::d2\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a9b11d0b3d9a341f541cebcd032227986}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a9b11d0b3d9a341f541cebcd032227986}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!contains@{contains}}
+\index{contains@{contains}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if multi-\/polygon contains point. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a10c2390027c64a8541efde7fcb2b282f}{MultiPolygon} multiPolygon = ... ;
+Point point = ... ;
+multiPolygon.contains(point) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if multi-\/polygon contains point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a3a123cc4ebd6d157c1774176054617b6}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a3a123cc4ebd6d157c1774176054617b6}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!contains@{contains}}
+\index{contains@{contains}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set}{Point\+Set} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if multi-\/polygon contains point set. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a10c2390027c64a8541efde7fcb2b282f}{MultiPolygon} multiPolygon = ... ;
+PointSet pointSet = ... ;
+multiPolygon.contains(pointSet) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if multi-\/polygon contains point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_ac2a7a8791732ddd249a2bee8d476b7ae}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_ac2a7a8791732ddd249a2bee8d476b7ae}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!get\+Polygon\+Count@{get\+Polygon\+Count}}
+\index{get\+Polygon\+Count@{get\+Polygon\+Count}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{get\+Polygon\+Count()}{getPolygonCount()}}
+{\footnotesize\ttfamily Size library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::get\+Polygon\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get number of polygons. 
+
+\begin{DoxyReturn}{Returns}
+Number of polygons 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a9afa806e12102255fc5abf8a94106089}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a9afa806e12102255fc5abf8a94106089}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if multi-\/polygon is defined. 
+
+\begin{DoxyReturn}{Returns}
+True if multi-\/polygon is defined 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ae9506254971168a3ca63e1923556b70d}{library\+::math\+::geom\+::d2\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a7478631c89b146b6dcd4814a521c0200}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a7478631c89b146b6dcd4814a521c0200}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \&}]{a\+Multi\+Polygon }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Multi\+Polygon} & A multi-\/polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if multi-\/polygons are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_abd2fa0b95f3b339dda6e4b8ccd321af0}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_abd2fa0b95f3b339dda6e4b8ccd321af0}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!operator=@{operator=}}
+\index{operator=@{operator=}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \& library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \&}]{a\+Multi\+Polygon }\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Multi\+Polygon} & A multi-\/polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to multi-\/polygon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a3032f68e33b1bb90cbf021008124bccd}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a3032f68e33b1bb90cbf021008124bccd}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!operator==@{operator==}}
+\index{operator==@{operator==}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \&}]{a\+Multi\+Polygon }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Multi\+Polygon} & A multi-\/polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if multi-\/polygons are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_aa1998e9d86d24edb61e978f397148d1c}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_aa1998e9d86d24edb61e978f397148d1c}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!print@{print}}
+\index{print@{print}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print multi-\/polygon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_a834bbf59cf1c483d1dc7b0966b1e1ab3}{library\+::math\+::geom\+::d2\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a598e024d69ca9a99d97cf7412b334869}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a598e024d69ca9a99d97cf7412b334869}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!to\+String@{to\+String}}
+\index{to\+String@{to\+String}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{to\+String()}{toString()}}
+{\footnotesize\ttfamily String library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::to\+String (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17}{Object\+::\+Format} \&}]{a\+Format = {\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}},  }\item[{const Integer \&}]{a\+Precision = {\ttfamily Integer\+:\+:Undefined()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get string representation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Format} & A format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1_object_acdd76b3637732a249536b609dbe3f0eb}{library\+::math\+::geom\+::d2\+::\+Object}.
+
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a92c7c7ece7479f0ac9a9b75546b69b20}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a92c7c7ece7479f0ac9a9b75546b69b20}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined multi-\/polygon. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a10c2390027c64a8541efde7fcb2b282f}{MultiPolygon} multiPolygon = \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_a92c7c7ece7479f0ac9a9b75546b69b20}{MultiPolygon::Undefined}() ; \textcolor{comment}{// Undefined}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined multi-\/polygon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_ad27159b10d8cb05d9ed15f1dd2d3de1d}\label{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon_ad27159b10d8cb05d9ed15f1dd2d3de1d}} 
+\index{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}!union\+With@{union\+With}}
+\index{union\+With@{union\+With}!library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon@{library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon}}
+\subsubsection{\texorpdfstring{union\+With()}{unionWith()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} library\+::math\+::geom\+::d2\+::objects\+::\+Multi\+Polygon\+::union\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \&}]{a\+Multi\+Polygon }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of multi-\/polygon with multi-\/polygon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Multi\+Polygon} & A multi-\/polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A multi-\/polygon 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Library/\+Mathematics/\+Geometry/2\+D/\+Objects/\hyperlink{_multi_polygon_8hpp}{Multi\+Polygon.\+hpp}\item 
+src/\+Library/\+Mathematics/\+Geometry/2\+D/\+Objects/\hyperlink{_multi_polygon_8cpp}{Multi\+Polygon.\+cpp}\end{DoxyCompactItemize}

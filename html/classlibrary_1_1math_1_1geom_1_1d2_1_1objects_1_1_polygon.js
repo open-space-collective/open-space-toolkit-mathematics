@@ -9,6 +9,8 @@ var classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon =
     [ "~Polygon", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#ab384278ae8b6089c45a79856f71370ca", null ],
     [ "applyTransformation", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a920b30eb110c7164f65754979da17638", null ],
     [ "clone", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a15bbbe7e468a50d6059e2df946175e1c", null ],
+    [ "contains", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a9a59a791536ec6ca38fe75d378aadc8e", null ],
+    [ "contains", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a750ce732c80c9efafa534fc3ae9d8a6f", null ],
     [ "getEdgeAt", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a92d93fe3b0f2d2b17b393475f3e1c090", null ],
     [ "getEdgeCount", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#ac01b8f978e663f09ef0f7a91de7720ce", null ],
     [ "getEdges", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a22fbf3d4f9553311497d20b9495841a7", null ],
@@ -23,5 +25,6 @@ var classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon =
     [ "operator=", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#afd72b5c2aa958835958d197ee57c3152", null ],
     [ "operator==", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a2d92051aa3535659ec1ca1849ea65fa0", null ],
     [ "print", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a028ca7818387654ed1aab1584cee6cc5", null ],
-    [ "toString", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#acef17857f29323e985fba23441ed1171", null ]
+    [ "toString", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#acef17857f29323e985fba23441ed1171", null ],
+    [ "unionWith", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a813f6b937bddcefd06701200adbb8a5f", null ]
 ];
