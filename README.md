@@ -8,15 +8,15 @@ Geometry, curve fitting, optimization.
 [![Documentation](https://img.shields.io/readthedocs/pip/stable.svg)](https://open-space-collective.github.io/library-mathematics)
 [![GitHub version](https://badge.fury.io/gh/open-space-collective%2Flibrary-mathematics.svg)](https://badge.fury.io/gh/open-space-collective%2Flibrary-mathematics)
 [![PyPI version](https://badge.fury.io/py/LibraryMathematicsPy.svg)](https://badge.fury.io/py/LibraryMathematicsPy)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Warning
 
-Library **name** and **license** are yet to be defined.
+Library **name** is yet to be defined.
 
 Please check the following projects:
 
 - [Naming Project](https://github.com/orgs/open-space-collective/projects/1)
-- [Licensing Project](https://github.com/orgs/open-space-collective/projects/2)
 
 *⚠ This library is still under heavy development. Do not use!*
 
@@ -168,7 +168,7 @@ The **Mathematics** library internally uses the following dependencies:
 | Boost                  | 1.67.0  | Boost Software License | [boost.org](https://www.boost.org)                                                                     |
 | Eigen                  | 3.3.4   | MPL2                   | [eigen.tuxfamily.org](http://eigen.tuxfamily.org/index.php)                                            |
 | Geometric Tools Engine | 3.14    | Boost Software License | [geometrictools.com](https://www.geometrictools.com)                                                   |
-| Core                   | master  | TBD                    | [github.com/open-space-collective/library-core](https://github.com/open-space-collective/library-core) |
+| Core                   | master  | Apache License 2.0     | [github.com/open-space-collective/library-core](https://github.com/open-space-collective/library-core) |
 
 ## Contribution
 
@@ -182,4 +182,4 @@ Please read our [contributing guide](CONTRIBUTING.md) to learn about our develop
 
 ## License
 
-*To be defined...*
+Apache License 2.0

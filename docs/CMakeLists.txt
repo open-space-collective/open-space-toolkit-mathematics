@@ -3,7 +3,7 @@
 # @project        Library/Mathematics
 # @file           docs/CMakeLists.txt
 # @author         Lucas Brémond <lucas@loftorbital.com>
-# @license        TBD
+# @license        Apache License 2.0
 
 ################################################################################################################################################################
 
