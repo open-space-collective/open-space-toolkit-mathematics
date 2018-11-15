@@ -5,7 +5,7 @@
 # @project        Library/Mathematics
 # @file           LibraryMathematicsPy/Geometry/__init__.py
 # @author         Lucas Brémond <lucas@loftorbital.com>
-# @license        TBD
+# @license        Apache License 2.0
 
 ################################################################################################################################################################
 
