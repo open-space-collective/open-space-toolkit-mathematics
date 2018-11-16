@@ -33,7 +33,7 @@ if [[ ! -z $1 ]] && [[ $1 == "--link" ]]; then
     --volume="$(pwd)/helpers:/home/jovyan/notebooks/helpers:ro" \
     --volume="$(pwd)/../../share/data:/app/share/data" \
     --workdir="/home/jovyan/notebooks" \
-    "${repository_name}/${project_name}-python-debug" \
+    "${image_name}-python-debug:${image_version}" \
     bash -c "mkdir -p /opt/conda/lib/python3.6/site-packages/Library/Core \
     && ln -s /opt/library-core/liblibrary-core.so.0 /opt/conda/lib/python3.6/site-packages/Library/Core/liblibrary-core.so.0 \
     && ln -s /opt/library-core/LibraryCorePy.so /opt/conda/lib/python3.6/site-packages/Library/Core/LibraryCorePy.so \
@@ -60,7 +60,7 @@ else
     --volume="$(pwd)/helpers:/home/jovyan/notebooks/helpers:ro" \
     --volume="$(pwd)/../../share/data:/app/share/data" \
     --workdir="/home/jovyan/notebooks" \
-    "${repository_name}/${project_name}-python-debug" \
+    "${image_name}-python-debug:${image_version}" \
     bash -c "mkdir -p /opt/conda/lib/python3.6/site-packages/Library/Mathematics \
     && ln -s /opt/lib/liblibrary-mathematics.so.0 /opt/conda/lib/python3.6/site-packages/Library/Mathematics/liblibrary-mathematics.so.0 \
     && ln -s /opt/lib/LibraryMathematicsPy.so /opt/conda/lib/python3.6/site-packages/Library/Mathematics/LibraryMathematicsPy.so \

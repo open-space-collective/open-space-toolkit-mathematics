@@ -17,7 +17,7 @@ source ../.env
 
 # Build Docker image if it does not exist already
 
-if [[ "$(docker images -q ${repository_name}/${project_name}-python 2> /dev/null)" == "" ]]; then
+if [[ "$(docker images -q ${image_name}-python:${image_version} 2> /dev/null)" == "" ]]; then
 
     pushd "${script_directory}/docker" > /dev/null
 
@@ -44,7 +44,7 @@ if [[ ! -z $1 ]] && [[ $1 == "--link" ]]; then
     --volume="${project_directory}/tutorials/python/notebooks:/home/jovyan/tutorials" \
     --volume="${project_directory}/share/data:/app/share/data" \
     --workdir="/home/jovyan" \
-    "${repository_name}/${project_name}-python" \
+    "${image_name}-python:${image_version}" \
     bash -c "mkdir -p /opt/conda/lib/python3.6/site-packages/Library/Core \
     && ln -s /opt/library-core/liblibrary-core.so.0 /opt/conda/lib/python3.6/site-packages/Library/Core/liblibrary-core.so.0 \
     && ln -s /opt/library-core/LibraryCorePy.so /opt/conda/lib/python3.6/site-packages/Library/Core/LibraryCorePy.so \
@@ -72,7 +72,7 @@ else
     --volume="${project_directory}/tutorials/python/notebooks:/home/jovyan/tutorials" \
     --volume="${project_directory}/share/data:/app/share/data" \
     --workdir="/home/jovyan" \
-    "${repository_name}/${project_name}-python" \
+    "${image_name}-python:${image_version}" \
     bash -c "mkdir -p /opt/conda/lib/python3.6/site-packages/Library/Mathematics \
     && ln -s /opt/lib/liblibrary-mathematics.so.0 /opt/conda/lib/python3.6/site-packages/Library/Mathematics/liblibrary-mathematics.so.0 \
     && ln -s /opt/lib/LibraryMathematicsPy.so /opt/conda/lib/python3.6/site-packages/Library/Mathematics/LibraryMathematicsPy.so \

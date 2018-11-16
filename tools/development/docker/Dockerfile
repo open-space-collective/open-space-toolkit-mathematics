@@ -7,13 +7,9 @@
 
 ################################################################################################################################################################
 
-FROM openspacecollective/library-core:0.1.7
+FROM openspacecollective/library-core:0.1.8
 
 LABEL maintainer="lucas@loftorbital.com"
-
-# Arguments
-
-ARG cpu_count=1
 
 # Dependencies
 
@@ -30,7 +26,7 @@ RUN mkdir /tmp/eigen \
  && make install \
  && rm -rf /tmp/eigen
 
-## Geometric Tools Engine [3.15]
+## Geometric Tools Engine [3.18]
 
 # RUN dnf -y update \
 #  && dnf install -y libX11-devel mesa-libGL-devel mesa-libEGL-devel libpng-devel \
@@ -38,11 +34,11 @@ RUN mkdir /tmp/eigen \
 
 # RUN mkdir /tmp/geometric-tools-engine \
 #  && pushd /tmp/geometric-tools-engine > /dev/null \
-#  && wget --quiet https://www.geometrictools.com/Downloads/GeometricToolsEngine3p15.zip \
-#  && unzip -q ./GeometricToolsEngine3p15.zip \
+#  && wget --quiet https://www.geometrictools.com/Downloads/GeometricToolsEngine3p18.zip \
+#  && unzip -q ./GeometricToolsEngine3p18.zip \
 #  && cd GeometricTools/GTEngine \
 #  && export GTE_PATH=$(pwd) \
-#  && make CFG=Release -j ${cpu_count} -f makeengine.gte \
+#  && make CFG=Release -j $(nproc) -f makeengine.gte \
 #  && cp -r ./Include /usr/local/include/Gte \
 #  && cp ./lib/Release/libgtengine.a /usr/local/lib \
 #  && rm -rf /tmp/geometric-tools-engine \
@@ -50,30 +46,30 @@ RUN mkdir /tmp/eigen \
 
 RUN mkdir /tmp/geometric-tools-engine \
  && pushd /tmp/geometric-tools-engine > /dev/null \
- && wget --quiet https://www.geometrictools.com/Downloads/GeometricToolsEngine3p15.zip \
- && unzip -q ./GeometricToolsEngine3p15.zip \
+ && wget --quiet https://www.geometrictools.com/Downloads/GeometricToolsEngine3p18.zip \
+ && unzip -q ./GeometricToolsEngine3p18.zip \
  && cd GeometricTools/GTEngine \
  && cp -r ./Include /usr/local/include/Gte \
  && rm -rf /tmp/geometric-tools-engine \
  && popd > /dev/null
 
-## Library ▸ Core [0.1.19]
+## Library ▸ Core [0.2.0]
 
 RUN mkdir -p /tmp/library-core \
  && pushd /tmp/library-core > /dev/null \
- && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.19/library-core-0.1.19-1.x86_64-runtime.rpm \
- && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.1.19/library-core-0.1.19-1.x86_64-devel.rpm \
+ && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.2.0/library-core-0.2.0-1.x86_64-runtime.rpm \
+ && wget --quiet https://github.com/open-space-collective/library-core/releases/download/0.2.0/library-core-0.2.0-1.x86_64-devel.rpm \
  && dnf install -y ./*.rpm \
  && rm -rf /tmp/library-core \
  && popd > /dev/null
 
 # Labels
 
-ARG version
+ARG VERSION
 
-ENV version ${version}
+ENV VERSION ${VERSION}
 
-LABEL version="${version}"
+LABEL VERSION="${VERSION}"
 
 # Execution
 
