@@ -55,6 +55,28 @@ if [[ ! -z $1 ]] && [[ $1 == "--link" ]]; then
     && echo 'from .LibraryMathematicsPy import *' > /opt/conda/lib/python3.6/site-packages/Library/Mathematics/__init__.py \
     && start-notebook.sh --NotebookApp.token=''"
 
+    # docker run \
+    # --name="${container_name}-notebook" \
+    # -it \
+    # --rm \
+    # --publish="${python_port}:8888" \
+    # --user="" \
+    # --env="JUPYTER_ENABLE_LAB=yes" \
+    # --env="LD_LIBRARY_PATH=/usr/local/lib:/opt/conda/lib/python3.6/site-packages:/home/jovyan/lib" \
+    # --env="PYTHONPATH=/opt/conda/lib/python3.6/site-packages:/home/jovyan/lib" \
+    # --volume="${library_core_directory}/lib:/opt/library-core:ro" \
+    # --volume="${project_directory}/lib:/opt/lib:ro" \
+    # --volume="${project_directory}/bindings/python/docs:/home/jovyan/docs" \
+    # --volume="${project_directory}/tutorials/python/notebooks:/home/jovyan/tutorials" \
+    # --volume="${project_directory}/share/data:/app/share/data" \
+    # --workdir="/home/jovyan" \
+    # "${image_name}-python:${image_version}" \
+    # bash -c "mkdir -p /opt/conda/lib/python3.6/site-packages/Library/Mathematics \
+    # && ln -s /opt/lib/liblibrary-mathematics.so.0 /opt/conda/lib/python3.6/site-packages/Library/Mathematics/liblibrary-mathematics.so.0 \
+    # && ln -s /opt/lib/LibraryMathematicsPy.so /opt/conda/lib/python3.6/site-packages/Library/Mathematics/LibraryMathematicsPy.so \
+    # && echo 'from .LibraryMathematicsPy import *' > /opt/conda/lib/python3.6/site-packages/Library/Mathematics/__init__.py \
+    # && start-notebook.sh --NotebookApp.token=''"
+
 else
 
     docker run \
@@ -62,22 +84,12 @@ else
     -it \
     --rm \
     --publish="${python_port}:8888" \
-    --user="" \
     --env="JUPYTER_ENABLE_LAB=yes" \
-    --env="LD_LIBRARY_PATH=/usr/local/lib:/opt/conda/lib/python3.6/site-packages:/home/jovyan/lib" \
-    --env="PYTHONPATH=/opt/conda/lib/python3.6/site-packages:/home/jovyan/lib" \
-    --volume="${library_core_directory}/lib:/opt/library-core:ro" \
-    --volume="${project_directory}/lib:/opt/lib:ro" \
     --volume="${project_directory}/bindings/python/docs:/home/jovyan/docs" \
     --volume="${project_directory}/tutorials/python/notebooks:/home/jovyan/tutorials" \
-    --volume="${project_directory}/share/data:/app/share/data" \
     --workdir="/home/jovyan" \
-    "${image_name}-python:${image_version}" \
-    bash -c "mkdir -p /opt/conda/lib/python3.6/site-packages/Library/Mathematics \
-    && ln -s /opt/lib/liblibrary-mathematics.so.0 /opt/conda/lib/python3.6/site-packages/Library/Mathematics/liblibrary-mathematics.so.0 \
-    && ln -s /opt/lib/LibraryMathematicsPy.so /opt/conda/lib/python3.6/site-packages/Library/Mathematics/LibraryMathematicsPy.so \
-    && echo 'from .LibraryMathematicsPy import *' > /opt/conda/lib/python3.6/site-packages/Library/Mathematics/__init__.py \
-    && start-notebook.sh --NotebookApp.token=''"
+    "jupyter/scipy-notebook:latest" \
+    start-notebook.sh --NotebookApp.token=''
 
 fi
 
