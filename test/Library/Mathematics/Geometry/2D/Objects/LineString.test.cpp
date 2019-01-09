@@ -42,7 +42,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, Clone)
 
     {
 
-        EXPECT_NO_THROW(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).clone()) ;
+        EXPECT_NO_THROW(const LineString* lineStringPtr = LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).clone() ; delete lineStringPtr ;) ;
 
     }
 

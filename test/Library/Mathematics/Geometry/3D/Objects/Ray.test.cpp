@@ -38,7 +38,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Clone)
 
     {
 
-        EXPECT_NO_THROW(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).clone()) ;
+        EXPECT_NO_THROW(const Ray* rayPtr = Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).clone() ; delete rayPtr ;) ;
 
     }
 

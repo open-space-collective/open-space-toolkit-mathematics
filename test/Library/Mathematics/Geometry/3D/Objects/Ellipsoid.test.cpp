@@ -50,7 +50,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Clone)
 
     {
 
-        EXPECT_NO_THROW(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).clone()) ;
+        EXPECT_NO_THROW(const Ellipsoid* ellipsoidPtr = Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).clone() ; delete ellipsoidPtr ;) ;
 
     }
 

@@ -42,7 +42,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, Clone)
 
     {
 
-        EXPECT_NO_THROW(PointSet({ { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }, { 0.0, 0.0, 2.0 } }).clone()) ;
+        EXPECT_NO_THROW(const PointSet* pointSetPtr = PointSet({ { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }, { 0.0, 0.0, 2.0 } }).clone() ; delete pointSetPtr ;) ;
 
     }
 

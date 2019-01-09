@@ -37,7 +37,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, Clone)
 
     {
 
-        EXPECT_NO_THROW(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).clone()) ;
+        EXPECT_NO_THROW(const Line* linePtr = Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).clone() ; delete linePtr ;) ;
 
     }
 

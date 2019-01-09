@@ -142,7 +142,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Clone)
             { 1.0, 0.0 }
         } ;
 
-        EXPECT_NO_THROW(Polygon(vertices).clone()) ;
+        EXPECT_NO_THROW(const Polygon* polygonPtr = Polygon(vertices).clone() ; delete polygonPtr ;) ;
 
     }
 
