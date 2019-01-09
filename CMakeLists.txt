@@ -263,9 +263,15 @@ ENDIF ()
 
 # INCLUDE_DIRECTORIES ("/usr/local/include/Gte")
 
-### Library ▸ Core [0.1]
+### Library ▸ Core [0.2.x]
 
-FIND_PACKAGE ("LibraryCore" "0.1" REQUIRED)
+FIND_PACKAGE ("LibraryCore" "0.2" REQUIRED)
+
+IF (NOT LibraryCore_FOUND)
+
+    MESSAGE (SEND_ERROR "[Library ▸ Core] not found.")
+
+ENDIF ()
 
 #####################################################################################3###########################################################################
 
@@ -450,9 +456,9 @@ INSTALL (FILES "LICENSE" DESTINATION ${INSTALL_ROOT} COMPONENT "documentation")
 
 IF (INSTALL_DATA)
 
-    IF (EXISTS "${PROJECT_SOURCE_DIR}/share/data")
+    IF (EXISTS "${PROJECT_SOURCE_DIR}/share")
 
-        INSTALL (DIRECTORY "${PROJECT_SOURCE_DIR}/share/data" DESTINATION ${INSTALL_DATA} COMPONENT "data")
+        INSTALL (DIRECTORY "${PROJECT_SOURCE_DIR}/share" DESTINATION ${INSTALL_DATA} COMPONENT "data")
 
     ENDIF ()
 
