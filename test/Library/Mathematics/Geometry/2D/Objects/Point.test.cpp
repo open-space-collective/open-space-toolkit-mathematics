@@ -34,7 +34,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, Clone)
 
     {
 
-        EXPECT_NO_THROW(Point(1.0, 2.0).clone()) ;
+        EXPECT_NO_THROW(const Point* pointPtr = Point(1.0, 2.0).clone() ; delete pointPtr ;) ;
 
     }
 

@@ -51,7 +51,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Clone)
         const Vector3d axis = Vector3d::Z() ;
         const Angle angle = Angle::Degrees(45.0) ;
 
-        EXPECT_NO_THROW(Cone(apex, axis, angle).clone()) ;
+        EXPECT_NO_THROW(const Cone* conePtr = Cone(apex, axis, angle).clone() ; delete conePtr ;) ;
 
     }
 

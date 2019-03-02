@@ -128,6 +128,19 @@ class Polygon : public Object
 
         virtual bool            isDefined                                   ( ) const override ;
 
+        /// @brief              Check if polygon intersects polygon
+        ///
+        /// @code
+        ///                     Polygon polygon = ... ;
+        ///                     Polygon anotherPolygon = ... ;
+        ///                     polygon.intersects(anotherPolygon) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPolygon A polygon
+        /// @return             True if polygon intersects polygon
+
+        bool                    intersects                                  (   const   Polygon&                    aPolygon                                    ) const ;
+
         /// @brief              Check if polygon contains point
         ///
         /// @code
@@ -222,7 +235,7 @@ class Polygon : public Object
         /// @param              [in] aPolygon A polygon
         /// @return             A multi-polygon
 
-        MultiPolygon            unionWith                                   (   const   Polygon&                    aPolygon                                    ) const ;
+        // MultiPolygon            unionWith                                   (   const   Polygon&                    aPolygon                                    ) const ;
 
         /// @brief              Get string representation
         ///

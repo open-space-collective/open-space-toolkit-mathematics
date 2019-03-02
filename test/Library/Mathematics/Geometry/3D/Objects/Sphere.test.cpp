@@ -44,7 +44,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Clone)
 
     {
 
-        EXPECT_NO_THROW(Sphere({ 1.0, 2.0, 3.0 }, 4.0).clone()) ;
+        EXPECT_NO_THROW(const Sphere* spherePtr = Sphere({ 1.0, 2.0, 3.0 }, 4.0).clone() ; delete spherePtr ;) ;
 
     }
 

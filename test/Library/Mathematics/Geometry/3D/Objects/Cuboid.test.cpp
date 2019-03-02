@@ -59,7 +59,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Clone)
         const std::array<Vector3d, 3> axes = { Vector3d { 1.0, 0.0, 0.0 }, Vector3d { 0.0, 1.0, 0.0 }, Vector3d { 0.0, 0.0, 1.0 } } ;
         const std::array<Real, 3> extent = { 1.0, 2.0, 3.0 } ;
 
-        EXPECT_NO_THROW(Cuboid(center, axes, extent).clone()) ;
+        EXPECT_NO_THROW(const Cuboid* cuboidPtr = Cuboid(center, axes, extent).clone() ; delete cuboidPtr ;) ;
 
     }
 

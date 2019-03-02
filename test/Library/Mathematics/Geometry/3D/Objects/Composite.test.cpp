@@ -105,7 +105,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Clone)
 
         const Pyramid pyramid = { base, apex } ;
 
-        EXPECT_NO_THROW(Composite(pyramid).clone() ;) ;
+        EXPECT_NO_THROW(const Composite* compositePtr = Composite(pyramid).clone() ; delete compositePtr ;) ;
 
     }
 

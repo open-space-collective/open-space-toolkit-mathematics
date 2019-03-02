@@ -49,7 +49,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Clone)
         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
         const Point apex = { 0.0, 0.0, 1.0 } ;
 
-        EXPECT_NO_THROW(Pyramid(base, apex).clone()) ;
+        EXPECT_NO_THROW(const Pyramid* pyramidPtr = Pyramid(base, apex).clone() ; delete pyramidPtr ;) ;
 
     }
 
