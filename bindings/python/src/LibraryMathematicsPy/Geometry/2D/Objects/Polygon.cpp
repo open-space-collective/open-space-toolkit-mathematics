@@ -37,6 +37,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Polygon
         .def(self_ns::repr(self_ns::self))
         
         .def("isDefined", &Polygon::isDefined)
+        .def("intersectsPolygon", +[] (const Polygon& aPolygon, const Polygon& anotherPolygon) -> bool { return aPolygon.intersects(anotherPolygon) ; })
         .def("containsPoint", +[] (const Polygon& aPolygon, const Point& aPoint) -> bool { return aPolygon.contains(aPoint) ; })
         .def("containsPointSet", +[] (const Polygon& aPolygon, const PointSet& aPointSet) -> bool { return aPolygon.contains(aPointSet) ; })
 
@@ -50,6 +51,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Polygon
         .def("getEdges", &Polygon::getEdges)
         .def("getVertices", &Polygon::getVertices)
         .def("toString", &Polygon::toString, LibraryMathematicsPy_Geometry_2D_Objects_Polygon_toString_overloads())
+        // .def("unionWith", &Polygon::unionWith)
         .def("applyTransformation", &Polygon::applyTransformation)
         
         .def("Undefined", &Polygon::Undefined).staticmethod("Undefined")

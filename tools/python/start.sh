@@ -88,7 +88,7 @@ else
     --volume="${project_directory}/bindings/python/docs:/home/jovyan/docs" \
     --volume="${project_directory}/tutorials/python/notebooks:/home/jovyan/tutorials" \
     --workdir="/home/jovyan" \
-    "jupyter/scipy-notebook:latest" \
+    "${image_name}-python:${image_version}" \
     start-notebook.sh --NotebookApp.token=''
 
 fi

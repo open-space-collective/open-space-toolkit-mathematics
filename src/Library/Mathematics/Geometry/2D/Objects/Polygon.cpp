@@ -64,6 +64,8 @@ class Polygon::Impl
 
         bool                    isDefined                                   ( ) const ;
 
+        bool                    intersects                                  (   const   Polygon&                    aPolygon                                    ) const ;
+        
         bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
         
         bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
@@ -91,6 +93,10 @@ class Polygon::Impl
         Array<Polygon::Edge>    getEdges                                    ( ) const ;
 
         Array<Polygon::Vertex>  getVertices                                 ( ) const ;
+
+        // Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
+        
+        // MultiPolygon            unionWith                                   (   const   Polygon&                    aPolygon                                    ) const ;
 
         String                  toString                                    (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const ;
@@ -149,6 +155,22 @@ bool                            Polygon::Impl::isDefined                    ( ) 
     return polygon_.outer().size() >= 3 ;
 }
 
+bool                            Polygon::Impl::intersects                   (   const   Polygon&                    aPolygon                                    ) const
+{
+
+    try
+    {
+        return boost::geometry::intersects(polygon_, aPolygon.implUPtr_->polygon_) ;
+    }
+    catch (const std::exception& anException)
+    {
+        throw library::core::error::RuntimeError("Error when checking if polygon intersects polygon: [{}]", anException.what()) ;
+    }
+
+    return false ;
+
+}
+
 bool                            Polygon::Impl::contains                     (   const   Point&                      aPoint                                      ) const
 {
 
@@ -168,9 +190,17 @@ bool                            Polygon::Impl::contains                     (   
 bool                            Polygon::Impl::contains                     (   const   PointSet&                   aPointSet                                   ) const
 {
     
-    throw library::core::error::runtime::ToBeImplemented("Polygon::contains (PointSet&)") ;
+    for (const auto& point : aPointSet)
+    {
 
-    return false ;
+        if (!this->contains(point))
+        {
+            return false ;
+        }
+
+    }
+
+    return true ;
     
 }
 
@@ -490,6 +520,23 @@ bool                            Polygon::isDefined                          ( ) 
     return (implUPtr_ != nullptr) && implUPtr_->isDefined() ;
 }
 
+bool                            Polygon::intersects                         (   const   Polygon&                    aPolygon                                    ) const
+{
+
+    if (!aPolygon.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->intersects(aPolygon) ;
+
+}
+
 bool                            Polygon::contains                           (   const   Point&                      aPoint                                      ) const
 {
 
@@ -693,6 +740,26 @@ String                          Polygon::toString                           (   
     return implUPtr_->toString(aFormat, aPrecision) ;
 
 }
+
+// Intersection                    Polygon::intersectionWith                   (   const   Polygon&                    aPolygon                                    ) const
+// {
+
+//     if (!this->isDefined())
+//     {
+//         throw library::core::error::runtime::Undefined("Polygon") ;
+//     }
+
+// }
+
+// MultiPolygon                    Polygon::unionWith                          (   const   Polygon&                    aPolygon                                    ) const
+// {
+
+//     if (!this->isDefined())
+//     {
+//         throw library::core::error::runtime::Undefined("Polygon") ;
+//     }
+
+// }
 
 void                            Polygon::applyTransformation                (   const   Transformation&             aTransformation                             )
 {

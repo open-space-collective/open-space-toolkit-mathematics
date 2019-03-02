@@ -10,6 +10,8 @@
 #include <Library/Mathematics/Geometry/2D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 
+#include <Library/Core/Containers/Tuple.hpp>
+
 #include <Global.test.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -369,6 +371,95 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IsDefined)
     }
 
 }
+
+TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IntersectsPolygon)
+{
+
+    using library::core::ctnr::Tuple ;
+    using library::core::ctnr::Array ;
+
+    using library::math::geom::d2::objects::Polygon ;
+
+    {
+
+        const Array<Tuple<Polygon, Polygon, bool>> testCases =
+        {
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, true },
+            { Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, true },
+            { Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, false },
+            { Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, true },
+            { Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 } } }, true },
+            { Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, true },
+            { Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, false },
+            { Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, false },
+            { Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 } } }, false },
+            { Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, true },
+            { Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, true },
+            { Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, false },
+            { Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 } } }, true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 } } }, Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 } } }, Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, false },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, true },
+        } ;
+
+        for (const auto& testCase : testCases)
+        {
+
+            const Polygon& firstPolygon = std::get<0>(testCase) ;
+            const Polygon& secondPolygon = std::get<1>(testCase) ;
+            const bool result = std::get<2>(testCase) ;
+
+            EXPECT_EQ(result, firstPolygon.intersects(secondPolygon)) ;
+
+        }
+
+    }
+
+    {
+
+        const Array<Polygon::Vertex> vertices =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Polygon polygon = { vertices } ;
+
+        EXPECT_ANY_THROW(Polygon::Undefined().intersects(Polygon::Undefined())) ;
+        EXPECT_ANY_THROW(polygon.intersects(Polygon::Undefined())) ;
+        EXPECT_ANY_THROW(Polygon::Undefined().intersects(polygon)) ;
+
+    }
+
+}
+
+// TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ContainsPoint)
+// {
+
+//     using library::math::geom::d2::objects::Polygon ;
+
+//     {
+
+//         FAIL() ;
+
+//     }
+
+// }
+
+// TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ContainsPointSet)
+// {
+
+//     using library::math::geom::d2::objects::Polygon ;
+
+//     {
+
+//         FAIL() ;
+
+//     }
+
+// }
 
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingCount)
 {
@@ -890,6 +981,32 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
     }
 
 }
+
+// TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith)
+// {
+
+//     using library::math::geom::d2::objects::Polygon ;
+
+//     {
+
+//         FAIL() ;
+
+//     }
+
+// }
+
+// TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, UnionWith)
+// {
+
+//     using library::math::geom::d2::objects::Polygon ;
+
+//     {
+
+//         FAIL() ;
+
+//     }
+
+// }
 
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ToString)
 {
