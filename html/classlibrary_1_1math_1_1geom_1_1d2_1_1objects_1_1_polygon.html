@@ -145,6 +145,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a83e0962f91f0732048e156ad634faaea"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a83e0962f91f0732048e156ad634faaea">isDefined</a> () const override</td></tr>
 <tr class="memdesc:a83e0962f91f0732048e156ad634faaea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if polygon is defined.  <a href="#a83e0962f91f0732048e156ad634faaea">More...</a><br /></td></tr>
 <tr class="separator:a83e0962f91f0732048e156ad634faaea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29df028aaa9e1be74ae8ea1716cf99da"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a29df028aaa9e1be74ae8ea1716cf99da">intersects</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html">Polygon</a> &amp;aPolygon) const</td></tr>
+<tr class="memdesc:a29df028aaa9e1be74ae8ea1716cf99da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if polygon intersects polygon.  <a href="#a29df028aaa9e1be74ae8ea1716cf99da">More...</a><br /></td></tr>
+<tr class="separator:a29df028aaa9e1be74ae8ea1716cf99da"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a59a791536ec6ca38fe75d378aadc8e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a9a59a791536ec6ca38fe75d378aadc8e">contains</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html">Point</a> &amp;aPoint) const</td></tr>
 <tr class="memdesc:a9a59a791536ec6ca38fe75d378aadc8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if polygon contains point.  <a href="#a9a59a791536ec6ca38fe75d378aadc8e">More...</a><br /></td></tr>
 <tr class="separator:a9a59a791536ec6ca38fe75d378aadc8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -178,11 +181,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae73d59e0e0bb5d13bd69e2924e602e20"><td class="memItemLeft" align="right" valign="top">Array&lt; <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a1559cddbcb23d41f2be9e389b0ccd127">Polygon::Vertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#ae73d59e0e0bb5d13bd69e2924e602e20">getVertices</a> () const</td></tr>
 <tr class="memdesc:ae73d59e0e0bb5d13bd69e2924e602e20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get polygon vertices.  <a href="#ae73d59e0e0bb5d13bd69e2924e602e20">More...</a><br /></td></tr>
 <tr class="separator:ae73d59e0e0bb5d13bd69e2924e602e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a813f6b937bddcefd06701200adbb8a5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon.html">MultiPolygon</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a813f6b937bddcefd06701200adbb8a5f">unionWith</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html">Polygon</a> &amp;aPolygon) const</td></tr>
-<tr class="memdesc:a813f6b937bddcefd06701200adbb8a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute intersection of polygon with polygon.  <a href="#a813f6b937bddcefd06701200adbb8a5f">More...</a><br /></td></tr>
-<tr class="separator:a813f6b937bddcefd06701200adbb8a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acef17857f29323e985fba23441ed1171"><td class="memItemLeft" align="right" valign="top">virtual String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#acef17857f29323e985fba23441ed1171">toString</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#ac8cd61dada4960cfee9a469231621b17">Object::Format</a> &amp;aFormat=<a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1_object.html#ac8cd61dada4960cfee9a469231621b17aeb6d8ae6f20283755b339c0dc273988b">Object::Format::Standard</a>, const Integer &amp;aPrecision=Integer::Undefined()) const override</td></tr>
-<tr class="memdesc:acef17857f29323e985fba23441ed1171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get string representation.  <a href="#acef17857f29323e985fba23441ed1171">More...</a><br /></td></tr>
+<tr class="memdesc:acef17857f29323e985fba23441ed1171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute intersection of polygon with polygon.  <a href="#acef17857f29323e985fba23441ed1171">More...</a><br /></td></tr>
 <tr class="separator:acef17857f29323e985fba23441ed1171"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a028ca7818387654ed1aab1584cee6cc5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a028ca7818387654ed1aab1584cee6cc5">print</a> (std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</td></tr>
 <tr class="memdesc:a028ca7818387654ed1aab1584cee6cc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print polygon.  <a href="#a028ca7818387654ed1aab1584cee6cc5">More...</a><br /></td></tr>
@@ -707,6 +707,33 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a29df028aaa9e1be74ae8ea1716cf99da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29df028aaa9e1be74ae8ea1716cf99da">&#9670;&nbsp;</a></span>intersects()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool library::math::geom::d2::objects::Polygon::intersects </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html">Polygon</a> &amp;&#160;</td>
+          <td class="paramname"><em>aPolygon</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if polygon intersects polygon. </p>
+<div class="fragment"><div class="line"><a class="code" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#ad2a0b0bcd5301dbcd9e2fa101fbd220b">Polygon</a> polygon = ... ;</div><div class="line"><a class="code" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#ad2a0b0bcd5301dbcd9e2fa101fbd220b">Polygon</a> anotherPolygon = ... ;</div><div class="line">polygon.intersects(anotherPolygon) ;</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPolygon</td><td>A polygon </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if polygon intersects polygon </dd></dl>
+
+</div>
+</div>
 <a id="a83e0962f91f0732048e156ad634faaea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a83e0962f91f0732048e156ad634faaea">&#9670;&nbsp;</a></span>isDefined()</h2>
 
@@ -899,7 +926,21 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get string representation. </p>
+<p>Compute intersection of polygon with polygon. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPolygon</td><td>A polygon </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Intersection of polygon with polygon Compute union of polygon with polygon</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPolygon</td><td>A polygon </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A multi-polygon Get string representation</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aFormat</td><td>A format </td></tr>
@@ -937,40 +978,6 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Constructs an undefined polygon. </p>
 <div class="fragment"><div class="line"><a class="code" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#ad2a0b0bcd5301dbcd9e2fa101fbd220b">Polygon</a> polygon = <a class="code" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a86e2c184f51c1e93fce5a786457b9fc3">Polygon::Undefined</a>() ; <span class="comment">// Undefined</span></div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Undefined polygon </dd></dl>
-
-</div>
-</div>
-<a id="a813f6b937bddcefd06701200adbb8a5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a813f6b937bddcefd06701200adbb8a5f">&#9670;&nbsp;</a></span>unionWith()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon.html">MultiPolygon</a> library::math::geom::d2::objects::Polygon::unionWith </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html">Polygon</a> &amp;&#160;</td>
-          <td class="paramname"><em>aPolygon</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Compute intersection of polygon with polygon. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">aPolygon</td><td>A polygon </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Intersection of polygon with polygon Compute union of polygon with polygon</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">aPolygon</td><td>A polygon </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A multi-polygon </dd></dl>
 
 </div>
 </div>

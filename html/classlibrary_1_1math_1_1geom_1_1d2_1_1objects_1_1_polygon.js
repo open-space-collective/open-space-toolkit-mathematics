@@ -20,11 +20,11 @@ var classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon =
     [ "getVertexAt", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a3d592373be3ef2a722cfd70935f47832", null ],
     [ "getVertexCount", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#aece2a526c36bbd641588e9742228fb08", null ],
     [ "getVertices", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#ae73d59e0e0bb5d13bd69e2924e602e20", null ],
+    [ "intersects", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a29df028aaa9e1be74ae8ea1716cf99da", null ],
     [ "isDefined", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a83e0962f91f0732048e156ad634faaea", null ],
     [ "operator!=", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a904fe22c8a690a6b5eb4f8746602d637", null ],
     [ "operator=", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#afd72b5c2aa958835958d197ee57c3152", null ],
     [ "operator==", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a2d92051aa3535659ec1ca1849ea65fa0", null ],
     [ "print", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a028ca7818387654ed1aab1584cee6cc5", null ],
-    [ "toString", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#acef17857f29323e985fba23441ed1171", null ],
-    [ "unionWith", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a813f6b937bddcefd06701200adbb8a5f", null ]
+    [ "toString", "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#acef17857f29323e985fba23441ed1171", null ]
 ];
