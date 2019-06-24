@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Cuboid.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -73,7 +73,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, EqualToOperator)
     using library::math::obj::Vector3d ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Cuboid ;
-    
+
     {
 
         const Point center = { 0.0, 0.0, 0.0 } ;
@@ -128,7 +128,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, NotEqualToOperator)
     using library::math::obj::Vector3d ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Cuboid ;
-    
+
     {
 
         const Point center = { 0.0, 0.0, 0.0 } ;
@@ -208,7 +208,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IsDefined)
     using library::math::obj::Vector3d ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Cuboid ;
-    
+
     {
 
         const Point center = { 0.0, 0.0, 0.0 } ;
@@ -235,7 +235,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IsNear)
     using library::math::obj::Vector3d ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Cuboid ;
-    
+
     {
 
         const Point center = { 0.0, 0.0, 0.0 } ;
@@ -338,7 +338,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Point)
 
         EXPECT_TRUE(cuboid.intersects(Point(+1.0, +0.5, +1.0))) ;
         EXPECT_TRUE(cuboid.intersects(Point(+1.0, -0.5, +1.0))) ;
-        
+
         EXPECT_TRUE(cuboid.intersects(Point(+1.0, +0.5, -1.0))) ;
         EXPECT_TRUE(cuboid.intersects(Point(+1.0, -0.5, -1.0))) ;
 
@@ -498,7 +498,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
         EXPECT_TRUE(cuboid.intersects(Line({ +1.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ +1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ +1.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
-        
+
         EXPECT_TRUE(cuboid.intersects(Line({ -1.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ -1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ -1.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
@@ -506,7 +506,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, +2.0, 0.0 }, { 1.0, 0.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, +2.0, 0.0 }, { 0.0, 1.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, +2.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
-        
+
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, -2.0, 0.0 }, { 1.0, 0.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, -2.0, 0.0 }, { 0.0, 1.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, -2.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
@@ -514,7 +514,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, 0.0, +3.0 }, { 1.0, 0.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, 0.0, +3.0 }, { 0.0, 1.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, 0.0, +3.0 }, { 0.0, 0.0, 1.0 }))) ;
-        
+
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, 0.0, -3.0 }, { 1.0, 0.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, 0.0, -3.0 }, { 0.0, 1.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, 0.0, -3.0 }, { 0.0, 0.0, 1.0 }))) ;
@@ -530,7 +530,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
         EXPECT_FALSE(cuboid.intersects(Line({ 0.0, +2.1, 0.0 }, { 1.0, 0.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, +2.1, 0.0 }, { 0.0, 1.0, 0.0 }))) ;
         EXPECT_FALSE(cuboid.intersects(Line({ 0.0, +2.1, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
-        
+
         EXPECT_FALSE(cuboid.intersects(Line({ 0.0, -2.1, 0.0 }, { 1.0, 0.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, -2.1, 0.0 }, { 0.0, 1.0, 0.0 }))) ;
         EXPECT_FALSE(cuboid.intersects(Line({ 0.0, -2.1, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
@@ -538,7 +538,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
         EXPECT_FALSE(cuboid.intersects(Line({ 0.0, 0.0, +3.1 }, { 1.0, 0.0, 0.0 }))) ;
         EXPECT_FALSE(cuboid.intersects(Line({ 0.0, 0.0, +3.1 }, { 0.0, 1.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, 0.0, +3.1 }, { 0.0, 0.0, 1.0 }))) ;
-        
+
         EXPECT_FALSE(cuboid.intersects(Line({ 0.0, 0.0, -3.1 }, { 1.0, 0.0, 0.0 }))) ;
         EXPECT_FALSE(cuboid.intersects(Line({ 0.0, 0.0, -3.1 }, { 0.0, 1.0, 0.0 }))) ;
         EXPECT_TRUE(cuboid.intersects(Line({ 0.0, 0.0, -3.1 }, { 0.0, 0.0, 1.0 }))) ;
@@ -552,7 +552,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
         const std::array<Real, 3> extent = { 1.0, 2.0, 3.0 } ;
 
         const Cuboid cuboid = { center, axes, extent } ;
-        
+
         EXPECT_ANY_THROW(Cuboid::Undefined().intersects(Line::Undefined())) ;
         EXPECT_ANY_THROW(cuboid.intersects(Line::Undefined())) ;
         EXPECT_ANY_THROW(Cuboid::Undefined().intersects(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
@@ -571,7 +571,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
 //     using library::math::geom::d3::objects::Cuboid ;
 
 //     {
-        
+
 //         EXPECT_ANY_THROW(Cuboid::Undefined().intersects(Ray::Undefined())) ;
 //         EXPECT_ANY_THROW(Cuboid(Point::Origin(), 1.0, 1.0, 1.0).intersects(Ray::Undefined())) ;
 //         EXPECT_ANY_THROW(Cuboid::Undefined().intersects(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
@@ -590,7 +590,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
 //     using library::math::geom::d3::objects::Cuboid ;
 
 //     {
-        
+
 //         EXPECT_ANY_THROW(Cuboid(Point::Origin(), 1.0, 1.0, 1.0).intersects(Segment::Undefined())) ;
 
 //     }
@@ -607,7 +607,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
 //     using library::math::geom::d3::objects::Cuboid ;
 
 //     {
-        
+
 //         EXPECT_ANY_THROW(Cuboid::Undefined().intersects(Plane::Undefined())) ;
 //         EXPECT_ANY_THROW(Cuboid(Point::Origin(), 1.0, 1.0, 1.0).intersects(Plane::Undefined())) ;
 
@@ -665,7 +665,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Contains_Point)
 
         EXPECT_TRUE(cuboid.contains(Point(+1.0, +0.5, +1.0))) ;
         EXPECT_TRUE(cuboid.contains(Point(+1.0, -0.5, +1.0))) ;
-        
+
         EXPECT_TRUE(cuboid.contains(Point(+1.0, +0.5, -1.0))) ;
         EXPECT_TRUE(cuboid.contains(Point(+1.0, -0.5, -1.0))) ;
 
@@ -1197,7 +1197,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Undefined)
 {
 
     using library::math::geom::d3::objects::Cuboid ;
-    
+
     {
 
         EXPECT_NO_THROW(Cuboid::Undefined()) ;
@@ -1213,7 +1213,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Cube)
     using library::math::obj::Vector3d ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Cuboid ;
-    
+
     {
 
         const Cuboid cube = Cuboid::Cube({ 0.0, 0.0, 0.0 }, 1.0) ;

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Composite.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -108,7 +108,7 @@ class Composite : public Object
         ///
         /// @param              [in] aComposite A composite
         /// @return             Concatenated composite
-        
+
         Composite               operator +                                  (   const   Composite&                  aComposite                                  ) const ;
 
         /// @brief              Addition assignment operator (composite concatenation)
@@ -117,7 +117,7 @@ class Composite : public Object
         ///
         /// @param              [in] aComposite A composite
         /// @return             Reference to concatenated composite
-        
+
         Composite&              operator +=                                 (   const   Composite&                  aComposite                                  ) ;
 
         /// @brief              Check if composite is defined
@@ -144,7 +144,7 @@ class Composite : public Object
             {
                 throw library::core::error::runtime::Undefined("Composite") ;
             }
-            
+
             return (objects_.getSize() == 1) && (dynamic_cast<const Type*>(objects_.accessFirst().get()) != nullptr) ;
 
         }
@@ -184,28 +184,28 @@ class Composite : public Object
         ///
         /// @param              [in] anObject An object
         /// @return             True if composite intersects object
-        
+
         bool                    intersects                                  (   const   Object&                     anObject                                    ) const ;
 
         /// @brief              Check if composite intersects composite
         ///
         /// @param              [in] aComposite A composite
         /// @return             True if composite intersects composite
-        
+
         bool                    intersects                                  (   const   Composite&                  aComposite                                  ) const ;
 
         /// @brief              Check if composite contains object
         ///
         /// @param              [in] anObject An object
         /// @return             True if composite contains object
-        
+
         bool                    contains                                    (   const   Object&                     anObject                                    ) const ;
 
         /// @brief              Check if composite contains composite
         ///
         /// @param              [in] aComposite A composite
         /// @return             True if composite contains composite
-        
+
         bool                    contains                                    (   const   Composite&                  aComposite                                  ) const ;
 
         /// @brief              Access object at index

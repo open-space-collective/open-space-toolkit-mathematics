@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Polygon.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -64,7 +64,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, EqualToOperator)
     using Polygon2d = library::math::geom::d2::objects::Polygon ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
-    
+
     {
 
         const Polygon2d polygon2d = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
@@ -104,7 +104,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, NotEqualToOperator)
     using Polygon2d = library::math::geom::d2::objects::Polygon ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
-    
+
     {
 
         const Polygon2d polygon2d = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
@@ -144,7 +144,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, StreamOperator)
     using Polygon2d = library::math::geom::d2::objects::Polygon ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -169,7 +169,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, IsDefined)
     using Polygon2d = library::math::geom::d2::objects::Polygon ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
-    
+
     {
 
         const Polygon2d polygon2d = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
@@ -198,7 +198,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, IsNear)
     using Polygon2d = library::math::geom::d2::objects::Polygon ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
-    
+
     {
 
         const Polygon2d polygon2d = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
@@ -266,7 +266,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetPolygon2d)
     using Polygon2d = library::math::geom::d2::objects::Polygon ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
-    
+
     {
 
         const Polygon2d polygon2d = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
@@ -293,7 +293,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetOrigin)
     using Polygon2d = library::math::geom::d2::objects::Polygon ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
-    
+
     {
 
         const Polygon2d polygon2d = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
@@ -320,7 +320,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetXAxis)
     using Polygon2d = library::math::geom::d2::objects::Polygon ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
-    
+
     {
 
         const Polygon2d polygon2d = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
@@ -347,7 +347,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetYAxis)
     using Polygon2d = library::math::geom::d2::objects::Polygon ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
-    
+
     {
 
         const Polygon2d polygon2d = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
@@ -374,7 +374,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetNormalVector)
     using Polygon2d = library::math::geom::d2::objects::Polygon ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
-    
+
     {
 
         const Polygon2d polygon2d = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
@@ -470,7 +470,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, Undefined)
 {
 
     using library::math::geom::d3::objects::Polygon ;
-    
+
     {
 
         EXPECT_NO_THROW(Polygon::Undefined()) ;

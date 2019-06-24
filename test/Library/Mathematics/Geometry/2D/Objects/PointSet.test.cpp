@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/2D/Objects/PointSet.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -51,7 +51,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, EqualToOperator)
 {
 
     using library::math::geom::d2::objects::PointSet ;
-    
+
     {
 
         EXPECT_TRUE(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }) == PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } })) ;
@@ -60,7 +60,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, EqualToOperator)
         EXPECT_TRUE(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }) == PointSet({ { 0.0, 1.0 }, { 0.0, 2.0 }, { 0.0, 0.0 } })) ;
         EXPECT_TRUE(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }) == PointSet({ { 0.0, 2.0 }, { 0.0, 0.0 }, { 0.0, 1.0 } })) ;
         EXPECT_TRUE(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }) == PointSet({ { 0.0, 2.0 }, { 0.0, 1.0 }, { 0.0, 0.0 } })) ;
-        
+
         EXPECT_TRUE(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }) == PointSet({ { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } })) ;
 
         EXPECT_TRUE(PointSet::Empty() == PointSet::Empty()) ;
@@ -95,7 +95,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, NotEqualToOperator)
         EXPECT_FALSE(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }) != PointSet({ { 0.0, 1.0 }, { 0.0, 2.0 }, { 0.0, 0.0 } })) ;
         EXPECT_FALSE(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }) != PointSet({ { 0.0, 2.0 }, { 0.0, 0.0 }, { 0.0, 1.0 } })) ;
         EXPECT_FALSE(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }) != PointSet({ { 0.0, 2.0 }, { 0.0, 1.0 }, { 0.0, 0.0 } })) ;
-        
+
         EXPECT_FALSE(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }) != PointSet({ { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } })) ;
 
         EXPECT_FALSE(PointSet::Empty() != PointSet::Empty()) ;
@@ -121,7 +121,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, StreamOperator)
 {
 
     using library::math::geom::d2::objects::PointSet ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -138,7 +138,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, IsDefined)
 {
 
     using library::math::geom::d2::objects::PointSet ;
-    
+
     {
 
         EXPECT_TRUE(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }).isDefined()) ;
@@ -158,7 +158,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, IsEmpty)
 {
 
     using library::math::geom::d2::objects::PointSet ;
-    
+
     {
 
         EXPECT_FALSE(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }).isEmpty()) ;
@@ -178,14 +178,14 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, IsNear)
 {
 
     using library::core::types::Real ;
-    
+
     using library::math::geom::d2::objects::PointSet ;
-    
+
     {
 
         EXPECT_TRUE(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }).isNear(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }), Real::Epsilon())) ;
         EXPECT_TRUE(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }).isNear(PointSet({ { 0.0, 1.0 }, { 0.0, 0.0 }, { 0.0, 2.0 } }), Real::Epsilon())) ;
-        
+
         EXPECT_TRUE(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }).isNear(PointSet({ { 0.0, Real::Epsilon() }, { Real::Epsilon(), 1.0 }, { 0.0, 2.0 } }), Real::Epsilon())) ;
 
     }
@@ -342,7 +342,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, Empty)
 {
 
     using library::math::geom::d2::objects::PointSet ;
-    
+
     {
 
         EXPECT_NO_THROW(PointSet::Empty()) ;

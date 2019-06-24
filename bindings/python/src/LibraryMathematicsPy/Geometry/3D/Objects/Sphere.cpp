@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Objects/Sphere.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -37,7 +37,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Sphere 
 
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
-        
+
         .def("isDefined", &Sphere::isDefined)
         .def("isUnitary", &Sphere::isUnitary)
 
@@ -56,7 +56,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Sphere 
         .def("intersectionWithRay", +[] (const Sphere& aSphere, const Ray& aRay) -> Intersection { return aSphere.intersectionWith(aRay) ; })
         .def("intersectionWithRay", +[] (const Sphere& aSphere, const Ray& aRay, const bool onlyInSight) -> Intersection { return aSphere.intersectionWith(aRay, onlyInSight) ; })
         .def("applyTransformation", &Sphere::applyTransformation)
-        
+
         .def("Undefined", &Sphere::Undefined).staticmethod("Undefined")
         .def("Unit", &Sphere::Unit).staticmethod("Unit")
 

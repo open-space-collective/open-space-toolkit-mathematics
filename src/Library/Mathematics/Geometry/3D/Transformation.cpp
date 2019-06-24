@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Transformation.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -55,13 +55,13 @@ bool                            Transformation::operator !=                 (   
 
 Transformation                  Transformation::operator *                  (   const   Transformation&             aTransformation                             ) const
 {
-    
+
     Transformation transformation = { *this } ;
 
     transformation *= aTransformation ;
 
     return transformation ;
-    
+
 }
 
 Vector4d                        Transformation::operator *                  (   const   Vector4d&                   aVector                                     ) const
@@ -117,7 +117,7 @@ Transformation&                 Transformation::operator *=                 (   
         { { Transformation::Type::Identity,         Transformation::Type::Reflection },     Transformation::Type::Reflection },
         { { Transformation::Type::Identity,         Transformation::Type::Shear },          Transformation::Type::Shear },
         { { Transformation::Type::Identity,         Transformation::Type::Affine },         Transformation::Type::Affine },
-        
+
         { { Transformation::Type::Translation,      Transformation::Type::Undefined },      Transformation::Type::Undefined },
         { { Transformation::Type::Translation,      Transformation::Type::Identity },       Transformation::Type::Translation },
         { { Transformation::Type::Translation,      Transformation::Type::Translation },    Transformation::Type::Translation },
@@ -126,7 +126,7 @@ Transformation&                 Transformation::operator *=                 (   
         { { Transformation::Type::Translation,      Transformation::Type::Reflection },     Transformation::Type::Affine },
         { { Transformation::Type::Translation,      Transformation::Type::Shear },          Transformation::Type::Affine },
         { { Transformation::Type::Translation,      Transformation::Type::Affine },         Transformation::Type::Affine },
-        
+
         { { Transformation::Type::Rotation,         Transformation::Type::Undefined },      Transformation::Type::Undefined },
         { { Transformation::Type::Rotation,         Transformation::Type::Identity },       Transformation::Type::Rotation },
         { { Transformation::Type::Rotation,         Transformation::Type::Translation },    Transformation::Type::Affine },
@@ -135,16 +135,16 @@ Transformation&                 Transformation::operator *=                 (   
         { { Transformation::Type::Rotation,         Transformation::Type::Reflection },     Transformation::Type::Affine },
         { { Transformation::Type::Rotation,         Transformation::Type::Shear },          Transformation::Type::Affine },
         { { Transformation::Type::Rotation,         Transformation::Type::Affine },         Transformation::Type::Affine },
-        
+
         { { Transformation::Type::Reflection,       Transformation::Type::Undefined },      Transformation::Type::Undefined },
         { { Transformation::Type::Reflection,       Transformation::Type::Identity },       Transformation::Type::Reflection },
         { { Transformation::Type::Reflection,       Transformation::Type::Translation },    Transformation::Type::Affine },
         { { Transformation::Type::Reflection,       Transformation::Type::Rotation },       Transformation::Type::Affine },
         { { Transformation::Type::Reflection,       Transformation::Type::Scaling },        Transformation::Type::Affine },
-        { { Transformation::Type::Reflection,       Transformation::Type::Reflection },     Transformation::Type::Affine },     
+        { { Transformation::Type::Reflection,       Transformation::Type::Reflection },     Transformation::Type::Affine },
         { { Transformation::Type::Reflection,       Transformation::Type::Shear },          Transformation::Type::Affine },
         { { Transformation::Type::Reflection,       Transformation::Type::Affine },         Transformation::Type::Affine },
-        
+
         { { Transformation::Type::Scaling,          Transformation::Type::Undefined },      Transformation::Type::Undefined },
         { { Transformation::Type::Scaling,          Transformation::Type::Identity },       Transformation::Type::Scaling },
         { { Transformation::Type::Scaling,          Transformation::Type::Translation },    Transformation::Type::Affine },
@@ -153,7 +153,7 @@ Transformation&                 Transformation::operator *=                 (   
         { { Transformation::Type::Scaling,          Transformation::Type::Reflection },     Transformation::Type::Affine },
         { { Transformation::Type::Scaling,          Transformation::Type::Shear },          Transformation::Type::Affine },
         { { Transformation::Type::Scaling,          Transformation::Type::Affine },         Transformation::Type::Affine },
-        
+
         { { Transformation::Type::Shear,            Transformation::Type::Undefined },      Transformation::Type::Undefined },
         { { Transformation::Type::Shear,            Transformation::Type::Identity },       Transformation::Type::Shear },
         { { Transformation::Type::Shear,            Transformation::Type::Translation },    Transformation::Type::Affine },
@@ -162,7 +162,7 @@ Transformation&                 Transformation::operator *=                 (   
         { { Transformation::Type::Shear,            Transformation::Type::Reflection },     Transformation::Type::Affine },
         { { Transformation::Type::Shear,            Transformation::Type::Shear },          Transformation::Type::Affine },
         { { Transformation::Type::Shear,            Transformation::Type::Affine },         Transformation::Type::Affine },
-        
+
         { { Transformation::Type::Affine,           Transformation::Type::Undefined },      Transformation::Type::Undefined },
         { { Transformation::Type::Affine,           Transformation::Type::Identity },       Transformation::Type::Affine },
         { { Transformation::Type::Affine,           Transformation::Type::Translation },    Transformation::Type::Affine },
@@ -228,7 +228,7 @@ Transformation::Type            Transformation::getType                     ( ) 
     {
         throw library::core::error::runtime::Undefined("Transformation") ;
     }
-    
+
     return type_ ;
 
 }
@@ -252,7 +252,7 @@ Transformation                  Transformation::getInverse                  ( ) 
     {
         throw library::core::error::runtime::Undefined("Transformation") ;
     }
-    
+
     return { type_, matrix_.inverse(), isRigid_ } ;
 
 }
@@ -274,7 +274,7 @@ void                            Transformation::print                       (   
     displayDecorators ? library::core::utils::Print::Header(anOutputStream, "3D :: Transformation") : void () ;
 
     library::core::utils::Print::Line(anOutputStream) << "Type:"                << Transformation::StringFromType(type_) ;
-    
+
     library::core::utils::Print::Line(anOutputStream) << "Matrix:" ;
 
     anOutputStream << matrix_ << std::endl ;
@@ -307,7 +307,7 @@ Transformation                  Transformation::Translation                 (   
                             0.0, 1.0, 0.0, aTranslationVector.y(),
                             0.0, 0.0, 1.0, aTranslationVector.z(),
                             0.0, 0.0, 0.0, 1.0 ;
-    
+
     return { Transformation::Type::Translation, transformationMatrix, true } ;
 
 }
@@ -323,7 +323,7 @@ Transformation                  Transformation::Rotation                    (   
     Matrix4d transformationMatrix = Matrix4d::Identity() ;
 
     transformationMatrix.block<3, 3>(0, 0) = RotationMatrix::RotationVector(aRotationVector).getMatrix().transpose() ;
-    
+
     return { Transformation::Type::Rotation, transformationMatrix, true } ;
 
 }
@@ -339,7 +339,7 @@ Transformation                  Transformation::Rotation                    (   
     Matrix4d transformationMatrix = Matrix4d::Identity() ;
 
     transformationMatrix.block<3, 3>(0, 0) = aRotationMatrix.getMatrix().transpose() ;
-    
+
     return { Transformation::Type::Rotation, transformationMatrix, true } ;
 
 }
@@ -379,11 +379,11 @@ String                          Transformation::StringFromType              (   
 
         case Transformation::Type::Affine:
             return "Affine" ;
-        
+
         default:
             throw library::core::error::runtime::Wrong("Type") ;
             break ;
-        
+
     }
 
     return String::Empty() ;
@@ -429,7 +429,7 @@ bool                            Transformation::IsRigid                     (   
     const Matrix3d topLeftMatrix = aMatrix.topLeftCorner<3, 3>() ;
 
     return (topLeftMatrix.transpose() * topLeftMatrix).isIdentity() ;
-    
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

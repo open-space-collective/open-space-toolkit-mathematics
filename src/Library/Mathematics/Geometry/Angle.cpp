@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/Angle.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -219,7 +219,7 @@ Angle                           operator *                                  (   
     {
         throw library::core::error::runtime::Undefined("Angle") ;
     }
-    
+
     return Angle((anAngle.value_ * aReal), anAngle.unit_) ;
 
 }
@@ -231,11 +231,11 @@ Angle                           Angle::operator +                           ( ) 
     {
         throw library::core::error::runtime::Undefined("Angle") ;
     }
-    
+
     return Angle(value_, unit_) ;
 
 }
-        
+
 Angle                           Angle::operator -                           ( ) const
 {
 
@@ -243,7 +243,7 @@ Angle                           Angle::operator -                           ( ) 
     {
         throw library::core::error::runtime::Undefined("Angle") ;
     }
-    
+
     return Angle(-value_, unit_) ;
 
 }
@@ -287,7 +287,7 @@ Angle::Unit                     Angle::getUnit                              ( ) 
     {
         throw library::core::error::runtime::Undefined("Angle") ;
     }
-    
+
     return unit_ ;
 
 }
@@ -332,7 +332,7 @@ Real                            Angle::inRadians                            (   
     {
         throw library::core::error::runtime::Undefined("Range span is not [2π].") ;
     }
-    
+
     return Angle::ReduceRange(this->in(Angle::Unit::Radian), aLowerBound, anUpperBound) ;
 
 }
@@ -360,7 +360,7 @@ Real                            Angle::inDegrees                            (   
     {
         throw library::core::error::runtime::Undefined("Range span is not [360].") ;
     }
-    
+
     return Angle::ReduceRange(this->in(Angle::Unit::Degree), aLowerBound, anUpperBound) ;
 
 }
@@ -388,7 +388,7 @@ Real                            Angle::inArcminutes                         (   
     {
         throw library::core::error::runtime::Undefined("Range span is not [21600].") ;
     }
-    
+
     return Angle::ReduceRange(this->in(Angle::Unit::Arcminute), aLowerBound, anUpperBound) ;
 
 }
@@ -416,7 +416,7 @@ Real                            Angle::inArcseconds                         (   
     {
         throw library::core::error::runtime::Undefined("Range span is not [1296000].") ;
     }
-    
+
     return Angle::ReduceRange(this->in(Angle::Unit::Arcsecond), aLowerBound, anUpperBound) ;
 
 }
@@ -452,7 +452,7 @@ Angle                           Angle::HalfPi                               ( )
 {
     return { M_PI / 2.0, Angle::Unit::Radian } ;
 }
-        
+
 Angle                           Angle::Pi                                   ( )
 {
     return { M_PI, Angle::Unit::Radian } ;
@@ -528,11 +528,11 @@ Angle                           Angle::Between                              (   
     {
         return Angle::Pi() ;
     }
-    
+
     return Angle::Radians(std::acos(dotProduct)) ;
 
 }
-        
+
 Angle                           Angle::Between                              (   const   Vector3d&                   aFirstVector,
                                                                                 const   Vector3d&                   aSecondVector                               )
 {
@@ -568,7 +568,7 @@ Angle                           Angle::Between                              (   
     {
         return Angle::Pi() ;
     }
-    
+
     return Angle::Radians(std::acos(dotProduct)) ;
 
 }
@@ -581,22 +581,22 @@ String                          Angle::StringFromUnit                       (   
 
         case Angle::Unit::Undefined:
             return "Undefined" ;
-            
+
         case Angle::Unit::Radian:
             return "Radian" ;
-            
+
         case Angle::Unit::Degree:
             return "Degree" ;
-            
+
         case Angle::Unit::Arcminute:
             return "Arcminute" ;
-            
+
         case Angle::Unit::Arcsecond:
             return "Arcsecond" ;
 
         case Angle::Unit::Revolution:
             return "Revolution" ;
-            
+
         default:
             throw library::core::error::runtime::Wrong("Unit") ;
             break ;
@@ -615,19 +615,19 @@ String                          Angle::SymbolFromUnit                       (   
 
         case Angle::Unit::Radian:
             return "rad" ;
-            
+
         case Angle::Unit::Degree:
             return "deg" ;
-            
+
         case Angle::Unit::Arcminute:
             return "amin" ;
-            
+
         case Angle::Unit::Arcsecond:
             return "asec" ;
-            
+
         case Angle::Unit::Revolution:
             return "rev" ;
-            
+
         default:
             throw library::core::error::runtime::Wrong("Unit") ;
             break ;
@@ -687,7 +687,7 @@ Real                            Angle::ReduceRange                          (   
     {
         value += range ;
     }
-    
+
     while (value >= aRangeUpperBound) // [TBM] This is a STUPID implementation: just used as a logic placeholder... should be improved ASAP
     {
         value -= range ;

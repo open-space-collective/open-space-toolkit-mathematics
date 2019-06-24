@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Objects/Interval.tpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -47,7 +47,7 @@ bool                            Interval<T>::operator ==                    (   
     {
         return false ;
     }
-    
+
     return (type_ == anInterval.type_) && (lowerBound_ == anInterval.lowerBound_) && (upperBound_ == anInterval.upperBound_) ;
 
 }
@@ -145,7 +145,7 @@ bool                            Interval<T>::contains                       (   
             break ;
 
     }
-    
+
     return false ;
 
 }
@@ -158,7 +158,7 @@ bool                            Interval<T>::contains                       (   
     {
         throw library::core::error::runtime::Undefined("Interval") ;
     }
-    
+
     if (!this->isDefined())
     {
         throw library::core::error::runtime::Undefined("Interval") ;
@@ -176,7 +176,7 @@ const T&                        Interval<T>::accessLowerBound               ( ) 
     {
         throw library::core::error::runtime::Undefined("Interval") ;
     }
-    
+
     return lowerBound_ ;
 
 }
@@ -189,7 +189,7 @@ const T&                        Interval<T>::accessUpperBound               ( ) 
     {
         throw library::core::error::runtime::Undefined("Interval") ;
     }
-    
+
     return upperBound_ ;
 
 }
@@ -202,7 +202,7 @@ typename Interval<T>::Type      Interval<T>::getType                        ( ) 
     {
         throw library::core::error::runtime::Undefined("Interval") ;
     }
-    
+
     return type_ ;
 
 }
@@ -215,7 +215,7 @@ T                               Interval<T>::getLowerBound                  ( ) 
     {
         throw library::core::error::runtime::Undefined("Interval") ;
     }
-    
+
     return lowerBound_ ;
 
 }
@@ -228,7 +228,7 @@ T                               Interval<T>::getUpperBound                  ( ) 
     {
         throw library::core::error::runtime::Undefined("Interval") ;
     }
-    
+
     return upperBound_ ;
 
 }
@@ -249,7 +249,7 @@ T                               Interval<T>::getUpperBound                  ( ) 
                                 template <class U>
 ctnr::Array<T>                  Interval<T>::generateArrayWithStep          (   const   U&                          aStep                                       ) const
 {
-    
+
     using library::core::types::Index ;
     using library::core::types::Size ;
 
@@ -262,7 +262,7 @@ ctnr::Array<T>                  Interval<T>::generateArrayWithStep          (   
     {
         throw library::core::error::runtime::Undefined("Step") ;
     }
-    
+
     if (aStep.isZero())
     {
         throw library::core::error::RuntimeError("Step is zero.") ;
@@ -277,11 +277,11 @@ ctnr::Array<T>                  Interval<T>::generateArrayWithStep          (   
 
         while (value <= this->accessUpperBound())
         {
-            
+
             grid.add(value) ;
-            
+
             value += aStep ;
-        
+
         }
 
         if (grid.accessLast() < this->accessUpperBound())
@@ -297,11 +297,11 @@ ctnr::Array<T>                  Interval<T>::generateArrayWithStep          (   
 
         while (value >= this->accessLowerBound())
         {
-            
+
             grid.add(value) ;
-            
+
             value += aStep ;
-        
+
         }
 
         if (grid.accessLast() > this->accessLowerBound())
@@ -312,7 +312,7 @@ ctnr::Array<T>                  Interval<T>::generateArrayWithStep          (   
     }
 
     return grid ;
-    
+
 }
 
                                 template <class T>
@@ -349,7 +349,7 @@ ctnr::Array<T>                  Interval<T>::generateArrayWithSize          (   
             step = (this->accessUpperBound() - this->accessLowerBound()) / static_cast<T>(anArraySize) ;
             value = this->accessLowerBound() ;
             break ;
-        
+
         default:
             throw library::core::error::runtime::Wrong("Type") ;
             break ;
@@ -366,7 +366,7 @@ ctnr::Array<T>                  Interval<T>::generateArrayWithSize          (   
     }
 
     return array ;
-    
+
 }
 
                                 template <class T>
@@ -399,7 +399,7 @@ types::String                   Interval<T>::toString                      ( ) c
     }
 
     throw library::core::error::runtime::Wrong("Type") ;
-    
+
     return types::String::Empty() ;
 
 }
@@ -430,7 +430,7 @@ void                            Interval<T>::setLowerBound                  (   
     {
         throw library::core::error::RuntimeError("Lower bound greater than upper bound.") ;
     }
-    
+
     lowerBound_ = aLowerBound ;
 
 }
@@ -448,7 +448,7 @@ void                            Interval<T>::setUpperBound                  (   
     {
         throw library::core::error::RuntimeError("Upper bound lower than lower bound.") ;
     }
-    
+
     upperBound_ = anUpperBound ;
 
 }

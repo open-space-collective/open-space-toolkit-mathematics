@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -120,7 +120,7 @@ bool                            RotationMatrix::operator ==                 (   
     {
         return false ;
     }
-    
+
     return matrix_ ==  aRotationMatrix.matrix_ ;
 
 }
@@ -177,7 +177,7 @@ double                          RotationMatrix::operator ()                 (   
     {
         throw library::core::error::runtime::Undefined("Rotation matrix") ;
     }
-    
+
     return matrix_(aRowIndex, aColumnIndex) ;
 
 }
@@ -331,10 +331,10 @@ RotationMatrix                  RotationMatrix::RX                          (   
     const Real rotationAngle_rad = aRotationAngle.inRadians() ;
 
     Matrix3d matrix ;
-    
+
     matrix << 1.0, 0.0,                             0.0,
               0.0, +std::cos(rotationAngle_rad), +std::sin(rotationAngle_rad),
-              0.0, -std::sin(rotationAngle_rad), +std::cos(rotationAngle_rad) ;                                                                            
+              0.0, -std::sin(rotationAngle_rad), +std::cos(rotationAngle_rad) ;
 
     return RotationMatrix(matrix) ;
 
@@ -351,7 +351,7 @@ RotationMatrix                  RotationMatrix::RY                          (   
     const Real rotationAngle_rad = aRotationAngle.inRadians() ;
 
     Matrix3d matrix ;
-    
+
     matrix << +std::cos(rotationAngle_rad), 0.0, -std::sin(rotationAngle_rad),
               0.0,                          1.0, 0.0,
               +std::sin(rotationAngle_rad), 0.0, +std::cos(rotationAngle_rad) ;
@@ -371,7 +371,7 @@ RotationMatrix                  RotationMatrix::RZ                          (   
     const Real rotationAngle_rad = aRotationAngle.inRadians() ;
 
     Matrix3d matrix ;
-    
+
     matrix << +std::cos(rotationAngle_rad), +std::sin(rotationAngle_rad), 0.0,
               -std::sin(rotationAngle_rad), +std::cos(rotationAngle_rad), 0.0,
               0.0,                          0.0,                          1.0 ;
@@ -431,7 +431,7 @@ RotationMatrix                  RotationMatrix::Rows                        (   
     }
 
     Matrix3d matrix ;
-    
+
     matrix << aFirstRow(0),  aFirstRow(1),  aFirstRow(2),
               aSecondRow(0), aSecondRow(1), aSecondRow(2),
               aThirdRow(0),  aThirdRow(1),  aThirdRow(2) ;
@@ -491,7 +491,7 @@ RotationMatrix                  RotationMatrix::Columns                     (   
     }
 
     Matrix3d matrix ;
-    
+
     matrix << aFirstColumn(0), aSecondColumn(0), aThirdColumn(0),
               aFirstColumn(1), aSecondColumn(1), aThirdColumn(1),
               aFirstColumn(2), aSecondColumn(2), aThirdColumn(2) ;
@@ -536,7 +536,7 @@ RotationMatrix                  RotationMatrix::Quaternion                  (   
     const double m_22 = - q_x * q_x - q_y * q_y + q_z * q_z + q_s * q_s ;
 
     Matrix3d matrix ;
-    
+
     matrix << m_00, m_01, m_02,
               m_10, m_11, m_12,
               m_20, m_21, m_22 ;

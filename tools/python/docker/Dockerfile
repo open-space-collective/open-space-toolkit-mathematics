@@ -1,6 +1,6 @@
 ################################################################################################################################################################
 
-# @project        Library/Mathematics
+# @project        Library ▸ Mathematics
 # @file           tools/python/docker/Dockerfile
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0

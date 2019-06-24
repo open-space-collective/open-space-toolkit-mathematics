@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Transformations/Rotations/RotationMatrix.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -20,7 +20,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
 
     using library::core::types::Real ;
     using library::core::types::String ;
-    
+
     using library::math::obj::Vector3d ;
     using library::math::obj::Matrix3d ;
     using library::math::geom::d3::trf::rot::RotationMatrix ;

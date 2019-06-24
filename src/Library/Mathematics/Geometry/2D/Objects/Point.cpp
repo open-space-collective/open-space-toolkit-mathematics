@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/2D/Objects/Point.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -34,7 +34,7 @@ namespace objects
                                     x_(aFirstCoordinate),
                                     y_(aSecondCoordinate)
 {
-    
+
 }
 
 Point*                          Point::clone                                ( ) const
@@ -73,7 +73,7 @@ Point                           Point::operator +                           (   
     }
 
     return { x_ + aVector.x(), y_ + aVector.y() } ;
-    
+
 }
 
 Point                           Point::operator -                           (   const   Vector2d&                   aVector                                     ) const
@@ -88,11 +88,11 @@ Point                           Point::operator -                           (   
     {
         throw library::core::error::runtime::Undefined("Vector") ;
     }
-    
+
     return { x_ - aVector.x(), y_ - aVector.y() } ;
 
 }
-        
+
 Vector2d                        Point::operator -                           (   const   Point&                      aPoint                                      ) const
 {
 
@@ -135,7 +135,7 @@ const Real&                     Point::x                                    ( ) 
     {
         throw library::core::error::runtime::Undefined("Point") ;
     }
-    
+
     return x_ ;
 
 }
@@ -147,7 +147,7 @@ const Real&                     Point::y                                    ( ) 
     {
         throw library::core::error::runtime::Undefined("Point") ;
     }
-    
+
     return y_ ;
 
 }
@@ -159,7 +159,7 @@ Vector2d                        Point::asVector                             ( ) 
     {
         throw library::core::error::runtime::Undefined("Point") ;
     }
-    
+
     return { x_, y_ } ;
 
 }
@@ -206,7 +206,7 @@ String                          Point::toString                             (   
     }
 
     return String::Empty() ;
-   
+
 }
 
 void                            Point::print                                (           std::ostream&               anOutputStream,

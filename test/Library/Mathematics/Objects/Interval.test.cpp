@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Objects/Interval.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -248,7 +248,7 @@ TEST (Library_Mathematics_Objects_Interval, IsDegenerate)
 //         EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Real::Undefined())) ;
 //         EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).contains(Real::Undefined())) ;
 //         EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).contains(Real::Undefined())) ;
-        
+
 //     }
 
 //     // Interval(Closed)::contains(Interval)
@@ -584,7 +584,7 @@ TEST (Library_Mathematics_Objects_Interval, IsDegenerate)
 //         EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>::Undefined())) ;
 //         EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).contains(Interval<Real>::Undefined())) ;
 //         EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).contains(Interval<Real>::Undefined())) ;
-        
+
 //     }
 
 // }

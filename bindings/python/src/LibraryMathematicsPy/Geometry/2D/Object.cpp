@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/2D/Object.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -29,18 +29,18 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Object     ( )
         .def("isDefined", &Object::isDefined)
         .def("intersects", &Object::intersects)
         .def("contains", &Object::contains)
-        
+
         .def("toString", &Object::toString)
         .def("applyTransformation", &Object::applyTransformation)
 
     ;
 
     enum_<Object::Format>("Format")
-    
+
         .value("Undefined", Object::Format::Undefined)
         .value("Standard", Object::Format::Standard)
         .value("WKT", Object::Format::WKT)
-    
+
     ;
 
 }

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Objects/Point.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -37,10 +37,10 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Point (
         .def(self_ns::str(self_ns::self))
 
         .def("__repr__", +[] (const Point& aPoint) -> std::string { return aPoint.toString() ; })
-        
+
         .def("isDefined", &Point::isDefined)
         .def("isNear", &Point::isNear)
-        
+
         .def("x", &Point::x, return_value_policy<reference_existing_object>())
         .def("y", &Point::y, return_value_policy<reference_existing_object>())
         .def("z", &Point::z, return_value_policy<reference_existing_object>())
@@ -63,7 +63,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Point (
 
         .from_python<Array<Point>>()
         .to_python<Array<Point>>()
-        
+
     ;
 
 }

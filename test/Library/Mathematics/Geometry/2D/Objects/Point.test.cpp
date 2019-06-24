@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/2D/Objects/Point.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -57,7 +57,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, AdditionOperator)
 
         EXPECT_ANY_THROW(Point::Undefined() + Vector2d(0.0, 0.0)) ;
         EXPECT_ANY_THROW(Point(1.0, 2.0) + Vector2d::Undefined()) ;
-        
+
     }
 
 }
@@ -79,7 +79,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, SubtractionOperator)
 
         EXPECT_ANY_THROW(Point::Undefined() - Vector2d(0.0, 0.0)) ;
         EXPECT_ANY_THROW(Point(1.0, 2.0) - Vector2d::Undefined()) ;
-        
+
     }
 
     {
@@ -93,16 +93,16 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, SubtractionOperator)
 
         EXPECT_ANY_THROW(Point::Undefined() - Point(0.0, 0.0)) ;
         EXPECT_ANY_THROW(Point(1.0, 2.0) - Point::Undefined()) ;
-        
+
     }
-    
+
 }
 
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, EqualToOperator)
 {
 
     using library::math::geom::d2::objects::Point ;
-    
+
     {
 
         EXPECT_TRUE(Point(1.0, 2.0) == Point(1.0, 2.0)) ;
@@ -156,7 +156,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, StreamOperator)
 {
 
     using library::math::geom::d2::objects::Point ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -173,7 +173,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, IsDefined)
 {
 
     using library::math::geom::d2::objects::Point ;
-    
+
     {
 
         EXPECT_TRUE(Point(0.0, 0.0).isDefined()) ;
@@ -193,14 +193,14 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, IsNear)
 {
 
     using library::core::types::Real ;
-    
+
     using library::math::geom::d2::objects::Point ;
-    
+
     {
 
         EXPECT_TRUE(Point(0.0, 0.0).isNear(Point(0.0, 0.0), 0.0)) ;
         EXPECT_TRUE(Point(0.0, 0.0).isNear(Point(0.0, 1e-15), 1e-15)) ;
-        
+
         EXPECT_FALSE(Point(0.0, 0.0).isNear(Point(0.0, 1e-14), 1e-15)) ;
 
     }
@@ -238,18 +238,18 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, AsVector)
 
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, DistanceTo)
 {
-    
+
     using library::core::types::Real ;
-    
+
     using library::math::geom::d2::objects::Point ;
-    
+
     {
 
         EXPECT_EQ(0.0, Point(0.0, 0.0).distanceTo(Point(0.0, 0.0))) ;
-        
+
         EXPECT_EQ(0.0, Point(+1.0, +1.0).distanceTo(Point(+1.0, +1.0))) ;
         EXPECT_EQ(0.0, Point(-1.0, -1.0).distanceTo(Point(-1.0, -1.0))) ;
-        
+
         EXPECT_EQ(1.0, Point(0.0, 0.0).distanceTo(Point(+1.0, 0.0))) ;
         EXPECT_EQ(1.0, Point(0.0, 0.0).distanceTo(Point(0.0, +1.0))) ;
 
@@ -318,7 +318,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, ApplyTransformation)
 {
 
     using library::core::types::Real ;
-    
+
     using library::math::obj::Vector2d ;
     using library::math::geom::Angle ;
     using library::math::geom::d2::objects::Point ;
@@ -374,7 +374,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, Undefined)
 {
 
     using library::math::geom::d2::objects::Point ;
-    
+
     {
 
         EXPECT_NO_THROW(Point::Undefined()) ;
@@ -388,7 +388,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, Origin)
 {
 
     using library::math::geom::d2::objects::Point ;
-    
+
     {
 
         EXPECT_NO_THROW(Point::Origin()) ;
@@ -403,7 +403,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, Vector)
 
     using library::math::obj::Vector2d ;
     using library::math::geom::d2::objects::Point ;
-    
+
     {
 
         EXPECT_NO_THROW(Point::Vector(Vector2d(1.0, 2.0))) ;

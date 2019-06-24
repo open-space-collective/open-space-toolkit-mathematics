@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Objects.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -14,13 +14,13 @@
 
 inline void                     LibraryMathematicsPy_Objects                ( )
 {
-    
+
     boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Objects")))) ;
-    
+
     boost::python::scope().attr("Objects") = module ;
-    
+
     boost::python::scope scope = module ;
-    
+
     // LibraryMathematicsPy_Objects_Vector() ;
     LibraryMathematicsPy_Objects_Interval() ;
 

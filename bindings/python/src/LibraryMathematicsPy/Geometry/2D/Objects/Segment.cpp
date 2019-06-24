@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/2D/Objects/Segment.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -42,7 +42,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Segment
         .def("getLength", &Segment::getLength)
         .def("toString", &Segment::toString, LibraryMathematicsPy_Geometry_2D_Objects_Segment_toString_overloads())
         .def("applyTransformation", &Segment::applyTransformation)
-        
+
         .def("Undefined", &Segment::Undefined).staticmethod("Undefined")
 
     ;
@@ -53,7 +53,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Segment
 
         .from_python<Array<Segment>>()
         .to_python<Array<Segment>>()
-        
+
     ;
 
 }

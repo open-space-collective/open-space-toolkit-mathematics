@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Composite.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -135,7 +135,7 @@ Composite                       Composite::operator +                       (   
     Composite composite = Composite::Undefined() ;
 
     composite.objects_.reserve(objects_.getSize() + aComposite.objects_.getSize()) ;
-    
+
     std::transform(objects_.begin(), objects_.end(), std::back_inserter(composite.objects_), [] (const Unique<Object>& anObjectUPtr) -> Unique<Object> { return Unique<Object>(anObjectUPtr->clone()) ; }) ;
     std::transform(aComposite.objects_.begin(), aComposite.objects_.end(), std::back_inserter(composite.objects_), [] (const Unique<Object>& anObjectUPtr) -> Unique<Object> { return Unique<Object>(anObjectUPtr->clone()) ; }) ;
 
@@ -152,7 +152,7 @@ Composite&                      Composite::operator +=                      (   
     }
 
     objects_.reserve(objects_.getSize() + aComposite.objects_.getSize()) ;
-    
+
     std::transform(aComposite.objects_.begin(), aComposite.objects_.end(), std::back_inserter(objects_), [] (const Unique<Object>& anObjectUPtr) -> Unique<Object> { return Unique<Object>(anObjectUPtr->clone()) ; }) ;
 
     return *this ;
@@ -256,7 +256,7 @@ const Array<Unique<Object>>&    Composite::accessObjects                    ( ) 
     {
         throw library::core::error::runtime::Undefined("Composite") ;
     }
-    
+
     return objects_ ;
 
 }
@@ -268,7 +268,7 @@ Size                            Composite::getObjectCount                   ( ) 
     {
         throw library::core::error::runtime::Undefined("Composite") ;
     }
-    
+
     return objects_.getSize() ;
 
 }
@@ -342,7 +342,7 @@ Composite::ConstIterator        Composite::begin                            ( ) 
     {
         throw library::core::error::runtime::Undefined("Composite") ;
     }
-    
+
     return objects_.begin() ;
 
 }
@@ -354,7 +354,7 @@ Composite::ConstIterator        Composite::end                              ( ) 
     {
         throw library::core::error::runtime::Undefined("Composite") ;
     }
-    
+
     return objects_.end() ;
 
 }
@@ -413,7 +413,7 @@ void                            Composite::applyTransformation              (   
 }
 
 Composite                       Composite::Undefined                        ( )
-{   
+{
     return Composite { Array<Unique<Object>>::Empty() } ;
 }
 

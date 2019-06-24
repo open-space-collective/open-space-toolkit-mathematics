@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Objects/Eigen.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -71,7 +71,7 @@ bool                            isNear                                      (   
     {
         throw std::runtime_error("Cannot compare objects of different size.") ;
     }
-    
+
     return ((*this) - aMatrix).norm() <= aTolerance ;
 
 }
@@ -88,7 +88,7 @@ static std::string              ScalarToString                              (   
 {
 
     (void) aPrecision ;
-    
+
     return std::to_string(aScalar) ;
 
 }
@@ -96,11 +96,11 @@ static std::string              ScalarToString                              (   
 static std::string              ScalarToString                              (           double                      aScalar,
                                                                                         int                         aPrecision                                  )
 {
-    
+
     std::string scalarString ;
 
     double integerPart ;
-    
+
     if ((aPrecision < 0) && (std::modf(aScalar, &integerPart) == 0.0)) // If scalar is integer
     {
 
@@ -128,7 +128,7 @@ static std::string              ScalarToString                              (   
         {
 
             stringStream.precision(15) ;
-            
+
             stringStream << aScalar ;
 
         }
@@ -195,7 +195,7 @@ std::string                     toString                                    (   
         {
             string += ", " ;
         }
-        
+
     }
 
     string += "]" ;
@@ -328,7 +328,7 @@ static Matrix<Scalar, Dynamic, 1> Parse                                     (   
     {
 
         std::istringstream stringStream(stringWithoutBrackets) ;
-    
+
         std::string token ;
 
         while (getline(stringStream, token, ','))
@@ -343,13 +343,13 @@ static Matrix<Scalar, Dynamic, 1> Parse                                     (   
     {
 
         std::istringstream stringStream(stringWithoutBrackets) ;
-    
+
         std::string token ;
         Index elementIndex = 0 ;
 
         while (getline(stringStream, token, ','))
         {
-            
+
             components(elementIndex) = atof(token.data()) ;
 
             elementIndex++ ;
@@ -359,7 +359,7 @@ static Matrix<Scalar, Dynamic, 1> Parse                                     (   
     }
 
     return components ;
-    
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

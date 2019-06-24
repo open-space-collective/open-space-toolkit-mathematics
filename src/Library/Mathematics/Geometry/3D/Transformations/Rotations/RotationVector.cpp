@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -57,7 +57,7 @@ bool                            RotationVector::operator ==                 (   
     {
         return true ;
     }
-    
+
     return ((axis_ ==  aRotationVector.axis_) && (angle_ ==  aRotationVector.angle_))
         || ((axis_ == -aRotationVector.axis_) && (angle_ == -aRotationVector.angle_)) ;
 
@@ -95,7 +95,7 @@ Vector3d                        RotationVector::getAxis                     ( ) 
     {
         throw library::core::error::runtime::Undefined("Rotation vector") ;
     }
-    
+
     return axis_ ;
 
 }
@@ -107,7 +107,7 @@ Angle                           RotationVector::getAngle                    ( ) 
     {
         throw library::core::error::runtime::Undefined("Rotation vector") ;
     }
-    
+
     return angle_ ;
 
 }
@@ -207,7 +207,7 @@ RotationVector                  RotationVector::Quaternion                  (   
     // }
 
     const Vector3d axis = (aQuaternion.getVectorPart() / (1.0 - aQuaternion.s() * aQuaternion.s()).sqrt()).normalized() ;
-    
+
     const Angle angle = Angle::Radians(2.0 * std::acos(std::abs(aQuaternion.s()))) ;
     // const Angle angle = Angle::Radians(2.0 * std::atan2(aQuaternion.getVectorPart().norm(), aQuaternion.s())) ;
 
@@ -226,7 +226,7 @@ RotationVector                  RotationVector::RotationMatrix              (   
     const Angle angle = Angle::Radians(std::acos((aRotationMatrix.accessMatrix().trace() - 1.0) / 2.0)) ;
 
     if (angle.inRadians().abs() < Real::Epsilon())
-    {   
+    {
         return RotationVector(Vector3d::X(), angle) ;
     }
 

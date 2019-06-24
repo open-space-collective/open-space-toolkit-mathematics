@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/2D/Objects/Polygon.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -65,9 +65,9 @@ class Polygon::Impl
         bool                    isDefined                                   ( ) const ;
 
         bool                    intersects                                  (   const   Polygon&                    aPolygon                                    ) const ;
-        
+
         bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
-        
+
         bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
 
         Size                    getInnerRingCount                           ( ) const ;
@@ -75,7 +75,7 @@ class Polygon::Impl
         Array<Polygon::Vertex>  getOuterRingVertices                        ( ) const ;
 
         Array<Polygon::Vertex>  getInnerRingVerticesAt                      (   const   Index&                      aRingIndex                                  ) const ;
-        
+
         Size                    getEdgeCount                                ( ) const ;
 
         Size                    getOuterRingEdgeCount                       ( ) const ;
@@ -95,12 +95,12 @@ class Polygon::Impl
         Array<Polygon::Vertex>  getVertices                                 ( ) const ;
 
         // Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
-        
+
         // MultiPolygon            unionWith                                   (   const   Polygon&                    aPolygon                                    ) const ;
 
         String                  toString                                    (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const ;
-        
+
         void                    applyTransformation                         (   const   Transformation&             aTransformation                             ) ;
 
     private:
@@ -189,7 +189,7 @@ bool                            Polygon::Impl::contains                     (   
 
 bool                            Polygon::Impl::contains                     (   const   PointSet&                   aPointSet                                   ) const
 {
-    
+
     for (const auto& point : aPointSet)
     {
 
@@ -201,7 +201,7 @@ bool                            Polygon::Impl::contains                     (   
     }
 
     return true ;
-    
+
 }
 
 Size                            Polygon::Impl::getInnerRingCount            ( ) const
@@ -285,7 +285,7 @@ Polygon::Ring                   Polygon::Impl::getOuterRing                 ( ) 
     {
         ringVertices.add(ringVertices[0]) ;
     }
-    
+
     return { ringVertices } ;
 
 }
@@ -299,7 +299,7 @@ Polygon::Ring                   Polygon::Impl::getInnerRingAt               (   
     {
         ringVertices.add(ringVertices[0]) ;
     }
-    
+
     return { ringVertices } ;
 
 }
@@ -367,7 +367,7 @@ Array<Polygon::Vertex>          Polygon::Impl::getVertices                  ( ) 
         vertices.add(vertex) ;
     }
 
-    for (Index innerRingIndex = 0; innerRingIndex < this->getInnerRingCount(); ++innerRingIndex) 
+    for (Index innerRingIndex = 0; innerRingIndex < this->getInnerRingCount(); ++innerRingIndex)
     {
         for (const auto& vertex : this->getInnerRingVerticesAt(innerRingIndex))
         {
@@ -462,7 +462,7 @@ Polygon::Impl::BoostPolygon     Polygon::Impl::BoostPolygonFromPoints       (   
                                 :   Object(),
                                     implUPtr_(std::make_unique<Polygon::Impl>(anOuterRing, anInnerRingArray))
 {
-    
+
 }
 
                                 Polygon::Polygon                            (   const   Polygon&                    aPolygon                                    )
@@ -484,7 +484,7 @@ Polygon&                        Polygon::operator =                         (   
     {
 
         Object::operator = (aPolygon) ;
-        
+
         implUPtr_.reset((aPolygon.implUPtr_ != nullptr) ? new Polygon::Impl(*aPolygon.implUPtr_) : nullptr) ;
 
     }
@@ -616,7 +616,7 @@ Polygon::Ring                   Polygon::getOuterRing                       ( ) 
     }
 
     return implUPtr_->getOuterRing() ;
-    
+
 }
 
 Polygon::Ring                   Polygon::getInnerRingAt                     (   const   Index&                      anInnerRingIndex                            ) const
@@ -628,7 +628,7 @@ Polygon::Ring                   Polygon::getInnerRingAt                     (   
     }
 
     return implUPtr_->getInnerRingAt(anInnerRingIndex) ;
-    
+
 }
 
 Polygon::Edge                   Polygon::getEdgeAt                          (   const   Index                       anEdgeIndex                                 ) const
@@ -700,7 +700,7 @@ void                            Polygon::print                              (   
     {
         library::core::utils::Print::Line(anOutputStream) << "Undefined" ;
     }
-    
+
     library::core::utils::Print::Separator(anOutputStream, "Inner Rings") ;
 
     if (implUPtr_ != nullptr)

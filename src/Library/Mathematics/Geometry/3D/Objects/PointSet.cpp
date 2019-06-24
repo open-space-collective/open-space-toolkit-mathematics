@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/PointSet.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -32,7 +32,7 @@ namespace objects
                                 :   Object(),
                                     points_(aPointArray.begin(), aPointArray.end())
 {
-    
+
 }
 
 PointSet*                       PointSet::clone                             ( ) const
@@ -83,12 +83,12 @@ bool                            PointSet::isNear                            (   
         const Point& firstPoint = *(firstPointSetBuffer.begin()) ;
 
         bool foundClosestPoint = false ;
-        
+
         for (auto secondPointSetBufferIt = secondPointSetBuffer.begin(); secondPointSetBufferIt != secondPointSetBuffer.end(); ++secondPointSetBufferIt)
         {
 
             const Point& secondPoint = *secondPointSetBufferIt ;
-            
+
             if (firstPoint.isNear(secondPoint, aTolerance))
             {
 
@@ -99,7 +99,7 @@ bool                            PointSet::isNear                            (   
                 break ;
 
             }
-            
+
         }
 
         if (foundClosestPoint)
@@ -110,11 +110,11 @@ bool                            PointSet::isNear                            (   
         {
             return false ;
         }
-        
+
     }
 
     return true ;
-    
+
 }
 
 Size                            PointSet::getSize                           ( ) const
@@ -182,7 +182,7 @@ PointSet::ConstIterator         PointSet::end                               ( ) 
 {
     return points_.end() ;
 }
-        
+
 void                            PointSet::applyTransformation               (   const   Transformation&             aTransformation                             )
 {
 

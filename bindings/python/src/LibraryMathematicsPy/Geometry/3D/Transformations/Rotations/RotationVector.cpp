@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Transformations/Rotations/RotationVector.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -21,7 +21,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
     using library::core::types::Integer ;
     using library::core::types::Real ;
     using library::core::types::String ;
-    
+
     using library::math::obj::Vector3d ;
     using library::math::geom::Angle ;
     using library::math::geom::d3::trf::rot::RotationVector ;
@@ -35,7 +35,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
         .def(self_ns::repr(self_ns::self))
 
         .def("isDefined", &RotationVector::isDefined)
-        
+
         .def("getAxis", &RotationVector::getAxis)
         .def("getAngle", &RotationVector::getAngle)
         .def("toString", +[] (const RotationVector& aRotationVector) -> String { return aRotationVector.toString() ; })

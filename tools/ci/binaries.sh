@@ -2,7 +2,7 @@
 
 ################################################################################################################################################################
 
-# @project        Library/Mathematics
+# @project        Library ▸ Mathematics
 # @file           tools/ci/binaries.sh
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0

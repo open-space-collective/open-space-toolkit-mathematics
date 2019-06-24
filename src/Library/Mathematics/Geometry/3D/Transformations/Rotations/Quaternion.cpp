@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -91,7 +91,7 @@ Quaternion                      Quaternion::operator *                      (   
     }
 
     return this->crossMultiply(aQuaternion) ;
-    
+
 }
 
 Vector3d                        Quaternion::operator *                      (   const   Vector3d&                   aVector                                     ) const
@@ -108,7 +108,7 @@ Vector3d                        Quaternion::operator *                      (   
     }
 
     return this->rotateVector(aVector) ;
-    
+
 }
 
 Quaternion                      Quaternion::operator /                      (   const   Quaternion&                 aQuaternion                                 ) const
@@ -118,7 +118,7 @@ Quaternion                      Quaternion::operator /                      (   
     {
         throw library::core::error::runtime::Undefined("Quaternion") ;
     }
-    
+
     if (aQuaternion.norm() < Real::Epsilon())
     {
         throw library::core::error::RuntimeError("Cannot divide by quaternion with zero norm.") ;
@@ -149,7 +149,7 @@ Quaternion&                     Quaternion::operator /=                     (   
     {
         throw library::core::error::runtime::Undefined("Quaternion") ;
     }
-    
+
     if (aQuaternion.norm() < Real::Epsilon())
     {
         throw library::core::error::RuntimeError("Cannot divide by quaternion with zero norm.") ;
@@ -190,7 +190,7 @@ bool                            Quaternion::isUnitary                       ( ) 
     {
         throw library::core::error::runtime::Undefined("Quaternion") ;
     }
-    
+
     return std::abs(((x_ * x_) + (y_ * y_) + (z_ * z_) + (s_ * s_)) - 1.0) <= Real::Epsilon() ;
 
 }
@@ -220,7 +220,7 @@ Real                            Quaternion::x                               ( ) 
     {
         throw library::core::error::runtime::Undefined("Quaternion") ;
     }
-    
+
     return x_ ;
 
 }
@@ -232,7 +232,7 @@ Real                            Quaternion::y                               ( ) 
     {
         throw library::core::error::runtime::Undefined("Quaternion") ;
     }
-    
+
     return y_ ;
 
 }
@@ -244,7 +244,7 @@ Real                            Quaternion::z                               ( ) 
     {
         throw library::core::error::runtime::Undefined("Quaternion") ;
     }
-    
+
     return z_ ;
 
 }
@@ -256,7 +256,7 @@ Real                            Quaternion::s                               ( ) 
     {
         throw library::core::error::runtime::Undefined("Quaternion") ;
     }
-    
+
     return s_ ;
 
 }
@@ -446,7 +446,7 @@ Vector4d                        Quaternion::toVector                        (   
 
         case Quaternion::Format::XYZS:
             return Vector4d(x_, y_, z_, s_) ;
-        
+
         case Quaternion::Format::SXYZ:
             return Vector4d(s_, x_, y_, z_) ;
 
@@ -639,11 +639,11 @@ Quaternion                      Quaternion::RotationMatrix                  (   
     }
 
     const Real trace = aRotationMatrix.accessMatrix().trace() ;
-    
+
     const Real rotationMatrix_11 = aRotationMatrix(0, 0) ;
     const Real rotationMatrix_12 = aRotationMatrix(0, 1) ;
     const Real rotationMatrix_13 = aRotationMatrix(0, 2) ;
-    
+
     const Real rotationMatrix_21 = aRotationMatrix(1, 0) ;
     const Real rotationMatrix_22 = aRotationMatrix(1, 1) ;
     const Real rotationMatrix_23 = aRotationMatrix(1, 2) ;

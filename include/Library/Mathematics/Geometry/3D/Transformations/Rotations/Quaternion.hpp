@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -155,7 +155,7 @@ class Quaternion
         /// @brief              Multiplication operator (vector)
         ///
         /// Example:
-        /// @code                 
+        /// @code
         ///                     Quaternion q_B_A = ... ;
         ///                     Vector3d v_A = ... ;
         ///                     Vector3d v_B = q_B_A * v_A ;
@@ -167,7 +167,7 @@ class Quaternion
         /// @return             A vector
 
         Vector3d                operator *                                  (   const   Vector3d&                   aVector                                     ) const ;
-        
+
         /// @brief              Division operator (quaternion)
         ///
         /// @code
@@ -485,7 +485,7 @@ class Quaternion
 
         static Quaternion       Unit                                        ( ) ;
 
-        /// @brief              Constructs a quaternion using the vector-scalar format 
+        /// @brief              Constructs a quaternion using the vector-scalar format
         ///
         /// @code
         ///                     Quaternion quaternion = Quaternion::XYZS(0.0, 0.0, 0.0, 1.0) ; // [0.0, 0.0, 0.0, 1.0]

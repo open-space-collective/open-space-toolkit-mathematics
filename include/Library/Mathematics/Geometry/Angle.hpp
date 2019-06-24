@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/Angle.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -57,7 +57,7 @@ class Angle
             Arcminute,          ///< Arcminute
             Arcsecond,          ///< Arcsecond
             Revolution          ///< Revolution
-        
+
         } ;
 
         /// @brief              Constructor
@@ -77,33 +77,33 @@ class Angle
         bool                    operator !=                                 (   const   Angle&                      anAngle                                     ) const ;
 
         Angle                   operator +                                  (   const   Angle&                      anAngle                                     ) const ;
-        
+
         Angle                   operator -                                  (   const   Angle&                      anAngle                                     ) const ;
-        
+
         Angle                   operator *                                  (   const   Real&                       aReal                                       ) const ;
-        
+
         Angle                   operator /                                  (   const   Real&                       aReal                                       ) const ;
 
         Angle&                  operator +=                                 (   const   Angle&                      anAngle                                     ) ;
-        
+
         Angle&                  operator -=                                 (   const   Angle&                      anAngle                                     ) ;
-        
+
         Angle&                  operator *=                                 (   const   Real&                       aReal                                       ) ;
-        
+
         Angle&                  operator /=                                 (   const   Real&                       aReal                                       ) ;
 
         friend Angle            operator *                                  (   const   Real&                       aReal,
                                                                                 const   Angle&                      anAngle                                     ) ;
 
         Angle                   operator +                                  ( ) const ;
-        
+
         Angle                   operator -                                  ( ) const ;
 
         friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
                                                                                 const   Angle&                      anAngle                                     ) ;
 
         bool                    isDefined                                   ( ) const ;
-        
+
         bool                    isZero                                      ( ) const ;
 
         Angle::Unit             getUnit                                     ( ) const ;
@@ -114,7 +114,7 @@ class Angle
 
         Real                    inRadians                                   (   const    Real&                      aLowerBound,
                                                                                 const    Real&                      anUpperBound                                ) const ;
-        
+
         Real                    inDegrees                                   ( ) const ;
 
         Real                    inDegrees                                   (   const    Real&                      aLowerBound,
@@ -133,19 +133,19 @@ class Angle
         Real                    inRevolutions                               ( ) const ;
 
         String                  toString                                    (   const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const ;
-                                                                                
+
         static Angle            Undefined                                   ( ) ;
 
         static Angle            Zero                                        ( ) ;
 
         static Angle            HalfPi                                      ( ) ;
-        
+
         static Angle            Pi                                          ( ) ;
 
         static Angle            TwoPi                                       ( ) ;
 
         static Angle            Radians                                     (   const   Real&                       aValue                                      ) ;
-        
+
         static Angle            Degrees                                     (   const   Real&                       aValue                                      ) ;
 
         static Angle            Arcminutes                                  (   const   Real&                       aValue                                      ) ;
@@ -156,10 +156,10 @@ class Angle
 
         static Angle            Between                                     (   const   Vector2d&                   aFirstVector,
                                                                                 const   Vector2d&                   aSecondVector                               ) ;
-        
+
         static Angle            Between                                     (   const   Vector3d&                   aFirstVector,
                                                                                 const   Vector3d&                   aSecondVector                               ) ;
-        
+
         static Angle            Parse                                       (   const   String&                     aString                                     ) ;
 
         static String           StringFromUnit                              (   const   Angle::Unit&                aUnit                                       ) ;

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Ellipsoid.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -63,7 +63,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, EqualToOperator)
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::trf::rot::Quaternion ;
     using library::math::geom::d3::trf::rot::RotationVector ;
-    
+
     {
 
         EXPECT_TRUE(Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0) == Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0)) ;
@@ -136,7 +136,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, StreamOperator)
 {
 
     using library::math::geom::d3::objects::Ellipsoid ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -153,7 +153,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IsDefined)
 {
 
     using library::math::geom::d3::objects::Ellipsoid ;
-    
+
     {
 
         EXPECT_TRUE(Ellipsoid({ 0.0, 0.0, 0.0 }, 1.0, 2.0, 3.0).isDefined()) ;
@@ -191,7 +191,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Point)
     {
 
         EXPECT_FALSE(Ellipsoid(Point::Origin(), 4.0, 5.0, 6.0).intersects(Point::Origin())) ;
-        
+
     }
 
     {
@@ -221,7 +221,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_PointSet)
     {
 
         EXPECT_FALSE(Ellipsoid(Point::Origin(), 4.0, 5.0, 6.0).intersects(PointSet::Empty())) ;
-        
+
     }
 
     {
@@ -376,7 +376,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Line)
     }
 
     {
-        
+
         EXPECT_ANY_THROW(Ellipsoid::Undefined().intersects(Line::Undefined())) ;
         EXPECT_ANY_THROW(Ellipsoid(Point::Origin(), 1.0, 1.0, 1.0).intersects(Line::Undefined())) ;
         EXPECT_ANY_THROW(Ellipsoid::Undefined().intersects(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
@@ -548,7 +548,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Ray)
     }
 
     {
-        
+
         EXPECT_ANY_THROW(Ellipsoid::Undefined().intersects(Ray::Undefined())) ;
         EXPECT_ANY_THROW(Ellipsoid(Point::Origin(), 1.0, 1.0, 1.0).intersects(Ray::Undefined())) ;
         EXPECT_ANY_THROW(Ellipsoid::Undefined().intersects(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
@@ -649,7 +649,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Segment)
     }
 
     {
-        
+
         EXPECT_ANY_THROW(Ellipsoid(Point::Origin(), 1.0, 1.0, 1.0).intersects(Segment::Undefined())) ;
 
     }
@@ -699,7 +699,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Plane)
     }
 
     {
-        
+
         EXPECT_ANY_THROW(Ellipsoid::Undefined().intersects(Plane::Undefined())) ;
         EXPECT_ANY_THROW(Ellipsoid(Point::Origin(), 1.0, 1.0, 1.0).intersects(Plane::Undefined())) ;
 
@@ -753,7 +753,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Contains_Point)
     {
 
         EXPECT_FALSE(Ellipsoid(Point::Origin(), 4.0, 5.0, 6.0).contains(Point::Origin())) ;
-        
+
     }
 
     {
@@ -788,7 +788,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Contains_PointSet)
     {
 
         EXPECT_FALSE(Ellipsoid(Point::Origin(), 4.0, 5.0, 6.0).contains(PointSet::Empty())) ;
-        
+
     }
 
     {
@@ -805,7 +805,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetCenter)
 
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Ellipsoid ;
-    
+
     {
 
         EXPECT_EQ(Point(1.0, 2.0, 3.0), Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).getCenter()) ;
@@ -824,7 +824,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetFirstPrincipalSemiAx
 {
 
     using library::math::geom::d3::objects::Ellipsoid ;
-    
+
     {
 
         EXPECT_EQ(4.0, Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).getFirstPrincipalSemiAxis()) ;
@@ -843,7 +843,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetSecondPrincipalSemiA
 {
 
     using library::math::geom::d3::objects::Ellipsoid ;
-    
+
     {
 
         EXPECT_EQ(5.0, Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).getSecondPrincipalSemiAxis()) ;
@@ -862,7 +862,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetThirdPrincipalSemiAx
 {
 
     using library::math::geom::d3::objects::Ellipsoid ;
-    
+
     {
 
         EXPECT_EQ(6.0, Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).getThirdPrincipalSemiAxis()) ;
@@ -881,7 +881,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetFirstAxis)
 {
 
     using library::core::types::Real ;
-    
+
     using library::math::obj::Vector3d ;
     using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Ellipsoid ;
@@ -908,7 +908,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetSecondAxis)
 {
 
     using library::core::types::Real ;
-    
+
     using library::math::obj::Vector3d ;
     using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Ellipsoid ;
@@ -935,7 +935,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetThirdAxis)
 {
 
     using library::core::types::Real ;
-    
+
     using library::math::obj::Vector3d ;
     using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Ellipsoid ;
@@ -963,7 +963,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetOrientation)
 
     using library::math::geom::d3::trf::rot::Quaternion ;
     using library::math::geom::d3::objects::Ellipsoid ;
-    
+
     {
 
         EXPECT_EQ(Quaternion::Unit(), Ellipsoid({ 1.0, 2.0, 3.0 }, 4.0, 5.0, 6.0).getOrientation()) ;
@@ -1673,7 +1673,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Undefined)
 {
 
     using library::math::geom::d3::objects::Ellipsoid ;
-    
+
     {
 
         EXPECT_NO_THROW(Ellipsoid::Undefined()) ;

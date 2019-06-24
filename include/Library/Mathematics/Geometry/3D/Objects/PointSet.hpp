@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/PointSet.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -65,7 +65,7 @@ class PointSet : public Object
 
                 for (size_t i = 0; i < 3; ++i)
                 {
-                    
+
                     auto elem = *(aPoint.asVector().data() + i) ;
 
                     seed ^= std::hash<double>()(elem) + 0x9e3779b9 + (seed << 6) + (seed >> 2) ;

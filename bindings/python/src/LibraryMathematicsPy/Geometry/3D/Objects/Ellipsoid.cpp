@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Objects/Ellipsoid.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -39,7 +39,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Ellipso
 
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
-        
+
         .def("isDefined", &Ellipsoid::isDefined)
         .def("intersectsPoint", +[] (const Ellipsoid& anEllipsoid, const Point& aPoint) -> bool { return anEllipsoid.intersects(aPoint) ; })
         .def("intersectsPointSet", +[] (const Ellipsoid& anEllipsoid, const PointSet& aPointSet) -> bool { return anEllipsoid.intersects(aPointSet) ; })
@@ -68,7 +68,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Ellipso
         .def("intersectionWithRay", +[] (const Ellipsoid& anEllipsoid, const Ray& aRay, const bool onlyInSight) -> Intersection { return anEllipsoid.intersectionWith(aRay, onlyInSight) ; })
         .def("intersectionWithSegment", +[] (const Ellipsoid& anEllipsoid, const Segment& aSegment) -> Intersection { return anEllipsoid.intersectionWith(aSegment) ; })
         .def("applyTransformation", &Ellipsoid::applyTransformation)
-        
+
         .def("Undefined", &Ellipsoid::Undefined).staticmethod("Undefined")
 
     ;

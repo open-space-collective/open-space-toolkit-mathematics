@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Pyramid.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -345,7 +345,7 @@ Array<Ray>                      Pyramid::getRaysOfLateralFaces              (   
         const Array<Ray> lateralFaceRays = this->getRaysOfLateralFaceAt(lateralFaceIndex, lateralRayCount) ;
 
         // [TBM] Double counting rays
-        
+
         rays.add(lateralFaceRays) ;
 
     }
@@ -396,7 +396,7 @@ Intersection                    Pyramid::intersectionWith                   (   
 
                     if (!secondIntersectionPointAdded)
                     {
-                        
+
                         secondIntersectionPoints.add(point) ;
 
                         secondIntersectionPointAdded = true ;
@@ -494,7 +494,7 @@ Intersection                    Pyramid::intersectionWith                   (   
 
                 //     if (!secondIntersectionPointAdded)
                 //     {
-                        
+
                 //         secondIntersectionPoints.add(point) ;
 
                 //         secondIntersectionPointAdded = true ;
@@ -537,7 +537,7 @@ void                            Pyramid::print                              (   
     displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Pyramid") : void () ;
 
     library::core::utils::Print::Line(anOutputStream) << "Apex:"                << (apex_.isDefined() ? apex_.toString() : "Undefined") ;
-    
+
     library::core::utils::Print::Separator(anOutputStream, "Base:") ;
 
     base_.print(anOutputStream, false) ;
@@ -545,7 +545,7 @@ void                            Pyramid::print                              (   
     displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
-        
+
 void                            Pyramid::applyTransformation                (   const   Transformation&             aTransformation                             )
 {
 

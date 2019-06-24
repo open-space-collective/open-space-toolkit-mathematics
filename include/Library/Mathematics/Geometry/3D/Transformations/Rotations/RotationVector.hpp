@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -117,7 +117,7 @@ class RotationVector
         /// @brief              Get rotation angle
         ///
         /// @return             Rotation angle
-        
+
         Angle                   getAngle                                    ( ) const ;
 
         /// @brief              Convert rotation vector to its string representation
