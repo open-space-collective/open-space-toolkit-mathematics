@@ -32,4 +32,10 @@ RUN pip install LibraryMathematicsPy
 
 RUN mkdir -p /home/jovyan/.library
 
+ENV JUPYTER_ENABLE_LAB yes
+
+ENV LD_LIBRARY_PATH "/usr/local/lib:/opt/conda/lib/python3.7/site-packages:/home/jovyan/lib"
+
+ENV PYTHONPATH "/opt/conda/lib/python3.7/site-packages:/home/jovyan/lib"
+
 ################################################################################################################################################################
