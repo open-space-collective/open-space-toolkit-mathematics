@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Objects/Pyramid.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -41,7 +41,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Pyramid
 
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
-        
+
         .def("isDefined", &Pyramid::isDefined)
         .def("intersectsEllipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid) -> bool { return aPyramid.intersects(anEllipsoid) ; })
         .def("intersectsEllipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid, const Size aDiscretizationLevel) -> bool { return aPyramid.intersects(anEllipsoid, aDiscretizationLevel) ; })
@@ -57,7 +57,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Pyramid
         .def("intersectionWithEllipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid, const bool onlyInSight) -> Intersection { return aPyramid.intersectionWith(anEllipsoid, onlyInSight) ; })
         .def("intersectionWithEllipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid, const bool onlyInSight, const Size aDiscretizationLevel) -> Intersection { return aPyramid.intersectionWith(anEllipsoid, onlyInSight, aDiscretizationLevel) ; })
         .def("applyTransformation", &Pyramid::applyTransformation)
-        
+
         .def("Undefined", &Pyramid::Undefined).staticmethod("Undefined")
 
     ;

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Composite.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -656,7 +656,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Is)
         const Composite composite = Composite { pyramid } ;
 
         EXPECT_TRUE(composite.is<Pyramid>()) ;
-        
+
         EXPECT_FALSE(composite.is<Cuboid>()) ;
 
     }
@@ -694,7 +694,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, As)
         const Composite composite = Composite { pyramid } ;
 
         EXPECT_EQ(pyramid, composite.as<Pyramid>()) ;
-        
+
         EXPECT_ANY_THROW(composite.as<Cuboid>()) ;
 
     }
@@ -923,7 +923,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, ConstIterator)
             {
                 EXPECT_TRUE(objectUPtr->isDefined()) ;
             }
-            
+
         ) ;
 
     }
@@ -955,7 +955,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, ConstIterator)
             {
                 EXPECT_TRUE(objectUPtr->isDefined()) ;
             }
-            
+
         ) ;
 
     }
@@ -964,7 +964,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, ConstIterator)
 
         EXPECT_ANY_THROW
         (
-            
+
             for (const auto& objectUPtr : Composite::Undefined())
             {
                 (void) objectUPtr ;
@@ -1017,7 +1017,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, ApplyTransformation)
         EXPECT_ANY_THROW(composite.applyTransformation(Transformation::Undefined())) ;
         EXPECT_ANY_THROW(Composite::Undefined().applyTransformation(Transformation::Undefined())) ;
         EXPECT_ANY_THROW(Composite::Undefined().applyTransformation(Transformation::Identity())) ;
-        
+
 
     }
 
@@ -1027,7 +1027,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Undefined)
 {
 
     using library::math::geom::d3::objects::Composite ;
-    
+
     {
 
         EXPECT_NO_THROW(Composite::Undefined()) ;

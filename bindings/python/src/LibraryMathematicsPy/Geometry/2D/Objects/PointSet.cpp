@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/2D/Objects/PointSet.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -19,7 +19,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_PointSe
     using namespace boost::python ;
 
     using library::core::ctnr::Array ;
-    
+
     using library::math::geom::d2::Object ;
     using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::objects::PointSet ;
@@ -40,7 +40,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_PointSe
         .def("getPointClosestTo", &PointSet::getPointClosestTo)
         .def("toString", &PointSet::toString, LibraryMathematicsPy_Geometry_2D_Objects_PointSet_toString_overloads())
         .def("applyTransformation", &PointSet::applyTransformation)
-        
+
         .def("Empty", &PointSet::Empty).staticmethod("Empty")
 
         .def("__iter__", boost::python::range(static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::begin), static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::end)))

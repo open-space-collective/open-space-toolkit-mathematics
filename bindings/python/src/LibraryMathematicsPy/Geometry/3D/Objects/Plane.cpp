@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Objects/Plane.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -28,14 +28,14 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Plane (
 
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
-        
+
         .def("isDefined", &Plane::isDefined)
         .def("containsPoint", +[] (const Plane& aPlane, const Point& aPoint) -> bool { return aPlane.contains(aPoint) ; })
 
         .def("getPoint", &Plane::getPoint)
         .def("getNormalVector", &Plane::getNormalVector)
         .def("applyTransformation", &Plane::applyTransformation)
-        
+
         .def("Undefined", &Plane::Undefined).staticmethod("Undefined")
 
     ;

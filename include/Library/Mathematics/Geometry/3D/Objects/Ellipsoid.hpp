@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -128,7 +128,7 @@ class Ellipsoid : public Object
         ///
         /// @param              [in] aPoint A point
         /// @return             True if ellipsoid intersects point
-        
+
         bool                    intersects                                  (   const   Point&                      aPoint                                      ) const ;
 
         /// @brief              Check if ellipsoid intersects point set
@@ -141,7 +141,7 @@ class Ellipsoid : public Object
         ///
         /// @param              [in] aPointSet A point set
         /// @return             True if ellipsoid intersects point set
-        
+
         bool                    intersects                                  (   const   PointSet&                   aPointSet                                   ) const ;
 
         /// @brief              Check if ellipsoid intersects line
@@ -154,7 +154,7 @@ class Ellipsoid : public Object
         ///
         /// @param              [in] aLine A line
         /// @return             True if ellipsoid intersects line
-        
+
         bool                    intersects                                  (   const   Line&                       aLine                                       ) const ;
 
         /// @brief              Check if ellipsoid intersects ray
@@ -167,7 +167,7 @@ class Ellipsoid : public Object
         ///
         /// @param              [in] aRay A ray
         /// @return             True if ellipsoid intersects ray
-        
+
         bool                    intersects                                  (   const   Ray&                        aRay                                        ) const ;
 
         /// @brief              Check if ellipsoid intersects segment
@@ -180,7 +180,7 @@ class Ellipsoid : public Object
         ///
         /// @param              [in] aSegment A segment
         /// @return             True if ellipsoid intersects segment
-        
+
         bool                    intersects                                  (   const   Segment&                    aSegment                                    ) const ;
 
         /// @brief              Check if ellipsoid intersects plane
@@ -193,7 +193,7 @@ class Ellipsoid : public Object
         ///
         /// @param              [in] aPlane A plane
         /// @return             True if ellipsoid intersects plane
-        
+
         bool                    intersects                                  (   const   Plane&                      aPlane                                      ) const ;
 
         /// @brief              Check if ellipsoid intersects sphere
@@ -206,7 +206,7 @@ class Ellipsoid : public Object
         ///
         /// @param              [in] aSphere A sphere
         /// @return             True if ellipsoid intersects sphere
-        
+
         bool                    intersects                                  (   const   Sphere&                     aSphere                                     ) const ;
 
         /// @brief              Check if ellipsoid intersects ellipsoid
@@ -219,7 +219,7 @@ class Ellipsoid : public Object
         ///
         /// @param              [in] anEllipsoid An ellipsoid
         /// @return             True if ellipsoid intersects ellipsoid
-        
+
         bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
 
         /// @brief              Check if ellipsoid intersects pyramid
@@ -232,7 +232,7 @@ class Ellipsoid : public Object
         ///
         /// @param              [in] aPyramid A pyramid
         /// @return             True if ellipsoid intersects pyramid
-        
+
         bool                    intersects                                  (   const   Pyramid&                    aPyramid                                    ) const ;
 
         /// @brief              Check if ellipsoid intersects cone
@@ -245,7 +245,7 @@ class Ellipsoid : public Object
         ///
         /// @param              [in] aCone A cone
         /// @return             True if ellipsoid intersects cone
-        
+
         bool                    intersects                                  (   const   Cone&                       aCone                                       ) const ;
 
         /// @brief              Check if ellipsoid contains point

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Objects/Ray.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -42,7 +42,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Ray ( )
         .def("getDirection", &Ray::getDirection)
         .def("intersectionWithEllipsoid", +[] (const Ray& aRay, const Ellipsoid& anEllipsoid) -> Intersection { return aRay.intersectionWith(anEllipsoid) ; })
         .def("applyTransformation", &Ray::applyTransformation)
-        
+
         .def("Undefined", &Ray::Undefined).staticmethod("Undefined")
 
     ;

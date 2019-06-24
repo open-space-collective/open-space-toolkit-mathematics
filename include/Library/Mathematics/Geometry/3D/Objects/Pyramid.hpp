@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -119,7 +119,7 @@ class Pyramid : public Object
         /// @param              [in] aSphere A sphere
         /// @param              [in] aDiscretizationLevel (optional) The polygonal discretization level
         /// @return             True if pyramid intersects sphere
-        
+
         bool                    intersects                                  (   const   Sphere&                     aSphere,
                                                                                 const   Size                        aDiscretizationLevel                        =   40 ) const ;
 
@@ -134,7 +134,7 @@ class Pyramid : public Object
         /// @param              [in] anEllipsoid An ellipsoid
         /// @param              [in] aDiscretizationLevel (optional) The polygonal discretization level
         /// @return             True if pyramid intersects ellipsoid
-        
+
         bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid,
                                                                                 const   Size                        aDiscretizationLevel                        =   40 ) const ;
 

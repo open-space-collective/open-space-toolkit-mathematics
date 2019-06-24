@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Ray.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -45,7 +45,7 @@ namespace objects
         {
             throw library::core::error::runtime::Wrong("Direction") ;
         }
-        
+
         direction_ = direction_.normalized() ;
 
     }
@@ -86,7 +86,7 @@ bool                            Ray::intersects                             (   
 
 // bool                            Ray::intersects                          (   const   Ray&                       aRay                                       ) const
 // {
-    
+
 // }
 
 bool                            Ray::intersects                          (   const   Sphere&                     aSphere                                     ) const
@@ -130,7 +130,7 @@ Point                           Ray::getOrigin                              ( ) 
     {
         throw library::core::error::runtime::Undefined("Ray") ;
     }
-    
+
     return origin_ ;
 
 }
@@ -142,7 +142,7 @@ Vector3d                        Ray::getDirection                           ( ) 
     {
         throw library::core::error::runtime::Undefined("Ray") ;
     }
-    
+
     return direction_ ;
 
 }

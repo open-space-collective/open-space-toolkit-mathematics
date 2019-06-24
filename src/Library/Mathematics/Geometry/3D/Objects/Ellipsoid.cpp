@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Ellipsoid.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -86,7 +86,7 @@ Point                           EllipsoidPointFromGteVector                 (   
                                     c_(aThirdPrincipalSemiAxis),
                                     q_(anOrientation)
 {
-    
+
     if (a_.isDefined() && (a_ < 0.0))
     {
         throw library::core::error::RuntimeError("First principal semi-axis is negative.") ;
@@ -150,12 +150,12 @@ bool                            Ellipsoid::intersects                       (   
 
 bool                            Ellipsoid::intersects                       (   const   PointSet&                   aPointSet                                   ) const
 {
-    
+
     if (!this->isDefined())
     {
         throw library::core::error::runtime::Undefined("Ellipsoid") ;
     }
-    
+
     return (!aPointSet.isEmpty()) && std::any_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
 
 }
@@ -283,7 +283,7 @@ bool                            Ellipsoid::intersects                       (   
     const Vector3d diff = segmentCenter - center_.asVector() ;
     const Vector3d matDir = M * segmentDirection ;
     const Vector3d matDiff = M * diff ;
-    
+
     const Real a2 = segmentDirection.dot(matDir) ;
     const Real a1 = segmentDirection.dot(matDiff) ;
     const Real a0 = diff.dot(matDiff) - 1.0 ;
@@ -291,17 +291,17 @@ bool                            Ellipsoid::intersects                       (   
     const Real discriminant = (a1 * a1) - (a0 * a2) ;
 
     static const Real tolerance = 1e-25 ; // [TBM] Tolerance parameter should be dynamic
-    
+
     if (discriminant < -tolerance) // No real roots
     {
         return false ;
     }
     else if (discriminant > tolerance) // Two real roots
     {
-    
+
         const Real discriminantRoot = std::sqrt(discriminant) ;
         const Real a2_inverse = 1.0 / a2 ;
-        
+
         const Real t0 = (-a1 - discriminantRoot) * a2_inverse ;
         const Real t1 = (-a1 + discriminantRoot) * a2_inverse ;
 
@@ -310,7 +310,7 @@ bool                            Ellipsoid::intersects                       (   
 
         if (!resultInterval.contains(segmentInterval))
         {
-        
+
             if (resultInterval.intersects(segmentInterval))
             {
                 return true ;
@@ -331,7 +331,7 @@ bool                            Ellipsoid::intersects                       (   
     {
 
         const Real t0 = -a1 / a2 ;
-        
+
         if (std::abs(t0) <= segmentHalfLength) // Single intersection
         {
             return true ;
@@ -474,9 +474,9 @@ bool                            Ellipsoid::contains                         (   
     dcm.row(0) = q_ * Vector3d::X() ;
     dcm.row(1) = q_ * Vector3d::Y() ;
     dcm.row(2) = q_ * Vector3d::Z() ;
-    
+
     const Vector3d point = dcm * (aPoint - center_) ;
-    
+
     const Real& x = point.x() ;
     const Real& y = point.y() ;
     const Real& z = point.z() ;
@@ -492,7 +492,7 @@ bool                            Ellipsoid::contains                         (   
     {
         throw library::core::error::runtime::Undefined("Ellipsoid") ;
     }
-    
+
     return (!aPointSet.isEmpty()) && std::all_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
 
 }
@@ -509,7 +509,7 @@ Point                           Ellipsoid::getCenter                        ( ) 
     {
         throw library::core::error::runtime::Undefined("Ellipsoid") ;
     }
-    
+
     return center_ ;
 
 }
@@ -521,7 +521,7 @@ Real                            Ellipsoid::getFirstPrincipalSemiAxis        ( ) 
     {
         throw library::core::error::runtime::Undefined("Ellipsoid") ;
     }
-    
+
     return a_ ;
 
 }
@@ -533,7 +533,7 @@ Real                            Ellipsoid::getSecondPrincipalSemiAxis       ( ) 
     {
         throw library::core::error::runtime::Undefined("Ellipsoid") ;
     }
-    
+
     return b_ ;
 
 }
@@ -545,7 +545,7 @@ Real                            Ellipsoid::getThirdPrincipalSemiAxis        ( ) 
     {
         throw library::core::error::runtime::Undefined("Ellipsoid") ;
     }
-    
+
     return c_ ;
 
 }
@@ -593,7 +593,7 @@ Quaternion                      Ellipsoid::getOrientation                   ( ) 
     {
         throw library::core::error::runtime::Undefined("Ellipsoid") ;
     }
-    
+
     return q_ ;
 
 }
@@ -620,7 +620,7 @@ Matrix3d                        Ellipsoid::getMatrix                        ( ) 
                                 aFirstVector(2) * aSecondVector(0), aFirstVector(2) * aSecondVector(1), aFirstVector(2) * aSecondVector(2) ;
 
         return tensorProductMatrix ;
-        
+
     } ;
 
 	return tensorProduct(firstRatio, firstRatio) + tensorProduct(secondRatio, secondRatio) + tensorProduct(thirdRatio, thirdRatio) ;
@@ -677,9 +677,9 @@ Intersection                    Ellipsoid::intersectionWith                 (   
         }
 
     }
-    
+
     return Intersection::Empty() ;
-    
+
 }
 
 Intersection                    Ellipsoid::intersectionWith                 (   const   Ray&                        aRay,
@@ -756,7 +756,7 @@ Intersection                    Ellipsoid::intersectionWith                 (   
             }
 
             return onlyInSight ? Intersection::Point(pointSet.getPointClosestTo(aRay.getOrigin())) : Intersection::PointSet(pointSet) ;
-            
+
         }
         else
         {
@@ -764,9 +764,9 @@ Intersection                    Ellipsoid::intersectionWith                 (   
         }
 
     }
-    
+
     return Intersection::Empty() ;
-    
+
 }
 
 Intersection                    Ellipsoid::intersectionWith                 (   const   Segment&                    aSegment                                    ) const
@@ -812,7 +812,7 @@ Intersection                    Ellipsoid::intersectionWith                 (   
 
         if (intersectionResult.numIntersections == 1)
         {
-            
+
             const Point point = EllipsoidPointFromGteVector(intersectionResult.point[0]) ;
 
             if ((point == aSegment.getFirstPoint() || (point == aSegment.getSecondPoint())) && (!this->contains(point))) // Discard segment points, if returned by Gte
@@ -825,7 +825,7 @@ Intersection                    Ellipsoid::intersectionWith                 (   
         }
         else if (intersectionResult.numIntersections == 2)
         {
-            
+
             const Point firstPoint = EllipsoidPointFromGteVector(intersectionResult.point[0]) ;
             const Point secondPoint = EllipsoidPointFromGteVector(intersectionResult.point[1]) ;
 
@@ -891,9 +891,9 @@ Intersection                    Ellipsoid::intersectionWith                 (   
         }
 
     }
-    
+
     return Intersection::Empty() ;
-    
+
 }
 
 Intersection                    Ellipsoid::intersectionWith                 (   const   Pyramid&                    aPyramid,

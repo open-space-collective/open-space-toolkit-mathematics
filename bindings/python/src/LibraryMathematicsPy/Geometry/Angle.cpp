@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/Angle.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -20,7 +20,7 @@ inline void                     LibraryMathematicsPy_Geometry_Angle         ( )
 
     using library::core::types::Real ;
     using library::core::types::String ;
-    
+
     using library::math::obj::Vector2d ;
     using library::math::obj::Vector3d ;
     using library::math::geom::Angle ;
@@ -48,7 +48,7 @@ inline void                     LibraryMathematicsPy_Geometry_Angle         ( )
 
         .def("isDefined", &Angle::isDefined)
         .def("isZero", &Angle::isZero)
-        
+
         .def("getUnit", &Angle::getUnit)
         .def("inUnit", &Angle::in)
         .def("inRadians", +[] (const Angle& anAngle) -> Real { return anAngle.inRadians() ; })
@@ -57,7 +57,7 @@ inline void                     LibraryMathematicsPy_Geometry_Angle         ( )
         .def("inArcseconds", +[] (const Angle& anAngle) -> Real { return anAngle.inArcseconds() ; })
         .def("inRevolutions", &Angle::inRevolutions)
         .def("toString", &Angle::toString, LibraryMathematicsPy_Geometry_Angle_toString_overloads())
-        
+
         .def("Undefined", &Angle::Undefined).staticmethod("Undefined")
         .def("Zero", &Angle::Zero).staticmethod("Zero")
         .def("HalfPi", &Angle::HalfPi).staticmethod("HalfPi")
@@ -77,14 +77,14 @@ inline void                     LibraryMathematicsPy_Geometry_Angle         ( )
     ;
 
     enum_<Angle::Unit>("Unit")
-    
+
         .value("Undefined", Angle::Unit::Undefined)
         .value("Radian", Angle::Unit::Radian)
         .value("Degree", Angle::Unit::Degree)
         .value("Arcminute", Angle::Unit::Arcminute)
         .value("Arcsecond", Angle::Unit::Arcsecond)
         .value("Revolution", Angle::Unit::Revolution)
-    
+
     ;
 
 }

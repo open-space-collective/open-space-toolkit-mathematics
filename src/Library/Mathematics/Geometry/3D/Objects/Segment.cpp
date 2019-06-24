@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Segment.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -74,14 +74,14 @@ bool                            Segment::isDegenerate                       ( ) 
     {
         throw library::core::error::runtime::Undefined("Segment") ;
     }
-    
+
     return firstPoint_ == secondPoint_ ;
 
 }
 
 // bool                            Segment::intersects                         (   const   Segment&                    aSegment                                    ) const
 // {
-    
+
 // }
 
 bool                            Segment::intersects                         (   const   Sphere&                     aSphere                                     ) const
@@ -165,7 +165,7 @@ Point                           Segment::getCenter                          ( ) 
     {
         throw library::core::error::runtime::Undefined("Segment") ;
     }
-    
+
     return firstPoint_ + (secondPoint_ - firstPoint_) / 2.0 ;
 
 }
@@ -182,7 +182,7 @@ Vector3d                        Segment::getDirection                       ( ) 
     {
         throw library::core::error::RuntimeError("Segment is degenerate.") ;
     }
-    
+
     return (secondPoint_ - firstPoint_).normalized() ;
 
 }
@@ -194,7 +194,7 @@ Real                            Segment::getLength                          ( ) 
     {
         throw library::core::error::runtime::Undefined("Segment") ;
     }
-    
+
     return (secondPoint_ - firstPoint_).norm() ;
 
 }

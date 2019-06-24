@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Objects/Segment.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -42,7 +42,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Segment
         .def("getDirection", &Segment::getDirection)
         .def("getLength", &Segment::getLength)
         .def("applyTransformation", &Segment::applyTransformation)
-        
+
         .def("Undefined", &Segment::Undefined).staticmethod("Undefined")
 
     ;

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Transformations/Rotations/Quaternion.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -22,7 +22,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
 
     using library::core::types::Real ;
     using library::core::types::String ;
-    
+
     using library::math::obj::Vector3d ;
     using library::math::obj::Vector4d ;
     using library::math::geom::d3::trf::rot::Quaternion ;
@@ -41,13 +41,13 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
 		.def(self / self)
 
         .def(self_ns::str(self_ns::self))
-        
+
         .def("__repr__", +[] (const Quaternion& aQuaternion) -> std::string { return aQuaternion.toString() ; })
 
         .def("isDefined", &Quaternion::isDefined)
         .def("isUnitary", &Quaternion::isUnitary)
         .def("isNear", &Quaternion::isNear)
-        
+
         .def("x", &Quaternion::x)
         .def("y", &Quaternion::y)
         .def("z", &Quaternion::z)
@@ -83,10 +83,10 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
     ;
 
     enum_<Quaternion::Format>("Format")
-    
+
         .value("XYZS", Quaternion::Format::XYZS)
         .value("SXYZ", Quaternion::Format::SXYZ)
-    
+
     ;
 
     using library::core::ctnr::Array ;
@@ -95,7 +95,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
 
         .from_python<Array<Quaternion>>()
         .to_python<Array<Quaternion>>()
-        
+
     ;
 
 }

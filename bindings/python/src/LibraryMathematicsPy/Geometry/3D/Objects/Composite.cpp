@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Objects/Composite.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -44,13 +44,13 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Composi
 
         .def(self == self)
         .def(self == self)
-        
+
         .def(self + self)
         .def(self += self)
 
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
-        
+
         .def("isDefined", &Composite::isDefined)
 
         .def("isPoint", +[] (const Composite& aComposite) -> bool { return aComposite.is<Point>() ; })
@@ -91,7 +91,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Composi
         .def("intersectionWithComposite", +[] (const Composite& aComposite, const Composite& anotherComposite) -> Intersection { return aComposite.intersectionWith(anotherComposite) ; })
 
         .def("applyTransformation", &Composite::applyTransformation)
-        
+
         .def("Undefined", &Composite::Undefined).staticmethod("Undefined")
 
     ;

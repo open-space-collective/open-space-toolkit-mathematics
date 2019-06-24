@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Ray.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -117,7 +117,7 @@ class Ray : public Object
         ///
         /// @param              [in] anPoint An point
         /// @return             True if ray intersects point
-        
+
         bool                    intersects                                  (   const   Point&                      aPoint                                      ) const ;
 
         /// @brief              Check if ray intersects sphere
@@ -130,9 +130,9 @@ class Ray : public Object
         ///
         /// @param              [in] anSphere A sphere
         /// @return             True if ray intersects sphere
-        
+
         bool                    intersects                                  (   const   Sphere&                     aSphere                                     ) const ;
-        
+
         /// @brief              Check if ray intersects ellipsoid
         ///
         /// @code
@@ -143,7 +143,7 @@ class Ray : public Object
         ///
         /// @param              [in] anEllipsoid An ellipsoid
         /// @return             True if ray intersects ellipsoid
-        
+
         bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
 
         /// @brief              Check if ray contains point

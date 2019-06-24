@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Object.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -578,7 +578,7 @@ bool                            Object::contains                            (   
     return false ;
 
 }
-        
+
 Intersection                    Object::intersectionWith                    (   const   Object&                     anObject                                    ) const
 {
 

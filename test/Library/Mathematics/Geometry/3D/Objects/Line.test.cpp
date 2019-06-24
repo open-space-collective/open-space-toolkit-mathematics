@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Line.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -47,7 +47,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, EqualToOperator)
 {
 
     using library::math::geom::d3::objects::Line ;
-    
+
     {
 
         EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) == Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, +1.0 })) ;
@@ -115,7 +115,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, StreamOperator)
 {
 
     using library::math::geom::d3::objects::Line ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -132,7 +132,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, IsDefined)
 {
 
     using library::math::geom::d3::objects::Line ;
-    
+
     {
 
         EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).isDefined()) ;
@@ -156,7 +156,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, Intersects_Point)
     {
 
         EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersects(Point(0.0, 0.0, 0.0))) ;
-        
+
         EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersects(Point(0.0, 0.0, -1.0))) ;
         EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersects(Point(0.0, 0.0, +1.0))) ;
 
@@ -268,12 +268,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, GetOrigin)
 
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Line ;
-    
+
     {
 
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getOrigin()) ;
         EXPECT_EQ(Point(0.0, 0.0, 1.0), Line({ 0.0, 0.0, 1.0 }, { 0.0, 0.0, 2.0 }).getOrigin()) ;
-        
+
         EXPECT_EQ(Point(0.0, 0.0, -1.0), Line({ 0.0, 0.0, -1.0 }, { 0.0, 0.0, +1.0 }).getOrigin()) ;
 
     }
@@ -292,7 +292,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, GetDirection)
     using library::math::obj::Vector3d ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Line ;
-    
+
     {
 
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, +2.0 }).getDirection()) ;
@@ -360,7 +360,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, Undefined)
 {
 
     using library::math::geom::d3::objects::Line ;
-    
+
     {
 
         EXPECT_NO_THROW(Line::Undefined()) ;

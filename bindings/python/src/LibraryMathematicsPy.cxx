@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy.cxx
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -26,7 +26,7 @@ BOOST_PYTHON_MODULE (LibraryMathematicsPy)
     SetupEigenConverters() ;
 
     boost::python::object package = boost::python::scope() ;
-    
+
     package.attr("__path__") = "Library" ;
 
     LibraryMathematicsPy_Objects() ;

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -17,13 +17,13 @@
 
 inline void                     LibraryMathematicsPy_Geometry_3D            ( )
 {
-    
+
     boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Geometry.D3")))) ;
-    
+
     boost::python::scope().attr("D3") = module ;
-    
+
     boost::python::scope scope = module ;
-    
+
     LibraryMathematicsPy_Geometry_3D_Object() ;
     LibraryMathematicsPy_Geometry_3D_Objects() ;
     LibraryMathematicsPy_Geometry_3D_Transformation() ;

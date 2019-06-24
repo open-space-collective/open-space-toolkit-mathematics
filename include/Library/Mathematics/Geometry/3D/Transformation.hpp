@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Transformation.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -110,7 +110,7 @@ class Transformation
         Transformation          getInverse                                  ( ) const ;
 
         Point                   applyTo                                     (   const   Point&                      aPoint                                      ) const ;
-        
+
         Vector3d                applyTo                                     (   const   Vector3d&                   aVector                                     ) const ;
 
         /// @brief              Print transformation
@@ -122,11 +122,11 @@ class Transformation
                                                                                         bool                        displayDecorators                           =   true ) const ;
 
         static Transformation   Undefined                                   ( ) ;
-        
+
         static Transformation   Identity                                    ( ) ;
-        
+
         static Transformation   Translation                                 (   const   Vector3d&                   aTranslationVector                          ) ;
-        
+
         static Transformation   Rotation                                    (   const   RotationVector&             aRotationVector                             ) ;
 
         static Transformation   Rotation                                    (   const   RotationMatrix&             aRotationMatrix                             ) ;
@@ -144,7 +144,7 @@ class Transformation
 
         Transformation::Type    type_ ;
         Matrix4d                matrix_ ;
-        
+
         bool                    isRigid_ ;
 
                                 Transformation                              (   const   Transformation::Type&       aType,

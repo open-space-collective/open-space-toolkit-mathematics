@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Line.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -44,7 +44,7 @@ namespace objects
         {
             throw library::core::error::runtime::Wrong("Direction") ;
         }
-        
+
         direction_ = direction_.normalized() ;
 
     }
@@ -90,7 +90,7 @@ bool                            Line::intersects                            (   
 
 // bool                            Line::intersects                            (   const   Line&                       aLine                                       ) const
 // {
-    
+
 // }
 
 bool                            Line::intersects                            (   const   Sphere&                     aSphere                                     ) const
@@ -132,7 +132,7 @@ Point                           Line::getOrigin                             ( ) 
     {
         throw library::core::error::runtime::Undefined("Line") ;
     }
-    
+
     return origin_ ;
 
 }
@@ -144,7 +144,7 @@ Vector3d                        Line::getDirection                       ( ) con
     {
         throw library::core::error::runtime::Undefined("Line") ;
     }
-    
+
     return direction_ ;
 
 }

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Plane.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -45,7 +45,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, EqualToOperator)
 {
 
     using library::math::geom::d3::objects::Plane ;
-    
+
     {
 
         EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) == Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 })) ;
@@ -107,7 +107,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, StreamOperator)
 {
 
     using library::math::geom::d3::objects::Plane ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -124,7 +124,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IsDefined)
 {
 
     using library::math::geom::d3::objects::Plane ;
-    
+
     {
 
         EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).isDefined()) ;
@@ -246,7 +246,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains)
     {
 
         // [TBI]
-        
+
     }
 
     // Plane
@@ -254,7 +254,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains)
     {
 
         // [TBI]
-        
+
     }
 
     // Sphere
@@ -262,7 +262,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains)
     {
 
         // [TBI]
-        
+
     }
 
     // Ellipsoid
@@ -270,7 +270,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains)
     {
 
         // [TBI]
-        
+
     }
 
 }
@@ -280,7 +280,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, GetPoint)
 
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Plane ;
-    
+
     {
 
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).getPoint()) ;
@@ -302,7 +302,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, GetNormalVector)
     using library::math::obj::Vector3d ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Plane ;
-    
+
     {
 
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, +2.0 }).getNormalVector()) ;
@@ -320,7 +320,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, GetNormalVector)
 
 TEST (Library_Mathematics_Geometry_3D_Objects_Plane, ApplyTransformation)
 {
-    
+
     using library::core::types::Real ;
 
     using library::math::obj::Vector3d ;
@@ -370,7 +370,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Undefined)
 {
 
     using library::math::geom::d3::objects::Plane ;
-    
+
     {
 
         EXPECT_NO_THROW(Plane::Undefined()) ;

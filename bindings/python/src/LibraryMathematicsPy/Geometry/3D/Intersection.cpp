@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Intersection.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -80,18 +80,18 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Intersection ( 
         .def("accessComposite", &Intersection::accessComposite, return_value_policy<reference_existing_object>())
 
         .def("getType", &Intersection::getType)
-        
+
         .def("Undefined", &Intersection::Undefined).staticmethod("Undefined")
         .def("Empty", &Intersection::Empty).staticmethod("Empty")
         .def("Point", &Intersection::Point).staticmethod("Point")
         .def("PointSet", &Intersection::PointSet).staticmethod("PointSet")
-        
+
         .def("StringFromType", &Intersection::StringFromType).staticmethod("StringFromType")
 
     ;
 
     enum_<Intersection::Type>("Type")
-    
+
         .value("Undefined", Intersection::Type::Undefined)
         .value("Empty", Intersection::Type::Empty)
         .value("Point", Intersection::Type::Point)
@@ -103,7 +103,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Intersection ( 
         .value("Sphere", Intersection::Type::Sphere)
         .value("Ellipsoid", Intersection::Type::Ellipsoid)
         .value("Complex", Intersection::Type::Complex)
-    
+
     ;
 
 }

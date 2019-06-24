@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Segment.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -124,7 +124,7 @@ class Segment : public Object
         ///
         /// @param              [in] aSphere A sphere
         /// @return             True if segment intersects sphere
-        
+
         bool                    intersects                                  (   const   Sphere&                     aSphere                                     ) const ;
 
         /// @brief              Check if segment intersects ellipsoid
@@ -137,7 +137,7 @@ class Segment : public Object
         ///
         /// @param              [in] anEllipsoid An ellipsoid
         /// @return             True if segment intersects ellipsoid
-        
+
         bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
 
         /// @brief              Check if segment contains point
@@ -170,7 +170,7 @@ class Segment : public Object
         /// @endcode
         ///
         /// @return             Segment second point
-        
+
         Point                   getSecondPoint                              ( ) const ;
 
         /// @brief              Get segment center

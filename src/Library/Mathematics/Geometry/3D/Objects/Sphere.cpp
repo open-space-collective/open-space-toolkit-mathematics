@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Sphere.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -111,7 +111,7 @@ bool                            Sphere::isUnitary                           ( ) 
     {
         throw library::core::error::runtime::Undefined("Sphere") ;
     }
-    
+
     return radius_ == 1.0 ;
 
 }
@@ -123,12 +123,12 @@ bool                            Sphere::intersects                          (   
 
 bool                            Sphere::intersects                          (   const   PointSet&                   aPointSet                                   ) const
 {
-    
+
     if (!this->isDefined())
     {
         throw library::core::error::runtime::Undefined("Sphere") ;
     }
-    
+
     return (!aPointSet.isEmpty()) && std::any_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
 
 }
@@ -304,7 +304,7 @@ bool                            Sphere::contains                            (   
     {
         throw library::core::error::runtime::Undefined("Sphere") ;
     }
-    
+
     return (!aPointSet.isEmpty()) && std::all_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
 
 }
@@ -316,7 +316,7 @@ Point                           Sphere::getCenter                           ( ) 
     {
         throw library::core::error::runtime::Undefined("Sphere") ;
     }
-    
+
     return center_ ;
 
 }
@@ -328,7 +328,7 @@ Real                            Sphere::getRadius                           ( ) 
     {
         throw library::core::error::runtime::Undefined("Sphere") ;
     }
-    
+
     return radius_ ;
 
 }
@@ -381,9 +381,9 @@ Intersection                    Sphere::intersectionWith                    (   
         }
 
     }
-    
+
     return Intersection::Empty() ;
-    
+
 }
 
 Intersection                    Sphere::intersectionWith                    (   const   Ray&                        aRay,
@@ -458,7 +458,7 @@ Intersection                    Sphere::intersectionWith                    (   
             }
 
             return onlyInSight ? Intersection::Point(pointSet.getPointClosestTo(aRay.getOrigin())) : Intersection::PointSet(pointSet) ;
-            
+
         }
         else
         {
@@ -466,9 +466,9 @@ Intersection                    Sphere::intersectionWith                    (   
         }
 
     }
-    
+
     return Intersection::Empty() ;
-    
+
 }
 
 Intersection                    Sphere::intersectionWith                    (   const   Segment&                    aSegment                                    ) const
@@ -507,7 +507,7 @@ Intersection                    Sphere::intersectionWith                    (   
 
         if (intersectionResult.numIntersections == 1)
         {
-            
+
             const Point point = SpherePointFromGteVector(intersectionResult.point[0]) ;
 
             if ((point == aSegment.getFirstPoint() || (point == aSegment.getSecondPoint())) && (!this->contains(point))) // Discard segment points, if returned by Gte
@@ -520,7 +520,7 @@ Intersection                    Sphere::intersectionWith                    (   
         }
         else if (intersectionResult.numIntersections == 2)
         {
-            
+
             const Point firstPoint = SpherePointFromGteVector(intersectionResult.point[0]) ;
             const Point secondPoint = SpherePointFromGteVector(intersectionResult.point[1]) ;
 
@@ -586,9 +586,9 @@ Intersection                    Sphere::intersectionWith                    (   
         }
 
     }
-    
+
     return Intersection::Empty() ;
-    
+
 }
 
 Intersection                    Sphere::intersectionWith                    (   const   Pyramid&                    aPyramid,

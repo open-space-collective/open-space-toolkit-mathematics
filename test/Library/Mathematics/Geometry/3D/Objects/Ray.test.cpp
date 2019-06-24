@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Ray.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -48,7 +48,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, EqualToOperator)
 {
 
     using library::math::geom::d3::objects::Ray ;
-    
+
     {
 
         EXPECT_TRUE(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) == Ray({ 0.0, 0.0, +0.0 }, { 0.0, 0.0, +1.0 })) ;
@@ -119,7 +119,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, StreamOperator)
 {
 
     using library::math::geom::d3::objects::Ray ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -136,7 +136,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, IsDefined)
 {
 
     using library::math::geom::d3::objects::Ray ;
-    
+
     {
 
         EXPECT_TRUE(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).isDefined()) ;
@@ -269,12 +269,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, GetOrigin)
 
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Ray ;
-    
+
     {
 
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getOrigin()) ;
         EXPECT_EQ(Point(0.0, 0.0, 1.0), Ray({ 0.0, 0.0, 1.0 }, { 0.0, 0.0, 2.0 }).getOrigin()) ;
-        
+
         EXPECT_EQ(Point(0.0, 0.0, -1.0), Ray({ 0.0, 0.0, -1.0 }, { 0.0, 0.0, +1.0 }).getOrigin()) ;
 
     }
@@ -293,7 +293,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, GetDirection)
     using library::math::obj::Vector3d ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Ray ;
-    
+
     {
 
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, +2.0 }).getDirection()) ;
@@ -314,7 +314,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Ellipsoid)
 
     using library::math::geom::d3::objects::Ray ;
     using library::math::geom::d3::objects::Ellipsoid ;
-    
+
     {
 
         // See: Library_Mathematics_Geometry_3D_Objects_Ellipsoid.IntersectionWith_Ray
@@ -383,7 +383,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Undefined)
 {
 
     using library::math::geom::d3::objects::Ray ;
-    
+
     {
 
         EXPECT_NO_THROW(Ray::Undefined()) ;

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Objects/Cuboid.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -48,7 +48,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Cuboid 
 
                     const std::array<Vector3d, 3> axes = { boost::python::extract<Vector3d>(anAxisList[0]), boost::python::extract<Vector3d>(anAxisList[1]), boost::python::extract<Vector3d>(anAxisList[2]) } ;
                     const std::array<Real, 3> extent = { boost::python::extract<Real>(anExtent[0]), boost::python::extract<Real>(anExtent[1]), boost::python::extract<Real>(anExtent[2]) } ;
-                    
+
                     return std::make_shared<Cuboid>(aCenter, axes, extent) ;
 
                 }
@@ -60,7 +60,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Cuboid 
 
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
-        
+
         .def("isDefined", &Cuboid::isDefined)
         .def("isNear", &Cuboid::isNear)
         .def("intersectsPoint", +[] (const Cuboid& aCuboid, const Point& aPoint) -> bool { return aCuboid.intersects(aPoint) ; })
@@ -77,7 +77,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Cuboid 
         .def("getThirdExtent", &Cuboid::getThirdExtent)
         .def("getVertices", &Cuboid::getVertices)
         .def("applyTransformation", &Cuboid::applyTransformation)
-        
+
         .def("Undefined", &Cuboid::Undefined).staticmethod("Undefined")
         .def("Cube", &Cuboid::Cube).staticmethod("Cube")
 

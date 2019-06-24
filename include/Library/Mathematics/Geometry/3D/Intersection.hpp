@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Intersection.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -127,7 +127,7 @@ class Intersection
         ///
         /// @param              [in] anIntersection An intersection
         /// @return             Concatenated intersection
-        
+
         Intersection            operator +                                  (   const   Intersection&               anIntersection                              ) const ;
 
         /// @brief              Addition assignment operator (intersection concatenation)
@@ -186,7 +186,7 @@ class Intersection
             {
                 throw library::core::error::runtime::Undefined("Intersection") ;
             }
-            
+
             return composite_.is<Type>() ;
 
         }

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Cone.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -64,7 +64,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, EqualToOperator)
     using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Cone ;
-    
+
     {
 
         const Point apex = { 0.0, 0.0, 0.0 } ;
@@ -114,7 +114,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, NotEqualToOperator)
     using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Cone ;
-    
+
     {
 
         const Point apex = { 0.0, 0.0, 0.0 } ;
@@ -164,7 +164,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, StreamOperator)
     using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Cone ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -188,7 +188,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IsDefined)
     using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Cone ;
-    
+
     {
 
         const Point apex = { 0.0, 0.0, 0.0 } ;
@@ -215,7 +215,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Intersects_Ellipsoid)
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Cone ;
-    
+
     {
 
         const Point apex = { -10.0, 0.0, 10.0 } ;
@@ -245,7 +245,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetApex)
     using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Cone ;
-    
+
     {
 
         const Point apex = { 0.0, 0.0, 0.0 } ;
@@ -271,7 +271,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetAxis)
     using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Cone ;
-    
+
     {
 
         const Point apex = { 0.0, 0.0, 0.0 } ;
@@ -297,7 +297,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetAngle)
     using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Cone ;
-    
+
     {
 
         const Point apex = { 0.0, 0.0, 0.0 } ;
@@ -321,13 +321,13 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetRaysOfLateralSurface)
 
     using library::core::types::Real ;
     using library::core::ctnr::Array ;
-    
+
     using library::math::obj::Vector3d ;
     using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Ray ;
     using library::math::geom::d3::objects::Cone ;
-    
+
     {
 
         const Point apex = { 0.0, 0.0, 0.0 } ;
@@ -351,7 +351,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetRaysOfLateralSurface)
                 referenceRays,
                 [] (const Ray& aFirstRay, const Ray& aSecondRay) -> bool
                 {
-                    
+
                     return aFirstRay.getOrigin().isNear(aSecondRay.getOrigin(), Real::Epsilon())
                         && aFirstRay.getDirection().isNear(aSecondRay.getDirection(), Real::Epsilon()) ;
 
@@ -373,7 +373,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IntersectionWith_Ellipsoid)
 {
 
     using library::core::types::Real ;
-    
+
     using library::math::obj::Vector3d ;
     using library::math::geom::Angle ;
     using library::math::geom::d3::objects::Point ;
@@ -381,7 +381,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IntersectionWith_Ellipsoid)
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Cone ;
     using library::math::geom::d3::Intersection ;
-    
+
     {
 
         const Point apex = { 10.0, 0.0, 10.0 } ;
@@ -402,7 +402,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IntersectionWith_Ellipsoid)
 
         EXPECT_EQ(4, intersectionLineString.getPointCount()) ;
 
-        const LineString referenceLineString = 
+        const LineString referenceLineString =
         {
             {
                 { 4.91908097261278, 0.895903111323379, 10.0 },
@@ -473,7 +473,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, ApplyTransformation)
         EXPECT_TRUE(cone.getApex().isNear(referenceCone.getApex(), Real::Epsilon())) << referenceCone.getApex().toString() << cone.getApex().toString() ;
         EXPECT_TRUE(cone.getAxis().isNear(referenceCone.getAxis(), Real::Epsilon())) << referenceCone.getAxis().toString() << cone.getAxis().toString() ;
         EXPECT_TRUE(cone.getAngle().inDegrees().isNear(referenceCone.getAngle().inDegrees(), Real::Epsilon())) << referenceCone.getAngle().toString() << cone.getAngle().toString() ;
-        
+
     }
 
     {
@@ -494,7 +494,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Undefined)
 {
 
     using library::math::geom::d3::objects::Cone ;
-    
+
     {
 
         EXPECT_NO_THROW(Cone::Undefined()) ;

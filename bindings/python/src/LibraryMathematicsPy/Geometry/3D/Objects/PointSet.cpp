@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Objects/PointSet.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -17,7 +17,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_PointSe
     using namespace boost::python ;
 
     using library::core::ctnr::Array ;
-    
+
     using library::math::geom::d3::Object ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::PointSet ;
@@ -37,7 +37,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_PointSe
         .def("getSize", &PointSet::getSize)
         .def("getPointClosestTo", &PointSet::getPointClosestTo)
         .def("applyTransformation", &PointSet::applyTransformation)
-        
+
         .def("Empty", &PointSet::Empty).staticmethod("Empty")
 
         .def("__iter__", boost::python::range(static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::begin), static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::end)))

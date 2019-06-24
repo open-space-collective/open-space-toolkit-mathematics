@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Point.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -36,7 +36,7 @@ namespace objects
                                     y_(aSecondCoordinate),
                                     z_(aThirdCoordinate)
 {
-    
+
 }
 
 Point*                          Point::clone                                ( ) const
@@ -73,7 +73,7 @@ Point                           Point::operator +                           (   
     {
         throw library::core::error::runtime::Undefined("Vector") ;
     }
-    
+
     return { x_ + aVector.x(), y_ + aVector.y(), z_ + aVector.z() } ;
 
 }
@@ -90,11 +90,11 @@ Point                           Point::operator -                           (   
     {
         throw library::core::error::runtime::Undefined("Vector") ;
     }
-    
+
     return { x_ - aVector.x(), y_ - aVector.y(), z_ - aVector.z() } ;
 
 }
-        
+
 Vector3d                        Point::operator -                           (   const   Point&                      aPoint                                      ) const
 {
 
@@ -137,7 +137,7 @@ const Real&                     Point::x                                    ( ) 
     {
         throw library::core::error::runtime::Undefined("Point") ;
     }
-    
+
     return x_ ;
 
 }
@@ -149,7 +149,7 @@ const Real&                     Point::y                                    ( ) 
     {
         throw library::core::error::runtime::Undefined("Point") ;
     }
-    
+
     return y_ ;
 
 }
@@ -161,7 +161,7 @@ const Real&                     Point::z                                    ( ) 
     {
         throw library::core::error::runtime::Undefined("Point") ;
     }
-    
+
     return z_ ;
 
 }
@@ -173,7 +173,7 @@ Vector3d                        Point::asVector                             ( ) 
     {
         throw library::core::error::runtime::Undefined("Point") ;
     }
-    
+
     return { x_, y_, z_ } ;
 
 }

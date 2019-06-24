@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/2D/Objects/Polygon.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -20,7 +20,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Constructor)
 {
 
     using library::core::ctnr::Array ;
-    
+
     using library::math::geom::d2::objects::Polygon ;
 
     {
@@ -131,7 +131,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Clone)
 {
 
     using library::core::ctnr::Array ;
-    
+
     using library::math::geom::d2::objects::Polygon ;
 
     {
@@ -154,9 +154,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, EqualToOperator)
 {
 
     using library::core::ctnr::Array ;
-    
+
     using library::math::geom::d2::objects::Polygon ;
-    
+
     {
 
         const Array<Polygon::Vertex> vertices =
@@ -237,9 +237,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, NotEqualToOperator)
 {
 
     using library::core::ctnr::Array ;
-    
+
     using library::math::geom::d2::objects::Polygon ;
-    
+
     {
 
         const Array<Polygon::Vertex> vertices =
@@ -320,9 +320,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, StreamOperator)
 {
 
     using library::core::ctnr::Array ;
-    
+
     using library::math::geom::d2::objects::Polygon ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -347,9 +347,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IsDefined)
 {
 
     using library::core::ctnr::Array ;
-    
+
     using library::math::geom::d2::objects::Polygon ;
-    
+
     {
 
         const Array<Polygon::Vertex> vertices =
@@ -811,7 +811,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingAt)
         } ;
 
         EXPECT_EQ(referenceSecondInnerRing, polygon.getInnerRingAt(1)) ;
-        
+
         EXPECT_ANY_THROW(polygon.getInnerRingAt(2)) ;
 
     }
@@ -957,7 +957,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 {
 
     using library::core::ctnr::Array ;
-    
+
     using library::math::geom::d2::objects::Polygon ;
 
     {
@@ -1012,7 +1012,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ToString)
 {
 
     using library::core::ctnr::Array ;
-    
+
     using library::math::obj::Vector2d ;
     using library::math::geom::d2::objects::Polygon ;
 
@@ -1076,7 +1076,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ToString)
         EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0 0.5,0.5 0.5,0.5 0,0 0),(0 0,0 0.1,0.1 0.1,0.1 0,0 0))", Polygon(outerRing, innerRings).toString()) ;
         EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0 0.5,0.5 0.5,0.5 0,0 0),(0 0,0 0.1,0.1 0.1,0.1 0,0 0))", Polygon(outerRing, innerRings).toString(Polygon::Format::Standard)) ;
         EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0 0.5,0.5 0.5,0.5 0,0 0),(0 0,0 0.1,0.1 0.1,0.1 0,0 0))", Polygon(outerRing, innerRings).toString(Polygon::Format::WKT)) ;
-        
+
     }
 
     {
@@ -1091,7 +1091,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ApplyTransformation)
 {
 
     using library::core::ctnr::Array ;
-    
+
     using library::math::obj::Vector2d ;
     using library::math::geom::d2::objects::Polygon ;
     using library::math::geom::d2::Transformation ;
@@ -1138,7 +1138,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Undefined)
 {
 
     using library::math::geom::d2::objects::Polygon ;
-    
+
     {
 
         EXPECT_NO_THROW(Polygon::Undefined()) ;

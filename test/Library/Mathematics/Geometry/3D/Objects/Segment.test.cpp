@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Segment.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -47,7 +47,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, EqualToOperator)
 {
 
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) == Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 })) ;
@@ -103,7 +103,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, StreamOperator)
 {
 
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -120,7 +120,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IsDefined)
 {
 
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).isDefined()) ;
@@ -140,7 +140,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IsDegenerate)
 {
 
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).isDegenerate()) ;
@@ -252,7 +252,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Contains)
     {
 
         // [TBI]
-        
+
     }
 
     // Segment
@@ -260,7 +260,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Contains)
     {
 
         // [TBI]
-        
+
     }
 
     // Sphere
@@ -268,7 +268,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Contains)
     {
 
         // [TBI]
-        
+
     }
 
     // Ellipsoid
@@ -276,7 +276,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Contains)
     {
 
         // [TBI]
-        
+
     }
 
 }
@@ -286,12 +286,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetCenter)
 
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).getCenter()) ;
         EXPECT_EQ(Point(0.0, 0.0, 1.0), Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 2.0 }).getCenter()) ;
-        
+
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Segment({ 0.0, 0.0, -1.0 }, { 0.0, 0.0, +1.0 }).getCenter()) ;
 
     }
@@ -310,7 +310,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetDirection)
     using library::math::obj::Vector3d ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, +2.0 }).getDirection()) ;
@@ -334,15 +334,15 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetLength)
 
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         EXPECT_EQ(0.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).getLength()) ;
         EXPECT_EQ(0.0, Segment({ 1.0, 1.0, 1.0 }, { 1.0, 1.0, 1.0 }).getLength()) ;
-        
+
         EXPECT_EQ(1.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getLength()) ;
         EXPECT_EQ(2.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 2.0 }).getLength()) ;
-        
+
         EXPECT_EQ(4.0, Segment({ 0.0, 0.0, -2.0 }, { 0.0, 0.0, +2.0 }).getLength()) ;
 
     }
@@ -407,7 +407,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Undefined)
 {
 
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         EXPECT_NO_THROW(Segment::Undefined()) ;
