@@ -13,6 +13,18 @@ LABEL maintainer="lucas@loftorbital.com"
 
 USER root
 
+# The following is to fix the "libstdc++.so.6: version `GLIBCXX_3.4.26' not found" error
+
+RUN apt update \
+ && apt-get install -y software-properties-common \
+ && add-apt-repository ppa:ubuntu-toolchain-r/test \
+ && apt-get update \
+ && apt-get install -y gcc-9 \
+ && apt-get upgrade -y libstdc++6 \
+ && rm -rf /var/lib/apt/lists/* \
+ && conda install -y libgcc=5.2.0 \
+ && conda uninstall -y libgcc
+
 RUN apt-get update \
  && apt-get install -y libssl1.0.0 libssl-dev \
  && rm -rf /var/lib/apt/lists/*
@@ -28,8 +40,6 @@ RUN chown -R ${NB_UID}:${NB_UID} /home/jovyan/.jupyter
 
 USER ${NB_UID}
 
-RUN pip install LibraryMathematicsPy
-
 RUN mkdir -p /home/jovyan/.library
 
 ENV JUPYTER_ENABLE_LAB yes
@@ -37,5 +47,7 @@ ENV JUPYTER_ENABLE_LAB yes
 ENV LD_LIBRARY_PATH "/usr/local/lib:/opt/conda/lib/python3.7/site-packages:/home/jovyan/lib"
 
 ENV PYTHONPATH "/opt/conda/lib/python3.7/site-packages:/home/jovyan/lib"
+
+RUN pip install LibraryMathematicsPy
 
 ################################################################################################################################################################
