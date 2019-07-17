@@ -40,6 +40,8 @@ bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a6179dc145
 \begin{DoxyCompactList}\small\item\em Get ray origin. \end{DoxyCompactList}\item 
 Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_ab2e0a6cfd7c2c288ec615a479024fb7d}{get\+Direction} () const
 \begin{DoxyCompactList}\small\item\em Get ray direction. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a50ede8e46490ec58931cb82754de873f}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&a\+Plane) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of ray with plane. \end{DoxyCompactList}\item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a54e7c2fa56bd086efbf85aa18674b403}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&a\+Sphere, const bool only\+In\+Sight=false) const
 \begin{DoxyCompactList}\small\item\em Compute intersection of ray with sphere. \end{DoxyCompactList}\item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_aea1460113fed4868d652c5f3bd7a9422}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&an\+Ellipsoid, const bool only\+In\+Sight=false) const
@@ -187,10 +189,28 @@ Get ray origin.
 \begin{DoxyReturn}{Returns}
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} origin 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a50ede8e46490ec58931cb82754de873f}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a50ede8e46490ec58931cb82754de873f}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Ray\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of ray with plane. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Plane} & A plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of ray with plane 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a54e7c2fa56bd086efbf85aa18674b403}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a54e7c2fa56bd086efbf85aa18674b403}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}!intersection\+With@{intersection\+With}}
 \index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}}
-\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Ray\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&}]{a\+Sphere,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false} }\end{DoxyParamCaption}) const}
 
 
@@ -210,7 +230,7 @@ Compute intersection of ray with sphere.
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_aea1460113fed4868d652c5f3bd7a9422}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_aea1460113fed4868d652c5f3bd7a9422}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}!intersection\+With@{intersection\+With}}
 \index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}}
-\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Ray\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false} }\end{DoxyParamCaption}) const}
 
 

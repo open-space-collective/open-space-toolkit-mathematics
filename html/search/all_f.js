@@ -2,7 +2,7 @@ var searchData=
 [
   ['radian',['Radian',['../classlibrary_1_1math_1_1geom_1_1_angle.html#ab593c4dafbb9a5c29fdbe114eaae8eaea50c62e3ca8d8ec8732a7f968a3bf2c7c',1,'library::math::geom::Angle']]],
   ['radians',['Radians',['../classlibrary_1_1math_1_1geom_1_1_angle.html#a9f4a8ad6bfe63060c86c0f1fb2753cf7',1,'library::math::geom::Angle']]],
-  ['ray',['Ray',['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html',1,'library::math::geom::d3::objects::Ray'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a11b7613464daaebc6e25a758b057f203',1,'library::math::geom::d3::objects::Ray::Ray()'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05a9406e3c325bfc9873426e5eda4ba6e18',1,'library::math::geom::d3::Intersection::Ray()']]],
+  ['ray',['Ray',['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html',1,'library::math::geom::d3::objects::Ray'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a1a1ca8a76e8d4ea2cd9435268b5a87d1',1,'library::math::geom::d3::Intersection::Ray()'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a11b7613464daaebc6e25a758b057f203',1,'library::math::geom::d3::objects::Ray::Ray()'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a3465d607fd42380f350598e055271b05a9406e3c325bfc9873426e5eda4ba6e18',1,'library::math::geom::d3::Intersection::Ray()']]],
   ['ray_2ecpp',['Ray.cpp',['../_ray_8cpp.html',1,'']]],
   ['ray_2ehpp',['Ray.hpp',['../_ray_8hpp.html',1,'']]],
   ['readme_2emd',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],

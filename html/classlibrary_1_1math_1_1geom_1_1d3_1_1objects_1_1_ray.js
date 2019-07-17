@@ -6,6 +6,7 @@ var classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray =
     [ "contains", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a6179dc1453ac7a54b13fe6bf46c0a66b", null ],
     [ "getDirection", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#ab2e0a6cfd7c2c288ec615a479024fb7d", null ],
     [ "getOrigin", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#abaac9b7fcc10e2076ada11f2798386bd", null ],
+    [ "intersectionWith", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a50ede8e46490ec58931cb82754de873f", null ],
     [ "intersectionWith", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a54e7c2fa56bd086efbf85aa18674b403", null ],
     [ "intersectionWith", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#aea1460113fed4868d652c5f3bd7a9422", null ],
     [ "intersects", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a83300d3992b2f963c5b60a8be6748da0", null ],

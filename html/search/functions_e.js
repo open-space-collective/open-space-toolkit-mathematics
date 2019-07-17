@@ -1,7 +1,7 @@
 var searchData=
 [
   ['radians',['Radians',['../classlibrary_1_1math_1_1geom_1_1_angle.html#a9f4a8ad6bfe63060c86c0f1fb2753cf7',1,'library::math::geom::Angle']]],
-  ['ray',['Ray',['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a11b7613464daaebc6e25a758b057f203',1,'library::math::geom::d3::objects::Ray']]],
+  ['ray',['Ray',['../classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html#a1a1ca8a76e8d4ea2cd9435268b5a87d1',1,'library::math::geom::d3::Intersection::Ray()'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a11b7613464daaebc6e25a758b057f203',1,'library::math::geom::d3::objects::Ray::Ray()']]],
   ['rectify',['rectify',['../classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#aad5bf4f7ab207b0c001680773d81071e',1,'library::math::geom::d3::trf::rot::Quaternion']]],
   ['revolutions',['Revolutions',['../classlibrary_1_1math_1_1geom_1_1_angle.html#a49035704c48951dcf6e6b570b3d849de',1,'library::math::geom::Angle']]],
   ['rotation',['Rotation',['../classlibrary_1_1math_1_1geom_1_1d2_1_1_transformation.html#a579b2f9b2adae54cf4082aac81d5136a',1,'library::math::geom::d2::Transformation::Rotation()'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation.html#a79978a6efb749a2e058aa0b2cea092b2',1,'library::math::geom::d3::Transformation::Rotation(const RotationVector &amp;aRotationVector)'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation.html#a017bb92fe8ee25689759c4a076a2807e',1,'library::math::geom::d3::Transformation::Rotation(const RotationMatrix &amp;aRotationMatrix)']]],

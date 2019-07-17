@@ -79,6 +79,12 @@ static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersect
 \begin{DoxyCompactList}\small\item\em Constructs a point set intersection. \end{DoxyCompactList}\item 
 static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_aa546d0185512a4c093a705a4c96f8960}{Line\+String} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_string}{objects\+::\+Line\+String} \&a\+Line\+String)
 \begin{DoxyCompactList}\small\item\em Constructs a line string intersection. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3f099c46287b3dfb2e51c26b73fe0f8e}{Line} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{objects\+::\+Line} \&a\+Line)
+\begin{DoxyCompactList}\small\item\em Constructs a line intersection. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a1a1ca8a76e8d4ea2cd9435268b5a87d1}{Ray} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{objects\+::\+Ray} \&a\+Ray)
+\begin{DoxyCompactList}\small\item\em Constructs a ray intersection. \end{DoxyCompactList}\item 
+static \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_af927ab821d40f12d5dd571316c6262ab}{Segment} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{objects\+::\+Segment} \&a\+Segment)
+\begin{DoxyCompactList}\small\item\em Constructs a segment intersection. \end{DoxyCompactList}\item 
 static String \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a7294c6aa40d2353f1f4d7d6019c9dbdc}{String\+From\+Type} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3465d607fd42380f350598e055271b05}{Intersection\+::\+Type} \&a\+Type)
 \begin{DoxyCompactList}\small\item\em Converts intersection type to string. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Friends}
@@ -324,6 +330,26 @@ Check if intersection is empty.
 \begin{DoxyReturn}{Returns}
 True if intersection is empty 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3f099c46287b3dfb2e51c26b73fe0f8e}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3f099c46287b3dfb2e51c26b73fe0f8e}} 
+\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Line@{Line}}
+\index{Line@{Line}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+\subsubsection{\texorpdfstring{Line()}{Line()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::\+Intersection\+::\+Line (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{objects\+::\+Line} \&}]{a\+Line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a line intersection. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_afbaef540a058ccc7e58f1be2585304a9}{Intersection} intersection = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3f099c46287b3dfb2e51c26b73fe0f8e}{Intersection::Line}(
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a3f099c46287b3dfb2e51c26b73fe0f8e}{Line}(\{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \})) ;
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Line intersection 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_aa546d0185512a4c093a705a4c96f8960}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_aa546d0185512a4c093a705a4c96f8960}} 
 \index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Line\+String@{Line\+String}}
 \index{Line\+String@{Line\+String}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
@@ -477,6 +503,46 @@ Constructs a point set intersection.
 
 \begin{DoxyReturn}{Returns}
 Point set intersection 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a1a1ca8a76e8d4ea2cd9435268b5a87d1}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a1a1ca8a76e8d4ea2cd9435268b5a87d1}} 
+\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Ray@{Ray}}
+\index{Ray@{Ray}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+\subsubsection{\texorpdfstring{Ray()}{Ray()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::\+Intersection\+::\+Ray (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{objects\+::\+Ray} \&}]{a\+Ray }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a ray intersection. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_afbaef540a058ccc7e58f1be2585304a9}{Intersection} intersection = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a1a1ca8a76e8d4ea2cd9435268b5a87d1}{Intersection::Ray}(\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a1a1ca8a76e8d4ea2cd9435268b5a87d1}{Ray}(\{ 0.0, 0.0, 0.0 \}, \{ 1.0,
+       0.0, 0.0 \})) ;
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Ray intersection 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_af927ab821d40f12d5dd571316c6262ab}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_af927ab821d40f12d5dd571316c6262ab}} 
+\index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!Segment@{Segment}}
+\index{Segment@{Segment}!library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}}
+\subsubsection{\texorpdfstring{Segment()}{Segment()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::\+Intersection\+::\+Segment (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{objects\+::\+Segment} \&}]{a\+Segment }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a segment intersection. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_afbaef540a058ccc7e58f1be2585304a9}{Intersection} intersection = \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_af927ab821d40f12d5dd571316c6262ab}{Intersection::Segment}(
+      \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_af927ab821d40f12d5dd571316c6262ab}{Segment}(\{ 0.0, 0.0, 0.0 \}, \{ 1.0, 0.0, 0.0 \})) ;
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Segment intersection 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a7294c6aa40d2353f1f4d7d6019c9dbdc}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection_a7294c6aa40d2353f1f4d7d6019c9dbdc}} 
 \index{library\+::math\+::geom\+::d3\+::\+Intersection@{library\+::math\+::geom\+::d3\+::\+Intersection}!String\+From\+Type@{String\+From\+Type}}

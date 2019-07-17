@@ -135,6 +135,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab2e0a6cfd7c2c288ec615a479024fb7d"><td class="memItemLeft" align="right" valign="top">Vector3d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#ab2e0a6cfd7c2c288ec615a479024fb7d">getDirection</a> () const</td></tr>
 <tr class="memdesc:ab2e0a6cfd7c2c288ec615a479024fb7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get ray direction.  <a href="#ab2e0a6cfd7c2c288ec615a479024fb7d">More...</a><br /></td></tr>
 <tr class="separator:ab2e0a6cfd7c2c288ec615a479024fb7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50ede8e46490ec58931cb82754de873f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a50ede8e46490ec58931cb82754de873f">intersectionWith</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane.html">Plane</a> &amp;aPlane) const</td></tr>
+<tr class="memdesc:a50ede8e46490ec58931cb82754de873f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute intersection of ray with plane.  <a href="#a50ede8e46490ec58931cb82754de873f">More...</a><br /></td></tr>
+<tr class="separator:a50ede8e46490ec58931cb82754de873f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54e7c2fa56bd086efbf85aa18674b403"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a54e7c2fa56bd086efbf85aa18674b403">intersectionWith</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html">Sphere</a> &amp;aSphere, const bool onlyInSight=false) const</td></tr>
 <tr class="memdesc:a54e7c2fa56bd086efbf85aa18674b403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute intersection of ray with sphere.  <a href="#a54e7c2fa56bd086efbf85aa18674b403">More...</a><br /></td></tr>
 <tr class="separator:a54e7c2fa56bd086efbf85aa18674b403"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -359,8 +362,35 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a50ede8e46490ec58931cb82754de873f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50ede8e46490ec58931cb82754de873f">&#9670;&nbsp;</a></span>intersectionWith() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a> library::math::geom::d3::objects::Ray::intersectionWith </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane.html">Plane</a> &amp;&#160;</td>
+          <td class="paramname"><em>aPlane</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute intersection of ray with plane. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPlane</td><td>A plane </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html" title="3D intersection ">Intersection</a> of ray with plane </dd></dl>
+
+</div>
+</div>
 <a id="a54e7c2fa56bd086efbf85aa18674b403"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a54e7c2fa56bd086efbf85aa18674b403">&#9670;&nbsp;</a></span>intersectionWith() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a54e7c2fa56bd086efbf85aa18674b403">&#9670;&nbsp;</a></span>intersectionWith() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -398,7 +428,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="aea1460113fed4868d652c5f3bd7a9422"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea1460113fed4868d652c5f3bd7a9422">&#9670;&nbsp;</a></span>intersectionWith() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#aea1460113fed4868d652c5f3bd7a9422">&#9670;&nbsp;</a></span>intersectionWith() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

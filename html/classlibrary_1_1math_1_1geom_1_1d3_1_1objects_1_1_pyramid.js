@@ -3,6 +3,7 @@ var classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid =
     [ "Pyramid", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#aafaaeed187584040b306b7de7ee57fd4", null ],
     [ "applyTransformation", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#a79d9b11e42c47213e2eb9538e52a2103", null ],
     [ "clone", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#a734bc02bbfec62647743649bf5d2b706", null ],
+    [ "contains", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#a6f92215d38dcab3319b7585be8019c1d", null ],
     [ "contains", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#a32e8fd53701cd4d2c0c6b377ca7902c9", null ],
     [ "getApex", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#af24d52592c3154d633f694411d11396c", null ],
     [ "getBase", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#a247e3c188d7919b2043e59d46b67c2ef", null ],
