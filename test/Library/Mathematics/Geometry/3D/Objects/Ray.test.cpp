@@ -309,6 +309,26 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, GetDirection)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Plane)
+{
+
+    using library::math::geom::d3::objects::Ray ;
+    using library::math::geom::d3::objects::Plane ;
+
+    {
+
+        // [TBI]
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Ray::Undefined().intersectionWith(Plane::Undefined())) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Ellipsoid)
 {
 

@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
@@ -15,6 +16,7 @@
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
 #include <Library/Mathematics/Objects/Interval.hpp>
@@ -126,6 +128,70 @@ bool                            Pyramid::intersects                         (   
     }
 
     return false ;
+
+}
+
+bool                            Pyramid::contains                           (   const   Point&                      aPoint                                      ) const
+{
+
+    using Point2d = library::math::geom::d2::objects::Point ;
+
+    if (!aPoint.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Pyramid") ;
+    }
+
+    if (aPoint == apex_)
+    {
+        return true ;
+    }
+
+    // Projection of the point onto the pyramid base plane, along the apex to point ray
+
+    const Ray apexToPointRay = { apex_, aPoint - apex_ } ;
+
+    const Plane basePlane = { base_.getOrigin(), base_.getNormalVector() } ;
+
+    const Intersection rayPlaneIntersection = apexToPointRay.intersectionWith(basePlane) ;
+
+    if (rayPlaneIntersection.isEmpty())
+    {
+        return false ;
+    }
+
+    if (!rayPlaneIntersection.is<Point>())
+    {
+        throw library::core::error::RuntimeError("Pyramid is degenerate.") ;
+    }
+
+    const Point intersectionPoint = rayPlaneIntersection.as<Point>() ;
+
+    // Convert intersection point into pyramid base frame
+
+    const Transformation translation = Transformation::Translation(-base_.getOrigin().asVector()) ;
+
+    const Vector3d baseXAxis = base_.getXAxis() ;
+    const Vector3d baseYAxis = base_.getYAxis() ;
+    const Vector3d baseZAxis = base_.getNormalVector() ;
+
+    const RotationMatrix rotationMatrix = RotationMatrix::Columns(baseXAxis, baseYAxis, baseZAxis) ;
+
+    const Transformation rotation = Transformation::Rotation(rotationMatrix) ;
+
+    const Transformation combinedTransformation = rotation * translation ;
+
+    const Point transformedPoint = combinedTransformation.applyTo(intersectionPoint) ;
+
+    const Point2d projectedPoint = { transformedPoint.x(), transformedPoint.y() } ;
+
+    // Query if projected point is within polygonal base
+
+    return base_.getPolygon2d().contains(projectedPoint) ;
 
 }
 

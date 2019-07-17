@@ -45,6 +45,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Pyramid
         .def("isDefined", &Pyramid::isDefined)
         .def("intersectsEllipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid) -> bool { return aPyramid.intersects(anEllipsoid) ; })
         .def("intersectsEllipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid, const Size aDiscretizationLevel) -> bool { return aPyramid.intersects(anEllipsoid, aDiscretizationLevel) ; })
+        .def("containsPoint", +[] (const Pyramid& aPyramid, const Point& aPoint) -> bool { return aPyramid.contains(aPoint) ; })
         .def("containsEllipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid) -> bool { return aPyramid.contains(anEllipsoid) ; })
 
         .def("getBase", &Pyramid::getBase)

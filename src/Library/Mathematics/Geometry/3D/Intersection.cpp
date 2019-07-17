@@ -222,6 +222,45 @@ Intersection                    Intersection::LineString                    (   
 
 }
 
+Intersection                    Intersection::Line                          (   const   objects::Line&              aLine                                       )
+{
+
+    Intersection intersection ;
+
+    intersection.type_ = Intersection::Type::Line ;
+
+    intersection.composite_ = Composite { aLine } ;
+
+    return intersection ;
+
+}
+
+Intersection                    Intersection::Ray                           (   const   objects::Ray&               aRay                                        )
+{
+
+    Intersection intersection ;
+
+    intersection.type_ = Intersection::Type::Ray ;
+
+    intersection.composite_ = Composite { aRay } ;
+
+    return intersection ;
+
+}
+
+Intersection                    Intersection::Segment                       (   const   objects::Segment&           aSegment                                    )
+{
+
+    Intersection intersection ;
+
+    intersection.type_ = Intersection::Type::Segment ;
+
+    intersection.composite_ = Composite { aSegment } ;
+
+    return intersection ;
+
+}
+
 String                          Intersection::StringFromType                (   const   Intersection::Type&         aType                                       )
 {
 

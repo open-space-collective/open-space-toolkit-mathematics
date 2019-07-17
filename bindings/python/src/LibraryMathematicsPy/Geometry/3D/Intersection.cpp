@@ -85,6 +85,9 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Intersection ( 
         .def("Empty", &Intersection::Empty).staticmethod("Empty")
         .def("Point", &Intersection::Point).staticmethod("Point")
         .def("PointSet", &Intersection::PointSet).staticmethod("PointSet")
+        .def("Line", &Intersection::Line).staticmethod("Line")
+        .def("Ray", &Intersection::Ray).staticmethod("Ray")
+        .def("Segment", &Intersection::Segment).staticmethod("Segment")
 
         .def("StringFromType", &Intersection::StringFromType).staticmethod("StringFromType")
 

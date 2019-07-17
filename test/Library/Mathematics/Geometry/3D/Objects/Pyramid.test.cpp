@@ -205,6 +205,118 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Intersects_Ellipsoid)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Contains_Point)
+{
+
+    using library::math::obj::Vector3d ;
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Polygon ;
+    using library::math::geom::d3::objects::Pyramid ;
+
+    {
+
+        const Polygon base = { { { { -0.1, -0.1 }, { +0.1, -0.1 }, { +0.1, +0.1 }, { -0.1, +0.1 } } }, { 0.0, 0.0, 1.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+
+        const Pyramid pyramid = { base, apex } ;
+
+        EXPECT_TRUE(pyramid.contains(Point { 0.0, 0.0, 0.0 })) ;
+        EXPECT_TRUE(pyramid.contains(Point { 0.0, 0.0, 1.0 })) ;
+        EXPECT_TRUE(pyramid.contains(Point { 0.0, 0.0, 2.0 })) ;
+        EXPECT_TRUE(pyramid.contains(Point { 0.0, 0.0, 3.0 })) ;
+
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, 0.0, -1.0 })) ;
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, 0.0, -2.0 })) ;
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, 0.0, -3.0 })) ;
+
+        EXPECT_FALSE(pyramid.contains(Point { +1.0, 0.0, 0.0 })) ;
+        EXPECT_FALSE(pyramid.contains(Point { -1.0, 0.0, 0.0 })) ;
+
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, +1.0, 0.0 })) ;
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, -1.0, 0.0 })) ;
+
+        EXPECT_FALSE(pyramid.contains(Point { 2.0, 2.0, 1.0 })) ;
+
+    }
+
+    {
+
+        const Polygon base = { { { { -0.1, -0.1 }, { +0.1, -0.1 }, { +0.1, +0.1 }, { -0.1, +0.1 } } }, { 0.0, 0.0, -1.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+
+        const Pyramid pyramid = { base, apex } ;
+
+        EXPECT_TRUE(pyramid.contains(Point { 0.0, 0.0, 0.0 })) ;
+        EXPECT_TRUE(pyramid.contains(Point { 0.0, 0.0, -1.0 })) ;
+        EXPECT_TRUE(pyramid.contains(Point { 0.0, 0.0, -2.0 })) ;
+        EXPECT_TRUE(pyramid.contains(Point { 0.0, 0.0, -3.0 })) ;
+
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, 0.0, 1.0 })) ;
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, 0.0, 2.0 })) ;
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, 0.0, 3.0 })) ;
+
+        EXPECT_FALSE(pyramid.contains(Point { +1.0, 0.0, 0.0 })) ;
+        EXPECT_FALSE(pyramid.contains(Point { -1.0, 0.0, 0.0 })) ;
+
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, +1.0, 0.0 })) ;
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, -1.0, 0.0 })) ;
+
+        EXPECT_FALSE(pyramid.contains(Point { 2.0, 2.0, -1.0 })) ;
+
+    }
+
+    {
+
+        const Polygon base = { { { { -0.1, -0.1 }, { +0.1, -0.1 }, { +0.1, +0.1 }, { -0.1, +0.1 } } }, { 0.0, 2.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 0.0, -1.0 } } ;
+        const Point apex = { 0.0, 1.0, 0.0 } ;
+
+        const Pyramid pyramid = { base, apex } ;
+
+        EXPECT_TRUE(pyramid.contains(Point { 0.0, 1.0, 0.0 })) ;
+        EXPECT_TRUE(pyramid.contains(Point { 0.0, 2.0, 0.0 })) ;
+        EXPECT_TRUE(pyramid.contains(Point { 0.0, 3.0, 0.0 })) ;
+        EXPECT_TRUE(pyramid.contains(Point { 0.0, 4.0, 0.0 })) ;
+
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, 0.0, 0.0 })) ;
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, -1.0, 0.0 })) ;
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, -2.0, 0.0 })) ;
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, -2.0, 0.0 })) ;
+
+        EXPECT_FALSE(pyramid.contains(Point { +1.0, 0.0, 0.0 })) ;
+        EXPECT_FALSE(pyramid.contains(Point { -1.0, 0.0, 0.0 })) ;
+
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, 0.0, +1.0 })) ;
+        EXPECT_FALSE(pyramid.contains(Point { 0.0, 0.0, -1.0 })) ;
+
+        EXPECT_FALSE(pyramid.contains(Point { 1.0, 1.0, 1.0 })) ;
+
+    }
+
+    {
+
+        const Polygon base = { { { { -1.0, -1.0 }, { +1.0, -1.0 }, { +1.0, +1.0 }, { -1.0, +1.0 } } }, { 2.0, 2.0, 0.0 }, { 0.0, 0.0, -1.0 }, { 0.0, 1.0, 0.0 } } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+
+        const Pyramid pyramid = { base, apex } ;
+
+        EXPECT_TRUE(pyramid.contains(Point { 0.0, 0.0, 0.0 })) ;
+        EXPECT_TRUE(pyramid.contains(Point { 2.0, 2.0, 0.0 })) ;
+        EXPECT_TRUE(pyramid.contains(Point { 2.0, 1.0, 0.0 })) ;
+        EXPECT_TRUE(pyramid.contains(Point { 2.0, 3.0, 0.0 })) ;
+
+        EXPECT_FALSE(pyramid.contains(Point { 2.0, 0.5, 0.0 })) ;
+        EXPECT_FALSE(pyramid.contains(Point { 1.0, 2.0, 0.0 })) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Pyramid::Undefined().contains(Point::Undefined())) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, GetBase)
 {
 

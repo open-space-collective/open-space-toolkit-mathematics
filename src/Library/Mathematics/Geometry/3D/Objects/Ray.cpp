@@ -89,7 +89,7 @@ bool                            Ray::intersects                             (   
 
 // }
 
-bool                            Ray::intersects                          (   const   Sphere&                     aSphere                                     ) const
+bool                            Ray::intersects                             (   const   Sphere&                     aSphere                                     ) const
 {
     return aSphere.intersects(*this) ;
 }
@@ -144,6 +144,50 @@ Vector3d                        Ray::getDirection                           ( ) 
     }
 
     return direction_ ;
+
+}
+
+Intersection                    Ray::intersectionWith                       (   const   Plane&                      aPlane                                      ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ray") ;
+    }
+
+    if (!aPlane.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Plane") ;
+    }
+
+    const Vector3d n = aPlane.getNormalVector() ;
+    const Vector3d v = direction_ ;
+
+    const Vector3d Q_0 = aPlane.getPoint().asVector() ;
+    const Vector3d P_0 = origin_.asVector() ;
+
+    const double nDotV = n.dot(v) ;
+
+    if (nDotV == 0.0) // Ray and plane are parallel
+    {
+
+        if (n.dot(Q_0 - P_0) == 0.0) // Ray is in plane
+        {
+            return Intersection::Ray(*this) ;
+        }
+
+        return Intersection::Empty() ;
+
+    }
+
+    const double t = n.dot(Q_0 - P_0) / nDotV ;
+
+    if (t < 0.0)
+    {
+        return Intersection::Empty() ;
+    }
+
+    return Intersection::Point(Point::Vector(P_0 + t * v)) ;
 
 }
 
