@@ -272,6 +272,36 @@ class Intersection
 
         static Intersection     LineString                                  (   const   objects::LineString&        aLineString                                 ) ;
 
+        /// @brief              Constructs a line intersection
+        ///
+        /// @code
+        ///                     Intersection intersection = Intersection::Line(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 })) ;
+        /// @endcode
+        ///
+        /// @return             Line intersection
+
+        static Intersection     Line                                        (   const   objects::Line&              aLine                                       ) ;
+
+        /// @brief              Constructs a ray intersection
+        ///
+        /// @code
+        ///                     Intersection intersection = Intersection::Ray(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 })) ;
+        /// @endcode
+        ///
+        /// @return             Ray intersection
+
+        static Intersection     Ray                                         (   const   objects::Ray&               aRay                                        ) ;
+
+        /// @brief              Constructs a segment intersection
+        ///
+        /// @code
+        ///                     Intersection intersection = Intersection::Segment(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 })) ;
+        /// @endcode
+        ///
+        /// @return             Segment intersection
+
+        static Intersection     Segment                                     (   const   objects::Segment&           aSegment                                    ) ;
+
         /// @brief              Converts intersection type to string
         ///
         /// @return             String

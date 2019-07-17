@@ -20,6 +20,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Ray ( )
     using library::math::geom::d3::Object ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Ray ;
+    using library::math::geom::d3::objects::Plane ;
     using library::math::geom::d3::objects::Sphere ;
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::Intersection ;
@@ -40,6 +41,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Ray ( )
 
         .def("getOrigin", &Ray::getOrigin)
         .def("getDirection", &Ray::getDirection)
+        .def("intersectionWithPlane", +[] (const Ray& aRay, const Plane& aPlane) -> Intersection { return aRay.intersectionWith(aPlane) ; })
         .def("intersectionWithEllipsoid", +[] (const Ray& aRay, const Ellipsoid& anEllipsoid) -> Intersection { return aRay.intersectionWith(anEllipsoid) ; })
         .def("applyTransformation", &Ray::applyTransformation)
         

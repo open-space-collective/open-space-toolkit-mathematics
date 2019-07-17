@@ -179,6 +179,13 @@ class Ray : public Object
 
         Vector3d                getDirection                                ( ) const ;
 
+        /// @brief              Compute intersection of ray with plane
+        ///
+        /// @param              [in] aPlane A plane
+        /// @return             Intersection of ray with plane
+
+        Intersection            intersectionWith                            (   const   Plane&                      aPlane                                      ) const ;
+
         /// @brief              Compute intersection of ray with sphere
         ///
         /// @param              [in] aSphere A sphere
