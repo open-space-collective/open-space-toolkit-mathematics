@@ -573,12 +573,33 @@ bool                            Object::contains                            (   
 
     }
 
+    // Pyramid
+
+    if (const Pyramid* objectPtr = dynamic_cast<const Pyramid*>(this))
+    {
+
+        // Point
+
+        if (const Point* otherObjectPtr = dynamic_cast<const Point*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+        // Ellipsoid
+
+        if (const Ellipsoid* otherObjectPtr = dynamic_cast<const Ellipsoid*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+    }
+
     throw library::core::error::runtime::ToBeImplemented("Object :: contains") ;
 
     return false ;
 
 }
-        
+
 Intersection                    Object::intersectionWith                    (   const   Object&                     anObject                                    ) const
 {
 
@@ -606,6 +627,13 @@ Intersection                    Object::intersectionWith                    (   
 
     if (const Ray* objectPtr = dynamic_cast<const Ray*>(this))
     {
+
+        // Plane
+
+        if (const Plane* otherObjectPtr = dynamic_cast<const Plane*>(&anObject))
+        {
+            return objectPtr->intersectionWith(*otherObjectPtr) ;
+        }
 
         // Ellipsoid
 
