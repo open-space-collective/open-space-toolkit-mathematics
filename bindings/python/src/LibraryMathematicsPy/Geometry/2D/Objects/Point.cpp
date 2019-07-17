@@ -65,6 +65,9 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Point (
 
         .from_python<Array<Point>>()
         .to_python<Array<Point>>()
+
+        .from_python<Array<Array<Point>>>()
+        .to_python<Array<Array<Point>>>()
         
     ;
 

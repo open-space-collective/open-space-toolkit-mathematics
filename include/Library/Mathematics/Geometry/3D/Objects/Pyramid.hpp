@@ -138,6 +138,19 @@ class Pyramid : public Object
         bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid,
                                                                                 const   Size                        aDiscretizationLevel                        =   40 ) const ;
 
+        /// @brief              Check if pyramid contains point
+        ///
+        /// @code
+        ///                     Pyramid pyramid = ... ;
+        ///                     Point point = ... ;
+        ///                     pyramid.contains(point) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             True if pyramid contains point
+
+        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+
         /// @brief              Check if pyramid contains ellipsoid
         ///
         /// @code
