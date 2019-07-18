@@ -38,6 +38,8 @@ using library::math::geom::d3::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+class PointSet ;
+class Plane ;
 class Sphere ;
 class Ellipsoid ;
 
@@ -110,10 +112,23 @@ class Line : public Object
         ///                     line.intersects(point) ;
         /// @endcode
         ///
-        /// @param              [in] anPoint An point
+        /// @param              [in] anPoint A point
         /// @return             True if line intersects point
-        
+
         bool                    intersects                                  (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Check if line intersects plane
+        ///
+        /// @code
+        ///                     Line line = ... ;
+        ///                     Plane plane = ... ;
+        ///                     line.intersects(plane) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPlane A plane
+        /// @return             True if line intersects plane
+
+        bool                    intersects                                  (   const   Plane&                      aPlane                                      ) const ;
 
         /// @brief              Check if line intersects sphere
         ///
@@ -125,7 +140,7 @@ class Line : public Object
         ///
         /// @param              [in] aSphere A sphere
         /// @return             True if line intersects sphere
-        
+
         bool                    intersects                                  (   const   Sphere&                     aSphere                                     ) const ;
 
         /// @brief              Check if line intersects ellipsoid
@@ -138,7 +153,7 @@ class Line : public Object
         ///
         /// @param              [in] anEllipsoid An ellipsoid
         /// @return             True if line intersects ellipsoid
-        
+
         bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
 
         /// @brief              Check if line contains point
@@ -173,6 +188,13 @@ class Line : public Object
         /// @return             Line direction
 
         Vector3d                getDirection                                ( ) const ;
+
+        /// @brief              Compute intersection of line with plane
+        ///
+        /// @param              [in] aPlane A plane
+        /// @return             Intersection of line with plane
+
+        Intersection            intersectionWith                            (   const   Plane&                      aPlane                                      ) const ;
 
         /// @brief              Print line
         ///

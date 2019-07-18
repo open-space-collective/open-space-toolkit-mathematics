@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
 
@@ -69,8 +70,50 @@ bool                            Plane::isDefined                            ( ) 
     return point_.isDefined() && normal_.isDefined() ;
 }
 
+bool                            Plane::intersects                           (   const   Point&                      aPoint                                      ) const
+{
+    return this->contains(aPoint) ;
+}
+
+bool                            Plane::intersects                           (   const   PointSet&                   aPointSet                                   ) const
+{
+
+    if (!aPointSet.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point Set") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Plane") ;
+    }
+
+    return (!aPointSet.isEmpty()) && std::any_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
+
+}
+
+bool                            Plane::intersects                           (   const   Line&                       aLine                                       ) const
+{
+    return aLine.intersects(*this) ;
+}
+
+bool                            Plane::intersects                           (   const   Ray&                        aRay                                        ) const
+{
+    return aRay.intersects(*this) ;
+}
+
+bool                            Plane::intersects                           (   const   Segment&                    aSegment                                    ) const
+{
+    return aSegment.intersects(*this) ;
+}
+
 bool                            Plane::contains                             (   const   Point&                      aPoint                                      ) const
 {
+
+    if (!aPoint.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point") ;
+    }
 
     if (!this->isDefined())
     {
@@ -78,6 +121,74 @@ bool                            Plane::contains                             (   
     }
 
     return (aPoint - point_).dot(normal_) == 0.0 ;
+
+}
+
+bool                            Plane::contains                             (   const   PointSet&                   aPointSet                                   ) const
+{
+
+    if (!aPointSet.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point Set") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Plane") ;
+    }
+
+    return (!aPointSet.isEmpty()) && std::all_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
+
+}
+
+bool                            Plane::contains                             (   const   Line&                       aLine                                       ) const
+{
+
+    if (!aLine.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Line") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Plane") ;
+    }
+
+    return this->contains(aLine.getOrigin()) && (normal_.dot(aLine.getDirection()) == 0.0) ;
+
+}
+
+bool                            Plane::contains                             (   const   Ray&                        aRay                                        ) const
+{
+
+    if (!aRay.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ray") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Plane") ;
+    }
+
+    return this->contains(aRay.getOrigin()) && (normal_.dot(aRay.getDirection()) == 0.0) ;
+
+}
+
+bool                            Plane::contains                             (   const   Segment&                    aSegment                                    ) const
+{
+
+    if (!aSegment.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Segment") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Plane") ;
+    }
+
+    return this->contains(aSegment.getFirstPoint()) && this->contains(aSegment.getSecondPoint()) ;
 
 }
 
@@ -103,6 +214,50 @@ Vector3d                        Plane::getNormalVector                      ( ) 
 
     return normal_ ;
 
+}
+
+Intersection                    Plane::intersectionWith                     (   const   Point&                      aPoint                                      ) const
+{
+    return this->contains(aPoint) ? Intersection::Point(aPoint) : Intersection::Empty() ;
+}
+
+Intersection                    Plane::intersectionWith                     (   const   PointSet&                   aPointSet                                   ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Plane") ;
+    }
+
+    Array<Point> points = Array<Point>::Empty() ;
+
+    for (const auto& point : aPointSet)
+    {
+
+        if (this->contains(point))
+        {
+            points.add(point) ;
+        }
+
+    }
+
+    return (!points.isEmpty()) ? ((points.getSize() == 1) ? Intersection::Point(points.accessFirst()) : Intersection::PointSet({ points })) : Intersection::Empty() ;
+
+}
+
+Intersection                    Plane::intersectionWith                     (   const   Line&                       aLine                                       ) const
+{
+    return aLine.intersectionWith(*this) ;
+}
+
+Intersection                    Plane::intersectionWith                     (   const   Ray&                        aRay                                        ) const
+{
+    return aRay.intersectionWith(*this) ;
+}
+
+Intersection                    Plane::intersectionWith                     (   const   Segment&                    aSegment                                    ) const
+{
+    return aSegment.intersectionWith(*this) ;
 }
 
 void                            Plane::print                                (           std::ostream&               anOutputStream,

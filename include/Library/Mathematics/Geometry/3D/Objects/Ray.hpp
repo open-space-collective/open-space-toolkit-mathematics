@@ -38,6 +38,7 @@ using library::math::geom::d3::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+class PointSet ;
 class Line ;
 class Segment ;
 class Plane ;
@@ -115,10 +116,23 @@ class Ray : public Object
         ///                     ray.intersects(point) ;
         /// @endcode
         ///
-        /// @param              [in] anPoint An point
+        /// @param              [in] anPoint A point
         /// @return             True if ray intersects point
-        
+
         bool                    intersects                                  (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Check if ray intersects plane
+        ///
+        /// @code
+        ///                     Ray ray = ... ;
+        ///                     Plane plane = ... ;
+        ///                     ray.intersects(plane) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPlane A plane
+        /// @return             True if ray intersects plane
+
+        bool                    intersects                                  (   const   Plane&                      aPlane                                      ) const ;
 
         /// @brief              Check if ray intersects sphere
         ///
@@ -130,9 +144,9 @@ class Ray : public Object
         ///
         /// @param              [in] anSphere A sphere
         /// @return             True if ray intersects sphere
-        
+
         bool                    intersects                                  (   const   Sphere&                     aSphere                                     ) const ;
-        
+
         /// @brief              Check if ray intersects ellipsoid
         ///
         /// @code
@@ -143,21 +157,34 @@ class Ray : public Object
         ///
         /// @param              [in] anEllipsoid An ellipsoid
         /// @return             True if ray intersects ellipsoid
-        
+
         bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
 
         /// @brief              Check if ray contains point
         ///
         /// @code
         ///                     Ray ray = ... ;
-        ///                     Ellipsoid ellipsoid = ... ;
-        ///                     ray.contains(ellipsoid) ;
+        ///                     Point point = ... ;
+        ///                     ray.contains(point) ;
         /// @endcode
         ///
-        /// @param              [in] anEllipsoid An ellipsoid
+        /// @param              [in] aPoint A point
         /// @return             True if ray contains point
 
         bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Check if ray contains point set
+        ///
+        /// @code
+        ///                     Ray ray = ... ;
+        ///                     PointSet pointSet = ... ;
+        ///                     ray.contains(pointSet) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             True if ray contains point set
+
+        bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
 
         /// @brief              Get ray origin
         ///

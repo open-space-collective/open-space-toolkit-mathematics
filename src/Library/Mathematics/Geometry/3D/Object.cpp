@@ -293,10 +293,12 @@ bool                            Object::intersects                          (   
     if (const Line* objectPtr = dynamic_cast<const Line*>(this))
     {
 
-        // if (const Line* otherObjectPtr = dynamic_cast<const Line*>(&anObject))
-        // {
-        //     return objectPtr->intersects(*otherObjectPtr) ;
-        // }
+        // Plane
+
+        if (const Plane* otherObjectPtr = dynamic_cast<const Plane*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
 
         // Sphere
 
@@ -319,10 +321,12 @@ bool                            Object::intersects                          (   
     if (const Ray* objectPtr = dynamic_cast<const Ray*>(this))
     {
 
-        // if (const Ray* otherObjectPtr = dynamic_cast<const Ray*>(&anObject))
-        // {
-        //     return objectPtr->intersects(*otherObjectPtr) ;
-        // }
+        // Plane
+
+        if (const Plane* otherObjectPtr = dynamic_cast<const Plane*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
 
         // Sphere
 
@@ -345,10 +349,12 @@ bool                            Object::intersects                          (   
     if (const Segment* objectPtr = dynamic_cast<const Segment*>(this))
     {
 
-        // if (const Segment* otherObjectPtr = dynamic_cast<const Segment*>(&anObject))
-        // {
-        //     return objectPtr->intersects(*otherObjectPtr) ;
-        // }
+        // Plane
+
+        if (const Plane* otherObjectPtr = dynamic_cast<const Plane*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
 
         // Sphere
 
@@ -360,6 +366,48 @@ bool                            Object::intersects                          (   
         // Ellipsoid
 
         if (const Ellipsoid* otherObjectPtr = dynamic_cast<const Ellipsoid*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+    }
+
+    // Plane
+
+    if (const Plane* objectPtr = dynamic_cast<const Plane*>(this))
+    {
+
+        // Point
+
+        if (const Point* otherObjectPtr = dynamic_cast<const Point*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+        // PointSet
+
+        if (const PointSet* otherObjectPtr = dynamic_cast<const PointSet*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+        // Line
+
+        if (const Line* otherObjectPtr = dynamic_cast<const Line*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+        // Ray
+
+        if (const Ray* otherObjectPtr = dynamic_cast<const Ray*>(&anObject))
+        {
+            return objectPtr->intersects(*otherObjectPtr) ;
+        }
+
+        // Segment
+
+        if (const Segment* otherObjectPtr = dynamic_cast<const Segment*>(&anObject))
         {
             return objectPtr->intersects(*otherObjectPtr) ;
         }
@@ -552,6 +600,48 @@ bool                            Object::contains                            (   
 
     // }
 
+    // Plane
+
+    if (const Plane* objectPtr = dynamic_cast<const Plane*>(this))
+    {
+
+        // Point
+
+        if (const Point* otherObjectPtr = dynamic_cast<const Point*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+        // PointSet
+
+        if (const PointSet* otherObjectPtr = dynamic_cast<const PointSet*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+        // Line
+
+        if (const Line* otherObjectPtr = dynamic_cast<const Line*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+        // Ray
+
+        if (const Ray* otherObjectPtr = dynamic_cast<const Ray*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+        // Segment
+
+        if (const Segment* otherObjectPtr = dynamic_cast<const Segment*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+    }
+
     // Ellipsoid
 
     if (const Ellipsoid* objectPtr = dynamic_cast<const Ellipsoid*>(this))
@@ -623,6 +713,20 @@ Intersection                    Object::intersectionWith                    (   
         throw library::core::error::runtime::Undefined("Object") ;
     }
 
+    // Line
+
+    if (const Line* objectPtr = dynamic_cast<const Line*>(this))
+    {
+
+        // Plane
+
+        if (const Plane* otherObjectPtr = dynamic_cast<const Plane*>(&anObject))
+        {
+            return objectPtr->intersectionWith(*otherObjectPtr) ;
+        }
+
+    }
+
     // Ray
 
     if (const Ray* objectPtr = dynamic_cast<const Ray*>(this))
@@ -638,6 +742,20 @@ Intersection                    Object::intersectionWith                    (   
         // Ellipsoid
 
         if (const Ellipsoid* otherObjectPtr = dynamic_cast<const Ellipsoid*>(&anObject))
+        {
+            return objectPtr->intersectionWith(*otherObjectPtr) ;
+        }
+
+    }
+
+    // Segment
+
+    if (const Segment* objectPtr = dynamic_cast<const Segment*>(this))
+    {
+
+        // Plane
+
+        if (const Plane* otherObjectPtr = dynamic_cast<const Plane*>(&anObject))
         {
             return objectPtr->intersectionWith(*otherObjectPtr) ;
         }

@@ -7,9 +7,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -44,7 +46,7 @@ namespace objects
         {
             throw library::core::error::runtime::Wrong("Direction") ;
         }
-        
+
         direction_ = direction_.normalized() ;
 
     }
@@ -90,8 +92,38 @@ bool                            Line::intersects                            (   
 
 // bool                            Line::intersects                            (   const   Line&                       aLine                                       ) const
 // {
-    
+
 // }
+
+bool                            Line::intersects                            (   const   Plane&                      aPlane                                      ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Line") ;
+    }
+
+    if (!aPlane.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Plane") ;
+    }
+
+    const Vector3d n = aPlane.getNormalVector() ;
+    const Vector3d v = direction_ ;
+
+    const Vector3d Q_0 = aPlane.getPoint().asVector() ;
+    const Vector3d P_0 = origin_.asVector() ;
+
+    const double nDotV = n.dot(v) ;
+
+    if (nDotV == 0.0) // Line and plane are parallel
+    {
+        return n.dot(Q_0 - P_0) == 0.0 ; // Line is in plane
+    }
+
+    return true ;
+
+}
 
 bool                            Line::intersects                            (   const   Sphere&                     aSphere                                     ) const
 {
@@ -132,7 +164,7 @@ Point                           Line::getOrigin                             ( ) 
     {
         throw library::core::error::runtime::Undefined("Line") ;
     }
-    
+
     return origin_ ;
 
 }
@@ -144,8 +176,47 @@ Vector3d                        Line::getDirection                       ( ) con
     {
         throw library::core::error::runtime::Undefined("Line") ;
     }
-    
+
     return direction_ ;
+
+}
+
+Intersection                    Line::intersectionWith                       (   const   Plane&                      aPlane                                      ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Line") ;
+    }
+
+    if (!aPlane.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Plane") ;
+    }
+
+    const Vector3d n = aPlane.getNormalVector() ;
+    const Vector3d v = direction_ ;
+
+    const Vector3d Q_0 = aPlane.getPoint().asVector() ;
+    const Vector3d P_0 = origin_.asVector() ;
+
+    const double nDotV = n.dot(v) ;
+
+    if (nDotV == 0.0) // Line and plane are parallel
+    {
+
+        if (n.dot(Q_0 - P_0) == 0.0) // Line is in plane
+        {
+            return Intersection::Line(*this) ;
+        }
+
+        return Intersection::Empty() ;
+
+    }
+
+    const double t = n.dot(Q_0 - P_0) / nDotV ;
+
+    return Intersection::Point(Point::Vector(P_0 + t * v)) ;
 
 }
 

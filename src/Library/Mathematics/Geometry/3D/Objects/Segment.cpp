@@ -7,9 +7,11 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -74,15 +76,49 @@ bool                            Segment::isDegenerate                       ( ) 
     {
         throw library::core::error::runtime::Undefined("Segment") ;
     }
-    
+
     return firstPoint_ == secondPoint_ ;
 
 }
 
 // bool                            Segment::intersects                         (   const   Segment&                    aSegment                                    ) const
 // {
-    
+
 // }
+
+bool                            Segment::intersects                         (   const   Plane&                      aPlane                                      ) const
+{
+
+    // http://geomalgorithms.com/a05-_intersect-1.html
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Segment") ;
+    }
+
+    if (!aPlane.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Plane") ;
+    }
+
+    const Vector3d n = aPlane.getNormalVector() ;
+    const Vector3d v = secondPoint_ - firstPoint_ ;
+
+    const Vector3d Q_0 = aPlane.getPoint().asVector() ;
+    const Vector3d P_0 = firstPoint_.asVector() ;
+
+    const double nDotV = n.dot(v) ;
+
+    if (nDotV == 0.0) // Segment and plane are parallel
+    {
+        return n.dot(Q_0 - P_0) == 0.0 ; // Segment is in plane
+    }
+
+    const double t = n.dot(Q_0 - P_0) / nDotV ;
+
+    return ((t >= 0.0) && (t <= 1.0)) ;
+
+}
 
 bool                            Segment::intersects                         (   const   Sphere&                     aSphere                                     ) const
 {
@@ -165,7 +201,7 @@ Point                           Segment::getCenter                          ( ) 
     {
         throw library::core::error::runtime::Undefined("Segment") ;
     }
-    
+
     return firstPoint_ + (secondPoint_ - firstPoint_) / 2.0 ;
 
 }
@@ -182,7 +218,7 @@ Vector3d                        Segment::getDirection                       ( ) 
     {
         throw library::core::error::RuntimeError("Segment is degenerate.") ;
     }
-    
+
     return (secondPoint_ - firstPoint_).normalized() ;
 
 }
@@ -194,8 +230,54 @@ Real                            Segment::getLength                          ( ) 
     {
         throw library::core::error::runtime::Undefined("Segment") ;
     }
-    
+
     return (secondPoint_ - firstPoint_).norm() ;
+
+}
+
+Intersection                    Segment::intersectionWith                   (   const   Plane&                      aPlane                                      ) const
+{
+
+    // http://geomalgorithms.com/a05-_intersect-1.html
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Segment") ;
+    }
+
+    if (!aPlane.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Plane") ;
+    }
+
+    const Vector3d n = aPlane.getNormalVector() ;
+    const Vector3d v = secondPoint_ - firstPoint_ ;
+
+    const Vector3d Q_0 = aPlane.getPoint().asVector() ;
+    const Vector3d P_0 = firstPoint_.asVector() ;
+
+    const double nDotV = n.dot(v) ;
+
+    if (nDotV == 0.0) // Segment and plane are parallel
+    {
+
+        if (n.dot(Q_0 - P_0) == 0.0) // Segment is in plane
+        {
+            return Intersection::Segment(*this) ;
+        }
+
+        return Intersection::Empty() ;
+
+    }
+
+    const double t = n.dot(Q_0 - P_0) / nDotV ;
+
+    if ((t < 0.0) || (t > 1.0))
+    {
+        return Intersection::Empty() ;
+    }
+
+    return Intersection::Point(Point::Vector(P_0 + t * v)) ;
 
 }
 

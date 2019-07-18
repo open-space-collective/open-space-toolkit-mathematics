@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
@@ -47,7 +48,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, EqualToOperator)
 {
 
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) == Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 })) ;
@@ -103,7 +104,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, StreamOperator)
 {
 
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -120,7 +121,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IsDefined)
 {
 
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).isDefined()) ;
@@ -140,7 +141,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IsDegenerate)
 {
 
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).isDegenerate()) ;
@@ -158,6 +159,47 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IsDegenerate)
     {
 
         EXPECT_ANY_THROW(Segment::Undefined().isDegenerate()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Plane)
+{
+
+    using library::math::geom::d3::objects::Segment ;
+    using library::math::geom::d3::objects::Plane ;
+
+    {
+
+        EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }))) ;
+        EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
+
+        EXPECT_TRUE(Segment({ 1.0, 2.0, 3.0 }, { 2.0, 2.0, 3.0 }).intersects(Plane({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }))) ;
+        EXPECT_TRUE(Segment({ 1.0, 2.0, 3.0 }, { 2.0, 2.0, 3.0 }).intersects(Plane({ 1.0, 2.0, 3.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_TRUE(Segment({ 1.0, 2.0, 3.0 }, { 2.0, 2.0, 3.0 }).intersects(Plane({ 1.0, 2.0, 3.0 }, { 0.0, 0.0, 1.0 }))) ;
+
+        EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ +1.0, +2.0, +3.0 }, { 1.0, 0.0, 0.0 }))) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ +1.0, +2.0, +3.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ +1.0, +2.0, +3.0 }, { 0.0, 0.0, 1.0 }))) ;
+
+        EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ -1.0, -2.0, -3.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ -1.0, -2.0, -3.0 }, { 0.0, 0.0, 1.0 }))) ;
+
+        EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ -1.0, -2.0, -3.0 }, { 1.0, 0.0, 0.0 }))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Segment::Undefined().intersects(Plane::Undefined())) ;
+        EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersects(Plane::Undefined())) ;
 
     }
 
@@ -209,74 +251,36 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Ellipsoid)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Contains)
+TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Contains_Point)
 {
 
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Segment ;
 
-    // Point
-
     {
 
-        {
-
-            EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).contains(Point(0.0, 0.0, 0.0))) ;
-            EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(0.0, 0.0, 0.0))) ;
-            EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(0.0, 0.0, 1.0))) ;
-            EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(0.0, 0.0, 0.5))) ;
-
-        }
-
-        {
-
-            EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).contains(Point(0.0, 0.0, 0.1))) ;
-            EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(0.0, 0.0, 2.0))) ;
-            EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(0.0, 0.0, -1.0))) ;
-            EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(1.0, 0.0, 0.0))) ;
-
-        }
-
-        {
-
-            EXPECT_ANY_THROW(Segment::Undefined().contains(Point::Undefined())) ;
-            EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).contains(Point::Undefined())) ;
-            EXPECT_ANY_THROW(Segment::Undefined().contains(Point(0.0, 0.0, 0.0))) ;
-
-        }
+        EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).contains(Point(0.0, 0.0, 0.0))) ;
+        EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(0.0, 0.0, 0.0))) ;
+        EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(0.0, 0.0, 1.0))) ;
+        EXPECT_TRUE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(0.0, 0.0, 0.5))) ;
 
     }
 
-    // PointSet
-
     {
 
-        // [TBI]
-        
+        EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).contains(Point(0.0, 0.0, 0.1))) ;
+        EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(0.0, 0.0, 2.0))) ;
+        EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(0.0, 0.0, -1.0))) ;
+        EXPECT_FALSE(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Point(1.0, 0.0, 0.0))) ;
+
     }
 
-    // Segment
-
     {
 
-        // [TBI]
-        
-    }
+        EXPECT_ANY_THROW(Segment::Undefined().contains(Point::Undefined())) ;
+        EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).contains(Point::Undefined())) ;
+        EXPECT_ANY_THROW(Segment::Undefined().contains(Point(0.0, 0.0, 0.0))) ;
 
-    // Sphere
-
-    {
-
-        // [TBI]
-        
-    }
-
-    // Ellipsoid
-
-    {
-
-        // [TBI]
-        
     }
 
 }
@@ -286,12 +290,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetCenter)
 
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).getCenter()) ;
         EXPECT_EQ(Point(0.0, 0.0, 1.0), Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 2.0 }).getCenter()) ;
-        
+
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Segment({ 0.0, 0.0, -1.0 }, { 0.0, 0.0, +1.0 }).getCenter()) ;
 
     }
@@ -310,7 +314,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetDirection)
     using library::math::obj::Vector3d ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, +2.0 }).getDirection()) ;
@@ -334,15 +338,15 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetLength)
 
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         EXPECT_EQ(0.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).getLength()) ;
         EXPECT_EQ(0.0, Segment({ 1.0, 1.0, 1.0 }, { 1.0, 1.0, 1.0 }).getLength()) ;
-        
+
         EXPECT_EQ(1.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getLength()) ;
         EXPECT_EQ(2.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 2.0 }).getLength()) ;
-        
+
         EXPECT_EQ(4.0, Segment({ 0.0, 0.0, -2.0 }, { 0.0, 0.0, +2.0 }).getLength()) ;
 
     }
@@ -350,6 +354,98 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetLength)
     {
 
         EXPECT_ANY_THROW(Segment::Undefined().getLength()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IntersectionWith_Plane)
+{
+
+    using library::core::types::Real ;
+
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Segment ;
+    using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::Intersection ;
+
+    const auto expectSegmentIntersection =
+    [] (const Segment& aSegment, const Plane& aPlane, const Segment& anIntersectionSegment) -> void
+    {
+
+        const Intersection intersection = aSegment.intersectionWith(aPlane) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.accessComposite().is<Segment>()) ;
+
+        const Segment segment = intersection.accessComposite().as<Segment>() ;
+
+        EXPECT_EQ(anIntersectionSegment, segment) ;
+
+    } ;
+
+    const auto expectPointIntersection =
+    [] (const Segment& aSegment, const Plane& aPlane, const Point& anIntersectionPoint) -> void
+    {
+
+        const Intersection intersection = aSegment.intersectionWith(aPlane) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
+
+        const Point point = intersection.accessComposite().as<Point>() ;
+
+        EXPECT_TRUE(point.isNear(anIntersectionPoint, Real::Epsilon())) ;
+
+    } ;
+
+    const auto expectEmptyIntersection =
+    [] (const Segment& aSegment, const Plane& aPlane) -> void
+    {
+
+        const Intersection intersection = aSegment.intersectionWith(aPlane) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+        EXPECT_TRUE(intersection.isEmpty()) ;
+
+    } ;
+
+    {
+
+        expectPointIntersection(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Point(0.0, 0.0, 0.0)) ;
+        expectPointIntersection(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ 1.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Point(1.0, 0.0, 0.0)) ;
+
+        expectSegmentIntersection(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }), Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 })) ;
+        expectSegmentIntersection(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 })) ;
+
+        expectPointIntersection(Segment({ 1.0, 2.0, 3.0 }, { 2.0, 2.0, 3.0 }), Plane({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }), Point(1.0, 2.0, 3.0)) ;
+        expectPointIntersection(Segment({ 1.0, 2.0, 3.0 }, { 2.0, 2.0, 3.0 }), Plane({ 2.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }), Point(2.0, 2.0, 3.0)) ;
+
+        expectSegmentIntersection(Segment({ 1.0, 2.0, 3.0 }, { 2.0, 2.0, 3.0 }), Plane({ 1.0, 2.0, 3.0 }, { 0.0, 1.0, 0.0 }), Segment({ 1.0, 2.0, 3.0 }, { 2.0, 2.0, 3.0 })) ;
+        expectSegmentIntersection(Segment({ 1.0, 2.0, 3.0 }, { 2.0, 2.0, 3.0 }), Plane({ 1.0, 2.0, 3.0 }, { 0.0, 0.0, 1.0 }), Segment({ 1.0, 2.0, 3.0 }, { 2.0, 2.0, 3.0 })) ;
+
+        expectPointIntersection(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ +1.0, +2.0, +3.0 }, { 1.0, 0.0, 0.0 }), Point(+1.0, 0.0, 0.0)) ;
+
+    }
+
+    {
+
+        expectEmptyIntersection(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ +1.0, +2.0, +3.0 }, { 0.0, 1.0, 0.0 })) ;
+        expectEmptyIntersection(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ +1.0, +2.0, +3.0 }, { 0.0, 0.0, 1.0 })) ;
+
+        expectEmptyIntersection(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ -1.0, -2.0, -3.0 }, { 0.0, 1.0, 0.0 })) ;
+        expectEmptyIntersection(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ -1.0, -2.0, -3.0 }, { 0.0, 0.0, 1.0 })) ;
+
+        expectEmptyIntersection(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ -1.0, -2.0, -3.0 }, { 1.0, 0.0, 0.0 })) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Segment::Undefined().intersectionWith(Plane::Undefined())) ;
+        EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersectionWith(Plane::Undefined())) ;
 
     }
 
@@ -407,7 +503,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Undefined)
 {
 
     using library::math::geom::d3::objects::Segment ;
-    
+
     {
 
         EXPECT_NO_THROW(Segment::Undefined()) ;
