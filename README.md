@@ -53,12 +53,15 @@ The **Mathematics** library exhibits the following structure:
 │   │   │   ├── Line
 │   │   │   ├── Ray
 │   │   │   ├── Segment
-│   │   │   ├── Rectangle
+│   │   │   ├── Line String
+│   │   │   ├── Polygon
 │   │   │   ├── Plane
+│   │   │   ├── Cuboid
 │   │   │   ├── Sphere
 │   │   │   ├── Ellipsoid
 │   │   │   ├── Cone
-│   │   │   └── Pyramid
+│   │   │   ├── Pyramid
+│   │   │   └── Composite
 │   │   ├── Intersection
 │   │   └── Transformations
 │   │       ├── Identity
@@ -108,6 +111,32 @@ Various tutorials are available here:
 
 - [C++](./tutorials/cpp)
 - [Python](./tutorials/python)
+
+## Features
+
+### Geometry Queries
+
+- `?`: query only
+- `x`: query and intersection
+
+#### 3D
+
+| Intersection | Point | Point Set | Line | Ray | Segment | Line String | Polygon | Plane | Cuboid | Sphere | Ellipsoid | Cone | Pyramid | Composite |
+|--------------|-------|-----------|------|-----|---------|-------------|---------|-------|--------|--------|-----------|------|---------|-----------|
+| Point        |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
+| Point Set    |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
+| Line         | ?     |           |      |     |         |             |         | x     |        | ?      | ?         |      |         |           |
+| Ray          | ?     |           |      |     |         |             |         | x     |        | ?      | x         |      |         |           |
+| Segment      |       |           |      |     |         |             |         | x     |        | ?      | ?         |      |         |           |
+| Line String  |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
+| Polygon      |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
+| Plane        | x     | x         | x    | x   | x       |             |         |       |        |        |           |      |         |           |
+| Cuboid       | ?     | ?         | ?    |     |         |             |         |       |        |        |           |      |         |           |
+| Sphere       | ?     | ?         | ?    | ?   | ?       |             |         | ?     |        |        |           |      | ?       |           |
+| Ellipsoid    | ?     | ?         | x    | x   | x       |             |         | ?     |        |        |           |      | x       |           |
+| Cone         |       |           |      |     |         |             |         |       |        |        | x         |      |         |           |
+| Pyramid      |       |           |      |     |         |             |         |       |        |        | x         |      |         |           |
+| Composite    |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
 
 ## Setup
 

@@ -10,6 +10,10 @@
 #ifndef __Library_Mathematics_Geometry_3D_Objects_Plane__
 #define __Library_Mathematics_Geometry_3D_Objects_Plane__
 
+#include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/PointSet.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
 #include <Library/Mathematics/Objects/Vector.hpp>
@@ -32,6 +36,10 @@ namespace objects
 using library::math::obj::Vector3d ;
 using library::math::geom::d3::Object ;
 using library::math::geom::d3::objects::Point ;
+using library::math::geom::d3::objects::PointSet ;
+using library::math::geom::d3::objects::Line ;
+using library::math::geom::d3::objects::Ray ;
+using library::math::geom::d3::objects::Segment ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -96,10 +104,75 @@ class Plane : public Object
 
         virtual bool            isDefined                                   ( ) const override ;
 
+        /// @brief              Check if plane intersects point
+        ///
+        /// @code
+        ///                     Plane plane = ... ;
+        ///                     Point point = ... ;
+        ///                     plane.intersects(point) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             True if plane intersects point
+
+        bool                    intersects                                  (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Check if plane intersects point set
+        ///
+        /// @code
+        ///                     Plane plane = ... ;
+        ///                     PointSet pointSet = ... ;
+        ///                     plane.intersects(pointSet) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             True if plane intersects point set
+
+        bool                    intersects                                  (   const   PointSet&                   aPointSet                                   ) const ;
+
+        /// @brief              Check if plane intersects line
+        ///
+        /// @code
+        ///                     Plane plane = ... ;
+        ///                     Line line = ... ;
+        ///                     plane.intersects(line) ;
+        /// @endcode
+        ///
+        /// @param              [in] aLine A line
+        /// @return             True if plane intersects line
+
+        bool                    intersects                                  (   const   Line&                       aLine                                       ) const ;
+
+        /// @brief              Check if plane intersects ray
+        ///
+        /// @code
+        ///                     Plane plane = ... ;
+        ///                     Ray ray = ... ;
+        ///                     plane.intersects(ray) ;
+        /// @endcode
+        ///
+        /// @param              [in] aRay A ray
+        /// @return             True if plane intersects ray
+
+        bool                    intersects                                  (   const   Ray&                        aRay                                        ) const ;
+
+        /// @brief              Check if plane intersects segment
+        ///
+        /// @code
+        ///                     Plane plane = ... ;
+        ///                     Segment segment = ... ;
+        ///                     plane.intersects(segment) ;
+        /// @endcode
+        ///
+        /// @param              [in] aSegment A segment
+        /// @return             True if plane intersects segment
+
+        bool                    intersects                                  (   const   Segment&                    aSegment                                    ) const ;
+
         /// @brief              Check if plane contains point
         ///
         /// @code
-        ///                     Point plane = ... ;
+        ///                     Plane plane = ... ;
         ///                     Point point = ... ;
         ///                     plane.contains(point) ;
         /// @endcode
@@ -108,6 +181,58 @@ class Plane : public Object
         /// @return             True if plane contains point
 
         bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Check if plane contains point set
+        ///
+        /// @code
+        ///                     Point plane = ... ;
+        ///                     PointSet pointSet = ... ;
+        ///                     plane.contains(pointSet) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             True if plane contains point set
+
+        bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
+
+        /// @brief              Check if plane contains line
+        ///
+        /// @code
+        ///                     Point plane = ... ;
+        ///                     Line line = ... ;
+        ///                     plane.contains(line) ;
+        /// @endcode
+        ///
+        /// @param              [in] aLine A line
+        /// @return             True if plane contains line
+
+        bool                    contains                                    (   const   Line&                       aLine                                       ) const ;
+
+        /// @brief              Check if plane contains ray
+        ///
+        /// @code
+        ///                     Point plane = ... ;
+        ///                     Ray ray = ... ;
+        ///                     plane.contains(ray) ;
+        /// @endcode
+        ///
+        /// @param              [in] aRay A ray
+        /// @return             True if plane contains ray
+
+        bool                    contains                                    (   const   Ray&                        aRay                                        ) const ;
+
+        /// @brief              Check if plane contains segment
+        ///
+        /// @code
+        ///                     Point plane = ... ;
+        ///                     Segment segment = ... ;
+        ///                     plane.contains(segment) ;
+        /// @endcode
+        ///
+        /// @param              [in] aSegment A segment
+        /// @return             True if plane contains segment
+
+        bool                    contains                                    (   const   Segment&                    aSegment                                    ) const ;
 
         /// @brief              Get plane point
         ///
@@ -128,6 +253,41 @@ class Plane : public Object
         /// @return             Plane normal vector
 
         Vector3d                getNormalVector                             ( ) const ;
+
+        /// @brief              Compute intersection of plane with point
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             Intersection of plane with point
+
+        Intersection            intersectionWith                            (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Compute intersection of plane with point set
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             Intersection of plane with point set
+
+        Intersection            intersectionWith                            (   const   PointSet&                   aPointSet                                   ) const ;
+
+        /// @brief              Compute intersection of plane with line
+        ///
+        /// @param              [in] aLine A line
+        /// @return             Intersection of plane with line
+
+        Intersection            intersectionWith                            (   const   Line&                       aLine                                       ) const ;
+
+        /// @brief              Compute intersection of plane with ray
+        ///
+        /// @param              [in] aRay A ray
+        /// @return             Intersection of plane with ray
+
+        Intersection            intersectionWith                            (   const   Ray&                        aRay                                        ) const ;
+
+        /// @brief              Compute intersection of plane with segment
+        ///
+        /// @param              [in] aSegment A segment
+        /// @return             Intersection of plane with segment
+
+        Intersection            intersectionWith                            (   const   Segment&                    aSegment                                    ) const ;
 
         /// @brief              Print plane
         ///

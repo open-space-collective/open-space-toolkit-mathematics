@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
@@ -47,7 +48,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, EqualToOperator)
 {
 
     using library::math::geom::d3::objects::Line ;
-    
+
     {
 
         EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) == Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, +1.0 })) ;
@@ -115,7 +116,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, StreamOperator)
 {
 
     using library::math::geom::d3::objects::Line ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -132,7 +133,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, IsDefined)
 {
 
     using library::math::geom::d3::objects::Line ;
-    
+
     {
 
         EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).isDefined()) ;
@@ -156,7 +157,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, Intersects_Point)
     {
 
         EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersects(Point(0.0, 0.0, 0.0))) ;
-        
+
         EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersects(Point(0.0, 0.0, -1.0))) ;
         EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersects(Point(0.0, 0.0, +1.0))) ;
 
@@ -178,6 +179,46 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, Intersects_Point)
 
         EXPECT_ANY_THROW(Line::Undefined().intersects(Point::Undefined())) ;
         EXPECT_ANY_THROW(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersects(Point::Undefined())) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Line, Intersects_Plane)
+{
+
+    using library::math::geom::d3::objects::Line ;
+    using library::math::geom::d3::objects::Plane ;
+
+    {
+
+        EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }))) ;
+        EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
+
+        EXPECT_TRUE(Line({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }))) ;
+        EXPECT_TRUE(Line({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ 1.0, 2.0, 3.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_TRUE(Line({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ 1.0, 2.0, 3.0 }, { 0.0, 0.0, 1.0 }))) ;
+
+        EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ +1.0, +2.0, +3.0 }, { 1.0, 0.0, 0.0 }))) ;
+        EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ -1.0, -2.0, -3.0 }, { 1.0, 0.0, 0.0 }))) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ +1.0, +2.0, +3.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_FALSE(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ +1.0, +2.0, +3.0 }, { 0.0, 0.0, 1.0 }))) ;
+
+        EXPECT_FALSE(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ -1.0, -2.0, -3.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_FALSE(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ -1.0, -2.0, -3.0 }, { 0.0, 0.0, 1.0 }))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Line::Undefined().intersects(Plane::Undefined())) ;
+        EXPECT_ANY_THROW(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersects(Plane::Undefined())) ;
 
     }
 
@@ -268,12 +309,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, GetOrigin)
 
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Line ;
-    
+
     {
 
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getOrigin()) ;
         EXPECT_EQ(Point(0.0, 0.0, 1.0), Line({ 0.0, 0.0, 1.0 }, { 0.0, 0.0, 2.0 }).getOrigin()) ;
-        
+
         EXPECT_EQ(Point(0.0, 0.0, -1.0), Line({ 0.0, 0.0, -1.0 }, { 0.0, 0.0, +1.0 }).getOrigin()) ;
 
     }
@@ -292,7 +333,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, GetDirection)
     using library::math::obj::Vector3d ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Line ;
-    
+
     {
 
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, +2.0 }).getDirection()) ;
@@ -303,6 +344,93 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, GetDirection)
     {
 
         EXPECT_ANY_THROW(Line::Undefined().getDirection()) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Line, IntersectionWith_Plane)
+{
+
+    using library::core::types::Real ;
+
+    using library::math::geom::d3::objects::Point ;
+    using library::math::geom::d3::objects::Line ;
+    using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::Intersection ;
+
+    const auto expectLineIntersection =
+    [] (const Line& aLine, const Plane& aPlane, const Line& anIntersectionLine) -> void
+    {
+
+        const Intersection intersection = aLine.intersectionWith(aPlane) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.accessComposite().is<Line>()) ;
+
+        const Line line = intersection.accessComposite().as<Line>() ;
+
+        EXPECT_EQ(anIntersectionLine, line) ;
+
+    } ;
+
+    const auto expectPointIntersection =
+    [] (const Line& aLine, const Plane& aPlane, const Point& anIntersectionPoint) -> void
+    {
+
+        const Intersection intersection = aLine.intersectionWith(aPlane) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
+
+        const Point point = intersection.accessComposite().as<Point>() ;
+
+        EXPECT_TRUE(point.isNear(anIntersectionPoint, Real::Epsilon())) ;
+
+    } ;
+
+    const auto expectEmptyIntersection =
+    [] (const Line& aLine, const Plane& aPlane) -> void
+    {
+
+        const Intersection intersection = aLine.intersectionWith(aPlane) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+        EXPECT_TRUE(intersection.isEmpty()) ;
+
+    } ;
+
+    {
+
+        expectPointIntersection(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Point(0.0, 0.0, 0.0)) ;
+        expectLineIntersection(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }), Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 })) ;
+        expectLineIntersection(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 })) ;
+
+        expectPointIntersection(Line({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }), Plane({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }), Point(1.0, 2.0, 3.0)) ;
+        expectLineIntersection(Line({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }), Plane({ 1.0, 2.0, 3.0 }, { 0.0, 1.0, 0.0 }), Line({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 })) ;
+        expectLineIntersection(Line({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }), Plane({ 1.0, 2.0, 3.0 }, { 0.0, 0.0, 1.0 }), Line({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 })) ;
+
+        expectPointIntersection(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ +1.0, +2.0, +3.0 }, { 1.0, 0.0, 0.0 }), Point(+1.0, 0.0, 0.0)) ;
+        expectPointIntersection(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ -1.0, -2.0, -3.0 }, { 1.0, 0.0, 0.0 }), Point(-1.0, 0.0, 0.0)) ;
+
+    }
+
+    {
+
+        expectEmptyIntersection(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ +1.0, +2.0, +3.0 }, { 0.0, 1.0, 0.0 })) ;
+        expectEmptyIntersection(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ +1.0, +2.0, +3.0 }, { 0.0, 0.0, 1.0 })) ;
+
+        expectEmptyIntersection(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ -1.0, -2.0, -3.0 }, { 0.0, 1.0, 0.0 })) ;
+        expectEmptyIntersection(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ -1.0, -2.0, -3.0 }, { 0.0, 0.0, 1.0 })) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Line::Undefined().intersectionWith(Plane::Undefined())) ;
+        EXPECT_ANY_THROW(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersectionWith(Plane::Undefined())) ;
 
     }
 
@@ -360,7 +488,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, Undefined)
 {
 
     using library::math::geom::d3::objects::Line ;
-    
+
     {
 
         EXPECT_NO_THROW(Line::Undefined()) ;

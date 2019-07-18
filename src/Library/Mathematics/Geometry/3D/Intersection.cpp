@@ -89,7 +89,7 @@ Intersection                    Intersection::operator +                    (   
     intersection.composite_ = composite_ + anIntersection.composite_ ;
 
     intersection.type_ = Intersection::TypeFromObjects(intersection.composite_.accessObjects()) ;
-    
+
     return intersection ;
 
 }
@@ -105,7 +105,7 @@ Intersection&                   Intersection::operator +=                   (   
     composite_ += anIntersection.composite_ ;
 
     type_ = Intersection::TypeFromObjects(composite_.accessObjects()) ;
-    
+
     return *this ;
 
 }
@@ -117,7 +117,7 @@ std::ostream&                   operator <<                                 (   
     library::core::utils::Print::Header(anOutputStream, "Intersection") ;
 
     library::core::utils::Print::Line(anOutputStream) << "Type:"                << Intersection::StringFromType(anIntersection.type_) ;
-    
+
     library::core::utils::Print::Line(anOutputStream) << "Composite:" ;
 
     anIntersection.composite_.print(anOutputStream, false) ;
@@ -130,7 +130,7 @@ std::ostream&                   operator <<                                 (   
 
 bool                            Intersection::isDefined                     ( ) const
 {
-    return (type_ != Intersection::Type::Undefined) && composite_.isDefined() ;
+    return type_ != Intersection::Type::Undefined ;
 }
 
 bool                            Intersection::isEmpty                       ( ) const
@@ -150,7 +150,7 @@ const Composite&                Intersection::accessComposite               ( ) 
     {
         throw library::core::error::runtime::Undefined("Intersection") ;
     }
-    
+
     return composite_ ;
 
 }
@@ -162,14 +162,14 @@ Intersection::Type              Intersection::getType                       ( ) 
     {
         throw library::core::error::runtime::Undefined("Intersection") ;
     }
-    
+
     return type_ ;
 
 }
 
 Intersection                    Intersection::Undefined                     ( )
 {
-    
+
     Intersection intersection ;
 
     intersection.type_ = Intersection::Type::Undefined ;
@@ -202,7 +202,7 @@ Intersection                    Intersection::PointSet                      (   
     Intersection intersection ;
 
     intersection.type_ = Intersection::Type::PointSet ;
-    
+
     intersection.composite_ = Composite { aPointSet } ;
 
     return intersection ;
@@ -215,7 +215,7 @@ Intersection                    Intersection::LineString                    (   
     Intersection intersection ;
 
     intersection.type_ = Intersection::Type::LineString ;
-    
+
     intersection.composite_ = Composite { aLineString } ;
 
     return intersection ;

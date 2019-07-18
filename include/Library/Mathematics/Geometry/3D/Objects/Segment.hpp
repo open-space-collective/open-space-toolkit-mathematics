@@ -37,6 +37,8 @@ using library::math::geom::d3::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+class PointSet ;
+class Plane ;
 class Sphere ;
 class Ellipsoid ;
 
@@ -114,6 +116,19 @@ class Segment : public Object
 
         bool                    isDegenerate                                ( ) const ;
 
+        /// @brief              Check if segment intersects plane
+        ///
+        /// @code
+        ///                     Segment segment = ... ;
+        ///                     Plane plane = ... ;
+        ///                     segment.intersects(plane) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPlane A plane
+        /// @return             True if segment intersects plane
+
+        bool                    intersects                                  (   const   Plane&                      aPlane                                      ) const ;
+
         /// @brief              Check if segment intersects sphere
         ///
         /// @code
@@ -124,7 +139,7 @@ class Segment : public Object
         ///
         /// @param              [in] aSphere A sphere
         /// @return             True if segment intersects sphere
-        
+
         bool                    intersects                                  (   const   Sphere&                     aSphere                                     ) const ;
 
         /// @brief              Check if segment intersects ellipsoid
@@ -137,7 +152,7 @@ class Segment : public Object
         ///
         /// @param              [in] anEllipsoid An ellipsoid
         /// @return             True if segment intersects ellipsoid
-        
+
         bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
 
         /// @brief              Check if segment contains point
@@ -148,7 +163,7 @@ class Segment : public Object
         ///                     segment.contains(point) ;
         /// @endcode
         ///
-        /// @param              [in] aPoint An point
+        /// @param              [in] aPoint A point
         /// @return             True if segment contains point
 
         bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
@@ -170,7 +185,7 @@ class Segment : public Object
         /// @endcode
         ///
         /// @return             Segment second point
-        
+
         Point                   getSecondPoint                              ( ) const ;
 
         /// @brief              Get segment center
@@ -202,6 +217,13 @@ class Segment : public Object
         /// @return             Segment length
 
         Real                    getLength                                   ( ) const ;
+
+        /// @brief              Compute intersection of segment with plane
+        ///
+        /// @param              [in] aPlane A plane
+        /// @return             Intersection of segment with plane
+
+        Intersection            intersectionWith                            (   const   Plane&                      aPlane                                      ) const ;
 
         /// @brief              Print segment
         ///

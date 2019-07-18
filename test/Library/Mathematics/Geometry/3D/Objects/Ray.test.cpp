@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/3D/Intersection.hpp>
+#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
@@ -48,7 +48,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, EqualToOperator)
 {
 
     using library::math::geom::d3::objects::Ray ;
-    
+
     {
 
         EXPECT_TRUE(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) == Ray({ 0.0, 0.0, +0.0 }, { 0.0, 0.0, +1.0 })) ;
@@ -119,7 +119,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, StreamOperator)
 {
 
     using library::math::geom::d3::objects::Ray ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -136,7 +136,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, IsDefined)
 {
 
     using library::math::geom::d3::objects::Ray ;
-    
+
     {
 
         EXPECT_TRUE(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).isDefined()) ;
@@ -179,6 +179,47 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Intersects_Point)
 
         EXPECT_ANY_THROW(Ray::Undefined().intersects(Point::Undefined())) ;
         EXPECT_ANY_THROW(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersects(Point::Undefined())) ;
+
+    }
+
+}
+
+TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Intersects_Plane)
+{
+
+    using library::math::geom::d3::objects::Ray ;
+    using library::math::geom::d3::objects::Plane ;
+
+    {
+
+        EXPECT_TRUE(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }))) ;
+        EXPECT_TRUE(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_TRUE(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
+
+        EXPECT_TRUE(Ray({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }))) ;
+        EXPECT_TRUE(Ray({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ 1.0, 2.0, 3.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_TRUE(Ray({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ 1.0, 2.0, 3.0 }, { 0.0, 0.0, 1.0 }))) ;
+
+        EXPECT_TRUE(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ +1.0, +2.0, +3.0 }, { 1.0, 0.0, 0.0 }))) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ +1.0, +2.0, +3.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_FALSE(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ +1.0, +2.0, +3.0 }, { 0.0, 0.0, 1.0 }))) ;
+
+        EXPECT_FALSE(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ -1.0, -2.0, -3.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_FALSE(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ -1.0, -2.0, -3.0 }, { 0.0, 0.0, 1.0 }))) ;
+
+        EXPECT_FALSE(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).intersects(Plane({ -1.0, -2.0, -3.0 }, { 1.0, 0.0, 0.0 }))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Ray::Undefined().intersects(Plane::Undefined())) ;
+        EXPECT_ANY_THROW(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersects(Plane::Undefined())) ;
 
     }
 
@@ -264,17 +305,48 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Contains_Point)
 
 }
 
+TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Contains_PointSet)
+{
+
+    using library::math::geom::d3::objects::PointSet ;
+    using library::math::geom::d3::objects::Ray ;
+
+    {
+
+        EXPECT_TRUE(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({{ 0.0, 0.0, 0.0 }}))) ;
+        EXPECT_TRUE(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({{ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }}))) ;
+        EXPECT_TRUE(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({{ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.5 }, { 0.0, 0.0, 1.0 }, { 0.0, 0.0, 2.0 }}))) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({{ 0.0, 0.0, -1.0 }, { 0.0, 0.0, 0.5 }, { 0.0, 0.0, 1.0 }, { 0.0, 0.0, 2.0 }}))) ;
+        EXPECT_FALSE(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({{ 0.0, 0.0, -2.0 }, { 0.0, 0.0, 0.5 }, { 0.0, 0.0, 1.0 }, { 0.0, 0.0, 2.0 }}))) ;
+        EXPECT_FALSE(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({{ -1.0, 0.0, 0.0 }, { 0.0, 0.0, 0.5 }, { 0.0, 0.0, 1.0 }, { 0.0, 0.0, 2.0 }}))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Ray::Undefined().contains(PointSet::Empty())) ;
+        EXPECT_ANY_THROW(Ray::Undefined().contains(PointSet({{ 0.0, 0.0, 0.0 }}))) ;
+
+    }
+
+}
+
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, GetOrigin)
 {
 
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Ray ;
-    
+
     {
 
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getOrigin()) ;
         EXPECT_EQ(Point(0.0, 0.0, 1.0), Ray({ 0.0, 0.0, 1.0 }, { 0.0, 0.0, 2.0 }).getOrigin()) ;
-        
+
         EXPECT_EQ(Point(0.0, 0.0, -1.0), Ray({ 0.0, 0.0, -1.0 }, { 0.0, 0.0, +1.0 }).getOrigin()) ;
 
     }
@@ -293,7 +365,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, GetDirection)
     using library::math::obj::Vector3d ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Ray ;
-    
+
     {
 
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, +2.0 }).getDirection()) ;
@@ -312,18 +384,86 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, GetDirection)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Plane)
 {
 
+    using library::core::types::Real ;
+
+    using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Ray ;
     using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::Intersection ;
+
+    const auto expectRayIntersection =
+    [] (const Ray& aRay, const Plane& aPlane, const Ray& anIntersectionRay) -> void
+    {
+
+        const Intersection intersection = aRay.intersectionWith(aPlane) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.accessComposite().is<Ray>()) ;
+
+        const Ray ray = intersection.accessComposite().as<Ray>() ;
+
+        EXPECT_EQ(anIntersectionRay, ray) ;
+
+    } ;
+
+    const auto expectPointIntersection =
+    [] (const Ray& aRay, const Plane& aPlane, const Point& anIntersectionPoint) -> void
+    {
+
+        const Intersection intersection = aRay.intersectionWith(aPlane) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
+
+        const Point point = intersection.accessComposite().as<Point>() ;
+
+        EXPECT_TRUE(point.isNear(anIntersectionPoint, Real::Epsilon())) ;
+
+    } ;
+
+    const auto expectEmptyIntersection =
+    [] (const Ray& aRay, const Plane& aPlane) -> void
+    {
+
+        const Intersection intersection = aRay.intersectionWith(aPlane) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+        EXPECT_TRUE(intersection.isEmpty()) ;
+
+    } ;
 
     {
 
-        // [TBI]
+        expectPointIntersection(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Point(0.0, 0.0, 0.0)) ;
+        expectRayIntersection(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }), Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 })) ;
+        expectRayIntersection(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 })) ;
+
+        expectPointIntersection(Ray({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }), Plane({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }), Point(1.0, 2.0, 3.0)) ;
+        expectRayIntersection(Ray({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }), Plane({ 1.0, 2.0, 3.0 }, { 0.0, 1.0, 0.0 }), Ray({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 })) ;
+        expectRayIntersection(Ray({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 }), Plane({ 1.0, 2.0, 3.0 }, { 0.0, 0.0, 1.0 }), Ray({ 1.0, 2.0, 3.0 }, { 1.0, 0.0, 0.0 })) ;
+
+        expectPointIntersection(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ +1.0, +2.0, +3.0 }, { 1.0, 0.0, 0.0 }), Point(+1.0, 0.0, 0.0)) ;
+
+    }
+
+    {
+
+        expectEmptyIntersection(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ +1.0, +2.0, +3.0 }, { 0.0, 1.0, 0.0 })) ;
+        expectEmptyIntersection(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ +1.0, +2.0, +3.0 }, { 0.0, 0.0, 1.0 })) ;
+
+        expectEmptyIntersection(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ -1.0, -2.0, -3.0 }, { 0.0, 1.0, 0.0 })) ;
+        expectEmptyIntersection(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ -1.0, -2.0, -3.0 }, { 0.0, 0.0, 1.0 })) ;
+
+        expectEmptyIntersection(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }), Plane({ -1.0, -2.0, -3.0 }, { 1.0, 0.0, 0.0 })) ;
 
     }
 
     {
 
         EXPECT_ANY_THROW(Ray::Undefined().intersectionWith(Plane::Undefined())) ;
+        EXPECT_ANY_THROW(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersectionWith(Plane::Undefined())) ;
 
     }
 
@@ -334,7 +474,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Ellipsoid)
 
     using library::math::geom::d3::objects::Ray ;
     using library::math::geom::d3::objects::Ellipsoid ;
-    
+
     {
 
         // See: Library_Mathematics_Geometry_3D_Objects_Ellipsoid.IntersectionWith_Ray
@@ -403,7 +543,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Undefined)
 {
 
     using library::math::geom::d3::objects::Ray ;
-    
+
     {
 
         EXPECT_NO_THROW(Ray::Undefined()) ;

@@ -11,6 +11,7 @@
 #include <Library/Mathematics/Geometry/3D/Transformation.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
+#include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 
 #include <Library/Core/Error.hpp>
@@ -45,7 +46,7 @@ namespace objects
         {
             throw library::core::error::runtime::Wrong("Direction") ;
         }
-        
+
         direction_ = direction_.normalized() ;
 
     }
@@ -86,8 +87,40 @@ bool                            Ray::intersects                             (   
 
 // bool                            Ray::intersects                          (   const   Ray&                       aRay                                       ) const
 // {
-    
+
 // }
+
+bool                            Ray::intersects                             (   const   Plane&                      aPlane                                      ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ray") ;
+    }
+
+    if (!aPlane.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Plane") ;
+    }
+
+    const Vector3d n = aPlane.getNormalVector() ;
+    const Vector3d v = direction_ ;
+
+    const Vector3d Q_0 = aPlane.getPoint().asVector() ;
+    const Vector3d P_0 = origin_.asVector() ;
+
+    const double nDotV = n.dot(v) ;
+
+    if (nDotV == 0.0) // Ray and plane are parallel
+    {
+        return n.dot(Q_0 - P_0) == 0.0 ; // Ray is in plane
+    }
+
+    const double t = n.dot(Q_0 - P_0) / nDotV ;
+
+    return t >= 0.0 ;
+
+}
 
 bool                            Ray::intersects                             (   const   Sphere&                     aSphere                                     ) const
 {
@@ -118,10 +151,22 @@ bool                            Ray::contains                               (   
 
 }
 
-// bool                            Ray::contains                              (   const   PointSet&                   aPointSet                                   ) const
-// {
+bool                            Ray::contains                               (   const   PointSet&                   aPointSet                                   ) const
+{
 
-// }
+    if (!aPointSet.isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Point Set") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Ray") ;
+    }
+
+    return (!aPointSet.isEmpty()) && std::all_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
+
+}
 
 Point                           Ray::getOrigin                              ( ) const
 {
@@ -130,7 +175,7 @@ Point                           Ray::getOrigin                              ( ) 
     {
         throw library::core::error::runtime::Undefined("Ray") ;
     }
-    
+
     return origin_ ;
 
 }
@@ -142,7 +187,7 @@ Vector3d                        Ray::getDirection                           ( ) 
     {
         throw library::core::error::runtime::Undefined("Ray") ;
     }
-    
+
     return direction_ ;
 
 }
