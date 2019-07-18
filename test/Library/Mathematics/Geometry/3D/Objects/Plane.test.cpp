@@ -338,7 +338,30 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains_Line)
 
     {
 
-        FAIL() ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }))) ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Line({ 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Line({ 0.0, 0.0, 0.0 }, { 1.0, 1.0, 0.0 }))) ;
+
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Line({ 1.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }))) ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Line({ 0.0, 1.0, 0.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Line({ 1.0, 1.0, 0.0 }, { 1.0, 1.0, 0.0 }))) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
+
+        EXPECT_FALSE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Line({ 0.0, 0.0, +1.0 }, { 1.0, 0.0, 0.0 }))) ;
+        EXPECT_FALSE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Line({ 0.0, 0.0, -1.0 }, { 0.0, 1.0, 0.0 }))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Plane::Undefined().contains(Line::Undefined())) ;
+        EXPECT_ANY_THROW(Plane::Undefined().contains(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }))) ;
+        EXPECT_ANY_THROW(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Line::Undefined())) ;
 
     }
 
@@ -352,7 +375,30 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains_Ray)
 
     {
 
-        FAIL() ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }))) ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 1.0, 0.0 }))) ;
+
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Ray({ 1.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }))) ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Ray({ 0.0, 1.0, 0.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Ray({ 1.0, 1.0, 0.0 }, { 1.0, 1.0, 0.0 }))) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
+
+        EXPECT_FALSE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Ray({ 0.0, 0.0, +1.0 }, { 1.0, 0.0, 0.0 }))) ;
+        EXPECT_FALSE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Ray({ 0.0, 0.0, -1.0 }, { 0.0, 1.0, 0.0 }))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Plane::Undefined().contains(Ray::Undefined())) ;
+        EXPECT_ANY_THROW(Plane::Undefined().contains(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }))) ;
+        EXPECT_ANY_THROW(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Ray::Undefined())) ;
 
     }
 
@@ -366,7 +412,31 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains_Segment)
 
     {
 
-        FAIL() ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }))) ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }))) ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 1.0, 0.0 }))) ;
+
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Segment({ 1.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }))) ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Segment({ 0.0, 1.0, 0.0 }, { 0.0, 1.0, 0.0 }))) ;
+        EXPECT_TRUE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Segment({ 1.0, 1.0, 0.0 }, { 1.0, 1.0, 0.0 }))) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
+
+        EXPECT_FALSE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Segment({ 0.0, 0.0, +1.0 }, { 1.0, 0.0, +1.0 }))) ;
+        EXPECT_FALSE(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Segment({ 0.0, 0.0, -1.0 }, { 0.0, 1.0, -1.0 }))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Plane::Undefined().contains(Segment::Undefined())) ;
+        EXPECT_ANY_THROW(Plane::Undefined().contains(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }))) ;
+        EXPECT_ANY_THROW(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(Segment::Undefined())) ;
 
     }
 
@@ -418,18 +488,64 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, GetNormalVector)
 TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Point)
 {
 
+    using library::core::types::Real ;
+
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::Intersection ;
+
+    const auto expectPointIntersection =
+    [] (const Plane& aPlane, const Point& aPoint, const Point& anIntersectionPoint) -> void
+    {
+
+        const Intersection intersection = aPlane.intersectionWith(aPoint) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
+
+        const Point point = intersection.accessComposite().as<Point>() ;
+
+        EXPECT_TRUE(point.isNear(anIntersectionPoint, Real::Epsilon())) ;
+
+    } ;
+
+    const auto expectEmptyIntersection =
+    [] (const Plane& aPlane, const Point& aPoint) -> void
+    {
+
+        const Intersection intersection = aPlane.intersectionWith(aPoint) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+        EXPECT_TRUE(intersection.isEmpty()) ;
+
+    } ;
 
     {
 
-        FAIL() ;
+        expectPointIntersection(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), Point(0.0, 0.0, 0.0), Point(0.0, 0.0, 0.0)) ;
+        expectPointIntersection(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), Point(1.0, 0.0, 0.0), Point(1.0, 0.0, 0.0)) ;
+        expectPointIntersection(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), Point(0.0, 1.0, 0.0), Point(0.0, 1.0, 0.0)) ;
+        expectPointIntersection(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), Point(1.0, 1.0, 0.0), Point(1.0, 1.0, 0.0)) ;
+        expectPointIntersection(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 2.0 }), Point(0.0, 0.0, 0.0), Point(0.0, 0.0, 0.0)) ;
+        expectPointIntersection(Plane({ 0.0, 0.0, 1.0 }, { 0.0, 0.0, 1.0 }), Point(0.0, 0.0, 1.0), Point(0.0, 0.0, 1.0)) ;
+        expectPointIntersection(Plane({ 1.0, 1.0, 1.0 }, { 0.0, 0.0, 1.0 }), Point(0.0, 0.0, 1.0), Point(0.0, 0.0, 1.0)) ;
+
+    }
+
+    {
+
+        expectEmptyIntersection(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), Point(0.0, 0.0, 0.1)) ;
+        expectEmptyIntersection(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), Point(0.0, 0.0, 1.0)) ;
+        expectEmptyIntersection(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), Point(0.0, 0.0, -1.0)) ;
 
     }
 
     {
 
         EXPECT_ANY_THROW(Plane::Undefined().intersectionWith(Point::Undefined())) ;
+        EXPECT_ANY_THROW(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersectionWith(Point::Undefined())) ;
+        EXPECT_ANY_THROW(Plane::Undefined().intersectionWith(Point(0.0, 0.0, 0.0))) ;
 
     }
 
@@ -438,18 +554,85 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Point)
 TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_PointSet)
 {
 
+    using library::core::types::Real ;
+
+    using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::PointSet ;
     using library::math::geom::d3::objects::Plane ;
+    using library::math::geom::d3::Intersection ;
+
+    const auto expectPointIntersection =
+    [] (const Plane& aPlane, const PointSet& aPointSet, const Point& anIntersectionPoint) -> void
+    {
+
+        const Intersection intersection = aPlane.intersectionWith(aPointSet) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.accessComposite().is<Point>()) ;
+
+        const Point point = intersection.accessComposite().as<Point>() ;
+
+        EXPECT_TRUE(point.isNear(anIntersectionPoint, Real::Epsilon())) ;
+
+    } ;
+
+    const auto expectPointSetIntersection =
+    [] (const Plane& aPlane, const PointSet& aPointSet, const PointSet& anIntersectionPointSet) -> void
+    {
+
+        const Intersection intersection = aPlane.intersectionWith(aPointSet) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+
+        ASSERT_TRUE(intersection.accessComposite().is<PointSet>()) ;
+
+        const PointSet pointSet = intersection.accessComposite().as<PointSet>() ;
+
+        EXPECT_TRUE(pointSet.isNear(anIntersectionPointSet, Real::Epsilon())) ;
+
+    } ;
+
+    const auto expectEmptyIntersection =
+    [] (const Plane& aPlane, const PointSet& aPointSet) -> void
+    {
+
+        const Intersection intersection = aPlane.intersectionWith(aPointSet) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+        EXPECT_TRUE(intersection.isEmpty()) ;
+
+    } ;
 
     {
 
-        FAIL() ;
+        expectPointSetIntersection(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), PointSet({{ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }}), PointSet({{ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }})) ;
+        expectPointSetIntersection(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), PointSet({{ 1.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }}), PointSet({{ 1.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }})) ;
+        expectPointSetIntersection(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), PointSet({{ 0.0, 1.0, 0.0 }, { 0.0, 0.0, 0.0 }}), PointSet({{ 0.0, 1.0, 0.0 }, { 0.0, 0.0, 0.0 }})) ;
+        expectPointSetIntersection(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), PointSet({{ 1.0, 1.0, 0.0 }, { 0.0, 0.0, 0.0 }}), PointSet({{ 1.0, 1.0, 0.0 }, { 0.0, 0.0, 0.0 }})) ;
+
+        expectPointSetIntersection(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 2.0 }), PointSet({{ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }}), PointSet({{ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }})) ;
+        expectPointSetIntersection(Plane({ 0.0, 0.0, 1.0 }, { 0.0, 0.0, 1.0 }), PointSet({{ 0.0, 0.0, 1.0 }, { 1.0, 0.0, 1.0 }}), PointSet({{ 0.0, 0.0, 1.0 }, { 1.0, 0.0, 1.0 }})) ;
+        expectPointSetIntersection(Plane({ 1.0, 1.0, 1.0 }, { 0.0, 0.0, 1.0 }), PointSet({{ 0.0, 0.0, 1.0 }, { 0.0, 1.0, 1.0 }}), PointSet({{ 0.0, 0.0, 1.0 }, { 0.0, 1.0, 1.0 }})) ;
+
+    }
+
+    {
+
+        expectPointIntersection(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), PointSet({{ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.1 }}), Point({ 0.0, 0.0, 0.0 })) ;
+
+    }
+
+    {
+
+        expectEmptyIntersection(Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), PointSet({{ 0.0, 0.0, 0.1 }, { 0.0, 0.0, 1.0 }, { 0.0, 0.0, -1.0 }})) ;
 
     }
 
     {
 
         EXPECT_ANY_THROW(Plane::Undefined().intersectionWith(PointSet::Empty())) ;
+        EXPECT_ANY_THROW(Plane::Undefined().intersectionWith(PointSet({{ 0.0, 0.0, 0.0 }}))) ;
 
     }
 
@@ -463,7 +646,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Line)
 
     {
 
-        FAIL() ;
+        // See: Library_Mathematics_Geometry_3D_Objects_Line.IntersectionWith_Plane
+
+        SUCCEED() ;
 
     }
 
@@ -483,7 +668,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Ray)
 
     {
 
-        FAIL() ;
+        // See: Library_Mathematics_Geometry_3D_Objects_Ray.IntersectionWith_Plane
+
+        SUCCEED() ;
 
     }
 
@@ -503,7 +690,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Segment)
 
     {
 
-        FAIL() ;
+        // See: Library_Mathematics_Geometry_3D_Objects_Segment.IntersectionWith_Plane
+
+        SUCCEED() ;
 
     }
 

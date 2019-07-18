@@ -116,27 +116,46 @@ Various tutorials are available here:
 
 ### Geometry Queries
 
-- `?`: query only
-- `x`: query and intersection
+- `○`: query only
+- `✔`: query / intersection set
+- ` `: to be implemented
+- `-`: undefined
 
 #### 3D
 
-| Intersection | Point | Point Set | Line | Ray | Segment | Line String | Polygon | Plane | Cuboid | Sphere | Ellipsoid | Cone | Pyramid | Composite |
-|--------------|-------|-----------|------|-----|---------|-------------|---------|-------|--------|--------|-----------|------|---------|-----------|
-| Point        |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
-| Point Set    |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
-| Line         | ?     |           |      |     |         |             |         | x     |        | ?      | ?         |      |         |           |
-| Ray          | ?     |           |      |     |         |             |         | x     |        | ?      | x         |      |         |           |
-| Segment      |       |           |      |     |         |             |         | x     |        | ?      | ?         |      |         |           |
-| Line String  |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
-| Polygon      |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
-| Plane        | x     | x         | x    | x   | x       |             |         |       |        |        |           |      |         |           |
-| Cuboid       | ?     | ?         | ?    |     |         |             |         |       |        |        |           |      |         |           |
-| Sphere       | ?     | ?         | ?    | ?   | ?       |             |         | ?     |        |        |           |      | ?       |           |
-| Ellipsoid    | ?     | ?         | x    | x   | x       |             |         | ?     |        |        |           |      | x       |           |
-| Cone         |       |           |      |     |         |             |         |       |        |        | x         |      |         |           |
-| Pyramid      |       |           |      |     |         |             |         |       |        |        | x         |      |         |           |
-| Composite    |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
+| Intersect        | Point | Point Set | Line | Ray | Segment | Line String | Polygon | Plane | Cuboid | Sphere | Ellipsoid | Cone | Pyramid | Composite |
+|------------------|-------|-----------|------|-----|---------|-------------|---------|-------|--------|--------|-----------|------|---------|-----------|
+| **Point**        |       |           | ○    | ○   |         |             |         | ✔     | ○      | ○      | ○         |      |         |           |
+| **Point Set**    |       |           |      |     |         |             |         | ✔     | ○      | ○      | ○         |      |         |           |
+| **Line**         | ○     |           |      |     |         |             |         | ✔     | ○      | ○      | ✔         |      |         |           |
+| **Ray**          | ○     |           |      |     |         |             |         | ✔     |        | ○      | ✔         |      |         |           |
+| **Segment**      |       |           |      |     |         |             |         | ✔     |        | ○      | ✔         |      |         |           |
+| **Line String**  |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
+| **Polygon**      |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
+| **Plane**        | ✔     | ✔         | ✔    | ✔   | ✔       |             |         |       |        | ○      | ○         |      |         |           |
+| **Cuboid**       | ○     | ○         | ○    |     |         |             |         |       |        |        |           |      |         |           |
+| **Sphere**       | ○     | ○         | ○    | ○   | ○       |             |         | ○     |        |        |           |      | ○       |           |
+| **Ellipsoid**    | ○     | ○         | ✔    | ✔   | ✔       |             |         | ○     |        |        |           | ✔    | ✔       |           |
+| **Cone**         |       |           |      |     |         |             |         |       |        |        | ✔         |      |         |           |
+| **Pyramid**      |       |           |      |     |         |             |         |       |        | ○      | ✔         |      |         |           |
+| **Composite**    |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
+
+| Contain          | Point | Point Set | Line | Ray | Segment | Line String | Polygon | Plane | Cuboid | Sphere | Ellipsoid | Cone | Pyramid | Composite |
+|------------------|-------|-----------|------|-----|---------|-------------|---------|-------|--------|--------|-----------|------|---------|-----------|
+| **Point**        |       |           | -    | -   | -       | -           | -       | -     | -      | -      | -         | -    | -       |           |
+| **Point Set**    |       |           | -    | -   | -       | -           | -       | -     | -      | -      | -         | -    | -       |           |
+| **Line**         | ✔     |           |      |     |         |             | -       | -     | -      | -      | -         | -    | -       |           |
+| **Ray**          | ✔     | ✔         | -    |     |         |             | -       | -     | -      | -      | -         | -    | -       |           |
+| **Segment**      | ✔     |           | -    | -   |         |             | -       | -     | -      | -      | -         | -    | -       |           |
+| **Line String**  |       |           | -    | -   |         |             | -       | -     | -      | -      | -         | -    | -       |           |
+| **Polygon**      |       |           | -    | -   |         |             |         | -     | -      | -      | -         | -    | -       |           |
+| **Plane**        | ✔     | ✔         | ✔    | ✔   | ✔       |             |         |       | -      | -      | -         | -    | -       |           |
+| **Cuboid**       | ✔     | ✔         | -    | -   |         |             |         | -     |        |        |           |      |         |           |
+| **Sphere**       | ✔     | ✔         | -    | -   | -       | -           | -       | -     |        |        |           |      |         |           |
+| **Ellipsoid**    | ✔     | ✔         | -    | -   | -       | -           | -       | -     |        |        |           |      |         |           |
+| **Cone**         |       |           |      |     |         | -           | -       | -     |        |        |           |      |         |           |
+| **Pyramid**      | ✔     |           |      |     |         |             |         | -     |        |        |           |      |         |           |
+| **Composite**    |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
 
 ## Setup
 

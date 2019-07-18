@@ -224,6 +224,11 @@ Intersection                    Plane::intersectionWith                     (   
 Intersection                    Plane::intersectionWith                     (   const   PointSet&                   aPointSet                                   ) const
 {
 
+    if (!this->isDefined())
+    {
+        throw library::core::error::runtime::Undefined("Plane") ;
+    }
+
     Array<Point> points = Array<Point>::Empty() ;
 
     for (const auto& point : aPointSet)
@@ -236,7 +241,7 @@ Intersection                    Plane::intersectionWith                     (   
 
     }
 
-    return (!points.isEmpty()) ? Intersection::PointSet({ points }) : Intersection::Empty() ;
+    return (!points.isEmpty()) ? ((points.getSize() == 1) ? Intersection::Point(points.accessFirst()) : Intersection::PointSet({ points })) : Intersection::Empty() ;
 
 }
 
