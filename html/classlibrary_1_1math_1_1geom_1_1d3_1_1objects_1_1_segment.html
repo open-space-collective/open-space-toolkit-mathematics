@@ -120,6 +120,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a11324bd27db3ef9d931fdee763246759"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a11324bd27db3ef9d931fdee763246759">isDegenerate</a> () const</td></tr>
 <tr class="memdesc:a11324bd27db3ef9d931fdee763246759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if segment is degenerate, i.e. its length is zero.  <a href="#a11324bd27db3ef9d931fdee763246759">More...</a><br /></td></tr>
 <tr class="separator:a11324bd27db3ef9d931fdee763246759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ba39afb970cc57b1e11ebd5eaf82db4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a8ba39afb970cc57b1e11ebd5eaf82db4">intersects</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane.html">Plane</a> &amp;aPlane) const</td></tr>
+<tr class="memdesc:a8ba39afb970cc57b1e11ebd5eaf82db4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if segment intersects plane.  <a href="#a8ba39afb970cc57b1e11ebd5eaf82db4">More...</a><br /></td></tr>
+<tr class="separator:a8ba39afb970cc57b1e11ebd5eaf82db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9919183ce212b474e418685db50891fc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a9919183ce212b474e418685db50891fc">intersects</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html">Sphere</a> &amp;aSphere) const</td></tr>
 <tr class="memdesc:a9919183ce212b474e418685db50891fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if segment intersects sphere.  <a href="#a9919183ce212b474e418685db50891fc">More...</a><br /></td></tr>
 <tr class="separator:a9919183ce212b474e418685db50891fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -144,6 +147,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a16b011c680e3102b8b44e6c88ffff81d"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a16b011c680e3102b8b44e6c88ffff81d">getLength</a> () const</td></tr>
 <tr class="memdesc:a16b011c680e3102b8b44e6c88ffff81d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get segment length.  <a href="#a16b011c680e3102b8b44e6c88ffff81d">More...</a><br /></td></tr>
 <tr class="separator:a16b011c680e3102b8b44e6c88ffff81d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75768b02696b8ce9415b7f2da7d8f411"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a75768b02696b8ce9415b7f2da7d8f411">intersectionWith</a> (const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane.html">Plane</a> &amp;aPlane) const</td></tr>
+<tr class="memdesc:a75768b02696b8ce9415b7f2da7d8f411"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute intersection of segment with plane.  <a href="#a75768b02696b8ce9415b7f2da7d8f411">More...</a><br /></td></tr>
+<tr class="separator:a75768b02696b8ce9415b7f2da7d8f411"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d3c1a17842ee4ee83cffda33911291d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a2d3c1a17842ee4ee83cffda33911291d">print</a> (std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</td></tr>
 <tr class="memdesc:a2d3c1a17842ee4ee83cffda33911291d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print segment.  <a href="#a2d3c1a17842ee4ee83cffda33911291d">More...</a><br /></td></tr>
 <tr class="separator:a2d3c1a17842ee4ee83cffda33911291d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -315,7 +321,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Check if segment contains point. </p>
 <div class="fragment"><div class="line"><a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a5562342d1edf2f52e37ce1bc138ee7d7">Segment</a> segment = ... ;</div><div class="line">Point point = ... ;</div><div class="line">segment.contains(point) ;</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>An point </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
   </table>
   </dd>
 </dl>
@@ -423,8 +429,62 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a75768b02696b8ce9415b7f2da7d8f411"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75768b02696b8ce9415b7f2da7d8f411">&#9670;&nbsp;</a></span>intersectionWith()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html">Intersection</a> library::math::geom::d3::objects::Segment::intersectionWith </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane.html">Plane</a> &amp;&#160;</td>
+          <td class="paramname"><em>aPlane</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute intersection of segment with plane. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPlane</td><td>A plane </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection.html" title="3D intersection ">Intersection</a> of segment with plane </dd></dl>
+
+</div>
+</div>
+<a id="a8ba39afb970cc57b1e11ebd5eaf82db4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ba39afb970cc57b1e11ebd5eaf82db4">&#9670;&nbsp;</a></span>intersects() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool library::math::geom::d3::objects::Segment::intersects </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane.html">Plane</a> &amp;&#160;</td>
+          <td class="paramname"><em>aPlane</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if segment intersects plane. </p>
+<div class="fragment"><div class="line"><a class="code" href="classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a5562342d1edf2f52e37ce1bc138ee7d7">Segment</a> segment = ... ;</div><div class="line">Plane plane = ... ;</div><div class="line">segment.intersects(plane) ;</div></div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPlane</td><td>A plane </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if segment intersects plane </dd></dl>
+
+</div>
+</div>
 <a id="a9919183ce212b474e418685db50891fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9919183ce212b474e418685db50891fc">&#9670;&nbsp;</a></span>intersects() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a9919183ce212b474e418685db50891fc">&#9670;&nbsp;</a></span>intersects() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -451,7 +511,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="af6d7eb00a6886d190c03e8b8e4220f33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6d7eb00a6886d190c03e8b8e4220f33">&#9670;&nbsp;</a></span>intersects() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#af6d7eb00a6886d190c03e8b8e4220f33">&#9670;&nbsp;</a></span>intersects() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">

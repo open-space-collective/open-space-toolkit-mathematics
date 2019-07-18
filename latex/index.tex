@@ -49,12 +49,15 @@ The {\bfseries Mathematics} library exhibits the following structure\+:
 │   │   │   ├── Line
 │   │   │   ├── Ray
 │   │   │   ├── Segment
-│   │   │   ├── Rectangle
+│   │   │   ├── Line String
+│   │   │   ├── Polygon
 │   │   │   ├── Plane
+│   │   │   ├── Cuboid
 │   │   │   ├── Sphere
 │   │   │   ├── Ellipsoid
 │   │   │   ├── Cone
-│   │   │   └── Pyramid
+│   │   │   ├── Pyramid
+│   │   │   └── Composite
 │   │   ├── Intersection
 │   │   └── Transformations
 │   │       ├── Identity
@@ -112,6 +115,70 @@ Various tutorials are available here\+:
 \item \href{./tutorials/python}{\tt Python}
 \end{DoxyItemize}
 
+\subsection*{Features}
+
+\subsubsection*{Geometry Queries}
+
+
+\begin{DoxyItemize}
+\item {\ttfamily ○}\+: query only
+\item {\ttfamily ✔}\+: query / intersection set
+\item \+: to be implemented
+\item {\ttfamily -\/}\+: undefined
+\end{DoxyItemize}
+
+\paragraph*{3D}
+
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{15}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Intersect }&\textbf{ Point }&\textbf{ Point Set }&\textbf{ Line }&\textbf{ Ray }&\textbf{ Segment }&\textbf{ Line String }&\textbf{ Polygon }&\textbf{ Plane }&\textbf{ Cuboid }&\textbf{ Sphere }&\textbf{ Ellipsoid }&\textbf{ Cone }&\textbf{ Pyramid }&\textbf{ Composite  }\\\cline{1-15}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Intersect }&\textbf{ Point }&\textbf{ Point Set }&\textbf{ Line }&\textbf{ Ray }&\textbf{ Segment }&\textbf{ Line String }&\textbf{ Polygon }&\textbf{ Plane }&\textbf{ Cuboid }&\textbf{ Sphere }&\textbf{ Ellipsoid }&\textbf{ Cone }&\textbf{ Pyramid }&\textbf{ Composite  }\\\cline{1-15}
+\endhead
+{\bfseries Point} &&&○ &○ &&&&✔ &○ &○ &○ &&&\\\cline{1-15}
+{\bfseries Point Set} &&&&&&&&✔ &○ &○ &○ &&&\\\cline{1-15}
+{\bfseries Line} &○ &&&&&&&✔ &○ &○ &✔ &&&\\\cline{1-15}
+{\bfseries Ray} &○ &&&&&&&✔ &&○ &✔ &&&\\\cline{1-15}
+{\bfseries Segment} &&&&&&&&✔ &&○ &✔ &&&\\\cline{1-15}
+{\bfseries Line String} &&&&&&&&&&&&&&\\\cline{1-15}
+{\bfseries Polygon} &&&&&&&&&&&&&&\\\cline{1-15}
+{\bfseries Plane} &✔ &✔ &✔ &✔ &✔ &&&&&○ &○ &&&\\\cline{1-15}
+{\bfseries Cuboid} &○ &○ &○ &&&&&&&&&&&\\\cline{1-15}
+{\bfseries Sphere} &○ &○ &○ &○ &○ &&&○ &&&&&○ &\\\cline{1-15}
+{\bfseries Ellipsoid} &○ &○ &✔ &✔ &✔ &&&○ &&&&✔ &✔ &\\\cline{1-15}
+{\bfseries Cone} &&&&&&&&&&&✔ &&&\\\cline{1-15}
+{\bfseries Pyramid} &&&&&&&&&&○ &✔ &&&\\\cline{1-15}
+{\bfseries Composite} &&&&&&&&&&&&&&\\\cline{1-15}
+\end{longtabu}
+\tabulinesep=1mm
+\begin{longtabu} spread 0pt [c]{*{15}{|X[-1]}|}
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Contain }&\textbf{ Point }&\textbf{ Point Set }&\textbf{ Line }&\textbf{ Ray }&\textbf{ Segment }&\textbf{ Line String }&\textbf{ Polygon }&\textbf{ Plane }&\textbf{ Cuboid }&\textbf{ Sphere }&\textbf{ Ellipsoid }&\textbf{ Cone }&\textbf{ Pyramid }&\textbf{ Composite  }\\\cline{1-15}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\rowcolor{\tableheadbgcolor}\textbf{ Contain }&\textbf{ Point }&\textbf{ Point Set }&\textbf{ Line }&\textbf{ Ray }&\textbf{ Segment }&\textbf{ Line String }&\textbf{ Polygon }&\textbf{ Plane }&\textbf{ Cuboid }&\textbf{ Sphere }&\textbf{ Ellipsoid }&\textbf{ Cone }&\textbf{ Pyramid }&\textbf{ Composite  }\\\cline{1-15}
+\endhead
+{\bfseries Point} &&&-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &\\\cline{1-15}
+{\bfseries Point Set} &&&-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &\\\cline{1-15}
+{\bfseries Line} &✔ &&&&&&-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &\\\cline{1-15}
+{\bfseries Ray} &✔ &✔ &-\/ &&&&-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &\\\cline{1-15}
+{\bfseries Segment} &✔ &&-\/ &-\/ &&&-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &\\\cline{1-15}
+{\bfseries Line String} &&&-\/ &-\/ &&&-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &\\\cline{1-15}
+{\bfseries Polygon} &&&-\/ &-\/ &&&&-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &\\\cline{1-15}
+{\bfseries Plane} &✔ &✔ &✔ &✔ &✔ &&&&-\/ &-\/ &-\/ &-\/ &-\/ &\\\cline{1-15}
+{\bfseries Cuboid} &✔ &✔ &-\/ &-\/ &&&&-\/ &&&&&&\\\cline{1-15}
+{\bfseries Sphere} &✔ &✔ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &&&&&&\\\cline{1-15}
+{\bfseries Ellipsoid} &✔ &✔ &-\/ &-\/ &-\/ &-\/ &-\/ &-\/ &&&&&&\\\cline{1-15}
+{\bfseries Cone} &&&&&&-\/ &-\/ &-\/ &&&&&&\\\cline{1-15}
+{\bfseries Pyramid} &✔ &&&&&&&-\/ &&&&&&\\\cline{1-15}
+{\bfseries Composite} &&&&&&&&&&&&&&\\\cline{1-15}
+\end{longtabu}
 \subsection*{Setup}
 
 \subsubsection*{Development}

@@ -30,6 +30,8 @@ virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segmen
 \begin{DoxyCompactList}\small\item\em Check if segment is defined. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a11324bd27db3ef9d931fdee763246759}{is\+Degenerate} () const
 \begin{DoxyCompactList}\small\item\em Check if segment is degenerate, i.\+e. its length is zero. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a8ba39afb970cc57b1e11ebd5eaf82db4}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&a\+Plane) const
+\begin{DoxyCompactList}\small\item\em Check if segment intersects plane. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a9919183ce212b474e418685db50891fc}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&a\+Sphere) const
 \begin{DoxyCompactList}\small\item\em Check if segment intersects sphere. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_af6d7eb00a6886d190c03e8b8e4220f33}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&an\+Ellipsoid) const
@@ -46,6 +48,8 @@ Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_af
 \begin{DoxyCompactList}\small\item\em Get segment direction. \end{DoxyCompactList}\item 
 Real \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a16b011c680e3102b8b44e6c88ffff81d}{get\+Length} () const
 \begin{DoxyCompactList}\small\item\em Get segment length. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a75768b02696b8ce9415b7f2da7d8f411}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&a\+Plane) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of segment with plane. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a2d3c1a17842ee4ee83cffda33911291d}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
 \begin{DoxyCompactList}\small\item\em Print segment. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a63c7017391bcc0e67f4d97311e7ebdb2}{apply\+Transformation} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&a\+Transformation) override
@@ -147,7 +151,7 @@ segment.contains(point) ;
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em a\+Point} & An point \\
+\mbox{\tt in}  & {\em a\+Point} & A point \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -248,10 +252,54 @@ Get segment second point.
 \begin{DoxyReturn}{Returns}
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} second point 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a75768b02696b8ce9415b7f2da7d8f411}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a75768b02696b8ce9415b7f2da7d8f411}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Segment\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of segment with plane. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Plane} & A plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of segment with plane 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a8ba39afb970cc57b1e11ebd5eaf82db4}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a8ba39afb970cc57b1e11ebd5eaf82db4}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Segment\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
+
+
+
+Check if segment intersects plane. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a5562342d1edf2f52e37ce1bc138ee7d7}{Segment} segment = ... ;
+Plane plane = ... ;
+segment.intersects(plane) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Plane} & A plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if segment intersects plane 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a9919183ce212b474e418685db50891fc}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_a9919183ce212b474e418685db50891fc}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Segment\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&}]{a\+Sphere }\end{DoxyParamCaption}) const}
 
 
@@ -277,7 +325,7 @@ True if segment intersects sphere
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_af6d7eb00a6886d190c03e8b8e4220f33}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment_af6d7eb00a6886d190c03e8b8e4220f33}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Segment@{library\+::math\+::geom\+::d3\+::objects\+::\+Segment}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Segment\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
 
 

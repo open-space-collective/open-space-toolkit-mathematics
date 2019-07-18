@@ -92,7 +92,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <p><em>⚠ This library is still under heavy development. Do not use!</em></p>
 <h2>Structure</h2>
 <p>The <b>Mathematics</b> library exhibits the following structure:</p>
-<div class="fragment"><div class="line">├── Objects</div><div class="line">│   ├── Vector</div><div class="line">│   ├── Matrix</div><div class="line">│   └── Interval</div><div class="line">├── Geometry</div><div class="line">│   ├── 2D</div><div class="line">|   │   ├── Objects</div><div class="line">│   │   │   ├── Point</div><div class="line">│   │   │   ├── Point Set</div><div class="line">│   │   │   ├── Line</div><div class="line">│   │   │   ├── Line String</div><div class="line">│   │   │   ├── Multi Line String</div><div class="line">│   │   │   └── Polygon</div><div class="line">│   │   ├── Intersection</div><div class="line">│   │   └── Transformations</div><div class="line">│   │       ├── Identity</div><div class="line">│   │       ├── Translation</div><div class="line">│   │       ├── Rotation</div><div class="line">│   │       ├── Reflection</div><div class="line">│   │       ├── Scaling</div><div class="line">│   │       └── Shear</div><div class="line">│   ├── 3D</div><div class="line">|   │   ├── Objects</div><div class="line">│   │   │   ├── Point</div><div class="line">│   │   │   ├── Point Set</div><div class="line">│   │   │   ├── Line</div><div class="line">│   │   │   ├── Ray</div><div class="line">│   │   │   ├── Segment</div><div class="line">│   │   │   ├── Rectangle</div><div class="line">│   │   │   ├── Plane</div><div class="line">│   │   │   ├── Sphere</div><div class="line">│   │   │   ├── Ellipsoid</div><div class="line">│   │   │   ├── Cone</div><div class="line">│   │   │   └── Pyramid</div><div class="line">│   │   ├── Intersection</div><div class="line">│   │   └── Transformations</div><div class="line">│   │       ├── Identity</div><div class="line">│   │       ├── Translation</div><div class="line">│   │       ├── Rotations</div><div class="line">│   │       │   ├── Quaternion</div><div class="line">│   │       │   ├── Euler Angle</div><div class="line">│   │       │   ├── Rotation Vector</div><div class="line">│   │       │   └── Rotation Matrix</div><div class="line">│   │       ├── Reflection</div><div class="line">│   │       ├── Scaling</div><div class="line">│   │       └── Shear</div><div class="line">├── Dynamics</div><div class="line">│   ├── State</div><div class="line">│   ├── Solvers</div><div class="line">│   │   ├── Runge–Kutta 4 (RK4)</div><div class="line">│   │   ├── Dormand–Prince 5 (DP5)</div><div class="line">│   │   └── Runge–Kutta–Fehlberg 78 (F78)</div><div class="line">│   └── Systems</div><div class="line">├── Curve Fitting</div><div class="line">│   ├── Interpolation</div><div class="line">│   │   ├── Linear</div><div class="line">│   │   ├── Cubic Spline</div><div class="line">│   │   └── Lagrange</div><div class="line">│   └── Smoothing</div><div class="line">├── Optimization</div><div class="line">│   ├── Problem</div><div class="line">│   └── Algorithms</div><div class="line">│       ├── Gradient Descent</div><div class="line">│       └── Evolutionary</div><div class="line">│           ├── Genetic</div><div class="line">│           ├── Differential Evolution</div><div class="line">│           └── Swarm</div><div class="line">└── Statistics</div></div><!-- fragment --><h2>Documentation</h2>
+<div class="fragment"><div class="line">├── Objects</div><div class="line">│   ├── Vector</div><div class="line">│   ├── Matrix</div><div class="line">│   └── Interval</div><div class="line">├── Geometry</div><div class="line">│   ├── 2D</div><div class="line">|   │   ├── Objects</div><div class="line">│   │   │   ├── Point</div><div class="line">│   │   │   ├── Point Set</div><div class="line">│   │   │   ├── Line</div><div class="line">│   │   │   ├── Line String</div><div class="line">│   │   │   ├── Multi Line String</div><div class="line">│   │   │   └── Polygon</div><div class="line">│   │   ├── Intersection</div><div class="line">│   │   └── Transformations</div><div class="line">│   │       ├── Identity</div><div class="line">│   │       ├── Translation</div><div class="line">│   │       ├── Rotation</div><div class="line">│   │       ├── Reflection</div><div class="line">│   │       ├── Scaling</div><div class="line">│   │       └── Shear</div><div class="line">│   ├── 3D</div><div class="line">|   │   ├── Objects</div><div class="line">│   │   │   ├── Point</div><div class="line">│   │   │   ├── Point Set</div><div class="line">│   │   │   ├── Line</div><div class="line">│   │   │   ├── Ray</div><div class="line">│   │   │   ├── Segment</div><div class="line">│   │   │   ├── Line String</div><div class="line">│   │   │   ├── Polygon</div><div class="line">│   │   │   ├── Plane</div><div class="line">│   │   │   ├── Cuboid</div><div class="line">│   │   │   ├── Sphere</div><div class="line">│   │   │   ├── Ellipsoid</div><div class="line">│   │   │   ├── Cone</div><div class="line">│   │   │   ├── Pyramid</div><div class="line">│   │   │   └── Composite</div><div class="line">│   │   ├── Intersection</div><div class="line">│   │   └── Transformations</div><div class="line">│   │       ├── Identity</div><div class="line">│   │       ├── Translation</div><div class="line">│   │       ├── Rotations</div><div class="line">│   │       │   ├── Quaternion</div><div class="line">│   │       │   ├── Euler Angle</div><div class="line">│   │       │   ├── Rotation Vector</div><div class="line">│   │       │   └── Rotation Matrix</div><div class="line">│   │       ├── Reflection</div><div class="line">│   │       ├── Scaling</div><div class="line">│   │       └── Shear</div><div class="line">├── Dynamics</div><div class="line">│   ├── State</div><div class="line">│   ├── Solvers</div><div class="line">│   │   ├── Runge–Kutta 4 (RK4)</div><div class="line">│   │   ├── Dormand–Prince 5 (DP5)</div><div class="line">│   │   └── Runge–Kutta–Fehlberg 78 (F78)</div><div class="line">│   └── Systems</div><div class="line">├── Curve Fitting</div><div class="line">│   ├── Interpolation</div><div class="line">│   │   ├── Linear</div><div class="line">│   │   ├── Cubic Spline</div><div class="line">│   │   └── Lagrange</div><div class="line">│   └── Smoothing</div><div class="line">├── Optimization</div><div class="line">│   ├── Problem</div><div class="line">│   └── Algorithms</div><div class="line">│       ├── Gradient Descent</div><div class="line">│       └── Evolutionary</div><div class="line">│           ├── Genetic</div><div class="line">│           ├── Differential Evolution</div><div class="line">│           └── Swarm</div><div class="line">└── Statistics</div></div><!-- fragment --><h2>Documentation</h2>
 <p>The documentation can be found here:</p>
 <ul>
 <li><a href="https://open-space-collective.github.io/library-mathematics">C++</a></li>
@@ -104,6 +104,79 @@ $(document).ready(function(){initNavTree('index.html','');});
 <li><a href="./tutorials/cpp">C++</a></li>
 <li><a href="./tutorials/python">Python</a></li>
 </ul>
+<h2>Features</h2>
+<h3>Geometry Queries</h3>
+<ul>
+<li><code>○</code>: query only</li>
+<li><code>✔</code>: query / intersection set</li>
+<li>: to be implemented</li>
+<li><code>-</code>: undefined</li>
+</ul>
+<h4>3D</h4>
+<table class="doxtable">
+<tr>
+<th>Intersect </th><th>Point </th><th>Point Set </th><th>Line </th><th>Ray </th><th>Segment </th><th>Line String </th><th>Polygon </th><th>Plane </th><th>Cuboid </th><th>Sphere </th><th>Ellipsoid </th><th>Cone </th><th>Pyramid </th><th>Composite  </th></tr>
+<tr>
+<td><b>Point</b> </td><td></td><td></td><td>○ </td><td>○ </td><td></td><td></td><td></td><td>✔ </td><td>○ </td><td>○ </td><td>○ </td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Point Set</b> </td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✔ </td><td>○ </td><td>○ </td><td>○ </td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Line</b> </td><td>○ </td><td></td><td></td><td></td><td></td><td></td><td></td><td>✔ </td><td>○ </td><td>○ </td><td>✔ </td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Ray</b> </td><td>○ </td><td></td><td></td><td></td><td></td><td></td><td></td><td>✔ </td><td></td><td>○ </td><td>✔ </td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Segment</b> </td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✔ </td><td></td><td>○ </td><td>✔ </td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Line String</b> </td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Polygon</b> </td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Plane</b> </td><td>✔ </td><td>✔ </td><td>✔ </td><td>✔ </td><td>✔ </td><td></td><td></td><td></td><td></td><td>○ </td><td>○ </td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Cuboid</b> </td><td>○ </td><td>○ </td><td>○ </td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Sphere</b> </td><td>○ </td><td>○ </td><td>○ </td><td>○ </td><td>○ </td><td></td><td></td><td>○ </td><td></td><td></td><td></td><td></td><td>○ </td><td></td></tr>
+<tr>
+<td><b>Ellipsoid</b> </td><td>○ </td><td>○ </td><td>✔ </td><td>✔ </td><td>✔ </td><td></td><td></td><td>○ </td><td></td><td></td><td></td><td>✔ </td><td>✔ </td><td></td></tr>
+<tr>
+<td><b>Cone</b> </td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>✔ </td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Pyramid</b> </td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>○ </td><td>✔ </td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Composite</b> </td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+<table class="doxtable">
+<tr>
+<th>Contain </th><th>Point </th><th>Point Set </th><th>Line </th><th>Ray </th><th>Segment </th><th>Line String </th><th>Polygon </th><th>Plane </th><th>Cuboid </th><th>Sphere </th><th>Ellipsoid </th><th>Cone </th><th>Pyramid </th><th>Composite  </th></tr>
+<tr>
+<td><b>Point</b> </td><td></td><td></td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td></td></tr>
+<tr>
+<td><b>Point Set</b> </td><td></td><td></td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td></td></tr>
+<tr>
+<td><b>Line</b> </td><td>✔ </td><td></td><td></td><td></td><td></td><td></td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td></td></tr>
+<tr>
+<td><b>Ray</b> </td><td>✔ </td><td>✔ </td><td>- </td><td></td><td></td><td></td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td></td></tr>
+<tr>
+<td><b>Segment</b> </td><td>✔ </td><td></td><td>- </td><td>- </td><td></td><td></td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td></td></tr>
+<tr>
+<td><b>Line String</b> </td><td></td><td></td><td>- </td><td>- </td><td></td><td></td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td></td></tr>
+<tr>
+<td><b>Polygon</b> </td><td></td><td></td><td>- </td><td>- </td><td></td><td></td><td></td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td></td></tr>
+<tr>
+<td><b>Plane</b> </td><td>✔ </td><td>✔ </td><td>✔ </td><td>✔ </td><td>✔ </td><td></td><td></td><td></td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td></td></tr>
+<tr>
+<td><b>Cuboid</b> </td><td>✔ </td><td>✔ </td><td>- </td><td>- </td><td></td><td></td><td></td><td>- </td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Sphere</b> </td><td>✔ </td><td>✔ </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Ellipsoid</b> </td><td>✔ </td><td>✔ </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td>- </td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Cone</b> </td><td></td><td></td><td></td><td></td><td></td><td>- </td><td>- </td><td>- </td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Pyramid</b> </td><td>✔ </td><td></td><td></td><td></td><td></td><td></td><td></td><td>- </td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td><b>Composite</b> </td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
 <h2>Setup</h2>
 <h3>Development</h3>
 <p>Using <a href="https://www.docker.com">Docker</a> is recommended, as the development tools and dependencies setup is described in the provided <a href="./tools/development/docker/Dockerfile">Dockerfile</a>.</p>

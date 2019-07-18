@@ -30,6 +30,8 @@ virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a
 \begin{DoxyCompactList}\small\item\em Check if line is defined. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_af40668ee33a6cd265a4b3c3a9a53f294}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Check if line intersects point. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a21d031807956bafc5577ed3b5ac54cbf}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&a\+Plane) const
+\begin{DoxyCompactList}\small\item\em Check if line intersects plane. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ab9b35d1e6276d927e9a54219855295ce}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&a\+Sphere) const
 \begin{DoxyCompactList}\small\item\em Check if line intersects sphere. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a2cc1edf1b60745c518fbf19f2ab0771c}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&an\+Ellipsoid) const
@@ -40,6 +42,8 @@ bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a59b72a3a
 \begin{DoxyCompactList}\small\item\em Get line origin. \end{DoxyCompactList}\item 
 Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_aa108a53227e4326188fe17a03c55f9cb}{get\+Direction} () const
 \begin{DoxyCompactList}\small\item\em Get line direction. \end{DoxyCompactList}\item 
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a422b904b4ec38d753ab7eed5b214f45a}{intersection\+With} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&a\+Plane) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of line with plane. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a6c2d2268fed2b9c461730fbcd4425d6e}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
 \begin{DoxyCompactList}\small\item\em Print line. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ae485ab541cbd10113eac30d1956fb4c0}{apply\+Transformation} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&a\+Transformation) override
@@ -183,10 +187,28 @@ Get line origin.
 \begin{DoxyReturn}{Returns}
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} origin 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a422b904b4ec38d753ab7eed5b214f45a}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a422b904b4ec38d753ab7eed5b214f45a}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}}
+{\footnotesize\ttfamily \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of line with plane. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Plane} & A plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of line with plane 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_af40668ee33a6cd265a4b3c3a9a53f294}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_af40668ee33a6cd265a4b3c3a9a53f294}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
 
 
@@ -203,16 +225,42 @@ line.intersects(point) ;
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em an\+Point} & An point \\
+\mbox{\tt in}  & {\em an\+Point} & A point \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True if line intersects point 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a21d031807956bafc5577ed3b5ac54cbf}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a21d031807956bafc5577ed3b5ac54cbf}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
+
+
+
+Check if line intersects plane. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a762e529453ff9ffa9233fd73737f4692}{Line} line = ... ;
+Plane plane = ... ;
+line.intersects(plane) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Plane} & A plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if line intersects plane 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ab9b35d1e6276d927e9a54219855295ce}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ab9b35d1e6276d927e9a54219855295ce}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&}]{a\+Sphere }\end{DoxyParamCaption}) const}
 
 
@@ -238,7 +286,7 @@ True if line intersects sphere
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a2cc1edf1b60745c518fbf19f2ab0771c}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a2cc1edf1b60745c518fbf19f2ab0771c}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Line@{library\+::math\+::geom\+::d3\+::objects\+::\+Line}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Line\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
 
 

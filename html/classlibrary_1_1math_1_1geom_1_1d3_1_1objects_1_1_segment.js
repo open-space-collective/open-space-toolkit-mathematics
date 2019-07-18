@@ -9,6 +9,8 @@ var classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment =
     [ "getFirstPoint", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#aa51ef3e713b4041f852db4201bbf7821", null ],
     [ "getLength", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a16b011c680e3102b8b44e6c88ffff81d", null ],
     [ "getSecondPoint", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a5d824fed334185975226d8f7e8489ced", null ],
+    [ "intersectionWith", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a75768b02696b8ce9415b7f2da7d8f411", null ],
+    [ "intersects", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a8ba39afb970cc57b1e11ebd5eaf82db4", null ],
     [ "intersects", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a9919183ce212b474e418685db50891fc", null ],
     [ "intersects", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#af6d7eb00a6886d190c03e8b8e4220f33", null ],
     [ "isDefined", "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a70a29c3822e4859a2e8cd4a52e1b26f5", null ],

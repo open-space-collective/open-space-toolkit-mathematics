@@ -30,12 +30,16 @@ virtual bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a7
 \begin{DoxyCompactList}\small\item\em Check if ray is defined. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a83300d3992b2f963c5b60a8be6748da0}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Check if ray intersects point. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_ade9febdb0da483a04f3a4d379c48b6d7}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&a\+Plane) const
+\begin{DoxyCompactList}\small\item\em Check if ray intersects plane. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_ab75f38e9f6f0e7160acdf5360089937b}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&a\+Sphere) const
 \begin{DoxyCompactList}\small\item\em Check if ray intersects sphere. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a691d9fda5c22f8cef0b412b9173fe71b}{intersects} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&an\+Ellipsoid) const
 \begin{DoxyCompactList}\small\item\em Check if ray intersects ellipsoid. \end{DoxyCompactList}\item 
 bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a6179dc1453ac7a54b13fe6bf46c0a66b}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Check if ray contains point. \end{DoxyCompactList}\item 
+bool \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a4766780e22a8113ff63b85c8af32e915}{contains} (const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if ray contains point set. \end{DoxyCompactList}\item 
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_abaac9b7fcc10e2076ada11f2798386bd}{get\+Origin} () const
 \begin{DoxyCompactList}\small\item\em Get ray origin. \end{DoxyCompactList}\item 
 Vector3d \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_ab2e0a6cfd7c2c288ec615a479024fb7d}{get\+Direction} () const
@@ -128,7 +132,7 @@ Implements \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1_object_a1a784c6b359
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a6179dc1453ac7a54b13fe6bf46c0a66b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a6179dc1453ac7a54b13fe6bf46c0a66b}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}!contains@{contains}}
 \index{contains@{contains}!library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}}
-\subsubsection{\texorpdfstring{contains()}{contains()}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ray\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
 
 
@@ -138,18 +142,44 @@ Check if ray contains point.
 
 \begin{DoxyCode}
 \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a11b7613464daaebc6e25a758b057f203}{Ray} ray = ... ;
-Ellipsoid ellipsoid = ... ;
-ray.contains(ellipsoid) ;
+Point point = ... ;
+ray.contains(point) ;
 \end{DoxyCode}
 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\mbox{\tt in}  & {\em a\+Point} & A point \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True if ray contains point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a4766780e22a8113ff63b85c8af32e915}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a4766780e22a8113ff63b85c8af32e915}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}!contains@{contains}}
+\index{contains@{contains}!library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ray\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if ray contains point set. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a11b7613464daaebc6e25a758b057f203}{Ray} ray = ... ;
+PointSet pointSet = ... ;
+ray.contains(pointSet) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ray contains point set 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_ab2e0a6cfd7c2c288ec615a479024fb7d}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_ab2e0a6cfd7c2c288ec615a479024fb7d}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}!get\+Direction@{get\+Direction}}
@@ -250,7 +280,7 @@ Compute intersection of ray with ellipsoid.
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a83300d3992b2f963c5b60a8be6748da0}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a83300d3992b2f963c5b60a8be6748da0}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ray\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
 
 
@@ -267,16 +297,42 @@ ray.intersects(point) ;
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em an\+Point} & An point \\
+\mbox{\tt in}  & {\em an\+Point} & A point \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True if ray intersects point 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_ade9febdb0da483a04f3a4d379c48b6d7}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_ade9febdb0da483a04f3a4d379c48b6d7}} 
+\index{library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}!intersects@{intersects}}
+\index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ray\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
+
+
+
+Check if ray intersects plane. 
+
+
+\begin{DoxyCode}
+\hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a11b7613464daaebc6e25a758b057f203}{Ray} ray = ... ;
+Plane plane = ... ;
+ray.intersects(plane) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Plane} & A plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ray intersects plane 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_ab75f38e9f6f0e7160acdf5360089937b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_ab75f38e9f6f0e7160acdf5360089937b}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ray\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&}]{a\+Sphere }\end{DoxyParamCaption}) const}
 
 
@@ -302,7 +358,7 @@ True if ray intersects sphere
 \mbox{\Hypertarget{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a691d9fda5c22f8cef0b412b9173fe71b}\label{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a691d9fda5c22f8cef0b412b9173fe71b}} 
 \index{library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}!intersects@{intersects}}
 \index{intersects@{intersects}!library\+::math\+::geom\+::d3\+::objects\+::\+Ray@{library\+::math\+::geom\+::d3\+::objects\+::\+Ray}}
-\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily bool library\+::math\+::geom\+::d3\+::objects\+::\+Ray\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
 
 

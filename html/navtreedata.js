@@ -55,7 +55,7 @@ var NAVTREEINDEX =
 "2_d_2_object_8cpp.html",
 "classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html#a4fe1cbb1f12f2ea9f84189db37e6d0c6",
 "classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html#ada78cbdc903bb25289a981d13ae2d2c5",
-"classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#af2e72e5232106d28995dbddb1f1c2f16"
+"classlibrary_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a855911876f8f59e446740071d0a8194a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
