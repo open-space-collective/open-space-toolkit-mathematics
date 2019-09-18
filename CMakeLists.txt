@@ -260,7 +260,8 @@ ELSE ()
     MESSAGE (SEND_ERROR "[Geometric Tools Engine] not found.")
 ENDIF ()
 
-# INCLUDE_DIRECTORIES ("/usr/local/include/Gte")
+INCLUDE_DIRECTORIES ("/usr/local/include/Gte")
+INCLUDE_DIRECTORIES("${CMAKE_CURRENT_SOURCE_DIR}/include/Gte")
 
 ### Library ▸ Core [0.2.x]
 
