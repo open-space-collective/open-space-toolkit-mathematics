@@ -74,17 +74,6 @@ SET (PYTHON_LIBRARIES "/usr/lib64/libpython3.7m.so")
 
 SET (NUMPY_INCLUDE_DIR "/usr/lib64/python3.7/site-packages/numpy/core/include")
 
-### Boost.NumPy Eigen
-FIND_PACKAGE ("BoostNumPy" REQUIRED)
-IF (BOOST_NUMPY_FOUND)
-
-    INCLUDE_DIRECTORIES (${BOOST_NUMPY_INCLUDE_DIRS})
-    LINK_DIRECTORIES (${BOOST_NUMPY_LIBRARY_DIRS})
-
-ELSE ()
-    MESSAGE (SEND_ERROR "[BOOST_NUMPY] not found.")
-ENDIF ()
-
 
 
 SET (EIGEN_NUMPY_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/thirdparty/boost_numpy_eigen")
