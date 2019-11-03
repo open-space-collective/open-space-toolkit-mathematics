@@ -41,12 +41,12 @@ RUN mkdir /tmp/eigen \
  && make install \
  && rm -rf /tmp/eigen
 
-## Geometric Tools Engine [3.25]
+## Geometric Tools Engine [3.28]
 
 RUN mkdir /tmp/geometric-tools-engine \
  && cd /tmp/geometric-tools-engine \
- && wget --quiet https://www.geometrictools.com/Downloads/GeometricToolsEngine3p25.zip \
- && unzip -q ./GeometricToolsEngine3p25.zip \
+ && wget --quiet https://www.geometrictools.com/Downloads/GeometricToolsEngine3p28.zip \
+ && unzip -q ./GeometricToolsEngine3p28.zip \
  && cd GeometricTools/GTEngine \
  && cp -r ./Include /usr/local/include/Gte \
  && rm -rf /tmp/geometric-tools-engine
