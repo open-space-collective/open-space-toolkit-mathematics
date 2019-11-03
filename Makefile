@@ -210,7 +210,7 @@ _build-packages-python: _build-development-image
 	--volume="/app/build" \
 	--workdir=/app/build \
 	$(docker_development_image_repository):$(docker_image_version)-$(target) \
-	/bin/bash -c "cmake -DBUILD_UNIT_TESTS=OFF -DBUILD_PYTHON_BINDINGS=ON .. && make -j && mkdir -p /app/packages/python && mv /app/build/bindings/python/dist/*.whl /app/packages/python"
+	/bin/bash -c "cmake -DBUILD_UNIT_TESTS=OFF -DBUILD_PYTHON_BINDINGS=ON .. && make -j 4 && mkdir -p /app/packages/python && mv /app/build/bindings/python/dist/*.whl /app/packages/python"
 
 ################################################################################################################################################################
 
@@ -384,7 +384,7 @@ _test-unit-cpp: _build-development-image
 	--volume="/app/build" \
 	--workdir=/app/build \
 	$(docker_development_image_repository):$(docker_image_version)-$(target) \
-	/bin/bash -c "cmake -DBUILD_UNIT_TESTS=ON .. && make -j && make test"
+	/bin/bash -c "cmake -DBUILD_UNIT_TESTS=ON .. && make -j 4 && make test"
 
 test-unit-python-debian: target := debian
 test-unit-python-fedora: target := fedora
@@ -429,7 +429,7 @@ _test-coverage-cpp: _build-development-image
 	--volume="/app/build" \
 	--workdir=/app/build \
 	$(docker_development_image_repository):$(docker_image_version)-$(target) \
-	/bin/bash -c "cmake -DBUILD_CODE_COVERAGE=ON .. && make -j && make coverage && (rm -rf /app/coverage || true) && mkdir /app/coverage && mv /app/build/coverage* /app/coverage"
+	/bin/bash -c "cmake -DBUILD_CODE_COVERAGE=ON .. && make -j 4 && make coverage && (rm -rf /app/coverage || true) && mkdir /app/coverage && mv /app/build/coverage* /app/coverage"
 
 ################################################################################################################################################################
 
