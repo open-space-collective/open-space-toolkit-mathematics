@@ -1,24 +1,8 @@
-#!/bin/bash
-
 ################################################################################################################################################################
 
 # @project        Library ▸ Mathematics
-# @file           tools/development/helpers/debug.sh
+# @file           bindings/python/test/geometry/d2/objects/__init__.py
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
-
-################################################################################################################################################################
-
-project_directory="$(git rev-parse --show-toplevel)"
-
-pushd "${project_directory}" > /dev/null
-
-if [[ -z ${1} ]]; then
-    gdb --args ./bin/*.test
-else
-    gdb --args ./bin/*.test --gtest_filter=${1}
-fi
-
-popd > /dev/null
 
 ################################################################################################################################################################
