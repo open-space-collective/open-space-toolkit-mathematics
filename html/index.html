@@ -93,13 +93,13 @@ $(document).ready(function(){initNavTree('index.html','');});
 <h2>Structure</h2>
 <p>The <b>Mathematics</b> library exhibits the following structure:</p>
 <div class="fragment"><div class="line">├── Objects</div><div class="line">│   ├── Vector</div><div class="line">│   ├── Matrix</div><div class="line">│   └── Interval</div><div class="line">├── Geometry</div><div class="line">│   ├── 2D</div><div class="line">|   │   ├── Objects</div><div class="line">│   │   │   ├── Point</div><div class="line">│   │   │   ├── Point Set</div><div class="line">│   │   │   ├── Line</div><div class="line">│   │   │   ├── Line String</div><div class="line">│   │   │   ├── Multi Line String</div><div class="line">│   │   │   └── Polygon</div><div class="line">│   │   ├── Intersection</div><div class="line">│   │   └── Transformations</div><div class="line">│   │       ├── Identity</div><div class="line">│   │       ├── Translation</div><div class="line">│   │       ├── Rotation</div><div class="line">│   │       ├── Reflection</div><div class="line">│   │       ├── Scaling</div><div class="line">│   │       └── Shear</div><div class="line">│   ├── 3D</div><div class="line">|   │   ├── Objects</div><div class="line">│   │   │   ├── Point</div><div class="line">│   │   │   ├── Point Set</div><div class="line">│   │   │   ├── Line</div><div class="line">│   │   │   ├── Ray</div><div class="line">│   │   │   ├── Segment</div><div class="line">│   │   │   ├── Line String</div><div class="line">│   │   │   ├── Polygon</div><div class="line">│   │   │   ├── Plane</div><div class="line">│   │   │   ├── Cuboid</div><div class="line">│   │   │   ├── Sphere</div><div class="line">│   │   │   ├── Ellipsoid</div><div class="line">│   │   │   ├── Cone</div><div class="line">│   │   │   ├── Pyramid</div><div class="line">│   │   │   └── Composite</div><div class="line">│   │   ├── Intersection</div><div class="line">│   │   └── Transformations</div><div class="line">│   │       ├── Identity</div><div class="line">│   │       ├── Translation</div><div class="line">│   │       ├── Rotations</div><div class="line">│   │       │   ├── Quaternion</div><div class="line">│   │       │   ├── Euler Angle</div><div class="line">│   │       │   ├── Rotation Vector</div><div class="line">│   │       │   └── Rotation Matrix</div><div class="line">│   │       ├── Reflection</div><div class="line">│   │       ├── Scaling</div><div class="line">│   │       └── Shear</div><div class="line">├── Dynamics</div><div class="line">│   ├── State</div><div class="line">│   ├── Solvers</div><div class="line">│   │   ├── Runge–Kutta 4 (RK4)</div><div class="line">│   │   ├── Dormand–Prince 5 (DP5)</div><div class="line">│   │   └── Runge–Kutta–Fehlberg 78 (F78)</div><div class="line">│   └── Systems</div><div class="line">├── Curve Fitting</div><div class="line">│   ├── Interpolation</div><div class="line">│   │   ├── Linear</div><div class="line">│   │   ├── Cubic Spline</div><div class="line">│   │   └── Lagrange</div><div class="line">│   └── Smoothing</div><div class="line">├── Optimization</div><div class="line">│   ├── Problem</div><div class="line">│   └── Algorithms</div><div class="line">│       ├── Gradient Descent</div><div class="line">│       └── Evolutionary</div><div class="line">│           ├── Genetic</div><div class="line">│           ├── Differential Evolution</div><div class="line">│           └── Swarm</div><div class="line">└── Statistics</div></div><!-- fragment --><h2>Documentation</h2>
-<p>The documentation can be found here:</p>
+<p>Documentation is available here:</p>
 <ul>
-<li><a href="https://open-space-collective.github.io/library-mathematics">C++</a></li>
+<li><a href="https://open-space-collective.github.io/library-io">C++</a></li>
 <li><a href="./bindings/python/docs">Python</a></li>
 </ul>
 <h2>Tutorials</h2>
-<p>Various tutorials are available here:</p>
+<p>Tutorials are available here:</p>
 <ul>
 <li><a href="./tutorials/cpp">C++</a></li>
 <li><a href="./tutorials/python">Python</a></li>
@@ -178,29 +178,33 @@ $(document).ready(function(){initNavTree('index.html','');});
 <td><b>Composite</b> </td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
 </table>
 <h2>Setup</h2>
-<h3>Development</h3>
-<p>Using <a href="https://www.docker.com">Docker</a> is recommended, as the development tools and dependencies setup is described in the provided <a href="./tools/development/docker/Dockerfile">Dockerfile</a>.</p>
-<p>Instructions to install Docker can be found <a href="https://docs.docker.com/install/">here</a>.</p>
-<p>Start the development environment:</p>
-<div class="fragment"><div class="line">./tools/development/start.sh</div></div><!-- fragment --><p>This will also build the <code>openspacecollective/library-mathematics:latest</code> Docker image, if not already.</p>
-<p>If installing Docker is not an option, please manually install the development tools (GCC, CMake) and the dependencies. The procedure should be similar to the one described in the <a href="./tools/development/docker/Dockerfile">Dockerfile</a>.</p>
+<h3>Development Environment</h3>
+<p>Using <a href="https://www.docker.com">Docker</a> for development is recommended, to simplify the installation of the necessary build tools and dependencies. Instructions on how to install Docker are available <a href="https://docs.docker.com/install/">here</a>.</p>
+<p>To start the development environment:</p>
+<div class="fragment"><div class="line">make start-development</div></div><!-- fragment --><p>This will:</p>
+<ol type="1">
+<li>Build the <code>openspacecollective/library-mathematics-development</code> Docker image.</li>
+<li>Create a development environment container with local source files and helper scripts mounted.</li>
+<li>Start a <code>bash</code> shell from the <code>./build</code> working directory.</li>
+</ol>
+<p>If installing Docker is not an option, you can manually install the development tools (GCC, CMake) and all required dependencies, by following a procedure similar to the one described in the <a href="./docker/development/Dockerfile">Development Dockerfile</a>.</p>
 <h3>Build</h3>
-<p>From the development environment:</p>
-<div class="fragment"><div class="line">./build.sh</div></div><!-- fragment --><p>Manually:</p>
-<div class="fragment"><div class="line">mkdir -p build</div><div class="line">cd build</div><div class="line">cmake ..</div><div class="line">make</div></div><!-- fragment --><h3>Test</h3>
-<p>From the development environment:</p>
-<div class="fragment"><div class="line">./test.sh</div></div><!-- fragment --><p>Manually:</p>
-<div class="fragment"><div class="line">./bin/library-mathematics.test</div></div><!-- fragment --><h2>Dependencies</h2>
-<p>The <b>Mathematics</b> library internally uses the following dependencies:</p>
+<p>From the <code>./build</code> directory:</p>
+<div class="fragment"><div class="line">cmake ..</div><div class="line">make</div></div><!-- fragment --><p><em>Tip: <code>helpers/build.sh</code> simplifies building from within the development environment.</em></p>
+<h3>Test</h3>
+<p>To start a container to build and run the tests:</p>
+<div class="fragment"><div class="line">make test</div></div><!-- fragment --><p>Or to run them manually:</p>
+<div class="fragment"><div class="line">./bin/library-mathematics.test</div></div><!-- fragment --><p><em>Tip: <code>helpers/test.sh</code> simplifies running tests from within the development environment.</em></p>
+<h2>Dependencies</h2>
 <table class="doxtable">
 <tr>
 <th>Name </th><th>Version </th><th>License </th><th>Link  </th></tr>
 <tr>
-<td>Boost </td><td>1.67.0 </td><td>Boost Software License </td><td><a href="https://www.boost.org">boost.org</a> </td></tr>
+<td>Boost </td><td>1.69.0 </td><td>Boost Software License </td><td><a href="https://www.boost.org">boost.org</a> </td></tr>
 <tr>
-<td>Eigen </td><td>3.3.4 </td><td>MPL2 </td><td><a href="http://eigen.tuxfamily.org/index.php">eigen.tuxfamily.org</a> </td></tr>
+<td>Eigen </td><td>3.3.7 </td><td>MPL2 </td><td><a href="http://eigen.tuxfamily.org/index.php">eigen.tuxfamily.org</a> </td></tr>
 <tr>
-<td>Geometric Tools Engine </td><td>3.14 </td><td>Boost Software License </td><td><a href="https://www.geometrictools.com">geometrictools.com</a> </td></tr>
+<td>Geometric Tools Engine </td><td>3.28 </td><td>Boost Software License </td><td><a href="https://www.geometrictools.com">geometrictools.com</a> </td></tr>
 <tr>
 <td>Core </td><td>master </td><td>Apache License 2.0 </td><td><a href="https://github.com/open-space-collective/library-core">github.com/open-space-collective/library-core</a> </td></tr>
 </table>
