@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Transformation.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -29,7 +29,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformation 
 
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
-        
+
         .def("isDefined", &Transformation::isDefined)
 
         .def("getType", &Transformation::getType)
@@ -37,7 +37,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformation 
         .def("getInverse", &Transformation::getInverse)
         .def("applyToPoint", + [] (const Transformation& aTransformation, const Point& aPoint) -> Point { return aTransformation.applyTo(aPoint) ; })
         .def("applyToVector", + [] (const Transformation& aTransformation, const Vector3d& aVector) -> Vector3d { return aTransformation.applyTo(aVector) ; })
-        
+
         .def("Undefined", &Transformation::Undefined).staticmethod("Undefined")
         .def("Identity", &Transformation::Identity).staticmethod("Identity")
         .def("Translation", &Transformation::Translation).staticmethod("Translation")
@@ -45,14 +45,14 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformation 
         // .def("Rotation", +[] (const RotationVector& aRotationVector) -> Transformation { return Transformation::Rotation(aRotationVector) ; } )
         .def("Rotation", +[] (const RotationMatrix& aRotationMatrix) -> Transformation { return Transformation::Rotation(aRotationMatrix) ; } )
         .def("RotationAround", &Transformation::RotationAround).staticmethod("RotationAround")
-        
+
         .def("StringFromType", &Transformation::StringFromType).staticmethod("StringFromType")
         .def("TypeOfMatrix", &Transformation::TypeOfMatrix).staticmethod("TypeOfMatrix")
 
     ;
 
     enum_<Transformation::Type>("Type")
-    
+
         .value("Undefined", Transformation::Type::Undefined)
         .value("Identity", Transformation::Type::Identity)
         .value("Translation", Transformation::Type::Translation)
@@ -61,7 +61,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformation 
         .value("Reflection", Transformation::Type::Reflection)
         .value("Shear", Transformation::Type::Shear)
         .value("Affine", Transformation::Type::Affine)
-    
+
     ;
 
 }

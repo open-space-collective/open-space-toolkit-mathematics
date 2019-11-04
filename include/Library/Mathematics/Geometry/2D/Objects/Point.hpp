@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/2D/Objects/Point.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -165,7 +165,7 @@ class Point : public Object
         /// @param              [in] aPoint A point
         /// @return             Distance to point
 
-        Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;    
+        Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;
 
         /// @brief              Get string representation
         ///

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -45,13 +45,13 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
     using library::math::geom::Angle ;
     using library::math::geom::d3::trf::rot::RotationVector ;
-    
+
     {
 
         EXPECT_TRUE(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0)) == RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0))) ;
         EXPECT_TRUE(RotationVector({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0)) == RotationVector({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0))) ;
         EXPECT_TRUE(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(20.0)) == RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(20.0))) ;
-        
+
         EXPECT_TRUE(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) == RotationVector({ 0.0, 0.0, +1.0 }, Angle::Degrees(+30.0))) ;
         EXPECT_TRUE(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) == RotationVector({ 0.0, 0.0, -1.0 }, Angle::Degrees(-30.0))) ;
 
@@ -97,13 +97,13 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
         EXPECT_TRUE(RotationVector::Undefined() != RotationVector::Undefined()) ;
 
     }
-    
+
     {
 
         EXPECT_FALSE(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0)) != RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0))) ;
         EXPECT_FALSE(RotationVector({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0)) != RotationVector({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0))) ;
         EXPECT_FALSE(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(20.0)) != RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(20.0))) ;
-        
+
         EXPECT_FALSE(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) != RotationVector({ 0.0, 0.0, +1.0 }, Angle::Degrees(+30.0))) ;
         EXPECT_FALSE(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) != RotationVector({ 0.0, 0.0, -1.0 }, Angle::Degrees(-30.0))) ;
 
@@ -121,7 +121,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
     using library::math::geom::Angle ;
     using library::math::geom::d3::trf::rot::RotationVector ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -140,7 +140,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
     using library::math::obj::Vector3d ;
     using library::math::geom::Angle ;
     using library::math::geom::d3::trf::rot::RotationVector ;
-    
+
     {
 
         EXPECT_TRUE(RotationVector({ 1.0, 0.0, 0.0 }, Angle::Degrees(10.0)).isDefined()) ;
@@ -192,7 +192,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
         EXPECT_EQ(Angle::Degrees(-30.0), RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(-30.0)).getAngle()) ;
         EXPECT_EQ(Angle::Degrees(+30.0), RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(+30.0)).getAngle()) ;
-        
+
         EXPECT_EQ(Angle::Degrees(-90.0), RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(-90.0)).getAngle()) ;
         EXPECT_EQ(Angle::Degrees(+90.0), RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(+90.0)).getAngle()) ;
 
@@ -221,7 +221,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
         EXPECT_EQ("[0.0, 0.0, 1.0] : -30.0 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(-30.0)).toString()) ;
         EXPECT_EQ("[0.0, 0.0, 1.0] : 30.0 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(+30.0)).toString()) ;
-        
+
         EXPECT_EQ("[0.0, 0.0, 1.0] : -90.0 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(-90.0)).toString()) ;
         EXPECT_EQ("[0.0, 0.0, 1.0] : 90.0 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(+90.0)).toString()) ;
 
@@ -236,7 +236,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
         EXPECT_EQ("[0.000, 0.000, 1.000] : -30.000 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(-30.0)).toString(3)) ;
         EXPECT_EQ("[0.000, 0.000, 1.000] : 30.000 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(+30.0)).toString(3)) ;
-        
+
         EXPECT_EQ("[0.000, 0.000, 1.000] : -90.000 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(-90.0)).toString(3)) ;
         EXPECT_EQ("[0.000, 0.000, 1.000] : 90.000 [deg]", RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(+90.0)).toString(3)) ;
 
@@ -257,7 +257,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 {
 
     using library::math::geom::d3::trf::rot::RotationVector ;
-    
+
     {
 
         EXPECT_NO_THROW(RotationVector::Undefined()) ;
@@ -272,7 +272,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
     using library::math::geom::Angle ;
     using library::math::geom::d3::trf::rot::RotationVector ;
-    
+
     {
 
         EXPECT_NO_THROW(RotationVector::Unit()) ;
@@ -288,7 +288,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
     using library::math::obj::Vector3d ;
     using library::math::geom::Angle ;
     using library::math::geom::d3::trf::rot::RotationVector ;
-    
+
     {
 
         EXPECT_NO_THROW(RotationVector::X(Angle::Degrees(45.0))) ;
@@ -314,7 +314,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
     using library::math::obj::Vector3d ;
     using library::math::geom::Angle ;
     using library::math::geom::d3::trf::rot::RotationVector ;
-    
+
     {
 
         EXPECT_NO_THROW(RotationVector::Y(Angle::Degrees(45.0))) ;
@@ -340,7 +340,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
     using library::math::obj::Vector3d ;
     using library::math::geom::Angle ;
     using library::math::geom::d3::trf::rot::RotationVector ;
-    
+
     {
 
         EXPECT_NO_THROW(RotationVector::Z(Angle::Degrees(45.0))) ;
@@ -367,7 +367,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
     using library::math::geom::Angle ;
     using library::math::geom::d3::trf::rot::Quaternion ;
     using library::math::geom::d3::trf::rot::RotationVector ;
-    
+
     {
 
         EXPECT_EQ(RotationVector::Unit(), RotationVector::Quaternion(Quaternion::Unit())) ;

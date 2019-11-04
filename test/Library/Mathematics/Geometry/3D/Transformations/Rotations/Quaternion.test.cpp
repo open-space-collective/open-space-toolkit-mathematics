@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -59,7 +59,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Equa
 {
 
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_TRUE(Quaternion(1.0, 0.0, 0.0, 0.0, Quaternion::Format::XYZS) == Quaternion(1.0, 0.0, 0.0, 0.0, Quaternion::Format::XYZS)) ;
@@ -117,7 +117,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, NotE
         EXPECT_TRUE(Quaternion::Undefined() != Quaternion::Undefined()) ;
 
     }
-    
+
     {
 
         EXPECT_FALSE(Quaternion(1.0, 0.0, 0.0, 0.0, Quaternion::Format::XYZS) != Quaternion(1.0, 0.0, 0.0, 0.0, Quaternion::Format::XYZS)) ;
@@ -143,7 +143,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, NotE
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -156,7 +156,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, NotE
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -169,7 +169,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, NotE
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -182,7 +182,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, NotE
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -195,7 +195,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Stre
 {
 
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -212,7 +212,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, IsDe
 {
 
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0).isDefined()) ;
@@ -240,7 +240,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, IsUn
 {
 
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0).isUnitary()) ;
@@ -269,7 +269,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, IsNe
 
     using library::math::geom::Angle ;
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0).isNear(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0), Angle::Zero())) ;
@@ -311,7 +311,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, X)
 {
 
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_EQ(1.0, Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).x()) ;
@@ -330,7 +330,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Y)
 {
 
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_EQ(2.0, Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).y()) ;
@@ -349,7 +349,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Z)
 {
 
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_EQ(3.0, Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).z()) ;
@@ -368,7 +368,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, S)
 {
 
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_EQ(4.0, Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).s()) ;
@@ -388,7 +388,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, GetV
 
     using library::math::obj::Vector3d ;
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_EQ(Vector3d(1.0, 2.0, 3.0), Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).getVectorPart()) ;
@@ -407,7 +407,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, GetS
 {
 
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_EQ(4.0, Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).getScalarPart()) ;
@@ -426,7 +426,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, GetS
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -439,7 +439,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 {
 
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_EQ(Quaternion::XYZS(-1.0, -2.0, -3.0, +4.0), Quaternion::XYZS(+1.0, +2.0, +3.0, +4.0).toConjugate()) ;
@@ -462,7 +462,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -475,7 +475,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -488,7 +488,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -501,7 +501,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -514,7 +514,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -527,7 +527,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -540,7 +540,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -553,7 +553,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -567,7 +567,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToVe
 
     using library::math::obj::Vector4d ;
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_EQ(Vector4d(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).toVector(Quaternion::Format::XYZS)) ;
@@ -587,7 +587,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToSt
 {
 
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_EQ("[0.0, 0.0, 0.0, 1.0]", Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).toString(Quaternion::Format::XYZS)) ;
@@ -621,7 +621,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToSt
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -634,7 +634,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToSt
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -647,7 +647,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToSt
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -660,7 +660,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToSt
 // {
 
 //     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
 //     {
 
 //         FAIL() ;
@@ -674,12 +674,12 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Angu
 
     using library::math::geom::Angle ;
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_EQ(Angle::Zero(), Quaternion::Unit().angularDifferenceWith(Quaternion::Unit())) ;
         EXPECT_EQ(Angle::Pi(), Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).angularDifferenceWith(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0))) ;
-        
+
         EXPECT_EQ(Angle::Zero(), Quaternion::XYZS(-0.707716822367268, -0.000523120993000198, -0.706495803466267, -0.000552600541000209).angularDifferenceWith(Quaternion::XYZS(0.707716822554873, 0.000523120132547009, 0.706495803279188, 0.000552600268546972))) ;
 
     }
@@ -698,7 +698,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Unde
 {
 
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_NO_THROW(Quaternion::Undefined()) ;
@@ -712,7 +712,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Unit
 {
 
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_NO_THROW(Quaternion::Unit()) ;
@@ -726,7 +726,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, XYZS
 {
 
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_NO_THROW(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)) ;
@@ -743,7 +743,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Rota
     using library::math::geom::Angle ;
     using library::math::geom::d3::trf::rot::RotationVector ;
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_TRUE(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS).isNear(Quaternion::RotationVector(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(0.0))), Angle::Radians(Real::Epsilon()))) ;
@@ -768,7 +768,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Rota
     using library::math::geom::d3::trf::rot::RotationVector ;
     using library::math::geom::d3::trf::rot::RotationMatrix ;
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_TRUE(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS).isNear(Quaternion::RotationMatrix(RotationMatrix::Unit()), Angle::Radians(Real::Epsilon()))) ;
@@ -822,7 +822,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Pars
 {
 
     using library::math::geom::d3::trf::rot::Quaternion ;
-    
+
     {
 
         EXPECT_NO_THROW(Quaternion::Parse("[0.0, 0.0, 0.0, 1.0]", Quaternion::Format::XYZS)) ;

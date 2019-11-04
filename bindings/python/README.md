@@ -1,5 +1,4 @@
-Library ▸ Mathematics ▸ Bindings ▸ Python
-=========================================
+# Library ▸ Mathematics ▸ Bindings ▸ Python
 
 Geometry, curve fitting, optimization.
 

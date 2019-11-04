@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/2D/Object.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -106,7 +106,7 @@ class Object
         ///
         /// @param              [in] anObject An object
         /// @return             True if object intersects another object
-        
+
         virtual bool            intersects                                  (   const   Object&                     anObject                                    ) const ;
 
         /// @brief              Check if object contains another object

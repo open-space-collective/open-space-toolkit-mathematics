@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/2D/Objects/LineString.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -19,7 +19,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_LineStr
     using namespace boost::python ;
 
     using library::core::ctnr::Array ;
-    
+
     using library::math::geom::d2::Object ;
     using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::objects::LineString ;
@@ -40,7 +40,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_LineStr
         .def("getPointClosestTo", &LineString::getPointClosestTo)
         .def("toString", &LineString::toString, LibraryMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads())
         .def("applyTransformation", &LineString::applyTransformation)
-        
+
         .def("Empty", &LineString::Empty).staticmethod("Empty")
 
         .def("__len__", &LineString::getPointCount)

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Cuboid.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -141,7 +141,7 @@ class Cuboid : public Object
         ///
         /// @param              [in] aPoint A point
         /// @return             True if cuboid intersects point
-        
+
         bool                    intersects                                  (   const   Point&                      aPoint                                      ) const ;
 
         /// @brief              Check if cuboid intersects point set
@@ -154,7 +154,7 @@ class Cuboid : public Object
         ///
         /// @param              [in] aPointSet A point set
         /// @return             True if cuboid intersects point set
-        
+
         bool                    intersects                                  (   const   PointSet&                   aPointSet                                   ) const ;
 
         /// @brief              Check if cuboid intersects line
@@ -167,7 +167,7 @@ class Cuboid : public Object
         ///
         /// @param              [in] aLine A line
         /// @return             True if cuboid intersects line
-        
+
         bool                    intersects                                  (   const   Line&                       aLine                                       ) const ;
 
         /// @brief              Check if cuboid intersects ray
@@ -180,7 +180,7 @@ class Cuboid : public Object
         ///
         /// @param              [in] aRay A ray
         /// @return             True if cuboid intersects ray
-        
+
         bool                    intersects                                  (   const   Ray&                        aRay                                        ) const ;
 
         /// @brief              Check if cuboid intersects segment
@@ -193,7 +193,7 @@ class Cuboid : public Object
         ///
         /// @param              [in] aSegment A segment
         /// @return             True if cuboid intersects segment
-        
+
         bool                    intersects                                  (   const   Segment&                    aSegment                                    ) const ;
 
         /// @brief              Check if cuboid intersects plane
@@ -206,7 +206,7 @@ class Cuboid : public Object
         ///
         /// @param              [in] aPlane A plane
         /// @return             True if cuboid intersects plane
-        
+
         bool                    intersects                                  (   const   Plane&                      aPlane                                      ) const ;
 
         /// @brief              Check if cuboid intersects sphere
@@ -219,7 +219,7 @@ class Cuboid : public Object
         ///
         /// @param              [in] aSphere A sphere
         /// @return             True if cuboid intersects sphere
-        
+
         bool                    intersects                                  (   const   Sphere&                     aSphere                                     ) const ;
 
         /// @brief              Check if cuboid intersects cuboid
@@ -232,7 +232,7 @@ class Cuboid : public Object
         ///
         /// @param              [in] aCuboid An cuboid
         /// @return             True if cuboid intersects cuboid
-        
+
         bool                    intersects                                  (   const   Cuboid&                     aCuboid                                     ) const ;
 
         /// @brief              Check if cuboid intersects pyramid
@@ -245,7 +245,7 @@ class Cuboid : public Object
         ///
         /// @param              [in] aPyramid A pyramid
         /// @return             True if cuboid intersects pyramid
-        
+
         bool                    intersects                                  (   const   Pyramid&                    aPyramid                                    ) const ;
 
         /// @brief              Check if cuboid contains point

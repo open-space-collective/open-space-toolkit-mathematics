@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Sphere.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -54,7 +54,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, EqualToOperator)
 {
 
     using library::math::geom::d3::objects::Sphere ;
-    
+
     {
 
         EXPECT_TRUE(Sphere({ 1.0, 2.0, 3.0 }, 4.0) == Sphere({ 1.0, 2.0, 3.0 }, 4.0)) ;
@@ -110,7 +110,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, StreamOperator)
 {
 
     using library::math::geom::d3::objects::Sphere ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -127,7 +127,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, IsDefined)
 {
 
     using library::math::geom::d3::objects::Sphere ;
-    
+
     {
 
         EXPECT_TRUE(Sphere({ 0.0, 0.0, 0.0 }, 1.0).isDefined()) ;
@@ -147,7 +147,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, IsUnitary)
 {
 
     using library::math::geom::d3::objects::Sphere ;
-    
+
     {
 
         EXPECT_TRUE(Sphere({ 0.0, 0.0, 0.0 }, 1.0).isUnitary()) ;
@@ -208,7 +208,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Point)
     {
 
         EXPECT_FALSE(Sphere(Point::Origin(), 4.0).intersects(Point::Origin())) ;
-        
+
     }
 
     {
@@ -238,7 +238,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_PointSet)
     {
 
         EXPECT_FALSE(Sphere(Point::Origin(), 4.0).intersects(PointSet::Empty())) ;
-        
+
     }
 
     {
@@ -404,7 +404,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Line)
     }
 
     {
-        
+
         EXPECT_ANY_THROW(Sphere::Undefined().intersects(Line::Undefined())) ;
         EXPECT_ANY_THROW(Sphere(Point::Origin(), 1.0).intersects(Line::Undefined())) ;
         EXPECT_ANY_THROW(Sphere::Undefined().intersects(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
@@ -587,7 +587,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Ray)
     }
 
     {
-        
+
         EXPECT_ANY_THROW(Sphere::Undefined().intersects(Ray::Undefined())) ;
         EXPECT_ANY_THROW(Sphere(Point::Origin(), 1.0).intersects(Ray::Undefined())) ;
         EXPECT_ANY_THROW(Sphere::Undefined().intersects(Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }))) ;
@@ -687,7 +687,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Segment)
     }
 
     {
-        
+
         EXPECT_ANY_THROW(Sphere(Point::Origin(), 1.0).intersects(Segment::Undefined())) ;
 
     }
@@ -737,7 +737,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Plane)
     }
 
     {
-        
+
         EXPECT_ANY_THROW(Sphere::Undefined().intersects(Plane::Undefined())) ;
         EXPECT_ANY_THROW(Sphere(Point::Origin(), 1.0).intersects(Plane::Undefined())) ;
 
@@ -791,7 +791,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Contains_Point)
     {
 
         EXPECT_FALSE(Sphere(Point::Origin(), 4.0).contains(Point::Origin())) ;
-        
+
     }
 
     {
@@ -826,7 +826,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Contains_PointSet)
     {
 
         EXPECT_FALSE(Sphere(Point::Origin(), 4.0).contains(PointSet::Empty())) ;
-        
+
     }
 
     {
@@ -877,7 +877,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, GetCenter)
 
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Sphere ;
-    
+
     {
 
         EXPECT_EQ(Point(1.0, 2.0, 3.0), Sphere({ 1.0, 2.0, 3.0 }, 4.0).getCenter()) ;
@@ -896,7 +896,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, GetRadius)
 {
 
     using library::math::geom::d3::objects::Sphere ;
-    
+
     {
 
         EXPECT_EQ(4.0, Sphere({ 1.0, 2.0, 3.0 }, 4.0).getRadius()) ;
@@ -963,7 +963,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Undefined)
 {
 
     using library::math::geom::d3::objects::Sphere ;
-    
+
     {
 
         EXPECT_NO_THROW(Sphere::Undefined()) ;
@@ -977,7 +977,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Unit)
 {
 
     using library::math::geom::d3::objects::Sphere ;
-    
+
     {
 
         EXPECT_NO_THROW(Sphere::Unit({ 0.0, 0.0, 0.0 })) ;

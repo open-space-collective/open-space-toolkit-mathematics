@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Objects/Interval.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -19,7 +19,7 @@ inline void                     LibraryMathematicsPy_Objects_Interval       ( )
     using namespace boost::python ;
 
     using library::core::types::Real ;
-    
+
     using library::math::obj::Interval ;
 
     scope in_RealInterval = class_<Interval<Real>>("RealInterval", init<const Real&, const Real&, const Interval<Real>::Type&>())
@@ -42,7 +42,7 @@ inline void                     LibraryMathematicsPy_Objects_Interval       ( )
 
         .def("Undefined", &Interval<Real>::Undefined).staticmethod("Undefined")
         .def("Closed", &Interval<Real>::Closed).staticmethod("Closed")
-    
+
     ;
 
     enum_<Interval<Real>::Type>("Type")

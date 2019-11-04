@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/2D/Objects/Segment.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -156,7 +156,7 @@ class Segment : public Object
         /// @endcode
         ///
         /// @return             Segment second point
-        
+
         Point                   getSecondPoint                              ( ) const ;
 
         /// @brief              Get segment center

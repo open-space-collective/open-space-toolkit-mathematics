@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Sphere.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -130,7 +130,7 @@ class Sphere : public Object
         ///
         /// @param              [in] aPoint A point
         /// @return             True if sphere intersects point
-        
+
         bool                    intersects                                  (   const   Point&                      aPoint                                      ) const ;
 
         /// @brief              Check if sphere intersects point set
@@ -143,7 +143,7 @@ class Sphere : public Object
         ///
         /// @param              [in] aPointSet A point set
         /// @return             True if sphere intersects point set
-        
+
         bool                    intersects                                  (   const   PointSet&                   aPointSet                                   ) const ;
 
         /// @brief              Check if sphere intersects line
@@ -156,7 +156,7 @@ class Sphere : public Object
         ///
         /// @param              [in] aLine A line
         /// @return             True if sphere intersects line
-        
+
         bool                    intersects                                  (   const   Line&                       aLine                                       ) const ;
 
         /// @brief              Check if sphere intersects ray
@@ -169,7 +169,7 @@ class Sphere : public Object
         ///
         /// @param              [in] aRay A ray
         /// @return             True if sphere intersects ray
-        
+
         bool                    intersects                                  (   const   Ray&                        aRay                                        ) const ;
 
         /// @brief              Check if sphere intersects segment
@@ -182,7 +182,7 @@ class Sphere : public Object
         ///
         /// @param              [in] aSegment A segment
         /// @return             True if sphere intersects segment
-        
+
         bool                    intersects                                  (   const   Segment&                    aSegment                                    ) const ;
 
         /// @brief              Check if sphere intersects plane
@@ -195,7 +195,7 @@ class Sphere : public Object
         ///
         /// @param              [in] aPlane A plane
         /// @return             True if sphere intersects plane
-        
+
         bool                    intersects                                  (   const   Plane&                      aPlane                                      ) const ;
 
         /// @brief              Check if sphere intersects ellipsoid
@@ -208,7 +208,7 @@ class Sphere : public Object
         ///
         /// @param              [in] anEllipsoid An ellipsoid
         /// @return             True if sphere intersects ellipsoid
-        
+
         bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
 
         /// @brief              Check if sphere intersects pyramid
@@ -221,7 +221,7 @@ class Sphere : public Object
         ///
         /// @param              [in] aPyramid A pyramid
         /// @return             True if sphere intersects pyramid
-        
+
         bool                    intersects                                  (   const   Pyramid&                    aPyramid                                    ) const ;
 
         /// @brief              Check if sphere intersects cone
@@ -234,7 +234,7 @@ class Sphere : public Object
         ///
         /// @param              [in] aCone A cone
         /// @return             True if sphere intersects cone
-        
+
         bool                    intersects                                  (   const   Cone&                       aCone                                       ) const ;
 
         /// @brief              Check if sphere contains point

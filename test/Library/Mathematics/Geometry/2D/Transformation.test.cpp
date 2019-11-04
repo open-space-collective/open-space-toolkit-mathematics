@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/2D/Transformation.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -96,7 +96,7 @@
 
 // TEST (Library_Mathematics_Geometry_2D_Transformation, IsDefined)
 // {
-    
+
 //     using library::math::geom::d2::Transformation ;
 
 //     {
@@ -109,7 +109,7 @@
 
 // TEST (Library_Mathematics_Geometry_2D_Transformation, GetType)
 // {
-    
+
 //     using library::math::geom::d2::Transformation ;
 
 //     {
@@ -122,7 +122,7 @@
 
 // TEST (Library_Mathematics_Geometry_2D_Transformation, GetMatrix)
 // {
-    
+
 //     using library::math::geom::d2::Transformation ;
 
 //     {
@@ -135,7 +135,7 @@
 
 // TEST (Library_Mathematics_Geometry_2D_Transformation, GetInverse)
 // {
-    
+
 //     using library::math::geom::d2::Transformation ;
 
 //     {
@@ -148,7 +148,7 @@
 
 // TEST (Library_Mathematics_Geometry_2D_Transformation, ApplyTo)
 // {
-    
+
 //     using library::math::geom::d2::Transformation ;
 
 //     {
@@ -161,7 +161,7 @@
 
 // TEST (Library_Mathematics_Geometry_2D_Transformation, Undefined)
 // {
-    
+
 //     using library::math::geom::d2::Transformation ;
 
 //     {
@@ -174,7 +174,7 @@
 
 // TEST (Library_Mathematics_Geometry_2D_Transformation, Identity)
 // {
-    
+
 //     using library::math::geom::d2::Transformation ;
 
 //     {
@@ -187,7 +187,7 @@
 
 // TEST (Library_Mathematics_Geometry_2D_Transformation, Translation)
 // {
-    
+
 //     using library::math::geom::d2::Transformation ;
 
 //     {
@@ -200,7 +200,7 @@
 
 // TEST (Library_Mathematics_Geometry_2D_Transformation, Rotation)
 // {
-    
+
 //     using library::math::geom::d2::Transformation ;
 
 //     {
@@ -215,7 +215,7 @@ TEST (Library_Mathematics_Geometry_2D_Transformation, RotationAround)
 {
 
     using library::core::types::String ;
-    
+
     using library::math::geom::Angle ;
     using library::math::geom::d2::objects::Point ;
     using library::math::geom::d2::Transformation ;
@@ -230,7 +230,7 @@ TEST (Library_Mathematics_Geometry_2D_Transformation, RotationAround)
         Point point = { 0.0, 0.0 } ;
 
         point.applyTransformation(transformation) ;
-        
+
         const Point rotatedPoint_ref = { 0.0, 0.0 } ;
 
         EXPECT_TRUE(point.isNear(rotatedPoint_ref, 1e-11)) << String::Format("{} ~ {}", point.toString(), rotatedPoint_ref.toString()) ;
@@ -247,7 +247,7 @@ TEST (Library_Mathematics_Geometry_2D_Transformation, RotationAround)
         Point point = { 1.0, 0.0 } ;
 
         point.applyTransformation(transformation) ;
-        
+
         const Point rotatedPoint_ref = { 1.0, 0.0 } ;
 
         EXPECT_TRUE(point.isNear(rotatedPoint_ref, 1e-11)) << String::Format("{} ~ {}", point.toString(), rotatedPoint_ref.toString()) ;
@@ -264,7 +264,7 @@ TEST (Library_Mathematics_Geometry_2D_Transformation, RotationAround)
         Point point = { 1.0, 0.0 } ;
 
         point.applyTransformation(transformation) ;
-        
+
         const Point rotatedPoint_ref = { +0.70710678118, +0.70710678118 } ;
 
         EXPECT_TRUE(point.isNear(rotatedPoint_ref, 1e-11)) << String::Format("{} ~ {}", point.toString(), rotatedPoint_ref.toString()) ;
@@ -281,7 +281,7 @@ TEST (Library_Mathematics_Geometry_2D_Transformation, RotationAround)
         Point point = { 1.0, 0.0 } ;
 
         point.applyTransformation(transformation) ;
-        
+
         const Point rotatedPoint_ref = { +0.70710678118, -0.70710678118 } ;
 
         EXPECT_TRUE(point.isNear(rotatedPoint_ref, 1e-11)) << String::Format("{} ~ {}", point.toString(), rotatedPoint_ref.toString()) ;
@@ -303,7 +303,7 @@ TEST (Library_Mathematics_Geometry_2D_Transformation, RotationAround)
 
 // TEST (Library_Mathematics_Geometry_2D_Transformation, StringFromType)
 // {
-    
+
 //     using library::math::geom::d2::Transformation ;
 
 //     {
@@ -316,7 +316,7 @@ TEST (Library_Mathematics_Geometry_2D_Transformation, RotationAround)
 
 // TEST (Library_Mathematics_Geometry_2D_Transformation, TypeOfMatrix)
 // {
-    
+
 //     using library::math::geom::d2::Transformation ;
 
 //     {

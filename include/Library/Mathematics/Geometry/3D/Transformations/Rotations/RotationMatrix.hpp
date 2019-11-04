@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -254,7 +254,7 @@ class RotationMatrix
         ///
         /// @param              [in] aRotationAngle A rotation angle
         /// @return             Rotation matrix
-        
+
         static RotationMatrix   RX                                          (   const   Angle&                      aRotationAngle                              ) ;
 
         /// @brief              Constructs a rotation matrix representing a rotation around the Y-axis
@@ -265,7 +265,7 @@ class RotationMatrix
         ///
         /// @param              [in] aRotationAngle A rotation angle
         /// @return             Rotation matrix
-        
+
         static RotationMatrix   RY                                          (   const   Angle&                      aRotationAngle                              ) ;
 
         /// @brief              Constructs a rotation matrix representing a rotation around the Z-axis
@@ -276,7 +276,7 @@ class RotationMatrix
         ///
         /// @param              [in] aRotationAngle A rotation angle
         /// @return             Rotation matrix
-        
+
         static RotationMatrix   RZ                                          (   const   Angle&                      aRotationAngle                              ) ;
 
         /// @brief              Constructs a rotation matrix from row vectors

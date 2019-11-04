@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/2D/Objects/LineString.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -52,7 +52,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, EqualToOperator)
 {
 
     using library::math::geom::d2::objects::LineString ;
-    
+
     {
 
         EXPECT_TRUE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) == LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } })) ;
@@ -68,7 +68,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, EqualToOperator)
         EXPECT_FALSE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) == LineString({ { 0.0, 1.0 }, { 0.0, 2.0 }, { 0.0, 0.0 } })) ;
         EXPECT_FALSE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) == LineString({ { 0.0, 2.0 }, { 0.0, 0.0 }, { 0.0, 1.0 } })) ;
         EXPECT_FALSE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) == LineString({ { 0.0, 2.0 }, { 0.0, 1.0 }, { 0.0, 0.0 } })) ;
-        
+
         EXPECT_FALSE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) == LineString({ { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } })) ;
 
         EXPECT_FALSE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) == LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 3.0 } })) ;
@@ -104,7 +104,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, NotEqualToOperator)
         EXPECT_TRUE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) != LineString({ { 0.0, 1.0 }, { 0.0, 2.0 }, { 0.0, 0.0 } })) ;
         EXPECT_TRUE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) != LineString({ { 0.0, 2.0 }, { 0.0, 0.0 }, { 0.0, 1.0 } })) ;
         EXPECT_TRUE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) != LineString({ { 0.0, 2.0 }, { 0.0, 1.0 }, { 0.0, 0.0 } })) ;
-        
+
         EXPECT_TRUE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) != LineString({ { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } })) ;
 
         EXPECT_TRUE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) != LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 3.0 } })) ;
@@ -124,7 +124,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, StreamOperator)
 {
 
     using library::math::geom::d2::objects::LineString ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -141,7 +141,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, IsDefined)
 {
 
     using library::math::geom::d2::objects::LineString ;
-    
+
     {
 
         EXPECT_TRUE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).isDefined()) ;
@@ -161,7 +161,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, IsEmpty)
 {
 
     using library::math::geom::d2::objects::LineString ;
-    
+
     {
 
         EXPECT_FALSE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).isEmpty()) ;
@@ -181,13 +181,13 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, IsNear)
 {
 
     using library::core::types::Real ;
-    
+
     using library::math::geom::d2::objects::LineString ;
-    
+
     {
 
         EXPECT_TRUE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).isNear(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }), Real::Epsilon())) ;
-        
+
         EXPECT_TRUE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).isNear(LineString({ { 0.0, Real::Epsilon() }, { Real::Epsilon(), 1.0 }, { 1.0, 0.0 } }), Real::Epsilon())) ;
 
     }
@@ -220,7 +220,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, AccessPointAt)
         EXPECT_EQ(Point(0.0, 1.0), LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 }, { 0.0, 0.0 } }).accessPointAt(1)) ;
         EXPECT_EQ(Point(1.0, 0.0), LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 }, { 0.0, 0.0 } }).accessPointAt(2)) ;
         EXPECT_EQ(Point(0.0, 0.0), LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 }, { 0.0, 0.0 } }).accessPointAt(3)) ;
-        
+
         EXPECT_ANY_THROW(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 }, { 0.0, 0.0 } }).accessPointAt(5)) ;
 
     }
@@ -342,7 +342,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, Empty)
 {
 
     using library::math::geom::d2::objects::LineString ;
-    
+
     {
 
         EXPECT_NO_THROW(LineString::Empty()) ;
@@ -357,7 +357,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, Segment)
 
     using library::math::geom::d2::objects::Segment ;
     using library::math::geom::d2::objects::LineString ;
-    
+
     {
 
         EXPECT_EQ(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 } }), LineString::Segment(Segment({ 0.0, 0.0 }, { 0.0, 1.0 }))) ;

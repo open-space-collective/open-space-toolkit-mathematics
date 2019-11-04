@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/2D/Objects/MultiPolygon.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -57,7 +57,7 @@ class MultiPolygon::Impl
     public:
 
                                 Impl                                        ( ) ;
-                                
+
                                 Impl                                        (   const   Array<Polygon>&             aPolygonArray                               ) ;
 
                                 ~Impl                                       ( ) = default ;
@@ -67,7 +67,7 @@ class MultiPolygon::Impl
         bool                    isDefined                                   ( ) const ;
 
         bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
-        
+
         bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
 
         Size                    getPolygonCount                             ( ) const ;
@@ -78,7 +78,7 @@ class MultiPolygon::Impl
 
         String                  toString                                    (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const ;
-        
+
         void                    applyTransformation                         (   const   Transformation&             aTransformation                             ) ;
 
     private:
@@ -138,11 +138,11 @@ bool                            MultiPolygon::Impl::contains                (   
 {
 
     (void) aPointSet ;
-    
+
     throw library::core::error::runtime::ToBeImplemented("MultiPolygon::contains (PointSet&)") ;
 
     return false ;
-    
+
 }
 
 Size                            MultiPolygon::Impl::getPolygonCount         ( ) const
@@ -159,12 +159,12 @@ Size                            MultiPolygon::Impl::getPolygonCount         ( ) 
 //     {
 
 //         Array<Point> outerRing =
-//         Array<Array<Point>> innerRings = 
+//         Array<Array<Point>> innerRings =
 
 //         const Polygon polygon = { outerRing, innerRings } ;
 
 //         polygons.add(polygon) ;
-    
+
 //     }
 
 //     return polygons ;
@@ -295,7 +295,7 @@ MultiPolygon::Impl::BoostMultiPolygon MultiPolygon::Impl::BoostMultiPolygonFromP
                                 :   Object(),
                                     implUPtr_(std::make_unique<MultiPolygon::Impl>(aPolygonArray))
 {
-    
+
 }
 
                                 MultiPolygon::MultiPolygon                  (   const   MultiPolygon&               aMultiPolygon                               )
@@ -317,7 +317,7 @@ MultiPolygon&                   MultiPolygon::operator =                    (   
     {
 
         Object::operator = (aMultiPolygon) ;
-        
+
         implUPtr_.reset((aMultiPolygon.implUPtr_ != nullptr) ? new MultiPolygon::Impl(*aMultiPolygon.implUPtr_) : nullptr) ;
 
     }

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Objects/LineString.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -17,7 +17,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_LineStr
     using namespace boost::python ;
 
     using library::core::ctnr::Array ;
-    
+
     using library::math::geom::d3::Object ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::LineString ;
@@ -37,7 +37,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_LineStr
         .def("getPointCount", &LineString::getPointCount)
         .def("getPointClosestTo", &LineString::getPointClosestTo)
         .def("applyTransformation", &LineString::applyTransformation)
-        
+
         .def("Empty", &LineString::Empty).staticmethod("Empty")
 
         .def("__iter__", boost::python::range(static_cast<LineString::ConstIterator (LineString::*)() const> (&LineString::begin), static_cast<LineString::ConstIterator (LineString::*)() const> (&LineString::end)))

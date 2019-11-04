@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Polygon.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -189,7 +189,7 @@ Size                            Polygon::getEdgeCount                       ( ) 
     {
         throw library::core::error::runtime::Undefined("Polygon") ;
     }
-    
+
     return polygon_.getEdgeCount() ;
 
 }
@@ -201,7 +201,7 @@ Size                            Polygon::getVertexCount                     ( ) 
     {
         throw library::core::error::runtime::Undefined("Polygon") ;
     }
-    
+
     return polygon_.getVertexCount() ;
 
 }
@@ -256,7 +256,7 @@ Array<Polygon::Edge>            Polygon::getEdges                           ( ) 
 
     for (const auto& edge2d : polygon_.getEdges())
     {
-        
+
         const Point2d& firstVertex2d = edge2d.getFirstPoint() ;
         const Point2d& secondVertex2d = edge2d.getSecondPoint() ;
 
@@ -320,9 +320,9 @@ void                            Polygon::applyTransformation                (   
     }
 
     // polygon_ = aTransformation.applyTo(polygon_) ;
-    
+
     origin_ = aTransformation.applyTo(origin_) ;
-    
+
     xAxis_ = aTransformation.applyTo(xAxis_) ;
     yAxis_ = aTransformation.applyTo(yAxis_) ;
 

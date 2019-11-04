@@ -1,6 +1,6 @@
 ################################################################################################################################################################
 
-# @project        Library/Mathematics
+# @project        Library ▸ Mathematics
 # @file           .gitignore
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
@@ -41,6 +41,8 @@ build/
 *.a
 *.exe*
 *.rpm*
+packages/
+coverage/
 
 ## Documentation
 

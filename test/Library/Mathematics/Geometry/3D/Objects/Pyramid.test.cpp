@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Pyramid.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -62,7 +62,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, EqualToOperator)
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
     using library::math::geom::d3::objects::Pyramid ;
-    
+
     {
 
         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
@@ -98,7 +98,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, NotEqualToOperator)
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
     using library::math::geom::d3::objects::Pyramid ;
-    
+
     {
 
         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
@@ -134,7 +134,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, StreamOperator)
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
     using library::math::geom::d3::objects::Pyramid ;
-    
+
     {
 
         testing::internal::CaptureStdout() ;
@@ -157,7 +157,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IsDefined)
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
     using library::math::geom::d3::objects::Pyramid ;
-    
+
     {
 
         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
@@ -183,7 +183,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Intersects_Ellipsoid)
     using library::math::geom::d3::objects::Polygon ;
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Pyramid ;
-    
+
     {
 
         const Polygon base = { { { { -0.1, -0.1 }, { +0.1, -0.1 }, { +0.1, +0.1 }, { -0.1, +0.1 } } }, { 0.0, 0.0, 1.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
@@ -324,7 +324,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, GetBase)
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
     using library::math::geom::d3::objects::Pyramid ;
-    
+
     {
 
         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
@@ -349,7 +349,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, GetApex)
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::Polygon ;
     using library::math::geom::d3::objects::Pyramid ;
-    
+
     {
 
         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
@@ -371,7 +371,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IntersectionWith_Ellipsoi
 {
 
     using library::core::types::Real ;
-    
+
     using library::math::obj::Vector3d ;
     using library::math::geom::d3::objects::Point ;
     using library::math::geom::d3::objects::LineString ;
@@ -379,7 +379,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IntersectionWith_Ellipsoi
     using library::math::geom::d3::objects::Ellipsoid ;
     using library::math::geom::d3::objects::Pyramid ;
     using library::math::geom::d3::Intersection ;
-    
+
     {
 
         const Polygon base = { { { { -0.1, -0.1 }, { +0.1, -0.1 }, { +0.1, +0.1 }, { -0.1, +0.1 } } }, { 0.0, 0.0, 1.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
@@ -399,7 +399,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IntersectionWith_Ellipsoi
 
         EXPECT_EQ(8, intersectionLineString.getPointCount()) ;
 
-        const LineString referenceLineString = 
+        const LineString referenceLineString =
         {
             {
                 { -0.505129425743498, -0.505129425743498, 5.05129425743498 },
@@ -471,7 +471,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, ApplyTransformation)
 
         EXPECT_TRUE(pyramid.getBase().isNear(referencePyramid.getBase(), Real::Epsilon())) << referencePyramid.getBase() << pyramid.getBase() ;
         EXPECT_TRUE(pyramid.getApex().isNear(referencePyramid.getApex(), Real::Epsilon())) << referencePyramid.getApex().toString() << pyramid.getApex().toString() ;
-        
+
     }
 
     {
@@ -491,7 +491,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Undefined)
 {
 
     using library::math::geom::d3::objects::Pyramid ;
-    
+
     {
 
         EXPECT_NO_THROW(Pyramid::Undefined()) ;

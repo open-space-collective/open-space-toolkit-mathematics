@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/2D/Objects/Polygon.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -35,7 +35,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Polygon
 
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
-        
+
         .def("isDefined", &Polygon::isDefined)
         .def("intersectsPolygon", +[] (const Polygon& aPolygon, const Polygon& anotherPolygon) -> bool { return aPolygon.intersects(anotherPolygon) ; })
         .def("containsPoint", +[] (const Polygon& aPolygon, const Point& aPoint) -> bool { return aPolygon.contains(aPoint) ; })
@@ -53,7 +53,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Polygon
         .def("toString", &Polygon::toString, LibraryMathematicsPy_Geometry_2D_Objects_Polygon_toString_overloads())
         // .def("unionWith", &Polygon::unionWith)
         .def("applyTransformation", &Polygon::applyTransformation)
-        
+
         .def("Undefined", &Polygon::Undefined).staticmethod("Undefined")
 
     ;

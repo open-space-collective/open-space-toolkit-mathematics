@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Cone.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -247,7 +247,7 @@ Intersection                    Cone::intersectionWith                      (   
 
                     if (!secondIntersectionPointAdded)
                     {
-                        
+
                         secondIntersectionPoints.add(point) ;
 
                         secondIntersectionPointAdded = true ;
@@ -372,7 +372,7 @@ void                            Cone::print                                 (   
     displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
-        
+
 void                            Cone::applyTransformation                   (   const   Transformation&             aTransformation                             )
 {
 

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/Cuboid.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -112,7 +112,7 @@ bool                            Cuboid::operator ==                         (   
                 }
 
             }
-            
+
         }
         else if (((axes_[0] == aCuboid.axes_[1]) || (axes_[0] == -aCuboid.axes_[1])) && (extent_[0] == aCuboid.extent_[1]))
         {
@@ -135,7 +135,7 @@ bool                            Cuboid::operator ==                         (   
                 }
 
             }
-            
+
         }
         else if (((axes_[0] == aCuboid.axes_[2]) || (axes_[0] == -aCuboid.axes_[2])) && (extent_[0] == aCuboid.extent_[2]))
         {
@@ -158,7 +158,7 @@ bool                            Cuboid::operator ==                         (   
                 }
 
             }
-            
+
         }
 
     }
@@ -211,12 +211,12 @@ bool                            Cuboid::intersects                          (   
 
 bool                            Cuboid::intersects                          (   const   PointSet&                   aPointSet                                   ) const
 {
-    
+
     if (!this->isDefined())
     {
         throw library::core::error::runtime::Undefined("Cuboid") ;
     }
-    
+
     return (!aPointSet.isEmpty()) && std::any_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
 
 }
@@ -340,7 +340,7 @@ bool                            Cuboid::contains                            (   
     {
         throw library::core::error::runtime::Undefined("Cuboid") ;
     }
-    
+
     return (!aPointSet.isEmpty()) && std::all_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
 
 }
@@ -357,7 +357,7 @@ Point                           Cuboid::getCenter                           ( ) 
     {
         throw library::core::error::runtime::Undefined("Cuboid") ;
     }
-    
+
     return center_ ;
 
 }

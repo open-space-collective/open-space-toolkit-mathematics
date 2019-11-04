@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           LibraryMathematicsPy/Geometry/3D/Transformations.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -13,13 +13,13 @@
 
 inline void                     LibraryMathematicsPy_Geometry_3D_Transformations ( )
 {
-    
+
     boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Geometry.D3.Transformations")))) ;
-    
+
     boost::python::scope().attr("Transformations") = module ;
-    
+
     boost::python::scope scope = module ;
-    
+
     LibraryMathematicsPy_Geometry_3D_Transformations_Rotations() ;
 
 }

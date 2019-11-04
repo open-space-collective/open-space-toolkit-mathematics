@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/2D/Transformation.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -103,7 +103,7 @@ class Transformation
         Transformation          getInverse                                  ( ) const ;
 
         Point                   applyTo                                     (   const   Point&                      aPoint                                      ) const ;
-        
+
         Vector2d                applyTo                                     (   const   Vector2d&                   aVector                                     ) const ;
 
         Unique<Object>          applyTo                                     (   const   Unique<Object>&             anObject                                    ) const ; // [TBI]
@@ -117,11 +117,11 @@ class Transformation
                                                                                         bool                        displayDecorators                           =   true ) const ;
 
         static Transformation   Undefined                                   ( ) ;
-        
+
         static Transformation   Identity                                    ( ) ;
-        
+
         static Transformation   Translation                                 (   const   Vector2d&                   aTranslationVector                          ) ;
-        
+
         static Transformation   Rotation                                    (   const   Angle&                      aRotationAngle                              ) ;
 
         static Transformation   RotationAround                              (   const   Point&                      aPoint,

@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -52,13 +52,13 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, 
 
 //     using library::math::geom::Angle ;
 //     using library::math::geom::d3::trf::rot::RotationMatrix ;
-    
+
 //     {
 
 //         EXPECT_TRUE(RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0)) == RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0))) ;
 //         EXPECT_TRUE(RotationMatrix({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0)) == RotationMatrix({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0))) ;
 //         EXPECT_TRUE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(20.0)) == RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(20.0))) ;
-        
+
 //         EXPECT_TRUE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) == RotationMatrix({ 0.0, 0.0, +1.0 }, Angle::Degrees(+30.0))) ;
 //         EXPECT_TRUE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) == RotationMatrix({ 0.0, 0.0, -1.0 }, Angle::Degrees(-30.0))) ;
 
@@ -104,13 +104,13 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, 
 //         EXPECT_TRUE(RotationMatrix::Undefined() != RotationMatrix::Undefined()) ;
 
 //     }
-    
+
 //     {
 
 //         EXPECT_FALSE(RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0)) != RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0))) ;
 //         EXPECT_FALSE(RotationMatrix({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0)) != RotationMatrix({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0))) ;
 //         EXPECT_FALSE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(20.0)) != RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(20.0))) ;
-        
+
 //         EXPECT_FALSE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) != RotationMatrix({ 0.0, 0.0, +1.0 }, Angle::Degrees(+30.0))) ;
 //         EXPECT_FALSE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) != RotationMatrix({ 0.0, 0.0, -1.0 }, Angle::Degrees(-30.0))) ;
 
@@ -128,7 +128,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, 
 
 //     using library::math::geom::Angle ;
 //     using library::math::geom::d3::trf::rot::RotationMatrix ;
-    
+
 //     {
 
 //         testing::internal::CaptureStdout() ;
@@ -147,7 +147,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, 
 //     using library::math::obj::Vector3d ;
 //     using library::math::geom::Angle ;
 //     using library::math::geom::d3::trf::rot::RotationMatrix ;
-    
+
 //     {
 
 //         EXPECT_TRUE(RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(10.0)).isDefined()) ;
@@ -199,7 +199,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, 
 
 //         EXPECT_EQ(Angle::Degrees(-30.0), RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(-30.0)).getAngle()) ;
 //         EXPECT_EQ(Angle::Degrees(+30.0), RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(+30.0)).getAngle()) ;
-        
+
 //         EXPECT_EQ(Angle::Degrees(-90.0), RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(-90.0)).getAngle()) ;
 //         EXPECT_EQ(Angle::Degrees(+90.0), RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(+90.0)).getAngle()) ;
 
@@ -220,7 +220,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, 
 // {
 
 //     using library::math::geom::d3::trf::rot::RotationMatrix ;
-    
+
 //     {
 
 //         EXPECT_NO_THROW(RotationMatrix::Undefined()) ;
@@ -235,7 +235,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, 
 
 //     using library::math::geom::Angle ;
 //     using library::math::geom::d3::trf::rot::RotationMatrix ;
-    
+
 //     {
 
 //         EXPECT_NO_THROW(RotationMatrix::Unit()) ;
@@ -256,7 +256,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, 
 //     using library::math::geom::Angle ;
 //     using library::math::geom::d3::trf::rot::Quaternion ;
 //     using library::math::geom::d3::trf::rot::RotationMatrix ;
-    
+
 //     {
 
 //         EXPECT_EQ(RotationMatrix::Unit(), RotationMatrix::Quaternion(Quaternion::Unit())) ;

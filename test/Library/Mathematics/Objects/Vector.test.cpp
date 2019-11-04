@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Objects/Vector.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -190,7 +190,7 @@ TEST (Library_Mathematics_Objects_Vector2d, ToString)
         EXPECT_EQ("[1, 2]", vector.toString(0)) ;
         EXPECT_EQ("[1.0, 2.0]", vector.toString(1)) ;
         EXPECT_EQ("[1.00, 2.01]", vector.toString(2)) ;
-        
+
     }
 
 }
@@ -301,7 +301,7 @@ TEST (Library_Mathematics_Objects_Vector3d, ToString)
         EXPECT_EQ("[1.0, 2.0, 3.0]", vector.toString(1)) ;
         EXPECT_EQ("[1.00, 2.01, 3.00]", vector.toString(2)) ;
         EXPECT_EQ("[1.000, 2.010, 3.001]", vector.toString(3)) ;
-        
+
     }
 
 }
@@ -399,7 +399,7 @@ TEST (Library_Mathematics_Objects_Vector4d, ToString)
         EXPECT_EQ("[1, 2, 3, 4]", vector.toString(0)) ;
         EXPECT_EQ("[1.0, 2.0, 3.0, 4.0]", vector.toString(1)) ;
         EXPECT_EQ("[1.00, 2.00, 3.00, 4.00]", vector.toString(2)) ;
-        
+
         EXPECT_EQ("[1.0, 2.0, 3.0, 4.0]", vector.toString()) ;
 
     }
@@ -415,7 +415,7 @@ TEST (Library_Mathematics_Objects_Vector4d, ToString)
         EXPECT_EQ("[1.00, 2.01, 3.00, 4.00]", vector.toString(2)) ;
         EXPECT_EQ("[1.000, 2.010, 3.001, 4.000]", vector.toString(3)) ;
         EXPECT_EQ("[1.0000, 2.0100, 3.0010, 4.0001]", vector.toString(4)) ;
-        
+
     }
 
 }
@@ -443,7 +443,7 @@ TEST (Library_Mathematics_Objects_Vector4d, Parse)
         EXPECT_ANY_THROW(Vector4d::Parse("")) ;
         EXPECT_ANY_THROW(Vector4d::Parse("[]")) ;
         EXPECT_ANY_THROW(Vector4d::Parse("1.000000, 2.000000, 3.000000, 4.000000, 5.000000")) ;
-        
+
     }
 
 }
@@ -584,7 +584,7 @@ TEST (Library_Mathematics_Objects_VectorXd, ToString)
         EXPECT_EQ("[1, 2, 3, 4, 5]", vector.toString(0)) ;
         EXPECT_EQ("[1.0, 2.0, 3.0, 4.0, 5.0]", vector.toString(1)) ;
         EXPECT_EQ("[1.00, 2.00, 3.00, 4.00, 5.00]", vector.toString(2)) ;
-        
+
         EXPECT_EQ("[1.0, 2.0, 3.0, 4.0, 5.0]", vector.toString()) ;
 
     }
@@ -610,7 +610,7 @@ TEST (Library_Mathematics_Objects_VectorXd, ToString)
         EXPECT_EQ("[1.0000, 2.0100, 3.0010, 4.0001, 5.0000, -6.0000, -0.0000]", vector.toString(4)) ;
         EXPECT_EQ("[1.00000, 2.01000, 3.00100, 4.00010, 5.00001, -6.00000, -0.00000]", vector.toString(5)) ;
         EXPECT_EQ("[1.000000, 2.010000, 3.001000, 4.000100, 5.000010, -6.000001, -0.000000]", vector.toString(6)) ;
-        
+
     }
 
 }

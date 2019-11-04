@@ -2,29 +2,16 @@
 
 ################################################################################################################################################################
 
-# @project        Library/Mathematics
+# @project        Library ▸ Mathematics
 # @file           tools/development/start.sh
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
 
 ################################################################################################################################################################
 
-script_directory="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-# Setup environment
-
-source "${script_directory}/../.env"
-
-# Build Docker image if it does not exist already
-
-if [[ "$(docker images -q ${image_name}:${image_version} 2> /dev/null)" == "" ]]; then
-
-    pushd "${script_directory}/docker" > /dev/null
-
-    ./build.sh
-
-    popd
-
+if [[ -z ${project_directory} ]]; then
+    echo "Variable [project_directory] is undefined."
+    exit 1
 fi
 
 options=""
@@ -32,22 +19,21 @@ command="/bin/bash"
 
 # Setup linked mode
 
-if [[ ! -z $1 ]] && [[ $1 == "--link" ]]; then
+if [[ ! -z ${1} ]] && [[ ${1} == "--link" ]]; then
 
     options=""
     command=""
 
     # Library ▸ Core
 
-    library_core_directory="${project_directory}/../library-core"
-
-    if [[ ! -d ${library_core_directory} ]]
-    then
-
-        echo "Library ▸ Core directory [${library_core_directory}s] cannot be found."
-
+    if [[ -z ${library_core_directory} ]]; then
+        echo "Variable [library_core_directory] is undefined."
         exit 1
+    fi
 
+    if [[ ! -d ${library_core_directory} ]]; then
+        echo "Library ▸ Core directory [${library_core_directory}] cannot be found."
+        exit 1
     fi
 
     options="${options} \
@@ -71,18 +57,14 @@ fi
 # Run Docker container
 
 docker run \
---name="${container_name}" \
 -it \
 --rm \
 --privileged \
 ${options} \
---volume="${project_directory}:/app:rw" \
---volume="${script_directory}/helpers/build.sh:/app/build/build.sh:ro" \
---volume="${script_directory}/helpers/test.sh:/app/build/test.sh:ro" \
---volume="${script_directory}/helpers/debug.sh:/app/build/debug.sh:ro" \
---volume="${script_directory}/helpers/clean.sh:/app/build/clean.sh:ro" \
+--volume="${project_directory}:/app:delegated" \
+--volume="${project_directory}/tools/development/helpers:/app/build/helpers:ro,delegated" \
 --workdir="/app/build" \
-"${image_name}:${image_version}" \
+${docker_development_image_repository}:${docker_image_version}-${target} \
 /bin/bash -c "${command}"
 
 ################################################################################################################################################################

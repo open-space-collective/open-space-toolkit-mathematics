@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library/Mathematics
+/// @project        Library ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/3D/Objects/LineString.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
@@ -33,7 +33,7 @@ namespace objects
                                 :   Object(),
                                     points_(aPointArray)
 {
-    
+
 }
 
 LineString*                     LineString::clone                           ( ) const
@@ -86,7 +86,7 @@ bool                            LineString::isNear                          (   
     }
 
     return true ;
-    
+
 }
 
 const Point&                    LineString::accessPointAt                   (   const   Index&                      anIndex                                     ) const
@@ -96,7 +96,7 @@ const Point&                    LineString::accessPointAt                   (   
     {
         throw library::core::error::RuntimeError("Point index [{}] out of bounds [0 - {}].", anIndex, points_.getSize()) ;
     }
-    
+
     return points_.at(anIndex) ;
 
 }
