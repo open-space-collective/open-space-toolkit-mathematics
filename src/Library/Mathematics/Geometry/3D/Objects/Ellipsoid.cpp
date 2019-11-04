@@ -42,6 +42,8 @@
 
 #pragma GCC diagnostic pop // Turn the warnings back on
 
+#include <math.h>
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace library
@@ -700,7 +702,7 @@ Intersection                    Ellipsoid::intersectionWith                 (   
 
     // Ray
 
-    const gte::Ray3<double> segment = { EllipsoidGteVectorFromPoint(aRay.getOrigin()), EllipsoidGteVectorFromVector3d(aRay.getDirection()) } ;
+    const gte::Ray3<double> ray = { EllipsoidGteVectorFromPoint(aRay.getOrigin()), EllipsoidGteVectorFromVector3d(aRay.getDirection()) } ;
 
     // Ellipsoid
 
@@ -714,7 +716,7 @@ Intersection                    Ellipsoid::intersectionWith                 (   
 
     gte::FIQuery<double, gte::Ray3<double>, gte::Ellipsoid3<double>> intersectionQuery ;
 
-    auto intersectionResult = intersectionQuery(segment, ellipsoid) ;
+    auto intersectionResult = intersectionQuery(ray, ellipsoid) ;
 
     if (intersectionResult.intersect)
     {
@@ -738,8 +740,6 @@ Intersection                    Ellipsoid::intersectionWith                 (   
             const Point firstPoint = EllipsoidPointFromGteVector(intersectionResult.point[0]) ;
             const Point secondPoint = EllipsoidPointFromGteVector(intersectionResult.point[1]) ;
 
-            const PointSet pointSet = { { firstPoint, secondPoint } } ;
-
             if ((firstPoint == aRay.getOrigin()) || (secondPoint == aRay.getOrigin()))
             {
 
@@ -754,6 +754,13 @@ Intersection                    Ellipsoid::intersectionWith                 (   
                 }
 
             }
+
+            if ((firstPoint - secondPoint).norm() < Real::Epsilon())
+            {
+                return Intersection::Point(firstPoint) ;
+            }
+
+            const PointSet pointSet = { { firstPoint, secondPoint } } ;
 
             return onlyInSight ? Intersection::Point(pointSet.getPointClosestTo(aRay.getOrigin())) : Intersection::PointSet(pointSet) ;
 
@@ -815,7 +822,12 @@ Intersection                    Ellipsoid::intersectionWith                 (   
 
             const Point point = EllipsoidPointFromGteVector(intersectionResult.point[0]) ;
 
-            if ((point == aSegment.getFirstPoint() || (point == aSegment.getSecondPoint())) && (!this->contains(point))) // Discard segment points, if returned by Gte
+            if (isnan(point.x()) || isnan(point.y()) || isnan(point.z()))
+            {
+                return Intersection::Empty() ;
+            }
+
+            if ((!point.isDefined()) || ((point == aSegment.getFirstPoint() || (point == aSegment.getSecondPoint())) && (!this->contains(point)))) // Discard segment points, if returned by Gte
             {
                 return Intersection::Empty() ;
             }

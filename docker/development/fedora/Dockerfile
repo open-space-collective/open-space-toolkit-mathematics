@@ -43,11 +43,8 @@ RUN mkdir /tmp/eigen \
 
 ## Geometric Tools Engine [3.28]
 
-RUN mkdir /tmp/geometric-tools-engine \
+RUN git clone --branch 3.28 --depth 1 https://github.com/lucas-bremond/geometric-tools-engine.git /tmp/geometric-tools-engine \
  && cd /tmp/geometric-tools-engine \
- && wget --quiet https://www.geometrictools.com/Downloads/GeometricToolsEngine3p28.zip \
- && unzip -q ./GeometricToolsEngine3p28.zip \
- && cd GeometricTools/GTEngine \
  && cp -r ./Include /usr/local/include/Gte \
  && rm -rf /tmp/geometric-tools-engine
 

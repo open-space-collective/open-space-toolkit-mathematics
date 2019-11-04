@@ -5,7 +5,7 @@
         "ms-python.python",
         "mhutchie.git-graph"
     ],
-    "image": "openspacecollective/library-mathematics:latest-debian",
+    "image": "openspacecollective/library-mathematics-development:latest-debian",
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash"
 	},

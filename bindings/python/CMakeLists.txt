@@ -1,7 +1,7 @@
 ################################################################################################################################################################
 
 # @project        Library ▸ Mathematics
-# @file           LibraryMathematicsPy/CMakeLists.txt
+# @file           bindings/python/CMakeLists.txt
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
 

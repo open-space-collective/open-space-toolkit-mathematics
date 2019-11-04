@@ -593,8 +593,7 @@ clean:
 		test-unit-cpp-debian test-unit-cpp-fedora \
 		test-unit-python-debian test-unit-python-fedora \
 		test-coverage \
-		test-coverage-cpp \
-		test-coverage-cpp-debian test-coverage-cpp-fedora \
+		test-coverage-cpp test-coverage-cpp-debian test-coverage-cpp-fedora \
 		deploy \
 		deploy-images deploy-development-images deploy-release-images deploy-jupyter-notebook-image \
 		deploy-packages deploy-coverage-cpp-results deploy-documentation \

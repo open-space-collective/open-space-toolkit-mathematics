@@ -21,23 +21,19 @@ command="/bin/bash"
 
 if [[ ! -z ${1} ]] && [[ ${1} == "--link" ]]; then
 
-    if [[ -z ${library_core_directory} ]]; then
-        echo "Variable [library_core_directory] is undefined."
-        exit 1
-    fi
-
     options=""
     command=""
 
     # Library ▸ Core
 
-    if [[ ! -d ${library_core_directory} ]]
-    then
-
-        echo "Library ▸ Core directory [${library_core_directory}s] cannot be found."
-
+    if [[ -z ${library_core_directory} ]]; then
+        echo "Variable [library_core_directory] is undefined."
         exit 1
+    fi
 
+    if [[ ! -d ${library_core_directory} ]]; then
+        echo "Library ▸ Core directory [${library_core_directory}] cannot be found."
+        exit 1
     fi
 
     options="${options} \
