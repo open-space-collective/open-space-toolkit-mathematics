@@ -94,7 +94,6 @@ _build-development-image: _pull-development-image
 	--tag=$(docker_development_image_repository):$(docker_image_version)-$(target) \
 	--tag=$(docker_development_image_repository):latest-$(target) \
 	--build-arg="BASE_IMAGE_VERSION=$(development_base_image_version)" \
-	--build-arg="BASE_IMAGE_SYSTEM=$(target)" \
 	--build-arg="VERSION=$(docker_image_version)" \
 	"$(project_directory)"
 
