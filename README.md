@@ -95,7 +95,7 @@ The **Mathematics** library exhibits the following structure:
 
 Documentation is available here:
 
-- [C++](https://open-space-collective.github.io/library-io)
+- [C++](https://open-space-collective.github.io/open-space-toolkit-mathematics)
 - [Python](./bindings/python/docs)
 
 ## Tutorials
