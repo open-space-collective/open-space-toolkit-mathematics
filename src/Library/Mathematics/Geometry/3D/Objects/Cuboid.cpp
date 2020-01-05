@@ -34,7 +34,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -187,17 +187,17 @@ bool                            Cuboid::isNear                              (   
 
     if (!aCuboid.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     if (!aTolerance.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Tolerance") ;
+        throw ostk::core::error::runtime::Undefined("Tolerance") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     return PointSet(this->getVertices()).isNear(PointSet(aCuboid.getVertices()), aTolerance) ;
@@ -214,7 +214,7 @@ bool                            Cuboid::intersects                          (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     return (!aPointSet.isEmpty()) && std::any_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
@@ -226,12 +226,12 @@ bool                            Cuboid::intersects                          (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     if (!aLine.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Line") ;
+        throw ostk::core::error::runtime::Undefined("Line") ;
     }
 
     // Line
@@ -261,12 +261,12 @@ bool                            Cuboid::intersects                          (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     if (!aCuboid.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     // First cuboid
@@ -300,12 +300,12 @@ bool                            Cuboid::contains                            (   
 
     if (!aPoint.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     const Vector3d dx = aPoint - center_ ;
@@ -338,7 +338,7 @@ bool                            Cuboid::contains                            (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     return (!aPointSet.isEmpty()) && std::all_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
@@ -355,7 +355,7 @@ Point                           Cuboid::getCenter                           ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     return center_ ;
@@ -367,7 +367,7 @@ Vector3d                        Cuboid::getFirstAxis                        ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     return axes_[0] ;
@@ -379,7 +379,7 @@ Vector3d                        Cuboid::getSecondAxis                       ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     return axes_[1] ;
@@ -391,7 +391,7 @@ Vector3d                        Cuboid::getThirdAxis                        ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     return axes_[2] ;
@@ -403,7 +403,7 @@ Real                            Cuboid::getFirstExtent                      ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     return extent_[0] ;
@@ -415,7 +415,7 @@ Real                            Cuboid::getSecondExtent                     ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     return extent_[1] ;
@@ -427,7 +427,7 @@ Real                            Cuboid::getThirdExtent                      ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     return extent_[2] ;
@@ -439,7 +439,7 @@ Array<Cuboid::Vertex>           Cuboid::getVertices                         ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     Array<Cuboid::Vertex> vertices = Array<Cuboid::Vertex>::Empty() ;
@@ -467,35 +467,35 @@ void                            Cuboid::print                               (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Cuboid") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Cuboid") : void () ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Center:"              << (center_.isDefined() ? center_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Center:"              << (center_.isDefined() ? center_.toString() : "Undefined") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "First axis:"          << (axes_[0].isDefined() ? axes_[0].toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Second axis:"         << (axes_[1].isDefined() ? axes_[1].toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Third axis:"          << (axes_[2].isDefined() ? axes_[2].toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "First axis:"          << (axes_[0].isDefined() ? axes_[0].toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Second axis:"         << (axes_[1].isDefined() ? axes_[1].toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Third axis:"          << (axes_[2].isDefined() ? axes_[2].toString() : "Undefined") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "First extent:"        << (extent_[0].isDefined() ? extent_[0].toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Second extent:"       << (extent_[1].isDefined() ? extent_[1].toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Third extent:"        << (extent_[2].isDefined() ? extent_[2].toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "First extent:"        << (extent_[0].isDefined() ? extent_[0].toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Second extent:"       << (extent_[1].isDefined() ? extent_[1].toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Third extent:"        << (extent_[2].isDefined() ? extent_[2].toString() : "Undefined") ;
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
 void                            Cuboid::applyTransformation                 (   const   Transformation&             aTransformation                             )
 {
 
-    using library::math::geom::d3::trf::rot::RotationMatrix ;
+    using ostk::math::geom::d3::trf::rot::RotationMatrix ;
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cuboid") ;
+        throw ostk::core::error::runtime::Undefined("Cuboid") ;
     }
 
     if (aTransformation.isIdentity())
@@ -530,12 +530,12 @@ Cuboid                          Cuboid::Cube                                (   
 
     if (!aCenter.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Center") ;
+        throw ostk::core::error::runtime::Undefined("Center") ;
     }
 
     if (!anExtent.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Extent") ;
+        throw ostk::core::error::runtime::Undefined("Extent") ;
     }
 
     return { aCenter, { Vector3d::X(), Vector3d::Y(), Vector3d::Z() }, { anExtent, anExtent, anExtent } } ;

@@ -16,11 +16,11 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_PointSe
 
     using namespace boost::python ;
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     scope in_PointSet = class_<PointSet, bases<Object>>("PointSet", init<const Array<Point>&>())
 

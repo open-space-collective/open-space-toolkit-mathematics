@@ -11,19 +11,19 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_Angle_toString_overloads, library::math::geom::Angle::toString, 0, 1)
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_Angle_toString_overloads, ostk::math::geom::Angle::toString, 0, 1)
 
 inline void                     LibraryMathematicsPy_Geometry_Angle         ( )
 {
 
     using namespace boost::python ;
 
-    using library::core::types::Real ;
-    using library::core::types::String ;
+    using ostk::core::types::Real ;
+    using ostk::core::types::String ;
 
-    using library::math::obj::Vector2d ;
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
+    using ostk::math::obj::Vector2d ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
 
     scope in_Angle = class_<Angle>("Angle", init<Real, Angle::Unit>())
 

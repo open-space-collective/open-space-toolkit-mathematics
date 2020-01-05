@@ -14,7 +14,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -58,7 +58,7 @@ bool                            Angle::operator ==                          (   
             return value_ == Angle::ReduceRange(((anAngle.unit_ == Angle::Unit::Revolution) ? anAngle.value_ : anAngle.in(Angle::Unit::Revolution)), value_, value_ + 1.0) ;
 
         default:
-            throw library::core::error::runtime::Wrong("Unit") ;
+            throw ostk::core::error::runtime::Wrong("Unit") ;
             break ;
 
     }
@@ -77,7 +77,7 @@ Angle                           Angle::operator +                           (   
 
     if ((unit_ == Angle::Unit::Undefined) || (anAngle.unit_ == Angle::Unit::Undefined))
     {
-        throw library::core::error::runtime::Undefined("Angle") ;
+        throw ostk::core::error::runtime::Undefined("Angle") ;
     }
 
     return Angle((value_ + ((unit_ == anAngle.unit_) ? anAngle.value_ : anAngle.in(unit_))), unit_) ;
@@ -89,7 +89,7 @@ Angle                           Angle::operator -                           (   
 
     if ((unit_ == Angle::Unit::Undefined) || (anAngle.unit_ == Angle::Unit::Undefined))
     {
-        throw library::core::error::runtime::Undefined("Angle") ;
+        throw ostk::core::error::runtime::Undefined("Angle") ;
     }
 
     return Angle((value_ - ((unit_ == anAngle.unit_) ? anAngle.value_ : anAngle.in(unit_))), unit_) ;
@@ -101,12 +101,12 @@ Angle                           Angle::operator *                           (   
 
     if (unit_ == Angle::Unit::Undefined)
     {
-        throw library::core::error::runtime::Undefined("Angle") ;
+        throw ostk::core::error::runtime::Undefined("Angle") ;
     }
 
     if (!aReal.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Real") ;
+        throw ostk::core::error::runtime::Undefined("Real") ;
     }
 
     return Angle((value_ * aReal), unit_) ;
@@ -118,17 +118,17 @@ Angle                           Angle::operator /                           (   
 
     if (unit_ == Angle::Unit::Undefined)
     {
-        throw library::core::error::runtime::Undefined("Angle") ;
+        throw ostk::core::error::runtime::Undefined("Angle") ;
     }
 
     if (!aReal.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Real") ;
+        throw ostk::core::error::runtime::Undefined("Real") ;
     }
 
     if (aReal.isZero())
     {
-        throw library::core::error::RuntimeError("Cannot divide by zero.") ;
+        throw ostk::core::error::RuntimeError("Cannot divide by zero.") ;
     }
 
     return Angle((value_ / aReal), unit_) ;
@@ -140,7 +140,7 @@ Angle&                          Angle::operator +=                          (   
 
     if ((unit_ == Angle::Unit::Undefined) || (anAngle.unit_ == Angle::Unit::Undefined))
     {
-        throw library::core::error::runtime::Undefined("Angle") ;
+        throw ostk::core::error::runtime::Undefined("Angle") ;
     }
 
     value_ += ((unit_ == anAngle.unit_) ? anAngle.value_ : anAngle.in(unit_)) ;
@@ -154,7 +154,7 @@ Angle&                          Angle::operator -=                          (   
 
     if ((unit_ == Angle::Unit::Undefined) || (anAngle.unit_ == Angle::Unit::Undefined))
     {
-        throw library::core::error::runtime::Undefined("Angle") ;
+        throw ostk::core::error::runtime::Undefined("Angle") ;
     }
 
     value_ -= ((unit_ == anAngle.unit_) ? anAngle.value_ : anAngle.in(unit_)) ;
@@ -168,12 +168,12 @@ Angle&                          Angle::operator *=                          (   
 
     if (unit_ == Angle::Unit::Undefined)
     {
-        throw library::core::error::runtime::Undefined("Angle") ;
+        throw ostk::core::error::runtime::Undefined("Angle") ;
     }
 
     if (!aReal.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Real") ;
+        throw ostk::core::error::runtime::Undefined("Real") ;
     }
 
     value_ *= aReal ;
@@ -187,17 +187,17 @@ Angle&                          Angle::operator /=                          (   
 
     if (unit_ == Angle::Unit::Undefined)
     {
-        throw library::core::error::runtime::Undefined("Angle") ;
+        throw ostk::core::error::runtime::Undefined("Angle") ;
     }
 
     if (!aReal.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Real") ;
+        throw ostk::core::error::runtime::Undefined("Real") ;
     }
 
     if (aReal.isZero())
     {
-        throw library::core::error::RuntimeError("Cannot divide by zero.") ;
+        throw ostk::core::error::RuntimeError("Cannot divide by zero.") ;
     }
 
     value_ /= aReal ;
@@ -212,12 +212,12 @@ Angle                           operator *                                  (   
 
     if (!aReal.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Real") ;
+        throw ostk::core::error::runtime::Undefined("Real") ;
     }
 
     if (anAngle.unit_ == Angle::Unit::Undefined)
     {
-        throw library::core::error::runtime::Undefined("Angle") ;
+        throw ostk::core::error::runtime::Undefined("Angle") ;
     }
 
     return Angle((anAngle.value_ * aReal), anAngle.unit_) ;
@@ -229,7 +229,7 @@ Angle                           Angle::operator +                           ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Angle") ;
+        throw ostk::core::error::runtime::Undefined("Angle") ;
     }
 
     return Angle(value_, unit_) ;
@@ -241,7 +241,7 @@ Angle                           Angle::operator -                           ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Angle") ;
+        throw ostk::core::error::runtime::Undefined("Angle") ;
     }
 
     return Angle(-value_, unit_) ;
@@ -252,12 +252,12 @@ std::ostream&                   operator <<                                 (   
                                                                                 const   Angle&                      anAngle                                     )
 {
 
-    library::core::utils::Print::Header(anOutputStream, "Angle") ;
+    ostk::core::utils::Print::Header(anOutputStream, "Angle") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Value:" << anAngle.value_ ;
-    library::core::utils::Print::Line(anOutputStream) << "Unit:" << Angle::StringFromUnit(anAngle.unit_) ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Value:" << anAngle.value_ ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Unit:" << Angle::StringFromUnit(anAngle.unit_) ;
 
-    library::core::utils::Print::Footer(anOutputStream) ;
+    ostk::core::utils::Print::Footer(anOutputStream) ;
 
     return anOutputStream ;
 
@@ -273,7 +273,7 @@ bool                            Angle::isZero                               ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Angle") ;
+        throw ostk::core::error::runtime::Undefined("Angle") ;
     }
 
     return value_ == 0.0 ;
@@ -285,7 +285,7 @@ Angle::Unit                     Angle::getUnit                              ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Angle") ;
+        throw ostk::core::error::runtime::Undefined("Angle") ;
     }
 
     return unit_ ;
@@ -297,7 +297,7 @@ Real                            Angle::in                                   (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Angle") ;
+        throw ostk::core::error::runtime::Undefined("Angle") ;
     }
 
     if (unit_ == aUnit)
@@ -320,17 +320,17 @@ Real                            Angle::inRadians                            (   
 
     if (!aLowerBound.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Lower bound") ;
+        throw ostk::core::error::runtime::Undefined("Lower bound") ;
     }
 
     if (!anUpperBound.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Upper bound") ;
+        throw ostk::core::error::runtime::Undefined("Upper bound") ;
     }
 
     if ((anUpperBound - aLowerBound) != Real::TwoPi())
     {
-        throw library::core::error::runtime::Undefined("Range span is not [2π].") ;
+        throw ostk::core::error::runtime::Undefined("Range span is not [2π].") ;
     }
 
     return Angle::ReduceRange(this->in(Angle::Unit::Radian), aLowerBound, anUpperBound) ;
@@ -348,17 +348,17 @@ Real                            Angle::inDegrees                            (   
 
     if (!aLowerBound.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Lower bound") ;
+        throw ostk::core::error::runtime::Undefined("Lower bound") ;
     }
 
     if (!anUpperBound.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Upper bound") ;
+        throw ostk::core::error::runtime::Undefined("Upper bound") ;
     }
 
     if ((anUpperBound - aLowerBound) != 360.0)
     {
-        throw library::core::error::runtime::Undefined("Range span is not [360].") ;
+        throw ostk::core::error::runtime::Undefined("Range span is not [360].") ;
     }
 
     return Angle::ReduceRange(this->in(Angle::Unit::Degree), aLowerBound, anUpperBound) ;
@@ -376,17 +376,17 @@ Real                            Angle::inArcminutes                         (   
 
     if (!aLowerBound.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Lower bound") ;
+        throw ostk::core::error::runtime::Undefined("Lower bound") ;
     }
 
     if (!anUpperBound.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Upper bound") ;
+        throw ostk::core::error::runtime::Undefined("Upper bound") ;
     }
 
     if ((anUpperBound - aLowerBound) != 21600.0)
     {
-        throw library::core::error::runtime::Undefined("Range span is not [21600].") ;
+        throw ostk::core::error::runtime::Undefined("Range span is not [21600].") ;
     }
 
     return Angle::ReduceRange(this->in(Angle::Unit::Arcminute), aLowerBound, anUpperBound) ;
@@ -404,17 +404,17 @@ Real                            Angle::inArcseconds                         (   
 
     if (!aLowerBound.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Lower bound") ;
+        throw ostk::core::error::runtime::Undefined("Lower bound") ;
     }
 
     if (!anUpperBound.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Upper bound") ;
+        throw ostk::core::error::runtime::Undefined("Upper bound") ;
     }
 
     if ((anUpperBound - aLowerBound) != 1296000.0)
     {
-        throw library::core::error::runtime::Undefined("Range span is not [1296000].") ;
+        throw ostk::core::error::runtime::Undefined("Range span is not [1296000].") ;
     }
 
     return Angle::ReduceRange(this->in(Angle::Unit::Arcsecond), aLowerBound, anUpperBound) ;
@@ -431,7 +431,7 @@ String                          Angle::toString                             (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Angle") ;
+        throw ostk::core::error::runtime::Undefined("Angle") ;
     }
 
     return value_.toString(aPrecision) + " [" + Angle::SymbolFromUnit(unit_) + "]" ;
@@ -499,12 +499,12 @@ Angle                           Angle::Between                              (   
 
     if ((!aFirstVector.isDefined()) || (!aSecondVector.isDefined()))
     {
-        throw library::core::error::runtime::Undefined("Vector") ;
+        throw ostk::core::error::runtime::Undefined("Vector") ;
     }
 
     if ((aFirstVector.squaredNorm() < Real::Epsilon()) || (aSecondVector.squaredNorm() < Real::Epsilon()))
     {
-        throw library::core::error::RuntimeError("Vector norm is too small.") ;
+        throw ostk::core::error::RuntimeError("Vector norm is too small.") ;
     }
 
     if (aFirstVector == aSecondVector)
@@ -539,12 +539,12 @@ Angle                           Angle::Between                              (   
 
     if ((!aFirstVector.isDefined()) || (!aSecondVector.isDefined()))
     {
-        throw library::core::error::runtime::Undefined("Vector") ;
+        throw ostk::core::error::runtime::Undefined("Vector") ;
     }
 
     if ((aFirstVector.squaredNorm() < Real::Epsilon()) || (aSecondVector.squaredNorm() < Real::Epsilon()))
     {
-        throw library::core::error::RuntimeError("Vector norm is too small.") ;
+        throw ostk::core::error::RuntimeError("Vector norm is too small.") ;
     }
 
     if (aFirstVector == aSecondVector)
@@ -598,7 +598,7 @@ String                          Angle::StringFromUnit                       (   
             return "Revolution" ;
 
         default:
-            throw library::core::error::runtime::Wrong("Unit") ;
+            throw ostk::core::error::runtime::Wrong("Unit") ;
             break ;
 
     }
@@ -629,7 +629,7 @@ String                          Angle::SymbolFromUnit                       (   
             return "rev" ;
 
         default:
-            throw library::core::error::runtime::Wrong("Unit") ;
+            throw ostk::core::error::runtime::Wrong("Unit") ;
             break ;
 
     }
@@ -660,7 +660,7 @@ Real                            Angle::SIRatio                              (   
             return Real::TwoPi() ;
 
         default:
-            throw library::core::error::runtime::Wrong("Unit") ;
+            throw ostk::core::error::runtime::Wrong("Unit") ;
             break ;
 
     }

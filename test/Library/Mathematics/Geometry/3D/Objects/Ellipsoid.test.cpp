@@ -26,8 +26,8 @@
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Constructor)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -46,7 +46,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Constructor)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Clone)
 {
 
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -59,10 +59,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Clone)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, EqualToOperator)
 {
 
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -97,10 +97,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, EqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, NotEqualToOperator)
 {
 
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -135,7 +135,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, NotEqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, StreamOperator)
 {
 
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -152,7 +152,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, StreamOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IsDefined)
 {
 
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -172,8 +172,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IsDefined)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Point)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -207,9 +207,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Point)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_PointSet)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -236,11 +236,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_PointSet)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Line)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Line ;
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -388,11 +388,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Line)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Ray)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -560,11 +560,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Ray)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Segment)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -659,11 +659,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Segment)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Plane)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Plane ;
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Plane ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -710,9 +710,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Plane)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Pyramid)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
 
     {
 
@@ -734,8 +734,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Pyramid)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Contains_Point)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -769,9 +769,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Contains_Point)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Contains_PointSet)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -803,8 +803,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Contains_PointSet)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetCenter)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -823,7 +823,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetCenter)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetFirstPrincipalSemiAxis)
 {
 
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -842,7 +842,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetFirstPrincipalSemiAx
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetSecondPrincipalSemiAxis)
 {
 
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -861,7 +861,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetSecondPrincipalSemiA
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetThirdPrincipalSemiAxis)
 {
 
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -880,13 +880,13 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetThirdPrincipalSemiAx
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetFirstAxis)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -907,13 +907,13 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetFirstAxis)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetSecondAxis)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -934,13 +934,13 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetSecondAxis)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetThirdAxis)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -961,8 +961,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetThirdAxis)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetOrientation)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -987,14 +987,14 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetOrientation)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetMatrix)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Matrix3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
-    using library::math::geom::d3::trf::rot::RotationMatrix ;
+    using ostk::math::obj::Matrix3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::geom::d3::trf::rot::RotationMatrix ;
 
     {
 
@@ -1035,13 +1035,13 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, GetMatrix)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Line)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Line ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::Intersection ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::Intersection ;
 
     {
 
@@ -1161,13 +1161,13 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Line)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::Intersection ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::Intersection ;
 
     // onlyInSight = false
 
@@ -1438,13 +1438,13 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Segment)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::Intersection ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::Intersection ;
 
     {
 
@@ -1627,9 +1627,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Segmen
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Pyramid)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
 
     {
 
@@ -1651,14 +1651,14 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Pyrami
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, ApplyTransformation)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::Transformation ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::Transformation ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     // Translation
 
@@ -1700,7 +1700,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, ApplyTransformation)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ellipsoid, Undefined)
 {
 
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 

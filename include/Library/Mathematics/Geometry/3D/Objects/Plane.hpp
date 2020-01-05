@@ -20,7 +20,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -33,13 +33,13 @@ namespace objects
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-using library::math::obj::Vector3d ;
-using library::math::geom::d3::Object ;
-using library::math::geom::d3::objects::Point ;
-using library::math::geom::d3::objects::PointSet ;
-using library::math::geom::d3::objects::Line ;
-using library::math::geom::d3::objects::Ray ;
-using library::math::geom::d3::objects::Segment ;
+using ostk::math::obj::Vector3d ;
+using ostk::math::geom::d3::Object ;
+using ostk::math::geom::d3::objects::Point ;
+using ostk::math::geom::d3::objects::PointSet ;
+using ostk::math::geom::d3::objects::Line ;
+using ostk::math::geom::d3::objects::Ray ;
+using ostk::math::geom::d3::objects::Segment ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

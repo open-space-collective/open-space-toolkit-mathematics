@@ -20,7 +20,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -33,16 +33,16 @@ namespace objects
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-using library::core::ctnr::Index ;
-using library::core::ctnr::Size ;
-using library::core::ctnr::Array ;
+using ostk::core::ctnr::Index ;
+using ostk::core::ctnr::Size ;
+using ostk::core::ctnr::Array ;
 
-using library::math::obj::Vector3d ;
-using library::math::geom::Angle ;
-using library::math::geom::d3::Object ;
-using library::math::geom::d3::objects::Point ;
-using library::math::geom::d3::objects::Ray ;
-using library::math::geom::d3::Intersection ;
+using ostk::math::obj::Vector3d ;
+using ostk::math::geom::Angle ;
+using ostk::math::geom::d3::Object ;
+using ostk::math::geom::d3::objects::Point ;
+using ostk::math::geom::d3::objects::Ray ;
+using ostk::math::geom::d3::Intersection ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

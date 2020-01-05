@@ -20,7 +20,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -31,15 +31,15 @@ namespace d2
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-using library::core::types::Unique ;
-using library::core::types::String ;
+using ostk::core::types::Unique ;
+using ostk::core::types::String ;
 
-using library::math::obj::Vector2d ;
-using library::math::obj::Vector3d ;
-using library::math::obj::Matrix3d ;
-using library::math::geom::Angle ;
-using library::math::geom::d2::Object ;
-using library::math::geom::d2::objects::Point ;
+using ostk::math::obj::Vector2d ;
+using ostk::math::obj::Vector3d ;
+using ostk::math::obj::Matrix3d ;
+using ostk::math::geom::Angle ;
+using ostk::math::geom::d2::Object ;
+using ostk::math::geom::d2::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

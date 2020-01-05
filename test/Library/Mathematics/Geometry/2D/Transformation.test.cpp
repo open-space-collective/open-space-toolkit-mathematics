@@ -19,7 +19,7 @@
 // TEST (Library_Mathematics_Geometry_2D_Transformation, Constructor)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -32,7 +32,7 @@
 // TEST (Library_Mathematics_Geometry_2D_Transformation, EqualToOperator)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -45,7 +45,7 @@
 // TEST (Library_Mathematics_Geometry_2D_Transformation, NotEqualToOperator)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -58,7 +58,7 @@
 // TEST (Library_Mathematics_Geometry_2D_Transformation, MultiplicationOperator)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -71,7 +71,7 @@
 // TEST (Library_Mathematics_Geometry_2D_Transformation, MultiplicationAssignmentOperator)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -84,7 +84,7 @@
 // TEST (Library_Mathematics_Geometry_2D_Transformation, StreamOperator)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -97,7 +97,7 @@
 // TEST (Library_Mathematics_Geometry_2D_Transformation, IsDefined)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -110,7 +110,7 @@
 // TEST (Library_Mathematics_Geometry_2D_Transformation, GetType)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -123,7 +123,7 @@
 // TEST (Library_Mathematics_Geometry_2D_Transformation, GetMatrix)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -136,7 +136,7 @@
 // TEST (Library_Mathematics_Geometry_2D_Transformation, GetInverse)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -149,7 +149,7 @@
 // TEST (Library_Mathematics_Geometry_2D_Transformation, ApplyTo)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -162,7 +162,7 @@
 // TEST (Library_Mathematics_Geometry_2D_Transformation, Undefined)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -175,7 +175,7 @@
 // TEST (Library_Mathematics_Geometry_2D_Transformation, Identity)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -188,7 +188,7 @@
 // TEST (Library_Mathematics_Geometry_2D_Transformation, Translation)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -201,7 +201,7 @@
 // TEST (Library_Mathematics_Geometry_2D_Transformation, Rotation)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -214,11 +214,11 @@
 TEST (Library_Mathematics_Geometry_2D_Transformation, RotationAround)
 {
 
-    using library::core::types::String ;
+    using ostk::core::types::String ;
 
-    using library::math::geom::Angle ;
-    using library::math::geom::d2::objects::Point ;
-    using library::math::geom::d2::Transformation ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::Transformation ;
 
     {
 
@@ -304,7 +304,7 @@ TEST (Library_Mathematics_Geometry_2D_Transformation, RotationAround)
 // TEST (Library_Mathematics_Geometry_2D_Transformation, StringFromType)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 
@@ -317,7 +317,7 @@ TEST (Library_Mathematics_Geometry_2D_Transformation, RotationAround)
 // TEST (Library_Mathematics_Geometry_2D_Transformation, TypeOfMatrix)
 // {
 
-//     using library::math::geom::d2::Transformation ;
+//     using ostk::math::geom::d2::Transformation ;
 
 //     {
 

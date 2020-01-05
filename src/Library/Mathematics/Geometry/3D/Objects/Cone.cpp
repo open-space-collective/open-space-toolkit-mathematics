@@ -24,7 +24,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -82,12 +82,12 @@ bool                            Cone::intersects                            (   
 
     if (!aSphere.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Sphere") ;
+        throw ostk::core::error::runtime::Undefined("Sphere") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cone") ;
+        throw ostk::core::error::runtime::Undefined("Cone") ;
     }
 
     for (const auto& ray : this->getRaysOfLateralSurface(aDiscretizationLevel)) // [TBM] Could be improved by calculating rays on the fly
@@ -110,12 +110,12 @@ bool                            Cone::intersects                            (   
 
     if (!anEllipsoid.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cone") ;
+        throw ostk::core::error::runtime::Undefined("Cone") ;
     }
 
     for (const auto& ray : this->getRaysOfLateralSurface(aDiscretizationLevel)) // [TBM] Could be improved by calculating rays on the fly
@@ -137,7 +137,7 @@ Point                           Cone::getApex                               ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cone") ;
+        throw ostk::core::error::runtime::Undefined("Cone") ;
     }
 
     return apex_ ;
@@ -149,7 +149,7 @@ Vector3d                        Cone::getAxis                              ( ) c
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cone") ;
+        throw ostk::core::error::runtime::Undefined("Cone") ;
     }
 
     return axis_ ;
@@ -161,7 +161,7 @@ Angle                           Cone::getAngle                              ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cone") ;
+        throw ostk::core::error::runtime::Undefined("Cone") ;
     }
 
     return angle_ ;
@@ -171,13 +171,13 @@ Angle                           Cone::getAngle                              ( ) 
 Array<Ray>                      Cone::getRaysOfLateralSurface               (   const   Size                        aRayCount                                   ) const
 {
 
-    using library::math::obj::Interval ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Interval ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     if (aRayCount == 0)
     {
-        throw library::core::error::runtime::Wrong("Ray count") ;
+        throw ostk::core::error::runtime::Wrong("Ray count") ;
     }
 
     const Vector3d referenceDirection = (std::abs(axis_.dot(Vector3d::X())) < 0.5) ? axis_.cross(Vector3d::X()).normalized() : axis_.cross(Vector3d::Y()).normalized() ;
@@ -212,12 +212,12 @@ Intersection                    Cone::intersectionWith                      (   
 
     if (!aSphere.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Sphere") ;
+        throw ostk::core::error::runtime::Undefined("Sphere") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cone") ;
+        throw ostk::core::error::runtime::Undefined("Cone") ;
     }
 
     Array<Point> firstIntersectionPoints = Array<Point>::Empty() ;
@@ -290,12 +290,12 @@ Intersection                    Cone::intersectionWith                      (   
 
     if (!anEllipsoid.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cone") ;
+        throw ostk::core::error::runtime::Undefined("Cone") ;
     }
 
     Array<Point> firstIntersectionPoints = Array<Point>::Empty() ;
@@ -363,13 +363,13 @@ void                            Cone::print                                 (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Cone") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Cone") : void () ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Apex:"                << (apex_.isDefined() ? apex_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Axis:"                << (axis_.isDefined() ? axis_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Angle:"               << (angle_.isDefined() ? angle_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Apex:"                << (apex_.isDefined() ? apex_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Axis:"                << (axis_.isDefined() ? axis_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Angle:"               << (angle_.isDefined() ? angle_.toString() : "Undefined") ;
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
@@ -378,12 +378,12 @@ void                            Cone::applyTransformation                   (   
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Cone") ;
+        throw ostk::core::error::runtime::Undefined("Cone") ;
     }
 
     apex_ = aTransformation.applyTo(apex_) ;

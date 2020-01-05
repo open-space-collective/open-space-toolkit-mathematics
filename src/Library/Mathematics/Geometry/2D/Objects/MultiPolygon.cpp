@@ -26,7 +26,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -45,9 +45,9 @@ using boost::geometry::model::ring ;
 using boost::geometry::model::polygon ;
 using boost::geometry::model::multi_polygon ;
 
-using library::core::types::Index ;
-using library::core::types::Size ;
-using library::core::types::String ;
+using ostk::core::types::Index ;
+using ostk::core::types::Size ;
+using ostk::core::types::String ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -127,7 +127,7 @@ bool                            MultiPolygon::Impl::contains                (   
     }
     catch (const std::exception& anException)
     {
-        throw library::core::error::RuntimeError("Error when checking if multi-polygon contains point: [{}]", anException.what()) ;
+        throw ostk::core::error::RuntimeError("Error when checking if multi-polygon contains point: [{}]", anException.what()) ;
     }
 
     return false ;
@@ -139,7 +139,7 @@ bool                            MultiPolygon::Impl::contains                (   
 
     (void) aPointSet ;
 
-    throw library::core::error::runtime::ToBeImplemented("MultiPolygon::contains (PointSet&)") ;
+    throw ostk::core::error::runtime::ToBeImplemented("MultiPolygon::contains (PointSet&)") ;
 
     return false ;
 
@@ -186,7 +186,7 @@ MultiPolygon::Impl              MultiPolygon::Impl::unionWith               (   
     }
     catch (const std::exception& anException)
     {
-        throw library::core::error::RuntimeError("Cannot compute union of multi-polyons: [{}].", anException.what()) ;
+        throw ostk::core::error::RuntimeError("Cannot compute union of multi-polyons: [{}].", anException.what()) ;
     }
 
 }
@@ -218,7 +218,7 @@ String                          MultiPolygon::Impl::toString                (   
         }
 
         default:
-            throw library::core::error::runtime::Wrong("Format") ;
+            throw ostk::core::error::runtime::Wrong("Format") ;
             break ;
 
     }
@@ -230,7 +230,7 @@ String                          MultiPolygon::Impl::toString                (   
 void                            MultiPolygon::Impl::applyTransformation     (   const   Transformation&             aTransformation                             )
 {
 
-    using library::math::obj::Matrix3d ;
+    using ostk::math::obj::Matrix3d ;
 
     MultiPolygon::Impl::BoostMultiPolygon transformedMultiPolygon ;
 
@@ -358,12 +358,12 @@ bool                            MultiPolygon::contains                      (   
 
     if (!aPoint.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Multi-polygon") ;
+        throw ostk::core::error::runtime::Undefined("Multi-polygon") ;
     }
 
     return implUPtr_->contains(aPoint) ;
@@ -375,12 +375,12 @@ bool                            MultiPolygon::contains                      (   
 
     if (!aPointSet.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point set") ;
+        throw ostk::core::error::runtime::Undefined("Point set") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Multi-polygon") ;
+        throw ostk::core::error::runtime::Undefined("Multi-polygon") ;
     }
 
     return implUPtr_->contains(aPointSet) ;
@@ -392,7 +392,7 @@ Size                            MultiPolygon::getPolygonCount               ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Multi-polygon") ;
+        throw ostk::core::error::runtime::Undefined("Multi-polygon") ;
     }
 
     return implUPtr_->getPolygonCount() ;
@@ -403,7 +403,7 @@ void                            MultiPolygon::print                         (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Multi-polygon") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Multi-polygon") : void () ;
 
     if (implUPtr_ != nullptr)
     {
@@ -413,10 +413,10 @@ void                            MultiPolygon::print                         (   
     }
     else
     {
-        library::core::utils::Print::Line(anOutputStream) << "Undefined" ;
+        ostk::core::utils::Print::Line(anOutputStream) << "Undefined" ;
     }
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
@@ -425,12 +425,12 @@ MultiPolygon                    MultiPolygon::unionWith                     (   
 
     if (!aMultiPolygon.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Multi-polygon") ;
+        throw ostk::core::error::runtime::Undefined("Multi-polygon") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Multi-polygon") ;
+        throw ostk::core::error::runtime::Undefined("Multi-polygon") ;
     }
 
     // [TBM] Could be improved to avoid unnecessary copies
@@ -449,7 +449,7 @@ String                          MultiPolygon::toString                      (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Multi-polygon") ;
+        throw ostk::core::error::runtime::Undefined("Multi-polygon") ;
     }
 
     return implUPtr_->toString(aFormat, aPrecision) ;
@@ -461,12 +461,12 @@ void                            MultiPolygon::applyTransformation           (   
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Multi-polygon") ;
+        throw ostk::core::error::runtime::Undefined("Multi-polygon") ;
     }
 
     implUPtr_->applyTransformation(aTransformation) ;

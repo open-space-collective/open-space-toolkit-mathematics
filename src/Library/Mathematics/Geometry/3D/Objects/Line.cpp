@@ -19,7 +19,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -44,7 +44,7 @@ namespace objects
 
         if (direction_.squaredNorm() == 0.0)
         {
-            throw library::core::error::runtime::Wrong("Direction") ;
+            throw ostk::core::error::runtime::Wrong("Direction") ;
         }
 
         direction_ = direction_.normalized() ;
@@ -100,12 +100,12 @@ bool                            Line::intersects                            (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Line") ;
+        throw ostk::core::error::runtime::Undefined("Line") ;
     }
 
     if (!aPlane.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     const Vector3d n = aPlane.getNormalVector() ;
@@ -140,12 +140,12 @@ bool                            Line::contains                              (   
 
     if (!aPoint.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Line") ;
+        throw ostk::core::error::runtime::Undefined("Line") ;
     }
 
     return direction_.cross(aPoint - origin_).squaredNorm() == 0.0 ;
@@ -162,7 +162,7 @@ Point                           Line::getOrigin                             ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Line") ;
+        throw ostk::core::error::runtime::Undefined("Line") ;
     }
 
     return origin_ ;
@@ -174,7 +174,7 @@ Vector3d                        Line::getDirection                       ( ) con
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Line") ;
+        throw ostk::core::error::runtime::Undefined("Line") ;
     }
 
     return direction_ ;
@@ -186,12 +186,12 @@ Intersection                    Line::intersectionWith                       (  
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Line") ;
+        throw ostk::core::error::runtime::Undefined("Line") ;
     }
 
     if (!aPlane.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     const Vector3d n = aPlane.getNormalVector() ;
@@ -224,12 +224,12 @@ void                            Line::print                                 (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Line") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Line") : void () ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Origin:"              << (origin_.isDefined() ? origin_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Direction:"           << (direction_.isDefined() ? direction_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Origin:"              << (origin_.isDefined() ? origin_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Direction:"           << (direction_.isDefined() ? direction_.toString() : "Undefined") ;
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
@@ -238,12 +238,12 @@ void                            Line::applyTransformation                   (   
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Line") ;
+        throw ostk::core::error::runtime::Undefined("Line") ;
     }
 
     origin_.applyTransformation(aTransformation) ;

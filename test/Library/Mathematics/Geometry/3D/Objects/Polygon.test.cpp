@@ -18,10 +18,10 @@
 TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, Constructor)
 {
 
-    using library::math::obj::Vector3d ;
-    using Polygon2d = library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
+    using ostk::math::obj::Vector3d ;
+    using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
 
     {
 
@@ -39,10 +39,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, Constructor)
 TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, Clone)
 {
 
-    using library::math::obj::Vector3d ;
-    using Polygon2d = library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
+    using ostk::math::obj::Vector3d ;
+    using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
 
     {
 
@@ -60,10 +60,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, Clone)
 TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, EqualToOperator)
 {
 
-    using library::math::obj::Vector3d ;
-    using Polygon2d = library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
+    using ostk::math::obj::Vector3d ;
+    using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
 
     {
 
@@ -100,10 +100,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, EqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, NotEqualToOperator)
 {
 
-    using library::math::obj::Vector3d ;
-    using Polygon2d = library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
+    using ostk::math::obj::Vector3d ;
+    using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
 
     {
 
@@ -140,10 +140,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, NotEqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, StreamOperator)
 {
 
-    using library::math::obj::Vector3d ;
-    using Polygon2d = library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
+    using ostk::math::obj::Vector3d ;
+    using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
 
     {
 
@@ -165,10 +165,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, StreamOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, IsDefined)
 {
 
-    using library::math::obj::Vector3d ;
-    using Polygon2d = library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
+    using ostk::math::obj::Vector3d ;
+    using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
 
     {
 
@@ -192,12 +192,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, IsDefined)
 TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, IsNear)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using Polygon2d = library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
+    using ostk::math::obj::Vector3d ;
+    using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
 
     {
 
@@ -262,10 +262,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, IsNear)
 TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetPolygon2d)
 {
 
-    using library::math::obj::Vector3d ;
-    using Polygon2d = library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
+    using ostk::math::obj::Vector3d ;
+    using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
 
     {
 
@@ -289,10 +289,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetPolygon2d)
 TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetOrigin)
 {
 
-    using library::math::obj::Vector3d ;
-    using Polygon2d = library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
+    using ostk::math::obj::Vector3d ;
+    using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
 
     {
 
@@ -316,10 +316,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetOrigin)
 TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetXAxis)
 {
 
-    using library::math::obj::Vector3d ;
-    using Polygon2d = library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
+    using ostk::math::obj::Vector3d ;
+    using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
 
     {
 
@@ -343,10 +343,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetXAxis)
 TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetYAxis)
 {
 
-    using library::math::obj::Vector3d ;
-    using Polygon2d = library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
+    using ostk::math::obj::Vector3d ;
+    using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
 
     {
 
@@ -370,10 +370,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetYAxis)
 TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetNormalVector)
 {
 
-    using library::math::obj::Vector3d ;
-    using Polygon2d = library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
+    using ostk::math::obj::Vector3d ;
+    using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
 
     {
 
@@ -397,15 +397,15 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetNormalVector)
 TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, ApplyTransformation)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using Polygon2d = library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::Transformation ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::Transformation ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     // Translation
 
@@ -469,7 +469,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, ApplyTransformation)
 TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, Undefined)
 {
 
-    using library::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Polygon ;
 
     {
 

@@ -26,7 +26,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -44,9 +44,9 @@ using boost::geometry::model::point ;
 using boost::geometry::model::ring ;
 using boost::geometry::model::polygon ;
 
-using library::core::types::Index ;
-using library::core::types::Size ;
-using library::core::types::String ;
+using ostk::core::types::Index ;
+using ostk::core::types::Size ;
+using ostk::core::types::String ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -127,7 +127,7 @@ class Polygon::Impl
 
         if (innerRing.getSize() < 3)
         {
-            throw library::core::error::RuntimeError("At least 3 points are necessary to define an inner ring.") ;
+            throw ostk::core::error::RuntimeError("At least 3 points are necessary to define an inner ring.") ;
         }
 
         Polygon::Impl::BoostRing ring ;
@@ -164,7 +164,7 @@ bool                            Polygon::Impl::intersects                   (   
     }
     catch (const std::exception& anException)
     {
-        throw library::core::error::RuntimeError("Error when checking if polygon intersects polygon: [{}]", anException.what()) ;
+        throw ostk::core::error::RuntimeError("Error when checking if polygon intersects polygon: [{}]", anException.what()) ;
     }
 
     return false ;
@@ -180,7 +180,7 @@ bool                            Polygon::Impl::contains                     (   
     }
     catch (const std::exception& anException)
     {
-        throw library::core::error::RuntimeError("Error when checking if polygon contains point: [{}]", anException.what()) ;
+        throw ostk::core::error::RuntimeError("Error when checking if polygon contains point: [{}]", anException.what()) ;
     }
 
     return false ;
@@ -233,7 +233,7 @@ Array<Polygon::Vertex>          Polygon::Impl::getInnerRingVerticesAt       (   
 
     if (aRingIndex >= this->getInnerRingCount())
     {
-        throw library::core::error::RuntimeError("Inner ring index [{}] out of bounds [{}].", aRingIndex, this->getInnerRingCount()) ;
+        throw ostk::core::error::RuntimeError("Inner ring index [{}] out of bounds [{}].", aRingIndex, this->getInnerRingCount()) ;
     }
 
     if (polygon_.inners().at(aRingIndex).empty())
@@ -309,12 +309,12 @@ Polygon::Edge                   Polygon::Impl::getEdgeAt                    (   
 
     if (anEdgeIndex >= this->getEdgeCount())
     {
-        throw library::core::error::runtime::Wrong("Edge index") ;
+        throw ostk::core::error::runtime::Wrong("Edge index") ;
     }
 
     if (anEdgeIndex >= this->getOuterRingEdgeCount())
     {
-        throw library::core::error::runtime::ToBeImplemented("Inner ring edge access.") ;
+        throw ostk::core::error::runtime::ToBeImplemented("Inner ring edge access.") ;
     }
 
     const Point firstVertex = this->getVertexAt(anEdgeIndex) ;
@@ -329,12 +329,12 @@ Polygon::Vertex                 Polygon::Impl::getVertexAt                  (   
 
     if (aVertexIndex >= (boost::geometry::num_points(polygon_) - 1))
     {
-        throw library::core::error::runtime::Wrong("Vertex index") ;
+        throw ostk::core::error::runtime::Wrong("Vertex index") ;
     }
 
     if (aVertexIndex >= (polygon_.outer().size() - 1))
     {
-        throw library::core::error::runtime::ToBeImplemented("Inner ring vertex access.") ;
+        throw ostk::core::error::runtime::ToBeImplemented("Inner ring vertex access.") ;
     }
 
     return { boost::geometry::get<0>(polygon_.outer().at(aVertexIndex)), boost::geometry::get<1>(polygon_.outer().at(aVertexIndex)) } ;
@@ -406,7 +406,7 @@ String                          Polygon::Impl::toString                     (   
         }
 
         default:
-            throw library::core::error::runtime::Wrong("Format") ;
+            throw ostk::core::error::runtime::Wrong("Format") ;
             break ;
 
     }
@@ -418,7 +418,7 @@ String                          Polygon::Impl::toString                     (   
 void                            Polygon::Impl::applyTransformation          (   const   Transformation&             aTransformation                             )
 {
 
-    using library::math::obj::Matrix3d ;
+    using ostk::math::obj::Matrix3d ;
 
     Polygon::Impl::BoostPolygon transformedPolygon ;
 
@@ -439,7 +439,7 @@ Polygon::Impl::BoostPolygon     Polygon::Impl::BoostPolygonFromPoints       (   
 
     if ((!aPointArray.isEmpty()) && (aPointArray.getSize() < 3))
     {
-        throw library::core::error::RuntimeError("At least 3 points are necessary to define a polygon.") ;
+        throw ostk::core::error::RuntimeError("At least 3 points are necessary to define a polygon.") ;
     }
 
     Polygon::Impl::BoostPolygon polygon ;
@@ -525,12 +525,12 @@ bool                            Polygon::intersects                         (   
 
     if (!aPolygon.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return implUPtr_->intersects(aPolygon) ;
@@ -542,12 +542,12 @@ bool                            Polygon::contains                           (   
 
     if (!aPoint.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return implUPtr_->contains(aPoint) ;
@@ -559,12 +559,12 @@ bool                            Polygon::contains                           (   
 
     if (!aPointSet.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point set") ;
+        throw ostk::core::error::runtime::Undefined("Point set") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return implUPtr_->contains(aPointSet) ;
@@ -576,7 +576,7 @@ Size                            Polygon::getInnerRingCount                  ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return implUPtr_->getInnerRingCount() ;
@@ -588,7 +588,7 @@ Size                            Polygon::getEdgeCount                       ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return implUPtr_->getEdgeCount() ;
@@ -600,7 +600,7 @@ Size                            Polygon::getVertexCount                     ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return implUPtr_->getVertexCount() ;
@@ -612,7 +612,7 @@ Polygon::Ring                   Polygon::getOuterRing                       ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return implUPtr_->getOuterRing() ;
@@ -624,7 +624,7 @@ Polygon::Ring                   Polygon::getInnerRingAt                     (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return implUPtr_->getInnerRingAt(anInnerRingIndex) ;
@@ -636,7 +636,7 @@ Polygon::Edge                   Polygon::getEdgeAt                          (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return implUPtr_->getEdgeAt(anEdgeIndex) ;
@@ -648,7 +648,7 @@ Polygon::Vertex                 Polygon::getVertexAt                        (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return implUPtr_->getVertexAt(aVertexIndex) ;
@@ -660,7 +660,7 @@ Array<Polygon::Edge>            Polygon::getEdges                           ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return implUPtr_->getEdges() ;
@@ -672,7 +672,7 @@ Array<Polygon::Vertex>          Polygon::getVertices                        ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return implUPtr_->getVertices() ;
@@ -683,25 +683,25 @@ void                            Polygon::print                              (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Polygon") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Polygon") : void () ;
 
-    library::core::utils::Print::Separator(anOutputStream, "Outer Ring") ;
+    ostk::core::utils::Print::Separator(anOutputStream, "Outer Ring") ;
 
     if (implUPtr_ != nullptr)
     {
 
         for (const auto& point : implUPtr_->getOuterRingVertices())
         {
-            library::core::utils::Print::Line(anOutputStream) << String::Format("- {}", point.toString()) ;
+            ostk::core::utils::Print::Line(anOutputStream) << String::Format("- {}", point.toString()) ;
         }
 
     }
     else
     {
-        library::core::utils::Print::Line(anOutputStream) << "Undefined" ;
+        ostk::core::utils::Print::Line(anOutputStream) << "Undefined" ;
     }
 
-    library::core::utils::Print::Separator(anOutputStream, "Inner Rings") ;
+    ostk::core::utils::Print::Separator(anOutputStream, "Inner Rings") ;
 
     if (implUPtr_ != nullptr)
     {
@@ -709,11 +709,11 @@ void                            Polygon::print                              (   
         for (Index innerRingIndex = 0; innerRingIndex < implUPtr_->getInnerRingCount(); ++innerRingIndex)
         {
 
-            library::core::utils::Print::Separator(anOutputStream, String::Format("Inner Ring @ {}", innerRingIndex)) ;
+            ostk::core::utils::Print::Separator(anOutputStream, String::Format("Inner Ring @ {}", innerRingIndex)) ;
 
             for (const auto& point : implUPtr_->getInnerRingVerticesAt(innerRingIndex))
             {
-                library::core::utils::Print::Line(anOutputStream) << String::Format("- {}", point.toString()) ;
+                ostk::core::utils::Print::Line(anOutputStream) << String::Format("- {}", point.toString()) ;
             }
 
         }
@@ -721,10 +721,10 @@ void                            Polygon::print                              (   
     }
     else
     {
-        library::core::utils::Print::Line(anOutputStream) << "Undefined" ;
+        ostk::core::utils::Print::Line(anOutputStream) << "Undefined" ;
     }
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
@@ -734,7 +734,7 @@ String                          Polygon::toString                           (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return implUPtr_->toString(aFormat, aPrecision) ;
@@ -746,7 +746,7 @@ String                          Polygon::toString                           (   
 
 //     if (!this->isDefined())
 //     {
-//         throw library::core::error::runtime::Undefined("Polygon") ;
+//         throw ostk::core::error::runtime::Undefined("Polygon") ;
 //     }
 
 // }
@@ -756,7 +756,7 @@ String                          Polygon::toString                           (   
 
 //     if (!this->isDefined())
 //     {
-//         throw library::core::error::runtime::Undefined("Polygon") ;
+//         throw ostk::core::error::runtime::Undefined("Polygon") ;
 //     }
 
 // }
@@ -766,12 +766,12 @@ void                            Polygon::applyTransformation                (   
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     implUPtr_->applyTransformation(aTransformation) ;

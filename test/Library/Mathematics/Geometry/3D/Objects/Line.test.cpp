@@ -21,7 +21,7 @@
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, Constructor)
 {
 
-    using library::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Line ;
 
     {
 
@@ -34,7 +34,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, Constructor)
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, Clone)
 {
 
-    using library::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Line ;
 
     {
 
@@ -47,7 +47,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, Clone)
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, EqualToOperator)
 {
 
-    using library::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Line ;
 
     {
 
@@ -81,7 +81,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, EqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, NotEqualToOperator)
 {
 
-    using library::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Line ;
 
     {
 
@@ -115,7 +115,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, NotEqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, StreamOperator)
 {
 
-    using library::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Line ;
 
     {
 
@@ -132,7 +132,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, StreamOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, IsDefined)
 {
 
-    using library::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Line ;
 
     {
 
@@ -151,8 +151,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, IsDefined)
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, Intersects_Point)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Line ;
 
     {
 
@@ -187,8 +187,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, Intersects_Point)
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, Intersects_Plane)
 {
 
-    using library::math::geom::d3::objects::Line ;
-    using library::math::geom::d3::objects::Plane ;
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Plane ;
 
     {
 
@@ -227,8 +227,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, Intersects_Plane)
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, Intersects_Sphere)
 {
 
-    using library::math::geom::d3::objects::Line ;
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -250,8 +250,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, Intersects_Sphere)
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, Intersects_Ellipsoid)
 {
 
-    using library::math::geom::d3::objects::Line ;
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -273,8 +273,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, Intersects_Ellipsoid)
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, Contains_Point)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Line ;
 
     {
 
@@ -307,8 +307,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, Contains_Point)
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, GetOrigin)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Line ;
 
     {
 
@@ -330,9 +330,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, GetOrigin)
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, GetDirection)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Line ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Line ;
 
     {
 
@@ -352,12 +352,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, GetDirection)
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, IntersectionWith_Plane)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Line ;
-    using library::math::geom::d3::objects::Plane ;
-    using library::math::geom::d3::Intersection ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Plane ;
+    using ostk::math::geom::d3::Intersection ;
 
     const auto expectLineIntersection =
     [] (const Line& aLine, const Plane& aPlane, const Line& anIntersectionLine) -> void
@@ -439,13 +439,13 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, IntersectionWith_Plane)
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, ApplyTransformation)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Line ;
-    using library::math::geom::d3::Transformation ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::Transformation ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     // Translation
 
@@ -487,7 +487,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Line, ApplyTransformation)
 TEST (Library_Mathematics_Geometry_3D_Objects_Line, Undefined)
 {
 
-    using library::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Line ;
 
     {
 

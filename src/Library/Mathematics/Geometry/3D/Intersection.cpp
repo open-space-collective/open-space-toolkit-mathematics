@@ -14,7 +14,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -81,7 +81,7 @@ Intersection                    Intersection::operator +                    (   
 
     if (!anIntersection.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Intersection") ;
+        throw ostk::core::error::runtime::Undefined("Intersection") ;
     }
 
     Intersection intersection ;
@@ -99,7 +99,7 @@ Intersection&                   Intersection::operator +=                   (   
 
     if (!anIntersection.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Intersection") ;
+        throw ostk::core::error::runtime::Undefined("Intersection") ;
     }
 
     composite_ += anIntersection.composite_ ;
@@ -114,15 +114,15 @@ std::ostream&                   operator <<                                 (   
                                                                                 const   Intersection&               anIntersection                              )
 {
 
-    library::core::utils::Print::Header(anOutputStream, "Intersection") ;
+    ostk::core::utils::Print::Header(anOutputStream, "Intersection") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Type:"                << Intersection::StringFromType(anIntersection.type_) ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Type:"                << Intersection::StringFromType(anIntersection.type_) ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Composite:" ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Composite:" ;
 
     anIntersection.composite_.print(anOutputStream, false) ;
 
-    library::core::utils::Print::Footer(anOutputStream) ;
+    ostk::core::utils::Print::Footer(anOutputStream) ;
 
     return anOutputStream ;
 
@@ -148,7 +148,7 @@ const Composite&                Intersection::accessComposite               ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Intersection") ;
+        throw ostk::core::error::runtime::Undefined("Intersection") ;
     }
 
     return composite_ ;
@@ -160,7 +160,7 @@ Intersection::Type              Intersection::getType                       ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Intersection") ;
+        throw ostk::core::error::runtime::Undefined("Intersection") ;
     }
 
     return type_ ;
@@ -310,7 +310,7 @@ String                          Intersection::StringFromType                (   
             return "Complex" ;
 
         default:
-            throw library::core::error::runtime::Wrong("Type") ;
+            throw ostk::core::error::runtime::Wrong("Type") ;
             break ;
 
     }

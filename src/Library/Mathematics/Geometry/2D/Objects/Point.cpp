@@ -15,7 +15,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -64,12 +64,12 @@ Point                           Point::operator +                           (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     if (!aVector.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Vector") ;
+        throw ostk::core::error::runtime::Undefined("Vector") ;
     }
 
     return { x_ + aVector.x(), y_ + aVector.y() } ;
@@ -81,12 +81,12 @@ Point                           Point::operator -                           (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     if (!aVector.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Vector") ;
+        throw ostk::core::error::runtime::Undefined("Vector") ;
     }
 
     return { x_ - aVector.x(), y_ - aVector.y() } ;
@@ -98,12 +98,12 @@ Vector2d                        Point::operator -                           (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     if (!aPoint.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     return { x_ - aPoint.x_, y_ - aPoint.y_ } ;
@@ -121,7 +121,7 @@ bool                            Point::isNear                               (   
 
     if (!aTolerance.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Tolerance") ;
+        throw ostk::core::error::runtime::Undefined("Tolerance") ;
     }
 
     return this->distanceTo(aPoint) <= aTolerance ;
@@ -133,7 +133,7 @@ const Real&                     Point::x                                    ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     return x_ ;
@@ -145,7 +145,7 @@ const Real&                     Point::y                                    ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     return y_ ;
@@ -157,7 +157,7 @@ Vector2d                        Point::asVector                             ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     return { x_, y_ } ;
@@ -169,12 +169,12 @@ Real                            Point::distanceTo                           (   
 
     if (!aPoint.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     return ((*this) - aPoint).norm() ;
@@ -187,7 +187,7 @@ String                          Point::toString                             (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     switch (aFormat)
@@ -200,7 +200,7 @@ String                          Point::toString                             (   
             return String::Format("POINT({} {})", x_.toString(aPrecision), y_.toString(aPrecision)) ;
 
         default:
-            throw library::core::error::runtime::Wrong("Format") ;
+            throw ostk::core::error::runtime::Wrong("Format") ;
             break ;
 
     }
@@ -213,12 +213,12 @@ void                            Point::print                                (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Point") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Point") : void () ;
 
-    library::core::utils::Print::Line(anOutputStream) << "X:"                   << (x_.isDefined() ? x_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Y:"                   << (y_.isDefined() ? y_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "X:"                   << (x_.isDefined() ? x_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Y:"                   << (y_.isDefined() ? y_.toString() : "Undefined") ;
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
@@ -227,12 +227,12 @@ void                            Point::applyTransformation                  (   
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     (*this) = aTransformation.applyTo(*this) ;

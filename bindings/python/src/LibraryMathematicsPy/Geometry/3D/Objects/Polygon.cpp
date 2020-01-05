@@ -16,11 +16,11 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Polygon
 
     using namespace boost::python ;
 
-    using library::math::obj::Vector3d ;
-    using Polygon2d = library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
+    using ostk::math::obj::Vector3d ;
+    using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
 
     scope in_Polygon = class_<Polygon, bases<Object>>("Polygon", init<const Polygon2d&, const Point&, const Vector3d&, const Vector3d&>())
 

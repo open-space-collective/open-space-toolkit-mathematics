@@ -16,7 +16,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Object     ( )
 
     using namespace boost::python ;
 
-    using library::math::geom::d2::Object ;
+    using ostk::math::geom::d2::Object ;
 
     scope in_Object = class_<Object, boost::noncopyable>("Object", no_init)
 

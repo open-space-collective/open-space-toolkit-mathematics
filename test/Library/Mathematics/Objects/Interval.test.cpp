@@ -17,8 +17,8 @@
 TEST (Library_Mathematics_Objects_Interval, Constructor)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -46,8 +46,8 @@ TEST (Library_Mathematics_Objects_Interval, Constructor)
 TEST (Library_Mathematics_Objects_Interval, EqualToOperator)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -72,8 +72,8 @@ TEST (Library_Mathematics_Objects_Interval, EqualToOperator)
 TEST (Library_Mathematics_Objects_Interval, NotEqualToOperator)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -98,8 +98,8 @@ TEST (Library_Mathematics_Objects_Interval, NotEqualToOperator)
 TEST (Library_Mathematics_Objects_Interval, IsDefined)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -125,8 +125,8 @@ TEST (Library_Mathematics_Objects_Interval, IsDefined)
 TEST (Library_Mathematics_Objects_Interval, IsDegenerate)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -160,9 +160,9 @@ TEST (Library_Mathematics_Objects_Interval, IsDegenerate)
 // TEST (Library_Mathematics_Objects_Interval, Intersects)
 // {
 
-//     using library::core::types::Real ;
+//     using ostk::core::types::Real ;
 
-//     using library::math::obj::Interval ;
+//     using ostk::math::obj::Interval ;
 
 //     {
 
@@ -175,9 +175,9 @@ TEST (Library_Mathematics_Objects_Interval, IsDegenerate)
 // TEST (Library_Mathematics_Objects_Interval, Contains)
 // {
 
-//     using library::core::types::Real ;
+//     using ostk::core::types::Real ;
 
-//     using library::math::obj::Interval ;
+//     using ostk::math::obj::Interval ;
 
 //     {
 
@@ -592,8 +592,8 @@ TEST (Library_Mathematics_Objects_Interval, IsDegenerate)
 TEST (Library_Mathematics_Objects_Interval, AccessLowerBound)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -641,8 +641,8 @@ TEST (Library_Mathematics_Objects_Interval, AccessLowerBound)
 TEST (Library_Mathematics_Objects_Interval, AccessUpperBound)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -690,8 +690,8 @@ TEST (Library_Mathematics_Objects_Interval, AccessUpperBound)
 TEST (Library_Mathematics_Objects_Interval, GetType)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -713,8 +713,8 @@ TEST (Library_Mathematics_Objects_Interval, GetType)
 TEST (Library_Mathematics_Objects_Interval, GetLowerBound)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -754,8 +754,8 @@ TEST (Library_Mathematics_Objects_Interval, GetLowerBound)
 TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -795,9 +795,9 @@ TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 // TEST (Library_Mathematics_Objects_Interval, GetIntersectionWith)
 // {
 
-//     using library::core::types::Real ;
+//     using ostk::core::types::Real ;
 
-//     using library::math::obj::Interval ;
+//     using ostk::math::obj::Interval ;
 
 //     {
 
@@ -810,9 +810,9 @@ TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 // TEST (Library_Mathematics_Objects_Interval, GetUnionWith)
 // {
 
-//     using library::core::types::Real ;
+//     using ostk::core::types::Real ;
 
-//     using library::math::obj::Interval ;
+//     using ostk::math::obj::Interval ;
 
 //     {
 
@@ -825,9 +825,9 @@ TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 // TEST (Library_Mathematics_Objects_Interval, GenerateArrayWithStep)
 // {
 
-//     using library::core::types::Real ;
+//     using ostk::core::types::Real ;
 
-//     using library::math::obj::Interval ;
+//     using ostk::math::obj::Interval ;
 
 //     {
 
@@ -840,11 +840,11 @@ TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 TEST (Library_Mathematics_Objects_Interval, GenerateArrayWithSize)
 {
 
-    using library::core::types::Size ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Size ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Interval ;
+    using ostk::math::obj::Interval ;
 
     // Closed
 
@@ -956,9 +956,9 @@ TEST (Library_Mathematics_Objects_Interval, GenerateArrayWithSize)
 TEST (Library_Mathematics_Objects_Interval, ToString)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Interval ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -998,8 +998,8 @@ TEST (Library_Mathematics_Objects_Interval, ToString)
 TEST (Library_Mathematics_Objects_Interval, SetType)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -1024,8 +1024,8 @@ TEST (Library_Mathematics_Objects_Interval, SetType)
 TEST (Library_Mathematics_Objects_Interval, SetLowerBound)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -1060,8 +1060,8 @@ TEST (Library_Mathematics_Objects_Interval, SetLowerBound)
 TEST (Library_Mathematics_Objects_Interval, SetUpperBound)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -1096,8 +1096,8 @@ TEST (Library_Mathematics_Objects_Interval, SetUpperBound)
 TEST (Library_Mathematics_Objects_Interval, Undefined)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -1112,8 +1112,8 @@ TEST (Library_Mathematics_Objects_Interval, Undefined)
 TEST (Library_Mathematics_Objects_Interval, Closed)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -1130,8 +1130,8 @@ TEST (Library_Mathematics_Objects_Interval, Closed)
 TEST (Library_Mathematics_Objects_Interval, Open)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -1148,8 +1148,8 @@ TEST (Library_Mathematics_Objects_Interval, Open)
 TEST (Library_Mathematics_Objects_Interval, HalfOpenLeft)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -1166,8 +1166,8 @@ TEST (Library_Mathematics_Objects_Interval, HalfOpenLeft)
 TEST (Library_Mathematics_Objects_Interval, HalfOpenRight)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval ;
 
     {
 
@@ -1184,9 +1184,9 @@ TEST (Library_Mathematics_Objects_Interval, HalfOpenRight)
 // TEST (Library_Mathematics_Objects_Interval, Parse)
 // {
 
-//     using library::core::types::Real ;
+//     using ostk::core::types::Real ;
 
-//     using library::math::obj::Interval ;
+//     using ostk::math::obj::Interval ;
 
 //     {
 

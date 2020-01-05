@@ -23,7 +23,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -36,16 +36,16 @@ namespace objects
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-using library::core::ctnr::Index ;
-using library::core::ctnr::Size ;
-using library::core::ctnr::Array ;
+using ostk::core::ctnr::Index ;
+using ostk::core::ctnr::Size ;
+using ostk::core::ctnr::Array ;
 
-using Polygon2d = library::math::geom::d2::objects::Polygon ;
-using library::math::geom::d3::Object ;
-using library::math::geom::d3::objects::Point ;
-using library::math::geom::d3::objects::Segment ;
-using library::math::geom::d3::objects::LineString ;
-using library::math::geom::d3::objects::Plane ;
+using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
+using ostk::math::geom::d3::Object ;
+using ostk::math::geom::d3::objects::Point ;
+using ostk::math::geom::d3::objects::Segment ;
+using ostk::math::geom::d3::objects::LineString ;
+using ostk::math::geom::d3::objects::Plane ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

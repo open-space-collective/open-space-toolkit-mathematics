@@ -18,8 +18,8 @@
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Constructor)
 {
 
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -43,8 +43,8 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, EqualToOperator)
 {
 
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -81,8 +81,8 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, NotEqualToOperator)
 {
 
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -119,8 +119,8 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, StreamOperator)
 {
 
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -137,9 +137,9 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, IsDefined)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -160,9 +160,9 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, GetAxis)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -183,8 +183,8 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, GetAngle)
 {
 
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -212,8 +212,8 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, ToString)
 {
 
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -256,7 +256,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Undefined)
 {
 
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -270,8 +270,8 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Unit)
 {
 
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -285,9 +285,9 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, X)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -311,9 +311,9 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Y)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -337,9 +337,9 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Z)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 
@@ -363,10 +363,10 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Quaternion)
 {
 
-    using library::core::types::Real ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::core::types::Real ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     {
 

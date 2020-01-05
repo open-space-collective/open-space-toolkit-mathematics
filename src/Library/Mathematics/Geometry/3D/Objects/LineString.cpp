@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -75,7 +75,7 @@ bool                            LineString::isNear                          (   
         return false ;
     }
 
-    for (const auto pointTuple : library::core::ctnr::iterators::Zip(points_, aLineString.points_))
+    for (const auto pointTuple : ostk::core::ctnr::iterators::Zip(points_, aLineString.points_))
     {
 
         if (!std::get<0>(pointTuple).isNear(std::get<1>(pointTuple), aTolerance))
@@ -94,7 +94,7 @@ const Point&                    LineString::accessPointAt                   (   
 
     if (anIndex >= points_.getSize())
     {
-        throw library::core::error::RuntimeError("Point index [{}] out of bounds [0 - {}].", anIndex, points_.getSize()) ;
+        throw ostk::core::error::RuntimeError("Point index [{}] out of bounds [0 - {}].", anIndex, points_.getSize()) ;
     }
 
     return points_.at(anIndex) ;
@@ -111,12 +111,12 @@ Point                           LineString::getPointClosestTo               (   
 
     if (!aPoint.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     if (this->isEmpty())
     {
-        throw library::core::error::runtime::Undefined("Line string") ;
+        throw ostk::core::error::runtime::Undefined("Line string") ;
     }
 
     Point const* pointPtr = nullptr ;
@@ -146,14 +146,14 @@ void                            LineString::print                           (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Line String") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Line String") : void () ;
 
     for (const auto& point : points_)
     {
-        library::core::utils::Print::Line(anOutputStream)                       << (point.isDefined() ? point.toString() : "Undefined") ;
+        ostk::core::utils::Print::Line(anOutputStream)                       << (point.isDefined() ? point.toString() : "Undefined") ;
     }
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
@@ -172,12 +172,12 @@ void                            LineString::applyTransformation             (   
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Line string") ;
+        throw ostk::core::error::runtime::Undefined("Line string") ;
     }
 
     for (auto& point : points_)
@@ -197,7 +197,7 @@ LineString                      LineString::Segment                         (   
 
     if (!aSegment.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment") ;
     }
 
     return { { aSegment.getFirstPoint(), aSegment.getSecondPoint() } } ;

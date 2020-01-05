@@ -20,10 +20,10 @@
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Constructor)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cone ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cone ;
 
     {
 
@@ -40,10 +40,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Constructor)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Clone)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cone ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cone ;
 
     {
 
@@ -60,10 +60,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Clone)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, EqualToOperator)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cone ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cone ;
 
     {
 
@@ -110,10 +110,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, EqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, NotEqualToOperator)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cone ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cone ;
 
     {
 
@@ -160,10 +160,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, NotEqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, StreamOperator)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cone ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cone ;
 
     {
 
@@ -184,10 +184,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, StreamOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IsDefined)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cone ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cone ;
 
     {
 
@@ -210,11 +210,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IsDefined)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Intersects_Ellipsoid)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::objects::Cone ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Cone ;
 
     {
 
@@ -241,10 +241,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Intersects_Ellipsoid)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetApex)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cone ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cone ;
 
     {
 
@@ -267,10 +267,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetApex)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetAxis)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cone ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cone ;
 
     {
 
@@ -293,10 +293,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetAxis)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetAngle)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cone ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cone ;
 
     {
 
@@ -319,14 +319,14 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetAngle)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetRaysOfLateralSurface)
 {
 
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::d3::objects::Cone ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Cone ;
 
     {
 
@@ -372,15 +372,15 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetRaysOfLateralSurface)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IntersectionWith_Ellipsoid)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::LineString ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::objects::Cone ;
-    using library::math::geom::d3::Intersection ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Cone ;
+    using ostk::math::geom::d3::Intersection ;
 
     {
 
@@ -427,14 +427,14 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IntersectionWith_Ellipsoid)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, ApplyTransformation)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cone ;
-    using library::math::geom::d3::Transformation ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cone ;
+    using ostk::math::geom::d3::Transformation ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     // Translation
 
@@ -493,7 +493,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, ApplyTransformation)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Undefined)
 {
 
-    using library::math::geom::d3::objects::Cone ;
+    using ostk::math::geom::d3::objects::Cone ;
 
     {
 

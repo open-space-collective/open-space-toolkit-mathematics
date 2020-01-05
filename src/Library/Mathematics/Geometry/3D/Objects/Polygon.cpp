@@ -15,7 +15,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -44,7 +44,7 @@ namespace objects
 
         if (std::abs(xAxis_.dot(yAxis_)) > Real::Epsilon())
         {
-            throw library::core::error::RuntimeError("X and Y axes are not orthogonal.") ;
+            throw ostk::core::error::RuntimeError("X and Y axes are not orthogonal.") ;
         }
 
     }
@@ -86,17 +86,17 @@ bool                            Polygon::isNear                             (   
 
     if (!aPolygon.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     if (!aTolerance.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Tolerance") ;
+        throw ostk::core::error::runtime::Undefined("Tolerance") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     if (this->getVertexCount() != aPolygon.getVertexCount())
@@ -107,8 +107,8 @@ bool                            Polygon::isNear                             (   
     const Array<Polygon::Vertex> firstVertices = this->getVertices() ;
     const Array<Polygon::Vertex> secondVertices = aPolygon.getVertices() ;
 
-    // for (const auto vertexTuple : library::core::ctnr::iterators::Zip(this->getVertices(), aPolygon.getVertices()))
-    for (const auto vertexTuple : library::core::ctnr::iterators::Zip(firstVertices, secondVertices))
+    // for (const auto vertexTuple : ostk::core::ctnr::iterators::Zip(this->getVertices(), aPolygon.getVertices()))
+    for (const auto vertexTuple : ostk::core::ctnr::iterators::Zip(firstVertices, secondVertices))
     {
 
         if (!std::get<0>(vertexTuple).isNear(std::get<1>(vertexTuple), aTolerance))
@@ -127,7 +127,7 @@ Polygon2d                       Polygon::getPolygon2d                       ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return polygon_ ;
@@ -139,7 +139,7 @@ Point                           Polygon::getOrigin                          ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return origin_ ;
@@ -151,7 +151,7 @@ Vector3d                        Polygon::getXAxis                           ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return xAxis_ ;
@@ -163,7 +163,7 @@ Vector3d                        Polygon::getYAxis                           ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return yAxis_ ;
@@ -175,7 +175,7 @@ Vector3d                        Polygon::getNormalVector                    ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return xAxis_.cross(yAxis_) ;
@@ -187,7 +187,7 @@ Size                            Polygon::getEdgeCount                       ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return polygon_.getEdgeCount() ;
@@ -199,7 +199,7 @@ Size                            Polygon::getVertexCount                     ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     return polygon_.getVertexCount() ;
@@ -209,12 +209,12 @@ Size                            Polygon::getVertexCount                     ( ) 
 Polygon::Edge                   Polygon::getEdgeAt                          (   const   Index                       anEdgeIndex                                 ) const
 {
 
-    using Point2d = library::math::geom::d2::objects::Point ;
-    using Segment2d = library::math::geom::d2::objects::Segment ;
+    using Point2d = ostk::math::geom::d2::objects::Point ;
+    using Segment2d = ostk::math::geom::d2::objects::Segment ;
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     const Segment2d edge2d = polygon_.getEdgeAt(anEdgeIndex) ;
@@ -232,11 +232,11 @@ Polygon::Edge                   Polygon::getEdgeAt                          (   
 Polygon::Vertex                 Polygon::getVertexAt                        (   const   Index                       aVertexIndex                                ) const
 {
 
-    using Point2d = library::math::geom::d2::objects::Point ;
+    using Point2d = ostk::math::geom::d2::objects::Point ;
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     const Point2d vertex2d = polygon_.getVertexAt(aVertexIndex) ;
@@ -248,7 +248,7 @@ Polygon::Vertex                 Polygon::getVertexAt                        (   
 Array<Polygon::Edge>            Polygon::getEdges                           ( ) const
 {
 
-    using Point2d = library::math::geom::d2::objects::Point ;
+    using Point2d = ostk::math::geom::d2::objects::Point ;
 
     Array<Polygon::Edge> edges = Array<Polygon::Edge>::Empty() ;
 
@@ -291,18 +291,18 @@ void                            Polygon::print                              (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Polygon") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Polygon") : void () ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Origin:"              << (origin_.isDefined() ? origin_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Origin:"              << (origin_.isDefined() ? origin_.toString() : "Undefined") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "X axis:"              << (xAxis_.isDefined() ? xAxis_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Y axis:"              << (yAxis_.isDefined() ? yAxis_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "X axis:"              << (xAxis_.isDefined() ? xAxis_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Y axis:"              << (yAxis_.isDefined() ? yAxis_.toString() : "Undefined") ;
 
-    library::core::utils::Print::Separator(anOutputStream, "Polygon") ;
+    ostk::core::utils::Print::Separator(anOutputStream, "Polygon") ;
 
     polygon_.print(anOutputStream, false) ;
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
@@ -311,12 +311,12 @@ void                            Polygon::applyTransformation                (   
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
     }
 
     // polygon_ = aTransformation.applyTo(polygon_) ;

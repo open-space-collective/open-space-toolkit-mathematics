@@ -21,7 +21,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -36,17 +36,17 @@ class Transformation ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-using library::core::types::Unique ;
-using library::core::types::String ;
+using ostk::core::types::Unique ;
+using ostk::core::types::String ;
 
-using library::math::obj::Vector3d ;
-using library::math::obj::Vector4d ;
-using library::math::obj::Matrix4d ;
-using library::math::geom::Angle ;
-using library::math::geom::d3::Object ;
-using library::math::geom::d3::objects::Point ;
-using library::math::geom::d3::trf::rot::RotationVector ;
-using library::math::geom::d3::trf::rot::RotationMatrix ;
+using ostk::math::obj::Vector3d ;
+using ostk::math::obj::Vector4d ;
+using ostk::math::obj::Matrix4d ;
+using ostk::math::geom::Angle ;
+using ostk::math::geom::d3::Object ;
+using ostk::math::geom::d3::objects::Point ;
+using ostk::math::geom::d3::trf::rot::RotationVector ;
+using ostk::math::geom::d3::trf::rot::RotationMatrix ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

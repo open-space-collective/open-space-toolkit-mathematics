@@ -26,11 +26,11 @@
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Constructor)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -47,11 +47,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Constructor)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Clone)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -68,11 +68,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Clone)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, EqualToOperator)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -123,11 +123,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, EqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, NotEqualToOperator)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -178,11 +178,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, NotEqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, StreamOperator)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -203,11 +203,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, StreamOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IsDefined)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -230,11 +230,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IsDefined)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IsNear)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -307,11 +307,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IsNear)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Point)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -367,12 +367,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Point)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_PointSet)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -475,13 +475,13 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_PointSet)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Line ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -564,11 +564,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
 // TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Ray)
 // {
 
-//     using library::core::types::Real ;
+//     using ostk::core::types::Real ;
 
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::Ray ;
-//     using library::math::geom::d3::objects::Cuboid ;
+//     using ostk::math::geom::d3::objects::Point ;
+//     using ostk::math::geom::d3::objects::Ray ;
+//     using ostk::math::geom::d3::objects::Cuboid ;
 
 //     {
 
@@ -583,11 +583,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
 // TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Segment)
 // {
 
-//     using library::core::types::Real ;
+//     using ostk::core::types::Real ;
 
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::Segment ;
-//     using library::math::geom::d3::objects::Cuboid ;
+//     using ostk::math::geom::d3::objects::Point ;
+//     using ostk::math::geom::d3::objects::Segment ;
+//     using ostk::math::geom::d3::objects::Cuboid ;
 
 //     {
 
@@ -600,11 +600,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
 // TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Plane)
 // {
 
-//     using library::core::types::Real ;
+//     using ostk::core::types::Real ;
 
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::Plane ;
-//     using library::math::geom::d3::objects::Cuboid ;
+//     using ostk::math::geom::d3::objects::Point ;
+//     using ostk::math::geom::d3::objects::Plane ;
+//     using ostk::math::geom::d3::objects::Cuboid ;
 
 //     {
 
@@ -618,9 +618,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
 // TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Pyramid)
 // {
 
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::Cuboid ;
-//     using library::math::geom::d3::objects::Pyramid ;
+//     using ostk::math::geom::d3::objects::Point ;
+//     using ostk::math::geom::d3::objects::Cuboid ;
+//     using ostk::math::geom::d3::objects::Pyramid ;
 
 //     {
 
@@ -634,11 +634,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Contains_Point)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -694,12 +694,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Contains_Point)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Contains_PointSet)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -802,11 +802,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Contains_PointSet)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetCenter)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -829,11 +829,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetCenter)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetFirstAxis)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -856,11 +856,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetFirstAxis)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetSecondAxis)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -883,11 +883,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetSecondAxis)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetThirdAxis)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -910,11 +910,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetThirdAxis)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetFirstExtent)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -937,11 +937,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetFirstExtent)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetSecondExtent)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -964,11 +964,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetSecondExtent)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetThirdExtent)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -991,12 +991,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetThirdExtent)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetVertices)
 {
 
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -1035,13 +1035,13 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetVertices)
 // TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IntersectionWith_Line)
 // {
 
-//     using library::core::types::Real ;
+//     using ostk::core::types::Real ;
 
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::PointSet ;
-//     using library::math::geom::d3::objects::Line ;
-//     using library::math::geom::d3::objects::Cuboid ;
-//     using library::math::geom::d3::Intersection ;
+//     using ostk::math::geom::d3::objects::Point ;
+//     using ostk::math::geom::d3::objects::PointSet ;
+//     using ostk::math::geom::d3::objects::Line ;
+//     using ostk::math::geom::d3::objects::Cuboid ;
+//     using ostk::math::geom::d3::Intersection ;
 
 //     {
 
@@ -1060,13 +1060,13 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetVertices)
 // TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IntersectionWith_Ray)
 // {
 
-//     using library::core::types::Real ;
+//     using ostk::core::types::Real ;
 
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::PointSet ;
-//     using library::math::geom::d3::objects::Ray ;
-//     using library::math::geom::d3::objects::Cuboid ;
-//     using library::math::geom::d3::Intersection ;
+//     using ostk::math::geom::d3::objects::Point ;
+//     using ostk::math::geom::d3::objects::PointSet ;
+//     using ostk::math::geom::d3::objects::Ray ;
+//     using ostk::math::geom::d3::objects::Cuboid ;
+//     using ostk::math::geom::d3::Intersection ;
 
 //     {
 
@@ -1085,13 +1085,13 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetVertices)
 // TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IntersectionWith_Segment)
 // {
 
-//     using library::core::types::Real ;
+//     using ostk::core::types::Real ;
 
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::PointSet ;
-//     using library::math::geom::d3::objects::Segment ;
-//     using library::math::geom::d3::objects::Cuboid ;
-//     using library::math::geom::d3::Intersection ;
+//     using ostk::math::geom::d3::objects::Point ;
+//     using ostk::math::geom::d3::objects::PointSet ;
+//     using ostk::math::geom::d3::objects::Segment ;
+//     using ostk::math::geom::d3::objects::Cuboid ;
+//     using ostk::math::geom::d3::Intersection ;
 
 //     {
 
@@ -1110,9 +1110,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetVertices)
 // TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IntersectionWith_Pyramid)
 // {
 
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::Cuboid ;
-//     using library::math::geom::d3::objects::Pyramid ;
+//     using ostk::math::geom::d3::objects::Point ;
+//     using ostk::math::geom::d3::objects::Cuboid ;
+//     using ostk::math::geom::d3::objects::Pyramid ;
 
 //     {
 
@@ -1131,15 +1131,15 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetVertices)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, ApplyTransformation)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::Transformation ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::Transformation ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     // Translation
 
@@ -1196,7 +1196,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, ApplyTransformation)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Undefined)
 {
 
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 
@@ -1210,9 +1210,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Undefined)
 TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Cube)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Cuboid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cuboid ;
 
     {
 

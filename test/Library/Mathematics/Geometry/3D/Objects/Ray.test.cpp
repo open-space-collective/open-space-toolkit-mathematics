@@ -21,7 +21,7 @@
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Constructor)
 {
 
-    using library::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Ray ;
 
     {
 
@@ -34,7 +34,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Constructor)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Clone)
 {
 
-    using library::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Ray ;
 
     {
 
@@ -47,7 +47,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Clone)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, EqualToOperator)
 {
 
-    using library::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Ray ;
 
     {
 
@@ -79,7 +79,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, EqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, NotEqualToOperator)
 {
 
-    using library::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Ray ;
 
     {
 
@@ -118,7 +118,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, NotEqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, StreamOperator)
 {
 
-    using library::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Ray ;
 
     {
 
@@ -135,7 +135,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, StreamOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, IsDefined)
 {
 
-    using library::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Ray ;
 
     {
 
@@ -154,8 +154,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, IsDefined)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Intersects_Point)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Ray ;
 
     {
 
@@ -187,8 +187,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Intersects_Point)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Intersects_Plane)
 {
 
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::d3::objects::Plane ;
+    using ostk::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Plane ;
 
     {
 
@@ -228,8 +228,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Intersects_Plane)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Intersects_Sphere)
 {
 
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -251,8 +251,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Intersects_Sphere)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Intersects_Ellipsoid)
 {
 
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -274,8 +274,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Intersects_Ellipsoid)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Contains_Point)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Ray ;
 
     {
 
@@ -308,8 +308,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Contains_Point)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Contains_PointSet)
 {
 
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Ray ;
 
     {
 
@@ -339,8 +339,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Contains_PointSet)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, GetOrigin)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Ray ;
 
     {
 
@@ -362,9 +362,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, GetOrigin)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, GetDirection)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Ray ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Ray ;
 
     {
 
@@ -384,12 +384,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, GetDirection)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Plane)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::d3::objects::Plane ;
-    using library::math::geom::d3::Intersection ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Plane ;
+    using ostk::math::geom::d3::Intersection ;
 
     const auto expectRayIntersection =
     [] (const Ray& aRay, const Plane& aPlane, const Ray& anIntersectionRay) -> void
@@ -472,8 +472,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Plane)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Ellipsoid)
 {
 
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -494,13 +494,13 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Ellipsoid)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, ApplyTransformation)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::d3::Transformation ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::Transformation ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     // Translation
 
@@ -542,7 +542,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Ray, ApplyTransformation)
 TEST (Library_Mathematics_Geometry_3D_Objects_Ray, Undefined)
 {
 
-    using library::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Ray ;
 
     {
 

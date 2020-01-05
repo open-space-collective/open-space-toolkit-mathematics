@@ -11,18 +11,18 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_2D_Objects_PointSet_toString_overloads, library::math::geom::d2::objects::PointSet::toString, 0, 2)
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_2D_Objects_PointSet_toString_overloads, ostk::math::geom::d2::objects::PointSet::toString, 0, 2)
 
 inline void                     LibraryMathematicsPy_Geometry_2D_Objects_PointSet ( )
 {
 
     using namespace boost::python ;
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::Object ;
-    using library::math::geom::d2::objects::Point ;
-    using library::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::Object ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::PointSet ;
 
     scope in_PointSet = class_<PointSet, bases<Object>>("PointSet", init<const Array<Point>&>())
 

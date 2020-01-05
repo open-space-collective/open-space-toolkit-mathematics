@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -37,32 +37,32 @@ namespace rot
 
     if ((matrix_.col(0).norm() - 1.0) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("First column is not unitary.") ;
+        throw ostk::core::error::RuntimeError("First column is not unitary.") ;
     }
 
     if ((matrix_.col(1).norm() - 1.0) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Second column is not unitary.") ;
+        throw ostk::core::error::RuntimeError("Second column is not unitary.") ;
     }
 
     if ((matrix_.col(2).norm() - 1.0) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Third column is not unitary.") ;
+        throw ostk::core::error::RuntimeError("Third column is not unitary.") ;
     }
 
     if (std::abs(matrix_.col(0).dot(matrix_.col(1))) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("First and second columns are not orthogonal.") ;
+        throw ostk::core::error::RuntimeError("First and second columns are not orthogonal.") ;
     }
 
     if (std::abs(matrix_.col(1).dot(matrix_.col(2))) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Second and third columns are not orthogonal.") ;
+        throw ostk::core::error::RuntimeError("Second and third columns are not orthogonal.") ;
     }
 
     if (std::abs(matrix_.col(2).dot(matrix_.col(0))) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("First and third columns are not orthogonal.") ;
+        throw ostk::core::error::RuntimeError("First and third columns are not orthogonal.") ;
     }
 
 }
@@ -83,32 +83,32 @@ namespace rot
 
     if ((matrix_.col(0).norm() - 1.0) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("First column is not unitary.") ;
+        throw ostk::core::error::RuntimeError("First column is not unitary.") ;
     }
 
     if ((matrix_.col(1).norm() - 1.0) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Second column is not unitary.") ;
+        throw ostk::core::error::RuntimeError("Second column is not unitary.") ;
     }
 
     if ((matrix_.col(2).norm() - 1.0) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Third column is not unitary.") ;
+        throw ostk::core::error::RuntimeError("Third column is not unitary.") ;
     }
 
     if (std::abs(matrix_.col(0).dot(matrix_.col(1))) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("First and second columns are not orthogonal.") ;
+        throw ostk::core::error::RuntimeError("First and second columns are not orthogonal.") ;
     }
 
     if (std::abs(matrix_.col(1).dot(matrix_.col(2))) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Second and third columns are not orthogonal.") ;
+        throw ostk::core::error::RuntimeError("Second and third columns are not orthogonal.") ;
     }
 
     if (std::abs(matrix_.col(2).dot(matrix_.col(0))) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("First and third columns are not orthogonal.") ;
+        throw ostk::core::error::RuntimeError("First and third columns are not orthogonal.") ;
     }
 
 }
@@ -135,7 +135,7 @@ RotationMatrix                  RotationMatrix::operator *                  (   
 
     if ((!this->isDefined()) || (!aRotationMatrix.isDefined()))
     {
-        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+        throw ostk::core::error::runtime::Undefined("Rotation matrix") ;
     }
 
     return RotationMatrix(matrix_ * aRotationMatrix.matrix_) ;
@@ -147,12 +147,12 @@ Vector3d                        RotationMatrix::operator *                  (   
 
     if (!aVector.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Vector") ;
+        throw ostk::core::error::runtime::Undefined("Vector") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+        throw ostk::core::error::runtime::Undefined("Rotation matrix") ;
     }
 
     return matrix_ * aVector ;
@@ -165,17 +165,17 @@ double                          RotationMatrix::operator ()                 (   
 
     if (aRowIndex > 3)
     {
-        throw library::core::error::RuntimeError("Row index out of bounds.") ;
+        throw ostk::core::error::RuntimeError("Row index out of bounds.") ;
     }
 
     if (aColumnIndex > 3)
     {
-        throw library::core::error::RuntimeError("Column index out of bounds.") ;
+        throw ostk::core::error::RuntimeError("Column index out of bounds.") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+        throw ostk::core::error::runtime::Undefined("Rotation matrix") ;
     }
 
     return matrix_(aRowIndex, aColumnIndex) ;
@@ -188,17 +188,17 @@ double&                         RotationMatrix::operator ()                 (   
 
     if (aRowIndex > 3)
     {
-        throw library::core::error::RuntimeError("Row index out of bounds.") ;
+        throw ostk::core::error::RuntimeError("Row index out of bounds.") ;
     }
 
     if (aColumnIndex > 3)
     {
-        throw library::core::error::RuntimeError("Column index out of bounds.") ;
+        throw ostk::core::error::RuntimeError("Column index out of bounds.") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+        throw ostk::core::error::runtime::Undefined("Rotation matrix") ;
     }
 
     return matrix_(aRowIndex, aColumnIndex) ;
@@ -209,13 +209,13 @@ std::ostream&                   operator <<                                 (   
                                                                                 const   RotationMatrix&             aRotationMatrix                             )
 {
 
-    library::core::utils::Print::Header(anOutputStream, "Rotation Matrix") ;
+    ostk::core::utils::Print::Header(anOutputStream, "Rotation Matrix") ;
 
-    library::core::utils::Print::Line(anOutputStream) << aRotationMatrix.matrix_(0, 0) << aRotationMatrix.matrix_(0, 1) << aRotationMatrix.matrix_(0, 2) ;
-    library::core::utils::Print::Line(anOutputStream) << aRotationMatrix.matrix_(1, 0) << aRotationMatrix.matrix_(1, 1) << aRotationMatrix.matrix_(1, 2) ;
-    library::core::utils::Print::Line(anOutputStream) << aRotationMatrix.matrix_(2, 0) << aRotationMatrix.matrix_(2, 1) << aRotationMatrix.matrix_(2, 2) ;
+    ostk::core::utils::Print::Line(anOutputStream) << aRotationMatrix.matrix_(0, 0) << aRotationMatrix.matrix_(0, 1) << aRotationMatrix.matrix_(0, 2) ;
+    ostk::core::utils::Print::Line(anOutputStream) << aRotationMatrix.matrix_(1, 0) << aRotationMatrix.matrix_(1, 1) << aRotationMatrix.matrix_(1, 2) ;
+    ostk::core::utils::Print::Line(anOutputStream) << aRotationMatrix.matrix_(2, 0) << aRotationMatrix.matrix_(2, 1) << aRotationMatrix.matrix_(2, 2) ;
 
-    library::core::utils::Print::Footer(anOutputStream) ;
+    ostk::core::utils::Print::Footer(anOutputStream) ;
 
     return anOutputStream ;
 
@@ -231,7 +231,7 @@ const Matrix3d&                 RotationMatrix::accessMatrix                ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+        throw ostk::core::error::runtime::Undefined("Rotation matrix") ;
     }
 
     return matrix_ ;
@@ -243,12 +243,12 @@ Vector3d                        RotationMatrix::getRowAt                    (   
 
     if (aRowIndex > 3)
     {
-        throw library::core::error::RuntimeError("Row index out of bounds.") ;
+        throw ostk::core::error::RuntimeError("Row index out of bounds.") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+        throw ostk::core::error::runtime::Undefined("Rotation matrix") ;
     }
 
     return matrix_.block<1,3>(aRowIndex, 0) ;
@@ -260,12 +260,12 @@ Vector3d                        RotationMatrix::getColumnAt                 (   
 
     if (aColumnIndex > 3)
     {
-        throw library::core::error::RuntimeError("Column index out of bounds.") ;
+        throw ostk::core::error::RuntimeError("Column index out of bounds.") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+        throw ostk::core::error::runtime::Undefined("Rotation matrix") ;
     }
 
     return matrix_.block<3,1>(0, aColumnIndex) ;
@@ -277,7 +277,7 @@ Matrix3d                        RotationMatrix::getMatrix                   ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+        throw ostk::core::error::runtime::Undefined("Rotation matrix") ;
     }
 
     return matrix_ ;
@@ -289,7 +289,7 @@ RotationMatrix                  RotationMatrix::toTransposed                ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+        throw ostk::core::error::runtime::Undefined("Rotation matrix") ;
     }
 
     return RotationMatrix(matrix_.transpose()) ;
@@ -301,7 +301,7 @@ RotationMatrix&                 RotationMatrix::transpose                   ( )
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+        throw ostk::core::error::runtime::Undefined("Rotation matrix") ;
     }
 
     matrix_ = matrix_.transpose() ;
@@ -325,7 +325,7 @@ RotationMatrix                  RotationMatrix::RX                          (   
 
     if (!aRotationAngle.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation angle") ;
+        throw ostk::core::error::runtime::Undefined("Rotation angle") ;
     }
 
     const Real rotationAngle_rad = aRotationAngle.inRadians() ;
@@ -345,7 +345,7 @@ RotationMatrix                  RotationMatrix::RY                          (   
 
     if (!aRotationAngle.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation angle") ;
+        throw ostk::core::error::runtime::Undefined("Rotation angle") ;
     }
 
     const Real rotationAngle_rad = aRotationAngle.inRadians() ;
@@ -365,7 +365,7 @@ RotationMatrix                  RotationMatrix::RZ                          (   
 
     if (!aRotationAngle.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation angle") ;
+        throw ostk::core::error::runtime::Undefined("Rotation angle") ;
     }
 
     const Real rotationAngle_rad = aRotationAngle.inRadians() ;
@@ -387,47 +387,47 @@ RotationMatrix                  RotationMatrix::Rows                        (   
 
     if (!aFirstRow.isDefined())
     {
-        throw library::core::error::runtime::Undefined("First row") ;
+        throw ostk::core::error::runtime::Undefined("First row") ;
     }
 
     if (!aSecondRow.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Second row") ;
+        throw ostk::core::error::runtime::Undefined("Second row") ;
     }
 
     if (!aThirdRow.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Third row") ;
+        throw ostk::core::error::runtime::Undefined("Third row") ;
     }
 
     if ((aFirstRow.norm() - 1.0) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("First row is not unitary.") ;
+        throw ostk::core::error::RuntimeError("First row is not unitary.") ;
     }
 
     if ((aSecondRow.norm() - 1.0) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Second row is not unitary.") ;
+        throw ostk::core::error::RuntimeError("Second row is not unitary.") ;
     }
 
     if ((aThirdRow.norm() - 1.0) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Third row is not unitary.") ;
+        throw ostk::core::error::RuntimeError("Third row is not unitary.") ;
     }
 
     if (std::abs(aFirstRow.dot(aSecondRow)) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("First and second columns are not orthogonal.") ;
+        throw ostk::core::error::RuntimeError("First and second columns are not orthogonal.") ;
     }
 
     if (std::abs(aSecondRow.dot(aThirdRow)) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Second and third columns are not orthogonal.") ;
+        throw ostk::core::error::RuntimeError("Second and third columns are not orthogonal.") ;
     }
 
     if (std::abs(aThirdRow.dot(aFirstRow)) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("First and third columns are not orthogonal.") ;
+        throw ostk::core::error::RuntimeError("First and third columns are not orthogonal.") ;
     }
 
     Matrix3d matrix ;
@@ -447,47 +447,47 @@ RotationMatrix                  RotationMatrix::Columns                     (   
 
     if (!aFirstColumn.isDefined())
     {
-        throw library::core::error::runtime::Undefined("First column") ;
+        throw ostk::core::error::runtime::Undefined("First column") ;
     }
 
     if (!aSecondColumn.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Second column") ;
+        throw ostk::core::error::runtime::Undefined("Second column") ;
     }
 
     if (!aThirdColumn.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Third column") ;
+        throw ostk::core::error::runtime::Undefined("Third column") ;
     }
 
     if ((aFirstColumn.norm() - 1.0) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("First column is not unitary.") ;
+        throw ostk::core::error::RuntimeError("First column is not unitary.") ;
     }
 
     if ((aSecondColumn.norm() - 1.0) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Second column is not unitary.") ;
+        throw ostk::core::error::RuntimeError("Second column is not unitary.") ;
     }
 
     if ((aThirdColumn.norm() - 1.0) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Third column is not unitary.") ;
+        throw ostk::core::error::RuntimeError("Third column is not unitary.") ;
     }
 
     if (std::abs(aFirstColumn.dot(aSecondColumn)) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("First and second columns are not orthogonal.") ;
+        throw ostk::core::error::RuntimeError("First and second columns are not orthogonal.") ;
     }
 
     if (std::abs(aSecondColumn.dot(aThirdColumn)) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Second and third columns are not orthogonal.") ;
+        throw ostk::core::error::RuntimeError("Second and third columns are not orthogonal.") ;
     }
 
     if (std::abs(aThirdColumn.dot(aFirstColumn)) > Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("First and third columns are not orthogonal.") ;
+        throw ostk::core::error::RuntimeError("First and third columns are not orthogonal.") ;
     }
 
     Matrix3d matrix ;
@@ -505,12 +505,12 @@ RotationMatrix                  RotationMatrix::Quaternion                  (   
 
     if (!aQuaternion.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     if (!aQuaternion.isUnitary())
     {
-        throw library::core::error::RuntimeError("Quaternion is not unitary.") ;
+        throw ostk::core::error::RuntimeError("Quaternion is not unitary.") ;
     }
 
     if (aQuaternion == rot::Quaternion::Unit())
@@ -550,7 +550,7 @@ RotationMatrix                  RotationMatrix::RotationVector              (   
 
     if (!aRotationVector.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation vector") ;
+        throw ostk::core::error::runtime::Undefined("Rotation vector") ;
     }
 
     const Vector3d axis = aRotationVector.getAxis() ;

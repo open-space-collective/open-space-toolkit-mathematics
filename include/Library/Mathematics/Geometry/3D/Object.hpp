@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -130,7 +130,7 @@ class Object
 
             if (objectPtr == nullptr)
             {
-                throw library::core::error::RuntimeError("Cannot convert object to underlying type.") ;
+                throw ostk::core::error::RuntimeError("Cannot convert object to underlying type.") ;
             }
 
             return *objectPtr ;

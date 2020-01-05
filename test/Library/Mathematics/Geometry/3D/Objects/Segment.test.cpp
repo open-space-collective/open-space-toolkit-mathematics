@@ -21,7 +21,7 @@
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Constructor)
 {
 
-    using library::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Segment ;
 
     {
 
@@ -34,7 +34,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Constructor)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Clone)
 {
 
-    using library::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Segment ;
 
     {
 
@@ -47,7 +47,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Clone)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, EqualToOperator)
 {
 
-    using library::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Segment ;
 
     {
 
@@ -75,7 +75,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, EqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, NotEqualToOperator)
 {
 
-    using library::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Segment ;
 
     {
 
@@ -103,7 +103,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, NotEqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, StreamOperator)
 {
 
-    using library::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Segment ;
 
     {
 
@@ -120,7 +120,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, StreamOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IsDefined)
 {
 
-    using library::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Segment ;
 
     {
 
@@ -140,7 +140,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IsDefined)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IsDegenerate)
 {
 
-    using library::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Segment ;
 
     {
 
@@ -167,8 +167,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IsDegenerate)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Plane)
 {
 
-    using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::Plane ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Plane ;
 
     {
 
@@ -208,8 +208,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Plane)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Sphere)
 {
 
-    using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -231,8 +231,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Sphere)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Ellipsoid)
 {
 
-    using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
 
     {
 
@@ -254,8 +254,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Ellipsoid)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Contains_Point)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Segment ;
 
     {
 
@@ -288,8 +288,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Contains_Point)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetCenter)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Segment ;
 
     {
 
@@ -311,9 +311,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetCenter)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetDirection)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Segment ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Segment ;
 
     {
 
@@ -336,8 +336,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetDirection)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetLength)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Segment ;
 
     {
 
@@ -362,12 +362,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetLength)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IntersectionWith_Plane)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::Plane ;
-    using library::math::geom::d3::Intersection ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Plane ;
+    using ostk::math::geom::d3::Intersection ;
 
     const auto expectSegmentIntersection =
     [] (const Segment& aSegment, const Plane& aPlane, const Segment& anIntersectionSegment) -> void
@@ -454,13 +454,13 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IntersectionWith_Plane)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, ApplyTransformation)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::Transformation ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::Transformation ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     // Translation
 
@@ -502,7 +502,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, ApplyTransformation)
 TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Undefined)
 {
 
-    using library::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Segment ;
 
     {
 

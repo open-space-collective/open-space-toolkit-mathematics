@@ -27,7 +27,7 @@
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Constructor)
 {
 
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -40,7 +40,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Constructor)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Clone)
 {
 
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -53,7 +53,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Clone)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, EqualToOperator)
 {
 
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -81,7 +81,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, EqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, NotEqualToOperator)
 {
 
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -109,7 +109,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, NotEqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, StreamOperator)
 {
 
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -126,7 +126,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, StreamOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, IsDefined)
 {
 
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -146,7 +146,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, IsDefined)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, IsUnitary)
 {
 
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -189,8 +189,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, IsUnitary)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Point)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -224,9 +224,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Point)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_PointSet)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -253,11 +253,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_PointSet)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Line)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Line ;
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -416,11 +416,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Line)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Ray)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -599,11 +599,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Ray)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Segment)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -697,11 +697,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Segment)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Plane)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Plane ;
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Plane ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -748,9 +748,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Plane)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Pyramid)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Sphere ;
-    using library::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Pyramid ;
 
     {
 
@@ -772,8 +772,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Pyramid)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Contains_Point)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -807,9 +807,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Contains_Point)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Contains_PointSet)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -875,8 +875,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Contains_PointSet)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, GetCenter)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -895,7 +895,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, GetCenter)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, GetRadius)
 {
 
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -914,13 +914,13 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, GetRadius)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, ApplyTransformation)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Sphere ;
-    using library::math::geom::d3::Transformation ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::Transformation ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     // Translation
 
@@ -962,7 +962,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, ApplyTransformation)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Undefined)
 {
 
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 
@@ -976,7 +976,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Undefined)
 TEST (Library_Mathematics_Geometry_3D_Objects_Sphere, Unit)
 {
 
-    using library::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Sphere ;
 
     {
 

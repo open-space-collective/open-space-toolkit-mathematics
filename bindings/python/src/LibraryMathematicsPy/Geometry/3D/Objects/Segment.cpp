@@ -16,13 +16,13 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Segment
 
     using namespace boost::python ;
 
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::Plane ;
-    using library::math::geom::d3::objects::Sphere ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::Intersection ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Plane ;
+    using ostk::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::Intersection ;
 
     scope in_Segment = class_<Segment, bases<Object>>("Segment", init<const Point&, const Point&>())
 

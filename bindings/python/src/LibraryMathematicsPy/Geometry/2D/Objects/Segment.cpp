@@ -13,16 +13,16 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_2D_Objects_Segment_toString_overloads, library::math::geom::d2::objects::Segment::toString, 0, 2)
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_2D_Objects_Segment_toString_overloads, ostk::math::geom::d2::objects::Segment::toString, 0, 2)
 
 inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Segment ( )
 {
 
     using namespace boost::python ;
 
-    using library::math::geom::d2::Object ;
-    using library::math::geom::d2::objects::Point ;
-    using library::math::geom::d2::objects::Segment ;
+    using ostk::math::geom::d2::Object ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Segment ;
 
     scope in_Segment = class_<Segment, bases<Object>>("Segment", init<const Point&, const Point&>())
 
@@ -47,7 +47,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Segment
 
     ;
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
     IterableConverter()
 

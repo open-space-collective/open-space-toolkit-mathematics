@@ -29,7 +29,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -48,20 +48,20 @@ namespace d3
 bool                            Object::operator ==                         (   const   Object&                     anObject                                    ) const
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Line ;
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::LineString ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Plane ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Sphere ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Cone ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Plane ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Cone ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     if ((!this->isDefined()) || (!anObject.isDefined()))
     {
@@ -244,7 +244,7 @@ bool                            Object::operator ==                         (   
     std::cout << (*this) << std::endl ;
     std::cout << anObject << std::endl ;
 
-    throw library::core::error::runtime::ToBeImplemented("Object :: operator ==") ;
+    throw ostk::core::error::runtime::ToBeImplemented("Object :: operator ==") ;
 
     return false ;
 
@@ -268,24 +268,24 @@ std::ostream&                   operator <<                                 (   
 bool                            Object::intersects                          (   const   Object&                     anObject                                    ) const
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Line ;
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::LineString ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Plane ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Sphere ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Cone ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Plane ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Cone ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     if (!anObject.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Object") ;
+        throw ostk::core::error::runtime::Undefined("Object") ;
     }
 
     // Line
@@ -550,7 +550,7 @@ bool                            Object::intersects                          (   
     std::cout << (*this) << std::endl ;
     std::cout << anObject << std::endl ;
 
-    throw library::core::error::runtime::ToBeImplemented("Object :: intersects") ;
+    throw ostk::core::error::runtime::ToBeImplemented("Object :: intersects") ;
 
     return false ;
 
@@ -559,24 +559,24 @@ bool                            Object::intersects                          (   
 bool                            Object::contains                            (   const   Object&                     anObject                                    ) const
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Line ;
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::LineString ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Plane ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Sphere ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Cone ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Plane ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Cone ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     if (!anObject.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Object") ;
+        throw ostk::core::error::runtime::Undefined("Object") ;
     }
 
     // Segment
@@ -684,7 +684,7 @@ bool                            Object::contains                            (   
 
     }
 
-    throw library::core::error::runtime::ToBeImplemented("Object :: contains") ;
+    throw ostk::core::error::runtime::ToBeImplemented("Object :: contains") ;
 
     return false ;
 
@@ -693,24 +693,24 @@ bool                            Object::contains                            (   
 Intersection                    Object::intersectionWith                    (   const   Object&                     anObject                                    ) const
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Line ;
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::LineString ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Plane ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Sphere ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Cone ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Plane ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Cone ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     if (!anObject.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Object") ;
+        throw ostk::core::error::runtime::Undefined("Object") ;
     }
 
     // Line
@@ -863,7 +863,7 @@ Intersection                    Object::intersectionWith                    (   
     std::cout << (*this) << std::endl ;
     std::cout << anObject << std::endl ;
 
-    throw library::core::error::runtime::ToBeImplemented("Object :: intersectionWith") ;
+    throw ostk::core::error::runtime::ToBeImplemented("Object :: intersectionWith") ;
 
     return Intersection::Undefined() ;
 

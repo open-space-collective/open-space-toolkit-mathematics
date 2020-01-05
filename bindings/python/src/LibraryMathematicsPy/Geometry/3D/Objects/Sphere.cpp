@@ -16,19 +16,19 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Sphere 
 
     using namespace boost::python ;
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::objects::Line ;
-    using library::math::geom::d3::objects::Ray ;
-    using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::Plane ;
-    using library::math::geom::d3::objects::Sphere ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::Intersection ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Ray ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Plane ;
+    using ostk::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::Intersection ;
 
     scope in_Sphere = class_<Sphere, bases<Object>>("Sphere", init<const Point&, const Real&>())
 

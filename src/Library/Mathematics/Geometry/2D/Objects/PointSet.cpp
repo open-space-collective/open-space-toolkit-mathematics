@@ -15,7 +15,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -127,12 +127,12 @@ Point                           PointSet::getPointClosestTo                 (   
 
     if (!aPoint.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     if (this->isEmpty())
     {
-        throw library::core::error::runtime::Undefined("Point set") ;
+        throw ostk::core::error::runtime::Undefined("Point set") ;
     }
 
     Point const* pointPtr = nullptr ;
@@ -194,10 +194,10 @@ String                          PointSet::toString                          (   
         }
 
         case Object::Format::WKT:
-            throw library::core::error::RuntimeError("LineString is not supported by WKT format.") ;
+            throw ostk::core::error::RuntimeError("LineString is not supported by WKT format.") ;
 
         default:
-            throw library::core::error::runtime::Wrong("Format") ;
+            throw ostk::core::error::runtime::Wrong("Format") ;
             break ;
 
     }
@@ -210,14 +210,14 @@ void                            PointSet::print                             (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Point Set") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Point Set") : void () ;
 
     for (const auto& point : points_)
     {
-        library::core::utils::Print::Line(anOutputStream)                       << (point.isDefined() ? point.toString() : "Undefined") ;
+        ostk::core::utils::Print::Line(anOutputStream)                       << (point.isDefined() ? point.toString() : "Undefined") ;
     }
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
@@ -236,12 +236,12 @@ void                            PointSet::applyTransformation               (   
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point set") ;
+        throw ostk::core::error::runtime::Undefined("Point set") ;
     }
 
     PointSet::Container points ;

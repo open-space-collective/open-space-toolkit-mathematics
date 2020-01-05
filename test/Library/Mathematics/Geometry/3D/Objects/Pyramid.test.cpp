@@ -20,10 +20,10 @@
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Constructor)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Pyramid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Pyramid ;
 
     {
 
@@ -39,10 +39,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Constructor)
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Clone)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Pyramid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Pyramid ;
 
     {
 
@@ -58,10 +58,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Clone)
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, EqualToOperator)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Pyramid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Pyramid ;
 
     {
 
@@ -94,10 +94,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, EqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, NotEqualToOperator)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Pyramid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Pyramid ;
 
     {
 
@@ -130,10 +130,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, NotEqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, StreamOperator)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Pyramid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Pyramid ;
 
     {
 
@@ -153,10 +153,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, StreamOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IsDefined)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Pyramid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Pyramid ;
 
     {
 
@@ -178,11 +178,11 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IsDefined)
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Intersects_Ellipsoid)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::objects::Pyramid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
 
     {
 
@@ -208,10 +208,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Intersects_Ellipsoid)
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Contains_Point)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Pyramid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Pyramid ;
 
     {
 
@@ -320,10 +320,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Contains_Point)
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, GetBase)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Pyramid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Pyramid ;
 
     {
 
@@ -345,10 +345,10 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, GetBase)
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, GetApex)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Pyramid ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Pyramid ;
 
     {
 
@@ -370,15 +370,15 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, GetApex)
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IntersectionWith_Ellipsoid)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::LineString ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Ellipsoid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::Intersection ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Ellipsoid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::Intersection ;
 
     {
 
@@ -428,15 +428,15 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IntersectionWith_Ellipsoi
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, ApplyTransformation)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::Transformation ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::Transformation ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     // Translation
 
@@ -490,7 +490,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, ApplyTransformation)
 TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Undefined)
 {
 
-    using library::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
 
     {
 

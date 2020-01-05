@@ -18,7 +18,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -37,9 +37,9 @@ namespace d2
 bool                            Object::operator ==                         (   const   Object&                     anObject                                    ) const
 {
 
-    using library::math::geom::d2::objects::Point ;
-    using library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d2::objects::MultiPolygon ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::MultiPolygon ;
 
     if ((!this->isDefined()) || (!anObject.isDefined()))
     {
@@ -103,15 +103,15 @@ std::ostream&                   operator <<                                 (   
 bool                            Object::intersects                          (   const   Object&                     anObject                                    ) const
 {
 
-    using library::math::geom::d2::objects::Point ;
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     if (!anObject.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Object") ;
+        throw ostk::core::error::runtime::Undefined("Object") ;
     }
 
-    throw library::core::error::runtime::ToBeImplemented("Object :: intersects") ;
+    throw ostk::core::error::runtime::ToBeImplemented("Object :: intersects") ;
 
     return false ;
 
@@ -120,14 +120,14 @@ bool                            Object::intersects                          (   
 bool                            Object::contains                            (   const   Object&                     anObject                                    ) const
 {
 
-    using library::math::geom::d2::objects::Point ;
-    using library::math::geom::d2::objects::PointSet ;
-    using library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d2::objects::MultiPolygon ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::MultiPolygon ;
 
     if (!anObject.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Object") ;
+        throw ostk::core::error::runtime::Undefined("Object") ;
     }
 
     // Polygon
@@ -172,7 +172,7 @@ bool                            Object::contains                            (   
 
     }
 
-    throw library::core::error::runtime::ToBeImplemented("Object :: contains") ;
+    throw ostk::core::error::runtime::ToBeImplemented("Object :: contains") ;
 
     return false ;
 

@@ -17,7 +17,7 @@
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, Constructor)
 {
 
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Point ;
 
     {
 
@@ -30,7 +30,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, Constructor)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, Clone)
 {
 
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Point ;
 
     {
 
@@ -43,8 +43,8 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, Clone)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, AdditionOperator)
 {
 
-    using library::math::obj::Vector2d ;
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::obj::Vector2d ;
+    using ostk::math::geom::d2::objects::Point ;
 
     {
 
@@ -65,8 +65,8 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, AdditionOperator)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, SubtractionOperator)
 {
 
-    using library::math::obj::Vector2d ;
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::obj::Vector2d ;
+    using ostk::math::geom::d2::objects::Point ;
 
     {
 
@@ -101,7 +101,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, SubtractionOperator)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, EqualToOperator)
 {
 
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Point ;
 
     {
 
@@ -128,7 +128,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, EqualToOperator)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, NotEqualToOperator)
 {
 
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Point ;
 
     {
 
@@ -155,7 +155,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, NotEqualToOperator)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, StreamOperator)
 {
 
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Point ;
 
     {
 
@@ -172,7 +172,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, StreamOperator)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, IsDefined)
 {
 
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Point ;
 
     {
 
@@ -192,9 +192,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, IsDefined)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, IsNear)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Point ;
 
     {
 
@@ -219,8 +219,8 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, IsNear)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, AsVector)
 {
 
-    using library::math::obj::Vector2d ;
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::obj::Vector2d ;
+    using ostk::math::geom::d2::objects::Point ;
 
     {
 
@@ -239,9 +239,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, AsVector)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, DistanceTo)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Point ;
 
     {
 
@@ -289,7 +289,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, DistanceTo)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, ToString)
 {
 
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Point ;
 
     {
 
@@ -317,12 +317,12 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, ToString)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, ApplyTransformation)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector2d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d2::objects::Point ;
-    using library::math::geom::d2::Transformation ;
+    using ostk::math::obj::Vector2d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::Transformation ;
 
     // Translation
 
@@ -373,7 +373,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, ApplyTransformation)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, Undefined)
 {
 
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Point ;
 
     {
 
@@ -387,7 +387,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, Undefined)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, Origin)
 {
 
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Point ;
 
     {
 
@@ -401,8 +401,8 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Point, Origin)
 TEST (Library_Mathematics_Geometry_2D_Objects_Point, Vector)
 {
 
-    using library::math::obj::Vector2d ;
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::obj::Vector2d ;
+    using ostk::math::geom::d2::objects::Point ;
 
     {
 

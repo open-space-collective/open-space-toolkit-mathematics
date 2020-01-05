@@ -14,7 +14,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -34,7 +34,7 @@ namespace obj
 
     if (lowerBound_.isDefined() && upperBound_.isDefined() && (lowerBound_ > upperBound_))
     {
-        throw library::core::error::RuntimeError("Lower bound greater than upper bound.") ;
+        throw ostk::core::error::RuntimeError("Lower bound greater than upper bound.") ;
     }
 
 }
@@ -63,13 +63,13 @@ std::ostream&                   operator <<                                 (   
                                                                                 const   Interval<U>&                anInterval                                  )
 {
 
-    library::core::utils::Print::Header(anOutputStream, "Interval") ;
+    ostk::core::utils::Print::Header(anOutputStream, "Interval") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Type:" << Interval<U>::StringFromType(anInterval.type_) ;
-    library::core::utils::Print::Line(anOutputStream) << "Lower Bound:" << anInterval.lowerBound_ ;
-    library::core::utils::Print::Line(anOutputStream) << "Upper Bound:" << anInterval.upperBound_ ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Type:" << Interval<U>::StringFromType(anInterval.type_) ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Lower Bound:" << anInterval.lowerBound_ ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Upper Bound:" << anInterval.upperBound_ ;
 
-    library::core::utils::Print::Footer(anOutputStream) ;
+    ostk::core::utils::Print::Footer(anOutputStream) ;
 
     return anOutputStream ;
 
@@ -87,7 +87,7 @@ bool                            Interval<T>::isDegenerate                   ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Interval") ;
+        throw ostk::core::error::runtime::Undefined("Interval") ;
     }
 
     return lowerBound_ == upperBound_ ;
@@ -100,7 +100,7 @@ bool                            Interval<T>::intersects                     (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Interval") ;
+        throw ostk::core::error::runtime::Undefined("Interval") ;
     }
 
     return this->contains(anInterval.lowerBound_)
@@ -117,12 +117,12 @@ bool                            Interval<T>::contains                       (   
 
     if (!aValue.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Value") ;
+        throw ostk::core::error::runtime::Undefined("Value") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Interval") ;
+        throw ostk::core::error::runtime::Undefined("Interval") ;
     }
 
     switch (type_)
@@ -141,7 +141,7 @@ bool                            Interval<T>::contains                       (   
             return (lowerBound_ <= aValue) && (aValue < upperBound_) ;
 
         default:
-            throw library::core::error::runtime::Wrong("Type") ;
+            throw ostk::core::error::runtime::Wrong("Type") ;
             break ;
 
     }
@@ -156,12 +156,12 @@ bool                            Interval<T>::contains                       (   
 
     if (!anInterval.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Interval") ;
+        throw ostk::core::error::runtime::Undefined("Interval") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Interval") ;
+        throw ostk::core::error::runtime::Undefined("Interval") ;
     }
 
     return this->contains(anInterval.lowerBound_) && this->contains(anInterval.upperBound_) ;
@@ -174,7 +174,7 @@ const T&                        Interval<T>::accessLowerBound               ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Interval") ;
+        throw ostk::core::error::runtime::Undefined("Interval") ;
     }
 
     return lowerBound_ ;
@@ -187,7 +187,7 @@ const T&                        Interval<T>::accessUpperBound               ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Interval") ;
+        throw ostk::core::error::runtime::Undefined("Interval") ;
     }
 
     return upperBound_ ;
@@ -200,7 +200,7 @@ typename Interval<T>::Type      Interval<T>::getType                        ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Interval") ;
+        throw ostk::core::error::runtime::Undefined("Interval") ;
     }
 
     return type_ ;
@@ -213,7 +213,7 @@ T                               Interval<T>::getLowerBound                  ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Interval") ;
+        throw ostk::core::error::runtime::Undefined("Interval") ;
     }
 
     return lowerBound_ ;
@@ -226,7 +226,7 @@ T                               Interval<T>::getUpperBound                  ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Interval") ;
+        throw ostk::core::error::runtime::Undefined("Interval") ;
     }
 
     return upperBound_ ;
@@ -250,22 +250,22 @@ T                               Interval<T>::getUpperBound                  ( ) 
 ctnr::Array<T>                  Interval<T>::generateArrayWithStep          (   const   U&                          aStep                                       ) const
 {
 
-    using library::core::types::Index ;
-    using library::core::types::Size ;
+    using ostk::core::types::Index ;
+    using ostk::core::types::Size ;
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Interval") ;
+        throw ostk::core::error::runtime::Undefined("Interval") ;
     }
 
     if (!aStep.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Step") ;
+        throw ostk::core::error::runtime::Undefined("Step") ;
     }
 
     if (aStep.isZero())
     {
-        throw library::core::error::RuntimeError("Step is zero.") ;
+        throw ostk::core::error::RuntimeError("Step is zero.") ;
     }
 
     ctnr::Array<T> grid = ctnr::Array<T>::Empty() ;
@@ -321,7 +321,7 @@ ctnr::Array<T>                  Interval<T>::generateArrayWithSize          (   
 
     if (anArraySize < 2)
     {
-        throw library::core::error::runtime::Wrong("Array size") ;
+        throw ostk::core::error::runtime::Wrong("Array size") ;
     }
 
     T step = T::Undefined() ;
@@ -351,7 +351,7 @@ ctnr::Array<T>                  Interval<T>::generateArrayWithSize          (   
             break ;
 
         default:
-            throw library::core::error::runtime::Wrong("Type") ;
+            throw ostk::core::error::runtime::Wrong("Type") ;
             break ;
 
     }
@@ -375,7 +375,7 @@ types::String                   Interval<T>::toString                      ( ) c
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Interval") ;
+        throw ostk::core::error::runtime::Undefined("Interval") ;
     }
 
     switch (type_)
@@ -398,7 +398,7 @@ types::String                   Interval<T>::toString                      ( ) c
 
     }
 
-    throw library::core::error::runtime::Wrong("Type") ;
+    throw ostk::core::error::runtime::Wrong("Type") ;
 
     return types::String::Empty() ;
 
@@ -410,7 +410,7 @@ void                            Interval<T>::setType                        (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Interval") ;
+        throw ostk::core::error::runtime::Undefined("Interval") ;
     }
 
     type_ = aType ;
@@ -423,12 +423,12 @@ void                            Interval<T>::setLowerBound                  (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Interval") ;
+        throw ostk::core::error::runtime::Undefined("Interval") ;
     }
 
     if (aLowerBound.isDefined() && upperBound_.isDefined() && (aLowerBound > upperBound_))
     {
-        throw library::core::error::RuntimeError("Lower bound greater than upper bound.") ;
+        throw ostk::core::error::RuntimeError("Lower bound greater than upper bound.") ;
     }
 
     lowerBound_ = aLowerBound ;
@@ -441,12 +441,12 @@ void                            Interval<T>::setUpperBound                  (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Interval") ;
+        throw ostk::core::error::runtime::Undefined("Interval") ;
     }
 
     if (anUpperBound.isDefined() && lowerBound_.isDefined() && (anUpperBound < lowerBound_))
     {
-        throw library::core::error::RuntimeError("Upper bound lower than lower bound.") ;
+        throw ostk::core::error::RuntimeError("Upper bound lower than lower bound.") ;
     }
 
     upperBound_ = anUpperBound ;
@@ -517,7 +517,7 @@ types::String                   Interval<T>::StringFromType                 (   
 
     }
 
-    throw library::core::error::runtime::Wrong("Type") ;
+    throw ostk::core::error::runtime::Wrong("Type") ;
 
     return types::String::Empty() ;
 

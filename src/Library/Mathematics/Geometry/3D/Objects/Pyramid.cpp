@@ -26,7 +26,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -81,12 +81,12 @@ bool                            Pyramid::intersects                         (   
 
     if (!aSphere.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Sphere") ;
+        throw ostk::core::error::runtime::Undefined("Sphere") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Pyramid") ;
+        throw ostk::core::error::runtime::Undefined("Pyramid") ;
     }
 
     for (const auto& ray : this->getRaysOfLateralFaces(aDiscretizationLevel)) // [TBM] Could be improved by calculating rays on the fly
@@ -109,12 +109,12 @@ bool                            Pyramid::intersects                         (   
 
     if (!anEllipsoid.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Pyramid") ;
+        throw ostk::core::error::runtime::Undefined("Pyramid") ;
     }
 
     for (const auto& ray : this->getRaysOfLateralFaces(aDiscretizationLevel)) // [TBM] Could be improved by calculating rays on the fly
@@ -134,16 +134,16 @@ bool                            Pyramid::intersects                         (   
 bool                            Pyramid::contains                           (   const   Point&                      aPoint                                      ) const
 {
 
-    using Point2d = library::math::geom::d2::objects::Point ;
+    using Point2d = ostk::math::geom::d2::objects::Point ;
 
     if (!aPoint.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Pyramid") ;
+        throw ostk::core::error::runtime::Undefined("Pyramid") ;
     }
 
     if (aPoint == apex_)
@@ -166,7 +166,7 @@ bool                            Pyramid::contains                           (   
 
     if (!rayPlaneIntersection.is<Point>())
     {
-        throw library::core::error::RuntimeError("Pyramid is degenerate.") ;
+        throw ostk::core::error::RuntimeError("Pyramid is degenerate.") ;
     }
 
     const Point intersectionPoint = rayPlaneIntersection.as<Point>() ;
@@ -200,15 +200,15 @@ bool                            Pyramid::contains                           (   
 
     if (!anEllipsoid.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Pyramid") ;
+        throw ostk::core::error::runtime::Undefined("Pyramid") ;
     }
 
-    throw library::core::error::runtime::ToBeImplemented("Pyramid") ;
+    throw ostk::core::error::runtime::ToBeImplemented("Pyramid") ;
 
     return false ;
 
@@ -219,7 +219,7 @@ Polygon                         Pyramid::getBase                            ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Pyramid") ;
+        throw ostk::core::error::runtime::Undefined("Pyramid") ;
     }
 
     return base_ ;
@@ -231,7 +231,7 @@ Point                           Pyramid::getApex                            ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Pyramid") ;
+        throw ostk::core::error::runtime::Undefined("Pyramid") ;
     }
 
     return apex_ ;
@@ -243,7 +243,7 @@ Size                            Pyramid::getLateralFaceCount                ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Pyramid") ;
+        throw ostk::core::error::runtime::Undefined("Pyramid") ;
     }
 
     return base_.getEdgeCount() ;
@@ -253,12 +253,12 @@ Size                            Pyramid::getLateralFaceCount                ( ) 
 Polygon                         Pyramid::getLateralFaceAt                   (   const   Index                       aLateralFaceIndex                           ) const
 {
 
-    using library::math::obj::Vector2d ;
-    using Point2d = library::math::geom::d2::objects::Point ;
+    using ostk::math::obj::Vector2d ;
+    using Point2d = ostk::math::geom::d2::objects::Point ;
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Pyramid") ;
+        throw ostk::core::error::runtime::Undefined("Pyramid") ;
     }
 
     const Segment baseEdge = base_.getEdgeAt(aLateralFaceIndex) ;
@@ -285,13 +285,13 @@ Array<Ray>                      Pyramid::getRaysOfLateralFaceAt             (   
                                                                                 const   Size                        aRayCount                                   ) const
 {
 
-    using library::math::obj::Interval ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Interval ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     // if (aRayCount < 2)
     // {
-    //     throw library::core::error::RuntimeError("Ray count [{}] lower than 2.", aRayCount) ;
+    //     throw ostk::core::error::RuntimeError("Ray count [{}] lower than 2.", aRayCount) ;
     // }
 
     const Segment baseEdge = base_.getEdgeAt(aLateralFaceIndex) ;
@@ -332,7 +332,7 @@ Array<Ray>                      Pyramid::getRaysOfLateralFaces              (   
 
     if (aRayCount < this->getLateralFaceCount())
     {
-        throw library::core::error::RuntimeError("Ray count [{}] lower than lateral face count [{}].", aRayCount, this->getLateralFaceCount()) ;
+        throw ostk::core::error::RuntimeError("Ray count [{}] lower than lateral face count [{}].", aRayCount, this->getLateralFaceCount()) ;
     }
 
     Size lateralRayCount = aRayCount / this->getLateralFaceCount() ;
@@ -361,12 +361,12 @@ Intersection                    Pyramid::intersectionWith                   (   
 
     if (!aSphere.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Sphere") ;
+        throw ostk::core::error::runtime::Undefined("Sphere") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Pyramid") ;
+        throw ostk::core::error::runtime::Undefined("Pyramid") ;
     }
 
     Array<Point> firstIntersectionPoints = Array<Point>::Empty() ;
@@ -439,12 +439,12 @@ Intersection                    Pyramid::intersectionWith                   (   
 
     if (!anEllipsoid.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Pyramid") ;
+        throw ostk::core::error::runtime::Undefined("Pyramid") ;
     }
 
     Array<Point> firstIntersectionPoints = Array<Point>::Empty() ;
@@ -534,15 +534,15 @@ void                            Pyramid::print                              (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Pyramid") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Pyramid") : void () ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Apex:"                << (apex_.isDefined() ? apex_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Apex:"                << (apex_.isDefined() ? apex_.toString() : "Undefined") ;
 
-    library::core::utils::Print::Separator(anOutputStream, "Base:") ;
+    ostk::core::utils::Print::Separator(anOutputStream, "Base:") ;
 
     base_.print(anOutputStream, false) ;
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
@@ -551,12 +551,12 @@ void                            Pyramid::applyTransformation                (   
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Pyramid") ;
+        throw ostk::core::error::runtime::Undefined("Pyramid") ;
     }
 
     base_.applyTransformation(aTransformation) ;

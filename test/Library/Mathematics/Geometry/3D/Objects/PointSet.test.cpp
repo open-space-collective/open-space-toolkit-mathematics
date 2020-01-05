@@ -18,8 +18,8 @@
 TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, Constructor)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     {
 
@@ -38,7 +38,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, Constructor)
 TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, Clone)
 {
 
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     {
 
@@ -51,7 +51,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, Clone)
 TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, EqualToOperator)
 {
 
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     {
 
@@ -86,7 +86,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, EqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, NotEqualToOperator)
 {
 
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     {
 
@@ -121,7 +121,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, NotEqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, StreamOperator)
 {
 
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     {
 
@@ -138,7 +138,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, StreamOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, IsDefined)
 {
 
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     {
 
@@ -158,7 +158,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, IsDefined)
 TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, IsEmpty)
 {
 
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     {
 
@@ -178,9 +178,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, IsEmpty)
 TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, IsNear)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     {
 
@@ -210,7 +210,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, IsNear)
 TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, GetSize)
 {
 
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     {
 
@@ -229,8 +229,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, GetSize)
 TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, GetPointClosestTo)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     {
 
@@ -253,9 +253,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, GetPointClosestTo)
 TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, ConstIterator)
 {
 
-    using library::core::types::Index ;
+    using ostk::core::types::Index ;
 
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     {
 
@@ -281,14 +281,14 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, ConstIterator)
 TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, ApplyTransformation)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::PointSet ;
-    using library::math::geom::d3::Transformation ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::Transformation ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     // Translation
 
@@ -321,7 +321,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, ApplyTransformation)
 TEST (Library_Mathematics_Geometry_3D_Objects_PointSet, Empty)
 {
 
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     {
 

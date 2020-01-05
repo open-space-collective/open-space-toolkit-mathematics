@@ -17,7 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -69,12 +69,12 @@ Vector4d                        Transformation::operator *                  (   
 
     if (!aVector.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Vector") ;
+        throw ostk::core::error::runtime::Undefined("Vector") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     return matrix_ * aVector ;
@@ -84,17 +84,17 @@ Vector4d                        Transformation::operator *                  (   
 Transformation&                 Transformation::operator *=                 (   const   Transformation&             aTransformation                             )
 {
 
-    using library::core::ctnr::Pair ;
-    using library::core::ctnr::Map ;
+    using ostk::core::ctnr::Pair ;
+    using ostk::core::ctnr::Map ;
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     static const Map<Pair<Transformation::Type, Transformation::Type>, Transformation::Type> TypeCompositionMap =
@@ -202,7 +202,7 @@ bool                            Transformation::isIdentity                  ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     return type_ == Transformation::Type::Identity ;
@@ -214,7 +214,7 @@ bool                            Transformation::isRigid                     ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     return isRigid_ ;
@@ -226,7 +226,7 @@ Transformation::Type            Transformation::getType                     ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     return type_ ;
@@ -238,7 +238,7 @@ Matrix4d                        Transformation::getMatrix                   ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     return matrix_ ;
@@ -250,7 +250,7 @@ Transformation                  Transformation::getInverse                  ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     return { type_, matrix_.inverse(), isRigid_ } ;
@@ -271,15 +271,15 @@ void                            Transformation::print                       (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "3D :: Transformation") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "3D :: Transformation") : void () ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Type:"                << Transformation::StringFromType(type_) ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Type:"                << Transformation::StringFromType(type_) ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Matrix:" ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Matrix:" ;
 
     anOutputStream << matrix_ << std::endl ;
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
@@ -298,7 +298,7 @@ Transformation                  Transformation::Translation                 (   
 
     if (!aTranslationVector.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Translation vector") ;
+        throw ostk::core::error::runtime::Undefined("Translation vector") ;
     }
 
     Matrix4d transformationMatrix ;
@@ -317,7 +317,7 @@ Transformation                  Transformation::Rotation                    (   
 
     if (!aRotationVector.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation vector") ;
+        throw ostk::core::error::runtime::Undefined("Rotation vector") ;
     }
 
     Matrix4d transformationMatrix = Matrix4d::Identity() ;
@@ -333,7 +333,7 @@ Transformation                  Transformation::Rotation                    (   
 
     if (!aRotationMatrix.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+        throw ostk::core::error::runtime::Undefined("Rotation matrix") ;
     }
 
     Matrix4d transformationMatrix = Matrix4d::Identity() ;
@@ -381,7 +381,7 @@ String                          Transformation::StringFromType              (   
             return "Affine" ;
 
         default:
-            throw library::core::error::runtime::Wrong("Type") ;
+            throw ostk::core::error::runtime::Wrong("Type") ;
             break ;
 
     }
@@ -405,7 +405,7 @@ Transformation::Type            Transformation::TypeOfMatrix                (   
 
     // [TBI] ...
 
-    throw library::core::error::RuntimeError("Cannot identify transformation type.") ;
+    throw ostk::core::error::RuntimeError("Cannot identify transformation type.") ;
 
     return Transformation::Type::Undefined ;
 
@@ -414,7 +414,7 @@ Transformation::Type            Transformation::TypeOfMatrix                (   
 bool                            Transformation::IsRigid                     (   const   Matrix4d&                   aMatrix                                     )
 {
 
-    using library::math::obj::Matrix3d ;
+    using ostk::math::obj::Matrix3d ;
 
     if (!aMatrix.isDefined())
     {

@@ -18,12 +18,12 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
 
     using namespace boost::python ;
 
-    using library::core::types::Real ;
-    using library::core::types::String ;
+    using ostk::core::types::Real ;
+    using ostk::core::types::String ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::obj::Matrix3d ;
-    using library::math::geom::d3::trf::rot::RotationMatrix ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::obj::Matrix3d ;
+    using ostk::math::geom::d3::trf::rot::RotationMatrix ;
 
     scope in_RotationMatrix = class_<RotationMatrix>("RotationMatrix", init<Matrix3d>())
 

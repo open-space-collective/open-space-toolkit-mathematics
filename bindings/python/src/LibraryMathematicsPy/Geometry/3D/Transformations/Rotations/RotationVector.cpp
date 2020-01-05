@@ -18,13 +18,13 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
 
     using namespace boost::python ;
 
-    using library::core::types::Integer ;
-    using library::core::types::Real ;
-    using library::core::types::String ;
+    using ostk::core::types::Integer ;
+    using ostk::core::types::Real ;
+    using ostk::core::types::String ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     scope in_RotationVector = class_<RotationVector>("RotationVector", init<const Vector3d&, const Angle&>())
 

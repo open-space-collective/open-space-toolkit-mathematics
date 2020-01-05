@@ -24,7 +24,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -37,16 +37,16 @@ namespace objects
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-using library::core::types::Unique ;
-using library::core::ctnr::Index ;
-using library::core::ctnr::Size ;
-using library::core::ctnr::Array ;
+using ostk::core::types::Unique ;
+using ostk::core::ctnr::Index ;
+using ostk::core::ctnr::Size ;
+using ostk::core::ctnr::Array ;
 
-using library::math::geom::d2::Object ;
-using library::math::geom::d2::objects::Point ;
-using library::math::geom::d2::objects::Segment ;
-using library::math::geom::d2::objects::LineString ;
-using library::math::geom::d2::objects::Polygon ;
+using ostk::math::geom::d2::Object ;
+using ostk::math::geom::d2::objects::Point ;
+using ostk::math::geom::d2::objects::Segment ;
+using ostk::math::geom::d2::objects::LineString ;
+using ostk::math::geom::d2::objects::Polygon ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

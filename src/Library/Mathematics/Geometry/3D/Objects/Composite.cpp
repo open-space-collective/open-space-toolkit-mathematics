@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -105,7 +105,7 @@ bool                            Composite::operator ==                      (   
         return false ;
     }
 
-    for (const auto objectTuple : library::core::ctnr::iterators::Zip(objects_, aComposite.objects_))
+    for (const auto objectTuple : ostk::core::ctnr::iterators::Zip(objects_, aComposite.objects_))
     {
 
         if ((*std::get<0>(objectTuple)) != (*std::get<1>(objectTuple)))
@@ -129,7 +129,7 @@ Composite                       Composite::operator +                       (   
 
     if (!aComposite.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     Composite composite = Composite::Undefined() ;
@@ -148,7 +148,7 @@ Composite&                      Composite::operator +=                      (   
 
     if (!aComposite.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     objects_.reserve(objects_.getSize() + aComposite.objects_.getSize()) ;
@@ -169,12 +169,12 @@ bool                            Composite::intersects                       (   
 
     if (!anObject.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Object") ;
+        throw ostk::core::error::runtime::Undefined("Object") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     return std::any_of(objects_.begin(), objects_.end(), [&anObject] (const Unique<Object>& anObjectUPtr) -> bool { return anObjectUPtr->intersects(anObject) ; }) ;
@@ -186,12 +186,12 @@ bool                            Composite::intersects                       (   
 
     if (!aComposite.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     return std::any_of(aComposite.objects_.begin(), aComposite.objects_.end(), [this] (const Unique<Object>& anObjectUPtr) -> bool { return this->intersects(*anObjectUPtr) ; }) ;
@@ -203,12 +203,12 @@ bool                            Composite::contains                         (   
 
     if (!anObject.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Object") ;
+        throw ostk::core::error::runtime::Undefined("Object") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     return std::all_of(objects_.begin(), objects_.end(), [&anObject] (const Unique<Object>& anObjectUPtr) -> bool { return anObjectUPtr->contains(anObject) ; }) ;
@@ -220,12 +220,12 @@ bool                            Composite::contains                         (   
 
     if (!aComposite.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     return std::all_of(aComposite.objects_.begin(), aComposite.objects_.end(), [this] (const Unique<Object>& anObjectUPtr) -> bool { return this->contains(*anObjectUPtr) ; }) ;
@@ -237,12 +237,12 @@ const Object&                   Composite::accessObjectAt                   (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     if (anIndex >= objects_.getSize())
     {
-        throw library::core::error::RuntimeError("Object index [{}] out of bounds [{}].", anIndex, objects_.getSize()) ;
+        throw ostk::core::error::RuntimeError("Object index [{}] out of bounds [{}].", anIndex, objects_.getSize()) ;
     }
 
     return *(objects_.at(anIndex).get()) ;
@@ -254,7 +254,7 @@ const Array<Unique<Object>>&    Composite::accessObjects                    ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     return objects_ ;
@@ -266,7 +266,7 @@ Size                            Composite::getObjectCount                   ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     return objects_.getSize() ;
@@ -278,12 +278,12 @@ Intersection                    Composite::intersectionWith                 (   
 
     if (!anObject.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Object") ;
+        throw ostk::core::error::runtime::Undefined("Object") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     Intersection intersection = Intersection::Empty() ;
@@ -309,12 +309,12 @@ Intersection                    Composite::intersectionWith                 (   
 
     if (!aComposite.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     Intersection intersection = Intersection::Empty() ;
@@ -340,7 +340,7 @@ Composite::ConstIterator        Composite::begin                            ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     return objects_.begin() ;
@@ -352,7 +352,7 @@ Composite::ConstIterator        Composite::end                              ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     return objects_.end() ;
@@ -363,12 +363,12 @@ void                            Composite::print                            (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Composite") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Composite") : void () ;
 
     if (!objects_.isEmpty())
     {
 
-        library::core::utils::Print::Separator(anOutputStream, "Objects") ;
+        ostk::core::utils::Print::Separator(anOutputStream, "Objects") ;
 
         for (const auto& objectUPtr : objects_)
         {
@@ -378,26 +378,26 @@ void                            Composite::print                            (   
     }
     else
     {
-        library::core::utils::Print::Line(anOutputStream) << "Empty" ;
+        ostk::core::utils::Print::Line(anOutputStream) << "Empty" ;
     }
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
 void                            Composite::applyTransformation              (   const   Transformation&             aTransformation                             )
 {
 
-    using library::math::geom::d3::trf::rot::RotationMatrix ;
+    using ostk::math::geom::d3::trf::rot::RotationMatrix ;
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
     if (aTransformation.isIdentity())

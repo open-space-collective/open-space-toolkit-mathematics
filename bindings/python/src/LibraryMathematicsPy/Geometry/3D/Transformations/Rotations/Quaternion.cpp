@@ -20,12 +20,12 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
 
     using namespace boost::python ;
 
-    using library::core::types::Real ;
-    using library::core::types::String ;
+    using ostk::core::types::Real ;
+    using ostk::core::types::String ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::obj::Vector4d ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::obj::Vector4d ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     scope in_Quaternion = class_<Quaternion>("Quaternion", init<const Real&, const Real&, const Real&, const Real&, const Quaternion::Format&>())
 
@@ -89,7 +89,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
 
     ;
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
     IterableConverter()
 

@@ -16,10 +16,10 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Transformation 
 
     using namespace boost::python ;
 
-    using library::math::obj::Vector2d ;
-    using library::math::obj::Matrix3d ;
-    using library::math::geom::d2::objects::Point ;
-    using library::math::geom::d2::Transformation ;
+    using ostk::math::obj::Vector2d ;
+    using ostk::math::obj::Matrix3d ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::Transformation ;
 
     scope in_Transformation = class_<Transformation>("Transformation", init<const Matrix3d&>())
 

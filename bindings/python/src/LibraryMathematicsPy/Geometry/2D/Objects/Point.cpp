@@ -13,18 +13,18 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_2D_Objects_Point_toString_overloads, library::math::geom::d2::objects::Point::toString, 0, 2)
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_2D_Objects_Point_toString_overloads, ostk::math::geom::d2::objects::Point::toString, 0, 2)
 
 inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Point ( )
 {
 
     using namespace boost::python ;
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector2d ;
-    using library::math::geom::d2::Object ;
-    using library::math::geom::d2::objects::Point ;
+    using ostk::math::obj::Vector2d ;
+    using ostk::math::geom::d2::Object ;
+    using ostk::math::geom::d2::objects::Point ;
 
     scope in_Point = class_<Point, bases<Object>>("Point", init<const Real&, const Real&>())
 
@@ -59,7 +59,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Point (
     // implicitly_convertible<Point, Vector2d>() ;
     // implicitly_convertible<Vector2d, Point>() ;
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
     IterableConverter()
 

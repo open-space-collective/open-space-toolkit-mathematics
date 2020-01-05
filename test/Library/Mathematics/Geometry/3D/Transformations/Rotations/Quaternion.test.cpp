@@ -19,9 +19,9 @@
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Constructor)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::obj::Vector4d ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::obj::Vector4d ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -58,7 +58,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Cons
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, EqualToOperator)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -100,7 +100,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Equa
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, NotEqualToOperator)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -142,7 +142,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, NotE
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, MultiplicationOperator)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -155,7 +155,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, NotE
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, DivisionOperator)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -168,7 +168,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, NotE
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, MultiplicationAssignmentOperator)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -181,7 +181,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, NotE
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, DivisionAssignmentOperator)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -194,7 +194,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, NotE
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, StreamOperator)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -211,7 +211,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Stre
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, IsDefined)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -239,7 +239,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, IsDe
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, IsUnitary)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -267,8 +267,8 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, IsUn
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, IsNear)
 {
 
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -310,7 +310,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, IsNe
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, X)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -329,7 +329,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, X)
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Y)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -348,7 +348,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Y)
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Z)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -367,7 +367,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Z)
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, S)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -386,8 +386,8 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, S)
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, GetVectorPart)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -406,7 +406,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, GetV
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, GetScalarPart)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -425,7 +425,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, GetS
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToNormalized)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -438,7 +438,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, GetS
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToConjugate)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -461,7 +461,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToInverse)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -474,7 +474,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Pow)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -487,7 +487,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Exp)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -500,7 +500,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Log)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -513,7 +513,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Norm)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -526,7 +526,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, CrossMultiply)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -539,7 +539,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, DotMultiply)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -552,7 +552,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, RotateVector)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -565,8 +565,8 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToCo
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToVector)
 {
 
-    using library::math::obj::Vector4d ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::obj::Vector4d ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -586,7 +586,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToVe
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToString)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -620,7 +620,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToSt
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Normalize)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -633,7 +633,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToSt
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Conjugate)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -646,7 +646,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToSt
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Inverse)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -659,7 +659,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToSt
 // TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Rectify)
 // {
 
-//     using library::math::geom::d3::trf::rot::Quaternion ;
+//     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 //     {
 
@@ -672,8 +672,8 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToSt
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, AngularDifferenceWith)
 {
 
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -697,7 +697,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Angu
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Undefined)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -711,7 +711,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Unde
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Unit)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -725,7 +725,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Unit
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, XYZS)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -739,10 +739,10 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, XYZS
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, RotationVector)
 {
 
-    using library::core::types::Real ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::core::types::Real ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -762,12 +762,12 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Rota
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, RotationMatrix)
 {
 
-    using library::core::types::Real ;
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
-    using library::math::geom::d3::trf::rot::RotationMatrix ;
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::core::types::Real ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::geom::d3::trf::rot::RotationMatrix ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 
@@ -821,7 +821,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Rota
 TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Parse)
 {
 
-    using library::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
     {
 

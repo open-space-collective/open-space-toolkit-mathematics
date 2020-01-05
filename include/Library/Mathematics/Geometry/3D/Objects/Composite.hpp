@@ -20,7 +20,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -33,12 +33,12 @@ namespace objects
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-using library::core::types::Unique ;
-using library::core::types::Index ;
-using library::core::types::Size ;
-using library::core::ctnr::Array ;
+using ostk::core::types::Unique ;
+using ostk::core::types::Index ;
+using ostk::core::types::Size ;
+using ostk::core::ctnr::Array ;
 
-using library::math::geom::d3::Object ;
+using ostk::math::geom::d3::Object ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -142,7 +142,7 @@ class Composite : public Object
 
             if (!this->isDefined())
             {
-                throw library::core::error::runtime::Undefined("Composite") ;
+                throw ostk::core::error::runtime::Undefined("Composite") ;
             }
 
             return (objects_.getSize() == 1) && (dynamic_cast<const Type*>(objects_.accessFirst().get()) != nullptr) ;
@@ -161,19 +161,19 @@ class Composite : public Object
 
             if (!this->isDefined())
             {
-                throw library::core::error::runtime::Undefined("Composite") ;
+                throw ostk::core::error::runtime::Undefined("Composite") ;
             }
 
             if (objects_.getSize() != 1)
             {
-                throw library::core::error::RuntimeError("Cannot convert composite: it is complex.") ;
+                throw ostk::core::error::RuntimeError("Cannot convert composite: it is complex.") ;
             }
 
             const Type* objectPtr = dynamic_cast<const Type*>(objects_.accessFirst().get()) ;
 
             if (objectPtr == nullptr)
             {
-                throw library::core::error::RuntimeError("Cannot convert composite: wrong type.") ;
+                throw ostk::core::error::RuntimeError("Cannot convert composite: wrong type.") ;
             }
 
             return *objectPtr ;

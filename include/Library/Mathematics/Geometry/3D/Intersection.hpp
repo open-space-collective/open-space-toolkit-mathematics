@@ -35,7 +35,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -46,13 +46,13 @@ namespace d3
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-using library::core::types::Unique ;
-using library::core::types::Index ;
-using library::core::types::Size ;
-using library::core::ctnr::Array ;
+using ostk::core::types::Unique ;
+using ostk::core::types::Index ;
+using ostk::core::types::Size ;
+using ostk::core::ctnr::Array ;
 
-using library::math::geom::d3::Object ;
-using library::math::geom::d3::objects::Composite ;
+using ostk::math::geom::d3::Object ;
+using ostk::math::geom::d3::objects::Composite ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -184,7 +184,7 @@ class Intersection
 
             if (!this->isDefined())
             {
-                throw library::core::error::runtime::Undefined("Intersection") ;
+                throw ostk::core::error::runtime::Undefined("Intersection") ;
             }
 
             return composite_.is<Type>() ;
@@ -203,7 +203,7 @@ class Intersection
 
             if (!this->isDefined())
             {
-                throw library::core::error::runtime::Undefined("Intersection") ;
+                throw ostk::core::error::runtime::Undefined("Intersection") ;
             }
 
             return composite_.as<Type>() ;

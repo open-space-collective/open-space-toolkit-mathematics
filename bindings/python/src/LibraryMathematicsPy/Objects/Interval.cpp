@@ -18,9 +18,9 @@ inline void                     LibraryMathematicsPy_Objects_Interval       ( )
 
     using namespace boost::python ;
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Interval ;
+    using ostk::math::obj::Interval ;
 
     scope in_RealInterval = class_<Interval<Real>>("RealInterval", init<const Real&, const Real&, const Interval<Real>::Type&>())
 

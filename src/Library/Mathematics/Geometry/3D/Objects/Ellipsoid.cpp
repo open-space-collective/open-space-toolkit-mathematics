@@ -46,7 +46,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -91,17 +91,17 @@ Point                           EllipsoidPointFromGteVector                 (   
 
     if (a_.isDefined() && (a_ < 0.0))
     {
-        throw library::core::error::RuntimeError("First principal semi-axis is negative.") ;
+        throw ostk::core::error::RuntimeError("First principal semi-axis is negative.") ;
     }
 
     if (b_.isDefined() && (b_ < 0.0))
     {
-        throw library::core::error::RuntimeError("Second principal semi-axis is negative.") ;
+        throw ostk::core::error::RuntimeError("Second principal semi-axis is negative.") ;
     }
 
     if (c_.isDefined() && (c_ < 0.0))
     {
-        throw library::core::error::RuntimeError("Third principal semi-axis is negative.") ;
+        throw ostk::core::error::RuntimeError("Third principal semi-axis is negative.") ;
     }
 
 }
@@ -155,7 +155,7 @@ bool                            Ellipsoid::intersects                       (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     return (!aPointSet.isEmpty()) && std::any_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
@@ -167,12 +167,12 @@ bool                            Ellipsoid::intersects                       (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     if (!aLine.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Line") ;
+        throw ostk::core::error::runtime::Undefined("Line") ;
     }
 
     // Line
@@ -202,12 +202,12 @@ bool                            Ellipsoid::intersects                       (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     if (!aRay.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ray") ;
+        throw ostk::core::error::runtime::Undefined("Ray") ;
     }
 
     // Ray
@@ -235,16 +235,16 @@ bool                            Ellipsoid::intersects                       (   
 bool                            Ellipsoid::intersects                       (   const   Segment&                    aSegment                                    ) const
 {
 
-    using library::math::obj::Interval ;
+    using ostk::math::obj::Interval ;
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     if (!aSegment.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment") ;
     }
 
     // // Does not work for some reason... most likely a bug w/ gte::TIQuery<double, gte::Segment3<double>, gte::Ellipsoid3<double>>
@@ -357,12 +357,12 @@ bool                            Ellipsoid::intersects                       (   
 
     if (!aPlane.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     // Plane
@@ -395,12 +395,12 @@ bool                            Ellipsoid::intersects                       (   
 
 //     if (!aSphere.isDefined())
 //     {
-//         throw library::core::error::runtime::Undefined("Sphere") ;
+//         throw ostk::core::error::runtime::Undefined("Sphere") ;
 //     }
 
 //     if (!this->isDefined())
 //     {
-//         throw library::core::error::runtime::Undefined("Ellipsoid") ;
+//         throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
 //     }
 
 //     return this->intersects(Ellipsoid(aSphere.getCenter(), aSphere.getRadius(), aSphere.getRadius(), aSphere.getRadius())) ;
@@ -412,12 +412,12 @@ bool                            Ellipsoid::intersects                       (   
 
 //     if (!anEllipsoid.isDefined())
 //     {
-//         throw library::core::error::runtime::Undefined("Ellipsoid") ;
+//         throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
 //     }
 
 //     if (!this->isDefined())
 //     {
-//         throw library::core::error::runtime::Undefined("Ellipsoid") ;
+//         throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
 //     }
 
 //     // Ellipsoid
@@ -459,16 +459,16 @@ bool                            Ellipsoid::intersects                       (   
 bool                            Ellipsoid::contains                         (   const   Point&                      aPoint                                      ) const
 {
 
-    using library::math::obj::Vector3d ;
+    using ostk::math::obj::Vector3d ;
 
     if (!aPoint.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     Matrix3d dcm ;
@@ -492,7 +492,7 @@ bool                            Ellipsoid::contains                         (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     return (!aPointSet.isEmpty()) && std::all_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
@@ -509,7 +509,7 @@ Point                           Ellipsoid::getCenter                        ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     return center_ ;
@@ -521,7 +521,7 @@ Real                            Ellipsoid::getFirstPrincipalSemiAxis        ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     return a_ ;
@@ -533,7 +533,7 @@ Real                            Ellipsoid::getSecondPrincipalSemiAxis       ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     return b_ ;
@@ -545,7 +545,7 @@ Real                            Ellipsoid::getThirdPrincipalSemiAxis        ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     return c_ ;
@@ -557,7 +557,7 @@ Vector3d                        Ellipsoid::getFirstAxis                     ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     return q_.toConjugate() * Vector3d::X() ;
@@ -569,7 +569,7 @@ Vector3d                        Ellipsoid::getSecondAxis                    ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     return q_.toConjugate() * Vector3d::Y() ;
@@ -581,7 +581,7 @@ Vector3d                        Ellipsoid::getThirdAxis                     ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     return q_.toConjugate() * Vector3d::Z() ;
@@ -593,7 +593,7 @@ Quaternion                      Ellipsoid::getOrientation                   ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     return q_ ;
@@ -605,7 +605,7 @@ Matrix3d                        Ellipsoid::getMatrix                        ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     const Vector3d firstRatio = this->getFirstAxis() / a_ ;
@@ -632,16 +632,16 @@ Matrix3d                        Ellipsoid::getMatrix                        ( ) 
 Intersection                    Ellipsoid::intersectionWith                 (   const   Line&                       aLine                                       ) const
 {
 
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     if (!aLine.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Line") ;
+        throw ostk::core::error::runtime::Undefined("Line") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     // Line
@@ -675,7 +675,7 @@ Intersection                    Ellipsoid::intersectionWith                 (   
         }
         else
         {
-            throw library::core::error::RuntimeError("Intersection algorithm has failed.") ;
+            throw ostk::core::error::RuntimeError("Intersection algorithm has failed.") ;
         }
 
     }
@@ -688,16 +688,16 @@ Intersection                    Ellipsoid::intersectionWith                 (   
                                                                                 const   bool                        onlyInSight                                 ) const
 {
 
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     if (!aRay.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ray") ;
+        throw ostk::core::error::runtime::Undefined("Ray") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     // Ray
@@ -767,7 +767,7 @@ Intersection                    Ellipsoid::intersectionWith                 (   
         }
         else
         {
-            throw library::core::error::RuntimeError("Intersection algorithm has failed.") ;
+            throw ostk::core::error::RuntimeError("Intersection algorithm has failed.") ;
         }
 
     }
@@ -779,16 +779,16 @@ Intersection                    Ellipsoid::intersectionWith                 (   
 Intersection                    Ellipsoid::intersectionWith                 (   const   Segment&                    aSegment                                    ) const
 {
 
-    using library::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::PointSet ;
 
     if (!aSegment.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     if (aSegment.isDegenerate() && this->contains(aSegment.getFirstPoint()))
@@ -899,7 +899,7 @@ Intersection                    Ellipsoid::intersectionWith                 (   
         }
         else
         {
-            throw library::core::error::RuntimeError("Intersection algorithm has failed.") ;
+            throw ostk::core::error::RuntimeError("Intersection algorithm has failed.") ;
         }
 
     }
@@ -924,37 +924,37 @@ void                            Ellipsoid::print                            (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Ellipsoid") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Ellipsoid") : void () ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Center:"              << (center_.isDefined() ? center_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Center:"              << (center_.isDefined() ? center_.toString() : "Undefined") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "First principal semi-axis:" << (a_.isDefined() ? a_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Second principal semi-axis:" << (b_.isDefined() ? b_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Third principal semi-axis:" << (c_.isDefined() ? c_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "First principal semi-axis:" << (a_.isDefined() ? a_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Second principal semi-axis:" << (b_.isDefined() ? b_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Third principal semi-axis:" << (c_.isDefined() ? c_.toString() : "Undefined") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "First axis:"          << (q_.isDefined() ? this->getFirstAxis().toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Second axis:"         << (q_.isDefined() ? this->getSecondAxis().toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Third axis:"          << (q_.isDefined() ? this->getThirdAxis().toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "First axis:"          << (q_.isDefined() ? this->getFirstAxis().toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Second axis:"         << (q_.isDefined() ? this->getSecondAxis().toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Third axis:"          << (q_.isDefined() ? this->getThirdAxis().toString() : "Undefined") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Orientation:"         << (q_.isDefined() ? q_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Orientation:"         << (q_.isDefined() ? q_.toString() : "Undefined") ;
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
 void                            Ellipsoid::applyTransformation              (   const   Transformation&             aTransformation                             )
 {
 
-    using library::math::geom::d3::trf::rot::RotationMatrix ;
+    using ostk::math::geom::d3::trf::rot::RotationMatrix ;
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ellipsoid") ;
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
     }
 
     if (aTransformation.isIdentity())
@@ -971,7 +971,7 @@ void                            Ellipsoid::applyTransformation              (   
 
     if (eigenSolver.info() != Eigen::Success)
     {
-        throw library::core::error::RuntimeError("Eigen vector calculation has failed.") ;
+        throw ostk::core::error::RuntimeError("Eigen vector calculation has failed.") ;
     }
 
     a_ = std::sqrt(1.0 / eigenSolver.eigenvalues()(0)) ;

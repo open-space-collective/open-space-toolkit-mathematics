@@ -30,17 +30,17 @@
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Constructor)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 
@@ -91,12 +91,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Constructor)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Clone)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 
@@ -114,12 +114,12 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Clone)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, CopyConstructor)
 {
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 
@@ -139,17 +139,17 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, CopyConstructor)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 
@@ -260,17 +260,17 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOperator)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 
@@ -381,17 +381,17 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AdditionOperator)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 
@@ -417,17 +417,17 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AdditionOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AdditionAssignmentOperator)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 
@@ -470,17 +470,17 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AdditionAssignmentOpera
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, StreamOperator)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 
@@ -504,17 +504,17 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, StreamOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, IsDefined)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 
@@ -540,17 +540,17 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, IsDefined)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Intersects)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     // [TBI]
 
@@ -587,17 +587,17 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Intersects)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Contains)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     // [TBI]
 
@@ -634,17 +634,17 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Contains)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Is)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 
@@ -672,17 +672,17 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Is)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, As)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 
@@ -710,17 +710,17 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, As)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AccessObjectAt)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 
@@ -775,17 +775,17 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AccessObjectAt)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AccessObjects)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 
@@ -835,17 +835,17 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AccessObjects)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, GetObjectCount)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 
@@ -895,17 +895,17 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, GetObjectCount)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, ConstIterator)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 
@@ -979,18 +979,18 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, ConstIterator)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, ApplyTransformation)
 {
 
-    using library::core::types::Unique ;
-    using library::core::types::Real ;
-    using library::core::ctnr::Array ;
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::Polygon ;
-    using library::math::geom::d3::objects::Cuboid ;
-    using library::math::geom::d3::objects::Pyramid ;
-    using library::math::geom::d3::objects::Composite ;
-    using library::math::geom::d3::Transformation ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
+    using ostk::math::geom::d3::Transformation ;
 
     {
 
@@ -1026,7 +1026,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, ApplyTransformation)
 TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Undefined)
 {
 
-    using library::math::geom::d3::objects::Composite ;
+    using ostk::math::geom::d3::objects::Composite ;
 
     {
 

@@ -19,9 +19,9 @@
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Constructor)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -130,9 +130,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Constructor)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Clone)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -153,9 +153,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Clone)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, EqualToOperator)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -236,9 +236,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, EqualToOperator)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, NotEqualToOperator)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -319,9 +319,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, NotEqualToOperator)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, StreamOperator)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -346,9 +346,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, StreamOperator)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IsDefined)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -375,10 +375,10 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IsDefined)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IntersectsPolygon)
 {
 
-    using library::core::ctnr::Tuple ;
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Tuple ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -438,7 +438,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IntersectsPolygon)
 // TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ContainsPoint)
 // {
 
-//     using library::math::geom::d2::objects::Polygon ;
+//     using ostk::math::geom::d2::objects::Polygon ;
 
 //     {
 
@@ -451,7 +451,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IntersectsPolygon)
 // TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ContainsPointSet)
 // {
 
-//     using library::math::geom::d2::objects::Polygon ;
+//     using ostk::math::geom::d2::objects::Polygon ;
 
 //     {
 
@@ -464,9 +464,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IntersectsPolygon)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingCount)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -527,9 +527,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingCount)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetEdgeCount)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -590,9 +590,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetEdgeCount)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertexCount)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -653,9 +653,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertexCount)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetOuterRing)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -738,9 +738,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetOuterRing)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingAt)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -827,9 +827,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingAt)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetEdgeAt)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -869,9 +869,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetEdgeAt)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertexAt)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -911,9 +911,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertexAt)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetEdges)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -956,9 +956,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetEdges)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -985,7 +985,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 // TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith)
 // {
 
-//     using library::math::geom::d2::objects::Polygon ;
+//     using ostk::math::geom::d2::objects::Polygon ;
 
 //     {
 
@@ -998,7 +998,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 // TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, UnionWith)
 // {
 
-//     using library::math::geom::d2::objects::Polygon ;
+//     using ostk::math::geom::d2::objects::Polygon ;
 
 //     {
 
@@ -1011,10 +1011,10 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ToString)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector2d ;
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::obj::Vector2d ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 
@@ -1090,11 +1090,11 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ToString)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ApplyTransformation)
 {
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::obj::Vector2d ;
-    using library::math::geom::d2::objects::Polygon ;
-    using library::math::geom::d2::Transformation ;
+    using ostk::math::obj::Vector2d ;
+    using ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::Transformation ;
 
     // Translation
 
@@ -1137,7 +1137,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ApplyTransformation)
 TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Undefined)
 {
 
-    using library::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
     {
 

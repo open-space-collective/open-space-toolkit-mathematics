@@ -19,7 +19,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -44,7 +44,7 @@ namespace objects
 
         if (direction_.squaredNorm() == 0.0)
         {
-            throw library::core::error::runtime::Wrong("Direction") ;
+            throw ostk::core::error::runtime::Wrong("Direction") ;
         }
 
         direction_ = direction_.normalized() ;
@@ -95,12 +95,12 @@ bool                            Ray::intersects                             (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ray") ;
+        throw ostk::core::error::runtime::Undefined("Ray") ;
     }
 
     if (!aPlane.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     const Vector3d n = aPlane.getNormalVector() ;
@@ -137,12 +137,12 @@ bool                            Ray::contains                               (   
 
     if (!aPoint.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ray") ;
+        throw ostk::core::error::runtime::Undefined("Ray") ;
     }
 
     const Vector3d AC = aPoint - origin_ ;
@@ -156,12 +156,12 @@ bool                            Ray::contains                               (   
 
     if (!aPointSet.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point Set") ;
+        throw ostk::core::error::runtime::Undefined("Point Set") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ray") ;
+        throw ostk::core::error::runtime::Undefined("Ray") ;
     }
 
     return (!aPointSet.isEmpty()) && std::all_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
@@ -173,7 +173,7 @@ Point                           Ray::getOrigin                              ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ray") ;
+        throw ostk::core::error::runtime::Undefined("Ray") ;
     }
 
     return origin_ ;
@@ -185,7 +185,7 @@ Vector3d                        Ray::getDirection                           ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ray") ;
+        throw ostk::core::error::runtime::Undefined("Ray") ;
     }
 
     return direction_ ;
@@ -197,12 +197,12 @@ Intersection                    Ray::intersectionWith                       (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ray") ;
+        throw ostk::core::error::runtime::Undefined("Ray") ;
     }
 
     if (!aPlane.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     const Vector3d n = aPlane.getNormalVector() ;
@@ -252,12 +252,12 @@ void                            Ray::print                                  (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Ray") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Ray") : void () ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Origin:"              << (origin_.isDefined() ? origin_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Direction:"           << (direction_.isDefined() ? direction_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Origin:"              << (origin_.isDefined() ? origin_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Direction:"           << (direction_.isDefined() ? direction_.toString() : "Undefined") ;
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
@@ -266,12 +266,12 @@ void                            Ray::applyTransformation                    (   
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ray") ;
+        throw ostk::core::error::runtime::Undefined("Ray") ;
     }
 
     origin_.applyTransformation(aTransformation) ;

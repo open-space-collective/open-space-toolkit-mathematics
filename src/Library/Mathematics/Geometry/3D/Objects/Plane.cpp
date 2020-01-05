@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -80,12 +80,12 @@ bool                            Plane::intersects                           (   
 
     if (!aPointSet.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point Set") ;
+        throw ostk::core::error::runtime::Undefined("Point Set") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     return (!aPointSet.isEmpty()) && std::any_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
@@ -112,12 +112,12 @@ bool                            Plane::contains                             (   
 
     if (!aPoint.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     return (aPoint - point_).dot(normal_) == 0.0 ;
@@ -129,12 +129,12 @@ bool                            Plane::contains                             (   
 
     if (!aPointSet.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point Set") ;
+        throw ostk::core::error::runtime::Undefined("Point Set") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     return (!aPointSet.isEmpty()) && std::all_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
@@ -146,12 +146,12 @@ bool                            Plane::contains                             (   
 
     if (!aLine.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Line") ;
+        throw ostk::core::error::runtime::Undefined("Line") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     return this->contains(aLine.getOrigin()) && (normal_.dot(aLine.getDirection()) == 0.0) ;
@@ -163,12 +163,12 @@ bool                            Plane::contains                             (   
 
     if (!aRay.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Ray") ;
+        throw ostk::core::error::runtime::Undefined("Ray") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     return this->contains(aRay.getOrigin()) && (normal_.dot(aRay.getDirection()) == 0.0) ;
@@ -180,12 +180,12 @@ bool                            Plane::contains                             (   
 
     if (!aSegment.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     return this->contains(aSegment.getFirstPoint()) && this->contains(aSegment.getSecondPoint()) ;
@@ -197,7 +197,7 @@ Point                           Plane::getPoint                             ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     return point_ ;
@@ -209,7 +209,7 @@ Vector3d                        Plane::getNormalVector                      ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     return normal_ ;
@@ -226,7 +226,7 @@ Intersection                    Plane::intersectionWith                     (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     Array<Point> points = Array<Point>::Empty() ;
@@ -264,12 +264,12 @@ void                            Plane::print                                (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Plane") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Plane") : void () ;
 
-    library::core::utils::Print::Line(anOutputStream) << "Point:"               << (point_.isDefined() ? point_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Normal vector:"       << (normal_.isDefined() ? normal_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Point:"               << (point_.isDefined() ? point_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Normal vector:"       << (normal_.isDefined() ? normal_.toString() : "Undefined") ;
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
@@ -278,12 +278,12 @@ void                            Plane::applyTransformation                  (   
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     point_.applyTransformation(aTransformation) ;

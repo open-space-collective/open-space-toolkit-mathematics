@@ -18,8 +18,8 @@
 TEST (Library_Mathematics_Geometry_3D_Objects_LineString, Constructor)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::LineString ;
 
     {
 
@@ -38,7 +38,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, Constructor)
 TEST (Library_Mathematics_Geometry_3D_Objects_LineString, Clone)
 {
 
-    using library::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::LineString ;
 
     {
 
@@ -51,7 +51,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, Clone)
 TEST (Library_Mathematics_Geometry_3D_Objects_LineString, EqualToOperator)
 {
 
-    using library::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::LineString ;
 
     {
 
@@ -83,7 +83,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, EqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_LineString, NotEqualToOperator)
 {
 
-    using library::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::LineString ;
 
     {
 
@@ -115,7 +115,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, NotEqualToOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_LineString, StreamOperator)
 {
 
-    using library::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::LineString ;
 
     {
 
@@ -132,7 +132,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, StreamOperator)
 TEST (Library_Mathematics_Geometry_3D_Objects_LineString, IsDefined)
 {
 
-    using library::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::LineString ;
 
     {
 
@@ -152,7 +152,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, IsDefined)
 TEST (Library_Mathematics_Geometry_3D_Objects_LineString, IsEmpty)
 {
 
-    using library::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::LineString ;
 
     {
 
@@ -172,9 +172,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, IsEmpty)
 TEST (Library_Mathematics_Geometry_3D_Objects_LineString, IsNear)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::LineString ;
 
     {
 
@@ -203,8 +203,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, IsNear)
 TEST (Library_Mathematics_Geometry_3D_Objects_LineString, AccessPointAt)
 {
 
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::LineString ;
 
     {
 
@@ -229,7 +229,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, AccessPointAt)
 TEST (Library_Mathematics_Geometry_3D_Objects_LineString, GetPointCount)
 {
 
-    using library::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::LineString ;
 
     {
 
@@ -248,8 +248,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, GetPointCount)
 // TEST (Library_Mathematics_Geometry_3D_Objects_LineString, ToString) // [TBI]
 // {
 
-//     using library::math::geom::d3::objects::Point ;
-//     using library::math::geom::d3::objects::LineString ;
+//     using ostk::math::geom::d3::objects::Point ;
+//     using ostk::math::geom::d3::objects::LineString ;
 
 //     {
 
@@ -277,9 +277,9 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, GetPointCount)
 TEST (Library_Mathematics_Geometry_3D_Objects_LineString, ConstIterator)
 {
 
-    using library::core::types::Index ;
+    using ostk::core::types::Index ;
 
-    using library::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::LineString ;
 
     {
 
@@ -305,14 +305,14 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, ConstIterator)
 TEST (Library_Mathematics_Geometry_3D_Objects_LineString, ApplyTransformation)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::Angle ;
-    using library::math::geom::d3::objects::Point ;
-    using library::math::geom::d3::objects::LineString ;
-    using library::math::geom::d3::Transformation ;
-    using library::math::geom::d3::trf::rot::RotationVector ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::Transformation ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
 
     // Translation
 
@@ -345,7 +345,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, ApplyTransformation)
 TEST (Library_Mathematics_Geometry_3D_Objects_LineString, Empty)
 {
 
-    using library::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::LineString ;
 
     {
 
@@ -359,8 +359,8 @@ TEST (Library_Mathematics_Geometry_3D_Objects_LineString, Empty)
 TEST (Library_Mathematics_Geometry_3D_Objects_LineString, Segment)
 {
 
-    using library::math::geom::d3::objects::Segment ;
-    using library::math::geom::d3::objects::LineString ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::LineString ;
 
     {
 

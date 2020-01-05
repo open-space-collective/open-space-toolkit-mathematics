@@ -11,18 +11,18 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads, library::math::geom::d2::objects::LineString::toString, 0, 2)
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads, ostk::math::geom::d2::objects::LineString::toString, 0, 2)
 
 inline void                     LibraryMathematicsPy_Geometry_2D_Objects_LineString ( )
 {
 
     using namespace boost::python ;
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-    using library::math::geom::d2::Object ;
-    using library::math::geom::d2::objects::Point ;
-    using library::math::geom::d2::objects::LineString ;
+    using ostk::math::geom::d2::Object ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::LineString ;
 
     scope in_LineString = class_<LineString, bases<Object>>("LineString", init<const Array<Point>&>())
 

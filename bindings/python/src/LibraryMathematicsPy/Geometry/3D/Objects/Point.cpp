@@ -18,11 +18,11 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Point (
 
     using namespace boost::python ;
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::obj::Vector3d ;
-    using library::math::geom::d3::Object ;
-    using library::math::geom::d3::objects::Point ;
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
 
     scope in_Point = class_<Point, bases<Object>>("Point", init<const Real&, const Real&, const Real&>())
 
@@ -57,7 +57,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Point (
     // implicitly_convertible<Point, Vector3d>() ;
     // implicitly_convertible<Vector3d, Point>() ;
 
-    using library::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
     IterableConverter()
 

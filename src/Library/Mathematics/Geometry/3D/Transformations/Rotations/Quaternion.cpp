@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -87,7 +87,7 @@ Quaternion                      Quaternion::operator *                      (   
 
     if ((!this->isDefined()) || (!aQuaternion.isDefined()))
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     return this->crossMultiply(aQuaternion) ;
@@ -99,12 +99,12 @@ Vector3d                        Quaternion::operator *                      (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     if (!aVector.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Vector") ;
+        throw ostk::core::error::runtime::Undefined("Vector") ;
     }
 
     return this->rotateVector(aVector) ;
@@ -116,12 +116,12 @@ Quaternion                      Quaternion::operator /                      (   
 
     if ((!this->isDefined()) || (!aQuaternion.isDefined()))
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     if (aQuaternion.norm() < Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Cannot divide by quaternion with zero norm.") ;
+        throw ostk::core::error::RuntimeError("Cannot divide by quaternion with zero norm.") ;
     }
 
     return this->crossMultiply(aQuaternion.toInverse()) ;
@@ -133,7 +133,7 @@ Quaternion&                     Quaternion::operator *=                     (   
 
     if ((!this->isDefined()) || (!aQuaternion.isDefined()))
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     (*this) = this->crossMultiply(aQuaternion) ; // [TBI] This is a shortcut... could be optimized
@@ -147,12 +147,12 @@ Quaternion&                     Quaternion::operator /=                     (   
 
     if ((!this->isDefined()) || (!aQuaternion.isDefined()))
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     if (aQuaternion.norm() < Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Cannot divide by quaternion with zero norm.") ;
+        throw ostk::core::error::RuntimeError("Cannot divide by quaternion with zero norm.") ;
     }
 
     (*this) = this->crossMultiply(aQuaternion.toInverse()) ; // [TBI] This is a shortcut... could be optimized
@@ -165,14 +165,14 @@ std::ostream&                   operator <<                                 (   
                                                                                 const   Quaternion&                 aQuaternion                                 )
 {
 
-    library::core::utils::Print::Header(anOutputStream, "Quaternion") ;
+    ostk::core::utils::Print::Header(anOutputStream, "Quaternion") ;
 
-    library::core::utils::Print::Line(anOutputStream) << "X:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.x_) : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Y:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.y_) : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Z:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.z_) : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "S:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.s_) : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "X:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.x_) : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Y:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.y_) : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Z:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.z_) : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "S:"                   << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.s_) : "Undefined") ;
 
-    library::core::utils::Print::Footer(anOutputStream) ;
+    ostk::core::utils::Print::Footer(anOutputStream) ;
 
     return anOutputStream ;
 
@@ -188,7 +188,7 @@ bool                            Quaternion::isUnitary                       ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     return std::abs(((x_ * x_) + (y_ * y_) + (z_ * z_) + (s_ * s_)) - 1.0) <= Real::Epsilon() ;
@@ -201,12 +201,12 @@ bool                            Quaternion::isNear                          (   
 
     if ((!this->isDefined()) || (!aQuaternion.isDefined()))
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     if (!anAngularTolerance.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Angular tolerance") ;
+        throw ostk::core::error::runtime::Undefined("Angular tolerance") ;
     }
 
     return this->angularDifferenceWith(aQuaternion).inRadians(0.0, Real::TwoPi()) <= anAngularTolerance.inRadians(0.0, Real::TwoPi()) ;
@@ -218,7 +218,7 @@ Real                            Quaternion::x                               ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     return x_ ;
@@ -230,7 +230,7 @@ Real                            Quaternion::y                               ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     return y_ ;
@@ -242,7 +242,7 @@ Real                            Quaternion::z                               ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     return z_ ;
@@ -254,7 +254,7 @@ Real                            Quaternion::s                               ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     return s_ ;
@@ -266,7 +266,7 @@ Vector3d                        Quaternion::getVectorPart                   ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     return { x_, y_, z_ } ;
@@ -278,7 +278,7 @@ Real                            Quaternion::getScalarPart                   ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     return s_ ;
@@ -290,7 +290,7 @@ Quaternion                      Quaternion::toNormalized                    ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     return Quaternion(*this).normalize() ;
@@ -302,7 +302,7 @@ Quaternion                      Quaternion::toConjugate                     ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     return Quaternion(*this).conjugate() ;
@@ -314,7 +314,7 @@ Quaternion                      Quaternion::toInverse                       ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     return Quaternion(*this).inverse() ;
@@ -326,7 +326,7 @@ Quaternion                      Quaternion::toInverse                       ( ) 
 
 //     if (!this->isDefined())
 //     {
-//         throw library::core::error::runtime::Undefined("Quaternion") ;
+//         throw ostk::core::error::runtime::Undefined("Quaternion") ;
 //     }
 
 //     AAAAAAA
@@ -338,7 +338,7 @@ Quaternion                      Quaternion::toInverse                       ( ) 
 
 //     if (!this->isDefined())
 //     {
-//         throw library::core::error::runtime::Undefined("Quaternion") ;
+//         throw ostk::core::error::runtime::Undefined("Quaternion") ;
 //     }
 
 //     AAAAAAA
@@ -350,7 +350,7 @@ Quaternion                      Quaternion::toInverse                       ( ) 
 
 //     if (!this->isDefined())
 //     {
-//         throw library::core::error::runtime::Undefined("Quaternion") ;
+//         throw ostk::core::error::runtime::Undefined("Quaternion") ;
 //     }
 
 //     AAAAAAA
@@ -362,7 +362,7 @@ Real                            Quaternion::norm                            ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     return ((x_ * x_) + (y_ * y_) + (z_ * z_) + (s_ * s_)).sqrt() ;
@@ -374,7 +374,7 @@ Quaternion                      Quaternion::crossMultiply                   (   
 
     if ((!this->isDefined()) || (!aQuaternion.isDefined()))
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     const Vector3d leftVectorPart = this->getVectorPart() ;
@@ -395,7 +395,7 @@ Quaternion                      Quaternion::dotMultiply                     (   
 
     if ((!this->isDefined()) || (!aQuaternion.isDefined()))
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     const Vector3d leftVectorPart = this->getVectorPart() ;
@@ -416,17 +416,17 @@ Vector3d                        Quaternion::rotateVector                    (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     if (!aVector.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Vector") ;
+        throw ostk::core::error::runtime::Undefined("Vector") ;
     }
 
     if (!this->isUnitary())
     {
-        throw library::core::error::RuntimeError("Quaternion with norm [{}] is not unitary.", this->norm()) ;
+        throw ostk::core::error::RuntimeError("Quaternion with norm [{}] is not unitary.", this->norm()) ;
     }
 
     return this->crossMultiply(Quaternion(aVector, 0.0)).crossMultiply(this->toConjugate()).getVectorPart() ;
@@ -438,7 +438,7 @@ Vector4d                        Quaternion::toVector                        (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     switch (aFormat)
@@ -451,7 +451,7 @@ Vector4d                        Quaternion::toVector                        (   
             return Vector4d(s_, x_, y_, z_) ;
 
         default:
-            throw library::core::error::runtime::Wrong("Format") ;
+            throw ostk::core::error::runtime::Wrong("Format") ;
             break ;
 
     }
@@ -465,7 +465,7 @@ String                          Quaternion::toString                        (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     return this->toVector(aFormat).toString() ;
@@ -478,7 +478,7 @@ String                          Quaternion::toString                        (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     return aPrecision.isDefined() ? this->toVector(aFormat).toString(aPrecision) : this->toVector(aFormat).toString() ;
@@ -490,14 +490,14 @@ Quaternion&                     Quaternion::normalize                       ( )
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     const Real norm = this->norm() ;
 
     if (norm.abs() < Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Quaternion norm is zero.") ;
+        throw ostk::core::error::RuntimeError("Quaternion norm is zero.") ;
     }
 
     x_ /= norm ;
@@ -514,7 +514,7 @@ Quaternion&                     Quaternion::conjugate                       ( )
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     x_ = -x_ ;
@@ -530,14 +530,14 @@ Quaternion&                     Quaternion::inverse                         ( )
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     const Real reducedNorm = (x_ * x_) + (y_ * y_) + (z_ * z_) + (s_ * s_) ;
 
     if (reducedNorm.abs() < Real::Epsilon())
     {
-        throw library::core::error::RuntimeError("Quaternion norm is zero.") ;
+        throw ostk::core::error::RuntimeError("Quaternion norm is zero.") ;
     }
 
     x_ = -x_ / reducedNorm ;
@@ -554,7 +554,7 @@ Quaternion&                     Quaternion::rectify                         ( )
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     if (s_ < 0.0)
@@ -576,12 +576,12 @@ Angle                           Quaternion::angularDifferenceWith           (   
 
     if ((!this->isDefined()) || (!aQuaternion.isDefined()))
     {
-        throw library::core::error::runtime::Undefined("Quaternion") ;
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
     }
 
     if ((!this->isUnitary()) || (!aQuaternion.isUnitary()))
     {
-        throw library::core::error::RuntimeError("Quaternion is not unitary.") ;
+        throw ostk::core::error::RuntimeError("Quaternion is not unitary.") ;
     }
 
     const Quaternion deltaQuaternion = ((*this) / aQuaternion).normalize() ;
@@ -615,7 +615,7 @@ Quaternion                      Quaternion::RotationVector                  (   
 
     if (!aRotationVector.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation Vector") ;
+        throw ostk::core::error::runtime::Undefined("Rotation Vector") ;
     }
 
     const Real rotationAngle_rad = aRotationVector.getAngle().inRadians() ;
@@ -635,7 +635,7 @@ Quaternion                      Quaternion::RotationMatrix                  (   
 
     if (!aRotationMatrix.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Rotation matrix") ;
+        throw ostk::core::error::runtime::Undefined("Rotation matrix") ;
     }
 
     const Real trace = aRotationMatrix.accessMatrix().trace() ;
@@ -695,7 +695,7 @@ Quaternion                      Quaternion::RotationMatrix                  (   
     }
     else
     {
-        throw library::core::error::RuntimeError("Rotation matrix cannot be converted into quaternion.") ;
+        throw ostk::core::error::RuntimeError("Rotation matrix cannot be converted into quaternion.") ;
     }
 
     return Quaternion::XYZS(x, y, z, s).normalize() ;
@@ -706,18 +706,18 @@ Quaternion                      Quaternion::Parse                           (   
                                                                                 const   Quaternion::Format&         aFormat                                     )
 {
 
-    using library::math::obj::VectorXd ;
+    using ostk::math::obj::VectorXd ;
 
     if (aString.isEmpty())
     {
-        throw library::core::error::runtime::Undefined("String") ;
+        throw ostk::core::error::runtime::Undefined("String") ;
     }
 
     VectorXd vector = VectorXd::Parse(aString) ;
 
     if (vector.size() != 4)
     {
-        throw library::core::error::RuntimeError("Vector size is not 4.") ;
+        throw ostk::core::error::RuntimeError("Vector size is not 4.") ;
     }
 
     return { vector, aFormat } ;

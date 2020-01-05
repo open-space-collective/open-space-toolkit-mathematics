@@ -17,8 +17,8 @@
 TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, Constructor)
 {
 
-    using library::math::geom::d2::objects::Point ;
-    using library::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::PointSet ;
 
     {
 
@@ -37,7 +37,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, Constructor)
 TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, Clone)
 {
 
-    using library::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::PointSet ;
 
     {
 
@@ -50,7 +50,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, Clone)
 TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, EqualToOperator)
 {
 
-    using library::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::PointSet ;
 
     {
 
@@ -85,7 +85,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, EqualToOperator)
 TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, NotEqualToOperator)
 {
 
-    using library::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::PointSet ;
 
     {
 
@@ -120,7 +120,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, NotEqualToOperator)
 TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, StreamOperator)
 {
 
-    using library::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::PointSet ;
 
     {
 
@@ -137,7 +137,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, StreamOperator)
 TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, IsDefined)
 {
 
-    using library::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::PointSet ;
 
     {
 
@@ -157,7 +157,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, IsDefined)
 TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, IsEmpty)
 {
 
-    using library::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::PointSet ;
 
     {
 
@@ -177,9 +177,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, IsEmpty)
 TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, IsNear)
 {
 
-    using library::core::types::Real ;
+    using ostk::core::types::Real ;
 
-    using library::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::PointSet ;
 
     {
 
@@ -209,7 +209,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, IsNear)
 TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, GetSize)
 {
 
-    using library::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::PointSet ;
 
     {
 
@@ -228,8 +228,8 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, GetSize)
 TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, GetPointClosestTo)
 {
 
-    using library::math::geom::d2::objects::Point ;
-    using library::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::PointSet ;
 
     {
 
@@ -252,8 +252,8 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, GetPointClosestTo)
 TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, ToString)
 {
 
-    using library::math::geom::d2::objects::Point ;
-    using library::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::PointSet ;
 
     {
 
@@ -285,9 +285,9 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, ToString)
 TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, ConstIterator)
 {
 
-    using library::core::types::Index ;
+    using ostk::core::types::Index ;
 
-    using library::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::PointSet ;
 
     {
 
@@ -313,10 +313,10 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, ConstIterator)
 TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, ApplyTransformation)
 {
 
-    using library::math::obj::Vector2d ;
-    using library::math::geom::d2::objects::Point ;
-    using library::math::geom::d2::objects::PointSet ;
-    using library::math::geom::d2::Transformation ;
+    using ostk::math::obj::Vector2d ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::Transformation ;
 
     // Translation
 
@@ -341,7 +341,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, ApplyTransformation)
 TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, Empty)
 {
 
-    using library::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::PointSet ;
 
     {
 

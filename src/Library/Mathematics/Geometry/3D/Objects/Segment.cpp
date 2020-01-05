@@ -19,7 +19,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-namespace library
+namespace ostk
 {
 namespace math
 {
@@ -74,7 +74,7 @@ bool                            Segment::isDegenerate                       ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment") ;
     }
 
     return firstPoint_ == secondPoint_ ;
@@ -93,12 +93,12 @@ bool                            Segment::intersects                         (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment") ;
     }
 
     if (!aPlane.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     const Vector3d n = aPlane.getNormalVector() ;
@@ -135,12 +135,12 @@ bool                            Segment::contains                           (   
 
     if (!aPoint.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment") ;
     }
 
     if (this->isDegenerate())
@@ -175,7 +175,7 @@ Point                           Segment::getFirstPoint                      ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment") ;
     }
 
     return firstPoint_ ;
@@ -187,7 +187,7 @@ Point                           Segment::getSecondPoint                     ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment") ;
     }
 
     return secondPoint_ ;
@@ -199,7 +199,7 @@ Point                           Segment::getCenter                          ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment") ;
     }
 
     return firstPoint_ + (secondPoint_ - firstPoint_) / 2.0 ;
@@ -211,12 +211,12 @@ Vector3d                        Segment::getDirection                       ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment") ;
     }
 
     if (this->isDegenerate())
     {
-        throw library::core::error::RuntimeError("Segment is degenerate.") ;
+        throw ostk::core::error::RuntimeError("Segment is degenerate.") ;
     }
 
     return (secondPoint_ - firstPoint_).normalized() ;
@@ -228,7 +228,7 @@ Real                            Segment::getLength                          ( ) 
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment") ;
     }
 
     return (secondPoint_ - firstPoint_).norm() ;
@@ -242,12 +242,12 @@ Intersection                    Segment::intersectionWith                   (   
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment") ;
     }
 
     if (!aPlane.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane") ;
     }
 
     const Vector3d n = aPlane.getNormalVector() ;
@@ -285,12 +285,12 @@ void                            Segment::print                              (   
                                                                                         bool                        displayDecorators                           ) const
 {
 
-    displayDecorators ? library::core::utils::Print::Header(anOutputStream, "Segment") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Segment") : void () ;
 
-    library::core::utils::Print::Line(anOutputStream) << "First point:"         << (firstPoint_.isDefined() ? firstPoint_.toString() : "Undefined") ;
-    library::core::utils::Print::Line(anOutputStream) << "Second point:"        << (secondPoint_.isDefined() ? secondPoint_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "First point:"         << (firstPoint_.isDefined() ? firstPoint_.toString() : "Undefined") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Second point:"        << (secondPoint_.isDefined() ? secondPoint_.toString() : "Undefined") ;
 
-    displayDecorators ? library::core::utils::Print::Footer(anOutputStream) : void () ;
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
 
 }
 
@@ -299,12 +299,12 @@ void                            Segment::applyTransformation                (   
 
     if (!aTransformation.isDefined())
     {
-        throw library::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation") ;
     }
 
     if (!this->isDefined())
     {
-        throw library::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment") ;
     }
 
     firstPoint_.applyTransformation(aTransformation) ;
