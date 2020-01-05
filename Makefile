@@ -459,7 +459,7 @@ _test-unit-python: _build-release-image-python
 
 	docker run \
 	--rm \
-	--workdir=/usr/local/lib/python3.7/site-packages/OpenSpaceToolkit/Mathematics \
+	--workdir=/usr/local/lib/python3.7/site-packages/ostk/mathematics \
 	--entrypoint="" \
 	$(docker_release_image_python_repository):$(docker_image_version)-$(target) \
 	/bin/bash -c "pip install pytest && pytest ."
