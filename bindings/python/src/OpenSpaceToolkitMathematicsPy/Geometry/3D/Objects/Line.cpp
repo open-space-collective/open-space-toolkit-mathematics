@@ -33,19 +33,19 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
 
-        .def("isDefined", &Line::isDefined)
-        .def("intersectsPoint", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.intersects(aPoint) ; })
-        .def("intersectsPlane", +[] (const Line& aLine, const Plane& aPlane) -> bool { return aLine.intersects(aPlane) ; })
-        .def("intersectsSphere", +[] (const Line& aLine, const Sphere& aSphere) -> bool { return aLine.intersects(aSphere) ; })
-        .def("intersectsEllipsoid", +[] (const Line& aLine, const Ellipsoid& anEllipsoid) -> bool { return aLine.intersects(anEllipsoid) ; })
-        .def("containsPoint", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.contains(aPoint) ; })
+        .def("is_defined", &Line::isDefined)
+        .def("intersects_point", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.intersects(aPoint) ; })
+        .def("intersects_plane", +[] (const Line& aLine, const Plane& aPlane) -> bool { return aLine.intersects(aPlane) ; })
+        .def("intersects_sphere", +[] (const Line& aLine, const Sphere& aSphere) -> bool { return aLine.intersects(aSphere) ; })
+        .def("intersects_ellipsoid", +[] (const Line& aLine, const Ellipsoid& anEllipsoid) -> bool { return aLine.intersects(anEllipsoid) ; })
+        .def("contains_point", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.contains(aPoint) ; })
 
-        .def("getOrigin", &Line::getOrigin)
-        .def("getDirection", &Line::getDirection)
-        .def("intersectionWithPlane", +[] (const Line& aLine, const Plane& aPlane) -> Intersection { return aLine.intersectionWith(aPlane) ; })
-        .def("applyTransformation", &Line::applyTransformation)
+        .def("get_origin", &Line::getOrigin)
+        .def("get_direction", &Line::getDirection)
+        .def("intersection_with_plane", +[] (const Line& aLine, const Plane& aPlane) -> Intersection { return aLine.intersectionWith(aPlane) ; })
+        .def("apply_transformation", &Line::applyTransformation)
 
-        .def("Undefined", &Line::Undefined).staticmethod("Undefined")
+        .def("undefined", &Line::Undefined).staticmethod("undefined")
 
     ;
 

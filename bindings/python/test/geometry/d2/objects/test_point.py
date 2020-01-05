@@ -23,10 +23,10 @@ def test_geometry_d2_objects_point_constructor ():
 
 def test_geometry_d2_objects_point_undefined ():
 
-    assert Point.Undefined() is not None
+    assert Point.undefined() is not None
 
 def test_geometry_d2_objects_point_origin ():
 
-    assert Point.Origin() is not None
+    assert Point.origin() is not None
 
 ################################################################################################################################################################

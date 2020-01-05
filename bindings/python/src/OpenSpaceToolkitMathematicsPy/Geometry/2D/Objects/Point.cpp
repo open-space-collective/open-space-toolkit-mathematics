@@ -40,19 +40,19 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
         .def("__repr__", +[] (const Point& aPoint) -> std::string { return aPoint.toString() ; })
 
-        .def("isDefined", &Point::isDefined)
-        .def("isNear", &Point::isNear)
+        .def("is_defined", &Point::isDefined)
+        .def("is_near", &Point::isNear)
 
         .def("x", &Point::x, return_value_policy<reference_existing_object>())
         .def("y", &Point::y, return_value_policy<reference_existing_object>())
-        .def("asVector", &Point::asVector)
-        .def("distanceTo", &Point::distanceTo)
-        .def("toString", &Point::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Point_toString_overloads())
-        .def("applyTransformation", &Point::applyTransformation)
+        .def("as_vector", &Point::asVector)
+        .def("distance_to", &Point::distanceTo)
+        .def("to_string", &Point::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Point_toString_overloads())
+        .def("apply_transformation", &Point::applyTransformation)
 
-        .def("Undefined", &Point::Undefined).staticmethod("Undefined")
-        .def("Origin", &Point::Origin).staticmethod("Origin")
-        .def("Vector", &Point::Vector).staticmethod("Vector")
+        .def("undefined", &Point::Undefined).staticmethod("undefined")
+        .def("origin", &Point::Origin).staticmethod("origin")
+        .def("vector", &Point::Vector).staticmethod("vector")
 
     ;
 

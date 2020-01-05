@@ -38,22 +38,22 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
 
-        .def("isDefined", &RotationMatrix::isDefined)
+        .def("is_defined", &RotationMatrix::isDefined)
 
-        .def("getRowAt", &RotationMatrix::getRowAt)
-        .def("getColumnAt", &RotationMatrix::getColumnAt)
-        .def("toTransposed", &RotationMatrix::toTransposed)
+        .def("get_row_at", &RotationMatrix::getRowAt)
+        .def("get_column_at", &RotationMatrix::getColumnAt)
+        .def("to_transposed", &RotationMatrix::toTransposed)
         .def("transpose", +[] (RotationMatrix& aRotationMatrix) -> void { aRotationMatrix.transpose() ; })
 
-        .def("Undefined", &RotationMatrix::Undefined).staticmethod("Undefined")
-        .def("Unit", &RotationMatrix::Unit).staticmethod("Unit")
-        .def("RX", &RotationMatrix::RX).staticmethod("RX")
-        .def("RY", &RotationMatrix::RY).staticmethod("RY")
-        .def("RZ", &RotationMatrix::RZ).staticmethod("RZ")
-        .def("Rows", &RotationMatrix::Rows).staticmethod("Rows")
-        .def("Columns", &RotationMatrix::Columns).staticmethod("Columns")
-        .def("Quaternion", &RotationMatrix::Quaternion).staticmethod("Quaternion")
-        .def("RotationVector", &RotationMatrix::RotationVector).staticmethod("RotationVector")
+        .def("undefined", &RotationMatrix::Undefined).staticmethod("undefined")
+        .def("unit", &RotationMatrix::Unit).staticmethod("unit")
+        .def("rx", &RotationMatrix::RX).staticmethod("rx")
+        .def("ry", &RotationMatrix::RY).staticmethod("ry")
+        .def("rz", &RotationMatrix::RZ).staticmethod("rz")
+        .def("rows", &RotationMatrix::Rows).staticmethod("rows")
+        .def("columns", &RotationMatrix::Columns).staticmethod("columns")
+        .def("quaternion", &RotationMatrix::Quaternion).staticmethod("quaternion")
+        .def("rotation_vector", &RotationMatrix::RotationVector).staticmethod("rotation_vector")
 
     ;
 

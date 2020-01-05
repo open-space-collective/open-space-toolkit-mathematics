@@ -32,16 +32,16 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
 
-        .def("isDefined", &PointSet::isDefined)
-        .def("isEmpty", &PointSet::isEmpty)
-        .def("isNear", &PointSet::isNear)
+        .def("is_defined", &PointSet::isDefined)
+        .def("is_empty", &PointSet::isEmpty)
+        .def("is_near", &PointSet::isNear)
 
-        .def("getSize", &PointSet::getSize)
-        .def("getPointClosestTo", &PointSet::getPointClosestTo)
-        .def("toString", &PointSet::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet_toString_overloads())
-        .def("applyTransformation", &PointSet::applyTransformation)
+        .def("get_size", &PointSet::getSize)
+        .def("get_point_closest_to", &PointSet::getPointClosestTo)
+        .def("to_string", &PointSet::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet_toString_overloads())
+        .def("apply_transformation", &PointSet::applyTransformation)
 
-        .def("Empty", &PointSet::Empty).staticmethod("Empty")
+        .def("empty", &PointSet::Empty).staticmethod("empty")
 
         .def("__iter__", boost::python::range(static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::begin), static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::end)))
 
