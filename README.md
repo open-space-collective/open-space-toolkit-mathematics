@@ -1,4 +1,4 @@
-# Library ▸ Mathematics
+# Open Space Toolkit ▸ Mathematics
 
 Geometry, curve fitting, optimization.
 

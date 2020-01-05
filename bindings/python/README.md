@@ -1,4 +1,4 @@
-# Library ▸ Mathematics ▸ Bindings ▸ Python
+# Open Space Toolkit ▸ Mathematics ▸ Bindings ▸ Python
 
 Geometry, curve fitting, optimization.
 
@@ -9,4 +9,4 @@ Geometry, curve fitting, optimization.
 [![PyPI version](https://badge.fury.io/py/LibraryMathematicsPy.svg)](https://badge.fury.io/py/LibraryMathematicsPy)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-[Library ▸ Mathematics](https://github.com/open-space-collective/library-mathematics)
+[Open Space Toolkit ▸ Mathematics](https://github.com/open-space-collective/library-mathematics)

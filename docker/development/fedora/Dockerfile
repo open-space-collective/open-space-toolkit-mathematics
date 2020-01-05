@@ -47,7 +47,7 @@ RUN git clone --branch 3.28 --depth 1 https://github.com/lucas-bremond/geometric
  && cp -r ./Include /usr/local/include/Gte \
  && rm -rf /tmp/geometric-tools-engine
 
-## Library ▸ Core [0.2.5]
+## Open Space Toolkit ▸ Core [0.2.5]
 
 RUN mkdir -p /tmp/library-core \
  && cd /tmp/library-core \
