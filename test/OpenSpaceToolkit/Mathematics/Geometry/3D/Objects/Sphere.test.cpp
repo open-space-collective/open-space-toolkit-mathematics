@@ -754,7 +754,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Pyrami
 
     {
 
-        // See: Library_Mathematics_Geometry_3D_Objects_Pyramid.Intersects_Sphere
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid.Intersects_Sphere
 
         SUCCEED() ;
 

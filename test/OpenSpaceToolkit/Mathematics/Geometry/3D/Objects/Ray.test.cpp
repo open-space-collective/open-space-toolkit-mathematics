@@ -233,7 +233,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Intersects_Sphere)
 
     {
 
-        // See: Library_Mathematics_Geometry_3D_Objects_Sphere.Intersects_Ray
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere.Intersects_Ray
 
         SUCCEED() ;
 
@@ -256,7 +256,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Intersects_Ellipsoid
 
     {
 
-        // See: Library_Mathematics_Geometry_3D_Objects_Ellipsoid.Intersects_Ray
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid.Intersects_Ray
 
         SUCCEED() ;
 
@@ -477,7 +477,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Ell
 
     {
 
-        // See: Library_Mathematics_Geometry_3D_Objects_Ellipsoid.IntersectionWith_Ray
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid.IntersectionWith_Ray
 
         SUCCEED() ;
 

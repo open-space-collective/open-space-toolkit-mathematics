@@ -213,7 +213,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Intersects_Spher
 
     {
 
-        // See: Library_Mathematics_Geometry_3D_Objects_Sphere.Intersects
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere.Intersects
 
         SUCCEED() ;
 
@@ -236,7 +236,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Intersects_Ellip
 
     {
 
-        // See: Library_Mathematics_Geometry_3D_Objects_Ellipsoid.Intersects
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid.Intersects
 
         SUCCEED() ;
 

@@ -220,7 +220,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_Line)
 
     {
 
-        // See: Library_Mathematics_Geometry_3D_Objects_Line.Intersects_Plane
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line.Intersects_Plane
 
         SUCCEED() ;
 
@@ -236,7 +236,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_Ray)
 
     {
 
-        // See: Library_Mathematics_Geometry_3D_Objects_Ray.Intersects_Plane
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray.Intersects_Plane
 
         SUCCEED() ;
 
@@ -252,7 +252,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_Segment
 
     {
 
-        // See: Library_Mathematics_Geometry_3D_Objects_Segment.Intersects_Plane
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment.Intersects_Plane
 
         SUCCEED() ;
 
@@ -646,7 +646,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_L
 
     {
 
-        // See: Library_Mathematics_Geometry_3D_Objects_Line.IntersectionWith_Plane
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line.IntersectionWith_Plane
 
         SUCCEED() ;
 
@@ -668,7 +668,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_R
 
     {
 
-        // See: Library_Mathematics_Geometry_3D_Objects_Ray.IntersectionWith_Plane
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray.IntersectionWith_Plane
 
         SUCCEED() ;
 
@@ -690,7 +690,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_S
 
     {
 
-        // See: Library_Mathematics_Geometry_3D_Objects_Segment.IntersectionWith_Plane
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment.IntersectionWith_Plane
 
         SUCCEED() ;
 

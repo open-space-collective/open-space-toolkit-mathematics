@@ -716,7 +716,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Pyr
 
     {
 
-        // See: Library_Mathematics_Geometry_3D_Objects_Pyramid.Intersects_Ellipsoid
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid.Intersects_Ellipsoid
 
         SUCCEED() ;
 
@@ -1633,7 +1633,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWi
 
     {
 
-        // See: Library_Mathematics_Geometry_3D_Objects_Pyramid.IntersectionWith_Ellipsoid
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid.IntersectionWith_Ellipsoid
 
         SUCCEED() ;
 
