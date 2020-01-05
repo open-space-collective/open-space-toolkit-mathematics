@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_3D_Objects_Cone__
-#define __Library_Mathematics_Geometry_3D_Objects_Cone__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone__
+#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone__
 
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>

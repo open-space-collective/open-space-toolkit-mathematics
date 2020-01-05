@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_2D_Objects_PointSet__
-#define __Library_Mathematics_Geometry_2D_Objects_PointSet__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet__
+#define __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet__
 
 #include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/2D/Object.hpp>

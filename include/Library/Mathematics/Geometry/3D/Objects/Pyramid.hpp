@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_3D_Objects_Pyramid__
-#define __Library_Mathematics_Geometry_3D_Objects_Pyramid__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid__
+#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid__
 
 #include <Library/Mathematics/Geometry/3D/Objects/Polygon.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>

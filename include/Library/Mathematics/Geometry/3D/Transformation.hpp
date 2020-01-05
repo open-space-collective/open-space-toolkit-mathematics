@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_3D_Transformation__
-#define __Library_Mathematics_Geometry_3D_Transformation__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation__
+#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation__
 
 #include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>

@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Objects_Interval__
-#define __Library_Mathematics_Objects_Interval__
+#ifndef __OpenSpaceToolkit_Mathematics_Objects_Interval__
+#define __OpenSpaceToolkit_Mathematics_Objects_Interval__
 
 #include <Library/Core/Containers/Array.hpp>
 #include <Library/Core/Types/String.hpp>

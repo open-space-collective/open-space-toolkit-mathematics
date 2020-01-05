@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_3D_Objects_Ellipsoid__
-#define __Library_Mathematics_Geometry_3D_Objects_Ellipsoid__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid__
+#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid__
 
 #include <Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>

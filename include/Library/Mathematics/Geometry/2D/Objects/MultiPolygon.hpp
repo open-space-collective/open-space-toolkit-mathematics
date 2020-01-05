@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_2D_Objects_MultiPolygon__
-#define __Library_Mathematics_Geometry_2D_Objects_MultiPolygon__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon__
+#define __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon__
 
 #include <Library/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/LineString.hpp>

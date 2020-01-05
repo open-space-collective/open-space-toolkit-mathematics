@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_2D_Transformation__
-#define __Library_Mathematics_Geometry_2D_Transformation__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation__
+#define __OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation__
 
 #include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/2D/Object.hpp>

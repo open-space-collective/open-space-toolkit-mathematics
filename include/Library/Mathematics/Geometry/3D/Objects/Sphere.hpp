@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_3D_Objects_Sphere__
-#define __Library_Mathematics_Geometry_3D_Objects_Sphere__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere__
+#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere__
 
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <Library/Mathematics/Geometry/3D/Object.hpp>

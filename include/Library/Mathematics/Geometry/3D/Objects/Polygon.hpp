@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_3D_Objects_Polygon__
-#define __Library_Mathematics_Geometry_3D_Objects_Polygon__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon__
+#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon__
 
 #include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/LineString.hpp>

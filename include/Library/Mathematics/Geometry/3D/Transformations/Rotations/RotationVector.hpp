@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector__
-#define __Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector__
+#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector__
 
 #include <Library/Mathematics/Geometry/Angle.hpp>
 #include <Library/Mathematics/Objects/Vector.hpp>

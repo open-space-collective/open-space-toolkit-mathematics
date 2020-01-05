@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Objects_Eigen__
-#define __Library_Mathematics_Objects_Eigen__
+#ifndef __OpenSpaceToolkit_Mathematics_Objects_Eigen__
+#define __OpenSpaceToolkit_Mathematics_Objects_Eigen__
 
 #include <Library/Core/Types/String.hpp>
 

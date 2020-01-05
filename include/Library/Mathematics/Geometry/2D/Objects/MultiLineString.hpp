@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_2D_Objects_MultiLineString__
-#define __Library_Mathematics_Geometry_2D_Objects_MultiLineString__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiLineString__
+#define __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiLineString__
 
 #include <Library/Mathematics/Geometry/2D/Objects/LineString.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>

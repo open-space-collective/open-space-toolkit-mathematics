@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Objects_Vector__
-#define __Library_Mathematics_Objects_Vector__
+#ifndef __OpenSpaceToolkit_Mathematics_Objects_Vector__
+#define __OpenSpaceToolkit_Mathematics_Objects_Vector__
 
 #include <Library/Core/Types/String.hpp>
 

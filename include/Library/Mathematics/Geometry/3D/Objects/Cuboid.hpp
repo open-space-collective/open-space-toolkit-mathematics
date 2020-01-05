@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_3D_Objects_Cuboid__
-#define __Library_Mathematics_Geometry_3D_Objects_Cuboid__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid__
+#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid__
 
 #include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
 #include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>

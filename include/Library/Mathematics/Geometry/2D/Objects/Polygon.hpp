@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_2D_Objects_Polygon__
-#define __Library_Mathematics_Geometry_2D_Objects_Polygon__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon__
+#define __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon__
 
 #include <Library/Mathematics/Geometry/2D/Objects/LineString.hpp>
 #include <Library/Mathematics/Geometry/2D/Objects/Segment.hpp>

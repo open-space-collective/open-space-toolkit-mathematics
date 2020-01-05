@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_3D_Objects_Composite__
-#define __Library_Mathematics_Geometry_3D_Objects_Composite__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite__
+#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite__
 
 #include <Library/Mathematics/Geometry/3D/Object.hpp>
 

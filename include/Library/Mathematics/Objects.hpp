@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Objects__
-#define __Library_Mathematics_Objects__
+#ifndef __OpenSpaceToolkit_Mathematics_Objects__
+#define __OpenSpaceToolkit_Mathematics_Objects__
 
 #include <Library/Mathematics/Objects/Vector.hpp>
 #include <Library/Mathematics/Objects/Matrix.hpp>

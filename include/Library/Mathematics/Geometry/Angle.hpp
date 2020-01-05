@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __Library_Mathematics_Geometry_Angle__
-#define __Library_Mathematics_Geometry_Angle__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_Angle__
+#define __OpenSpaceToolkit_Mathematics_Geometry_Angle__
 
 #include <Library/Mathematics/Objects/Vector.hpp>
 
