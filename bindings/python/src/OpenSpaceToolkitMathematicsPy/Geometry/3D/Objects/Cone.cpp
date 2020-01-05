@@ -43,20 +43,20 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
 
-        .def("isDefined", &Cone::isDefined)
-        .def("intersectsEllipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid) -> bool { return aCone.intersects(anEllipsoid) ; })
-        .def("intersectsEllipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid, const Size aDiscretizationLevel) -> bool { return aCone.intersects(anEllipsoid, aDiscretizationLevel) ; })
+        .def("is_defined", &Cone::isDefined)
+        .def("intersects_ellipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid) -> bool { return aCone.intersects(anEllipsoid) ; })
+        .def("intersects_ellipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid, const Size aDiscretizationLevel) -> bool { return aCone.intersects(anEllipsoid, aDiscretizationLevel) ; })
 
-        .def("getApex", &Cone::getApex)
-        .def("getAxis", &Cone::getAxis)
-        .def("getAngle", &Cone::getAngle)
-        .def("getRaysOfLateralSurface", &Cone::getRaysOfLateralSurface)
-        .def("intersectionWithEllipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid) -> Intersection { return aCone.intersectionWith(anEllipsoid) ; })
-        .def("intersectionWithEllipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid, const bool onlyInSight) -> Intersection { return aCone.intersectionWith(anEllipsoid, onlyInSight) ; })
-        .def("intersectionWithEllipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid, const bool onlyInSight, const Size aDiscretizationLevel) -> Intersection { return aCone.intersectionWith(anEllipsoid, onlyInSight, aDiscretizationLevel) ; })
-        .def("applyTransformation", &Cone::applyTransformation)
+        .def("get_apex", &Cone::getApex)
+        .def("get_axis", &Cone::getAxis)
+        .def("get_angle", &Cone::getAngle)
+        .def("get_rays_of_lateral_surface", &Cone::getRaysOfLateralSurface)
+        .def("intersection_with_ellipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid) -> Intersection { return aCone.intersectionWith(anEllipsoid) ; })
+        .def("intersection_with_ellipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid, const bool onlyInSight) -> Intersection { return aCone.intersectionWith(anEllipsoid, onlyInSight) ; })
+        .def("intersection_with_ellipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid, const bool onlyInSight, const Size aDiscretizationLevel) -> Intersection { return aCone.intersectionWith(anEllipsoid, onlyInSight, aDiscretizationLevel) ; })
+        .def("apply_transformation", &Cone::applyTransformation)
 
-        .def("Undefined", &Cone::Undefined).staticmethod("Undefined")
+        .def("undefined", &Cone::Undefined).staticmethod("undefined")
 
     ;
 

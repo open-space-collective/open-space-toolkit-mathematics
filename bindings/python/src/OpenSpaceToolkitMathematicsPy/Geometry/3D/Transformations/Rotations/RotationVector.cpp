@@ -34,20 +34,20 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
 
-        .def("isDefined", &RotationVector::isDefined)
+        .def("is_defined", &RotationVector::isDefined)
 
-        .def("getAxis", &RotationVector::getAxis)
-        .def("getAngle", &RotationVector::getAngle)
-        .def("toString", +[] (const RotationVector& aRotationVector) -> String { return aRotationVector.toString() ; })
-        .def("toString", +[] (const RotationVector& aRotationVector, const Integer& aPrecision) -> String { return aRotationVector.toString(aPrecision) ; })
+        .def("get_axis", &RotationVector::getAxis)
+        .def("get_angle", &RotationVector::getAngle)
+        .def("to_string", +[] (const RotationVector& aRotationVector) -> String { return aRotationVector.toString() ; })
+        .def("to_string", +[] (const RotationVector& aRotationVector, const Integer& aPrecision) -> String { return aRotationVector.toString(aPrecision) ; })
 
-        .def("Undefined", &RotationVector::Undefined)
-        .def("Unit", &RotationVector::Unit).staticmethod("Unit")
-        .def("X", &RotationVector::X).staticmethod("X")
-        .def("Y", &RotationVector::Y).staticmethod("Y")
-        .def("Z", &RotationVector::Z).staticmethod("Z")
-        .def("Quaternion", &RotationVector::Quaternion).staticmethod("Quaternion")
-        .def("RotationMatrix", &RotationVector::RotationMatrix).staticmethod("RotationMatrix")
+        .def("undefined", &RotationVector::Undefined)
+        .def("unit", &RotationVector::Unit).staticmethod("unit")
+        .def("x", &RotationVector::X).staticmethod("x")
+        .def("y", &RotationVector::Y).staticmethod("y")
+        .def("z", &RotationVector::Z).staticmethod("z")
+        .def("quaternion", &RotationVector::Quaternion).staticmethod("quaternion")
+        .def("rotation_matrix", &RotationVector::RotationMatrix).staticmethod("rotation_matrix")
 
     ;
 

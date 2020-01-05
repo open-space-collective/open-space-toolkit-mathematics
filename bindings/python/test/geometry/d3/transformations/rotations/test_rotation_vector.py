@@ -21,19 +21,19 @@ RotationVector = geometry.d3.transformations.rotations.RotationVector
 
 def test_geometry_d3_transformations_rotations_rotation_vector ():
 
-    rv: RotationVector = RotationVector(numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.Zero())
+    rv: RotationVector = RotationVector(numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.zero())
 
     assert (rv == rv) is True
     assert (rv != rv) is False
 
-    assert rv.isDefined() is True
+    assert rv.is_defined() is True
 
-    assert numpy.array_equal(rv.getAxis(), numpy.array([[0.0], [0.0], [1.0]], dtype=float))
-    assert rv.getAngle() == Angle.Zero()
+    assert numpy.array_equal(rv.get_axis(), numpy.array([[0.0], [0.0], [1.0]], dtype=float))
+    assert rv.get_angle() == Angle.Zero()
 
-    assert RotationVector.Undefined().isDefined() is False
-    assert RotationVector.Unit().isDefined() is True
-    assert RotationVector.Quaternion(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion.Format.XYZS)).isDefined() is True
-    # assert RotationVector.RotationMatrix().isDefined() is True
+    assert RotationVector.undefined().is_defined() is False
+    assert RotationVector.unit().is_defined() is True
+    assert RotationVector.quaternion(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion.Format.XYZS)).is_defined() is True
+    # assert RotationVector.RotationMatrix().is_defined() is True
 
 ################################################################################################################################################################

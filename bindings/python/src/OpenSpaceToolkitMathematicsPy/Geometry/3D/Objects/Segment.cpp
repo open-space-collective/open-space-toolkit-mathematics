@@ -32,22 +32,22 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
 
-        .def("isDefined", &Segment::isDefined)
-        .def("isDegenerate", &Segment::isDegenerate)
-        .def("intersectsPlane", +[] (const Segment& aSegment, const Plane& aPlane) -> bool { return aSegment.intersects(aPlane) ; })
-        .def("intersectsSphere", +[] (const Segment& aSegment, const Sphere& aSphere) -> bool { return aSegment.intersects(aSphere) ; })
-        .def("intersectsEllipsoid", +[] (const Segment& aSegment, const Ellipsoid& anEllipsoid) -> bool { return aSegment.intersects(anEllipsoid) ; })
-        .def("containsPoint", +[] (const Segment& aSegment, const Point& aPoint) -> bool { return aSegment.contains(aPoint) ; })
+        .def("is_defined", &Segment::isDefined)
+        .def("is_degenerate", &Segment::isDegenerate)
+        .def("intersects_plane", +[] (const Segment& aSegment, const Plane& aPlane) -> bool { return aSegment.intersects(aPlane) ; })
+        .def("intersects_sphere", +[] (const Segment& aSegment, const Sphere& aSphere) -> bool { return aSegment.intersects(aSphere) ; })
+        .def("intersects_ellipsoid", +[] (const Segment& aSegment, const Ellipsoid& anEllipsoid) -> bool { return aSegment.intersects(anEllipsoid) ; })
+        .def("contains_point", +[] (const Segment& aSegment, const Point& aPoint) -> bool { return aSegment.contains(aPoint) ; })
 
-        .def("getFirstPoint", &Segment::getFirstPoint)
-        .def("getSecondPoint", &Segment::getSecondPoint)
-        .def("getCenter", &Segment::getCenter)
-        .def("getDirection", &Segment::getDirection)
-        .def("getLength", &Segment::getLength)
-        .def("intersectionWithPlane", +[] (const Segment& aSegment, const Plane& aPlane) -> Intersection { return aSegment.intersectionWith(aPlane) ; })
-        .def("applyTransformation", &Segment::applyTransformation)
+        .def("get_first_point", &Segment::getFirstPoint)
+        .def("get_second_point", &Segment::getSecondPoint)
+        .def("get_center", &Segment::getCenter)
+        .def("get_direction", &Segment::getDirection)
+        .def("get_length", &Segment::getLength)
+        .def("intersection_with_plane", +[] (const Segment& aSegment, const Plane& aPlane) -> Intersection { return aSegment.intersectionWith(aPlane) ; })
+        .def("apply_transformation", &Segment::applyTransformation)
 
-        .def("Undefined", &Segment::Undefined).staticmethod("Undefined")
+        .def("undefined", &Segment::Undefined).staticmethod("undefined")
 
     ;
 

@@ -26,12 +26,12 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
 
-        .def("isDefined", &Object::isDefined)
+        .def("is_defined", &Object::isDefined)
         .def("intersects", &Object::intersects)
         .def("contains", &Object::contains)
 
-        .def("toString", &Object::toString)
-        .def("applyTransformation", &Object::applyTransformation)
+        .def("to_string", &Object::toString)
+        .def("apply_transformation", &Object::applyTransformation)
 
     ;
 

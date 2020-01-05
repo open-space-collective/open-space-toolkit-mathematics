@@ -20,6 +20,6 @@ def test_geometry_angle ():
     angle: Angle = Angle(12.34, Angle.Unit.Degree)
 
     assert angle is not None
-    assert angle.inDegrees() == 12.34
+    assert angle.in_degrees() == 12.34
 
 ################################################################################################################################################################

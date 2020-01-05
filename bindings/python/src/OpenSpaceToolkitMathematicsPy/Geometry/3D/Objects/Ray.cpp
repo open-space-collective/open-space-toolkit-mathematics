@@ -34,21 +34,21 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
 
-        .def("isDefined", &Ray::isDefined)
-        .def("intersectsPoint", +[] (const Ray& aRay, const Point& aPoint) -> bool { return aRay.intersects(aPoint) ; })
-        .def("intersectsPlane", +[] (const Ray& aRay, const Plane& aPlane) -> bool { return aRay.intersects(aPlane) ; })
-        .def("intersectsSphere", +[] (const Ray& aRay, const Sphere& aSphere) -> bool { return aRay.intersects(aSphere) ; })
-        .def("intersectsEllipsoid", +[] (const Ray& aRay, const Ellipsoid& anEllipsoid) -> bool { return aRay.intersects(anEllipsoid) ; })
-        .def("containsPoint", +[] (const Ray& aRay, const Point& aPoint) -> bool { return aRay.contains(aPoint) ; })
-        .def("containsPointSet", +[] (const Ray& aRay, const PointSet& aPointSet) -> bool { return aRay.contains(aPointSet) ; })
+        .def("is_defined", &Ray::isDefined)
+        .def("intersects_point", +[] (const Ray& aRay, const Point& aPoint) -> bool { return aRay.intersects(aPoint) ; })
+        .def("intersects_plane", +[] (const Ray& aRay, const Plane& aPlane) -> bool { return aRay.intersects(aPlane) ; })
+        .def("intersects_sphere", +[] (const Ray& aRay, const Sphere& aSphere) -> bool { return aRay.intersects(aSphere) ; })
+        .def("intersects_ellipsoid", +[] (const Ray& aRay, const Ellipsoid& anEllipsoid) -> bool { return aRay.intersects(anEllipsoid) ; })
+        .def("contains_point", +[] (const Ray& aRay, const Point& aPoint) -> bool { return aRay.contains(aPoint) ; })
+        .def("contains_point_set", +[] (const Ray& aRay, const PointSet& aPointSet) -> bool { return aRay.contains(aPointSet) ; })
 
-        .def("getOrigin", &Ray::getOrigin)
-        .def("getDirection", &Ray::getDirection)
-        .def("intersectionWithPlane", +[] (const Ray& aRay, const Plane& aPlane) -> Intersection { return aRay.intersectionWith(aPlane) ; })
-        .def("intersectionWithEllipsoid", +[] (const Ray& aRay, const Ellipsoid& anEllipsoid) -> Intersection { return aRay.intersectionWith(anEllipsoid) ; })
-        .def("applyTransformation", &Ray::applyTransformation)
+        .def("get_origin", &Ray::getOrigin)
+        .def("get_direction", &Ray::getDirection)
+        .def("intersection_with_plane", +[] (const Ray& aRay, const Plane& aPlane) -> Intersection { return aRay.intersectionWith(aPlane) ; })
+        .def("intersection_with_ellipsoid", +[] (const Ray& aRay, const Ellipsoid& anEllipsoid) -> Intersection { return aRay.intersectionWith(anEllipsoid) ; })
+        .def("apply_transformation", &Ray::applyTransformation)
 
-        .def("Undefined", &Ray::Undefined).staticmethod("Undefined")
+        .def("undefined", &Ray::Undefined).staticmethod("undefined")
 
     ;
 

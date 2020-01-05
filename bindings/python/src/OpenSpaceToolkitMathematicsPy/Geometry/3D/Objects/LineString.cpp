@@ -30,15 +30,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
 
-        .def("isDefined", &LineString::isDefined)
-        .def("isEmpty", &LineString::isEmpty)
-        .def("isNear", &LineString::isNear)
+        .def("is_defined", &LineString::isDefined)
+        .def("is_empty", &LineString::isEmpty)
+        .def("is_near", &LineString::isNear)
 
-        .def("getPointCount", &LineString::getPointCount)
-        .def("getPointClosestTo", &LineString::getPointClosestTo)
-        .def("applyTransformation", &LineString::applyTransformation)
+        .def("get_point_count", &LineString::getPointCount)
+        .def("get_point_closest_to", &LineString::getPointClosestTo)
+        .def("apply_transformation", &LineString::applyTransformation)
 
-        .def("Empty", &LineString::Empty).staticmethod("Empty")
+        .def("empty", &LineString::Empty).staticmethod("empty")
 
         .def("__iter__", boost::python::range(static_cast<LineString::ConstIterator (LineString::*)() const> (&LineString::begin), static_cast<LineString::ConstIterator (LineString::*)() const> (&LineString::end)))
 

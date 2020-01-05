@@ -32,16 +32,16 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
 
-        .def("isDefined", &LineString::isDefined)
-        .def("isEmpty", &LineString::isEmpty)
-        .def("isNear", &LineString::isNear)
+        .def("is_defined", &LineString::isDefined)
+        .def("is_empty", &LineString::isEmpty)
+        .def("is_near", &LineString::isNear)
 
-        .def("getPointCount", &LineString::getPointCount)
-        .def("getPointClosestTo", &LineString::getPointClosestTo)
-        .def("toString", &LineString::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads())
-        .def("applyTransformation", &LineString::applyTransformation)
+        .def("get_point_count", &LineString::getPointCount)
+        .def("get_point_closest_to", &LineString::getPointClosestTo)
+        .def("to_string", &LineString::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads())
+        .def("apply_transformation", &LineString::applyTransformation)
 
-        .def("Empty", &LineString::Empty).staticmethod("Empty")
+        .def("empty", &LineString::Empty).staticmethod("empty")
 
         .def("__len__", &LineString::getPointCount)
         .def("__getitem__", +[] (const LineString& aLineString, const size_t anIndex) -> const Point& { return aLineString.accessPointAt(anIndex) ; }, return_internal_reference<>())

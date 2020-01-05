@@ -30,17 +30,17 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
 
-        .def("isDefined", &Polygon::isDefined)
-        .def("isNear", &Polygon::isNear)
+        .def("is_defined", &Polygon::isDefined)
+        .def("is_near", &Polygon::isNear)
 
-        .def("getPolygon2d", &Polygon::getPolygon2d)
-        .def("getOrigin", &Polygon::getOrigin)
-        .def("getXAxis", &Polygon::getXAxis)
-        .def("getYAxis", &Polygon::getYAxis)
-        .def("getNormalVector", &Polygon::getNormalVector)
-        .def("applyTransformation", &Polygon::applyTransformation)
+        .def("get_polygon2d", &Polygon::getPolygon2d)
+        .def("get_origin", &Polygon::getOrigin)
+        .def("get_x_axis", &Polygon::getXAxis)
+        .def("get_y_axis", &Polygon::getYAxis)
+        .def("get_normal_vector", &Polygon::getNormalVector)
+        .def("apply_transformation", &Polygon::applyTransformation)
 
-        .def("Undefined", &Polygon::Undefined).staticmethod("Undefined")
+        .def("undefined", &Polygon::Undefined).staticmethod("undefined")
 
     ;
 

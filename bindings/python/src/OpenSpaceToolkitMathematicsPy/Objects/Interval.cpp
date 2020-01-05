@@ -30,18 +30,18 @@ inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval  
         .def(self_ns::str(self_ns::self))
         .def(self_ns::repr(self_ns::self))
 
-        .def("isDefined", &Interval<Real>::isDefined)
-        .def("isDegenerate", &Interval<Real>::isDegenerate)
+        .def("is_defined", &Interval<Real>::isDefined)
+        .def("is_degenerate", &Interval<Real>::isDegenerate)
         .def("intersects", &Interval<Real>::intersects)
-        .def("containsReal", +[] (const Interval<Real>& anInterval, const Real& aReal) -> bool { return anInterval.contains(aReal) ; })
-        .def("containsInterval", +[] (const Interval<Real>& anInterval, const Interval<Real>& anOtherInterval) -> bool { return anInterval.contains(anOtherInterval) ; })
+        .def("contains_real", +[] (const Interval<Real>& anInterval, const Real& aReal) -> bool { return anInterval.contains(aReal) ; })
+        .def("contains_interval", +[] (const Interval<Real>& anInterval, const Interval<Real>& anOtherInterval) -> bool { return anInterval.contains(anOtherInterval) ; })
 
-        .def("getLowerBound", &Interval<Real>::getLowerBound)
-        .def("getUpperBound", &Interval<Real>::getUpperBound)
-        .def("toString", &Interval<Real>::toString)
+        .def("get_lower_bound", &Interval<Real>::getLowerBound)
+        .def("get_upper_bound", &Interval<Real>::getUpperBound)
+        .def("to_string", &Interval<Real>::toString)
 
-        .def("Undefined", &Interval<Real>::Undefined).staticmethod("Undefined")
-        .def("Closed", &Interval<Real>::Closed).staticmethod("Closed")
+        .def("undefined", &Interval<Real>::Undefined).staticmethod("undefined")
+        .def("closed", &Interval<Real>::Closed).staticmethod("closed")
 
     ;
 
