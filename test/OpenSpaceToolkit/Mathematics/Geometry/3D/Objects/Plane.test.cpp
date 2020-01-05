@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Constructor)
 {
 
     using ostk::math::geom::d3::objects::Plane ;
@@ -29,7 +29,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Constructor)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Clone)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Clone)
 {
 
     using ostk::math::geom::d3::objects::Plane ;
@@ -42,7 +42,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Clone)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, EqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, EqualToOperator)
 {
 
     using ostk::math::geom::d3::objects::Plane ;
@@ -73,7 +73,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, EqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, NotEqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, NotEqualToOperator)
 {
 
     using ostk::math::geom::d3::objects::Plane ;
@@ -104,7 +104,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, NotEqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, StreamOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, StreamOperator)
 {
 
     using ostk::math::geom::d3::objects::Plane ;
@@ -121,7 +121,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, StreamOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IsDefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IsDefined)
 {
 
     using ostk::math::geom::d3::objects::Plane ;
@@ -141,7 +141,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IsDefined)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Intersects_Point)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_Point)
 {
 
     using ostk::math::geom::d3::objects::Point ;
@@ -177,7 +177,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Intersects_Point)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Intersects_PointSet)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_PointSet)
 {
 
     using ostk::math::geom::d3::objects::PointSet ;
@@ -212,7 +212,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Intersects_PointSet)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Intersects_Line)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_Line)
 {
 
     using ostk::math::geom::d3::objects::Line ;
@@ -228,7 +228,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Intersects_Line)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Intersects_Ray)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_Ray)
 {
 
     using ostk::math::geom::d3::objects::Ray ;
@@ -244,7 +244,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Intersects_Ray)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Intersects_Segment)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_Segment)
 {
 
     using ostk::math::geom::d3::objects::Segment ;
@@ -260,7 +260,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Intersects_Segment)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains_Point)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Contains_Point)
 {
 
     using ostk::math::geom::d3::objects::Point ;
@@ -296,7 +296,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains_Point)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains_PointSet)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Contains_PointSet)
 {
 
     using ostk::math::geom::d3::objects::PointSet ;
@@ -330,7 +330,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains_PointSet)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains_Line)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Contains_Line)
 {
 
     using ostk::math::geom::d3::objects::Line ;
@@ -367,7 +367,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains_Line)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains_Ray)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Contains_Ray)
 {
 
     using ostk::math::geom::d3::objects::Ray ;
@@ -404,7 +404,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains_Ray)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains_Segment)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Contains_Segment)
 {
 
     using ostk::math::geom::d3::objects::Segment ;
@@ -442,7 +442,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Contains_Segment)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, GetPoint)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, GetPoint)
 {
 
     using ostk::math::geom::d3::objects::Point ;
@@ -463,7 +463,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, GetPoint)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, GetNormalVector)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, GetNormalVector)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -485,7 +485,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, GetNormalVector)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Point)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Point)
 {
 
     using ostk::core::types::Real ;
@@ -551,7 +551,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Point)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_PointSet)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_PointSet)
 {
 
     using ostk::core::types::Real ;
@@ -638,7 +638,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_PointSet)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Line)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Line)
 {
 
     using ostk::math::geom::d3::objects::Line ;
@@ -660,7 +660,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Line)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Ray)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Ray)
 {
 
     using ostk::math::geom::d3::objects::Ray ;
@@ -682,7 +682,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Ray)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Segment)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Segment)
 {
 
     using ostk::math::geom::d3::objects::Segment ;
@@ -704,7 +704,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Segment)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, ApplyTransformation)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, ApplyTransformation)
 {
 
     using ostk::core::types::Real ;
@@ -752,7 +752,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Plane, ApplyTransformation)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Plane, Undefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Undefined)
 {
 
     using ostk::math::geom::d3::objects::Plane ;

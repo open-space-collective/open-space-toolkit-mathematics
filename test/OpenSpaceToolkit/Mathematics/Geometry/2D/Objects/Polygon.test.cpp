@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, Constructor)
 {
 
     using ostk::core::ctnr::Array ;
@@ -127,7 +127,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Constructor)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Clone)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, Clone)
 {
 
     using ostk::core::ctnr::Array ;
@@ -150,7 +150,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Clone)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, EqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, EqualToOperator)
 {
 
     using ostk::core::ctnr::Array ;
@@ -233,7 +233,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, EqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, NotEqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, NotEqualToOperator)
 {
 
     using ostk::core::ctnr::Array ;
@@ -316,7 +316,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, NotEqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, StreamOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, StreamOperator)
 {
 
     using ostk::core::ctnr::Array ;
@@ -343,7 +343,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, StreamOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IsDefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IsDefined)
 {
 
     using ostk::core::ctnr::Array ;
@@ -372,7 +372,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IsDefined)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IntersectsPolygon)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectsPolygon)
 {
 
     using ostk::core::ctnr::Tuple ;
@@ -435,7 +435,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IntersectsPolygon)
 
 }
 
-// TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ContainsPoint)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ContainsPoint)
 // {
 
 //     using ostk::math::geom::d2::objects::Polygon ;
@@ -448,7 +448,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IntersectsPolygon)
 
 // }
 
-// TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ContainsPointSet)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ContainsPointSet)
 // {
 
 //     using ostk::math::geom::d2::objects::Polygon ;
@@ -461,7 +461,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IntersectsPolygon)
 
 // }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingCount)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingCount)
 {
 
     using ostk::core::ctnr::Array ;
@@ -524,7 +524,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingCount)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetEdgeCount)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetEdgeCount)
 {
 
     using ostk::core::ctnr::Array ;
@@ -587,7 +587,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetEdgeCount)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertexCount)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetVertexCount)
 {
 
     using ostk::core::ctnr::Array ;
@@ -650,7 +650,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertexCount)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetOuterRing)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetOuterRing)
 {
 
     using ostk::core::ctnr::Array ;
@@ -735,7 +735,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetOuterRing)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingAt)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingAt)
 {
 
     using ostk::core::ctnr::Array ;
@@ -824,7 +824,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingAt)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetEdgeAt)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetEdgeAt)
 {
 
     using ostk::core::ctnr::Array ;
@@ -866,7 +866,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetEdgeAt)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertexAt)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetVertexAt)
 {
 
     using ostk::core::ctnr::Array ;
@@ -908,7 +908,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertexAt)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetEdges)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetEdges)
 {
 
     using ostk::core::ctnr::Array ;
@@ -953,7 +953,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetEdges)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 {
 
     using ostk::core::ctnr::Array ;
@@ -982,7 +982,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 
 }
 
-// TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith)
 // {
 
 //     using ostk::math::geom::d2::objects::Polygon ;
@@ -995,7 +995,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 
 // }
 
-// TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, UnionWith)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, UnionWith)
 // {
 
 //     using ostk::math::geom::d2::objects::Polygon ;
@@ -1008,7 +1008,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 
 // }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ToString)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ToString)
 {
 
     using ostk::core::ctnr::Array ;
@@ -1087,7 +1087,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ToString)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ApplyTransformation)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ApplyTransformation)
 {
 
     using ostk::core::ctnr::Array ;
@@ -1134,7 +1134,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, ApplyTransformation)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_Polygon, Undefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, Undefined)
 {
 
     using ostk::math::geom::d2::objects::Polygon ;

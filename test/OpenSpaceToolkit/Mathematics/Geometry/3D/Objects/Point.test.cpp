@@ -15,7 +15,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point, Constructor)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -29,7 +29,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, Constructor)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, Clone)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point, Clone)
 {
 
     using ostk::math::geom::d3::objects::Point ;
@@ -42,7 +42,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, Clone)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, EqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point, EqualToOperator)
 {
 
     using ostk::math::geom::d3::objects::Point ;
@@ -69,7 +69,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, EqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, NotEqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point, NotEqualToOperator)
 {
 
     using ostk::math::geom::d3::objects::Point ;
@@ -96,7 +96,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, NotEqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, AdditionOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point, AdditionOperator)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -118,7 +118,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, AdditionOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, SubtractionOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point, SubtractionOperator)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -154,7 +154,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, SubtractionOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, StreamOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point, StreamOperator)
 {
 
     using ostk::math::geom::d3::objects::Point ;
@@ -171,7 +171,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, StreamOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, IsDefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point, IsDefined)
 {
 
     using ostk::math::geom::d3::objects::Point ;
@@ -191,7 +191,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, IsDefined)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, IsNear)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point, IsNear)
 {
 
     using ostk::core::types::Real ;
@@ -218,7 +218,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, IsNear)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, AsVector)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point, AsVector)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -238,7 +238,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, AsVector)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, DistanceTo)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point, DistanceTo)
 {
 
     using ostk::core::types::Real ;
@@ -296,7 +296,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, DistanceTo)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, ApplyTransformation)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point, ApplyTransformation)
 {
 
     using ostk::core::types::Real ;
@@ -341,7 +341,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, ApplyTransformation)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, Undefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point, Undefined)
 {
 
     using ostk::math::geom::d3::objects::Point ;
@@ -355,7 +355,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, Undefined)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, Origin)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point, Origin)
 {
 
     using ostk::math::geom::d3::objects::Point ;
@@ -369,7 +369,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Point, Origin)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Point, Vector)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point, Vector)
 {
 
     using ostk::math::obj::Vector3d ;

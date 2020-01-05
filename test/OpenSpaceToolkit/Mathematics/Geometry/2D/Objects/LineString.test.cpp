@@ -15,7 +15,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, Constructor)
 {
 
     using ostk::math::geom::d2::objects::Point ;
@@ -35,7 +35,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, Constructor)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, Clone)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, Clone)
 {
 
     using ostk::math::geom::d2::objects::LineString ;
@@ -48,7 +48,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, Clone)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, EqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, EqualToOperator)
 {
 
     using ostk::math::geom::d2::objects::LineString ;
@@ -84,7 +84,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, EqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, NotEqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, NotEqualToOperator)
 {
 
     using ostk::math::geom::d2::objects::LineString ;
@@ -120,7 +120,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, NotEqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, StreamOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, StreamOperator)
 {
 
     using ostk::math::geom::d2::objects::LineString ;
@@ -137,7 +137,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, StreamOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, IsDefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, IsDefined)
 {
 
     using ostk::math::geom::d2::objects::LineString ;
@@ -157,7 +157,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, IsDefined)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, IsEmpty)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, IsEmpty)
 {
 
     using ostk::math::geom::d2::objects::LineString ;
@@ -177,7 +177,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, IsEmpty)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, IsNear)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, IsNear)
 {
 
     using ostk::core::types::Real ;
@@ -208,7 +208,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, IsNear)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, AccessPointAt)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, AccessPointAt)
 {
 
     using ostk::math::geom::d2::objects::Point ;
@@ -234,7 +234,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, AccessPointAt)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, GetPointCount)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, GetPointCount)
 {
 
     using ostk::math::geom::d2::objects::LineString ;
@@ -253,7 +253,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, GetPointCount)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, ToString)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, ToString)
 {
 
     using ostk::math::geom::d2::objects::Point ;
@@ -282,7 +282,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, ToString)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, ConstIterator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, ConstIterator)
 {
 
     using ostk::core::types::Index ;
@@ -310,7 +310,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, ConstIterator)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, ApplyTransformation)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, ApplyTransformation)
 {
 
     using ostk::math::obj::Vector2d ;
@@ -338,7 +338,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, ApplyTransformation)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, Empty)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, Empty)
 {
 
     using ostk::math::geom::d2::objects::LineString ;
@@ -352,7 +352,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_LineString, Empty)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_LineString, Segment)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, Segment)
 {
 
     using ostk::math::geom::d2::objects::Segment ;

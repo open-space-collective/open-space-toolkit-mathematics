@@ -15,7 +15,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Constructor)
 {
 
     using ostk::math::geom::Angle ;
@@ -40,7 +40,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, EqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, EqualToOperator)
 {
 
     using ostk::math::geom::Angle ;
@@ -78,7 +78,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, NotEqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, NotEqualToOperator)
 {
 
     using ostk::math::geom::Angle ;
@@ -116,7 +116,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, StreamOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, StreamOperator)
 {
 
     using ostk::math::geom::Angle ;
@@ -134,7 +134,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, IsDefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, IsDefined)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -157,7 +157,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, GetAxis)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, GetAxis)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -180,7 +180,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, GetAngle)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, GetAngle)
 {
 
     using ostk::math::geom::Angle ;
@@ -209,7 +209,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, ToString)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, ToString)
 {
 
     using ostk::math::geom::Angle ;
@@ -253,7 +253,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Undefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Undefined)
 {
 
     using ostk::math::geom::d3::trf::rot::RotationVector ;
@@ -267,7 +267,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Unit)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Unit)
 {
 
     using ostk::math::geom::Angle ;
@@ -282,7 +282,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, X)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, X)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -308,7 +308,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Y)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Y)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -334,7 +334,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Z)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Z)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -360,7 +360,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, 
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Quaternion)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Quaternion)
 {
 
     using ostk::core::types::Real ;

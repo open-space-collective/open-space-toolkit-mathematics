@@ -27,7 +27,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Constructor)
 {
 
     using ostk::core::types::Unique ;
@@ -88,7 +88,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Constructor)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Clone)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Clone)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -111,7 +111,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Clone)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, CopyConstructor)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, CopyConstructor)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -136,7 +136,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, CopyConstructor)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator)
 {
 
     using ostk::core::types::Unique ;
@@ -257,7 +257,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOperator)
 {
 
     using ostk::core::types::Unique ;
@@ -378,7 +378,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AdditionOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionOperator)
 {
 
     using ostk::core::types::Unique ;
@@ -414,7 +414,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AdditionOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AdditionAssignmentOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionAssignmentOperator)
 {
 
     using ostk::core::types::Unique ;
@@ -467,7 +467,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AdditionAssignmentOpera
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, StreamOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, StreamOperator)
 {
 
     using ostk::core::types::Unique ;
@@ -501,7 +501,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, StreamOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, IsDefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, IsDefined)
 {
 
     using ostk::core::types::Unique ;
@@ -537,7 +537,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, IsDefined)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Intersects)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Intersects)
 {
 
     using ostk::core::types::Unique ;
@@ -584,7 +584,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Intersects)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Contains)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Contains)
 {
 
     using ostk::core::types::Unique ;
@@ -631,7 +631,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Contains)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Is)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Is)
 {
 
     using ostk::core::types::Unique ;
@@ -669,7 +669,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Is)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, As)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, As)
 {
 
     using ostk::core::types::Unique ;
@@ -707,7 +707,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, As)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AccessObjectAt)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjectAt)
 {
 
     using ostk::core::types::Unique ;
@@ -772,7 +772,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AccessObjectAt)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AccessObjects)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjects)
 {
 
     using ostk::core::types::Unique ;
@@ -832,7 +832,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, AccessObjects)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, GetObjectCount)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, GetObjectCount)
 {
 
     using ostk::core::types::Unique ;
@@ -892,7 +892,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, GetObjectCount)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, ConstIterator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, ConstIterator)
 {
 
     using ostk::core::types::Unique ;
@@ -976,7 +976,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, ConstIterator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, ApplyTransformation)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, ApplyTransformation)
 {
 
     using ostk::core::types::Unique ;
@@ -1023,7 +1023,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Composite, ApplyTransformation)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Composite, Undefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Undefined)
 {
 
     using ostk::math::geom::d3::objects::Composite ;

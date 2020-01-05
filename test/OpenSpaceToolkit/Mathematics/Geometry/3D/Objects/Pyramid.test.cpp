@@ -17,7 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, Constructor)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -36,7 +36,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Constructor)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Clone)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, Clone)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -55,7 +55,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Clone)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, EqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, EqualToOperator)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -91,7 +91,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, EqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, NotEqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, NotEqualToOperator)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -127,7 +127,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, NotEqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, StreamOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, StreamOperator)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -150,7 +150,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, StreamOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IsDefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, IsDefined)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -175,7 +175,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IsDefined)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Intersects_Ellipsoid)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, Intersects_Ellipsoid)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -205,7 +205,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Intersects_Ellipsoid)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Contains_Point)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, Contains_Point)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -317,7 +317,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Contains_Point)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, GetBase)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, GetBase)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -342,7 +342,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, GetBase)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, GetApex)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, GetApex)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -367,7 +367,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, GetApex)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IntersectionWith_Ellipsoid)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, IntersectionWith_Ellipsoid)
 {
 
     using ostk::core::types::Real ;
@@ -425,7 +425,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, IntersectionWith_Ellipsoi
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, ApplyTransformation)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, ApplyTransformation)
 {
 
     using ostk::core::types::Real ;
@@ -487,7 +487,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, ApplyTransformation)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Pyramid, Undefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, Undefined)
 {
 
     using ostk::math::geom::d3::objects::Pyramid ;

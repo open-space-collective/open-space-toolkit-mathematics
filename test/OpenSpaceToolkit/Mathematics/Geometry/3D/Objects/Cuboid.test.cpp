@@ -23,7 +23,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, Constructor)
 {
 
     using ostk::core::types::Real ;
@@ -44,7 +44,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Constructor)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Clone)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, Clone)
 {
 
     using ostk::core::types::Real ;
@@ -65,7 +65,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Clone)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, EqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, EqualToOperator)
 {
 
     using ostk::core::types::Real ;
@@ -120,7 +120,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, EqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, NotEqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, NotEqualToOperator)
 {
 
     using ostk::core::types::Real ;
@@ -175,7 +175,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, NotEqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, StreamOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, StreamOperator)
 {
 
     using ostk::core::types::Real ;
@@ -200,7 +200,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, StreamOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IsDefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, IsDefined)
 {
 
     using ostk::core::types::Real ;
@@ -227,7 +227,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IsDefined)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IsNear)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, IsNear)
 {
 
     using ostk::core::types::Real ;
@@ -304,7 +304,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IsNear)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Point)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Point)
 {
 
     using ostk::core::types::Real ;
@@ -364,7 +364,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Point)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_PointSet)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_PointSet)
 {
 
     using ostk::core::types::Real ;
@@ -472,7 +472,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_PointSet)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
 {
 
     using ostk::core::types::Real ;
@@ -561,7 +561,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
 
 }
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Ray)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Ray)
 // {
 
 //     using ostk::core::types::Real ;
@@ -580,7 +580,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Segment)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Segment)
 // {
 
 //     using ostk::core::types::Real ;
@@ -597,7 +597,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Plane)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Plane)
 // {
 
 //     using ostk::core::types::Real ;
@@ -615,7 +615,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Pyramid)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Pyramid)
 // {
 
 //     using ostk::math::geom::d3::objects::Point ;
@@ -631,7 +631,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Intersects_Line)
 
 // }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Contains_Point)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, Contains_Point)
 {
 
     using ostk::core::types::Real ;
@@ -691,7 +691,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Contains_Point)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Contains_PointSet)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, Contains_PointSet)
 {
 
     using ostk::core::types::Real ;
@@ -799,7 +799,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Contains_PointSet)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetCenter)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, GetCenter)
 {
 
     using ostk::core::types::Real ;
@@ -826,7 +826,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetCenter)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetFirstAxis)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, GetFirstAxis)
 {
 
     using ostk::core::types::Real ;
@@ -853,7 +853,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetFirstAxis)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetSecondAxis)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, GetSecondAxis)
 {
 
     using ostk::core::types::Real ;
@@ -880,7 +880,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetSecondAxis)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetThirdAxis)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, GetThirdAxis)
 {
 
     using ostk::core::types::Real ;
@@ -907,7 +907,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetThirdAxis)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetFirstExtent)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, GetFirstExtent)
 {
 
     using ostk::core::types::Real ;
@@ -934,7 +934,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetFirstExtent)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetSecondExtent)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, GetSecondExtent)
 {
 
     using ostk::core::types::Real ;
@@ -961,7 +961,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetSecondExtent)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetThirdExtent)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, GetThirdExtent)
 {
 
     using ostk::core::types::Real ;
@@ -988,7 +988,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetThirdExtent)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetVertices)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, GetVertices)
 {
 
     using ostk::core::types::Real ;
@@ -1032,7 +1032,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetVertices)
 
 }
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IntersectionWith_Line)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, IntersectionWith_Line)
 // {
 
 //     using ostk::core::types::Real ;
@@ -1057,7 +1057,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetVertices)
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IntersectionWith_Ray)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, IntersectionWith_Ray)
 // {
 
 //     using ostk::core::types::Real ;
@@ -1082,7 +1082,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetVertices)
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IntersectionWith_Segment)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, IntersectionWith_Segment)
 // {
 
 //     using ostk::core::types::Real ;
@@ -1107,7 +1107,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetVertices)
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, IntersectionWith_Pyramid)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, IntersectionWith_Pyramid)
 // {
 
 //     using ostk::math::geom::d3::objects::Point ;
@@ -1128,7 +1128,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, GetVertices)
 
 // }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, ApplyTransformation)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, ApplyTransformation)
 {
 
     using ostk::core::types::Real ;
@@ -1193,7 +1193,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, ApplyTransformation)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Undefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, Undefined)
 {
 
     using ostk::math::geom::d3::objects::Cuboid ;
@@ -1207,7 +1207,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Undefined)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cuboid, Cube)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, Cube)
 {
 
     using ostk::math::obj::Vector3d ;

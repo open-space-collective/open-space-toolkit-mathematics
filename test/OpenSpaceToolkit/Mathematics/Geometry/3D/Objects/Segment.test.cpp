@@ -18,7 +18,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Constructor)
 {
 
     using ostk::math::geom::d3::objects::Segment ;
@@ -31,7 +31,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Constructor)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Clone)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Clone)
 {
 
     using ostk::math::geom::d3::objects::Segment ;
@@ -44,7 +44,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Clone)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, EqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, EqualToOperator)
 {
 
     using ostk::math::geom::d3::objects::Segment ;
@@ -72,7 +72,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, EqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, NotEqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, NotEqualToOperator)
 {
 
     using ostk::math::geom::d3::objects::Segment ;
@@ -100,7 +100,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, NotEqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, StreamOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, StreamOperator)
 {
 
     using ostk::math::geom::d3::objects::Segment ;
@@ -117,7 +117,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, StreamOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IsDefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, IsDefined)
 {
 
     using ostk::math::geom::d3::objects::Segment ;
@@ -137,7 +137,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IsDefined)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IsDegenerate)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, IsDegenerate)
 {
 
     using ostk::math::geom::d3::objects::Segment ;
@@ -164,7 +164,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IsDegenerate)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Plane)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Intersects_Plane)
 {
 
     using ostk::math::geom::d3::objects::Segment ;
@@ -205,7 +205,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Plane)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Sphere)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Intersects_Sphere)
 {
 
     using ostk::math::geom::d3::objects::Segment ;
@@ -228,7 +228,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Sphere)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Ellipsoid)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Intersects_Ellipsoid)
 {
 
     using ostk::math::geom::d3::objects::Segment ;
@@ -251,7 +251,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Intersects_Ellipsoid)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Contains_Point)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Contains_Point)
 {
 
     using ostk::math::geom::d3::objects::Point ;
@@ -285,7 +285,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Contains_Point)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetCenter)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, GetCenter)
 {
 
     using ostk::math::geom::d3::objects::Point ;
@@ -308,7 +308,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetCenter)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetDirection)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, GetDirection)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -333,7 +333,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetDirection)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetLength)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, GetLength)
 {
 
     using ostk::math::geom::d3::objects::Point ;
@@ -359,7 +359,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, GetLength)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IntersectionWith_Plane)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, IntersectionWith_Plane)
 {
 
     using ostk::core::types::Real ;
@@ -451,7 +451,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, IntersectionWith_Plane)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, ApplyTransformation)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, ApplyTransformation)
 {
 
     using ostk::core::types::Real ;
@@ -499,7 +499,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Segment, ApplyTransformation)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Segment, Undefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Undefined)
 {
 
     using ostk::math::geom::d3::objects::Segment ;

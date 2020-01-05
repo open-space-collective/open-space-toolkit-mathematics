@@ -16,7 +16,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, Constructor)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, Constructor)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -29,7 +29,7 @@
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, EqualToOperator)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, EqualToOperator)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -42,7 +42,7 @@
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, NotEqualToOperator)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, NotEqualToOperator)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -55,7 +55,7 @@
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, MultiplicationOperator)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, MultiplicationOperator)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -68,7 +68,7 @@
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, MultiplicationAssignmentOperator)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, MultiplicationAssignmentOperator)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -81,7 +81,7 @@
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, StreamOperator)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, StreamOperator)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -94,7 +94,7 @@
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, IsDefined)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, IsDefined)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -107,7 +107,7 @@
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, IsRigid)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, IsRigid)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -120,7 +120,7 @@
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, GetType)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, GetType)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -133,7 +133,7 @@
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, GetMatrix)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, GetMatrix)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -146,7 +146,7 @@
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, GetInverse)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, GetInverse)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -159,7 +159,7 @@
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, ApplyTo)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, ApplyTo)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -172,7 +172,7 @@
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, Undefined)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, Undefined)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -185,7 +185,7 @@
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, Identity)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, Identity)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -198,7 +198,7 @@
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, Translation)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, Translation)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -211,7 +211,7 @@
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, Rotation)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, Rotation)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -224,7 +224,7 @@
 
 // }
 
-TEST (Library_Mathematics_Geometry_3D_Transformation, RotationAround)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, RotationAround)
 {
 
     using ostk::core::types::String ;
@@ -320,7 +320,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformation, RotationAround)
 
 }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, StringFromType)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, StringFromType)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;
@@ -333,7 +333,7 @@ TEST (Library_Mathematics_Geometry_3D_Transformation, RotationAround)
 
 // }
 
-// TEST (Library_Mathematics_Geometry_3D_Transformation, TypeOfMatrix)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, TypeOfMatrix)
 // {
 
 //     using ostk::math::geom::d3::Transformation ;

@@ -14,7 +14,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Objects_Interval, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, Constructor)
 {
 
     using ostk::core::types::Real ;
@@ -43,7 +43,7 @@ TEST (Library_Mathematics_Objects_Interval, Constructor)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, EqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, EqualToOperator)
 {
 
     using ostk::core::types::Real ;
@@ -69,7 +69,7 @@ TEST (Library_Mathematics_Objects_Interval, EqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, NotEqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, NotEqualToOperator)
 {
 
     using ostk::core::types::Real ;
@@ -95,7 +95,7 @@ TEST (Library_Mathematics_Objects_Interval, NotEqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, IsDefined)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, IsDefined)
 {
 
     using ostk::core::types::Real ;
@@ -122,7 +122,7 @@ TEST (Library_Mathematics_Objects_Interval, IsDefined)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, IsDegenerate)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, IsDegenerate)
 {
 
     using ostk::core::types::Real ;
@@ -157,7 +157,7 @@ TEST (Library_Mathematics_Objects_Interval, IsDegenerate)
 
 }
 
-// TEST (Library_Mathematics_Objects_Interval, Intersects)
+// TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, Intersects)
 // {
 
 //     using ostk::core::types::Real ;
@@ -172,7 +172,7 @@ TEST (Library_Mathematics_Objects_Interval, IsDegenerate)
 
 // }
 
-// TEST (Library_Mathematics_Objects_Interval, Contains)
+// TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, Contains)
 // {
 
 //     using ostk::core::types::Real ;
@@ -589,7 +589,7 @@ TEST (Library_Mathematics_Objects_Interval, IsDegenerate)
 
 // }
 
-TEST (Library_Mathematics_Objects_Interval, AccessLowerBound)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, AccessLowerBound)
 {
 
     using ostk::core::types::Real ;
@@ -638,7 +638,7 @@ TEST (Library_Mathematics_Objects_Interval, AccessLowerBound)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, AccessUpperBound)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, AccessUpperBound)
 {
 
     using ostk::core::types::Real ;
@@ -687,7 +687,7 @@ TEST (Library_Mathematics_Objects_Interval, AccessUpperBound)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, GetType)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GetType)
 {
 
     using ostk::core::types::Real ;
@@ -710,7 +710,7 @@ TEST (Library_Mathematics_Objects_Interval, GetType)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, GetLowerBound)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GetLowerBound)
 {
 
     using ostk::core::types::Real ;
@@ -751,7 +751,7 @@ TEST (Library_Mathematics_Objects_Interval, GetLowerBound)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GetUpperBound)
 {
 
     using ostk::core::types::Real ;
@@ -792,7 +792,7 @@ TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 
 }
 
-// TEST (Library_Mathematics_Objects_Interval, GetIntersectionWith)
+// TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GetIntersectionWith)
 // {
 
 //     using ostk::core::types::Real ;
@@ -807,7 +807,7 @@ TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 
 // }
 
-// TEST (Library_Mathematics_Objects_Interval, GetUnionWith)
+// TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GetUnionWith)
 // {
 
 //     using ostk::core::types::Real ;
@@ -822,7 +822,7 @@ TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 
 // }
 
-// TEST (Library_Mathematics_Objects_Interval, GenerateArrayWithStep)
+// TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GenerateArrayWithStep)
 // {
 
 //     using ostk::core::types::Real ;
@@ -837,7 +837,7 @@ TEST (Library_Mathematics_Objects_Interval, GetUpperBound)
 
 // }
 
-TEST (Library_Mathematics_Objects_Interval, GenerateArrayWithSize)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GenerateArrayWithSize)
 {
 
     using ostk::core::types::Size ;
@@ -953,7 +953,7 @@ TEST (Library_Mathematics_Objects_Interval, GenerateArrayWithSize)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, ToString)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, ToString)
 {
 
     using ostk::core::types::Real ;
@@ -995,7 +995,7 @@ TEST (Library_Mathematics_Objects_Interval, ToString)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, SetType)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, SetType)
 {
 
     using ostk::core::types::Real ;
@@ -1021,7 +1021,7 @@ TEST (Library_Mathematics_Objects_Interval, SetType)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, SetLowerBound)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, SetLowerBound)
 {
 
     using ostk::core::types::Real ;
@@ -1057,7 +1057,7 @@ TEST (Library_Mathematics_Objects_Interval, SetLowerBound)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, SetUpperBound)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, SetUpperBound)
 {
 
     using ostk::core::types::Real ;
@@ -1093,7 +1093,7 @@ TEST (Library_Mathematics_Objects_Interval, SetUpperBound)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, Undefined)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, Undefined)
 {
 
     using ostk::core::types::Real ;
@@ -1109,7 +1109,7 @@ TEST (Library_Mathematics_Objects_Interval, Undefined)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, Closed)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, Closed)
 {
 
     using ostk::core::types::Real ;
@@ -1127,7 +1127,7 @@ TEST (Library_Mathematics_Objects_Interval, Closed)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, Open)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, Open)
 {
 
     using ostk::core::types::Real ;
@@ -1145,7 +1145,7 @@ TEST (Library_Mathematics_Objects_Interval, Open)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, HalfOpenLeft)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, HalfOpenLeft)
 {
 
     using ostk::core::types::Real ;
@@ -1163,7 +1163,7 @@ TEST (Library_Mathematics_Objects_Interval, HalfOpenLeft)
 
 }
 
-TEST (Library_Mathematics_Objects_Interval, HalfOpenRight)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, HalfOpenRight)
 {
 
     using ostk::core::types::Real ;
@@ -1181,7 +1181,7 @@ TEST (Library_Mathematics_Objects_Interval, HalfOpenRight)
 
 }
 
-// TEST (Library_Mathematics_Objects_Interval, Parse)
+// TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, Parse)
 // {
 
 //     using ostk::core::types::Real ;

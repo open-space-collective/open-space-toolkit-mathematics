@@ -14,7 +14,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, Constructor)
 {
 
     using ostk::math::geom::d2::objects::Point ;
@@ -34,7 +34,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, Constructor)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, Clone)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, Clone)
 {
 
     using ostk::math::geom::d2::objects::PointSet ;
@@ -47,7 +47,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, Clone)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, EqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, EqualToOperator)
 {
 
     using ostk::math::geom::d2::objects::PointSet ;
@@ -82,7 +82,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, EqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, NotEqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, NotEqualToOperator)
 {
 
     using ostk::math::geom::d2::objects::PointSet ;
@@ -117,7 +117,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, NotEqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, StreamOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, StreamOperator)
 {
 
     using ostk::math::geom::d2::objects::PointSet ;
@@ -134,7 +134,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, StreamOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, IsDefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, IsDefined)
 {
 
     using ostk::math::geom::d2::objects::PointSet ;
@@ -154,7 +154,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, IsDefined)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, IsEmpty)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, IsEmpty)
 {
 
     using ostk::math::geom::d2::objects::PointSet ;
@@ -174,7 +174,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, IsEmpty)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, IsNear)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, IsNear)
 {
 
     using ostk::core::types::Real ;
@@ -206,7 +206,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, IsNear)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, GetSize)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, GetSize)
 {
 
     using ostk::math::geom::d2::objects::PointSet ;
@@ -225,7 +225,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, GetSize)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, GetPointClosestTo)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, GetPointClosestTo)
 {
 
     using ostk::math::geom::d2::objects::Point ;
@@ -249,7 +249,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, GetPointClosestTo)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, ToString)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, ToString)
 {
 
     using ostk::math::geom::d2::objects::Point ;
@@ -282,7 +282,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, ToString)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, ConstIterator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, ConstIterator)
 {
 
     using ostk::core::types::Index ;
@@ -310,7 +310,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, ConstIterator)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, ApplyTransformation)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, ApplyTransformation)
 {
 
     using ostk::math::obj::Vector2d ;
@@ -338,7 +338,7 @@ TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, ApplyTransformation)
 
 }
 
-TEST (Library_Mathematics_Geometry_2D_Objects_PointSet, Empty)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, Empty)
 {
 
     using ostk::math::geom::d2::objects::PointSet ;

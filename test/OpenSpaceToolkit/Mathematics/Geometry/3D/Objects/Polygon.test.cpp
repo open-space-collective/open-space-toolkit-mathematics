@@ -15,7 +15,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, Constructor)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -36,7 +36,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, Constructor)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, Clone)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, Clone)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -57,7 +57,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, Clone)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, EqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, EqualToOperator)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -97,7 +97,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, EqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, NotEqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, NotEqualToOperator)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -137,7 +137,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, NotEqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, StreamOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, StreamOperator)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -162,7 +162,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, StreamOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, IsDefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, IsDefined)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -189,7 +189,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, IsDefined)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, IsNear)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, IsNear)
 {
 
     using ostk::core::types::Real ;
@@ -259,7 +259,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, IsNear)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetPolygon2d)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetPolygon2d)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -286,7 +286,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetPolygon2d)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetOrigin)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetOrigin)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -313,7 +313,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetOrigin)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetXAxis)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetXAxis)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -340,7 +340,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetXAxis)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetYAxis)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetYAxis)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -367,7 +367,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetYAxis)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetNormalVector)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetNormalVector)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -394,7 +394,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, GetNormalVector)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, ApplyTransformation)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, ApplyTransformation)
 {
 
     using ostk::core::types::Real ;
@@ -466,7 +466,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, ApplyTransformation)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Polygon, Undefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, Undefined)
 {
 
     using ostk::math::geom::d3::objects::Polygon ;

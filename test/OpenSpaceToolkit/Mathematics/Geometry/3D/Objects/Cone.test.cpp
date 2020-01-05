@@ -17,7 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Constructor)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -37,7 +37,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Constructor)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Clone)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Clone)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -57,7 +57,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Clone)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cone, EqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, EqualToOperator)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -107,7 +107,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, EqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cone, NotEqualToOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, NotEqualToOperator)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -157,7 +157,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, NotEqualToOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cone, StreamOperator)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, StreamOperator)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -181,7 +181,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, StreamOperator)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IsDefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, IsDefined)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -207,7 +207,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IsDefined)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Intersects_Ellipsoid)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Intersects_Ellipsoid)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -238,7 +238,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Intersects_Ellipsoid)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetApex)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, GetApex)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -264,7 +264,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetApex)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetAxis)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, GetAxis)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -290,7 +290,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetAxis)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetAngle)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, GetAngle)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -316,7 +316,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetAngle)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetRaysOfLateralSurface)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, GetRaysOfLateralSurface)
 {
 
     using ostk::core::types::Real ;
@@ -369,7 +369,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, GetRaysOfLateralSurface)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IntersectionWith_Ellipsoid)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, IntersectionWith_Ellipsoid)
 {
 
     using ostk::core::types::Real ;
@@ -424,7 +424,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, IntersectionWith_Ellipsoid)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cone, ApplyTransformation)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, ApplyTransformation)
 {
 
     using ostk::core::types::Real ;
@@ -490,7 +490,7 @@ TEST (Library_Mathematics_Geometry_3D_Objects_Cone, ApplyTransformation)
 
 }
 
-TEST (Library_Mathematics_Geometry_3D_Objects_Cone, Undefined)
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Undefined)
 {
 
     using ostk::math::geom::d3::objects::Cone ;

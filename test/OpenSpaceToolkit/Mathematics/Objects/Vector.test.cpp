@@ -13,7 +13,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Objects_Vector2i, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Vector2i, Constructor)
 {
 
     using ostk::math::obj::Vector2i ;
@@ -29,7 +29,7 @@ TEST (Library_Mathematics_Objects_Vector2i, Constructor)
 
 }
 
-TEST (Library_Mathematics_Objects_Vector2i, ToString)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Vector2i, ToString)
 {
 
     using ostk::math::obj::Vector2i ;
@@ -50,7 +50,7 @@ TEST (Library_Mathematics_Objects_Vector2i, ToString)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Objects_Vector3i, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Vector3i, Constructor)
 {
 
     using ostk::math::obj::Vector3i ;
@@ -97,7 +97,7 @@ TEST (Library_Mathematics_Objects_Vector3i, Constructor)
 
 }
 
-TEST (Library_Mathematics_Objects_Vector3i, ToString)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Vector3i, ToString)
 {
 
     using ostk::math::obj::Vector3i ;
@@ -118,7 +118,7 @@ TEST (Library_Mathematics_Objects_Vector3i, ToString)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Objects_Vector2d, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Vector2d, Constructor)
 {
 
     using ostk::math::obj::Vector2d ;
@@ -164,7 +164,7 @@ TEST (Library_Mathematics_Objects_Vector2d, Constructor)
 
 }
 
-TEST (Library_Mathematics_Objects_Vector2d, ToString)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Vector2d, ToString)
 {
 
     using ostk::math::obj::Vector2d ;
@@ -197,7 +197,7 @@ TEST (Library_Mathematics_Objects_Vector2d, ToString)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Objects_Vector3d, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Vector3d, Constructor)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -274,7 +274,7 @@ TEST (Library_Mathematics_Objects_Vector3d, Constructor)
 
 }
 
-TEST (Library_Mathematics_Objects_Vector3d, ToString)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Vector3d, ToString)
 {
 
     using ostk::math::obj::Vector3d ;
@@ -308,7 +308,7 @@ TEST (Library_Mathematics_Objects_Vector3d, ToString)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Objects_Vector4d, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Vector4d, Constructor)
 {
 
     using ostk::math::obj::Vector4d ;
@@ -356,7 +356,7 @@ TEST (Library_Mathematics_Objects_Vector4d, Constructor)
 
 }
 
-TEST (Library_Mathematics_Objects_Vector4d, IsNear)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Vector4d, IsNear)
 {
 
     using ostk::math::obj::Vector4d ;
@@ -387,7 +387,7 @@ TEST (Library_Mathematics_Objects_Vector4d, IsNear)
 
 }
 
-TEST (Library_Mathematics_Objects_Vector4d, ToString)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Vector4d, ToString)
 {
 
     using ostk::math::obj::Vector4d ;
@@ -420,7 +420,7 @@ TEST (Library_Mathematics_Objects_Vector4d, ToString)
 
 }
 
-TEST (Library_Mathematics_Objects_Vector4d, Parse)
+TEST (OpenSpaceToolkit_Mathematics_Objects_Vector4d, Parse)
 {
 
     using ostk::math::obj::Vector4d ;
@@ -450,7 +450,7 @@ TEST (Library_Mathematics_Objects_Vector4d, Parse)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (Library_Mathematics_Objects_VectorXd, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Objects_VectorXd, Constructor)
 {
 
     using ostk::math::obj::VectorXd ;
@@ -505,7 +505,7 @@ TEST (Library_Mathematics_Objects_VectorXd, Constructor)
 
 }
 
-TEST (Library_Mathematics_Objects_VectorXd, IsNear)
+TEST (OpenSpaceToolkit_Mathematics_Objects_VectorXd, IsNear)
 {
 
     using ostk::math::obj::VectorXd ;
@@ -566,7 +566,7 @@ TEST (Library_Mathematics_Objects_VectorXd, IsNear)
 
 }
 
-TEST (Library_Mathematics_Objects_VectorXd, ToString)
+TEST (OpenSpaceToolkit_Mathematics_Objects_VectorXd, ToString)
 {
 
     using ostk::math::obj::VectorXd ;
@@ -615,7 +615,7 @@ TEST (Library_Mathematics_Objects_VectorXd, ToString)
 
 }
 
-TEST (Library_Mathematics_Objects_VectorXd, Parse)
+TEST (OpenSpaceToolkit_Mathematics_Objects_VectorXd, Parse)
 {
 
     using ostk::math::obj::VectorXd ;
