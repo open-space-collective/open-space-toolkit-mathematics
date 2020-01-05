@@ -1,5 +1,5 @@
 {
-    "name": "Library Mathematics",
+    "name": "Open Space Toolkit Mathematics",
     "extensions": [
         "ms-vscode.cpptools",
         "ms-python.python",
