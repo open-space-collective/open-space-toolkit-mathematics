@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @project        Library ▸ Mathematics
+/// @project        Open Space Toolkit ▸ Mathematics
 /// @file           Library/Mathematics/Geometry/2D/Objects/Point.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0

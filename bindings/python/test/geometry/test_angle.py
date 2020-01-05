@@ -1,6 +1,6 @@
 ################################################################################################################################################################
 
-# @project        Library ▸ Mathematics
+# @project        Open Space Toolkit ▸ Mathematics
 # @file           bindings/python/test/geometry/test_angle.py
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
