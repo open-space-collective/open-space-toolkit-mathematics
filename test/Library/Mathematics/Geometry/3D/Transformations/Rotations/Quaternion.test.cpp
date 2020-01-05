@@ -1,16 +1,16 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.test.cpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
-#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
-#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
-#include <Library/Mathematics/Geometry/Angle.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
 
 #include <Global.test.hpp>
 

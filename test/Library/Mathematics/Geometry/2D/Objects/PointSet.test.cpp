@@ -1,14 +1,14 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/2D/Objects/PointSet.test.cpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
-#include <Library/Mathematics/Geometry/2D/Objects/PointSet.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.hpp>
 
 #include <Global.test.hpp>
 

@@ -1,17 +1,17 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Objects/PointSet.cpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/PointSet.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/PointSet.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/PointSet.hpp>
 
-#include <Library/Core/Error.hpp>
-#include <Library/Core/Utilities.hpp>
+#include <OpenSpaceToolkit/Core/Error.hpp>
+#include <OpenSpaceToolkit/Core/Utilities.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

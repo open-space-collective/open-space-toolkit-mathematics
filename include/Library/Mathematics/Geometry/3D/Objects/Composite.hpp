@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Objects/Composite.hpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Composite.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -10,13 +10,13 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite__
 
-#include <Library/Mathematics/Geometry/3D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
 
-#include <Library/Core/Containers/Array.hpp>
-#include <Library/Core/Types/Size.hpp>
-#include <Library/Core/Types/Index.hpp>
-#include <Library/Core/Types/Unique.hpp>
-#include <Library/Core/Error.hpp>
+#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
+#include <OpenSpaceToolkit/Core/Types/Size.hpp>
+#include <OpenSpaceToolkit/Core/Types/Index.hpp>
+#include <OpenSpaceToolkit/Core/Types/Unique.hpp>
+#include <OpenSpaceToolkit/Core/Error.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

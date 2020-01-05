@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Objects/Cuboid.hpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cuboid.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -10,12 +10,12 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid__
 
-#include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <Library/Mathematics/Objects/Vector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
 
-#include <Library/Core/Containers/Array.hpp>
-#include <Library/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
+#include <OpenSpaceToolkit/Core/Types/Real.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

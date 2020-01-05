@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Objects/Vector.hpp
+/// @file           OpenSpaceToolkit/Mathematics/Objects/Vector.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -10,9 +10,9 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Objects_Vector__
 #define __OpenSpaceToolkit_Mathematics_Objects_Vector__
 
-#include <Library/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Types/String.hpp>
 
-#define EIGEN_MATRIXBASE_PLUGIN "Library/Mathematics/Objects/Eigen.hpp"
+#define EIGEN_MATRIXBASE_PLUGIN "OpenSpaceToolkit/Mathematics/Objects/Eigen.hpp"
 
 // Disable Eigen warnings
 

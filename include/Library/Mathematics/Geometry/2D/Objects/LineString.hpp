@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/2D/Objects/LineString.hpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/LineString.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -10,12 +10,12 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString__
 
-#include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
-#include <Library/Mathematics/Geometry/2D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
 
-#include <Library/Core/Containers/Array.hpp>
-#include <Library/Core/Types/Size.hpp>
-#include <Library/Core/Types/Index.hpp>
+#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
+#include <OpenSpaceToolkit/Core/Types/Size.hpp>
+#include <OpenSpaceToolkit/Core/Types/Index.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

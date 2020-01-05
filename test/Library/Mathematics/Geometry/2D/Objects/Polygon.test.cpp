@@ -1,16 +1,16 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/2D/Objects/Polygon.test.cpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/2D/Transformation.hpp>
-#include <Library/Mathematics/Geometry/2D/Objects/Polygon.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 
-#include <Library/Core/Containers/Tuple.hpp>
+#include <OpenSpaceToolkit/Core/Containers/Tuple.hpp>
 
 #include <Global.test.hpp>
 

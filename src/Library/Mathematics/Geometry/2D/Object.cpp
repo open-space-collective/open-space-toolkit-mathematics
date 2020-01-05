@@ -1,20 +1,20 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/2D/Object.cpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp>
-#include <Library/Mathematics/Geometry/2D/Objects/Polygon.hpp>
-#include <Library/Mathematics/Geometry/2D/Objects/PointSet.hpp>
-#include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
-#include <Library/Mathematics/Geometry/2D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
 
-#include <Library/Core/Error.hpp>
-#include <Library/Core/Utilities.hpp>
+#include <OpenSpaceToolkit/Core/Error.hpp>
+#include <OpenSpaceToolkit/Core/Utilities.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/Angle.hpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -10,11 +10,11 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_Angle__
 #define __OpenSpaceToolkit_Mathematics_Geometry_Angle__
 
-#include <Library/Mathematics/Objects/Vector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
 
-#include <Library/Core/Types/String.hpp>
-#include <Library/Core/Types/Real.hpp>
-#include <Library/Core/Types/Integer.hpp>
+#include <OpenSpaceToolkit/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Types/Integer.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

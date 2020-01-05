@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Objects/Plane.hpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Plane.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -10,13 +10,13 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane__
 
-#include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/PointSet.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <Library/Mathematics/Geometry/3D/Object.hpp>
-#include <Library/Mathematics/Objects/Vector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ray.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/PointSet.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

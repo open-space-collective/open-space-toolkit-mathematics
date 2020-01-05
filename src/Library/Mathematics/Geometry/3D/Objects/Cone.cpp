@@ -1,26 +1,26 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Objects/Cone.cpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cone.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
-#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
-#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
-#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Cone.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
-#include <Library/Mathematics/Geometry/2D/Objects/Polygon.hpp>
-#include <Library/Mathematics/Geometry/2D/Objects/Point.hpp>
-#include <Library/Mathematics/Objects/Interval.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cone.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Plane.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Objects/Interval.hpp>
 
-#include <Library/Core/Error.hpp>
-#include <Library/Core/Utilities.hpp>
+#include <OpenSpaceToolkit/Core/Error.hpp>
+#include <OpenSpaceToolkit/Core/Utilities.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

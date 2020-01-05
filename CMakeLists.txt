@@ -11,7 +11,7 @@
 
 SET (PROJECT_NAME "LibraryMathematics")
 SET (PROJECT_DESCRIPTION "Mathematics library.")
-SET (PROJECT_PATH "Library/Mathematics")
+SET (PROJECT_PATH "OpenSpaceToolkit/Mathematics")
 SET (PROJECT_PACKAGE_NAME "open-space-toolkit-mathematics")
 SET (PROJECT_LICENSE "Apache License 2.0")
 SET (PROJECT_VENDOR_ID "org.open-space-collective")

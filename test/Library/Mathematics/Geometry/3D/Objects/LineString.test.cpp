@@ -1,15 +1,15 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Objects/LineString.test.cpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/LineString.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/LineString.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/LineString.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp>
 
 #include <Global.test.hpp>
 

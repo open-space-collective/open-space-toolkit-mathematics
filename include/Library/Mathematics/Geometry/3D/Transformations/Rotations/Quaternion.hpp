@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -10,12 +10,12 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion__
 
-#include <Library/Mathematics/Geometry/Angle.hpp>
-#include <Library/Mathematics/Objects/Vector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
+#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
 
-#include <Library/Core/Types/String.hpp>
-#include <Library/Core/Types/Real.hpp>
-#include <Library/Core/Types/Integer.hpp>
+#include <OpenSpaceToolkit/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Types/Integer.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

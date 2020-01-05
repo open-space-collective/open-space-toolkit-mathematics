@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Objects.hpp
+/// @file           OpenSpaceToolkit/Mathematics/Objects.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -10,9 +10,9 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Objects__
 #define __OpenSpaceToolkit_Mathematics_Objects__
 
-#include <Library/Mathematics/Objects/Vector.hpp>
-#include <Library/Mathematics/Objects/Matrix.hpp>
-#include <Library/Mathematics/Objects/Interval.hpp>
+#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Objects/Matrix.hpp>
+#include <OpenSpaceToolkit/Mathematics/Objects/Interval.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Objects/Eigen.hpp
+/// @file           OpenSpaceToolkit/Mathematics/Objects/Eigen.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -10,7 +10,7 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Objects_Eigen__
 #define __OpenSpaceToolkit_Mathematics_Objects_Eigen__
 
-#include <Library/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Types/String.hpp>
 
 #include <sstream>
 #include <limits>

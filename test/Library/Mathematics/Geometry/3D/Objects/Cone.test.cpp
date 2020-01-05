@@ -1,17 +1,17 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Objects/Cone.test.cpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cone.test.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
-#include <Library/Mathematics/Geometry/3D/Intersection.hpp>
-#include <Library/Mathematics/Geometry/3D/Transformation.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Cone.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cone.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 
 #include <Global.test.hpp>
 

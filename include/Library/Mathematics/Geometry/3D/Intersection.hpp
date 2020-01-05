@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Intersection.hpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -12,26 +12,26 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <Library/Mathematics/Geometry/3D/Objects/Composite.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Cuboid.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Sphere.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Plane.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Polygon.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/LineString.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Segment.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Line.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/PointSet.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <Library/Mathematics/Geometry/3D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Composite.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cuboid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Sphere.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Plane.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Polygon.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/LineString.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ray.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/PointSet.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
 
-#include <Library/Core/Containers/Array.hpp>
-#include <Library/Core/Types/Size.hpp>
-#include <Library/Core/Types/Index.hpp>
-#include <Library/Core/Types/Unique.hpp>
-#include <Library/Core/Error.hpp>
+#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
+#include <OpenSpaceToolkit/Core/Types/Size.hpp>
+#include <OpenSpaceToolkit/Core/Types/Index.hpp>
+#include <OpenSpaceToolkit/Core/Types/Unique.hpp>
+#include <OpenSpaceToolkit/Core/Error.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

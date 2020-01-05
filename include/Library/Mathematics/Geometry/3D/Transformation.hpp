@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Transformation.hpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -10,14 +10,14 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation__
 
-#include <Library/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <Library/Mathematics/Geometry/3D/Object.hpp>
-#include <Library/Mathematics/Geometry/Angle.hpp>
-#include <Library/Mathematics/Objects/Vector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
+#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
 
-#include <Library/Core/Types/String.hpp>
-#include <Library/Core/Types/Unique.hpp>
+#include <OpenSpaceToolkit/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Types/Unique.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 

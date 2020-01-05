@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           Library/Mathematics/Geometry/3D/Objects/Pyramid.hpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Pyramid.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -10,14 +10,14 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid__
 
-#include <Library/Mathematics/Geometry/3D/Objects/Polygon.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Ray.hpp>
-#include <Library/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <Library/Mathematics/Geometry/3D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Polygon.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ray.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
 
-#include <Library/Core/Containers/Array.hpp>
-#include <Library/Core/Types/Size.hpp>
-#include <Library/Core/Types/Index.hpp>
+#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
+#include <OpenSpaceToolkit/Core/Types/Size.hpp>
+#include <OpenSpaceToolkit/Core/Types/Index.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
