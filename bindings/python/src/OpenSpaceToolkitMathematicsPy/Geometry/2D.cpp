@@ -1,0 +1,31 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/// @project        Open Space Toolkit ▸ Mathematics
+/// @file           bindings/python/src/OpenSpaceToolkitMathematicsPy/Geometry/2D.cpp
+/// @author         Lucas Brémond <lucas@loftorbital.com>
+/// @license        Apache License 2.0
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Transformation.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object.cpp>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D            ( )
+{
+
+    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("ostk.mathematics.geometry.d2")))) ;
+
+    boost::python::scope().attr("d2") = module ;
+
+    boost::python::scope scope = module ;
+
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Object() ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects() ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation() ;
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,59 +1,14 @@
 ################################################################################################################################################################
 
 # @project        Open Space Toolkit ▸ Mathematics
-# @file           .gitignore
+# @file           bindings/python/tools/python/ostk/mathematics/__init__.py
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
 
 ################################################################################################################################################################
 
-# Operating Systems
+from ostk.core import *
 
-## Mac OS
-
-**/.DS_Store
-
-# Editors
-
-## Visual Studio Code
-
-.vscode/
-*.code-workspace
-
-## Sublime Text
-
-*.sublime-workspace
-*.sublime-project
-
-# Project
-
-## Common
-
-!.gitignore
-!.gitkeep
-
-## Binaries
-
-bin/*
-lib/*
-build/
-*.so*
-*.a
-*.exe*
-*.rpm*
-packages/
-coverage/
-
-## Documentation
-
-docs/html/
-docs/latex/
-
-## Misc.
-
-tmp/
-__pycache__
-.ipynb_checkpoints
-.pytest_cache/
+from .OpenSpaceToolkitMathematicsPy import *
 
 ################################################################################################################################################################
