@@ -24,7 +24,7 @@ export docker_jupyter_notebook_image_repository := $(docker_image_repository)-ju
 export jupyter_notebook_image_repository := jupyter/scipy-notebook:latest
 export jupyter_notebook_port := 9003
 
-export library_core_directory := $(project_directory)/../open-space-toolkit-core
+export open_space_toolkit_core_directory := $(project_directory)/../open-space-toolkit-core
 
 export ci_build_number := $(TRAVIS_BUILD_NUMBER)
 export ci_commit := $(TRAVIS_COMMIT)
