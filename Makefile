@@ -1,13 +1,13 @@
 ################################################################################################################################################################
 
-# @project        Library ▸ Mathematics
+# @project        Open Space Toolkit ▸ Mathematics
 # @file           Makefile
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
 
 ################################################################################################################################################################
 
-export project_name := library-mathematics
+export project_name := open-space-toolkit-mathematics
 export project_version := $(shell git describe --tags --always)
 export project_directory := $(shell git rev-parse --show-toplevel)
 
@@ -24,7 +24,7 @@ export docker_jupyter_notebook_image_repository := $(docker_image_repository)-ju
 export jupyter_notebook_image_repository := jupyter/scipy-notebook:latest
 export jupyter_notebook_port := 9003
 
-export library_core_directory := $(project_directory)/../library-core
+export open_space_toolkit_core_directory := $(project_directory)/../open-space-toolkit-core
 
 export ci_build_number := $(TRAVIS_BUILD_NUMBER)
 export ci_commit := $(TRAVIS_COMMIT)
@@ -459,7 +459,7 @@ _test-unit-python: _build-release-image-python
 
 	docker run \
 	--rm \
-	--workdir=/usr/local/lib/python3.7/site-packages/Library/Mathematics \
+	--workdir=/usr/local/lib/python3.7/site-packages/ostk/mathematics \
 	--entrypoint="" \
 	$(docker_release_image_python_repository):$(docker_image_version)-$(target) \
 	/bin/bash -c "pip install pytest && pytest ."

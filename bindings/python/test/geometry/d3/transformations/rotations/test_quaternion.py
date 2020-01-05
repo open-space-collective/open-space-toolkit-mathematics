@@ -1,6 +1,6 @@
 ################################################################################################################################################################
 
-# @project        Library ▸ Mathematics
+# @project        Open Space Toolkit ▸ Mathematics
 # @file           bindings/python/test/geometry/d3/transformations/rotations/test_quaternion.py
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
@@ -9,13 +9,13 @@
 
 import numpy
 
-from Library.Mathematics import Geometry
+from ostk.mathematics import geometry
 
 ################################################################################################################################################################
 
-Angle = Geometry.Angle
-Quaternion = Geometry.D3.Transformations.Rotations.Quaternion
-RotationVector = Geometry.D3.Transformations.Rotations.RotationVector
+Angle = geometry.Angle
+Quaternion = geometry.d3.transformations.rotations.Quaternion
+RotationVector = geometry.d3.transformations.rotations.RotationVector
 
 ################################################################################################################################################################
 

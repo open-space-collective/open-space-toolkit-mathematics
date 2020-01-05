@@ -1,7 +1,7 @@
 ################################################################################################################################################################
 
-# @project        Library ▸ Mathematics
-# @file           tools/python/setup.py.in
+# @project        Open Space Toolkit ▸ Mathematics
+# @file           bindings/python/tools/python/setup.py.in
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
 
@@ -16,26 +16,26 @@ with open('${CMAKE_CURRENT_SOURCE_DIR}/requirements.txt', 'r') as f:
     requirements = f.read().splitlines()
 
 setuptools.setup(
-    name = 'LibraryMathematicsPy',
+    name = 'open-space-toolkit-mathematics',
     version = '${PROJECT_VERSION_STRING}',
     author = 'Open Space Collective',
     author_email = 'contact@open-space-collective.org',
     description = 'Geometry, curve fitting, optimization.',
     long_description = long_description,
     long_description_content_type = 'text/markdown',
-    url = 'https://github.com/open-space-collective/library-mathematics',
+    url = 'https://github.com/open-space-collective/open-space-toolkit-mathematics',
     classifiers = (
         'Development Status :: 3 - Alpha',
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: Apache Software License',
         'Operating System :: POSIX :: Linux'
     ),
-    keywords = 'open-space-collective library mathematics',
+    keywords = 'open-space-collective open-space-toolkit mathematics',
     packages = setuptools.find_packages(),
     package_data = {
         '': [
-            '${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_PATH}/LibraryMathematicsPy.so',
-            '${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_PATH}/liblibrary-mathematics.so.0',
+            '${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_PATH}/libopen-space-toolkit-mathematics.so.0',
+            '${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_PATH}/${LIBRARY_TARGET}',
             '${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_PATH}/libboost_numpy37.so.1.69.0'
         ]
     },

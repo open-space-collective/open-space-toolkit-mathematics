@@ -1,11 +1,11 @@
 {
-    "name": "Library Mathematics",
+    "name": "Open Space Toolkit Mathematics",
     "extensions": [
         "ms-vscode.cpptools",
         "ms-python.python",
         "mhutchie.git-graph"
     ],
-    "image": "openspacecollective/library-mathematics-development:latest-debian",
+    "image": "openspacecollective/open-space-toolkit-mathematics-development:latest-debian",
 	"settings": {
 		"terminal.integrated.shell.linux": "/bin/bash"
 	},

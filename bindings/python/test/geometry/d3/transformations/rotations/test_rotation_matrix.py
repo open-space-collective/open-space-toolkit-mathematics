@@ -1,19 +1,19 @@
 ################################################################################################################################################################
 
-# @project        Library ▸ Mathematics
+# @project        Open Space Toolkit ▸ Mathematics
 # @file           bindings/python/test/geometry/d3/transformations/rotations/test_rotation_matrix.py
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
 
 ################################################################################################################################################################
 
-from Library.Mathematics import Geometry
+from ostk.mathematics import geometry
 
 ################################################################################################################################################################
 
-Angle = Geometry.Angle
-Quaternion = Geometry.D3.Transformations.Rotations.Quaternion
-RotationMatrix = Geometry.D3.Transformations.Rotations.RotationMatrix
+Angle = geometry.Angle
+Quaternion = geometry.d3.transformations.rotations.Quaternion
+RotationMatrix = geometry.d3.transformations.rotations.RotationMatrix
 
 ################################################################################################################################################################
 

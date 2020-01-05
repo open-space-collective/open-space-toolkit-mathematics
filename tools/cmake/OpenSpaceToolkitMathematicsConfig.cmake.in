@@ -1,0 +1,29 @@
+################################################################################################################################################################
+
+# @project        Open Space Toolkit ▸ Mathematics
+# @file           tools/cmake/OpenSpaceToolkitMathematicsConfig.cmake.in
+# @author         Lucas Brémond <lucas@loftorbital.com>
+# @license        Apache License 2.0
+
+################################################################################################################################################################
+
+SET (OpenSpaceToolkitMathematics_ROOT_DIR ${OpenSpaceToolkitMathematics_ROOT_DIR} @CMAKE_INSTALL_PREFIX@)
+
+FIND_PATH (OpenSpaceToolkitMathematics_INCLUDE_DIR "OpenSpaceToolkit/Mathematics/Objects.hpp" PATHS ${OpenSpaceToolkitMathematics_ROOT_DIR} PATH_SUFFIXES "include" NO_DEFAULT_PATH)
+FIND_LIBRARY (OpenSpaceToolkitMathematics_LIBRARY NAMES "libopen-space-toolkit-mathematics.so" PATHS ${OpenSpaceToolkitMathematics_ROOT_DIR} PATH_SUFFIXES "lib" NO_DEFAULT_PATH)
+
+# MESSAGE (STATUS "OpenSpaceToolkitMathematics_ROOT_DIR = ${OpenSpaceToolkitMathematics_ROOT_DIR}")
+# MESSAGE (STATUS "OpenSpaceToolkitMathematics_INCLUDE_DIR = ${OpenSpaceToolkitMathematics_INCLUDE_DIR}")
+# MESSAGE (STATUS "OpenSpaceToolkitMathematics_LIBRARY = ${OpenSpaceToolkitMathematics_LIBRARY}")
+# MESSAGE (STATUS "OpenSpaceToolkitMathematics_FIND_VERSION = ${OpenSpaceToolkitMathematics_FIND_VERSION}")
+
+IF (OpenSpaceToolkitMathematics_INCLUDE_DIR)
+
+    SET (OpenSpaceToolkitMathematics_INCLUDE_DIRS ${OpenSpaceToolkitMathematics_INCLUDE_DIR} ${OpenSpaceToolkitMathematics_INCLUDE_DIR}/OpenSpaceToolkit/Mathematics)
+    SET (OpenSpaceToolkitMathematics_LIBRARIES ${OpenSpaceToolkitMathematics_LIBRARY})
+
+    SET (OpenSpaceToolkitMathematics_FOUND TRUE)
+
+ENDIF ()
+
+################################################################################################################################################################

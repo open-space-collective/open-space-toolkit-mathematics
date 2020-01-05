@@ -1,17 +1,17 @@
 ################################################################################################################################################################
 
-# @project        Library ▸ Mathematics
+# @project        Open Space Toolkit ▸ Mathematics
 # @file           bindings/python/test/geometry/d2/objects/test_point.py
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
 
 ################################################################################################################################################################
 
-import Library.Mathematics as Mathematics
+import ostk.mathematics as mathematics
 
 ################################################################################################################################################################
 
-Point = Mathematics.Geometry.D2.Objects.Point
+Point = mathematics.geometry.d2.objects.Point
 
 ################################################################################################################################################################
 

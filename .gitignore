@@ -1,6 +1,6 @@
 ################################################################################################################################################################
 
-# @project        Library ▸ Mathematics
+# @project        Open Space Toolkit ▸ Mathematics
 # @file           .gitignore
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
@@ -54,5 +54,6 @@ docs/latex/
 tmp/
 __pycache__
 .ipynb_checkpoints
+.pytest_cache/
 
 ################################################################################################################################################################

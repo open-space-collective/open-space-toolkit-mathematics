@@ -2,7 +2,7 @@
 
 ################################################################################################################################################################
 
-# @project        Library ▸ Mathematics
+# @project        Open Space Toolkit ▸ Mathematics
 # @file           tools/development/helpers/test.sh
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
