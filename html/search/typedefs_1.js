@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['edge',['Edge',['../classlibrary_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a17e3083d71685e16f3244298e6f44ad9',1,'library::math::geom::d2::objects::Polygon::Edge()'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html#a743ee54e5fb8e2e649c254e69abed69c',1,'library::math::geom::d3::objects::Cuboid::Edge()'],['../classlibrary_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon.html#a7962e0559e972fe43eef942ce318fb8d',1,'library::math::geom::d3::objects::Polygon::Edge()']]]
+  ['edge',['Edge',['../classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a85e5c92944c126a62464874b5a6ba490',1,'ostk::math::geom::d2::objects::Polygon::Edge()'],['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html#af9482cb1219e7d447aaf76b6e2dbb1d1',1,'ostk::math::geom::d3::objects::Cuboid::Edge()'],['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon.html#a58c9a7e93e903b2226804116cce4f1ec',1,'ostk::math::geom::d3::objects::Polygon::Edge()']]]
 ];

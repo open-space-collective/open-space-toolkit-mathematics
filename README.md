@@ -1,23 +1,17 @@
-# Library ▸ Mathematics
+# Open Space Toolkit ▸ Mathematics
 
 Geometry, curve fitting, optimization.
 
-[![Build Status](https://travis-ci.com/open-space-collective/library-mathematics.svg?branch=master)](https://travis-ci.com/open-space-collective/library-mathematics)
-[![Code Coverage](https://codecov.io/gh/open-space-collective/library-mathematics/branch/master/graph/badge.svg)](https://codecov.io/gh/open-space-collective/library-mathematics)
-[![Documentation](https://img.shields.io/readthedocs/pip/stable.svg)](https://open-space-collective.github.io/library-mathematics)
-[![GitHub version](https://badge.fury.io/gh/open-space-collective%2Flibrary-mathematics.svg)](https://badge.fury.io/gh/open-space-collective%2Flibrary-mathematics)
-[![PyPI version](https://badge.fury.io/py/LibraryMathematicsPy.svg)](https://badge.fury.io/py/LibraryMathematicsPy)
+[![Build Status](https://travis-ci.com/open-space-collective/open-space-toolkit-mathematics.svg?branch=master)](https://travis-ci.com/open-space-collective/open-space-toolkit-mathematics)
+[![Code Coverage](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics/branch/master/graph/badge.svg)](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics)
+[![Documentation](https://img.shields.io/readthedocs/pip/stable.svg)](https://open-space-collective.github.io/open-space-toolkit-mathematics)
+[![GitHub version](https://badge.fury.io/gh/open-space-collective%2Fopen-space-toolkit-mathematics.svg)](https://badge.fury.io/gh/open-space-collective%2Fopen-space-toolkit-mathematics)
+[![PyPI version](https://badge.fury.io/py/open-space-toolkit-mathematics.svg)](https://badge.fury.io/py/open-space-toolkit-mathematics)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 ## Warning
 
-Library **name** is yet to be defined.
-
-Please check the following projects:
-
-- [Naming Project](https://github.com/orgs/open-space-collective/projects/1)
-
-*⚠ This library is still under heavy development. Do not use!*
+*⚠ This component is under development.*
 
 ## Structure
 
@@ -101,7 +95,7 @@ The **Mathematics** library exhibits the following structure:
 
 Documentation is available here:
 
-- [C++](https://open-space-collective.github.io/library-io)
+- [C++](https://open-space-collective.github.io/open-space-toolkit-mathematics)
 - [Python](./bindings/python/docs)
 
 ## Tutorials
@@ -171,7 +165,7 @@ make start-development
 
 This will:
 
-1. Build the `openspacecollective/library-mathematics-development` Docker image.
+1. Build the `openspacecollective/open-space-toolkit-mathematics-development` Docker image.
 2. Create a development environment container with local source files and helper scripts mounted.
 3. Start a `bash` shell from the `./build` working directory.
 
@@ -200,7 +194,7 @@ make test
 Or to run them manually:
 
 ```bash
-./bin/library-mathematics.test
+./bin/open-space-toolkit-mathematics.test
 ```
 
 *Tip: `helpers/test.sh` simplifies running tests from within the development environment.*
@@ -212,7 +206,7 @@ Or to run them manually:
 | Boost                  | 1.69.0  | Boost Software License | [boost.org](https://www.boost.org)                                                                     |
 | Eigen                  | 3.3.7   | MPL2                   | [eigen.tuxfamily.org](http://eigen.tuxfamily.org/index.php)                                            |
 | Geometric Tools Engine | 3.28    | Boost Software License | [geometrictools.com](https://www.geometrictools.com)                                                   |
-| Core                   | master  | Apache License 2.0     | [github.com/open-space-collective/library-core](https://github.com/open-space-collective/library-core) |
+| Core                   | master  | Apache License 2.0     | [github.com/open-space-collective/open-space-toolkit-core](https://github.com/open-space-collective/open-space-toolkit-core) |
 
 ## Contribution
 

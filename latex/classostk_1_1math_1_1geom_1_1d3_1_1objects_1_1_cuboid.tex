@@ -1,0 +1,863 @@
+\hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{}\section{ostk\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Cuboid Class Reference}
+\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+
+
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid}.  
+
+
+
+
+{\ttfamily \#include $<$Cuboid.\+hpp$>$}
+
+Inheritance diagram for ostk\+:\+:math\+:\+:geom\+:\+:d3\+:\+:objects\+:\+:Cuboid\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a0d3440e0c30348ece10f3658130e9b55}{Vertex}
+\item 
+typedef \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_af9482cb1219e7d447aaf76b6e2dbb1d1}{Edge}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Center, const std\+::array$<$ Vector3d, 3 $>$ \&a\+Axis\+Array, const std\+::array$<$ Real, 3 $>$ \&an\+Extent)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} $\ast$ \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a0096ba5626ce44a892f05610f6d6eb13}{clone} () const override
+\begin{DoxyCompactList}\small\item\em Clone cuboid. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aeb4eab71c3019aef0ad4e561bcf20f06}{operator==} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&a\+Cuboid) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a8517c894a67a923ef2179c3f615e5ef1}{operator!=} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&a\+Cuboid) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a4e7dbaf957b92cbbb02dd85c0b505366}{is\+Defined} () const override
+\begin{DoxyCompactList}\small\item\em Check if cuboid is defined. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a4e4bcebf83464e2f946346d606c5f44c}{is\+Near} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&a\+Cuboid, const Real \&a\+Tolerance) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid is near another cuboid. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae3bd1daf3311571b020da901f24d1a41}{intersects} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects point. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aa922a6ee7f3fe7cbbbfe584fa0d86e2c}{intersects} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects point set. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a4a9e6493bb2339591bceb908e0b561d1}{intersects} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&a\+Line) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects line. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_adfa6039ef6cf8e800af4927ababbc34f}{intersects} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} \&a\+Ray) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects ray. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a7651ffba557857db7169304e0b07793c}{intersects} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects segment. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ad55e530dcadee6dfa1621ad261874a89}{intersects} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&a\+Plane) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects plane. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aba72527a8c264f7ca79dc304e8a29fc8}{intersects} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&a\+Sphere) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects sphere. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_acc741e333008726d186887c49d14a00d}{intersects} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&a\+Cuboid) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects cuboid. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a528e8cfa569be9a65a6f9f1407af4a53}{intersects} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&a\+Pyramid) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid intersects pyramid. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac6e3f399ced96b348cb954a2ff0314fd}{contains} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid contains point. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac2f8d6ab7827fd2c8c088ef69492aa2c}{contains} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid contains point set. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac04afa98ba39500f4e476a57a92a554e}{contains} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Check if cuboid contains segment. \end{DoxyCompactList}\item 
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_af55a54e1355ac6a50c1b9c6d0de1abd8}{get\+Center} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid center. \end{DoxyCompactList}\item 
+Vector3d \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a944ae7484ccd8c22cc6a814cb002aad8}{get\+First\+Axis} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid first axis. \end{DoxyCompactList}\item 
+Vector3d \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_add00ad2c59ec4a2e64d655e9ad2810a8}{get\+Second\+Axis} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid second axis. \end{DoxyCompactList}\item 
+Vector3d \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac60a1fcb4c3472283629b9cf9de45d12}{get\+Third\+Axis} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid third axis. \end{DoxyCompactList}\item 
+Real \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a5a86a357cd12deb1cf51c48ef8c3e406}{get\+First\+Extent} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid first extent. \end{DoxyCompactList}\item 
+Real \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a21bec63f825795671eeb56e084731453}{get\+Second\+Extent} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid second extent. \end{DoxyCompactList}\item 
+Real \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a8cc3b3e20f67bfd7de8230fb2c471a70}{get\+Third\+Extent} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid third extent. \end{DoxyCompactList}\item 
+Array$<$ \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a0d3440e0c30348ece10f3658130e9b55}{Cuboid\+::\+Vertex} $>$ \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a46a7d78b2dcc261c2dbbf734d0837813}{get\+Vertices} () const
+\begin{DoxyCompactList}\small\item\em Get cuboid vertices. \end{DoxyCompactList}\item 
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a821798e9d6f37cd6cafc6a34ef131f9a}{intersection\+With} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&a\+Line) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of cuboid with line. \end{DoxyCompactList}\item 
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a518146484563c222a5953aee578503b4}{intersection\+With} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} \&a\+Ray, const bool only\+In\+Sight=false) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of cuboid with ray. \end{DoxyCompactList}\item 
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a13752ceb5d818419d6325cf4d2efd34e}{intersection\+With} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of cuboid with segment. \end{DoxyCompactList}\item 
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_af945b79b88ec89ae5c2a9f9624668cb9}{intersection\+With} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&a\+Cuboid) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of cuboid with cuboid. \end{DoxyCompactList}\item 
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a583a87ed4da890236e672e4dd3fbcbab}{intersection\+With} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&a\+Pyramid, const bool only\+In\+Sight=false) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of cuboid with pyramid. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a6ea70c4469116cc9f512e4c1a0e49016}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print cuboid. \end{DoxyCompactList}\item 
+virtual void \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aaa90106ccf8120f854bdcf0f824e5610}{apply\+Transformation} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to cuboid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aab6e643de544bd3de7529cc71a934f7a}{Undefined} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined cuboid. \end{DoxyCompactList}\item 
+static \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a6a42b2d344c9a6e12feef60ceea77b9d}{Cube} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Center, const Real \&an\+Extent)
+\begin{DoxyCompactList}\small\item\em Constructs a a cube. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid}. 
+
+https\+://en.wikipedia.\+org/wiki/\+Cuboid 
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_af9482cb1219e7d447aaf76b6e2dbb1d1}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_af9482cb1219e7d447aaf76b6e2dbb1d1}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!Edge@{Edge}}
+\index{Edge@{Edge}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{Edge}{Edge}}
+{\footnotesize\ttfamily typedef \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_af9482cb1219e7d447aaf76b6e2dbb1d1}{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::\+Edge}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a0d3440e0c30348ece10f3658130e9b55}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a0d3440e0c30348ece10f3658130e9b55}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{Vertex}{Vertex}}
+{\footnotesize\ttfamily typedef \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a0d3440e0c30348ece10f3658130e9b55}{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::\+Vertex}}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!Cuboid@{Cuboid}}
+\index{Cuboid@{Cuboid}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{Cuboid()}{Cuboid()}}
+{\footnotesize\ttfamily ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::\+Cuboid (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Center,  }\item[{const std\+::array$<$ Vector3d, 3 $>$ \&}]{a\+Axis\+Array,  }\item[{const std\+::array$<$ Real, 3 $>$ \&}]{an\+Extent }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = \{ \{ 0.0, 0.0, 0.0 \}, \{ \{ 1.0, 0.0, 0.0 \}, \{ 0.0, 1.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \} \}, \{ 1
+      .0, 2.0, 3.0 \} \} ;
+\end{DoxyCode}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aaa90106ccf8120f854bdcf0f824e5610}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aaa90106ccf8120f854bdcf0f824e5610}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!apply\+Transformation@{apply\+Transformation}}
+\index{apply\+Transformation@{apply\+Transformation}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{apply\+Transformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to cuboid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_object_ae9194dd6d2bb4df09292ffc84dccdb1d}{ostk\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a0096ba5626ce44a892f05610f6d6eb13}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a0096ba5626ce44a892f05610f6d6eb13}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!clone@{clone}}
+\index{clone@{clone}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} $\ast$ ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone cuboid. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned cuboid 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_object_a676013f9555f6492687f9809b2db887b}{ostk\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac6e3f399ced96b348cb954a2ff0314fd}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac6e3f399ced96b348cb954a2ff0314fd}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!contains@{contains}}
+\index{contains@{contains}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid contains point. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = ... ;
+Point point = ... ;
+cuboid.contains(point) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid contains point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac2f8d6ab7827fd2c8c088ef69492aa2c}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac2f8d6ab7827fd2c8c088ef69492aa2c}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!contains@{contains}}
+\index{contains@{contains}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid contains point set. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = ... ;
+PointSet pointSet = ... ;
+cuboid.contains(pointSet) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid contains point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac04afa98ba39500f4e476a57a92a554e}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac04afa98ba39500f4e476a57a92a554e}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!contains@{contains}}
+\index{contains@{contains}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid contains segment. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = ... ;
+Segment segment = ... ;
+cuboid.contains(segment) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid contains segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a6a42b2d344c9a6e12feef60ceea77b9d}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a6a42b2d344c9a6e12feef60ceea77b9d}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!Cube@{Cube}}
+\index{Cube@{Cube}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{Cube()}{Cube()}}
+{\footnotesize\ttfamily \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::\+Cube (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Center,  }\item[{const Real \&}]{an\+Extent }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a a cube. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cube = \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a6a42b2d344c9a6e12feef60ceea77b9d}{Cuboid::Cube}(\{ 0.0, 0.0, 0.0 \}, 1.0) ;
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Cube 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_af55a54e1355ac6a50c1b9c6d0de1abd8}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_af55a54e1355ac6a50c1b9c6d0de1abd8}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+Center@{get\+Center}}
+\index{get\+Center@{get\+Center}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+Center()}{getCenter()}}
+{\footnotesize\ttfamily \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid center. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = \{ \{ 0.0, 0.0, 0.0 \}, \{ \{ 1.0, 0.0, 0.0 \}, \{ 0.0, 1.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \} \}, \{ 1
+      .0, 2.0, 3.0 \} \} ;
+cuboid.getCenter() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} center 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a944ae7484ccd8c22cc6a814cb002aad8}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a944ae7484ccd8c22cc6a814cb002aad8}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+First\+Axis@{get\+First\+Axis}}
+\index{get\+First\+Axis@{get\+First\+Axis}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+First\+Axis()}{getFirstAxis()}}
+{\footnotesize\ttfamily Vector3d ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+First\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid first axis. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} first axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a5a86a357cd12deb1cf51c48ef8c3e406}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a5a86a357cd12deb1cf51c48ef8c3e406}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+First\+Extent@{get\+First\+Extent}}
+\index{get\+First\+Extent@{get\+First\+Extent}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+First\+Extent()}{getFirstExtent()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+First\+Extent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid first extent. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} first extent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_add00ad2c59ec4a2e64d655e9ad2810a8}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_add00ad2c59ec4a2e64d655e9ad2810a8}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+Second\+Axis@{get\+Second\+Axis}}
+\index{get\+Second\+Axis@{get\+Second\+Axis}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+Second\+Axis()}{getSecondAxis()}}
+{\footnotesize\ttfamily Vector3d ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+Second\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid second axis. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} second axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a21bec63f825795671eeb56e084731453}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a21bec63f825795671eeb56e084731453}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+Second\+Extent@{get\+Second\+Extent}}
+\index{get\+Second\+Extent@{get\+Second\+Extent}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+Second\+Extent()}{getSecondExtent()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+Second\+Extent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid second extent. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} second extent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac60a1fcb4c3472283629b9cf9de45d12}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ac60a1fcb4c3472283629b9cf9de45d12}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+Third\+Axis@{get\+Third\+Axis}}
+\index{get\+Third\+Axis@{get\+Third\+Axis}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+Third\+Axis()}{getThirdAxis()}}
+{\footnotesize\ttfamily Vector3d ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+Third\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid third axis. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} third axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a8cc3b3e20f67bfd7de8230fb2c471a70}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a8cc3b3e20f67bfd7de8230fb2c471a70}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+Third\+Extent@{get\+Third\+Extent}}
+\index{get\+Third\+Extent@{get\+Third\+Extent}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+Third\+Extent()}{getThirdExtent()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+Third\+Extent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid third extent. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} third extent 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a46a7d78b2dcc261c2dbbf734d0837813}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a46a7d78b2dcc261c2dbbf734d0837813}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!get\+Vertices@{get\+Vertices}}
+\index{get\+Vertices@{get\+Vertices}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{get\+Vertices()}{getVertices()}}
+{\footnotesize\ttfamily Array$<$ \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a0d3440e0c30348ece10f3658130e9b55}{Cuboid\+::\+Vertex} $>$ ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::get\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cuboid vertices. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} vertices 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a821798e9d6f37cd6cafc6a34ef131f9a}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a821798e9d6f37cd6cafc6a34ef131f9a}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&}]{a\+Line }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of cuboid with line. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Line} & A line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of cuboid with line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a518146484563c222a5953aee578503b4}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a518146484563c222a5953aee578503b4}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} \&}]{a\+Ray,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of cuboid with ray. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Ray} & A ray \\
+\hline
+\mbox{\tt in}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of cuboid with ray 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a13752ceb5d818419d6325cf4d2efd34e}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a13752ceb5d818419d6325cf4d2efd34e}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of cuboid with segment. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of cuboid with segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_af945b79b88ec89ae5c2a9f9624668cb9}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_af945b79b88ec89ae5c2a9f9624668cb9}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&}]{a\+Cuboid }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of cuboid with cuboid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Segment} & A cuboid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of cuboid with cuboid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a583a87ed4da890236e672e4dd3fbcbab}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a583a87ed4da890236e672e4dd3fbcbab}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersection\+With@{intersection\+With}}
+\index{intersection\+With@{intersection\+With}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersection\+With()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&}]{a\+Pyramid,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of cuboid with pyramid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Pyramid} & A pyramid \\
+\hline
+\mbox{\tt in}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} of cuboid with pyramid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae3bd1daf3311571b020da901f24d1a41}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ae3bd1daf3311571b020da901f24d1a41}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects point. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = ... ;
+Point point = ... ;
+cuboid.intersects(point) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aa922a6ee7f3fe7cbbbfe584fa0d86e2c}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aa922a6ee7f3fe7cbbbfe584fa0d86e2c}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects point set. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = ... ;
+PointSet pointSet = ... ;
+cuboid.intersects(pointSet) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a4a9e6493bb2339591bceb908e0b561d1}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a4a9e6493bb2339591bceb908e0b561d1}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \&}]{a\+Line }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects line. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = ... ;
+Line line = ... ;
+cuboid.intersects(line) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Line} & A line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_adfa6039ef6cf8e800af4927ababbc34f}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_adfa6039ef6cf8e800af4927ababbc34f}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray}{Ray} \&}]{a\+Ray }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects ray. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = ... ;
+Ray ray = ... ;
+cuboid.intersects(ray) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Ray} & A ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects ray 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a7651ffba557857db7169304e0b07793c}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a7651ffba557857db7169304e0b07793c}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects segment. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = ... ;
+Segment segment = ... ;
+cuboid.intersects(segment) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ad55e530dcadee6dfa1621ad261874a89}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_ad55e530dcadee6dfa1621ad261874a89}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects plane. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = ... ;
+Plane plane = ... ;
+cuboid.intersects(plane) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Plane} & A plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects plane 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aba72527a8c264f7ca79dc304e8a29fc8}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aba72527a8c264f7ca79dc304e8a29fc8}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&}]{a\+Sphere }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects sphere. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = ... ;
+Sphere sphere = ... ;
+cuboid.intersects(sphere) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Sphere} & A sphere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects sphere 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_acc741e333008726d186887c49d14a00d}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_acc741e333008726d186887c49d14a00d}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&}]{a\+Cuboid }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects cuboid. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = ... ;
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} anotherCuboid = ... ;
+cuboid.intersects(anotherCuboid) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Cuboid} & An cuboid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects cuboid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a528e8cfa569be9a65a6f9f1407af4a53}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a528e8cfa569be9a65a6f9f1407af4a53}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::intersects (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid}{Pyramid} \&}]{a\+Pyramid }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid intersects pyramid. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = ... ;
+Pyramid pyramid = ... ;
+cuboid.intersects(pyramid) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Pyramid} & A pyramid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid intersects pyramid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a4e7dbaf957b92cbbb02dd85c0b505366}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a4e7dbaf957b92cbbb02dd85c0b505366}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!is\+Defined@{is\+Defined}}
+\index{is\+Defined@{is\+Defined}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{is\+Defined()}{isDefined()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if cuboid is defined. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = \{ \{ 0.0, 0.0, 0.0 \}, \{ \{ 1.0, 0.0, 0.0 \}, \{ 0.0, 1.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \} \}, \{ 1
+      .0, 2.0, 3.0 \} \} ;
+cuboid.isDefined() ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if cuboid is defined 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_object_a271a1964cd208be85ce9a0a429395ad8}{ostk\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a4e4bcebf83464e2f946346d606c5f44c}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a4e4bcebf83464e2f946346d606c5f44c}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!is\+Near@{is\+Near}}
+\index{is\+Near@{is\+Near}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{is\+Near()}{isNear()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::is\+Near (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&}]{a\+Cuboid,  }\item[{const Real \&}]{a\+Tolerance }\end{DoxyParamCaption}) const}
+
+
+
+Check if cuboid is near another cuboid. 
+
+
+\begin{DoxyCode}
+Point(0.0, 0.0, 0.0).isNear(Point(0.0, 0.0, 0.0), 1e-15) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Cuboid} & A cuboid \\
+\hline
+\mbox{\tt in}  & {\em a\+Tolerance} & A tolerance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboid is near another cuboid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a8517c894a67a923ef2179c3f615e5ef1}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a8517c894a67a923ef2179c3f615e5ef1}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&}]{a\+Cuboid }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = \{ \{ 0.0, 0.0, 0.0 \}, \{ \{ 1.0, 0.0, 0.0 \}, \{ 0.0, 1.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \} \}, \{ 1
+      .0, 2.0, 3.0 \} \} ;
+cuboid != cuboid ; \textcolor{comment}{// False}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Cuboid} & An cuboid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboids are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aeb4eab71c3019aef0ad4e561bcf20f06}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aeb4eab71c3019aef0ad4e561bcf20f06}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} \&}]{a\+Cuboid }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = \{ \{ 0.0, 0.0, 0.0 \}, \{ \{ 1.0, 0.0, 0.0 \}, \{ 0.0, 1.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \} \}, \{ 1
+      .0, 2.0, 3.0 \} \} ;
+cuboid == cuboid ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Cuboid} & An cuboid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cuboids are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a6ea70c4469116cc9f512e4c1a0e49016}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a6ea70c4469116cc9f512e4c1a0e49016}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!print@{print}}
+\index{print@{print}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print cuboid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\tt in}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_object_ab2a2a782503b97d1cecabdfedc636fce}{ostk\+::math\+::geom\+::d3\+::\+Object}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aab6e643de544bd3de7529cc71a934f7a}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aab6e643de544bd3de7529cc71a934f7a}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid}}
+\subsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid}{Cuboid} ostk\+::math\+::geom\+::d3\+::objects\+::\+Cuboid\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined cuboid. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_a1da071d7cbb0a694348628f098f77c5b}{Cuboid} cuboid = \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid_aab6e643de544bd3de7529cc71a934f7a}{Cuboid::Undefined}() ; \textcolor{comment}{// Undefined}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined cuboid 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_cuboid_8hpp}{Cuboid.\+hpp}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_cuboid_8cpp}{Cuboid.\+cpp}\end{DoxyCompactItemize}

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
-<title>LibraryMathematics: Documentation</title>
+<title>OpenSpaceToolkitMathematics: Documentation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
-<div id="topbanner"><a href="https://github.com/open-space-collective/library-mathematics" title="Library ▸ Mathematics"><i class="githublogo"></i></a></div>
+<div id="topbanner"><a href="https://github.com/open-space-collective/open-space-toolkit-mathematics" title="Open Space Toolkit ▸ Mathematics"><i class="githublogo"></i></a></div>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
           <img id="MSearchSelect" src="search/mag_sel.png"
@@ -78,24 +78,19 @@ $(document).ready(function(){initNavTree('index.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Library ▸ Mathematics </div>  </div>
+<div class="title">Open Space Toolkit ▸ Mathematics </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p>Geometry, curve fitting, optimization.</p>
-<p><a href="https://travis-ci.com/open-space-collective/library-mathematics"></a> <a href="https://codecov.io/gh/open-space-collective/library-mathematics"></a> <a href="https://open-space-collective.github.io/library-mathematics"></a> <a href="https://badge.fury.io/gh/open-space-collective%2Flibrary-mathematics"></a> <a href="https://badge.fury.io/py/LibraryMathematicsPy"></a> <a href="https://opensource.org/licenses/Apache-2.0"></a></p>
+<p><a href="https://travis-ci.com/open-space-collective/open-space-toolkit-mathematics"></a> <a href="https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics"></a> <a href="https://open-space-collective.github.io/open-space-toolkit-mathematics"></a> <a href="https://badge.fury.io/gh/open-space-collective%2Fopen-space-toolkit-mathematics"></a> <a href="https://badge.fury.io/py/open-space-toolkit-mathematics"></a> <a href="https://opensource.org/licenses/Apache-2.0"></a></p>
 <h2>Warning</h2>
-<p>Library <b>name</b> is yet to be defined.</p>
-<p>Please check the following projects:</p>
-<ul>
-<li><a href="https://github.com/orgs/open-space-collective/projects/1">Naming Project</a></li>
-</ul>
-<p><em>⚠ This library is still under heavy development. Do not use!</em></p>
+<p><em>⚠ This component is under development.</em></p>
 <h2>Structure</h2>
 <p>The <b>Mathematics</b> library exhibits the following structure:</p>
 <div class="fragment"><div class="line">├── Objects</div><div class="line">│   ├── Vector</div><div class="line">│   ├── Matrix</div><div class="line">│   └── Interval</div><div class="line">├── Geometry</div><div class="line">│   ├── 2D</div><div class="line">|   │   ├── Objects</div><div class="line">│   │   │   ├── Point</div><div class="line">│   │   │   ├── Point Set</div><div class="line">│   │   │   ├── Line</div><div class="line">│   │   │   ├── Line String</div><div class="line">│   │   │   ├── Multi Line String</div><div class="line">│   │   │   └── Polygon</div><div class="line">│   │   ├── Intersection</div><div class="line">│   │   └── Transformations</div><div class="line">│   │       ├── Identity</div><div class="line">│   │       ├── Translation</div><div class="line">│   │       ├── Rotation</div><div class="line">│   │       ├── Reflection</div><div class="line">│   │       ├── Scaling</div><div class="line">│   │       └── Shear</div><div class="line">│   ├── 3D</div><div class="line">|   │   ├── Objects</div><div class="line">│   │   │   ├── Point</div><div class="line">│   │   │   ├── Point Set</div><div class="line">│   │   │   ├── Line</div><div class="line">│   │   │   ├── Ray</div><div class="line">│   │   │   ├── Segment</div><div class="line">│   │   │   ├── Line String</div><div class="line">│   │   │   ├── Polygon</div><div class="line">│   │   │   ├── Plane</div><div class="line">│   │   │   ├── Cuboid</div><div class="line">│   │   │   ├── Sphere</div><div class="line">│   │   │   ├── Ellipsoid</div><div class="line">│   │   │   ├── Cone</div><div class="line">│   │   │   ├── Pyramid</div><div class="line">│   │   │   └── Composite</div><div class="line">│   │   ├── Intersection</div><div class="line">│   │   └── Transformations</div><div class="line">│   │       ├── Identity</div><div class="line">│   │       ├── Translation</div><div class="line">│   │       ├── Rotations</div><div class="line">│   │       │   ├── Quaternion</div><div class="line">│   │       │   ├── Euler Angle</div><div class="line">│   │       │   ├── Rotation Vector</div><div class="line">│   │       │   └── Rotation Matrix</div><div class="line">│   │       ├── Reflection</div><div class="line">│   │       ├── Scaling</div><div class="line">│   │       └── Shear</div><div class="line">├── Dynamics</div><div class="line">│   ├── State</div><div class="line">│   ├── Solvers</div><div class="line">│   │   ├── Runge–Kutta 4 (RK4)</div><div class="line">│   │   ├── Dormand–Prince 5 (DP5)</div><div class="line">│   │   └── Runge–Kutta–Fehlberg 78 (F78)</div><div class="line">│   └── Systems</div><div class="line">├── Curve Fitting</div><div class="line">│   ├── Interpolation</div><div class="line">│   │   ├── Linear</div><div class="line">│   │   ├── Cubic Spline</div><div class="line">│   │   └── Lagrange</div><div class="line">│   └── Smoothing</div><div class="line">├── Optimization</div><div class="line">│   ├── Problem</div><div class="line">│   └── Algorithms</div><div class="line">│       ├── Gradient Descent</div><div class="line">│       └── Evolutionary</div><div class="line">│           ├── Genetic</div><div class="line">│           ├── Differential Evolution</div><div class="line">│           └── Swarm</div><div class="line">└── Statistics</div></div><!-- fragment --><h2>Documentation</h2>
 <p>Documentation is available here:</p>
 <ul>
-<li><a href="https://open-space-collective.github.io/library-io">C++</a></li>
+<li><a href="https://open-space-collective.github.io/open-space-toolkit-mathematics">C++</a></li>
 <li><a href="./bindings/python/docs">Python</a></li>
 </ul>
 <h2>Tutorials</h2>
@@ -183,7 +178,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <p>To start the development environment:</p>
 <div class="fragment"><div class="line">make start-development</div></div><!-- fragment --><p>This will:</p>
 <ol type="1">
-<li>Build the <code>openspacecollective/library-mathematics-development</code> Docker image.</li>
+<li>Build the <code>openspacecollective/open-space-toolkit-mathematics-development</code> Docker image.</li>
 <li>Create a development environment container with local source files and helper scripts mounted.</li>
 <li>Start a <code>bash</code> shell from the <code>./build</code> working directory.</li>
 </ol>
@@ -194,7 +189,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <h3>Test</h3>
 <p>To start a container to build and run the tests:</p>
 <div class="fragment"><div class="line">make test</div></div><!-- fragment --><p>Or to run them manually:</p>
-<div class="fragment"><div class="line">./bin/library-mathematics.test</div></div><!-- fragment --><p><em>Tip: <code>helpers/test.sh</code> simplifies running tests from within the development environment.</em></p>
+<div class="fragment"><div class="line">./bin/open-space-toolkit-mathematics.test</div></div><!-- fragment --><p><em>Tip: <code>helpers/test.sh</code> simplifies running tests from within the development environment.</em></p>
 <h2>Dependencies</h2>
 <table class="doxtable">
 <tr>
@@ -206,7 +201,7 @@ $(document).ready(function(){initNavTree('index.html','');});
 <tr>
 <td>Geometric Tools Engine </td><td>3.28 </td><td>Boost Software License </td><td><a href="https://www.geometrictools.com">geometrictools.com</a> </td></tr>
 <tr>
-<td>Core </td><td>master </td><td>Apache License 2.0 </td><td><a href="https://github.com/open-space-collective/library-core">github.com/open-space-collective/library-core</a> </td></tr>
+<td>Core </td><td>master </td><td>Apache License 2.0 </td><td><a href="https://github.com/open-space-collective/open-space-toolkit-core">github.com/open-space-collective/open-space-toolkit-core</a> </td></tr>
 </table>
 <h2>Contribution</h2>
 <p>Contributions are more than welcome!</p>
