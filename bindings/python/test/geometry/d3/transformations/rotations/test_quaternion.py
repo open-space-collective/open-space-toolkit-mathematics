@@ -28,7 +28,7 @@ def test_geometry_d3_transformations_rotations_quaternion ():
 
     assert q.is_defined() is True
     assert q.is_unitary() is True
-    assert q.is_near(q, Angle.Degrees(0.0)) is True
+    assert q.is_near(q, Angle.degrees(0.0)) is True
 
     assert q.x() == 0.0
     assert q.y() == 0.0
@@ -68,7 +68,7 @@ def test_geometry_d3_transformations_rotations_quaternion ():
     assert Quaternion.undefined().is_defined() is False
     assert Quaternion.unit().is_defined() is True
     assert Quaternion.xyzs(0.0, 0.0, 0.0, 1.0).is_defined() is True
-    assert Quaternion.rotation_vector(RotationVector(numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.Zero())).is_defined() is True
+    assert Quaternion.rotation_vector(RotationVector(numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.zero())).is_defined() is True
     # RotationMatrix
     assert Quaternion.parse("[0.0, 0.0, 0.0, 1.0]", Quaternion.Format.XYZS).is_defined() is True
 

@@ -29,7 +29,7 @@ def test_geometry_d3_transformations_rotations_rotation_vector ():
     assert rv.is_defined() is True
 
     assert numpy.array_equal(rv.get_axis(), numpy.array([[0.0], [0.0], [1.0]], dtype=float))
-    assert rv.get_angle() == Angle.Zero()
+    assert rv.get_angle() == Angle.zero()
 
     assert RotationVector.undefined().is_defined() is False
     assert RotationVector.unit().is_defined() is True
