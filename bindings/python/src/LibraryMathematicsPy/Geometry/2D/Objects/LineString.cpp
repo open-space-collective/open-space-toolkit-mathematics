@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Geometry/2D/Objects/LineString.cpp
+/// @file           OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/LineString.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -11,9 +11,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads, ostk::math::geom::d2::objects::LineString::toString, 0, 2)
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads, ostk::math::geom::d2::objects::LineString::toString, 0, 2)
 
-inline void                     LibraryMathematicsPy_Geometry_2D_Objects_LineString ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_LineString ( )
 {
 
     using namespace boost::python ;
@@ -38,7 +38,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_LineStr
 
         .def("getPointCount", &LineString::getPointCount)
         .def("getPointClosestTo", &LineString::getPointClosestTo)
-        .def("toString", &LineString::toString, LibraryMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads())
+        .def("toString", &LineString::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads())
         .def("applyTransformation", &LineString::applyTransformation)
 
         .def("Empty", &LineString::Empty).staticmethod("Empty")

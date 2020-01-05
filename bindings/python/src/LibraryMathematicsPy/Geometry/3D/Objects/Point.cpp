@@ -1,19 +1,19 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Geometry/3D/Objects/Point.cpp
+/// @file           OpenSpaceToolkitMathematicsPy/Geometry/3D/Objects/Point.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <LibraryMathematicsPy/Utilities/IterableConverter.hpp>
+#include <OpenSpaceToolkitMathematicsPy/Utilities/IterableConverter.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Point ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Point ( )
 {
 
     using namespace boost::python ;

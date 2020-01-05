@@ -36,6 +36,6 @@ ENV LD_LIBRARY_PATH "/usr/local/lib:/usr/lib/x86_64-linux-gnu:/opt/conda/lib/pyt
 ENV PYTHONPATH "/opt/conda/lib/python3.7/site-packages:/home/jovyan/lib"
 
 RUN pip install LibraryCorePy
-RUN pip install LibraryMathematicsPy
+RUN pip install OpenSpaceToolkitMathematicsPy
 
 ################################################################################################################################################################

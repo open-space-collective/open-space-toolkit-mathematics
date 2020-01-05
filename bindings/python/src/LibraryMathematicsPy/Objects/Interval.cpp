@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Objects/Interval.cpp
+/// @file           OpenSpaceToolkitMathematicsPy/Objects/Interval.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -13,7 +13,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     LibraryMathematicsPy_Objects_Interval       ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval       ( )
 {
 
     using namespace boost::python ;

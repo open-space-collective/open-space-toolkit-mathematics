@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy.cxx
+/// @file           OpenSpaceToolkitMathematicsPy.cxx
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -12,12 +12,12 @@
 
 #include <eigen_numpy.h>
 
-#include <LibraryMathematicsPy/Objects.cpp>
-#include <LibraryMathematicsPy/Geometry.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Objects.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry.cpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOST_PYTHON_MODULE (LibraryMathematicsPy)
+BOOST_PYTHON_MODULE (OpenSpaceToolkitMathematicsPy)
 {
 
     Py_Initialize() ;
@@ -29,8 +29,8 @@ BOOST_PYTHON_MODULE (LibraryMathematicsPy)
 
     package.attr("__path__") = "Library" ;
 
-    LibraryMathematicsPy_Objects() ;
-    LibraryMathematicsPy_Geometry() ;
+    OpenSpaceToolkitMathematicsPy_Objects() ;
+    OpenSpaceToolkitMathematicsPy_Geometry() ;
 
 }
 

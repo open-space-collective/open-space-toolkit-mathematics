@@ -1,21 +1,21 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Geometry/2D/Objects/Point.cpp
+/// @file           OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Point.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <LibraryMathematicsPy/Utilities/IterableConverter.hpp>
+#include <OpenSpaceToolkitMathematicsPy/Utilities/IterableConverter.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_2D_Objects_Point_toString_overloads, ostk::math::geom::d2::objects::Point::toString, 0, 2)
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Point_toString_overloads, ostk::math::geom::d2::objects::Point::toString, 0, 2)
 
-inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Point ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Point ( )
 {
 
     using namespace boost::python ;
@@ -47,7 +47,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Point (
         .def("y", &Point::y, return_value_policy<reference_existing_object>())
         .def("asVector", &Point::asVector)
         .def("distanceTo", &Point::distanceTo)
-        .def("toString", &Point::toString, LibraryMathematicsPy_Geometry_2D_Objects_Point_toString_overloads())
+        .def("toString", &Point::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Point_toString_overloads())
         .def("applyTransformation", &Point::applyTransformation)
 
         .def("Undefined", &Point::Undefined).staticmethod("Undefined")

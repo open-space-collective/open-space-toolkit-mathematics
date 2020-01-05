@@ -9,6 +9,6 @@
 
 from Library.Core import *
 
-from .LibraryMathematicsPy import *
+from .OpenSpaceToolkitMathematicsPy import *
 
 ################################################################################################################################################################

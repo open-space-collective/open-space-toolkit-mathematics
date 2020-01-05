@@ -1,19 +1,19 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Geometry.cpp
+/// @file           OpenSpaceToolkitMathematicsPy/Geometry.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <LibraryMathematicsPy/Geometry/3D.cpp>
-#include <LibraryMathematicsPy/Geometry/2D.cpp>
-#include <LibraryMathematicsPy/Geometry/Angle.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/Angle.cpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     LibraryMathematicsPy_Geometry               ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry               ( )
 {
 
     boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Geometry")))) ;
@@ -22,9 +22,9 @@ inline void                     LibraryMathematicsPy_Geometry               ( )
 
     boost::python::scope scope = module ;
 
-    LibraryMathematicsPy_Geometry_Angle() ;
-    LibraryMathematicsPy_Geometry_2D() ;
-    LibraryMathematicsPy_Geometry_3D() ;
+    OpenSpaceToolkitMathematicsPy_Geometry_Angle() ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D() ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D() ;
 
 }
 

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Geometry/2D/Objects/Polygon.cpp
+/// @file           OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Polygon.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -11,9 +11,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_2D_Objects_Polygon_toString_overloads, ostk::math::geom::d2::objects::Polygon::toString, 0, 2)
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Polygon_toString_overloads, ostk::math::geom::d2::objects::Polygon::toString, 0, 2)
 
-inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Polygon ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Polygon ( )
 {
 
     using namespace boost::python ;
@@ -50,7 +50,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_Polygon
         .def("getVertexAt", &Polygon::getVertexAt)
         .def("getEdges", &Polygon::getEdges)
         .def("getVertices", &Polygon::getVertices)
-        .def("toString", &Polygon::toString, LibraryMathematicsPy_Geometry_2D_Objects_Polygon_toString_overloads())
+        .def("toString", &Polygon::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Polygon_toString_overloads())
         // .def("unionWith", &Polygon::unionWith)
         .def("applyTransformation", &Polygon::applyTransformation)
 

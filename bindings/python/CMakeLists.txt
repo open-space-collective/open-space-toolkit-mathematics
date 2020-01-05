@@ -9,9 +9,9 @@
 
 ## Project Properties
 
-SET (PROJECT_NAME "LibraryMathematicsPy")
+SET (PROJECT_NAME "OpenSpaceToolkitMathematicsPy")
 SET (PROJECT_DESCRIPTION "Python bindings for Open Space Toolkit / Mathematics.")
-SET (PROJECT_PACKAGE_NAME "LibraryMathematicsPy")
+SET (PROJECT_PACKAGE_NAME "OpenSpaceToolkitMathematicsPy")
 SET (PROJECT_PATH "OpenSpaceToolkit/Mathematics")
 SET (PROJECT_LICENSE "Apache License 2.0")
 SET (PROJECT_VENDOR_ID "com.bremond.lucas")
@@ -154,7 +154,7 @@ ADD_CUSTOM_COMMAND (OUTPUT ${OUTPUT}
                     COMMAND cp "/usr/local/lib/libboost_${PYTHON_VERSION}.so.${BOOST_VERSION}.0" "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_PATH}/libboost_${PYTHON_VERSION}.so.${BOOST_VERSION}.0"
                     COMMAND cp "/usr/local/lib/libboost_numpy37.so.${BOOST_VERSION}.0" "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_PATH}/libboost_numpy37.so.${BOOST_VERSION}.0"
                     COMMAND cp "${CMAKE_SOURCE_DIR}/lib/${SHARED_LIBRARY_TARGET}" "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_PATH}/libopen-space-toolkit-mathematics.so.0"
-                    COMMAND cp "${CMAKE_SOURCE_DIR}/lib/${LIBRARY_TARGET}" "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_PATH}/LibraryMathematicsPy.so"
+                    COMMAND cp "${CMAKE_SOURCE_DIR}/lib/${LIBRARY_TARGET}" "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_PATH}/OpenSpaceToolkitMathematicsPy.so"
                     COMMAND ${PYTHON} ${SETUP_PY} bdist_wheel
                     COMMAND ${CMAKE_COMMAND} -E touch ${OUTPUT}
                     DEPENDS ${DEPS})

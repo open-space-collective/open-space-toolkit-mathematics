@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Geometry/3D/Objects/PointSet.cpp
+/// @file           OpenSpaceToolkitMathematicsPy/Geometry/3D/Objects/PointSet.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     LibraryMathematicsPy_Geometry_3D_Objects_PointSet ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_PointSet ( )
 {
 
     using namespace boost::python ;

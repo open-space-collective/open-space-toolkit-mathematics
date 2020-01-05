@@ -1,18 +1,18 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Objects.cpp
+/// @file           OpenSpaceToolkitMathematicsPy/Objects.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <LibraryMathematicsPy/Objects/Interval.cpp>
-// #include <LibraryMathematicsPy/Objects/Vector.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Objects/Interval.cpp>
+// #include <OpenSpaceToolkitMathematicsPy/Objects/Vector.cpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     LibraryMathematicsPy_Objects                ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Objects                ( )
 {
 
     boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Objects")))) ;
@@ -21,8 +21,8 @@ inline void                     LibraryMathematicsPy_Objects                ( )
 
     boost::python::scope scope = module ;
 
-    // LibraryMathematicsPy_Objects_Vector() ;
-    LibraryMathematicsPy_Objects_Interval() ;
+    // OpenSpaceToolkitMathematicsPy_Objects_Vector() ;
+    OpenSpaceToolkitMathematicsPy_Objects_Interval() ;
 
 }
 

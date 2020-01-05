@@ -1,17 +1,17 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Geometry/3D/Transformations.cpp
+/// @file           OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformations.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <LibraryMathematicsPy/Geometry/3D/Transformations/Rotations.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformations/Rotations.cpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     LibraryMathematicsPy_Geometry_3D_Transformations ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations ( )
 {
 
     boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Geometry.D3.Transformations")))) ;
@@ -20,7 +20,7 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
 
     boost::python::scope scope = module ;
 
-    LibraryMathematicsPy_Geometry_3D_Transformations_Rotations() ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations() ;
 
 }
 

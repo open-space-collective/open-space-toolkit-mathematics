@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Geometry/3D/Objects/Cuboid.cpp
+/// @file           OpenSpaceToolkitMathematicsPy/Geometry/3D/Objects/Cuboid.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -14,7 +14,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     LibraryMathematicsPy_Geometry_3D_Objects_Cuboid ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cuboid ( )
 {
 
     using namespace boost::python ;

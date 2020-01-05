@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Geometry/2D/Objects/PointSet.cpp
+/// @file           OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/PointSet.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -11,9 +11,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_2D_Objects_PointSet_toString_overloads, ostk::math::geom::d2::objects::PointSet::toString, 0, 2)
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet_toString_overloads, ostk::math::geom::d2::objects::PointSet::toString, 0, 2)
 
-inline void                     LibraryMathematicsPy_Geometry_2D_Objects_PointSet ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet ( )
 {
 
     using namespace boost::python ;
@@ -38,7 +38,7 @@ inline void                     LibraryMathematicsPy_Geometry_2D_Objects_PointSe
 
         .def("getSize", &PointSet::getSize)
         .def("getPointClosestTo", &PointSet::getPointClosestTo)
-        .def("toString", &PointSet::toString, LibraryMathematicsPy_Geometry_2D_Objects_PointSet_toString_overloads())
+        .def("toString", &PointSet::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet_toString_overloads())
         .def("applyTransformation", &PointSet::applyTransformation)
 
         .def("Empty", &PointSet::Empty).staticmethod("Empty")

@@ -1,14 +1,14 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Utilities/IterableConverter.hpp
+/// @file           OpenSpaceToolkitMathematicsPy/Utilities/IterableConverter.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __LibraryMathematicsPy_Utilities_IterableConverter__
-#define __LibraryMathematicsPy_Utilities_IterableConverter__
+#ifndef __OpenSpaceToolkitMathematicsPy_Utilities_IterableConverter__
+#define __OpenSpaceToolkitMathematicsPy_Utilities_IterableConverter__
 
 #include <boost/python/stl_iterator.hpp>
 

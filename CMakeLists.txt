@@ -9,7 +9,7 @@
 
 ## Project Properties
 
-SET (PROJECT_NAME "LibraryMathematics")
+SET (PROJECT_NAME "OpenSpaceToolkitMathematics")
 SET (PROJECT_DESCRIPTION "Mathematics library.")
 SET (PROJECT_PATH "OpenSpaceToolkit/Mathematics")
 SET (PROJECT_PACKAGE_NAME "open-space-toolkit-mathematics")

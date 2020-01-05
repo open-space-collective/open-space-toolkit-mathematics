@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Geometry/2D/Object.cpp
+/// @file           OpenSpaceToolkitMathematicsPy/Geometry/2D/Object.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     LibraryMathematicsPy_Geometry_2D_Object     ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object     ( )
 {
 
     using namespace boost::python ;

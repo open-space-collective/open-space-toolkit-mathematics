@@ -1,19 +1,19 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Geometry/3D/Transformations/Rotations.cpp
+/// @file           OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformations/Rotations.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <LibraryMathematicsPy/Geometry/3D/Transformations/Rotations/Quaternion.cpp>
-#include <LibraryMathematicsPy/Geometry/3D/Transformations/Rotations/RotationVector.cpp>
-#include <LibraryMathematicsPy/Geometry/3D/Transformations/Rotations/RotationMatrix.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformations/Rotations/Quaternion.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformations/Rotations/RotationVector.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformations/Rotations/RotationMatrix.cpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     LibraryMathematicsPy_Geometry_3D_Transformations_Rotations ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations ( )
 {
 
     boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Geometry.D3.Transformations.Rotations")))) ;
@@ -22,9 +22,9 @@ inline void                     LibraryMathematicsPy_Geometry_3D_Transformations
 
     boost::python::scope scope = module ;
 
-    LibraryMathematicsPy_Geometry_3D_Transformations_Rotations_Quaternion() ;
-    LibraryMathematicsPy_Geometry_3D_Transformations_Rotations_RotationVector() ;
-    LibraryMathematicsPy_Geometry_3D_Transformations_Rotations_RotationMatrix() ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_Quaternion() ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_RotationVector() ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_RotationMatrix() ;
 
 }
 

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Geometry/Angle.cpp
+/// @file           OpenSpaceToolkitMathematicsPy/Geometry/Angle.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -11,9 +11,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (LibraryMathematicsPy_Geometry_Angle_toString_overloads, ostk::math::geom::Angle::toString, 0, 1)
+BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (OpenSpaceToolkitMathematicsPy_Geometry_Angle_toString_overloads, ostk::math::geom::Angle::toString, 0, 1)
 
-inline void                     LibraryMathematicsPy_Geometry_Angle         ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_Angle         ( )
 {
 
     using namespace boost::python ;
@@ -56,7 +56,7 @@ inline void                     LibraryMathematicsPy_Geometry_Angle         ( )
         .def("inArcminutes", +[] (const Angle& anAngle) -> Real { return anAngle.inArcminutes() ; })
         .def("inArcseconds", +[] (const Angle& anAngle) -> Real { return anAngle.inArcseconds() ; })
         .def("inRevolutions", &Angle::inRevolutions)
-        .def("toString", &Angle::toString, LibraryMathematicsPy_Geometry_Angle_toString_overloads())
+        .def("toString", &Angle::toString, OpenSpaceToolkitMathematicsPy_Geometry_Angle_toString_overloads())
 
         .def("Undefined", &Angle::Undefined).staticmethod("Undefined")
         .def("Zero", &Angle::Zero).staticmethod("Zero")

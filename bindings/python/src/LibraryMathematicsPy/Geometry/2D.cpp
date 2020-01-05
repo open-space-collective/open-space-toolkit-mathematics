@@ -1,19 +1,19 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           LibraryMathematicsPy/Geometry/2D.cpp
+/// @file           OpenSpaceToolkitMathematicsPy/Geometry/2D.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <LibraryMathematicsPy/Geometry/2D/Transformation.cpp>
-#include <LibraryMathematicsPy/Geometry/2D/Objects.cpp>
-#include <LibraryMathematicsPy/Geometry/2D/Object.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Transformation.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object.cpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     LibraryMathematicsPy_Geometry_2D            ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D            ( )
 {
 
     boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("Library.Mathematics.Geometry.D2")))) ;
@@ -22,9 +22,9 @@ inline void                     LibraryMathematicsPy_Geometry_2D            ( )
 
     boost::python::scope scope = module ;
 
-    LibraryMathematicsPy_Geometry_2D_Object() ;
-    LibraryMathematicsPy_Geometry_2D_Objects() ;
-    LibraryMathematicsPy_Geometry_2D_Transformation() ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Object() ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects() ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation() ;
 
 }
 

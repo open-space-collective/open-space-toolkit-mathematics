@@ -1,28 +1,28 @@
 ################################################################################################################################################################
 
 # @project        Open Space Toolkit ▸ Mathematics
-# @file           tools/cmake/LibraryMathematicsConfig.cmake.in
+# @file           tools/cmake/OpenSpaceToolkitMathematicsConfig.cmake.in
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
 
 ################################################################################################################################################################
 
-SET (LibraryMathematics_ROOT_DIR ${LibraryMathematics_ROOT_DIR} @CMAKE_INSTALL_PREFIX@)
+SET (OpenSpaceToolkitMathematics_ROOT_DIR ${OpenSpaceToolkitMathematics_ROOT_DIR} @CMAKE_INSTALL_PREFIX@)
 
-FIND_PATH (LibraryMathematics_INCLUDE_DIR "OpenSpaceToolkit/Mathematics/Objects.hpp" PATHS ${LibraryMathematics_ROOT_DIR} PATH_SUFFIXES "include" NO_DEFAULT_PATH)
-FIND_LIBRARY (LibraryMathematics_LIBRARY NAMES "libopen-space-toolkit-mathematics.so" PATHS ${LibraryMathematics_ROOT_DIR} PATH_SUFFIXES "lib" NO_DEFAULT_PATH)
+FIND_PATH (OpenSpaceToolkitMathematics_INCLUDE_DIR "OpenSpaceToolkit/Mathematics/Objects.hpp" PATHS ${OpenSpaceToolkitMathematics_ROOT_DIR} PATH_SUFFIXES "include" NO_DEFAULT_PATH)
+FIND_LIBRARY (OpenSpaceToolkitMathematics_LIBRARY NAMES "libopen-space-toolkit-mathematics.so" PATHS ${OpenSpaceToolkitMathematics_ROOT_DIR} PATH_SUFFIXES "lib" NO_DEFAULT_PATH)
 
-# MESSAGE (STATUS "LibraryMathematics_ROOT_DIR = ${LibraryMathematics_ROOT_DIR}")
-# MESSAGE (STATUS "LibraryMathematics_INCLUDE_DIR = ${LibraryMathematics_INCLUDE_DIR}")
-# MESSAGE (STATUS "LibraryMathematics_LIBRARY = ${LibraryMathematics_LIBRARY}")
-# MESSAGE (STATUS "LibraryMathematics_FIND_VERSION = ${LibraryMathematics_FIND_VERSION}")
+# MESSAGE (STATUS "OpenSpaceToolkitMathematics_ROOT_DIR = ${OpenSpaceToolkitMathematics_ROOT_DIR}")
+# MESSAGE (STATUS "OpenSpaceToolkitMathematics_INCLUDE_DIR = ${OpenSpaceToolkitMathematics_INCLUDE_DIR}")
+# MESSAGE (STATUS "OpenSpaceToolkitMathematics_LIBRARY = ${OpenSpaceToolkitMathematics_LIBRARY}")
+# MESSAGE (STATUS "OpenSpaceToolkitMathematics_FIND_VERSION = ${OpenSpaceToolkitMathematics_FIND_VERSION}")
 
-IF (LibraryMathematics_INCLUDE_DIR)
+IF (OpenSpaceToolkitMathematics_INCLUDE_DIR)
 
-    SET (LibraryMathematics_INCLUDE_DIRS ${LibraryMathematics_INCLUDE_DIR} ${LibraryMathematics_INCLUDE_DIR}/OpenSpaceToolkit/Mathematics)
-    SET (LibraryMathematics_LIBRARIES ${LibraryMathematics_LIBRARY})
+    SET (OpenSpaceToolkitMathematics_INCLUDE_DIRS ${OpenSpaceToolkitMathematics_INCLUDE_DIR} ${OpenSpaceToolkitMathematics_INCLUDE_DIR}/OpenSpaceToolkit/Mathematics)
+    SET (OpenSpaceToolkitMathematics_LIBRARIES ${OpenSpaceToolkitMathematics_LIBRARY})
 
-    SET (LibraryMathematics_FOUND TRUE)
+    SET (OpenSpaceToolkitMathematics_FOUND TRUE)
 
 ENDIF ()
 
