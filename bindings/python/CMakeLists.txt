@@ -10,7 +10,7 @@
 ## Project Properties
 
 SET (PROJECT_NAME "LibraryMathematicsPy")
-SET (PROJECT_DESCRIPTION "Python bindings for Library / Mathematics.")
+SET (PROJECT_DESCRIPTION "Python bindings for Open Space Toolkit / Mathematics.")
 SET (PROJECT_PACKAGE_NAME "LibraryMathematicsPy")
 SET (PROJECT_PATH "Library/Mathematics")
 SET (PROJECT_LICENSE "Apache License 2.0")
