@@ -1,7 +1,5 @@
 # Open Space Toolkit ▸ Mathematics
 
-Geometry, curve fitting, optimization.
-
 [![Build Status](https://travis-ci.com/open-space-collective/open-space-toolkit-mathematics.svg?branch=master)](https://travis-ci.com/open-space-collective/open-space-toolkit-mathematics)
 [![Code Coverage](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics/branch/master/graph/badge.svg)](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics)
 [![Documentation](https://img.shields.io/readthedocs/pip/stable.svg)](https://open-space-collective.github.io/open-space-toolkit-mathematics)
@@ -9,9 +7,83 @@ Geometry, curve fitting, optimization.
 [![PyPI version](https://badge.fury.io/py/open-space-toolkit-mathematics.svg)](https://badge.fury.io/py/open-space-toolkit-mathematics)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
+Geometry, curve fitting, optimization.
+
 ## Warning
 
 *⚠ This component is under development.*
+
+## Installation
+
+### C++
+
+The binary packages are hosted using [GitHub Releases](https://github.com/open-space-collective/open-space-toolkit-mathematics/releases).
+
+*Note: Don't forget to set the desired version number in the URLs!*
+
+#### Debian / Ubuntu
+
+```bash
+# Download .deb packages
+
+wget https://github.com/open-space-collective/open-space-toolkit-mathematics/releases/download/0.3.0/open-space-toolkit-mathematics-0.3.0-1.x86_64-runtime.deb
+wget https://github.com/open-space-collective/open-space-toolkit-mathematics/releases/download/0.3.0/open-space-toolkit-mathematics-0.3.0-1.x86_64-devel.deb
+
+# Install .deb packages
+
+apt install -y open-space-toolkit-mathematics-0.3.0-*.deb
+```
+
+#### Fedora / CentOS
+
+```bash
+# Download .rpm packages
+
+wget https://github.com/open-space-collective/open-space-toolkit-mathematics/releases/download/0.3.0/open-space-toolkit-mathematics-0.3.0-1.x86_64-runtime.rpm
+wget https://github.com/open-space-collective/open-space-toolkit-mathematics/releases/download/0.3.0/open-space-toolkit-mathematics-0.3.0-1.x86_64-devel.rpm
+
+# Install .rpm packages
+
+dnf install -y open-space-toolkit-mathematics-0.3.0-*.rpm
+```
+
+### Python
+
+The binary packages are hosted on [PyPI](https://pypi.org/project/open-space-toolkit-mathematics/):
+
+```bash
+pip install open-space-toolkit-mathematics
+```
+
+## Getting Started
+
+Want to quickly get started? It's pretty simple.
+
+Install [Docker](https://www.docker.com/) and try this:
+
+```bash
+docker run -it openspacecollective/open-space-toolkit-mathematics-python
+```
+
+This will start an [iPython](https://ipython.org/) shell within a container where the OSTk Mathematics component is already installed.
+
+Once the shell is up and running, playing with it is easy:
+
+```py
+import numpy
+from ostk.mathematics.geometry import Angle
+from ostk.mathematics.geometry.d3.transformations.rotations import Quaternion
+from ostk.mathematics.geometry.d3.transformations.rotations import RotationVector
+
+rv = RotationVector(numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.degrees(15.0)) # Construct rotation vector
+
+q_AB = Quaternion(1.0, 2.0, 3.0, 4.0, Quaternion.Format.XYZS).to_normalized() # Construct quaternion and normalize
+q_BC = Quaternion.rotation_vector(rv) # Construct quaternion from rotation vector
+
+q_AC = q_AB * q_BC # Multiply quaternions
+```
+
+*Tip: Use tab for auto-completion!*
 
 ## Structure
 
