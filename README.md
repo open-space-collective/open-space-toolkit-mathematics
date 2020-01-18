@@ -1,7 +1,5 @@
 # Open Space Toolkit ▸ Mathematics
 
-Geometry, curve fitting, optimization.
-
 [![Build Status](https://travis-ci.com/open-space-collective/open-space-toolkit-mathematics.svg?branch=master)](https://travis-ci.com/open-space-collective/open-space-toolkit-mathematics)
 [![Code Coverage](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics/branch/master/graph/badge.svg)](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics)
 [![Documentation](https://img.shields.io/readthedocs/pip/stable.svg)](https://open-space-collective.github.io/open-space-toolkit-mathematics)
@@ -9,9 +7,95 @@ Geometry, curve fitting, optimization.
 [![PyPI version](https://badge.fury.io/py/open-space-toolkit-mathematics.svg)](https://badge.fury.io/py/open-space-toolkit-mathematics)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
+Geometry, curve fitting, optimization.
+
 ## Warning
 
 *⚠ This component is under development.*
+
+## Getting Started
+
+Want to get started? This is the simplest and quickest way:
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/open-space-collective/open-space-toolkit/master?urlpath=lab/tree/notebooks)
+
+*Nothing to download or install! This will automatically start a [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) environment in your browser with Open Space Toolkit libraries and example notebooks ready to use.*
+
+### Alternatives
+
+#### Docker Images
+
+[Docker](https://www.docker.com/) must be installed on your system.
+
+##### iPython
+
+The following command will start an [iPython](https://ipython.org/) shell within a container where the OSTk components are already installed:
+
+```bash
+docker run -it openspacecollective/open-space-toolkit-mathematics-python
+```
+
+Once the shell is up and running, playing with it is easy:
+
+```py
+import numpy
+from ostk.mathematics.geometry import Angle
+from ostk.mathematics.geometry.d3.transformations.rotations import Quaternion
+from ostk.mathematics.geometry.d3.transformations.rotations import RotationVector
+
+rv = RotationVector(numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.degrees(15.0)) # Construct rotation vector
+
+q_AB = Quaternion(1.0, 2.0, 3.0, 4.0, Quaternion.Format.XYZS).to_normalized() # Construct quaternion and normalize
+q_BC = Quaternion.rotation_vector(rv) # Construct quaternion from rotation vector
+
+q_AC = q_AB * q_BC # Multiply quaternions
+```
+
+*Tip: Use tab for auto-completion!*
+
+##### JupyterLab
+
+The following command will start a [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/) server within a container where the OSTk components are already installed:
+
+```bash
+docker run --publish=8888:8888 openspacecollective/open-space-toolkit-mathematics-jupyter
+```
+
+Once the container is running, access [http://localhost:8888/lab](http://localhost:8888/lab) and create a Python 3 Notebook.
+
+## Installation
+
+### C++
+
+The binary packages are hosted using [GitHub Releases](https://github.com/open-space-collective/open-space-toolkit-mathematics/releases):
+
+- Runtime libraries: `open-space-toolkit-mathematics-X.Y.Z-1.x86_64-runtime`
+- C++ headers: `open-space-toolkit-mathematics-X.Y.Z-1.x86_64-devel`
+- Python bindings: `open-space-toolkit-mathematics-X.Y.Z-1.x86_64-python`
+
+#### Debian / Ubuntu
+
+After downloading the relevant `.deb` binary packages, install:
+
+```bash
+apt install open-space-toolkit-mathematics-*.deb
+```
+
+#### Fedora / CentOS
+
+After downloading the relevant `.rpm` binary packages, install:
+
+```bash
+dnf install open-space-toolkit-mathematics-*.rpm
+```
+
+### Python
+
+Install from [PyPI](https://pypi.org/project/open-space-toolkit-mathematics/):
+
+```bash
+pip install open-space-toolkit-mathematics
+```
 
 ## Structure
 

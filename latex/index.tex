@@ -1,10 +1,111 @@
-Geometry, curve fitting, optimization.
-
 \href{https://travis-ci.com/open-space-collective/open-space-toolkit-mathematics}{\tt } \href{https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics}{\tt } \href{https://open-space-collective.github.io/open-space-toolkit-mathematics}{\tt } \href{https://badge.fury.io/gh/open-space-collective%2Fopen-space-toolkit-mathematics}{\tt } \href{https://badge.fury.io/py/open-space-toolkit-mathematics}{\tt } \href{https://opensource.org/licenses/Apache-2.0}{\tt }
+
+Geometry, curve fitting, optimization.
 
 \subsection*{Warning}
 
 {\itshape ⚠ This component is under development.}
+
+\subsection*{Getting Started}
+
+Want to get started? This is the simplest and quickest way\+:
+
+\href{https://mybinder.org/v2/gh/open-space-collective/open-space-toolkit/master?urlpath=lab/tree/notebooks}{\tt }
+
+{\itshape Nothing to download or install! This will automatically start a \href{https://jupyterlab.readthedocs.io/en/stable/}{\tt Jupyter\+Lab} environment in your browser with Open Space Toolkit libraries and example notebooks ready to use.}
+
+\subsubsection*{Alternatives}
+
+\paragraph*{Docker Images}
+
+\href{https://www.docker.com/}{\tt Docker} must be installed on your system.
+
+\subparagraph*{i\+Python}
+
+The following command will start an \href{https://ipython.org/}{\tt i\+Python} shell within a container where the O\+S\+Tk components are already installed\+:
+
+
+\begin{DoxyCode}
+docker run -it openspacecollective/open-space-toolkit-mathematics-python
+\end{DoxyCode}
+
+
+Once the shell is up and running, playing with it is easy\+:
+
+
+\begin{DoxyCode}
+\textcolor{keyword}{import} numpy
+\textcolor{keyword}{from} ostk.mathematics.geometry \textcolor{keyword}{import} Angle
+\textcolor{keyword}{from} ostk.mathematics.geometry.d3.transformations.rotations \textcolor{keyword}{import} Quaternion
+\textcolor{keyword}{from} ostk.mathematics.geometry.d3.transformations.rotations \textcolor{keyword}{import} RotationVector
+
+rv = RotationVector(numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.degrees(15.0)) \textcolor{comment}{# Construct
+       rotation vector}
+
+q\_AB = Quaternion(1.0, 2.0, 3.0, 4.0, Quaternion.Format.XYZS).to\_normalized() \textcolor{comment}{# Construct quaternion and
+       normalize}
+q\_BC = Quaternion.rotation\_vector(rv) \textcolor{comment}{# Construct quaternion from rotation vector}
+
+q\_AC = q\_AB * q\_BC \textcolor{comment}{# Multiply quaternions}
+\end{DoxyCode}
+
+
+{\itshape Tip\+: Use tab for auto-\/completion!}
+
+\subparagraph*{Jupyter\+Lab}
+
+The following command will start a \href{https://jupyterlab.readthedocs.io/en/stable/}{\tt Jupyter\+Lab} server within a container where the O\+S\+Tk components are already installed\+:
+
+
+\begin{DoxyCode}
+docker run --publish=8888:8888 openspacecollective/open-space-toolkit-mathematics-jupyter
+\end{DoxyCode}
+
+
+Once the container is running, access \href{http://localhost:8888/lab}{\tt http\+://localhost\+:8888/lab} and create a Python 3 Notebook.
+
+\subsection*{Installation}
+
+\subsubsection*{C++}
+
+The binary packages are hosted using \href{https://github.com/open-space-collective/open-space-toolkit-mathematics/releases}{\tt Git\+Hub Releases}\+:
+
+
+\begin{DoxyItemize}
+\item Runtime libraries\+: {\ttfamily open-\/space-\/toolkit-\/mathematics-\/\+X.\+Y.\+Z-\/1.\+x86\+\_\+64-\/runtime}
+\item C++ headers\+: {\ttfamily open-\/space-\/toolkit-\/mathematics-\/\+X.\+Y.\+Z-\/1.\+x86\+\_\+64-\/devel}
+\item Python bindings\+: {\ttfamily open-\/space-\/toolkit-\/mathematics-\/\+X.\+Y.\+Z-\/1.\+x86\+\_\+64-\/python}
+\end{DoxyItemize}
+
+\paragraph*{Debian / Ubuntu}
+
+After downloading the relevant {\ttfamily .deb} binary packages, install\+:
+
+
+\begin{DoxyCode}
+apt install open-space-toolkit-mathematics-*.deb
+\end{DoxyCode}
+
+
+\paragraph*{Fedora / Cent\+OS}
+
+After downloading the relevant {\ttfamily .rpm} binary packages, install\+:
+
+
+\begin{DoxyCode}
+dnf install open-space-toolkit-mathematics-*.rpm
+\end{DoxyCode}
+
+
+\subsubsection*{Python}
+
+Install from \href{https://pypi.org/project/open-space-toolkit-mathematics/}{\tt Py\+PI}\+:
+
+
+\begin{DoxyCode}
+pip install open-space-toolkit-mathematics
+\end{DoxyCode}
+
 
 \subsection*{Structure}
 
