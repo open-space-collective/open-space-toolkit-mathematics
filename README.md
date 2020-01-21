@@ -9,10 +9,6 @@
 
 Geometry, curve fitting, optimization.
 
-## Warning
-
-*⚠ This component is under development.*
-
 ## Getting Started
 
 Want to get started? This is the simplest and quickest way:
