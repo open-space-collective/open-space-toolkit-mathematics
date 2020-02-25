@@ -58,7 +58,7 @@ class MultiPolygon::Impl
 
                                 Impl                                        ( ) ;
 
-                                Impl                                        (   const   Array<Polygon>&             aPolygonArray                               ) ;
+                                Impl                                        (   const   Array<Polygon2d>&           aPolygonArray                               ) ;
 
                                 ~Impl                                       ( ) = default ;
 
@@ -72,7 +72,7 @@ class MultiPolygon::Impl
 
         Size                    getPolygonCount                             ( ) const ;
 
-        Array<Polygon>          getPolygons                                 ( ) const ;
+        Array<Polygon2d>        getPolygons                                 ( ) const ;
 
         MultiPolygon::Impl      unionWith                                   (   const   MultiPolygon::Impl&         aMultiPolygon                               ) const ;
 
@@ -88,9 +88,9 @@ class MultiPolygon::Impl
         typedef                 polygon<Impl::BoostPoint>                       BoostPolygon ;
         typedef                 multi_polygon<Impl::BoostPolygon>               BoostMultiPolygon ;
 
-    Impl::BoostMultiPolygon multiPolygon_ ;
+        Impl::BoostMultiPolygon multiPolygon_ ;
 
-        static Impl::BoostMultiPolygon BoostMultiPolygonFromPolygons        (   const   Array<Polygon>&             aPolygonArray                               ) ;
+        static Impl::BoostMultiPolygon BoostMultiPolygonFromPolygons        (   const   Array<Polygon2d>&           aPolygonArray                               ) ;
 
 } ;
 
@@ -102,7 +102,7 @@ class MultiPolygon::Impl
 
 }
 
-                                MultiPolygon::Impl::Impl                    (   const   Array<Polygon>&             aPolygonArray                               )
+                                MultiPolygon::Impl::Impl                    (   const   Array<Polygon2d>&           aPolygonArray                               )
                                 :   multiPolygon_(MultiPolygon::Impl::BoostMultiPolygonFromPolygons(aPolygonArray))
 {
 
@@ -150,26 +150,44 @@ Size                            MultiPolygon::Impl::getPolygonCount         ( ) 
     return multiPolygon_.size() ;
 }
 
-// Array<Polygon>                  MultiPolygon::Impl::getPolygons             ( ) const
-// {
+Array<Polygon2d>                MultiPolygon::Impl::getPolygons             ( ) const
+{
 
-//     Array<Polygon> polygons = Array<Polygon>::Empty() ;
+    Array<Polygon2d> polygons = Array<Polygon2d>::Empty() ;
 
-//     for (const auto& polygon : multiPolygon_)
-//     {
+    for (const auto& polygon : multiPolygon_)
+    {
 
-//         Array<Point> outerRing =
-//         Array<Array<Point>> innerRings =
+        Array<Point> outerRing = Array<Point>::Empty() ;
 
-//         const Polygon polygon = { outerRing, innerRings } ;
+        for (size_t vertexIdx = 0; vertexIdx < (polygon.outer().size() - 1); ++vertexIdx)
+        {
+            outerRing.add(Point(boost::geometry::get<0>(polygon.outer().at(vertexIdx)), boost::geometry::get<1>(polygon.outer().at(vertexIdx)))) ;
+        }
 
-//         polygons.add(polygon) ;
+        Array<Array<Point>> innerRings = Array<Array<Point>>::Empty() ;
 
-//     }
+        for (const auto& innerRing : polygon.inners())
+        {
 
-//     return polygons ;
+            Array<Point> innerRingVertices = Array<Point>::Empty() ;
 
-// }
+            for (size_t vertexIdx = 0; vertexIdx < (innerRing.size() - 1); ++vertexIdx)
+            {
+                innerRingVertices.add(Point(boost::geometry::get<0>(innerRing.at(vertexIdx)), boost::geometry::get<1>(innerRing.at(vertexIdx)))) ;
+            }
+
+            innerRings.add(innerRingVertices) ;
+
+        }
+
+        polygons.add(Polygon2d { outerRing, innerRings }) ;
+
+    }
+
+    return polygons ;
+
+}
 
 MultiPolygon::Impl              MultiPolygon::Impl::unionWith               (   const   MultiPolygon::Impl&         aMultiPolygon                               ) const
 {
@@ -246,7 +264,7 @@ void                            MultiPolygon::Impl::applyTransformation     (   
 
 }
 
-MultiPolygon::Impl::BoostMultiPolygon MultiPolygon::Impl::BoostMultiPolygonFromPolygons ( const Array<Polygon>&     aPolygonArray                               )
+MultiPolygon::Impl::BoostMultiPolygon MultiPolygon::Impl::BoostMultiPolygonFromPolygons ( const Array<Polygon2d>&   aPolygonArray                               )
 {
 
     MultiPolygon::Impl::BoostMultiPolygon boostMultiPolygon ;
@@ -291,7 +309,7 @@ MultiPolygon::Impl::BoostMultiPolygon MultiPolygon::Impl::BoostMultiPolygonFromP
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                MultiPolygon::MultiPolygon                  (   const   Array<Polygon>&             aPolygonArray                               )
+                                MultiPolygon::MultiPolygon                  (   const   Array<Polygon2d>&           aPolygonArray                               )
                                 :   Object(),
                                     implUPtr_(std::make_unique<MultiPolygon::Impl>(aPolygonArray))
 {
@@ -399,24 +417,15 @@ Size                            MultiPolygon::getPolygonCount               ( ) 
 
 }
 
-void                            MultiPolygon::print                         (           std::ostream&               anOutputStream,
-                                                                                        bool                        displayDecorators                           ) const
+Array<Polygon2d>                MultiPolygon::getPolygons                   ( ) const
 {
 
-    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Multi-polygon") : void () ;
-
-    if (implUPtr_ != nullptr)
+    if (!this->isDefined())
     {
-
-        // [TBI]
-
-    }
-    else
-    {
-        ostk::core::utils::Print::Line(anOutputStream) << "Undefined" ;
+        throw ostk::core::error::runtime::Undefined("Multi-polygon") ;
     }
 
-    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
+    return implUPtr_->getPolygons() ;
 
 }
 
@@ -456,6 +465,40 @@ String                          MultiPolygon::toString                      (   
 
 }
 
+void                            MultiPolygon::print                         (           std::ostream&               anOutputStream,
+                                                                                        bool                        displayDecorators                           ) const
+{
+
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Multi-polygon") : void () ;
+
+    if (implUPtr_ != nullptr)
+    {
+
+        for (const auto& polygon : this->getPolygons())
+        {
+            polygon.print(anOutputStream, false) ;
+        }
+
+    }
+    else
+    {
+        ostk::core::utils::Print::Line(anOutputStream) << "Undefined" ;
+    }
+
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
+
+}
+
+// MultiPolygon::ConstIterator     MultiPolygon::begin                         ( ) const
+// {
+
+// }
+
+// MultiPolygon::ConstIterator     MultiPolygon::end                           ( ) const
+// {
+
+// }
+
 void                            MultiPolygon::applyTransformation           (   const   Transformation&             aTransformation                             )
 {
 
@@ -475,7 +518,12 @@ void                            MultiPolygon::applyTransformation           (   
 
 MultiPolygon                    MultiPolygon::Undefined                     ( )
 {
-    return { Array<Polygon>::Empty() } ;
+    return { Array<Polygon2d>::Empty() } ;
+}
+
+MultiPolygon                    MultiPolygon::Polygon                       (   const   Polygon2d&                  aPolygon                                    )
+{
+    return { Array<Polygon2d> { aPolygon } } ;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

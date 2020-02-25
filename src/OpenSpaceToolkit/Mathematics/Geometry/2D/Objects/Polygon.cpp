@@ -8,6 +8,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 
 #include <OpenSpaceToolkit/Core/Types/String.hpp>
@@ -95,8 +96,6 @@ class Polygon::Impl
         Array<Polygon::Vertex>  getVertices                                 ( ) const ;
 
         // Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
-
-        // MultiPolygon            unionWith                                   (   const   Polygon&                    aPolygon                                    ) const ;
 
         String                  toString                                    (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const ;
@@ -379,6 +378,11 @@ Array<Polygon::Vertex>          Polygon::Impl::getVertices                  ( ) 
 
 }
 
+// Intersection                    Polygon::Impl::intersectionWith             (   const   Polygon&                    aPolygon                                    ) const
+// {
+
+// }
+
 String                          Polygon::Impl::toString                     (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const
 {
@@ -518,6 +522,48 @@ bool                            Polygon::operator !=                        (   
 bool                            Polygon::isDefined                          ( ) const
 {
     return (implUPtr_ != nullptr) && implUPtr_->isDefined() ;
+}
+
+bool                            Polygon::isNear                             (   const   Polygon&                    aPolygon,
+                                                                                const   Real&                       aTolerance                                  ) const
+{
+
+    if (!aPolygon.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    if (!aTolerance.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Tolerance") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    if (this->getVertexCount() != aPolygon.getVertexCount())
+    {
+        return false ;
+    }
+
+    const Array<Polygon::Vertex> firstVertices = this->getVertices() ;
+    const Array<Polygon::Vertex> secondVertices = aPolygon.getVertices() ;
+
+    // for (const auto vertexTuple : ostk::core::ctnr::iterators::Zip(this->getVertices(), aPolygon.getVertices()))
+    for (const auto vertexTuple : ostk::core::ctnr::iterators::Zip(firstVertices, secondVertices))
+    {
+
+        if (!std::get<0>(vertexTuple).isNear(std::get<1>(vertexTuple), aTolerance))
+        {
+            return false ;
+        }
+
+    }
+
+    return true ;
+
 }
 
 bool                            Polygon::intersects                         (   const   Polygon&                    aPolygon                                    ) const
@@ -728,6 +774,30 @@ void                            Polygon::print                              (   
 
 }
 
+// Intersection                    Polygon::intersectionWith                   (   const   Polygon&                    aPolygon                                    ) const
+// {
+
+//     if ((!this->isDefined()) || (!aPolygon.isDefined()))
+//     {
+//         throw ostk::core::error::runtime::Undefined("Polygon") ;
+//     }
+
+//     return implUPtr_->intersectionWith(aPolygon) ;
+
+// }
+
+MultiPolygon                    Polygon::unionWith                          (   const   Polygon&                    aPolygon                                    ) const
+{
+
+    if ((!this->isDefined()) || (!aPolygon.isDefined()))
+    {
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return MultiPolygon::Polygon(*this).unionWith(MultiPolygon::Polygon(aPolygon)) ;
+
+}
+
 String                          Polygon::toString                           (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const
 {
@@ -740,26 +810,6 @@ String                          Polygon::toString                           (   
     return implUPtr_->toString(aFormat, aPrecision) ;
 
 }
-
-// Intersection                    Polygon::intersectionWith                   (   const   Polygon&                    aPolygon                                    ) const
-// {
-
-//     if (!this->isDefined())
-//     {
-//         throw ostk::core::error::runtime::Undefined("Polygon") ;
-//     }
-
-// }
-
-// MultiPolygon                    Polygon::unionWith                          (   const   Polygon&                    aPolygon                                    ) const
-// {
-
-//     if (!this->isDefined())
-//     {
-//         throw ostk::core::error::runtime::Undefined("Polygon") ;
-//     }
-
-// }
 
 void                            Polygon::applyTransformation                (   const   Transformation&             aTransformation                             )
 {

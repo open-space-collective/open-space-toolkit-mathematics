@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/MultiPolygon.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Polygon.cpp>
 // #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Segment.cpp>
 // #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Ray.cpp>
@@ -37,6 +38,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_LineString() ;
     // OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_MultiLineString() ;
     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Polygon() ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_MultiPolygon() ;
 
 }
 

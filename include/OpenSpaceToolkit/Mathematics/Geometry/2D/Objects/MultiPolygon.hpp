@@ -46,7 +46,8 @@ using ostk::math::geom::d2::Object ;
 using ostk::math::geom::d2::objects::Point ;
 using ostk::math::geom::d2::objects::Segment ;
 using ostk::math::geom::d2::objects::LineString ;
-using ostk::math::geom::d2::objects::Polygon ;
+
+using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -57,11 +58,13 @@ class MultiPolygon : public Object
 
     public:
 
+        typedef                 Array<Polygon2d>::ConstIterator                 ConstIterator ;
+
         /// @brief              Constructor
         ///
         /// @param              [in] aPolygonArray An array of polygons
 
-                                MultiPolygon                                (   const   Array<Polygon>&             aPolygonArray                               =   Array<Polygon>::Empty() ) ;
+                                MultiPolygon                                (   const   Array<Polygon2d>&           aPolygonArray                               =   Array<Polygon2d>::Empty() ) ;
 
         /// @brief              Copy constructor
         ///
@@ -138,6 +141,12 @@ class MultiPolygon : public Object
 
         Size                    getPolygonCount                             ( ) const ;
 
+        /// @brief              Get polygons
+        ///
+        /// @return             Array of polygons
+
+        Array<Polygon2d>        getPolygons                                 ( ) const ;
+
         /// @brief              Compute intersection of multi-polygon with multi-polygon
         ///
         /// @param              [in] aMultiPolygon A multi-polygon
@@ -161,6 +170,18 @@ class MultiPolygon : public Object
         virtual void            print                                       (           std::ostream&               anOutputStream,
                                                                                         bool                        displayDecorators                           =   true ) const override ;
 
+        /// @brief              Get begin const iterator over polygons
+        ///
+        /// @return             Const iterator
+
+        MultiPolygon::ConstIterator begin                                   ( ) const ;
+
+        /// @brief              Get end const iterator over polygons
+        ///
+        /// @return             Const iterator
+
+        MultiPolygon::ConstIterator end                                     ( ) const ;
+
         /// @brief              Apply transformation to multi-polygon
         ///
         /// @param              [in] aTransformation A transformation
@@ -176,6 +197,16 @@ class MultiPolygon : public Object
         /// @return             Undefined multi-polygon
 
         static MultiPolygon     Undefined                                   ( ) ;
+
+        /// @brief              Constructs a multi-polygon from a polygon
+        ///
+        /// @code
+        ///                     MultiPolygon multiPolygon = MultiPolygon::Polygon(polygon) ;
+        /// @endcode
+        ///
+        /// @return             Multi-polygon
+
+        static MultiPolygon     Polygon                                     (   const   Polygon2d&                  aPolygon                                    ) ;
 
     private:
 
