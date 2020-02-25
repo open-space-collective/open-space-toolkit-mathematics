@@ -8,6 +8,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 
 #include <OpenSpaceToolkit/Core/Types/String.hpp>
@@ -94,9 +95,9 @@ class Polygon::Impl
 
         Array<Polygon::Vertex>  getVertices                                 ( ) const ;
 
-        // Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
+        Polygon                 getConvexHull                               ( ) const ;
 
-        // MultiPolygon            unionWith                                   (   const   Polygon&                    aPolygon                                    ) const ;
+        // Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
 
         String                  toString                                    (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const ;
@@ -112,6 +113,8 @@ class Polygon::Impl
         Impl::BoostPolygon      polygon_ ;
 
         static Impl::BoostPolygon BoostPolygonFromPoints                    (   const   Array<Point>&               aPointArray                                 ) ;
+
+        static Polygon          PolygonFromBoostPolygon                     (   const   Polygon::Impl::BoostPolygon& aPolygon                                   ) ;
 
 } ;
 
@@ -379,6 +382,29 @@ Array<Polygon::Vertex>          Polygon::Impl::getVertices                  ( ) 
 
 }
 
+Polygon                         Polygon::Impl::getConvexHull                ( ) const
+{
+
+    Polygon::Impl::BoostPolygon convexHull ;
+
+    try
+    {
+        boost::geometry::convex_hull(polygon_, convexHull) ;
+    }
+    catch (const std::exception& anException)
+    {
+        throw ostk::core::error::RuntimeError("Error caught while computing the convex hull: [{}]", anException.what()) ;
+    }
+
+    return Polygon::Impl::PolygonFromBoostPolygon(convexHull) ;
+
+}
+
+// Intersection                    Polygon::Impl::intersectionWith             (   const   Polygon&                    aPolygon                                    ) const
+// {
+
+// }
+
 String                          Polygon::Impl::toString                     (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const
 {
@@ -455,6 +481,36 @@ Polygon::Impl::BoostPolygon     Polygon::Impl::BoostPolygonFromPoints       (   
 
 }
 
+Polygon                         Polygon::Impl::PolygonFromBoostPolygon      (   const   Polygon::Impl::BoostPolygon& aPolygon                                   )
+{
+
+    Array<Point> outerRing = Array<Point>::Empty() ;
+
+    for (size_t vertexIdx = 0; vertexIdx < (aPolygon.outer().size() - 1); ++vertexIdx)
+    {
+        outerRing.add(Point(boost::geometry::get<0>(aPolygon.outer().at(vertexIdx)), boost::geometry::get<1>(aPolygon.outer().at(vertexIdx)))) ;
+    }
+
+    Array<Array<Point>> innerRings = Array<Array<Point>>::Empty() ;
+
+    for (const auto& innerRing : aPolygon.inners())
+    {
+
+        Array<Point> innerRingVertices = Array<Point>::Empty() ;
+
+        for (size_t vertexIdx = 0; vertexIdx < (innerRing.size() - 1); ++vertexIdx)
+        {
+            innerRingVertices.add(Point(boost::geometry::get<0>(innerRing.at(vertexIdx)), boost::geometry::get<1>(innerRing.at(vertexIdx)))) ;
+        }
+
+        innerRings.add(innerRingVertices) ;
+
+    }
+
+    return Polygon { outerRing, innerRings } ;
+
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                                 Polygon::Polygon                            (   const   Array<Point>&               anOuterRing,
@@ -518,6 +574,48 @@ bool                            Polygon::operator !=                        (   
 bool                            Polygon::isDefined                          ( ) const
 {
     return (implUPtr_ != nullptr) && implUPtr_->isDefined() ;
+}
+
+bool                            Polygon::isNear                             (   const   Polygon&                    aPolygon,
+                                                                                const   Real&                       aTolerance                                  ) const
+{
+
+    if (!aPolygon.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    if (!aTolerance.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Tolerance") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    if (this->getVertexCount() != aPolygon.getVertexCount())
+    {
+        return false ;
+    }
+
+    const Array<Polygon::Vertex> firstVertices = this->getVertices() ;
+    const Array<Polygon::Vertex> secondVertices = aPolygon.getVertices() ;
+
+    // for (const auto vertexTuple : ostk::core::ctnr::iterators::Zip(this->getVertices(), aPolygon.getVertices()))
+    for (const auto vertexTuple : ostk::core::ctnr::iterators::Zip(firstVertices, secondVertices))
+    {
+
+        if (!std::get<0>(vertexTuple).isNear(std::get<1>(vertexTuple), aTolerance))
+        {
+            return false ;
+        }
+
+    }
+
+    return true ;
+
 }
 
 bool                            Polygon::intersects                         (   const   Polygon&                    aPolygon                                    ) const
@@ -679,6 +777,18 @@ Array<Polygon::Vertex>          Polygon::getVertices                        ( ) 
 
 }
 
+Polygon                         Polygon::getConvexHull                      ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->getConvexHull() ;
+
+}
+
 void                            Polygon::print                              (           std::ostream&               anOutputStream,
                                                                                         bool                        displayDecorators                           ) const
 {
@@ -728,6 +838,30 @@ void                            Polygon::print                              (   
 
 }
 
+// Intersection                    Polygon::intersectionWith                   (   const   Polygon&                    aPolygon                                    ) const
+// {
+
+//     if ((!this->isDefined()) || (!aPolygon.isDefined()))
+//     {
+//         throw ostk::core::error::runtime::Undefined("Polygon") ;
+//     }
+
+//     return implUPtr_->intersectionWith(aPolygon) ;
+
+// }
+
+MultiPolygon                    Polygon::unionWith                          (   const   Polygon&                    aPolygon                                    ) const
+{
+
+    if ((!this->isDefined()) || (!aPolygon.isDefined()))
+    {
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return MultiPolygon::Polygon(*this).unionWith(MultiPolygon::Polygon(aPolygon)) ;
+
+}
+
 String                          Polygon::toString                           (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const
 {
@@ -740,26 +874,6 @@ String                          Polygon::toString                           (   
     return implUPtr_->toString(aFormat, aPrecision) ;
 
 }
-
-// Intersection                    Polygon::intersectionWith                   (   const   Polygon&                    aPolygon                                    ) const
-// {
-
-//     if (!this->isDefined())
-//     {
-//         throw ostk::core::error::runtime::Undefined("Polygon") ;
-//     }
-
-// }
-
-// MultiPolygon                    Polygon::unionWith                          (   const   Polygon&                    aPolygon                                    ) const
-// {
-
-//     if (!this->isDefined())
-//     {
-//         throw ostk::core::error::runtime::Undefined("Polygon") ;
-//     }
-
-// }
 
 void                            Polygon::applyTransformation                (   const   Transformation&             aTransformation                             )
 {

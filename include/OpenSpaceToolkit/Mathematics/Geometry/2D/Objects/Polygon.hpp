@@ -128,6 +128,15 @@ class Polygon : public Object
 
         virtual bool            isDefined                                   ( ) const override ;
 
+        /// @brief              Check if polygon is near another polygon
+        ///
+        /// @param              [in] aPolygon A polygon
+        /// @param              [in] aTolerance A tolerance
+        /// @return             True if polygon is near another polygon
+
+        bool                    isNear                                      (   const   Polygon&                    aPolygon,
+                                                                                const   Real&                       aTolerance                                  ) const ;
+
         /// @brief              Check if polygon intersects polygon
         ///
         /// @code
@@ -223,6 +232,14 @@ class Polygon : public Object
 
         Array<Polygon::Vertex>  getVertices                                 ( ) const ;
 
+        /// @brief              Get polygon convex hull
+        ///
+        ///                     https://en.wikipedia.org/wiki/Convex_hull
+        ///
+        /// @return             Polygon convex hull
+
+        Polygon                 getConvexHull                               ( ) const ;
+
         /// @brief              Compute intersection of polygon with polygon
         ///
         /// @param              [in] aPolygon A polygon
@@ -235,7 +252,7 @@ class Polygon : public Object
         /// @param              [in] aPolygon A polygon
         /// @return             A multi-polygon
 
-        // MultiPolygon            unionWith                                   (   const   Polygon&                    aPolygon                                    ) const ;
+        MultiPolygon            unionWith                                   (   const   Polygon&                    aPolygon                                    ) const ;
 
         /// @brief              Get string representation
         ///

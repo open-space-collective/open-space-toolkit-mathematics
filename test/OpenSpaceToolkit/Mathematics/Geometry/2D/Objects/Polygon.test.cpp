@@ -8,6 +8,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 
 #include <OpenSpaceToolkit/Core/Containers/Tuple.hpp>
@@ -367,6 +368,79 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IsDefined)
     {
 
         EXPECT_FALSE(Polygon::Undefined().isDefined()) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IsNear)
+{
+
+    using ostk::core::types::Real ;
+
+    using ostk::math::geom::d2::objects::Polygon ;
+
+    // Is near ifself
+
+    {
+
+        const Polygon polygon =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 1.0 },
+                { 1.0, 1.0 },
+                { 1.0, 0.0 }
+            }
+        } ;
+
+        EXPECT_TRUE(polygon.isNear(polygon, 0.0)) ;
+
+    }
+
+    // Near tolerance (large)
+
+    {
+
+        const Polygon firstPolygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const Polygon secondPolygon = { { { 0.0 + 1.0, 0.0 }, { 1.0 + 1.0, 0.0 }, { 1.0, 1.0 + 1.0 }, { 0.0 + 1.0, 1.0 } } } ;
+
+        EXPECT_FALSE(firstPolygon.isNear(secondPolygon, 0.5)) ;
+        EXPECT_TRUE(firstPolygon.isNear(secondPolygon, 1.0)) ;
+        EXPECT_TRUE(firstPolygon.isNear(secondPolygon, 2.0)) ;
+
+    }
+
+    // Near tolerance (small)
+
+    {
+
+        const Polygon firstPolygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const Polygon secondPolygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 + 1e-15 }, { 0.0, 1.0 } } } ;
+
+        EXPECT_FALSE(firstPolygon.isNear(secondPolygon, 1e-16)) ;
+        // EXPECT_TRUE(firstPolygon.isNear(secondPolygon, 1e-15)) ; -> Not working due to round-off errors
+        EXPECT_TRUE(firstPolygon.isNear(secondPolygon, 1e-14)) ;
+
+    }
+
+    // Undefined throws
+
+    {
+
+        const Polygon polygon =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 1.0 },
+                { 1.0, 1.0 },
+                { 1.0, 0.0 }
+            }
+        } ;
+
+        EXPECT_ANY_THROW(Polygon::Undefined().isNear(polygon, 0.0)) ;
+        EXPECT_ANY_THROW(polygon.isNear(Polygon::Undefined(), 0.0)) ;
+        EXPECT_ANY_THROW(polygon.isNear(polygon, Real::Undefined())) ;
 
     }
 
@@ -982,6 +1056,76 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetConvexHull)
+{
+
+    using ostk::math::geom::d2::objects::Polygon ;
+
+    {
+
+        // Convex hull of convex polygon
+
+        {
+
+            const Polygon polygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.0, 1.0 },
+                    { 1.0, 1.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            const Polygon convexHull = polygon.getConvexHull() ;
+
+            ASSERT_TRUE(convexHull == polygon) ;
+
+        }
+
+        // Convex hull of concave polygon
+
+        {
+
+            const Polygon polygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.5, 0.5 },
+                    { 0.0, 1.0 },
+                    { 1.0, 1.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            const Polygon convexHull = polygon.getConvexHull() ;
+
+            const Polygon referencePolygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.0, 1.0 },
+                    { 1.0, 1.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            ASSERT_TRUE(convexHull == referencePolygon) ;
+
+        }
+
+    }
+
+    // Undefined throws
+
+    {
+
+        EXPECT_ANY_THROW(Polygon::Undefined().getConvexHull()) ;
+
+    }
+
+}
+
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith)
 // {
 
@@ -995,18 +1139,255 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, UnionWith)
-// {
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, UnionWith)
+{
 
-//     using ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
-//     {
+    {
 
-//         FAIL() ;
+        using ostk::core::ctnr::Array ;
 
-//     }
+        using ostk::math::geom::d2::objects::MultiPolygon ;
 
-// }
+        // Union with itself
+
+        {
+
+            const Array<Polygon::Vertex> vertices =
+            {
+                { 0.0, 0.0 },
+                { 0.0, 1.0 },
+                { 1.0, 1.0 },
+                { 1.0, 0.0 }
+            } ;
+
+            const Polygon polygon = { vertices } ;
+
+            const MultiPolygon unionMultiPolygon = polygon.unionWith(polygon) ;
+
+            ASSERT_EQ(unionMultiPolygon.getPolygonCount(), 1) ;
+
+            const Polygon unionPolygon = unionMultiPolygon.getPolygons().accessFirst() ;
+
+            ASSERT_TRUE(unionPolygon == polygon) ;
+
+        }
+
+        // Union contains
+
+        {
+
+            const Polygon firstPolygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.0, 1.0 },
+                    { 1.0, 1.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            const Polygon secondPolygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.0, 2.0 },
+                    { 2.0, 2.0 },
+                    { 2.0, 0.0 }
+                }
+            } ;
+
+            const MultiPolygon unionMultiPolygon = firstPolygon.unionWith(secondPolygon) ;
+
+            ASSERT_EQ(unionMultiPolygon.getPolygonCount(), 1) ;
+
+            const Polygon unionPolygon = unionMultiPolygon.getPolygons().accessFirst() ;
+
+            ASSERT_TRUE(unionPolygon == secondPolygon) ;
+
+        }
+
+        // Union overlap
+
+        {
+
+            const Polygon firstPolygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.0, 1.0 },
+                    { 1.0, 1.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            const Polygon secondPolygon =
+            {
+                {
+                    { 0.5, 0.5 },
+                    { 0.5, 1.5 },
+                    { 1.5, 1.5 },
+                    { 1.5, 0.5 }
+                }
+            } ;
+
+            const MultiPolygon unionMultiPolygon = firstPolygon.unionWith(secondPolygon) ;
+
+            ASSERT_EQ(unionMultiPolygon.getPolygonCount(), 1) ;
+
+            const Polygon unionPolygon = unionMultiPolygon.getPolygons().accessFirst() ;
+
+            const Polygon referencePolygon =
+            {
+                {
+                    { 0.5, 1.0 },
+                    { 0.5, 1.5 },
+                    { 1.5, 1.5 },
+                    { 1.5, 0.5 },
+                    { 1.0, 0.5 },
+                    { 1.0, 0.0 },
+                    { 0.0, 0.0 },
+                    { 0.0, 1.0 }
+                }
+            } ;
+
+            ASSERT_TRUE(unionPolygon.isNear(referencePolygon, 1e-6)) ;
+
+        }
+
+        // Union side-by-side
+
+        {
+
+            const Polygon firstPolygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.0, 1.0 },
+                    { 1.0, 1.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            const Polygon secondPolygon =
+            {
+                {
+                    { 1.0, 0.0 },
+                    { 1.0, 1.0 },
+                    { 2.0, 1.0 },
+                    { 2.0, 0.0 }
+                }
+            } ;
+
+            const MultiPolygon unionMultiPolygon = firstPolygon.unionWith(secondPolygon) ;
+
+            ASSERT_EQ(unionMultiPolygon.getPolygonCount(), 1) ;
+
+            const Polygon unionPolygon = unionMultiPolygon.getPolygons().accessFirst() ;
+
+            const Polygon referencePolygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.0, 1.0 },
+                    { 2.0, 1.0 },
+                    { 2.0, 0.0 }
+                }
+            } ;
+
+            ASSERT_TRUE(unionPolygon == referencePolygon) ;
+
+        }
+
+        // Union disjoint, vertex in common
+
+        {
+
+            const Polygon firstPolygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.0, 1.0 },
+                    { 1.0, 1.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            const Polygon secondPolygon =
+            {
+                {
+                    { 1.0, 1.0 },
+                    { 1.0, 2.0 },
+                    { 2.0, 2.0 },
+                    { 2.0, 1.0 }
+                }
+            } ;
+
+            const MultiPolygon unionMultiPolygon = firstPolygon.unionWith(secondPolygon) ;
+
+            ASSERT_EQ(unionMultiPolygon.getPolygonCount(), 2) ;
+
+            ASSERT_TRUE(unionMultiPolygon.getPolygons().accessFirst() == firstPolygon) ;
+            ASSERT_TRUE(unionMultiPolygon.getPolygons().accessLast() == secondPolygon) ;
+
+        }
+
+        // Union disjoint
+
+        {
+
+            const Polygon firstPolygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.0, 1.0 },
+                    { 1.0, 1.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            const Polygon secondPolygon =
+            {
+                {
+                    { 2.0, 2.0 },
+                    { 2.0, 3.0 },
+                    { 3.0, 3.0 },
+                    { 3.0, 2.0 }
+                }
+            } ;
+
+            const MultiPolygon unionMultiPolygon = firstPolygon.unionWith(secondPolygon) ;
+
+            ASSERT_EQ(unionMultiPolygon.getPolygonCount(), 2) ;
+
+            ASSERT_TRUE(unionMultiPolygon.getPolygons().accessFirst() == firstPolygon) ;
+            ASSERT_TRUE(unionMultiPolygon.getPolygons().accessLast() == secondPolygon) ;
+
+        }
+
+    }
+
+    // Undefined throws
+
+    {
+
+        const Polygon polygon =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 1.0 },
+                { 1.0, 1.0 },
+                { 1.0, 0.0 }
+            }
+        } ;
+
+        EXPECT_ANY_THROW(Polygon::Undefined().unionWith(polygon)) ;
+        EXPECT_ANY_THROW(polygon.unionWith(Polygon::Undefined())) ;
+
+    }
+
+}
 
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ToString)
 {

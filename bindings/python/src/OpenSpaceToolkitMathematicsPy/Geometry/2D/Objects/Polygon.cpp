@@ -37,6 +37,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def(self_ns::repr(self_ns::self))
 
         .def("is_defined", &Polygon::isDefined)
+        .def("is_near", &Polygon::isNear)
         .def("intersects_polygon", +[] (const Polygon& aPolygon, const Polygon& anotherPolygon) -> bool { return aPolygon.intersects(anotherPolygon) ; })
         .def("contains_point", +[] (const Polygon& aPolygon, const Point& aPoint) -> bool { return aPolygon.contains(aPoint) ; })
         .def("contains_point_set", +[] (const Polygon& aPolygon, const PointSet& aPointSet) -> bool { return aPolygon.contains(aPointSet) ; })
@@ -50,8 +51,9 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("get_vertex_at", &Polygon::getVertexAt)
         .def("get_edges", &Polygon::getEdges)
         .def("get_vertices", &Polygon::getVertices)
+        .def("get_convex_hull", &Polygon::getConvexHull)
+        .def("union_with", &Polygon::unionWith)
         .def("to_string", &Polygon::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Polygon_toString_overloads())
-        // .def("union_with", &Polygon::unionWith)
         .def("apply_transformation", &Polygon::applyTransformation)
 
         .def("undefined", &Polygon::Undefined).staticmethod("undefined")
