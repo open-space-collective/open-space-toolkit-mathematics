@@ -147,6 +147,14 @@ class MultiPolygon : public Object
 
         Array<Polygon2d>        getPolygons                                 ( ) const ;
 
+        /// @brief              Get multi-polygon convex hull
+        ///
+        ///                     https://en.wikipedia.org/wiki/Convex_hull
+        ///
+        /// @return             Multi-polygon convex hull
+
+        Polygon2d               getConvexHull                               ( ) const ;
+
         /// @brief              Compute intersection of multi-polygon with multi-polygon
         ///
         /// @param              [in] aMultiPolygon A multi-polygon

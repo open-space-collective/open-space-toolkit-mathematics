@@ -1056,6 +1056,76 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetConvexHull)
+{
+
+    using ostk::math::geom::d2::objects::Polygon ;
+
+    {
+
+        // Convex hull of convex polygon
+
+        {
+
+            const Polygon polygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.0, 1.0 },
+                    { 1.0, 1.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            const Polygon convexHull = polygon.getConvexHull() ;
+
+            ASSERT_TRUE(convexHull == polygon) ;
+
+        }
+
+        // Convex hull of concave polygon
+
+        {
+
+            const Polygon polygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.5, 0.5 },
+                    { 0.0, 1.0 },
+                    { 1.0, 1.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            const Polygon convexHull = polygon.getConvexHull() ;
+
+            const Polygon referencePolygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.0, 1.0 },
+                    { 1.0, 1.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            ASSERT_TRUE(convexHull == referencePolygon) ;
+
+        }
+
+    }
+
+    // Undefined throws
+
+    {
+
+        EXPECT_ANY_THROW(Polygon::Undefined().getConvexHull()) ;
+
+    }
+
+}
+
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith)
 // {
 
@@ -1078,7 +1148,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, UnionWith)
 
         using ostk::core::ctnr::Array ;
 
-        using ostk::math::geom::d2::objects::Polygon ;
         using ostk::math::geom::d2::objects::MultiPolygon ;
 
         // Union with itself
@@ -1296,6 +1365,25 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, UnionWith)
             ASSERT_TRUE(unionMultiPolygon.getPolygons().accessLast() == secondPolygon) ;
 
         }
+
+    }
+
+    // Undefined throws
+
+    {
+
+        const Polygon polygon =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 1.0 },
+                { 1.0, 1.0 },
+                { 1.0, 0.0 }
+            }
+        } ;
+
+        EXPECT_ANY_THROW(Polygon::Undefined().unionWith(polygon)) ;
+        EXPECT_ANY_THROW(polygon.unionWith(Polygon::Undefined())) ;
 
     }
 

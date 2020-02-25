@@ -95,6 +95,8 @@ class Polygon::Impl
 
         Array<Polygon::Vertex>  getVertices                                 ( ) const ;
 
+        Polygon                 getConvexHull                               ( ) const ;
+
         // Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
 
         String                  toString                                    (   const   Object::Format&             aFormat,
@@ -111,6 +113,8 @@ class Polygon::Impl
         Impl::BoostPolygon      polygon_ ;
 
         static Impl::BoostPolygon BoostPolygonFromPoints                    (   const   Array<Point>&               aPointArray                                 ) ;
+
+        static Polygon          PolygonFromBoostPolygon                     (   const   Polygon::Impl::BoostPolygon& aPolygon                                   ) ;
 
 } ;
 
@@ -378,6 +382,24 @@ Array<Polygon::Vertex>          Polygon::Impl::getVertices                  ( ) 
 
 }
 
+Polygon                         Polygon::Impl::getConvexHull                ( ) const
+{
+
+    Polygon::Impl::BoostPolygon convexHull ;
+
+    try
+    {
+        boost::geometry::convex_hull(polygon_, convexHull) ;
+    }
+    catch (const std::exception& anException)
+    {
+        throw ostk::core::error::RuntimeError("Error caught while computing the convex hull: [{}]", anException.what()) ;
+    }
+
+    return Polygon::Impl::PolygonFromBoostPolygon(convexHull) ;
+
+}
+
 // Intersection                    Polygon::Impl::intersectionWith             (   const   Polygon&                    aPolygon                                    ) const
 // {
 
@@ -456,6 +478,36 @@ Polygon::Impl::BoostPolygon     Polygon::Impl::BoostPolygonFromPoints       (   
     boost::geometry::correct(polygon) ;
 
     return polygon ;
+
+}
+
+Polygon                         Polygon::Impl::PolygonFromBoostPolygon      (   const   Polygon::Impl::BoostPolygon& aPolygon                                   )
+{
+
+    Array<Point> outerRing = Array<Point>::Empty() ;
+
+    for (size_t vertexIdx = 0; vertexIdx < (aPolygon.outer().size() - 1); ++vertexIdx)
+    {
+        outerRing.add(Point(boost::geometry::get<0>(aPolygon.outer().at(vertexIdx)), boost::geometry::get<1>(aPolygon.outer().at(vertexIdx)))) ;
+    }
+
+    Array<Array<Point>> innerRings = Array<Array<Point>>::Empty() ;
+
+    for (const auto& innerRing : aPolygon.inners())
+    {
+
+        Array<Point> innerRingVertices = Array<Point>::Empty() ;
+
+        for (size_t vertexIdx = 0; vertexIdx < (innerRing.size() - 1); ++vertexIdx)
+        {
+            innerRingVertices.add(Point(boost::geometry::get<0>(innerRing.at(vertexIdx)), boost::geometry::get<1>(innerRing.at(vertexIdx)))) ;
+        }
+
+        innerRings.add(innerRingVertices) ;
+
+    }
+
+    return Polygon { outerRing, innerRings } ;
 
 }
 
@@ -722,6 +774,18 @@ Array<Polygon::Vertex>          Polygon::getVertices                        ( ) 
     }
 
     return implUPtr_->getVertices() ;
+
+}
+
+Polygon                         Polygon::getConvexHull                      ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->getConvexHull() ;
 
 }
 

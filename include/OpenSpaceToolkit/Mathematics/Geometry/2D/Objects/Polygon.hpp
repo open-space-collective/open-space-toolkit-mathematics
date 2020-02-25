@@ -232,6 +232,14 @@ class Polygon : public Object
 
         Array<Polygon::Vertex>  getVertices                                 ( ) const ;
 
+        /// @brief              Get polygon convex hull
+        ///
+        ///                     https://en.wikipedia.org/wiki/Convex_hull
+        ///
+        /// @return             Polygon convex hull
+
+        Polygon                 getConvexHull                               ( ) const ;
+
         /// @brief              Compute intersection of polygon with polygon
         ///
         /// @param              [in] aPolygon A polygon

@@ -982,6 +982,175 @@
 
 // }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon, GetConvexHull)
+{
+
+    using ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::MultiPolygon ;
+
+    {
+
+        // Convex hull of convex polygon
+
+        {
+
+            const Polygon polygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.0, 1.0 },
+                    { 1.0, 1.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            const MultiPolygon multiPolygon = { { polygon } } ;
+
+            const Polygon convexHull = multiPolygon.getConvexHull() ;
+
+            ASSERT_TRUE(convexHull == polygon) ;
+
+        }
+
+        // Convex hull of concave polygon
+
+        {
+
+            const Polygon polygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.5, 0.5 },
+                    { 0.0, 1.0 },
+                    { 1.0, 1.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            const MultiPolygon multiPolygon = { { polygon } } ;
+
+            const Polygon convexHull = multiPolygon.getConvexHull() ;
+
+            const Polygon referencePolygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.0, 1.0 },
+                    { 1.0, 1.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            ASSERT_TRUE(convexHull == referencePolygon) ;
+
+        }
+
+        // Convex hull of convex polygons
+
+        {
+
+            const MultiPolygon multiPolygon =
+            {
+                {
+                    Polygon
+                    {
+                        {
+                            { 0.0, 0.0 },
+                            { 0.0, 1.0 },
+                            { 1.0, 1.0 },
+                            { 1.0, 0.0 }
+                        }
+                    },
+                    Polygon
+                    {
+                        {
+                            { 2.0, 2.0 },
+                            { 2.0, 3.0 },
+                            { 3.0, 3.0 },
+                            { 3.0, 2.0 }
+                        }
+                    }
+                }
+            } ;
+
+            const Polygon convexHull = multiPolygon.getConvexHull() ;
+
+            const Polygon referencePolygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.0, 1.0 },
+                    { 2.0, 3.0 },
+                    { 3.0, 3.0 },
+                    { 3.0, 2.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            ASSERT_TRUE(convexHull == referencePolygon) ;
+
+        }
+
+        // Convex hull of concave polygons
+
+        {
+
+            const MultiPolygon multiPolygon =
+            {
+                {
+                    Polygon
+                    {
+                        {
+                            { 0.0, 0.0 },
+                            { 0.5, 0.5 },
+                            { 0.0, 1.0 },
+                            { 1.0, 1.0 },
+                            { 1.0, 0.0 }
+                        }
+                    },
+                    Polygon
+                    {
+                        {
+                            { 2.0, 2.0 },
+                            { 2.5, 2.5 },
+                            { 2.0, 3.0 },
+                            { 3.0, 3.0 },
+                            { 3.0, 2.0 }
+                        }
+                    }
+                }
+            } ;
+
+            const Polygon convexHull = multiPolygon.getConvexHull() ;
+
+            const Polygon referencePolygon =
+            {
+                {
+                    { 0.0, 0.0 },
+                    { 0.0, 1.0 },
+                    { 2.0, 3.0 },
+                    { 3.0, 3.0 },
+                    { 3.0, 2.0 },
+                    { 1.0, 0.0 }
+                }
+            } ;
+
+            ASSERT_TRUE(convexHull == referencePolygon) ;
+
+        }
+
+    }
+
+    // Undefined throws
+
+    {
+
+        EXPECT_ANY_THROW(MultiPolygon::Undefined().getConvexHull()) ;
+
+    }
+
+}
+
 // // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon, IntersectionWith)
 // // {
 

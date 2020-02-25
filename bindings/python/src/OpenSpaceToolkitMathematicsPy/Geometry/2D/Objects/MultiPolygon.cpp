@@ -40,6 +40,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("contains_point_set", +[] (const MultiPolygon& aMultiPolygon, const PointSet& aPointSet) -> bool { return aMultiPolygon.contains(aPointSet) ; })
 
         .def("get_polygon_count", &MultiPolygon::getPolygonCount)
+        .def("get_polygons", &MultiPolygon::getPolygons)
+        .def("get_convex_hull", &MultiPolygon::getConvexHull)
         .def("union_with", &MultiPolygon::unionWith)
         .def("to_string", &MultiPolygon::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_MultiPolygon_toString_overloads())
         .def("apply_transformation", &MultiPolygon::applyTransformation)

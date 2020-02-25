@@ -74,6 +74,8 @@ class MultiPolygon::Impl
 
         Array<Polygon2d>        getPolygons                                 ( ) const ;
 
+        Polygon2d               getConvexHull                               ( ) const ;
+
         MultiPolygon::Impl      unionWith                                   (   const   MultiPolygon::Impl&         aMultiPolygon                               ) const ;
 
         String                  toString                                    (   const   Object::Format&             aFormat,
@@ -91,6 +93,8 @@ class MultiPolygon::Impl
         Impl::BoostMultiPolygon multiPolygon_ ;
 
         static Impl::BoostMultiPolygon BoostMultiPolygonFromPolygons        (   const   Array<Polygon2d>&           aPolygonArray                               ) ;
+
+        static Polygon2d        PolygonFromBoostPolygon                     (   const   MultiPolygon::Impl::BoostPolygon& aPolygon                              ) ;
 
 } ;
 
@@ -186,6 +190,24 @@ Array<Polygon2d>                MultiPolygon::Impl::getPolygons             ( ) 
     }
 
     return polygons ;
+
+}
+
+Polygon2d                       MultiPolygon::Impl::getConvexHull           ( ) const
+{
+
+    MultiPolygon::Impl::BoostPolygon convexHull ;
+
+    try
+    {
+        boost::geometry::convex_hull(multiPolygon_, convexHull) ;
+    }
+    catch (const std::exception& anException)
+    {
+        throw ostk::core::error::RuntimeError("Error caught while computing the convex hull: [{}]", anException.what()) ;
+    }
+
+    return MultiPolygon::Impl::PolygonFromBoostPolygon(convexHull) ;
 
 }
 
@@ -304,6 +326,36 @@ MultiPolygon::Impl::BoostMultiPolygon MultiPolygon::Impl::BoostMultiPolygonFromP
     boost::geometry::correct(boostMultiPolygon) ;
 
     return boostMultiPolygon ;
+
+}
+
+Polygon2d                       MultiPolygon::Impl::PolygonFromBoostPolygon (   const   MultiPolygon::Impl::BoostPolygon& aPolygon                              )
+{
+
+    Array<Point> outerRing = Array<Point>::Empty() ;
+
+    for (size_t vertexIdx = 0; vertexIdx < (aPolygon.outer().size() - 1); ++vertexIdx)
+    {
+        outerRing.add(Point(boost::geometry::get<0>(aPolygon.outer().at(vertexIdx)), boost::geometry::get<1>(aPolygon.outer().at(vertexIdx)))) ;
+    }
+
+    Array<Array<Point>> innerRings = Array<Array<Point>>::Empty() ;
+
+    for (const auto& innerRing : aPolygon.inners())
+    {
+
+        Array<Point> innerRingVertices = Array<Point>::Empty() ;
+
+        for (size_t vertexIdx = 0; vertexIdx < (innerRing.size() - 1); ++vertexIdx)
+        {
+            innerRingVertices.add(Point(boost::geometry::get<0>(innerRing.at(vertexIdx)), boost::geometry::get<1>(innerRing.at(vertexIdx)))) ;
+        }
+
+        innerRings.add(innerRingVertices) ;
+
+    }
+
+    return Polygon2d { outerRing, innerRings } ;
 
 }
 
@@ -426,6 +478,18 @@ Array<Polygon2d>                MultiPolygon::getPolygons                   ( ) 
     }
 
     return implUPtr_->getPolygons() ;
+
+}
+
+Polygon2d                       MultiPolygon::getConvexHull                 ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Multi-polygon") ;
+    }
+
+    return implUPtr_->getConvexHull() ;
 
 }
 

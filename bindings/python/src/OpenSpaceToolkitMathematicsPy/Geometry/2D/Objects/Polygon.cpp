@@ -51,6 +51,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("get_vertex_at", &Polygon::getVertexAt)
         .def("get_edges", &Polygon::getEdges)
         .def("get_vertices", &Polygon::getVertices)
+        .def("get_convex_hull", &Polygon::getConvexHull)
         .def("union_with", &Polygon::unionWith)
         .def("to_string", &Polygon::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Polygon_toString_overloads())
         .def("apply_transformation", &Polygon::applyTransformation)
