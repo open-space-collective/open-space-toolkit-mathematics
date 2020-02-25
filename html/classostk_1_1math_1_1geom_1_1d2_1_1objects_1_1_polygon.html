@@ -145,6 +145,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a81f92393dad2c6421fd4fe3834f60fa2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a81f92393dad2c6421fd4fe3834f60fa2">isDefined</a> () const override</td></tr>
 <tr class="memdesc:a81f92393dad2c6421fd4fe3834f60fa2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if polygon is defined.  <a href="#a81f92393dad2c6421fd4fe3834f60fa2">More...</a><br /></td></tr>
 <tr class="separator:a81f92393dad2c6421fd4fe3834f60fa2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70a128f7d670604478947243e8a96937"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a70a128f7d670604478947243e8a96937">isNear</a> (const <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html">Polygon</a> &amp;aPolygon, const Real &amp;aTolerance) const</td></tr>
+<tr class="memdesc:a70a128f7d670604478947243e8a96937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if polygon is near another polygon.  <a href="#a70a128f7d670604478947243e8a96937">More...</a><br /></td></tr>
+<tr class="separator:a70a128f7d670604478947243e8a96937"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0183cbb840fe9f1fb9dfde0cc3eae50"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#ad0183cbb840fe9f1fb9dfde0cc3eae50">intersects</a> (const <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html">Polygon</a> &amp;aPolygon) const</td></tr>
 <tr class="memdesc:ad0183cbb840fe9f1fb9dfde0cc3eae50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if polygon intersects polygon.  <a href="#ad0183cbb840fe9f1fb9dfde0cc3eae50">More...</a><br /></td></tr>
 <tr class="separator:ad0183cbb840fe9f1fb9dfde0cc3eae50"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,8 +184,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a04a97204d397a1c7a919ebf4d73fb537"><td class="memItemLeft" align="right" valign="top">Array&lt; <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a2fdf6254b42f087bd9cd0b8b0d7df91c">Polygon::Vertex</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a04a97204d397a1c7a919ebf4d73fb537">getVertices</a> () const</td></tr>
 <tr class="memdesc:a04a97204d397a1c7a919ebf4d73fb537"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get polygon vertices.  <a href="#a04a97204d397a1c7a919ebf4d73fb537">More...</a><br /></td></tr>
 <tr class="separator:a04a97204d397a1c7a919ebf4d73fb537"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82a1c0d6a76ee136829e0668bdd5c4a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html">Polygon</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a82a1c0d6a76ee136829e0668bdd5c4a6">getConvexHull</a> () const</td></tr>
+<tr class="memdesc:a82a1c0d6a76ee136829e0668bdd5c4a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get polygon convex hull.  <a href="#a82a1c0d6a76ee136829e0668bdd5c4a6">More...</a><br /></td></tr>
+<tr class="separator:a82a1c0d6a76ee136829e0668bdd5c4a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad01feda42e80b74752d3529bc122981b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon.html">MultiPolygon</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#ad01feda42e80b74752d3529bc122981b">unionWith</a> (const <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html">Polygon</a> &amp;aPolygon) const</td></tr>
+<tr class="memdesc:ad01feda42e80b74752d3529bc122981b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute intersection of polygon with polygon.  <a href="#ad01feda42e80b74752d3529bc122981b">More...</a><br /></td></tr>
+<tr class="separator:ad01feda42e80b74752d3529bc122981b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e672ccf5f1101de80e636f097f0a0f7"><td class="memItemLeft" align="right" valign="top">virtual String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a6e672ccf5f1101de80e636f097f0a0f7">toString</a> (const <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1_object.html#aa76f9e30caebf4005bafbdff447f66cf">Object::Format</a> &amp;aFormat=<a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1_object.html#aa76f9e30caebf4005bafbdff447f66cfaeb6d8ae6f20283755b339c0dc273988b">Object::Format::Standard</a>, const Integer &amp;aPrecision=Integer::Undefined()) const override</td></tr>
-<tr class="memdesc:a6e672ccf5f1101de80e636f097f0a0f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute intersection of polygon with polygon.  <a href="#a6e672ccf5f1101de80e636f097f0a0f7">More...</a><br /></td></tr>
+<tr class="memdesc:a6e672ccf5f1101de80e636f097f0a0f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get string representation.  <a href="#a6e672ccf5f1101de80e636f097f0a0f7">More...</a><br /></td></tr>
 <tr class="separator:a6e672ccf5f1101de80e636f097f0a0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adbf6ed9930a6dd2f3eab1c5c1b256ded"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#adbf6ed9930a6dd2f3eab1c5c1b256ded">print</a> (std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</td></tr>
 <tr class="memdesc:adbf6ed9930a6dd2f3eab1c5c1b256ded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print polygon.  <a href="#adbf6ed9930a6dd2f3eab1c5c1b256ded">More...</a><br /></td></tr>
@@ -512,6 +521,27 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a82a1c0d6a76ee136829e0668bdd5c4a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82a1c0d6a76ee136829e0668bdd5c4a6">&#9670;&nbsp;</a></span>getConvexHull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html">Polygon</a> ostk::math::geom::d2::objects::Polygon::getConvexHull </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get polygon convex hull. </p>
+<p><a href="https://en.wikipedia.org/wiki/Convex_hull">https://en.wikipedia.org/wiki/Convex_hull</a></p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html" title="Polygon. ">Polygon</a> convex hull </dd></dl>
+
+</div>
+</div>
 <a id="a247cba455e33ab1a05c43de43c27ba48"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a247cba455e33ab1a05c43de43c27ba48">&#9670;&nbsp;</a></span>getEdgeAt()</h2>
 
@@ -764,6 +794,44 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a70a128f7d670604478947243e8a96937"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70a128f7d670604478947243e8a96937">&#9670;&nbsp;</a></span>isNear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ostk::math::geom::d2::objects::Polygon::isNear </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html">Polygon</a> &amp;&#160;</td>
+          <td class="paramname"><em>aPolygon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Real &amp;&#160;</td>
+          <td class="paramname"><em>aTolerance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if polygon is near another polygon. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPolygon</td><td>A polygon </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aTolerance</td><td>A tolerance </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if polygon is near another polygon </dd></dl>
+
+</div>
+</div>
 <a id="a2a592e75608feeafd324105c65c67640"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a592e75608feeafd324105c65c67640">&#9670;&nbsp;</a></span>operator!=()</h2>
 
@@ -926,21 +994,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Compute intersection of polygon with polygon. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">aPolygon</td><td>A polygon </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Intersection of polygon with polygon Compute union of polygon with polygon</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">aPolygon</td><td>A polygon </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>A multi-polygon Get string representation</dd></dl>
+<p>Get string representation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aFormat</td><td>A format </td></tr>
@@ -978,6 +1032,40 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Constructs an undefined polygon. </p>
 <div class="fragment"><div class="line"><a class="code" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#adaf9ef564754ab10ed3dd0d5fa0d90ea">Polygon</a> polygon = <a class="code" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#af260e109c9315fd31f7f24f3154dcbf2">Polygon::Undefined</a>() ; <span class="comment">// Undefined</span></div></div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Undefined polygon </dd></dl>
+
+</div>
+</div>
+<a id="ad01feda42e80b74752d3529bc122981b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad01feda42e80b74752d3529bc122981b">&#9670;&nbsp;</a></span>unionWith()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon.html">MultiPolygon</a> ostk::math::geom::d2::objects::Polygon::unionWith </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html">Polygon</a> &amp;&#160;</td>
+          <td class="paramname"><em>aPolygon</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compute intersection of polygon with polygon. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPolygon</td><td>A polygon </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Intersection of polygon with polygon Compute union of polygon with polygon</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPolygon</td><td>A polygon </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A multi-polygon </dd></dl>
 
 </div>
 </div>

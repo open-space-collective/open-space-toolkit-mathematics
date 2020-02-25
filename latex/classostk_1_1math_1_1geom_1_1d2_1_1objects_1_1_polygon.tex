@@ -45,6 +45,8 @@ bool \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a2a592e75
 \begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a81f92393dad2c6421fd4fe3834f60fa2}{is\+Defined} () const override
 \begin{DoxyCompactList}\small\item\em Check if polygon is defined. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a70a128f7d670604478947243e8a96937}{is\+Near} (const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} \&a\+Polygon, const Real \&a\+Tolerance) const
+\begin{DoxyCompactList}\small\item\em Check if polygon is near another polygon. \end{DoxyCompactList}\item 
 bool \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ad0183cbb840fe9f1fb9dfde0cc3eae50}{intersects} (const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} \&a\+Polygon) const
 \begin{DoxyCompactList}\small\item\em Check if polygon intersects polygon. \end{DoxyCompactList}\item 
 bool \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_aa9f49a046d832821a8b26064b3cf2158}{contains} (const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&a\+Point) const
@@ -69,8 +71,12 @@ Array$<$ \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a85e5
 \begin{DoxyCompactList}\small\item\em Get polygon edges. \end{DoxyCompactList}\item 
 Array$<$ \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a2fdf6254b42f087bd9cd0b8b0d7df91c}{Polygon\+::\+Vertex} $>$ \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a04a97204d397a1c7a919ebf4d73fb537}{get\+Vertices} () const
 \begin{DoxyCompactList}\small\item\em Get polygon vertices. \end{DoxyCompactList}\item 
-virtual String \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a6e672ccf5f1101de80e636f097f0a0f7}{to\+String} (const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1_object_aa76f9e30caebf4005bafbdff447f66cf}{Object\+::\+Format} \&a\+Format=\hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1_object_aa76f9e30caebf4005bafbdff447f66cfaeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}, const Integer \&a\+Precision=Integer\+::\+Undefined()) const override
+\hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a82a1c0d6a76ee136829e0668bdd5c4a6}{get\+Convex\+Hull} () const
+\begin{DoxyCompactList}\small\item\em Get polygon convex hull. \end{DoxyCompactList}\item 
+\hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ad01feda42e80b74752d3529bc122981b}{union\+With} (const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} \&a\+Polygon) const
 \begin{DoxyCompactList}\small\item\em Compute intersection of polygon with polygon. \end{DoxyCompactList}\item 
+virtual String \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a6e672ccf5f1101de80e636f097f0a0f7}{to\+String} (const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1_object_aa76f9e30caebf4005bafbdff447f66cf}{Object\+::\+Format} \&a\+Format=\hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1_object_aa76f9e30caebf4005bafbdff447f66cfaeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}, const Integer \&a\+Precision=Integer\+::\+Undefined()) const override
+\begin{DoxyCompactList}\small\item\em Get string representation. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_adbf6ed9930a6dd2f3eab1c5c1b256ded}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
 \begin{DoxyCompactList}\small\item\em Print polygon. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a00d04368f01daa0b234b403321453bbf}{apply\+Transformation} (const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1_transformation}{Transformation} \&a\+Transformation) override
@@ -261,6 +267,21 @@ polygon.contains(pointSet) ;
 \begin{DoxyReturn}{Returns}
 True if polygon contains point set 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a82a1c0d6a76ee136829e0668bdd5c4a6}\label{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a82a1c0d6a76ee136829e0668bdd5c4a6}} 
+\index{ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!get\+Convex\+Hull@{get\+Convex\+Hull}}
+\index{get\+Convex\+Hull@{get\+Convex\+Hull}!ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{get\+Convex\+Hull()}{getConvexHull()}}
+{\footnotesize\ttfamily \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::get\+Convex\+Hull (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get polygon convex hull. 
+
+\href{https://en.wikipedia.org/wiki/Convex_hull}{\tt https\+://en.\+wikipedia.\+org/wiki/\+Convex\+\_\+hull}
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} convex hull 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a247cba455e33ab1a05c43de43c27ba48}\label{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a247cba455e33ab1a05c43de43c27ba48}} 
 \index{ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!get\+Edge\+At@{get\+Edge\+At}}
 \index{get\+Edge\+At@{get\+Edge\+At}!ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
@@ -431,6 +452,26 @@ True if polygon is defined
 
 Implements \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1_object_a456cc7121218d24c1322d0fe54230cc4}{ostk\+::math\+::geom\+::d2\+::\+Object}.
 
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a70a128f7d670604478947243e8a96937}\label{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a70a128f7d670604478947243e8a96937}} 
+\index{ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!is\+Near@{is\+Near}}
+\index{is\+Near@{is\+Near}!ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{is\+Near()}{isNear()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::is\+Near (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} \&}]{a\+Polygon,  }\item[{const Real \&}]{a\+Tolerance }\end{DoxyParamCaption}) const}
+
+
+
+Check if polygon is near another polygon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Polygon} & A polygon \\
+\hline
+\mbox{\tt in}  & {\em a\+Tolerance} & A tolerance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if polygon is near another polygon 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a2a592e75608feeafd324105c65c67640}\label{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_a2a592e75608feeafd324105c65c67640}} 
 \index{ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
@@ -514,24 +555,8 @@ Implements \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1_object_ae05ad883ed5a56
 
 
 
-Compute intersection of polygon with polygon. 
+Get string representation. 
 
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em a\+Polygon} & A polygon \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-Intersection of polygon with polygon Compute union of polygon with polygon
-\end{DoxyReturn}
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em a\+Polygon} & A polygon \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-A multi-\/polygon Get string representation
-\end{DoxyReturn}
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em a\+Format} & A format \\
@@ -562,6 +587,32 @@ Constructs an undefined polygon.
 
 \begin{DoxyReturn}{Returns}
 Undefined polygon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ad01feda42e80b74752d3529bc122981b}\label{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon_ad01feda42e80b74752d3529bc122981b}} 
+\index{ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon}!union\+With@{union\+With}}
+\index{union\+With@{union\+With}!ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon}}
+\subsubsection{\texorpdfstring{union\+With()}{unionWith()}}
+{\footnotesize\ttfamily \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon} ostk\+::math\+::geom\+::d2\+::objects\+::\+Polygon\+::union\+With (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon}{Polygon} \&}]{a\+Polygon }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of polygon with polygon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Polygon} & A polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Intersection of polygon with polygon Compute union of polygon with polygon
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Polygon} & A polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A multi-\/polygon 
 \end{DoxyReturn}
 
 

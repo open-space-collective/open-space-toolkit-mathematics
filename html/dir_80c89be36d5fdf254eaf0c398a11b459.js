@@ -6,9 +6,7 @@ var dir_80c89be36d5fdf254eaf0c398a11b459 =
     [ "MultiLineString.hpp", "_multi_line_string_8hpp.html", [
       [ "MultiLineString", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string" ]
     ] ],
-    [ "MultiPolygon.hpp", "_multi_polygon_8hpp.html", [
-      [ "MultiPolygon", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon.html", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon" ]
-    ] ],
+    [ "MultiPolygon.hpp", "_multi_polygon_8hpp.html", "_multi_polygon_8hpp" ],
     [ "Point.hpp", "2_d_2_objects_2_point_8hpp.html", [
       [ "Point", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point" ]
     ] ],

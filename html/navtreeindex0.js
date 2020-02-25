@@ -96,6 +96,7 @@ var NAVTREEINDEX0 =
 "_multi_line_string_8hpp_source.html":[5,0,0,0,0,0,0,0,1],
 "_multi_polygon_8cpp.html":[5,0,1,0,0,0,0,0,1],
 "_multi_polygon_8hpp.html":[5,0,0,0,0,0,0,0,2],
+"_multi_polygon_8hpp.html#a5786a3021d23f9c64937e263a2da9d27":[5,0,0,0,0,0,0,0,2,1],
 "_multi_polygon_8hpp_source.html":[5,0,0,0,0,0,0,0,2],
 "_objects_8hpp.html":[5,0,0,0,0,2],
 "_objects_8hpp_source.html":[5,0,0,0,0,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string.html#afd26337c26696a0ff1b4b2e94e58f17c":[4,0,0,0,0,0,0,0,3],
 "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html":[4,0,0,0,0,0,0,1],
 "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html#a124780190c563f303f81bff8e25ed742":[4,0,0,0,0,0,0,1,11],
-"classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html#a43dc9419e5743d8a920141ba4fa10c5f":[4,0,0,0,0,0,0,1,0],
-"classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html#a446d9d1344336d6ec8b2ff1e46629ca2":[4,0,0,0,0,0,0,1,9]
+"classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html#a43dc9419e5743d8a920141ba4fa10c5f":[4,0,0,0,0,0,0,1,0]
 };

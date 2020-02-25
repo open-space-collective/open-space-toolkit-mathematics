@@ -11,6 +11,7 @@ var classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon =
     [ "clone", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a55e4524d1f58bf8379580e63f49f0b48", null ],
     [ "contains", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#aa9f49a046d832821a8b26064b3cf2158", null ],
     [ "contains", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a6a95f14d1bcbc3d0231ed09f31d17045", null ],
+    [ "getConvexHull", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a82a1c0d6a76ee136829e0668bdd5c4a6", null ],
     [ "getEdgeAt", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a247cba455e33ab1a05c43de43c27ba48", null ],
     [ "getEdgeCount", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a585310d630d1e80f496a9525a308bb2b", null ],
     [ "getEdges", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#ac0c151b62ba0798eb4d86b2458e6d8b0", null ],
@@ -22,9 +23,11 @@ var classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon =
     [ "getVertices", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a04a97204d397a1c7a919ebf4d73fb537", null ],
     [ "intersects", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#ad0183cbb840fe9f1fb9dfde0cc3eae50", null ],
     [ "isDefined", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a81f92393dad2c6421fd4fe3834f60fa2", null ],
+    [ "isNear", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a70a128f7d670604478947243e8a96937", null ],
     [ "operator!=", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a2a592e75608feeafd324105c65c67640", null ],
     [ "operator=", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#aad1bdf4404a88c3da5c93e12e0cbb241", null ],
     [ "operator==", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a6fa3a2d3811523250bbb916e5d0ff8b9", null ],
     [ "print", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#adbf6ed9930a6dd2f3eab1c5c1b256ded", null ],
-    [ "toString", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a6e672ccf5f1101de80e636f097f0a0f7", null ]
+    [ "toString", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a6e672ccf5f1101de80e636f097f0a0f7", null ],
+    [ "unionWith", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#ad01feda42e80b74752d3529bc122981b", null ]
 ];
