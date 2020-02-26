@@ -40,7 +40,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::Intersection ;
     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
-    scope in_Composite = class_<Composite, Shared<Composite>, bases<Object>>("Composite", no_init)
+    scope in_Composite = class_<Composite, Shared<Composite>, bases<Object>>("Composite", init<const Object&>())
 
         .def(self == self)
         .def(self == self)
@@ -52,6 +52,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self_ns::repr(self_ns::self))
 
         .def("is_defined", &Composite::isDefined)
+        .def("is_empty", &Composite::isEmpty)
 
         .def("is_point", +[] (const Composite& aComposite) -> bool { return aComposite.is<Point>() ; })
         .def("is_point_set", +[] (const Composite& aComposite) -> bool { return aComposite.is<PointSet>() ; })
@@ -93,6 +94,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("apply_transformation", &Composite::applyTransformation)
 
         .def("undefined", &Composite::Undefined).staticmethod("undefined")
+        .def("empty", &Composite::Empty).staticmethod("empty")
 
     ;
 

@@ -408,7 +408,15 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionOperat
 
     {
 
-        EXPECT_ANY_THROW(Composite::Undefined() + Composite::Undefined()) ;
+        const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
+        const Point apex = { 0.0, 0.0, 1.0 } ;
+
+        const Pyramid pyramid = { base, apex } ;
+
+        Composite composite = Composite { pyramid } ;
+
+        EXPECT_ANY_THROW(Composite::Undefined() + composite) ;
+        EXPECT_ANY_THROW(composite + Composite::Undefined()) ;
 
     }
 
@@ -444,23 +452,14 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionAssign
 
     {
 
-        Composite firstComposite = Composite::Undefined() ;
-
         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
         const Point apex = { 0.0, 0.0, 1.0 } ;
 
         const Pyramid pyramid = { base, apex } ;
 
-        const Composite composite = Composite { pyramid } ;
+        Composite composite = Composite { pyramid } ;
 
-        EXPECT_NO_THROW(firstComposite += composite) ;
-
-    }
-
-    {
-
-        Composite composite = Composite::Undefined() ;
-
+        EXPECT_ANY_THROW(Composite::Undefined() += composite) ;
         EXPECT_ANY_THROW(composite += Composite::Undefined()) ;
 
     }
@@ -532,6 +531,48 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, IsDefined)
     {
 
         EXPECT_FALSE(Composite::Undefined().isDefined()) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, IsEmpty)
+{
+
+    using ostk::core::types::Unique ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
+
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::Object ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Cuboid ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+    using ostk::math::geom::d3::objects::Composite ;
+
+    {
+
+        const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
+        const Point apex = { 0.0, 0.0, 1.0 } ;
+
+        const Pyramid pyramid = { base, apex } ;
+
+        const Composite composite = Composite { pyramid } ;
+
+        EXPECT_FALSE(composite.isEmpty()) ;
+
+    }
+
+    {
+
+        EXPECT_TRUE(Composite::Empty().isEmpty()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Composite::Undefined().isEmpty()) ;
 
     }
 
@@ -1032,6 +1073,21 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Undefined)
 
         EXPECT_NO_THROW(Composite::Undefined()) ;
         EXPECT_FALSE(Composite::Undefined().isDefined()) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Empty)
+{
+
+    using ostk::math::geom::d3::objects::Composite ;
+
+    {
+
+        EXPECT_NO_THROW(Composite::Empty()) ;
+        EXPECT_TRUE(Composite::Empty().isDefined()) ;
+        EXPECT_TRUE(Composite::Empty().isEmpty()) ;
 
     }
 
