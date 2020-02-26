@@ -31,6 +31,7 @@ namespace objects
 
                                 Composite::Composite                        (   const   Object&                     anObject                                    )
                                 :   Object(),
+                                    defined_(true),
                                     objects_(Array<Unique<Object>>::Empty())
 {
 
@@ -40,6 +41,7 @@ namespace objects
 
                                 Composite::Composite                        (   const   Unique<Object>&             anObjectUPtr                                )
                                 :   Object(),
+                                    defined_(true),
                                     objects_(Array<Unique<Object>>::Empty())
 {
 
@@ -49,6 +51,7 @@ namespace objects
 
                                 Composite::Composite                        (           Array<Unique<Object>>&&     anObjectArray                               )
                                 :   Object(),
+                                    defined_(true),
                                     objects_(Array<Unique<Object>>::Empty())
 {
 
@@ -60,6 +63,7 @@ namespace objects
 
                                 Composite::Composite                        (   const   Composite&                  aComposite                                  )
                                 :   Object(),
+                                    defined_(aComposite.defined_),
                                     objects_(Array<Unique<Object>>::Empty())
 {
 
@@ -79,6 +83,8 @@ Composite&                      Composite::operator =                       (   
 
     if (this != &aComposite)
     {
+
+        defined_ = aComposite.defined_ ;
 
         objects_.clear() ;
 
@@ -132,7 +138,12 @@ Composite                       Composite::operator +                       (   
         throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
-    Composite composite = Composite::Undefined() ;
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Composite") ;
+    }
+
+    Composite composite = Composite::Empty() ;
 
     composite.objects_.reserve(objects_.getSize() + aComposite.objects_.getSize()) ;
 
@@ -151,6 +162,11 @@ Composite&                      Composite::operator +=                      (   
         throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Composite") ;
+    }
+
     objects_.reserve(objects_.getSize() + aComposite.objects_.getSize()) ;
 
     std::transform(aComposite.objects_.begin(), aComposite.objects_.end(), std::back_inserter(objects_), [] (const Unique<Object>& anObjectUPtr) -> Unique<Object> { return Unique<Object>(anObjectUPtr->clone()) ; }) ;
@@ -161,7 +177,19 @@ Composite&                      Composite::operator +=                      (   
 
 bool                            Composite::isDefined                        ( ) const
 {
-    return (!objects_.isEmpty()) && std::all_of(objects_.begin(), objects_.end(), [] (const Unique<Object>& anObjectUPtr) -> bool { return anObjectUPtr->isDefined() ; }) ; ;
+    return defined_ && std::all_of(objects_.begin(), objects_.end(), [] (const Unique<Object>& anObjectUPtr) -> bool { return anObjectUPtr->isDefined() ; }) ;
+}
+
+bool                            Composite::isEmpty                          ( ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Composite") ;
+    }
+
+    return objects_.isEmpty() ;
+
 }
 
 bool                            Composite::intersects                       (   const   Object&                     anObject                                    ) const
@@ -413,6 +441,17 @@ void                            Composite::applyTransformation              (   
 }
 
 Composite                       Composite::Undefined                        ( )
+{
+
+    Composite composite = Composite::Empty() ;
+
+    composite.defined_ = false ;
+
+    return composite ;
+
+}
+
+Composite                       Composite::Empty                            ( )
 {
     return Composite { Array<Unique<Object>>::Empty() } ;
 }

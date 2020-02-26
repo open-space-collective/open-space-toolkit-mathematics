@@ -130,6 +130,16 @@ class Composite : public Object
 
         virtual bool            isDefined                                   ( ) const override ;
 
+        /// @brief              Check if composite is empty
+        ///
+        /// @code
+        ///                     Composite(...).isEmpty() ;
+        /// @endcode
+        ///
+        /// @return             True if composite is empty
+
+        bool                    isEmpty                                     ( ) const ;
+
         /// @brief              Returns true if composite can be converted to underlying object
         ///
         ///                     Only valid if the composite only contains one object.
@@ -277,8 +287,19 @@ class Composite : public Object
 
         static Composite        Undefined                                   ( ) ;
 
+        /// @brief              Constructs an empty composite
+        ///
+        /// @code
+        ///                     Composite composite = Composite::Empty() ;
+        /// @endcode
+        ///
+        /// @return             Empty composite
+
+        static Composite        Empty                                       ( ) ;
+
     private:
 
+        bool                    defined_ ;
         Array<Unique<Object>>   objects_ ;
 
 } ;

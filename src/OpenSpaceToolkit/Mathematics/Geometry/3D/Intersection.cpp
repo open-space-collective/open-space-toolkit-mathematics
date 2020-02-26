@@ -319,6 +319,8 @@ String                          Intersection::StringFromType                (   
 
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
                                 Intersection::Intersection                  ( )
                                 :   type_(Intersection::Type::Undefined),
                                     composite_(Composite::Undefined())
