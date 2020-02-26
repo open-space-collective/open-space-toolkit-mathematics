@@ -45,6 +45,8 @@ bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_aa215a9
 \begin{DoxyCompactList}\small\item\em Addition assignment operator (composite concatenation) \end{DoxyCompactList}\item 
 virtual bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_afda60d7f0111f98729e9c9d96ba4e1d5}{is\+Defined} () const override
 \begin{DoxyCompactList}\small\item\em Check if composite is defined. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_ac7b84d04a89c0cd2ef9c3538792ac168}{is\+Empty} () const
+\begin{DoxyCompactList}\small\item\em Check if composite is empty. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Type $>$ }\\bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_acbe01e7ef63382a16aa0b33f10d7a620}{is} () const
 \begin{DoxyCompactList}\small\item\em Returns true if composite can be converted to underlying object. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class Type $>$ }\\const Type \& \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_a183fda79f9c329411533a390c77885ef}{as} () const
@@ -79,7 +81,9 @@ virtual void \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite}{Composite} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_abd7585518f349e7d599a81102f9e0e41}{Undefined} ()
-\begin{DoxyCompactList}\small\item\em Constructs an undefined composite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructs an undefined composite. \end{DoxyCompactList}\item 
+static \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite}{Composite} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_ab6ca471e3e731465d64148506869c93d}{Empty} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty composite. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -294,6 +298,25 @@ Check if composite contains composite.
 \begin{DoxyReturn}{Returns}
 True if composite contains composite 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_ab6ca471e3e731465d64148506869c93d}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_ab6ca471e3e731465d64148506869c93d}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite}!Empty@{Empty}}
+\index{Empty@{Empty}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite}}
+\subsubsection{\texorpdfstring{Empty()}{Empty()}}
+{\footnotesize\ttfamily \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite}{Composite} ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite\+::\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an empty composite. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_aaecda2f184484d63a52de87706a37d4c}{Composite} composite = \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_ab6ca471e3e731465d64148506869c93d}{Composite::Empty}() ;
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Empty composite 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_abaaf231b9d0b5924ceb2b89db38cfe25}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_abaaf231b9d0b5924ceb2b89db38cfe25}} 
 \index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite}!end@{end}}
 \index{end@{end}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite}}
@@ -439,6 +462,25 @@ True if composite is defined
 
 Implements \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_object_a271a1964cd208be85ce9a0a429395ad8}{ostk\+::math\+::geom\+::d3\+::\+Object}.
 
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_ac7b84d04a89c0cd2ef9c3538792ac168}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_ac7b84d04a89c0cd2ef9c3538792ac168}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite}}
+\subsubsection{\texorpdfstring{is\+Empty()}{isEmpty()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if composite is empty. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_aaecda2f184484d63a52de87706a37d4c}{Composite}(...).isEmpty() ;
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if composite is empty 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_aa215a94dadd9a8912760c5c5ec4eb6e1}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite_aa215a94dadd9a8912760c5c5ec4eb6e1}} 
 \index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite}!operator"!=@{operator"!=}}
 \index{operator"!=@{operator"!=}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Composite}}

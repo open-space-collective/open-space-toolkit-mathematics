@@ -1,5 +1,6 @@
 var NAVTREEINDEX2 =
 {
+"classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html#a8cc3b3e20f67bfd7de8230fb2c471a70":[4,0,0,0,0,1,0,2,14],
 "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html#a944ae7484ccd8c22cc6a814cb002aad8":[4,0,0,0,0,1,0,2,9],
 "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html#aa922a6ee7f3fe7cbbbfe584fa0d86e2c":[4,0,0,0,0,1,0,2,22],
 "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html#aaa90106ccf8120f854bdcf0f824e5610":[4,0,0,0,0,1,0,2,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html#afbae10b116900f5383913e564c0ec91a":[4,0,0,0,0,1,0,13,7],
 "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html#afccce29f97045441ccc5b6bf37566d18":[4,0,0,0,0,1,0,13,16],
 "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html#aff56934077d5851cc168dae45613d78d":[4,0,0,0,0,1,0,13,15],
-"classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html":[4,0,0,0,0,1,1,0,0],
-"classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a0bb2ccff6bafbafc61232574584fb65d":[4,0,0,0,0,1,1,0,0,29]
+"classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html":[4,0,0,0,0,1,1,0,0]
 };
