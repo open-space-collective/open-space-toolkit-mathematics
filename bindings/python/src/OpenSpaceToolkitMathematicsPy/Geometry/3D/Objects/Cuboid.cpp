@@ -14,10 +14,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cuboid ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cuboid                     (         pybind11::module&       aModule         )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::core::types::Shared ;
     using ostk::core::types::Real ;
@@ -36,30 +36,28 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::Intersection ;
     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
-    scope in_Cuboid = class_<Cuboid, Shared<Cuboid>, bases<Object>>("Cuboid", no_init)
+    //     scope in_Cuboid = class_<Cuboid, Shared<Cuboid>, bases<Object>>("Cuboid", no_init)
+    class_<Cuboid, Object>(aModule, "Cuboid")
 
-        .def
-        (
-            "__init__",
-            make_constructor
-            (
-                +[] (const Point& aCenter, const boost::python::list& anAxisList, const boost::python::list& anExtent) -> Shared<Cuboid>
+        .def("__init__",
+                +[] (const Point& aCenter, const pybind11::list& anAxisList, const pybind11::list& anExtent) -> Shared<Cuboid>
                 {
 
-                    const std::array<Vector3d, 3> axes = { boost::python::extract<Vector3d>(anAxisList[0]), boost::python::extract<Vector3d>(anAxisList[1]), boost::python::extract<Vector3d>(anAxisList[2]) } ;
-                    const std::array<Real, 3> extent = { boost::python::extract<Real>(anExtent[0]), boost::python::extract<Real>(anExtent[1]), boost::python::extract<Real>(anExtent[2]) } ;
+                    const std::array<Vector3d, 3> axes = { pybind11::cast<Vector3d>(anAxisList[0]), pybind11::cast<Vector3d>(anAxisList[1]), pybind11::cast<Vector3d>(anAxisList[2]) } ;
+                    const std::array<Real, 3> extent = { pybind11::cast<Real>(anExtent[0]), pybind11::cast<Real>(anExtent[1]), pybind11::cast<Real>(anExtent[2]) } ;
 
                     return std::make_shared<Cuboid>(aCenter, axes, extent) ;
 
                 }
-            )
         )
+
+        // .def(init<const Point&, const std::array<Vector3d, 3>&, const std::array<Real, 3>&>())
 
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shift_to_string<Cuboid>))
+        .def("__repr__", &(shift_to_string<Cuboid>))
 
         .def("is_defined", &Cuboid::isDefined)
         .def("is_near", &Cuboid::isNear)
@@ -78,8 +76,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("get_vertices", &Cuboid::getVertices)
         .def("apply_transformation", &Cuboid::applyTransformation)
 
-        .def("undefined", &Cuboid::Undefined).staticmethod("undefined")
-        .def("cube", &Cuboid::Cube).staticmethod("cube")
+        .def_static("undefined", &Cuboid::Undefined)
+        .def_static("cube", &Cuboid::Cube)
 
     ;
 

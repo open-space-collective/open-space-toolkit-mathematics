@@ -11,10 +11,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object     ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object                     (    pybind11::module&                     aModule        )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::math::geom::d3::Object ;
     using ostk::math::geom::d3::objects::Point ;
@@ -29,13 +29,19 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::objects::Ellipsoid ;
     using ostk::math::geom::d3::objects::Pyramid ;
 
-    scope in_Object = class_<Object, boost::noncopyable>("Object", no_init)
+    // class_<Object, boost::noncopyable>("Object", no_init)
+    class_<Object>(aModule, "Object")
 
-        .def(self == self)
-        .def(self != self)
+        // no init
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        // Define methods
+        // .def(self == self)
+        // .def(self != self)
+        .def("__eq__", [](const Object &self, const Object &other){ return self == other; })
+        .def("__ne__", [](const Object &self, const Object &other){ return self != other; })
+
+        .def("__str__", &(shift_to_string<Object>))
+        .def("__repr__", &(shift_to_string<Object>))
 
         .def("is_defined", &Object::isDefined)
         .def("is_point", +[] (const Object& anObject) -> bool { return anObject.is<Point>() ; })

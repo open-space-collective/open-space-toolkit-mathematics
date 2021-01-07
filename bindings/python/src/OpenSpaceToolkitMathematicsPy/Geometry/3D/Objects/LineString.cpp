@@ -11,10 +11,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_LineString ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_LineString                     (           pybind11::module& aModule         )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::core::ctnr::Array ;
 
@@ -22,13 +22,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::objects::Point ;
     using ostk::math::geom::d3::objects::LineString ;
 
-    scope in_LineString = class_<LineString, bases<Object>>("LineString", init<const Array<Point>&>())
+    class_<LineString, Object>(aModule, "LineString")
+
+        .def(init<const Array<Point>&>())
 
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shift_to_string<LineString>))
+        .def("__repr__", &(shift_to_string<LineString>))
 
         .def("is_defined", &LineString::isDefined)
         .def("is_empty", &LineString::isEmpty)
@@ -38,9 +40,9 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("get_point_closest_to", &LineString::getPointClosestTo)
         .def("apply_transformation", &LineString::applyTransformation)
 
-        .def("empty", &LineString::Empty).staticmethod("empty")
+        .def_static("empty", &LineString::Empty)
 
-        .def("__iter__", boost::python::range(static_cast<LineString::ConstIterator (LineString::*)() const> (&LineString::begin), static_cast<LineString::ConstIterator (LineString::*)() const> (&LineString::end)))
+        // .def("__iter__", boost::python::range(static_cast<LineString::ConstIterator (LineString::*)() const> (&LineString::begin), static_cast<LineString::ConstIterator (LineString::*)() const> (&LineString::end)))
 
     ;
 

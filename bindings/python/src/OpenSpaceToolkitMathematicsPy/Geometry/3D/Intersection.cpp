@@ -11,10 +11,15 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection ( )
+// using ostk::core::types::Unique ;
+// using ostk::core::ctnr::Array ;
+
+// void          set_unique_obj_array(const Array<Unique<ostk::math::geom::d3::Object>>& anArray) { (void) anArray ; }
+
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection                     (          pybind11::module&               aModule  )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::core::types::Unique ;
     using ostk::core::ctnr::Array ;
@@ -36,16 +41,20 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Inters
     using ostk::math::geom::d3::Intersection ;
 
     // scope in_Intersection = class_<Intersection>("Intersection", init<const Array<Unique<Object>>>())
-    scope in_Intersection = class_<Intersection>("Intersection", no_init)
+    class_<Intersection> intersection(aModule, "Intersection") ;
 
-        .def(self == self)
+    // Define constructor
+    // intersection.def(init<const Array<Unique<Object>>>()) ;
+
+    // Define methods
+    intersection.def(self == self)
         .def(self != self)
 
         .def(self + self)
         .def(self += self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shift_to_string<Segment>))
+        .def("__repr__", &(shift_to_string<Segment>))
 
         .def("is_defined", &Intersection::isDefined)
         .def("is_empty", &Intersection::isEmpty)
@@ -77,23 +86,28 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Inters
         .def("as_pyramid", +[] (const Intersection& anIntersection) -> Pyramid { return anIntersection.as<Pyramid>() ; })
         .def("as_composite", +[] (const Intersection& anIntersection) -> Composite { return anIntersection.as<Composite>() ; })
 
-        .def("access_composite", &Intersection::accessComposite, return_value_policy<reference_existing_object>())
+        // .def("access_composite", &Intersection::accessComposite, return_value_policy<reference_existing_object>())
+        .def("access_composite", &Intersection::accessComposite, return_value_policy::reference)
 
         .def("get_type", &Intersection::getType)
 
-        .def("undefined", &Intersection::Undefined).staticmethod("undefined")
-        .def("empty", &Intersection::Empty).staticmethod("empty")
-        .def("point", &Intersection::Point).staticmethod("point")
-        .def("point_set", &Intersection::PointSet).staticmethod("point_set")
-        .def("line", &Intersection::Line).staticmethod("line")
-        .def("ray", &Intersection::Ray).staticmethod("ray")
-        .def("segment", &Intersection::Segment).staticmethod("segment")
+        // Define static methods
+        .def_static("undefined", &Intersection::Undefined)
+        .def_static("empty", &Intersection::Empty)
+        .def_static("point", &Intersection::Point)
+        .def_static("point_set", &Intersection::PointSet)
+        .def_static("line", &Intersection::Line)
+        .def_static("ray", &Intersection::Ray)
+        .def_static("segment", &Intersection::Segment)
 
-        .def("string_from_type", &Intersection::StringFromType).staticmethod("string_from_type")
+        .def_static("string_from_type", &Intersection::StringFromType)
 
     ;
 
-    enum_<Intersection::Type>("Type")
+    // aModule.def("set_unique_obj_array", overload_cast<const Array<Unique<Object>>&>(&set_unique_obj_array));
+
+    // Define Intersection types
+    enum_<Intersection::Type>(intersection, "Type")
 
         .value("Undefined", Intersection::Type::Undefined)
         .value("Empty", Intersection::Type::Empty)

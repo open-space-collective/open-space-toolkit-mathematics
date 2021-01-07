@@ -9,8 +9,6 @@
 
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/MultiPolygon.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Polygon.cpp>
-// #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Segment.cpp>
-// #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Ray.cpp>
 // #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/MultiLineString.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/LineString.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Segment.cpp>
@@ -21,24 +19,25 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects    ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects                     (                pybind11::module& aModule               )
 {
 
-    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("ostk.mathematics.geometry.d2.objects")))) ;
+    // Create "objects" python submodule
+    auto objects = aModule.def_submodule("objects") ;
 
-    boost::python::scope().attr("objects") = module ;
+    // Add __path__ attribute for "objects" submodule
+    objects.attr("__path__") = "ostk.mathematics.geometry.d2.objects" ;
 
-    boost::python::scope scope = module ;
-
-    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Point() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet() ;
-    // OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Line() ;
-    // OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Ray() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Segment() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_LineString() ;
-    // OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_MultiLineString() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Polygon() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_MultiPolygon() ;
+    // Add objects to python "objects" submodules
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Point(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet(objects) ;
+    // OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Line(objects) ;
+    // OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Ray(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Segment(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_LineString(objects) ;
+    // OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_MultiLineString(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Polygon(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_MultiPolygon(objects) ;
 
 }
 

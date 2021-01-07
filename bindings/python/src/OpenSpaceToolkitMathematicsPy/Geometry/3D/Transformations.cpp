@@ -11,16 +11,17 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations             (     pybind11::module&                     aModule      )
 {
 
-    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("ostk.mathematics.geometry.d3.transformations")))) ;
+    // Create "transformations" python submodule
+    auto transformations = aModule.def_submodule("transformations") ;
 
-    boost::python::scope().attr("transformations") = module ;
+    // Add __path__ attribute for "transformations" submodule
+    transformations.attr("__path__") = "ostk.mathematics.geometry.d3.transformations" ;
 
-    boost::python::scope scope = module ;
-
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations() ;
+    // Add objects to python "transformations" submodules
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations(transformations) ;
 
 }
 

@@ -11,26 +11,27 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads, ostk::math::geom::d2::objects::LineString::toString, 0, 2)
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_LineString ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_LineString                     (          pybind11::module&  aModule         )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
+    using ostk::core::types::Integer ;
     using ostk::core::ctnr::Array ;
 
     using ostk::math::geom::d2::Object ;
     using ostk::math::geom::d2::objects::Point ;
     using ostk::math::geom::d2::objects::LineString ;
 
-    scope in_LineString = class_<LineString, bases<Object>>("LineString", init<const Array<Point>&>())
+    class_<LineString, Object>(aModule, "LineString")
+
+        .def(init<const Array<Point>&>())
 
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shift_to_string<LineString>))
+        .def("__repr__", &(shift_to_string<LineString>))
 
         .def("is_defined", &LineString::isDefined)
         .def("is_empty", &LineString::isEmpty)
@@ -38,14 +39,16 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
         .def("get_point_count", &LineString::getPointCount)
         .def("get_point_closest_to", &LineString::getPointClosestTo)
-        .def("to_string", &LineString::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads())
+        // .def("to_string", &LineString::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads())
+        .def("to_string", &LineString::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
+
         .def("apply_transformation", &LineString::applyTransformation)
 
-        .def("empty", &LineString::Empty).staticmethod("empty")
+        .def_static("empty", &LineString::Empty)
 
         .def("__len__", &LineString::getPointCount)
-        .def("__getitem__", +[] (const LineString& aLineString, const size_t anIndex) -> const Point& { return aLineString.accessPointAt(anIndex) ; }, return_internal_reference<>())
-        .def("__iter__", range(&LineString::begin, &LineString::end))
+        .def("__getitem__", +[] (const LineString& aLineString, const size_t anIndex) -> const Point& { return aLineString.accessPointAt(anIndex) ; }, return_value_policy::reference_internal)
+        .def("__iter__", [] (const LineString& aLineString) {return make_iterator(aLineString.begin(), aLineString.end()) ; }, keep_alive<0, 1>()) // Keep vector alive while iterator is used
 
     ;
 

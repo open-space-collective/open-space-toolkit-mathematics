@@ -13,18 +13,19 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D            ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D                     (          pybind11::module&                     aModule         )
 {
 
-    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("ostk.mathematics.geometry.d2")))) ;
+    // Create "d2" python submodule
+    auto d2 = aModule.def_submodule("d2") ;
 
-    boost::python::scope().attr("d2") = module ;
+    // Add __path__ attribute for "d2" submodule
+    d2.attr("__path__") = "ostk.mathematics.geometry.d2" ;
 
-    boost::python::scope scope = module ;
-
-    OpenSpaceToolkitMathematicsPy_Geometry_2D_Object() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation() ;
+    // Add objects to python "d2" submodules
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Object(d2) ; // Cannot be binded without including Transformation.cpp (uses forward declaration for Transformation)
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects(d2) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation(d2) ;
 
 }
 

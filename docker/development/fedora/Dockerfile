@@ -31,9 +31,9 @@ RUN cd /tmp \
 
 RUN mkdir /tmp/eigen \
  && cd /tmp/eigen \
- && wget --quiet http://bitbucket.org/eigen/eigen/get/3.3.7.tar.gz \
- && tar -xvf 3.3.7.tar.gz \
- && cd eigen-eigen-323c052e1731 \
+ && wget --quiet https://gitlab.com/libeigen/eigen/-/archive/3.3.7/eigen-3.3.7.tar.gz \
+ && tar -xvf eigen-3.3.7.tar.gz \
+ && cd eigen-3.3.7 \
  && mkdir build \
  && cd build \
  && cmake .. \

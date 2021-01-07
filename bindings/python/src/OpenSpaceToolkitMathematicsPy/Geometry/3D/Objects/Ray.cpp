@@ -11,10 +11,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Ray ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Ray                     (      pybind11::module&   aModule                   )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::math::obj::Vector3d ;
     using ostk::math::geom::d3::Object ;
@@ -26,13 +26,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::objects::Ellipsoid ;
     using ostk::math::geom::d3::Intersection ;
 
-    scope in_Ray = class_<Ray, bases<Object>>("Ray", init<const Point&, const Vector3d&>())
+    class_<Ray, Object>(aModule, "Ray")
+
+        .def(init<const Point&, const Vector3d&>())
 
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shift_to_string<Ray>))
+        .def("__repr__", &(shift_to_string<Ray>))
 
         .def("is_defined", &Ray::isDefined)
         .def("intersects_point", +[] (const Ray& aRay, const Point& aPoint) -> bool { return aRay.intersects(aPoint) ; })
@@ -48,7 +50,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("intersection_with_ellipsoid", +[] (const Ray& aRay, const Ellipsoid& anEllipsoid) -> Intersection { return aRay.intersectionWith(anEllipsoid) ; })
         .def("apply_transformation", &Ray::applyTransformation)
 
-        .def("undefined", &Ray::Undefined).staticmethod("undefined")
+        .def_static("undefined", &Ray::Undefined)
 
     ;
 

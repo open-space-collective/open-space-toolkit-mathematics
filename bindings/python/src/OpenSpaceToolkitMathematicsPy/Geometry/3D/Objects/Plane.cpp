@@ -11,10 +11,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Plane ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Plane                   (   pybind11::module&                    aModule     )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::math::obj::Vector3d ;
     using ostk::math::geom::d3::Object ;
@@ -26,13 +26,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::objects::Segment ;
     using ostk::math::geom::d3::Intersection ;
 
-    scope in_Plane = class_<Plane, bases<Object>>("Plane", init<const Point&, const Vector3d&>())
+    class_<Plane, Object>(aModule, "Plane")
+
+        .def(init<const Point&, const Vector3d&>())
 
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shift_to_string<Plane>))
+        .def("__repr__", &(shift_to_string<Plane>))
 
         .def("is_defined", &Plane::isDefined)
         .def("intersects_point", +[] (const Plane& aPlane, const Point& aPoint) -> bool { return aPlane.intersects(aPoint) ; })
@@ -55,7 +57,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("intersection_with_segment", +[] (const Plane& aPlane, const Segment& aSegment) -> Intersection { return aPlane.intersectionWith(aSegment) ; })
         .def("apply_transformation", &Plane::applyTransformation)
 
-        .def("undefined", &Plane::Undefined).staticmethod("undefined")
+        .def_static("undefined", &Plane::Undefined)
 
     ;
 

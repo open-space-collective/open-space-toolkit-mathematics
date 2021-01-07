@@ -7,28 +7,32 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <OpenSpaceToolkit/Mathematics/Objects/Interval.hpp>
-
 #include <OpenSpaceToolkit/Core/Types/Real.hpp>
+
+#include <OpenSpaceToolkit/Mathematics/Objects/Interval.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval       ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval                     (          pybind11::module&                     aModule    )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::core::types::Real ;
 
     using ostk::math::obj::Interval ;
 
-    scope in_RealInterval = class_<Interval<Real>>("RealInterval", init<const Real&, const Real&, const Interval<Real>::Type&>())
+    class_<Interval<Real>> real_interval(aModule, "RealInterval");
 
+    // Define constructor
+    real_interval.def(init<const Real&, const Real&, const Interval<Real>::Type&>())
+
+        // Define methods
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shift_to_string<Interval<Real>>))
+        .def("__repr__", &(shift_to_string<Interval<Real>>))
 
         .def("is_defined", &Interval<Real>::isDefined)
         .def("is_degenerate", &Interval<Real>::isDegenerate)
@@ -40,18 +44,23 @@ inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval  
         .def("get_upper_bound", &Interval<Real>::getUpperBound)
         .def("to_string", &Interval<Real>::toString)
 
-        .def("undefined", &Interval<Real>::Undefined).staticmethod("undefined")
-        .def("closed", &Interval<Real>::Closed).staticmethod("closed")
-
+        // Define static methods
+        .def_static("undefined", &Interval<Real>::Undefined)
+        .def_static("closed", &Interval<Real>::Closed)
     ;
 
-    enum_<Interval<Real>::Type>("Type")
+    // Add other interval types
+    // ...
+
+    // Define emuneration type for "real_interval"
+    enum_<Interval<Real>::Type>(real_interval, "Type")
 
         .value("Undefined", Interval<Real>::Type::Undefined)
         .value("Closed", Interval<Real>::Type::Closed)
         .value("Open", Interval<Real>::Type::Open)
         .value("HalfOpenLeft", Interval<Real>::Type::HalfOpenLeft)
         .value("HalfOpenRight", Interval<Real>::Type::HalfOpenRight)
+        .export_values()
 
     ;
 

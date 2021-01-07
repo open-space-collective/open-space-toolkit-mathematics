@@ -13,10 +13,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_RotationMatrix ( )
+inline void               OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_RotationMatrix (     pybind11::module&                    aModule)
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::core::types::Real ;
     using ostk::core::types::String ;
@@ -25,18 +25,23 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
     using ostk::math::obj::Matrix3d ;
     using ostk::math::geom::d3::trf::rot::RotationMatrix ;
 
-    scope in_RotationMatrix = class_<RotationMatrix>("RotationMatrix", init<Matrix3d>())
+    // scope in_RotationMatrix = class_<RotationMatrix>("RotationMatrix", init<Matrix3d>())
+    class_<RotationMatrix>(aModule, "RotationMatrix")
+
+        // Define constructors
+        .def(init<Matrix3d>())
 
         .def(init<const Real&, const Real&, const Real&, const Real&, const Real&, const Real&, const Real&, const Real&, const Real&>())
 
+        // Define methods
         .def(self == self)
         .def(self != self)
 
         .def(self * self)
 		.def(self * Vector3d())
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shift_to_string<RotationMatrix>))
+        .def("__repr__", &(shift_to_string<RotationMatrix>))
 
         .def("is_defined", &RotationMatrix::isDefined)
 
@@ -45,15 +50,16 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def("to_transposed", &RotationMatrix::toTransposed)
         .def("transpose", +[] (RotationMatrix& aRotationMatrix) -> void { aRotationMatrix.transpose() ; })
 
-        .def("undefined", &RotationMatrix::Undefined).staticmethod("undefined")
-        .def("unit", &RotationMatrix::Unit).staticmethod("unit")
-        .def("rx", &RotationMatrix::RX).staticmethod("rx")
-        .def("ry", &RotationMatrix::RY).staticmethod("ry")
-        .def("rz", &RotationMatrix::RZ).staticmethod("rz")
-        .def("rows", &RotationMatrix::Rows).staticmethod("rows")
-        .def("columns", &RotationMatrix::Columns).staticmethod("columns")
-        .def("quaternion", &RotationMatrix::Quaternion).staticmethod("quaternion")
-        .def("rotation_vector", &RotationMatrix::RotationVector).staticmethod("rotation_vector")
+        // Define static methods
+        .def_static("undefined", &RotationMatrix::Undefined)
+        .def_static("unit", &RotationMatrix::Unit)
+        .def_static("rx", &RotationMatrix::RX)
+        .def_static("ry", &RotationMatrix::RY)
+        .def_static("rz", &RotationMatrix::RZ)
+        .def_static("rows", &RotationMatrix::Rows)
+        .def_static("columns", &RotationMatrix::Columns)
+        .def_static("quaternion", &RotationMatrix::Quaternion)
+        .def_static("rotation_vector", &RotationMatrix::RotationVector)
 
     ;
 

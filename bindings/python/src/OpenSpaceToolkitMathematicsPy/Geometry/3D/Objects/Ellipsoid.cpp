@@ -12,10 +12,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Ellipsoid ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Ellipsoid                     (          pybind11::module&    aModule        )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::core::types::Real ;
 
@@ -32,13 +32,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::Intersection ;
     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
-    scope in_Ellipsoid = class_<Ellipsoid, bases<Object>>("Ellipsoid", init<const Point&, const Real&, const Real&, const Real&, const Quaternion&>())
+    class_<Ellipsoid, Object>(aModule, "Ellipsoid")
+
+        .def(init<const Point&, const Real&, const Real&, const Real&, const Quaternion&>())
 
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shift_to_string<Ellipsoid>))
+        .def("__repr__", &(shift_to_string<Ellipsoid>))
 
         .def("is_defined", &Ellipsoid::isDefined)
         .def("intersects_point", +[] (const Ellipsoid& anEllipsoid, const Point& aPoint) -> bool { return anEllipsoid.intersects(aPoint) ; })
@@ -69,7 +71,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("intersection_with_segment", +[] (const Ellipsoid& anEllipsoid, const Segment& aSegment) -> Intersection { return anEllipsoid.intersectionWith(aSegment) ; })
         .def("apply_transformation", &Ellipsoid::applyTransformation)
 
-        .def("undefined", &Ellipsoid::Undefined).staticmethod("undefined")
+        .def_static("undefined", &Ellipsoid::Undefined)
 
     ;
 

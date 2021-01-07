@@ -11,10 +11,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Segment ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Segment                     (       pybind11::module& aModule                )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11;
 
     using ostk::math::geom::d3::Object ;
     using ostk::math::geom::d3::objects::Point ;
@@ -24,13 +24,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::objects::Ellipsoid ;
     using ostk::math::geom::d3::Intersection ;
 
-    scope in_Segment = class_<Segment, bases<Object>>("Segment", init<const Point&, const Point&>())
+    class_<Segment, Object>(aModule, "Segment")
+
+        .def(init<const Point&, const Point&>())
 
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shift_to_string<Segment>))
+        .def("__repr__", &(shift_to_string<Segment>))
 
         .def("is_defined", &Segment::isDefined)
         .def("is_degenerate", &Segment::isDegenerate)
@@ -47,8 +49,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("intersection_with_plane", +[] (const Segment& aSegment, const Plane& aPlane) -> Intersection { return aSegment.intersectionWith(aPlane) ; })
         .def("apply_transformation", &Segment::applyTransformation)
 
-        .def("undefined", &Segment::Undefined).staticmethod("undefined")
-
+        .def_static("undefined", &Segment::Undefined)
     ;
 
 }

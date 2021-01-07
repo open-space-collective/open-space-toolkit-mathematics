@@ -11,26 +11,27 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet_toString_overloads, ostk::math::geom::d2::objects::PointSet::toString, 0, 2)
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet                     (     pybind11::module& aModule                 )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
+    using ostk::core::types::Integer ;
     using ostk::core::ctnr::Array ;
 
     using ostk::math::geom::d2::Object ;
     using ostk::math::geom::d2::objects::Point ;
     using ostk::math::geom::d2::objects::PointSet ;
 
-    scope in_PointSet = class_<PointSet, bases<Object>>("PointSet", init<const Array<Point>&>())
+    class_<PointSet, Object>(aModule, "PointSet")
+
+        .def(init<const Array<Point>&>())
 
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shift_to_string<PointSet>))
+        .def("__repr__", &(shift_to_string<PointSet>))
 
         .def("is_defined", &PointSet::isDefined)
         .def("is_empty", &PointSet::isEmpty)
@@ -38,12 +39,13 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
         .def("get_size", &PointSet::getSize)
         .def("get_point_closest_to", &PointSet::getPointClosestTo)
-        .def("to_string", &PointSet::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet_toString_overloads())
+        // .def("to_string", &PointSet::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet_toString_overloads())
+        .def("to_string", &PointSet::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
         .def("apply_transformation", &PointSet::applyTransformation)
 
-        .def("empty", &PointSet::Empty).staticmethod("empty")
+        .def_static("empty", &PointSet::Empty)
 
-        .def("__iter__", boost::python::range(static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::begin), static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::end)))
+        // .def("__iter__", boost::python::range(static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::begin), static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::end)))
 
     ;
 
