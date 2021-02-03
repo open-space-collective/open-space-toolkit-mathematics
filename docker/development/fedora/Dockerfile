@@ -47,12 +47,12 @@ RUN git clone --branch 3.28 --depth 1 https://github.com/lucas-bremond/geometric
  && cp -r ./Include /usr/local/include/Gte \
  && rm -rf /tmp/geometric-tools-engine
 
-## Open Space Toolkit ▸ Core [0.3.0]
+## Open Space Toolkit ▸ Core [0.4.2]
 
 RUN mkdir -p /tmp/open-space-toolkit-core \
  && cd /tmp/open-space-toolkit-core \
- && wget --quiet https://github.com/open-space-collective/open-space-toolkit-core/releases/download/0.3.0/open-space-toolkit-core-0.3.0-1.x86_64-runtime.rpm \
- && wget --quiet https://github.com/open-space-collective/open-space-toolkit-core/releases/download/0.3.0/open-space-toolkit-core-0.3.0-1.x86_64-devel.rpm \
+ && wget --quiet https://github.com/open-space-collective/open-space-toolkit-core/releases/download/0.4.2/open-space-toolkit-core-0.4.2-1.x86_64-runtime.rpm \
+ && wget --quiet https://github.com/open-space-collective/open-space-toolkit-core/releases/download/0.4.2/open-space-toolkit-core-0.4.2-1.x86_64-devel.rpm \
  && dnf install -y ./*.rpm \
  && rm -rf /tmp/open-space-toolkit-core
 

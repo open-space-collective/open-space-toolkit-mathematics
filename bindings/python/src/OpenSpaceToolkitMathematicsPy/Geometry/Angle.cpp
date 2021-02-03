@@ -22,7 +22,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_Angle   (
     using ostk::math::obj::Vector3d ;
     using ostk::math::geom::Angle ;
 
-    class_<Angle> angle(aModule, "Angle");
+    class_<Angle> angle(aModule, "Angle") ;
 
     // Define constructor
     angle.def(init<Real, Angle::Unit>())

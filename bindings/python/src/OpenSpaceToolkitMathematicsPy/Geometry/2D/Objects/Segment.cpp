@@ -22,7 +22,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
     using ostk::math::geom::d2::objects::Point ;
     using ostk::math::geom::d2::objects::Segment ;
 
-    // class_<Segment>(aModule, "Segment", base<Object>())
     class_<Segment, Object>(aModule, "Segment")
 
         .def(init<const Point&, const Point&>())
@@ -41,7 +40,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("get_center", &Segment::getCenter)
         .def("get_direction", &Segment::getDirection)
         .def("get_length", &Segment::getLength)
-        // .def("to_string", &Segment::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Segment_toString_overloads())
         .def("to_string", &Segment::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
         .def("apply_transformation", &Segment::applyTransformation)
 

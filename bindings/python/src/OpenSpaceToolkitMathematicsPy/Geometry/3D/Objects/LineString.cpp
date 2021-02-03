@@ -42,7 +42,9 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
         .def_static("empty", &LineString::Empty)
 
-        // .def("__iter__", boost::python::range(static_cast<LineString::ConstIterator (LineString::*)() const> (&LineString::begin), static_cast<LineString::ConstIterator (LineString::*)() const> (&LineString::end)))
+        .def("__len__", &LineString::getPointCount)
+        .def("__getitem__", +[] (const LineString& aLineString, const size_t anIndex) -> const Point& { return aLineString.accessPointAt(anIndex) ; }, return_value_policy::reference_internal)
+        .def("__iter__", [] (const LineString& aLineString) {return make_iterator(aLineString.begin(), aLineString.end()) ; }, keep_alive<0, 1>()) // Keep vector alive while iterator is used
 
     ;
 

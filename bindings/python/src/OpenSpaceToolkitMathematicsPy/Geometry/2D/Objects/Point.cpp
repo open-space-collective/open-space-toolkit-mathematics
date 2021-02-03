@@ -15,12 +15,21 @@ using ostk::core::ctnr::Array ;
 using ostk::math::geom::d2::objects::Point ;
 using ostk::math::obj::VectorXd ;
 
-void          set_point_array(const Array<Point>& anArray) { (void) anArray ; }
-void          set_point_2_array(const Array<Array<Point>>& anArray) { (void) anArray ; }
+void                            set_point_array                             (   const   Array<Point>&               anArray                                     )
+{
 
-// void scale_by_2(pybind11::EigenDRef<VectorXd> v) {
-//     v *= 2;
-// }
+    (void) anArray ;
+
+}
+
+void                            set_point_2_array                           (   const   Array<Array<Point>>&        anArray                                     )
+{
+
+    (void) anArray ;
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Point  (  pybind11::module&       aModule                                     )
 {
@@ -41,7 +50,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def(self == self)
         .def(self != self)
 
-        .def(self + self)
         .def(self - self)
 
         .def(self + Vector2d())
@@ -59,8 +67,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("y", &Point::y, return_value_policy::reference)
         .def("as_vector", &Point::asVector)
         .def("distance_to", &Point::distanceTo)
-        // Following function used to overload toString() with 0, 1 or 2 arguments (dispatched later). Find a proper way to bind. Not critical for now
-        // .def("to_string", &Point::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Point_toString_overloads())
         .def("to_string", &Point::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
         .def("apply_transformation", &Point::applyTransformation)
 
@@ -75,8 +81,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
     aModule.def("set_point_array", overload_cast<const Array<Point>&>(&set_point_array));
     aModule.def("set_point_2_array", overload_cast<const Array<Array<Point>>&>(&set_point_2_array));
-
-    // aModule.def("scale_by_2", &scale_by_2) ;
 
 }
 

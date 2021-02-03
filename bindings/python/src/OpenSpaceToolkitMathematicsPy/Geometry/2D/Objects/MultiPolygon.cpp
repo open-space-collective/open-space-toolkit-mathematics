@@ -44,7 +44,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("get_polygons", &MultiPolygon::getPolygons)
         .def("get_convex_hull", &MultiPolygon::getConvexHull)
         .def("union_with", &MultiPolygon::unionWith)
-        // .def("to_string", &MultiPolygon::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_MultiPolygon_toString_overloads())
         .def("to_string", &MultiPolygon::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
         .def("apply_transformation", &MultiPolygon::applyTransformation)
 

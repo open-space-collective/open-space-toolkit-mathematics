@@ -51,7 +51,7 @@ FROM python:3.8-slim as python-builder
 
 COPY --from=cpp-builder /app/build/bindings/python/dist /dist
 
-RUN pip install /dist/*.whl
+RUN python3.8 -m pip install /dist/*38*.whl
 
 ################################################################################################################################################################
 
@@ -61,7 +61,7 @@ LABEL maintainer="lucas@loftorbital.com"
 
 RUN pip install ipython numpy
 
-COPY --from=python-builder /usr/local/lib/python3.7/site-packages/ostk /usr/local/lib/python3.7/site-packages/ostk
+COPY --from=python-builder /usr/local/lib/python3.8/site-packages/ostk /usr/local/lib/python3.8/site-packages/ostk
 
 ENTRYPOINT ["ipython"]
 

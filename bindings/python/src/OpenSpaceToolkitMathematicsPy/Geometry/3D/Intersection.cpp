@@ -11,11 +11,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// using ostk::core::types::Unique ;
-// using ostk::core::ctnr::Array ;
-
-// void          set_unique_obj_array(const Array<Unique<ostk::math::geom::d3::Object>>& anArray) { (void) anArray ; }
-
 inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection (        pybind11::module&   aModule                                     )
 {
 
@@ -44,7 +39,26 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Inters
     class_<Intersection> intersection(aModule, "Intersection") ;
 
     // Define constructor
-    // intersection.def(init<const Array<Unique<Object>>>()) ;
+    // intersection.def("__init__",
+    //     [] (Intersection& anIntersection, const pybind11::list& anObjectList)
+    //         {
+
+    //             Array<Unique<Object>> anObjectArray = {} ;
+    //             int length = anObjectList.size() ;
+
+    //             for (int i = 0 ; i < length ; i++ )
+    //             {
+
+    //                 Unique<Object> ptr = std::make_unique<Object>(anObjectList[i]) ;
+    //                 anObjectArray.add(unique_ptr) ;
+
+    //             }
+
+    //             anIntersection = std::move(anObjectArray) ;
+    //             // new (&anIntersection) Intersection(anObjectArray) ;
+
+    //         }
+    // ) ;
 
     // Define methods
     intersection.def(self == self)
@@ -53,8 +67,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Inters
         .def(self + self)
         .def(self += self)
 
-        .def("__str__", &(shiftToString<Segment>))
-        .def("__repr__", &(shiftToString<Segment>))
+        .def("__str__", &(shiftToString<Intersection>))
+        .def("__repr__", &(shiftToString<Intersection>))
 
         .def("is_defined", &Intersection::isDefined)
         .def("is_empty", &Intersection::isEmpty)
@@ -103,8 +117,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Inters
         .def_static("string_from_type", &Intersection::StringFromType)
 
     ;
-
-    // aModule.def("set_unique_obj_array", overload_cast<const Array<Unique<Object>>&>(&set_unique_obj_array));
 
     // Define Intersection types
     enum_<Intersection::Type>(intersection, "Type")

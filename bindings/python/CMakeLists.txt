@@ -51,9 +51,7 @@ PROJECT (${PROJECT_NAME} VERSION ${PROJECT_VERSION_STRING} LANGUAGES "C" "CXX")
 
 ## Helper Functions
 
-# Largely inspired by https://github.com/ROCmSoftwarePlatform/AMDMIGraphX/pull/655/files
-
-# Improved FIND_PYTHON macro
+### Improved FIND_PYTHON macro
 
 MACRO (FIND_PYTHON version)
     FIND_PROGRAM (PYTHON_CONFIG_${version} python${version}-config)
@@ -71,7 +69,7 @@ MACRO (FIND_PYTHON version)
     ENDIF ()
 ENDMACRO ()
 
-# Function to grab python extension and use for target
+### Function to grab python extension and use for target
 
 FUNCTION (PY_EXTENSION name version)
     SET (_python_module_extension)
@@ -80,7 +78,7 @@ FUNCTION (PY_EXTENSION name version)
     SET_TARGET_PROPERTIES (${name} PROPERTIES PREFIX "" SUFFIX "${_python_module_extension}")
 ENDFUNCTION ()
 
-# Function to add python module using python::headers directly
+### Function to add python module using python::headers directly
 
 FUNCTION (PY_ADD_MODULE NAME)
     SET (options)
@@ -120,7 +118,7 @@ FUNCTION (PY_ADD_MODULE NAME)
     )
 ENDFUNCTION ()
 
-# Function preparing python package directory/build wheel for each python version
+### Function preparing python package directory/build wheel for each python version
 
 FUNCTION (PY_ADD_PACKAGE_DIRECTORY NAME)
     SET (options)
@@ -161,7 +159,7 @@ FUNCTION (PY_ADD_PACKAGE_DIRECTORY NAME)
                             COMMAND cp "${CMAKE_SOURCE_DIR}/lib/${SHARED_LIBRARY_TARGET}" "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_PATH}/libopen-space-toolkit-mathematics.so.0"
                             COMMAND cp "${CMAKE_SOURCE_DIR}/lib/${LIBRARY_TARGET}.*${EXTENSION}*.so" "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_PATH}/"
                             COMMAND python${PYTHON_VERSION} ${SETUP_PY} bdist_wheel --python-tag=py${EXTENSION}
-                            COMMAND rm -r "${CMAKE_CURRENT_BINARY_DIR}/build/lib"
+                            COMMAND rm -rf "${CMAKE_CURRENT_BINARY_DIR}/build/lib"
                             COMMAND ${CMAKE_COMMAND} -E touch ${OUTPUT}
                             DEPENDS ${DEPS})
 
@@ -187,12 +185,12 @@ ENDFUNCTION ()
 
 ## Dependencies
 
-# Pybind11
+### Pybind11
 
 SET (PYBIND11_NOPYTHON ON)
 FIND_PACKAGE (pybind11 2.6.0 REQUIRED)
 
-# Python
+### Python
 
 # Decide on the versions to build for and support
 SET (PYTHON_SEARCH_VERSIONS 2.7 3.5 3.6 3.7 3.8 3.9)
@@ -207,25 +205,6 @@ FOREACH (PYTHON_VERSION ${PYTHON_SEARCH_VERSIONS})
         MESSAGE (STATUS "Python ${PYTHON_VERSION} not found.")
     ENDIF ()
 ENDFOREACH ()
-
-### Boost (Removed for now)
-
-#UNSET (Boost_USE_STATIC_LIBS CACHE)
-#UNSET (Boost_USE_MULTITHREADED CACHE)
-
-#SET (BUILD_SHARED_LIBS ON)
-#SET (Boost_USE_STATIC_LIBS OFF)
-#SET (Boost_USE_MULTITHREADED ON)
-
-#FIND_PACKAGE ("Boost" ${BOOST_VERSION} REQUIRED COMPONENTS ${PYTHON_VERSION})
-
-#IF (NOT Boost_FOUND)
-#    MESSAGE (SEND_ERROR "[Boost ${BOOST_VERSION}] not found.")
-#ENDIF ()
-
-### Eigen
-
-#ADD_COMPILE_DEFINITIONS (EIGEN_MAX_STATIC_ALIGN_BYTES)
 
 ### NumPy
 

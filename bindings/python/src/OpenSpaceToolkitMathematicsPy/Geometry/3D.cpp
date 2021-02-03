@@ -7,8 +7,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <OpenSpaceToolkitMathematicsPy/Utilities/ArrayCasting.hpp>
-
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Intersection.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformations.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformation.cpp>

@@ -39,7 +39,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
         .def("get_point_count", &LineString::getPointCount)
         .def("get_point_closest_to", &LineString::getPointClosestTo)
-        // .def("to_string", &LineString::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_LineString_toString_overloads())
         .def("to_string", &LineString::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
 
         .def("apply_transformation", &LineString::applyTransformation)

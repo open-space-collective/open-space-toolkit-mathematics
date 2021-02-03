@@ -25,7 +25,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
     using ostk::math::obj::Matrix3d ;
     using ostk::math::geom::d3::trf::rot::RotationMatrix ;
 
-    // scope in_RotationMatrix = class_<RotationMatrix>("RotationMatrix", init<Matrix3d>())
     class_<RotationMatrix>(aModule, "RotationMatrix")
 
         // Define constructors

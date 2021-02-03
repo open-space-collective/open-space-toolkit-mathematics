@@ -60,7 +60,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Transf
         .value("Reflection", Transformation::Type::Reflection)
         .value("Shear", Transformation::Type::Shear)
         .value("Affine", Transformation::Type::Affine)
-        .export_values()
 
     ;
 

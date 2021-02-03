@@ -35,8 +35,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         // no init
 
         // Define methods
-        // .def(self == self)
-        // .def(self != self)
         .def("__eq__", [](const Object &self, const Object &other){ return self == other; })
         .def("__ne__", [](const Object &self, const Object &other){ return self != other; })
 

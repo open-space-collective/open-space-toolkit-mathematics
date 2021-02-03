@@ -7,9 +7,6 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// #include <OpenSpaceToolkitMathematicsPy/Utilities/IterableConverter.hpp>
-// #include <OpenSpaceToolkitMathematicsPy/Utilities/ArrayCasting.hpp>
-
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
@@ -19,7 +16,14 @@
 using ostk::core::ctnr::Array ;
 using ostk::math::geom::d3::trf::rot::Quaternion ;
 
-void          set_quaternion_array(const Array<Quaternion>& anArray) { (void) anArray ; }
+void                            set_quaternion_array                        (   const   Array<Quaternion>&          anArray                                     )
+{
+
+    (void) anArray ;
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_Quaternion ( pybind11::module& aModule                      )
 {
@@ -95,7 +99,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
 
         .value("XYZS", Quaternion::Format::XYZS)
         .value("SXYZ", Quaternion::Format::SXYZ)
-        .export_values()
 
     ;
 

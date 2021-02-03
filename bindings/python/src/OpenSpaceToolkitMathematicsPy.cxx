@@ -13,6 +13,7 @@
 #include <pybind11/numpy.h>
 
 #include <OpenSpaceToolkitMathematicsPy/Utilities/ShiftToString.hpp>
+#include <OpenSpaceToolkitMathematicsPy/Utilities/ArrayCasting.hpp>
 
 #include <OpenSpaceToolkitMathematicsPy/Objects.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry.cpp>

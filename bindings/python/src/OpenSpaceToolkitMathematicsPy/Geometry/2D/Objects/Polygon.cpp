@@ -54,7 +54,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("get_vertices", &Polygon::getVertices)
         .def("get_convex_hull", &Polygon::getConvexHull)
         .def("union_with", &Polygon::unionWith)
-        // .def("to_string", &Polygon::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Polygon_toString_overloads())
         .def("to_string", &Polygon::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
         .def("apply_transformation", &Polygon::applyTransformation)
 

@@ -13,7 +13,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// The following trampolin function might be used if the virtual functions defined in C++ are to be overriden in Python
+// The following trampoline function might be used if the virtual functions defined in C++ are to be overriden in Python
 // Probably not needed for now. To be included if writing python extension classes
 
 // using ostk::math::geom::d2::Object ;
@@ -22,7 +22,8 @@
 // using ostk::core::types::Integer ;
 
 // // Not to be confused with PyObject Python C API class used to represent any python object in C++
-// class PyObject2D : public Object {
+// class PyObject2D : public Object
+// {
 // public:
 //     /* Inherit the constructors */
 //     using ostk::math::geom::d2::Object::Object;
@@ -116,7 +117,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .value("Undefined", Object::Format::Undefined)
         .value("Standard", Object::Format::Standard)
         .value("WKT", Object::Format::WKT)
-        .export_values()
 
     ;
 

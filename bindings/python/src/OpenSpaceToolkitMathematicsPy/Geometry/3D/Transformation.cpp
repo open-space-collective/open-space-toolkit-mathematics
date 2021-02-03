@@ -27,7 +27,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
     // Define constructor
     transformation.def(init<const Matrix4d&>()) ;
 
-        // Define methods
+    // Define methods
     transformation.def(self == self)
         .def(self != self)
 
@@ -66,7 +66,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .value("Reflection", Transformation::Type::Reflection)
         .value("Shear", Transformation::Type::Shear)
         .value("Affine", Transformation::Type::Affine)
-        .export_values()
 
     ;
 
