@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Plane                   (   pybind11::module&                    aModule     )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Plane (        pybind11::module&  aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -33,8 +33,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shift_to_string<Plane>))
-        .def("__repr__", &(shift_to_string<Plane>))
+        .def("__str__", &(shiftToString<Plane>))
+        .def("__repr__", &(shiftToString<Plane>))
 
         .def("is_defined", &Plane::isDefined)
         .def("intersects_point", +[] (const Plane& aPlane, const Point& aPoint) -> bool { return aPlane.intersects(aPoint) ; })

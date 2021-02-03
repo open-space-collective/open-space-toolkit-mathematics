@@ -16,7 +16,7 @@
 
 // void          set_unique_obj_array(const Array<Unique<ostk::math::geom::d3::Object>>& anArray) { (void) anArray ; }
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection                     (          pybind11::module&               aModule  )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection (        pybind11::module&   aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -53,8 +53,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Inters
         .def(self + self)
         .def(self += self)
 
-        .def("__str__", &(shift_to_string<Segment>))
-        .def("__repr__", &(shift_to_string<Segment>))
+        .def("__str__", &(shiftToString<Segment>))
+        .def("__repr__", &(shiftToString<Segment>))
 
         .def("is_defined", &Intersection::isDefined)
         .def("is_empty", &Intersection::isEmpty)

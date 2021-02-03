@@ -80,7 +80,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object                     (              pybind11::module&    aModule               )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object  (        pybind11::module&        aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -96,8 +96,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         // ob.def(self == self)
         //   .def(self != self) ;
 
-        .def("__str__", &(shift_to_string<Object>))
-        .def("__repr__", &(shift_to_string<Object>))
+        .def("__str__", &(shiftToString<Object>))
+        .def("__repr__", &(shiftToString<Object>))
         // Equivalent to ...
         // .def(self_ns::str(self_ns::self))
         // .def(self_ns::repr(self_ns::self))

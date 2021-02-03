@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet                     (     pybind11::module& aModule                 )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet  (     pybind11::module& aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -30,8 +30,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shift_to_string<PointSet>))
-        .def("__repr__", &(shift_to_string<PointSet>))
+        .def("__str__", &(shiftToString<PointSet>))
+        .def("__repr__", &(shiftToString<PointSet>))
 
         .def("is_defined", &PointSet::isDefined)
         .def("is_empty", &PointSet::isEmpty)

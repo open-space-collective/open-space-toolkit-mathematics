@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_MultiPolygon                     (         pybind11::module& aModule         )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_MultiPolygon  ( pybind11::module& aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -33,8 +33,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shift_to_string<MultiPolygon>))
-        .def("__repr__", &(shift_to_string<MultiPolygon>))
+        .def("__str__", &(shiftToString<MultiPolygon>))
+        .def("__repr__", &(shiftToString<MultiPolygon>))
 
         .def("is_defined", &MultiPolygon::isDefined)
         .def("contains_point", +[] (const MultiPolygon& aMultiPolygon, const Point& aPoint) -> bool { return aMultiPolygon.contains(aPoint) ; })

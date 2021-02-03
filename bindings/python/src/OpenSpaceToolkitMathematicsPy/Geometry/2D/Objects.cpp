@@ -19,7 +19,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects                     (                pybind11::module& aModule               )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects (         pybind11::module&       aModule                                     )
 {
 
     // Create "objects" python submodule

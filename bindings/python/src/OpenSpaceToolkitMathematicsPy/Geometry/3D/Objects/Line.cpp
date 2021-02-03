@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Line                     (              pybind11::module& aModule            )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Line (         pybind11::module&  aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -32,8 +32,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shift_to_string<Line>))
-        .def("__repr__", &(shift_to_string<Line>))
+        .def("__str__", &(shiftToString<Line>))
+        .def("__repr__", &(shiftToString<Line>))
 
         .def("is_defined", &Line::isDefined)
         .def("intersects_point", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.intersects(aPoint) ; })

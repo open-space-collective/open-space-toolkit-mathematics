@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_Angle                     (          pybind11::module&                     aModule      )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_Angle   (        pybind11::module&           aModule                                     )
 {
     using namespace pybind11 ;
 
@@ -48,7 +48,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_Angle    
         .def(self += self)
         .def(self -= self)
 
-        .def("__str__", &(shift_to_string<Angle>))
+        .def("__str__", &(shiftToString<Angle>))
         .def("__repr__", +[] (const Angle& anAngle) -> std::string { return anAngle.toString() ; })
 
         .def("is_defined", &Angle::isDefined)

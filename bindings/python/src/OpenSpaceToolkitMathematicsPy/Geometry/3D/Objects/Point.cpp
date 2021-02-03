@@ -15,7 +15,7 @@ using ostk::core::ctnr::Array ;
 
 void          set_point_3_array(const Array<ostk::math::geom::d3::objects::Point>& anArray) { (void) anArray ; }
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Point                     (             pybind11::module& aModule            )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Point (        pybind11::module&  aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -38,8 +38,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
         .def(self - self)
 
-        .def("__str__", &(shift_to_string<Point>))
-        .def("__repr__", &(shift_to_string<Point>))
+        .def("__str__", &(shiftToString<Point>))
+        .def("__repr__", &(shiftToString<Point>))
 
         .def("is_defined", &Point::isDefined)
         .def("is_near", &Point::isNear)

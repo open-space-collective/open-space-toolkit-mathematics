@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object                     (    pybind11::module&                     aModule        )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object (        pybind11::module&         aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -40,8 +40,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("__eq__", [](const Object &self, const Object &other){ return self == other; })
         .def("__ne__", [](const Object &self, const Object &other){ return self != other; })
 
-        .def("__str__", &(shift_to_string<Object>))
-        .def("__repr__", &(shift_to_string<Object>))
+        .def("__str__", &(shiftToString<Object>))
+        .def("__repr__", &(shiftToString<Object>))
 
         .def("is_defined", &Object::isDefined)
         .def("is_point", +[] (const Object& anObject) -> bool { return anObject.is<Point>() ; })

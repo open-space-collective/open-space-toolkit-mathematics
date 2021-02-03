@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation                     (              pybind11::module& aModule          )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation   (     pybind11::module&  aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -28,8 +28,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Transf
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shift_to_string<Transformation>))
-        .def("__repr__", &(shift_to_string<Transformation>))
+        .def("__str__", &(shiftToString<Transformation>))
+        .def("__repr__", &(shiftToString<Transformation>))
 
         .def("is_defined", &Transformation::isDefined)
 

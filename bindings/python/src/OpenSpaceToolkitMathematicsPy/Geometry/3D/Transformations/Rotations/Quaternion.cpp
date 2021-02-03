@@ -21,7 +21,7 @@ using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 void          set_quaternion_array(const Array<Quaternion>& anArray) { (void) anArray ; }
 
-inline void              OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_Quaternion     (          pybind11::module&               aModule )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_Quaternion ( pybind11::module& aModule                      )
 {
     using namespace pybind11 ;
 
@@ -49,7 +49,7 @@ inline void              OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformatio
 
 		.def(self / self)
 
-        .def("__str__", &(shift_to_string<Quaternion>))
+        .def("__str__", &(shiftToString<Quaternion>))
         .def("__repr__", +[] (const Quaternion& aQuaternion) -> std::string { return aQuaternion.toString() ; })
 
         .def("is_defined", &Quaternion::isDefined)

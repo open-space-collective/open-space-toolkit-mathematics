@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Ray                     (      pybind11::module&   aModule                   )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Ray ( pybind11::module&           aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -33,8 +33,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shift_to_string<Ray>))
-        .def("__repr__", &(shift_to_string<Ray>))
+        .def("__str__", &(shiftToString<Ray>))
+        .def("__repr__", &(shiftToString<Ray>))
 
         .def("is_defined", &Ray::isDefined)
         .def("intersects_point", +[] (const Ray& aRay, const Point& aPoint) -> bool { return aRay.intersects(aPoint) ; })

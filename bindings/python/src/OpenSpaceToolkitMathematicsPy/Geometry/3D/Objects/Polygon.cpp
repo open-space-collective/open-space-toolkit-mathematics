@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Polygon                     (          pybind11::module& aModule             )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Polygon ( pybind11::module&       aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -29,8 +29,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shift_to_string<Polygon>))
-        .def("__repr__", &(shift_to_string<Polygon>))
+        .def("__str__", &(shiftToString<Polygon>))
+        .def("__repr__", &(shiftToString<Polygon>))
 
         .def("is_defined", &Polygon::isDefined)
         .def("is_near", &Polygon::isNear)

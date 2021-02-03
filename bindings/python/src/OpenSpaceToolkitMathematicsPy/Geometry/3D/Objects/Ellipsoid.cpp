@@ -12,7 +12,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Ellipsoid                     (          pybind11::module&    aModule        )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Ellipsoid ( pybind11::module&     aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -39,8 +39,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shift_to_string<Ellipsoid>))
-        .def("__repr__", &(shift_to_string<Ellipsoid>))
+        .def("__str__", &(shiftToString<Ellipsoid>))
+        .def("__repr__", &(shiftToString<Ellipsoid>))
 
         .def("is_defined", &Ellipsoid::isDefined)
         .def("intersects_point", +[] (const Ellipsoid& anEllipsoid, const Point& aPoint) -> bool { return anEllipsoid.intersects(aPoint) ; })

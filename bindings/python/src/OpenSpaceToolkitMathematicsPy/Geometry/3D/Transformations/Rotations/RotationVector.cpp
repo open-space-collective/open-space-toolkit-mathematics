@@ -13,7 +13,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void              OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_RotationVector (    pybind11::module&                     aModule )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_RotationVector ( pybind11::module& aModule                  )
 {
 
     using namespace pybind11 ;
@@ -35,8 +35,8 @@ inline void              OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformatio
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shift_to_string<RotationVector>))
-        .def("__repr__", &(shift_to_string<RotationVector>))
+        .def("__str__", &(shiftToString<RotationVector>))
+        .def("__repr__", &(shiftToString<RotationVector>))
 
         .def("is_defined", &RotationVector::isDefined)
 

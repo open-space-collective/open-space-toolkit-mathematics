@@ -12,7 +12,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Pyramid                     (      pybind11::module&  aModule                )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Pyramid ( pybind11::module&       aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -41,8 +41,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shift_to_string<Pyramid>))
-        .def("__repr__", &(shift_to_string<Pyramid>))
+        .def("__str__", &(shiftToString<Pyramid>))
+        .def("__repr__", &(shiftToString<Pyramid>))
 
         .def("is_defined", &Pyramid::isDefined)
         .def("intersects_ellipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid) -> bool { return aPyramid.intersects(anEllipsoid) ; })

@@ -13,7 +13,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations         (    pybind11::module&                     aModule )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations ( pybind11::module& aModule                                 )
 {
 
     // Create "rotations" python submodule

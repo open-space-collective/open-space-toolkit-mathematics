@@ -17,7 +17,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D                     (          pybind11::module&                     aModule         )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D   (           pybind11::module&           aModule                                     )
 {
 
     // Create "d3" python submodule

@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Segment                     (       pybind11::module& aModule                )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Segment ( pybind11::module&       aModule                                     )
 {
 
     using namespace pybind11;
@@ -31,8 +31,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shift_to_string<Segment>))
-        .def("__repr__", &(shift_to_string<Segment>))
+        .def("__str__", &(shiftToString<Segment>))
+        .def("__repr__", &(shiftToString<Segment>))
 
         .def("is_defined", &Segment::isDefined)
         .def("is_degenerate", &Segment::isDegenerate)

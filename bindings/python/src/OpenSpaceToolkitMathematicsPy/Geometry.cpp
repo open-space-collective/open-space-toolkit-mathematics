@@ -13,7 +13,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry                     (          pybind11::module&                     aModule            )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry      (           pybind11::module&           aModule                                     )
 {
 
     // Create "geometry" python submodule

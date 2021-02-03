@@ -12,7 +12,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Objects                     (          pybind11::module&                     aModule             )
+inline void                     OpenSpaceToolkitMathematicsPy_Objects       (           pybind11::module&           aModule                                     )
 {
 
     // Create "objects" python submodule

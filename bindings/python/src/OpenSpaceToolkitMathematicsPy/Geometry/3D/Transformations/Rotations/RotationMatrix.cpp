@@ -13,7 +13,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void               OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_RotationMatrix (     pybind11::module&                    aModule)
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_RotationMatrix ( pybind11::module& aModule                  )
 {
 
     using namespace pybind11 ;
@@ -40,8 +40,8 @@ inline void               OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformati
         .def(self * self)
 		.def(self * Vector3d())
 
-        .def("__str__", &(shift_to_string<RotationMatrix>))
-        .def("__repr__", &(shift_to_string<RotationMatrix>))
+        .def("__str__", &(shiftToString<RotationMatrix>))
+        .def("__repr__", &(shiftToString<RotationMatrix>))
 
         .def("is_defined", &RotationMatrix::isDefined)
 

@@ -22,7 +22,7 @@ void          set_point_2_array(const Array<Array<Point>>& anArray) { (void) anA
 //     v *= 2;
 // }
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Point                     (                     pybind11::module& aModule    )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Point  (  pybind11::module&       aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -41,12 +41,13 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def(self == self)
         .def(self != self)
 
+        .def(self + self)
+        .def(self - self)
+
         .def(self + Vector2d())
         .def(self - Vector2d())
 
-        .def(self - self)
-
-        .def("__str__", &(shift_to_string<Point>))
+        .def("__str__", &(shiftToString<Point>))
         .def("__repr__", +[] (const Point& aPoint) -> std::string { return aPoint.toString() ; })
 
         .def("is_defined", &Point::isDefined)

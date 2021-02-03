@@ -13,7 +13,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval                     (          pybind11::module&                     aModule    )
+inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval (        pybind11::module&           aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -31,8 +31,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval  
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shift_to_string<Interval<Real>>))
-        .def("__repr__", &(shift_to_string<Interval<Real>>))
+        .def("__str__", &(shiftToString<Interval<Real>>))
+        .def("__repr__", &(shiftToString<Interval<Real>>))
 
         .def("is_defined", &Interval<Real>::isDefined)
         .def("is_degenerate", &Interval<Real>::isDegenerate)

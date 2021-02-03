@@ -14,7 +14,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Composite                     (            pybind11::module& aModule         )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Composite ( pybind11::module&     aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -50,8 +50,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self + self)
         .def(self += self)
 
-        .def("__str__", &(shift_to_string<Composite>))
-        .def("__repr__", &(shift_to_string<Composite>))
+        .def("__str__", &(shiftToString<Composite>))
+        .def("__repr__", &(shiftToString<Composite>))
 
         .def("is_defined", &Composite::isDefined)
         .def("is_empty", &Composite::isEmpty)

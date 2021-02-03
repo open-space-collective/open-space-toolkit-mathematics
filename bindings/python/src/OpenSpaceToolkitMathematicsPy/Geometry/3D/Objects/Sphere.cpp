@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Sphere                     (        pybind11::module&  aModule               )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Sphere ( pybind11::module&        aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -37,8 +37,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shift_to_string<Sphere>))
-        .def("__repr__", &(shift_to_string<Sphere>))
+        .def("__str__", &(shiftToString<Sphere>))
+        .def("__repr__", &(shiftToString<Sphere>))
 
         .def("is_defined", &Sphere::isDefined)
         .def("is_unitary", &Sphere::isUnitary)

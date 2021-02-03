@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_LineString                     (           pybind11::module& aModule         )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_LineString (    pybind11::module& aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -29,8 +29,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shift_to_string<LineString>))
-        .def("__repr__", &(shift_to_string<LineString>))
+        .def("__str__", &(shiftToString<LineString>))
+        .def("__repr__", &(shiftToString<LineString>))
 
         .def("is_defined", &LineString::isDefined)
         .def("is_empty", &LineString::isEmpty)

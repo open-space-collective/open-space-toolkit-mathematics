@@ -12,7 +12,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cone                     (           pybind11::module&      aModule          )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cone (        pybind11::module&   aModule                                     )
 {
 
     using namespace pybind11 ;
@@ -42,8 +42,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self == self)
         .def(self != self)
 
-        .def("__str__", &(shift_to_string<Cone>))
-        .def("__repr__", &(shift_to_string<Cone>))
+        .def("__str__", &(shiftToString<Cone>))
+        .def("__repr__", &(shiftToString<Cone>))
 
         .def("is_defined", &Cone::isDefined)
         .def("intersects_ellipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid) -> bool { return aCone.intersects(anEllipsoid) ; })

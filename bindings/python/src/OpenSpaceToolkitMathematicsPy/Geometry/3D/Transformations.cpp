@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations             (     pybind11::module&                     aModule      )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations (  pybind11::module&      aModule                                     )
 {
 
     // Create "transformations" python submodule
