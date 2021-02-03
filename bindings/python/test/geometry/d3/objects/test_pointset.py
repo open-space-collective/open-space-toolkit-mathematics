@@ -1,7 +1,7 @@
 ################################################################################################################################################################
 
 # @project        Open Space Toolkit ▸ Mathematics
-# @file           bindings/python/test/geometry/d2/objects/test_pointset.py
+# @file           bindings/python/test/geometry/d3/objects/test_pointset.py
 # @author         Remy Derollez <remy@loftorbital.com>
 # @license        Apache License 2.0
 
@@ -15,17 +15,17 @@ import ostk.mathematics as mathematics
 
 ################################################################################################################################################################
 
-Object = mathematics.geometry.d2.Object
-Point = mathematics.geometry.d2.objects.Point
-PointSet = mathematics.geometry.d2.objects.PointSet
-Transformation = mathematics.geometry.d2.Transformation
+Object = mathematics.geometry.d3.Object
+Point = mathematics.geometry.d3.objects.Point
+PointSet = mathematics.geometry.d3.objects.PointSet
+Transformation = mathematics.geometry.d3.Transformation
 
 ################################################################################################################################################################
 
-def test_geometry_d2_objects_pointset_constructor ():
+def test_geometry_d3_objects_pointset_constructor ():
 
-    point_1: Point = Point(1.0, 2.0)
-    point_2: Point = Point(3.0, 4.0)
+    point_1: Point = Point(1.0, 2.0, 1.0)
+    point_2: Point = Point(3.0, 4.0, 1.0)
 
     # Construction using python list
     pointset: PointSet = PointSet([point_1, point_2])
@@ -50,7 +50,7 @@ def test_geometry_d2_objects_pointset_constructor ():
     assert isinstance(pointset, Object)
     assert pointset.is_defined()
 
-def test_geometry_d2_objects_pointset_empty ():
+def test_geometry_d3_objects_pointset_empty ():
 
     pointset: Pointset = PointSet.empty()
 
@@ -60,10 +60,10 @@ def test_geometry_d2_objects_pointset_empty ():
     assert pointset.is_defined() is False
     assert pointset.is_empty()
 
-def test_geometry_d2_objects_pointset_comparators ():
+def test_geometry_d3_objects_pointset_comparators ():
 
-    point_1: Point = Point(1.0, 2.0)
-    point_2: Point = Point(3.0, 4.0)
+    point_1: Point = Point(1.0, 2.0, 1.0)
+    point_2: Point = Point(3.0, 4.0, 1.0)
 
     pointset_1: PointSet = PointSet([point_1, point_2])
     pointset_2: PointSet = PointSet((point_2, point_1))
@@ -74,10 +74,10 @@ def test_geometry_d2_objects_pointset_comparators ():
     assert pointset_3 != pointset_1
     assert pointset_2 != pointset_3
 
-def test_geometry_d2_objects_pointset_get_size ():
+def test_geometry_d3_objects_pointset_get_size ():
 
-    point_1: Point = Point(1.0, 2.0)
-    point_2: Point = Point(3.0, 4.0)
+    point_1: Point = Point(1.0, 2.0, 1.0)
+    point_2: Point = Point(3.0, 4.0, 1.0)
 
     pointset_1: PointSet = PointSet([point_1, point_2])
     pointset_2: PointSet = PointSet((point_2, point_1))
@@ -91,12 +91,12 @@ def test_geometry_d2_objects_pointset_get_size ():
     assert pointset_4.get_size() == 0
     assert pointset_5.get_size() == 1
 
-# def test_geometry_d2_objects_pointset_is_near ():
+# def test_geometry_d3_objects_pointset_is_near ():
 
-# def test_geometry_d2_objects_pointset_get_point_closest_to ():
+# def test_geometry_d3_objects_pointset_get_point_closest_to ():
 
-# def test_geometry_d2_objects_pointset_to_string ():
+# def test_geometry_d3_objects_pointset_to_string ():
 
-# def test_geometry_d2_objects_pointset_apply_transformation ():
+# def test_geometry_d3_objects_pointset_apply_transformation ():
 
 ################################################################################################################################################################

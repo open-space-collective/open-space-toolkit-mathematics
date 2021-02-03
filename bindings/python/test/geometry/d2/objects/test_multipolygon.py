@@ -35,10 +35,10 @@ def test_geometry_d2_objects_multipolygon_constructor ():
         Creates and Return a Square centered in center
         and with length 1.0 with no inner rings.
         '''
-        point_1: Point = center + Point(0.5, 0.5)
-        point_2: Point = center + Point(0.5, -0.5)
-        point_3: Point = center + Point(-0.5, -0.5)
-        point_4: Point = center + Point(-0.5, 0.5)
+        point_1: Point = center + [0.5, 0.5]
+        point_2: Point = center + [0.5, -0.5]
+        point_3: Point = center + [-0.5, -0.5]
+        point_4: Point = center + [-0.5, 0.5]
 
         return Polygon([point_1, point_2, point_3, point_4])
 
@@ -92,10 +92,10 @@ def test_geometry_d2_objects_multipolygon_comparators() :
         Creates and Return a Square centered in center
         and with length 1.0 with no inner rings.
         '''
-        point_1: Point = center + Point(0.5, 0.5)
-        point_2: Point = center + Point(0.5, -0.5)
-        point_3: Point = center + Point(-0.5, -0.5)
-        point_4: Point = center + Point(-0.5, 0.5)
+        point_1: Point = center + [0.5, 0.5]
+        point_2: Point = center + [0.5, -0.5]
+        point_3: Point = center + [-0.5, -0.5]
+        point_4: Point = center + [-0.5, 0.5]
 
         return Polygon([point_1, point_2, point_3, point_4])
 
@@ -130,10 +130,10 @@ def test_geometry_d2_objects_multipoolygon_getters ():
         Creates and Return a Square centered in center
         and with length 1.0 with no inner rings.
         '''
-        point_1: Point = center + Point(0.5, 0.5)
-        point_2: Point = center + Point(0.5, -0.5)
-        point_3: Point = center + Point(-0.5, -0.5)
-        point_4: Point = center + Point(-0.5, 0.5)
+        point_1: Point = center + [0.5, 0.5]
+        point_2: Point = center + [0.5, -0.5]
+        point_3: Point = center + [-0.5, -0.5]
+        point_4: Point = center + [-0.5, 0.5]
 
         return Polygon([point_1, point_2, point_3, point_4])
 

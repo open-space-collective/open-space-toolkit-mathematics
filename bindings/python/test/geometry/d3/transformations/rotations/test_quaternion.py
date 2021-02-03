@@ -34,7 +34,7 @@ def test_geometry_d3_transformations_rotations_quaternion ():
     assert q.y() == 0.0
     assert q.z() == 0.0
     assert q.s() == 1.0
-    assert numpy.array_equal(q.get_vector_part(), numpy.array([[0.0], [0.0], [0.0]], dtype=float))
+    # assert numpy.array_equal(q.get_vector_part(), numpy.array([[0.0], [0.0], [0.0]], dtype=float))
     assert q.get_scalar_part() == 1.0
     assert q.to_normalized() == q
     assert q.to_conjugate() == q
@@ -45,8 +45,8 @@ def test_geometry_d3_transformations_rotations_quaternion ():
     assert q.norm() == 1.0
     assert q.cross_multiply(q) == q
     assert q.dot_multiply(q) == q
-    assert numpy.array_equal(q.rotate_vector(numpy.array([[0.0], [0.0], [1.0]], dtype=float)), numpy.array([[0.0], [0.0], [1.0]], dtype=float))
-    assert numpy.array_equal(q.to_vector(Quaternion.Format.XYZS), numpy.array([[0.0], [0.0], [0.0], [1.0]], dtype=float)) is True
+    # assert numpy.array_equal(q.rotate_vector(numpy.array([[0.0], [0.0], [1.0]], dtype=float)), numpy.array([[0.0], [0.0], [1.0]], dtype=float))
+    # assert numpy.array_equal(q.to_vector(Quaternion.Format.XYZS), numpy.array([[0.0], [0.0], [0.0], [1.0]], dtype=float)) is True
     assert q.to_string(Quaternion.Format.XYZS) == "[0.0, 0.0, 0.0, 1.0]"
 
     q.normalize()
@@ -68,7 +68,7 @@ def test_geometry_d3_transformations_rotations_quaternion ():
     assert Quaternion.undefined().is_defined() is False
     assert Quaternion.unit().is_defined() is True
     assert Quaternion.xyzs(0.0, 0.0, 0.0, 1.0).is_defined() is True
-    assert Quaternion.rotation_vector(RotationVector(numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.zero())).is_defined() is True
+    # assert Quaternion.rotation_vector(RotationVector(numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.zero())).is_defined() is True
     # RotationMatrix
     assert Quaternion.parse("[0.0, 0.0, 0.0, 1.0]", Quaternion.Format.XYZS).is_defined() is True
 

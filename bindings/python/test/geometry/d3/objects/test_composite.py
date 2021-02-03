@@ -1,7 +1,7 @@
 ################################################################################################################################################################
 
 # @project        Open Space Toolkit ▸ Mathematics
-# @file           bindings/python/test/geometry/d2/test_object.py
+# @file           bindings/python/test/geometry/d3/objects/test_composite.py
 # @author         Remy Derollez <remy@loftorbital.com>
 # @license        Apache License 2.0
 
@@ -9,38 +9,20 @@
 
 import pytest
 
+import numpy as np
+
 import ostk.mathematics as mathematics
 
-################################################################################################################################################################
-
-Object = mathematics.geometry.d2.Object
-Format = Object.Format
+from ostk.core.types import String
 
 ################################################################################################################################################################
 
-def test_geometry_d2_object_format ():
+Object = mathematics.geometry.d3.Object
+Composite = mathematics.geometry.d3.objects.Composite
+Transformation = mathematics.geometry.d3.Transformation
 
-    enum_members = Format.__members__
+################################################################################################################################################################
 
-    list_keys = [
-        'Undefined',
-        'Standard',
-        'WKT'
-    ]
-
-    list_values = [
-        Format.Undefined,
-        Format.Standard,
-        Format.WKT
-    ]
-
-    assert list(enum_members.keys()) == list_keys
-    assert list(enum_members.values()) == list_values
-
-def test_geometry_d2_object_no_constructor ():
-
-    with pytest.raises(TypeError):
-
-        ob = Object()
+# def test_geometry_d3_objects_composite_constructor ():
 
 ################################################################################################################################################################

@@ -11,11 +11,11 @@ import pytest
 
 import math
 
-from ostk.mathematics import geometry
+import ostk.mathematics as mathematics
 
 ################################################################################################################################################################
 
-Angle = geometry.Angle
+Angle = mathematics.geometry.Angle
 Unit  = Angle.Unit
 
 ################################################################################################################################################################
@@ -119,14 +119,14 @@ def test_angle_zero_constructor ():
 
     assert angle is not None
     assert isinstance(angle, Angle)
-    assert angle.is_defined() is False
+    assert angle.is_defined() is True
     assert angle.get_unit() == Unit.Radian
     assert angle.is_zero() is True
     assert angle.in_radians() == 0.0
     assert angle.in_degrees() == 0.0
     assert angle.in_arcminutes() == 0.0
     assert angle.in_arcseconds() == 0.0
-    assert angle.in_revolutions() = 0.0
+    assert angle.in_revolutions() == 0.0
 
 def test_angle_pi_constructors ():
 
@@ -247,7 +247,7 @@ def test_angle_operators ():
     angle_rad: Angle = Angle(math.pi / 2, Unit.Radian)
 
     sum_angle: Angle = angle_rad + angle_deg
-    assert sum_angle not None
+    assert sum_angle is not None
     assert isinstance(sum_angle, Angle)
     assert (sum_angle.in_degrees() - 180.0) <= 1e-10
 
