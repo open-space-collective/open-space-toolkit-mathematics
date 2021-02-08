@@ -11,13 +11,12 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Polygon_toString_overloads, ostk::math::geom::d2::objects::Polygon::toString, 0, 2)
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Polygon ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Polygon  (     pybind11::module&  aModule                                     )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
+    using ostk::core::types::Integer ;
     using ostk::core::ctnr::Array ;
 
     using ostk::math::obj::Vector2d ;
@@ -26,15 +25,17 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
     using ostk::math::geom::d2::objects::PointSet ;
     using ostk::math::geom::d2::objects::Polygon ;
 
-    scope in_Polygon = class_<Polygon, bases<Object>>("Polygon", init<const Array<Point>&, const Array<Array<Point>>&>())
+    class_<Polygon, Object>(aModule, "Polygon")
+
+        .def(init<const Array<Point>&, const Array<Array<Point>>&>())
 
         .def(init<const Array<Point>&>())
 
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shiftToString<Polygon>))
+        .def("__repr__", &(shiftToString<Polygon>))
 
         .def("is_defined", &Polygon::isDefined)
         .def("is_near", &Polygon::isNear)
@@ -53,10 +54,10 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("get_vertices", &Polygon::getVertices)
         .def("get_convex_hull", &Polygon::getConvexHull)
         .def("union_with", &Polygon::unionWith)
-        .def("to_string", &Polygon::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Polygon_toString_overloads())
+        .def("to_string", &Polygon::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
         .def("apply_transformation", &Polygon::applyTransformation)
 
-        .def("undefined", &Polygon::Undefined).staticmethod("undefined")
+        .def_static("undefined", &Polygon::Undefined)
 
     ;
 

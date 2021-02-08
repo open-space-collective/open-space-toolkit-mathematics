@@ -13,18 +13,19 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations ( pybind11::module& aModule                                 )
 {
 
-    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("ostk.mathematics.geometry.d3.transformations.rotations")))) ;
+    // Create "rotations" python submodule
+    auto rotations = aModule.def_submodule("rotations") ;
 
-    boost::python::scope().attr("rotations") = module ;
+    // Add __path__ attribute for "rotations" submodule
+    rotations.attr("__path__") = "ostk.mathematics.geometry.d3.transformations.rotations" ;
 
-    boost::python::scope scope = module ;
-
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_Quaternion() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_RotationVector() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_RotationMatrix() ;
+    // Add objects to python "rotations" submodules
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_Quaternion(rotations) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_RotationVector(rotations) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_RotationMatrix(rotations) ;
 
 }
 

@@ -11,10 +11,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation (    pybind11::module&     aModule                                     )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::math::obj::Vector3d ;
     using ostk::math::obj::Matrix4d ;
@@ -22,13 +22,17 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
     using ostk::math::geom::d3::Transformation ;
     using ostk::math::geom::d3::trf::rot::RotationMatrix ;
 
-    scope in_Transformation = class_<Transformation>("Transformation", init<const Matrix4d&>())
+    class_<Transformation> transformation(aModule, "Transformation") ;
 
-        .def(self == self)
+    // Define constructor
+    transformation.def(init<const Matrix4d&>()) ;
+
+    // Define methods
+    transformation.def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shiftToString<Transformation>))
+        .def("__repr__", &(shiftToString<Transformation>))
 
         .def("is_defined", &Transformation::isDefined)
 
@@ -38,20 +42,21 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def("apply_to_point", + [] (const Transformation& aTransformation, const Point& aPoint) -> Point { return aTransformation.applyTo(aPoint) ; })
         .def("apply_to_vector", + [] (const Transformation& aTransformation, const Vector3d& aVector) -> Vector3d { return aTransformation.applyTo(aVector) ; })
 
-        .def("undefined", &Transformation::Undefined).staticmethod("undefined")
-        .def("identity", &Transformation::Identity).staticmethod("identity")
-        .def("translation", &Transformation::Translation).staticmethod("translation")
-        // .def("rotation", &Transformation::Rotation).staticmethod("rotation")
+        .def_static("undefined", &Transformation::Undefined)
+        .def_static("identity", &Transformation::Identity)
+        .def_static("translation", &Transformation::Translation)
+        // .def_static("rotation", &Transformation::Rotation)
         // .def("rotation", +[] (const RotationVector& aRotationVector) -> Transformation { return Transformation::Rotation(aRotationVector) ; } )
         .def("rotation", +[] (const RotationMatrix& aRotationMatrix) -> Transformation { return Transformation::Rotation(aRotationMatrix) ; } )
-        .def("rotation_around", &Transformation::RotationAround).staticmethod("rotation_around")
+        .def_static("rotation_around", &Transformation::RotationAround)
 
-        .def("string_from_type", &Transformation::StringFromType).staticmethod("string_from_type")
-        .def("type_of_matrix", &Transformation::TypeOfMatrix).staticmethod("type_of_matrix")
+        .def_static("string_from_type", &Transformation::StringFromType)
+        .def_static("type_of_matrix", &Transformation::TypeOfMatrix)
 
     ;
 
-    enum_<Transformation::Type>("Type")
+    // Define enumeration type for a transformation
+    enum_<Transformation::Type> (transformation, "Type")
 
         .value("Undefined", Transformation::Type::Undefined)
         .value("Identity", Transformation::Type::Identity)

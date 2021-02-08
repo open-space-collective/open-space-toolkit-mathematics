@@ -15,20 +15,21 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D   ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D   (           pybind11::module&           aModule                                     )
 {
 
-    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("ostk.mathematics.geometry.d3")))) ;
+    // Create "d3" python submodule
+    auto d3 = aModule.def_submodule("d3") ;
 
-    boost::python::scope().attr("d3") = module ;
+    // Add __path__ attribute for "d3" submodule
+    d3.attr("__path__") = "ostk.mathematics.geometry.d3" ;
 
-    boost::python::scope scope = module ;
-
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection() ;
+    // Add objects to python "d3" submodules
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(d3) ; // Cannot be binded without including Objects.cpp
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects(d3) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(d3) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations(d3) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(d3) ;
 
 }
 

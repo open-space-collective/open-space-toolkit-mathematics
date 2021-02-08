@@ -11,10 +11,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_PointSet ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_PointSet (      pybind11::module& aModule                                     )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::core::ctnr::Array ;
 
@@ -22,13 +22,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::objects::Point ;
     using ostk::math::geom::d3::objects::PointSet ;
 
-    scope in_PointSet = class_<PointSet, bases<Object>>("PointSet", init<const Array<Point>&>())
+    class_<PointSet, Object>(aModule, "PointSet")
+
+        .def(init<const Array<Point>&>())
 
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shiftToString<PointSet>))
+        .def("__repr__", &(shiftToString<PointSet>))
 
         .def("is_defined", &PointSet::isDefined)
         .def("is_empty", &PointSet::isEmpty)
@@ -38,9 +40,9 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("get_point_closest_to", &PointSet::getPointClosestTo)
         .def("apply_transformation", &PointSet::applyTransformation)
 
-        .def("empty", &PointSet::Empty).staticmethod("empty")
+        .def_static("empty", &PointSet::Empty)
 
-        .def("__iter__", boost::python::range(static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::begin), static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::end)))
+        // .def_static("__iter__", boost::python::range(static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::begin), static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::end)))
 
     ;
 

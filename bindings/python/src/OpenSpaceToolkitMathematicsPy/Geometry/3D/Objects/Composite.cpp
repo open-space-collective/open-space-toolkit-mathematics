@@ -14,10 +14,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Composite ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Composite ( pybind11::module&     aModule                                     )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::core::types::Shared ;
     using ostk::core::types::Real ;
@@ -40,7 +40,9 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::Intersection ;
     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
-    scope in_Composite = class_<Composite, Shared<Composite>, bases<Object>>("Composite", init<const Object&>())
+    class_<Composite, Object>(aModule, "Composite")
+
+        .def(init<const Object&>())
 
         .def(self == self)
         .def(self == self)
@@ -48,8 +50,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(self + self)
         .def(self += self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shiftToString<Composite>))
+        .def("__repr__", &(shiftToString<Composite>))
 
         .def("is_defined", &Composite::isDefined)
         .def("is_empty", &Composite::isEmpty)
@@ -85,16 +87,19 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("as_pyramid", +[] (const Composite& aComposite) -> Pyramid { return aComposite.as<Pyramid>() ; })
         .def("as_composite", +[] (const Composite& aComposite) -> Composite { return aComposite.as<Composite>() ; })
 
-        .def("access_object_at", &Composite::accessObjectAt, return_value_policy<reference_existing_object>())
-        .def("access_objects", &Composite::accessObjects, return_value_policy<reference_existing_object>())
+        // Casting issue with both boost and pybind11 (likely related to pointers' handling)
+        // .def("access_object_at", &Composite::accessObjectAt, return_value_policy<reference_existing_object>())
+        // .def("access_objects", &Composite::accessObjects, return_value_policy<reference_existing_object>())
+        // .def("access_object_at", &Composite::accessObjectAt, return_value_policy::reference)
+        // .def("access_objects", &Composite::accessObjects, return_value_policy::reference)
         .def("get_object_count", &Composite::getObjectCount)
         .def("intersection_with_object", +[] (const Composite& aComposite, const Object& anObject) -> Intersection { return aComposite.intersectionWith(anObject) ; })
         .def("intersection_with_composite", +[] (const Composite& aComposite, const Composite& anotherComposite) -> Intersection { return aComposite.intersectionWith(anotherComposite) ; })
 
         .def("apply_transformation", &Composite::applyTransformation)
 
-        .def("undefined", &Composite::Undefined).staticmethod("undefined")
-        .def("empty", &Composite::Empty).staticmethod("empty")
+        .def_static("undefined", &Composite::Undefined)
+        .def_static("empty", &Composite::Empty)
 
     ;
 

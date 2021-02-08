@@ -1,7 +1,7 @@
 ################################################################################################################################################################
 
 # @project        Open Space Toolkit ▸ Mathematics
-# @file           bindings/python/src/OpenSpaceToolkitMathematicsPy/Objects.py
+# @file           bindings/python/test/test_objects.py
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
 

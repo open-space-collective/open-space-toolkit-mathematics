@@ -12,10 +12,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Pyramid ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Pyramid ( pybind11::module&       aModule                                     )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::core::types::Size ;
     using ostk::core::types::Real ;
@@ -34,13 +34,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::Intersection ;
     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
-    scope in_Pyramid = class_<Pyramid, bases<Object>>("Pyramid", init<const Polygon&, const Point&>())
+    class_<Pyramid, Object>(aModule, "Pyramid")
+
+        .def(init<const Polygon&, const Point&>())
 
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shiftToString<Pyramid>))
+        .def("__repr__", &(shiftToString<Pyramid>))
 
         .def("is_defined", &Pyramid::isDefined)
         .def("intersects_ellipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid) -> bool { return aPyramid.intersects(anEllipsoid) ; })
@@ -59,7 +61,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("intersection_with_ellipsoid", +[] (const Pyramid& aPyramid, const Ellipsoid& anEllipsoid, const bool onlyInSight, const Size aDiscretizationLevel) -> Intersection { return aPyramid.intersectionWith(anEllipsoid, onlyInSight, aDiscretizationLevel) ; })
         .def("apply_transformation", &Pyramid::applyTransformation)
 
-        .def("undefined", &Pyramid::Undefined).staticmethod("undefined")
+        .def_static("undefined", &Pyramid::Undefined)
 
     ;
 

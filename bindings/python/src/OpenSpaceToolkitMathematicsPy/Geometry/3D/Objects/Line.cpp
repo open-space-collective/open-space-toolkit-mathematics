@@ -11,10 +11,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Line ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Line (         pybind11::module&  aModule                                     )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::math::obj::Vector3d ;
     using ostk::math::geom::d3::Object ;
@@ -25,13 +25,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::objects::Ellipsoid ;
     using ostk::math::geom::d3::Intersection ;
 
-    scope in_Line = class_<Line, bases<Object>>("Line", init<const Point&, const Vector3d&>())
+    class_<Line, Object>(aModule, "Line")
+
+        .def(init<const Point&, const Vector3d&>())
 
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shiftToString<Line>))
+        .def("__repr__", &(shiftToString<Line>))
 
         .def("is_defined", &Line::isDefined)
         .def("intersects_point", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.intersects(aPoint) ; })
@@ -45,7 +47,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("intersection_with_plane", +[] (const Line& aLine, const Plane& aPlane) -> Intersection { return aLine.intersectionWith(aPlane) ; })
         .def("apply_transformation", &Line::applyTransformation)
 
-        .def("undefined", &Line::Undefined).staticmethod("undefined")
+        .def_static("undefined", &Line::Undefined)
 
     ;
 

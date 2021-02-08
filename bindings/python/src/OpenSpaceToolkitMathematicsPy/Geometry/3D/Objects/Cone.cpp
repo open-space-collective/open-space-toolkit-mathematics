@@ -12,10 +12,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cone ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cone (        pybind11::module&   aModule                                     )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::core::types::Size ;
     using ostk::core::types::Real ;
@@ -35,13 +35,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::objects::Cone ;
     using ostk::math::geom::d3::Intersection ;
 
-    scope in_Cone = class_<Cone, bases<Object>>("Cone", init<const Point&, const Vector3d&, const Angle&>())
+    class_<Cone, Object>(aModule, "Cone")
+
+        .def(init<const Point&, const Vector3d&, const Angle&>())
 
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shiftToString<Cone>))
+        .def("__repr__", &(shiftToString<Cone>))
 
         .def("is_defined", &Cone::isDefined)
         .def("intersects_ellipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid) -> bool { return aCone.intersects(anEllipsoid) ; })
@@ -56,8 +58,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("intersection_with_ellipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid, const bool onlyInSight, const Size aDiscretizationLevel) -> Intersection { return aCone.intersectionWith(anEllipsoid, onlyInSight, aDiscretizationLevel) ; })
         .def("apply_transformation", &Cone::applyTransformation)
 
-        .def("undefined", &Cone::Undefined).staticmethod("undefined")
-
+        .def_static("undefined", &Cone::Undefined)
     ;
 
 }

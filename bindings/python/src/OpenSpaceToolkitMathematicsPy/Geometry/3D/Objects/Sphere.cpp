@@ -11,10 +11,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Sphere ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Sphere ( pybind11::module&        aModule                                     )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::core::types::Real ;
 
@@ -30,13 +30,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::objects::Pyramid ;
     using ostk::math::geom::d3::Intersection ;
 
-    scope in_Sphere = class_<Sphere, bases<Object>>("Sphere", init<const Point&, const Real&>())
+    class_<Sphere, Object>(aModule, "Sphere")
+
+        .def(init<const Point&, const Real&>())
 
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shiftToString<Sphere>))
+        .def("__repr__", &(shiftToString<Sphere>))
 
         .def("is_defined", &Sphere::isDefined)
         .def("is_unitary", &Sphere::isUnitary)
@@ -57,8 +59,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("intersection_with_ray", +[] (const Sphere& aSphere, const Ray& aRay, const bool onlyInSight) -> Intersection { return aSphere.intersectionWith(aRay, onlyInSight) ; })
         .def("apply_transformation", &Sphere::applyTransformation)
 
-        .def("undefined", &Sphere::Undefined).staticmethod("undefined")
-        .def("unit", &Sphere::Unit).staticmethod("unit")
+        .def_static("undefined", &Sphere::Undefined)
+        .def_static("unit", &Sphere::Unit)
 
     ;
 

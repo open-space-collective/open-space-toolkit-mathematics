@@ -24,30 +24,31 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects    ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects (        pybind11::module&        aModule                                     )
 {
 
-    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("ostk.mathematics.geometry.d3.objects")))) ;
+    // Create "objects" python submodule
+    auto objects = aModule.def_submodule("objects") ;
 
-    boost::python::scope().attr("objects") = module ;
+    // Add __path__ attribute for "objects" submodule
+    objects.attr("__path__") = "ostk.mathematics.geometry.d3.objects" ;
 
-    boost::python::scope scope = module ;
-
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Point() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_PointSet() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Line() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Ray() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Segment() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_LineString() ;
-    // OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_MultiLineString() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Plane() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Polygon() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cuboid() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Sphere() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Ellipsoid() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Pyramid() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cone() ;
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Composite() ;
+    // Add objects to python "objects" submodules
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Point(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_PointSet(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Line(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Ray(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Segment(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_LineString(objects) ;
+    // OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_MultiLineString(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Plane(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Polygon(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cuboid(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Sphere(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Ellipsoid(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Pyramid(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cone(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Composite(objects) ;
 
 }
 

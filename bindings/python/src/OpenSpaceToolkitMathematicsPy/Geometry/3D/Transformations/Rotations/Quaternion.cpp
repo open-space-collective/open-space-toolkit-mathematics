@@ -7,18 +7,27 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <OpenSpaceToolkitMathematicsPy/Utilities/IterableConverter.hpp>
-
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_Quaternion ( )
+using ostk::core::ctnr::Array ;
+using ostk::math::geom::d3::trf::rot::Quaternion ;
+
+void                            set_quaternion_array                        (   const   Array<Quaternion>&          anArray                                     )
 {
 
-    using namespace boost::python ;
+    (void) anArray ;
+
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_Quaternion ( pybind11::module& aModule                      )
+{
+    using namespace pybind11 ;
 
     using ostk::core::types::Real ;
     using ostk::core::types::String ;
@@ -27,11 +36,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
     using ostk::math::obj::Vector4d ;
     using ostk::math::geom::d3::trf::rot::Quaternion ;
 
-    scope in_Quaternion = class_<Quaternion>("Quaternion", init<const Real&, const Real&, const Real&, const Real&, const Quaternion::Format&>())
+    class_<Quaternion> quaternion(aModule, "Quaternion") ;
+
+    // Define constructors
+    quaternion.def(init<const Real&, const Real&, const Real&, const Real&, const Quaternion::Format&>())
 
         .def(init<const Vector4d&, const Quaternion::Format&>())
         .def(init<const Vector3d&, const Real&>())
 
+        // Define methods
         .def(self == self)
         .def(self != self)
 
@@ -40,8 +53,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
 
 		.def(self / self)
 
-        .def(self_ns::str(self_ns::self))
-
+        .def("__str__", &(shiftToString<Quaternion>))
         .def("__repr__", +[] (const Quaternion& aQuaternion) -> std::string { return aQuaternion.toString() ; })
 
         .def("is_defined", &Quaternion::isDefined)
@@ -73,30 +85,24 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def("rectify", +[] (Quaternion& aQuaternion) -> void { aQuaternion.rectify() ; })
         .def("angular_difference_with", &Quaternion::angularDifferenceWith)
 
-        .def("undefined", &Quaternion::Undefined).staticmethod("undefined")
-        .def("unit", &Quaternion::Unit).staticmethod("unit")
-        .def("xyzs", &Quaternion::XYZS).staticmethod("xyzs")
-        .def("rotation_vector", &Quaternion::RotationVector).staticmethod("rotation_vector")
-        .def("rotation_matrix", &Quaternion::RotationMatrix).staticmethod("rotation_matrix")
-        .def("parse", &Quaternion::Parse).staticmethod("parse")
+        // Define static methods
+        .def_static("undefined", &Quaternion::Undefined)
+        .def_static("unit", &Quaternion::Unit)
+        .def_static("xyzs", &Quaternion::XYZS)
+        .def_static("rotation_vector", &Quaternion::RotationVector)
+        .def_static("rotation_matrix", &Quaternion::RotationMatrix)
+        .def_static("parse", &Quaternion::Parse)
 
     ;
 
-    enum_<Quaternion::Format>("Format")
+    enum_<Quaternion::Format>(quaternion, "Format")
 
         .value("XYZS", Quaternion::Format::XYZS)
         .value("SXYZ", Quaternion::Format::SXYZ)
 
     ;
 
-    using ostk::core::ctnr::Array ;
-
-    IterableConverter()
-
-        .from_python<Array<Quaternion>>()
-        .to_python<Array<Quaternion>>()
-
-    ;
+    aModule.def("set_quaternion_array", overload_cast<const Array<Quaternion>&>(&set_quaternion_array));
 
 }
 

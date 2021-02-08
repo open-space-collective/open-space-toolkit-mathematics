@@ -12,17 +12,18 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Objects       ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Objects       (           pybind11::module&           aModule                                     )
 {
 
-    boost::python::object module(boost::python::handle<>(boost::python::borrowed(PyImport_AddModule("ostk.mathematics.objects")))) ;
+    // Create "objects" python submodule
+    auto objects = aModule.def_submodule("objects") ;
 
-    boost::python::scope().attr("objects") = module ;
+    // Add __path__ attribute for "objects" submodule
+    objects.attr("__path__") = "ostk.mathematics.objects" ;
 
-    boost::python::scope scope = module ;
-
-    // OpenSpaceToolkitMathematicsPy_Objects_Vector() ;
-    OpenSpaceToolkitMathematicsPy_Objects_Interval() ;
+    // Add objects to python "objects" submodules
+    OpenSpaceToolkitMathematicsPy_Objects_Interval(objects) ;
+    // OpenSpaceToolkitMathematicsPy_Objects_Vector(objects) ;
 
 }
 

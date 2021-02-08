@@ -13,10 +13,10 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_RotationVector ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_RotationVector ( pybind11::module& aModule                  )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
 
     using ostk::core::types::Integer ;
     using ostk::core::types::Real ;
@@ -26,13 +26,17 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
     using ostk::math::geom::Angle ;
     using ostk::math::geom::d3::trf::rot::RotationVector ;
 
-    scope in_RotationVector = class_<RotationVector>("RotationVector", init<const Vector3d&, const Angle&>())
+    class_<RotationVector>(aModule, "RotationVector")
 
+        // Define constructor
+        .def(init<const Vector3d&, const Angle&>())
+
+        // Define methods
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shiftToString<RotationVector>))
+        .def("__repr__", &(shiftToString<RotationVector>))
 
         .def("is_defined", &RotationVector::isDefined)
 
@@ -41,13 +45,14 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def("to_string", +[] (const RotationVector& aRotationVector) -> String { return aRotationVector.toString() ; })
         .def("to_string", +[] (const RotationVector& aRotationVector, const Integer& aPrecision) -> String { return aRotationVector.toString(aPrecision) ; })
 
-        .def("undefined", &RotationVector::Undefined)
-        .def("unit", &RotationVector::Unit).staticmethod("unit")
-        .def("x", &RotationVector::X).staticmethod("x")
-        .def("y", &RotationVector::Y).staticmethod("y")
-        .def("z", &RotationVector::Z).staticmethod("z")
-        .def("quaternion", &RotationVector::Quaternion).staticmethod("quaternion")
-        .def("rotation_matrix", &RotationVector::RotationMatrix).staticmethod("rotation_matrix")
+        // Define static methods
+        .def_static("undefined", &RotationVector::Undefined)
+        .def_static("unit", &RotationVector::Unit)
+        .def_static("x", &RotationVector::X)
+        .def_static("y", &RotationVector::Y)
+        .def_static("z", &RotationVector::Z)
+        .def_static("quaternion", &RotationVector::Quaternion)
+        .def_static("rotation_matrix", &RotationVector::RotationMatrix)
 
     ;
 

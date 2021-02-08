@@ -7,30 +7,30 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <OpenSpaceToolkitMathematicsPy/Utilities/IterableConverter.hpp>
-
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Segment.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-BOOST_PYTHON_MEMBER_FUNCTION_OVERLOADS (OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Segment_toString_overloads, ostk::math::geom::d2::objects::Segment::toString, 0, 2)
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Segment ( )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Segment (      pybind11::module&  aModule                                     )
 {
 
-    using namespace boost::python ;
+    using namespace pybind11 ;
+
+    using ostk::core::types::Integer ;
 
     using ostk::math::geom::d2::Object ;
     using ostk::math::geom::d2::objects::Point ;
     using ostk::math::geom::d2::objects::Segment ;
 
-    scope in_Segment = class_<Segment, bases<Object>>("Segment", init<const Point&, const Point&>())
+    class_<Segment, Object>(aModule, "Segment")
+
+        .def(init<const Point&, const Point&>())
 
         .def(self == self)
         .def(self != self)
 
-        .def(self_ns::str(self_ns::self))
-        .def(self_ns::repr(self_ns::self))
+        .def("__str__", &(shiftToString<Segment>))
+        .def("__repr__", &(shiftToString<Segment>))
 
         .def("is_defined", &Segment::isDefined)
         .def("is_degenerate", &Segment::isDegenerate)
@@ -40,19 +40,10 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("get_center", &Segment::getCenter)
         .def("get_direction", &Segment::getDirection)
         .def("get_length", &Segment::getLength)
-        .def("to_string", &Segment::toString, OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Segment_toString_overloads())
+        .def("to_string", &Segment::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
         .def("apply_transformation", &Segment::applyTransformation)
 
-        .def("undefined", &Segment::Undefined).staticmethod("undefined")
-
-    ;
-
-    using ostk::core::ctnr::Array ;
-
-    IterableConverter()
-
-        .from_python<Array<Segment>>()
-        .to_python<Array<Segment>>()
+        .def_static("undefined", &Segment::Undefined)
 
     ;
 
