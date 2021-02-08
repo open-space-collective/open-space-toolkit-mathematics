@@ -288,7 +288,7 @@ Or to run them manually:
 
 | Name                   | Version | License                | Link                                                                                                                         |
 | ---------------------- | ------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Boost                  | 1.69.0  | Boost Software License | [boost.org](https://www.boost.org)                                                                                           |
+| Pybind11    | 2.6.1   | BSD-3-Clause           | [github.com/pybind/pybind11](https://github.com/pybind/pybind11)       |
 | Eigen                  | 3.3.7   | MPL2                   | [eigen.tuxfamily.org](http://eigen.tuxfamily.org/index.php)                                                                  |
 | Geometric Tools Engine | 3.28    | Boost Software License | [geometrictools.com](https://www.geometrictools.com)                                                                         |
 | Core                   | master  | Apache License 2.0     | [github.com/open-space-collective/open-space-toolkit-core](https://github.com/open-space-collective/open-space-toolkit-core) |
