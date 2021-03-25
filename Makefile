@@ -15,7 +15,7 @@ export docker_registry_path := openspacecollective
 export docker_image_repository := $(docker_registry_path)/$(project_name)
 export docker_image_version := $(project_version)
 
-export development_base_image_version := 0.2.0
+export development_base_image_version := 0.2.1
 
 export docker_development_image_repository := $(docker_image_repository)-development
 export docker_release_image_cpp_repository := $(docker_image_repository)-cpp
@@ -252,7 +252,8 @@ _build-packages-cpp: _build-development-image
 	--volume="/app/build" \
 	--workdir=/app/build \
 	$(docker_development_image_repository):$(docker_image_version)-$(target) \
-	/bin/bash -c "cmake -DBUILD_UNIT_TESTS=OFF -DBUILD_PYTHON_BINDINGS=OFF -DCPACK_GENERATOR=$(package_generator) .. && make package && mkdir -p /app/packages/cpp && mv /app/build/*.$(package_extension) /app/packages/cpp"
+	/bin/bash -c "cmake -DBUILD_UNIT_TESTS=OFF -DBUILD_PYTHON_BINDINGS=OFF -DCPACK_GENERATOR=$(package_generator) .. \
+	&& make package && mkdir -p /app/packages/cpp && mv /app/build/*.$(package_extension) /app/packages/cpp"
 
 build-packages-python: ## Build Python packages
 
@@ -408,14 +409,14 @@ _debug-python-release: _build-release-image-python
 
 ################################################################################################################################################################
 
-test:
+test: ## Run tests
 
 	@ echo "Running tests..."
 
 	@ make test-unit
 	@ make test-coverage
 
-test-unit:
+test-unit: ## Run unit tests
 
 	@ echo "Running unit tests..."
 
@@ -450,7 +451,7 @@ _test-unit-cpp: _build-development-image
 	--volume="/app/build" \
 	--workdir=/app/build \
 	$(docker_development_image_repository):$(docker_image_version)-$(target) \
-	/bin/bash -c "cmake -DBUILD_UNIT_TESTS=ON .. && make -j 4 && make test"
+	/bin/bash -c "cmake -DBUILD_UNIT_TESTS=ON -DBUILD_PYTHON_BINDINGS=OFF .. && make -j 4 && make test"
 
 test-unit-python-debian: target := debian
 test-unit-python-fedora: target := fedora
@@ -468,7 +469,7 @@ _test-unit-python: _build-release-image-python
 	$(docker_release_image_python_repository):$(docker_image_version)-$(target) \
 	/bin/bash -c "pip install pytest && pytest -sv ."
 
-test-coverage:
+test-coverage: ## Run test coverage
 
 	@ echo "Running coverage tests..."
 
@@ -495,11 +496,12 @@ _test-coverage-cpp: _build-development-image
 	--volume="/app/build" \
 	--workdir=/app/build \
 	$(docker_development_image_repository):$(docker_image_version)-$(target) \
-	/bin/bash -c "cmake -DBUILD_PYTHON_BINDINGS=OFF -DBUILD_CODE_COVERAGE=ON .. && make -j 4 && make coverage && (rm -rf /app/coverage || true) && mkdir /app/coverage && mv /app/build/coverage* /app/coverage"
+	/bin/bash -c "cmake -DBUILD_PYTHON_BINDINGS=OFF -DBUILD_CODE_COVERAGE=ON .. && make -j 4 && make coverage && (rm -rf /app/coverage || true) \
+	&& mkdir /app/coverage && mv /app/build/coverage* /app/coverage"
 
 ################################################################################################################################################################
 
-deploy:
+deploy: ## Deploy everything
 
 	@ echo "Deploying..."
 
@@ -508,14 +510,14 @@ deploy:
 	@ make deploy-packages
 	@ make deploy-documentation
 
-deploy-images:
+deploy-images: ## Deploy all images
 
 	@ echo "Deploying images..."
 
 	@ make deploy-development-images
 	@ make deploy-release-images
 
-deploy-development-images:
+deploy-development-images: ## Deploy development images
 
 	@ echo "Deploying development images..."
 
@@ -529,7 +531,7 @@ _deploy-development-image: _build-development-image
 	docker push $(docker_development_image_repository):$(docker_image_version)-$(target)
 	docker push $(docker_development_image_repository):latest-$(target)
 
-deploy-release-images:
+deploy-release-images: ## Deploy release images
 
 	@ echo "Deploying release images..."
 
@@ -567,7 +569,7 @@ deploy-release-image-jupyter: build-release-image-jupyter
 	docker push $(docker_release_image_jupyter_repository):$(docker_image_version)
 	docker push $(docker_release_image_jupyter_repository):latest
 
-deploy-packages:
+deploy-packages: ## Deploy packages
 
 	@ echo "Deploying packages..."
 
@@ -586,7 +588,7 @@ _deploy_packages:
 	@ make _deploy-packages-cpp target=$(target)
 	@ make _deploy-packages-python target=$(target)
 
-deploy-packages-cpp:
+deploy-packages-cpp: ## Deploy packages C++
 
 	@ echo "Deploying C++ packages..."
 
@@ -599,7 +601,7 @@ _deploy-packages-cpp: _build-packages-cpp
 
 	@ echo "TBI"
 
-deploy-packages-python:
+deploy-packages-python: ## Deploy packages Python
 
 	@ echo "Deploying Python packages..."
 
@@ -635,7 +637,7 @@ deploy-coverage-cpp-results: _test-coverage-cpp
 	$(docker_development_image_repository):$(docker_image_version)-$(target) \
 	/bin/bash -c "bash <(curl -s https://codecov.io/bash) -X gcov -y .codecov.yml -t ${ci_codecov_token}"
 
-deploy-documentation: build-documentation
+deploy-documentation: build-documentation ## Deploy documentation
 
 	@ echo "Deploying documentation..."
 
@@ -643,7 +645,7 @@ deploy-documentation: build-documentation
 
 ################################################################################################################################################################
 
-clean:
+clean: ## Clean
 
 	@ echo "Cleaning up..."
 
