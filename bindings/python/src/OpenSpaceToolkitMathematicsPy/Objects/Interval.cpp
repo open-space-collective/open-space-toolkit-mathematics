@@ -22,7 +22,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval (
 
     using ostk::math::obj::Interval ;
 
-    class_<Interval<Real>> real_interval(aModule, "RealInterval", pybind11::module_local()) ;
+    class_<Interval<Real>> real_interval(aModule, "RealInterval") ;
 
     // Define constructor
     real_interval.def(init<const Real&, const Real&, const Interval<Real>::Type&>())
@@ -53,7 +53,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval (
     // ...
 
     // Define emuneration type for "real_interval"
-    enum_<Interval<Real>::Type>(real_interval, "Type", pybind11::module_local())
+    enum_<Interval<Real>::Type>(real_interval, "Type")
 
         .value("Undefined", Interval<Real>::Type::Undefined)
         .value("Closed", Interval<Real>::Type::Closed)
