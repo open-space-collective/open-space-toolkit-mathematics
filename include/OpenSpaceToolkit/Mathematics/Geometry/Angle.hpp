@@ -112,23 +112,23 @@ class Angle
 
         Real                    inRadians                                   ( ) const ;
 
-        Real                    inRadians                                   (   const    Real&                      aLowerBound,
-                                                                                const    Real&                      anUpperBound                                ) const ;
+        Real                    inRadians                                   (   const   Real&                       aLowerBound,
+                                                                                const   Real&                       anUpperBound                                ) const ;
 
         Real                    inDegrees                                   ( ) const ;
 
-        Real                    inDegrees                                   (   const    Real&                      aLowerBound,
-                                                                                const    Real&                      anUpperBound                                ) const ;
+        Real                    inDegrees                                   (   const   Real&                       aLowerBound,
+                                                                                const   Real&                       anUpperBound                                ) const ;
 
         Real                    inArcminutes                                ( ) const ;
 
-        Real                    inArcminutes                                (   const    Real&                      aLowerBound,
-                                                                                const    Real&                      anUpperBound                                ) const ;
+        Real                    inArcminutes                                (   const   Real&                       aLowerBound,
+                                                                                const   Real&                       anUpperBound                                ) const ;
 
         Real                    inArcseconds                                ( ) const ;
 
-        Real                    inArcseconds                                (   const    Real&                      aLowerBound,
-                                                                                const    Real&                      anUpperBound                                ) const ;
+        Real                    inArcseconds                                (   const   Real&                       aLowerBound,
+                                                                                const   Real&                       anUpperBound                                ) const ;
 
         Real                    inRevolutions                               ( ) const ;
 

@@ -34,6 +34,9 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_Angle   (
         .def(self + self)
         .def(self - self)
 
+        .def(+self)
+        .def(-self)
+
         // Real has default constructor deleted
         // https://docs.python.org/3/library/operator.html
         // .def(self * Real())

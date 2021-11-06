@@ -227,6 +227,8 @@ def test_angle_operators ():
     double_angle: Angle = angle * 2.0
     sum_angle: Angle = angle + angle
     diff_angle: Angle = angle - angle
+    positive_angle: Angle = +angle
+    negative_angle: Angle = -angle
 
     assert half_angle is not None
     assert isinstance(half_angle, Angle)
@@ -236,12 +238,18 @@ def test_angle_operators ():
     assert isinstance(sum_angle, Angle)
     assert diff_angle is not None
     assert isinstance(diff_angle, Angle)
+    assert positive_angle is not None
+    assert isinstance(positive_angle, Angle)
+    assert negative_angle is not None
+    assert isinstance(negative_angle, Angle)
 
     assert half_angle.in_degrees() == 15.0
     assert double_angle.in_degrees() == 60.0
     assert sum_angle.in_degrees() == 60.0
     assert diff_angle.in_degrees() == 0.0
     assert diff_angle.is_zero()
+    assert positive_angle.in_degrees() == +30.0
+    assert negative_angle.in_degrees() == -30.0
 
     angle_deg: Angle = Angle(90.0, Unit.Degree)
     angle_rad: Angle = Angle(math.pi / 2, Unit.Radian)
