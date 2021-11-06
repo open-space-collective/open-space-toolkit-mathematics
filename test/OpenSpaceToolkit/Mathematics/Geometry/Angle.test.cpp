@@ -595,7 +595,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_Angle, UnaryAdditionOperator)
 
     {
 
-        EXPECT_EQ(Angle(0.0, Angle::Unit::Radian), +Angle(0.0, Angle::Unit::Degree)) ;
+        EXPECT_EQ(Angle(0.0, Angle::Unit::Radian), +Angle(0.0, Angle::Unit::Radian)) ;
 
         EXPECT_EQ(Angle(+123.456, Angle::Unit::Radian), +Angle(123.456, Angle::Unit::Radian)) ;
         EXPECT_EQ(Angle(+123.456, Angle::Unit::Degree), +Angle(123.456, Angle::Unit::Degree)) ;
@@ -626,7 +626,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_Angle, UnarySubtractionOperator)
 
     {
 
-        EXPECT_EQ(Angle(0.0, Angle::Unit::Radian), -Angle(0.0, Angle::Unit::Degree)) ;
+        EXPECT_EQ(Angle(0.0, Angle::Unit::Radian), -Angle(0.0, Angle::Unit::Radian)) ;
 
         EXPECT_EQ(Angle(-123.456, Angle::Unit::Radian), -Angle(123.456, Angle::Unit::Radian)) ;
         EXPECT_EQ(Angle(-123.456, Angle::Unit::Degree), -Angle(123.456, Angle::Unit::Degree)) ;
