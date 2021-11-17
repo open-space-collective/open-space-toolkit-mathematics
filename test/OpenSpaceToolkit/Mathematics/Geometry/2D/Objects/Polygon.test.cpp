@@ -509,31 +509,125 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectsPolygo
 
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ContainsPoint)
-// {
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ContainsPoint)
+{
 
-//     using ostk::math::geom::d2::objects::Polygon ;
+    using ostk::core::ctnr::Tuple ;
+    using ostk::core::ctnr::Array ;
 
-//     {
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Polygon ;
 
-//         FAIL() ;
+    {
 
-//     }
+        const Array<Tuple<Polygon, Point, bool>> testCases =
+        {
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 0.0, 0.0 }, true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 0.0, 1.0 }, true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 1.0, 0.0 }, true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 1.0, 1.0 }, true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 0.5, 0.5 }, true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 5.0 }, { 5.0, 5.0 }, { 5.0, 0.0 } } }, { 2.5, 2.5 }, true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 5.0 }, { 5.0, 5.0 }, { 5.0, 0.0 } } }, { 1.0, 4.0 }, true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 5.0 }, { 5.0, 5.0 }, { 5.0, 0.0 } } }, { 4.0, 1.0 }, true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 0.0, 2.0 }, false },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 2.0, 0.0 }, false },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 2.0, 2.0 }, false },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 0.0, 0.9999 }, true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 0.9999, 0.0 }, true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 0.0, 1.0001 }, false },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 1.0001, 0.0 }, false },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 0.9999, 0.9999 }, true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 1.0001, 1.0001 }, false },
+        } ;
 
-// }
+        for (const auto& testCase : testCases)
+        {
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ContainsPointSet)
-// {
+            const Polygon& polygon = std::get<0>(testCase) ;
+            const Point& point = std::get<1>(testCase) ;
+            const bool result = std::get<2>(testCase) ;
 
-//     using ostk::math::geom::d2::objects::Polygon ;
+            EXPECT_EQ(result, polygon.contains(point)) ;
 
-//     {
+        }
 
-//         FAIL() ;
+    }
 
-//     }
+    {
 
-// }
+        const Array<Polygon::Vertex> vertices =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Polygon polygon = { vertices } ;
+
+        EXPECT_ANY_THROW(Polygon::Undefined().contains(Point::Undefined())) ;
+        EXPECT_ANY_THROW(polygon.contains(Point::Undefined())) ;
+        EXPECT_ANY_THROW(Polygon::Undefined().contains({ 0.0, 0.0 })) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ContainsPointSet)
+{
+
+    using ostk::core::ctnr::Tuple ;
+    using ostk::core::ctnr::Array ;
+
+    using ostk::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::Polygon ;
+
+    {
+
+        const Array<Tuple<Polygon, PointSet, bool>> testCases =
+        {
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 } }), true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, PointSet({ { 0.0, 1.0 }, { 1.0, 0.0 } }), true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, PointSet({ { 1.0, 0.0 }, { 1.0, 1.0 } }), true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, PointSet({ { 1.0, 0.0 }, { 2.0, 2.0 } }), false },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } }), true },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 2.0, 0.0 } }), false },
+            { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 2.0, 2.0 }, { 2.0, 0.0 } }), false },
+        } ;
+
+        for (const auto& testCase : testCases)
+        {
+
+            const Polygon& polygon = std::get<0>(testCase) ;
+            const PointSet& pointSet = std::get<1>(testCase) ;
+            const bool result = std::get<2>(testCase) ;
+
+            EXPECT_EQ(result, polygon.contains(pointSet)) ;
+
+        }
+
+    }
+
+    {
+
+        const Array<Polygon::Vertex> vertices =
+        {
+            { 0.0, 0.0 },
+            { 0.0, 1.0 },
+            { 1.0, 1.0 },
+            { 1.0, 0.0 }
+        } ;
+
+        const Polygon polygon = { vertices } ;
+
+        EXPECT_ANY_THROW(Polygon::Undefined().contains(PointSet::Empty())) ;
+        EXPECT_ANY_THROW(polygon.contains(PointSet::Empty())) ;
+        EXPECT_ANY_THROW(Polygon::Undefined().contains(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 } }))) ;
+
+    }
+
+}
 
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingCount)
 {
