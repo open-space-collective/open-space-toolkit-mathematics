@@ -20,7 +20,10 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using namespace pybind11 ;
 
     using ostk::core::types::Shared ;
+    using ostk::core::types::Unique ;
     using ostk::core::types::Real ;
+
+    using ostk::core::ctnr::Array ;
 
     using ostk::math::obj::Vector3d ;
     using ostk::math::geom::d3::Object ;
@@ -87,11 +90,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("as_pyramid", +[] (const Composite& aComposite) -> Pyramid { return aComposite.as<Pyramid>() ; })
         .def("as_composite", +[] (const Composite& aComposite) -> Composite { return aComposite.as<Composite>() ; })
 
-        // Casting issue with both boost and pybind11 (likely related to pointers' handling)
-        // .def("access_object_at", &Composite::accessObjectAt, return_value_policy<reference_existing_object>())
-        // .def("access_objects", &Composite::accessObjects, return_value_policy<reference_existing_object>())
-        // .def("access_object_at", &Composite::accessObjectAt, return_value_policy::reference)
-        // .def("access_objects", &Composite::accessObjects, return_value_policy::reference)
+        .def("access_object_at", &Composite::accessObjectAt, return_value_policy::reference)
+
         .def("get_object_count", &Composite::getObjectCount)
         .def("intersection_with_object", +[] (const Composite& aComposite, const Object& anObject) -> Intersection { return aComposite.intersectionWith(anObject) ; })
         .def("intersection_with_composite", +[] (const Composite& aComposite, const Composite& anotherComposite) -> Intersection { return aComposite.intersectionWith(anotherComposite) ; })
