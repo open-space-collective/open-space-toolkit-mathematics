@@ -20,10 +20,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using namespace pybind11 ;
 
     using ostk::core::types::Shared ;
-    using ostk::core::types::Unique ;
     using ostk::core::types::Real ;
-
-    using ostk::core::ctnr::Array ;
 
     using ostk::math::obj::Vector3d ;
     using ostk::math::geom::d3::Object ;
