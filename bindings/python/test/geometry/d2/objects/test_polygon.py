@@ -249,7 +249,7 @@ def test_geometry_d2_objects_polygon_contains ():
     point_3: Point = Point(1.0, -1.0)
     point_4: Point = Point(-1.0, -1.0)
 
-    pointset: PointSet = PointSet([Point(0.0, 0.0)])
+    point_set: PointSet = PointSet([Point(0.0, 0.0)])
     polygon: Polygon = Polygon((point_1, point_2, point_3, point_4))
 
     assert polygon.contains_point(Point.origin())
@@ -259,7 +259,7 @@ def test_geometry_d2_objects_polygon_contains ():
     assert polygon.contains_point(point_4)
     assert polygon.contains_point(Point(10.0, 10.0)) is False
 
-    assert polygon.contains_point_set(pointset)
+    assert polygon.contains_point_set(point_set)
 
 def test_geometry_d2_objects_polygon_getters ():
 
