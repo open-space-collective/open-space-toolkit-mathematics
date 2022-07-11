@@ -304,6 +304,42 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Contains_Point)
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Contains_PointSet)
+{
+
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Line ;
+
+    {
+
+        EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({ { 0.0, 0.0, -2.0 } }))) ;
+        EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({ { 0.0, 0.0, -1.0 } }))) ;
+        EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({ { 0.0, 0.0, -0.5 } }))) ;
+        EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({ { 0.0, 0.0, +0.0 } }))) ;
+        EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({ { 0.0, 0.0, +0.5 } }))) ;
+        EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({ { 0.0, 0.0, +1.0 } }))) ;
+        EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({ { 0.0, 0.0, +2.0 } }))) ;
+
+        EXPECT_TRUE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({ { 0.0, 0.0, -2.0 }, { 0.0, 0.0, -1.0 } }))) ;
+
+    }
+
+    {
+
+        EXPECT_FALSE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({ { 1.0, 0.0, 0.0 }}))) ;
+        EXPECT_FALSE(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet({ { 0.0, 0.0, -2.0 }, { 1.0, 0.0, 0.0 }}))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Line::Undefined().contains(PointSet::Empty())) ;
+        EXPECT_ANY_THROW(Line::Undefined().contains(PointSet({ { 0.0, 0.0, 0.0 } }))) ;
+
+    }
+
+}
+
 TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, GetOrigin)
 {
 

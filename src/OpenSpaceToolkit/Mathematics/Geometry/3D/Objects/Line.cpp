@@ -152,10 +152,25 @@ bool                            Line::contains                              (   
 
 }
 
-// bool                            Line::contains                              (   const   PointSet&                   aPointSet                                   ) const
-// {
+bool                            Line::contains                              (   const   PointSet&                   aPointSet                                   ) const
+{
 
-// }
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Line") ;
+    }
+
+    for (auto& point : aPointSet)
+    {
+        if (!this->contains(point))
+        {
+            return false;
+        }
+    }
+
+    return true ;
+
+}
 
 Point                           Line::getOrigin                             ( ) const
 {

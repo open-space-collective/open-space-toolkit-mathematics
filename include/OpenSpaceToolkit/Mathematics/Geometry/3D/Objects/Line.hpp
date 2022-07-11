@@ -160,14 +160,27 @@ class Line : public Object
         ///
         /// @code
         ///                     Line line = ... ;
-        ///                     Ellipsoid ellipsoid = ... ;
-        ///                     line.contains(ellipsoid) ;
+        ///                     Point point = ... ;
+        ///                     line.contains(point) ;
         /// @endcode
         ///
-        /// @param              [in] anEllipsoid An ellipsoid
+        /// @param              [in] aPoint A point
         /// @return             True if line contains point
 
         bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Check if line contains point set
+        ///
+        /// @code
+        ///                     Line line = ... ;
+        ///                     PointSet pointSet = ... ;
+        ///                     line.contains(pointSet) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             True if line contains point set
+
+        bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
 
         /// @brief              Get line origin
         ///

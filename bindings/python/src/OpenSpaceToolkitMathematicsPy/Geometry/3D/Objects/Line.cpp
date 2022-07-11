@@ -19,6 +19,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::obj::Vector3d ;
     using ostk::math::geom::d3::Object ;
     using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
     using ostk::math::geom::d3::objects::Line ;
     using ostk::math::geom::d3::objects::Plane ;
     using ostk::math::geom::d3::objects::Sphere ;
@@ -41,6 +42,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("intersects_sphere", +[] (const Line& aLine, const Sphere& aSphere) -> bool { return aLine.intersects(aSphere) ; })
         .def("intersects_ellipsoid", +[] (const Line& aLine, const Ellipsoid& anEllipsoid) -> bool { return aLine.intersects(anEllipsoid) ; })
         .def("contains_point", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.contains(aPoint) ; })
+        .def("contains_point_set", +[] (const Line& aLine, const PointSet& aPointSet) -> bool { return aLine.contains(aPointSet) ; })
 
         .def("get_origin", &Line::getOrigin)
         .def("get_direction", &Line::getDirection)
