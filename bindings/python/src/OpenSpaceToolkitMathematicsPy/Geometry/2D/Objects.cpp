@@ -13,7 +13,7 @@
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/LineString.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Segment.cpp>
 // #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Ray.cpp>
-// #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Line.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Line.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/PointSet.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Point.cpp>
 
@@ -31,7 +31,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
     // Add objects to python "objects" submodules
     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Point(objects) ;
     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet(objects) ;
-    // OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Line(objects) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Line(objects) ;
     // OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Ray(objects) ;
     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Segment(objects) ;
     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_LineString(objects) ;
