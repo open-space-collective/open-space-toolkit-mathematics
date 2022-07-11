@@ -202,6 +202,13 @@ class Line : public Object
 
         Vector3d                getDirection                                ( ) const ;
 
+        /// @brief              Get distance to point
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             Distance to point
+
+        Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;
+
         /// @brief              Compute intersection of line with plane
         ///
         /// @param              [in] aPlane A plane

@@ -196,6 +196,18 @@ Vector3d                        Line::getDirection                          ( ) 
 
 }
 
+Real                            Line::distanceTo                            (   const   Point&                      aPoint                                      ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Line") ;
+    }
+
+    return this->getDirection().cross(aPoint - origin_).norm() ;
+
+}
+
 Intersection                    Line::intersectionWith                      (   const   Plane&                      aPlane                                      ) const
 {
 

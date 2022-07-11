@@ -385,6 +385,57 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, GetDirection)
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, DistanceTo_Point)
+{
+
+    using ostk::core::types::Real ;
+
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Line ;
+
+    {
+
+        EXPECT_EQ(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, +1.0 }).distanceTo({ 0.0, 0.0, 0.0 }), 0.0) ;
+        EXPECT_EQ(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, +1.0 }).distanceTo({ 0.0, 0.0, +1.0 }), 0.0) ;
+        EXPECT_EQ(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, +1.0 }).distanceTo({ 0.0, 0.0, -1.0 }), 0.0) ;
+        EXPECT_EQ(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, +1.0 }).distanceTo({ 0.0, 0.0, +2.0 }), 0.0) ;
+        EXPECT_EQ(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, +1.0 }).distanceTo({ 0.0, 0.0, -2.0 }), 0.0) ;
+
+        EXPECT_EQ(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, -1.0 }).distanceTo({ 0.0, 0.0, 0.0 }), 0.0) ;
+        EXPECT_EQ(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, -1.0 }).distanceTo({ 0.0, 0.0, +1.0 }), 0.0) ;
+        EXPECT_EQ(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, -1.0 }).distanceTo({ 0.0, 0.0, -1.0 }), 0.0) ;
+        EXPECT_EQ(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, -1.0 }).distanceTo({ 0.0, 0.0, +2.0 }), 0.0) ;
+        EXPECT_EQ(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, -1.0 }).distanceTo({ 0.0, 0.0, -2.0 }), 0.0) ;
+
+        EXPECT_EQ(Line({ 0.0, 0.0, 1.0 }, { 0.0, 0.0, +1.0 }).distanceTo({ 0.0, 0.0, 0.0 }), 0.0) ;
+        EXPECT_EQ(Line({ 0.0, 0.0, 1.0 }, { 0.0, 0.0, +1.0 }).distanceTo({ 0.0, 0.0, +1.0 }), 0.0) ;
+        EXPECT_EQ(Line({ 0.0, 0.0, 1.0 }, { 0.0, 0.0, +1.0 }).distanceTo({ 0.0, 0.0, -1.0 }), 0.0) ;
+        EXPECT_EQ(Line({ 0.0, 0.0, 1.0 }, { 0.0, 0.0, +1.0 }).distanceTo({ 0.0, 0.0, +2.0 }), 0.0) ;
+        EXPECT_EQ(Line({ 0.0, 0.0, 1.0 }, { 0.0, 0.0, +1.0 }).distanceTo({ 0.0, 0.0, -2.0 }), 0.0) ;
+
+        EXPECT_EQ(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, +1.0 }).distanceTo({ 1.0, 0.0, 0.0 }), 1.0) ;
+        EXPECT_EQ(Line({ 1.0, 0.0, 0.0 }, { 0.0, 0.0, +1.0 }).distanceTo({ 0.0, 0.0, 0.0 }), 1.0) ;
+        EXPECT_EQ(Line({ 0.0, 1.0, 0.0 }, { 0.0, 0.0, +1.0 }).distanceTo({ 0.0, 0.0, 0.0 }), 1.0) ;
+
+        EXPECT_EQ(Line({ 1.0, 0.0, 0.0 }, { 0.0, 0.0, +1.0 }).distanceTo({ 1.0, 0.0, 2.0 }), 0.0) ;
+
+    }
+
+    {
+
+        EXPECT_NEAR(Line({ 1.0, 2.0, 3.0 }, { 4.0, 5.0, 6.0 }).distanceTo({ 7.0, 8.0, 9.0 }), 1.67487, 1e-5) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Line::Undefined().distanceTo({ 0.0, 0.0, 0.0 })) ;
+        EXPECT_ANY_THROW(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).distanceTo(Point::Undefined())) ;
+
+    }
+
+}
+
 TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, IntersectionWith_Plane)
 {
 

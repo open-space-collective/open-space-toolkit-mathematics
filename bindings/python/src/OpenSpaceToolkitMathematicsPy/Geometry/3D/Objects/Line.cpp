@@ -46,6 +46,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
         .def("get_origin", &Line::getOrigin)
         .def("get_direction", &Line::getDirection)
+        .def("distance_to_point", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.distanceTo(aPoint) ; })
         .def("intersection_with_plane", +[] (const Line& aLine, const Plane& aPlane) -> Intersection { return aLine.intersectionWith(aPlane) ; })
         .def("apply_transformation", &Line::applyTransformation)
 

@@ -57,4 +57,13 @@ class TestLine:
 
         assert line.contains_point_set(point_set) is True
 
+    def test_distance_to_point_success (self):
+
+        line = Line(
+            Point(1.0, 2.0, 3.0),
+            np.array((1.0, 1.0, 1.0)),
+        )
+
+        assert line.distance_to_point(Point(2.0, 3.0, 4.0)) == 0.0
+
 ################################################################################################################################################################
