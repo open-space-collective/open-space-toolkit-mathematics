@@ -117,23 +117,6 @@ bool                            Line::contains                              (   
 
     return aPoint.y() == m * (aPoint.x() - p_1.x()) + p_1.y() ;
 
-    // y == ((m * x) + c)
-
-    // if (aPoint.x() == p_1.x())
-    // {
-    //     throw ostk::core::error::runtime::Undefined("Line") ;
-    // }
-
-    // std::cout << "((aPoint.y() - p_1.y())) = " << ((aPoint.y() - p_1.y())) << std::endl ;
-    // std::cout << "((aPoint.x() - p_1.x())) = " << ((aPoint.x() - p_1.x())) << std::endl ;
-    // std::cout << "A = " << ((aPoint.y() - p_1.y())) / ((aPoint.x() - p_1.x())) << std::endl ;
-    // std::cout << "((p_2.y() - p_1.y())) = " << ((p_2.y() - p_1.y())) << std::endl ;
-    // std::cout << "((p_2.x() - p_1.x())) = " << ((p_2.x() - p_1.x())) << std::endl ;
-    // std::cout << "B = " << ((p_2.y() - p_1.y())) / ((p_2.x() - p_1.x())) << std::endl ;
-
-    // return ((aPoint.y() - p_1.y())) / ((aPoint.x() - p_1.x()))
-    //     == ((p_2.y() - p_1.y())) / ((p_2.x() - p_1.x())) ;
-
 }
 
 bool                            Line::contains                              (   const   PointSet&                   aPointSet                                   ) const

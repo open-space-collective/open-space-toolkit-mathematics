@@ -7,6 +7,8 @@
 
 ################################################################################################################################################################
 
+import pytest
+
 import numpy as np
 
 import ostk.mathematics as mathematics
@@ -55,7 +57,7 @@ class TestLine:
             np.array((1.0, 1.0, 1.0)),
         )
 
-        assert line.distance_to_point(Point(2.0, 3.0, 4.0)) == 0.0
+        assert float(line.distance_to_point(Point(2.0, 3.0, 4.0))) == pytest.approx(0.0, 1e-10)
 
     def test_undefined_success (self):
 

@@ -16,6 +16,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
     using namespace pybind11 ;
 
+    using ostk::core::types::Real ;
+
     using ostk::math::obj::Vector2d ;
     using ostk::math::geom::d2::Object ;
     using ostk::math::geom::d2::objects::Point ;
@@ -39,7 +41,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
         .def("get_origin", &Line::getOrigin)
         .def("get_direction", &Line::getDirection)
-        .def("distance_to_point", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.distanceTo(aPoint) ; })
+        .def("distance_to_point", +[] (const Line& aLine, const Point& aPoint) -> Real { return aLine.distanceTo(aPoint) ; })
         .def("apply_transformation", &Line::applyTransformation)
 
         .def_static("undefined", &Line::Undefined)

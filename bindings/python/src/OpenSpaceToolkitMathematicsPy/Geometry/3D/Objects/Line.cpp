@@ -16,6 +16,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
     using namespace pybind11 ;
 
+    using ostk::core::types::Real ;
+
     using ostk::math::obj::Vector3d ;
     using ostk::math::geom::d3::Object ;
     using ostk::math::geom::d3::objects::Point ;
@@ -46,7 +48,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
         .def("get_origin", &Line::getOrigin)
         .def("get_direction", &Line::getDirection)
-        .def("distance_to_point", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.distanceTo(aPoint) ; })
+        .def("distance_to_point", +[] (const Line& aLine, const Point& aPoint) -> Real { return aLine.distanceTo(aPoint) ; })
         .def("intersection_with_plane", +[] (const Line& aLine, const Plane& aPlane) -> Intersection { return aLine.intersectionWith(aPlane) ; })
         .def("apply_transformation", &Line::applyTransformation)
 

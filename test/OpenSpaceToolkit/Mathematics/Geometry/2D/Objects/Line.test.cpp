@@ -336,6 +336,8 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, DistanceTo_Point)
 
     {
 
+        EXPECT_NEAR(Line({ 1.0, 2.0 }, { 1.0, 1.0 }).distanceTo({ 1.0, 5.0 }), 2.12132, 1e-5) ;
+        EXPECT_NEAR(Line({ 1.0, 2.0 }, { 1.0, 0.0 }).distanceTo({ 1.0, 5.0 }), 3.0, 1e-5) ;
         EXPECT_NEAR(Line({ 1.0, 2.0 }, { 4.0, 5.0 }).distanceTo({ 7.0, 8.0 }), 0.93704, 1e-5) ;
 
     }
