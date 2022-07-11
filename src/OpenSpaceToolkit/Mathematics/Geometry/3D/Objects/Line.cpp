@@ -169,7 +169,7 @@ Point                           Line::getOrigin                             ( ) 
 
 }
 
-Vector3d                        Line::getDirection                       ( ) const
+Vector3d                        Line::getDirection                          ( ) const
 {
 
     if (!this->isDefined())
@@ -181,7 +181,7 @@ Vector3d                        Line::getDirection                       ( ) con
 
 }
 
-Intersection                    Line::intersectionWith                       (   const   Plane&                      aPlane                                      ) const
+Intersection                    Line::intersectionWith                      (   const   Plane&                      aPlane                                      ) const
 {
 
     if (!this->isDefined())
