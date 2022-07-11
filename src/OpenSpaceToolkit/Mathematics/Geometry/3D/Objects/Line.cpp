@@ -160,6 +160,11 @@ bool                            Line::contains                              (   
         throw ostk::core::error::runtime::Undefined("Line") ;
     }
 
+    if (aPointSet.isEmpty())
+    {
+        throw ostk::core::error::runtime::Undefined("Point Set") ;
+    }
+
     for (auto& point : aPointSet)
     {
         if (!this->contains(point))
@@ -281,6 +286,29 @@ void                            Line::applyTransformation                   (   
 Line                            Line::Undefined                             ( )
 {
     return { Point::Undefined(), Vector3d::Undefined() } ;
+}
+
+Line                            Line::Points                                (   const   Point&                      aFirstPoint,
+                                                                                const   Point&                      aSecondPoint                                )
+{
+
+    if (!aFirstPoint.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("First point") ;
+    }
+
+    if (!aSecondPoint.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Second point") ;
+    }
+
+    if (aFirstPoint == aSecondPoint)
+    {
+        throw ostk::core::error::RuntimeError("Points are identical.") ;
+    }
+
+    return { aFirstPoint, (aSecondPoint - aFirstPoint).normalized() } ;
+
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

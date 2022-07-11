@@ -51,6 +51,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("apply_transformation", &Line::applyTransformation)
 
         .def_static("undefined", &Line::Undefined)
+        .def_static("points", &Line::Points)
 
     ;
 

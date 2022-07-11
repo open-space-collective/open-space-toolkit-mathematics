@@ -333,7 +333,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Contains_PointSet)
 
     {
 
-        EXPECT_ANY_THROW(Line::Undefined().contains(PointSet::Empty())) ;
+        EXPECT_ANY_THROW(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).contains(PointSet::Empty())) ;
         EXPECT_ANY_THROW(Line::Undefined().contains(PointSet({ { 0.0, 0.0, 0.0 } }))) ;
 
     }
@@ -580,6 +580,37 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Undefined)
 
         EXPECT_NO_THROW(Line::Undefined()) ;
         EXPECT_FALSE(Line::Undefined().isDefined()) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Points)
+{
+
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Line ;
+
+    {
+
+        const Line line = Line::Points(Point(1.0, 2.0, 3.0), Point(2.0, 3.0, 4.0)) ;
+
+        EXPECT_EQ(line.getOrigin(), Point(1.0, 2.0, 3.0)) ;
+        EXPECT_NEAR((line.getDirection() - Vector3d(1.0, 1.0, 1.0).normalized()).norm(), 0.0, 1e-15) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Line::Points(Point(1.0, 2.0, 3.0), Point(1.0, 2.0, 3.0))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Line::Points(Point::Undefined(), Point(2.0, 3.0, 4.0))) ;
+        EXPECT_ANY_THROW(Line::Points(Point(1.0, 2.0, 3.0), Point::Undefined())) ;
 
     }
 

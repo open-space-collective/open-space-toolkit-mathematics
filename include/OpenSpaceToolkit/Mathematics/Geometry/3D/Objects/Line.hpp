@@ -240,6 +240,19 @@ class Line : public Object
 
         static Line             Undefined                                   ( ) ;
 
+        /// @brief              Constructs a line using two points
+        ///
+        /// @code
+        ///                     Point p_1 = ...
+        ///                     Point p_2 = ...
+        ///                     Line line = Line::Points(p_1, p_2) ;
+        /// @endcode
+        ///
+        /// @return             Line
+
+        static Line             Points                                      (   const   Point&                      aFirstPoint,
+                                                                                const   Point&                      aSecondPoint                                ) ;
+
     private:
 
         Point                   origin_ ;

@@ -34,15 +34,6 @@ class TestLine:
         assert isinstance(line, Object)
         assert line.is_defined()
 
-    def test_undefined_success (self):
-
-        line = Line.undefined()
-
-        assert line is not None
-        assert isinstance(line, Point)
-        assert isinstance(line, Object)
-        assert line.is_defined() is False
-
     def test_contains_point_set_success (self):
 
         line = Line(
@@ -65,5 +56,26 @@ class TestLine:
         )
 
         assert line.distance_to_point(Point(2.0, 3.0, 4.0)) == 0.0
+
+    def test_undefined_success (self):
+
+        line = Line.undefined()
+
+        assert line is not None
+        assert isinstance(line, Line)
+        assert isinstance(line, Object)
+        assert line.is_defined() is False
+
+    def test_points_success (self):
+
+        line = Line.points(
+            Point(1.0, 2.0, 3.0),
+            Point(2.0, 4.0, 4.0),
+        )
+
+        assert line is not None
+        assert isinstance(line, Line)
+        assert isinstance(line, Object)
+        assert line.is_defined() is True
 
 ################################################################################################################################################################
