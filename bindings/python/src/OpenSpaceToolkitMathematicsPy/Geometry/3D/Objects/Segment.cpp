@@ -47,6 +47,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("get_direction", &Segment::getDirection)
         .def("get_length", &Segment::getLength)
         .def("intersection_with_plane", +[] (const Segment& aSegment, const Plane& aPlane) -> Intersection { return aSegment.intersectionWith(aPlane) ; })
+        .def("to_line", &Segment::toLine)
         .def("apply_transformation", &Segment::applyTransformation)
 
         .def_static("undefined", &Segment::Undefined)

@@ -40,6 +40,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("get_center", &Segment::getCenter)
         .def("get_direction", &Segment::getDirection)
         .def("get_length", &Segment::getLength)
+        .def("to_line", &Segment::toLine)
         .def("to_string", &Segment::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
         .def("apply_transformation", &Segment::applyTransformation)
 

@@ -451,6 +451,34 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, IntersectionWith
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, ToLine)
+{
+
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Segment ;
+
+    {
+
+        EXPECT_EQ(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).toLine()) ;
+        EXPECT_EQ(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 2.0 }).toLine()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).toLine()) ;
+        EXPECT_ANY_THROW(Segment({ 1.0, 1.0, 1.0 }, { 1.0, 1.0, 1.0 }).toLine()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Segment::Undefined().toLine()) ;
+
+    }
+
+}
+
 TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, ApplyTransformation)
 {
 

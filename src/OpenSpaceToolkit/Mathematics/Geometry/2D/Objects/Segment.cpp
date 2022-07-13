@@ -194,6 +194,11 @@ Real                            Segment::getLength                          ( ) 
 
 }
 
+Line                            Segment::toLine                             ( ) const
+{
+    return Line::Points(firstPoint_, secondPoint_) ;
+}
+
 String                          Segment::toString                           (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const
 {

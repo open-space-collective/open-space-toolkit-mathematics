@@ -281,6 +281,11 @@ Intersection                    Segment::intersectionWith                   (   
 
 }
 
+Line                            Segment::toLine                             ( ) const
+{
+    return Line::Points(firstPoint_, secondPoint_) ;
+}
+
 void                            Segment::print                              (           std::ostream&               anOutputStream,
                                                                                         bool                        displayDecorators                           ) const
 {
