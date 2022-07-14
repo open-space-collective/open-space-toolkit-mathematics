@@ -359,6 +359,88 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, GetLength)
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, DistanceToPoint)
+{
+
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Segment ;
+
+    {
+
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(Point({ 0.0, 0.0, 0.0 }))) ;
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +2.0, 0.0 }).distanceTo(Point({ 0.0, 0.0, 0.0 }))) ;
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, -1.0, 0.0 }).distanceTo(Point({ 0.0, 0.0, 0.0 }))) ;
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, -2.0, 0.0 }).distanceTo(Point({ 0.0, 0.0, 0.0 }))) ;
+
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(Point({ 0.0, 1.0, 0.0 }))) ;
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +2.0, 0.0 }).distanceTo(Point({ 0.0, 1.0, 0.0 }))) ;
+
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +2.0, 0.0 }).distanceTo(Point({ 0.0, 2.0, 0.0 }))) ;
+
+        EXPECT_EQ(1.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(Point({ +0.0, +2.0, 0.0 }))) ;
+        EXPECT_EQ(1.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(Point({ +1.0, +1.0, 0.0 }))) ;
+        EXPECT_EQ(1.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(Point({ -1.0, +1.0, 0.0 }))) ;
+
+        EXPECT_EQ(1.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(Point({ +0.0, -1.0, 0.0 }))) ;
+        EXPECT_EQ(1.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(Point({ +1.0, +0.0, 0.0 }))) ;
+        EXPECT_EQ(1.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(Point({ -1.0, +0.0, 0.0 }))) ;
+
+        EXPECT_EQ(2.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(Point({ +0.0, +3.0, 0.0 }))) ;
+        EXPECT_EQ(2.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(Point({ +0.0, -2.0, 0.0 }))) ;
+
+        EXPECT_NEAR(1.41421, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(Point({ +1.0, +2.0, 0.0 })), 1e-5) ;
+        EXPECT_NEAR(1.41421, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(Point({ -1.0, +2.0, 0.0 })), 1e-5) ;
+        EXPECT_NEAR(1.41421, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(Point({ +1.0, -1.0, 0.0 })), 1e-5) ;
+        EXPECT_NEAR(1.41421, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(Point({ -1.0, -1.0, 0.0 })), 1e-5) ;
+
+    }
+
+    {
+
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).distanceTo(Point({ 0.0, 0.0, 0.0 }))) ;
+
+        EXPECT_EQ(0.0, Segment({ +1.0, 0.0, 0.0 }, { +1.0, 0.0, 0.0 }).distanceTo(Point({ +1.0, 0.0, 0.0 }))) ;
+        EXPECT_EQ(0.0, Segment({ 0.0, +1.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(Point({ 0.0, +1.0, 0.0 }))) ;
+
+        EXPECT_EQ(0.0, Segment({ -1.0, 0.0, 0.0 }, { -1.0, 0.0, 0.0 }).distanceTo(Point({ -1.0, 0.0, 0.0 }))) ;
+        EXPECT_EQ(0.0, Segment({ 0.0, -1.0, 0.0 }, { 0.0, -1.0, 0.0 }).distanceTo(Point({ 0.0, -1.0, 0.0 }))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Segment::Undefined().distanceTo(Point({ 0.0, 0.0, 0.0 }))) ;
+        EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }).distanceTo(Point::Undefined())) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, DistanceToPointSet)
+{
+
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Segment ;
+
+    {
+
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(PointSet({ { 0.0, 0.0, 0.0 }, { 0.0, 10.0, 0.0 } }))) ;
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(PointSet({ { 0.0, 10.0, 0.0 }, { 0.0, 0.0, 0.0 } }))) ;
+
+        EXPECT_EQ(1.0, Segment({ 0.0, 0.0, 0.0 }, { 0.0, +1.0, 0.0 }).distanceTo(PointSet({ { 0.0, 3.0, 0.0 }, { 0.0, 2.0, 0.0 }, { 10.0, 0.0, 0.0 } }))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Segment::Undefined().distanceTo(PointSet({ { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 } }))) ;
+        EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }).distanceTo(PointSet::Empty())) ;
+
+    }
+
+}
+
 TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, IntersectionWith_Plane)
 {
 
@@ -446,6 +528,34 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, IntersectionWith
 
         EXPECT_ANY_THROW(Segment::Undefined().intersectionWith(Plane::Undefined())) ;
         EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).intersectionWith(Plane::Undefined())) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, ToLine)
+{
+
+    using ostk::math::geom::d3::objects::Line ;
+    using ostk::math::geom::d3::objects::Segment ;
+
+    {
+
+        EXPECT_EQ(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).toLine()) ;
+        EXPECT_EQ(Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }), Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 2.0 }).toLine()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 0.0 }).toLine()) ;
+        EXPECT_ANY_THROW(Segment({ 1.0, 1.0, 1.0 }, { 1.0, 1.0, 1.0 }).toLine()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Segment::Undefined().toLine()) ;
 
     }
 

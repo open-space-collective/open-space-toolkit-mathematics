@@ -332,7 +332,7 @@ RotationMatrix                  RotationMatrix::RX                          (   
 
     Matrix3d matrix ;
 
-    matrix << 1.0, 0.0,                             0.0,
+    matrix << 1.0,                          0.0,                          0.0,
               0.0, +std::cos(rotationAngle_rad), +std::sin(rotationAngle_rad),
               0.0, -std::sin(rotationAngle_rad), +std::cos(rotationAngle_rad) ;
 
@@ -353,7 +353,7 @@ RotationMatrix                  RotationMatrix::RY                          (   
     Matrix3d matrix ;
 
     matrix << +std::cos(rotationAngle_rad), 0.0, -std::sin(rotationAngle_rad),
-              0.0,                          1.0, 0.0,
+              0.0,                          1.0,                          0.0,
               +std::sin(rotationAngle_rad), 0.0, +std::cos(rotationAngle_rad) ;
 
     return RotationMatrix(matrix) ;
@@ -374,7 +374,7 @@ RotationMatrix                  RotationMatrix::RZ                          (   
 
     matrix << +std::cos(rotationAngle_rad), +std::sin(rotationAngle_rad), 0.0,
               -std::sin(rotationAngle_rad), +std::cos(rotationAngle_rad), 0.0,
-              0.0,                          0.0,                          1.0 ;
+                                       0.0,                          0.0, 1.0 ;
 
     return RotationMatrix(matrix) ;
 

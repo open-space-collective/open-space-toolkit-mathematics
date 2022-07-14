@@ -1,18 +1,15 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.cpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Line.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Sphere.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Plane.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Line.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.hpp>
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utilities.hpp>
@@ -25,7 +22,7 @@ namespace math
 {
 namespace geom
 {
-namespace d3
+namespace d2
 {
 namespace objects
 {
@@ -33,7 +30,7 @@ namespace objects
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                                 Line::Line                                  (   const   Point&                      anOrigin,
-                                                                                const   Vector3d&                   aDirection                                  )
+                                                                                const   Vector2d&                   aDirection                                  )
                                 :   Object(),
                                     origin_(anOrigin),
                                     direction_(aDirection)
@@ -90,51 +87,6 @@ bool                            Line::intersects                            (   
     return this->contains(aPoint) ;
 }
 
-// bool                            Line::intersects                            (   const   Line&                       aLine                                       ) const
-// {
-
-// }
-
-bool                            Line::intersects                            (   const   Plane&                      aPlane                                      ) const
-{
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line") ;
-    }
-
-    if (!aPlane.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Plane") ;
-    }
-
-    const Vector3d n = aPlane.getNormalVector() ;
-    const Vector3d v = direction_ ;
-
-    const Vector3d Q_0 = aPlane.getPoint().asVector() ;
-    const Vector3d P_0 = origin_.asVector() ;
-
-    const double nDotV = n.dot(v) ;
-
-    if (nDotV == 0.0) // Line and plane are parallel
-    {
-        return n.dot(Q_0 - P_0) == 0.0 ; // Line is in plane
-    }
-
-    return true ;
-
-}
-
-bool                            Line::intersects                            (   const   Sphere&                     aSphere                                     ) const
-{
-    return aSphere.intersects(*this) ;
-}
-
-bool                            Line::intersects                            (   const   Ellipsoid&                  anEllipsoid                                 ) const
-{
-    return anEllipsoid.intersects(*this) ;
-}
-
 bool                            Line::contains                              (   const   Point&                      aPoint                                      ) const
 {
 
@@ -148,7 +100,22 @@ bool                            Line::contains                              (   
         throw ostk::core::error::runtime::Undefined("Line") ;
     }
 
-    return direction_.cross(aPoint - origin_).squaredNorm() == 0.0 ;
+    if (aPoint == origin_)
+    {
+        return true ;
+    }
+
+    const Point p_1 = origin_ ;
+    const Point p_2 = origin_ + direction_ ;
+
+    if (p_2.x() == p_1.x())
+    {
+        return aPoint.x() == p_1.x() ;
+    }
+
+    const Real m = (p_2.y() - p_1.y()) / (p_2.x() - p_1.x()) ;
+
+    return aPoint.y() == m * (aPoint.x() - p_1.x()) + p_1.y() ;
 
 }
 
@@ -189,7 +156,7 @@ Point                           Line::getOrigin                             ( ) 
 
 }
 
-Vector3d                        Line::getDirection                          ( ) const
+Vector2d                        Line::getDirection                          ( ) const
 {
 
     if (!this->isDefined())
@@ -209,46 +176,33 @@ Real                            Line::distanceTo                            (   
         throw ostk::core::error::runtime::Undefined("Line") ;
     }
 
-    return this->getDirection().cross(aPoint - origin_).norm() ;
+    // https://en.wikipedia.org/wiki/Distance_from_a_point_to_a_line#Vector_formulation
+
+    const Point p = aPoint ;
+    const Point a = origin_ ;
+    const Vector2d n = direction_ ;
+
+    return ((p - a) - ((p - a).dot(n)) * n).norm() ;
 
 }
 
-Intersection                    Line::intersectionWith                      (   const   Plane&                      aPlane                                      ) const
+String                          Line::toString                              (   const   Object::Format&             aFormat,
+                                                                                const   Integer&                    aPrecision                                  ) const
 {
 
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Line") ;
-    }
-
-    if (!aPlane.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Plane") ;
-    }
-
-    const Vector3d n = aPlane.getNormalVector() ;
-    const Vector3d v = direction_ ;
-
-    const Vector3d Q_0 = aPlane.getPoint().asVector() ;
-    const Vector3d P_0 = origin_.asVector() ;
-
-    const double nDotV = n.dot(v) ;
-
-    if (nDotV == 0.0) // Line and plane are parallel
+    switch (aFormat)
     {
 
-        if (n.dot(Q_0 - P_0) == 0.0) // Line is in plane
-        {
-            return Intersection::Line(*this) ;
-        }
+        case Object::Format::Standard:
+            return String::Format("[{} -> {}]", origin_.toString(Object::Format::Standard, aPrecision), Point::Vector(direction_).toString(Object::Format::Standard, aPrecision)) ;
 
-        return Intersection::Empty() ;
+        default:
+            throw ostk::core::error::runtime::Wrong("Format") ;
+            break ;
 
     }
 
-    const double t = n.dot(Q_0 - P_0) / nDotV ;
-
-    return Intersection::Point(Point::Vector(P_0 + t * v)) ;
+    return String::Empty() ;
 
 }
 
@@ -285,7 +239,7 @@ void                            Line::applyTransformation                   (   
 
 Line                            Line::Undefined                             ( )
 {
-    return { Point::Undefined(), Vector3d::Undefined() } ;
+    return { Point::Undefined(), Vector2d::Undefined() } ;
 }
 
 Line                            Line::Points                                (   const   Point&                      aFirstPoint,
@@ -311,7 +265,7 @@ Line                            Line::Points                                (   
 
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }
 }
@@ -319,4 +273,4 @@ Line                            Line::Points                                (   
 }
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

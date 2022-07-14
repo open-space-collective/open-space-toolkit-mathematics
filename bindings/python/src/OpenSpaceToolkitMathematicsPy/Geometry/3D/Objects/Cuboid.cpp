@@ -59,10 +59,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
         .def("is_defined", &Cuboid::isDefined)
         .def("is_near", &Cuboid::isNear)
-        .def("intersects_point", +[] (const Cuboid& aCuboid, const Point& aPoint) -> bool { return aCuboid.intersects(aPoint) ; })
-        .def("intersects_point_set", +[] (const Cuboid& aCuboid, const PointSet& aPointSet) -> bool { return aCuboid.intersects(aPointSet) ; })
-        .def("intersects_line", +[] (const Cuboid& aCuboid, const Line& aLine) -> bool { return aCuboid.intersects(aLine) ; })
-        .def("intersects_cuboid", +[] (const Cuboid& aFirstCuboid, const Cuboid& aSecondCuboid) -> bool { return aFirstCuboid.intersects(aSecondCuboid) ; })
+
+        .def("intersects", overload_cast<const Point&>(&Cuboid::intersects, const_))
+        .def("intersects", overload_cast<const PointSet&>(&Cuboid::intersects, const_))
+        .def("intersects", overload_cast<const Line&>(&Cuboid::intersects, const_))
+        .def("intersects", overload_cast<const Cuboid&>(&Cuboid::intersects, const_))
+        .def("intersects_point", +[] (const Cuboid& aCuboid, const Point& aPoint) -> bool { return aCuboid.intersects(aPoint) ; }) // TBR
+        .def("intersects_point_set", +[] (const Cuboid& aCuboid, const PointSet& aPointSet) -> bool { return aCuboid.intersects(aPointSet) ; }) // TBR
+        .def("intersects_line", +[] (const Cuboid& aCuboid, const Line& aLine) -> bool { return aCuboid.intersects(aLine) ; }) // TBR
+        .def("intersects_cuboid", +[] (const Cuboid& aFirstCuboid, const Cuboid& aSecondCuboid) -> bool { return aFirstCuboid.intersects(aSecondCuboid) ; }) // TBR
 
         .def("get_center", &Cuboid::getCenter)
         .def("get_first_axis", &Cuboid::getFirstAxis)

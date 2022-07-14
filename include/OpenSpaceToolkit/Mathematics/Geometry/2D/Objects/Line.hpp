@@ -1,17 +1,18 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp
+/// @file           OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Line.hpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line__
-#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line__
+#define __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line__
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
 
 #include <OpenSpaceToolkit/Core/Types/Real.hpp>
 
@@ -23,7 +24,7 @@ namespace math
 {
 namespace geom
 {
-namespace d3
+namespace d2
 {
 namespace objects
 {
@@ -32,16 +33,13 @@ namespace objects
 
 using ostk::core::types::Real ;
 
-using ostk::math::obj::Vector3d ;
-using ostk::math::geom::d3::Object ;
-using ostk::math::geom::d3::objects::Point ;
+using ostk::math::obj::Vector2d ;
+using ostk::math::geom::d2::Object ;
+using ostk::math::geom::d2::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 class PointSet ;
-class Plane ;
-class Sphere ;
-class Ellipsoid ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -57,14 +55,14 @@ class Line : public Object
         /// @brief              Constructor
         ///
         /// @code
-        ///                     Line line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
+        ///                     Line line({ 0.0, 0.0 }, { 0.0, 1.0 }) ;
         /// @endcode
         ///
         /// @param              [in] anOrigin A line origin
         /// @param              [in] aDirection A line direction
 
                                 Line                                        (   const   Point&                      anOrigin,
-                                                                                const   Vector3d&                   aDirection                                  ) ;
+                                                                                const   Vector2d&                   aDirection                                  ) ;
 
         /// @brief              Clone line
         ///
@@ -75,7 +73,7 @@ class Line : public Object
         /// @brief              Equal to operator
         ///
         /// @code
-        ///                     Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) == Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ; // True
+        ///                     Line({ 0.0, 0.0 }, { 0.0, 1.0 }) == Line({ 0.0, 0.0 }, { 0.0, 1.0 }) ; // True
         /// @endcode
         ///
         /// @param              [in] aLine A line
@@ -86,7 +84,7 @@ class Line : public Object
         /// @brief              Not equal to operator
         ///
         /// @code
-        ///                     Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) != Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 2.0 }) ; // True
+        ///                     Line({ 0.0, 0.0 }, { 0.0, 1.0 }) != Line({ 0.0, 0.0 }, { 0.0, 2.0 }) ; // True
         /// @endcode
         ///
         /// @param              [in] aLine A line
@@ -97,7 +95,7 @@ class Line : public Object
         /// @brief              Check if line is defined
         ///
         /// @code
-        ///                     Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).isDefined() ; // True
+        ///                     Line({ 0.0, 0.0 }, { 0.0, 1.0 }).isDefined() ; // True
         /// @endcode
         ///
         /// @return             True if line is defined
@@ -117,44 +115,18 @@ class Line : public Object
 
         bool                    intersects                                  (   const   Point&                      aPoint                                      ) const ;
 
-        /// @brief              Check if line intersects plane
+        /// @brief              Check if line intersects line
         ///
         /// @code
         ///                     Line line = ... ;
-        ///                     Plane plane = ... ;
-        ///                     line.intersects(plane) ;
+        ///                     Line otherLine = ... ;
+        ///                     line.intersects(otherLine) ;
         /// @endcode
         ///
-        /// @param              [in] aPlane A plane
-        /// @return             True if line intersects plane
+        /// @param              [in] aLine A line
+        /// @return             True if line intersects kine
 
-        bool                    intersects                                  (   const   Plane&                      aPlane                                      ) const ;
-
-        /// @brief              Check if line intersects sphere
-        ///
-        /// @code
-        ///                     Line line = ... ;
-        ///                     Sphere sphere = ... ;
-        ///                     line.intersects(sphere) ;
-        /// @endcode
-        ///
-        /// @param              [in] aSphere A sphere
-        /// @return             True if line intersects sphere
-
-        bool                    intersects                                  (   const   Sphere&                     aSphere                                     ) const ;
-
-        /// @brief              Check if line intersects ellipsoid
-        ///
-        /// @code
-        ///                     Line line = ... ;
-        ///                     Ellipsoid ellipsoid = ... ;
-        ///                     line.intersects(ellipsoid) ;
-        /// @endcode
-        ///
-        /// @param              [in] anEllipsoid An ellipsoid
-        /// @return             True if line intersects ellipsoid
-
-        bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
+        bool                    intersects                                  (   const   Line&                       aLine                                       ) const ;
 
         /// @brief              Check if line contains point
         ///
@@ -185,7 +157,7 @@ class Line : public Object
         /// @brief              Get line origin
         ///
         /// @code
-        ///                     Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getOrigin() ; // [0.0, 0.0, 0.0]
+        ///                     Line({ 0.0, 0.0 }, { 0.0, 1.0 }).getOrigin() ; // [0.0, 0.0]
         /// @endcode
         ///
         /// @return             Line origin
@@ -195,12 +167,12 @@ class Line : public Object
         /// @brief              Get line direction
         ///
         /// @code
-        ///                     Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getDirection() ; // [0.0, 0.0, 1.0]
+        ///                     Line({ 0.0, 0.0 }, { 0.0, 1.0 }).getDirection() ; // [0.0, 1.0]
         /// @endcode
         ///
         /// @return             Line direction
 
-        Vector3d                getDirection                                ( ) const ;
+        Vector2d                getDirection                                ( ) const ;
 
         /// @brief              Get distance to point
         ///
@@ -209,12 +181,13 @@ class Line : public Object
 
         Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;
 
-        /// @brief              Compute intersection of line with plane
+        /// @brief              Get string representation
         ///
-        /// @param              [in] aPlane A plane
-        /// @return             Intersection of line with plane
+        /// @param              [in] aFormat A format
+        /// @return             String representation
 
-        Intersection            intersectionWith                            (   const   Plane&                      aPlane                                      ) const ;
+        virtual String          toString                                    (   const   Object::Format&             aFormat                                     =   Object::Format::Standard,
+                                                                                const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const override ;
 
         /// @brief              Print line
         ///
@@ -223,6 +196,8 @@ class Line : public Object
 
         virtual void            print                                       (           std::ostream&               anOutputStream,
                                                                                         bool                        displayDecorators                           =   true ) const override ;
+
+
 
         /// @brief              Apply transformation to line
         ///
@@ -256,7 +231,7 @@ class Line : public Object
     private:
 
         Point                   origin_ ;
-        Vector3d                direction_ ;
+        Vector2d                direction_ ;
 
 } ;
 

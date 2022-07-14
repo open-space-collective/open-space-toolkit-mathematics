@@ -150,6 +150,13 @@ class PointSet : public Object
 
         Size                    getSize                                     ( ) const ;
 
+        /// @brief              Get distance to point
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             Distance to point
+
+        Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;
+
         /// @brief              Get point closest to another point
         ///
         /// @param              [in] aPoint A point

@@ -10,6 +10,7 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment__
 
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Line.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
 
@@ -34,6 +35,7 @@ using ostk::core::types::Real ;
 
 using ostk::math::geom::d2::Object ;
 using ostk::math::geom::d2::objects::Point ;
+using ostk::math::geom::d2::objects::Line ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -188,6 +190,26 @@ class Segment : public Object
         /// @return             Segment length
 
         Real                    getLength                                   ( ) const ;
+
+        /// @brief              Get distance to point
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             Distance to point
+
+        Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Get distance to point set
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             Distance to point set
+
+        Real                    distanceTo                                  (   const   PointSet&                   aPointSet                                   ) const ;
+
+        /// @brief              Get line from segment
+        ///
+        /// @return             Line
+
+        Line                    toLine                                      ( ) const ;
 
         /// @brief              Get string representation
         ///

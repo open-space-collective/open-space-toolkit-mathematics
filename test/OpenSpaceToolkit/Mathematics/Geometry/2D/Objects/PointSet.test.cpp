@@ -225,6 +225,31 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, GetSize)
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, DistanceToPoint)
+{
+
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::PointSet ;
+
+    {
+
+        EXPECT_EQ(0.0, PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }).distanceTo(Point({ 0.0, 0.0 }))) ;
+        EXPECT_EQ(0.0, PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }).distanceTo(Point({ 0.0, 1.0 }))) ;
+        EXPECT_EQ(0.0, PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }).distanceTo(Point({ 0.0, 2.0 }))) ;
+
+        EXPECT_EQ(1.0, PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }).distanceTo(Point({ 0.0, 3.0 }))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(PointSet::Empty().distanceTo(Point::Undefined())) ;
+        EXPECT_ANY_THROW(PointSet({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 0.0, 2.0 } }).distanceTo(Point::Undefined())) ;
+
+    }
+
+}
+
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, GetPointClosestTo)
 {
 

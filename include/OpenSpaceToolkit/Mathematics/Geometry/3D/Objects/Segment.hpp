@@ -10,6 +10,7 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment__
 
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
 
@@ -34,6 +35,8 @@ using ostk::core::types::Real ;
 
 using ostk::math::geom::d3::Object ;
 using ostk::math::geom::d3::objects::Point ;
+using ostk::math::geom::d3::objects::PointSet ;
+using ostk::math::geom::d3::objects::Line ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -218,12 +221,32 @@ class Segment : public Object
 
         Real                    getLength                                   ( ) const ;
 
+        /// @brief              Get distance to point
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             Distance to point
+
+        Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Get distance to point set
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             Distance to point set
+
+        Real                    distanceTo                                  (   const   PointSet&                   aPointSet                                   ) const ;
+
         /// @brief              Compute intersection of segment with plane
         ///
         /// @param              [in] aPlane A plane
         /// @return             Intersection of segment with plane
 
         Intersection            intersectionWith                            (   const   Plane&                      aPlane                                      ) const ;
+
+        /// @brief              Get line from segment
+        ///
+        /// @return             Line
+
+        Line                    toLine                                      ( ) const ;
 
         /// @brief              Print segment
         ///

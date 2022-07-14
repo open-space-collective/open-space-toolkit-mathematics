@@ -69,10 +69,14 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("is_pyramid", +[] (const Composite& aComposite) -> bool { return aComposite.is<Pyramid>() ; })
         .def("is_composite", +[] (const Composite& aComposite) -> bool { return aComposite.is<Composite>() ; })
 
-        .def("intersects_object", +[] (const Composite& aComposite, const Object& anObject) -> bool { return aComposite.intersects(anObject) ; })
-        .def("intersects_composite", +[] (const Composite& aComposite, const Composite& anotherComposite) -> bool { return aComposite.intersects(anotherComposite) ; })
-        .def("contains_object", +[] (const Composite& aComposite, const Object& anObject) -> bool { return aComposite.contains(anObject) ; })
-        .def("contains_composite", +[] (const Composite& aComposite, const Composite& anotherComposite) -> bool { return aComposite.contains(anotherComposite) ; })
+        .def("intersects", overload_cast<const Object&>(&Composite::intersects, const_))
+        .def("intersects", overload_cast<const Composite&>(&Composite::intersects, const_))
+        .def("intersects_object", +[] (const Composite& aComposite, const Object& anObject) -> bool { return aComposite.intersects(anObject) ; }) // TBR
+        .def("intersects_composite", +[] (const Composite& aComposite, const Composite& anotherComposite) -> bool { return aComposite.intersects(anotherComposite) ; }) // TBR
+        .def("contains", overload_cast<const Object&>(&Composite::contains, const_))
+        .def("contains", overload_cast<const Composite&>(&Composite::contains, const_))
+        .def("contains_object", +[] (const Composite& aComposite, const Object& anObject) -> bool { return aComposite.contains(anObject) ; }) // TBR
+        .def("contains_composite", +[] (const Composite& aComposite, const Composite& anotherComposite) -> bool { return aComposite.contains(anotherComposite) ; }) // TBR
 
         .def("as_point", +[] (const Composite& aComposite) -> Point { return aComposite.as<Point>() ; })
         .def("as_point_set", +[] (const Composite& aComposite) -> PointSet { return aComposite.as<PointSet>() ; })
@@ -90,8 +94,10 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("access_object_at", &Composite::accessObjectAt, return_value_policy::reference)
 
         .def("get_object_count", &Composite::getObjectCount)
-        .def("intersection_with_object", +[] (const Composite& aComposite, const Object& anObject) -> Intersection { return aComposite.intersectionWith(anObject) ; })
-        .def("intersection_with_composite", +[] (const Composite& aComposite, const Composite& anotherComposite) -> Intersection { return aComposite.intersectionWith(anotherComposite) ; })
+        .def("intersection_with", overload_cast<const Object&>(&Composite::intersectionWith, const_))
+        .def("intersection_with", overload_cast<const Composite&>(&Composite::intersectionWith, const_))
+        .def("intersection_with_object", +[] (const Composite& aComposite, const Object& anObject) -> Intersection { return aComposite.intersectionWith(anObject) ; }) // TBR
+        .def("intersection_with_composite", +[] (const Composite& aComposite, const Composite& anotherComposite) -> Intersection { return aComposite.intersectionWith(anotherComposite) ; }) // TBR
 
         .def("apply_transformation", &Composite::applyTransformation)
 
