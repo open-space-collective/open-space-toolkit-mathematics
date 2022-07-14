@@ -9,6 +9,7 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.hpp>
 
 #include <Global.test.hpp>
 
@@ -263,6 +264,88 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, GetLength)
     {
 
         EXPECT_ANY_THROW(Segment::Undefined().getLength()) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, DistanceToPoint)
+{
+
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Segment ;
+
+    {
+
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(Point({ 0.0, 0.0 }))) ;
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0 }, { 0.0, +2.0 }).distanceTo(Point({ 0.0, 0.0 }))) ;
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0 }, { 0.0, -1.0 }).distanceTo(Point({ 0.0, 0.0 }))) ;
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0 }, { 0.0, -2.0 }).distanceTo(Point({ 0.0, 0.0 }))) ;
+
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(Point({ 0.0, 1.0 }))) ;
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0 }, { 0.0, +2.0 }).distanceTo(Point({ 0.0, 1.0 }))) ;
+
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0 }, { 0.0, +2.0 }).distanceTo(Point({ 0.0, 2.0 }))) ;
+
+        EXPECT_EQ(1.0, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(Point({ +0.0, +2.0 }))) ;
+        EXPECT_EQ(1.0, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(Point({ +1.0, +1.0 }))) ;
+        EXPECT_EQ(1.0, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(Point({ -1.0, +1.0 }))) ;
+
+        EXPECT_EQ(1.0, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(Point({ +0.0, -1.0 }))) ;
+        EXPECT_EQ(1.0, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(Point({ +1.0, +0.0 }))) ;
+        EXPECT_EQ(1.0, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(Point({ -1.0, +0.0 }))) ;
+
+        EXPECT_EQ(2.0, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(Point({ +0.0, +3.0 }))) ;
+        EXPECT_EQ(2.0, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(Point({ +0.0, -2.0 }))) ;
+
+        EXPECT_NEAR(1.41421, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(Point({ +1.0, +2.0 })), 1e-5) ;
+        EXPECT_NEAR(1.41421, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(Point({ -1.0, +2.0 })), 1e-5) ;
+        EXPECT_NEAR(1.41421, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(Point({ +1.0, -1.0 })), 1e-5) ;
+        EXPECT_NEAR(1.41421, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(Point({ -1.0, -1.0 })), 1e-5) ;
+
+    }
+
+    {
+
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0 }, { 0.0, 0.0 }).distanceTo(Point({ 0.0, 0.0 }))) ;
+
+        EXPECT_EQ(0.0, Segment({ +1.0, 0.0 }, { +1.0, 0.0 }).distanceTo(Point({ +1.0, 0.0 }))) ;
+        EXPECT_EQ(0.0, Segment({ 0.0, +1.0 }, { 0.0, +1.0 }).distanceTo(Point({ 0.0, +1.0 }))) ;
+
+        EXPECT_EQ(0.0, Segment({ -1.0, 0.0 }, { -1.0, 0.0 }).distanceTo(Point({ -1.0, 0.0 }))) ;
+        EXPECT_EQ(0.0, Segment({ 0.0, -1.0 }, { 0.0, -1.0 }).distanceTo(Point({ 0.0, -1.0 }))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Segment::Undefined().distanceTo(Point({ 0.0, 0.0 }))) ;
+        EXPECT_ANY_THROW(Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).distanceTo(Point::Undefined())) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, DistanceToPointSet)
+{
+
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::Segment ;
+
+    {
+
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(PointSet({ { 0.0, 0.0 }, { 0.0, 10.0 } }))) ;
+        EXPECT_EQ(0.0, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(PointSet({ { 0.0, 10.0 }, { 0.0, 0.0 } }))) ;
+
+        EXPECT_EQ(1.0, Segment({ 0.0, 0.0 }, { 0.0, +1.0 }).distanceTo(PointSet({ { 0.0, 3.0 }, { 0.0, 2.0 }, { 10.0, 0.0 } }))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Segment::Undefined().distanceTo(PointSet({ { 0.0, 0.0 }, { 1.0, 0.0 } }))) ;
+        EXPECT_ANY_THROW(Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).distanceTo(PointSet::Empty())) ;
 
     }
 

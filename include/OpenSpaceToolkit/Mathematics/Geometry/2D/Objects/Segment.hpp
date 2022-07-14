@@ -191,6 +191,20 @@ class Segment : public Object
 
         Real                    getLength                                   ( ) const ;
 
+        /// @brief              Get distance to point
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             Distance to point
+
+        Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Get distance to point set
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             Distance to point set
+
+        Real                    distanceTo                                  (   const   PointSet&                   aPointSet                                   ) const ;
+
         /// @brief              Get line from segment
         ///
         /// @return             Line

@@ -12,6 +12,7 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Segment.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.hpp>
 
+#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utilities.hpp>
 
@@ -191,6 +192,65 @@ Real                            Segment::getLength                          ( ) 
     }
 
     return (secondPoint_ - firstPoint_).norm() ;
+
+}
+
+Real                            Segment::distanceTo                         (   const   Point&                      aPoint                                      ) const
+{
+
+    if (!aPoint.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Segment") ;
+    }
+
+    if (this->isDegenerate())
+    {
+        return firstPoint_.distanceTo(aPoint) ;
+    }
+
+    // https://stackoverflow.com/questions/849211/shortest-distance-between-a-point-and-a-line-segment
+
+    const Point& v = firstPoint_ ;
+    const Point& w = secondPoint_ ;
+    const Point& p = aPoint ;
+
+    // |w-v|^2 (avoid sqrt)
+    const double l2 = (secondPoint_ - firstPoint_).squaredNorm() ;
+
+    // Clamp t from [0,1] to handle points outside the segmentw.
+    const double t = std::max(0.0, std::min(1.0, (p - v).dot(w - v) / l2)) ;
+
+    // Projection falls on the segment
+    const Point projection = v + t * (w - v) ;
+
+    return projection.distanceTo(aPoint) ;
+
+}
+
+Real                            Segment::distanceTo                         (   const   PointSet&                   aPointSet                                   ) const
+{
+
+    using ostk::core::ctnr::Array ;
+
+    if (aPointSet.isEmpty())
+    {
+        throw ostk::core::error::runtime::Undefined("Point Set") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Segment") ;
+    }
+
+    const Array<Real> distances = Array<Point>(aPointSet.begin(), aPointSet.end())
+        .map<Real>([this] (const Point& aPoint) -> Real { return this->distanceTo(aPoint) ; }) ;
+
+    return *std::min_element(distances.begin(), distances.end()) ;
 
 }
 

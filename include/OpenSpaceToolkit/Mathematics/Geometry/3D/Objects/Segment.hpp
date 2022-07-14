@@ -35,6 +35,7 @@ using ostk::core::types::Real ;
 
 using ostk::math::geom::d3::Object ;
 using ostk::math::geom::d3::objects::Point ;
+using ostk::math::geom::d3::objects::PointSet ;
 using ostk::math::geom::d3::objects::Line ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -219,6 +220,20 @@ class Segment : public Object
         /// @return             Segment length
 
         Real                    getLength                                   ( ) const ;
+
+        /// @brief              Get distance to point
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             Distance to point
+
+        Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Get distance to point set
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             Distance to point set
+
+        Real                    distanceTo                                  (   const   PointSet&                   aPointSet                                   ) const ;
 
         /// @brief              Compute intersection of segment with plane
         ///

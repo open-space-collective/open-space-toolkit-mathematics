@@ -17,6 +17,7 @@ import ostk.mathematics as mathematics
 
 Object = mathematics.geometry.d3.Object
 Point = mathematics.geometry.d3.objects.Point
+PointSet = mathematics.geometry.d3.objects.PointSet
 Segment = mathematics.geometry.d3.objects.Segment
 Line = mathematics.geometry.d3.objects.Line
 Transformation = mathematics.geometry.d3.Transformation
@@ -105,6 +106,14 @@ class TestSegment:
         assert np.array_equal(segment.get_direction(), np.array((1.0, 0.0, 0.0)))
 
         assert segment.get_length() == 2.0
+
+    def test_distance_to_success_point (self, segment: mathematics.geometry.d3.objects.Segment):
+
+        assert segment.distance_to(Point(0.0, 0.0, 0.0)) == 0.0
+
+    def test_distance_to_success_point_set (self, segment: mathematics.geometry.d3.objects.Segment):
+
+        assert segment.distance_to(PointSet([Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0)])) == 0.0
 
     def test_to_line_success (self, segment: mathematics.geometry.d3.objects.Segment):
 

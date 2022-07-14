@@ -18,6 +18,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
     using ostk::math::geom::d3::Object ;
     using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
     using ostk::math::geom::d3::objects::Segment ;
     using ostk::math::geom::d3::objects::Plane ;
     using ostk::math::geom::d3::objects::Sphere ;
@@ -46,7 +47,10 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("get_center", &Segment::getCenter)
         .def("get_direction", &Segment::getDirection)
         .def("get_length", &Segment::getLength)
-        .def("intersection_with_plane", +[] (const Segment& aSegment, const Plane& aPlane) -> Intersection { return aSegment.intersectionWith(aPlane) ; })
+        .def("distance_to", overload_cast<const Point&>(&Segment::distanceTo, const_))
+        .def("distance_to", overload_cast<const PointSet&>(&Segment::distanceTo, const_))
+        .def("intersection_with", overload_cast<const Plane&>(&Segment::intersectionWith, const_))
+        .def("intersection_with_plane", +[] (const Segment& aSegment, const Plane& aPlane) -> Intersection { return aSegment.intersectionWith(aPlane) ; }) // TBR
         .def("to_line", &Segment::toLine)
         .def("apply_transformation", &Segment::applyTransformation)
 
