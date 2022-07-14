@@ -35,13 +35,13 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("__repr__", &(shiftToString<Line>))
 
         .def("is_defined", &Line::isDefined)
-        .def("intersects_point", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.intersects(aPoint) ; })
-        .def("contains_point", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.contains(aPoint) ; })
-        .def("contains_point_set", +[] (const Line& aLine, const PointSet& aPointSet) -> bool { return aLine.contains(aPointSet) ; })
+        .def("intersects", overload_cast<const Point&>(&Line::intersects, const_))
+        .def("contains", overload_cast<const Point&>(&Line::contains, const_))
+        .def("contains", overload_cast<const PointSet&>(&Line::contains, const_))
 
         .def("get_origin", &Line::getOrigin)
         .def("get_direction", &Line::getDirection)
-        .def("distance_to_point", +[] (const Line& aLine, const Point& aPoint) -> Real { return aLine.distanceTo(aPoint) ; })
+        .def("distance_to", overload_cast<const Point&>(&Line::distanceTo, const_))
         .def("apply_transformation", &Line::applyTransformation)
 
         .def_static("undefined", &Line::Undefined)

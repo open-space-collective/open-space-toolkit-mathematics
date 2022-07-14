@@ -39,17 +39,24 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("__repr__", &(shiftToString<Line>))
 
         .def("is_defined", &Line::isDefined)
-        .def("intersects_point", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.intersects(aPoint) ; })
-        .def("intersects_plane", +[] (const Line& aLine, const Plane& aPlane) -> bool { return aLine.intersects(aPlane) ; })
-        .def("intersects_sphere", +[] (const Line& aLine, const Sphere& aSphere) -> bool { return aLine.intersects(aSphere) ; })
-        .def("intersects_ellipsoid", +[] (const Line& aLine, const Ellipsoid& anEllipsoid) -> bool { return aLine.intersects(anEllipsoid) ; })
-        .def("contains_point", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.contains(aPoint) ; })
-        .def("contains_point_set", +[] (const Line& aLine, const PointSet& aPointSet) -> bool { return aLine.contains(aPointSet) ; })
+        .def("intersects", overload_cast<const Point&>(&Line::intersects, const_))
+        .def("intersects", overload_cast<const Plane&>(&Line::intersects, const_))
+        .def("intersects", overload_cast<const Sphere&>(&Line::intersects, const_))
+        .def("intersects", overload_cast<const Ellipsoid&>(&Line::intersects, const_))
+        .def("intersects_point", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.intersects(aPoint) ; }) // TBR
+        .def("intersects_plane", +[] (const Line& aLine, const Plane& aPlane) -> bool { return aLine.intersects(aPlane) ; }) // TBR
+        .def("intersects_sphere", +[] (const Line& aLine, const Sphere& aSphere) -> bool { return aLine.intersects(aSphere) ; }) // TBR
+        .def("intersects_ellipsoid", +[] (const Line& aLine, const Ellipsoid& anEllipsoid) -> bool { return aLine.intersects(anEllipsoid) ; }) // TBR
+        .def("contains", overload_cast<const Point&>(&Line::contains, const_))
+        .def("contains", overload_cast<const PointSet&>(&Line::contains, const_))
+        .def("contains_point", +[] (const Line& aLine, const Point& aPoint) -> bool { return aLine.contains(aPoint) ; }) // TBR
+        .def("contains_point_set", +[] (const Line& aLine, const PointSet& aPointSet) -> bool { return aLine.contains(aPointSet) ; }) // TBR
 
         .def("get_origin", &Line::getOrigin)
         .def("get_direction", &Line::getDirection)
-        .def("distance_to_point", +[] (const Line& aLine, const Point& aPoint) -> Real { return aLine.distanceTo(aPoint) ; })
-        .def("intersection_with_plane", +[] (const Line& aLine, const Plane& aPlane) -> Intersection { return aLine.intersectionWith(aPlane) ; })
+        .def("distance_to", overload_cast<const Point&>(&Line::distanceTo, const_))
+        .def("intersection_with", overload_cast<const Plane&>(&Line::intersectionWith, const_))
+        .def("intersection_with_plane", +[] (const Line& aLine, const Plane& aPlane) -> Intersection { return aLine.intersectionWith(aPlane) ; }) // TBR
         .def("apply_transformation", &Line::applyTransformation)
 
         .def_static("undefined", &Line::Undefined)

@@ -36,7 +36,7 @@ class TestLine:
         assert isinstance(line, Object)
         assert line.is_defined()
 
-    def test_contains_point_set_success (self):
+    def test_contains_success_point_set (self):
 
         line = Line(
             Point(1.0, 2.0),
@@ -48,17 +48,17 @@ class TestLine:
             Point(2.0, 3.0),
         ])
 
-        assert line.contains_point_set(point_set) is True
+        assert line.contains(point_set) is True
 
-    def test_distance_to_point_success (self):
+    def test_distance_to_success_point (self):
 
         line = Line(
             Point(1.0, 2.0),
             np.array((1.0, 1.0)),
         )
 
-        assert float(line.distance_to_point(Point(2.0, 3.0))) == pytest.approx(0.0, 1e-5)
-        assert float(line.distance_to_point(Point(1.0, 5.0))) == pytest.approx(2.12132, 1e-5)
+        assert float(line.distance_to(Point(2.0, 3.0))) == pytest.approx(0.0, 1e-5)
+        assert float(line.distance_to(Point(1.0, 5.0))) == pytest.approx(2.12132, 1e-5)
 
     def test_undefined_success (self):
 
