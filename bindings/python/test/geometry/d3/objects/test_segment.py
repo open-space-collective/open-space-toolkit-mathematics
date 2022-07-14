@@ -29,7 +29,7 @@ Transformation = mathematics.geometry.d3.Transformation
 ################################################################################################################################################################
 
 @pytest.fixture
-def segment () -> mathematics.geometry.d3.objects.Segment:
+def segment () -> Segment:
 
     return Segment(
         Point(0.0, 0.0, 0.0),
@@ -91,47 +91,47 @@ class TestSegment:
 
         assert segment.get_length() == 2.0
 
-    def test_is_defined_success (self, segment: mathematics.geometry.d3.objects.Segment):
+    def test_is_defined_success (self, segment: Segment):
 
         assert segment.is_defined() is True
 
-    def test_is_degenerate_success (self, segment: mathematics.geometry.d3.objects.Segment):
+    def test_is_degenerate_success (self, segment: Segment):
 
         assert segment.is_degenerate() is False
 
-    def test_intersects_success_plane (self, segment: mathematics.geometry.d3.objects.Segment):
+    def test_intersects_success_plane (self, segment: Segment):
 
         assert segment.intersects(Plane(Point(0.0, 0.0, 0.0), np.array((1.0, 0.0, 0.0)))) is True
 
-    def test_intersects_success_sphere (self, segment: mathematics.geometry.d3.objects.Segment):
+    def test_intersects_success_sphere (self, segment: Segment):
 
         assert segment.intersects(Sphere(Point(0.0, 0.0, 0.0), 1.0)) is True
 
-    def test_intersects_success_ellipsoid (self, segment: mathematics.geometry.d3.objects.Segment):
+    def test_intersects_success_ellipsoid (self, segment: Segment):
 
         assert segment.intersects(Ellipsoid(Point(0.0, 0.0, 0.0), 0.5, 0.5, 0.5)) is True
 
-    def test_contains_success_point (self, segment: mathematics.geometry.d3.objects.Segment):
+    def test_contains_success_point (self, segment: Segment):
 
         assert segment.contains(Point(0.0, 0.0, 0.0)) is True
 
-    def test_get_length_success (self, segment: mathematics.geometry.d3.objects.Segment):
+    def test_get_length_success (self, segment: Segment):
 
         assert segment.get_length() == 2.0
 
-    def test_distance_to_success_point (self, segment: mathematics.geometry.d3.objects.Segment):
+    def test_distance_to_success_point (self, segment: Segment):
 
         assert segment.distance_to(Point(0.0, 0.0, 0.0)) == 0.0
 
-    def test_distance_to_success_point_set (self, segment: mathematics.geometry.d3.objects.Segment):
+    def test_distance_to_success_point_set (self, segment: Segment):
 
         assert segment.distance_to(PointSet([Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0)])) == 0.0
 
-    def test_intersection_with_success_plane (self, segment: mathematics.geometry.d3.objects.Segment):
+    def test_intersection_with_success_plane (self, segment: Segment):
 
         assert segment.intersection_with(Plane(Point(0.0, 0.0, 0.0), np.array((0.0, 0.0, 1.0)))) == Intersection.point(Point(0.0, 0.0, 0.0))
 
-    def test_to_line_success (self, segment: mathematics.geometry.d3.objects.Segment):
+    def test_to_line_success (self, segment: Segment):
 
         assert segment.to_line() == Line(Point(0.0, 0.0, 0.0), np.array((0.0, 0.0, 1.0)))
 
