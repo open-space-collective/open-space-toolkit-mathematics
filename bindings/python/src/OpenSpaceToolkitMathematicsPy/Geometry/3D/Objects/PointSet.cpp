@@ -37,6 +37,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("is_near", &PointSet::isNear)
 
         .def("get_size", &PointSet::getSize)
+        .def("distance_to", overload_cast<const Point&>(&PointSet::distanceTo, const_))
         .def("get_point_closest_to", &PointSet::getPointClosestTo)
         .def("apply_transformation", &PointSet::applyTransformation)
 

@@ -122,6 +122,28 @@ Size                            PointSet::getSize                           ( ) 
     return points_.size() ;
 }
 
+Real                            PointSet::distanceTo                        (   const   Point&                      aPoint                                      ) const
+{
+
+    using ostk::core::ctnr::Array ;
+
+    if (!aPoint.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (this->isEmpty())
+    {
+        throw ostk::core::error::runtime::Undefined("Point Set") ;
+    }
+
+    const Array<Real> distances = Array<Point>(this->begin(), this->end())
+        .map<Real>([&aPoint] (const Point& anOtherPoint) -> Real { return aPoint.distanceTo(anOtherPoint) ; }) ;
+
+    return *std::min_element(distances.begin(), distances.end()) ;
+
+}
+
 Point                           PointSet::getPointClosestTo                 (   const   Point&                      aPoint                                      ) const
 {
 
