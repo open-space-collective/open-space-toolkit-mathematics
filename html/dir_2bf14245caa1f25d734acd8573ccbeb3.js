@@ -4,7 +4,7 @@ var dir_2bf14245caa1f25d734acd8573ccbeb3 =
     [ "Cone.cpp", "_cone_8cpp.html", null ],
     [ "Cuboid.cpp", "_cuboid_8cpp.html", "_cuboid_8cpp" ],
     [ "Ellipsoid.cpp", "_ellipsoid_8cpp.html", "_ellipsoid_8cpp" ],
-    [ "Line.cpp", "_line_8cpp.html", null ],
+    [ "Line.cpp", "3_d_2_objects_2_line_8cpp.html", null ],
     [ "LineString.cpp", "3_d_2_objects_2_line_string_8cpp.html", null ],
     [ "Plane.cpp", "_plane_8cpp.html", null ],
     [ "Point.cpp", "3_d_2_objects_2_point_8cpp.html", null ],

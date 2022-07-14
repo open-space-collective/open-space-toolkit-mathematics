@@ -7,6 +7,7 @@ var classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set =
     [ "applyTransformation", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set.html#af03e071aa9d7a364a0c76f563b65a57e", null ],
     [ "begin", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set.html#ab660f9c1ab7ec392dce305a0d6cf72a5", null ],
     [ "clone", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set.html#a5936e0dbba4443f938d074c5e77fdac7", null ],
+    [ "distanceTo", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set.html#ad46f8b9e6d9f9b256fe1d0104f266968", null ],
     [ "end", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set.html#ad15fd1b2a3609d6e24657118945b579f", null ],
     [ "getPointClosestTo", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set.html#a55f63833c4c6fe3481a4f8833701907a", null ],
     [ "getSize", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set.html#a8c773ea027260feeb3b24298d075f228", null ],

@@ -1,5 +1,8 @@
 var dir_80c89be36d5fdf254eaf0c398a11b459 =
 [
+    [ "Line.hpp", "2_d_2_objects_2_line_8hpp.html", [
+      [ "Line", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line.html", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line" ]
+    ] ],
     [ "LineString.hpp", "2_d_2_objects_2_line_string_8hpp.html", [
       [ "LineString", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string.html", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string" ]
     ] ],

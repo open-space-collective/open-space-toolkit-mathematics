@@ -12,7 +12,7 @@ var dir_95db98e18178b2638dfcdd619a4f1219 =
     [ "Ellipsoid.hpp", "_ellipsoid_8hpp.html", [
       [ "Ellipsoid", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid" ]
     ] ],
-    [ "Line.hpp", "_line_8hpp.html", [
+    [ "Line.hpp", "3_d_2_objects_2_line_8hpp.html", [
       [ "Line", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line.html", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line" ]
     ] ],
     [ "LineString.hpp", "3_d_2_objects_2_line_string_8hpp.html", [

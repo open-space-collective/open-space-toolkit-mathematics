@@ -46,6 +46,8 @@ bool \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_ab11988
 \begin{DoxyCompactList}\small\item\em Check if point set is near another point set. \end{DoxyCompactList}\item 
 Size \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a169dfd11b6bd2e162f1ceb632ee19508}{get\+Size} () const
 \begin{DoxyCompactList}\small\item\em Get size of point set. \end{DoxyCompactList}\item 
+Real \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a3d5dd5bed603fd73b8f0e8eeaeb48693}{distance\+To} (const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Get distance to point. \end{DoxyCompactList}\item 
 \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a1d08aa1b16ad2865f09a25267c63e58b}{get\+Point\+Closest\+To} (const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Get point closest to another point. \end{DoxyCompactList}\item 
 virtual String \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_af032e86d9d9dcabe229a015a8361daf2}{to\+String} (const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1_object_aa76f9e30caebf4005bafbdff447f66cf}{Object\+::\+Format} \&a\+Format=\hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1_object_aa76f9e30caebf4005bafbdff447f66cfaeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}, const Integer \&a\+Precision=Integer\+::\+Undefined()) const override
@@ -157,6 +159,24 @@ Pointer to cloned point set
 
 Implements \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1_object_a98dedc6792aef35308966ca768eb3e14}{ostk\+::math\+::geom\+::d2\+::\+Object}.
 
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a3d5dd5bed603fd73b8f0e8eeaeb48693}\label{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a3d5dd5bed603fd73b8f0e8eeaeb48693}} 
+\index{ostk\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!distance\+To@{distance\+To}}
+\index{distance\+To@{distance\+To}!ostk\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}
+\subsubsection{\texorpdfstring{distance\+To()}{distanceTo()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set\+::distance\+To (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Get distance to point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance to point 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a09f5e125c7b4545a75e4eea6193bf615}\label{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_a09f5e125c7b4545a75e4eea6193bf615}} 
 \index{ostk\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}!Empty@{Empty}}
 \index{Empty@{Empty}!ostk\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Point\+Set}}

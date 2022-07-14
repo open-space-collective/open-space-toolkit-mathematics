@@ -38,10 +38,14 @@ bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a72843cbf325
 \begin{DoxyCompactList}\small\item\em Check if line intersects ellipsoid. \end{DoxyCompactList}\item 
 bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a51121a95b14948a800a36f57aa85e55a}{contains} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Check if line contains point. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a63fe1d825e847ba201c50ddf2d02ee1e}{contains} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if line contains point set. \end{DoxyCompactList}\item 
 \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_afc9e2dbb4641c031b91c4b8019a41b69}{get\+Origin} () const
 \begin{DoxyCompactList}\small\item\em Get line origin. \end{DoxyCompactList}\item 
 Vector3d \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a7f312d93308a5f0a876d69c46662838b}{get\+Direction} () const
 \begin{DoxyCompactList}\small\item\em Get line direction. \end{DoxyCompactList}\item 
+Real \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_acbc844b79bd79c92641828baefee8eb7}{distance\+To} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Get distance to point. \end{DoxyCompactList}\item 
 \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a3dba3152c9257eb58f2437c687e410db}{intersection\+With} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&a\+Plane) const
 \begin{DoxyCompactList}\small\item\em Compute intersection of line with plane. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ad3e7bf31cdde2d265dd9ff644b341f2d}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
@@ -52,7 +56,9 @@ virtual void \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ab12
 \begin{DoxyCompactItemize}
 \item 
 static \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_aa22d1d366cfaf4083977a332de24f621}{Undefined} ()
-\begin{DoxyCompactList}\small\item\em Constructs an undefined line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Constructs an undefined line. \end{DoxyCompactList}\item 
+static \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a23ebcd8b2720d8daefba7191eccdf8cb}{Points} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+First\+Point, const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Second\+Point)
+\begin{DoxyCompactList}\small\item\em Constructs a line using two points. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -126,7 +132,7 @@ Implements \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_object_a676013f9555f64
 \mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a51121a95b14948a800a36f57aa85e55a}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a51121a95b14948a800a36f57aa85e55a}} 
 \index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line}!contains@{contains}}
 \index{contains@{contains}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Line@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line}}
-\subsubsection{\texorpdfstring{contains()}{contains()}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Line\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
 
 
@@ -136,18 +142,62 @@ Check if line contains point.
 
 \begin{DoxyCode}
 \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a9ebdaaf67a4bd91780808f8683463ebe}{Line} line = ... ;
-Ellipsoid ellipsoid = ... ;
-line.contains(ellipsoid) ;
+Point point = ... ;
+line.contains(point) ;
 \end{DoxyCode}
 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\mbox{\tt in}  & {\em a\+Point} & A point \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True if line contains point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a63fe1d825e847ba201c50ddf2d02ee1e}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a63fe1d825e847ba201c50ddf2d02ee1e}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line}!contains@{contains}}
+\index{contains@{contains}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Line@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Line\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if line contains point set. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a9ebdaaf67a4bd91780808f8683463ebe}{Line} line = ... ;
+PointSet pointSet = ... ;
+line.contains(pointSet) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if line contains point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_acbc844b79bd79c92641828baefee8eb7}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_acbc844b79bd79c92641828baefee8eb7}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line}!distance\+To@{distance\+To}}
+\index{distance\+To@{distance\+To}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Line@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{distance\+To()}{distanceTo()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geom\+::d3\+::objects\+::\+Line\+::distance\+To (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Get distance to point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance to point 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a7f312d93308a5f0a876d69c46662838b}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a7f312d93308a5f0a876d69c46662838b}} 
 \index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line}!get\+Direction@{get\+Direction}}
@@ -380,6 +430,27 @@ Equal to operator.
 \begin{DoxyReturn}{Returns}
 True if lines are equal 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a23ebcd8b2720d8daefba7191eccdf8cb}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a23ebcd8b2720d8daefba7191eccdf8cb}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line}!Points@{Points}}
+\index{Points@{Points}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Line@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line}}
+\subsubsection{\texorpdfstring{Points()}{Points()}}
+{\footnotesize\ttfamily \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} ostk\+::math\+::geom\+::d3\+::objects\+::\+Line\+::\+Points (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+First\+Point,  }\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Second\+Point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a line using two points. 
+
+
+\begin{DoxyCode}
+Point p\_1 = ...
+Point p\_2 = ...
+Line line = \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_a23ebcd8b2720d8daefba7191eccdf8cb}{Line::Points}(p\_1, p\_2) ;
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line}{Line} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ad3e7bf31cdde2d265dd9ff644b341f2d}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line_ad3e7bf31cdde2d265dd9ff644b341f2d}} 
 \index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line}!print@{print}}
 \index{print@{print}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Line@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Line}}
@@ -424,5 +495,5 @@ Undefined line
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_line_8hpp}{Line.\+hpp}\item 
-src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{_line_8cpp}{Line.\+cpp}\end{DoxyCompactItemize}
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{3_d_2_objects_2_line_8hpp}{Line.\+hpp}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Objects/\hyperlink{3_d_2_objects_2_line_8cpp}{Line.\+cpp}\end{DoxyCompactItemize}

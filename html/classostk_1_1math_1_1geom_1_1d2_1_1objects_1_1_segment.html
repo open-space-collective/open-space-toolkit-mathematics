@@ -141,6 +141,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9e6dcd2b0d921c755b6980f457ed7f3e"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a9e6dcd2b0d921c755b6980f457ed7f3e">getLength</a> () const</td></tr>
 <tr class="memdesc:a9e6dcd2b0d921c755b6980f457ed7f3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get segment length.  <a href="#a9e6dcd2b0d921c755b6980f457ed7f3e">More...</a><br /></td></tr>
 <tr class="separator:a9e6dcd2b0d921c755b6980f457ed7f3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86ccd1f27b77bb7bc08c6461ccdf67b4"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a86ccd1f27b77bb7bc08c6461ccdf67b4">distanceTo</a> (const <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html">Point</a> &amp;aPoint) const</td></tr>
+<tr class="memdesc:a86ccd1f27b77bb7bc08c6461ccdf67b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get distance to point.  <a href="#a86ccd1f27b77bb7bc08c6461ccdf67b4">More...</a><br /></td></tr>
+<tr class="separator:a86ccd1f27b77bb7bc08c6461ccdf67b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1619a8228472bd21629ad889d8eec99"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#ab1619a8228472bd21629ad889d8eec99">distanceTo</a> (const <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set.html">PointSet</a> &amp;aPointSet) const</td></tr>
+<tr class="memdesc:ab1619a8228472bd21629ad889d8eec99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get distance to point set.  <a href="#ab1619a8228472bd21629ad889d8eec99">More...</a><br /></td></tr>
+<tr class="separator:ab1619a8228472bd21629ad889d8eec99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a630cfcf9111d168924035d768dd38a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line.html">Line</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a0a630cfcf9111d168924035d768dd38a">toLine</a> () const</td></tr>
+<tr class="memdesc:a0a630cfcf9111d168924035d768dd38a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get line from segment.  <a href="#a0a630cfcf9111d168924035d768dd38a">More...</a><br /></td></tr>
+<tr class="separator:a0a630cfcf9111d168924035d768dd38a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac302430065e10f1f281bb8782a904673"><td class="memItemLeft" align="right" valign="top">virtual String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#ac302430065e10f1f281bb8782a904673">toString</a> (const <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1_object.html#aa76f9e30caebf4005bafbdff447f66cf">Object::Format</a> &amp;aFormat=<a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1_object.html#aa76f9e30caebf4005bafbdff447f66cfaeb6d8ae6f20283755b339c0dc273988b">Object::Format::Standard</a>, const Integer &amp;aPrecision=Integer::Undefined()) const override</td></tr>
 <tr class="memdesc:ac302430065e10f1f281bb8782a904673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get string representation.  <a href="#ac302430065e10f1f281bb8782a904673">More...</a><br /></td></tr>
 <tr class="separator:ac302430065e10f1f281bb8782a904673"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -345,6 +354,60 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if segment contains point set </dd></dl>
+
+</div>
+</div>
+<a id="a86ccd1f27b77bb7bc08c6461ccdf67b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86ccd1f27b77bb7bc08c6461ccdf67b4">&#9670;&nbsp;</a></span>distanceTo() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Real ostk::math::geom::d2::objects::Segment::distanceTo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html">Point</a> &amp;&#160;</td>
+          <td class="paramname"><em>aPoint</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get distance to point. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPoint</td><td>A point </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Distance to point </dd></dl>
+
+</div>
+</div>
+<a id="ab1619a8228472bd21629ad889d8eec99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1619a8228472bd21629ad889d8eec99">&#9670;&nbsp;</a></span>distanceTo() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Real ostk::math::geom::d2::objects::Segment::distanceTo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set.html">PointSet</a> &amp;&#160;</td>
+          <td class="paramname"><em>aPointSet</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get distance to point set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPointSet</td><td>A point set </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Distance to point set </dd></dl>
 
 </div>
 </div>
@@ -596,6 +659,26 @@ Additional Inherited Members</h2></td></tr>
 </dl>
 
 <p>Implements <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1_object.html#ae05ad883ed5a560e38f0aae7a4adc1ea">ostk::math::geom::d2::Object</a>.</p>
+
+</div>
+</div>
+<a id="a0a630cfcf9111d168924035d768dd38a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a630cfcf9111d168924035d768dd38a">&#9670;&nbsp;</a></span>toLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line.html">Line</a> ostk::math::geom::d2::objects::Segment::toLine </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get line from segment. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line.html" title="Line. ">Line</a> </dd></dl>
 
 </div>
 </div>

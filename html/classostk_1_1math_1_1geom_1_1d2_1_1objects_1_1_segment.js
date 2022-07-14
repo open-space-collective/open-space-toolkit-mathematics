@@ -5,6 +5,8 @@ var classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment =
     [ "clone", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#ad0ba7ee144638335e4f02da0de38beab", null ],
     [ "contains", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a08468b912471a18d29062b96968afc2f", null ],
     [ "contains", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#afd9fea7d6b73c7136ddb1246e20134d3", null ],
+    [ "distanceTo", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a86ccd1f27b77bb7bc08c6461ccdf67b4", null ],
+    [ "distanceTo", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#ab1619a8228472bd21629ad889d8eec99", null ],
     [ "getCenter", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a691c0ef8268b6c3628e1cb69beb9ed74", null ],
     [ "getDirection", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a92754ce55fb91c186fbe06db876425f9", null ],
     [ "getFirstPoint", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a8c91be64413c5944403dcd61daa141ae", null ],
@@ -15,5 +17,6 @@ var classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment =
     [ "operator!=", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a3a2de88cdbd141be1bfd22945e3fa100", null ],
     [ "operator==", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a1b6b81c43a1f80a4ddd07ac62943db24", null ],
     [ "print", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a475ba5efb353218779018b9be88be276", null ],
+    [ "toLine", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a0a630cfcf9111d168924035d768dd38a", null ],
     [ "toString", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#ac302430065e10f1f281bb8782a904673", null ]
 ];
