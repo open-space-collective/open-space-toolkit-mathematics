@@ -37,10 +37,14 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
         .def("is_defined", &Segment::isDefined)
         .def("is_degenerate", &Segment::isDegenerate)
-        .def("intersects_plane", +[] (const Segment& aSegment, const Plane& aPlane) -> bool { return aSegment.intersects(aPlane) ; })
-        .def("intersects_sphere", +[] (const Segment& aSegment, const Sphere& aSphere) -> bool { return aSegment.intersects(aSphere) ; })
-        .def("intersects_ellipsoid", +[] (const Segment& aSegment, const Ellipsoid& anEllipsoid) -> bool { return aSegment.intersects(anEllipsoid) ; })
-        .def("contains_point", +[] (const Segment& aSegment, const Point& aPoint) -> bool { return aSegment.contains(aPoint) ; })
+        .def("intersects", overload_cast<const Plane&>(&Segment::intersects, const_))
+        .def("intersects", overload_cast<const Sphere&>(&Segment::intersects, const_))
+        .def("intersects", overload_cast<const Ellipsoid&>(&Segment::intersects, const_))
+        .def("intersects_plane", +[] (const Segment& aSegment, const Plane& aPlane) -> bool { return aSegment.intersects(aPlane) ; }) // TBR
+        .def("intersects_sphere", +[] (const Segment& aSegment, const Sphere& aSphere) -> bool { return aSegment.intersects(aSphere) ; }) // TBR
+        .def("intersects_ellipsoid", +[] (const Segment& aSegment, const Ellipsoid& anEllipsoid) -> bool { return aSegment.intersects(anEllipsoid) ; }) // TBR
+        .def("contains", overload_cast<const Point&>(&Segment::contains, const_))
+        .def("contains_point", +[] (const Segment& aSegment, const Point& aPoint) -> bool { return aSegment.contains(aPoint) ; }) // TBR
 
         .def("get_first_point", &Segment::getFirstPoint)
         .def("get_second_point", &Segment::getSecondPoint)

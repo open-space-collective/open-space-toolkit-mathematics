@@ -34,6 +34,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
     class_<Ellipsoid, Object>(aModule, "Ellipsoid")
 
+        .def(init<const Point&, const Real&, const Real&, const Real&>())
         .def(init<const Point&, const Real&, const Real&, const Real&, const Quaternion&>())
 
         .def(self == self)
