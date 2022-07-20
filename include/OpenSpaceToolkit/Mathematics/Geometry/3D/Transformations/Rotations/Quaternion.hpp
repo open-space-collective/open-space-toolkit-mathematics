@@ -196,6 +196,13 @@ class Quaternion
 
         Quaternion              operator /                                  (   const   Quaternion&                 aQuaternion                                 ) const ;
 
+        /// @brief              Addition assignment operator (quaternion)
+        ///
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             A reference to quaternion
+
+        Quaternion&             operator +=                                 (   const   Quaternion&                 aQuaternion                                 ) ;
+
         /// @brief              Multiplication assignment operator (quaternion)
         ///
         /// @note               This operator uses cross multiplication
