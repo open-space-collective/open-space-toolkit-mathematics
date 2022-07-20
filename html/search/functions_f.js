@@ -5,6 +5,8 @@ var searchData=
   ['setlowerbound',['setLowerBound',['../classostk_1_1math_1_1obj_1_1_interval.html#a958544f14f36300f89e383351279299d',1,'ostk::math::obj::Interval']]],
   ['settype',['setType',['../classostk_1_1math_1_1obj_1_1_interval.html#a84876dff7017bf9ebb5c7ef71aefffc7',1,'ostk::math::obj::Interval']]],
   ['setupperbound',['setUpperBound',['../classostk_1_1math_1_1obj_1_1_interval.html#a5e53477bc77dea2587283a1fa73b3659',1,'ostk::math::obj::Interval']]],
+  ['shortestrotation',['ShortestRotation',['../classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a577ce79f1b77303355a96fc6e4f71310',1,'ostk::math::geom::d3::trf::rot::Quaternion']]],
+  ['slerp',['SLERP',['../classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#abb665a14367c406cf7e5c88824195186',1,'ostk::math::geom::d3::trf::rot::Quaternion']]],
   ['sphere',['Sphere',['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html#a6920f72260a7b2c9ffc29283540e16c2',1,'ostk::math::geom::d3::objects::Sphere']]],
   ['spheregtevectorfrompoint',['SphereGteVectorFromPoint',['../namespaceostk_1_1math_1_1geom_1_1d3_1_1objects.html#ab5e5801a03f5bdf9e4bb1fd4ef912e1a',1,'ostk::math::geom::d3::objects']]],
   ['spheregtevectorfromvector3d',['SphereGteVectorFromVector3d',['../namespaceostk_1_1math_1_1geom_1_1d3_1_1objects.html#a994fd988c1cb50ee37d241e56be9829c',1,'ostk::math::geom::d3::objects']]],

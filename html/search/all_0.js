@@ -19,5 +19,6 @@ var searchData=
   ['arcsecond',['Arcsecond',['../classostk_1_1math_1_1geom_1_1_angle.html#abb73526d3f7f94a3b33e8358e1b18027a7839ceecae19481f2e21e0ce3e11d3aa',1,'ostk::math::geom::Angle']]],
   ['arcseconds',['Arcseconds',['../classostk_1_1math_1_1geom_1_1_angle.html#ab6ddff73b6bfc7c10e7d01db919cbb25',1,'ostk::math::geom::Angle']]],
   ['as',['as',['../classostk_1_1math_1_1geom_1_1d3_1_1_intersection.html#a4be3a53127df9940bc2eb61777b22b33',1,'ostk::math::geom::d3::Intersection::as()'],['../classostk_1_1math_1_1geom_1_1d3_1_1_object.html#ad921120c3bf1176035258fad0f654137',1,'ostk::math::geom::d3::Object::as()'],['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite.html#a183fda79f9c329411533a390c77885ef',1,'ostk::math::geom::d3::objects::Composite::as()']]],
+  ['assert_5fvector_5fequality',['ASSERT_VECTOR_EQUALITY',['../_test_8hpp.html#aedae5b4131082f77c6db5849c1f6077c',1,'Test.hpp']]],
   ['asvector',['asVector',['../classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point.html#a19aa06ed436313a39c332caffcf2c86a',1,'ostk::math::geom::d2::objects::Point::asVector()'],['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point.html#a00034296a5aab3bcc8c4fe46584f119a',1,'ostk::math::geom::d3::objects::Point::asVector()']]]
 ];

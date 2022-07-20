@@ -12,6 +12,8 @@ class \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vect
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \hyperlink{namespaceostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_a31ab86b0f429a33d76fbab4bf520417b}{operator$\ast$} (const Real \&a\+Scalar, const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Quaternion)
+\item 
 std\+::ostream \& \hyperlink{namespaceostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_af606d732f296e6b0a7e35d5023a59915}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&a\+Quaternion)
 \item 
 std\+::ostream \& \hyperlink{namespaceostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_a44f63ac9ffcaf5993609c3229eb2b91b}{operator$<$$<$} (std\+::ostream \&an\+Output\+Stream, const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix} \&a\+Rotation\+Matrix)
@@ -21,6 +23,30 @@ std\+::ostream \& \hyperlink{namespaceostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_a
 
 
 \subsection{Function Documentation}
+\mbox{\Hypertarget{namespaceostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_a31ab86b0f429a33d76fbab4bf520417b}\label{namespaceostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_a31ab86b0f429a33d76fbab4bf520417b}} 
+\index{ostk\+::math\+::geom\+::d3\+::trf\+::rot@{ostk\+::math\+::geom\+::d3\+::trf\+::rot}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!ostk\+::math\+::geom\+::d3\+::trf\+::rot@{ostk\+::math\+::geom\+::d3\+::trf\+::rot}}
+\subsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} ostk\+::math\+::geom\+::d3\+::trf\+::rot\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Scalar,  }\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} \&}]{a\+Quaternion }\end{DoxyParamCaption})}
+
+Example\+: 
+\begin{DoxyCode}
+Real scalar = ... ;
+Quaternion q\_1 = ... ;
+Quaternion q\_2 = scalar * q\_1 ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Scalar} & A scalar \\
+\hline
+\mbox{\tt in}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion} 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespaceostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_a8079bca5341bbc79c343ef3be7e49d7b}\label{namespaceostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_a8079bca5341bbc79c343ef3be7e49d7b}} 
 \index{ostk\+::math\+::geom\+::d3\+::trf\+::rot@{ostk\+::math\+::geom\+::d3\+::trf\+::rot}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!ostk\+::math\+::geom\+::d3\+::trf\+::rot@{ostk\+::math\+::geom\+::d3\+::trf\+::rot}}
