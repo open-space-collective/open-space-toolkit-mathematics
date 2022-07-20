@@ -650,6 +650,21 @@ class Quaternion
         static Quaternion       Parse                                       (   const   String&                     aString,
                                                                                 const   Quaternion::Format&         aFormat                                     =   Quaternion::Format::XYZS ) ;
 
+        /// @brief              Constructs a quaternion describing the shortest rotation between two vectors
+        ///
+        /// @code
+        ///                     Vector3d v_1 = ...
+        ///                     Vector3d v_2 = ...
+        ///                     Quaternion q = Quaternion.ShortestRotation(v_1, v_2)
+        /// @endcode
+        ///
+        /// @param              [in] aFirstVector A first vector
+        /// @param              [in] aSecondVector A second vector
+        /// @return             Quaternion
+
+        static Quaternion       ShortestRotation                            (   const   Vector3d&                   aFirstVector,
+                                                                                const   Vector3d&                   aSecondVector                               ) ;
+
     private:
 
         Real                    x_ ;

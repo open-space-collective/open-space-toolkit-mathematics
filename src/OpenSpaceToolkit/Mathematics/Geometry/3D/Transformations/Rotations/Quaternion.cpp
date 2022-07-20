@@ -660,6 +660,30 @@ Quaternion                      Quaternion::Parse                           (   
 
 }
 
+Quaternion                      Quaternion::ShortestRotation                (   const   Vector3d&                   aFirstVector,
+                                                                                const   Vector3d&                   aSecondVector                               )
+{
+
+    if (!aFirstVector.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("First vector") ;
+    }
+
+    if (!aSecondVector.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Second vector") ;
+    }
+
+    const Vector3d firstNormalizedVector = aFirstVector.normalized() ;
+    const Vector3d secondNormalizedVector = aSecondVector.normalized() ;
+
+    const Vector3d orthogonalVector = secondNormalizedVector.cross(firstNormalizedVector) ;
+    const Real dotProduct = firstNormalizedVector.dot(secondNormalizedVector) ;
+
+    return Quaternion::XYZS(orthogonalVector.x(), orthogonalVector.y(), orthogonalVector.z(), 1.0 + dotProduct).toNormalized() ;
+
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }

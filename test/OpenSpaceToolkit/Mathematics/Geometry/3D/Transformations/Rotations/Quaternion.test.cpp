@@ -969,4 +969,28 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quatern
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ShortestRotation)
+{
+
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::RotationVector ;
+
+    {
+
+        EXPECT_TRUE(Quaternion::ShortestRotation({ 1.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Radians(1e-9))) ;
+        EXPECT_TRUE(Quaternion::ShortestRotation({ 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }).isNear(Quaternion::RotationVector(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(-90.0))), Angle::Radians(1e-9))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Quaternion::ShortestRotation({ 1.0, 0.0, 0.0 }, Vector3d::Undefined())) ;
+        EXPECT_ANY_THROW(Quaternion::ShortestRotation(Vector3d::Undefined(), { 1.0, 0.0, 0.0 })) ;
+
+    }
+
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

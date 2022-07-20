@@ -95,6 +95,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def_static("rotation_vector", &Quaternion::RotationVector)
         .def_static("rotation_matrix", &Quaternion::RotationMatrix)
         .def_static("parse", &Quaternion::Parse)
+        .def_static("shortest_rotation", &Quaternion::ShortestRotation, arg("first_vector"), arg("second_vector"))
 
     ;
 

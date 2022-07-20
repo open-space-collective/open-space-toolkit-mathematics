@@ -189,4 +189,8 @@ class TestQuaternion:
 
         assert Quaternion.parse("[0.0, 0.0, 0.0, 1.0]", Quaternion.Format.XYZS) == quaternion
 
+    def test_shortest_rotation_success (self, quaternion: Quaternion):
+
+        assert Quaternion.shortest_rotation(np.array((1.0, 0.0, 0.0)), np.array((1.0, 0.0, 0.0))) == quaternion
+
 ################################################################################################################################################################
