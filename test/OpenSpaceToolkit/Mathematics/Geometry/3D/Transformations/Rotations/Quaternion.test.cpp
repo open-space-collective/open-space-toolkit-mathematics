@@ -7,6 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <OpenSpaceToolkit/Mathematics/Test.hpp>
+
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
@@ -981,6 +983,17 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quatern
 
         EXPECT_TRUE(Quaternion::ShortestRotation({ 1.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }).isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Radians(1e-9))) ;
         EXPECT_TRUE(Quaternion::ShortestRotation({ 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 }).isNear(Quaternion::RotationVector(RotationVector({ 0.0, 0.0, 1.0 }, Angle::Degrees(-90.0))), Angle::Radians(1e-9))) ;
+
+    }
+
+    {
+
+        const Vector3d v_A = { 1.0, 0.0, 0.0 } ;
+        const Vector3d v_B = { 0.0, 1.0, 0.0 } ;
+
+        const Quaternion q_B_A = Quaternion::ShortestRotation(v_A, v_B) ;
+
+        ASSERT_VECTOR_EQUALITY(v_B, q_B_A * v_A, 1e-9) ;
 
     }
 
