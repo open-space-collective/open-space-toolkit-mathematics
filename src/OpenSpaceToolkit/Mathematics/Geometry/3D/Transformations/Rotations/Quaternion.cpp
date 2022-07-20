@@ -661,7 +661,7 @@ Quaternion                      Quaternion::Parse                           (   
         throw ostk::core::error::runtime::Undefined("String") ;
     }
 
-    VectorXd vector = VectorXd::Parse(aString) ;
+    const VectorXd vector = VectorXd::Parse(aString) ;
 
     if (vector.size() != 4)
     {
