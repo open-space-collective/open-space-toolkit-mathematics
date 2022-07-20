@@ -137,6 +137,19 @@ class Quaternion
 
         bool                    operator !=                                 (   const   Quaternion&                 aQuaternion                                 ) const ;
 
+        /// @brief              Addition operator (quaternion)
+        ///
+        /// @code
+        ///                     Quaternion q_1 = ... ;
+        ///                     Quaternion q_2 = ... ;
+        ///                     Quaternion q_3 = q_1 + q_2 ;
+        /// @encode
+        ///
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             Quaternion
+
+        Quaternion              operator +                                  (   const   Quaternion&                 aQuaternion                                 ) const ;
+
         /// @brief              Multiplication operator (quaternion)
         ///
         /// @code
@@ -148,7 +161,7 @@ class Quaternion
         /// @note               This operator uses cross multiplication
         ///
         /// @param              [in] aQuaternion A quaternion
-        /// @return             A quaternion
+        /// @return             Quaternion
 
         Quaternion              operator *                                  (   const   Quaternion&                 aQuaternion                                 ) const ;
 
@@ -164,9 +177,39 @@ class Quaternion
         /// @note               This operator uses transformVector
         ///
         /// @param              [in] aVector A vector
-        /// @return             A vector
+        /// @return             Vector
 
         Vector3d                operator *                                  (   const   Vector3d&                   aVector                                     ) const ;
+
+        /// @brief              Multiplication operator (scalar)
+        ///
+        /// Example:
+        /// @code
+        ///                     Quaternion q_1 = ... ;
+        ///                     Real scalar = ... ;
+        ///                     Quaternion q_2 = q_1 * scalar ;
+        /// @endcode
+        ///
+        /// @param              [in] aScalar A scalar
+        /// @return             Quaternion
+
+        Quaternion              operator *                                  (   const   Real&                       aScalar                                     ) const ;
+
+        /// @brief              Multiplication operator (scalar)
+        ///
+        /// Example:
+        /// @code
+        ///                     Real scalar = ... ;
+        ///                     Quaternion q_1 = ... ;
+        ///                     Quaternion q_2 = scalar * q_1 ;
+        /// @endcode
+        ///
+        /// @param              [in] aScalar A scalar
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             Quaternion
+
+        friend Quaternion       operator *                                  (   const   Real&                       aScalar,
+                                                                                const   Quaternion&                 aQuaternion                                 ) ;
 
         /// @brief              Division operator (quaternion)
         ///
@@ -179,16 +222,36 @@ class Quaternion
         /// @note               This is equivalent to multiplying with the inverse
         ///
         /// @param              [in] aQuaternion A quaternion
-        /// @return             A quaternion
+        /// @return             Quaternion
 
         Quaternion              operator /                                  (   const   Quaternion&                 aQuaternion                                 ) const ;
+
+        /// @brief              Power operator (quaternion)
+        ///
+        /// @code
+        ///                     Quaternion q_1 = ... ;
+        ///                     Real scalar = ... ;
+        ///                     Quaternion q_2 = q_1 ^ scalar ;
+        /// @endcode
+        ///
+        /// @param              [in] aScalar A scalar
+        /// @return             Quaternion
+
+        Quaternion              operator ^                                  (   const   Real&                       aScalar                                     ) const ;
+
+        /// @brief              Addition assignment operator (quaternion)
+        ///
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             Reference to quaternion
+
+        Quaternion&             operator +=                                 (   const   Quaternion&                 aQuaternion                                 ) ;
 
         /// @brief              Multiplication assignment operator (quaternion)
         ///
         /// @note               This operator uses cross multiplication
         ///
         /// @param              [in] aQuaternion A quaternion
-        /// @return             A reference to quaternion
+        /// @return             Reference to quaternion
 
         Quaternion&             operator *=                                 (   const   Quaternion&                 aQuaternion                                 ) ;
 
@@ -197,7 +260,7 @@ class Quaternion
         /// @note               This is equivalent to multiplying with the inverse
         ///
         /// @param              [in] aQuaternion A quaternion
-        /// @return             A reference to quaternion
+        /// @return             Reference to quaternion
 
         Quaternion&             operator /=                                 (   const   Quaternion&                 aQuaternion                                 ) ;
 
@@ -337,21 +400,11 @@ class Quaternion
 
         Quaternion              toInverse                                   ( ) const ;
 
-        /// @brief              Get power
-        ///
-        /// @code
-        ///                     TBC...
-        /// @endcode
-        ///
-        /// @param              [in] aValue A power value
-        /// @return             Power
-
-        Quaternion              pow                                         (   const   Real&                       aValue                                      ) const ;
-
         /// @brief              Get exponential
         ///
         /// @code
-        ///                     TBC...
+        ///                     Quaternion q_1 = ...
+        ///                     Quaternion q_2 = q_1.exp() ;
         /// @endcode
         ///
         /// @return             Exponential
@@ -361,12 +414,26 @@ class Quaternion
         /// @brief              Get logarithm
         ///
         /// @code
-        ///                     TBC...
+        ///                     Quaternion q_1 = ...
+        ///                     Quaternion q_2 = q_1.log() ;
         /// @endcode
         ///
         /// @return             Logarithm
 
         Quaternion              log                                         ( ) const ;
+
+        /// @brief              Get power
+        ///
+        /// @code
+        ///                     Quaternion q_1 = ...
+        ///                     Real scalar = ...
+        ///                     Quaternion q_2 = q_1 ^ scalar ;
+        /// @endcode
+        ///
+        /// @param              [in] aValue A power value
+        /// @return             Power
+
+        Quaternion              pow                                         (   const   Real&                       aValue                                      ) const ;
 
         /// @brief              Get quaternion norm
         ///
@@ -378,9 +445,55 @@ class Quaternion
 
         Real                    norm                                        ( ) const ;
 
+        /// @brief              Multiply quaternion using cross multiplication
+        ///
+        /// @code
+        ///                     Quaternion q_1 = ...
+        ///                     Quaternion q_2 = ...
+        ///                     Quaternion q_3 = q_1.crossMultiply(q_2)
+        /// @endcode
+        ///
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             Quaternion
+
         Quaternion              crossMultiply                               (   const   Quaternion&                 aQuaternion                                 ) const ;
 
+        /// @brief              Multiply quaternion using dot multiplication
+        ///
+        /// @code
+        ///                     Quaternion q_1 = ...
+        ///                     Quaternion q_2 = ...
+        ///                     Quaternion q_3 = q_1.dotMultiply(q_2)
+        /// @endcode
+        ///
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             Quaternion
+
         Quaternion              dotMultiply                                 (   const   Quaternion&                 aQuaternion                                 ) const ;
+
+        /// @brief              Calculate quaternion dot product
+        ///
+        /// @code
+        ///                     Quaternion q_1 = ...
+        ///                     Quaternion q_2 = ...
+        ///                     Real q_3 = q_1.dotProduct(q_2)
+        /// @endcode
+        ///
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             Quaternion
+
+        Real    	            dotProduct                                  (   const   Quaternion&                 aQuaternion                                 ) const ;
+
+        /// @brief              Rotate vector using quaternion
+        ///
+        /// @code
+        ///                     Quaternion q = ...
+        ///                     Vector3d v_1 = ...
+        ///                     Vector3d v_2 = q.rotateVector(v_1)
+        /// @endcode
+        ///
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             Vector
 
         Vector3d                rotateVector                                (   const   Vector3d&                   aVector                                     ) const ;
 
@@ -536,6 +649,74 @@ class Quaternion
 
         static Quaternion       Parse                                       (   const   String&                     aString,
                                                                                 const   Quaternion::Format&         aFormat                                     =   Quaternion::Format::XYZS ) ;
+
+        /// @brief              Constructs a quaternion describing the shortest rotation between two vectors
+        ///
+        /// @code
+        ///                     Vector3d v_1 = ...
+        ///                     Vector3d v_2 = ...
+        ///                     Quaternion q = Quaternion.ShortestRotation(v_1, v_2)
+        /// @endcode
+        ///
+        /// @param              [in] aFirstVector A first vector
+        /// @param              [in] aSecondVector A second vector
+        /// @return             Quaternion
+
+        static Quaternion       ShortestRotation                            (   const   Vector3d&                   aFirstVector,
+                                                                                const   Vector3d&                   aSecondVector                               ) ;
+
+        /// @brief              Linear interpolation method
+        ///
+        /// @code
+        ///                     Quaternion q_1 = ...
+        ///                     Quaternion q_2 = ...
+        ///                     Quaternion q = Quaternion.LERP(q_1, q_2, 0.5)
+        /// @endcode
+        ///
+        /// @param              [in] aFirstQuaternion A first quaternion
+        /// @param              [in] aSecondQuaternion A second quaternion
+        /// @param              [in] aRatio An interpolation ratio
+        /// @return             Quaternion
+
+        static Quaternion       LERP                                        (   const   Quaternion&                 aFirstQuaternion,
+                                                                                const   Quaternion&                 aSecondQuaternion,
+                                                                                const   Real&                       aRatio                                      ) ;
+
+        /// @brief              Normalized linear interpolation method
+        ///
+        /// @code
+        ///                     Quaternion q_1 = ...
+        ///                     Quaternion q_2 = ...
+        ///                     Quaternion q = Quaternion.NLERP(q_1, q_2, 0.5)
+        /// @endcode
+        ///
+        /// @param              [in] aFirstQuaternion A first quaternion
+        /// @param              [in] aSecondQuaternion A second quaternion
+        /// @param              [in] aRatio An interpolation ratio
+        /// @return             Quaternion
+
+        static Quaternion       NLERP                                       (   const   Quaternion&                 aFirstQuaternion,
+                                                                                const   Quaternion&                 aSecondQuaternion,
+                                                                                const   Real&                       aRatio                                      ) ;
+
+        ///                     Spherical linear interpolation method
+        ///
+        /// @ref                https://en.wikipedia.org/wiki/Slerp
+        ///
+        /// @code
+        ///                     Quaternion q_1 = ...
+        ///                     Quaternion q_2 = ...
+        ///                     Quaternion q = Quaternion.SLERP(q_1, q_2, 0.5)
+        /// @endcode
+        ///
+        /// @param              [in] aFirstQuaternion A first quaternion
+        /// @param              [in] aSecondQuaternion A second quaternion
+        /// @param              [in] aRatio An interpolation ratio
+        /// @return             Quaternion
+
+        static Quaternion       SLERP                                       (   const   Quaternion&                 aFirstQuaternion,
+                                                                                const   Quaternion&                 aSecondQuaternion,
+                                                                                const   Real&                       aRatio                                      ) ;
 
     private:
 

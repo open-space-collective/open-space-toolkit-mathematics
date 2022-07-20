@@ -38,20 +38,25 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
 
     class_<Quaternion> quaternion(aModule, "Quaternion") ;
 
-    // Define constructors
     quaternion.def(init<const Real&, const Real&, const Real&, const Real&, const Quaternion::Format&>())
 
         .def(init<const Vector4d&, const Quaternion::Format&>())
         .def(init<const Vector3d&, const Real&>())
+        .def(init<const Quaternion&>())
 
-        // Define methods
         .def(self == self)
         .def(self != self)
 
+		.def(self + self)
+		.def(self += self)
 		.def(self * self)
 		.def(self * Vector3d())
+		.def(self * double())
+		.def(double() * self)
 
 		.def(self / self)
+
+        .def("__pow__", +[] (const Quaternion& aQuaternion, double aScalar) -> Quaternion { return aQuaternion ^ aScalar ; }, is_operator())
 
         .def("__str__", &(shiftToString<Quaternion>))
         .def("__repr__", +[] (const Quaternion& aQuaternion) -> std::string { return aQuaternion.toString() ; })
@@ -69,12 +74,13 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def("to_normalized", &Quaternion::toNormalized)
         .def("to_conjugate", &Quaternion::toConjugate)
         .def("to_inverse", &Quaternion::toInverse)
-        // .def("pow", &Quaternion::pow)
-        // .def("exp", &Quaternion::exp)
-        // .def("log", &Quaternion::log)
+        .def("exp", &Quaternion::exp)
+        .def("log", &Quaternion::log)
+        .def("pow", &Quaternion::pow)
         .def("norm", &Quaternion::norm)
         .def("cross_multiply", &Quaternion::crossMultiply)
         .def("dot_multiply", &Quaternion::dotMultiply)
+        .def("dot_product", &Quaternion::dotProduct)
         .def("rotate_vector", &Quaternion::rotateVector)
         .def("to_vector", &Quaternion::toVector)
         .def("to_string", +[] (const Quaternion& aQuaternion) -> String { return aQuaternion.toString() ; })
@@ -85,13 +91,16 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def("rectify", +[] (Quaternion& aQuaternion) -> void { aQuaternion.rectify() ; })
         .def("angular_difference_with", &Quaternion::angularDifferenceWith)
 
-        // Define static methods
         .def_static("undefined", &Quaternion::Undefined)
         .def_static("unit", &Quaternion::Unit)
         .def_static("xyzs", &Quaternion::XYZS)
         .def_static("rotation_vector", &Quaternion::RotationVector)
         .def_static("rotation_matrix", &Quaternion::RotationMatrix)
         .def_static("parse", &Quaternion::Parse)
+        .def_static("shortest_rotation", &Quaternion::ShortestRotation, arg("first_vector"), arg("second_vector"))
+        .def_static("lerp", &Quaternion::LERP, arg("first_quaternion"), arg("second_quaternion"), arg("ratio"))
+        .def_static("nlerp", &Quaternion::NLERP, arg("first_quaternion"), arg("second_quaternion"), arg("ratio"))
+        .def_static("slerp", &Quaternion::SLERP, arg("first_quaternion"), arg("second_quaternion"), arg("ratio"))
 
     ;
 
