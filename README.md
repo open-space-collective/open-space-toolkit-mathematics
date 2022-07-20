@@ -1,6 +1,6 @@
 # Open Space Toolkit ▸ Mathematics
 
-[![Build Status](https://travis-ci.com/open-space-collective/open-space-toolkit-mathematics.svg?branch=master)](https://travis-ci.com/open-space-collective/open-space-toolkit-mathematics)
+[![Build and Test](https://github.com/open-space-collective/open-space-toolkit-mathematics/actions/workflows/build-test.yml/badge.svg?branch=master)](https://github.com/open-space-collective/open-space-toolkit-mathematics/actions/workflows/build-test.yml)
 [![Code Coverage](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics/branch/master/graph/badge.svg)](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics)
 [![Documentation](https://img.shields.io/readthedocs/pip/stable.svg)](https://open-space-collective.github.io/open-space-toolkit-mathematics)
 [![GitHub version](https://badge.fury.io/gh/open-space-collective%2Fopen-space-toolkit-mathematics.svg)](https://badge.fury.io/gh/open-space-collective%2Fopen-space-toolkit-mathematics)
@@ -301,7 +301,7 @@ Please read our [contributing guide](CONTRIBUTING.md) to learn about our develop
 
 ## Special Thanks
 
-*To be completed...*
+[![Loft Orbital](https://github.com/open-space-collective/open-space-toolkit/blob/master/assets/thanks/loft_orbital.png)](https://www.loftorbital.com/)
 
 ## License
 
