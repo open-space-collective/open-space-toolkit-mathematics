@@ -139,6 +139,26 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quatern
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, AdditionOperator)
+{
+
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+
+    {
+
+        EXPECT_EQ(Quaternion::XYZS(2.0, 4.0, 6.0, 8.0), Quaternion::XYZS(1.0, 2.0, 3.0, 4.0) + Quaternion::XYZS(1.0, 2.0, 3.0, 4.0)) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Quaternion::Undefined() + Quaternion::Unit()) ;
+        EXPECT_ANY_THROW(Quaternion::Unit() + Quaternion::Undefined()) ;
+
+    }
+
+}
+
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, MultiplicationOperator)
 // {
 

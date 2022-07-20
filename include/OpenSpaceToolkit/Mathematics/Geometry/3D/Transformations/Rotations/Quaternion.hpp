@@ -137,6 +137,19 @@ class Quaternion
 
         bool                    operator !=                                 (   const   Quaternion&                 aQuaternion                                 ) const ;
 
+        /// @brief              Addition operator (quaternion)
+        ///
+        /// @code
+        ///                     Quaternion q_1 = ... ;
+        ///                     Quaternion q_2 = ... ;
+        ///                     Quaternion q_3 = q_1 + q_2 ;
+        /// @encode
+        ///
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             A quaternion
+
+        Quaternion              operator +                                  (   const   Quaternion&                 aQuaternion                                 ) const ;
+
         /// @brief              Multiplication operator (quaternion)
         ///
         /// @code

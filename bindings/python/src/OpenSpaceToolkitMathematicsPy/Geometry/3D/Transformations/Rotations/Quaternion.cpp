@@ -48,6 +48,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def(self == self)
         .def(self != self)
 
+		.def(self + self)
 		.def(self * self)
 		.def(self * Vector3d())
 

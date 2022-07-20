@@ -82,16 +82,14 @@ bool                            Quaternion::operator !=                     (   
     return !((*this) == aQuaternion) ;
 }
 
+Quaternion                      Quaternion::operator +                      (   const   Quaternion&                 aQuaternion                                 ) const
+{
+    return Quaternion(this->getVectorPart() + aQuaternion.getVectorPart(), this->getScalarPart() + aQuaternion.getScalarPart()) ;
+}
+
 Quaternion                      Quaternion::operator *                      (   const   Quaternion&                 aQuaternion                                 ) const
 {
-
-    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
-
     return this->crossMultiply(aQuaternion) ;
-
 }
 
 Vector3d                        Quaternion::operator *                      (   const   Vector3d&                   aVector                                     ) const
