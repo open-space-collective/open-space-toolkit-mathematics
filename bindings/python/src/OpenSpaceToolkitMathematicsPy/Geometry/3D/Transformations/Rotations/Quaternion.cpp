@@ -42,6 +42,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
 
         .def(init<const Vector4d&, const Quaternion::Format&>())
         .def(init<const Vector3d&, const Real&>())
+        .def(init<const Quaternion&>())
 
         .def(self == self)
         .def(self != self)
@@ -55,7 +56,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
 
 		.def(self / self)
 
-        .def("__pow__", +[] (const Quaternion& aQuaternion, double b) -> Quaternion { return aQuaternion ^ b ; }, is_operator())
+        .def("__pow__", +[] (const Quaternion& aQuaternion, double aScalar) -> Quaternion { return aQuaternion ^ aScalar ; }, is_operator())
 
         .def("__str__", &(shiftToString<Quaternion>))
         .def("__repr__", +[] (const Quaternion& aQuaternion) -> std::string { return aQuaternion.toString() ; })
