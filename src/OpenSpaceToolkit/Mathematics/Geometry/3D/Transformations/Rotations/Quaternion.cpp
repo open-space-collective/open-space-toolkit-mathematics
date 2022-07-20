@@ -109,6 +109,23 @@ Quaternion                      Quaternion::operator /                      (   
 
 }
 
+Quaternion&                     Quaternion::operator +=                     (   const   Quaternion&                 aQuaternion                                 )
+{
+
+    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
+    {
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
+    }
+
+    x_ += aQuaternion.x_ ;
+    y_ += aQuaternion.y_ ;
+    z_ += aQuaternion.z_ ;
+    s_ += aQuaternion.s_ ;
+
+    return *this ;
+
+}
+
 Quaternion&                     Quaternion::operator *=                     (   const   Quaternion&                 aQuaternion                                 )
 {
 
