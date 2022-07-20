@@ -120,6 +120,11 @@ Quaternion                      Quaternion::operator /                      (   
 
 }
 
+Quaternion                      Quaternion::operator ^                      (   const   Real&                       aScalar                                     ) const
+{
+    return this->pow(aScalar);
+}
+
 Quaternion&                     Quaternion::operator +=                     (   const   Quaternion&                 aQuaternion                                 )
 {
 

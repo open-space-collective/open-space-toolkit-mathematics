@@ -55,6 +55,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
 
 		.def(self / self)
 
+        .def("__pow__", +[] (const Quaternion& aQuaternion, double b) -> Quaternion { return aQuaternion ^ b ; }, is_operator())
+
         .def("__str__", &(shiftToString<Quaternion>))
         .def("__repr__", +[] (const Quaternion& aQuaternion) -> std::string { return aQuaternion.toString() ; })
 

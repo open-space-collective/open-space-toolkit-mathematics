@@ -226,6 +226,19 @@ class Quaternion
 
         Quaternion              operator /                                  (   const   Quaternion&                 aQuaternion                                 ) const ;
 
+        /// @brief              Power operator (quaternion)
+        ///
+        /// @code
+        ///                     Quaternion q_1 = ... ;
+        ///                     Real scalar = ... ;
+        ///                     Quaternion q_2 = q_1 ^ scalar ;
+        /// @endcode
+        ///
+        /// @param              [in] aScalar A scalar
+        /// @return             A quaternion
+
+        Quaternion              operator ^                                  (   const   Real&                       aScalar                                     ) const ;
+
         /// @brief              Addition assignment operator (quaternion)
         ///
         /// @param              [in] aQuaternion A quaternion
