@@ -387,21 +387,11 @@ class Quaternion
 
         Quaternion              toInverse                                   ( ) const ;
 
-        /// @brief              Get power
-        ///
-        /// @code
-        ///                     TBC...
-        /// @endcode
-        ///
-        /// @param              [in] aValue A power value
-        /// @return             Power
-
-        Quaternion              pow                                         (   const   Real&                       aValue                                      ) const ;
-
         /// @brief              Get exponential
         ///
         /// @code
-        ///                     TBC...
+        ///                     Quaternion q_1 = ...
+        ///                     Quaternion q_2 = q_1.exp() ;
         /// @endcode
         ///
         /// @return             Exponential
@@ -411,12 +401,26 @@ class Quaternion
         /// @brief              Get logarithm
         ///
         /// @code
-        ///                     TBC...
+        ///                     Quaternion q_1 = ...
+        ///                     Quaternion q_2 = q_1.log() ;
         /// @endcode
         ///
         /// @return             Logarithm
 
         Quaternion              log                                         ( ) const ;
+
+        /// @brief              Get power
+        ///
+        /// @code
+        ///                     Quaternion q_1 = ...
+        ///                     Real scalar = ...
+        ///                     Quaternion q_2 = q_1 ^ scalar ;
+        /// @endcode
+        ///
+        /// @param              [in] aValue A power value
+        /// @return             Power
+
+        Quaternion              pow                                         (   const   Real&                       aValue                                      ) const ;
 
         /// @brief              Get quaternion norm
         ///

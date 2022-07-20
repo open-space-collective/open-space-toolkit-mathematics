@@ -545,44 +545,71 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quatern
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Pow)
-// {
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Exp)
+{
 
-//     using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
-//     {
+    {
 
-//         FAIL() ;
+        EXPECT_EQ(Quaternion::Unit(), Quaternion::Unit().exp()) ;
+        EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0).exp().toNormalized().isNear(Quaternion::XYZS(0.841471, 0.0, 0.0, 0.540302).toNormalized(), Angle::Radians(1e-4))) ;
 
-//     }
+    }
 
-// }
+    {
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Exp)
-// {
+        EXPECT_ANY_THROW(Quaternion::Undefined().exp()) ;
 
-//     using ostk::math::geom::d3::trf::rot::Quaternion ;
+    }
 
-//     {
+}
 
-//         FAIL() ;
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Log)
+{
 
-//     }
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
-// }
+    {
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Log)
-// {
+        EXPECT_EQ(Quaternion({ 0.0, 0.0, 0.0 }, 0.0), Quaternion::Unit().log()) ;
+        EXPECT_TRUE(Quaternion::XYZS(0.841471, 0.0, 0.0, 0.540302).log().toNormalized().isNear(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0), Angle::Radians(1e-4))) ;
 
-//     using ostk::math::geom::d3::trf::rot::Quaternion ;
+    }
 
-//     {
+    {
 
-//         FAIL() ;
+        EXPECT_ANY_THROW(Quaternion::Undefined().log()) ;
 
-//     }
+    }
 
-// }
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Pow)
+{
+
+    using ostk::core::types::Real ;
+
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+
+    {
+
+        EXPECT_EQ(Quaternion::Unit(), Quaternion::Unit().pow(1.0)) ;
+        EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0).pow(2.0).isNear(Quaternion::XYZS(0.0, 0.0, 0.0, -1.0), Angle::Radians(1e-4))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Quaternion::Undefined().pow(2.0)) ;
+        EXPECT_ANY_THROW(Quaternion::Unit().pow(Real::Undefined())) ;
+
+    }
+
+}
 
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Norm)
 // {

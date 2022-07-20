@@ -294,6 +294,49 @@ Quaternion                      Quaternion::toInverse                       ( ) 
     return Quaternion(*this).inverse() ;
 }
 
+Quaternion                      Quaternion::exp                             ( ) const
+{
+
+    // Ref.: http://www.neil.dantam.name/note/dantam-quaternion.pdf, II-F
+
+    const Vector3d v = this->getVectorPart() ;
+    const Real v_norm = v.norm() ;
+
+    if (v_norm <= Real::Epsilon())
+    {
+        return Quaternion::Unit() ;
+    }
+
+    return std::exp(s_) * Quaternion(v * sin(v_norm) / v_norm, cos(v_norm)) ;
+
+}
+
+Quaternion                      Quaternion::log                             ( ) const
+{
+
+    // Ref.: http://www.neil.dantam.name/note/dantam-quaternion.pdf, II-G
+
+    const Vector3d v = this->getVectorPart() ;
+    const Real v_norm = v.norm() ;
+
+    if (v_norm <= Real::Epsilon())
+    {
+        return Quaternion({ 0.0, 0.0, 0.0 }, std::log(this->norm())) ;
+    }
+
+    return Quaternion(std::atan2(v_norm, s_) / v_norm * v, std::log(this->norm())) ;
+
+}
+
+Quaternion                      Quaternion::pow                             (   const   Real&                       aValue                                      ) const
+{
+
+    // Ref.: http://www.neil.dantam.name/note/dantam-quaternion.pdf, II-H
+
+    return ((this->log()) * aValue).exp() ;
+
+}
+
 Real                            Quaternion::norm                            ( ) const
 {
 

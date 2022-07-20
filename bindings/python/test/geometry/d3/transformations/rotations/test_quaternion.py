@@ -45,9 +45,6 @@ class TestQuaternion:
         assert q.to_normalized() == q
         assert q.to_conjugate() == q
         assert q.to_inverse() == q
-        # print('pow:', q.pow())
-        # print('exp:', q.exp())
-        # print('log:', q.log())
         assert q.norm() == 1.0
         assert q.cross_multiply(q) == q
         assert q.dot_multiply(q) == q
@@ -91,5 +88,17 @@ class TestQuaternion:
 
         assert (quaternion * 1.0) == quaternion
         assert (1.0 * quaternion) == quaternion
+
+    def test_exp_success (self, quaternion: Quaternion):
+
+        assert quaternion.exp() == quaternion
+
+    def test_log_success (self, quaternion: Quaternion):
+
+        assert quaternion.log() == Quaternion.xyzs(0.0, 0.0, 0.0, 0.0)
+
+    def test_pow_success (self, quaternion: Quaternion):
+
+        assert quaternion.pow(1.0) == quaternion
 
 ################################################################################################################################################################
