@@ -79,6 +79,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def("norm", &Quaternion::norm)
         .def("cross_multiply", &Quaternion::crossMultiply)
         .def("dot_multiply", &Quaternion::dotMultiply)
+        .def("dot_product", &Quaternion::dotProduct)
         .def("rotate_vector", &Quaternion::rotateVector)
         .def("to_vector", &Quaternion::toVector)
         .def("to_string", +[] (const Quaternion& aQuaternion) -> String { return aQuaternion.toString() ; })

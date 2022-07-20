@@ -386,6 +386,18 @@ Quaternion                      Quaternion::dotMultiply                     (   
 
 }
 
+Real                            Quaternion::dotProduct                      (   const   Quaternion&                 aQuaternion                                 ) const
+{
+
+    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
+    {
+        throw ostk::core::error::runtime::Undefined("Quaternion") ;
+    }
+
+    return (x_ * aQuaternion.x_) + (y_ * aQuaternion.y_) + (z_ * aQuaternion.z_) + (s_ * aQuaternion.s_) ;
+
+}
+
 Vector3d                        Quaternion::rotateVector                    (   const   Vector3d&                   aVector                                     ) const
 {
 
