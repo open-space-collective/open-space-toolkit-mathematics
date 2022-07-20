@@ -94,28 +94,11 @@ Quaternion                      Quaternion::operator *                      (   
 
 Vector3d                        Quaternion::operator *                      (   const   Vector3d&                   aVector                                     ) const
 {
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
-
-    if (!aVector.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Vector") ;
-    }
-
     return this->rotateVector(aVector) ;
-
 }
 
 Quaternion                      Quaternion::operator /                      (   const   Quaternion&                 aQuaternion                                 ) const
 {
-
-    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
 
     if (aQuaternion.norm() < Real::Epsilon())
     {
@@ -129,11 +112,6 @@ Quaternion                      Quaternion::operator /                      (   
 Quaternion&                     Quaternion::operator *=                     (   const   Quaternion&                 aQuaternion                                 )
 {
 
-    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
-
     (*this) = this->crossMultiply(aQuaternion) ; // [TBI] This is a shortcut... could be optimized
 
     return *this ;
@@ -142,11 +120,6 @@ Quaternion&                     Quaternion::operator *=                     (   
 
 Quaternion&                     Quaternion::operator /=                     (   const   Quaternion&                 aQuaternion                                 )
 {
-
-    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
 
     if (aQuaternion.norm() < Real::Epsilon())
     {
@@ -196,11 +169,6 @@ bool                            Quaternion::isUnitary                       ( ) 
 bool                            Quaternion::isNear                          (   const   Quaternion&                 aQuaternion,
                                                                                 const   Angle&                      anAngularTolerance                          ) const
 {
-
-    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
 
     if (!anAngularTolerance.isDefined())
     {
@@ -285,75 +253,18 @@ Real                            Quaternion::getScalarPart                   ( ) 
 
 Quaternion                      Quaternion::toNormalized                    ( ) const
 {
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
-
     return Quaternion(*this).normalize() ;
-
 }
 
 Quaternion                      Quaternion::toConjugate                     ( ) const
 {
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
-
     return Quaternion(*this).conjugate() ;
-
 }
 
 Quaternion                      Quaternion::toInverse                       ( ) const
 {
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
-
     return Quaternion(*this).inverse() ;
-
 }
-
-// Quaternion                      Quaternion::pow                             (   const   Real&                       aValue                                      ) const
-// {
-
-//     if (!this->isDefined())
-//     {
-//         throw ostk::core::error::runtime::Undefined("Quaternion") ;
-//     }
-
-//     AAAAAAA
-
-// }
-
-// Quaternion                      Quaternion::exp                             ( ) const
-// {
-
-//     if (!this->isDefined())
-//     {
-//         throw ostk::core::error::runtime::Undefined("Quaternion") ;
-//     }
-
-//     AAAAAAA
-
-// }
-
-// Quaternion                      Quaternion::log                             ( ) const
-// {
-
-//     if (!this->isDefined())
-//     {
-//         throw ostk::core::error::runtime::Undefined("Quaternion") ;
-//     }
-
-//     AAAAAAA
-
-// }
 
 Real                            Quaternion::norm                            ( ) const
 {
@@ -369,11 +280,6 @@ Real                            Quaternion::norm                            ( ) 
 
 Quaternion                      Quaternion::crossMultiply                   (   const   Quaternion&                 aQuaternion                                 ) const
 {
-
-    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
 
     const Vector3d leftVectorPart = this->getVectorPart() ;
     const Real& leftScalarPart = s_ ;
@@ -391,11 +297,6 @@ Quaternion                      Quaternion::crossMultiply                   (   
 Quaternion                      Quaternion::dotMultiply                     (   const   Quaternion&                 aQuaternion                                 ) const
 {
 
-    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
-
     const Vector3d leftVectorPart = this->getVectorPart() ;
     const Real& leftScalarPart = s_ ;
 
@@ -411,11 +312,6 @@ Quaternion                      Quaternion::dotMultiply                     (   
 
 Vector3d                        Quaternion::rotateVector                    (   const   Vector3d&                   aVector                                     ) const
 {
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
 
     if (!aVector.isDefined())
     {
@@ -460,36 +356,17 @@ Vector4d                        Quaternion::toVector                        (   
 
 String                          Quaternion::toString                        (   const   Quaternion::Format&         aFormat                                     ) const
 {
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
-
     return this->toVector(aFormat).toString() ;
-
 }
 
 String                          Quaternion::toString                        (   const   Integer&                    aPrecision,
                                                                                 const   Quaternion::Format&         aFormat                                     ) const
 {
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
-
     return aPrecision.isDefined() ? this->toVector(aFormat).toString(aPrecision) : this->toVector(aFormat).toString() ;
-
 }
 
 Quaternion&                     Quaternion::normalize                       ( )
 {
-
-    if (!this->isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
 
     const Real norm = this->norm() ;
 
@@ -572,11 +449,6 @@ Quaternion&                     Quaternion::rectify                         ( )
 Angle                           Quaternion::angularDifferenceWith           (   const   Quaternion&                 aQuaternion                                 ) const
 {
 
-    if ((!this->isDefined()) || (!aQuaternion.isDefined()))
-    {
-        throw ostk::core::error::runtime::Undefined("Quaternion") ;
-    }
-
     if ((!this->isUnitary()) || (!aQuaternion.isUnitary()))
     {
         throw ostk::core::error::RuntimeError("Quaternion is not unitary.") ;
@@ -611,11 +483,6 @@ Quaternion                      Quaternion::RotationVector                  (   
 
     /// @ref Markley F. L.: Fundamentals of Spacecraft Attitude Determination and Control, 45
 
-    if (!aRotationVector.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation Vector") ;
-    }
-
     const Real rotationAngle_rad = aRotationVector.getAngle().inRadians() ;
 
     const Vector3d vectorPart = std::sin(rotationAngle_rad / 2.0) * aRotationVector.getAxis() ;
@@ -630,11 +497,6 @@ Quaternion                      Quaternion::RotationMatrix                  (   
 
     /// @ref Markley F. L.: Fundamentals of Spacecraft Attitude Determination and Control, 48
     /// @note Should we use this method instead? https://d3cw3dd2w32x2b.cloudfront.net/wp-content/uploads/2015/01/matrix-to-quat.pdf
-
-    if (!aRotationMatrix.isDefined())
-    {
-        throw ostk::core::error::runtime::Undefined("Rotation matrix") ;
-    }
 
     const Real trace = aRotationMatrix.accessMatrix().trace() ;
 
