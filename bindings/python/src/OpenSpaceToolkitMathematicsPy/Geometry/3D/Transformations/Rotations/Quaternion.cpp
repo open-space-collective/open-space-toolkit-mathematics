@@ -38,13 +38,11 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
 
     class_<Quaternion> quaternion(aModule, "Quaternion") ;
 
-    // Define constructors
     quaternion.def(init<const Real&, const Real&, const Real&, const Real&, const Quaternion::Format&>())
 
         .def(init<const Vector4d&, const Quaternion::Format&>())
         .def(init<const Vector3d&, const Real&>())
 
-        // Define methods
         .def(self == self)
         .def(self != self)
 
@@ -86,7 +84,6 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def("rectify", +[] (Quaternion& aQuaternion) -> void { aQuaternion.rectify() ; })
         .def("angular_difference_with", &Quaternion::angularDifferenceWith)
 
-        // Define static methods
         .def_static("undefined", &Quaternion::Undefined)
         .def_static("unit", &Quaternion::Unit)
         .def_static("xyzs", &Quaternion::XYZS)
