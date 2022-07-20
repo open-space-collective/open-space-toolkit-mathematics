@@ -7,6 +7,8 @@
 
 ################################################################################################################################################################
 
+import pytest
+
 from ostk.mathematics import geometry
 
 ################################################################################################################################################################
@@ -17,14 +19,18 @@ RotationVector = geometry.d3.transformations.rotations.RotationVector
 
 ################################################################################################################################################################
 
+@pytest.fixture
+def quaternion () -> Quaternion:
+
+    return Quaternion.xyzs(0.0, 0.0, 0.0, 1.0)
+
+################################################################################################################################################################
+
 class TestQuaternion:
 
     def test_misc_success (self):
 
         q: Quaternion = Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion.Format.XYZS)
-
-        assert (q == q) is True
-        assert (q != q) is False
 
         assert q.is_defined() is True
         assert q.is_unitary() is True
@@ -71,5 +77,12 @@ class TestQuaternion:
         # assert Quaternion.rotation_vector(RotationVector(numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.zero())).is_defined() is True
         # RotationMatrix
         assert Quaternion.parse("[0.0, 0.0, 0.0, 1.0]", Quaternion.Format.XYZS).is_defined() is True
+
+    def test_operators_success (self, quaternion: Quaternion):
+
+        assert (quaternion == quaternion) is True
+        assert (quaternion != quaternion) is False
+
+        assert (quaternion + quaternion) == Quaternion.xyzs(0.0, 0.0, 0.0, 2.0)
 
 ################################################################################################################################################################
