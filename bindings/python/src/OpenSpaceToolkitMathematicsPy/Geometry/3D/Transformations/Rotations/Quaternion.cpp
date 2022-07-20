@@ -98,6 +98,9 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def_static("rotation_matrix", &Quaternion::RotationMatrix)
         .def_static("parse", &Quaternion::Parse)
         .def_static("shortest_rotation", &Quaternion::ShortestRotation, arg("first_vector"), arg("second_vector"))
+        .def_static("lerp", &Quaternion::LERP, arg("first_quaternion"), arg("second_quaternion"), arg("ratio"))
+        .def_static("nlerp", &Quaternion::NLERP, arg("first_quaternion"), arg("second_quaternion"), arg("ratio"))
+        .def_static("slerp", &Quaternion::SLERP, arg("first_quaternion"), arg("second_quaternion"), arg("ratio"))
 
     ;
 

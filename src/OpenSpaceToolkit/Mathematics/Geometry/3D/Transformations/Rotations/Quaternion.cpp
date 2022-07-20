@@ -696,6 +696,56 @@ Quaternion                      Quaternion::ShortestRotation                (   
 
 }
 
+Quaternion                      Quaternion::LERP                            (   const   Quaternion&                 aFirstQuaternion,
+                                                                                const   Quaternion&                 aSecondQuaternion,
+                                                                                const   Real&                       aRatio                                      )
+{
+
+    if (!aRatio.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Ratio") ;
+    }
+
+    if ((aRatio < 0.0) || (aRatio > 1.0))
+    {
+        throw ostk::core::error::RuntimeError("Ratio [{}] not in [0, 1] interval.", aRatio) ;
+    }
+
+    return (aFirstQuaternion * (1.0 - aRatio) + aSecondQuaternion * aRatio) ;
+
+}
+
+Quaternion                      Quaternion::NLERP                           (   const   Quaternion&                 aFirstQuaternion,
+                                                                                const   Quaternion&                 aSecondQuaternion,
+                                                                                const   Real&                       aRatio                                      )
+{
+    return Quaternion::LERP(aFirstQuaternion, aSecondQuaternion, aRatio).toNormalized() ;
+}
+
+Quaternion                      Quaternion::SLERP                           (   const   Quaternion&                 aFirstQuaternion,
+                                                                                const   Quaternion&                 aSecondQuaternion,
+                                                                                const   Real&                       aRatio                                      )
+{
+
+    if (!aRatio.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Ratio") ;
+    }
+
+    if ((aRatio < 0.0) || (aRatio > 1.0))
+    {
+        throw ostk::core::error::RuntimeError("Ratio [{}] not in [0, 1] interval.", aRatio) ;
+    }
+
+    if (aFirstQuaternion.dotProduct(aSecondQuaternion) >= 0.0)
+    {
+        return (aFirstQuaternion * ((aFirstQuaternion.toInverse() * aSecondQuaternion) ^ aRatio)).toNormalized() ;
+    }
+
+    return (aFirstQuaternion * ((aFirstQuaternion.toInverse() * (- 1.0) * aSecondQuaternion) ^ aRatio)).toNormalized() ;
+
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 }

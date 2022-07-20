@@ -193,4 +193,16 @@ class TestQuaternion:
 
         assert Quaternion.shortest_rotation(np.array((1.0, 0.0, 0.0)), np.array((1.0, 0.0, 0.0))) == quaternion
 
+    def test_lerp_success (self, quaternion: Quaternion):
+
+        assert Quaternion.lerp(quaternion, quaternion, 0.0) == quaternion
+
+    def test_nlerp_success (self, quaternion: Quaternion):
+
+        assert Quaternion.nlerp(quaternion, quaternion, 0.0) == quaternion
+
+    def test_slerp_success (self, quaternion: Quaternion):
+
+        assert Quaternion.slerp(quaternion, quaternion, 0.0) == quaternion
+
 ################################################################################################################################################################
