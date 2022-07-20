@@ -146,7 +146,7 @@ class Quaternion
         /// @encode
         ///
         /// @param              [in] aQuaternion A quaternion
-        /// @return             A quaternion
+        /// @return             Quaternion
 
         Quaternion              operator +                                  (   const   Quaternion&                 aQuaternion                                 ) const ;
 
@@ -161,7 +161,7 @@ class Quaternion
         /// @note               This operator uses cross multiplication
         ///
         /// @param              [in] aQuaternion A quaternion
-        /// @return             A quaternion
+        /// @return             Quaternion
 
         Quaternion              operator *                                  (   const   Quaternion&                 aQuaternion                                 ) const ;
 
@@ -177,7 +177,7 @@ class Quaternion
         /// @note               This operator uses transformVector
         ///
         /// @param              [in] aVector A vector
-        /// @return             A vector
+        /// @return             Vector
 
         Vector3d                operator *                                  (   const   Vector3d&                   aVector                                     ) const ;
 
@@ -191,7 +191,7 @@ class Quaternion
         /// @endcode
         ///
         /// @param              [in] aScalar A scalar
-        /// @return             A quaternion
+        /// @return             Quaternion
 
         Quaternion              operator *                                  (   const   Real&                       aScalar                                     ) const ;
 
@@ -206,7 +206,7 @@ class Quaternion
         ///
         /// @param              [in] aScalar A scalar
         /// @param              [in] aQuaternion A quaternion
-        /// @return             A quaternion
+        /// @return             Quaternion
 
         friend Quaternion       operator *                                  (   const   Real&                       aScalar,
                                                                                 const   Quaternion&                 aQuaternion                                 ) ;
@@ -222,7 +222,7 @@ class Quaternion
         /// @note               This is equivalent to multiplying with the inverse
         ///
         /// @param              [in] aQuaternion A quaternion
-        /// @return             A quaternion
+        /// @return             Quaternion
 
         Quaternion              operator /                                  (   const   Quaternion&                 aQuaternion                                 ) const ;
 
@@ -235,14 +235,14 @@ class Quaternion
         /// @endcode
         ///
         /// @param              [in] aScalar A scalar
-        /// @return             A quaternion
+        /// @return             Quaternion
 
         Quaternion              operator ^                                  (   const   Real&                       aScalar                                     ) const ;
 
         /// @brief              Addition assignment operator (quaternion)
         ///
         /// @param              [in] aQuaternion A quaternion
-        /// @return             A reference to quaternion
+        /// @return             Reference to quaternion
 
         Quaternion&             operator +=                                 (   const   Quaternion&                 aQuaternion                                 ) ;
 
@@ -251,7 +251,7 @@ class Quaternion
         /// @note               This operator uses cross multiplication
         ///
         /// @param              [in] aQuaternion A quaternion
-        /// @return             A reference to quaternion
+        /// @return             Reference to quaternion
 
         Quaternion&             operator *=                                 (   const   Quaternion&                 aQuaternion                                 ) ;
 
@@ -260,7 +260,7 @@ class Quaternion
         /// @note               This is equivalent to multiplying with the inverse
         ///
         /// @param              [in] aQuaternion A quaternion
-        /// @return             A reference to quaternion
+        /// @return             Reference to quaternion
 
         Quaternion&             operator /=                                 (   const   Quaternion&                 aQuaternion                                 ) ;
 
@@ -445,9 +445,55 @@ class Quaternion
 
         Real                    norm                                        ( ) const ;
 
+        /// @brief              Multiply quaternion using cross multiplication
+        ///
+        /// @code
+        ///                     Quaternion q_1 = ...
+        ///                     Quaternion q_2 = ...
+        ///                     Quaternion q_3 = q_1.crossMultiply(q_2)
+        /// @endcode
+        ///
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             Quaternion
+
         Quaternion              crossMultiply                               (   const   Quaternion&                 aQuaternion                                 ) const ;
 
+        /// @brief              Multiply quaternion using dot multiplication
+        ///
+        /// @code
+        ///                     Quaternion q_1 = ...
+        ///                     Quaternion q_2 = ...
+        ///                     Quaternion q_3 = q_1.dotMultiply(q_2)
+        /// @endcode
+        ///
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             Quaternion
+
         Quaternion              dotMultiply                                 (   const   Quaternion&                 aQuaternion                                 ) const ;
+
+        /// @brief              Calculate quaternion dot product
+        ///
+        /// @code
+        ///                     Quaternion q_1 = ...
+        ///                     Quaternion q_2 = ...
+        ///                     Real q_3 = q_1.dotProduct(q_2)
+        /// @endcode
+        ///
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             Quaternion
+
+        Real    	            dotProduct                                  (   const   Quaternion&                 aQuaternion                                 ) const ;
+
+        /// @brief              Rotate vector using quaternion
+        ///
+        /// @code
+        ///                     Quaternion q = ...
+        ///                     Vector3d v_1 = ...
+        ///                     Vector3d v_2 = q.rotateVector(v_1)
+        /// @endcode
+        ///
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             Vector
 
         Vector3d                rotateVector                                (   const   Vector3d&                   aVector                                     ) const ;
 
