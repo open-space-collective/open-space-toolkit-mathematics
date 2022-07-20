@@ -159,18 +159,72 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quatern
 
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, MultiplicationOperator)
-// {
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, MultiplicationOperator_Quaternion)
+{
 
-//     using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
 
-//     {
+    {
 
-//         FAIL() ;
+        EXPECT_EQ(Quaternion::Unit(), Quaternion::Unit() * Quaternion::Unit()) ;
 
-//     }
+    }
 
-// }
+    {
+
+        EXPECT_ANY_THROW(Quaternion::Undefined() * Quaternion::Unit()) ;
+        EXPECT_ANY_THROW(Quaternion::Unit() * Quaternion::Undefined()) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, MultiplicationOperator_Vector3d)
+{
+
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+
+    {
+
+        EXPECT_EQ(Vector3d::X(), Quaternion::Unit() * Vector3d::X()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Quaternion::Undefined() * Vector3d::X()) ;
+        EXPECT_ANY_THROW(Quaternion::Unit() * Vector3d::Undefined()) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, MultiplicationOperator_Real)
+{
+
+    using ostk::core::types::Real ;
+
+    using ostk::math::geom::d3::trf::rot::Quaternion ;
+
+    {
+
+        EXPECT_EQ(Quaternion::Unit(), Quaternion::Unit() * 1.0) ;
+        EXPECT_EQ(Quaternion::Unit(), 1.0 * Quaternion::Unit()) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Quaternion::Undefined() * 1.0) ;
+        EXPECT_ANY_THROW(Quaternion::Unit() * Real::Undefined()) ;
+
+        EXPECT_ANY_THROW(1.0 * Quaternion::Undefined()) ;
+        EXPECT_ANY_THROW(Real::Undefined() * Quaternion::Unit()) ;
+
+    }
+
+}
 
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, DivisionOperator)
 // {

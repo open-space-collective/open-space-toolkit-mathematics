@@ -181,6 +181,36 @@ class Quaternion
 
         Vector3d                operator *                                  (   const   Vector3d&                   aVector                                     ) const ;
 
+        /// @brief              Multiplication operator (scalar)
+        ///
+        /// Example:
+        /// @code
+        ///                     Quaternion q_1 = ... ;
+        ///                     Real scalar = ... ;
+        ///                     Quaternion q_2 = q_1 * scalar ;
+        /// @endcode
+        ///
+        /// @param              [in] aScalar A scalar
+        /// @return             A quaternion
+
+        Quaternion              operator *                                  (   const   Real&                       aScalar                                     ) const ;
+
+        /// @brief              Multiplication operator (scalar)
+        ///
+        /// Example:
+        /// @code
+        ///                     Real scalar = ... ;
+        ///                     Quaternion q_1 = ... ;
+        ///                     Quaternion q_2 = scalar * q_1 ;
+        /// @endcode
+        ///
+        /// @param              [in] aScalar A scalar
+        /// @param              [in] aQuaternion A quaternion
+        /// @return             A quaternion
+
+        friend Quaternion       operator *                                  (   const   Real&                       aScalar,
+                                                                                const   Quaternion&                 aQuaternion                                 ) ;
+
         /// @brief              Division operator (quaternion)
         ///
         /// @code

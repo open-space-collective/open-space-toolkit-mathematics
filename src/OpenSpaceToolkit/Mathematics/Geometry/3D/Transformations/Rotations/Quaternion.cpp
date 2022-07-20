@@ -97,6 +97,17 @@ Vector3d                        Quaternion::operator *                      (   
     return this->rotateVector(aVector) ;
 }
 
+Quaternion                      Quaternion::operator *                      (   const   Real&                       aScalar                                     ) const
+{
+ return Quaternion(this->getVectorPart() * aScalar, this->getScalarPart() * aScalar) ;
+}
+
+Quaternion                      operator *                                  (   const   Real&                       aScalar,
+                                                                                const   Quaternion&                 aQuaternion                                 )
+{
+    return aQuaternion * aScalar ;
+}
+
 Quaternion                      Quaternion::operator /                      (   const   Quaternion&                 aQuaternion                                 ) const
 {
 

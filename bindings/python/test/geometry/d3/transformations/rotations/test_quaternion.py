@@ -89,4 +89,7 @@ class TestQuaternion:
         quaternion_2 += quaternion
         assert quaternion_2 == Quaternion.xyzs(0.0, 0.0, 0.0, 2.0)
 
+        assert (quaternion * 1.0) == quaternion
+        assert (1.0 * quaternion) == quaternion
+
 ################################################################################################################################################################
