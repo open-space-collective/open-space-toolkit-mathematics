@@ -46,6 +46,7 @@ using ostk::math::geom::d3::objects::Point ;
 using ostk::math::geom::d3::objects::Segment ;
 using ostk::math::geom::d3::objects::LineString ;
 using ostk::math::geom::d3::objects::Plane ;
+using ostk::math::geom::d3::Intersection ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -188,6 +189,13 @@ class Polygon : public Object
         /// @return             Polygon vertices
 
         Array<Polygon::Vertex>  getVertices                                 ( ) const ;
+
+        /// @brief              Compute intersection of polygon with another polygon
+        ///
+        /// @param              [in] aPolygon A polygon
+        /// @return             Intersection
+
+        // Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
 
         /// @brief              Print polygon
         ///

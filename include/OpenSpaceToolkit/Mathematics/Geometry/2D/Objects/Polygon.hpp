@@ -49,6 +49,7 @@ using ostk::math::geom::d2::Object ;
 using ostk::math::geom::d2::objects::Point ;
 using ostk::math::geom::d2::objects::Segment ;
 using ostk::math::geom::d2::objects::LineString ;
+using ostk::math::geom::d2::Intersection ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -245,7 +246,7 @@ class Polygon : public Object
         /// @param              [in] aPolygon A polygon
         /// @return             Intersection of polygon with polygon
 
-        // Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
+        Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
 
         /// @brief              Compute union of polygon with polygon
         ///

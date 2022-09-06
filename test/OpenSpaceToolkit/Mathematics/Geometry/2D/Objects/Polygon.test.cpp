@@ -8,12 +8,22 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 
 #include <OpenSpaceToolkit/Core/Containers/Tuple.hpp>
 
 #include <Global.test.hpp>
+
+#include <iostream>
+#include <deque>
+
+#include <boost/geometry.hpp>
+#include <boost/geometry/geometries/point_xy.hpp>
+#include <boost/geometry/geometries/polygon.hpp>
+
+#include <boost/foreach.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -958,9 +968,9 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingAt)
         {
             {
                 { 0.0, 0.0 },
-                { 0.0, 0.5 },
-                { 0.5, 0.5 },
                 { 0.5, 0.0 },
+                { 0.5, 0.5 },
+                { 0.0, 0.5 },
                 { 0.0, 0.0 }
             }
         } ;
@@ -971,9 +981,9 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingAt)
         {
             {
                 { 0.0, 0.0 },
-                { 0.0, 0.1 },
-                { 0.1, 0.1 },
                 { 0.1, 0.0 },
+                { 0.1, 0.1 },
+                { 0.0, 0.1 },
                 { 0.0, 0.0 }
             }
         } ;
@@ -1220,18 +1230,314 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetConvexHull)
 
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith)
-// {
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith)
+{
 
-//     using ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::Intersection ;
 
-//     {
+    // Polygon intersection between two intersecting simple convex polygons
 
-//         FAIL() ;
+    {
 
-//     }
+        const Polygon polygon_1 =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 1.0 },
+                { 1.0, 1.0 },
+                { 1.0, 0.0 }
+            }
+        } ;
 
-// }
+        const Polygon polygon_2 =
+        {
+            {
+                { 0.5, 0.0 },
+                { 0.5, 1.0 },
+                { 1.5, 1.0 },
+                { 1.5, 0.0 }
+            }
+        } ;
+
+        Intersection intersection = polygon_1.intersectionWith(polygon_2) ;
+
+        const Polygon referencePolygon =
+        {
+            {
+                { 0.5, 1.0 },
+                { 1.0, 1.0 },
+                { 1.0, 0.0 },
+                { 0.5, 0.0 }
+            }
+        } ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+        EXPECT_FALSE(intersection.isEmpty()) ;
+        EXPECT_TRUE(intersection.accessComposite().is<Polygon>()) ;
+        // ASSERT_TRUE(intersection.accessComposite()[0] == referencePolygon) ;
+
+    }
+
+    // Check symmetry of intersection
+
+    {
+
+        const Polygon polygon_1 =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 1.0 },
+                { 1.0, 1.0 },
+                { 1.0, 0.0 }
+            }
+        } ;
+
+        const Polygon polygon_2 =
+        {
+            {
+                { 0.5, 0.0 },
+                { 0.5, 1.0 },
+                { 1.5, 1.0 },
+                { 1.5, 0.0 }
+            }
+        } ;
+
+        Intersection intersection1 = polygon_1.intersectionWith(polygon_2) ;
+        Intersection intersection2 = polygon_2.intersectionWith(polygon_1) ;
+
+        EXPECT_TRUE(intersection1 == intersection2) ;
+
+    }
+
+    // Point intersection between two intersecting simple convex polygons
+
+    {
+
+        const Polygon polygon_1 =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 1.0 },
+                { 1.0, 1.0 },
+                { 1.0, 0.0 }
+            }
+        } ;
+
+        const Polygon polygon_2 =
+        {
+            {
+                { 1.0, 1.0 },
+                { 1.0, 2.0 },
+                { 2.0, 2.0 },
+                { 2.0, 1.0 }
+            }
+        } ;
+
+        Intersection intersection = polygon_1.intersectionWith(polygon_2) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+        EXPECT_TRUE(intersection.isEmpty()) ;
+
+    }
+
+    // Polygon intersection between 1 simple convex polygon and 1 complex polygon with one hole
+
+    {
+
+        const Polygon polygon_1 =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 4.0 },
+                { 4.0, 4.0 },
+                { 4.0, 0.0 }
+            },
+            {
+                {
+                    { 1.0, 1.0 },
+                    { 3.0, 1.0 },
+                    { 3.0, 3.0 },
+                    { 1.0, 3.0 }
+                }
+            }
+        } ;
+
+        const Polygon polygon_2 =
+        {
+            {
+                { 0.0, -1.0 },
+                { 0.0, 5.0 },
+                { 2.5, 5.0 },
+                { 2.5, -1.0 }
+            }
+        } ;
+
+        Intersection intersection = polygon_1.intersectionWith(polygon_2) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+        EXPECT_FALSE(intersection.isEmpty()) ;
+
+    }
+
+    // Composite intersection between 1 simple convex polygon and 1 complex polygon with one hole
+
+    {
+
+        const Polygon polygon_1 =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 4.0 },
+                { 4.0, 4.0 },
+                { 4.0, 0.0 }
+            },
+            {
+                {
+                    { 1.0, 1.0 },
+                    { 3.0, 1.0 },
+                    { 3.0, 3.0 },
+                    { 1.0, 3.0 }
+                }
+            }
+        } ;
+
+        const Polygon polygon_2 =
+        {
+            {
+                { 1.5, -1.0 },
+                { 1.5, 5.0 },
+                { 2.5, 5.0 },
+                { 2.5, -1.0 }
+            }
+        } ;
+
+        Intersection intersection = polygon_1.intersectionWith(polygon_2) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+        EXPECT_FALSE(intersection.isEmpty()) ;
+        ASSERT_TRUE(intersection.accessComposite().getObjectCount() == 2) ;
+        // EXPECT_TRUE(intersection.accessComposite().is<Complex>()) ;
+
+    }
+
+    // Intersection between two non-intersecting simple convex polygons
+
+    {
+
+        const Polygon polygon_1 =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 1.0 },
+                { 1.0, 1.0 },
+                { 1.0, 0.0 }
+            }
+        } ;
+
+        const Polygon polygon_2 =
+        {
+            {
+                { 2.0, 0.0 },
+                { 2.0, 1.0 },
+                { 3.0, 1.0 },
+                { 3.0, 0.0 }
+            }
+        } ;
+
+        Intersection intersection = polygon_1.intersectionWith(polygon_2) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+        EXPECT_TRUE(intersection.isEmpty()) ;
+        ASSERT_TRUE(intersection.accessComposite().getObjectCount() == 0) ;
+
+    }
+
+    // Intersection between two intersecting convex polygons on a line
+
+    {
+
+        const Polygon polygon_1 =
+        {
+            {
+                { 0.0, 0.0 },
+                { 0.0, 1.0 },
+                { 1.0, 1.0 },
+                { 1.0, 0.0 }
+            }
+        } ;
+
+        const Polygon polygon_2 =
+        {
+            {
+                { 1.0, 0.0 },
+                { 1.0, 1.0 },
+                { 2.0, 1.0 },
+                { 2.0, 0.0 }
+            }
+        } ;
+
+        // TBR: Currently no intersection found in that case
+        Intersection intersection = polygon_1.intersectionWith(polygon_2) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+        EXPECT_TRUE(intersection.isEmpty()) ;
+
+    }
+
+    // Polygon intersection between two intersecting non-convex polygons
+    {
+
+        const Polygon polygon_1 =
+        {
+            {
+                { 2.0, 1.3 },
+                { 2.4, 1.7 },
+                { 2.8, 1.8 },
+                { 3.4, 1.2 },
+                { 3.7, 1.6 },
+                { 3.4, 2.0 },
+                { 4.1, 3.0 },
+                { 5.3, 2.6 },
+                { 5.4, 1.2 },
+                { 4.9, 0.8 },
+                { 2.9, 0.7 },
+                { 2.0, 1.3 }
+            },
+            {
+                {
+                    { 4.0, 2.0 },
+                    { 4.2, 1.4 },
+                    { 4.8, 1.9 },
+                    { 4.4, 2.2 },
+                    { 4.0, 2.0 }
+                }
+            }
+        } ;
+
+        const Polygon polygon_2 =
+        {
+            {
+                { 4.0, -0.5 },
+                { 3.5, 1.0 },
+                { 2.0, 1.5 },
+                { 3.5, 2.0 },
+                { 4.0, 3.5 },
+                { 4.5, 2.0 },
+                { 6.0, 1.5 },
+                { 4.5, 1.0 },
+                { 4.0, -0.5}
+            }
+        } ;
+
+        Intersection intersection = polygon_1.intersectionWith(polygon_2) ;
+
+        EXPECT_TRUE(intersection.isDefined()) ;
+        EXPECT_FALSE(intersection.isEmpty()) ;
+
+    }
+
+}
 
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, UnionWith)
 {
@@ -1548,9 +1854,9 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ToString)
             }
         } ;
 
-        EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0 0.5,0.5 0.5,0.5 0,0 0),(0 0,0 0.1,0.1 0.1,0.1 0,0 0))", Polygon(outerRing, innerRings).toString()) ;
-        EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0 0.5,0.5 0.5,0.5 0,0 0),(0 0,0 0.1,0.1 0.1,0.1 0,0 0))", Polygon(outerRing, innerRings).toString(Polygon::Format::Standard)) ;
-        EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0 0.5,0.5 0.5,0.5 0,0 0),(0 0,0 0.1,0.1 0.1,0.1 0,0 0))", Polygon(outerRing, innerRings).toString(Polygon::Format::WKT)) ;
+        EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0.5 0,0.5 0.5,0 0.5,0 0),(0 0,0.1 0,0.1 0.1,0 0.1,0 0))", Polygon(outerRing, innerRings).toString()) ;
+        EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0.5 0,0.5 0.5,0 0.5,0 0),(0 0,0.1 0,0.1 0.1,0 0.1,0 0))", Polygon(outerRing, innerRings).toString(Polygon::Format::Standard)) ;
+        EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0.5 0,0.5 0.5,0 0.5,0 0),(0 0,0.1 0,0.1 0.1,0 0.1,0 0))", Polygon(outerRing, innerRings).toString(Polygon::Format::WKT)) ;
 
     }
 

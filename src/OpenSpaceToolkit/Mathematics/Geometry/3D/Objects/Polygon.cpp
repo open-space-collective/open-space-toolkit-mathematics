@@ -287,6 +287,13 @@ Array<Polygon::Vertex>          Polygon::getVertices                        ( ) 
 
 }
 
+// Intersection                    Polygon::intersectionWith                      (   const   Polygon&                 aPolygon                                    ) const
+// {
+
+
+
+// }
+
 void                            Polygon::print                              (           std::ostream&               anOutputStream,
                                                                                         bool                        displayDecorators                           ) const
 {

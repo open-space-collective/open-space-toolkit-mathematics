@@ -8,6 +8,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 
@@ -41,9 +42,9 @@ namespace objects
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using boost::geometry::cs::cartesian ;
-using boost::geometry::model::point ;
 using boost::geometry::model::ring ;
 using boost::geometry::model::polygon ;
+using boost::geometry::model::d2::point_xy ;
 
 using ostk::core::types::Index ;
 using ostk::core::types::Size ;
@@ -97,7 +98,7 @@ class Polygon::Impl
 
         Polygon                 getConvexHull                               ( ) const ;
 
-        // Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
+        Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
 
         String                  toString                                    (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const ;
@@ -106,7 +107,7 @@ class Polygon::Impl
 
     private:
 
-        typedef                 point<double, 2, cartesian>                     BoostPoint ;
+        typedef                 point_xy<double>                                BoostPoint ;
         typedef                 ring<Impl::BoostPoint>                          BoostRing ;
         typedef                 polygon<Impl::BoostPoint>                       BoostPolygon ;
 
@@ -140,9 +141,9 @@ class Polygon::Impl
             boost::geometry::append(ring, Polygon::Impl::BoostPoint(innerRingPoint.x(), innerRingPoint.y())) ;
         }
 
-        boost::geometry::correct(ring) ;
-
         polygon_.inners().push_back(ring) ;
+
+        boost::geometry::correct(polygon_) ;
 
     }
 
@@ -400,10 +401,64 @@ Polygon                         Polygon::Impl::getConvexHull                ( ) 
 
 }
 
-// Intersection                    Polygon::Impl::intersectionWith             (   const   Polygon&                    aPolygon                                    ) const
-// {
+Intersection                    Polygon::Impl::intersectionWith             (   const   Polygon&                    aPolygon                                    ) const
+{
 
-// }
+    // https://www.boost.org/doc/libs/1_69_0/libs/geometry/doc/html/geometry/reference/algorithms/intersection/intersection_3.html
+
+    Array<Polygon::Impl::BoostPolygon> intersectionOutput ;
+
+    boost::geometry::validity_failure_type failurePolygon1 ;
+    boost::geometry::validity_failure_type failurePolygon2 ;
+    bool polygon1IsValid = boost::geometry::is_valid(polygon_, failurePolygon1) ;
+    bool polygon2IsValid = boost::geometry::is_valid(aPolygon.implUPtr_->polygon_, failurePolygon2) ;
+
+    if (!polygon1IsValid)
+    {
+        throw ostk::core::error::RuntimeError("Polygon 1 is not valid: [{}]", failurePolygon1) ;
+    }
+
+    if (!polygon2IsValid)
+    {
+        throw ostk::core::error::RuntimeError("Polygon 2 is not valid: [{}]", failurePolygon2) ;
+    }
+
+    try
+    {
+        boost::geometry::intersection(polygon_, aPolygon.implUPtr_->polygon_, intersectionOutput) ;
+    }
+    catch (const std::exception& anException)
+    {
+        throw ostk::core::error::RuntimeError("Error caught while computing the intersection between polygons: [{}]", anException.what()) ;
+    }
+
+    int intersectionOutputSize = intersectionOutput.getSize() ;
+
+    if (intersectionOutputSize == 0)
+    {
+        return Intersection::Empty() ;
+    }
+
+    else if (intersectionOutputSize == 1)
+    {
+
+        return Intersection::Polygon(Polygon::Impl::PolygonFromBoostPolygon(intersectionOutput[0])) ;
+    }
+
+    else
+    {
+
+        Intersection intersection = Intersection::Empty() ;
+
+        for (auto polygon : intersectionOutput)
+        {
+            intersection += Intersection::Polygon(Polygon::Impl::PolygonFromBoostPolygon(polygon)) ;
+        }
+
+        return intersection ;
+    }
+
+}
 
 String                          Polygon::Impl::toString                     (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const
@@ -838,17 +893,17 @@ void                            Polygon::print                              (   
 
 }
 
-// Intersection                    Polygon::intersectionWith                   (   const   Polygon&                    aPolygon                                    ) const
-// {
+Intersection                    Polygon::intersectionWith                   (   const   Polygon&                    aPolygon                                    ) const
+{
 
-//     if ((!this->isDefined()) || (!aPolygon.isDefined()))
-//     {
-//         throw ostk::core::error::runtime::Undefined("Polygon") ;
-//     }
+    if ((!this->isDefined()) || (!aPolygon.isDefined()))
+    {
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
+    }
 
-//     return implUPtr_->intersectionWith(aPolygon) ;
+    return implUPtr_->intersectionWith(aPolygon) ;
 
-// }
+}
 
 MultiPolygon                    Polygon::unionWith                          (   const   Polygon&                    aPolygon                                    ) const
 {

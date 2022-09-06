@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.hpp>
