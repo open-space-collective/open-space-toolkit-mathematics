@@ -267,8 +267,8 @@ class TestPolygon:
 
         # Inner Ring Vertices
         point_5: Point = Point(-0.5, 0.5)
-        point_6: Point = Point(0.5, 0.5)
-        point_7: Point = Point(0.5, -0.5)
+        point_6: Point = Point(0.5, -0.5)
+        point_7: Point = Point(0.5, 0.5)
         point_8: Point = Point(-0.5, -0.5)
 
         # Rings Definitions
