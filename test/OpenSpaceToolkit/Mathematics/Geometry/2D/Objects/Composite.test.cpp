@@ -455,18 +455,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Intersects)
     using ostk::math::geom::d2::objects::Polygon ;
     using ostk::math::geom::d2::objects::Composite ;
 
-    // [TBI]
-
-    // {
-
-    //     const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
-
-    //     const Composite composite = Composite { polygon } ;
-
-    //     EXPECT_TRUE(composite.intersects(composite)) ;
-
-    // }
-
     {
 
         const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
@@ -481,52 +469,285 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Intersects)
 
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Contains)
-// {
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Contains)
+{
 
-//     using ostk::core::types::Unique ;
-//     using ostk::core::types::Real ;
-//     using ostk::core::ctnr::Array ;
+    using ostk::math::geom::d2::Object ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::LineString ;
+    using ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Composite ;
 
-//     using ostk::math::obj::Vector3d ;
-//     using ostk::math::geom::d2::Object ;
-//     using ostk::math::geom::d2::objects::Point ;
-//     using ostk::math::geom::d2::objects::Polygon ;
-//     using ostk::math::geom::d2::objects::Cuboid ;
-//     using ostk::math::geom::d2::objects::Pyramid ;
-//     using ostk::math::geom::d2::objects::Composite ;
+    {
 
-//     // [TBI]
+        const Point point = { 1.0, 0.0 } ;
 
-//     // {
+        EXPECT_FALSE(Composite::Empty().contains(point)) ;
 
-//     //     const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//     //     const Point apex = { 0.0, 0.0, 1.0 } ;
+    }
 
-//     //     const Pyramid pyramid = { base, apex } ;
+    // Point contained in border of the Polygon as part of the Polygon definition
 
-//     //     const Composite composite = Composite { pyramid } ;
+    {
 
-//     //     EXPECT_TRUE(composite.contains(composite)) ;
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
 
-//     // }
+        const Composite composite = Composite { polygon } ;
 
-//     {
+        const Point point = { 1.0, 0.0 } ;
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        EXPECT_ANY_THROW(Composite::Undefined().contains(Composite::Undefined())) ;
+        EXPECT_ANY_THROW(Composite::Undefined().contains(composite)) ;
+        EXPECT_ANY_THROW(composite.contains(Composite::Undefined())) ;
+        EXPECT_TRUE(composite.contains(point)) ;
 
-//         const Pyramid pyramid = { base, apex } ;
+    }
 
-//         const Composite composite = Composite { pyramid } ;
+    // Point contained in border of the Polygon, not part of the Polygon definition
 
-//         EXPECT_ANY_THROW(Composite::Undefined().contains(Composite::Undefined())) ;
-//         EXPECT_ANY_THROW(Composite::Undefined().contains(composite)) ;
-//         EXPECT_ANY_THROW(composite.contains(Composite::Undefined())) ;
+    {
 
-//     }
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
 
-// }
+        const Composite composite = Composite { polygon } ;
+
+        const Point point = { 0.5, 0.0 } ;
+
+        EXPECT_TRUE(composite.contains(point)) ;
+
+    }
+
+    // Point contained in the interior of the Polygon, not part of the Polygon definition
+
+    {
+
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+
+        const Composite composite = Composite { polygon } ;
+
+        const Point point = { 0.5, 0.5 } ;
+
+        EXPECT_TRUE(composite.contains(point)) ;
+
+    }
+
+    // Point contained in the border of the Polygon, but not in the LineString
+
+    {
+
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const LineString lineString = LineString({ { 2.0, 2.0 }, { 2.0, 3.0 } }) ;
+
+        Composite composite = Composite { polygon } ;
+
+        composite += Composite { lineString }  ;
+
+        const Point point = { 1.0, 0.0 } ;
+
+        EXPECT_FALSE(composite.contains(point)) ;
+
+    }
+
+    // Point contained in the border of the Polygon, but not in the LineString
+
+    {
+
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const LineString lineString = LineString({ { 2.0, 2.0 }, { 2.0, 3.0 } }) ;
+
+        Composite composite = Composite { polygon } ;
+
+        composite += Composite { lineString }  ;
+
+        const Point point = { 0.5, 0.0 } ;
+
+        EXPECT_FALSE(composite.contains(point)) ;
+
+    }
+
+    // Point contained in the border of the Polygon, and in the LineString
+
+    {
+
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const LineString lineString = LineString({ { 0.5, -1.0 }, { 0.5, 3.0 } }) ;
+
+        Composite composite = Composite { polygon } ;
+
+        composite += Composite { lineString }  ;
+
+        const Point point = { 0.5, 0.0 } ;
+
+        EXPECT_TRUE(composite.contains(point)) ;
+
+    }
+
+    // Point contained in the interior of the Polygon, and in the LineString
+
+    {
+
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const LineString lineString = LineString({ { 0.5, -1.0 }, { 0.5, 3.0 } }) ;
+
+        Composite composite = Composite { polygon } ;
+
+        composite += Composite { lineString }  ;
+
+        const Point point = { 0.5, 0.5 } ;
+
+        EXPECT_TRUE(composite.contains(point)) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AnyContains)
+{
+
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::LineString ;
+    using ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Composite ;
+
+    {
+
+        const Point point = { 1.0, 0.0 } ;
+
+        EXPECT_FALSE(Composite::Empty().anyContains(point)) ;
+
+    }
+
+    // Point contained in border of the Polygon as part of the Polygon definition
+
+    {
+
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+
+        const Composite composite = Composite { polygon } ;
+
+        const Point point = { 1.0, 0.0 } ;
+
+        EXPECT_ANY_THROW(Composite::Undefined().contains(Composite::Undefined())) ;
+        EXPECT_ANY_THROW(Composite::Undefined().contains(composite)) ;
+        EXPECT_ANY_THROW(composite.contains(Composite::Undefined())) ;
+        EXPECT_TRUE(composite.anyContains(point)) ;
+
+    }
+
+    // Point contained in border of the Polygon, not part of the Polygon definition
+
+    {
+
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+
+        const Composite composite = Composite { polygon } ;
+
+        const Point point = { 0.5, 0.0 } ;
+
+        EXPECT_TRUE(composite.anyContains(point)) ;
+
+    }
+
+    // Point contained in the interior of the Polygon, not part of the Polygon definition
+
+    {
+
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+
+        const Composite composite = Composite { polygon } ;
+
+        const Point point = { 0.5, 0.5 } ;
+
+        EXPECT_TRUE(composite.anyContains(point)) ;
+
+    }
+
+    // Point contained in the border of the Polygon, but not in the LineString
+
+    {
+
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const LineString lineString = LineString({ { 2.0, 2.0 }, { 2.0, 3.0 } }) ;
+
+        Composite composite = Composite { polygon } ;
+
+        composite += Composite { lineString }  ;
+
+        const Point point = { 1.0, 0.0 } ;
+
+        EXPECT_TRUE(composite.anyContains(point)) ;
+
+    }
+
+    // Point contained in the border of the Polygon, but not in the LineString
+
+    {
+
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const LineString lineString = LineString({ { 2.0, 2.0 }, { 2.0, 3.0 } }) ;
+
+        Composite composite = Composite { polygon } ;
+
+        composite += Composite { lineString }  ;
+
+        const Point point = { 0.5, 0.0 } ;
+
+        EXPECT_TRUE(composite.anyContains(point)) ;
+
+    }
+
+    // Point contained in the border of the Polygon, and in the LineString
+
+    {
+
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const LineString lineString = LineString({ { 0.5, -1.0 }, { 0.5, 3.0 } }) ;
+
+        Composite composite = Composite { polygon } ;
+
+        composite += Composite { lineString }  ;
+
+        const Point point = { 0.5, 0.0 } ;
+
+        EXPECT_TRUE(composite.anyContains(point)) ;
+
+    }
+
+    // Point contained in the interior of the Polygon, and in the LineString
+
+    {
+
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const LineString lineString = LineString({ { 0.5, -1.0 }, { 0.5, 3.0 } }) ;
+
+        Composite composite = Composite { polygon } ;
+
+        composite += Composite { lineString }  ;
+
+        const Point point = { 0.5, 0.5 } ;
+
+        EXPECT_TRUE(composite.anyContains(point)) ;
+
+    }
+
+    // Point not contained in the Polygon nor in the LineString
+
+    {
+
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const LineString lineString = LineString({ { 0.5, -1.0 }, { 0.5, 3.0 } }) ;
+
+        Composite composite = Composite { polygon } ;
+
+        composite += Composite { lineString }  ;
+
+        const Point point = { 5.0, 5.0 } ;
+
+        EXPECT_FALSE(composite.anyContains(point)) ;
+
+    }
+
+}
 
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Is)
 {
@@ -601,8 +822,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AccessObjectAt
 
         const Composite composite = Composite { polygon } ;
 
-        // EXPECT_TRUE(composite.accessObjectAt(0)) ;
-
+        EXPECT_EQ(composite.accessObjectAt(0), polygon) ;
         EXPECT_ANY_THROW(composite.accessObjectAt(1)) ;
 
     }

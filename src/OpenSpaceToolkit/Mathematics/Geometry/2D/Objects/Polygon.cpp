@@ -42,6 +42,7 @@ namespace objects
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 using boost::geometry::cs::cartesian ;
+using boost::geometry::model::linestring ;
 using boost::geometry::model::ring ;
 using boost::geometry::model::polygon ;
 using boost::geometry::model::d2::point_xy ;
@@ -71,6 +72,8 @@ class Polygon::Impl
         bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
 
         bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
+
+        bool                    contains                                    (   const   LineString&                 aLineString                                 ) const ;
 
         Size                    getInnerRingCount                           ( ) const ;
 
@@ -108,12 +111,15 @@ class Polygon::Impl
     private:
 
         typedef                 point_xy<double>                                BoostPoint ;
+        typedef                 linestring<Impl::BoostPoint>                    BoostLineString ;
         typedef                 ring<Impl::BoostPoint>                          BoostRing ;
         typedef                 polygon<Impl::BoostPoint>                       BoostPolygon ;
 
         Impl::BoostPolygon      polygon_ ;
 
         static Impl::BoostPolygon BoostPolygonFromPoints                    (   const   Array<Point>&               aPointArray                                 ) ;
+
+        static Impl::BoostLineString BoostLineStringFromPoints              (   const   Array<Point>&               aPointArray                                 ) ;
 
         static Polygon          PolygonFromBoostPolygon                     (   const   Polygon::Impl::BoostPolygon& aPolygon                                   ) ;
 
@@ -205,6 +211,29 @@ bool                            Polygon::Impl::contains                     (   
     }
 
     return true ;
+
+}
+
+bool                            Polygon::Impl::contains                     (   const   LineString&                 aLineString                                 ) const
+{
+
+    Array<Point> pointArray = Array<Point>::Empty() ;
+
+    for (Size index = 0; index < (aLineString.getPointCount()); index++)
+    {
+        pointArray.add(aLineString.accessPointAt(index)) ;
+    }
+
+    try
+    {
+        return boost::geometry::covered_by(Polygon::Impl::BoostLineStringFromPoints(pointArray), polygon_) ;
+    }
+    catch (const std::exception& anException)
+    {
+        throw ostk::core::error::RuntimeError("Error when checking if polygon contains line string: [{}]", anException.what()) ;
+    }
+
+    return false ;
 
 }
 
@@ -405,11 +434,19 @@ Intersection                    Polygon::Impl::intersectionWith             (   
 {
 
     // https://www.boost.org/doc/libs/1_69_0/libs/geometry/doc/html/geometry/reference/algorithms/intersection/intersection_3.html
+    // First implementation computing all possible types of intersections (points, linestrings, polygons). Could be improved for performance.
 
-    Array<Polygon::Impl::BoostPolygon> intersectionOutput ;
+    Intersection intersection = Intersection::Empty() ;
+
+    Array<Polygon::Impl::BoostPoint> pointIntersectionOutput ;
+    Array<Polygon::Impl::BoostLineString> lineStringIntersectionOutput ;
+    Array<Polygon::Impl::BoostPolygon> polygonIntersectionOutput ;
+
+    // Initial check on input polygons boost geometries
 
     boost::geometry::validity_failure_type failurePolygon1 ;
     boost::geometry::validity_failure_type failurePolygon2 ;
+
     bool polygon1IsValid = boost::geometry::is_valid(polygon_, failurePolygon1) ;
     bool polygon2IsValid = boost::geometry::is_valid(aPolygon.implUPtr_->polygon_, failurePolygon2) ;
 
@@ -423,40 +460,114 @@ Intersection                    Polygon::Impl::intersectionWith             (   
         throw ostk::core::error::RuntimeError("Polygon 2 is not valid: [{}]", failurePolygon2) ;
     }
 
+    // Obtain the polygon intersection output if any
+
     try
     {
-        boost::geometry::intersection(polygon_, aPolygon.implUPtr_->polygon_, intersectionOutput) ;
+        boost::geometry::intersection(polygon_, aPolygon.implUPtr_->polygon_, polygonIntersectionOutput) ;
     }
     catch (const std::exception& anException)
     {
-        throw ostk::core::error::RuntimeError("Error caught while computing the intersection between polygons: [{}]", anException.what()) ;
+        throw ostk::core::error::RuntimeError("Error caught while computing the intersection between polygons expecting a polygon output: [{}]", anException.what()) ;
     }
 
-    int intersectionOutputSize = intersectionOutput.getSize() ;
+    // Obtain the line string intersection output if any
 
-    if (intersectionOutputSize == 0)
+    try
     {
-        return Intersection::Empty() ;
+        boost::geometry::intersection(polygon_, aPolygon.implUPtr_->polygon_, lineStringIntersectionOutput) ;
+    }
+    catch (const std::exception& anException)
+    {
+        throw ostk::core::error::RuntimeError("Error caught while computing the intersection between polygons expecting a line string output: [{}]", anException.what()) ;
     }
 
-    else if (intersectionOutputSize == 1)
-    {
+    // Obtain the point intersection output if any
 
-        return Intersection::Polygon(Polygon::Impl::PolygonFromBoostPolygon(intersectionOutput[0])) ;
+    try
+    {
+        boost::geometry::intersection(polygon_, aPolygon.implUPtr_->polygon_, pointIntersectionOutput) ;
+    }
+    catch (const std::exception& anException)
+    {
+        throw ostk::core::error::RuntimeError("Error caught while computing the intersection between polygons expecting a point output: [{}]", anException.what()) ;
     }
 
-    else
+    int polygonIntersectionOutputSize = polygonIntersectionOutput.getSize() ;
+    int lineStringIntersectionOutputSize = lineStringIntersectionOutput.getSize() ;
+    int pointIntersectionOutputSize = pointIntersectionOutput.getSize() ;
+
+    // Handle polygon intersections
+
+    if (polygonIntersectionOutputSize > 0)
     {
 
-        Intersection intersection = Intersection::Empty() ;
-
-        for (auto polygon : intersectionOutput)
+        for (auto polygon : polygonIntersectionOutput)
         {
             intersection += Intersection::Polygon(Polygon::Impl::PolygonFromBoostPolygon(polygon)) ;
         }
 
-        return intersection ;
     }
+
+    // Handle line string intersections
+
+    if (lineStringIntersectionOutputSize > 0)
+    {
+
+        for (auto& boostLineString: lineStringIntersectionOutput)
+        {
+
+            boost::geometry::validity_failure_type lineStringFailure ;
+            
+            bool lineStringIsValid = boost::geometry::is_valid(boostLineString, lineStringFailure) ;
+
+            Array<Point> pointArray = Array<Point>::Empty() ;
+
+            for (auto& boostPoint: boostLineString)
+            {
+                pointArray.add(Point(boostPoint.x(), boostPoint.y())) ;
+            }
+
+            LineString lineString = LineString(pointArray) ;
+
+            if (lineStringIsValid)
+            {
+
+                Composite intersectionComposite = intersection.accessComposite() ;
+
+                if (!intersectionComposite.anyContains(lineString))
+                {
+                    intersection += Intersection::LineString(lineString) ;
+                }
+
+            }
+
+        }
+
+    }
+
+    // Handle point intersections
+
+    if (pointIntersectionOutputSize > 0)
+    {
+
+        for (auto& boostPoint: pointIntersectionOutput)
+        {
+
+            Point point = Point({ boostPoint.x(), boostPoint.y() }) ;
+
+            Composite intersectionComposite = intersection.accessComposite() ;
+
+            if (!intersectionComposite.anyContains(point))
+            {
+                intersection += Intersection::Point(point) ;
+            }
+
+        }
+
+    }
+
+    return intersection ;
 
 }
 
@@ -533,6 +644,27 @@ Polygon::Impl::BoostPolygon     Polygon::Impl::BoostPolygonFromPoints       (   
     boost::geometry::correct(polygon) ;
 
     return polygon ;
+
+}
+
+Polygon::Impl::BoostLineString  Polygon::Impl::BoostLineStringFromPoints    (   const   Array<Point>&               aPointArray                                 )
+{
+
+    if ((!aPointArray.isEmpty()) && (aPointArray.getSize() < 2))
+    {
+        throw ostk::core::error::RuntimeError("At least 2 points are necessary to define a line string.") ;
+    }
+
+    Polygon::Impl::BoostLineString lineString ;
+
+    for (const auto& point : aPointArray)
+    {
+        boost::geometry::append(lineString, Polygon::Impl::BoostPoint(point.x(), point.y())) ;
+    }
+
+    boost::geometry::correct(lineString) ;
+
+    return lineString ;
 
 }
 
@@ -721,6 +853,23 @@ bool                            Polygon::contains                           (   
     }
 
     return implUPtr_->contains(aPointSet) ;
+
+}
+
+bool                            Polygon::contains                           (   const   LineString&                 aLineString                                 ) const
+{
+
+    if (!aLineString.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Line string") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->contains(aLineString) ;
 
 }
 

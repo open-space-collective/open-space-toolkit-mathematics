@@ -177,6 +177,19 @@ class Polygon : public Object
 
         bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
 
+        /// @brief              Check if polygon contains line string
+        ///
+        /// @code
+        ///                     Polygon polygon = ... ;
+        ///                     LineString lineString = ... ;
+        ///                     polygon.contains(lineString) ;
+        /// @endcode
+        ///
+        /// @param              [in] aLineSeting A line string
+        /// @return             True if polygon contains line string
+
+        bool                    contains                                    (   const   LineString&                 aLineString                                 ) const ;
+
         /// @brief              Get number of inner rings
         ///
         /// @return             Number of inner rings

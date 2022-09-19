@@ -549,6 +549,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ContainsPoint)
             { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 1.0001, 0.0 }, false },
             { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 0.9999, 0.9999 }, true },
             { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, { 1.0001, 1.0001 }, false },
+            { Polygon { { { 1.49999970000006, 4.0 }, { 2.49999970000006, 4.0 }, { 2.49999970000006, 3.0 }, { 1.49999970000006, 3.0 } } }, { 1.49999970000006, 4.0 }, true }
         } ;
 
         for (const auto& testCase : testCases)
@@ -1233,8 +1234,12 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetConvexHull)
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith)
 {
 
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::LineString ;
     using ostk::math::geom::d2::objects::Polygon ;
     using ostk::math::geom::d2::Intersection ;
+
+    // TBI: Intersection type to be improved
 
     // Polygon intersection between two intersecting simple convex polygons
 
@@ -1274,8 +1279,9 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith
 
         EXPECT_TRUE(intersection.isDefined()) ;
         EXPECT_FALSE(intersection.isEmpty()) ;
+        EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1) ;
         EXPECT_TRUE(intersection.accessComposite().is<Polygon>()) ;
-        // ASSERT_TRUE(intersection.accessComposite()[0] == referencePolygon) ;
+        EXPECT_TRUE(intersection.accessComposite().as<Polygon>() == referencePolygon) ;
 
     }
 
@@ -1337,7 +1343,8 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith
         Intersection intersection = polygon_1.intersectionWith(polygon_2) ;
 
         EXPECT_TRUE(intersection.isDefined()) ;
-        EXPECT_TRUE(intersection.isEmpty()) ;
+        EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1) ;
+        EXPECT_TRUE(intersection.accessComposite().is<Point>()) ;
 
     }
 
@@ -1377,6 +1384,8 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith
 
         EXPECT_TRUE(intersection.isDefined()) ;
         EXPECT_FALSE(intersection.isEmpty()) ;
+        EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1) ;
+        EXPECT_TRUE(intersection.accessComposite().is<Polygon>()) ;
 
     }
 
@@ -1416,8 +1425,8 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith
 
         EXPECT_TRUE(intersection.isDefined()) ;
         EXPECT_FALSE(intersection.isEmpty()) ;
-        ASSERT_TRUE(intersection.accessComposite().getObjectCount() == 2) ;
-        // EXPECT_TRUE(intersection.accessComposite().is<Complex>()) ;
+        EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 2) ;
+        // EXPECT_TRUE(intersection.isComplex()) ;
 
     }
 
@@ -1449,11 +1458,11 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith
 
         EXPECT_TRUE(intersection.isDefined()) ;
         EXPECT_TRUE(intersection.isEmpty()) ;
-        ASSERT_TRUE(intersection.accessComposite().getObjectCount() == 0) ;
+        EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 0) ;
 
     }
 
-    // Intersection between two intersecting convex polygons on a line
+    // Line String intersection between two intersecting convex polygons
 
     {
 
@@ -1477,15 +1486,16 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith
             }
         } ;
 
-        // TBR: Currently no intersection found in that case
         Intersection intersection = polygon_1.intersectionWith(polygon_2) ;
 
         EXPECT_TRUE(intersection.isDefined()) ;
-        EXPECT_TRUE(intersection.isEmpty()) ;
+        EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1) ;
+        // EXPECT_TRUE(intersection.accessComposite().is<LineString>()) ;
 
     }
 
     // Polygon intersection between two intersecting non-convex polygons
+
     {
 
         const Polygon polygon_1 =
@@ -1534,6 +1544,8 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith
 
         EXPECT_TRUE(intersection.isDefined()) ;
         EXPECT_FALSE(intersection.isEmpty()) ;
+        EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1) ;
+        EXPECT_TRUE(intersection.accessComposite().is<Polygon>()) ;
 
     }
 

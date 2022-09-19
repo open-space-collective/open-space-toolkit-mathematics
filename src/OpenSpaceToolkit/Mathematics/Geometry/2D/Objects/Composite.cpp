@@ -239,6 +239,11 @@ bool                            Composite::contains                         (   
         throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
+    if (this->isEmpty())
+    {
+        return false ;
+    }
+
     return std::all_of(objects_.begin(), objects_.end(), [&anObject] (const Unique<Object>& anObjectUPtr) -> bool { return anObjectUPtr->contains(anObject) ; }) ;
 
 }
@@ -256,7 +261,56 @@ bool                            Composite::contains                         (   
         throw ostk::core::error::runtime::Undefined("Composite") ;
     }
 
+    if (this->isEmpty())
+    {
+        return false ;
+    }
+
     return std::all_of(aComposite.objects_.begin(), aComposite.objects_.end(), [this] (const Unique<Object>& anObjectUPtr) -> bool { return this->contains(*anObjectUPtr) ; }) ;
+
+}
+
+bool                            Composite::anyContains                      (   const   Object&                     anObject                                    ) const
+{
+
+    if (!anObject.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Object") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Composite") ;
+    }
+
+    if (this->isEmpty())
+    {
+        return false ;
+    }
+
+    return std::any_of(objects_.begin(), objects_.end(), [&anObject] (const Unique<Object>& anObjectUPtr) -> bool { return anObjectUPtr->contains(anObject) ; }) ;
+
+}
+
+bool                            Composite::anyContains                      (   const   Composite&                  aComposite                                  ) const
+{
+
+    if (!aComposite.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Composite") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Composite") ;
+    }
+
+    if (this->isEmpty())
+    {
+        return false ;
+    }
+
+    return std::any_of(aComposite.objects_.begin(), aComposite.objects_.end(), [this] (const Unique<Object>& anObjectUPtr) -> bool { return this->contains(*anObjectUPtr) ; }) ;
 
 }
 
@@ -390,6 +444,8 @@ Composite::ConstIterator        Composite::end                              ( ) 
 String                          Composite::toString                         (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const
 {
+
+    (void) aPrecision ;
 
     switch (aFormat)
     {

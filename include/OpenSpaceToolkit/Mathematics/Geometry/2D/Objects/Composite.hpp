@@ -218,6 +218,20 @@ class Composite : public Object
 
         bool                    contains                                    (   const   Composite&                  aComposite                                  ) const ;
 
+        /// @brief              Check if composite contains object
+        ///
+        /// @param              [in] anObject An object
+        /// @return             True if any object in composite contains object
+
+        bool                    anyContains                                 (   const   Object&                     anObject                                    ) const ;
+
+        /// @brief              Check if composite contains composite
+        ///
+        /// @param              [in] aComposite A composite
+        /// @return             True if any object in composite contains composite
+
+        bool                    anyContains                                 (   const   Composite&                  aComposite                                  ) const ;
+
         /// @brief              Access object at index
         ///
         /// @param              [in] anIndex An object index
