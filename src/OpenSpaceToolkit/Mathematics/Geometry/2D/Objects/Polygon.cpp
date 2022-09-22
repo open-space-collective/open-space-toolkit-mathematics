@@ -103,6 +103,8 @@ class Polygon::Impl
 
         Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
 
+        Intersection            differenceWith                              (   const   Polygon&                    aPolygon                                    ) const ;
+
         String                  toString                                    (   const   Object::Format&             aFormat,
                                                                                 const   Integer&                    aPrecision                                  ) const ;
 
@@ -518,7 +520,7 @@ Intersection                    Polygon::Impl::intersectionWith             (   
         {
 
             boost::geometry::validity_failure_type lineStringFailure ;
-            
+
             bool lineStringIsValid = boost::geometry::is_valid(boostLineString, lineStringFailure) ;
 
             Array<Point> pointArray = Array<Point>::Empty() ;
@@ -568,6 +570,68 @@ Intersection                    Polygon::Impl::intersectionWith             (   
     }
 
     return intersection ;
+
+}
+
+Intersection                    Polygon::Impl::differenceWith               (   const   Polygon&                    aPolygon                                    ) const
+{
+
+    // https://www.boost.org/doc/libs/1_69_0/libs/geometry/doc/html/geometry/reference/algorithms/difference/difference_3.html
+
+    Intersection difference = Intersection::Empty() ;  // Dirty but does the job for now
+
+    Array<Polygon::Impl::BoostPolygon> polygonDifferenceOutput ;
+
+    // Initial check on input polygons boost geometries
+
+    boost::geometry::validity_failure_type failurePolygon1 ;
+    boost::geometry::validity_failure_type failurePolygon2 ;
+
+    bool polygon1IsValid = boost::geometry::is_valid(polygon_, failurePolygon1) ;
+    bool polygon2IsValid = boost::geometry::is_valid(aPolygon.implUPtr_->polygon_, failurePolygon2) ;
+
+    if (!polygon1IsValid)
+    {
+        throw ostk::core::error::RuntimeError("Polygon 1 is not valid: [{}]", failurePolygon1) ;
+    }
+
+    if (!polygon2IsValid)
+    {
+        throw ostk::core::error::RuntimeError("Polygon 2 is not valid: [{}]", failurePolygon2) ;
+    }
+
+    // Obtain the polygon difference output if any
+
+    try
+    {
+        boost::geometry::difference(polygon_, aPolygon.implUPtr_->polygon_, polygonDifferenceOutput) ;
+    }
+    catch (const std::exception& anException)
+    {
+        throw ostk::core::error::RuntimeError("Error caught while computing the intersection between polygons expecting a polygon output: [{}]", anException.what()) ;
+    }
+
+    int polygonDifferenceOutputSize = polygonDifferenceOutput.getSize() ;
+
+    // Handle polygon differences
+
+    if (polygonDifferenceOutputSize > 0)
+    {
+
+        for (auto polygon : polygonDifferenceOutput)
+        {
+            difference += Intersection::Polygon(Polygon::Impl::PolygonFromBoostPolygon(polygon)) ;
+        }
+
+    }
+
+    // Handle linestring differences
+    // ...
+
+    // Handle point differences
+    // ...
+
+    return difference ;
 
 }
 
@@ -1051,6 +1115,18 @@ Intersection                    Polygon::intersectionWith                   (   
     }
 
     return implUPtr_->intersectionWith(aPolygon) ;
+
+}
+
+Intersection                    Polygon::differenceWith                     (   const   Polygon&                    aPolygon                                    ) const
+{
+
+    if ((!this->isDefined()) || (!aPolygon.isDefined()))
+    {
+        throw ostk::core::error::runtime::Undefined("Polygon") ;
+    }
+
+    return implUPtr_->differenceWith(aPolygon) ;
 
 }
 

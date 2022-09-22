@@ -1551,6 +1551,53 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, DifferenceWith)
+{
+
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::LineString ;
+    using ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::Intersection ;
+
+    // Polygon difference between two intersecting simple convex polygons
+
+    {
+
+        const Polygon polygon_1 =
+        {
+            {
+                { -111.006, 45.042 },
+                { -111.116, 41.046 },
+                { -109.05, 37.055 },
+                { -94.702, 37.09 },
+                { -96.46, 45.921 },
+                { -111.006, 45.042 }
+            }
+        } ;
+
+        const Polygon polygon_2 =
+        {
+            {
+                { -104.062, 40.947 },
+                { -104.062, 45.461 },
+                { -96.46, 45.921 },
+                { -95.282, 40.006 },
+                { -104.062, 40.947 }
+            }
+        } ;
+
+        Intersection difference = polygon_1.differenceWith(polygon_2) ;
+
+        EXPECT_TRUE(difference.isDefined()) ;
+        EXPECT_FALSE(difference.isEmpty()) ;
+        EXPECT_TRUE(difference.accessComposite().getObjectCount() == 1) ;
+        EXPECT_TRUE(difference.accessComposite().is<Polygon>()) ;
+
+    }
+
+}
+
+
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, UnionWith)
 {
 

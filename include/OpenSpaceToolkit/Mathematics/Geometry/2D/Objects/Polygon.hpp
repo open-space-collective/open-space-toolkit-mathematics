@@ -261,6 +261,13 @@ class Polygon : public Object
 
         Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
 
+        /// @brief              Compute difference of polygon with polygon
+        ///
+        /// @param              [in] aPolygon A polygon
+        /// @return             Difference (leveraging Intersection class) of polygon with polygon
+
+        Intersection            differenceWith                             (   const   Polygon&                    aPolygon                                    ) const ;
+
         /// @brief              Compute union of polygon with polygon
         ///
         /// @param              [in] aPolygon A polygon
