@@ -1426,7 +1426,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith
         EXPECT_TRUE(intersection.isDefined()) ;
         EXPECT_FALSE(intersection.isEmpty()) ;
         EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 2) ;
-        // EXPECT_TRUE(intersection.isComplex()) ;
 
     }
 
@@ -1490,7 +1489,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith
 
         EXPECT_TRUE(intersection.isDefined()) ;
         EXPECT_TRUE(intersection.accessComposite().getObjectCount() == 1) ;
-        // EXPECT_TRUE(intersection.accessComposite().is<LineString>()) ;
+        EXPECT_TRUE(intersection.accessComposite().is<LineString>()) ;
 
     }
 
@@ -1536,7 +1535,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith
                 { 4.5, 2.0 },
                 { 6.0, 1.5 },
                 { 4.5, 1.0 },
-                { 4.0, -0.5}
+                { 4.0, -0.5 }
             }
         } ;
 
@@ -1592,6 +1591,67 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, DifferenceWith)
         EXPECT_FALSE(difference.isEmpty()) ;
         EXPECT_TRUE(difference.accessComposite().getObjectCount() == 1) ;
         EXPECT_TRUE(difference.accessComposite().is<Polygon>()) ;
+
+    }
+
+    // Polygon difference between intersecting complex polygons
+    // https://www.boost.org/doc/libs/1_69_0/libs/geometry/doc/html/geometry/reference/algorithms/difference/difference_3.html
+
+    {
+
+        const Polygon polygon_1 =
+        {
+            {
+                { 2.0, 1.3 },
+                { 2.4, 1.7 },
+                { 2.8, 1.8 },
+                { 3.4, 1.2 },
+                { 3.7, 1.6 },
+                { 3.4, 2.0 },
+                { 4.1, 3.0 },
+                { 5.3, 2.6 },
+                { 5.4, 1.2 },
+                { 4.9, 0.8 },
+                { 2.9, 0.7 },
+                { 2.0, 1.3 }
+            },
+            {
+                {
+                    { 4.0, 2.0 },
+                    { 4.2, 1.4 },
+                    { 4.8, 1.9 },
+                    { 4.4, 2.2 },
+                    { 4.0, 2.0 }
+                }
+            }
+        } ;
+
+        const Polygon polygon_2 =
+        {
+            {
+                { 4.0, -0.5 },
+                { 3.5, 1.0 },
+                { 2.0, 1.5 },
+                { 3.5, 2.0 },
+                { 4.0, 3.5 },
+                { 4.5, 2.0 },
+                { 6.0, 1.5 },
+                { 4.5, 1.0 },
+                { 4.0, -0.5 }
+            }
+        } ;
+
+        Intersection difference1minus2 = polygon_1.differenceWith(polygon_2) ;
+
+        EXPECT_TRUE(difference1minus2.isDefined()) ;
+        EXPECT_FALSE(difference1minus2.isEmpty()) ;
+        EXPECT_TRUE(difference1minus2.accessComposite().getObjectCount() == 5) ;
+
+        Intersection difference2minus1 = polygon_2.differenceWith(polygon_1) ;
+
+        EXPECT_TRUE(difference2minus1.isDefined()) ;
+        EXPECT_FALSE(difference2minus1.isEmpty()) ;
+        EXPECT_TRUE(difference2minus1.accessComposite().getObjectCount() == 6) ;
 
     }
 

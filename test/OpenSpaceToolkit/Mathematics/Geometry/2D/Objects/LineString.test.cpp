@@ -276,6 +276,30 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, IsNear)
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, GetPointArray)
+{
+
+    using ostk::core::ctnr::Array ;
+
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::LineString ;
+
+    {
+
+        Array<Point> pointArray = { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 }, { 0.0, 0.0 } } ;
+
+        EXPECT_EQ(pointArray, LineString(pointArray).getPointArray()) ;
+
+    }
+
+    {
+
+        EXPECT_EQ(Array<Point>::Empty(), LineString::Empty().getPointArray()) ;
+
+    }
+
+}
+
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, AccessPointAt)
 {
 

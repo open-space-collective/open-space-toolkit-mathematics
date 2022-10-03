@@ -132,6 +132,12 @@ class LineString : public Object
         bool                    isNear                                      (   const   LineString&                 aLineString,
                                                                                 const   Real&                       aTolerance                                  ) const ;
 
+        /// @brief              Get point array
+        ///
+        /// @return             Point array
+
+        const Array<Point>&     getPointArray                            ( ) const ;
+
         /// @brief              Access point at index
         ///
         /// @brief              [in] anIndex A point index

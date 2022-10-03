@@ -219,12 +219,7 @@ bool                            Polygon::Impl::contains                     (   
 bool                            Polygon::Impl::contains                     (   const   LineString&                 aLineString                                 ) const
 {
 
-    Array<Point> pointArray = Array<Point>::Empty() ;
-
-    for (Size index = 0; index < (aLineString.getPointCount()); index++)
-    {
-        pointArray.add(aLineString.accessPointAt(index)) ;
-    }
+    Array<Point> pointArray = aLineString.getPointArray() ;
 
     try
     {

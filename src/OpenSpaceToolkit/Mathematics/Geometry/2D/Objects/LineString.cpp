@@ -131,6 +131,11 @@ bool                            LineString::isNear                          (   
 
 }
 
+const Array<Point>&             LineString::getPointArray                ( ) const
+{
+    return points_ ;
+}
+
 const Point&                    LineString::accessPointAt                   (   const   Index&                      anIndex                                     ) const
 {
 
