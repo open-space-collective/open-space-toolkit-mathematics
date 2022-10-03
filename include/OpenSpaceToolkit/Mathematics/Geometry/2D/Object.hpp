@@ -68,7 +68,7 @@ class Object
 
         virtual Object*         clone                                       ( ) const = 0 ;
 
-        /// @brief              Not equal to operator
+        /// @brief              Equal to operator
         ///
         /// @param              [in] anObject An object
         /// @return             True if objects are equal

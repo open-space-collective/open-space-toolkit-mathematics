@@ -233,7 +233,7 @@ class Intersection
         /// @brief              Constructs a point intersection
         ///
         /// @code
-        ///                     Intersection intersection = Intersection::Point(Point(0.0, 0.0, 0.0)) ;
+        ///                     Intersection intersection = Intersection::Point(Point(0.0, 0.0)) ;
         /// @endcode
         ///
         /// @return             Point intersection
@@ -243,7 +243,7 @@ class Intersection
         /// @brief              Constructs a point set intersection
         ///
         /// @code
-        ///                     Intersection intersection = Intersection::PointSet({ Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0) }) ;
+        ///                     Intersection intersection = Intersection::PointSet({ Point(0.0, 0.0), Point(1.0, 0.0) }) ;
         /// @endcode
         ///
         /// @return             Point set intersection
@@ -253,7 +253,7 @@ class Intersection
         /// @brief              Constructs a line string intersection
         ///
         /// @code
-        ///                     Intersection intersection = Intersection::LineString({ Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0), Point(1.0, 0.0, 1.0) }) ;
+        ///                     Intersection intersection = Intersection::LineString({ Point(0.0, 0.0), Point(1.0, 0.0), Point(0.0, 1.0) }) ;
         /// @endcode
         ///
         /// @return             Line string intersection
@@ -263,7 +263,7 @@ class Intersection
         /// @brief              Constructs a line intersection
         ///
         /// @code
-        ///                     Intersection intersection = Intersection::Line(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 })) ;
+        ///                     Intersection intersection = Intersection::Line(Line({ 0.0, 0.0 }, { 1.0, 0.0 })) ;
         /// @endcode
         ///
         /// @return             Line intersection

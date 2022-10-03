@@ -26,7 +26,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Constructor)
 {
 
     using ostk::core::types::Unique ;
-    using ostk::core::types::Real ;
     using ostk::core::ctnr::Array ;
 
     using ostk::math::geom::d2::Object ;
@@ -52,27 +51,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Constructor)
         EXPECT_NO_THROW(Composite composite(polygonUPtr) ;) ;
 
     }
-
-    // {
-
-    //     const Array<Point> outerRing = { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } ;
-    //     const Array<Array<Point>> innerRings = Array<Array<Point>>::Empty() ;
-
-    //     const Unique<Object> polygonUPtr = std::make_unique<Polygon>(outerRing, innerRings) ;
-
-    //     const Real pointX = 0.0 ;
-    //     const Real pointY = 0.0 ;
-
-    //     Unique<Object> PointUPtr = std::make_unique<Point>(pointX, pointY) ;
-
-    //     Array<Unique<Object>> objects = Array<Unique<Object>>::Empty() ;
-
-    //     objects.emplace_back(std::move(polygonUPtr)) ;
-    //     objects.emplace_back(std::move(PointUPtr)) ;
-
-    //     EXPECT_NO_THROW(Composite composite(std::move(objects)) ;) ;
-
-    // }
 
 }
 
@@ -137,30 +115,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, EqualToOperato
 
     {
 
-        // const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-        // const Point apex = { 0.0, 0.0, 1.0 } ;
-
-        // Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex) ;
-
-        // const Point center = { 0.0, 0.0, 0.0 } ;
-        // const std::array<Vector3d, 3> axes = { Vector3d { 1.0, 0.0, 0.0 }, Vector3d { 0.0, 1.0, 0.0 }, Vector3d { 0.0, 0.0, 1.0 } } ;
-        // const std::array<Real, 3> extent = { 1.0, 2.0, 3.0 } ;
-
-        // Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent) ;
-
-        // Array<Unique<Object>> objects = Array<Unique<Object>>::Empty() ;
-
-        // objects.emplace_back(std::move(pyramidUPtr)) ;
-        // objects.emplace_back(std::move(cuboidUPtr)) ;
-
-        // const Composite composite = Composite { std::move(objects) } ;
-
-        // EXPECT_TRUE(composite == composite) ;
-
-    }
-
-    {
-
         const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
 
         const Composite composite = Composite { polygon } ;
@@ -173,126 +127,39 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, EqualToOperato
 
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, NotEqualToOperator)
-// {
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, NotEqualToOperator)
+{
 
-//     using ostk::core::types::Unique ;
-//     using ostk::core::types::Real ;
-//     using ostk::core::ctnr::Array ;
+    using ostk::core::ctnr::Array ;
 
-//     using ostk::math::obj::Vector3d ;
-//     using ostk::math::geom::d2::Object ;
-//     using ostk::math::geom::d2::objects::Point ;
-//     using ostk::math::geom::d2::objects::Polygon ;
-//     using ostk::math::geom::d2::objects::Cuboid ;
-//     using ostk::math::geom::d2::objects::Pyramid ;
-//     using ostk::math::geom::d2::objects::Composite ;
+    using ostk::math::geom::d2::Object ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Composite ;
 
-//     {
+    {
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
 
-//         const Pyramid pyramid = { base, apex } ;
+        const Composite composite = Composite { polygon } ;
 
-//         const Composite composite = Composite { pyramid } ;
+        EXPECT_FALSE(composite != composite) ;
 
-//         EXPECT_FALSE(composite != composite) ;
+    }
 
-//     }
+    {
 
-//     {
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const Point point = { 1.0, 2.0 } ;
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        const Composite polygonComposite = Composite { polygon } ;
+        const Composite pointComposite = Composite { point } ;
 
-//         Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex) ;
+        EXPECT_TRUE(polygonComposite != pointComposite) ;
 
-//         const Point center = { 0.0, 0.0, 0.0 } ;
-//         const std::array<Vector3d, 3> axes = { Vector3d { 1.0, 0.0, 0.0 }, Vector3d { 0.0, 1.0, 0.0 }, Vector3d { 0.0, 0.0, 1.0 } } ;
-//         const std::array<Real, 3> extent = { 1.0, 2.0, 3.0 } ;
+    }
 
-//         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent) ;
-
-//         Array<Unique<Object>> objects = Array<Unique<Object>>::Empty() ;
-
-//         objects.emplace_back(std::move(pyramidUPtr)) ;
-//         objects.emplace_back(std::move(cuboidUPtr)) ;
-
-//         const Composite composite = Composite { std::move(objects) } ;
-
-//         EXPECT_FALSE(composite != composite) ;
-
-//     }
-
-//     {
-
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
-
-//         const Pyramid pyramid = { base, apex } ;
-
-//         const Composite firstComposite = Composite { pyramid } ;
-
-//         const Point center = { 0.0, 0.0, 0.0 } ;
-//         const std::array<Vector3d, 3> axes = { Vector3d { 1.0, 0.0, 0.0 }, Vector3d { 0.0, 1.0, 0.0 }, Vector3d { 0.0, 0.0, 1.0 } } ;
-//         const std::array<Real, 3> extent = { 1.0, 2.0, 3.0 } ;
-
-//         const Cuboid cuboid = { center, axes, extent } ;
-
-//         const Composite secondComposite = Composite { cuboid } ;
-
-//         EXPECT_TRUE(firstComposite != secondComposite) ;
-
-//     }
-
-//     {
-
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
-
-//         const Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex) ;
-
-//         const Point center = { 0.0, 0.0, 0.0 } ;
-//         const std::array<Vector3d, 3> axes = { Vector3d { 1.0, 0.0, 0.0 }, Vector3d { 0.0, 1.0, 0.0 }, Vector3d { 0.0, 0.0, 1.0 } } ;
-//         const std::array<Real, 3> extent = { 1.0, 2.0, 3.0 } ;
-
-//         const Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent) ;
-
-//         Array<Unique<Object>> firstObjects = Array<Unique<Object>>::Empty() ;
-
-//         firstObjects.emplace_back(std::move(pyramidUPtr->clone())) ;
-//         firstObjects.emplace_back(std::move(cuboidUPtr->clone())) ;
-
-//         const Composite firstComposite = Composite { std::move(firstObjects) } ;
-
-//         Array<Unique<Object>> secondObjects = Array<Unique<Object>>::Empty() ;
-
-//         secondObjects.emplace_back(std::move(cuboidUPtr->clone())) ;
-//         secondObjects.emplace_back(std::move(pyramidUPtr->clone())) ;
-
-//         const Composite secondComposite = Composite { std::move(secondObjects) } ;
-
-//         EXPECT_TRUE(firstComposite != secondComposite) ;
-
-//     }
-
-//     {
-
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
-
-//         const Pyramid pyramid = { base, apex } ;
-
-//         const Composite composite = Composite { pyramid } ;
-
-//         EXPECT_TRUE(Composite::Undefined() != Composite::Undefined()) ;
-//         EXPECT_TRUE(Composite::Undefined() != composite) ;
-//         EXPECT_TRUE(composite != Composite::Undefined()) ;
-
-//     }
-
-// }
+}
 
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AdditionOperator)
 {
@@ -763,7 +630,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Is)
         const Composite composite = Composite { polygon } ;
 
         EXPECT_TRUE(composite.is<Polygon>()) ;
-
         EXPECT_FALSE(composite.is<Point>()) ;
 
     }
@@ -791,7 +657,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, As)
         const Composite composite = Composite { polygon } ;
 
         EXPECT_EQ(polygon, composite.as<Polygon>()) ;
-
         EXPECT_ANY_THROW(composite.as<Point>()) ;
 
     }
@@ -827,33 +692,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AccessObjectAt
 
     }
 
-    // {
-
-    //     const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-    //     const Point apex = { 0.0, 0.0, 1.0 } ;
-
-    //     Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex) ;
-
-    //     const Point center = { 0.0, 0.0, 0.0 } ;
-    //     const std::array<Vector3d, 3> axes = { Vector3d { 1.0, 0.0, 0.0 }, Vector3d { 0.0, 1.0, 0.0 }, Vector3d { 0.0, 0.0, 1.0 } } ;
-    //     const std::array<Real, 3> extent = { 1.0, 2.0, 3.0 } ;
-
-    //     Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent) ;
-
-    //     Array<Unique<Object>> objects = Array<Unique<Object>>::Empty() ;
-
-    //     objects.emplace_back(std::move(pyramidUPtr)) ;
-    //     objects.emplace_back(std::move(cuboidUPtr)) ;
-
-    //     const Composite composite = Composite { std::move(objects) } ;
-
-    //     EXPECT_TRUE(composite.accessObjectAt(0).is<Pyramid>()) ;
-    //     EXPECT_TRUE(composite.accessObjectAt(1).is<Cuboid>()) ;
-
-    //     EXPECT_ANY_THROW(composite.accessObjectAt(2)) ;
-
-    // }
-
     {
 
         EXPECT_ANY_THROW(Composite::Undefined().accessObjectAt(0)) ;
@@ -878,30 +716,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AccessObjects)
 
     }
 
-    // {
-
-    //     const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-    //     const Point apex = { 0.0, 0.0, 1.0 } ;
-
-    //     Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex) ;
-
-    //     const Point center = { 0.0, 0.0, 0.0 } ;
-    //     const std::array<Vector3d, 3> axes = { Vector3d { 1.0, 0.0, 0.0 }, Vector3d { 0.0, 1.0, 0.0 }, Vector3d { 0.0, 0.0, 1.0 } } ;
-    //     const std::array<Real, 3> extent = { 1.0, 2.0, 3.0 } ;
-
-    //     Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent) ;
-
-    //     Array<Unique<Object>> objects = Array<Unique<Object>>::Empty() ;
-
-    //     objects.emplace_back(std::move(pyramidUPtr)) ;
-    //     objects.emplace_back(std::move(cuboidUPtr)) ;
-
-    //     const Composite composite = Composite { std::move(objects) } ;
-
-    //     EXPECT_EQ(2, composite.accessObjects().getSize()) ;
-
-    // }
-
     {
 
         EXPECT_ANY_THROW(Composite::Undefined().accessObjects()) ;
@@ -925,30 +739,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, GetObjectCount
         EXPECT_EQ(1, composite.getObjectCount()) ;
 
     }
-
-    // {
-
-    //     const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-    //     const Point apex = { 0.0, 0.0, 1.0 } ;
-
-    //     Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex) ;
-
-    //     const Point center = { 0.0, 0.0, 0.0 } ;
-    //     const std::array<Vector3d, 3> axes = { Vector3d { 1.0, 0.0, 0.0 }, Vector3d { 0.0, 1.0, 0.0 }, Vector3d { 0.0, 0.0, 1.0 } } ;
-    //     const std::array<Real, 3> extent = { 1.0, 2.0, 3.0 } ;
-
-    //     Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent) ;
-
-    //     Array<Unique<Object>> objects = Array<Unique<Object>>::Empty() ;
-
-    //     objects.emplace_back(std::move(pyramidUPtr)) ;
-    //     objects.emplace_back(std::move(cuboidUPtr)) ;
-
-    //     const Composite composite = Composite { std::move(objects) } ;
-
-    //     EXPECT_EQ(2, composite.getObjectCount()) ;
-
-    // }
 
     {
 
