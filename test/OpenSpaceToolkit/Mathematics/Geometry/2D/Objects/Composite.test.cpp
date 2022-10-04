@@ -7,13 +7,9 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp>
-// #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Composite.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Segment.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Line.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
 
 #include <OpenSpaceToolkit/Core/Types/Real.hpp>
@@ -94,11 +90,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, CopyConstructo
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, EqualToOperator)
 {
 
-    using ostk::core::types::Unique ;
-    using ostk::core::types::Real ;
-    using ostk::core::ctnr::Array ;
-
-    using ostk::math::geom::d2::Object ;
     using ostk::math::geom::d2::objects::Point ;
     using ostk::math::geom::d2::objects::Polygon ;
     using ostk::math::geom::d2::objects::Composite ;
@@ -130,9 +121,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, EqualToOperato
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, NotEqualToOperator)
 {
 
-    using ostk::core::ctnr::Array ;
-
-    using ostk::math::geom::d2::Object ;
     using ostk::math::geom::d2::objects::Point ;
     using ostk::math::geom::d2::objects::Polygon ;
     using ostk::math::geom::d2::objects::Composite ;
@@ -164,11 +152,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, NotEqualToOper
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AdditionOperator)
 {
 
-    using ostk::core::types::Unique ;
-    using ostk::core::types::Real ;
-    using ostk::core::ctnr::Array ;
-
-    using ostk::math::geom::d2::Object ;
     using ostk::math::geom::d2::objects::Point ;
     using ostk::math::geom::d2::objects::Polygon ;
     using ostk::math::geom::d2::objects::Composite ;
@@ -180,6 +163,18 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AdditionOperat
         const Composite composite = Composite { polygon } ;
 
         EXPECT_NO_THROW(composite + composite) ;
+
+    }
+
+    {
+
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const Point point = { 1.0, 2.0 } ;
+
+        const Composite polygonComposite = Composite { polygon } ;
+        const Composite pointComposite = Composite { point } ;
+
+        EXPECT_NO_THROW(polygonComposite + pointComposite) ;
 
     }
 
@@ -199,7 +194,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AdditionOperat
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AdditionAssignmentOperator)
 {
 
-    using ostk::math::geom::d2::Object ;
     using ostk::math::geom::d2::objects::Point ;
     using ostk::math::geom::d2::objects::Polygon ;
     using ostk::math::geom::d2::objects::Composite ;
@@ -211,6 +205,18 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AdditionAssign
         Composite composite = Composite { polygon } ;
 
         EXPECT_NO_THROW(composite += composite) ;
+
+    }
+
+    {
+
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const Point point = { 1.0, 2.0 } ;
+
+        Composite composite = Composite { polygon } ;
+        const Composite otherComposite = Composite { point } ;
+
+        EXPECT_NO_THROW(composite += otherComposite) ;
 
     }
 
@@ -230,8 +236,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AdditionAssign
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, StreamOperator)
 {
 
-    using ostk::math::geom::d2::Object ;
-    using ostk::math::geom::d2::objects::Point ;
     using ostk::math::geom::d2::objects::Polygon ;
     using ostk::math::geom::d2::objects::Composite ;
 
@@ -254,11 +258,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, StreamOperator
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, IsDefined)
 {
 
-    using ostk::core::types::Real ;
-    using ostk::core::ctnr::Array ;
-
-    using ostk::math::geom::d2::Object ;
-    using ostk::math::geom::d2::objects::Point ;
     using ostk::math::geom::d2::objects::Polygon ;
     using ostk::math::geom::d2::objects::Composite ;
 
@@ -283,11 +282,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, IsDefined)
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, IsEmpty)
 {
 
-    using ostk::core::types::Unique ;
-    using ostk::core::types::Real ;
-    using ostk::core::ctnr::Array ;
-
-    using ostk::math::geom::d2::Object ;
     using ostk::math::geom::d2::objects::Point ;
     using ostk::math::geom::d2::objects::Polygon ;
     using ostk::math::geom::d2::objects::Composite ;
@@ -328,6 +322,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Intersects)
 
         const Composite composite = Composite { polygon } ;
 
+        // EXPECT_TRUE(composite.intersects(composite)) ; // TBI
         EXPECT_ANY_THROW(Composite::Undefined().intersects(Composite::Undefined())) ;
         EXPECT_ANY_THROW(Composite::Undefined().intersects(composite)) ;
         EXPECT_ANY_THROW(composite.intersects(Composite::Undefined())) ;
@@ -647,6 +642,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, As)
 
     using ostk::math::geom::d2::Object ;
     using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::LineString ;
     using ostk::math::geom::d2::objects::Polygon ;
     using ostk::math::geom::d2::objects::Composite ;
 
@@ -663,6 +659,23 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, As)
 
     {
 
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const Point point = { 1.0, 2.0 } ;
+
+        Composite composite = Composite { polygon } ;
+
+        const Composite otherComposite = Composite { point } ;
+
+        composite += otherComposite ;
+
+        EXPECT_ANY_THROW(composite.as<Point>()) ;
+        EXPECT_ANY_THROW(composite.as<Polygon>()) ;
+        EXPECT_ANY_THROW(composite.as<LineString>()) ;
+
+    }
+
+    {
+
         EXPECT_ANY_THROW(Composite::Undefined().as<Point>()) ;
 
     }
@@ -672,11 +685,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, As)
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AccessObjectAt)
 {
 
-    using ostk::core::types::Unique ;
-    using ostk::core::types::Real ;
-    using ostk::core::ctnr::Array ;
-
-    using ostk::math::geom::d2::Object ;
     using ostk::math::geom::d2::objects::Point ;
     using ostk::math::geom::d2::objects::Polygon ;
     using ostk::math::geom::d2::objects::Composite ;
@@ -694,6 +702,23 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AccessObjectAt
 
     {
 
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const Point point = { 1.0, 2.0 } ;
+
+        Composite composite = Composite { polygon } ;
+
+        const Composite otherComposite = Composite { point } ;
+
+        composite += otherComposite ;
+
+        EXPECT_EQ(composite.accessObjectAt(0), polygon) ;
+        EXPECT_EQ(composite.accessObjectAt(1), point) ;
+        EXPECT_ANY_THROW(composite.accessObjectAt(2)) ;
+
+    }
+
+    {
+
         EXPECT_ANY_THROW(Composite::Undefined().accessObjectAt(0)) ;
 
     }
@@ -703,6 +728,10 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AccessObjectAt
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AccessObjects)
 {
 
+    using ostk::core::types::Unique ;
+    using ostk::core::ctnr::Array ;
+
+    using ostk::math::geom::d2::Object ;
     using ostk::math::geom::d2::objects::Polygon ;
     using ostk::math::geom::d2::objects::Composite ;
 
@@ -722,11 +751,18 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AccessObjects)
 
     }
 
+    {
+
+        EXPECT_EQ(Array<Unique<Object>>::Empty(), Composite::Empty().accessObjects()) ;
+
+    }
+
 }
 
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, GetObjectCount)
 {
 
+    using ostk::math::geom::d2::objects::Point ;
     using ostk::math::geom::d2::objects::Polygon ;
     using ostk::math::geom::d2::objects::Composite ;
 
@@ -742,142 +778,107 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, GetObjectCount
 
     {
 
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const Point point = { 1.0, 2.0 } ;
+
+        Composite composite = Composite { polygon } ;
+
+        const Composite otherComposite = Composite { point } ;
+
+        composite += otherComposite ;
+        composite += composite ;
+
+        EXPECT_EQ(4, composite.getObjectCount()) ;
+
+    }
+
+    {
+
         EXPECT_ANY_THROW(Composite::Undefined().getObjectCount()) ;
 
     }
 
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, ConstIterator)
-// {
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, ConstIterator)
+{
 
-//     using ostk::core::types::Unique ;
-//     using ostk::core::types::Real ;
-//     using ostk::core::ctnr::Array ;
+    using ostk::math::geom::d2::Object ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Composite ;
 
-//     using ostk::math::obj::Vector3d ;
-//     using ostk::math::geom::d2::Object ;
-//     using ostk::math::geom::d2::objects::Point ;
-//     using ostk::math::geom::d2::objects::Polygon ;
-//     using ostk::math::geom::d2::objects::Cuboid ;
-//     using ostk::math::geom::d2::objects::Pyramid ;
-//     using ostk::math::geom::d2::objects::Composite ;
+    {
 
-//     {
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
+        const Point point = { 1.0, 2.0 } ;
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        Composite composite = Composite { polygon } ;
 
-//         const Pyramid pyramid = { base, apex } ;
+        const Composite otherComposite = Composite { point } ;
 
-//         const Composite composite = Composite { pyramid } ;
+        composite += otherComposite ;
 
-//         EXPECT_NO_THROW
-//         (
+        EXPECT_NO_THROW
+        (
 
-//             for (const auto& objectUPtr : composite)
-//             {
-//                 EXPECT_TRUE(objectUPtr->isDefined()) ;
-//             }
+            for (const auto& objectUPtr : composite)
+            {
+                EXPECT_TRUE(objectUPtr->isDefined()) ;
+            }
 
-//         ) ;
+        ) ;
 
-//     }
+    }
 
-//     {
+    {
 
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
+        EXPECT_ANY_THROW
+        (
 
-//         Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex) ;
+            for (const auto& objectUPtr : Composite::Undefined())
+            {
+                (void) objectUPtr ;
+            }
 
-//         const Point center = { 0.0, 0.0, 0.0 } ;
-//         const std::array<Vector3d, 3> axes = { Vector3d { 1.0, 0.0, 0.0 }, Vector3d { 0.0, 1.0, 0.0 }, Vector3d { 0.0, 0.0, 1.0 } } ;
-//         const std::array<Real, 3> extent = { 1.0, 2.0, 3.0 } ;
+        ) ;
 
-//         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent) ;
+    }
 
-//         Array<Unique<Object>> objects = Array<Unique<Object>>::Empty() ;
+}
 
-//         objects.emplace_back(std::move(pyramidUPtr)) ;
-//         objects.emplace_back(std::move(cuboidUPtr)) ;
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, ApplyTransformation)
+{
 
-//         const Composite composite = Composite { std::move(objects) } ;
+    using ostk::math::geom::d2::Object ;
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::geom::d2::objects::Composite ;
+    using ostk::math::geom::d2::Transformation ;
 
-//         EXPECT_NO_THROW
-//         (
+    {
 
-//             for (const auto& objectUPtr : composite)
-//             {
-//                 EXPECT_TRUE(objectUPtr->isDefined()) ;
-//             }
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
 
-//         ) ;
+        Composite composite = Composite { polygon } ;
 
-//     }
+        EXPECT_NO_THROW(composite.applyTransformation(Transformation::Identity())) ;
 
-//     {
+    }
 
-//         EXPECT_ANY_THROW
-//         (
+    {
 
-//             for (const auto& objectUPtr : Composite::Undefined())
-//             {
-//                 (void) objectUPtr ;
-//             }
+        const Polygon polygon = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
 
-//         ) ;
+        Composite composite = Composite { polygon } ;
 
-//     }
+        EXPECT_ANY_THROW(composite.applyTransformation(Transformation::Undefined())) ;
+        EXPECT_ANY_THROW(Composite::Undefined().applyTransformation(Transformation::Undefined())) ;
+        EXPECT_ANY_THROW(Composite::Undefined().applyTransformation(Transformation::Identity())) ;
 
-// }
+    }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, ApplyTransformation)
-// {
-
-//     using ostk::core::types::Unique ;
-//     using ostk::core::types::Real ;
-//     using ostk::core::ctnr::Array ;
-
-//     using ostk::math::obj::Vector3d ;
-//     using ostk::math::geom::d2::Object ;
-//     using ostk::math::geom::d2::objects::Point ;
-//     using ostk::math::geom::d2::objects::Polygon ;
-//     using ostk::math::geom::d2::objects::Cuboid ;
-//     using ostk::math::geom::d2::objects::Pyramid ;
-//     using ostk::math::geom::d2::objects::Composite ;
-//     using ostk::math::geom::d2::Transformation ;
-
-//     {
-
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
-
-//         const Pyramid pyramid = { base, apex } ;
-
-//         Composite composite = Composite { pyramid } ;
-
-//         EXPECT_NO_THROW(composite.applyTransformation(Transformation::Identity())) ;
-
-//     }
-
-//     {
-
-//         const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
-//         const Point apex = { 0.0, 0.0, 1.0 } ;
-
-//         const Pyramid pyramid = { base, apex } ;
-
-//         Composite composite = Composite { pyramid } ;
-
-//         EXPECT_ANY_THROW(composite.applyTransformation(Transformation::Undefined())) ;
-//         EXPECT_ANY_THROW(Composite::Undefined().applyTransformation(Transformation::Undefined())) ;
-//         EXPECT_ANY_THROW(Composite::Undefined().applyTransformation(Transformation::Identity())) ;
-
-
-//     }
-
-// }
+}
 
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Undefined)
 {
