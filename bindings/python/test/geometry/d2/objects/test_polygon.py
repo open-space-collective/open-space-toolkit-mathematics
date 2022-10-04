@@ -23,6 +23,7 @@ MultiPolygon = mathematics.geometry.d2.objects.MultiPolygon
 LineString = mathematics.geometry.d2.objects.LineString
 Segment = mathematics.geometry.d2.objects.Segment
 Transformation = mathematics.geometry.d2.Transformation
+Intersection = mathematics.geometry.d2.Intersection
 
 ################################################################################################################################################################
 
@@ -351,5 +352,76 @@ class TestPolygon:
         assert multipolygon is not None
         assert isinstance(multipolygon, MultiPolygon)
         assert multipolygon.is_defined()
+
+    def test_intersection_with (self):
+
+        def square (center: Point) -> Polygon:
+            '''
+            Creates and Return a Square centered in center
+            and with length 1.0 with no inner rings.
+            '''
+            point_1: Point = center + [0.5, 0.5]
+            point_2: Point = center + [0.5, -0.5]
+            point_3: Point = center + [-0.5, -0.5]
+            point_4: Point = center + [-0.5, 0.5]
+
+            return Polygon([point_1, point_2, point_3, point_4])
+
+        square_1: Polygon = square(Point(0.0, 0.0))
+        square_2: Polygon = square(Point(0.0, 0.0))
+
+        intersection: Intersection = square_1.intersection_with(square_2)
+
+        assert intersection is not None
+        assert isinstance(intersection, Intersection)
+        assert intersection.is_defined()
+        assert intersection.is_polygon()
+
+        assert intersection.as_polygon() == square_1
+        assert square_1.intersection_with(square_2) == square_2.intersection_with(square_1)
+
+        square_3: Polygon = square(Point(1.0, 0.0))
+        intersection_2: Intersection = square_1.intersection_with(square_3)
+
+        assert intersection_2 is not None
+        assert isinstance(intersection_2, Intersection)
+        assert intersection_2.is_defined()
+        assert intersection_2.is_line_string()
+        assert intersection_2.as_line_string() == LineString([Point(0.5, 0.5), Point(0.5, -0.5)])
+        assert intersection_2.get_type() == Intersection.Type.LineString
+
+    def test_difference_with (self):
+
+        def square (center: Point) -> Polygon:
+            '''
+            Creates and Return a Square centered in center
+            and with length 1.0 with no inner rings.
+            '''
+            point_1: Point = center + [0.5, 0.5]
+            point_2: Point = center + [0.5, -0.5]
+            point_3: Point = center + [-0.5, -0.5]
+            point_4: Point = center + [-0.5, 0.5]
+
+            return Polygon([point_1, point_2, point_3, point_4])
+
+        square_1: Polygon = square(Point(0.0, 0.0))
+        square_2: Polygon = square(Point(0.0, 0.0))
+
+        difference: Intersection = square_1.difference_with(square_2)
+
+        assert difference is not None
+        assert isinstance(difference, Intersection)
+        assert difference.is_defined()
+        assert difference.is_empty()
+
+        square_3: Polygon = square(Point(0.5, 0.0))
+        difference_2: Intersection = square_1.difference_with(square_3)
+
+        assert difference_2 is not None
+        assert isinstance(difference_2, Intersection)
+        assert difference_2.is_defined()
+        assert difference_2.is_polygon()
+        assert difference_2.as_polygon() == Polygon([Point(0.0, 0.5), Point(-0.5, 0.5), Point(-0.5, -0.5), Point(0.0, -0.5)])
+        assert difference_2.get_type() == Intersection.Type.Polygon
 
 ################################################################################################################################################################
