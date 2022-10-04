@@ -45,7 +45,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def(init<const Object&>())
 
         .def(self == self)
-        .def(self == self)
+        .def(self != self)
 
         .def(self + self)
         .def(self += self)

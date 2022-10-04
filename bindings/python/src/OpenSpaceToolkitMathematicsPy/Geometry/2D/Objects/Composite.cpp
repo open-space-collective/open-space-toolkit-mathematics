@@ -37,7 +37,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def(init<const Object&>())
 
         .def(self == self)
-        .def(self == self)
+        .def(self != self)
 
         .def(self + self)
         .def(self += self)
@@ -64,6 +64,10 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("contains", overload_cast<const Composite&>(&Composite::contains, const_))
         .def("contains_object", +[] (const Composite& aComposite, const Object& anObject) -> bool { return aComposite.contains(anObject) ; }) // TBR
         .def("contains_composite", +[] (const Composite& aComposite, const Composite& anotherComposite) -> bool { return aComposite.contains(anotherComposite) ; }) // TBR
+        .def("any_contains", overload_cast<const Object&>(&Composite::anyContains, const_))
+        .def("any_contains", overload_cast<const Composite&>(&Composite::anyContains, const_))
+        .def("any_contains_object", +[] (const Composite& aComposite, const Object& anObject) -> bool { return aComposite.anyContains(anObject) ; }) // TBR
+        .def("any_contains_composite", +[] (const Composite& aComposite, const Composite& anotherComposite) -> bool { return aComposite.anyContains(anotherComposite) ; }) // TBR
 
         .def("as_point", +[] (const Composite& aComposite) -> Point { return aComposite.as<Point>() ; })
         .def("as_point_set", +[] (const Composite& aComposite) -> PointSet { return aComposite.as<PointSet>() ; })

@@ -41,6 +41,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("is_near", &Polygon::isNear)
         .def("intersects", overload_cast<const Polygon&>(&Polygon::intersects, const_))
         .def("intersects_polygon", +[] (const Polygon& aPolygon, const Polygon& anotherPolygon) -> bool { return aPolygon.intersects(anotherPolygon) ; }) // TBR
+        .def("intersection_with", overload_cast<const Polygon&>(&Polygon::intersectionWith, const_))
+        .def("difference_with", overload_cast<const Polygon&>(&Polygon::differenceWith, const_))
         .def("contains", overload_cast<const Point&>(&Polygon::contains, const_))
         .def("contains", overload_cast<const PointSet&>(&Polygon::contains, const_))
         .def("contains_point", +[] (const Polygon& aPolygon, const Point& aPoint) -> bool { return aPolygon.contains(aPoint) ; })
