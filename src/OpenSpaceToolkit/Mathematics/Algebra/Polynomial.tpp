@@ -27,16 +27,15 @@ namespace alg
 
                                 template <class T>
                                 Polynomial<T>::Polynomial                   (   const   Array<T>&                   aCoefficientsArray                          )
-                                :   degree_(static_cast<int>(aCoefficientsArray.getSize()) - 1),
-                                    coefficients_(aCoefficientsArray)
+                                :  coefficients_(aCoefficientsArray)
 {
-
+    this->normalize() ;
 }
 
                                 template <class T>
 bool                            Polynomial<T>::operator ==                  (   const   Polynomial&                 aPolynomial                                 ) const
 {
-    return (degree_ == aPolynomial.getDegree()) && (coefficients_ == aPolynomial.getCoefficientsArray()) ;
+    return (coefficients_ == aPolynomial.getCoefficientsArray()) ;
 }
 
                                 template <class T>
@@ -83,10 +82,16 @@ std::ostream&                   operator <<                                 (   
 }
 
                                 template <class T>
+void                            Polynomial<T>::normalize                    ( )
+{
+    coefficients_.erase(std::find_if(coefficients_.rbegin(), coefficients_.rend(), _1 != T(0)).base(), coefficients_.end()) ;
+}
+
+                                template <class T>
 Integer                         Polynomial<T>::getDegree                    ( ) const
 {
 
-    return degree_ ;
+    return static_cast<int>(coefficients_.getSize()) - 1 ;
 
 }
 

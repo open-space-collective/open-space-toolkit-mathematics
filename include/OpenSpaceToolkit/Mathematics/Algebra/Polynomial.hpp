@@ -39,7 +39,7 @@ using ostk::core::types::Size ;
 
 // TBI: Polynomials with one indeterminate for now
 
-/// @brief                      Expression consisting of inderterminates (belonging to a field of class T) and coefficients
+/// @brief                      Expression consisting of inderterminates (belonging to a field of type T) and coefficients
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Polynomial
 
@@ -166,8 +166,18 @@ class Polynomial
 
     private:
 
-        Integer                 degree_ ;
-        Array<T>                coefficients_ ;
+        Array<T>                coefficients_ ; // Sorted in ascending order
+
+        /// @brief              Normalize polynomial
+        ///
+        /// @code
+        ///                     Remove zero coefficients
+        ///                     polynomial.normalize() ;
+        /// @endcode
+        ///
+        /// @return             Nothing
+
+        void                    normalize                                   ( ) const ;
 
 } ;
 
