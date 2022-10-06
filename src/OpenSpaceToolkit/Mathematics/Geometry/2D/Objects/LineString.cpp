@@ -83,8 +83,10 @@ bool                            LineString::contains                        (   
 
     else
     {
-        for (int index = 0; index < (pointCount- 1); index++)
+
+        for (int index = 0; index < (pointCount - 1); index++)
         {
+
             Point firstPoint = this->accessPointAt(index) ;
             Point secondPoint = this->accessPointAt(index + 1) ;
 

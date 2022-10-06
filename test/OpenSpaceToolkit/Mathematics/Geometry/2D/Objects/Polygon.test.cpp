@@ -1461,7 +1461,7 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith
 
     }
 
-    // Line String intersection between two intersecting convex polygons
+    // Line string intersection between two intersecting convex polygons
 
     {
 

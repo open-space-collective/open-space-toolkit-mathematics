@@ -46,7 +46,6 @@ using ostk::math::geom::d3::objects::Point ;
 using ostk::math::geom::d3::objects::Segment ;
 using ostk::math::geom::d3::objects::LineString ;
 using ostk::math::geom::d3::objects::Plane ;
-using ostk::math::geom::d3::Intersection ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
