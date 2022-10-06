@@ -17,32 +17,6 @@ Object = mathematics.geometry.d2.Object
 Point = mathematics.geometry.d2.objects.Point
 Polygon = mathematics.geometry.d2.objects.Polygon
 Composite = mathematics.geometry.d2.objects.Composite
-Segment = mathematics.geometry.d2.objects.Segment
-
-################################################################################################################################################################
-
-@pytest.fixture
-def polygon () -> Polygon:
-
-    point_1: Point = Point(-1.0, 1.0)
-    point_2: Point = Point(1.0, 1.0)
-    point_3: Point = Point(1.0, -1.0)
-    point_4: Point = Point(-1.0, -1.0)
-
-    return Polygon([point_1, point_2, point_3, point_4])
-
-@pytest.fixture
-def point () -> Point:
-
-    return Point(-2.0, 5.0)
-
-@pytest.fixture
-def composite (polygon: Polygon, point: Point) -> Composite:
-
-    composite = Composite(polygon)
-    composite += Composite(point)
-
-    return composite
 
 ################################################################################################################################################################
 
@@ -140,37 +114,5 @@ class TestComposite:
 
         with pytest.raises(RuntimeError):
             composite.access_object_at(2)
-
-    # def test_geometry_d2_objects_composite_contains (
-    #     self,
-    #     composite: Composite,
-    #     polygon: Polygon,
-    #     point: Point
-    # ):
-
-    #     assert composite.get_object_count() == 2
-    #     assert composite.access_object_at(0) == polygon
-    #     assert composite.access_object_at(1) == point
-
-    #     assert composite.contains(polygon) is False
-    #     assert composite.contains(point) is False
-    #     assert composite.contains(Point(6.0, 7.0)) is False
-    #     assert composite.contains(Point(0.0, 0.0)) is False
-
-    # def test_geometry_d2_objects_composite_any_contains (
-    #     self,
-    #     composite: Composite,
-    #     polygon: Polygon,
-    #     point: Point
-    # ):
-
-    #     assert composite.get_object_count() == 2
-    #     assert composite.access_object_at(0) == polygon
-    #     assert composite.access_object_at(1) == point
-
-    #     assert composite.any_contains(polygon)
-    #     assert composite.any_contains(point)
-    #     assert composite.any_contains(Point(6.0, 7.0)) is False
-    #     assert composite.any_contains(Point(0.0, 0.0)) is False
 
 ################################################################################################################################################################

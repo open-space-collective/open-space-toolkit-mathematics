@@ -20,17 +20,6 @@ Point = mathematics.geometry.d2.objects.Point
 PointSet = mathematics.geometry.d2.objects.PointSet
 Segment = mathematics.geometry.d2.objects.Segment
 Line = mathematics.geometry.d2.objects.Line
-Transformation = mathematics.geometry.d2.Transformation
-
-################################################################################################################################################################
-
-@pytest.fixture
-def segment () -> Segment:
-
-    return Segment(
-        Point(0.0, 0.0),
-        Point(0.0, 2.0),
-    )
 
 ################################################################################################################################################################
 
@@ -107,15 +96,24 @@ class TestSegment:
 
         assert segment.get_length() == 2.0
 
-    def test_distance_to_success_point (self, segment: Segment):
+    def test_distance_to_success_point (
+        self,
+        segment: Segment
+    ):
 
         assert segment.distance_to(Point(0.0, 0.0)) == 0.0
 
-    def test_distance_to_success_point_set (self, segment: Segment):
+    def test_distance_to_success_point_set (
+        self,
+        segment: Segment
+    ):
 
         assert segment.distance_to(PointSet([Point(0.0, 0.0), Point(1.0, 0.0)])) == 0.0
 
-    def test_to_line_success (self, segment: Segment):
+    def test_to_line_success (
+        self,
+        segment: Segment
+    ):
 
         assert segment.to_line() == Line(Point(0.0, 0.0), np.array((0.0, 1.0)))
 
