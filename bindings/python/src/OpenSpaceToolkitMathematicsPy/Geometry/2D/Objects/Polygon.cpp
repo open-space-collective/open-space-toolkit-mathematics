@@ -27,9 +27,9 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
     class_<Polygon, Object>(aModule, "Polygon")
 
-        .def(init<const Array<Point>&, const Array<Array<Point>>&>())
+        .def(init<const Array<Point>&, const Array<Array<Point>>&>(), arg("outer_ring"), arg("inner_rings"))
 
-        .def(init<const Array<Point>&>())
+        .def(init<const Array<Point>&>(), arg("outer_ring"))
 
         .def(self == self)
         .def(self != self)
@@ -38,29 +38,29 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("__repr__", &(shiftToString<Polygon>))
 
         .def("is_defined", &Polygon::isDefined)
-        .def("is_near", &Polygon::isNear)
-        .def("intersects", overload_cast<const Polygon&>(&Polygon::intersects, const_))
-        .def("intersects_polygon", +[] (const Polygon& aPolygon, const Polygon& anotherPolygon) -> bool { return aPolygon.intersects(anotherPolygon) ; }) // TBR
-        .def("intersection_with", overload_cast<const Polygon&>(&Polygon::intersectionWith, const_))
-        .def("difference_with", overload_cast<const Polygon&>(&Polygon::differenceWith, const_))
-        .def("contains", overload_cast<const Point&>(&Polygon::contains, const_))
-        .def("contains", overload_cast<const PointSet&>(&Polygon::contains, const_))
-        .def("contains_point", +[] (const Polygon& aPolygon, const Point& aPoint) -> bool { return aPolygon.contains(aPoint) ; })
-        .def("contains_point_set", +[] (const Polygon& aPolygon, const PointSet& aPointSet) -> bool { return aPolygon.contains(aPointSet) ; })
+        .def("is_near", &Polygon::isNear, arg("polygon"), arg("tolerance"))
+        .def("intersects", overload_cast<const Polygon&>(&Polygon::intersects, const_), arg("polygon"))
+        .def("intersects_polygon", +[] (const Polygon& aPolygon, const Polygon& anotherPolygon) -> bool { return aPolygon.intersects(anotherPolygon) ; }, arg("polygon")) // TBR
+        .def("intersection_with", overload_cast<const Polygon&>(&Polygon::intersectionWith, const_), arg("polygon"))
+        .def("difference_with", overload_cast<const Polygon&>(&Polygon::differenceWith, const_), arg("polygon"))
+        .def("contains", overload_cast<const Point&>(&Polygon::contains, const_), arg("point"))
+        .def("contains", overload_cast<const PointSet&>(&Polygon::contains, const_), arg("point_set"))
+        .def("contains_point", +[] (const Polygon& aPolygon, const Point& aPoint) -> bool { return aPolygon.contains(aPoint) ; }, arg("point"))
+        .def("contains_point_set", +[] (const Polygon& aPolygon, const PointSet& aPointSet) -> bool { return aPolygon.contains(aPointSet) ; }, arg("point_set"))
 
         .def("get_inner_ring_count", &Polygon::getInnerRingCount)
         .def("get_edge_count", &Polygon::getEdgeCount)
         .def("get_vertex_count", &Polygon::getVertexCount)
         .def("get_outer_ring", &Polygon::getOuterRing)
-        .def("get_inner_ring_at", &Polygon::getInnerRingAt)
-        .def("get_edge_at", &Polygon::getEdgeAt)
-        .def("get_vertex_at", &Polygon::getVertexAt)
+        .def("get_inner_ring_at", &Polygon::getInnerRingAt, arg("index"))
+        .def("get_edge_at", &Polygon::getEdgeAt, arg("index"))
+        .def("get_vertex_at", &Polygon::getVertexAt, arg("index"))
         .def("get_edges", &Polygon::getEdges)
         .def("get_vertices", &Polygon::getVertices)
         .def("get_convex_hull", &Polygon::getConvexHull)
-        .def("union_with", &Polygon::unionWith)
+        .def("union_with", &Polygon::unionWith, arg("polygon"))
         .def("to_string", &Polygon::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
-        .def("apply_transformation", &Polygon::applyTransformation)
+        .def("apply_transformation", &Polygon::applyTransformation, arg("transformation"))
 
         .def_static("undefined", &Polygon::Undefined)
 

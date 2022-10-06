@@ -26,7 +26,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
     class_<Line, Object>(aModule, "Line")
 
-        .def(init<const Point&, const Vector2d&>())
+        .def(init<const Point&, const Vector2d&>(), arg("point"), arg("direction"))
 
         .def(self == self)
         .def(self != self)
@@ -35,17 +35,17 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("__repr__", &(shiftToString<Line>))
 
         .def("is_defined", &Line::isDefined)
-        .def("intersects", overload_cast<const Point&>(&Line::intersects, const_))
-        .def("contains", overload_cast<const Point&>(&Line::contains, const_))
-        .def("contains", overload_cast<const PointSet&>(&Line::contains, const_))
+        .def("intersects", overload_cast<const Point&>(&Line::intersects, const_), arg("point"))
+        .def("contains", overload_cast<const Point&>(&Line::contains, const_), arg("point"))
+        .def("contains", overload_cast<const PointSet&>(&Line::contains, const_), arg("point_set"))
 
         .def("get_origin", &Line::getOrigin)
         .def("get_direction", &Line::getDirection)
-        .def("distance_to", overload_cast<const Point&>(&Line::distanceTo, const_))
-        .def("apply_transformation", &Line::applyTransformation)
+        .def("distance_to", overload_cast<const Point&>(&Line::distanceTo, const_), arg("point"))
+        .def("apply_transformation", &Line::applyTransformation, arg("transformation"))
 
         .def_static("undefined", &Line::Undefined)
-        .def_static("points", &Line::Points)
+        .def_static("points", &Line::Points, arg("first_point"), arg("second_point"))
 
     ;
 

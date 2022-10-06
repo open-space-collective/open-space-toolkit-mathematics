@@ -25,7 +25,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
     class_<PointSet, Object>(aModule, "PointSet")
 
-        .def(init<const Array<Point>&>())
+        .def(init<const Array<Point>&>(), arg("point_array"))
 
         .def(self == self)
         .def(self != self)
@@ -35,13 +35,13 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
         .def("is_defined", &PointSet::isDefined)
         .def("is_empty", &PointSet::isEmpty)
-        .def("is_near", &PointSet::isNear)
+        .def("is_near", &PointSet::isNear, arg("point_set"), arg("tolerance"))
 
         .def("get_size", &PointSet::getSize)
-        .def("distance_to", overload_cast<const Point&>(&PointSet::distanceTo, const_))
-        .def("get_point_closest_to", &PointSet::getPointClosestTo)
+        .def("distance_to", overload_cast<const Point&>(&PointSet::distanceTo, const_), arg("point"))
+        .def("get_point_closest_to", &PointSet::getPointClosestTo, arg("point"))
         .def("to_string", &PointSet::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
-        .def("apply_transformation", &PointSet::applyTransformation)
+        .def("apply_transformation", &PointSet::applyTransformation, arg("transformation"))
 
         .def_static("empty", &PointSet::Empty)
 

@@ -7,8 +7,8 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/MultiPolygon.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Composite.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/MultiPolygon.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Polygon.cpp>
 // #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/MultiLineString.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/LineString.cpp>

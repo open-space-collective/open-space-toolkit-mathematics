@@ -25,7 +25,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
     class_<LineString, Object>(aModule, "LineString")
 
-        .def(init<const Array<Point>&>())
+        .def(init<const Array<Point>&>(), arg("point_array"))
 
         .def(self == self)
         .def(self != self)
@@ -35,18 +35,18 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
         .def("is_defined", &LineString::isDefined)
         .def("is_empty", &LineString::isEmpty)
-        .def("is_near", &LineString::isNear)
+        .def("is_near", &LineString::isNear, arg("line_string"), arg("tolerance"))
 
         .def("get_point_count", &LineString::getPointCount)
-        .def("get_point_closest_to", &LineString::getPointClosestTo)
+        .def("get_point_closest_to", &LineString::getPointClosestTo, arg("point"))
         .def("to_string", &LineString::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
 
-        .def("apply_transformation", &LineString::applyTransformation)
+        .def("apply_transformation", &LineString::applyTransformation, arg("transformation"))
 
         .def_static("empty", &LineString::Empty)
 
         .def("__len__", &LineString::getPointCount)
-        .def("__getitem__", +[] (const LineString& aLineString, const size_t anIndex) -> const Point& { return aLineString.accessPointAt(anIndex) ; }, return_value_policy::reference_internal)
+        .def("__getitem__", +[] (const LineString& aLineString, const size_t anIndex) -> const Point& { return aLineString.accessPointAt(anIndex) ; }, return_value_policy::reference_internal, arg("index"))
         .def("__iter__", [] (const LineString& aLineString) {return make_iterator(aLineString.begin(), aLineString.end()) ; }, keep_alive<0, 1>()) // Keep vector alive while iterator is used
 
     ;
