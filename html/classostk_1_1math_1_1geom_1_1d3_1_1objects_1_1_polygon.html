@@ -164,7 +164,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae5cb46e0bdcf9a9f59f03d05e2706301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get polygon vertices.  <a href="#ae5cb46e0bdcf9a9f59f03d05e2706301">More...</a><br /></td></tr>
 <tr class="separator:ae5cb46e0bdcf9a9f59f03d05e2706301"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe478a380cdd22efb082590fda923201"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon.html#abe478a380cdd22efb082590fda923201">print</a> (std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</td></tr>
-<tr class="memdesc:abe478a380cdd22efb082590fda923201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print polygon.  <a href="#abe478a380cdd22efb082590fda923201">More...</a><br /></td></tr>
+<tr class="memdesc:abe478a380cdd22efb082590fda923201"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compute intersection of polygon with another polygon.  <a href="#abe478a380cdd22efb082590fda923201">More...</a><br /></td></tr>
 <tr class="separator:abe478a380cdd22efb082590fda923201"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abf60fe8602485822f8f07c01f6980cf5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon.html#abf60fe8602485822f8f07c01f6980cf5">applyTransformation</a> (const <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1_transformation.html">Transformation</a> &amp;aTransformation) override</td></tr>
 <tr class="memdesc:abf60fe8602485822f8f07c01f6980cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply transformation to polygon.  <a href="#abf60fe8602485822f8f07c01f6980cf5">More...</a><br /></td></tr>
@@ -762,7 +762,14 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Print polygon. </p>
+<p>Compute intersection of polygon with another polygon. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aPolygon</td><td>A polygon </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1_intersection.html" title="3D intersection ">Intersection</a> Print polygon</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>

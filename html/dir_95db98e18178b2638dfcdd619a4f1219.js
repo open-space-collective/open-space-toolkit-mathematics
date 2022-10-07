@@ -1,6 +1,6 @@
 var dir_95db98e18178b2638dfcdd619a4f1219 =
 [
-    [ "Composite.hpp", "_composite_8hpp.html", [
+    [ "Composite.hpp", "3_d_2_objects_2_composite_8hpp.html", [
       [ "Composite", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite.html", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite" ]
     ] ],
     [ "Cone.hpp", "_cone_8hpp.html", [

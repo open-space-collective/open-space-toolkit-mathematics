@@ -62,7 +62,7 @@ Array$<$ \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_a58c9
 Array$<$ \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_a314eaf277355d59f5e6ab775702c47c2}{Polygon\+::\+Vertex} $>$ \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_ae5cb46e0bdcf9a9f59f03d05e2706301}{get\+Vertices} () const
 \begin{DoxyCompactList}\small\item\em Get polygon vertices. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_abe478a380cdd22efb082590fda923201}{print} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
-\begin{DoxyCompactList}\small\item\em Print polygon. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Compute intersection of polygon with another polygon. \end{DoxyCompactList}\item 
 virtual void \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon_abf60fe8602485822f8f07c01f6980cf5}{apply\+Transformation} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_transformation}{Transformation} \&a\+Transformation) override
 \begin{DoxyCompactList}\small\item\em Apply transformation to polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
@@ -405,8 +405,16 @@ True if polygons are equal
 
 
 
-Print polygon. 
+Compute intersection of polygon with another polygon. 
 
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Polygon} & A polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} Print polygon
+\end{DoxyReturn}
 
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\tt in}  & {\em an\+Output\+Stream} & An output stream \\

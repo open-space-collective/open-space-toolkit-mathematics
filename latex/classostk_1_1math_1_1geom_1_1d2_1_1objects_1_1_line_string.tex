@@ -35,8 +35,12 @@ virtual bool \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_stri
 \begin{DoxyCompactList}\small\item\em Check if line string is defined. \end{DoxyCompactList}\item 
 bool \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_a2fe1d6a0a8a917b00b13ab9c3cf24bf3}{is\+Empty} () const
 \begin{DoxyCompactList}\small\item\em Check if line string is empty. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_a04cc661c265dc5777b08754c8015c600}{contains} (const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if line string contains a point. \end{DoxyCompactList}\item 
 bool \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_a5772e2ac0f24c76d9957e1617077b04a}{is\+Near} (const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string}{Line\+String} \&a\+Line\+String, const Real \&a\+Tolerance) const
 \begin{DoxyCompactList}\small\item\em Check if line string is near another line string. \end{DoxyCompactList}\item 
+const Array$<$ \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} $>$ \& \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_a66969b9cadd8d7b03d3ed1dade26388b}{get\+Point\+Array} () const
+\begin{DoxyCompactList}\small\item\em Get point array. \end{DoxyCompactList}\item 
 const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \& \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_a716b6b5f34bbbdcea2a3b4e8e5faf9b5}{access\+Point\+At} (const Index \&an\+Index) const
 \begin{DoxyCompactList}\small\item\em Access point at index. \end{DoxyCompactList}\item 
 Size \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_af4a7c10fc43a4facff65280e23217ec4}{get\+Point\+Count} () const
@@ -165,6 +169,25 @@ Pointer to cloned line string
 
 Implements \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1_object_a98dedc6792aef35308966ca768eb3e14}{ostk\+::math\+::geom\+::d2\+::\+Object}.
 
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_a04cc661c265dc5777b08754c8015c600}\label{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_a04cc661c265dc5777b08754c8015c600}} 
+\index{ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String}!contains@{contains}}
+\index{contains@{contains}!ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String}}
+\subsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if line string contains a point. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_ae99b409ec3eddf804a7c83f2452b1249}{LineString}(\{ \{ 0.0, 0.0 \}, \{ 0.0, 1.0 \}, \{ 1.0, 0.0 \} \}).\hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_a04cc661c265dc5777b08754c8015c600}{contains}(\{ 0.0, 0.5 \}) ; \textcolor{comment}{// True}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if line string contains a point 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_a3557befd15577368d8cc2f9c2a74dfec}\label{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_a3557befd15577368d8cc2f9c2a74dfec}} 
 \index{ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String}!Empty@{Empty}}
 \index{Empty@{Empty}!ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String}}
@@ -196,6 +219,19 @@ Get end const iterator.
 
 \begin{DoxyReturn}{Returns}
 End const iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_a66969b9cadd8d7b03d3ed1dade26388b}\label{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_a66969b9cadd8d7b03d3ed1dade26388b}} 
+\index{ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String}!get\+Point\+Array@{get\+Point\+Array}}
+\index{get\+Point\+Array@{get\+Point\+Array}!ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String}}
+\subsubsection{\texorpdfstring{get\+Point\+Array()}{getPointArray()}}
+{\footnotesize\ttfamily const Array$<$ \hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} $>$ \& ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String\+::get\+Point\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get point array. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point}{Point} array 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_adba8e8498cade7e10b4df301b0215d8e}\label{classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string_adba8e8498cade7e10b4df301b0215d8e}} 
 \index{ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String@{ostk\+::math\+::geom\+::d2\+::objects\+::\+Line\+String}!get\+Point\+Closest\+To@{get\+Point\+Closest\+To}}

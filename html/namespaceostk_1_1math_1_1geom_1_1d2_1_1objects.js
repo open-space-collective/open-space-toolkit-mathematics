@@ -1,5 +1,6 @@
 var namespaceostk_1_1math_1_1geom_1_1d2_1_1objects =
 [
+    [ "Composite", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_composite.html", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_composite" ],
     [ "Line", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line.html", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line" ],
     [ "LineString", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string.html", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string" ],
     [ "MultiLineString", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string" ],

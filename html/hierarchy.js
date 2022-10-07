@@ -3,11 +3,13 @@ var hierarchy =
     [ "ostk::math::geom::Angle", "classostk_1_1math_1_1geom_1_1_angle.html", null ],
     [ "ostk::math::geom::d2::objects::PointSet::Hasher", "structostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_point_set_1_1_hasher.html", null ],
     [ "ostk::math::geom::d3::objects::PointSet::Hasher", "structostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set_1_1_hasher.html", null ],
+    [ "ostk::math::geom::d2::Intersection", "classostk_1_1math_1_1geom_1_1d2_1_1_intersection.html", null ],
     [ "ostk::math::geom::d3::Intersection", "classostk_1_1math_1_1geom_1_1d3_1_1_intersection.html", null ],
     [ "ostk::math::obj::IntervalBase", "classostk_1_1math_1_1obj_1_1_interval_base.html", [
       [ "ostk::math::obj::Interval< T >", "classostk_1_1math_1_1obj_1_1_interval.html", null ]
     ] ],
     [ "ostk::math::geom::d2::Object", "classostk_1_1math_1_1geom_1_1d2_1_1_object.html", [
+      [ "ostk::math::geom::d2::objects::Composite", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_composite.html", null ],
       [ "ostk::math::geom::d2::objects::Line", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line.html", null ],
       [ "ostk::math::geom::d2::objects::LineString", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string.html", null ],
       [ "ostk::math::geom::d2::objects::MultiLineString", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_line_string.html", null ],

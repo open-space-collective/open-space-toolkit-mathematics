@@ -1,6 +1,6 @@
 var dir_2bf14245caa1f25d734acd8573ccbeb3 =
 [
-    [ "Composite.cpp", "_composite_8cpp.html", null ],
+    [ "Composite.cpp", "3_d_2_objects_2_composite_8cpp.html", null ],
     [ "Cone.cpp", "_cone_8cpp.html", null ],
     [ "Cuboid.cpp", "_cuboid_8cpp.html", "_cuboid_8cpp" ],
     [ "Ellipsoid.cpp", "_ellipsoid_8cpp.html", "_ellipsoid_8cpp" ],
