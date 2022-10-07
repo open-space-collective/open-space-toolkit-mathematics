@@ -177,8 +177,8 @@ class TestLineString:
         assert isinstance(linestring_list[1], Point)
         assert len(linestring_list) == 2
 
-    # def test_geometry_d2_objects_linestring_to_string ():
+    # def test_to_string_success (self):
 
-    # def test_geometry_d2_objects_linestring_apply_transformation ():
+    # def test_apply_transformation_success (self):
 
 ################################################################################################################################################################

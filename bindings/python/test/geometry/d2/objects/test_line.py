@@ -39,14 +39,14 @@ class TestLine:
     def test_contains_success_point_set(
         self,
         line: Line,
-        point_set: PointSet
+        point_set: PointSet,
     ):
 
         assert line.contains(point_set) is True
 
     def test_distance_to_success_point (
         self,
-        line: Line
+        line: Line,
     ):
 
         assert float(line.distance_to(Point(2.0, 3.0))) == pytest.approx(0.0, 1e-5)
@@ -63,7 +63,7 @@ class TestLine:
 
     def test_points_success (
         self,
-        line: Line
+        line: Line,
     ):
 
         assert line is not None

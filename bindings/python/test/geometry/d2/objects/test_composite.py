@@ -22,7 +22,7 @@ Composite = mathematics.geometry.d2.objects.Composite
 
 class TestComposite:
 
-    def test_geometry_d2_objects_composite_constructor (
+    def test_constructor_success (
         self,
         polygon: Polygon
     ):
@@ -33,7 +33,7 @@ class TestComposite:
         assert isinstance(composite, Composite)
         assert composite.is_defined()
 
-    def test_geometry_d2_objects_composite_empty (self):
+    def test_empty_success (self):
 
         composite: Composite = Composite.empty()
 
@@ -43,7 +43,7 @@ class TestComposite:
         assert composite.is_defined()
         assert composite.is_empty()
 
-    def test_geometry_d2_objects_composite_defined (self):
+    def test_is_defined_success (self):
 
         composite: Composite = Composite.undefined()
 
@@ -52,10 +52,10 @@ class TestComposite:
         assert isinstance(composite, Object)
         assert composite.is_defined() is False
 
-    def test_geometry_d2_objects_composite_comparators (
+    def test_comparators_success (
         self,
         composite: Composite,
-        polygon: Polygon
+        polygon: Polygon,
     ):
 
         other_composite: Composite = Composite(polygon)
@@ -64,10 +64,10 @@ class TestComposite:
         assert composite != other_composite
         assert other_composite != composite
 
-    def tes_geometry_d2_objects_composite_addition_operator (
+    def test_addition_operator_success (
         self,
         composite: Composite,
-        polygon: Polygon
+        polygon: Polygon,
     ):
 
         assert composite is not None
@@ -90,10 +90,10 @@ class TestComposite:
         with pytest.raises(RuntimeError):
             composite += Composite.undefined()
 
-    def test_geometry_d2_objects_composite_is (
+    def test_is_success (
         self,
         composite: Composite,
-        polygon: Polygon
+        polygon: Polygon,
     ):
 
         assert composite.is_point() is False
@@ -101,11 +101,11 @@ class TestComposite:
 
         assert Composite(polygon).is_polygon()
 
-    def test_geometry_d2_objects_composite_access_object_at (
+    def test_access_object_at_success (
         self,
         composite: Composite,
         polygon: Polygon,
-        point: Point
+        point: Point,
     ):
 
         assert composite.get_object_count() == 2

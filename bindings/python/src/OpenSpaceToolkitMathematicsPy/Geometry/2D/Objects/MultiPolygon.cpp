@@ -28,7 +28,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
     class_<MultiPolygon, Object>(aModule, "MultiPolygon")
 
-        .def(init<const Array<Polygon>&>(), arg("polygon_array"))
+        .def(init<const Array<Polygon>&>(), arg("polygons"))
 
         .def(self == self)
         .def(self != self)

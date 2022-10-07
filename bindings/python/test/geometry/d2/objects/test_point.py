@@ -226,7 +226,7 @@ class TestPoint:
         assert isinstance(point.to_string(), String)
         assert point.to_string() == '[3.0, 5.0]'
 
-    # def test_geometry_d2_objects_point_apply_transformation ():
+    # def test_apply_transformation_success (self):
 
     #     point: Point = Point(4.5, 5.4)
 

@@ -25,7 +25,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
     class_<PointSet, Object>(aModule, "PointSet")
 
-        .def(init<const Array<Point>&>(), arg("point_array"))
+        .def(init<const Array<Point>&>(), arg("points"))
 
         .def(self == self)
         .def(self != self)

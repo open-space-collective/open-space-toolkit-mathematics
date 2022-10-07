@@ -220,7 +220,7 @@ class TestPolygon:
         square_1: Polygon,
         square_2: Polygon,
         square_3: Polygon,
-        square_4: Polygon
+        square_4: Polygon,
     ):
 
         assert square_1.intersects(square_2) is False
@@ -323,7 +323,7 @@ class TestPolygon:
     def test_union_with (
         self,
         square_1: Polygon,
-        square_4: Polygon
+        square_4: Polygon,
     ):
 
         multipolygon: MultiPolygon = square_1.union_with(square_4)
@@ -335,7 +335,7 @@ class TestPolygon:
     def test_intersection_with (
         self,
         square_1: Polygon,
-        square_4: Polygon
+        square_4: Polygon,
     ):
 
         intersection: Intersection = square_1.intersection_with(square_1)
@@ -359,7 +359,7 @@ class TestPolygon:
     def test_difference_with (
         self,
         square_1: Polygon,
-        square_3: Polygon
+        square_3: Polygon,
     ):
 
         difference: Intersection = square_1.difference_with(square_1)

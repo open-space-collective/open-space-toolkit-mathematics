@@ -98,21 +98,21 @@ class TestSegment:
 
     def test_distance_to_success_point (
         self,
-        segment: Segment
+        segment: Segment,
     ):
 
         assert segment.distance_to(Point(0.0, 0.0)) == 0.0
 
     def test_distance_to_success_point_set (
         self,
-        segment: Segment
+        segment: Segment,
     ):
 
         assert segment.distance_to(PointSet([Point(0.0, 0.0), Point(1.0, 0.0)])) == 0.0
 
     def test_to_line_success (
         self,
-        segment: Segment
+        segment: Segment,
     ):
 
         assert segment.to_line() == Line(Point(0.0, 0.0), np.array((0.0, 1.0)))

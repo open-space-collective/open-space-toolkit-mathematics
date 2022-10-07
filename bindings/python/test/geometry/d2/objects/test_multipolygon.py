@@ -99,7 +99,7 @@ class TestMultipolygon:
     def test_getters_success (
         self,
         square_1: Polygon,
-        square_2: Polygon
+        square_2: Polygon,
     ):
 
         # Multiple Polygons
@@ -116,10 +116,10 @@ class TestMultipolygon:
         assert multipolygon.get_polygons()[0] == square_1
         assert multipolygon.get_convex_hull() == square_1
 
-    # def test_geometry_d2_objects_multipolygon_union_with() :
+    # def test_union_with_success (self) :
 
-    # def test_geometry_d2_objects_multipolygon_to_string ():
+    # def test_to_string_success (self):
 
-    # def test_geometry_d2_objects_multipolygon_apply_transformation ():
+    # def test_apply_transformation_success (self):
 
 ################################################################################################################################################################
