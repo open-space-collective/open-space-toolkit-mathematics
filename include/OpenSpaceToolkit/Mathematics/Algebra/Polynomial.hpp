@@ -11,6 +11,7 @@
 #define __OpenSpaceToolkit_Mathematics_Algebra_Polynomial__
 
 #include <OpenSpaceToolkit/Core/Containers/Array.hpp>
+#include <OpenSpaceToolkit/Core/Containers/Map.hpp>
 #include <OpenSpaceToolkit/Core/Types/Integer.hpp>
 #include <OpenSpaceToolkit/Core/Types/String.hpp>
 #include <OpenSpaceToolkit/Core/Types/Size.hpp>
@@ -30,6 +31,7 @@ namespace types = ostk::core::types ;
 namespace ctnr = ostk::core::ctnr ;
 
 using ostk::core::ctnr::Array ;
+using ostk::core::ctnr::Map ;
 using ostk::core::types::Integer ;
 using ostk::core::types::Real ;
 using ostk::core::types::String ;
@@ -39,7 +41,7 @@ using ostk::core::types::Size ;
 
 // TBI: Polynomials with one indeterminate for now
 
-/// @brief                      Expression consisting of inderterminates (belonging to a field of type T) and coefficients
+/// @brief                      Expression consisting of inderterminates and coefficients (belonging to a field of class T)
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Polynomial
 
@@ -88,7 +90,7 @@ class Polynomial
         /// @param              [in] aPolynomial A polynomial
         /// @return             Resulting polynomial
 
-        // Polynomial              operator +                                  (   const   Polynomial&                 aPolynomial                                 ) const ;
+        Polynomial<T>           operator +                                  (   const   Polynomial<T>&              aPolynomial                                 ) const ;
 
         /// @brief              Addition assignment operator (Polynomial addition)
         ///
@@ -97,7 +99,52 @@ class Polynomial
         /// @param              [in] aPolynomial A polynomial
         /// @return             Reference to resulting polynomial
 
-        // Polynomial&             operator +=                                 (   const   Polynomial&                 aPolynomial                                 ) ;
+        Polynomial<T>&          operator +=                                 (   const   Polynomial<T>&              aPolynomial                                 ) ;
+
+        /// @brief              Substraction operator
+        ///
+        ///                     Substract another polynomial from a polynomial.
+        ///
+        /// @param              [in] aPolynomial A polynomial
+        /// @return             Resulting polynomial
+
+        Polynomial<T>           operator -                                  (   const   Polynomial<T>&              aPolynomial                                 ) const ;
+
+        /// @brief              Substraction assignment operator (Polynomial substraction)
+        ///
+        ///                     Substract another polynomial from a polynomial.
+        ///
+        /// @param              [in] aPolynomial A polynomial
+        /// @return             Reference to resulting polynomial
+
+        Polynomial<T>&          operator -=                                 (   const   Polynomial<T>&              aPolynomial                                 ) ;
+
+        /// @brief              Multiplication operator
+        ///
+        ///                     Multiply a polynomial with another polynomial.
+        ///
+        /// @param              [in] aPolynomial A polynomial
+        /// @return             Resulting polynomial
+
+        Polynomial<T>           operator *                                  (   const   Polynomial<T>&              aPolynomial                                 ) const ;
+
+        /// @brief              Multiplication assigment operator (Polynomial multiplication)
+        ///
+        ///                     Multiply a polynomial with another polynomial.
+        ///
+        /// @param              [in] aPolynomial A polynomial
+        /// @return             Reference to resulting polynomial
+
+        Polynomial<T>&           operator *=                                (   const   Polynomial<T>&              aPolynomial                                 ) ;
+
+        /// @brief              Power operator
+        ///
+        ///                     Raise a polynomial to a specified power value
+        ///
+        /// @param              [in] aValue A value (Integer)
+        /// @return             Polynomial
+
+        Polynomial<T>           operator ^                                  (   const   Integer&                    aValue                                      ) const ;
 
         /// @brief              Get polynomial degree
         ///
@@ -121,6 +168,17 @@ class Polynomial
 
         Array<T>                getCoefficientsArray                        ( ) const ;
 
+        /// @brief              Access polynomial coefficient at specified degree
+        ///
+        /// @code
+        ///                     Polynomial<Real> polynomial = Polynomial<Real>({ 0.0, 1.0, 1.0 }) ;
+        ///                     polynomial.accessCoefficientForDegree(1) == 1.0 ;
+        /// @endcode
+        ///
+        /// @return             Polynomial coefficient
+
+        T                       accessCoefficientOfDegree                   (   const   Integer&                    aDegree                                     ) const ;
+
         /// @brief              Evaluate polynomial at value
         ///
         /// @code
@@ -131,6 +189,27 @@ class Polynomial
         /// @return             Real
 
         double                  evaluateAt                                  (   const   Real&                       aValue                                      ) ;
+
+        /// @brief              Normalize polynomial
+        ///
+        /// @code
+        ///                     Remove zero coefficients
+        ///                     polynomial.normalize() ;
+        /// @endcode
+        ///
+        /// @return             Nothing
+
+        void                    normalize                                   ( )  ;
+
+        /// @brief              Get power
+        ///
+        /// @code
+        ///                     polynomial.pow(2) ;
+        /// @endcode
+        /// @param              [in] aValue A power value
+        /// @return             Power
+
+        Polynomial<T>           pow                                         (   const   Integer&                    aValue                                      ) const ;
 
         /// @brief              Output stream operator
         ///
@@ -164,20 +243,61 @@ class Polynomial
 
         static Polynomial<T>    Zero                                        (   const   Integer&                    aDegree                                     ) ;
 
-    private:
-
-        Array<T>                coefficients_ ; // Sorted in ascending order
-
-        /// @brief              Normalize polynomial
+        /// @brief              Constructs Monomial of specified degree with specified coefficient
         ///
         /// @code
-        ///                     Remove zero coefficients
-        ///                     polynomial.normalize() ;
+        ///                     Polynomial<Real> polynomial = Polynomial<Real>::Monomial(2, 3.2) ; //  3.2 * X^2
         /// @endcode
         ///
-        /// @return             Nothing
+        /// @return             Monomial
 
-        void                    normalize                                   ( ) const ;
+        static Polynomial<T>    Monomial                                    (   const   Integer&                    aDegree,
+                                                                                const   T&                          aCoefficient                                ) ;
+
+        /// @brief              Constructs Legendre Polynomial of the first kind of specific degree
+        ///
+        /// @code
+        ///                     Polynomial<Real> polynomial = Polynomial<Real>::Legendre(2) ;
+        /// @endcode
+        ///
+        /// @return             Legendre Polynomial
+
+        static Polynomial<T>    Legendre                                    (   const   Integer&                    aDegree                                     ) ;
+
+        /// @brief              Constructs "Probabilistic" Hermite Polynomial of specified degree
+        ///
+        /// @code
+        ///                     Polynomial<Real> polynomial = Polynomial<Real>::Hermite(3) ;
+        /// @endcode
+        ///
+        /// @return             Legendre Polynomial
+
+        static Polynomial<T>    Hermite                                     (   const   Integer&                    aDegree                                     ) ;
+
+        /// @brief              Constructs Laguerre Polynomial of the first kind of specific degree
+        ///
+        /// @code
+        ///                     Polynomial<Real> polynomial = Polynomial<Real>::Laguerre(4) ;
+        /// @endcode
+        ///
+        /// @return             Laguerre Polynomial
+
+        static Polynomial<T>    Laguerre                                    (   const   Integer&                    aDegree                                     ) ;
+
+        /// @brief              Constructs Chebyshev Polynomial of the first kind of specific degree
+        ///
+        /// @code
+        ///                     Polynomial<Real> polynomial = Polynomial<Real>::Chebyshev(1) ;
+        /// @endcode
+        ///
+        /// @return             Chebyshev Polynomial
+
+        static Polynomial<T>    Chebyshev                                   (   const   Integer&                    aDegree                                     ) ;
+
+    private:
+
+        // TBI: Should use a representation that is less inefficient for sparse polynomials
+        Array<T>                coefficients_ ; // Sorted in ascending order
 
 } ;
 
