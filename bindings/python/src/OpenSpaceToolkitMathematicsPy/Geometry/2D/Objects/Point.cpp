@@ -45,7 +45,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
     class_<Point, Object>(aModule, "Point")
 
-        .def(init<const Real&, const Real&>())
+        .def(init<const Real&, const Real&>(), arg("x"), arg("y"))
 
         .def(self == self)
         .def(self != self)
@@ -59,20 +59,18 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("__repr__", +[] (const Point& aPoint) -> std::string { return aPoint.toString() ; })
 
         .def("is_defined", &Point::isDefined)
-        .def("is_near", &Point::isNear)
+        .def("is_near", &Point::isNear, arg("point"), arg("tolerance"))
 
-        // .def("x", &Point::x, return_value_policy<reference_existing_object>())
-        // .def("y", &Point::y, return_value_policy<reference_existing_object>())
         .def("x", &Point::x, return_value_policy::reference)
         .def("y", &Point::y, return_value_policy::reference)
         .def("as_vector", &Point::asVector)
-        .def("distance_to", &Point::distanceTo)
+        .def("distance_to", &Point::distanceTo, arg("point"))
         .def("to_string", &Point::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
-        .def("apply_transformation", &Point::applyTransformation)
+        .def("apply_transformation", &Point::applyTransformation, arg("transformation"))
 
         .def_static("undefined", &Point::Undefined)
         .def_static("origin", &Point::Origin)
-        .def_static("vector", &Point::Vector)
+        .def_static("vector", &Point::Vector, arg("vector"))
 
     ;
 

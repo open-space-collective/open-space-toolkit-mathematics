@@ -109,6 +109,16 @@ class LineString : public Object
 
         bool                    isEmpty                                     ( ) const ;
 
+        /// @brief              Check if line string contains a point
+        ///
+        /// @code
+        ///                     LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).contains({ 0.0, 0.5 }) ; // True
+        /// @endcode
+        ///
+        /// @return             True if line string contains a point
+
+        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+
         /// @brief              Check if line string is near another line string
         ///
         /// @code
@@ -121,6 +131,12 @@ class LineString : public Object
 
         bool                    isNear                                      (   const   LineString&                 aLineString,
                                                                                 const   Real&                       aTolerance                                  ) const ;
+
+        /// @brief              Get point array
+        ///
+        /// @return             Point array
+
+        const Array<Point>&     getPointArray                            ( ) const ;
 
         /// @brief              Access point at index
         ///

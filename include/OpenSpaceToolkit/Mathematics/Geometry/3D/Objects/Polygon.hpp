@@ -189,6 +189,13 @@ class Polygon : public Object
 
         Array<Polygon::Vertex>  getVertices                                 ( ) const ;
 
+        /// @brief              Compute intersection of polygon with another polygon
+        ///
+        /// @param              [in] aPolygon A polygon
+        /// @return             Intersection
+
+        // Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
+
         /// @brief              Print polygon
         ///
         /// @param              [in] anOutputStream An output stream

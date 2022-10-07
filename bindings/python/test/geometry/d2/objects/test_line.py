@@ -36,26 +36,18 @@ class TestLine:
         assert isinstance(line, Object)
         assert line.is_defined()
 
-    def test_contains_success_point_set (self):
-
-        line = Line(
-            Point(1.0, 2.0),
-            np.array((1.0, 1.0)),
-        )
-
-        point_set = PointSet([
-            Point(1.0, 2.0),
-            Point(2.0, 3.0),
-        ])
+    def test_contains_success_point_set(
+        self,
+        line: Line,
+        point_set: PointSet,
+    ):
 
         assert line.contains(point_set) is True
 
-    def test_distance_to_success_point (self):
-
-        line = Line(
-            Point(1.0, 2.0),
-            np.array((1.0, 1.0)),
-        )
+    def test_distance_to_success_point (
+        self,
+        line: Line,
+    ):
 
         assert float(line.distance_to(Point(2.0, 3.0))) == pytest.approx(0.0, 1e-5)
         assert float(line.distance_to(Point(1.0, 5.0))) == pytest.approx(2.12132, 1e-5)
@@ -69,12 +61,10 @@ class TestLine:
         assert isinstance(line, Object)
         assert line.is_defined() is False
 
-    def test_points_success (self):
-
-        line = Line.points(
-            Point(1.0, 2.0),
-            Point(2.0, 4.0),
-        )
+    def test_points_success (
+        self,
+        line: Line,
+    ):
 
         assert line is not None
         assert isinstance(line, Line)

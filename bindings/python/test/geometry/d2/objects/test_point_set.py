@@ -16,17 +16,6 @@ import ostk.mathematics as mathematics
 Object = mathematics.geometry.d2.Object
 Point = mathematics.geometry.d2.objects.Point
 PointSet = mathematics.geometry.d2.objects.PointSet
-Transformation = mathematics.geometry.d2.Transformation
-
-################################################################################################################################################################
-
-@pytest.fixture
-def point_set () -> PointSet:
-
-    return PointSet([
-        Point(1.0, 2.0),
-        Point(3.0, 4.0),
-    ])
 
 ################################################################################################################################################################
 

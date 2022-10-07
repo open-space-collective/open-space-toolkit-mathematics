@@ -177,6 +177,74 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, IsEmpty)
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, Contains)
+{
+
+    using ostk::core::ctnr::Array ;
+
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::LineString ;
+
+    {
+
+        const Point point = { 1.0, 0.0 } ;
+
+        EXPECT_ANY_THROW(LineString::Empty().contains(point)) ;
+
+    }
+
+    {
+
+        const LineString lineString = LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) ;
+
+        EXPECT_ANY_THROW(lineString.contains(Point::Undefined())) ;
+
+    }
+
+    {
+
+        const Point point = { 1.0, 0.0 } ;
+
+        const Array<Point> pointArray = { point } ;
+
+        const LineString lineString = LineString(pointArray) ;
+
+        EXPECT_TRUE(lineString.contains(point)) ;
+
+    }
+
+    {
+
+        const LineString lineString = LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) ;
+
+        const Point point = { 1.0, 0.0 } ;
+
+        EXPECT_TRUE(lineString.contains(point)) ;
+
+    }
+
+    {
+
+        const LineString lineString = LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) ;
+
+        const Point point = { 0.0, 0.5 } ;
+
+        EXPECT_TRUE(lineString.contains(point)) ;
+
+    }
+
+    {
+
+        const LineString lineString = LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) ;
+
+        const Point point = { 3.0, 3.0 } ;
+
+        EXPECT_FALSE(lineString.contains(point)) ;
+
+    }
+
+}
+
 TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, IsNear)
 {
 
@@ -203,6 +271,30 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, IsNear)
         EXPECT_FALSE(LineString::Empty().isNear(LineString::Empty(), Real::Epsilon())) ;
         EXPECT_FALSE(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).isNear(LineString::Empty(), Real::Epsilon())) ;
         EXPECT_FALSE(LineString::Empty().isNear(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }), Real::Epsilon())) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString, GetPointArray)
+{
+
+    using ostk::core::ctnr::Array ;
+
+    using ostk::math::geom::d2::objects::Point ;
+    using ostk::math::geom::d2::objects::LineString ;
+
+    {
+
+        Array<Point> pointArray = { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 }, { 0.0, 0.0 } } ;
+
+        EXPECT_EQ(pointArray, LineString(pointArray).getPointArray()) ;
+
+    }
+
+    {
+
+        EXPECT_EQ(Array<Point>::Empty(), LineString::Empty().getPointArray()) ;
 
     }
 

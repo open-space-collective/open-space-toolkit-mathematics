@@ -28,7 +28,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
 
     class_<MultiPolygon, Object>(aModule, "MultiPolygon")
 
-        .def(init<const Array<Polygon>&>())
+        .def(init<const Array<Polygon>&>(), arg("polygons"))
 
         .def(self == self)
         .def(self != self)
@@ -37,18 +37,18 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("__repr__", &(shiftToString<MultiPolygon>))
 
         .def("is_defined", &MultiPolygon::isDefined)
-        .def("contains_point", +[] (const MultiPolygon& aMultiPolygon, const Point& aPoint) -> bool { return aMultiPolygon.contains(aPoint) ; })
-        .def("contains_point_set", +[] (const MultiPolygon& aMultiPolygon, const PointSet& aPointSet) -> bool { return aMultiPolygon.contains(aPointSet) ; })
+        .def("contains_point", +[] (const MultiPolygon& aMultiPolygon, const Point& aPoint) -> bool { return aMultiPolygon.contains(aPoint) ; }, arg("point"))
+        .def("contains_point_set", +[] (const MultiPolygon& aMultiPolygon, const PointSet& aPointSet) -> bool { return aMultiPolygon.contains(aPointSet) ; }, arg("point_set"))
 
         .def("get_polygon_count", &MultiPolygon::getPolygonCount)
         .def("get_polygons", &MultiPolygon::getPolygons)
         .def("get_convex_hull", &MultiPolygon::getConvexHull)
-        .def("union_with", &MultiPolygon::unionWith)
+        .def("union_with", &MultiPolygon::unionWith, arg("multipolygon"))
         .def("to_string", &MultiPolygon::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
-        .def("apply_transformation", &MultiPolygon::applyTransformation)
+        .def("apply_transformation", &MultiPolygon::applyTransformation, arg("transformation"))
 
         .def_static("undefined", &MultiPolygon::Undefined)
-        .def_static("polygon", &MultiPolygon::Polygon)
+        .def_static("polygon", &MultiPolygon::Polygon, arg("polygon"))
 
     ;
 

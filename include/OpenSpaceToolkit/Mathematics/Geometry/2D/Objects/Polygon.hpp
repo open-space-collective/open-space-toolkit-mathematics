@@ -49,6 +49,7 @@ using ostk::math::geom::d2::Object ;
 using ostk::math::geom::d2::objects::Point ;
 using ostk::math::geom::d2::objects::Segment ;
 using ostk::math::geom::d2::objects::LineString ;
+using ostk::math::geom::d2::Intersection ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -176,6 +177,19 @@ class Polygon : public Object
 
         bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
 
+        /// @brief              Check if polygon contains line string
+        ///
+        /// @code
+        ///                     Polygon polygon = ... ;
+        ///                     LineString lineString = ... ;
+        ///                     polygon.contains(lineString) ;
+        /// @endcode
+        ///
+        /// @param              [in] aLineSeting A line string
+        /// @return             True if polygon contains line string
+
+        bool                    contains                                    (   const   LineString&                 aLineString                                 ) const ;
+
         /// @brief              Get number of inner rings
         ///
         /// @return             Number of inner rings
@@ -245,7 +259,14 @@ class Polygon : public Object
         /// @param              [in] aPolygon A polygon
         /// @return             Intersection of polygon with polygon
 
-        // Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
+        Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
+
+        /// @brief              Compute difference of polygon with polygon
+        ///
+        /// @param              [in] aPolygon A polygon
+        /// @return             Difference (leveraging Intersection class) of polygon with polygon
+
+        Intersection            differenceWith                             (   const   Polygon&                    aPolygon                                    ) const ;
 
         /// @brief              Compute union of polygon with polygon
         ///

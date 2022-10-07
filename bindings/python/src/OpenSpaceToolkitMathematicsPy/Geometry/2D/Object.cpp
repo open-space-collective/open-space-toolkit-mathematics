@@ -91,24 +91,20 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
     // noncopyable class with Boost, removed in Pybind11
     class_<Object> ob(aModule, "Object");
 
-    ob.def("__eq__", [](const Object &self, const Object &other){ return self == other; })
+    ob
+
+        .def("__eq__", [](const Object &self, const Object &other){ return self == other; })
         .def("__ne__", [](const Object &self, const Object &other){ return self != other; })
-        // Equivalent to ...
-        // ob.def(self == self)
-        //   .def(self != self) ;
 
         .def("__str__", &(shiftToString<Object>))
         .def("__repr__", &(shiftToString<Object>))
-        // Equivalent to ...
-        // .def(self_ns::str(self_ns::self))
-        // .def(self_ns::repr(self_ns::self))
 
         .def("is_defined", &Object::isDefined)
-        .def("intersects", &Object::intersects)
-        .def("contains", &Object::contains)
+        .def("intersects", &Object::intersects, arg("object"))
+        .def("contains", &Object::contains, arg("object"))
 
         // .def("to_string", &Object::toString)
-        .def("apply_transformation", &Object::applyTransformation)
+        .def("apply_transformation", &Object::applyTransformation, arg("transformation"))
 
     ;
 

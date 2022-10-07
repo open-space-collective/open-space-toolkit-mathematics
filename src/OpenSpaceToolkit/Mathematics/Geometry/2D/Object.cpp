@@ -7,6 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.hpp>
@@ -122,12 +123,27 @@ bool                            Object::contains                            (   
 
     using ostk::math::geom::d2::objects::Point ;
     using ostk::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::objects::LineString ;
     using ostk::math::geom::d2::objects::Polygon ;
     using ostk::math::geom::d2::objects::MultiPolygon ;
 
     if (!anObject.isDefined())
     {
         throw ostk::core::error::runtime::Undefined("Object") ;
+    }
+
+    // LineString
+
+    if (const LineString* objectPtr = dynamic_cast<const LineString*>(this))
+    {
+
+        // Point
+
+        if (const Point* otherObjectPtr = dynamic_cast<const Point*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
     }
 
     // Polygon
@@ -145,6 +161,13 @@ bool                            Object::contains                            (   
         // PointSet
 
         if (const PointSet* otherObjectPtr = dynamic_cast<const PointSet*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+        // LineString
+
+        if (const LineString* otherObjectPtr = dynamic_cast<const LineString*>(&anObject))
         {
             return objectPtr->contains(*otherObjectPtr) ;
         }

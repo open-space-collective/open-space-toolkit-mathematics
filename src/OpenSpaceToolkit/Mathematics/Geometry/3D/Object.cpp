@@ -860,6 +860,20 @@ Intersection                    Object::intersectionWith                    (   
 
     }
 
+    // Polygon
+
+    if (const Polygon* objectPtr = dynamic_cast<const Polygon*>(this))
+    {
+
+        // Polygon
+
+        if (const Polygon* otherObjectPtr = dynamic_cast<const Polygon*>(&anObject))
+        {
+            return objectPtr->intersectionWith(*otherObjectPtr) ;
+        }
+
+    }
+
     std::cout << (*this) << std::endl ;
     std::cout << anObject << std::endl ;
 

@@ -61,6 +61,50 @@ bool                            LineString::isEmpty                         ( ) 
     return points_.isEmpty() ;
 }
 
+bool                            LineString::contains                        (   const   Point&                      aPoint                                      ) const
+{
+
+    if (!aPoint.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("LineString") ;
+    }
+
+    int pointCount = this->getPointCount() ;
+
+    if (pointCount == 1)
+    {
+        return (this->accessPointAt(0) == aPoint) ;
+    }
+
+    else
+    {
+
+        for (int index = 0; index < (pointCount - 1); index++)
+        {
+
+            Point firstPoint = this->accessPointAt(index) ;
+            Point secondPoint = this->accessPointAt(index + 1) ;
+
+            objects::Segment segment = objects::Segment(firstPoint, secondPoint) ;
+
+            if (segment.contains(aPoint))
+            {
+                return true ;
+            }
+
+        }
+
+    }
+
+    return false ;
+
+}
+
 bool                            LineString::isNear                          (   const   LineString&                 aLineString,
                                                                                 const   Real&                       aTolerance                                  ) const
 {
@@ -87,6 +131,11 @@ bool                            LineString::isNear                          (   
 
     return true ;
 
+}
+
+const Array<Point>&             LineString::getPointArray                ( ) const
+{
+    return points_ ;
 }
 
 const Point&                    LineString::accessPointAt                   (   const   Index&                      anIndex                                     ) const
