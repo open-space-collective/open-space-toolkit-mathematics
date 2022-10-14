@@ -254,6 +254,11 @@ Interval<T>                     Interval<T>::getIntersectionWith            (   
     const T lowerBound = std::max(lowerBound_, anInterval.getLowerBound()) ;
     const T upperBound = std::min(upperBound_, anInterval.getUpperBound()) ;
 
+    if (lowerBound > upperBound)
+    {
+        return Interval<T>::Undefined() ;
+    }
+
     return Interval<T>(lowerBound, upperBound, type_) ;
 
 }
@@ -276,8 +281,18 @@ Interval<T>                     Interval<T>::getUnionWith                   (   
         throw ostk::core::error::runtime::Wrong("Different types of interval") ;
     }
 
+    if (!this->intersects(anInterval))
+    {
+        return Interval<T>::Undefined() ;
+    }
+
     const T lowerBound = std::min(lowerBound_, anInterval.getLowerBound()) ;
     const T upperBound = std::max(upperBound_, anInterval.getUpperBound()) ;
+
+    if (lowerBound > upperBound)
+    {
+        return Interval<T>::Undefined() ;
+    }
 
     return Interval<T>(lowerBound, upperBound, type_) ;
 
