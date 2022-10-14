@@ -402,9 +402,9 @@ class TestInterval:
     def test_real_interval_get_intersection_with (self):
 
         test_cases = [
-            (RealInterval(0.0, 10.0, Type.HalfOpenLeft),  RealInterval(5.0, 7.0,  Type.HalfOpenLeft),    RealInterval(5.0, 7.0, Type.Closed)),
-            (RealInterval(0.0, 10.0, Type.HalfOpenRight), RealInterval(-15.0, 25.0, Type.HalfOpenRight), RealInterval(0.0, 10.0, Type.Closed)),
-            (RealInterval(0.0, 10.0, Type.Closed),        RealInterval(-5.0, 7.0, Type.Closed),          RealInterval(0.0, 7.0, Type.Closed)),
+            (RealInterval(0.0, 10.0, Type.HalfOpenLeft),  RealInterval(5.0, 7.0,  Type.HalfOpenLeft),    RealInterval(5.0, 7.0, Type.HalfOpenLeft)),
+            (RealInterval(0.0, 10.0, Type.HalfOpenRight), RealInterval(-15.0, 25.0, Type.HalfOpenRight), RealInterval(0.0, 10.0, Type.HalfOpenRight)),
+            (RealInterval(0.0, 10.0, Type.Open),          RealInterval(-5.0, 7.0, Type.Open),            RealInterval(0.0, 7.0, Type.Open)),
             (RealInterval(0.0, 10.0, Type.Closed),        RealInterval(5.0, 15.0,  Type.Closed),         RealInterval(5.0, 10.0, Type.Closed)),
         ]
 
@@ -418,9 +418,9 @@ class TestInterval:
     def test_real_interval_get_union_with (self):
 
         test_cases = [
-            (RealInterval(0.0, 10.0, Type.HalfOpenLeft),  RealInterval(5.0, 7.0, Type.HalfOpenLeft),     RealInterval(0.0, 10.0, Type.Closed)),
-            (RealInterval(0.0, 10.0, Type.HalfOpenRight), RealInterval(-15.0, 25.0, Type.HalfOpenRight), RealInterval(-15.0, 25.0, Type.Closed)),
-            (RealInterval(0.0, 10.0, Type.Open),          RealInterval(-5.0, 7.0, Type.Open),            RealInterval(-5.0, 10.0, Type.Closed)),
+            (RealInterval(0.0, 10.0, Type.HalfOpenLeft),  RealInterval(5.0, 7.0, Type.HalfOpenLeft),     RealInterval(0.0, 10.0, Type.HalfOpenLeft)),
+            (RealInterval(0.0, 10.0, Type.HalfOpenRight), RealInterval(-15.0, 25.0, Type.HalfOpenRight), RealInterval(-15.0, 25.0, Type.HalfOpenRight)),
+            (RealInterval(0.0, 10.0, Type.Open),          RealInterval(-5.0, 7.0, Type.Open),            RealInterval(-5.0, 10.0, Type.Open)),
             (RealInterval(0.0, 10.0, Type.Closed),        RealInterval(5.0, 15.0, Type.Closed),          RealInterval(0.0, 15.0, Type.Closed)),
         ]
 
