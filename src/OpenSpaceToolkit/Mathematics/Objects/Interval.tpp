@@ -236,6 +236,7 @@ T                               Interval<T>::getUpperBound                  ( ) 
                                 template <class T>
 Interval<T>                     Interval<T>::getIntersectionWith            (   const   Interval&                   anInterval                                  ) const
 {
+
     if (!this->isDefined())
     {
         throw ostk::core::error::runtime::Undefined("Interval") ;
@@ -266,6 +267,7 @@ Interval<T>                     Interval<T>::getIntersectionWith            (   
                                 template <class T>
 Interval<T>                     Interval<T>::getUnionWith                   (   const   Interval&                   anInterval                                  ) const
 {
+
     if (!this->isDefined())
     {
         throw ostk::core::error::runtime::Undefined("Interval") ;

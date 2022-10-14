@@ -807,9 +807,9 @@ TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GetIntersectionWith)
 
         Array<Tuple<Interval<Real>, Interval<Real>, Interval<Real>>> testCases =
             {
-                {Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenLeft),  Interval<Real>(5.0, 7.0, Interval<Real>::Type::HalfOpenLeft),     Interval<Real>(5.0, 7.0, Interval<Real>::Type::Closed)},
-                {Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenRight), Interval<Real>(-15.0, 25.0, Interval<Real>::Type::HalfOpenRight), Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed)},
-                {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Open),          Interval<Real>(-5.0, 7.0, Interval<Real>::Type::Open),            Interval<Real>(0.0, 7.0, Interval<Real>::Type::Closed)},
+                {Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenLeft),  Interval<Real>(5.0, 7.0, Interval<Real>::Type::HalfOpenLeft),     Interval<Real>(5.0, 7.0, Interval<Real>::Type::HalfOpenLeft)},
+                {Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenRight), Interval<Real>(-15.0, 25.0, Interval<Real>::Type::HalfOpenRight), Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenRight)},
+                {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Open),          Interval<Real>(-5.0, 7.0, Interval<Real>::Type::Open),            Interval<Real>(0.0, 7.0, Interval<Real>::Type::Open)},
                 {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),        Interval<Real>(5.0, 15.0, Interval<Real>::Type::Closed),          Interval<Real>(5.0, 10.0, Interval<Real>::Type::Closed)},
                 {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),        Interval<Real>(10.0, 15.0, Interval<Real>::Type::Closed),         Interval<Real>(10.0, 10.0, Interval<Real>::Type::Closed)}
             } ;
@@ -852,6 +852,7 @@ TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GetIntersectionWith)
         EXPECT_ANY_THROW(anInterval.getIntersectionWith(anotherInterval)) ;
 
     }
+
 }
 
 TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GetUnionWith)
@@ -868,9 +869,9 @@ TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GetUnionWith)
 
         Array<Tuple<Interval<Real>, Interval<Real>, Interval<Real>>> testCases =
             {
-                {Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenLeft),  Interval<Real>(5.0, 7.0, Interval<Real>::Type::HalfOpenLeft),     Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed)},
-                {Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenRight), Interval<Real>(-15.0, 25.0, Interval<Real>::Type::HalfOpenRight), Interval<Real>(-15.0, 25.0, Interval<Real>::Type::Closed)},
-                {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Open),          Interval<Real>(-5.0, 7.0, Interval<Real>::Type::Open),            Interval<Real>(-5.0, 10.0, Interval<Real>::Type::Closed)},
+                {Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenLeft),  Interval<Real>(5.0, 7.0, Interval<Real>::Type::HalfOpenLeft),     Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenLeft)},
+                {Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenRight), Interval<Real>(-15.0, 25.0, Interval<Real>::Type::HalfOpenRight), Interval<Real>(-15.0, 25.0, Interval<Real>::Type::HalfOpenRight)},
+                {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Open),          Interval<Real>(-5.0, 7.0, Interval<Real>::Type::Open),            Interval<Real>(-5.0, 10.0, Interval<Real>::Type::Open)},
                 {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),        Interval<Real>(5.0, 15.0, Interval<Real>::Type::Closed),          Interval<Real>(0.0, 15.0, Interval<Real>::Type::Closed)},
                 {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),        Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),          Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed)},
             } ;

@@ -36,11 +36,11 @@ inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval (
 
         .def("is_defined", &Interval<Real>::isDefined)
         .def("is_degenerate", &Interval<Real>::isDegenerate)
-        .def("intersects", &Interval<Real>::intersects)
-        .def("contains_real", +[] (const Interval<Real>& anInterval, const Real& aReal) -> bool { return anInterval.contains(aReal) ; })
-        .def("contains_interval", +[] (const Interval<Real>& anInterval, const Interval<Real>& anOtherInterval) -> bool { return anInterval.contains(anOtherInterval) ; })
-        .def("get_intersection_with", &Interval<Real>::getIntersectionWith)
-        .def("get_union_with", &Interval<Real>::getUnionWith)
+        .def("intersects", &Interval<Real>::intersects, arg("interval"))
+        .def("contains_real", +[] (const Interval<Real>& anInterval, const Real& aReal) -> bool { return anInterval.contains(aReal) ; }, arg("real"))
+        .def("contains_interval", +[] (const Interval<Real>& anInterval, const Interval<Real>& anOtherInterval) -> bool { return anInterval.contains(anOtherInterval) ; }, arg("interval"))
+        .def("get_intersection_with", &Interval<Real>::getIntersectionWith, arg("interval"))
+        .def("get_union_with", &Interval<Real>::getUnionWith, arg("interval"))
 
         .def("get_lower_bound", &Interval<Real>::getLowerBound)
         .def("get_upper_bound", &Interval<Real>::getUpperBound)
@@ -48,7 +48,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval (
 
         // Define static methods
         .def_static("undefined", &Interval<Real>::Undefined)
-        .def_static("closed", &Interval<Real>::Closed)
+        .def_static("closed", &Interval<Real>::Closed, arg("lower bound"), arg("upper bound"))
     ;
 
     // Add other interval types
