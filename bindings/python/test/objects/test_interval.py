@@ -396,4 +396,37 @@ def test_real_interval_to_string ():
     assert interval_halfopenleft.to_string() == ']-4.3099999999999996, 3.0]'
     assert interval_halfopenright.to_string() == '[-4.3099999999999996, 3.0['
 
+
+def test_real_interval_get_intersection_with ():
+
+    test_cases = [
+        (RealInterval(0.0, 10.0, Type.Closed),RealInterval(5.0, 7.0,  Type.Closed),  RealInterval(5.0, 7.0, Type.Closed)),
+        (RealInterval(0.0, 10.0, Type.Closed),RealInterval(-15.0, 25.0, Type.Closed), RealInterval(0.0, 10.0, Type.Closed)),
+        (RealInterval(0.0, 10.0, Type.Closed),RealInterval(-5.0, 7.0, Type.Closed),  RealInterval(0.0, 7.0, Type.Closed)),
+        (RealInterval(0.0, 10.0, Type.Closed),RealInterval(5.0, 15.0,  Type.Closed),  RealInterval(5.0, 10.0, Type.Closed)),
+    ]
+
+    for test_case in test_cases:
+        first_interval = test_case[0]
+        second_interval = test_case[1]
+        expected_interval = test_case[2]
+
+        assert first_interval.get_intersection_with(second_interval) == expected_interval
+
+def test_real_interval_get_union_with ():
+
+    test_cases = [
+        (RealInterval(0.0, 10.0, Type.Closed),  RealInterval(5.0, 7.0, Type.Closed),    RealInterval(0.0, 10.0, Type.Closed)),
+        (RealInterval(0.0, 10.0, Type.Closed),  RealInterval(-15.0, 25.0, Type.Closed), RealInterval(-15.0, 25.0, Type.Closed)),
+        (RealInterval(0.0, 10.0, Type.Closed),  RealInterval(-5.0, 7.0, Type.Closed),   RealInterval(-5.0, 10.0, Type.Closed)),
+        (RealInterval(0.0, 10.0, Type.Closed),  RealInterval(5.0, 15.0, Type.Closed),   RealInterval(0.0, 15.0, Type.Closed)),
+    ]
+
+    for test_case in test_cases:
+        first_interval = test_case[0]
+        second_interval = test_case[1]
+        expected_interval = test_case[2]
+
+        assert first_interval.get_union_with(second_interval) == expected_interval
+
 ################################################################################################################################################################
