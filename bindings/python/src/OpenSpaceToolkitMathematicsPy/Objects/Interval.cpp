@@ -39,6 +39,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval (
         .def("intersects", &Interval<Real>::intersects)
         .def("contains_real", +[] (const Interval<Real>& anInterval, const Real& aReal) -> bool { return anInterval.contains(aReal) ; })
         .def("contains_interval", +[] (const Interval<Real>& anInterval, const Interval<Real>& anOtherInterval) -> bool { return anInterval.contains(anOtherInterval) ; })
+        .def("get_intersection_with", &Interval<Real>::getIntersectionWith)
+        .def("get_union_with", &Interval<Real>::getUnionWith)
 
         .def("get_lower_bound", &Interval<Real>::getLowerBound)
         .def("get_upper_bound", &Interval<Real>::getUpperBound)

@@ -9,6 +9,8 @@
 
 #include <OpenSpaceToolkit/Mathematics/Objects/Interval.hpp>
 #include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
+#include <OpenSpaceToolkit/Core/Containers/Tuple.hpp>
 
 #include <Global.test.hpp>
 
@@ -792,35 +794,64 @@ TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GetUpperBound)
 
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GetIntersectionWith)
-// {
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GetIntersectionWith)
+{
 
-//     using ostk::core::types::Real ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
+    using ostk::core::ctnr::Tuple ;
 
-//     using ostk::math::obj::Interval ;
+    using ostk::math::obj::Interval ;
 
-//     {
+    Array<Tuple<Interval<Real>, Interval<Real>, Interval<Real>>> testCases =
+        {
+            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed), Interval<Real>(5.0, 7.0, Interval<Real>::Type::Closed),    Interval<Real>(5.0, 7.0, Interval<Real>::Type::Closed)},
+            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed), Interval<Real>(-15.0, 25.0, Interval<Real>::Type::Closed), Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed)},
+            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed), Interval<Real>(-5.0, 7.0, Interval<Real>::Type::Closed),   Interval<Real>(0.0, 7.0, Interval<Real>::Type::Closed)},
+            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed), Interval<Real>(5.0, 15.0, Interval<Real>::Type::Closed),   Interval<Real>(5.0, 10.0, Interval<Real>::Type::Closed)},
 
-//         FAIL() ;
+        } ;
 
-//     }
+    for (const auto& testCase : testCases)
+    {
 
-// }
+        Interval<Real> anInterval = std::get<0>(testCase) ;
+        Interval<Real> anotherInterval = std::get<1>(testCase) ;
+        Interval<Real> truthInterval = std::get<2>(testCase) ;
 
-// TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GetUnionWith)
-// {
+        EXPECT_EQ(anInterval.getIntersectionWith(anotherInterval), truthInterval) ;
+    }
+}
 
-//     using ostk::core::types::Real ;
+TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GetUnionWith)
+{
 
-//     using ostk::math::obj::Interval ;
+    using ostk::core::types::Real ;
+    using ostk::core::ctnr::Array ;
+    using ostk::core::ctnr::Tuple ;
 
-//     {
+    using ostk::math::obj::Interval ;
 
-//         FAIL() ;
+    Array<Tuple<Interval<Real>, Interval<Real>, Interval<Real>>> testCases =
+        {
+            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),  Interval<Real>(5.0, 7.0, Interval<Real>::Type::Closed),    Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed)},
+            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),  Interval<Real>(-15.0, 25.0, Interval<Real>::Type::Closed), Interval<Real>(-15.0, 25.0, Interval<Real>::Type::Closed)},
+            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),  Interval<Real>(-5.0, 7.0, Interval<Real>::Type::Closed),   Interval<Real>(-5.0, 10.0, Interval<Real>::Type::Closed)},
+            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),  Interval<Real>(5.0, 15.0, Interval<Real>::Type::Closed),   Interval<Real>(0.0, 15.0, Interval<Real>::Type::Closed)},
 
-//     }
+        } ;
 
-// }
+    for (const auto& testCase : testCases)
+    {
+
+        Interval<Real> anInterval = std::get<0>(testCase) ;
+        Interval<Real> anotherInterval = std::get<1>(testCase) ;
+        Interval<Real> truthInterval = std::get<2>(testCase) ;
+
+        EXPECT_EQ(anInterval.getUnionWith(anotherInterval), truthInterval) ;
+    }
+
+}
 
 // TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GenerateArrayWithStep)
 // {
