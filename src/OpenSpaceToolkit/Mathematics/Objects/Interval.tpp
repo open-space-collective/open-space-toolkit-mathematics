@@ -233,17 +233,72 @@ T                               Interval<T>::getUpperBound                  ( ) 
 
 }
 
-//                                 template <class T>
-// Interval<T>                     Interval<T>::getIntersectionWith            (   const   Interval&                   anInterval                                  ) const
-// {
-//     return Interval<T>::Undefined() ; // [TBI]
-// }
+                                template <class T>
+Interval<T>                     Interval<T>::getIntersectionWith            (   const   Interval&                   anInterval                                  ) const
+{
 
-//                                 template <class T>
-// Interval<T>                     Interval<T>::getUnionWith                   (   const   Interval&                   anInterval                                  ) const
-// {
-//     return Interval<T>::Undefined() ; // [TBI]
-// }
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Interval") ;
+    }
+
+    if (!anInterval.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Interval") ;
+    }
+
+    if (anInterval.getType() != type_)
+    {
+        throw ostk::core::error::runtime::ToBeImplemented("Intersection between different Interval::Type of interval.") ;
+    }
+
+    const T lowerBound = std::max(lowerBound_, anInterval.getLowerBound()) ;
+    const T upperBound = std::min(upperBound_, anInterval.getUpperBound()) ;
+
+    if (lowerBound > upperBound)
+    {
+        return Interval<T>::Undefined() ;
+    }
+
+    return Interval<T>(lowerBound, upperBound, type_) ;
+
+}
+
+                                template <class T>
+Interval<T>                     Interval<T>::getUnionWith                   (   const   Interval&                   anInterval                                  ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Interval") ;
+    }
+
+    if (!anInterval.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Interval") ;
+    }
+
+    if (anInterval.getType() != type_)
+    {
+        throw ostk::core::error::runtime::ToBeImplemented("Union between different Interval::Type of interval.") ;
+    }
+
+    if (!this->intersects(anInterval))
+    {
+        return Interval<T>::Undefined() ;
+    }
+
+    const T lowerBound = std::min(lowerBound_, anInterval.getLowerBound()) ;
+    const T upperBound = std::max(upperBound_, anInterval.getUpperBound()) ;
+
+    if (lowerBound > upperBound)
+    {
+        return Interval<T>::Undefined() ;
+    }
+
+    return Interval<T>(lowerBound, upperBound, type_) ;
+
+}
 
                                 template <class T>
                                 template <class U>
