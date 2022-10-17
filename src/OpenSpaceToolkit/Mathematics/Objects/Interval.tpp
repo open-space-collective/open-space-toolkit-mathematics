@@ -249,7 +249,7 @@ Interval<T>                     Interval<T>::getIntersectionWith            (   
 
     if (anInterval.getType() != type_)
     {
-        throw ostk::core::error::runtime::Wrong("Different types of interval") ;
+        throw ostk::core::error::runtime::ToBeImplemented("Intersection between different Interval::Type of interval.") ;
     }
 
     const T lowerBound = std::max(lowerBound_, anInterval.getLowerBound()) ;
@@ -280,7 +280,7 @@ Interval<T>                     Interval<T>::getUnionWith                   (   
 
     if (anInterval.getType() != type_)
     {
-        throw ostk::core::error::runtime::Wrong("Different types of interval") ;
+        throw ostk::core::error::runtime::ToBeImplemented("Union between different Interval::Type of interval.") ;
     }
 
     if (!this->intersects(anInterval))
