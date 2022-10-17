@@ -398,7 +398,6 @@ class TestInterval:
         assert interval_halfopenleft.to_string() == ']-4.3099999999999996, 3.0]'
         assert interval_halfopenright.to_string() == '[-4.3099999999999996, 3.0['
 
-
     def test_real_interval_get_intersection_with (self):
 
         test_cases = [
