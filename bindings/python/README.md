@@ -2,8 +2,8 @@
 
 Geometry, curve fitting, optimization.
 
-[![Build and Test](https://github.com/open-space-collective/open-space-toolkit-mathematics/actions/workflows/build-test.yml/badge.svg?branch=master)](https://github.com/open-space-collective/open-space-toolkit-mathematics/actions/workflows/build-test.yml)
-[![Code Coverage](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics/branch/master/graph/badge.svg)](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics)
+[![Build and Test](https://github.com/open-space-collective/open-space-toolkit-mathematics/actions/workflows/build-test.yml/badge.svg?branch=main)](https://github.com/open-space-collective/open-space-toolkit-mathematics/actions/workflows/build-test.yml)
+[![Code Coverage](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics/branch/main/graph/badge.svg)](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics)
 [![Documentation](https://img.shields.io/readthedocs/pip/stable.svg)](https://open-space-collective.github.io/open-space-toolkit-mathematics)
 [![GitHub version](https://badge.fury.io/gh/open-space-collective%2Fopen-space-toolkit-mathematics.svg)](https://badge.fury.io/gh/open-space-collective%2Fopen-space-toolkit-mathematics)
 [![PyPI version](https://badge.fury.io/py/open-space-toolkit-mathematics.svg)](https://badge.fury.io/py/open-space-toolkit-mathematics)
