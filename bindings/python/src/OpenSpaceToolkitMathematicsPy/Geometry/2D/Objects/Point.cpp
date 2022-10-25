@@ -65,7 +65,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("y", &Point::y, return_value_policy::reference)
         .def("as_vector", &Point::asVector)
         .def("distance_to", &Point::distanceTo, arg("point"))
-        .def("to_string", &Point::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
+        .def("to_string", &Point::toString, arg("format") = Object::Format::Standard, arg("precision") = Integer::Undefined())
         .def("apply_transformation", &Point::applyTransformation, arg("transformation"))
 
         .def_static("undefined", &Point::Undefined)

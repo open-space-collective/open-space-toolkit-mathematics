@@ -41,6 +41,10 @@ using ostk::math::geom::d3::trf::rot::Quaternion ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#define                         DEFAULT_ORIENTATION                             Quaternion::Unit()
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 class PointSet ;
 class Line ;
 class Ray ;
@@ -78,7 +82,7 @@ class Ellipsoid : public Object
                                                                                 const   Real&                       aFirstPrincipalSemiAxis,
                                                                                 const   Real&                       aSecondPrincipalSemiAxis,
                                                                                 const   Real&                       aThirdPrincipalSemiAxis,
-                                                                                const   Quaternion&                 anOrientation                               =   Quaternion::Unit() ) ;
+                                                                                const   Quaternion&                 anOrientation                               =   DEFAULT_ORIENTATION ) ;
 
         /// @brief              Clone ellipsoid
         ///

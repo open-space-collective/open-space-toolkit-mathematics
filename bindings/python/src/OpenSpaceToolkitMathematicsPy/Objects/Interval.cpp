@@ -37,8 +37,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval (
         .def("is_defined", &Interval<Real>::isDefined)
         .def("is_degenerate", &Interval<Real>::isDegenerate)
         .def("intersects", &Interval<Real>::intersects, arg("interval"))
-        .def("contains_real", +[] (const Interval<Real>& anInterval, const Real& aReal) -> bool { return anInterval.contains(aReal) ; }, arg("real"))
-        .def("contains_interval", +[] (const Interval<Real>& anInterval, const Interval<Real>& anOtherInterval) -> bool { return anInterval.contains(anOtherInterval) ; }, arg("interval"))
+        .def("contains", overload_cast<const Real&>(&Interval<Real>::contains, const_), arg("real"))
+        .def("contains", overload_cast<const Interval<Real>&>(&Interval<Real>::contains, const_), arg("interval"))
         .def("get_intersection_with", &Interval<Real>::getIntersectionWith, arg("interval"))
         .def("get_union_with", &Interval<Real>::getUnionWith, arg("interval"))
 

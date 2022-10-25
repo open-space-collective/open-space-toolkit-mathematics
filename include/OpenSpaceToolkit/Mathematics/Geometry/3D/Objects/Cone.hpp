@@ -46,6 +46,11 @@ using ostk::math::geom::d3::Intersection ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#define                         DEFAULT_RAY_COUNT                               0
+#define                         DEFAULT_DISCRETIZATION_LEVEL                    40
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 class Line ;
 class Segment ;
 class Plane ;
@@ -122,7 +127,7 @@ class Cone : public Object
         /// @return             True if cone intersects sphere
 
         bool                    intersects                                  (   const   Sphere&                     aSphere,
-                                                                                const   Size                        aDiscretizationLevel                        =   40 ) const ;
+                                                                                const   Size                        aDiscretizationLevel                        =   DEFAULT_DISCRETIZATION_LEVEL ) const ;
 
         /// @brief              Check if cone intersects ellipsoid
         ///
@@ -137,7 +142,7 @@ class Cone : public Object
         /// @return             True if cone intersects ellipsoid
 
         bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid,
-                                                                                const   Size                        aDiscretizationLevel                        =   40 ) const ;
+                                                                                const   Size                        aDiscretizationLevel                        =   DEFAULT_DISCRETIZATION_LEVEL ) const ;
 
         /// @brief              Get cone apex
         ///
@@ -162,7 +167,7 @@ class Cone : public Object
         /// @param              [in] aRayCount A number of rays (at least face count)
         /// @return             Array of rays
 
-        Array<Ray>              getRaysOfLateralSurface                     (   const   Size                        aRayCount                                   =   0 ) const ;
+        Array<Ray>              getRaysOfLateralSurface                     (   const   Size                        aRayCount                                   =   DEFAULT_RAY_COUNT ) const ;
 
         /// @brief              Compute intersection of cone with sphere
         ///
@@ -173,7 +178,7 @@ class Cone : public Object
 
         Intersection            intersectionWith                            (   const   Sphere&                     aSphere,
                                                                                 const   bool                        onlyInSight                                 =   false,
-                                                                                const   Size                        aDiscretizationLevel                        =   40 ) const ;
+                                                                                const   Size                        aDiscretizationLevel                        =   DEFAULT_DISCRETIZATION_LEVEL ) const ;
 
         /// @brief              Compute intersection of cone with ellipsoid
         ///
@@ -184,7 +189,7 @@ class Cone : public Object
 
         Intersection            intersectionWith                            (   const   Ellipsoid&                  anEllipsoid,
                                                                                 const   bool                        onlyInSight                                 =   false,
-                                                                                const   Size                        aDiscretizationLevel                        =   40 ) const ;
+                                                                                const   Size                        aDiscretizationLevel                        =   DEFAULT_DISCRETIZATION_LEVEL ) const ;
 
         /// @brief              Print cone
         ///

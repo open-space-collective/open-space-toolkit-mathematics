@@ -44,7 +44,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("distance_to", overload_cast<const Point&>(&Segment::distanceTo, const_), arg("point"))
         .def("distance_to", overload_cast<const PointSet&>(&Segment::distanceTo, const_), arg("point_set"))
         .def("to_line", &Segment::toLine)
-        .def("to_string", &Segment::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
+        .def("to_string", &Segment::toString, arg("format") = Object::Format::Standard, arg("precision") = Integer::Undefined())
         .def("apply_transformation", &Segment::applyTransformation, arg("transformation"))
 
         .def_static("undefined", &Segment::Undefined)

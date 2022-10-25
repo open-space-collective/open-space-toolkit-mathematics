@@ -46,6 +46,11 @@ using ostk::math::geom::d3::Intersection ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#define                         DEFAULT_ONLY_IN_SIGHT                           false
+#define                         DEFAULT_DISCRETIZATION_LEVEL                    40
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 class Line ;
 class Ray ;
 class Segment ;
@@ -121,7 +126,7 @@ class Pyramid : public Object
         /// @return             True if pyramid intersects sphere
 
         bool                    intersects                                  (   const   Sphere&                     aSphere,
-                                                                                const   Size                        aDiscretizationLevel                        =   40 ) const ;
+                                                                                const   Size                        aDiscretizationLevel                        =   DEFAULT_DISCRETIZATION_LEVEL ) const ;
 
         /// @brief              Check if pyramid intersects ellipsoid
         ///
@@ -136,7 +141,7 @@ class Pyramid : public Object
         /// @return             True if pyramid intersects ellipsoid
 
         bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid,
-                                                                                const   Size                        aDiscretizationLevel                        =   40 ) const ;
+                                                                                const   Size                        aDiscretizationLevel                        =   DEFAULT_DISCRETIZATION_LEVEL ) const ;
 
         /// @brief              Check if pyramid contains point
         ///
@@ -213,8 +218,8 @@ class Pyramid : public Object
         /// @return             Intersection of pyramid with sphere
 
         Intersection            intersectionWith                            (   const   Sphere&                     aSphere,
-                                                                                const   bool                        onlyInSight                                 =   false,
-                                                                                const   Size                        aDiscretizationLevel                        =   40 ) const ;
+                                                                                const   bool                        onlyInSight                                 =   DEFAULT_ONLY_IN_SIGHT,
+                                                                                const   Size                        aDiscretizationLevel                        =   DEFAULT_DISCRETIZATION_LEVEL ) const ;
 
         /// @brief              Compute intersection of pyramid with ellipsoid
         ///
@@ -224,8 +229,8 @@ class Pyramid : public Object
         /// @return             Intersection of pyramid with ellipsoid
 
         Intersection            intersectionWith                            (   const   Ellipsoid&                  anEllipsoid,
-                                                                                const   bool                        onlyInSight                                 =   false,
-                                                                                const   Size                        aDiscretizationLevel                        =   40 ) const ;
+                                                                                const   bool                        onlyInSight                                 =   DEFAULT_ONLY_IN_SIGHT,
+                                                                                const   Size                        aDiscretizationLevel                        =   DEFAULT_DISCRETIZATION_LEVEL ) const ;
 
         /// @brief              Print pyramid
         ///

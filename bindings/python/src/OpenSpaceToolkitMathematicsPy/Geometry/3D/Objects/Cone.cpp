@@ -37,7 +37,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
     class_<Cone, Object>(aModule, "Cone")
 
-        .def(init<const Point&, const Vector3d&, const Angle&>())
+        .def(init<const Point&, const Vector3d&, const Angle&>(), arg("apex"), arg("axis"), arg("angle"))
 
         .def(self == self)
         .def(self != self)
@@ -46,21 +46,16 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("__repr__", &(shiftToString<Cone>))
 
         .def("is_defined", &Cone::isDefined)
-        .def("intersects", overload_cast<const Sphere&, const Size>(&Cone::intersects, const_), arg("sphere"), arg("discretization_level") = 40)
-        .def("intersects", overload_cast<const Ellipsoid&, const Size>(&Cone::intersects, const_), arg("ellipsoid"), arg("discretization_level") = 40)
-        .def("intersects_ellipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid) -> bool { return aCone.intersects(anEllipsoid) ; }) // TBR
-        .def("intersects_ellipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid, const Size aDiscretizationLevel) -> bool { return aCone.intersects(anEllipsoid, aDiscretizationLevel) ; }) // TBR
+        .def("intersects", overload_cast<const Sphere&, const Size>(&Cone::intersects, const_), arg("sphere"), arg("discretization_level") = DEFAULT_DISCRETIZATION_LEVEL)
+        .def("intersects", overload_cast<const Ellipsoid&, const Size>(&Cone::intersects, const_), arg("ellipsoid"), arg("discretization_level") = DEFAULT_DISCRETIZATION_LEVEL)
 
         .def("get_apex", &Cone::getApex)
         .def("get_axis", &Cone::getAxis)
         .def("get_angle", &Cone::getAngle)
-        .def("get_rays_of_lateral_surface", &Cone::getRaysOfLateralSurface)
-        .def("intersection_with", overload_cast<const Sphere&, const bool, const Size>(&Cone::intersectionWith, const_), arg("sphere"), arg("only_in_sight") = false, arg("discretization_level") = 40)
-        .def("intersection_with", overload_cast<const Ellipsoid&, const bool, const Size>(&Cone::intersectionWith, const_), arg("ellipsoid"), arg("only_in_sight") = false, arg("discretization_level") = 40)
-        .def("intersection_with_ellipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid) -> Intersection { return aCone.intersectionWith(anEllipsoid) ; }) // TBR
-        .def("intersection_with_ellipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid, const bool onlyInSight) -> Intersection { return aCone.intersectionWith(anEllipsoid, onlyInSight) ; }) // TBR
-        .def("intersection_with_ellipsoid", +[] (const Cone& aCone, const Ellipsoid& anEllipsoid, const bool onlyInSight, const Size aDiscretizationLevel) -> Intersection { return aCone.intersectionWith(anEllipsoid, onlyInSight, aDiscretizationLevel) ; }) // TBR
-        .def("apply_transformation", &Cone::applyTransformation)
+        .def("get_rays_of_lateral_surface", &Cone::getRaysOfLateralSurface, arg("ray_count") = DEFAULT_RAY_COUNT)
+        .def("intersection_with", overload_cast<const Sphere&, const bool, const Size>(&Cone::intersectionWith, const_), arg("sphere"), arg("only_in_sight") = false, arg("discretization_level") = DEFAULT_DISCRETIZATION_LEVEL)
+        .def("intersection_with", overload_cast<const Ellipsoid&, const bool, const Size>(&Cone::intersectionWith, const_), arg("ellipsoid"), arg("only_in_sight") = false, arg("discretization_level") = DEFAULT_DISCRETIZATION_LEVEL)
+        .def("apply_transformation", &Cone::applyTransformation, arg("transformation"))
 
         .def_static("undefined", &Cone::Undefined)
     ;

@@ -11,19 +11,19 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation   (     pybind11::module&  aModule                                     )
+inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation ( pybind11::module&        aModule                                     )
 {
 
     using namespace pybind11 ;
 
     using ostk::math::obj::Vector2d ;
     using ostk::math::obj::Matrix3d ;
-    using ostk::math::geom::d2::objects::Point ;
     using ostk::math::geom::d2::Transformation ;
+    using ostk::math::geom::d2::objects::Point ;
 
     class_<Transformation> transf(aModule, "Transformation") ;
 
-    transf.def(init<const Matrix3d&>())
+    transf.def(init<const Matrix3d&>(), arg("matrix"))
 
         .def(self == self)
         .def(self != self)
@@ -36,17 +36,19 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Transf
         .def("get_type", &Transformation::getType)
         .def("get_matrix", &Transformation::getMatrix)
         .def("get_inverse", &Transformation::getInverse)
-        .def("apply_to_point", + [] (const Transformation& aTransformation, const Point& aPoint) -> Point { return aTransformation.applyTo(aPoint) ; })
-        .def("apply_to_vector", + [] (const Transformation& aTransformation, const Vector2d& aVector) -> Vector2d { return aTransformation.applyTo(aVector) ; })
+
+        .def("apply_to", overload_cast<const Point&>(&Transformation::applyTo, const_), arg("point"))
+        .def("apply_to", overload_cast<const Vector2d&>(&Transformation::applyTo, const_), arg("vector"))
+        // .def("apply_to", overload_cast<const Unique<Object>&>(&Transformation::applyTo, const_), arg("object"))
 
         .def_static("undefined", &Transformation::Undefined)
         .def_static("identity", &Transformation::Identity)
-        .def_static("translation", &Transformation::Translation)
-        .def_static("rotation", &Transformation::Rotation)
-        .def_static("rotation_around", &Transformation::RotationAround)
+        .def_static("translation", &Transformation::Translation, arg("transaction_vector"))
+        .def_static("rotation", &Transformation::Rotation, arg("rotation_angle"))
+        .def_static("rotation_around", &Transformation::RotationAround, arg("point"), arg("rotation_angle"))
 
-        .def_static("string_from_type", &Transformation::StringFromType)
-        .def_static("type_of_matrix", &Transformation::TypeOfMatrix)
+        .def_static("string_from_type", &Transformation::StringFromType, arg("type"))
+        .def_static("type_of_matrix", &Transformation::TypeOfMatrix, arg("matrix"))
 
     ;
 

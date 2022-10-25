@@ -239,14 +239,14 @@ class TestPolygon:
         point_set: PointSet = PointSet([Point(0.0, 0.0)])
         polygon: Polygon = Polygon((point_1, point_2, point_3, point_4))
 
-        assert polygon.contains_point(Point.origin())
-        assert polygon.contains_point(point_1)
-        assert polygon.contains_point(point_2)
-        assert polygon.contains_point(point_3)
-        assert polygon.contains_point(point_4)
-        assert polygon.contains_point(Point(10.0, 10.0)) is False
+        assert polygon.contains(Point.origin())
+        assert polygon.contains(point_1)
+        assert polygon.contains(point_2)
+        assert polygon.contains(point_3)
+        assert polygon.contains(point_4)
+        assert polygon.contains(Point(10.0, 10.0)) is False
 
-        assert polygon.contains_point_set(point_set)
+        assert polygon.contains(point_set)
 
     def test_getters (self):
 

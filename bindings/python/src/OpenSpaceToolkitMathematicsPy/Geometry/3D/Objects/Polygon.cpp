@@ -24,7 +24,14 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
     class_<Polygon, Object>(aModule, "Polygon")
 
-        .def(init<const Polygon2d&, const Point&, const Vector3d&, const Vector3d&>())
+        .def
+        (
+            init<const Polygon2d&, const Point&, const Vector3d&, const Vector3d&>(),
+            arg("polygon"),
+            arg("origin"),
+            arg("x_axis"),
+            arg("y_axis")
+        )
 
         .def(self == self)
         .def(self != self)
@@ -33,14 +40,19 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("__repr__", &(shiftToString<Polygon>))
 
         .def("is_defined", &Polygon::isDefined)
-        .def("is_near", &Polygon::isNear)
+        .def("is_near", &Polygon::isNear, arg("polygon"), arg("tolerance"))
 
         .def("get_polygon2d", &Polygon::getPolygon2d)
         .def("get_origin", &Polygon::getOrigin)
         .def("get_x_axis", &Polygon::getXAxis)
         .def("get_y_axis", &Polygon::getYAxis)
         .def("get_normal_vector", &Polygon::getNormalVector)
-        .def("apply_transformation", &Polygon::applyTransformation)
+        .def("get_edge_count", &Polygon::getEdgeCount)
+        .def("get_vertex_count", &Polygon::getVertexCount)
+        .def("get_edge_at", &Polygon::getEdgeAt, arg("index"))
+        .def("get_vertex_at", &Polygon::getVertexAt, arg("index"))
+        .def("get_vertices", &Polygon::getVertices)
+        .def("apply_transformation", &Polygon::applyTransformation, arg("transformation"))
 
         .def_static("undefined", &Polygon::Undefined)
 

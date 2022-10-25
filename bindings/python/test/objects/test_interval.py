@@ -22,14 +22,14 @@ Type = RealInterval.Type
 
 class TestInterval:
 
-    def test_real_interval_type (self):
+    def test_type (self):
 
         enum_members = Type.__members__
 
         assert list(enum_members.keys()) == ['Undefined', 'Closed', 'Open', 'HalfOpenLeft', 'HalfOpenRight']
         assert list(enum_members.values()) == [Type.Undefined, Type.Closed, Type.Open, Type.HalfOpenLeft, Type.HalfOpenRight]
 
-    def test_real_interval_default_constructor (self):
+    def test_default_constructor (self):
 
         # Input types for RealInterval
         interval_1 = RealInterval(-4.31, 1.0, Type.Open)
@@ -105,7 +105,7 @@ class TestInterval:
 
             invalid_interval_4 = RealInterval(4.8, 3.5, Type.HalfOpenRight)
 
-    def test_real_interval_undefined_constructor (self):
+    def test_undefined_constructor (self):
 
         undefined_interval = RealInterval.undefined()
 
@@ -113,7 +113,7 @@ class TestInterval:
         assert undefined_interval is not None
         assert undefined_interval.is_defined() is False
 
-    def test_real_interval_closed_constructor (self):
+    def test_closed_constructor (self):
 
         a = -3.1
         b = 45.6
@@ -126,7 +126,7 @@ class TestInterval:
         assert closed_interval.get_lower_bound() == a
         assert closed_interval.get_upper_bound() == b
 
-    def test_real_interval_is_defined (self):
+    def test_is_defined (self):
 
         # Interval Bounds
         a = -4.31
@@ -146,9 +146,9 @@ class TestInterval:
         assert interval_halfopenright.is_defined() is True
         assert RealInterval.undefined().is_defined() is False
 
-    # def test_real_interval_is_degenerate ():
+    # def test_is_degenerate ():
 
-    def test_real_interval_intersects (self):
+    def test_intersects (self):
 
         # Interval Bounds
         a = -4.31
@@ -214,7 +214,7 @@ class TestInterval:
         assert interval_halfopenright.intersects(interval_between) is True
         assert interval_halfopenright.intersects(interval_bigger) is True
 
-    def test_real_interval_contains_real (self):
+    def test_contains_real (self):
 
         # Interval Bounds
         a = -4.31
@@ -235,49 +235,49 @@ class TestInterval:
         real_between_1 = 2.3
         real_between_2 = 2.999999999
 
-        # Test contains_real on undefined
+        # Test contains on undefined
 
         with pytest.raises(RuntimeError):
 
-            interval_undefined.contains_real(real_left)
+            interval_undefined.contains(real_left)
 
-        # Test contains_real on closed
+        # Test contains on closed
 
-        assert interval_closed.contains_real(real_left) is False
-        assert interval_closed.contains_real(real_right) is False
-        assert interval_closed.contains_real(real_leftbound) is True
-        assert interval_closed.contains_real(real_rightbound) is True
-        assert interval_closed.contains_real(real_between_1) is True
-        assert interval_closed.contains_real(real_between_2) is True
+        assert interval_closed.contains(real_left) is False
+        assert interval_closed.contains(real_right) is False
+        assert interval_closed.contains(real_leftbound) is True
+        assert interval_closed.contains(real_rightbound) is True
+        assert interval_closed.contains(real_between_1) is True
+        assert interval_closed.contains(real_between_2) is True
 
-        # Test contains_real on open
+        # Test contains on open
 
-        assert interval_open.contains_real(real_left) is False
-        assert interval_open.contains_real(real_right) is False
-        assert interval_open.contains_real(real_leftbound) is False
-        assert interval_open.contains_real(real_rightbound) is False
-        assert interval_open.contains_real(real_between_1) is True
-        assert interval_open.contains_real(real_between_2) is True
+        assert interval_open.contains(real_left) is False
+        assert interval_open.contains(real_right) is False
+        assert interval_open.contains(real_leftbound) is False
+        assert interval_open.contains(real_rightbound) is False
+        assert interval_open.contains(real_between_1) is True
+        assert interval_open.contains(real_between_2) is True
 
-        # Test contains_real on halfopenleft
+        # Test contains on halfopenleft
 
-        assert interval_halfopenleft.contains_real(real_left) is False
-        assert interval_halfopenleft.contains_real(real_right) is False
-        assert interval_halfopenleft.contains_real(real_leftbound) is False
-        assert interval_halfopenleft.contains_real(real_rightbound) is True
-        assert interval_halfopenleft.contains_real(real_between_1) is True
-        assert interval_halfopenleft.contains_real(real_between_2) is True
+        assert interval_halfopenleft.contains(real_left) is False
+        assert interval_halfopenleft.contains(real_right) is False
+        assert interval_halfopenleft.contains(real_leftbound) is False
+        assert interval_halfopenleft.contains(real_rightbound) is True
+        assert interval_halfopenleft.contains(real_between_1) is True
+        assert interval_halfopenleft.contains(real_between_2) is True
 
-        # Test contains_real on halfopenright
+        # Test contains on halfopenright
 
-        assert interval_halfopenright.contains_real(real_left) is False
-        assert interval_halfopenright.contains_real(real_right) is False
-        assert interval_halfopenright.contains_real(real_leftbound) is True
-        assert interval_halfopenright.contains_real(real_rightbound) is False
-        assert interval_halfopenright.contains_real(real_between_1) is True
-        assert interval_halfopenright.contains_real(real_between_2) is True
+        assert interval_halfopenright.contains(real_left) is False
+        assert interval_halfopenright.contains(real_right) is False
+        assert interval_halfopenright.contains(real_leftbound) is True
+        assert interval_halfopenright.contains(real_rightbound) is False
+        assert interval_halfopenright.contains(real_between_1) is True
+        assert interval_halfopenright.contains(real_between_2) is True
 
-    def test_real_interval_contains_interval (self):
+    def test_contains_interval (self):
 
         # Interval Bounds
         a = -4.31
@@ -300,49 +300,49 @@ class TestInterval:
 
         # Add test cases with contained intervals not Type.Closed...
 
-        # Test contains_interval on undefined
+        # Test contains on undefined
 
         with pytest.raises(RuntimeError):
 
-            interval_undefined.contains_interval(interval_left)
+            interval_undefined.contains(interval_left)
 
-        # Test contains_interval on closed
+        # Test contains on closed
 
-        assert interval_closed.contains_interval(interval_left) is False
-        assert interval_closed.contains_interval(interval_intersects_left) is False
-        assert interval_closed.contains_interval(interval_right) is False
-        assert interval_closed.contains_interval(interval_intersects_right) is False
-        assert interval_closed.contains_interval(interval_between) is True
-        assert interval_closed.contains_interval(interval_bigger) is False
+        assert interval_closed.contains(interval_left) is False
+        assert interval_closed.contains(interval_intersects_left) is False
+        assert interval_closed.contains(interval_right) is False
+        assert interval_closed.contains(interval_intersects_right) is False
+        assert interval_closed.contains(interval_between) is True
+        assert interval_closed.contains(interval_bigger) is False
 
-        # Test contains_interval on open
+        # Test contains on open
 
-        assert interval_open.contains_interval(interval_left) is False
-        assert interval_open.contains_interval(interval_intersects_left) is False
-        assert interval_open.contains_interval(interval_right) is False
-        assert interval_open.contains_interval(interval_intersects_right) is False
-        assert interval_open.contains_interval(interval_between) is True
-        assert interval_open.contains_interval(interval_bigger) is False
+        assert interval_open.contains(interval_left) is False
+        assert interval_open.contains(interval_intersects_left) is False
+        assert interval_open.contains(interval_right) is False
+        assert interval_open.contains(interval_intersects_right) is False
+        assert interval_open.contains(interval_between) is True
+        assert interval_open.contains(interval_bigger) is False
 
-        # Test contains_interval on halfopenleft
+        # Test contains on halfopenleft
 
-        assert interval_halfopenleft.contains_interval(interval_left) is False
-        assert interval_halfopenleft.contains_interval(interval_intersects_left) is False
-        assert interval_halfopenleft.contains_interval(interval_right) is False
-        assert interval_halfopenleft.contains_interval(interval_intersects_right) is False
-        assert interval_halfopenleft.contains_interval(interval_between) is True
-        assert interval_halfopenleft.contains_interval(interval_bigger) is False
+        assert interval_halfopenleft.contains(interval_left) is False
+        assert interval_halfopenleft.contains(interval_intersects_left) is False
+        assert interval_halfopenleft.contains(interval_right) is False
+        assert interval_halfopenleft.contains(interval_intersects_right) is False
+        assert interval_halfopenleft.contains(interval_between) is True
+        assert interval_halfopenleft.contains(interval_bigger) is False
 
-        # Test contains_interval on halfopenright
+        # Test contains on halfopenright
 
-        assert interval_halfopenright.contains_interval(interval_left) is False
-        assert interval_halfopenright.contains_interval(interval_intersects_left) is False
-        assert interval_halfopenright.contains_interval(interval_right) is False
-        assert interval_halfopenright.contains_interval(interval_intersects_right) is False
-        assert interval_halfopenright.contains_interval(interval_between) is True
-        assert interval_halfopenright.contains_interval(interval_bigger) is False
+        assert interval_halfopenright.contains(interval_left) is False
+        assert interval_halfopenright.contains(interval_intersects_left) is False
+        assert interval_halfopenright.contains(interval_right) is False
+        assert interval_halfopenright.contains(interval_intersects_right) is False
+        assert interval_halfopenright.contains(interval_between) is True
+        assert interval_halfopenright.contains(interval_bigger) is False
 
-    def test_real_interval_get_bounds (self):
+    def test_get_bounds (self):
 
         # Interval Bounds
         a = -4.31
@@ -375,7 +375,7 @@ class TestInterval:
         assert interval_halfopenleft.get_upper_bound() == b
         assert interval_halfopenright.get_upper_bound() == b
 
-    def test_real_interval_to_string (self):
+    def test_to_string (self):
 
         # Interval Bounds
         a = -4.31
@@ -398,7 +398,7 @@ class TestInterval:
         assert interval_halfopenleft.to_string() == ']-4.3099999999999996, 3.0]'
         assert interval_halfopenright.to_string() == '[-4.3099999999999996, 3.0['
 
-    def test_real_interval_get_intersection_with (self):
+    def test_get_intersection_with (self):
 
         test_cases = [
             (RealInterval(0.0, 10.0, Type.HalfOpenLeft),  RealInterval(5.0, 7.0,  Type.HalfOpenLeft),    RealInterval(5.0, 7.0, Type.HalfOpenLeft)),
@@ -414,7 +414,7 @@ class TestInterval:
 
             assert first_interval.get_intersection_with(second_interval) == expected_interval
 
-    def test_real_interval_get_union_with (self):
+    def test_get_union_with (self):
 
         test_cases = [
             (RealInterval(0.0, 10.0, Type.HalfOpenLeft),  RealInterval(5.0, 7.0, Type.HalfOpenLeft),     RealInterval(0.0, 10.0, Type.HalfOpenLeft)),
