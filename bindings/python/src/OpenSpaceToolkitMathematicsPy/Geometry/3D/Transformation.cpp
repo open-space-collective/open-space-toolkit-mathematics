@@ -45,7 +45,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
 
         .def_static("undefined", &Transformation::Undefined)
         .def_static("identity", &Transformation::Identity)
-        .def_static("translation", &Transformation::Translation, arg("transaction_vector"))
+        .def_static("translation", &Transformation::Translation, arg("translation_vector"))
         .def_static("rotation", overload_cast<const RotationVector&>(&Transformation::Rotation), arg("rotation_vector"))
         .def_static("rotation", overload_cast<const RotationMatrix&>(&Transformation::Rotation), arg("rotation_matrix"))
         .def_static("rotation_around", &Transformation::RotationAround, arg("point"), arg("rotation_vector"))
