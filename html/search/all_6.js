@@ -42,7 +42,7 @@ var searchData=
   ['getradius',['getRadius',['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html#a856d4bceb6c0e3133aced9eab57d6450',1,'ostk::math::geom::d3::objects::Sphere']]],
   ['getraysoflateralfaceat',['getRaysOfLateralFaceAt',['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#a798481e060dc0af1ed8ed57a75d8fa9b',1,'ostk::math::geom::d3::objects::Pyramid']]],
   ['getraysoflateralfaces',['getRaysOfLateralFaces',['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#a7ead70ef5dff894a705f337dbc6cbff6',1,'ostk::math::geom::d3::objects::Pyramid']]],
-  ['getraysoflateralsurface',['getRaysOfLateralSurface',['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone.html#aad4d7147444b84a741f497b921ae62e0',1,'ostk::math::geom::d3::objects::Cone']]],
+  ['getraysoflateralsurface',['getRaysOfLateralSurface',['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone.html#a8dc14bb0164c5bf0b2525aaa4c52ea5a',1,'ostk::math::geom::d3::objects::Cone']]],
   ['getrowat',['getRowAt',['../classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_matrix.html#a4dc63a231000b99be5338210835e3d5c',1,'ostk::math::geom::d3::trf::rot::RotationMatrix']]],
   ['getscalarpart',['getScalarPart',['../classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a6cb0e23d41afd8477e97fa764d416e1e',1,'ostk::math::geom::d3::trf::rot::Quaternion']]],
   ['getsecondaxis',['getSecondAxis',['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html#add00ad2c59ec4a2e64d655e9ad2810a8',1,'ostk::math::geom::d3::objects::Cuboid::getSecondAxis()'],['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html#a9a694ec8f31e617d4101bd31fa1519a0',1,'ostk::math::geom::d3::objects::Ellipsoid::getSecondAxis()']]],

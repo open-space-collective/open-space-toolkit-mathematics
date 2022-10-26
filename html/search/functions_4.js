@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['ellipsoid',['Ellipsoid',['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html#acd84276f65a14db12623402a411712b7',1,'ostk::math::geom::d3::objects::Ellipsoid']]],
+  ['ellipsoid',['Ellipsoid',['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html#a106c71abf9503f3d06b2613c1c7e9d65',1,'ostk::math::geom::d3::objects::Ellipsoid']]],
   ['ellipsoidgtevectorfrompoint',['EllipsoidGteVectorFromPoint',['../namespaceostk_1_1math_1_1geom_1_1d3_1_1objects.html#a22a1f8043bef37b2f367019b676464de',1,'ostk::math::geom::d3::objects']]],
   ['ellipsoidgtevectorfromvector3d',['EllipsoidGteVectorFromVector3d',['../namespaceostk_1_1math_1_1geom_1_1d3_1_1objects.html#a30cbde4545131a3ca01ab7b621653995',1,'ostk::math::geom::d3::objects']]],
   ['ellipsoidpointfromgtevector',['EllipsoidPointFromGteVector',['../namespaceostk_1_1math_1_1geom_1_1d3_1_1objects.html#a3ac3dc557eaa5a2f0d74ee1e483f7785',1,'ostk::math::geom::d3::objects']]],

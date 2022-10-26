@@ -1,5 +1,10 @@
 var searchData=
 [
+  ['default_5fdiscretization_5flevel',['DEFAULT_DISCRETIZATION_LEVEL',['../_cone_8hpp.html#a3eb9931e85ba4c9718113211e549e91d',1,'DEFAULT_DISCRETIZATION_LEVEL():&#160;Cone.hpp'],['../_pyramid_8hpp.html#a3eb9931e85ba4c9718113211e549e91d',1,'DEFAULT_DISCRETIZATION_LEVEL():&#160;Pyramid.hpp']]],
+  ['default_5fonly_5fin_5fsight',['DEFAULT_ONLY_IN_SIGHT',['../_pyramid_8hpp.html#af424617f7c785f4835e2feba5a5640f2',1,'DEFAULT_ONLY_IN_SIGHT():&#160;Pyramid.hpp'],['../_ray_8hpp.html#af424617f7c785f4835e2feba5a5640f2',1,'DEFAULT_ONLY_IN_SIGHT():&#160;Ray.hpp'],['../_sphere_8hpp.html#af424617f7c785f4835e2feba5a5640f2',1,'DEFAULT_ONLY_IN_SIGHT():&#160;Sphere.hpp']]],
+  ['default_5forientation',['DEFAULT_ORIENTATION',['../_ellipsoid_8hpp.html#a5c684aeaeb24d197904b5a34839d2dd9',1,'Ellipsoid.hpp']]],
+  ['default_5fprecision',['DEFAULT_PRECISION',['../3_d_2_objects_2_point_8hpp.html#a6d81881a7883657dbc659ca545d9085d',1,'Point.hpp']]],
+  ['default_5fray_5fcount',['DEFAULT_RAY_COUNT',['../_cone_8hpp.html#a95759f940e1d5e70e977d66fa8fcb5ec',1,'Cone.hpp']]],
   ['degree',['Degree',['../classostk_1_1math_1_1geom_1_1_angle.html#abb73526d3f7f94a3b33e8358e1b18027a6669c4dc00cb161446821b3529ca07d8',1,'ostk::math::geom::Angle']]],
   ['degrees',['Degrees',['../classostk_1_1math_1_1geom_1_1_angle.html#a2cefda601167af07f61f0477776203ca',1,'ostk::math::geom::Angle']]],
   ['differencewith',['differenceWith',['../classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#aaea6f04037e95bd70e4d6f0524f129e9',1,'ostk::math::geom::d2::objects::Polygon']]],
