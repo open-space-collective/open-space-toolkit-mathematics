@@ -29,7 +29,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
     class_<RotationVector>(aModule, "RotationVector")
 
         // Define constructor
-        .def(init<const Vector3d&, const Angle&>())
+        .def(init<const Vector3d&, const Angle&>(), arg("axis"), arg("angle"))
 
         // Define methods
         .def(self == self)
@@ -48,11 +48,11 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         // Define static methods
         .def_static("undefined", &RotationVector::Undefined)
         .def_static("unit", &RotationVector::Unit)
-        .def_static("x", &RotationVector::X)
-        .def_static("y", &RotationVector::Y)
-        .def_static("z", &RotationVector::Z)
-        .def_static("quaternion", &RotationVector::Quaternion)
-        .def_static("rotation_matrix", &RotationVector::RotationMatrix)
+        .def_static("x", &RotationVector::X, arg("angle"))
+        .def_static("y", &RotationVector::Y, arg("angle"))
+        .def_static("z", &RotationVector::Z, arg("angle"))
+        .def_static("quaternion", &RotationVector::Quaternion, arg("quaternion"))
+        .def_static("rotation_matrix", &RotationVector::RotationMatrix, arg("rotation_matrix"))
 
     ;
 

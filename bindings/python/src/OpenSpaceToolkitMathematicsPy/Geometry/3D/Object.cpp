@@ -69,7 +69,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("as_pyramid", +[] (const Object& anObject) -> Pyramid { return anObject.as<Pyramid>() ; })
 
         // .def("intersection_with", &Object::intersectionWith)
-        .def("apply_transformation", &Object::applyTransformation)
+        .def("apply_transformation", &Object::applyTransformation, arg("transformation"))
 
     ;
 

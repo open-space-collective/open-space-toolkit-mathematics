@@ -28,9 +28,21 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
     class_<RotationMatrix>(aModule, "RotationMatrix")
 
         // Define constructors
-        .def(init<Matrix3d>())
+        .def(init<Matrix3d>(), arg("matrix"))
 
-        .def(init<const Real&, const Real&, const Real&, const Real&, const Real&, const Real&, const Real&, const Real&, const Real&>())
+        .def
+        (
+            init<const Real&, const Real&, const Real&, const Real&, const Real&, const Real&, const Real&, const Real&, const Real&>(),
+            arg("first_coefficient"),
+            arg("second_coefficient"),
+            arg("third_coefficient"),
+            arg("fourth_coefficient"),
+            arg("fifth_coefficient"),
+            arg("sixth_coefficient"),
+            arg("seventh_coefficient"),
+            arg("eighth_coefficient"),
+            arg("ninth_coefficient")
+        )
 
         // Define methods
         .def(self == self)
@@ -44,21 +56,21 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
 
         .def("is_defined", &RotationMatrix::isDefined)
 
-        .def("get_row_at", &RotationMatrix::getRowAt)
-        .def("get_column_at", &RotationMatrix::getColumnAt)
+        .def("get_row_at", &RotationMatrix::getRowAt, arg("index"))
+        .def("get_column_at", &RotationMatrix::getColumnAt, arg("index"))
         .def("to_transposed", &RotationMatrix::toTransposed)
         .def("transpose", +[] (RotationMatrix& aRotationMatrix) -> void { aRotationMatrix.transpose() ; })
 
         // Define static methods
         .def_static("undefined", &RotationMatrix::Undefined)
         .def_static("unit", &RotationMatrix::Unit)
-        .def_static("rx", &RotationMatrix::RX)
-        .def_static("ry", &RotationMatrix::RY)
-        .def_static("rz", &RotationMatrix::RZ)
-        .def_static("rows", &RotationMatrix::Rows)
-        .def_static("columns", &RotationMatrix::Columns)
-        .def_static("quaternion", &RotationMatrix::Quaternion)
-        .def_static("rotation_vector", &RotationMatrix::RotationVector)
+        .def_static("rx", &RotationMatrix::RX, arg("rotation_angle"))
+        .def_static("ry", &RotationMatrix::RY, arg("rotation_angle"))
+        .def_static("rz", &RotationMatrix::RZ, arg("rotation_angle"))
+        .def_static("rows", &RotationMatrix::Rows, arg("first_row"), arg("second_row"), arg("third_row"))
+        .def_static("columns", &RotationMatrix::Columns, arg("first_column"), arg("second_column"), arg("third_column"))
+        .def_static("quaternion", &RotationMatrix::Quaternion, arg("quaternion"))
+        .def_static("rotation_vector", &RotationMatrix::RotationVector, arg("rotation_vector"))
 
     ;
 

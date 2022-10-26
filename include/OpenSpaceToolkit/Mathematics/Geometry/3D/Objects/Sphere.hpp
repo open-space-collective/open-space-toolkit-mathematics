@@ -37,6 +37,10 @@ using ostk::math::geom::d3::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#define                         DEFAULT_ONLY_IN_SIGHT                           false
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 class PointSet ;
 class Line ;
 class Ray ;
@@ -297,7 +301,7 @@ class Sphere : public Object
         /// @return             Intersection of sphere with ray
 
         Intersection            intersectionWith                            (   const   Ray&                        aRay,
-                                                                                const   bool                        onlyInSight                                 =   false ) const ;
+                                                                                const   bool                        onlyInSight                                 =   DEFAULT_ONLY_IN_SIGHT ) const ;
 
         /// @brief              Compute intersection of sphere with segment
         ///
@@ -313,7 +317,7 @@ class Sphere : public Object
         /// @return             Intersection of sphere with pyramid
 
         Intersection            intersectionWith                            (   const   Pyramid&                    aPyramid,
-                                                                                const   bool                        onlyInSight                                 =   false ) const ;
+                                                                                const   bool                        onlyInSight                                 =   DEFAULT_ONLY_IN_SIGHT ) const ;
 
         /// @brief              Compute intersection of sphere with cone
         ///
@@ -322,7 +326,7 @@ class Sphere : public Object
         /// @return             Intersection of sphere with cone
 
         Intersection            intersectionWith                            (   const   Cone&                       aCone,
-                                                                                const   bool                        onlyInSight                                 =   false ) const ;
+                                                                                const   bool                        onlyInSight                                 =   DEFAULT_ONLY_IN_SIGHT ) const ;
 
         /// @brief              Print sphere
         ///

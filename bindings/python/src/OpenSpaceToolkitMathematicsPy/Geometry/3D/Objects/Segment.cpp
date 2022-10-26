@@ -27,7 +27,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
     class_<Segment, Object>(aModule, "Segment")
 
-        .def(init<const Point&, const Point&>())
+        .def(init<const Point&, const Point&>(), arg("first_point"), arg("second_point"))
 
         .def(self == self)
         .def(self != self)
@@ -37,26 +37,21 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
         .def("is_defined", &Segment::isDefined)
         .def("is_degenerate", &Segment::isDegenerate)
-        .def("intersects", overload_cast<const Plane&>(&Segment::intersects, const_))
-        .def("intersects", overload_cast<const Sphere&>(&Segment::intersects, const_))
-        .def("intersects", overload_cast<const Ellipsoid&>(&Segment::intersects, const_))
-        .def("intersects_plane", +[] (const Segment& aSegment, const Plane& aPlane) -> bool { return aSegment.intersects(aPlane) ; }) // TBR
-        .def("intersects_sphere", +[] (const Segment& aSegment, const Sphere& aSphere) -> bool { return aSegment.intersects(aSphere) ; }) // TBR
-        .def("intersects_ellipsoid", +[] (const Segment& aSegment, const Ellipsoid& anEllipsoid) -> bool { return aSegment.intersects(anEllipsoid) ; }) // TBR
-        .def("contains", overload_cast<const Point&>(&Segment::contains, const_))
-        .def("contains_point", +[] (const Segment& aSegment, const Point& aPoint) -> bool { return aSegment.contains(aPoint) ; }) // TBR
+        .def("intersects", overload_cast<const Plane&>(&Segment::intersects, const_), arg("plane"))
+        .def("intersects", overload_cast<const Sphere&>(&Segment::intersects, const_), arg("sphere"))
+        .def("intersects", overload_cast<const Ellipsoid&>(&Segment::intersects, const_), arg("ellipsoid"))
+        .def("contains", overload_cast<const Point&>(&Segment::contains, const_), arg("point"))
 
         .def("get_first_point", &Segment::getFirstPoint)
         .def("get_second_point", &Segment::getSecondPoint)
         .def("get_center", &Segment::getCenter)
         .def("get_direction", &Segment::getDirection)
         .def("get_length", &Segment::getLength)
-        .def("distance_to", overload_cast<const Point&>(&Segment::distanceTo, const_))
-        .def("distance_to", overload_cast<const PointSet&>(&Segment::distanceTo, const_))
-        .def("intersection_with", overload_cast<const Plane&>(&Segment::intersectionWith, const_))
-        .def("intersection_with_plane", +[] (const Segment& aSegment, const Plane& aPlane) -> Intersection { return aSegment.intersectionWith(aPlane) ; }) // TBR
+        .def("distance_to", overload_cast<const Point&>(&Segment::distanceTo, const_), arg("point"))
+        .def("distance_to", overload_cast<const PointSet&>(&Segment::distanceTo, const_), arg("point_set"))
+        .def("intersection_with", overload_cast<const Plane&>(&Segment::intersectionWith, const_), arg("plane"))
         .def("to_line", &Segment::toLine)
-        .def("apply_transformation", &Segment::applyTransformation)
+        .def("apply_transformation", &Segment::applyTransformation, arg("transformation"))
 
         .def_static("undefined", &Segment::Undefined)
     ;

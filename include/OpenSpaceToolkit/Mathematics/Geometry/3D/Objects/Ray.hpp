@@ -38,6 +38,10 @@ using ostk::math::geom::d3::objects::Point ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#define                         DEFAULT_ONLY_IN_SIGHT                           false
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 class PointSet ;
 class Line ;
 class Segment ;
@@ -220,7 +224,7 @@ class Ray : public Object
         /// @return             Intersection of ray with sphere
 
         Intersection            intersectionWith                            (   const   Sphere&                     aSphere,
-                                                                                const   bool                        onlyInSight                                 =   false ) const ;
+                                                                                const   bool                        onlyInSight                                 =   DEFAULT_ONLY_IN_SIGHT ) const ;
 
         /// @brief              Compute intersection of ray with ellipsoid
         ///
@@ -229,7 +233,7 @@ class Ray : public Object
         /// @return             Intersection of ray with ellipsoid
 
         Intersection            intersectionWith                            (   const   Ellipsoid&                  anEllipsoid,
-                                                                                const   bool                        onlyInSight                                 =   false ) const ;
+                                                                                const   bool                        onlyInSight                                 =   DEFAULT_ONLY_IN_SIGHT ) const ;
 
         /// @brief              Print ray
         ///

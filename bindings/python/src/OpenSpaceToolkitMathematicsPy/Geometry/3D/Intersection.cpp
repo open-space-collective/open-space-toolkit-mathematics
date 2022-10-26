@@ -108,13 +108,13 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Inters
         // Define static methods
         .def_static("undefined", &Intersection::Undefined)
         .def_static("empty", &Intersection::Empty)
-        .def_static("point", &Intersection::Point)
-        .def_static("point_set", &Intersection::PointSet)
-        .def_static("line", &Intersection::Line)
-        .def_static("ray", &Intersection::Ray)
-        .def_static("segment", &Intersection::Segment)
+        .def_static("point", &Intersection::Point, arg("point"))
+        .def_static("point_set", &Intersection::PointSet, arg("point_set"))
+        .def_static("line", &Intersection::Line, arg("line"))
+        .def_static("ray", &Intersection::Ray, arg("ray"))
+        .def_static("segment", &Intersection::Segment, arg("segment"))
 
-        .def_static("string_from_type", &Intersection::StringFromType)
+        .def_static("string_from_type", &Intersection::StringFromType, arg("type"))
 
     ;
 

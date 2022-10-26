@@ -40,7 +40,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("get_size", &PointSet::getSize)
         .def("distance_to", overload_cast<const Point&>(&PointSet::distanceTo, const_), arg("point"))
         .def("get_point_closest_to", &PointSet::getPointClosestTo, arg("point"))
-        .def("to_string", &PointSet::toString, "aFormat"_a=Object::Format::Standard, "aPrecision"_a=Integer::Undefined())
+        .def("to_string", &PointSet::toString, arg("format") = Object::Format::Standard, arg("precision") = Integer::Undefined())
         .def("apply_transformation", &PointSet::applyTransformation, arg("transformation"))
 
         .def_static("empty", &PointSet::Empty)

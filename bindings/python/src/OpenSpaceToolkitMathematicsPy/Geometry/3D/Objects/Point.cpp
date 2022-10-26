@@ -15,7 +15,10 @@
 
 using ostk::core::ctnr::Array ;
 
-void          set_point_3_array(const Array<ostk::math::geom::d3::objects::Point>& anArray) { (void) anArray ; }
+void                            set_point_3_array                           (   const   Array<ostk::math::geom::d3::objects::Point>& anArray                    )
+{
+    (void) anArray ;
+}
 
 inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Point (        pybind11::module&  aModule                                     )
 {
@@ -23,6 +26,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using namespace pybind11 ;
 
     using ostk::core::types::Shared ;
+    using ostk::core::types::Integer ;
     using ostk::core::types::Real ;
 
     using ostk::math::obj::Vector3d ;
@@ -31,7 +35,13 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
     class_<Point, Object>(aModule, "Point")
 
-        .def(init<const Real&, const Real&, const Real&>())
+        .def
+        (
+            init<const Real&, const Real&, const Real&>(),
+            arg("first_coordinate"),
+            arg("second_coordinate"),
+            arg("third_coordinate")
+        )
 
         .def(self == self)
         .def(self != self)
@@ -45,17 +55,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("__repr__", &(shiftToString<Point>))
 
         .def("is_defined", &Point::isDefined)
-        .def("is_near", &Point::isNear)
+        .def("is_near", &Point::isNear, arg("point"), arg("tolerance"))
 
-        // .def("x", &Point::x, return_value_policy<reference_existing_object>())
-        // .def("y", &Point::y, return_value_policy<reference_existing_object>())
-        // .def("z", &Point::z, return_value_policy<reference_existing_object>())
         .def("x", &Point::x, return_value_policy::reference)
         .def("y", &Point::y, return_value_policy::reference)
         .def("z", &Point::z, return_value_policy::reference)
         .def("as_vector", &Point::asVector)
-        .def("distance_to", &Point::distanceTo)
-        .def("apply_transformation", &Point::applyTransformation)
+        .def("distance_to", &Point::distanceTo, arg("point"))
+        .def("to_string", &Point::toString, arg("precision") = DEFAULT_PRECISION)
+        .def("apply_transformation", &Point::applyTransformation, arg("transformation"))
 
         .def_static("undefined", &Point::Undefined)
         .def_static("origin", &Point::Origin)
@@ -63,7 +71,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
     ;
 
-    aModule.def("set_point_3_array", overload_cast<const Array<Point>&>(&set_point_3_array));
+    aModule.def("set_point_3_array", overload_cast<const Array<Point>&>(&set_point_3_array)) ;
 
 }
 

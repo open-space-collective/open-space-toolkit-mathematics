@@ -41,6 +41,10 @@ using ostk::math::geom::d3::Object ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+#define                         DEFAULT_PRECISION                               Integer::Undefined()
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 /// @brief                      Point
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Point_(geometry)
@@ -188,7 +192,7 @@ class Point : public Object
         /// @param              [in] (optional) aPrecision A precision
         /// @return             String representation
 
-        String                  toString                                    (   const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const ;
+        String                  toString                                    (   const   Integer&                    aPrecision                                  =   DEFAULT_PRECISION ) const ;
 
         /// @brief              Print point
         ///
