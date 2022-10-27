@@ -345,6 +345,13 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Segment)
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Ray)
+{
+
+    // TBI
+
+}
+
 TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Sphere)
 {
 

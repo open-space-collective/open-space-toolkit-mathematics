@@ -28,6 +28,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::objects::Line ;
     using ostk::math::geom::d3::objects::Ray ;
     using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Ray ;
     using ostk::math::geom::d3::objects::Plane ;
     using ostk::math::geom::d3::objects::Polygon ;
     using ostk::math::geom::d3::objects::Sphere ;
@@ -48,11 +49,12 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("is_defined", &Cone::isDefined)
         .def("intersects", overload_cast<const Sphere&, const Size>(&Cone::intersects, const_), arg("sphere"), arg("discretization_level") = DEFAULT_DISCRETIZATION_LEVEL)
         .def("intersects", overload_cast<const Ellipsoid&, const Size>(&Cone::intersects, const_), arg("ellipsoid"), arg("discretization_level") = DEFAULT_DISCRETIZATION_LEVEL)
-        .def("contains", overload_cast<const Point&>()(&Cone::contains, const_), arg("point"))
-        .def("contains", overload_cast<const PointSet&>()(&Cone::contains, const_), arg("point_set"))
-        .def("contains", overload_cast<const Segment&>()(&Cone::contains, const_), arg("segment"))
-        .def("contains", overload_cast<const Sphere&>()(&Cone::contains, const_), arg("sphere"))
-        .def("contains", overload_cast<const Ellipsoid&>()(&Cone::contains, const_), arg("ellipsoid"))
+        .def("contains", overload_cast<const Point&>(&Cone::contains, const_), arg("point"))
+        .def("contains", overload_cast<const PointSet&>(&Cone::contains, const_), arg("point_set"))
+        .def("contains", overload_cast<const Segment&>(&Cone::contains, const_), arg("segment"))
+        .def("contains", overload_cast<const Ray&>(&Cone::contains, const_), arg("ray"))
+        .def("contains", overload_cast<const Sphere&>(&Cone::contains, const_), arg("sphere"))
+        .def("contains", overload_cast<const Ellipsoid&>(&Cone::contains, const_), arg("ellipsoid"))
 
         .def("get_apex", &Cone::getApex)
         .def("get_axis", &Cone::getAxis)

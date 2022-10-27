@@ -186,6 +186,28 @@ bool                            Cone::contains                              (   
     return this->contains(aSegment.getFirstPoint()) && this->contains(aSegment.getSecondPoint()) ;
 }
 
+bool                            Cone::contains                              (   const   Ray&                        aRay                                        ) const
+{
+
+    if (!aRay.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Ray") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Cone") ;
+    }
+
+    if (!this->contains(aRay.getOrigin()))
+    {
+        return false ;
+    }
+
+    return Angle::Between(aRay.getDirection(), this->axis_).inDegrees(0.0, 360.0) <= this->angle_.inDegrees(0.0, 360.0) ;
+
+}
+
 bool                            Cone::contains                              (   const   Sphere&                     aSphere                                     ) const
 {
 

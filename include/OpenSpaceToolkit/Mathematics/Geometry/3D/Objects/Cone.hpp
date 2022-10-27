@@ -183,6 +183,19 @@ class Cone : public Object
 
         bool                    contains                                    (   const   Segment&                    aSegment                                    ) const ;
 
+        /// @brief              Check if cone contains ray
+        ///
+        /// @code
+        ///                     Cone cone = ... ;
+        ///                     Ray ray = ... ;
+        ///                     cone.contains(ray) ;
+        /// @endcode
+        ///
+        /// @param              [in] aRay A ray
+        /// @return             True if cone contains ray
+
+        bool                    contains                                    (   const   Ray&                        aRay                                        ) const ;
+
         /// @brief              Check if cone contains sphere
         ///
         /// @code
