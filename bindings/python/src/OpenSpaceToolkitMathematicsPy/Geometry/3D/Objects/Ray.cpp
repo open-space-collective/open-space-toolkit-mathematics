@@ -46,6 +46,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
         .def("get_origin", &Ray::getOrigin)
         .def("get_direction", &Ray::getDirection)
+        .def("distance_to", overload_cast<const Point&>(&Ray::distanceTo, const_), arg("point"))
         .def("intersection_with", overload_cast<const Plane&>(&Ray::intersectionWith, const_), arg("plane"))
         .def("intersection_with", overload_cast<const Sphere&, const bool>(&Ray::intersectionWith, const_), arg("sphere"), arg("only_in_sight") = DEFAULT_ONLY_IN_SIGHT)
         .def("intersection_with", overload_cast<const Ellipsoid&, const bool>(&Ray::intersectionWith, const_), arg("ellipsoid"), arg("only_in_sight") = DEFAULT_ONLY_IN_SIGHT)

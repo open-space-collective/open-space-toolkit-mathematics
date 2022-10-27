@@ -523,7 +523,47 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, GetRaysOfLateralSur
 TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, DistanceTo_Point)
 {
 
-    //
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cone ;
+
+    {
+
+        const Point apex = { -10.0, 0.0, 10.0 } ;
+        const Vector3d axis = Vector3d::X() ;
+        const Angle angle = Angle::Degrees(45.0) ;
+
+        const Cone cone = { apex, axis, angle } ;
+
+        EXPECT_EQ(0.0, cone.distanceTo(apex)) ;
+
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +1.0, 0.0, -1.0 }), 1e-15) ; // On lateral surface
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +1.0, 0.0, +1.0 }), 1e-15) ; // On lateral surface
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +1.0, -1.0, 0.0 }), 1e-15) ; // On lateral surface
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +1.0, +1.0, 0.0 }), 1e-15) ; // On lateral surface
+
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +2.0, 0.0, -2.0 }), 1e-15) ; // On lateral surface
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +2.0, 0.0, +2.0 }), 1e-15) ; // On lateral surface
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +2.0, -2.0, 0.0 }), 1e-15) ; // On lateral surface
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +2.0, +2.0, 0.0 }), 1e-15) ; // On lateral surface
+
+        EXPECT_NEAR(1.0, cone.distanceTo(apex + Vector3d { -1.0, 0.0, 0.0 }), 1e-15) ;
+        EXPECT_NEAR(std::sqrt(2.0) / 2.0, cone.distanceTo(apex + Vector3d { +1.0, 0.0, 0.0 }), 1e-15) ;
+        EXPECT_NEAR(std::sqrt(2.0) / 2.0, cone.distanceTo(apex + Vector3d { 0.0, -1.0, 0.0 }), 1e-15) ;
+        EXPECT_NEAR(std::sqrt(2.0) / 2.0, cone.distanceTo(apex + Vector3d { 0.0, +1.0, 0.0 }), 1e-15) ;
+
+        EXPECT_NEAR(std::sqrt(2.0), cone.distanceTo(apex + Vector3d { -1.0, -1.0, 0.0 }), 1e-15) ;
+        EXPECT_NEAR(std::sqrt(2.0), cone.distanceTo(apex + Vector3d { -1.0, +1.0, 0.0 }), 1e-15) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Cone::Undefined().distanceTo(Point::Undefined())) ;
+        EXPECT_ANY_THROW(Cone::Undefined().distanceTo({ 0.0, 0.0, 0.0 })) ;
+
+    }
 
 }
 

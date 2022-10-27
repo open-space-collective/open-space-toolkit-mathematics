@@ -60,7 +60,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("get_axis", &Cone::getAxis)
         .def("get_angle", &Cone::getAngle)
         .def("get_rays_of_lateral_surface", &Cone::getRaysOfLateralSurface, arg("ray_count") = DEFAULT_RAY_COUNT)
-        .def("distance_to", &Cone::distanceTo, arg("point"))
+        .def("distance_to", overload_cast<const Point&>(&Cone::distanceTo, const_), arg("point"))
         .def("intersection_with", overload_cast<const Sphere&, const bool, const Size>(&Cone::intersectionWith, const_), arg("sphere"), arg("only_in_sight") = false, arg("discretization_level") = DEFAULT_DISCRETIZATION_LEVEL)
         .def("intersection_with", overload_cast<const Ellipsoid&, const bool, const Size>(&Cone::intersectionWith, const_), arg("ellipsoid"), arg("only_in_sight") = false, arg("discretization_level") = DEFAULT_DISCRETIZATION_LEVEL)
         .def("apply_transformation", &Cone::applyTransformation, arg("transformation"))

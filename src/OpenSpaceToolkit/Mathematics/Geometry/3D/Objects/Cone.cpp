@@ -342,8 +342,31 @@ Real                            Cone::distanceTo                            (   
         return apexToPoint.norm() ;
     }
 
-    // TBM: This is GitHub Copilot generated: not tested and likely wrong?
-    return apexToPoint.norm() * std::sin(Angle::Between(apexToPoint, this->axis_).inRadians()) ;
+    // TBO: There's probably a better way to do this that doesn't require the use of so many vector re-normalization.
+
+    Vector3d nAxis ;
+
+    if (this->axis_.cross(apexToPoint).norm() > Real::Epsilon())
+    {
+        nAxis = (this->axis_.cross(apexToPoint)).cross(this->axis_).normalized() ;
+    }
+    else
+    {
+
+        if (this->axis_.cross(Vector3d { 1.0, 0.0, 0.0 }).norm() > Real::Epsilon())
+        {
+            nAxis = (this->axis_.cross(Vector3d { 1.0, 0.0, 0.0 })).cross(this->axis_).normalized() ;
+        }
+        else
+        {
+            nAxis = (this->axis_.cross(Vector3d { 0.0, 1.0, 0.0 })).cross(this->axis_).normalized() ;
+        }
+
+    }
+
+    const Vector3d rayDirection = (this->axis_.normalized() + std::tan(this->angle_.inRadians()) * nAxis).normalized() ;
+
+    return Ray(this->apex_, rayDirection).distanceTo(aPoint) ;
 
 }
 

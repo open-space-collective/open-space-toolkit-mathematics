@@ -381,6 +381,38 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, GetDirection)
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, DistanceTo_Point)
+{
+
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Ray ;
+
+    {
+
+        EXPECT_EQ(0.0, Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).distanceTo(Point(0.0, 0.0, 0.0))) ;
+
+        EXPECT_EQ(0.0, Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).distanceTo(Point(0.0, 0.0, +1.0))) ;
+        EXPECT_EQ(0.0, Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).distanceTo(Point(0.0, 0.0, +2.0))) ;
+
+        EXPECT_EQ(1.0, Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).distanceTo(Point(+1.0, 0.0, 0.0))) ;
+        EXPECT_EQ(1.0, Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).distanceTo(Point(-1.0, 0.0, 0.0))) ;
+        EXPECT_EQ(1.0, Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).distanceTo(Point(0.0, +1.0, 0.0))) ;
+        EXPECT_EQ(1.0, Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).distanceTo(Point(0.0, -1.0, 0.0))) ;
+
+        EXPECT_EQ(1.0, Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).distanceTo(Point(0.0, 0.0, -1.0))) ;
+        EXPECT_EQ(2.0, Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).distanceTo(Point(0.0, 0.0, -2.0))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Ray::Undefined().distanceTo(Point::Undefined())) ;
+        EXPECT_ANY_THROW(Ray::Undefined().distanceTo({ 0.0, 0.0, 0.0 })) ;
+
+    }
+
+}
+
 TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Plane)
 {
 
