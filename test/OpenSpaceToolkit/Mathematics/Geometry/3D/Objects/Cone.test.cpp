@@ -238,6 +238,162 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Intersects_Ellipsoi
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Point)
+{
+
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cone ;
+
+    {
+
+        const Point apex = { -10.0, 0.0, 10.0 } ;
+        const Vector3d axis = Vector3d::X() ;
+        const Angle angle = Angle::Degrees(10.0) ;
+
+        const Cone cone = { apex, axis, angle } ;
+
+        EXPECT_TRUE(cone.contains(apex)) ;
+
+        EXPECT_TRUE(cone.contains({ -5.0, 0.0, 10.0 })) ;
+        EXPECT_TRUE(cone.contains({ +0.0, 0.0, 10.0 })) ;
+        EXPECT_TRUE(cone.contains({ +5.0, 0.0, 10.0 })) ;
+
+        EXPECT_TRUE(cone.contains({ +10.0, 0.0, 9.0 })) ;
+        EXPECT_TRUE(cone.contains({ +10.0, 0.0, 11.0 })) ;
+
+        EXPECT_FALSE(cone.contains({ -15.0, 0.0, 10.0 })) ;
+
+        EXPECT_FALSE(cone.contains({ +10.0, 0.0, 6.0 })) ;
+        EXPECT_FALSE(cone.contains({ +10.0, 0.0, 14.0 })) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Cone::Undefined().contains(Point::Undefined())) ;
+        EXPECT_ANY_THROW(Cone::Undefined().contains({ 0.0, 0.0, 0.0 })) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_PointSet)
+{
+
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Cone ;
+
+    {
+
+        const Point apex = { -10.0, 0.0, 10.0 } ;
+        const Vector3d axis = Vector3d::X() ;
+        const Angle angle = Angle::Degrees(10.0) ;
+
+        const Cone cone = { apex, axis, angle } ;
+
+        EXPECT_TRUE(cone.contains(PointSet({ { -5.0, 0.0, 10.0 }, { +0.0, 0.0, 10.0 }, { +5.0, 0.0, 10.0 } }))) ;
+        EXPECT_TRUE(cone.contains(PointSet({ { +10.0, 0.0, 9.0 }, { +10.0, 0.0, 11.0 } }))) ;
+
+        EXPECT_FALSE(cone.contains(PointSet({ { +10.0, 0.0, 9.0 }, { +10.0, 0.0, 11.0 }, { -15.0, 0.0, 10.0 } }))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Cone::Undefined().contains(PointSet::Empty())) ;
+        EXPECT_ANY_THROW(Cone::Undefined().contains(PointSet({ { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 } }))) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Segment)
+{
+
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Cone ;
+
+    {
+
+        const Point apex = { -10.0, 0.0, 10.0 } ;
+        const Vector3d axis = Vector3d::X() ;
+        const Angle angle = Angle::Degrees(10.0) ;
+
+        const Cone cone = { apex, axis, angle } ;
+
+        EXPECT_TRUE(cone.contains(Segment { { -5.0, 0.0, 10.0 }, { +0.0, 0.0, 10.0 } } )) ;
+        EXPECT_TRUE(cone.contains(Segment { { +10.0, 0.0, 9.0 }, { +10.0, 0.0, 11.0 } } )) ;
+
+        EXPECT_FALSE(cone.contains(Segment { { +10.0, 0.0, 9.0 }, { -15.0, 0.0, 10.0 } } )) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Cone::Undefined().contains(Segment::Undefined())) ;
+        EXPECT_ANY_THROW(Cone::Undefined().contains(Segment { { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 } } )) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Ray)
+{
+
+    // TBI
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Sphere)
+{
+
+    using ostk::core::types::Real ;
+
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Sphere ;
+    using ostk::math::geom::d3::objects::Cone ;
+
+    {
+
+        const Point apex = { -10.0, 0.0, 10.0 } ;
+        const Vector3d axis = Vector3d::X() ;
+        const Angle angle = Angle::Degrees(45.0) ;
+
+        const Cone cone = { apex, axis, angle } ;
+
+        EXPECT_FALSE(cone.contains(Sphere { apex, 1.0 } )) ;
+        EXPECT_FALSE(cone.contains(Sphere { apex + Vector3d { 1.0, 0.0, 0.0 }, 1.0 } )) ;
+        EXPECT_FALSE(cone.contains(Sphere { apex + Vector3d { std::sqrt(2.0) - Real::Epsilon(), 0.0, 0.0 }, 1.0 } )) ;
+
+        EXPECT_TRUE(cone.contains(Sphere { apex + Vector3d { std::sqrt(2.0) + Real::Epsilon(), 0.0, 0.0 }, 1.0 } )) ;
+        EXPECT_TRUE(cone.contains(Sphere { apex + Vector3d { 2.0, 0.0, 0.0 }, 1.0 } )) ;
+
+        EXPECT_FALSE(cone.contains(Sphere { (apex - Vector3d { 0.5, 0.0, 0.0 }), 1.0 } )) ;
+        EXPECT_FALSE(cone.contains(Sphere { (apex - Vector3d { 1.0, 0.0, 0.0 }), 1.0 } )) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Cone::Undefined().contains(Sphere::Undefined())) ;
+        EXPECT_ANY_THROW(Cone::Undefined().contains(Sphere::Unit({ 0.0, 0.0, 0.0 }))) ;
+
+    }
+
+}
+
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Ellipsoid)
+
 TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, GetApex)
 {
 
@@ -364,6 +520,53 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, GetRaysOfLateralSur
     {
 
         EXPECT_ANY_THROW(Cone::Undefined().getRaysOfLateralSurface()) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, DistanceTo_Point)
+{
+
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::Angle ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Cone ;
+
+    {
+
+        const Point apex = { -10.0, 0.0, 10.0 } ;
+        const Vector3d axis = Vector3d::X() ;
+        const Angle angle = Angle::Degrees(45.0) ;
+
+        const Cone cone = { apex, axis, angle } ;
+
+        EXPECT_EQ(0.0, cone.distanceTo(apex)) ;
+
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +1.0, 0.0, -1.0 }), 1e-15) ; // On lateral surface
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +1.0, 0.0, +1.0 }), 1e-15) ; // On lateral surface
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +1.0, -1.0, 0.0 }), 1e-15) ; // On lateral surface
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +1.0, +1.0, 0.0 }), 1e-15) ; // On lateral surface
+
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +2.0, 0.0, -2.0 }), 1e-15) ; // On lateral surface
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +2.0, 0.0, +2.0 }), 1e-15) ; // On lateral surface
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +2.0, -2.0, 0.0 }), 1e-15) ; // On lateral surface
+        EXPECT_NEAR(0.0, cone.distanceTo(apex + Vector3d { +2.0, +2.0, 0.0 }), 1e-15) ; // On lateral surface
+
+        EXPECT_NEAR(1.0, cone.distanceTo(apex + Vector3d { -1.0, 0.0, 0.0 }), 1e-15) ;
+        EXPECT_NEAR(std::sqrt(2.0) / 2.0, cone.distanceTo(apex + Vector3d { +1.0, 0.0, 0.0 }), 1e-15) ;
+        EXPECT_NEAR(std::sqrt(2.0) / 2.0, cone.distanceTo(apex + Vector3d { 0.0, -1.0, 0.0 }), 1e-15) ;
+        EXPECT_NEAR(std::sqrt(2.0) / 2.0, cone.distanceTo(apex + Vector3d { 0.0, +1.0, 0.0 }), 1e-15) ;
+
+        EXPECT_NEAR(std::sqrt(2.0), cone.distanceTo(apex + Vector3d { -1.0, -1.0, 0.0 }), 1e-15) ;
+        EXPECT_NEAR(std::sqrt(2.0), cone.distanceTo(apex + Vector3d { -1.0, +1.0, 0.0 }), 1e-15) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Cone::Undefined().distanceTo(Point::Undefined())) ;
+        EXPECT_ANY_THROW(Cone::Undefined().distanceTo({ 0.0, 0.0, 0.0 })) ;
 
     }
 

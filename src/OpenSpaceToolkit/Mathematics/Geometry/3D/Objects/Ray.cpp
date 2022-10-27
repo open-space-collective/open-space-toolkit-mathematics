@@ -192,6 +192,35 @@ Vector3d                        Ray::getDirection                           ( ) 
 
 }
 
+Real                            Ray::distanceTo                             (   const   Point&                      aPoint                                      ) const
+{
+
+    if (!aPoint.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Ray") ;
+    }
+
+    if (aPoint == this->origin_)
+    {
+        return 0.0 ;
+    }
+
+    const Vector3d originToPoint = aPoint - this->origin_ ;
+
+    if (originToPoint.dot(this->direction_) < 0.0)
+    {
+        return originToPoint.norm() ;
+    }
+
+    return this->direction_.cross(aPoint - this->origin_).norm() ;
+
+}
+
 Intersection                    Ray::intersectionWith                       (   const   Plane&                      aPlane                                      ) const
 {
 

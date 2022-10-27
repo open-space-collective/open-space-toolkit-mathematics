@@ -144,6 +144,84 @@ class Cone : public Object
         bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid,
                                                                                 const   Size                        aDiscretizationLevel                        =   DEFAULT_DISCRETIZATION_LEVEL ) const ;
 
+        /// @brief              Check if cone contains point
+        ///
+        /// @code
+        ///                     Cone cone = ... ;
+        ///                     Point point = ... ;
+        ///                     cone.contains(point) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             True if cone contains point
+
+        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+
+        /// @brief              Check if cone contains point set
+        ///
+        /// @code
+        ///                     Cone cone = ... ;
+        ///                     PointSet pointSet = ... ;
+        ///                     cone.contains(pointSet) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             True if cone contains point set
+
+        bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
+
+        /// @brief              Check if cone contains segment
+        ///
+        /// @code
+        ///                     Cone cone = ... ;
+        ///                     Segment segment = ... ;
+        ///                     cone.contains(segment) ;
+        /// @endcode
+        ///
+        /// @param              [in] aSegment A segment
+        /// @return             True if cone contains segment
+
+        bool                    contains                                    (   const   Segment&                    aSegment                                    ) const ;
+
+        /// @brief              Check if cone contains ray
+        ///
+        /// @code
+        ///                     Cone cone = ... ;
+        ///                     Ray ray = ... ;
+        ///                     cone.contains(ray) ;
+        /// @endcode
+        ///
+        /// @param              [in] aRay A ray
+        /// @return             True if cone contains ray
+
+        bool                    contains                                    (   const   Ray&                        aRay                                        ) const ;
+
+        /// @brief              Check if cone contains sphere
+        ///
+        /// @code
+        ///                     Cone cone = ... ;
+        ///                     Sphere sphere = ... ;
+        ///                     cone.contains(sphere) ;
+        /// @endcode
+        ///
+        /// @param              [in] aSphere A sphere
+        /// @return             True if cone contains sphere
+
+        bool                    contains                                    (   const   Sphere&                     aSphere                                     ) const ;
+
+        /// @brief              Check if cone contains ellipsoid
+        ///
+        /// @code
+        ///                     Cone cone = ... ;
+        ///                     Ellipsoid ellipsoid = ... ;
+        ///                     cone.contains(ellipsoid) ;
+        /// @endcode
+        ///
+        /// @param              [in] anEllipsoid An ellipsoid
+        /// @return             True if cone contains ellipsoid
+
+        bool                    contains                                    (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
+
         /// @brief              Get cone apex
         ///
         /// @return             Cone apex
@@ -168,6 +246,13 @@ class Cone : public Object
         /// @return             Array of rays
 
         Array<Ray>              getRaysOfLateralSurface                     (   const   Size                        aRayCount                                   =   DEFAULT_RAY_COUNT ) const ;
+
+        /// @brief              Compute distance of cone to point
+        ///
+        /// @param              [in] aPoint A point
+        /// @return             Distance of cone to point
+
+        Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;
 
         /// @brief              Compute intersection of cone with sphere
         ///
