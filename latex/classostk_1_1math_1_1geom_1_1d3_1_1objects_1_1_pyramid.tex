@@ -34,6 +34,10 @@ bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a807b60d7
 \begin{DoxyCompactList}\small\item\em Check if pyramid intersects ellipsoid. \end{DoxyCompactList}\item 
 bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a7f476c37cc3f014bdc24e7fa4f2da743}{contains} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
 \begin{DoxyCompactList}\small\item\em Check if pyramid contains point. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a4eebfb0cbd8d60ffce7db9b61b550e63}{contains} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if pyramid contains point set. \end{DoxyCompactList}\item 
+bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a7c7d10a2e8fb4a1b23a3b55a5156e588}{contains} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Check if pyramid contains segment. \end{DoxyCompactList}\item 
 bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a761592bada278f4a80f910e3e234fde8}{contains} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&an\+Ellipsoid) const
 \begin{DoxyCompactList}\small\item\em Check if pyramid contains ellipsoid. \end{DoxyCompactList}\item 
 \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon}{Polygon} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_ae1f35fb024a1cd171b750170cb1df0a4}{get\+Base} () const
@@ -138,7 +142,7 @@ Implements \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_object_a676013f9555f64
 \mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a7f476c37cc3f014bdc24e7fa4f2da743}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a7f476c37cc3f014bdc24e7fa4f2da743}} 
 \index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!contains@{contains}}
 \index{contains@{contains}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
-\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
 {\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
 
 
@@ -161,10 +165,62 @@ pyramid.contains(point) ;
 \begin{DoxyReturn}{Returns}
 True if pyramid contains point 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a4eebfb0cbd8d60ffce7db9b61b550e63}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a4eebfb0cbd8d60ffce7db9b61b550e63}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!contains@{contains}}
+\index{contains@{contains}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set}{Point\+Set} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if pyramid contains point set. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a5560d123994714b36d4737b358dadcea}{Pyramid} pyramid = ... ;
+PointSet pointSet = ... ;
+pyramid.contains(pointSet) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if pyramid contains point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a7c7d10a2e8fb4a1b23a3b55a5156e588}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a7c7d10a2e8fb4a1b23a3b55a5156e588}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!contains@{contains}}
+\index{contains@{contains}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment}{Segment} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Check if pyramid contains segment. 
+
+
+\begin{DoxyCode}
+\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a5560d123994714b36d4737b358dadcea}{Pyramid} pyramid = ... ;
+Segment segment = ... ;
+pyramid.contains(segment) ;
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if pyramid contains segment 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a761592bada278f4a80f910e3e234fde8}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid_a761592bada278f4a80f910e3e234fde8}} 
 \index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}!contains@{contains}}
 \index{contains@{contains}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid}}
-\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily bool ostk\+::math\+::geom\+::d3\+::objects\+::\+Pyramid\+::contains (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
 
 

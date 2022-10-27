@@ -5,6 +5,7 @@ var classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray =
     [ "clone", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#aef341aa921aa184e1193c782e9198230", null ],
     [ "contains", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a7a8791f8658c741fd8ce967511ed2f5f", null ],
     [ "contains", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a4433e066d6de57630140527bc74442ec", null ],
+    [ "distanceTo", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a9c7b98506891aac4fa9f3d20939fcf67", null ],
     [ "getDirection", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a986aa3d13740b411f72115503b1c9a72", null ],
     [ "getOrigin", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a8c47fac4d487986b538b8168484527c2", null ],
     [ "intersectionWith", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#aa4625c2dfe200ab9df245d2a4dc92f64", null ],

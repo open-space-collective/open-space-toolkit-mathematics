@@ -44,6 +44,8 @@ bool \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a4433e066d6de
 \begin{DoxyCompactList}\small\item\em Get ray origin. \end{DoxyCompactList}\item 
 Vector3d \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a986aa3d13740b411f72115503b1c9a72}{get\+Direction} () const
 \begin{DoxyCompactList}\small\item\em Get ray direction. \end{DoxyCompactList}\item 
+Real \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a9c7b98506891aac4fa9f3d20939fcf67}{distance\+To} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Get distance to point. \end{DoxyCompactList}\item 
 \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_aa4625c2dfe200ab9df245d2a4dc92f64}{intersection\+With} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane}{Plane} \&a\+Plane) const
 \begin{DoxyCompactList}\small\item\em Compute intersection of ray with plane. \end{DoxyCompactList}\item 
 \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1_intersection}{Intersection} \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_ad51ec740a903fc78304898a08d28103b}{intersection\+With} (const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere}{Sphere} \&a\+Sphere, const bool only\+In\+Sight=\hyperlink{_sphere_8hpp_af424617f7c785f4835e2feba5a5640f2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+I\+N\+\_\+\+S\+I\+G\+HT}) const
@@ -180,6 +182,24 @@ ray.contains(pointSet) ;
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 True if ray contains point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a9c7b98506891aac4fa9f3d20939fcf67}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a9c7b98506891aac4fa9f3d20939fcf67}} 
+\index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Ray@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Ray}!distance\+To@{distance\+To}}
+\index{distance\+To@{distance\+To}!ostk\+::math\+::geom\+::d3\+::objects\+::\+Ray@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Ray}}
+\subsubsection{\texorpdfstring{distance\+To()}{distanceTo()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geom\+::d3\+::objects\+::\+Ray\+::distance\+To (\begin{DoxyParamCaption}\item[{const \hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point}{Point} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Get distance to point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance to point 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a986aa3d13740b411f72115503b1c9a72}\label{classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray_a986aa3d13740b411f72115503b1c9a72}} 
 \index{ostk\+::math\+::geom\+::d3\+::objects\+::\+Ray@{ostk\+::math\+::geom\+::d3\+::objects\+::\+Ray}!get\+Direction@{get\+Direction}}

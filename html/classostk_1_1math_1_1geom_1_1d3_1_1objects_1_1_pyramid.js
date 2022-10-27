@@ -4,6 +4,8 @@ var classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid =
     [ "applyTransformation", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#ab4f31049019c0ea4b87931adf4ba7c5d", null ],
     [ "clone", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#aefdaacc9298ef9d9a26137b2976f7dc6", null ],
     [ "contains", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#a7f476c37cc3f014bdc24e7fa4f2da743", null ],
+    [ "contains", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#a4eebfb0cbd8d60ffce7db9b61b550e63", null ],
+    [ "contains", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#a7c7d10a2e8fb4a1b23a3b55a5156e588", null ],
     [ "contains", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#a761592bada278f4a80f910e3e234fde8", null ],
     [ "getApex", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#acbc557f7d8bbfe1fc3f59fdad16684a3", null ],
     [ "getBase", "classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#ae1f35fb024a1cd171b750170cb1df0a4", null ],
