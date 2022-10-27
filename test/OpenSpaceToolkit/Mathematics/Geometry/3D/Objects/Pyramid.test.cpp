@@ -317,6 +317,72 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, Contains_Point)
 
 }
 
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, Contains_PointSet)
+{
+
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+
+    {
+
+        const Polygon base = { { { { -0.1, -0.1 }, { +0.1, -0.1 }, { +0.1, +0.1 }, { -0.1, +0.1 } } }, { 0.0, 0.0, 1.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+
+        const Pyramid pyramid = { base, apex } ;
+
+        EXPECT_TRUE(pyramid.contains(PointSet({ { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 } }))) ;
+        EXPECT_TRUE(pyramid.contains(PointSet({ { 0.0, 0.0, 1.0 }, { 0.0, 0.0, 0.0 } }))) ;
+
+        EXPECT_FALSE(pyramid.contains(PointSet({ { 0.0, 0.0, 0.0 }, { 0.0, 0.0, -1.0 } }))) ;
+        EXPECT_FALSE(pyramid.contains(PointSet({ { 0.0, 0.0, 0.0 }, { 0.0, 0.0, -2.0 } }))) ;
+        EXPECT_FALSE(pyramid.contains(PointSet({ { 0.0, 0.0, 0.0 }, { 0.0, 0.0, -3.0 } }))) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Pyramid::Undefined().contains(PointSet::Empty())) ;
+
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, Contains_Segment)
+{
+
+    using ostk::math::obj::Vector3d ;
+    using ostk::math::geom::d3::objects::Point ;
+    using ostk::math::geom::d3::objects::Segment ;
+    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::geom::d3::objects::Pyramid ;
+
+    {
+
+        const Polygon base = { { { { -0.1, -0.1 }, { +0.1, -0.1 }, { +0.1, +0.1 }, { -0.1, +0.1 } } }, { 0.0, 0.0, 1.0 }, { 1.0, 0.0, 0.0 }, { 0.0, 1.0, 0.0 } } ;
+        const Point apex = { 0.0, 0.0, 0.0 } ;
+
+        const Pyramid pyramid = { base, apex } ;
+
+        EXPECT_TRUE(pyramid.contains(Segment { { 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 } })) ;
+        EXPECT_TRUE(pyramid.contains(Segment { { 0.0, 0.0, 1.0 }, { 0.0, 0.0, 0.0 } })) ;
+
+        EXPECT_FALSE(pyramid.contains(Segment { { 0.0, 0.0, 0.0 }, { 0.0, 0.0, -1.0 } })) ;
+        EXPECT_FALSE(pyramid.contains(Segment { { 0.0, 0.0, 0.0 }, { 0.0, 0.0, -2.0 } })) ;
+        EXPECT_FALSE(pyramid.contains(Segment { { 0.0, 0.0, 0.0 }, { 0.0, 0.0, -3.0 } })) ;
+
+    }
+
+    {
+
+        EXPECT_ANY_THROW(Pyramid::Undefined().contains(Segment::Undefined())) ;
+
+    }
+
+}
+
 TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, GetBase)
 {
 

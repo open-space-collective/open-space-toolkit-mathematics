@@ -195,6 +195,31 @@ bool                            Pyramid::contains                           (   
 
 }
 
+bool                            Pyramid::contains                           (   const   PointSet&                   aPointSet                                   ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Pyramid") ;
+    }
+
+    return std::all_of
+    (
+        std::begin(aPointSet),
+        std::end(aPointSet),
+        [this] (const Point& aPoint) -> bool
+        {
+            return this->contains(aPoint) ;
+        }
+    ) ;
+
+}
+
+bool                            Pyramid::contains                           (   const   Segment&                    aSegment                                    ) const
+{
+    return this->contains(aSegment.getFirstPoint()) && this->contains(aSegment.getSecondPoint()) ;
+}
+
 bool                            Pyramid::contains                           (   const   Ellipsoid&                  anEllipsoid                                 ) const
 {
 

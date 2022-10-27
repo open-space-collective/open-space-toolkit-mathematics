@@ -23,6 +23,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
     using ostk::math::geom::d3::Object ;
     using ostk::math::geom::d3::objects::Point ;
     using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::objects::Segment ;
     using ostk::math::geom::d3::objects::Line ;
     using ostk::math::geom::d3::objects::Ray ;
     using ostk::math::geom::d3::objects::Segment ;
@@ -47,6 +48,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("is_defined", &Pyramid::isDefined)
         .def("intersects", overload_cast<const Ellipsoid&, const Size>(&Pyramid::intersects, const_), arg("ellipsoid"), arg("discretization_level") = DEFAULT_DISCRETIZATION_LEVEL)
         .def("contains", overload_cast<const Point&>(&Pyramid::contains, const_), arg("point"))
+        .def("contains", overload_cast<const PointSet&>(&Pyramid::contains, const_), arg("point_set"))
+        .def("contains", overload_cast<const Segment&>(&Pyramid::contains, const_), arg("segment"))
         .def("contains", overload_cast<const Ellipsoid&>(&Pyramid::contains, const_), arg("ellipsoid"))
 
         .def("get_base", &Pyramid::getBase)

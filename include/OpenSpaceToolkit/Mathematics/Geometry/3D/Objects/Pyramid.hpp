@@ -156,6 +156,32 @@ class Pyramid : public Object
 
         bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
 
+        /// @brief              Check if pyramid contains point set
+        ///
+        /// @code
+        ///                     Pyramid pyramid = ... ;
+        ///                     PointSet pointSet = ... ;
+        ///                     pyramid.contains(pointSet) ;
+        /// @endcode
+        ///
+        /// @param              [in] aPointSet A point set
+        /// @return             True if pyramid contains point set
+
+        bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
+
+        /// @brief              Check if pyramid contains segment
+        ///
+        /// @code
+        ///                     Pyramid pyramid = ... ;
+        ///                     Segment segment = ... ;
+        ///                     pyramid.contains(segment) ;
+        /// @endcode
+        ///
+        /// @param              [in] aSegment A segment
+        /// @return             True if pyramid contains segment
+
+        bool                    contains                                    (   const   Segment&                    aSegment                                    ) const ;
+
         /// @brief              Check if pyramid contains ellipsoid
         ///
         /// @code
