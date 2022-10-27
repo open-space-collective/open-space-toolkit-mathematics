@@ -675,6 +675,69 @@ bool                            Object::contains                            (   
             return objectPtr->contains(*otherObjectPtr) ;
         }
 
+        // PointSet
+
+        if (const PointSet* otherObjectPtr = dynamic_cast<const PointSet*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+        // Segment
+
+        if (const Segment* otherObjectPtr = dynamic_cast<const Segment*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+        // Ellipsoid
+
+        if (const Ellipsoid* otherObjectPtr = dynamic_cast<const Ellipsoid*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+    }
+
+    // Cone
+
+    if (const Cone* objectPtr = dynamic_cast<const Cone*>(this))
+    {
+
+        // Point
+
+        if (const Point* otherObjectPtr = dynamic_cast<const Point*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+        // PointSet
+
+        if (const PointSet* otherObjectPtr = dynamic_cast<const PointSet*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+        // Segment
+
+        if (const Segment* otherObjectPtr = dynamic_cast<const Segment*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+        // Ray
+
+        if (const Ray* otherObjectPtr = dynamic_cast<const Ray*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
+        // Sphere
+
+        if (const Sphere* otherObjectPtr = dynamic_cast<const Sphere*>(&anObject))
+        {
+            return objectPtr->contains(*otherObjectPtr) ;
+        }
+
         // Ellipsoid
 
         if (const Ellipsoid* otherObjectPtr = dynamic_cast<const Ellipsoid*>(&anObject))

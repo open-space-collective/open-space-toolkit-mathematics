@@ -132,6 +132,96 @@ bool                            Cone::intersects                            (   
 
 }
 
+bool                            Cone::contains                              (   const   Point&                      aPoint                                      ) const
+{
+
+    if (!aPoint.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Cone") ;
+    }
+
+    if (aPoint == this->apex_)
+    {
+        return true ;
+    }
+
+    const Vector3d apexToPoint = aPoint - this->apex_ ;
+
+    if (apexToPoint.dot(this->axis_) < 0.0)
+    {
+        return false ;
+    }
+
+    return Angle::Between(apexToPoint, this->axis_).inDegrees(0.0, 360.0) <= this->angle_.inDegrees(0.0, 360.0) ;
+
+}
+
+bool                            Cone::contains                              (   const   PointSet&                   aPointSet                                   ) const
+{
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Cone") ;
+    }
+
+    return std::all_of
+    (
+        std::begin(aPointSet),
+        std::end(aPointSet),
+        [this] (const Point& aPoint) -> bool
+        {
+            return this->contains(aPoint) ;
+        }
+    ) ;
+
+}
+
+bool                            Cone::contains                              (   const   Segment&                    aSegment                                    ) const
+{
+    return this->contains(aSegment.getFirstPoint()) && this->contains(aSegment.getSecondPoint()) ;
+}
+
+bool                            Cone::contains                              (   const   Sphere&                     aSphere                                     ) const
+{
+
+    if (!aSphere.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Sphere") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Cone") ;
+    }
+
+    return this->contains(aSphere.getCenter()) && (this->distanceTo(aSphere.getCenter()) <= aSphere.getRadius()) ;
+
+}
+
+bool                            Cone::contains                              (   const   Ellipsoid&                  anEllipsoid                                 ) const
+{
+
+    if (!anEllipsoid.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Ellipsoid") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Cone") ;
+    }
+
+    throw ostk::core::error::runtime::ToBeImplemented("Cone::contains(const Ellipsoid&)") ;
+
+    return false ; // TBI
+
+}
+
 Point                           Cone::getApex                               ( ) const
 {
 
@@ -202,6 +292,36 @@ Array<Ray>                      Cone::getRaysOfLateralSurface               (   
     }
 
     return rays ;
+
+}
+
+Real                            Cone::distanceTo                            (   const   Point&                      aPoint                                      ) const
+{
+
+    if (!aPoint.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Point") ;
+    }
+
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Cone") ;
+    }
+
+    if (aPoint == this->apex_)
+    {
+        return 0.0 ;
+    }
+
+    const Vector3d apexToPoint = aPoint - this->apex_ ;
+
+    if (apexToPoint.dot(this->axis_) < 0.0)
+    {
+        return apexToPoint.norm() ;
+    }
+
+    // TBM: This is GitHub Copilot generated: not tested and likely wrong?
+    return apexToPoint.norm() * std::sin(Angle::Between(apexToPoint, this->axis_).inRadians()) ;
 
 }
 
