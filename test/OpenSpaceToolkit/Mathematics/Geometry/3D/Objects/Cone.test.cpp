@@ -355,6 +355,8 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Ray)
 TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Sphere)
 {
 
+    using ostk::core::types::Real ;
+
     using ostk::math::obj::Vector3d ;
     using ostk::math::geom::Angle ;
     using ostk::math::geom::d3::objects::Point ;
@@ -365,16 +367,19 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Sphere)
 
         const Point apex = { -10.0, 0.0, 10.0 } ;
         const Vector3d axis = Vector3d::X() ;
-        const Angle angle = Angle::Degrees(10.0) ;
+        const Angle angle = Angle::Degrees(45.0) ;
 
         const Cone cone = { apex, axis, angle } ;
 
-        EXPECT_TRUE(cone.contains(Sphere { { 0.0, 0.0, 10.0 }, 1.0 } )) ;
-
-        EXPECT_FALSE(cone.contains(Sphere { { 0.0, 0.0, 10.0 }, 10.0 } )) ;
-
         EXPECT_FALSE(cone.contains(Sphere { apex, 1.0 } )) ;
+        EXPECT_FALSE(cone.contains(Sphere { apex + Vector3d { 1.0, 0.0, 0.0 }, 1.0 } )) ;
+        EXPECT_FALSE(cone.contains(Sphere { apex + Vector3d { std::sqrt(2.0) - Real::Epsilon(), 0.0, 0.0 }, 1.0 } )) ;
+
+        EXPECT_TRUE(cone.contains(Sphere { apex + Vector3d { std::sqrt(2.0) + Real::Epsilon(), 0.0, 0.0 }, 1.0 } )) ;
+        EXPECT_TRUE(cone.contains(Sphere { apex + Vector3d { 2.0, 0.0, 0.0 }, 1.0 } )) ;
+
         EXPECT_FALSE(cone.contains(Sphere { (apex - Vector3d { 0.5, 0.0, 0.0 }), 1.0 } )) ;
+        EXPECT_FALSE(cone.contains(Sphere { (apex - Vector3d { 1.0, 0.0, 0.0 }), 1.0 } )) ;
 
     }
 

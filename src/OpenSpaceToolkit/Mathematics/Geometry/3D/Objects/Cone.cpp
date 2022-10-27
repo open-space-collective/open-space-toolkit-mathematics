@@ -221,7 +221,7 @@ bool                            Cone::contains                              (   
         throw ostk::core::error::runtime::Undefined("Cone") ;
     }
 
-    return this->contains(aSphere.getCenter()) && (this->distanceTo(aSphere.getCenter()) <= aSphere.getRadius()) ;
+    return this->contains(aSphere.getCenter()) && (this->distanceTo(aSphere.getCenter()) >= aSphere.getRadius()) ;
 
 }
 
