@@ -166,6 +166,7 @@ The library exhibits the following structure:
 ├── Curve Fitting
 │   ├── Interpolation
 │   │   ├── Linear
+│   │   ├── Barycentric Rational
 │   │   ├── Cubic Spline
 │   │   └── Lagrange
 │   └── Smoothing
