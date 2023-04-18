@@ -73,6 +73,7 @@ TEST (OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, Evaluate)
 
     using ostk::core::types::Real ;
     using ostk::core::types::Size ;
+    using ostk::core::types::String ;
     using ostk::core::ctnr::Array ;
     using ostk::core::ctnr::Table ;
     using ostk::core::fs::Path ;
@@ -87,20 +88,19 @@ TEST (OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, Evaluate)
     const int testRowIncrement = 20 ;
 
     VectorXd referenceX(referenceData.getRowCount()) ;
-    MatrixXd referenceY(referenceData.getRowCount(), referenceData.getColumnCount()) ;
+    MatrixXd referenceY(referenceData.getRowCount(), 6) ;
 
-    int i = 0 ;
-    for (const auto& referenceRow : referenceData)
+    for (Size i = 0 ; i < referenceData.getRowCount() ; ++i)
     {
 
-        referenceX(i) = Real::Integer(i) ;
+        const auto& referenceRow = referenceData[i] ;
 
-        for (Size j = 0 ; j < referenceData.getColumnCount() ; ++j)
+        referenceX(i) = referenceRow[0].accessReal() ;
+
+        for (Size j = 0 ; j < 6 ; ++j)
         {
-            referenceY(i, j) = referenceRow[j].accessReal() ;
+            referenceY(i, j) = referenceRow[j + 1].accessReal() ;
         }
-
-        ++i ;
 
     }
 
@@ -111,12 +111,16 @@ TEST (OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, Evaluate)
 
         const Size testRowCount = referenceX.size() - testRowIncrement ;
 
-        for (Size j = 0 ; j < referenceData.getColumnCount() ; ++j)
+        for (Size j = 0 ; j < 6 ; ++j)
         {
+
             CubicSpline spline = CubicSpline(testX, testY.col(j)) ;
+
             VectorXd yEstimated = spline.evaluate(referenceX.head(testRowCount)) ;
-            VectorXd residuals = (yEstimated - referenceY.col(j).head(testRowCount)).array().abs() ;
-            EXPECT_TRUE(residuals.unaryExpr([](double x) { return x < 1e-2 ; }).all()) ;
+            VectorXd yTruth = referenceY.col(j).head(testRowCount) ;
+
+            EXPECT_TRUE(yEstimated.isApprox(yTruth, 1e-2)) << String::Format("Residual: {}", (yEstimated - yTruth).array().abs().maxCoeff()) ;
+
         }
 
     }

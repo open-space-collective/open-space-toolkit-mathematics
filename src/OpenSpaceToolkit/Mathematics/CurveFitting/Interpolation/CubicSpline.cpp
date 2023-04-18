@@ -6,7 +6,7 @@
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+#include <iostream>
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/CubicSpline.hpp>
 
@@ -38,6 +38,13 @@ namespace interp
     }
 
     const double h = x(1) - x(0) ;
+
+    const VectorXd diff = x.segment(1, x.size() - 1) - x.segment(0, x.size() - 1) ;
+
+    if (!((diff.array() - h) < 1e-6).all())
+    {
+        throw ostk::core::error::runtime::Wrong("x must be uniformly spaced") ;
+    }
 
     interpolator_ = boost::math::interpolators::cardinal_cubic_b_spline<double>(y.begin(), y.end(), x(0), h) ;
 
