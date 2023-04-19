@@ -30,7 +30,7 @@ namespace interp
 
     if (x.size() != y.size())
     {
-        throw ostk::core::error::runtime::Wrong("xVector.size()", "y.size()") ;
+        throw ostk::core::error::runtime::Wrong("Vector size", y.size()) ;
     }
 
 }
@@ -47,7 +47,7 @@ VectorXd                        BarycentricRational::evaluate                (  
 
     for (int i = 0; i < xInput.size(); ++i)
     {
-        yOutput(i) = evaluate(xInput(i)) ;
+        yOutput(i) = interpolator_(xInput(i)) ;
     }
 
     return yOutput ;

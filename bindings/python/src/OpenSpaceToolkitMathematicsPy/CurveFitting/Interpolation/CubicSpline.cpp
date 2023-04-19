@@ -25,7 +25,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_CurveFitting_Inter
     class_<CubicSpline>(aModule, "CubicSpline")
 
         .def(init<const VectorXd&, const VectorXd&>(), arg("x"), arg("y"))
-        .def(init<const VectorXd&, const Real&, const Real&>(), arg("y"), arg("x0"), arg("h"))
+        .def(init<const VectorXd&, const Real&, const Real&>(), arg("y"), arg("x_0"), arg("h"))
 
         .def("evaluate", overload_cast<const VectorXd&>(&CubicSpline::evaluate, const_), arg("x"))
         .def("evaluate", overload_cast<const double&>(&CubicSpline::evaluate, const_), arg("x"))

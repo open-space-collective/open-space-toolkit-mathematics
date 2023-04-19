@@ -18,10 +18,10 @@ from ostk.mathematics.curve_fitting.interpolation import CubicSpline
 
 class TestCubicSpline:
     def test_default_constructor(self):
-        CubicSpline([0.0, 1.0, 2.0, 4.0, 5.0, 6.0], [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
+        CubicSpline(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0], y = [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
 
     def test_default_constructor_2(self):
-        CubicSpline([0.0, 3.0, 6.0, 9.0, 17.0, 5.0], 0.0, 1.0)
+        CubicSpline(y = [0.0, 3.0, 6.0, 9.0, 17.0, 5.0], x_0 = 0.0, h = 1.0)
 
     def test_evaluate(self):
         y: list[float] = [

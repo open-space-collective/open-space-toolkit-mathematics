@@ -25,20 +25,10 @@ TEST (OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational, Constructor
     using ostk::math::curvefitting::interp::BarycentricRational ;
 
     VectorXd x(6) ;
-    x(0) = 0.0 ;
-    x(1) = 1.0 ;
-    x(2) = 2.0 ;
-    x(3) = 3.0 ;
-    x(4) = 4.0 ;
-    x(5) = 5.0 ;
+    x << 0.0, 1.0, 2.0, 3.0, 4.0, 5.0 ;
 
     VectorXd y(6) ;
-    y(0) = 0.0 ;
-    y(1) = 3.0 ;
-    y(2) = 5.0 ;
-    y(3) = 6.0 ;
-    y(4) = 9.0 ;
-    y(5) = 15.0 ;
+    y << 0.0, 3.0, 5.0, 6.0, 9.0, 15.0 ;
 
     {
         EXPECT_NO_THROW(BarycentricRational(x, y)) ;

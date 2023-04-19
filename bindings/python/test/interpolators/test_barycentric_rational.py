@@ -14,11 +14,11 @@ from ostk.mathematics.curve_fitting.interpolation import BarycentricRational
 class TestBarycentricRational:
 
     def test_default_constructor (self):
-        BarycentricRational([0.0, 1.0, 2.0, 4.0, 5.0, 6.0], [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
+        BarycentricRational(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0], y = [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
 
     def test_evaluate (self):
 
-        spline = BarycentricRational([0.0, 1.0, 2.0, 4.0, 5.0, 6.0], [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
+        spline = BarycentricRational(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0], y = [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
 
         assert spline.evaluate(0.0) == 0.0
         assert spline.evaluate(1.0) == 3.0
@@ -27,7 +27,6 @@ class TestBarycentricRational:
         assert spline.evaluate(5.0) == 17.0
         assert spline.evaluate(6.0) == 5.0
 
-        assert (spline.evaluate([0.0, 1.0, 2.0, 4.0, 5.0, 6.0]) == [0.0, 3.0, 6.0, 9.0, 17.0, 5.0]).all()
-
+        assert (spline.evaluate(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0]) == [0.0, 3.0, 6.0, 9.0, 17.0, 5.0]).all()
 
 ################################################################################################################################################################

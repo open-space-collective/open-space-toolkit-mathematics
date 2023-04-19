@@ -76,7 +76,7 @@ VectorXd                        CubicSpline::evaluate                       (   
 
     for (int i = 0; i < xInput.size(); ++i)
     {
-        yOutput(i) = evaluate(xInput(i)) ;
+        yOutput(i) = interpolator_(xInput(i)) ;
     }
 
     return yOutput ;

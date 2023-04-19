@@ -40,7 +40,8 @@ using boost::math::interpolators::barycentric_rational ;
 
 /// @brief                      BarycentricRational
 ///
-///                             Barycentric rational interpolation is a high-accuracy interpolation method for non-uniformly spaced samples. It requires 𝑶(N) time for construction, and 𝑶(N) time for each evaluation.
+///                             Barycentric rational interpolation is a high-accuracy interpolation method for non-uniformly spaced samples.
+///                             It requires 𝑶(N) time for construction, and 𝑶(N) time for each evaluation.
 ///
 /// @ref                        https://www.boost.org/doc/libs/1_81_0/libs/math/doc/html/math_toolkit/barycentric.html
 
