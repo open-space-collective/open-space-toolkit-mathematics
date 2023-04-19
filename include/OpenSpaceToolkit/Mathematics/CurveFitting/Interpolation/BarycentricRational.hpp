@@ -62,8 +62,8 @@ class BarycentricRational
         /// @warning            The x values must be sorted in ascending order
         /// @warning            The x values must be equally spaced
 
-                                BarycentricRational                                 (   const   VectorXd&                   x,
-                                                                                        const   VectorXd&                   y                                           ) ;
+                                BarycentricRational                         (   const   VectorXd&                   anXVector,
+                                                                                const   VectorXd&                   aYVector                                    ) ;
 
         /// @brief              Clone barycentric rational
         ///
@@ -80,7 +80,7 @@ class BarycentricRational
         /// @param              [in] xInput A vector of x values
         /// @return             Vector of y values
 
-        VectorXd                evaluate                                    (   const   VectorXd&                   xInput                                      ) const ;
+        VectorXd                evaluate                                    (   const   VectorXd&                   aQueryVector                                ) const ;
     
         /// @brief              Evaluate the spline
         ///
@@ -91,7 +91,7 @@ class BarycentricRational
         /// @param              [in] xInput An x value
         /// @return             Vector of y values
 
-        double                  evaluate                                    (   const   double&                     xInput                                      ) const ;
+        double                  evaluate                                    (   const   double&                     aQueryValue                                 ) const ;
 
     private:
 

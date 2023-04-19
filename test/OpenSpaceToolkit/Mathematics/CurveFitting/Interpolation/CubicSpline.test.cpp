@@ -119,7 +119,7 @@ TEST (OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, Evaluate)
             VectorXd yEstimated = spline.evaluate(referenceX.head(testRowCount)) ;
             VectorXd yTruth = referenceY.col(j).head(testRowCount) ;
 
-            EXPECT_TRUE(yEstimated.isApprox(yTruth, 1e-2)) << String::Format("Residual: {}", (yEstimated - yTruth).array().abs().maxCoeff()) ;
+            EXPECT_TRUE(yEstimated.isApprox(yTruth, 5e-3)) << String::Format("Residual: {}", (yEstimated - yTruth).array().abs().maxCoeff()) ;
 
         }
 

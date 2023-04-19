@@ -23,14 +23,14 @@ namespace interp
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                BarycentricRational::BarycentricRational    (   const   VectorXd&                   x,
-                                                                                const   VectorXd&                   y                                           )
-                                :   interpolator_(x.begin(), x.end(), y.begin())
+                                BarycentricRational::BarycentricRational    (   const   VectorXd&                   anXVector,
+                                                                                const   VectorXd&                   aYVector                                    )
+                                :   interpolator_(anXVector.begin(), anXVector.end(), aYVector.begin())
 {
 
-    if (x.size() != y.size())
+    if (anXVector.size() != aYVector.size())
     {
-        throw ostk::core::error::runtime::Wrong("Vector size", y.size()) ;
+        throw ostk::core::error::runtime::Wrong("Vector size", aYVector.size()) ;
     }
 
 }
@@ -40,24 +40,24 @@ BarycentricRational*            BarycentricRational::clone                  ( ) 
     return new BarycentricRational(*this) ;
 }
 
-VectorXd                        BarycentricRational::evaluate                (   const   VectorXd&                   xInput                                     ) const
+VectorXd                        BarycentricRational::evaluate               (   const   VectorXd&                   aQueryVector                                ) const
 {
 
-    VectorXd yOutput(xInput.size()) ;
+    VectorXd yOutput(aQueryVector.size()) ;
 
-    for (int i = 0; i < xInput.size(); ++i)
+    for (int i = 0; i < aQueryVector.size(); ++i)
     {
-        yOutput(i) = interpolator_(xInput(i)) ;
+        yOutput(i) = interpolator_(aQueryVector(i)) ;
     }
 
     return yOutput ;
 
 }
 
-double                          BarycentricRational::evaluate                (   const   double&                     xInput                                     ) const
+double                          BarycentricRational::evaluate               (   const   double&                     aQueryValue                                 ) const
 {
 
-    return interpolator_(xInput) ;
+    return interpolator_(aQueryValue) ;
 
 }
     
