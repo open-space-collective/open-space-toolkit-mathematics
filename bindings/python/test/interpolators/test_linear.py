@@ -14,6 +14,7 @@ from ostk.mathematics.curve_fitting.interpolation import LinearInterpolator
 class TestLinearInterpolator:
 
     def test_default_constructor (self):
+
         LinearInterpolator(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0], y = [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
 
     def test_evaluate (self):
