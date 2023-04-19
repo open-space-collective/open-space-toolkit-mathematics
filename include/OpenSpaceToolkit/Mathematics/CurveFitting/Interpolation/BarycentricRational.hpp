@@ -56,8 +56,8 @@ class BarycentricRational
         ///                     BarycentricRational barycentricRational(x, y) ;
         /// @endcode
         ///
-        /// @param              [in] x A vector of x values
-        /// @param              [in] y A vector of y values
+        /// @param              [in] anXVector A vector of x values
+        /// @param              [in] aYVector A vector of y values
         ///
         /// @warning            The x values must be sorted in ascending order
         /// @warning            The x values must be equally spaced
@@ -77,7 +77,7 @@ class BarycentricRational
         ///                     VectorXd values = barycentricRational.evaluate({1.0, 5.0, 6.0}) ;
         /// @endcode
         ///
-        /// @param              [in] xInput A vector of x values
+        /// @param              [in] aQueryVector A vector of x values
         /// @return             Vector of y values
 
         VectorXd                evaluate                                    (   const   VectorXd&                   aQueryVector                                ) const ;
@@ -88,7 +88,7 @@ class BarycentricRational
         ///                     double values = barycentricRational.evaluate(5.0) ;
         /// @endcode
         ///
-        /// @param              [in] xInput An x value
+        /// @param              [in] aQueryValue An x value
         /// @return             Vector of y values
 
         double                  evaluate                                    (   const   double&                     aQueryValue                                 ) const ;

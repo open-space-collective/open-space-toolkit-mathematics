@@ -56,8 +56,8 @@ class CubicSpline
         ///                     CubicSpline cubicSpline(x, y) ;
         /// @endcode
         ///
-        /// @param              [in] x A vector of x values
-        /// @param              [in] y A vector of y values
+        /// @param              [in] anXVector A vector of x values
+        /// @param              [in] aYVector A vector of y values
         ///
         /// @warning            The x values must be sorted in ascending order
         /// @warning            The x values must be equally spaced
@@ -71,7 +71,7 @@ class CubicSpline
         ///                     CubicSpline cubicSpline(y, x0, h) ;
         /// @endcode
         ///
-        /// @param              [in] y A vector of y values
+        /// @param              [in] aYVector A vector of y values
         /// @param              [in] x0 The first x value
         /// @param              [in] h The spacing between x values
         ///
@@ -82,9 +82,9 @@ class CubicSpline
                                                                                 const   Real&                       x0,
                                                                                 const   Real&                       h                                           ) ;
 
-        /// @brief              Clone barycentric rational
+        /// @brief              Clone cubic spline 
         ///
-        /// @return             Pointer to cloned barycentric rational
+        /// @return             Pointer to cloned cubic spline
 
         CubicSpline*    clone                                               ( ) const ;
 
@@ -94,7 +94,7 @@ class CubicSpline
         ///                     VectorXd values = cubicSpline.evaluate({1.0, 5.0, 6.0}) ;
         /// @endcode
         ///
-        /// @param              [in] xInput A vector of x values
+        /// @param              [in] aQueryVector A vector of x values
         /// @return             Vector of y values
 
         VectorXd                evaluate                                    (   const   VectorXd&                   aQueryVector                                ) const ;
@@ -105,10 +105,10 @@ class CubicSpline
         ///                     double values = cubicSpline.evaluate(5.0) ;
         /// @endcode
         ///
-        /// @param              [in] xInput An x value
+        /// @param              [in] aQueryValue An x value
         /// @return             Vector of y values
 
-        double                  evaluate                                    (   const   double&                     aQueryValye                                 ) const ;
+        double                  evaluate                                    (   const   double&                     aQueryValue                                 ) const ;
 
     private:
 
