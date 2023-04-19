@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Interpolation/BarycentricRational.test.cpp
+/// @file           OpenSpaceToolkit/Mathematics/Interpolation/LinearInterpolator.test.cpp
 /// @author         Vishwa Shah <vishwa@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -10,7 +10,7 @@
 #include <OpenSpaceToolkit/Core/Containers/Array.hpp>
 #include <OpenSpaceToolkit/Core/Containers/Table.hpp>
 
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/BarycentricRational.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/Linear.hpp>
 
 #include <Global.test.hpp>
 
@@ -26,11 +26,11 @@ using ostk::core::fs::File ;
 
 using ostk::math::obj::VectorXd ;
 using ostk::math::obj::MatrixXd ;
-using ostk::math::curvefitting::interp::BarycentricRational ;
+using ostk::math::curvefitting::interp::LinearInterpolator ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Interpolator_LinearInterpolator, Constructor)
 {
 
     VectorXd x(6) ;
@@ -40,12 +40,12 @@ TEST (OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational, Constructor
     y << 0.0, 3.0, 5.0, 6.0, 9.0, 15.0 ;
 
     {
-        EXPECT_NO_THROW(BarycentricRational(x, y)) ;
+        EXPECT_NO_THROW(LinearInterpolator(x, y)) ;
     }
 
 }
 
-TEST (OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational, Evaluate)
+TEST (OpenSpaceToolkit_Mathematics_Interpolator_LinearInterpolator, Evaluate)
 {
 
     const Table referenceData = Table::Load(File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/propagated_states.csv")), Table::Format::CSV, true) ;
@@ -79,14 +79,14 @@ TEST (OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational, Evaluate)
         for (Size j = 0 ; j < 6 ; ++j)
         {
 
-            BarycentricRational spline = BarycentricRational(testX, testY.col(j)) ;
+            LinearInterpolator interpolator = LinearInterpolator(testX, testY.col(j)) ;
 
-            VectorXd yEstimated = spline.evaluate(referenceX.head(testRowCount)) ;
+            VectorXd yEstimated = interpolator.evaluate(referenceX.head(testRowCount)) ;
             VectorXd yTruth = referenceY.col(j).head(testRowCount) ;
 
             VectorXd residuals = (yEstimated - yTruth).array().abs() ;
 
-            EXPECT_TRUE((residuals.array() < 5e-2).all()) << String::Format("Residual: {}", residuals.maxCoeff()) ;
+            EXPECT_TRUE((residuals.array() < 420.0).all()) << String::Format("Residual: {}", residuals.maxCoeff()) ;
 
         }
 

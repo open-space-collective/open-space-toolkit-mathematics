@@ -9,6 +9,7 @@
 
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolation/BarycentricRational.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolation/CubicSpline.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolation/Linear.cpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -24,6 +25,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_CurveFitting_Inter
     // Add objects to python "interpolation" submodules
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolation_BarycentricRational(interpolation) ;
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolation_CubicSpline(interpolation) ;
+    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolation_Linear(interpolation) ;
 
 }
 

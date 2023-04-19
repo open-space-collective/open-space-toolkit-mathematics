@@ -16,29 +16,28 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+using ostk::core::types::Real ;
+using ostk::core::types::Size ;
+using ostk::core::types::String ;
+using ostk::core::ctnr::Array ;
+using ostk::core::ctnr::Table ;
+using ostk::core::fs::Path ;
+using ostk::core::fs::File ;
+
+using ostk::math::obj::VectorXd ;
+using ostk::math::obj::MatrixXd ;
+using ostk::math::curvefitting::interp::CubicSpline ;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 TEST (OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, Constructor)
 {
 
-    using ostk::core::types::Real ;
-
-    using ostk::math::obj::VectorXd ;
-    using ostk::math::curvefitting::interp::CubicSpline ;
-
     VectorXd x(6) ;
-    x(0) = 0.0 ;
-    x(1) = 1.0 ;
-    x(2) = 2.0 ;
-    x(3) = 3.0 ;
-    x(4) = 4.0 ;
-    x(5) = 5.0 ;
+    x << 0.0, 1.0, 2.0, 3.0, 4.0, 5.0 ;
 
     VectorXd y(6) ;
-    y(0) = 0.0 ;
-    y(1) = 3.0 ;
-    y(2) = 5.0 ;
-    y(3) = 6.0 ;
-    y(4) = 9.0 ;
-    y(5) = 15.0 ;
+    y << 0.0, 3.0, 5.0, 6.0, 9.0, 15.0 ;
 
     {
         EXPECT_NO_THROW(CubicSpline(x, y)) ;
@@ -49,18 +48,8 @@ TEST (OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, Constructor)
 TEST (OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, SecondConstructor)
 {
 
-    using ostk::core::types::Real ;
-
-    using ostk::math::obj::VectorXd ;
-    using ostk::math::curvefitting::interp::CubicSpline ;
-
     VectorXd y(6) ;
-    y(0) = 0.0 ;
-    y(1) = 3.0 ;
-    y(2) = 5.0 ;
-    y(3) = 6.0 ;
-    y(4) = 9.0 ;
-    y(5) = 15.0 ;
+    y << 0.0, 3.0, 5.0, 6.0, 9.0, 15.0 ;
 
     {
         EXPECT_NO_THROW(CubicSpline(y, 1.0, 1.0)) ;
@@ -70,18 +59,6 @@ TEST (OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, SecondConstructor)
 
 TEST (OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, Evaluate)
 {
-
-    using ostk::core::types::Real ;
-    using ostk::core::types::Size ;
-    using ostk::core::types::String ;
-    using ostk::core::ctnr::Array ;
-    using ostk::core::ctnr::Table ;
-    using ostk::core::fs::Path ;
-    using ostk::core::fs::File ;
-
-    using ostk::math::obj::VectorXd ;
-    using ostk::math::obj::MatrixXd ;
-    using ostk::math::curvefitting::interp::CubicSpline ;
 
     const Table referenceData = Table::Load(File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/propagated_states.csv")), Table::Format::CSV, true) ;
 
@@ -119,7 +96,9 @@ TEST (OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, Evaluate)
             VectorXd yEstimated = spline.evaluate(referenceX.head(testRowCount)) ;
             VectorXd yTruth = referenceY.col(j).head(testRowCount) ;
 
-            EXPECT_TRUE(yEstimated.isApprox(yTruth, 5e-3)) << String::Format("Residual: {}", (yEstimated - yTruth).array().abs().maxCoeff()) ;
+            VectorXd residuals = (yEstimated - yTruth).array().abs() ;
+
+            EXPECT_TRUE((residuals.array() < 5e-3).all()) << String::Format("Residual: {}", residuals.maxCoeff()) ;
 
         }
 

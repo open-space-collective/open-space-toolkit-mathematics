@@ -10,9 +10,10 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational__
 #define __OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational__
 
-#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
-
 #include <OpenSpaceToolkit/Core/Types/Real.hpp>
+
+#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
 
 #include <boost/math/interpolators/barycentric_rational.hpp>
 
@@ -33,6 +34,7 @@ using ostk::core::types::Real ;
 using ostk::core::types::Size ;
 
 using ostk::math::obj::VectorXd ;
+using ostk::math::curvefitting::interp::Interpolator ;
 
 using boost::math::interpolators::barycentric_rational ;
 
@@ -45,7 +47,7 @@ using boost::math::interpolators::barycentric_rational ;
 ///
 /// @ref                        https://www.boost.org/doc/libs/1_81_0/libs/math/doc/html/math_toolkit/barycentric.html
 
-class BarycentricRational
+class BarycentricRational: public Interpolator
 {
 
     public:
