@@ -55,7 +55,7 @@ RUN git clone --branch ${GEOMETRIC_TOOLS_ENGINE_VERSION} --depth 1 https://githu
 
 ## Open Space Toolkit ▸ Core
 
-ARG OSTK_CORE_VERSION="0.4.7"
+ARG OSTK_CORE_VERSION="0.5.0"
 
 RUN mkdir -p /tmp/open-space-toolkit-core \
  && cd /tmp/open-space-toolkit-core \
