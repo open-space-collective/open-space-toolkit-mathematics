@@ -40,10 +40,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "2_d_2_intersection_8cpp.html",
-"classostk_1_1math_1_1geom_1_1d2_1_1_object.html#aa76f9e30caebf4005bafbdff447f66cfaec0fc0100c4fc1ce4eea230c3dc10360",
-"classostk_1_1math_1_1geom_1_1d3_1_1_intersection.html#acd2ff7b56469e39e4aefe2681e58cfb7",
-"classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_point_set.html#aa87eb9a571cb8b420e8c404005a2b723",
-"functions_f.html"
+"classostk_1_1math_1_1geom_1_1d2_1_1_intersection.html#a6a5cd04fff08e2bd74d99a29544b7fe2",
+"classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#ad0ba7ee144638335e4f02da0de38beab",
+"classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane.html#a9db422bcf962c77b11c1d93325aebfd9",
+"classostk_1_1math_1_1obj_1_1_interval_base.html#a0dd9bd29a9bfefa26de9b88ac81de92aab5e08f9173f660e791d3ba99ff8281d7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,9 +1,11 @@
 var searchData=
 [
+  ['curvefitting',['curvefitting',['../namespaceostk_1_1math_1_1curvefitting.html',1,'ostk::math']]],
   ['d2',['d2',['../namespaceostk_1_1math_1_1geom_1_1d2.html',1,'ostk::math::geom']]],
   ['d3',['d3',['../namespaceostk_1_1math_1_1geom_1_1d3.html',1,'ostk::math::geom']]],
   ['geom',['geom',['../namespaceostk_1_1math_1_1geom.html',1,'ostk::math']]],
   ['open_20space_20toolkit_20▸_20mathematics',['Open Space Toolkit ▸ Mathematics',['../index.html',1,'']]],
+  ['interp',['interp',['../namespaceostk_1_1math_1_1curvefitting_1_1interp.html',1,'ostk::math::curvefitting']]],
   ['math',['math',['../namespaceostk_1_1math.html',1,'ostk']]],
   ['obj',['obj',['../namespaceostk_1_1math_1_1obj.html',1,'ostk::math']]],
   ['object',['Object',['../classostk_1_1math_1_1geom_1_1d2_1_1_object.html',1,'ostk::math::geom::d2::Object'],['../classostk_1_1math_1_1geom_1_1d3_1_1_object.html',1,'ostk::math::geom::d3::Object'],['../classostk_1_1math_1_1geom_1_1d2_1_1_object.html#a5e2d37e51e0028b18188078e13932f34',1,'ostk::math::geom::d2::Object::Object()'],['../classostk_1_1math_1_1geom_1_1d3_1_1_object.html#ac507d37b0ef8755045938e43d20b0c94',1,'ostk::math::geom::d3::Object::Object()']]],

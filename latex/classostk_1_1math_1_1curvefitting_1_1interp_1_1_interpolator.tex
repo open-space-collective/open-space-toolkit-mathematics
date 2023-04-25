@@ -1,0 +1,130 @@
+\hypertarget{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator}{}\section{ostk\+:\+:math\+:\+:curvefitting\+:\+:interp\+:\+:Interpolator Class Reference}
+\label{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator}\index{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator@{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator}}
+
+
+\hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator}{Interpolator}.  
+
+
+
+
+{\ttfamily \#include $<$Interpolator.\+hpp$>$}
+
+Inheritance diagram for ostk\+:\+:math\+:\+:curvefitting\+:\+:interp\+:\+:Interpolator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.252796cm]{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_afcb021e5aa9972479e9e0750b86c6cd4}{Interpolator} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+virtual \hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_a6a6a80292cecb1353e1f7f5e8f147795}{$\sim$\+Interpolator} ()=0
+\begin{DoxyCompactList}\small\item\em Destructor (pure virtual) \end{DoxyCompactList}\item 
+virtual \hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator}{Interpolator} $\ast$ \hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_a717dc5547d117cccd73506b75c40c66a}{clone} () const =0
+\begin{DoxyCompactList}\small\item\em Clone interpolator. \end{DoxyCompactList}\item 
+virtual Vector\+Xd \hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_aac2035e403234027b227479d1e1b544e}{evaluate} (const Vector\+Xd \&a\+Query\+Vector) const
+\begin{DoxyCompactList}\small\item\em Evaluate the interpolator. \end{DoxyCompactList}\item 
+virtual double \hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_af678ba11fe02754aeaa821bc101fcd87}{evaluate} (const double \&a\+Query\+Value) const
+\begin{DoxyCompactList}\small\item\em Evaluate the interpolator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator}{Interpolator}. 
+
+A cubic Spline interpolator is a spline where each piece is a third-\/degree polynomial specified in Spline form, that is by its values and first derivatives at the end points of the corresponding domain interval.
+
+https\+://en.wikipedia.\+org/wiki/\+Cubic\+\_\+\+Spline\+\_\+spline\#\+:$\sim$\+:text=In\%20numerical\%20analysis\%2C\%20a\%20cubic,of\%20the\%20corresponding\%20domain\%20interval. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_afcb021e5aa9972479e9e0750b86c6cd4}\label{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_afcb021e5aa9972479e9e0750b86c6cd4}} 
+\index{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator@{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator}!Interpolator@{Interpolator}}
+\index{Interpolator@{Interpolator}!ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator@{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator}}
+\subsubsection{\texorpdfstring{Interpolator()}{Interpolator()}}
+{\footnotesize\ttfamily ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator\+::\+Interpolator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_a6a6a80292cecb1353e1f7f5e8f147795}\label{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_a6a6a80292cecb1353e1f7f5e8f147795}} 
+\index{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator@{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator}!````~Interpolator@{$\sim$\+Interpolator}}
+\index{````~Interpolator@{$\sim$\+Interpolator}!ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator@{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator}}
+\subsubsection{\texorpdfstring{$\sim$\+Interpolator()}{~Interpolator()}}
+{\footnotesize\ttfamily ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator\+::$\sim$\+Interpolator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Destructor (pure virtual) 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_a717dc5547d117cccd73506b75c40c66a}\label{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_a717dc5547d117cccd73506b75c40c66a}} 
+\index{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator@{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator}!clone@{clone}}
+\index{clone@{clone}!ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator@{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator}}
+\subsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator}{Interpolator}$\ast$ ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Clone interpolator. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned interpolator 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline_a43d9d4ff7c386a5f3442dc8a617aa0cc}{ostk\+::math\+::curvefitting\+::interp\+::\+Cubic\+Spline}, \hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear_interpolator_aaf48bb953f88279ff2cb755da611e937}{ostk\+::math\+::curvefitting\+::interp\+::\+Linear\+Interpolator}, and \hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_barycentric_rational_a0fe27c0d93f957df0132354daa3e1368}{ostk\+::math\+::curvefitting\+::interp\+::\+Barycentric\+Rational}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_aac2035e403234027b227479d1e1b544e}\label{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_aac2035e403234027b227479d1e1b544e}} 
+\index{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator@{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator@{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator}}
+\subsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Vector\+Xd ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator\+::evaluate (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluate the interpolator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Query\+Vector} & A vector of x values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of y values 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline_a69c23827173fe8ee587d468551246fd9}{ostk\+::math\+::curvefitting\+::interp\+::\+Cubic\+Spline}, \hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear_interpolator_abf0d1f4f1bf3dc1a64cfb1183c8e3e83}{ostk\+::math\+::curvefitting\+::interp\+::\+Linear\+Interpolator}, and \hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_barycentric_rational_a4fbf8e51d6c5c383dca899b3e06fe043}{ostk\+::math\+::curvefitting\+::interp\+::\+Barycentric\+Rational}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_af678ba11fe02754aeaa821bc101fcd87}\label{classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_af678ba11fe02754aeaa821bc101fcd87}} 
+\index{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator@{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator}!evaluate@{evaluate}}
+\index{evaluate@{evaluate}!ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator@{ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator}}
+\subsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily double ostk\+::math\+::curvefitting\+::interp\+::\+Interpolator\+::evaluate (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Evaluate the interpolator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em a\+Query\+Value} & An x value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of y values 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline_a9cd7d809db55125256a73582cb040e4f}{ostk\+::math\+::curvefitting\+::interp\+::\+Cubic\+Spline}, \hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear_interpolator_ade4cbbc6da45e0dedd71d86a45258512}{ostk\+::math\+::curvefitting\+::interp\+::\+Linear\+Interpolator}, and \hyperlink{classostk_1_1math_1_1curvefitting_1_1interp_1_1_barycentric_rational_ac4924f9afb399ee21f12f2d9bf381da1}{ostk\+::math\+::curvefitting\+::interp\+::\+Barycentric\+Rational}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Curve\+Fitting/\hyperlink{_interpolator_8hpp}{Interpolator.\+hpp}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Curve\+Fitting/\hyperlink{_interpolator_8cpp}{Interpolator.\+cpp}\end{DoxyCompactItemize}

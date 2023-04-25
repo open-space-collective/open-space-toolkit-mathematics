@@ -1,8 +1,10 @@
 var searchData=
 [
+  ['curvefitting',['curvefitting',['../namespaceostk_1_1math_1_1curvefitting.html',1,'ostk::math']]],
   ['d2',['d2',['../namespaceostk_1_1math_1_1geom_1_1d2.html',1,'ostk::math::geom']]],
   ['d3',['d3',['../namespaceostk_1_1math_1_1geom_1_1d3.html',1,'ostk::math::geom']]],
   ['geom',['geom',['../namespaceostk_1_1math_1_1geom.html',1,'ostk::math']]],
+  ['interp',['interp',['../namespaceostk_1_1math_1_1curvefitting_1_1interp.html',1,'ostk::math::curvefitting']]],
   ['math',['math',['../namespaceostk_1_1math.html',1,'ostk']]],
   ['obj',['obj',['../namespaceostk_1_1math_1_1obj.html',1,'ostk::math']]],
   ['objects',['objects',['../namespaceostk_1_1math_1_1geom_1_1d2_1_1objects.html',1,'ostk::math::geom::d2::objects'],['../namespaceostk_1_1math_1_1geom_1_1d3_1_1objects.html',1,'ostk::math::geom::d3::objects']]],

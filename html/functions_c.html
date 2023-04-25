@@ -81,7 +81,11 @@ $(document).ready(function(){initNavTree('functions_c.html','');});
 
 <h3><a id="index_c"></a>- c -</h3><ul>
 <li>clone()
-: <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1_object.html#a98dedc6792aef35308966ca768eb3e14">ostk::math::geom::d2::Object</a>
+: <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_barycentric_rational.html#a0fe27c0d93f957df0132354daa3e1368">ostk::math::curvefitting::interp::BarycentricRational</a>
+, <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html#a43d9d4ff7c386a5f3442dc8a617aa0cc">ostk::math::curvefitting::interp::CubicSpline</a>
+, <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator.html#a717dc5547d117cccd73506b75c40c66a">ostk::math::curvefitting::interp::Interpolator</a>
+, <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear_interpolator.html#aaf48bb953f88279ff2cb755da611e937">ostk::math::curvefitting::interp::LinearInterpolator</a>
+, <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1_object.html#a98dedc6792aef35308966ca768eb3e14">ostk::math::geom::d2::Object</a>
 , <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_composite.html#a24c81b4b2b2455338590c0ae94fb0f5e">ostk::math::geom::d2::objects::Composite</a>
 , <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line.html#a5c81c1f01b0372c7b0f8e597e77dad92">ostk::math::geom::d2::objects::Line</a>
 , <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string.html#abb5ac5e7e3e068c6597aab554e6a5e21">ostk::math::geom::d2::objects::LineString</a>
@@ -144,25 +148,28 @@ $(document).ready(function(){initNavTree('functions_c.html','');});
 , <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line_string.html#a04cc661c265dc5777b08754c8015c600">ostk::math::geom::d2::objects::LineString</a>
 , <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_multi_polygon.html#ad58e3e306864939951e8724bf9213d52">ostk::math::geom::d2::objects::MultiPolygon</a>
 , <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#aa9f49a046d832821a8b26064b3cf2158">ostk::math::geom::d2::objects::Polygon</a>
-, <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a08468b912471a18d29062b96968afc2f">ostk::math::geom::d2::objects::Segment</a>
+, <a class="el" href="classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#afd9fea7d6b73c7136ddb1246e20134d3">ostk::math::geom::d2::objects::Segment</a>
 , <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1_object.html#a97edbd679b50c4663d3ab20c65cea4b9">ostk::math::geom::d3::Object</a>
-, <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite.html#a54395e684abc0b64a629808e3c478e52">ostk::math::geom::d3::objects::Composite</a>
-, <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone.html#a97717dcecc3db77e980644be84485aba">ostk::math::geom::d3::objects::Cone</a>
-, <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html#ac04afa98ba39500f4e476a57a92a554e">ostk::math::geom::d3::objects::Cuboid</a>
-, <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html#afcb41440d899c60766cdc7e9c838c55d">ostk::math::geom::d3::objects::Ellipsoid</a>
-, <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line.html#a63fe1d825e847ba201c50ddf2d02ee1e">ostk::math::geom::d3::objects::Line</a>
-, <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane.html#a229e30b431a2a2b8d00c02dbfba83e91">ostk::math::geom::d3::objects::Plane</a>
-, <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#a7c7d10a2e8fb4a1b23a3b55a5156e588">ostk::math::geom::d3::objects::Pyramid</a>
+, <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_composite.html#abe810bb7e17c444b1b556053e32750d1">ostk::math::geom::d3::objects::Composite</a>
+, <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cone.html#adc42e76b33717df0f6dbe91caea7c9de">ostk::math::geom::d3::objects::Cone</a>
+, <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html#ac6e3f399ced96b348cb954a2ff0314fd">ostk::math::geom::d3::objects::Cuboid</a>
+, <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ellipsoid.html#a9e0b0c5c2db95f53da783ccfea36de17">ostk::math::geom::d3::objects::Ellipsoid</a>
+, <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_line.html#a51121a95b14948a800a36f57aa85e55a">ostk::math::geom::d3::objects::Line</a>
+, <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane.html#a5113cf47ca5ef948fa8f43074291108d">ostk::math::geom::d3::objects::Plane</a>
+, <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_pyramid.html#a761592bada278f4a80f910e3e234fde8">ostk::math::geom::d3::objects::Pyramid</a>
 , <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_ray.html#a7a8791f8658c741fd8ce967511ed2f5f">ostk::math::geom::d3::objects::Ray</a>
 , <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_segment.html#a07d2c8bc8f734b3a99fb4f11610f9fab">ostk::math::geom::d3::objects::Segment</a>
 , <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_sphere.html#a65299f7b2db42d3ad1b32fc70c9845ae">ostk::math::geom::d3::objects::Sphere</a>
-, <a class="el" href="classostk_1_1math_1_1obj_1_1_interval.html#ad7d805288e161a123593991f90c437ff">ostk::math::obj::Interval&lt; T &gt;</a>
+, <a class="el" href="classostk_1_1math_1_1obj_1_1_interval.html#a78acbb2eb10761ffd0f0d6198391a3fa">ostk::math::obj::Interval&lt; T &gt;</a>
 </li>
 <li>crossMultiply()
 : <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html#a324f12e547fbeb114b4db5f9f26ae46f">ostk::math::geom::d3::trf::rot::Quaternion</a>
 </li>
 <li>Cube()
 : <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html#a6a42b2d344c9a6e12feef60ceea77b9d">ostk::math::geom::d3::objects::Cuboid</a>
+</li>
+<li>CubicSpline()
+: <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html#acf1a047eb5cd1441f22f67e86fa1a1af">ostk::math::curvefitting::interp::CubicSpline</a>
 </li>
 <li>Cuboid()
 : <a class="el" href="classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html#a1da071d7cbb0a694348628f098f77c5b">ostk::math::geom::d3::objects::Cuboid</a>
