@@ -17,6 +17,7 @@
 
 #include <OpenSpaceToolkitMathematicsPy/Objects.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting.cpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -42,6 +43,7 @@ PYBIND11_MODULE (OpenSpaceToolkitMathematicsPy, m)
     // Add python submodules to OpenSpaceToolkitMathematicsPy
     OpenSpaceToolkitMathematicsPy_Objects(m) ;
     OpenSpaceToolkitMathematicsPy_Geometry(m) ;
+    OpenSpaceToolkitMathematicsPy_CurveFitting(m) ;
 
 }
 
