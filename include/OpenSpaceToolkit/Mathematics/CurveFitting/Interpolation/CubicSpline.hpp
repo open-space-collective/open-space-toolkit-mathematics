@@ -2,7 +2,7 @@
 
 /// @project        Open Space Toolkit ▸ Mathematics
 /// @file           OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/CubicSpline.hpp
-/// @author         Vishwa Shah <vishwa@loftorbital.com
+/// @author         Vishwa Shah <vishwa@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,7 +65,7 @@ class CubicSpline: public Interpolator
         /// @warning            The x values must be equally spaced
 
                                 CubicSpline                                 (   const   VectorXd&                   anXVector,
-                                                                                const   VectorXd&                   aYVector                                           ) ;
+                                                                                const   VectorXd&                   aYVector                                    ) ;
 
         /// @brief              Constructor
         ///
@@ -84,13 +84,13 @@ class CubicSpline: public Interpolator
                                                                                 const   Real&                       x0,
                                                                                 const   Real&                       h                                           ) ;
 
-        /// @brief              Clone cubic spline 
+        /// @brief              Clone cubic spline
         ///
-        /// @return             Pointer to cloned cubic spline
+        /// @return             Pointer to cloned cubic spline interpolator
 
         virtual CubicSpline*    clone                                       ( ) const ;
 
-        /// @brief              Evaluate the spline
+        /// @brief              Evaluate the cubic spline interpolator
         ///
         /// @code
         ///                     VectorXd values = cubicSpline.evaluate({1.0, 5.0, 6.0}) ;
@@ -100,8 +100,8 @@ class CubicSpline: public Interpolator
         /// @return             Vector of y values
 
         VectorXd                evaluate                                    (   const   VectorXd&                   aQueryVector                                ) const ;
-    
-        /// @brief              Evaluate the spline
+
+        /// @brief              Evaluate the cubic spline interpolator
         ///
         /// @code
         ///                     double values = cubicSpline.evaluate(5.0) ;
@@ -114,7 +114,7 @@ class CubicSpline: public Interpolator
 
     private:
 
-        boost::math::interpolators::cardinal_cubic_b_spline<double> interpolator_ ;
+        cardinal_cubic_b_spline<double> interpolator_ ;
 
 } ;
 

@@ -7,19 +7,19 @@
 
 ################################################################################################################################################################
 
-from ostk.mathematics.curve_fitting.interpolation import LinearInterpolator
+from ostk.mathematics.curve_fitting.interpolation import Linear
 
 ################################################################################################################################################################
 
-class TestLinearInterpolator:
+class TestLinear:
 
     def test_default_constructor (self):
 
-        LinearInterpolator(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0], y = [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
+        Linear(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0], y = [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
 
     def test_evaluate (self):
 
-        interpolator = LinearInterpolator(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0], y = [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
+        interpolator = Linear(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0], y = [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
 
         assert interpolator.evaluate(0.0) == 0.0
         assert interpolator.evaluate(1.0) == 3.0

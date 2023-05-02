@@ -16,15 +16,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_CurveFitting_Inter
 
     using namespace pybind11 ;
 
-    using ostk::math::curvefitting::interp::LinearInterpolator ;
+    using ostk::math::curvefitting::interp::Linear ;
 
     // noncopyable class with Boost, removed in Pybind11
-    class_<LinearInterpolator>(aModule, "LinearInterpolator")
+    class_<Linear>(aModule, "Linear")
 
         .def(init<const VectorXd&, const VectorXd&>(), arg("x"), arg("y"))
 
-        .def("evaluate", overload_cast<const VectorXd&>(&LinearInterpolator::evaluate, const_), arg("x"))
-        .def("evaluate", overload_cast<const double&>(&LinearInterpolator::evaluate, const_), arg("x"))
+        .def("evaluate", overload_cast<const VectorXd&>(&Linear::evaluate, const_), arg("x"))
+        .def("evaluate", overload_cast<const double&>(&Linear::evaluate, const_), arg("x"))
     ;
 
 }

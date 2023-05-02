@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Interpolation/LinearInterpolator.test.cpp
+/// @file           OpenSpaceToolkit/Mathematics/Interpolation/Linear.test.cpp
 /// @author         Vishwa Shah <vishwa@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -26,11 +26,11 @@ using ostk::core::fs::File ;
 
 using ostk::math::obj::VectorXd ;
 using ostk::math::obj::MatrixXd ;
-using ostk::math::curvefitting::interp::LinearInterpolator ;
+using ostk::math::curvefitting::interp::Linear ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (OpenSpaceToolkit_Mathematics_Interpolator_LinearInterpolator, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Interpolator_Linear, Constructor)
 {
 
     VectorXd x(6) ;
@@ -40,12 +40,12 @@ TEST (OpenSpaceToolkit_Mathematics_Interpolator_LinearInterpolator, Constructor)
     y << 0.0, 3.0, 5.0, 6.0, 9.0, 15.0 ;
 
     {
-        EXPECT_NO_THROW(LinearInterpolator(x, y)) ;
+        EXPECT_NO_THROW(Linear(x, y)) ;
     }
 
 }
 
-TEST (OpenSpaceToolkit_Mathematics_Interpolator_LinearInterpolator, Evaluate)
+TEST (OpenSpaceToolkit_Mathematics_Interpolator_Linear, Evaluate)
 {
 
     const Table referenceData = Table::Load(File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/propagated_states.csv")), Table::Format::CSV, true) ;
@@ -79,7 +79,7 @@ TEST (OpenSpaceToolkit_Mathematics_Interpolator_LinearInterpolator, Evaluate)
         for (Size j = 0 ; j < 6 ; ++j)
         {
 
-            LinearInterpolator interpolator = LinearInterpolator(testX, testY.col(j)) ;
+            Linear interpolator = Linear(testX, testY.col(j)) ;
 
             VectorXd yEstimated = interpolator.evaluate(referenceX.head(testRowCount)) ;
             VectorXd yTruth = referenceY.col(j).head(testRowCount) ;

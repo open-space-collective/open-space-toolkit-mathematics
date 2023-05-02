@@ -2,7 +2,7 @@
 
 /// @project        Open Space Toolkit ▸ Mathematics
 /// @file           OpenSpaceToolkit/Mathematics/Interpolation/CubicSpline.hpp
-/// @author         Vishwa Shah <vishwa@loftorbital.com
+/// @author         Vishwa Shah <vishwa@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -36,10 +36,10 @@ using ostk::math::obj::VectorXd ;
 
 /// @brief                      Interpolator
 ///
-///                             A cubic Spline interpolator is a spline where each piece is a third-degree polynomial specified in Spline form, that is
-///                             by its values and first derivatives at the end points of the corresponding domain interval.
+///                             In mathematics, an interpolator is a type of estimator allowing to construct new data points based on a range of a discrete set
+///                             of known data points.
 ///
-/// @ref                        https://en.wikipedia.org/wiki/Cubic_Spline_spline#:~:text=In%20numerical%20analysis%2C%20a%20cubic,of%20the%20corresponding%20domain%20interval.
+/// @ref                        https://en.wikipedia.org/wiki/Interpolation.
 
 class Interpolator
 {
@@ -66,7 +66,7 @@ class Interpolator
         /// @return             Vector of y values
 
         virtual VectorXd        evaluate                                    (   const   VectorXd&                   aQueryVector                                ) const ;
-    
+
         /// @brief              Evaluate the interpolator
         ///
         /// @param              [in] aQueryValue An x value
