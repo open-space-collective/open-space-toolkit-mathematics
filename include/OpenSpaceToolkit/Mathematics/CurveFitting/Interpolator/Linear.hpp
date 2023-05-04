@@ -1,21 +1,22 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/CubicSpline.hpp
+/// @file           OpenSpaceToolkit/Mathematics/Interpolator/Linear.hpp
 /// @author         Vishwa Shah <vishwa@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline__
-#define __OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline__
+#ifndef __OpenSpaceToolkit_Mathematics_Interpolator_Linear__
+#define __OpenSpaceToolkit_Mathematics_Interpolator_Linear__
 
 #include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Types/Size.hpp>
+#include <OpenSpaceToolkit/Core/Types/Index.hpp>
+#include <OpenSpaceToolkit/Core/Containers/Pair.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
-
-#include <boost/math/interpolators/cardinal_cubic_b_spline.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -32,22 +33,22 @@ namespace interp
 
 using ostk::core::types::Real ;
 using ostk::core::types::Size ;
+using ostk::core::types::Index ;
+using ostk::core::ctnr::Pair ;
 
 using ostk::math::obj::VectorXd ;
 using ostk::math::curvefitting::interp::Interpolator ;
 
-using boost::math::interpolators::cardinal_cubic_b_spline ;
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @brief                      CubicSpline
+/// @brief                      Linear
 ///
-///                             A cubic Spline interpolator is a spline where each piece is a third-degree polynomial specified in Spline form, that is
-///                             by its values and first derivatives at the end points of the corresponding domain interval.
+///                             In mathematics, linear interpolator is a method of curve fitting using linear polynomials to construct new data
+///                             points within the range of a discrete set of known data points.
 ///
-/// @ref                        https://en.wikipedia.org/wiki/Cubic_Spline_spline#:~:text=In%20numerical%20analysis%2C%20a%20cubic,of%20the%20corresponding%20domain%20interval.
+/// @ref                        https://en.wikipedia.org/wiki/Linear_interpolator#:~:text=In%20mathematics%2C%20linear%20interpolator%20is,set%20of%20known%20data%20points.
 
-class CubicSpline: public Interpolator
+class Linear: public Interpolator
 {
 
     public:
@@ -55,7 +56,7 @@ class CubicSpline: public Interpolator
         /// @brief              Constructor
         ///
         /// @code
-        ///                     CubicSpline cubicSpline(x, y) ;
+        ///                     Linear linear(x, y) ;
         /// @endcode
         ///
         /// @param              [in] anXVector A vector of x values
@@ -64,36 +65,19 @@ class CubicSpline: public Interpolator
         /// @warning            The x values must be sorted in ascending order
         /// @warning            The x values must be equally spaced
 
-                                CubicSpline                                 (   const   VectorXd&                   anXVector,
+                                Linear                                      (   const   VectorXd&                   anXVector,
                                                                                 const   VectorXd&                   aYVector                                    ) ;
 
-        /// @brief              Constructor
+        /// @brief              Clone linear
+        ///
+        /// @return             Pointer to cloned linear interpolator
+
+        virtual Linear*         clone                                ( ) const ;
+
+        /// @brief              Evaluate the linear interpolator
         ///
         /// @code
-        ///                     CubicSpline cubicSpline(y, x0, h) ;
-        /// @endcode
-        ///
-        /// @param              [in] aYVector A vector of y values
-        /// @param              [in] x0 The first x value
-        /// @param              [in] h The spacing between x values
-        ///
-        /// @warning            The x values must be sorted in ascending order
-        /// @warning            The x values must be equally spaced
-
-                                CubicSpline                                 (   const   VectorXd&                   aYVector,
-                                                                                const   Real&                       x0,
-                                                                                const   Real&                       h                                           ) ;
-
-        /// @brief              Clone cubic spline
-        ///
-        /// @return             Pointer to cloned cubic spline interpolator
-
-        virtual CubicSpline*    clone                                       ( ) const ;
-
-        /// @brief              Evaluate the cubic spline interpolator
-        ///
-        /// @code
-        ///                     VectorXd values = cubicSpline.evaluate({1.0, 5.0, 6.0}) ;
+        ///                     VectorXd values = linear.evaluate({1.0, 5.0, 6.0}) ;
         /// @endcode
         ///
         /// @param              [in] aQueryVector A vector of x values
@@ -101,10 +85,10 @@ class CubicSpline: public Interpolator
 
         VectorXd                evaluate                                    (   const   VectorXd&                   aQueryVector                                ) const ;
 
-        /// @brief              Evaluate the cubic spline interpolator
+        /// @brief              Evaluate the linear interpolator
         ///
         /// @code
-        ///                     double values = cubicSpline.evaluate(5.0) ;
+        ///                     double values = linear.evaluate(5.0) ;
         /// @endcode
         ///
         /// @param              [in] aQueryValue An x value
@@ -114,7 +98,10 @@ class CubicSpline: public Interpolator
 
     private:
 
-        cardinal_cubic_b_spline<double> interpolator_ ;
+        VectorXd                x_ ;
+        VectorXd                y_ ;
+
+        Pair<Index, Index>      findIndexRange                              (   const   double&                     aQueryValue                                 ) const ;
 
 } ;
 

@@ -8,8 +8,8 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/CubicSpline.hpp>
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/BarycentricRational.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp>
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
 

@@ -11,7 +11,7 @@ import pytest
 
 import numpy as np
 
-from ostk.mathematics.curve_fitting.interpolation import CubicSpline
+from ostk.mathematics.curve_fitting.interpolator import CubicSpline
 
 ################################################################################################################################################################
 

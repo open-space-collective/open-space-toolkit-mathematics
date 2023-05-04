@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Interpolation/CubicSpline.hpp
+/// @file           OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp
 /// @author         Vishwa Shah <vishwa@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -39,7 +39,7 @@ using ostk::math::obj::VectorXd ;
 ///                             In mathematics, an interpolator is a type of estimator allowing to construct new data points based on a range of a discrete set
 ///                             of known data points.
 ///
-/// @ref                        https://en.wikipedia.org/wiki/Interpolation.
+/// @ref                        https://en.wikipedia.org/wiki/Interpolator.
 
 class Interpolator
 {

@@ -1,17 +1,17 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           bindings/python/src/OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolation/Linear.cpp
+/// @file           bindings/python/src/OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/Linear.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/Linear.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolation_Linear ( pybind11::module& aModule                                     )
+inline void                     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_Linear ( pybind11::module& aModule                                     )
 {
 
     using namespace pybind11 ;
