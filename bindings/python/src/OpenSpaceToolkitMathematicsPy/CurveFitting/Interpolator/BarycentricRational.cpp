@@ -11,7 +11,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricRational ( pybind11::module& aModule                        )
+inline void                     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricRational ( pybind11::module& aModule                         )
 {
 
     using namespace pybind11 ;

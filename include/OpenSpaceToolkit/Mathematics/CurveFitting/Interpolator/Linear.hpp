@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Interpolator/Linear.hpp
+/// @file           OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp
 /// @author         Vishwa Shah <vishwa@loftorbital.com>
 /// @license        Apache License 2.0
 

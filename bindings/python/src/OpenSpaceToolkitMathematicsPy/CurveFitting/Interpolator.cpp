@@ -13,7 +13,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator (           pybind11::module&           aModule                       )
+inline void                     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator (           pybind11::module&           aModule                         )
 {
 
     // Create "interpolator" python submodule

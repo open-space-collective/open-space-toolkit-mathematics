@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Interpolator/BarycentricRational.test.cpp
+/// @file           OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.test.cpp
 /// @author         Vishwa Shah <vishwa@loftorbital.com>
 /// @license        Apache License 2.0
 

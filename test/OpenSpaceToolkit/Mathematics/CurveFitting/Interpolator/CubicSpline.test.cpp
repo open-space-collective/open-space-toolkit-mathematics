@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Interpolator/CubicSpline.test.cpp
+/// @file           OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.test.cpp
 /// @author         Vishwa Shah <vishwa@loftorbital.com>
 /// @license        Apache License 2.0
 
