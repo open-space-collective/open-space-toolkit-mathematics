@@ -220,7 +220,6 @@ start-development-link:
 
 	@ project_directory="$(CURDIR)" docker_development_image_repository=$(docker_development_image_repository) docker_image_version=$(docker_image_version) "$(CURDIR)/tools/development/start.sh" --link $(links)
 
-
 ifndef link
 start-development: start-development-no-link
 else
@@ -340,7 +339,13 @@ test-unit-python: build-release-image-python
 		$(docker_release_image_python_repository):$(docker_image_version) \
 		/bin/bash -c "pip install pytest && pytest -sv ."
 
-test-coverage: build-development-image ## Run test coverage cpp
+test-coverage: ## Run test coverage cpp
+
+	@ echo "Running coverage tests..."
+
+	@ make test-coverage-cpp
+
+test-coverage-cpp: build-development-image
 
 	@ echo "Running C++ coverage tests..."
 
