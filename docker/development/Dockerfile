@@ -1,7 +1,7 @@
 ################################################################################################################################################################
 
 # @project        Open Space Toolkit ▸ Mathematics
-# @file           docker/development/fedora/Dockerfile
+# @file           docker/development/Dockerfile
 # @author         Lucas Brémond <lucas@loftorbital.com>
 # @license        Apache License 2.0
 
@@ -9,7 +9,7 @@
 
 ARG BASE_IMAGE_VERSION="latest"
 
-FROM openspacecollective/open-space-toolkit-base:${BASE_IMAGE_VERSION}-fedora
+FROM openspacecollective/open-space-toolkit-base:${BASE_IMAGE_VERSION}
 
 LABEL maintainer="lucas@loftorbital.com"
 
@@ -59,9 +59,9 @@ ARG OSTK_CORE_VERSION="0.5.0"
 
 RUN mkdir -p /tmp/open-space-toolkit-core \
  && cd /tmp/open-space-toolkit-core \
- && wget --quiet https://github.com/open-space-collective/open-space-toolkit-core/releases/download/${OSTK_CORE_VERSION}/open-space-toolkit-core-${OSTK_CORE_VERSION}-1.x86_64-runtime.rpm \
- && wget --quiet https://github.com/open-space-collective/open-space-toolkit-core/releases/download/${OSTK_CORE_VERSION}/open-space-toolkit-core-${OSTK_CORE_VERSION}-1.x86_64-devel.rpm \
- && dnf install -y ./*.rpm \
+ && wget --quiet https://github.com/open-space-collective/open-space-toolkit-core/releases/download/${OSTK_CORE_VERSION}/open-space-toolkit-core-${OSTK_CORE_VERSION}-1.x86_64-runtime.deb \
+ && wget --quiet https://github.com/open-space-collective/open-space-toolkit-core/releases/download/${OSTK_CORE_VERSION}/open-space-toolkit-core-${OSTK_CORE_VERSION}-1.x86_64-devel.deb \
+ && apt-get install -y ./*.deb \
  && rm -rf /tmp/open-space-toolkit-core
 
 # Labels
