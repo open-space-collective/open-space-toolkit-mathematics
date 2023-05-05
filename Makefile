@@ -198,10 +198,6 @@ start-development: build-development-image ## Start development environment
 
 	@ echo "Starting development environment..."
 
-start-development-no-link:
-
-	@ echo "Starting development environment..."
-
 	docker run \
 		-it \
 		--rm \
@@ -221,7 +217,7 @@ start-development-link:
 	@ project_directory="$(CURDIR)" docker_development_image_repository=$(docker_development_image_repository) docker_image_version=$(docker_image_version) "$(CURDIR)/tools/development/start.sh" --link $(links)
 
 ifndef link
-start-development: start-development-no-link
+start-development: start-development
 else
 start-development: start-development-link
 endif
