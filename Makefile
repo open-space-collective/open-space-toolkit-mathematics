@@ -86,8 +86,7 @@ build-development-image: pull-development-image ## Build development images
 
 	@ echo "Building development image..."
 
-	docker buildx build \
-		--cache-from=$(docker_development_image_repository):latest \
+	docker build \
 		--file="$(CURDIR)/docker/development/Dockerfile" \
 		--tag=$(docker_development_image_repository):$(docker_image_version) \
 		--tag=$(docker_development_image_repository):latest \
@@ -104,12 +103,11 @@ build-release-images: ## Build release images
 
 	@ make build-release-image-jupyter
 
-build-release-image-cpp: build-development-image pull-release-image-cpp
+build-release-image-cpp: pull-development-image pull-release-image-cpp
 
 	@ echo "Building C++ release image..."
 
-	docker buildx build \
-		--cache-from=$(docker_release_image_cpp_repository):latest \
+	docker build \
 		--file="$(CURDIR)/docker/release/Dockerfile" \
 		--tag=$(docker_release_image_cpp_repository):$(docker_image_version) \
 		--tag=$(docker_release_image_cpp_repository):latest \
@@ -117,12 +115,11 @@ build-release-image-cpp: build-development-image pull-release-image-cpp
 		--target=cpp-release \
 		"$(CURDIR)"
 
-build-release-image-python: build-development-image pull-release-image-python
+build-release-image-python: pull-development-image pull-release-image-python
 
 	@ echo "Building Python release image..."
 
-	docker buildx build \
-		--cache-from=$(docker_release_image_python_repository):latest \
+	docker build \
 		--file="$(CURDIR)/docker/release/Dockerfile" \
 		--tag=$(docker_release_image_python_repository):$(docker_image_version) \
 		--tag=$(docker_release_image_python_repository):latest \
@@ -130,19 +127,18 @@ build-release-image-python: build-development-image pull-release-image-python
 		--target=python-release \
 		"$(CURDIR)"
 
-build-release-image-jupyter: pull-release-image-jupyter
+build-release-image-jupyter: pull-development-image pull-release-image-jupyter
 
 	@ echo "Building Jupyter Notebook release image..."
 
-	docker buildx build \
-		--cache-from=$(docker_release_image_jupyter_repository):latest \
+	docker build \
 		--file="$(CURDIR)/docker/jupyter/Dockerfile" \
 		--tag=$(docker_release_image_jupyter_repository):$(docker_image_version) \
 		--tag=$(docker_release_image_jupyter_repository):latest \
 		--build-arg="JUPYTER_NOTEBOOK_IMAGE_REPOSITORY=$(jupyter_notebook_image_repository)" \
 		"$(CURDIR)/docker/jupyter"
 
-build-documentation: build-development-image ## Build documentation
+build-documentation: ## Build documentation
 
 	@ echo "Building documentation..."
 
@@ -162,7 +158,7 @@ build-packages: ## Build packages
 	@ make build-packages-cpp
 	@ make build-packages-python
 
-build-packages-cpp: build-development-image ## Build C++ packages
+build-packages-cpp: ## Build C++ packages
 
 	@ echo "Building C++ packages..."
 
@@ -177,7 +173,7 @@ build-packages-cpp: build-development-image ## Build C++ packages
 		&& mkdir -p /app/packages/cpp \
 		&& mv /app/build/*.deb /app/packages/cpp"
 
-build-packages-python: build-development-image ## Build Python packages
+build-packages-python: ## Build Python packages
 
 	@ echo "Building Python packages..."
 
@@ -308,7 +304,7 @@ test-unit: ## Run unit tests
 	@ make test-unit-cpp
 	@ make test-unit-python
 
-test-unit-cpp: build-development-image
+test-unit-cpp:
 
 	@ echo "Running C++ unit tests..."
 
@@ -323,7 +319,7 @@ test-unit-cpp: build-development-image
 		&& make -j 4 \
 		&& make test"
 
-test-unit-python: build-release-image-python
+test-unit-python:
 
 	@ echo "Running Python unit tests..."
 
@@ -341,7 +337,7 @@ test-coverage: ## Run test coverage cpp
 
 	@ make test-coverage-cpp
 
-test-coverage-cpp: build-development-image
+test-coverage-cpp:
 
 	@ echo "Running C++ coverage tests..."
 
@@ -391,6 +387,9 @@ clean: ## Clean
 help:
 
 	@grep -E '^[0-9a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+
+.EXPORT_ALL_VARIABLES:
+DOCKER_BUILDKIT = 1
 
 .DEFAULT_GOAL := help
 
