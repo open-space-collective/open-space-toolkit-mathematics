@@ -841,6 +841,11 @@ Intersection                    Ellipsoid::intersectionWith                 (   
             const Point firstPoint = EllipsoidPointFromGteVector(intersectionResult.point[0]) ;
             const Point secondPoint = EllipsoidPointFromGteVector(intersectionResult.point[1]) ;
 
+            if (firstPoint == secondPoint)
+            {
+                return Intersection::Point(firstPoint) ;
+            }
+
             if ((firstPoint == aSegment.getFirstPoint()) || (secondPoint == aSegment.getFirstPoint()) || (firstPoint == aSegment.getSecondPoint()) || (secondPoint == aSegment.getSecondPoint())) // Discard segment points, if returned by Gte
             {
 
