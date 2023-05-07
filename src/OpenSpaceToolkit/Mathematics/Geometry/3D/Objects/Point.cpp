@@ -52,9 +52,7 @@ bool                            Point::operator ==                          (   
         return false ;
     }
 
-    Real tolerance = 1e-15 ;
-
-    return (x_.isNear(aPoint.x_, tolerance)) && (y_.isNear(aPoint.y_, tolerance)) && (z_.isNear(aPoint.z_, tolerance)) ;
+    return (x_ == aPoint.x_) && (y_ == aPoint.y_) && (z_ == aPoint.z_) ;
 
 }
 
