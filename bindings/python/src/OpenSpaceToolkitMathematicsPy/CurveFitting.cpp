@@ -7,7 +7,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolation.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator.cpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -21,7 +21,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_CurveFitting      
     curve_fitting.attr("__path__") = "ostk.mathematics.curve_fitting" ;
 
     // Add objects to python "interpolators" submodules
-    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolation(curve_fitting) ;
+    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(curve_fitting) ;
 
 }
 

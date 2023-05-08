@@ -1,33 +1,33 @@
 ################################################################################################################################################################
 
 # @project        Open Space Toolkit ▸ Mathematics
-# @file           bindings/python/test/interpolators/test_linear.py
+# @file           bindings/python/test/curve_fitting/interpolator/test_barycentric_rational.py
 # @author         Vishwa Shah <vishwa@loftorbital.com>
 # @license        Apache License 2.0
 
 ################################################################################################################################################################
 
-from ostk.mathematics.curve_fitting.interpolation import LinearInterpolator
+from ostk.mathematics.curve_fitting.interpolator import BarycentricRational
 
 ################################################################################################################################################################
 
-class TestLinearInterpolator:
+class TestBarycentricRational:
 
     def test_default_constructor (self):
 
-        LinearInterpolator(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0], y = [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
+        BarycentricRational(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0], y = [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
 
     def test_evaluate (self):
 
-        interpolator = LinearInterpolator(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0], y = [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
+        spline = BarycentricRational(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0], y = [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
 
-        assert interpolator.evaluate(0.0) == 0.0
-        assert interpolator.evaluate(1.0) == 3.0
-        assert interpolator.evaluate(2.0) == 6.0
-        assert interpolator.evaluate(4.0) == 9.0
-        assert interpolator.evaluate(5.0) == 17.0
-        assert interpolator.evaluate(6.0) == 5.0
+        assert spline.evaluate(0.0) == 0.0
+        assert spline.evaluate(1.0) == 3.0
+        assert spline.evaluate(2.0) == 6.0
+        assert spline.evaluate(4.0) == 9.0
+        assert spline.evaluate(5.0) == 17.0
+        assert spline.evaluate(6.0) == 5.0
 
-        assert (interpolator.evaluate(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0]) == [0.0, 3.0, 6.0, 9.0, 17.0, 5.0]).all()
+        assert (spline.evaluate(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0]) == [0.0, 3.0, 6.0, 9.0, 17.0, 5.0]).all()
 
 ################################################################################################################################################################

@@ -164,7 +164,7 @@ The library exhibits the following structure:
 │   │   └── Runge–Kutta–Fehlberg 78 (F78)
 │   └── Systems
 ├── Curve Fitting
-│   ├── Interpolation
+│   ├── Interpolator
 │   │   ├── Linear
 │   │   ├── Barycentric Rational
 │   │   ├── Cubic Spline

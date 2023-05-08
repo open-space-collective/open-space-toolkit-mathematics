@@ -1,17 +1,17 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           bindings/python/src/OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolation/BarycentricRational.cpp
+/// @file           bindings/python/src/OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/BarycentricRational.cpp
 /// @author         Lucas Brémond <lucas@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/BarycentricRational.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-inline void                     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolation_BarycentricRational ( pybind11::module& aModule                        )
+inline void                     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricRational ( pybind11::module& aModule                         )
 {
 
     using namespace pybind11 ;

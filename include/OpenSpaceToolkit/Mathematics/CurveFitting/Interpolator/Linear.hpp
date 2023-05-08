@@ -1,14 +1,14 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Interpolation/LinearInterpolator.hpp
-/// @author         Vishwa Shah <vishwa@loftorbital.com
+/// @file           OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp
+/// @author         Vishwa Shah <vishwa@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __OpenSpaceToolkit_Mathematics_Interpolator_LinearInterpolator__
-#define __OpenSpaceToolkit_Mathematics_Interpolator_LinearInterpolator__
+#ifndef __OpenSpaceToolkit_Mathematics_Interpolator_Linear__
+#define __OpenSpaceToolkit_Mathematics_Interpolator_Linear__
 
 #include <OpenSpaceToolkit/Core/Types/Real.hpp>
 #include <OpenSpaceToolkit/Core/Types/Size.hpp>
@@ -41,14 +41,14 @@ using ostk::math::curvefitting::interp::Interpolator ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @brief                      LinearInterpolator
+/// @brief                      Linear
 ///
-///                             In mathematics, linear interpolation is a method of curve fitting using linear polynomials to construct new data
+///                             In mathematics, linear interpolator is a method of curve fitting using linear polynomials to construct new data
 ///                             points within the range of a discrete set of known data points.
 ///
-/// @ref                        https://en.wikipedia.org/wiki/Linear_interpolation#:~:text=In%20mathematics%2C%20linear%20interpolation%20is,set%20of%20known%20data%20points.
+/// @ref                        https://en.wikipedia.org/wiki/Linear_interpolator#:~:text=In%20mathematics%2C%20linear%20interpolator%20is,set%20of%20known%20data%20points.
 
-class LinearInterpolator: public Interpolator
+class Linear: public Interpolator
 {
 
     public:
@@ -56,7 +56,7 @@ class LinearInterpolator: public Interpolator
         /// @brief              Constructor
         ///
         /// @code
-        ///                     LinearInterpolator linear(x, y) ;
+        ///                     Linear linear(x, y) ;
         /// @endcode
         ///
         /// @param              [in] anXVector A vector of x values
@@ -65,16 +65,16 @@ class LinearInterpolator: public Interpolator
         /// @warning            The x values must be sorted in ascending order
         /// @warning            The x values must be equally spaced
 
-                                LinearInterpolator                          (   const   VectorXd&                   anXVector,
-                                                                                const   VectorXd&                   aYVector                                           ) ;
+                                Linear                                      (   const   VectorXd&                   anXVector,
+                                                                                const   VectorXd&                   aYVector                                    ) ;
 
-        /// @brief              Clone cubic spline 
+        /// @brief              Clone linear
         ///
-        /// @return             Pointer to cloned cubic spline
+        /// @return             Pointer to cloned linear interpolator
 
-        virtual LinearInterpolator*    clone                                ( ) const ;
+        virtual Linear*         clone                                       ( ) const ;
 
-        /// @brief              Evaluate the spline
+        /// @brief              Evaluate the linear interpolator
         ///
         /// @code
         ///                     VectorXd values = linear.evaluate({1.0, 5.0, 6.0}) ;
@@ -84,8 +84,8 @@ class LinearInterpolator: public Interpolator
         /// @return             Vector of y values
 
         VectorXd                evaluate                                    (   const   VectorXd&                   aQueryVector                                ) const ;
-    
-        /// @brief              Evaluate the spline
+
+        /// @brief              Evaluate the linear interpolator
         ///
         /// @code
         ///                     double values = linear.evaluate(5.0) ;
@@ -97,7 +97,7 @@ class LinearInterpolator: public Interpolator
         double                  evaluate                                    (   const   double&                     aQueryValue                                 ) const ;
 
     private:
-    
+
         VectorXd                x_ ;
         VectorXd                y_ ;
 

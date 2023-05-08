@@ -665,7 +665,7 @@ class Quaternion
         static Quaternion       ShortestRotation                            (   const   Vector3d&                   aFirstVector,
                                                                                 const   Vector3d&                   aSecondVector                               ) ;
 
-        /// @brief              Linear interpolation method
+        /// @brief              Linear interpolator method
         ///
         /// @code
         ///                     Quaternion q_1 = ...
@@ -675,14 +675,14 @@ class Quaternion
         ///
         /// @param              [in] aFirstQuaternion A first quaternion
         /// @param              [in] aSecondQuaternion A second quaternion
-        /// @param              [in] aRatio An interpolation ratio
+        /// @param              [in] aRatio An interpolator ratio
         /// @return             Quaternion
 
         static Quaternion       LERP                                        (   const   Quaternion&                 aFirstQuaternion,
                                                                                 const   Quaternion&                 aSecondQuaternion,
                                                                                 const   Real&                       aRatio                                      ) ;
 
-        /// @brief              Normalized linear interpolation method
+        /// @brief              Normalized linear interpolator method
         ///
         /// @code
         ///                     Quaternion q_1 = ...
@@ -692,14 +692,14 @@ class Quaternion
         ///
         /// @param              [in] aFirstQuaternion A first quaternion
         /// @param              [in] aSecondQuaternion A second quaternion
-        /// @param              [in] aRatio An interpolation ratio
+        /// @param              [in] aRatio An interpolator ratio
         /// @return             Quaternion
 
         static Quaternion       NLERP                                       (   const   Quaternion&                 aFirstQuaternion,
                                                                                 const   Quaternion&                 aSecondQuaternion,
                                                                                 const   Real&                       aRatio                                      ) ;
 
-        ///                     Spherical linear interpolation method
+        ///                     Spherical linear interpolator method
         ///
         /// @ref                https://en.wikipedia.org/wiki/Slerp
         ///
@@ -711,7 +711,7 @@ class Quaternion
         ///
         /// @param              [in] aFirstQuaternion A first quaternion
         /// @param              [in] aSecondQuaternion A second quaternion
-        /// @param              [in] aRatio An interpolation ratio
+        /// @param              [in] aRatio An interpolator ratio
         /// @return             Quaternion
 
         static Quaternion       SLERP                                       (   const   Quaternion&                 aFirstQuaternion,

@@ -1,14 +1,14 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/Linear.cpp
+/// @file           OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.cpp
 /// @author         Vishwa Shah <vishwa@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
 #include <OpenSpaceToolkit/Core/Error.hpp>
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/Linear.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -23,7 +23,7 @@ namespace interp
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                LinearInterpolator::LinearInterpolator      (   const   VectorXd&                   anXVector,
+                                Linear::Linear                              (   const   VectorXd&                   anXVector,
                                                                                 const   VectorXd&                   aYVector                                    )
                                 : x_(anXVector),
                                   y_(aYVector)
@@ -41,12 +41,12 @@ namespace interp
 
 }
 
-LinearInterpolator*            LinearInterpolator::clone                    ( ) const
+Linear*                         Linear::clone                               ( ) const
 {
-    return new LinearInterpolator(*this) ;
+    return new Linear(*this) ;
 }
 
-VectorXd                        LinearInterpolator::evaluate                (   const   VectorXd&                   aQueryVector                                ) const
+VectorXd                        Linear::evaluate                            (   const   VectorXd&                   aQueryVector                                ) const
 {
 
     VectorXd yOutput(aQueryVector.size()) ;
@@ -60,7 +60,7 @@ VectorXd                        LinearInterpolator::evaluate                (   
 
 }
 
-double                          LinearInterpolator::evaluate                (   const   double&                     aQueryValue                                 ) const
+double                          Linear::evaluate                            (   const   double&                     aQueryValue                                 ) const
 {
 
     using ostk::core::ctnr::Unpack ;
@@ -85,7 +85,7 @@ double                          LinearInterpolator::evaluate                (   
 }
 
 
-Pair<Index, Index>              LinearInterpolator::findIndexRange        (   const   double&                     aQueryValue                                 ) const
+Pair<Index, Index>              Linear::findIndexRange                      (   const   double&                     aQueryValue                                 ) const
 {
 
     Index index = std::distance(x_.begin(), std::lower_bound(x_.begin(), x_.end(), aQueryValue));

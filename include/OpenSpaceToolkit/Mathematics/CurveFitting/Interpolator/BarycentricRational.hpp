@@ -1,21 +1,21 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/CubicSpline.hpp
-/// @author         Vishwa Shah <vishwa@loftorbital.com
+/// @file           OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp
+/// @author         Vishwa Shah <vishwa@loftorbital.com>
 /// @license        Apache License 2.0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#ifndef __OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline__
-#define __OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline__
+#ifndef __OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational__
+#define __OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational__
 
 #include <OpenSpaceToolkit/Core/Types/Real.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
 
-#include <boost/math/interpolators/cardinal_cubic_b_spline.hpp>
+#include <boost/math/interpolators/barycentric_rational.hpp>
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -36,18 +36,18 @@ using ostk::core::types::Size ;
 using ostk::math::obj::VectorXd ;
 using ostk::math::curvefitting::interp::Interpolator ;
 
-using boost::math::interpolators::cardinal_cubic_b_spline ;
+using boost::math::interpolators::barycentric_rational ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-/// @brief                      CubicSpline
+/// @brief                      BarycentricRational
 ///
-///                             A cubic Spline interpolator is a spline where each piece is a third-degree polynomial specified in Spline form, that is
-///                             by its values and first derivatives at the end points of the corresponding domain interval.
+///                             Barycentric rational interpolator is a high-accuracy interpolator method for non-uniformly spaced samples.
+///                             It requires 𝑶(N) time for construction, and 𝑶(N) time for each evaluation.
 ///
-/// @ref                        https://en.wikipedia.org/wiki/Cubic_Spline_spline#:~:text=In%20numerical%20analysis%2C%20a%20cubic,of%20the%20corresponding%20domain%20interval.
+/// @ref                        https://www.boost.org/doc/libs/1_81_0/libs/math/doc/html/math_toolkit/barycentric.html
 
-class CubicSpline: public Interpolator
+class BarycentricRational: public Interpolator
 {
 
     public:
@@ -55,7 +55,7 @@ class CubicSpline: public Interpolator
         /// @brief              Constructor
         ///
         /// @code
-        ///                     CubicSpline cubicSpline(x, y) ;
+        ///                     BarycentricRational barycentricRational(x, y) ;
         /// @endcode
         ///
         /// @param              [in] anXVector A vector of x values
@@ -64,36 +64,19 @@ class CubicSpline: public Interpolator
         /// @warning            The x values must be sorted in ascending order
         /// @warning            The x values must be equally spaced
 
-                                CubicSpline                                 (   const   VectorXd&                   anXVector,
-                                                                                const   VectorXd&                   aYVector                                           ) ;
+                                BarycentricRational                         (   const   VectorXd&                   anXVector,
+                                                                                const   VectorXd&                   aYVector                                    ) ;
 
-        /// @brief              Constructor
+        /// @brief              Clone barycentric rational
         ///
-        /// @code
-        ///                     CubicSpline cubicSpline(y, x0, h) ;
-        /// @endcode
-        ///
-        /// @param              [in] aYVector A vector of y values
-        /// @param              [in] x0 The first x value
-        /// @param              [in] h The spacing between x values
-        ///
-        /// @warning            The x values must be sorted in ascending order
-        /// @warning            The x values must be equally spaced
+        /// @return             Pointer to cloned barycentric rational
 
-                                CubicSpline                                 (   const   VectorXd&                   aYVector,
-                                                                                const   Real&                       x0,
-                                                                                const   Real&                       h                                           ) ;
-
-        /// @brief              Clone cubic spline 
-        ///
-        /// @return             Pointer to cloned cubic spline
-
-        virtual CubicSpline*    clone                                       ( ) const ;
+        BarycentricRational*    clone                                       ( ) const ;
 
         /// @brief              Evaluate the spline
         ///
         /// @code
-        ///                     VectorXd values = cubicSpline.evaluate({1.0, 5.0, 6.0}) ;
+        ///                     VectorXd values = barycentricRational.evaluate({1.0, 5.0, 6.0}) ;
         /// @endcode
         ///
         /// @param              [in] aQueryVector A vector of x values
@@ -104,7 +87,7 @@ class CubicSpline: public Interpolator
         /// @brief              Evaluate the spline
         ///
         /// @code
-        ///                     double values = cubicSpline.evaluate(5.0) ;
+        ///                     double values = barycentricRational.evaluate(5.0) ;
         /// @endcode
         ///
         /// @param              [in] aQueryValue An x value
@@ -114,7 +97,7 @@ class CubicSpline: public Interpolator
 
     private:
 
-        boost::math::interpolators::cardinal_cubic_b_spline<double> interpolator_ ;
+        barycentric_rational<double> interpolator_ ;
 
 } ;
 

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Interpolation/BarycentricRational.test.cpp
+/// @file           OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.test.cpp
 /// @author         Vishwa Shah <vishwa@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -10,7 +10,7 @@
 #include <OpenSpaceToolkit/Core/Containers/Array.hpp>
 #include <OpenSpaceToolkit/Core/Containers/Table.hpp>
 
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/BarycentricRational.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp>
 
 #include <Global.test.hpp>
 
@@ -48,7 +48,7 @@ TEST (OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational, Constructor
 TEST (OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational, Evaluate)
 {
 
-    const Table referenceData = Table::Load(File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/propagated_states.csv")), Table::Format::CSV, true) ;
+    const Table referenceData = Table::Load(File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/propagated_states.csv")), Table::Format::CSV, true) ;
 
     const int testRowIncrement = 20 ;
 

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Interpolation/LinearInterpolator.test.cpp
+/// @file           OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.test.cpp
 /// @author         Vishwa Shah <vishwa@loftorbital.com>
 /// @license        Apache License 2.0
 
@@ -10,7 +10,7 @@
 #include <OpenSpaceToolkit/Core/Containers/Array.hpp>
 #include <OpenSpaceToolkit/Core/Containers/Table.hpp>
 
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/Linear.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp>
 
 #include <Global.test.hpp>
 
@@ -26,11 +26,11 @@ using ostk::core::fs::File ;
 
 using ostk::math::obj::VectorXd ;
 using ostk::math::obj::MatrixXd ;
-using ostk::math::curvefitting::interp::LinearInterpolator ;
+using ostk::math::curvefitting::interp::CubicSpline ;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-TEST (OpenSpaceToolkit_Mathematics_Interpolator_LinearInterpolator, Constructor)
+TEST (OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, Constructor)
 {
 
     VectorXd x(6) ;
@@ -40,15 +40,27 @@ TEST (OpenSpaceToolkit_Mathematics_Interpolator_LinearInterpolator, Constructor)
     y << 0.0, 3.0, 5.0, 6.0, 9.0, 15.0 ;
 
     {
-        EXPECT_NO_THROW(LinearInterpolator(x, y)) ;
+        EXPECT_NO_THROW(CubicSpline(x, y)) ;
     }
 
 }
 
-TEST (OpenSpaceToolkit_Mathematics_Interpolator_LinearInterpolator, Evaluate)
+TEST (OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, SecondConstructor)
 {
 
-    const Table referenceData = Table::Load(File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolation/propagated_states.csv")), Table::Format::CSV, true) ;
+    VectorXd y(6) ;
+    y << 0.0, 3.0, 5.0, 6.0, 9.0, 15.0 ;
+
+    {
+        EXPECT_NO_THROW(CubicSpline(y, 1.0, 1.0)) ;
+    }
+
+}
+
+TEST (OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, Evaluate)
+{
+
+    const Table referenceData = Table::Load(File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/propagated_states.csv")), Table::Format::CSV, true) ;
 
     const int testRowIncrement = 20 ;
 
@@ -79,14 +91,14 @@ TEST (OpenSpaceToolkit_Mathematics_Interpolator_LinearInterpolator, Evaluate)
         for (Size j = 0 ; j < 6 ; ++j)
         {
 
-            LinearInterpolator interpolator = LinearInterpolator(testX, testY.col(j)) ;
+            CubicSpline spline = CubicSpline(testX, testY.col(j)) ;
 
-            VectorXd yEstimated = interpolator.evaluate(referenceX.head(testRowCount)) ;
+            VectorXd yEstimated = spline.evaluate(referenceX.head(testRowCount)) ;
             VectorXd yTruth = referenceY.col(j).head(testRowCount) ;
 
             VectorXd residuals = (yEstimated - yTruth).array().abs() ;
 
-            EXPECT_TRUE((residuals.array() < 420.0).all()) << String::Format("Residual: {}", residuals.maxCoeff()) ;
+            EXPECT_TRUE((residuals.array() < 5e-3).all()) << String::Format("Residual: {}", residuals.maxCoeff()) ;
 
         }
 

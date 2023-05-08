@@ -1,7 +1,7 @@
 ################################################################################################################################################################
 
 # @project        Open Space Toolkit ▸ Mathematics
-# @file           bindings/python/test/interpolators/test_cubic_spline.py
+# @file           bindings/python/test/curve_fitting/interpolator/test_cubic_spline.py
 # @author         Vishwa Shah <vishwa@loftorbital.com>
 # @license        Apache License 2.0
 
@@ -11,7 +11,7 @@ import pytest
 
 import numpy as np
 
-from ostk.mathematics.curve_fitting.interpolation import CubicSpline
+from ostk.mathematics.curve_fitting.interpolator import CubicSpline
 
 ################################################################################################################################################################
 
@@ -19,7 +19,7 @@ from ostk.mathematics.curve_fitting.interpolation import CubicSpline
 class TestCubicSpline:
     def test_default_constructor(self):
 
-        CubicSpline(x = [0.0, 1.0, 2.0, 4.0, 5.0, 6.0], y = [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
+        CubicSpline(x = [0.0, 1.0, 2.0, 3.0, 4.0, 5.0], y = [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
 
     def test_default_constructor_2(self):
 
