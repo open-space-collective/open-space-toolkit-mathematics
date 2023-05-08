@@ -8,8 +8,8 @@ var hierarchy =
       [ "ostk::math::curvefitting::interp::CubicSpline", "classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html", null ],
       [ "ostk::math::curvefitting::interp::LinearInterpolator", "classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear_interpolator.html", null ]
     ] ],
-    [ "ostk::math::geom::d3::Intersection", "classostk_1_1math_1_1geom_1_1d3_1_1_intersection.html", null ],
     [ "ostk::math::geom::d2::Intersection", "classostk_1_1math_1_1geom_1_1d2_1_1_intersection.html", null ],
+    [ "ostk::math::geom::d3::Intersection", "classostk_1_1math_1_1geom_1_1d3_1_1_intersection.html", null ],
     [ "ostk::math::obj::IntervalBase", "classostk_1_1math_1_1obj_1_1_interval_base.html", [
       [ "ostk::math::obj::Interval< T >", "classostk_1_1math_1_1obj_1_1_interval.html", null ]
     ] ],
@@ -43,6 +43,6 @@ var hierarchy =
     [ "ostk::math::geom::d3::trf::rot::Quaternion", "classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion.html", null ],
     [ "ostk::math::geom::d3::trf::rot::RotationMatrix", "classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_matrix.html", null ],
     [ "ostk::math::geom::d3::trf::rot::RotationVector", "classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_rotation_vector.html", null ],
-    [ "ostk::math::geom::d2::Transformation", "classostk_1_1math_1_1geom_1_1d2_1_1_transformation.html", null ],
-    [ "ostk::math::geom::d3::Transformation", "classostk_1_1math_1_1geom_1_1d3_1_1_transformation.html", null ]
+    [ "ostk::math::geom::d3::Transformation", "classostk_1_1math_1_1geom_1_1d3_1_1_transformation.html", null ],
+    [ "ostk::math::geom::d2::Transformation", "classostk_1_1math_1_1geom_1_1d2_1_1_transformation.html", null ]
 ];
