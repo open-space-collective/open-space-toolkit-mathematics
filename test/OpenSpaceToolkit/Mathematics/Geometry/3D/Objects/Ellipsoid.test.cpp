@@ -1579,13 +1579,10 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWi
 
             for (const auto& point : pointSet)
             {
-
                 ASSERT_TRUE(point.isNear(Point(0.0, 0.0, +3.0), Real::Epsilon())) ;
-
             }
 
-        }
-        else {
+        } else {
 
             ASSERT_TRUE(intersection.accessComposite().accessObjectAt(0).is<Point>()) ;
 
