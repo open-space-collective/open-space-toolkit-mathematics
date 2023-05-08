@@ -6,7 +6,7 @@ var hierarchy =
     [ "ostk::math::curvefitting::interp::Interpolator", "classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator.html", [
       [ "ostk::math::curvefitting::interp::BarycentricRational", "classostk_1_1math_1_1curvefitting_1_1interp_1_1_barycentric_rational.html", null ],
       [ "ostk::math::curvefitting::interp::CubicSpline", "classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html", null ],
-      [ "ostk::math::curvefitting::interp::LinearInterpolator", "classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear_interpolator.html", null ]
+      [ "ostk::math::curvefitting::interp::Linear", "classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear.html", null ]
     ] ],
     [ "ostk::math::geom::d2::Intersection", "classostk_1_1math_1_1geom_1_1d2_1_1_intersection.html", null ],
     [ "ostk::math::geom::d3::Intersection", "classostk_1_1math_1_1geom_1_1d3_1_1_intersection.html", null ],

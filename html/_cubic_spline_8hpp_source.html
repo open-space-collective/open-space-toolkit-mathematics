@@ -125,7 +125,7 @@ $(document).ready(function(){initNavTree('_cubic_spline_8hpp_source.html',''); i
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                                <a class="code" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html#a6193f35fae4f27ef042c3895f4d1e341">CubicSpline</a>                                 (   <span class="keyword">const</span>   <a class="code" href="namespaceostk_1_1math_1_1obj.html#a84bdc62967e939556fb94869024693ff">VectorXd</a>&amp;                   anXVector,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                                                                <span class="keyword">const</span>   <a class="code" href="namespaceostk_1_1math_1_1obj.html#a84bdc62967e939556fb94869024693ff">VectorXd</a>&amp;                   aYVector                                           ) ;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                                                                                <span class="keyword">const</span>   <a class="code" href="namespaceostk_1_1math_1_1obj.html#a84bdc62967e939556fb94869024693ff">VectorXd</a>&amp;                   aYVector                                    ) ;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                                <a class="code" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html#a6193f35fae4f27ef042c3895f4d1e341">CubicSpline</a>                                 (   <span class="keyword">const</span>   <a class="code" href="namespaceostk_1_1math_1_1obj.html#a84bdc62967e939556fb94869024693ff">VectorXd</a>&amp;                   aYVector,</div>
@@ -137,13 +137,13 @@ $(document).ready(function(){initNavTree('_cubic_spline_8hpp_source.html',''); i
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="namespaceostk_1_1math_1_1obj.html#a84bdc62967e939556fb94869024693ff">VectorXd</a>                <a class="code" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html#a69c23827173fe8ee587d468551246fd9">evaluate</a>                                    (   <span class="keyword">const</span>   <a class="code" href="namespaceostk_1_1math_1_1obj.html#a84bdc62967e939556fb94869024693ff">VectorXd</a>&amp;                   aQueryVector                                ) <span class="keyword">const</span> ;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        <span class="keywordtype">double</span>                  <a class="code" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html#a69c23827173fe8ee587d468551246fd9">evaluate</a>                                    (   <span class="keyword">const</span>   <span class="keywordtype">double</span>&amp;                     aQueryValue                                 ) <span class="keyword">const</span> ;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        boost::math::interpolators::cardinal_cubic_b_spline&lt;double&gt; interpolator_ ;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        cardinal_cubic_b_spline&lt;double&gt; interpolator_ ;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;} ;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
@@ -158,7 +158,7 @@ $(document).ready(function(){initNavTree('_cubic_spline_8hpp_source.html',''); i
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline_html_a69c23827173fe8ee587d468551246fd9"><div class="ttname"><a href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html#a69c23827173fe8ee587d468551246fd9">ostk::math::curvefitting::interp::CubicSpline::evaluate</a></div><div class="ttdeci">VectorXd evaluate(const VectorXd &amp;aQueryVector) const</div><div class="ttdoc">Evaluate the spline.</div><div class="ttdef"><b>Definition:</b> CubicSpline.cpp:73</div></div>
+<div class="ttc" id="aclassostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline_html_a69c23827173fe8ee587d468551246fd9"><div class="ttname"><a href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html#a69c23827173fe8ee587d468551246fd9">ostk::math::curvefitting::interp::CubicSpline::evaluate</a></div><div class="ttdeci">VectorXd evaluate(const VectorXd &amp;aQueryVector) const</div><div class="ttdoc">Evaluate the cubic spline interpolator.</div><div class="ttdef"><b>Definition:</b> CubicSpline.cpp:73</div></div>
 <div class="ttc" id="a_vector_8hpp_html"><div class="ttname"><a href="_vector_8hpp.html">Vector.hpp</a></div></div>
 <div class="ttc" id="aclassostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator_html"><div class="ttname"><a href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator.html">ostk::math::curvefitting::interp::Interpolator</a></div><div class="ttdoc">Interpolator.</div><div class="ttdef"><b>Definition:</b> Interpolator.hpp:44</div></div>
 <div class="ttc" id="aclassostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline_html_a6193f35fae4f27ef042c3895f4d1e341"><div class="ttname"><a href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html#a6193f35fae4f27ef042c3895f4d1e341">ostk::math::curvefitting::interp::CubicSpline::CubicSpline</a></div><div class="ttdeci">CubicSpline(const VectorXd &amp;anXVector, const VectorXd &amp;aYVector)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> CubicSpline.cpp:27</div></div>
@@ -171,7 +171,7 @@ $(document).ready(function(){initNavTree('_cubic_spline_8hpp_source.html',''); i
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_0135578efc1637a0e0841daccc698f8a.html">OpenSpaceToolkit</a></li><li class="navelem"><a class="el" href="dir_f3faba878442e5c0a91342498b159f75.html">Mathematics</a></li><li class="navelem"><a class="el" href="dir_e003ce5e4f2df09af4cc2717bf4daebd.html">CurveFitting</a></li><li class="navelem"><a class="el" href="dir_d4036326ce41ac9e6f110e45346f678b.html">Interpolation</a></li><li class="navelem"><a class="el" href="_cubic_spline_8hpp.html">CubicSpline.hpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_0135578efc1637a0e0841daccc698f8a.html">OpenSpaceToolkit</a></li><li class="navelem"><a class="el" href="dir_f3faba878442e5c0a91342498b159f75.html">Mathematics</a></li><li class="navelem"><a class="el" href="dir_e003ce5e4f2df09af4cc2717bf4daebd.html">CurveFitting</a></li><li class="navelem"><a class="el" href="dir_63470a2cc504a7aebe94128417d762f9.html">Interpolator</a></li><li class="navelem"><a class="el" href="_cubic_spline_8hpp.html">CubicSpline.hpp</a></li>
   </ul>
 </div>
 </body>

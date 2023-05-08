@@ -100,7 +100,7 @@ Inheritance diagram for ostk::math::curvefitting::interp::Interpolator:</div>
   <map id="ostk::math::curvefitting::interp::Interpolator_map" name="ostk::math::curvefitting::interp::Interpolator_map">
 <area href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_barycentric_rational.html" title="BarycentricRational." alt="ostk::math::curvefitting::interp::BarycentricRational" shape="rect" coords="0,56,290,80"/>
 <area href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html" title="CubicSpline." alt="ostk::math::curvefitting::interp::CubicSpline" shape="rect" coords="300,56,590,80"/>
-<area href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear_interpolator.html" title="LinearInterpolator." alt="ostk::math::curvefitting::interp::LinearInterpolator" shape="rect" coords="600,56,890,80"/>
+<area href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear.html" title="Linear." alt="ostk::math::curvefitting::interp::Linear" shape="rect" coords="600,56,890,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -124,9 +124,9 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_interpolator.html" title="Interpolator.">Interpolator</a>. </p>
-<pre class="fragment">                        A cubic Spline interpolator is a spline where each piece is a third-degree polynomial specified in Spline form, that is
-                        by its values and first derivatives at the end points of the corresponding domain interval.
-</pre><p><a href="https://en.wikipedia.org/wiki/Cubic_Spline_spline#">https://en.wikipedia.org/wiki/Cubic_Spline_spline#</a>:~:text=In%20numerical%20analysis%2C%20a%20cubic,of%20the%20corresponding%20domain%20interval. </p>
+<pre class="fragment">                        In mathematics, an interpolator is a type of estimator allowing to construct new data points based on a range of a discrete set
+                        of known data points.
+</pre><p><a href="https://en.wikipedia.org/wiki/Interpolator">https://en.wikipedia.org/wiki/Interpolator</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afcb021e5aa9972479e9e0750b86c6cd4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afcb021e5aa9972479e9e0750b86c6cd4">&#9670;&nbsp;</a></span>Interpolator()</h2>
@@ -209,7 +209,7 @@ Public Member Functions</h2></td></tr>
 <p>Clone interpolator. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to cloned interpolator </dd></dl>
 
-<p>Implemented in <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html#a43d9d4ff7c386a5f3442dc8a617aa0cc">ostk::math::curvefitting::interp::CubicSpline</a>, <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear_interpolator.html#aaf48bb953f88279ff2cb755da611e937">ostk::math::curvefitting::interp::LinearInterpolator</a>, and <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_barycentric_rational.html#a0fe27c0d93f957df0132354daa3e1368">ostk::math::curvefitting::interp::BarycentricRational</a>.</p>
+<p>Implemented in <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html#a43d9d4ff7c386a5f3442dc8a617aa0cc">ostk::math::curvefitting::interp::CubicSpline</a>, <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear.html#a5cc05aadb7cf4baa8c2522c116258824">ostk::math::curvefitting::interp::Linear</a>, and <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_barycentric_rational.html#a0fe27c0d93f957df0132354daa3e1368">ostk::math::curvefitting::interp::BarycentricRational</a>.</p>
 
 </div>
 </div>
@@ -246,7 +246,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Vector of y values </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html#a9cd7d809db55125256a73582cb040e4f">ostk::math::curvefitting::interp::CubicSpline</a>, <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear_interpolator.html#ade4cbbc6da45e0dedd71d86a45258512">ostk::math::curvefitting::interp::LinearInterpolator</a>, and <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_barycentric_rational.html#ac4924f9afb399ee21f12f2d9bf381da1">ostk::math::curvefitting::interp::BarycentricRational</a>.</p>
+<p>Reimplemented in <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html#a9cd7d809db55125256a73582cb040e4f">ostk::math::curvefitting::interp::CubicSpline</a>, <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear.html#ae77257906e4a25280ccb8433d90c8f94">ostk::math::curvefitting::interp::Linear</a>, and <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_barycentric_rational.html#ac4924f9afb399ee21f12f2d9bf381da1">ostk::math::curvefitting::interp::BarycentricRational</a>.</p>
 
 </div>
 </div>
@@ -283,7 +283,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Vector of y values </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html#a69c23827173fe8ee587d468551246fd9">ostk::math::curvefitting::interp::CubicSpline</a>, <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear_interpolator.html#abf0d1f4f1bf3dc1a64cfb1183c8e3e83">ostk::math::curvefitting::interp::LinearInterpolator</a>, and <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_barycentric_rational.html#a4fbf8e51d6c5c383dca899b3e06fe043">ostk::math::curvefitting::interp::BarycentricRational</a>.</p>
+<p>Reimplemented in <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html#a69c23827173fe8ee587d468551246fd9">ostk::math::curvefitting::interp::CubicSpline</a>, <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear.html#a96e11eb290e34ad18e0ab1a5815410e1">ostk::math::curvefitting::interp::Linear</a>, and <a class="el" href="classostk_1_1math_1_1curvefitting_1_1interp_1_1_barycentric_rational.html#a4fbf8e51d6c5c383dca899b3e06fe043">ostk::math::curvefitting::interp::BarycentricRational</a>.</p>
 
 </div>
 </div>

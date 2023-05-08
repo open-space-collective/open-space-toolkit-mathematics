@@ -109,9 +109,9 @@ static \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quater
 static \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a577ce79f1b77303355a96fc6e4f71310}{Shortest\+Rotation}} (const Vector3d \&a\+First\+Vector, const Vector3d \&a\+Second\+Vector)
 \begin{DoxyCompactList}\small\item\em Constructs a quaternion describing the shortest rotation between two vectors. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_afdce957b3873db3f458a479db3b1cfd4}{L\+E\+RP}} (const \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}} \&a\+First\+Quaternion, const \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}} \&a\+Second\+Quaternion, const Real \&a\+Ratio)
-\begin{DoxyCompactList}\small\item\em Linear interpolation method. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Linear interpolator method. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a0dc52e246578fc512b9918339d8ba6b9}{N\+L\+E\+RP}} (const \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}} \&a\+First\+Quaternion, const \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}} \&a\+Second\+Quaternion, const Real \&a\+Ratio)
-\begin{DoxyCompactList}\small\item\em Normalized linear interpolation method. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Normalized linear interpolator method. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_abb665a14367c406cf7e5c88824195186}{S\+L\+E\+RP}} (const \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}} \&a\+First\+Quaternion, const \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}} \&a\+Second\+Quaternion, const Real \&a\+Ratio)
 \end{DoxyCompactItemize}
 \doxysubsection*{Friends}
@@ -548,7 +548,7 @@ True if quaternion is unitary
 
 
 
-Linear interpolation method. 
+Linear interpolator method. 
 
 
 \begin{DoxyCode}{0}
@@ -564,7 +564,7 @@ Linear interpolation method.
 \hline
 \mbox{\texttt{ in}}  & {\em a\+Second\+Quaternion} & A second quaternion \\
 \hline
-\mbox{\texttt{ in}}  & {\em a\+Ratio} & An interpolation ratio \\
+\mbox{\texttt{ in}}  & {\em a\+Ratio} & An interpolator ratio \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -598,7 +598,7 @@ Logarithm
 
 
 
-Normalized linear interpolation method. 
+Normalized linear interpolator method. 
 
 
 \begin{DoxyCode}{0}
@@ -614,7 +614,7 @@ Normalized linear interpolation method.
 \hline
 \mbox{\texttt{ in}}  & {\em a\+Second\+Quaternion} & A second quaternion \\
 \hline
-\mbox{\texttt{ in}}  & {\em a\+Ratio} & An interpolation ratio \\
+\mbox{\texttt{ in}}  & {\em a\+Ratio} & An interpolator ratio \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -1087,7 +1087,7 @@ Constructs a quaternion describing the shortest rotation between two vectors.
 \doxysubsubsection{\texorpdfstring{SLERP()}{SLERP()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}} ostk\+::math\+::geom\+::d3\+::trf\+::rot\+::\+Quaternion\+::\+S\+L\+E\+RP (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}} \&}]{a\+First\+Quaternion,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}} \&}]{a\+Second\+Quaternion,  }\item[{const Real \&}]{a\+Ratio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
-Spherical linear interpolation method
+Spherical linear interpolator method
 
 \href{https://en.wikipedia.org/wiki/Slerp}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Slerp}}
 
@@ -1105,7 +1105,7 @@ Spherical linear interpolation method
 \hline
 \mbox{\texttt{ in}}  & {\em a\+Second\+Quaternion} & A second quaternion \\
 \hline
-\mbox{\texttt{ in}}  & {\em a\+Ratio} & An interpolation ratio \\
+\mbox{\texttt{ in}}  & {\em a\+Ratio} & An interpolator ratio \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

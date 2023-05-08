@@ -1,4 +1,4 @@
-var dir_d4036326ce41ac9e6f110e45346f678b =
+var dir_63470a2cc504a7aebe94128417d762f9 =
 [
     [ "BarycentricRational.hpp", "_barycentric_rational_8hpp.html", [
       [ "BarycentricRational", "classostk_1_1math_1_1curvefitting_1_1interp_1_1_barycentric_rational.html", "classostk_1_1math_1_1curvefitting_1_1interp_1_1_barycentric_rational" ]
@@ -7,6 +7,6 @@ var dir_d4036326ce41ac9e6f110e45346f678b =
       [ "CubicSpline", "classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline.html", "classostk_1_1math_1_1curvefitting_1_1interp_1_1_cubic_spline" ]
     ] ],
     [ "Linear.hpp", "_linear_8hpp.html", [
-      [ "LinearInterpolator", "classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear_interpolator.html", "classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear_interpolator" ]
+      [ "Linear", "classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear.html", "classostk_1_1math_1_1curvefitting_1_1interp_1_1_linear" ]
     ] ]
 ];
