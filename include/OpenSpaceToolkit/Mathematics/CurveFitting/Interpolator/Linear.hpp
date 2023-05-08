@@ -72,7 +72,7 @@ class Linear: public Interpolator
         ///
         /// @return             Pointer to cloned linear interpolator
 
-        virtual Linear*         clone                                ( ) const ;
+        virtual Linear*         clone                                       ( ) const ;
 
         /// @brief              Evaluate the linear interpolator
         ///
