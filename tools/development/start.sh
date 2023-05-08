@@ -9,62 +9,97 @@
 
 ################################################################################################################################################################
 
+# Check input arguments
+
 if [[ -z ${project_directory} ]]; then
     echo "Variable [project_directory] is undefined."
     exit 1
 fi
 
-options=""
-command="/bin/bash"
+if [[ -z ${docker_development_image_repository} ]]; then
+    echo "Variable [docker_development_image_repository] is undefined."
+    exit 1
+fi
+
+if [[ -z ${docker_image_version} ]]; then
+    echo "Variable [docker_image_version] is undefined."
+    exit 1
+fi
+
+project_directory=$(git rev-parse --show-toplevel)
+
+# Initialize variables
+
+options=()
+command=""
 
 # Setup linked mode
 
 if [[ ! -z ${1} ]] && [[ ${1} == "--link" ]]; then
 
-    options=""
-    command=""
+    for link in "${@:2}"
 
-    # Open Space Toolkit ▸ Core
+    do
 
-    if [[ -z ${open_space_toolkit_core_directory} ]]; then
-        echo "Variable [open_space_toolkit_core_directory] is undefined."
-        exit 1
-    fi
+        # Extract last part of the path
 
-    if [[ ! -d ${open_space_toolkit_core_directory} ]]; then
-        echo "Open Space Toolkit ▸ Core directory [${open_space_toolkit_core_directory}] cannot be found."
-        exit 1
-    fi
+        dep=${link##*/}
 
-    options="${options} \
-    --volume=${open_space_toolkit_core_directory}:/mnt/open-space-toolkit-core:ro"
+        # Log the linking step
 
-    command=" \
-    rm -rf /usr/local/include/OpenSpaceToolkit/Core; \
-    rm -f /usr/local/lib/libopen-space-toolkit-core.so*; \
-    cp -as /mnt/open-space-toolkit-core/include/OpenSpaceToolkit/Core /usr/local/include/OpenSpaceToolkit/Core; \
-    cp -as /mnt/open-space-toolkit-core/src/OpenSpaceToolkit/Core/* /usr/local/include/OpenSpaceToolkit/Core/; \
-    ln -s /mnt/open-space-toolkit-core/lib/libopen-space-toolkit-core.so /usr/local/lib/; \
-    ln -s /mnt/open-space-toolkit-core/lib/libopen-space-toolkit-core.so.0 /usr/local/lib/;"
+        echo "Linking with ${dep} at ${link}..."
 
-    # Output
+        # Open Space Toolkit ▸ Core
 
-    command="${command} \
-    /bin/bash"
+        if [[ ${dep} == "open-space-toolkit-core" ]]; then
+
+            options+=( "-v" )
+            options+=( "${link}:/mnt/open-space-toolkit-core:ro" )
+
+            command="${command} \
+            rm -rf /usr/local/include/OpenSpaceToolkit/Core; \
+            rm -f /usr/local/lib/libopen-space-toolkit-core.so*; \
+            cp -as /mnt/open-space-toolkit-core/include/OpenSpaceToolkit/Core /usr/local/include/OpenSpaceToolkit/Core; \
+            cp -as /mnt/open-space-toolkit-core/src/OpenSpaceToolkit/Core/* /usr/local/include/OpenSpaceToolkit/Core/; \
+            ln -s /mnt/open-space-toolkit-core/lib/libopen-space-toolkit-core.so /usr/local/lib/; \
+            ln -s /mnt/open-space-toolkit-core/lib/libopen-space-toolkit-core.so.0 /usr/local/lib/;"
+
+        fi
+
+        # Open Space Toolkit ▸ IO
+
+        if [[ ${dep} == "open-space-toolkit-io" ]]; then
+
+            options+=( "-v" )
+            options+=( "${link}:/mnt/open-space-toolkit-io:ro" )
+
+            command="${command} \
+            rm -rf /usr/local/include/OpenSpaceToolkit/IO; \
+            rm -f /usr/local/lib/libopen-space-toolkit-io.so*; \
+            cp -as /mnt/open-space-toolkit-io/include/OpenSpaceToolkit/IO /usr/local/include/OpenSpaceToolkit/IO; \
+            cp -as /mnt/open-space-toolkit-io/src/OpenSpaceToolkit/IO/* /usr/local/include/OpenSpaceToolkit/IO/; \
+            ln -s /mnt/open-space-toolkit-io/lib/libopen-space-toolkit-io.so /usr/local/lib/; \
+            ln -s /mnt/open-space-toolkit-io/lib/libopen-space-toolkit-io.so.0 /usr/local/lib/;"
+
+        fi
+
+    done
+
+    command="${command} /bin/bash"
 
 fi
 
 # Run Docker container
 
 docker run \
--it \
---rm \
---privileged \
-${options} \
---volume="${project_directory}:/app:delegated" \
---volume="${project_directory}/tools/development/helpers:/app/build/helpers:ro,delegated" \
---workdir="/app/build" \
-${docker_development_image_repository}:${docker_image_version}-${target} \
-/bin/bash -c "${command}"
+    -it \
+    --rm \
+    --privileged \
+    "${options[@]}" \
+    --volume="${project_directory}:/app:delegated" \
+    --volume="${project_directory}/tools/development/helpers:/app/build/helpers:ro,delegated" \
+    --workdir="/app/build" \
+    ${docker_development_image_repository}:${docker_image_version} \
+    /bin/bash -c "${command}"
 
 ################################################################################################################################################################
