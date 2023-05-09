@@ -3,11 +3,10 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray__
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
-
 #include <OpenSpaceToolkit/Core/Types/Real.hpp>
 
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
 
 namespace ostk
 {
@@ -20,26 +19,22 @@ namespace d3
 namespace objects
 {
 
+using ostk::core::types::Real;
 
-using ostk::core::types::Real ;
+using ostk::math::obj::Vector3d;
+using ostk::math::geom::d3::Object;
+using ostk::math::geom::d3::objects::Point;
 
-using ostk::math::obj::Vector3d ;
-using ostk::math::geom::d3::Object ;
-using ostk::math::geom::d3::objects::Point ;
+#define DEFAULT_ONLY_IN_SIGHT false
 
-
-#define                         DEFAULT_ONLY_IN_SIGHT                           false
-
-
-class PointSet ;
-class Line ;
-class Segment ;
-class Plane ;
-class Polygon ;
-class Sphere ;
-class Ellipsoid ;
-class Pyramid ;
-
+class PointSet;
+class Line;
+class Segment;
+class Plane;
+class Polygon;
+class Sphere;
+class Ellipsoid;
+class Pyramid;
 
 /// @brief                      Ray
 ///
@@ -47,227 +42,218 @@ class Pyramid ;
 
 class Ray : public Object
 {
+   public:
+    /// @brief              Constructor
+    ///
+    /// @code
+    ///                     Ray ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
+    /// @endcode
+    ///
+    /// @param              [in] anOrigin A ray origin
+    /// @param              [in] aDirection A ray direction
 
-    public:
+    Ray(const Point& anOrigin, const Vector3d& aDirection);
 
-        /// @brief              Constructor
-        ///
-        /// @code
-        ///                     Ray ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
-        /// @endcode
-        ///
-        /// @param              [in] anOrigin A ray origin
-        /// @param              [in] aDirection A ray direction
+    /// @brief              Clone ray
+    ///
+    /// @return             Pointer to cloned ray
 
-                                Ray                                         (   const   Point&                      anOrigin,
-                                                                                const   Vector3d&                   aDirection                                  ) ;
+    virtual Ray* clone() const override;
 
-        /// @brief              Clone ray
-        ///
-        /// @return             Pointer to cloned ray
+    /// @brief              Equal to operator
+    ///
+    /// @code
+    ///                     Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) == Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ; //
+    ///                     True
+    /// @endcode
+    ///
+    /// @param              [in] aRay A ray
+    /// @return             True if rays are equal
 
-        virtual Ray*            clone                                       ( ) const override ;
+    bool operator==(const Ray& aRay) const;
 
-        /// @brief              Equal to operator
-        ///
-        /// @code
-        ///                     Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) == Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ; // True
-        /// @endcode
-        ///
-        /// @param              [in] aRay A ray
-        /// @return             True if rays are equal
+    /// @brief              Not equal to operator
+    ///
+    /// @code
+    ///                     Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) != Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 2.0 }) ; //
+    ///                     True
+    /// @endcode
+    ///
+    /// @param              [in] aRay A ray
+    /// @return             True if rays are not equal
 
-        bool                    operator ==                                 (   const   Ray&                        aRay                                        ) const ;
+    bool operator!=(const Ray& aRay) const;
 
-        /// @brief              Not equal to operator
-        ///
-        /// @code
-        ///                     Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) != Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 2.0 }) ; // True
-        /// @endcode
-        ///
-        /// @param              [in] aRay A ray
-        /// @return             True if rays are not equal
+    /// @brief              Check if ray is defined
+    ///
+    /// @code
+    ///                     Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).isDefined() ; // True
+    /// @endcode
+    ///
+    /// @return             True if ray is defined
 
-        bool                    operator !=                                 (   const   Ray&                        aRay                                        ) const ;
+    virtual bool isDefined() const override;
 
-        /// @brief              Check if ray is defined
-        ///
-        /// @code
-        ///                     Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).isDefined() ; // True
-        /// @endcode
-        ///
-        /// @return             True if ray is defined
+    /// @brief              Check if ray intersects point
+    ///
+    /// @code
+    ///                     Ray ray = ... ;
+    ///                     Point point = ... ;
+    ///                     ray.intersects(point) ;
+    /// @endcode
+    ///
+    /// @param              [in] anPoint A point
+    /// @return             True if ray intersects point
 
-        virtual bool            isDefined                                   ( ) const override ;
+    bool intersects(const Point& aPoint) const;
 
-        /// @brief              Check if ray intersects point
-        ///
-        /// @code
-        ///                     Ray ray = ... ;
-        ///                     Point point = ... ;
-        ///                     ray.intersects(point) ;
-        /// @endcode
-        ///
-        /// @param              [in] anPoint A point
-        /// @return             True if ray intersects point
+    /// @brief              Check if ray intersects plane
+    ///
+    /// @code
+    ///                     Ray ray = ... ;
+    ///                     Plane plane = ... ;
+    ///                     ray.intersects(plane) ;
+    /// @endcode
+    ///
+    /// @param              [in] aPlane A plane
+    /// @return             True if ray intersects plane
 
-        bool                    intersects                                  (   const   Point&                      aPoint                                      ) const ;
+    bool intersects(const Plane& aPlane) const;
 
-        /// @brief              Check if ray intersects plane
-        ///
-        /// @code
-        ///                     Ray ray = ... ;
-        ///                     Plane plane = ... ;
-        ///                     ray.intersects(plane) ;
-        /// @endcode
-        ///
-        /// @param              [in] aPlane A plane
-        /// @return             True if ray intersects plane
+    /// @brief              Check if ray intersects sphere
+    ///
+    /// @code
+    ///                     Ray ray = ... ;
+    ///                     Sphere sphere = ... ;
+    ///                     ray.intersects(sphere) ;
+    /// @endcode
+    ///
+    /// @param              [in] anSphere A sphere
+    /// @return             True if ray intersects sphere
 
-        bool                    intersects                                  (   const   Plane&                      aPlane                                      ) const ;
+    bool intersects(const Sphere& aSphere) const;
 
-        /// @brief              Check if ray intersects sphere
-        ///
-        /// @code
-        ///                     Ray ray = ... ;
-        ///                     Sphere sphere = ... ;
-        ///                     ray.intersects(sphere) ;
-        /// @endcode
-        ///
-        /// @param              [in] anSphere A sphere
-        /// @return             True if ray intersects sphere
+    /// @brief              Check if ray intersects ellipsoid
+    ///
+    /// @code
+    ///                     Ray ray = ... ;
+    ///                     Ellipsoid ellipsoid = ... ;
+    ///                     ray.intersects(ellipsoid) ;
+    /// @endcode
+    ///
+    /// @param              [in] anEllipsoid An ellipsoid
+    /// @return             True if ray intersects ellipsoid
 
-        bool                    intersects                                  (   const   Sphere&                     aSphere                                     ) const ;
+    bool intersects(const Ellipsoid& anEllipsoid) const;
 
-        /// @brief              Check if ray intersects ellipsoid
-        ///
-        /// @code
-        ///                     Ray ray = ... ;
-        ///                     Ellipsoid ellipsoid = ... ;
-        ///                     ray.intersects(ellipsoid) ;
-        /// @endcode
-        ///
-        /// @param              [in] anEllipsoid An ellipsoid
-        /// @return             True if ray intersects ellipsoid
+    /// @brief              Check if ray contains point
+    ///
+    /// @code
+    ///                     Ray ray = ... ;
+    ///                     Point point = ... ;
+    ///                     ray.contains(point) ;
+    /// @endcode
+    ///
+    /// @param              [in] aPoint A point
+    /// @return             True if ray contains point
 
-        bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
+    bool contains(const Point& aPoint) const;
 
-        /// @brief              Check if ray contains point
-        ///
-        /// @code
-        ///                     Ray ray = ... ;
-        ///                     Point point = ... ;
-        ///                     ray.contains(point) ;
-        /// @endcode
-        ///
-        /// @param              [in] aPoint A point
-        /// @return             True if ray contains point
+    /// @brief              Check if ray contains point set
+    ///
+    /// @code
+    ///                     Ray ray = ... ;
+    ///                     PointSet pointSet = ... ;
+    ///                     ray.contains(pointSet) ;
+    /// @endcode
+    ///
+    /// @param              [in] aPointSet A point set
+    /// @return             True if ray contains point set
 
-        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+    bool contains(const PointSet& aPointSet) const;
 
-        /// @brief              Check if ray contains point set
-        ///
-        /// @code
-        ///                     Ray ray = ... ;
-        ///                     PointSet pointSet = ... ;
-        ///                     ray.contains(pointSet) ;
-        /// @endcode
-        ///
-        /// @param              [in] aPointSet A point set
-        /// @return             True if ray contains point set
+    /// @brief              Get ray origin
+    ///
+    /// @code
+    ///                     Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getOrigin() ; // [0.0, 0.0, 0.0]
+    /// @endcode
+    ///
+    /// @return             Ray origin
 
-        bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
+    Point getOrigin() const;
 
-        /// @brief              Get ray origin
-        ///
-        /// @code
-        ///                     Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getOrigin() ; // [0.0, 0.0, 0.0]
-        /// @endcode
-        ///
-        /// @return             Ray origin
+    /// @brief              Get ray direction
+    ///
+    /// @code
+    ///                     Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getDirection() ; // [0.0, 0.0, 1.0]
+    /// @endcode
+    ///
+    /// @return             Ray direction
 
-        Point                   getOrigin                                   ( ) const ;
+    Vector3d getDirection() const;
 
-        /// @brief              Get ray direction
-        ///
-        /// @code
-        ///                     Ray({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getDirection() ; // [0.0, 0.0, 1.0]
-        /// @endcode
-        ///
-        /// @return             Ray direction
+    /// @brief              Get distance to point
+    ///
+    /// @param              [in] aPoint A point
+    /// @return             Distance to point
 
-        Vector3d                getDirection                                ( ) const ;
+    Real distanceTo(const Point& aPoint) const;
 
-        /// @brief              Get distance to point
-        ///
-        /// @param              [in] aPoint A point
-        /// @return             Distance to point
+    /// @brief              Compute intersection of ray with plane
+    ///
+    /// @param              [in] aPlane A plane
+    /// @return             Intersection of ray with plane
 
-        Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;
+    Intersection intersectionWith(const Plane& aPlane) const;
 
-        /// @brief              Compute intersection of ray with plane
-        ///
-        /// @param              [in] aPlane A plane
-        /// @return             Intersection of ray with plane
+    /// @brief              Compute intersection of ray with sphere
+    ///
+    /// @param              [in] aSphere A sphere
+    /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
+    /// @return             Intersection of ray with sphere
 
-        Intersection            intersectionWith                            (   const   Plane&                      aPlane                                      ) const ;
+    Intersection intersectionWith(const Sphere& aSphere, const bool onlyInSight = DEFAULT_ONLY_IN_SIGHT) const;
 
-        /// @brief              Compute intersection of ray with sphere
-        ///
-        /// @param              [in] aSphere A sphere
-        /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
-        /// @return             Intersection of ray with sphere
+    /// @brief              Compute intersection of ray with ellipsoid
+    ///
+    /// @param              [in] anEllipsoid An ellipsoid
+    /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
+    /// @return             Intersection of ray with ellipsoid
 
-        Intersection            intersectionWith                            (   const   Sphere&                     aSphere,
-                                                                                const   bool                        onlyInSight                                 =   DEFAULT_ONLY_IN_SIGHT ) const ;
+    Intersection intersectionWith(const Ellipsoid& anEllipsoid, const bool onlyInSight = DEFAULT_ONLY_IN_SIGHT) const;
 
-        /// @brief              Compute intersection of ray with ellipsoid
-        ///
-        /// @param              [in] anEllipsoid An ellipsoid
-        /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
-        /// @return             Intersection of ray with ellipsoid
+    /// @brief              Print ray
+    ///
+    /// @param              [in] anOutputStream An output stream
+    /// @param              [in] (optional) displayDecorators If true, display decorators
 
-        Intersection            intersectionWith                            (   const   Ellipsoid&                  anEllipsoid,
-                                                                                const   bool                        onlyInSight                                 =   DEFAULT_ONLY_IN_SIGHT ) const ;
+    virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
-        /// @brief              Print ray
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] (optional) displayDecorators If true, display decorators
+    /// @brief              Apply transformation to ray
+    ///
+    /// @param              [in] aTransformation A transformation
 
-        virtual void            print                                       (           std::ostream&               anOutputStream,
-                                                                                        bool                        displayDecorators                           =   true ) const override ;
+    virtual void applyTransformation(const Transformation& aTransformation) override;
 
-        /// @brief              Apply transformation to ray
-        ///
-        /// @param              [in] aTransformation A transformation
+    /// @brief              Constructs an undefined ray
+    ///
+    /// @code
+    ///                     Ray ray = Ray::Undefined() ; // Undefined
+    /// @endcode
+    ///
+    /// @return             Undefined ray
 
-        virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) override ;
+    static Ray Undefined();
 
-        /// @brief              Constructs an undefined ray
-        ///
-        /// @code
-        ///                     Ray ray = Ray::Undefined() ; // Undefined
-        /// @endcode
-        ///
-        /// @return             Undefined ray
+   private:
+    Point origin_;
+    Vector3d direction_;
+};
 
-        static Ray              Undefined                                   ( ) ;
-
-    private:
-
-        Point                   origin_ ;
-        Vector3d                direction_ ;
-
-} ;
-
-
-}
-}
-}
-}
-}
-
+}  // namespace objects
+}  // namespace d3
+}  // namespace geom
+}  // namespace math
+}  // namespace ostk
 
 #endif
-

@@ -3,13 +3,12 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point__
 
+#include <OpenSpaceToolkit/Core/Types/Integer.hpp>
+#include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Types/String.hpp>
+
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
-
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
-#include <OpenSpaceToolkit/Core/Types/Integer.hpp>
-
 
 namespace ostk
 {
@@ -22,17 +21,14 @@ namespace d3
 namespace objects
 {
 
+using ostk::core::types::Integer;
+using ostk::core::types::Real;
+using ostk::core::types::String;
 
-using ostk::core::types::Integer ;
-using ostk::core::types::Real ;
-using ostk::core::types::String ;
+using ostk::math::obj::Vector3d;
+using ostk::math::geom::d3::Object;
 
-using ostk::math::obj::Vector3d ;
-using ostk::math::geom::d3::Object ;
-
-
-#define                         DEFAULT_PRECISION                               Integer::Undefined()
-
+#define DEFAULT_PRECISION Integer::Undefined()
 
 /// @brief                      Point
 ///
@@ -40,208 +36,197 @@ using ostk::math::geom::d3::Object ;
 
 class Point : public Object
 {
+   public:
+    /// @brief              Constructor
+    ///
+    /// @code
+    ///                     Point point(0.0, 0.0, 0.0) ;
+    /// @endcode
+    ///
+    /// @param              [in] aFirstCoordinate A first coordinate
+    /// @param              [in] aSecondCoordinate A second coordinate
+    /// @param              [in] aThirdCoordinate A third coordinate
 
-    public:
+    Point(const Real& aFirstCoordinate, const Real& aSecondCoordinate, const Real& aThirdCoordinate);
 
-        /// @brief              Constructor
-        ///
-        /// @code
-        ///                     Point point(0.0, 0.0, 0.0) ;
-        /// @endcode
-        ///
-        /// @param              [in] aFirstCoordinate A first coordinate
-        /// @param              [in] aSecondCoordinate A second coordinate
-        /// @param              [in] aThirdCoordinate A third coordinate
+    /// @brief              Clone point
+    ///
+    /// @return             Pointer to cloned point
 
-                                Point                                       (   const   Real&                       aFirstCoordinate,
-                                                                                const   Real&                       aSecondCoordinate,
-                                                                                const   Real&                       aThirdCoordinate                            ) ;
+    virtual Point* clone() const override;
 
-        /// @brief              Clone point
-        ///
-        /// @return             Pointer to cloned point
+    /// @brief              Equal to operator
+    ///
+    /// @param              [in] aPoint A point
+    /// @return             True if points are equal
 
-        virtual Point*          clone                                       ( ) const override ;
+    bool operator==(const Point& aPoint) const;
 
-        /// @brief              Equal to operator
-        ///
-        /// @param              [in] aPoint A point
-        /// @return             True if points are equal
+    /// @brief              Not equal to operator
+    ///
+    /// @param              [in] aPoint A point
+    /// @return             True if points are not equal
 
-        bool                    operator ==                                 (   const   Point&                      aPoint                                      ) const ;
+    bool operator!=(const Point& aPoint) const;
 
-        /// @brief              Not equal to operator
-        ///
-        /// @param              [in] aPoint A point
-        /// @return             True if points are not equal
+    /// @brief              Addition operator: translate point along vector
+    ///
+    /// @code
+    ///                     Point(0.0, 0.0, 0.0) + Vector3d(0.0, 0.0, 1.0) ; // [0.0, 0.0, 1.0]
+    /// @encode
+    ///
+    /// @param              [in] aVector A translation vector
+    /// @return             A point
 
-        bool                    operator !=                                 (   const   Point&                      aPoint                                      ) const ;
+    Point operator+(const Vector3d& aVector) const;
 
-        /// @brief              Addition operator: translate point along vector
-        ///
-        /// @code
-        ///                     Point(0.0, 0.0, 0.0) + Vector3d(0.0, 0.0, 1.0) ; // [0.0, 0.0, 1.0]
-        /// @encode
-        ///
-        /// @param              [in] aVector A translation vector
-        /// @return             A point
+    /// @brief              Subtraction operator: translate point along opposite vector
+    ///
+    /// @code
+    ///                     Point(0.0, 0.0, 1.0) - Vector3d(0.0, 0.0, 1.0) ; // [0.0, 0.0, 0.0]
+    /// @encode
+    ///
+    /// @param              [in] aVector A translation vector
+    /// @return             A point
 
-        Point                   operator +                                  (   const   Vector3d&                   aVector                                     ) const ;
+    Point operator-(const Vector3d& aVector) const;
 
-        /// @brief              Subtraction operator: translate point along opposite vector
-        ///
-        /// @code
-        ///                     Point(0.0, 0.0, 1.0) - Vector3d(0.0, 0.0, 1.0) ; // [0.0, 0.0, 0.0]
-        /// @encode
-        ///
-        /// @param              [in] aVector A translation vector
-        /// @return             A point
+    /// @brief              Subtraction operator: get translation vector between two points
+    ///
+    /// @code
+    ///                     Point(0.0, 0.0, 1.0) - Point(0.0, 0.0, 0.0)  ; // [0.0, 0.0, 1.0]
+    /// @encode
+    ///
+    /// @param              [in] aPoint A point
+    /// @return             A translation vector
 
-        Point                   operator -                                  (   const   Vector3d&                   aVector                                     ) const ;
+    Vector3d operator-(const Point& aPoint) const;
 
-        /// @brief              Subtraction operator: get translation vector between two points
-        ///
-        /// @code
-        ///                     Point(0.0, 0.0, 1.0) - Point(0.0, 0.0, 0.0)  ; // [0.0, 0.0, 1.0]
-        /// @encode
-        ///
-        /// @param              [in] aPoint A point
-        /// @return             A translation vector
+    /// @brief              Check if point is defined
+    ///
+    /// @code
+    ///                     Point(0.0, 0.0, 0.0).isDefined() ; // True
+    /// @endcode
+    ///
+    /// @return             True if point is defined
 
-        Vector3d                operator -                                  (   const   Point&                      aPoint                                      ) const ;
+    virtual bool isDefined() const override;
 
-        /// @brief              Check if point is defined
-        ///
-        /// @code
-        ///                     Point(0.0, 0.0, 0.0).isDefined() ; // True
-        /// @endcode
-        ///
-        /// @return             True if point is defined
+    /// @brief              Check if point is near another point
+    ///
+    /// @code
+    ///                     Point(0.0, 0.0, 0.0).isNear(Point(0.0, 0.0, 0.0), 1e-15) ; // True
+    /// @endcode
+    ///
+    /// @param              [in] aPoint A point
+    /// @param              [in] aTolerance A tolerance
+    /// @return             True if point is near another point
 
-        virtual bool            isDefined                                   ( ) const override ;
+    bool isNear(const Point& aPoint, const Real& aTolerance) const;
 
-        /// @brief              Check if point is near another point
-        ///
-        /// @code
-        ///                     Point(0.0, 0.0, 0.0).isNear(Point(0.0, 0.0, 0.0), 1e-15) ; // True
-        /// @endcode
-        ///
-        /// @param              [in] aPoint A point
-        /// @param              [in] aTolerance A tolerance
-        /// @return             True if point is near another point
+    /// @brief              Get reference to first coordinate
+    ///
+    /// @code
+    ///                     Point(1.0, 2.0).x() ; // &1.0
+    /// @endcode
+    ///
+    /// @return             Reference to first coordinate
 
-        bool                    isNear                                      (   const   Point&                      aPoint,
-                                                                                const   Real&                       aTolerance                                  ) const ;
+    const Real& x() const;
 
-        /// @brief              Get reference to first coordinate
-        ///
-        /// @code
-        ///                     Point(1.0, 2.0).x() ; // &1.0
-        /// @endcode
-        ///
-        /// @return             Reference to first coordinate
+    /// @brief              Get reference to second coordinate
+    ///
+    /// @code
+    ///                     Point(1.0, 2.0).y() ; // &2.0
+    /// @endcode
+    ///
+    /// @return             Reference to second coordinate
 
-        const Real&             x                                           ( ) const ;
+    const Real& y() const;
 
-        /// @brief              Get reference to second coordinate
-        ///
-        /// @code
-        ///                     Point(1.0, 2.0).y() ; // &2.0
-        /// @endcode
-        ///
-        /// @return             Reference to second coordinate
+    /// @brief              Get reference to third coordinate
+    ///
+    /// @code
+    ///                     Point(1.0, 2.0, 3.0).z() ; // &3.0
+    /// @endcode
+    ///
+    /// @return             Reference to third coordinate
 
-        const Real&             y                                           ( ) const ;
+    const Real& z() const;
 
-        /// @brief              Get reference to third coordinate
-        ///
-        /// @code
-        ///                     Point(1.0, 2.0, 3.0).z() ; // &3.0
-        /// @endcode
-        ///
-        /// @return             Reference to third coordinate
+    /// @brief              Get vector representation of point
+    ///
+    /// @return             Vector representation of point
 
-        const Real&             z                                           ( ) const ;
+    Vector3d asVector() const;
 
-        /// @brief              Get vector representation of point
-        ///
-        /// @return             Vector representation of point
+    /// @brief              Get distance to another point
+    ///
+    /// @param              [in] aPoint A point
+    /// @return             Distance to point
 
-        Vector3d                asVector                                    ( ) const ;
+    Real distanceTo(const Point& aPoint) const;
 
-        /// @brief              Get distance to another point
-        ///
-        /// @param              [in] aPoint A point
-        /// @return             Distance to point
+    /// @brief              Get string representation
+    ///
+    /// @param              [in] (optional) aPrecision A precision
+    /// @return             String representation
 
-        Real                    distanceTo                                  (   const   Point&                      aPoint                                      ) const ;
+    String toString(const Integer& aPrecision = DEFAULT_PRECISION) const;
 
-        /// @brief              Get string representation
-        ///
-        /// @param              [in] (optional) aPrecision A precision
-        /// @return             String representation
+    /// @brief              Print point
+    ///
+    /// @param              [in] anOutputStream An output stream
+    /// @param              [in] (optional) displayDecorators If true, display decorators
 
-        String                  toString                                    (   const   Integer&                    aPrecision                                  =   DEFAULT_PRECISION ) const ;
+    virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
-        /// @brief              Print point
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] (optional) displayDecorators If true, display decorators
+    /// @brief              Apply transformation to point
+    ///
+    /// @param              [in] aTransformation A transformation
 
-        virtual void            print                                       (           std::ostream&               anOutputStream,
-                                                                                        bool                        displayDecorators                           =   true ) const override ;
+    virtual void applyTransformation(const Transformation& aTransformation) override;
 
-        /// @brief              Apply transformation to point
-        ///
-        /// @param              [in] aTransformation A transformation
+    /// @brief              Constructs an undefined point
+    ///
+    /// @code
+    ///                     Point point = Point::Undefined() ; // Undefined
+    /// @endcode
+    ///
+    /// @return             Undefined point
 
-        virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) override ;
+    static Point Undefined();
 
-        /// @brief              Constructs an undefined point
-        ///
-        /// @code
-        ///                     Point point = Point::Undefined() ; // Undefined
-        /// @endcode
-        ///
-        /// @return             Undefined point
+    /// @brief              Constructs a point at origin
+    ///
+    /// @code
+    ///                     Point point = Point::Origin() ; // [0.0, 0.0, 0.0]
+    /// @endcode
+    ///
+    /// @return             Point at origin
 
-        static Point            Undefined                                   ( ) ;
+    static Point Origin();
 
-        /// @brief              Constructs a point at origin
-        ///
-        /// @code
-        ///                     Point point = Point::Origin() ; // [0.0, 0.0, 0.0]
-        /// @endcode
-        ///
-        /// @return             Point at origin
+    /// @brief              Constructs a point from a vector
+    ///
+    /// @code
+    ///                     Point point = Point::Vector({ 0.0, 0.0, 0.0 }) ; // [0.0, 0.0, 0.0]
+    /// @endcode
+    ///
+    /// @return             Point
 
-        static Point            Origin                                      ( ) ;
+    static Point Vector(const Vector3d& aVector);
 
-        /// @brief              Constructs a point from a vector
-        ///
-        /// @code
-        ///                     Point point = Point::Vector({ 0.0, 0.0, 0.0 }) ; // [0.0, 0.0, 0.0]
-        /// @endcode
-        ///
-        /// @return             Point
+   private:
+    Real x_;
+    Real y_;
+    Real z_;
+};
 
-        static Point            Vector                                      (   const   Vector3d&                   aVector                                     ) ;
-
-    private:
-
-        Real                    x_ ;
-        Real                    y_ ;
-        Real                    z_ ;
-
-} ;
-
-
-}
-}
-}
-}
-}
-
+}  // namespace objects
+}  // namespace d3
+}  // namespace geom
+}  // namespace math
+}  // namespace ostk
 
 #endif
-

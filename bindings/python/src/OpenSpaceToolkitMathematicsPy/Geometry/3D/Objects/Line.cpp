@@ -2,23 +2,21 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp>
 
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Line (         pybind11::module&  aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Line(pybind11::module& aModule)
 {
+    using namespace pybind11;
 
-    using namespace pybind11 ;
+    using ostk::core::types::Real;
 
-    using ostk::core::types::Real ;
-
-    using ostk::math::obj::Vector3d ;
-    using ostk::math::geom::d3::Object ;
-    using ostk::math::geom::d3::objects::Point ;
-    using ostk::math::geom::d3::objects::PointSet ;
-    using ostk::math::geom::d3::objects::Line ;
-    using ostk::math::geom::d3::objects::Plane ;
-    using ostk::math::geom::d3::objects::Sphere ;
-    using ostk::math::geom::d3::objects::Ellipsoid ;
-    using ostk::math::geom::d3::Intersection ;
+    using ostk::math::obj::Vector3d;
+    using ostk::math::geom::d3::Object;
+    using ostk::math::geom::d3::objects::Point;
+    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geom::d3::objects::Sphere;
+    using ostk::math::geom::d3::objects::Ellipsoid;
+    using ostk::math::geom::d3::Intersection;
 
     class_<Line, Object>(aModule, "Line")
 
@@ -47,7 +45,5 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def_static("undefined", &Line::Undefined)
         .def_static("points", &Line::Points, arg("first_point"), arg("second_point"))
 
-    ;
-
+        ;
 }
-

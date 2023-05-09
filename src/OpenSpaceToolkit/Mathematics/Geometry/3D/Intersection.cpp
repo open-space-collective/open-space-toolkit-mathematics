@@ -1,10 +1,9 @@
 // Copyright © Loft Orbital Solutions Inc.
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
-
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utilities.hpp>
 
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 
 namespace ostk
 {
@@ -15,411 +14,362 @@ namespace geom
 namespace d3
 {
 
-
-                                Intersection::Intersection                  (           Array<Unique<Object>>&&     anObjectArray                               )
-                                :   type_(Intersection::TypeFromObjects(anObjectArray)),
-                                    composite_(std::move(anObjectArray))
+Intersection::Intersection(Array<Unique<Object>>&& anObjectArray)
+    : type_(Intersection::TypeFromObjects(anObjectArray)),
+      composite_(std::move(anObjectArray))
 {
-
 }
 
-                                Intersection::Intersection                  (   const   Intersection&               anIntersection                              )
-                                :   type_(anIntersection.type_),
-                                    composite_(anIntersection.composite_)
+Intersection::Intersection(const Intersection& anIntersection)
+    : type_(anIntersection.type_),
+      composite_(anIntersection.composite_)
 {
-
 }
 
-                                Intersection::~Intersection                 ( )
+Intersection::~Intersection() {}
+
+Intersection& Intersection::operator=(const Intersection& anIntersection)
 {
-
-}
-
-Intersection&                   Intersection::operator =                    (   const   Intersection&               anIntersection                              )
-{
-
     if (this != &anIntersection)
     {
-
-        type_ = anIntersection.type_ ;
-        composite_ = anIntersection.composite_ ;
-
+        type_ = anIntersection.type_;
+        composite_ = anIntersection.composite_;
     }
 
-    return *this ;
-
+    return *this;
 }
 
-bool                            Intersection::operator ==                   (   const   Intersection&               anIntersection                              ) const
+bool Intersection::operator==(const Intersection& anIntersection) const
 {
-
     if ((!this->isDefined()) || (!anIntersection.isDefined()))
     {
-        return false ;
+        return false;
     }
 
-    return (type_ == anIntersection.type_) && (composite_ == anIntersection.composite_) ;
-
+    return (type_ == anIntersection.type_) && (composite_ == anIntersection.composite_);
 }
 
-bool                            Intersection::operator !=                   (   const   Intersection&               anIntersection                              ) const
+bool Intersection::operator!=(const Intersection& anIntersection) const
 {
-    return !((*this) == anIntersection) ;
+    return !((*this) == anIntersection);
 }
 
-Intersection                    Intersection::operator +                    (   const   Intersection&               anIntersection                              ) const
+Intersection Intersection::operator+(const Intersection& anIntersection) const
 {
-
     if (!anIntersection.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Intersection") ;
+        throw ostk::core::error::runtime::Undefined("Intersection");
     }
 
-    Intersection intersection ;
+    Intersection intersection;
 
-    intersection.composite_ = composite_ + anIntersection.composite_ ;
+    intersection.composite_ = composite_ + anIntersection.composite_;
 
-    intersection.type_ = Intersection::TypeFromObjects(intersection.composite_.accessObjects()) ;
+    intersection.type_ = Intersection::TypeFromObjects(intersection.composite_.accessObjects());
 
-    return intersection ;
-
+    return intersection;
 }
 
-Intersection&                   Intersection::operator +=                   (   const   Intersection&               anIntersection                              )
+Intersection& Intersection::operator+=(const Intersection& anIntersection)
 {
-
     if (!anIntersection.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Intersection") ;
+        throw ostk::core::error::runtime::Undefined("Intersection");
     }
 
-    composite_ += anIntersection.composite_ ;
+    composite_ += anIntersection.composite_;
 
-    type_ = Intersection::TypeFromObjects(composite_.accessObjects()) ;
+    type_ = Intersection::TypeFromObjects(composite_.accessObjects());
 
-    return *this ;
-
+    return *this;
 }
 
-std::ostream&                   operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Intersection&               anIntersection                              )
+std::ostream& operator<<(std::ostream& anOutputStream, const Intersection& anIntersection)
 {
+    ostk::core::utils::Print::Header(anOutputStream, "Intersection");
 
-    ostk::core::utils::Print::Header(anOutputStream, "Intersection") ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Type:" << Intersection::StringFromType(anIntersection.type_);
 
-    ostk::core::utils::Print::Line(anOutputStream) << "Type:"                << Intersection::StringFromType(anIntersection.type_) ;
+    ostk::core::utils::Print::Line(anOutputStream) << "Composite:";
 
-    ostk::core::utils::Print::Line(anOutputStream) << "Composite:" ;
+    anIntersection.composite_.print(anOutputStream, false);
 
-    anIntersection.composite_.print(anOutputStream, false) ;
+    ostk::core::utils::Print::Footer(anOutputStream);
 
-    ostk::core::utils::Print::Footer(anOutputStream) ;
-
-    return anOutputStream ;
-
+    return anOutputStream;
 }
 
-bool                            Intersection::isDefined                     ( ) const
+bool Intersection::isDefined() const
 {
-    return type_ != Intersection::Type::Undefined ;
+    return type_ != Intersection::Type::Undefined;
 }
 
-bool                            Intersection::isEmpty                       ( ) const
+bool Intersection::isEmpty() const
 {
-    return type_ == Intersection::Type::Empty ;
+    return type_ == Intersection::Type::Empty;
 }
 
-bool                            Intersection::isComplex                     ( ) const
+bool Intersection::isComplex() const
 {
-    return type_ == Intersection::Type::Complex ;
+    return type_ == Intersection::Type::Complex;
 }
 
-const Composite&                Intersection::accessComposite               ( ) const
+const Composite& Intersection::accessComposite() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Intersection") ;
+        throw ostk::core::error::runtime::Undefined("Intersection");
     }
 
-    return composite_ ;
-
+    return composite_;
 }
 
-Intersection::Type              Intersection::getType                       ( ) const
+Intersection::Type Intersection::getType() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Intersection") ;
+        throw ostk::core::error::runtime::Undefined("Intersection");
     }
 
-    return type_ ;
-
+    return type_;
 }
 
-Intersection                    Intersection::Undefined                     ( )
+Intersection Intersection::Undefined()
 {
+    Intersection intersection;
 
-    Intersection intersection ;
+    intersection.type_ = Intersection::Type::Undefined;
 
-    intersection.type_ = Intersection::Type::Undefined ;
-
-    return intersection ;
-
+    return intersection;
 }
 
-Intersection                    Intersection::Empty                         ( )
+Intersection Intersection::Empty()
 {
-    return { Array<Unique<Object>>::Empty() } ;
+    return {Array<Unique<Object>>::Empty()};
 }
 
-Intersection                    Intersection::Point                         (   const   objects::Point&             aPoint                                      )
+Intersection Intersection::Point(const objects::Point& aPoint)
 {
+    Intersection intersection;
 
-    Intersection intersection ;
+    intersection.type_ = Intersection::Type::Point;
 
-    intersection.type_ = Intersection::Type::Point ;
+    intersection.composite_ = Composite {aPoint};
 
-    intersection.composite_ = Composite { aPoint } ;
-
-    return intersection ;
-
+    return intersection;
 }
 
-Intersection                    Intersection::PointSet                      (   const   objects::PointSet&          aPointSet                                   )
+Intersection Intersection::PointSet(const objects::PointSet& aPointSet)
 {
+    Intersection intersection;
 
-    Intersection intersection ;
+    intersection.type_ = Intersection::Type::PointSet;
 
-    intersection.type_ = Intersection::Type::PointSet ;
+    intersection.composite_ = Composite {aPointSet};
 
-    intersection.composite_ = Composite { aPointSet } ;
-
-    return intersection ;
-
+    return intersection;
 }
 
-Intersection                    Intersection::LineString                    (   const   objects::LineString&        aLineString                                 )
+Intersection Intersection::LineString(const objects::LineString& aLineString)
 {
+    Intersection intersection;
 
-    Intersection intersection ;
+    intersection.type_ = Intersection::Type::LineString;
 
-    intersection.type_ = Intersection::Type::LineString ;
+    intersection.composite_ = Composite {aLineString};
 
-    intersection.composite_ = Composite { aLineString } ;
-
-    return intersection ;
-
+    return intersection;
 }
 
-Intersection                    Intersection::Line                          (   const   objects::Line&              aLine                                       )
+Intersection Intersection::Line(const objects::Line& aLine)
 {
+    Intersection intersection;
 
-    Intersection intersection ;
+    intersection.type_ = Intersection::Type::Line;
 
-    intersection.type_ = Intersection::Type::Line ;
+    intersection.composite_ = Composite {aLine};
 
-    intersection.composite_ = Composite { aLine } ;
-
-    return intersection ;
-
+    return intersection;
 }
 
-Intersection                    Intersection::Ray                           (   const   objects::Ray&               aRay                                        )
+Intersection Intersection::Ray(const objects::Ray& aRay)
 {
+    Intersection intersection;
 
-    Intersection intersection ;
+    intersection.type_ = Intersection::Type::Ray;
 
-    intersection.type_ = Intersection::Type::Ray ;
+    intersection.composite_ = Composite {aRay};
 
-    intersection.composite_ = Composite { aRay } ;
-
-    return intersection ;
-
+    return intersection;
 }
 
-Intersection                    Intersection::Segment                       (   const   objects::Segment&           aSegment                                    )
+Intersection Intersection::Segment(const objects::Segment& aSegment)
 {
+    Intersection intersection;
 
-    Intersection intersection ;
+    intersection.type_ = Intersection::Type::Segment;
 
-    intersection.type_ = Intersection::Type::Segment ;
+    intersection.composite_ = Composite {aSegment};
 
-    intersection.composite_ = Composite { aSegment } ;
-
-    return intersection ;
-
+    return intersection;
 }
 
-String                          Intersection::StringFromType                (   const   Intersection::Type&         aType                                       )
+String Intersection::StringFromType(const Intersection::Type& aType)
 {
-
     switch (aType)
     {
-
         case Intersection::Type::Undefined:
-            return "Undefined" ;
+            return "Undefined";
 
         case Intersection::Type::Empty:
-            return "Empty" ;
+            return "Empty";
 
         case Intersection::Type::Point:
-            return "Point" ;
+            return "Point";
 
         case Intersection::Type::PointSet:
-            return "PointSet" ;
+            return "PointSet";
 
         case Intersection::Type::Line:
-            return "Line" ;
+            return "Line";
 
         case Intersection::Type::Ray:
-            return "Ray" ;
+            return "Ray";
 
         case Intersection::Type::Segment:
-            return "Segment" ;
+            return "Segment";
 
         case Intersection::Type::LineString:
-            return "LineString" ;
+            return "LineString";
 
         case Intersection::Type::Polygon:
-            return "Polygon" ;
+            return "Polygon";
 
         case Intersection::Type::Plane:
-            return "Plane" ;
+            return "Plane";
 
         case Intersection::Type::Sphere:
-            return "Sphere" ;
+            return "Sphere";
 
         case Intersection::Type::Ellipsoid:
-            return "Ellipsoid" ;
+            return "Ellipsoid";
 
         case Intersection::Type::Pyramid:
-            return "Pyramid" ;
+            return "Pyramid";
 
         case Intersection::Type::Complex:
-            return "Complex" ;
+            return "Complex";
 
         default:
-            throw ostk::core::error::runtime::Wrong("Type") ;
-            break ;
-
+            throw ostk::core::error::runtime::Wrong("Type");
+            break;
     }
 
-    return String::Empty() ;
-
+    return String::Empty();
 }
 
-
-                                Intersection::Intersection                  ( )
-                                :   type_(Intersection::Type::Undefined),
-                                    composite_(Composite::Undefined())
+Intersection::Intersection()
+    : type_(Intersection::Type::Undefined),
+      composite_(Composite::Undefined())
 {
-
 }
 
-Intersection::Type              Intersection::TypeFromObjects               (   const   Array<Unique<Object>>&      anObjectArray                               )
+Intersection::Type Intersection::TypeFromObjects(const Array<Unique<Object>>& anObjectArray)
 {
-
     if (anObjectArray.isEmpty())
     {
-        return Intersection::Type::Empty ;
+        return Intersection::Type::Empty;
     }
 
-    Intersection::Type type = Intersection::Type::Undefined ;
+    Intersection::Type type = Intersection::Type::Undefined;
 
     for (const auto& objectUPtr : anObjectArray)
     {
-
-        const Intersection::Type objectType = Intersection::TypeFromObject(objectUPtr) ;
+        const Intersection::Type objectType = Intersection::TypeFromObject(objectUPtr);
 
         if (type == Intersection::Type::Undefined)
         {
-            type = objectType ;
+            type = objectType;
         }
         else if (type != objectType)
         {
-            return Intersection::Type::Complex ;
+            return Intersection::Type::Complex;
         }
-
     }
 
-    return type ;
-
+    return type;
 }
 
-Intersection::Type              Intersection::TypeFromObject                (   const   Unique<Object>&             anObjectUPtr                                )
+Intersection::Type Intersection::TypeFromObject(const Unique<Object>& anObjectUPtr)
 {
-
     if (dynamic_cast<const objects::Point*>(anObjectUPtr.get()))
     {
-        return Intersection::Type::Point ;
+        return Intersection::Type::Point;
     }
 
     if (dynamic_cast<const objects::PointSet*>(anObjectUPtr.get()))
     {
-        return Intersection::Type::PointSet ;
+        return Intersection::Type::PointSet;
     }
 
     if (dynamic_cast<const objects::Line*>(anObjectUPtr.get()))
     {
-        return Intersection::Type::Line ;
+        return Intersection::Type::Line;
     }
 
     if (dynamic_cast<const objects::Ray*>(anObjectUPtr.get()))
     {
-        return Intersection::Type::Ray ;
+        return Intersection::Type::Ray;
     }
 
     if (dynamic_cast<const objects::Segment*>(anObjectUPtr.get()))
     {
-        return Intersection::Type::Segment ;
+        return Intersection::Type::Segment;
     }
 
     if (dynamic_cast<const objects::LineString*>(anObjectUPtr.get()))
     {
-        return Intersection::Type::LineString ;
+        return Intersection::Type::LineString;
     }
 
     if (dynamic_cast<const objects::Polygon*>(anObjectUPtr.get()))
     {
-        return Intersection::Type::Polygon ;
+        return Intersection::Type::Polygon;
     }
 
     if (dynamic_cast<const objects::Plane*>(anObjectUPtr.get()))
     {
-        return Intersection::Type::Plane ;
+        return Intersection::Type::Plane;
     }
 
     if (dynamic_cast<const objects::Cuboid*>(anObjectUPtr.get()))
     {
-        return Intersection::Type::Cuboid ;
+        return Intersection::Type::Cuboid;
     }
 
     if (dynamic_cast<const objects::Sphere*>(anObjectUPtr.get()))
     {
-        return Intersection::Type::Sphere ;
+        return Intersection::Type::Sphere;
     }
 
     if (dynamic_cast<const objects::Ellipsoid*>(anObjectUPtr.get()))
     {
-        return Intersection::Type::Ellipsoid ;
+        return Intersection::Type::Ellipsoid;
     }
 
     if (dynamic_cast<const objects::Pyramid*>(anObjectUPtr.get()))
     {
-        return Intersection::Type::Pyramid ;
+        return Intersection::Type::Pyramid;
     }
 
-    return Intersection::Type::Undefined ;
-
+    return Intersection::Type::Undefined;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}
-}
-}
-}
+}  // namespace d3
+}  // namespace geom
+}  // namespace math
+}  // namespace ostk
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

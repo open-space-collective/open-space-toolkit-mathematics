@@ -1,24 +1,23 @@
 // Copyright © Loft Orbital Solutions Inc.
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
+#include <boost/geometry.hpp>
+#include <boost/geometry/geometries/point_xy.hpp>
+#include <boost/geometry/geometries/polygon.hpp>
+#include <boost/geometry/io/wkt/wkt.hpp>
+#include <boost/geometry/strategies/transform.hpp>
+#include <boost/geometry/strategies/transform/matrix_transformers.hpp>
+#include <boost/numeric/ublas/matrix.hpp>
+
+#include <OpenSpaceToolkit/Core/Error.hpp>
+#include <OpenSpaceToolkit/Core/Types/Index.hpp>
+#include <OpenSpaceToolkit/Core/Types/Size.hpp>
+#include <OpenSpaceToolkit/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Utilities.hpp>
+
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
-
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
-#include <OpenSpaceToolkit/Core/Types/Size.hpp>
-#include <OpenSpaceToolkit/Core/Types/Index.hpp>
-#include <OpenSpaceToolkit/Core/Error.hpp>
-#include <OpenSpaceToolkit/Core/Utilities.hpp>
-
-#include <boost/geometry/io/wkt/wkt.hpp>
-#include <boost/geometry/strategies/transform/matrix_transformers.hpp>
-#include <boost/geometry/strategies/transform.hpp>
-#include <boost/geometry/geometries/polygon.hpp>
-#include <boost/geometry/geometries/point_xy.hpp>
-#include <boost/geometry.hpp>
-#include <boost/numeric/ublas/matrix.hpp>
-
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
 
 namespace ostk
 {
@@ -31,582 +30,551 @@ namespace d2
 namespace objects
 {
 
+using boost::geometry::cs::cartesian;
+using boost::geometry::model::linestring;
+using boost::geometry::model::ring;
+using boost::geometry::model::polygon;
+using boost::geometry::model::d2::point_xy;
 
-using boost::geometry::cs::cartesian ;
-using boost::geometry::model::linestring ;
-using boost::geometry::model::ring ;
-using boost::geometry::model::polygon ;
-using boost::geometry::model::d2::point_xy ;
-
-using ostk::core::types::Index ;
-using ostk::core::types::Size ;
-using ostk::core::types::String ;
-
+using ostk::core::types::Index;
+using ostk::core::types::Size;
+using ostk::core::types::String;
 
 class Polygon::Impl
 {
+   public:
+    Impl(const Array<Point>& anOuterRing, const Array<Array<Point>>& anInnerRingArray);
 
-    public:
+    ~Impl() = default;
 
-                                Impl                                        (   const   Array<Point>&               anOuterRing,
-                                                                                const   Array<Array<Point>>&        anInnerRingArray                            ) ;
+    bool operator==(const Polygon::Impl& aPolygon) const;
 
-                                ~Impl                                       ( ) = default ;
+    bool isDefined() const;
 
-        bool                    operator ==                                 (   const   Polygon::Impl&              aPolygon                                    ) const ;
+    bool intersects(const Polygon& aPolygon) const;
 
-        bool                    isDefined                                   ( ) const ;
+    bool contains(const Point& aPoint) const;
 
-        bool                    intersects                                  (   const   Polygon&                    aPolygon                                    ) const ;
+    bool contains(const PointSet& aPointSet) const;
 
-        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+    bool contains(const LineString& aLineString) const;
 
-        bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
+    Size getInnerRingCount() const;
 
-        bool                    contains                                    (   const   LineString&                 aLineString                                 ) const ;
+    Array<Polygon::Vertex> getOuterRingVertices() const;
 
-        Size                    getInnerRingCount                           ( ) const ;
+    Array<Polygon::Vertex> getInnerRingVerticesAt(const Index& aRingIndex) const;
 
-        Array<Polygon::Vertex>  getOuterRingVertices                        ( ) const ;
+    Size getEdgeCount() const;
 
-        Array<Polygon::Vertex>  getInnerRingVerticesAt                      (   const   Index&                      aRingIndex                                  ) const ;
+    Size getOuterRingEdgeCount() const;
 
-        Size                    getEdgeCount                                ( ) const ;
+    Size getVertexCount() const;
 
-        Size                    getOuterRingEdgeCount                       ( ) const ;
+    Polygon::Ring getOuterRing() const;
 
-        Size                    getVertexCount                              ( ) const ;
+    Polygon::Ring getInnerRingAt(const Index& anInnerRingIndex) const;
 
-        Polygon::Ring           getOuterRing                                ( ) const ;
+    Polygon::Edge getEdgeAt(const Index anEdgeIndex) const;
 
-        Polygon::Ring           getInnerRingAt                              (   const   Index&                      anInnerRingIndex                            ) const ;
+    Polygon::Vertex getVertexAt(const Index aVertexIndex) const;
 
-        Polygon::Edge           getEdgeAt                                   (   const   Index                       anEdgeIndex                                 ) const ;
+    Array<Polygon::Edge> getEdges() const;
 
-        Polygon::Vertex         getVertexAt                                 (   const   Index                       aVertexIndex                                ) const ;
+    Array<Polygon::Vertex> getVertices() const;
 
-        Array<Polygon::Edge>    getEdges                                    ( ) const ;
+    Polygon getConvexHull() const;
 
-        Array<Polygon::Vertex>  getVertices                                 ( ) const ;
+    Intersection intersectionWith(const Polygon& aPolygon) const;
 
-        Polygon                 getConvexHull                               ( ) const ;
+    Intersection differenceWith(const Polygon& aPolygon) const;
 
-        Intersection            intersectionWith                            (   const   Polygon&                    aPolygon                                    ) const ;
+    String toString(const Object::Format& aFormat, const Integer& aPrecision) const;
 
-        Intersection            differenceWith                              (   const   Polygon&                    aPolygon                                    ) const ;
+    void applyTransformation(const Transformation& aTransformation);
 
-        String                  toString                                    (   const   Object::Format&             aFormat,
-                                                                                const   Integer&                    aPrecision                                  ) const ;
+   private:
+    typedef point_xy<double> BoostPoint;
+    typedef linestring<Impl::BoostPoint> BoostLineString;
+    typedef ring<Impl::BoostPoint> BoostRing;
+    typedef polygon<Impl::BoostPoint> BoostPolygon;
 
-        void                    applyTransformation                         (   const   Transformation&             aTransformation                             ) ;
+    Impl::BoostPolygon polygon_;
 
-    private:
+    static Impl::BoostPolygon BoostPolygonFromPoints(const Array<Point>& aPointArray);
 
-        typedef                 point_xy<double>                                BoostPoint ;
-        typedef                 linestring<Impl::BoostPoint>                    BoostLineString ;
-        typedef                 ring<Impl::BoostPoint>                          BoostRing ;
-        typedef                 polygon<Impl::BoostPoint>                       BoostPolygon ;
+    static Impl::BoostLineString BoostLineStringFromPoints(const Array<Point>& aPointArray);
 
-        Impl::BoostPolygon      polygon_ ;
+    static Polygon PolygonFromBoostPolygon(const Polygon::Impl::BoostPolygon& aPolygon);
+};
 
-        static Impl::BoostPolygon BoostPolygonFromPoints                    (   const   Array<Point>&               aPointArray                                 ) ;
-
-        static Impl::BoostLineString BoostLineStringFromPoints              (   const   Array<Point>&               aPointArray                                 ) ;
-
-        static Polygon          PolygonFromBoostPolygon                     (   const   Polygon::Impl::BoostPolygon& aPolygon                                   ) ;
-
-} ;
-
-
-                                Polygon::Impl::Impl                         (   const   Array<Point>&               anOuterRing,
-                                                                                const   Array<Array<Point>>&        anInnerRingArray                            )
-                                :   polygon_(Polygon::Impl::BoostPolygonFromPoints(anOuterRing))
+Polygon::Impl::Impl(const Array<Point>& anOuterRing, const Array<Array<Point>>& anInnerRingArray)
+    : polygon_(Polygon::Impl::BoostPolygonFromPoints(anOuterRing))
 {
-
-    for (const auto& innerRing : anInnerRingArray) // [TBM] This is temporary, should be constructed inline instead
+    for (const auto& innerRing : anInnerRingArray)  // [TBM] This is temporary, should be constructed inline instead
     {
-
         if (innerRing.getSize() < 3)
         {
-            throw ostk::core::error::RuntimeError("At least 3 points are necessary to define an inner ring.") ;
+            throw ostk::core::error::RuntimeError("At least 3 points are necessary to define an inner ring.");
         }
 
-        Polygon::Impl::BoostRing ring ;
+        Polygon::Impl::BoostRing ring;
 
         for (const auto& innerRingPoint : innerRing)
         {
-            boost::geometry::append(ring, Polygon::Impl::BoostPoint(innerRingPoint.x(), innerRingPoint.y())) ;
+            boost::geometry::append(ring, Polygon::Impl::BoostPoint(innerRingPoint.x(), innerRingPoint.y()));
         }
 
-        polygon_.inners().push_back(ring) ;
+        polygon_.inners().push_back(ring);
 
-        boost::geometry::correct(polygon_) ;
-
+        boost::geometry::correct(polygon_);
     }
-
 }
 
-bool                            Polygon::Impl::operator ==                  (   const   Polygon::Impl&              aPolygon                                    ) const
+bool Polygon::Impl::operator==(const Polygon::Impl& aPolygon) const
 {
-    return boost::geometry::equals(polygon_, aPolygon.polygon_) ;
+    return boost::geometry::equals(polygon_, aPolygon.polygon_);
 }
 
-bool                            Polygon::Impl::isDefined                    ( ) const
+bool Polygon::Impl::isDefined() const
 {
-    return polygon_.outer().size() >= 3 ;
+    return polygon_.outer().size() >= 3;
 }
 
-bool                            Polygon::Impl::intersects                   (   const   Polygon&                    aPolygon                                    ) const
+bool Polygon::Impl::intersects(const Polygon& aPolygon) const
 {
-
     try
     {
-        return boost::geometry::intersects(polygon_, aPolygon.implUPtr_->polygon_) ;
+        return boost::geometry::intersects(polygon_, aPolygon.implUPtr_->polygon_);
     }
     catch (const std::exception& anException)
     {
-        throw ostk::core::error::RuntimeError("Error when checking if polygon intersects polygon: [{}]", anException.what()) ;
+        throw ostk::core::error::RuntimeError(
+            "Error when checking if polygon intersects polygon: [{}]", anException.what()
+        );
     }
 
-    return false ;
-
+    return false;
 }
 
-bool                            Polygon::Impl::contains                     (   const   Point&                      aPoint                                      ) const
+bool Polygon::Impl::contains(const Point& aPoint) const
 {
-
     try
     {
-        return boost::geometry::covered_by(Polygon::Impl::BoostPoint(aPoint.x(), aPoint.y()), polygon_) ;
+        return boost::geometry::covered_by(Polygon::Impl::BoostPoint(aPoint.x(), aPoint.y()), polygon_);
     }
     catch (const std::exception& anException)
     {
-        throw ostk::core::error::RuntimeError("Error when checking if polygon contains point: [{}]", anException.what()) ;
+        throw ostk::core::error::RuntimeError(
+            "Error when checking if polygon contains point: [{}]", anException.what()
+        );
     }
 
-    return false ;
-
+    return false;
 }
 
-bool                            Polygon::Impl::contains                     (   const   PointSet&                   aPointSet                                   ) const
+bool Polygon::Impl::contains(const PointSet& aPointSet) const
 {
-
     for (const auto& point : aPointSet)
     {
-
         if (!this->contains(point))
         {
-            return false ;
+            return false;
         }
-
     }
 
-    return true ;
-
+    return true;
 }
 
-bool                            Polygon::Impl::contains                     (   const   LineString&                 aLineString                                 ) const
+bool Polygon::Impl::contains(const LineString& aLineString) const
 {
-
-    Array<Point> pointArray = aLineString.getPointArray() ;
+    Array<Point> pointArray = aLineString.getPointArray();
 
     try
     {
-        return boost::geometry::covered_by(Polygon::Impl::BoostLineStringFromPoints(pointArray), polygon_) ;
+        return boost::geometry::covered_by(Polygon::Impl::BoostLineStringFromPoints(pointArray), polygon_);
     }
     catch (const std::exception& anException)
     {
-        throw ostk::core::error::RuntimeError("Error when checking if polygon contains line string: [{}]", anException.what()) ;
+        throw ostk::core::error::RuntimeError(
+            "Error when checking if polygon contains line string: [{}]", anException.what()
+        );
     }
 
-    return false ;
-
+    return false;
 }
 
-Size                            Polygon::Impl::getInnerRingCount            ( ) const
+Size Polygon::Impl::getInnerRingCount() const
 {
-    return polygon_.inners().size() ;
+    return polygon_.inners().size();
 }
 
-Array<Polygon::Vertex>          Polygon::Impl::getOuterRingVertices         ( ) const
+Array<Polygon::Vertex> Polygon::Impl::getOuterRingVertices() const
 {
-
     if (polygon_.outer().empty())
     {
-        return Array<Point>::Empty() ;
+        return Array<Point>::Empty();
     }
 
-    Array<Point> outerRingVertices = Array<Point>::Empty() ;
+    Array<Point> outerRingVertices = Array<Point>::Empty();
 
     for (size_t vertexIdx = 0; vertexIdx < (polygon_.outer().size() - 1); ++vertexIdx)
     {
-        outerRingVertices.add(Point(boost::geometry::get<0>(polygon_.outer().at(vertexIdx)), boost::geometry::get<1>(polygon_.outer().at(vertexIdx)))) ;
+        outerRingVertices.add(Point(
+            boost::geometry::get<0>(polygon_.outer().at(vertexIdx)),
+            boost::geometry::get<1>(polygon_.outer().at(vertexIdx))
+        ));
     }
 
-    return outerRingVertices ;
-
+    return outerRingVertices;
 }
 
-Array<Polygon::Vertex>          Polygon::Impl::getInnerRingVerticesAt       (   const   Index&                      aRingIndex                                  ) const
+Array<Polygon::Vertex> Polygon::Impl::getInnerRingVerticesAt(const Index& aRingIndex) const
 {
-
     if (aRingIndex >= this->getInnerRingCount())
     {
-        throw ostk::core::error::RuntimeError("Inner ring index [{}] out of bounds [{}].", aRingIndex, this->getInnerRingCount()) ;
+        throw ostk::core::error::RuntimeError(
+            "Inner ring index [{}] out of bounds [{}].", aRingIndex, this->getInnerRingCount()
+        );
     }
 
     if (polygon_.inners().at(aRingIndex).empty())
     {
-        return Array<Point>::Empty() ;
+        return Array<Point>::Empty();
     }
 
-    Array<Point> innerRingVertices = Array<Point>::Empty() ;
+    Array<Point> innerRingVertices = Array<Point>::Empty();
 
     for (size_t vertexIdx = 0; vertexIdx < (polygon_.inners().at(aRingIndex).size() - 1); ++vertexIdx)
     {
-        innerRingVertices.add(Point(boost::geometry::get<0>(polygon_.inners().at(aRingIndex).at(vertexIdx)), boost::geometry::get<1>(polygon_.inners().at(aRingIndex).at(vertexIdx)))) ;
+        innerRingVertices.add(Point(
+            boost::geometry::get<0>(polygon_.inners().at(aRingIndex).at(vertexIdx)),
+            boost::geometry::get<1>(polygon_.inners().at(aRingIndex).at(vertexIdx))
+        ));
     }
 
-    return innerRingVertices ;
-
+    return innerRingVertices;
 }
 
-Size                            Polygon::Impl::getEdgeCount                 ( ) const
+Size Polygon::Impl::getEdgeCount() const
 {
-
-    Size edgeCount = boost::geometry::num_points(polygon_.outer()) - 1 ;
+    Size edgeCount = boost::geometry::num_points(polygon_.outer()) - 1;
 
     for (const auto& innerRing : polygon_.inners())
     {
-        edgeCount += boost::geometry::num_points(innerRing) - 1 ;
+        edgeCount += boost::geometry::num_points(innerRing) - 1;
     }
 
-    return edgeCount ;
-
+    return edgeCount;
 }
 
-Size                            Polygon::Impl::getOuterRingEdgeCount        ( ) const
+Size Polygon::Impl::getOuterRingEdgeCount() const
 {
-    return boost::geometry::num_points(polygon_.outer()) - 1 ;
+    return boost::geometry::num_points(polygon_.outer()) - 1;
 }
 
-Size                            Polygon::Impl::getVertexCount               ( ) const
+Size Polygon::Impl::getVertexCount() const
 {
-    return boost::geometry::num_points(polygon_) - (1 + this->getInnerRingCount()) ;
+    return boost::geometry::num_points(polygon_) - (1 + this->getInnerRingCount());
 }
 
-Polygon::Ring                   Polygon::Impl::getOuterRing                 ( ) const
+Polygon::Ring Polygon::Impl::getOuterRing() const
 {
-
-    Array<Point> ringVertices = this->getOuterRingVertices() ;
+    Array<Point> ringVertices = this->getOuterRingVertices();
 
     if (!ringVertices.isEmpty())
     {
-        ringVertices.add(ringVertices[0]) ;
+        ringVertices.add(ringVertices[0]);
     }
 
-    return { ringVertices } ;
-
+    return {ringVertices};
 }
 
-Polygon::Ring                   Polygon::Impl::getInnerRingAt               (   const   Index&                      anInnerRingIndex                            ) const
+Polygon::Ring Polygon::Impl::getInnerRingAt(const Index& anInnerRingIndex) const
 {
-
-    Array<Point> ringVertices = this->getInnerRingVerticesAt(anInnerRingIndex) ;
+    Array<Point> ringVertices = this->getInnerRingVerticesAt(anInnerRingIndex);
 
     if (!ringVertices.isEmpty())
     {
-        ringVertices.add(ringVertices[0]) ;
+        ringVertices.add(ringVertices[0]);
     }
 
-    return { ringVertices } ;
-
+    return {ringVertices};
 }
 
-Polygon::Edge                   Polygon::Impl::getEdgeAt                    (   const   Index                       anEdgeIndex                                 ) const
+Polygon::Edge Polygon::Impl::getEdgeAt(const Index anEdgeIndex) const
 {
-
     if (anEdgeIndex >= this->getEdgeCount())
     {
-        throw ostk::core::error::runtime::Wrong("Edge index") ;
+        throw ostk::core::error::runtime::Wrong("Edge index");
     }
 
     if (anEdgeIndex >= this->getOuterRingEdgeCount())
     {
-        throw ostk::core::error::runtime::ToBeImplemented("Inner ring edge access.") ;
+        throw ostk::core::error::runtime::ToBeImplemented("Inner ring edge access.");
     }
 
-    const Point firstVertex = this->getVertexAt(anEdgeIndex) ;
-    const Point secondVertex = (anEdgeIndex != (this->getOuterRingEdgeCount() - 1)) ? this->getVertexAt(anEdgeIndex + 1) : this->getVertexAt(0) ;
+    const Point firstVertex = this->getVertexAt(anEdgeIndex);
+    const Point secondVertex = (anEdgeIndex != (this->getOuterRingEdgeCount() - 1)) ? this->getVertexAt(anEdgeIndex + 1)
+                                                                                    : this->getVertexAt(0);
 
-    return { firstVertex, secondVertex } ;
-
+    return {firstVertex, secondVertex};
 }
 
-Polygon::Vertex                 Polygon::Impl::getVertexAt                  (   const   Index                       aVertexIndex                                ) const
+Polygon::Vertex Polygon::Impl::getVertexAt(const Index aVertexIndex) const
 {
-
     if (aVertexIndex >= (boost::geometry::num_points(polygon_) - 1))
     {
-        throw ostk::core::error::runtime::Wrong("Vertex index") ;
+        throw ostk::core::error::runtime::Wrong("Vertex index");
     }
 
     if (aVertexIndex >= (polygon_.outer().size() - 1))
     {
-        throw ostk::core::error::runtime::ToBeImplemented("Inner ring vertex access.") ;
+        throw ostk::core::error::runtime::ToBeImplemented("Inner ring vertex access.");
     }
 
-    return { boost::geometry::get<0>(polygon_.outer().at(aVertexIndex)), boost::geometry::get<1>(polygon_.outer().at(aVertexIndex)) } ;
-
+    return {
+        boost::geometry::get<0>(polygon_.outer().at(aVertexIndex)),
+        boost::geometry::get<1>(polygon_.outer().at(aVertexIndex))};
 }
 
-Array<Polygon::Edge>            Polygon::Impl::getEdges                     ( ) const
+Array<Polygon::Edge> Polygon::Impl::getEdges() const
 {
+    Array<Polygon::Edge> edges = Array<Polygon::Edge>::Empty();
 
-    Array<Polygon::Edge> edges = Array<Polygon::Edge>::Empty() ;
-
-    edges.reserve(this->getEdgeCount()) ;
+    edges.reserve(this->getEdgeCount());
 
     for (Index edgeIndex = 0; edgeIndex < this->getEdgeCount(); ++edgeIndex)
     {
-        edges.add(this->getEdgeAt(edgeIndex)) ;
+        edges.add(this->getEdgeAt(edgeIndex));
     }
 
-    return edges ;
-
+    return edges;
 }
 
-Array<Polygon::Vertex>          Polygon::Impl::getVertices                  ( ) const
+Array<Polygon::Vertex> Polygon::Impl::getVertices() const
 {
-
-    Array<Polygon::Vertex> vertices = Array<Polygon::Vertex>::Empty() ;
+    Array<Polygon::Vertex> vertices = Array<Polygon::Vertex>::Empty();
 
     for (const auto& vertex : this->getOuterRingVertices())
     {
-        vertices.add(vertex) ;
+        vertices.add(vertex);
     }
 
     for (Index innerRingIndex = 0; innerRingIndex < this->getInnerRingCount(); ++innerRingIndex)
     {
         for (const auto& vertex : this->getInnerRingVerticesAt(innerRingIndex))
         {
-            vertices.add(vertex) ;
+            vertices.add(vertex);
         }
     }
 
-    return vertices ;
-
+    return vertices;
 }
 
-Polygon                         Polygon::Impl::getConvexHull                ( ) const
+Polygon Polygon::Impl::getConvexHull() const
 {
-
-    Polygon::Impl::BoostPolygon convexHull ;
+    Polygon::Impl::BoostPolygon convexHull;
 
     try
     {
-        boost::geometry::convex_hull(polygon_, convexHull) ;
+        boost::geometry::convex_hull(polygon_, convexHull);
     }
     catch (const std::exception& anException)
     {
-        throw ostk::core::error::RuntimeError("Error caught while computing the convex hull: [{}]", anException.what()) ;
+        throw ostk::core::error::RuntimeError("Error caught while computing the convex hull: [{}]", anException.what());
     }
 
-    return Polygon::Impl::PolygonFromBoostPolygon(convexHull) ;
-
+    return Polygon::Impl::PolygonFromBoostPolygon(convexHull);
 }
 
-Intersection                    Polygon::Impl::intersectionWith             (   const   Polygon&                    aPolygon                                    ) const
+Intersection Polygon::Impl::intersectionWith(const Polygon& aPolygon) const
 {
-
     // https://www.boost.org/doc/libs/1_69_0/libs/geometry/doc/html/geometry/reference/algorithms/intersection/intersection_3.html
-    // First implementation computing all possible types of intersections (points, linestrings, polygons). Could be improved for performance.
+    // First implementation computing all possible types of intersections (points, linestrings, polygons). Could be
+    // improved for performance.
 
-    Intersection intersection = Intersection::Empty() ;
+    Intersection intersection = Intersection::Empty();
 
-    Array<Polygon::Impl::BoostPoint> pointIntersectionOutput ;
-    Array<Polygon::Impl::BoostLineString> lineStringIntersectionOutput ;
-    Array<Polygon::Impl::BoostPolygon> polygonIntersectionOutput ;
+    Array<Polygon::Impl::BoostPoint> pointIntersectionOutput;
+    Array<Polygon::Impl::BoostLineString> lineStringIntersectionOutput;
+    Array<Polygon::Impl::BoostPolygon> polygonIntersectionOutput;
 
     // Initial check on input polygons boost geometries
 
-    boost::geometry::validity_failure_type failurePolygon1 ;
-    boost::geometry::validity_failure_type failurePolygon2 ;
+    boost::geometry::validity_failure_type failurePolygon1;
+    boost::geometry::validity_failure_type failurePolygon2;
 
-    bool polygon1IsValid = boost::geometry::is_valid(polygon_, failurePolygon1) ;
-    bool polygon2IsValid = boost::geometry::is_valid(aPolygon.implUPtr_->polygon_, failurePolygon2) ;
+    bool polygon1IsValid = boost::geometry::is_valid(polygon_, failurePolygon1);
+    bool polygon2IsValid = boost::geometry::is_valid(aPolygon.implUPtr_->polygon_, failurePolygon2);
 
     if (!polygon1IsValid)
     {
-        throw ostk::core::error::RuntimeError("Polygon 1 is not valid: [{}]", failurePolygon1) ;
+        throw ostk::core::error::RuntimeError("Polygon 1 is not valid: [{}]", failurePolygon1);
     }
 
     if (!polygon2IsValid)
     {
-        throw ostk::core::error::RuntimeError("Polygon 2 is not valid: [{}]", failurePolygon2) ;
+        throw ostk::core::error::RuntimeError("Polygon 2 is not valid: [{}]", failurePolygon2);
     }
 
     // Obtain the polygon intersection output if any
 
     try
     {
-        boost::geometry::intersection(polygon_, aPolygon.implUPtr_->polygon_, polygonIntersectionOutput) ;
+        boost::geometry::intersection(polygon_, aPolygon.implUPtr_->polygon_, polygonIntersectionOutput);
     }
     catch (const std::exception& anException)
     {
-        throw ostk::core::error::RuntimeError("Error caught while computing the intersection between polygons expecting a polygon output: [{}]", anException.what()) ;
+        throw ostk::core::error::RuntimeError(
+            "Error caught while computing the intersection between polygons expecting a polygon output: [{}]",
+            anException.what()
+        );
     }
 
     // Obtain the line string intersection output if any
 
     try
     {
-        boost::geometry::intersection(polygon_, aPolygon.implUPtr_->polygon_, lineStringIntersectionOutput) ;
+        boost::geometry::intersection(polygon_, aPolygon.implUPtr_->polygon_, lineStringIntersectionOutput);
     }
     catch (const std::exception& anException)
     {
-        throw ostk::core::error::RuntimeError("Error caught while computing the intersection between polygons expecting a line string output: [{}]", anException.what()) ;
+        throw ostk::core::error::RuntimeError(
+            "Error caught while computing the intersection between polygons expecting a line string output: [{}]",
+            anException.what()
+        );
     }
 
     // Obtain the point intersection output if any
 
     try
     {
-        boost::geometry::intersection(polygon_, aPolygon.implUPtr_->polygon_, pointIntersectionOutput) ;
+        boost::geometry::intersection(polygon_, aPolygon.implUPtr_->polygon_, pointIntersectionOutput);
     }
     catch (const std::exception& anException)
     {
-        throw ostk::core::error::RuntimeError("Error caught while computing the intersection between polygons expecting a point output: [{}]", anException.what()) ;
+        throw ostk::core::error::RuntimeError(
+            "Error caught while computing the intersection between polygons expecting a point output: [{}]",
+            anException.what()
+        );
     }
 
-    int polygonIntersectionOutputSize = polygonIntersectionOutput.getSize() ;
-    int lineStringIntersectionOutputSize = lineStringIntersectionOutput.getSize() ;
-    int pointIntersectionOutputSize = pointIntersectionOutput.getSize() ;
+    int polygonIntersectionOutputSize = polygonIntersectionOutput.getSize();
+    int lineStringIntersectionOutputSize = lineStringIntersectionOutput.getSize();
+    int pointIntersectionOutputSize = pointIntersectionOutput.getSize();
 
     // Handle polygon intersections
 
     if (polygonIntersectionOutputSize > 0)
     {
-
         for (auto polygon : polygonIntersectionOutput)
         {
-            intersection += Intersection::Polygon(Polygon::Impl::PolygonFromBoostPolygon(polygon)) ;
+            intersection += Intersection::Polygon(Polygon::Impl::PolygonFromBoostPolygon(polygon));
         }
-
     }
 
     // Handle line string intersections
 
     if (lineStringIntersectionOutputSize > 0)
     {
-
-        for (auto& boostLineString: lineStringIntersectionOutput)
+        for (auto& boostLineString : lineStringIntersectionOutput)
         {
+            boost::geometry::validity_failure_type lineStringFailure;
 
-            boost::geometry::validity_failure_type lineStringFailure ;
+            bool lineStringIsValid = boost::geometry::is_valid(boostLineString, lineStringFailure);
 
-            bool lineStringIsValid = boost::geometry::is_valid(boostLineString, lineStringFailure) ;
+            Array<Point> pointArray = Array<Point>::Empty();
 
-            Array<Point> pointArray = Array<Point>::Empty() ;
-
-            for (auto& boostPoint: boostLineString)
+            for (auto& boostPoint : boostLineString)
             {
-                pointArray.add(Point(boostPoint.x(), boostPoint.y())) ;
+                pointArray.add(Point(boostPoint.x(), boostPoint.y()));
             }
 
-            LineString lineString = LineString(pointArray) ;
+            LineString lineString = LineString(pointArray);
 
             if (lineStringIsValid)
             {
-
-                Composite intersectionComposite = intersection.accessComposite() ;
+                Composite intersectionComposite = intersection.accessComposite();
 
                 if (!intersectionComposite.anyContains(lineString))
                 {
-                    intersection += Intersection::LineString(lineString) ;
+                    intersection += Intersection::LineString(lineString);
                 }
-
             }
-
         }
-
     }
 
     // Handle point intersections
 
     if (pointIntersectionOutputSize > 0)
     {
-
-        for (auto& boostPoint: pointIntersectionOutput)
+        for (auto& boostPoint : pointIntersectionOutput)
         {
+            Point point = Point({boostPoint.x(), boostPoint.y()});
 
-            Point point = Point({ boostPoint.x(), boostPoint.y() }) ;
-
-            Composite intersectionComposite = intersection.accessComposite() ;
+            Composite intersectionComposite = intersection.accessComposite();
 
             if (!intersectionComposite.anyContains(point))
             {
-                intersection += Intersection::Point(point) ;
+                intersection += Intersection::Point(point);
             }
-
         }
-
     }
 
-    return intersection ;
-
+    return intersection;
 }
 
-Intersection                    Polygon::Impl::differenceWith               (   const   Polygon&                    aPolygon                                    ) const
+Intersection Polygon::Impl::differenceWith(const Polygon& aPolygon) const
 {
-
     // https://www.boost.org/doc/libs/1_69_0/libs/geometry/doc/html/geometry/reference/algorithms/difference/difference_3.html
 
-    Intersection difference = Intersection::Empty() ;  // Dirty but does the job for now
+    Intersection difference = Intersection::Empty();  // Dirty but does the job for now
 
-    Array<Polygon::Impl::BoostPolygon> polygonDifferenceOutput ;
+    Array<Polygon::Impl::BoostPolygon> polygonDifferenceOutput;
 
     // Initial check on input polygons boost geometries
 
-    boost::geometry::validity_failure_type failurePolygon1 ;
-    boost::geometry::validity_failure_type failurePolygon2 ;
+    boost::geometry::validity_failure_type failurePolygon1;
+    boost::geometry::validity_failure_type failurePolygon2;
 
-    bool polygon1IsValid = boost::geometry::is_valid(polygon_, failurePolygon1) ;
-    bool polygon2IsValid = boost::geometry::is_valid(aPolygon.implUPtr_->polygon_, failurePolygon2) ;
+    bool polygon1IsValid = boost::geometry::is_valid(polygon_, failurePolygon1);
+    bool polygon2IsValid = boost::geometry::is_valid(aPolygon.implUPtr_->polygon_, failurePolygon2);
 
     if (!polygon1IsValid)
     {
-        throw ostk::core::error::RuntimeError("Polygon 1 is not valid: [{}]", failurePolygon1) ;
+        throw ostk::core::error::RuntimeError("Polygon 1 is not valid: [{}]", failurePolygon1);
     }
 
     if (!polygon2IsValid)
     {
-        throw ostk::core::error::RuntimeError("Polygon 2 is not valid: [{}]", failurePolygon2) ;
+        throw ostk::core::error::RuntimeError("Polygon 2 is not valid: [{}]", failurePolygon2);
     }
 
     // Obtain the polygon difference output if any
 
     try
     {
-        boost::geometry::difference(polygon_, aPolygon.implUPtr_->polygon_, polygonDifferenceOutput) ;
+        boost::geometry::difference(polygon_, aPolygon.implUPtr_->polygon_, polygonDifferenceOutput);
     }
     catch (const std::exception& anException)
     {
-        throw ostk::core::error::RuntimeError("Error caught while computing the intersection between polygons expecting a polygon output: [{}]", anException.what()) ;
+        throw ostk::core::error::RuntimeError(
+            "Error caught while computing the intersection between polygons expecting a polygon output: [{}]",
+            anException.what()
+        );
     }
 
-    int polygonDifferenceOutputSize = polygonDifferenceOutput.getSize() ;
+    int polygonDifferenceOutputSize = polygonDifferenceOutput.getSize();
 
     // Handle polygon differences
 
     if (polygonDifferenceOutputSize > 0)
     {
-
         for (auto polygon : polygonDifferenceOutput)
         {
-            difference += Intersection::Polygon(Polygon::Impl::PolygonFromBoostPolygon(polygon)) ;
+            difference += Intersection::Polygon(Polygon::Impl::PolygonFromBoostPolygon(polygon));
         }
-
     }
 
     // Handle linestring differences
@@ -615,557 +583,485 @@ Intersection                    Polygon::Impl::differenceWith               (   
     // Handle point differences
     // ...
 
-    return difference ;
-
+    return difference;
 }
 
-String                          Polygon::Impl::toString                     (   const   Object::Format&             aFormat,
-                                                                                const   Integer&                    aPrecision                                  ) const
+String Polygon::Impl::toString(const Object::Format& aFormat, const Integer& aPrecision) const
 {
-
     switch (aFormat)
     {
-
         case Object::Format::Standard:
         case Object::Format::WKT:
         {
-
-            std::stringstream stringStream ;
+            std::stringstream stringStream;
 
             if (aPrecision.isDefined())
             {
-                stringStream << std::fixed << std::setprecision(aPrecision) << boost::geometry::wkt(polygon_) ;
+                stringStream << std::fixed << std::setprecision(aPrecision) << boost::geometry::wkt(polygon_);
             }
             else
             {
-                stringStream << boost::geometry::wkt(polygon_) ;
+                stringStream << boost::geometry::wkt(polygon_);
             }
 
-            return stringStream.str() ;
-
+            return stringStream.str();
         }
 
         default:
-            throw ostk::core::error::runtime::Wrong("Format") ;
-            break ;
-
+            throw ostk::core::error::runtime::Wrong("Format");
+            break;
     }
 
-    return String::Empty() ;
-
+    return String::Empty();
 }
 
-void                            Polygon::Impl::applyTransformation          (   const   Transformation&             aTransformation                             )
+void Polygon::Impl::applyTransformation(const Transformation& aTransformation)
 {
+    using ostk::math::obj::Matrix3d;
 
-    using ostk::math::obj::Matrix3d ;
+    Polygon::Impl::BoostPolygon transformedPolygon;
 
-    Polygon::Impl::BoostPolygon transformedPolygon ;
+    const Matrix3d transformationMatrix = aTransformation.getMatrix();
 
-    const Matrix3d transformationMatrix = aTransformation.getMatrix() ;
+    const boost::geometry::strategy::transform::matrix_transformer<double, 2, 2> transform = {
+        transformationMatrix(0, 0),
+        transformationMatrix(0, 1),
+        transformationMatrix(0, 2),
+        transformationMatrix(1, 0),
+        transformationMatrix(1, 1),
+        transformationMatrix(1, 2),
+        transformationMatrix(2, 0),
+        transformationMatrix(2, 1),
+        transformationMatrix(2, 2)};
 
-    const boost::geometry::strategy::transform::matrix_transformer<double, 2, 2> transform = { transformationMatrix(0, 0), transformationMatrix(0, 1), transformationMatrix(0, 2),
-                                                                                               transformationMatrix(1, 0), transformationMatrix(1, 1), transformationMatrix(1, 2),
-                                                                                               transformationMatrix(2, 0), transformationMatrix(2, 1), transformationMatrix(2, 2) } ;
+    boost::geometry::transform(polygon_, transformedPolygon, transform);
 
-    boost::geometry::transform(polygon_, transformedPolygon, transform) ;
-
-    polygon_ = transformedPolygon ;
-
+    polygon_ = transformedPolygon;
 }
 
-Polygon::Impl::BoostPolygon     Polygon::Impl::BoostPolygonFromPoints       (   const   Array<Point>&               aPointArray                                 )
+Polygon::Impl::BoostPolygon Polygon::Impl::BoostPolygonFromPoints(const Array<Point>& aPointArray)
 {
-
     if ((!aPointArray.isEmpty()) && (aPointArray.getSize() < 3))
     {
-        throw ostk::core::error::RuntimeError("At least 3 points are necessary to define a polygon.") ;
+        throw ostk::core::error::RuntimeError("At least 3 points are necessary to define a polygon.");
     }
 
-    Polygon::Impl::BoostPolygon polygon ;
+    Polygon::Impl::BoostPolygon polygon;
 
     for (const auto& point : aPointArray)
     {
-        boost::geometry::append(polygon, Polygon::Impl::BoostPoint(point.x(), point.y())) ;
+        boost::geometry::append(polygon, Polygon::Impl::BoostPoint(point.x(), point.y()));
     }
 
-    boost::geometry::correct(polygon) ;
+    boost::geometry::correct(polygon);
 
-    return polygon ;
-
+    return polygon;
 }
 
-Polygon::Impl::BoostLineString  Polygon::Impl::BoostLineStringFromPoints    (   const   Array<Point>&               aPointArray                                 )
+Polygon::Impl::BoostLineString Polygon::Impl::BoostLineStringFromPoints(const Array<Point>& aPointArray)
 {
-
     if ((!aPointArray.isEmpty()) && (aPointArray.getSize() < 2))
     {
-        throw ostk::core::error::RuntimeError("At least 2 points are necessary to define a line string.") ;
+        throw ostk::core::error::RuntimeError("At least 2 points are necessary to define a line string.");
     }
 
-    Polygon::Impl::BoostLineString lineString ;
+    Polygon::Impl::BoostLineString lineString;
 
     for (const auto& point : aPointArray)
     {
-        boost::geometry::append(lineString, Polygon::Impl::BoostPoint(point.x(), point.y())) ;
+        boost::geometry::append(lineString, Polygon::Impl::BoostPoint(point.x(), point.y()));
     }
 
-    boost::geometry::correct(lineString) ;
+    boost::geometry::correct(lineString);
 
-    return lineString ;
-
+    return lineString;
 }
 
-Polygon                         Polygon::Impl::PolygonFromBoostPolygon      (   const   Polygon::Impl::BoostPolygon& aPolygon                                   )
+Polygon Polygon::Impl::PolygonFromBoostPolygon(const Polygon::Impl::BoostPolygon& aPolygon)
 {
-
-    Array<Point> outerRing = Array<Point>::Empty() ;
+    Array<Point> outerRing = Array<Point>::Empty();
 
     for (size_t vertexIdx = 0; vertexIdx < (aPolygon.outer().size() - 1); ++vertexIdx)
     {
-        outerRing.add(Point(boost::geometry::get<0>(aPolygon.outer().at(vertexIdx)), boost::geometry::get<1>(aPolygon.outer().at(vertexIdx)))) ;
+        outerRing.add(Point(
+            boost::geometry::get<0>(aPolygon.outer().at(vertexIdx)),
+            boost::geometry::get<1>(aPolygon.outer().at(vertexIdx))
+        ));
     }
 
-    Array<Array<Point>> innerRings = Array<Array<Point>>::Empty() ;
+    Array<Array<Point>> innerRings = Array<Array<Point>>::Empty();
 
     for (const auto& innerRing : aPolygon.inners())
     {
-
-        Array<Point> innerRingVertices = Array<Point>::Empty() ;
+        Array<Point> innerRingVertices = Array<Point>::Empty();
 
         for (size_t vertexIdx = 0; vertexIdx < (innerRing.size() - 1); ++vertexIdx)
         {
-            innerRingVertices.add(Point(boost::geometry::get<0>(innerRing.at(vertexIdx)), boost::geometry::get<1>(innerRing.at(vertexIdx)))) ;
+            innerRingVertices.add(Point(
+                boost::geometry::get<0>(innerRing.at(vertexIdx)), boost::geometry::get<1>(innerRing.at(vertexIdx))
+            ));
         }
 
-        innerRings.add(innerRingVertices) ;
-
+        innerRings.add(innerRingVertices);
     }
 
-    return Polygon { outerRing, innerRings } ;
-
+    return Polygon {outerRing, innerRings};
 }
 
-
-                                Polygon::Polygon                            (   const   Array<Point>&               anOuterRing,
-                                                                                const   Array<Array<Point>>&        anInnerRingArray                            )
-                                :   Object(),
-                                    implUPtr_(std::make_unique<Polygon::Impl>(anOuterRing, anInnerRingArray))
+Polygon::Polygon(const Array<Point>& anOuterRing, const Array<Array<Point>>& anInnerRingArray)
+    : Object(),
+      implUPtr_(std::make_unique<Polygon::Impl>(anOuterRing, anInnerRingArray))
 {
-
 }
 
-                                Polygon::Polygon                            (   const   Polygon&                    aPolygon                                    )
-                                :   Object(aPolygon),
-                                    implUPtr_((aPolygon.implUPtr_ != nullptr) ? new Polygon::Impl(*aPolygon.implUPtr_) : nullptr)
+Polygon::Polygon(const Polygon& aPolygon)
+    : Object(aPolygon),
+      implUPtr_((aPolygon.implUPtr_ != nullptr) ? new Polygon::Impl(*aPolygon.implUPtr_) : nullptr)
 {
-
 }
 
-                                Polygon::~Polygon                           ( )
+Polygon::~Polygon() {}
+
+Polygon& Polygon::operator=(const Polygon& aPolygon)
 {
-
-}
-
-Polygon&                        Polygon::operator =                         (   const   Polygon&                    aPolygon                                    )
-{
-
     if (this != &aPolygon)
     {
+        Object::operator=(aPolygon);
 
-        Object::operator = (aPolygon) ;
-
-        implUPtr_.reset((aPolygon.implUPtr_ != nullptr) ? new Polygon::Impl(*aPolygon.implUPtr_) : nullptr) ;
-
+        implUPtr_.reset((aPolygon.implUPtr_ != nullptr) ? new Polygon::Impl(*aPolygon.implUPtr_) : nullptr);
     }
 
-    return *this ;
-
+    return *this;
 }
 
-Polygon*                        Polygon::clone                              ( ) const
+Polygon* Polygon::clone() const
 {
-    return new Polygon(*this) ;
+    return new Polygon(*this);
 }
 
-bool                            Polygon::operator ==                        (   const   Polygon&                    aPolygon                                    ) const
+bool Polygon::operator==(const Polygon& aPolygon) const
 {
-
     if ((!this->isDefined()) || (!aPolygon.isDefined()))
     {
-        return false ;
+        return false;
     }
 
-    return (*implUPtr_) == (*aPolygon.implUPtr_) ;
-
+    return (*implUPtr_) == (*aPolygon.implUPtr_);
 }
 
-bool                            Polygon::operator !=                        (   const   Polygon&                    aPolygon                                    ) const
+bool Polygon::operator!=(const Polygon& aPolygon) const
 {
-    return !((*this) == aPolygon) ;
+    return !((*this) == aPolygon);
 }
 
-bool                            Polygon::isDefined                          ( ) const
+bool Polygon::isDefined() const
 {
-    return (implUPtr_ != nullptr) && implUPtr_->isDefined() ;
+    return (implUPtr_ != nullptr) && implUPtr_->isDefined();
 }
 
-bool                            Polygon::isNear                             (   const   Polygon&                    aPolygon,
-                                                                                const   Real&                       aTolerance                                  ) const
+bool Polygon::isNear(const Polygon& aPolygon, const Real& aTolerance) const
 {
-
     if (!aPolygon.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
     if (!aTolerance.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Tolerance") ;
+        throw ostk::core::error::runtime::Undefined("Tolerance");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
     if (this->getVertexCount() != aPolygon.getVertexCount())
     {
-        return false ;
+        return false;
     }
 
-    const Array<Polygon::Vertex> firstVertices = this->getVertices() ;
-    const Array<Polygon::Vertex> secondVertices = aPolygon.getVertices() ;
+    const Array<Polygon::Vertex> firstVertices = this->getVertices();
+    const Array<Polygon::Vertex> secondVertices = aPolygon.getVertices();
 
     // for (const auto vertexTuple : ostk::core::ctnr::iterators::Zip(this->getVertices(), aPolygon.getVertices()))
     for (const auto vertexTuple : ostk::core::ctnr::iterators::Zip(firstVertices, secondVertices))
     {
-
         if (!std::get<0>(vertexTuple).isNear(std::get<1>(vertexTuple), aTolerance))
         {
-            return false ;
+            return false;
         }
-
     }
 
-    return true ;
-
+    return true;
 }
 
-bool                            Polygon::intersects                         (   const   Polygon&                    aPolygon                                    ) const
+bool Polygon::intersects(const Polygon& aPolygon) const
 {
-
     if (!aPolygon.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->intersects(aPolygon) ;
-
+    return implUPtr_->intersects(aPolygon);
 }
 
-bool                            Polygon::contains                           (   const   Point&                      aPoint                                      ) const
+bool Polygon::contains(const Point& aPoint) const
 {
-
     if (!aPoint.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->contains(aPoint) ;
-
+    return implUPtr_->contains(aPoint);
 }
 
-bool                            Polygon::contains                           (   const   PointSet&                   aPointSet                                   ) const
+bool Polygon::contains(const PointSet& aPointSet) const
 {
-
     if (!aPointSet.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Point set") ;
+        throw ostk::core::error::runtime::Undefined("Point set");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->contains(aPointSet) ;
-
+    return implUPtr_->contains(aPointSet);
 }
 
-bool                            Polygon::contains                           (   const   LineString&                 aLineString                                 ) const
+bool Polygon::contains(const LineString& aLineString) const
 {
-
     if (!aLineString.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Line string") ;
+        throw ostk::core::error::runtime::Undefined("Line string");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->contains(aLineString) ;
-
+    return implUPtr_->contains(aLineString);
 }
 
-Size                            Polygon::getInnerRingCount                  ( ) const
+Size Polygon::getInnerRingCount() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->getInnerRingCount() ;
-
+    return implUPtr_->getInnerRingCount();
 }
 
-Size                            Polygon::getEdgeCount                       ( ) const
+Size Polygon::getEdgeCount() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->getEdgeCount() ;
-
+    return implUPtr_->getEdgeCount();
 }
 
-Size                            Polygon::getVertexCount                     ( ) const
+Size Polygon::getVertexCount() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->getVertexCount() ;
-
+    return implUPtr_->getVertexCount();
 }
 
-Polygon::Ring                   Polygon::getOuterRing                       ( ) const
+Polygon::Ring Polygon::getOuterRing() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->getOuterRing() ;
-
+    return implUPtr_->getOuterRing();
 }
 
-Polygon::Ring                   Polygon::getInnerRingAt                     (   const   Index&                      anInnerRingIndex                            ) const
+Polygon::Ring Polygon::getInnerRingAt(const Index& anInnerRingIndex) const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->getInnerRingAt(anInnerRingIndex) ;
-
+    return implUPtr_->getInnerRingAt(anInnerRingIndex);
 }
 
-Polygon::Edge                   Polygon::getEdgeAt                          (   const   Index                       anEdgeIndex                                 ) const
+Polygon::Edge Polygon::getEdgeAt(const Index anEdgeIndex) const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->getEdgeAt(anEdgeIndex) ;
-
+    return implUPtr_->getEdgeAt(anEdgeIndex);
 }
 
-Polygon::Vertex                 Polygon::getVertexAt                        (   const   Index                       aVertexIndex                                ) const
+Polygon::Vertex Polygon::getVertexAt(const Index aVertexIndex) const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->getVertexAt(aVertexIndex) ;
-
+    return implUPtr_->getVertexAt(aVertexIndex);
 }
 
-Array<Polygon::Edge>            Polygon::getEdges                           ( ) const
+Array<Polygon::Edge> Polygon::getEdges() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->getEdges() ;
-
+    return implUPtr_->getEdges();
 }
 
-Array<Polygon::Vertex>          Polygon::getVertices                        ( ) const
+Array<Polygon::Vertex> Polygon::getVertices() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->getVertices() ;
-
+    return implUPtr_->getVertices();
 }
 
-Polygon                         Polygon::getConvexHull                      ( ) const
+Polygon Polygon::getConvexHull() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->getConvexHull() ;
-
+    return implUPtr_->getConvexHull();
 }
 
-void                            Polygon::print                              (           std::ostream&               anOutputStream,
-                                                                                        bool                        displayDecorators                           ) const
+void Polygon::print(std::ostream& anOutputStream, bool displayDecorators) const
 {
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Polygon") : void();
 
-    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Polygon") : void () ;
-
-    ostk::core::utils::Print::Separator(anOutputStream, "Outer Ring") ;
+    ostk::core::utils::Print::Separator(anOutputStream, "Outer Ring");
 
     if (implUPtr_ != nullptr)
     {
-
         for (const auto& point : implUPtr_->getOuterRingVertices())
         {
-            ostk::core::utils::Print::Line(anOutputStream) << String::Format("- {}", point.toString()) ;
+            ostk::core::utils::Print::Line(anOutputStream) << String::Format("- {}", point.toString());
         }
-
     }
     else
     {
-        ostk::core::utils::Print::Line(anOutputStream) << "Undefined" ;
+        ostk::core::utils::Print::Line(anOutputStream) << "Undefined";
     }
 
-    ostk::core::utils::Print::Separator(anOutputStream, "Inner Rings") ;
+    ostk::core::utils::Print::Separator(anOutputStream, "Inner Rings");
 
     if (implUPtr_ != nullptr)
     {
-
         for (Index innerRingIndex = 0; innerRingIndex < implUPtr_->getInnerRingCount(); ++innerRingIndex)
         {
-
-            ostk::core::utils::Print::Separator(anOutputStream, String::Format("Inner Ring @ {}", innerRingIndex)) ;
+            ostk::core::utils::Print::Separator(anOutputStream, String::Format("Inner Ring @ {}", innerRingIndex));
 
             for (const auto& point : implUPtr_->getInnerRingVerticesAt(innerRingIndex))
             {
-                ostk::core::utils::Print::Line(anOutputStream) << String::Format("- {}", point.toString()) ;
+                ostk::core::utils::Print::Line(anOutputStream) << String::Format("- {}", point.toString());
             }
-
         }
-
     }
     else
     {
-        ostk::core::utils::Print::Line(anOutputStream) << "Undefined" ;
+        ostk::core::utils::Print::Line(anOutputStream) << "Undefined";
     }
 
-    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
-
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
 }
 
-Intersection                    Polygon::intersectionWith                   (   const   Polygon&                    aPolygon                                    ) const
+Intersection Polygon::intersectionWith(const Polygon& aPolygon) const
 {
-
     if ((!this->isDefined()) || (!aPolygon.isDefined()))
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->intersectionWith(aPolygon) ;
-
+    return implUPtr_->intersectionWith(aPolygon);
 }
 
-Intersection                    Polygon::differenceWith                     (   const   Polygon&                    aPolygon                                    ) const
+Intersection Polygon::differenceWith(const Polygon& aPolygon) const
 {
-
     if ((!this->isDefined()) || (!aPolygon.isDefined()))
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->differenceWith(aPolygon) ;
-
+    return implUPtr_->differenceWith(aPolygon);
 }
 
-MultiPolygon                    Polygon::unionWith                          (   const   Polygon&                    aPolygon                                    ) const
+MultiPolygon Polygon::unionWith(const Polygon& aPolygon) const
 {
-
     if ((!this->isDefined()) || (!aPolygon.isDefined()))
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return MultiPolygon::Polygon(*this).unionWith(MultiPolygon::Polygon(aPolygon)) ;
-
+    return MultiPolygon::Polygon(*this).unionWith(MultiPolygon::Polygon(aPolygon));
 }
 
-String                          Polygon::toString                           (   const   Object::Format&             aFormat,
-                                                                                const   Integer&                    aPrecision                                  ) const
+String Polygon::toString(const Object::Format& aFormat, const Integer& aPrecision) const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return implUPtr_->toString(aFormat, aPrecision) ;
-
+    return implUPtr_->toString(aFormat, aPrecision);
 }
 
-void                            Polygon::applyTransformation                (   const   Transformation&             aTransformation                             )
+void Polygon::applyTransformation(const Transformation& aTransformation)
 {
-
     if (!aTransformation.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Polygon") ;
+        throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    implUPtr_->applyTransformation(aTransformation) ;
-
+    implUPtr_->applyTransformation(aTransformation);
 }
 
-Polygon                         Polygon::Undefined                          ( )
+Polygon Polygon::Undefined()
 {
-    return { Array<Point>::Empty() } ;
+    return {Array<Point>::Empty()};
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}
-}
-}
-}
-}
+}  // namespace objects
+}  // namespace d2
+}  // namespace geom
+}  // namespace math
+}  // namespace ostk
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

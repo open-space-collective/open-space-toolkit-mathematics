@@ -2,26 +2,24 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp>
 
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection (        pybind11::module&   aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::module& aModule)
 {
+    using namespace pybind11;
 
-    using namespace pybind11 ;
+    using ostk::core::types::Unique;
+    using ostk::core::ctnr::Array;
 
-    using ostk::core::types::Unique ;
-    using ostk::core::ctnr::Array ;
+    using ostk::math::geom::d2::Object;
+    using ostk::math::geom::d2::objects::Point;
+    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geom::d2::objects::Line;
+    using ostk::math::geom::d2::objects::Segment;
+    using ostk::math::geom::d2::objects::LineString;
+    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geom::d2::Intersection;
 
-    using ostk::math::geom::d2::Object ;
-    using ostk::math::geom::d2::objects::Point ;
-    using ostk::math::geom::d2::objects::PointSet ;
-    using ostk::math::geom::d2::objects::Line ;
-    using ostk::math::geom::d2::objects::Segment ;
-    using ostk::math::geom::d2::objects::LineString ;
-    using ostk::math::geom::d2::objects::Polygon ;
-    using ostk::math::geom::d2::objects::Composite ;
-    using ostk::math::geom::d2::Intersection ;
-
-    class_<Intersection> intersection(aModule, "Intersection") ;
+    class_<Intersection> intersection(aModule, "Intersection");
 
     intersection
 
@@ -38,21 +36,105 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Inters
         .def("is_empty", &Intersection::isEmpty)
         .def("is_complex", &Intersection::isComplex)
 
-        .def("is_point", +[] (const Intersection& anIntersection) -> bool { return anIntersection.is<Point>() ; })
-        .def("is_point_set", +[] (const Intersection& anIntersection) -> bool { return anIntersection.is<PointSet>() ; })
-        .def("is_line", +[] (const Intersection& anIntersection) -> bool { return anIntersection.is<Line>() ; })
-        .def("is_segment", +[] (const Intersection& anIntersection) -> bool { return anIntersection.is<Segment>() ; })
-        .def("is_line_string", +[] (const Intersection& anIntersection) -> bool { return anIntersection.is<LineString>() ; })
-        .def("is_polygon", +[] (const Intersection& anIntersection) -> bool { return anIntersection.is<Polygon>() ; })
-        .def("is_composite", +[] (const Intersection& anIntersection) -> bool { return anIntersection.is<Composite>() ; })
+        .def(
+            "is_point",
+            +[](const Intersection& anIntersection) -> bool
+            {
+                return anIntersection.is<Point>();
+            }
+        )
+        .def(
+            "is_point_set",
+            +[](const Intersection& anIntersection) -> bool
+            {
+                return anIntersection.is<PointSet>();
+            }
+        )
+        .def(
+            "is_line",
+            +[](const Intersection& anIntersection) -> bool
+            {
+                return anIntersection.is<Line>();
+            }
+        )
+        .def(
+            "is_segment",
+            +[](const Intersection& anIntersection) -> bool
+            {
+                return anIntersection.is<Segment>();
+            }
+        )
+        .def(
+            "is_line_string",
+            +[](const Intersection& anIntersection) -> bool
+            {
+                return anIntersection.is<LineString>();
+            }
+        )
+        .def(
+            "is_polygon",
+            +[](const Intersection& anIntersection) -> bool
+            {
+                return anIntersection.is<Polygon>();
+            }
+        )
+        .def(
+            "is_composite",
+            +[](const Intersection& anIntersection) -> bool
+            {
+                return anIntersection.is<Composite>();
+            }
+        )
 
-        .def("as_point", +[] (const Intersection& anIntersection) -> Point { return anIntersection.as<Point>() ; })
-        .def("as_point_set", +[] (const Intersection& anIntersection) -> PointSet { return anIntersection.as<PointSet>() ; })
-        .def("as_line", +[] (const Intersection& anIntersection) -> Line { return anIntersection.as<Line>() ; })
-        .def("as_segment", +[] (const Intersection& anIntersection) -> Segment { return anIntersection.as<Segment>() ; })
-        .def("as_line_string", +[] (const Intersection& anIntersection) -> LineString { return anIntersection.as<LineString>() ; })
-        .def("as_polygon", +[] (const Intersection& anIntersection) -> Polygon { return anIntersection.as<Polygon>() ; })
-        .def("as_composite", +[] (const Intersection& anIntersection) -> Composite { return anIntersection.as<Composite>() ; })
+        .def(
+            "as_point",
+            +[](const Intersection& anIntersection) -> Point
+            {
+                return anIntersection.as<Point>();
+            }
+        )
+        .def(
+            "as_point_set",
+            +[](const Intersection& anIntersection) -> PointSet
+            {
+                return anIntersection.as<PointSet>();
+            }
+        )
+        .def(
+            "as_line",
+            +[](const Intersection& anIntersection) -> Line
+            {
+                return anIntersection.as<Line>();
+            }
+        )
+        .def(
+            "as_segment",
+            +[](const Intersection& anIntersection) -> Segment
+            {
+                return anIntersection.as<Segment>();
+            }
+        )
+        .def(
+            "as_line_string",
+            +[](const Intersection& anIntersection) -> LineString
+            {
+                return anIntersection.as<LineString>();
+            }
+        )
+        .def(
+            "as_polygon",
+            +[](const Intersection& anIntersection) -> Polygon
+            {
+                return anIntersection.as<Polygon>();
+            }
+        )
+        .def(
+            "as_composite",
+            +[](const Intersection& anIntersection) -> Composite
+            {
+                return anIntersection.as<Composite>();
+            }
+        )
 
         .def("access_composite", &Intersection::accessComposite, return_value_policy::reference)
 
@@ -68,7 +150,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Inters
 
         .def_static("string_from_type", &Intersection::StringFromType)
 
-    ;
+        ;
 
     // Define Intersection types
     enum_<Intersection::Type>(intersection, "Type")
@@ -83,7 +165,5 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Inters
         .value("Polygon", Intersection::Type::Polygon)
         .value("Complex", Intersection::Type::Complex)
 
-    ;
-
+        ;
 }
-

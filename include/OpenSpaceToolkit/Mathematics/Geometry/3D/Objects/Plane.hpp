@@ -3,14 +3,13 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane__
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ray.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/PointSet.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/PointSet.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ray.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp>
 #include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
-
 
 namespace ostk
 {
@@ -23,15 +22,13 @@ namespace d3
 namespace objects
 {
 
-
-using ostk::math::obj::Vector3d ;
-using ostk::math::geom::d3::Object ;
-using ostk::math::geom::d3::objects::Point ;
-using ostk::math::geom::d3::objects::PointSet ;
-using ostk::math::geom::d3::objects::Line ;
-using ostk::math::geom::d3::objects::Ray ;
-using ostk::math::geom::d3::objects::Segment ;
-
+using ostk::math::obj::Vector3d;
+using ostk::math::geom::d3::Object;
+using ostk::math::geom::d3::objects::Point;
+using ostk::math::geom::d3::objects::PointSet;
+using ostk::math::geom::d3::objects::Line;
+using ostk::math::geom::d3::objects::Ray;
+using ostk::math::geom::d3::objects::Segment;
 
 /// @brief                      Plane
 ///
@@ -41,282 +38,275 @@ using ostk::math::geom::d3::objects::Segment ;
 
 class Plane : public Object
 {
+   public:
+    /// @brief              Constructor
+    ///
+    /// @code
+    ///                     Plane plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
+    /// @endcode
+    ///
+    /// @param              [in] aPoint A point
+    /// @param              [in] aNormalVector A normal vector
 
-    public:
+    Plane(const Point& aPoint, const Vector3d& aNormalVector);
 
-        /// @brief              Constructor
-        ///
-        /// @code
-        ///                     Plane plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
-        /// @endcode
-        ///
-        /// @param              [in] aPoint A point
-        /// @param              [in] aNormalVector A normal vector
+    /// @brief              Clone plane
+    ///
+    /// @return             Pointer to cloned plane
 
-                                Plane                                       (   const   Point&                      aPoint,
-                                                                                const   Vector3d&                   aNormalVector                               ) ;
+    virtual Plane* clone() const override;
 
-        /// @brief              Clone plane
-        ///
-        /// @return             Pointer to cloned plane
+    /// @brief              Equal to operator
+    ///
+    /// @code
+    ///                     Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) == Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
+    ///                     // True
+    /// @endcode
+    ///
+    /// @param              [in] aPlane A plane
+    /// @return             True if planes are equal
 
-        virtual Plane*          clone                                       ( ) const override ;
+    bool operator==(const Plane& aPlane) const;
 
-        /// @brief              Equal to operator
-        ///
-        /// @code
-        ///                     Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) == Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ; // True
-        /// @endcode
-        ///
-        /// @param              [in] aPlane A plane
-        /// @return             True if planes are equal
+    /// @brief              Not equal to operator
+    ///
+    /// @code
+    ///                     Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) != Plane({ 0.0, 0.0, 1.0 }, { 0.0, 0.0, 1.0 }) ;
+    ///                     // True
+    /// @endcode
+    ///
+    /// @param              [in] aPlane A plane
+    /// @return             True if planes are not equal
 
-        bool                    operator ==                                 (   const   Plane&                      aPlane                                      ) const ;
+    bool operator!=(const Plane& aPlane) const;
 
-        /// @brief              Not equal to operator
-        ///
-        /// @code
-        ///                     Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) != Plane({ 0.0, 0.0, 1.0 }, { 0.0, 0.0, 1.0 }) ; // True
-        /// @endcode
-        ///
-        /// @param              [in] aPlane A plane
-        /// @return             True if planes are not equal
+    /// @brief              Check if plane is defined
+    ///
+    /// @code
+    ///                     Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).isDefined() ; // True
+    /// @endcode
+    ///
+    /// @return             True if plane is defined
 
-        bool                    operator !=                                 (   const   Plane&                      aPlane                                      ) const ;
+    virtual bool isDefined() const override;
 
-        /// @brief              Check if plane is defined
-        ///
-        /// @code
-        ///                     Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).isDefined() ; // True
-        /// @endcode
-        ///
-        /// @return             True if plane is defined
+    /// @brief              Check if plane intersects point
+    ///
+    /// @code
+    ///                     Plane plane = ... ;
+    ///                     Point point = ... ;
+    ///                     plane.intersects(point) ;
+    /// @endcode
+    ///
+    /// @param              [in] aPoint A point
+    /// @return             True if plane intersects point
 
-        virtual bool            isDefined                                   ( ) const override ;
+    bool intersects(const Point& aPoint) const;
 
-        /// @brief              Check if plane intersects point
-        ///
-        /// @code
-        ///                     Plane plane = ... ;
-        ///                     Point point = ... ;
-        ///                     plane.intersects(point) ;
-        /// @endcode
-        ///
-        /// @param              [in] aPoint A point
-        /// @return             True if plane intersects point
+    /// @brief              Check if plane intersects point set
+    ///
+    /// @code
+    ///                     Plane plane = ... ;
+    ///                     PointSet pointSet = ... ;
+    ///                     plane.intersects(pointSet) ;
+    /// @endcode
+    ///
+    /// @param              [in] aPointSet A point set
+    /// @return             True if plane intersects point set
 
-        bool                    intersects                                  (   const   Point&                      aPoint                                      ) const ;
+    bool intersects(const PointSet& aPointSet) const;
 
-        /// @brief              Check if plane intersects point set
-        ///
-        /// @code
-        ///                     Plane plane = ... ;
-        ///                     PointSet pointSet = ... ;
-        ///                     plane.intersects(pointSet) ;
-        /// @endcode
-        ///
-        /// @param              [in] aPointSet A point set
-        /// @return             True if plane intersects point set
+    /// @brief              Check if plane intersects line
+    ///
+    /// @code
+    ///                     Plane plane = ... ;
+    ///                     Line line = ... ;
+    ///                     plane.intersects(line) ;
+    /// @endcode
+    ///
+    /// @param              [in] aLine A line
+    /// @return             True if plane intersects line
 
-        bool                    intersects                                  (   const   PointSet&                   aPointSet                                   ) const ;
+    bool intersects(const Line& aLine) const;
 
-        /// @brief              Check if plane intersects line
-        ///
-        /// @code
-        ///                     Plane plane = ... ;
-        ///                     Line line = ... ;
-        ///                     plane.intersects(line) ;
-        /// @endcode
-        ///
-        /// @param              [in] aLine A line
-        /// @return             True if plane intersects line
+    /// @brief              Check if plane intersects ray
+    ///
+    /// @code
+    ///                     Plane plane = ... ;
+    ///                     Ray ray = ... ;
+    ///                     plane.intersects(ray) ;
+    /// @endcode
+    ///
+    /// @param              [in] aRay A ray
+    /// @return             True if plane intersects ray
 
-        bool                    intersects                                  (   const   Line&                       aLine                                       ) const ;
+    bool intersects(const Ray& aRay) const;
 
-        /// @brief              Check if plane intersects ray
-        ///
-        /// @code
-        ///                     Plane plane = ... ;
-        ///                     Ray ray = ... ;
-        ///                     plane.intersects(ray) ;
-        /// @endcode
-        ///
-        /// @param              [in] aRay A ray
-        /// @return             True if plane intersects ray
+    /// @brief              Check if plane intersects segment
+    ///
+    /// @code
+    ///                     Plane plane = ... ;
+    ///                     Segment segment = ... ;
+    ///                     plane.intersects(segment) ;
+    /// @endcode
+    ///
+    /// @param              [in] aSegment A segment
+    /// @return             True if plane intersects segment
 
-        bool                    intersects                                  (   const   Ray&                        aRay                                        ) const ;
+    bool intersects(const Segment& aSegment) const;
 
-        /// @brief              Check if plane intersects segment
-        ///
-        /// @code
-        ///                     Plane plane = ... ;
-        ///                     Segment segment = ... ;
-        ///                     plane.intersects(segment) ;
-        /// @endcode
-        ///
-        /// @param              [in] aSegment A segment
-        /// @return             True if plane intersects segment
+    /// @brief              Check if plane contains point
+    ///
+    /// @code
+    ///                     Plane plane = ... ;
+    ///                     Point point = ... ;
+    ///                     plane.contains(point) ;
+    /// @endcode
+    ///
+    /// @param              [in] aPoint A point
+    /// @return             True if plane contains point
 
-        bool                    intersects                                  (   const   Segment&                    aSegment                                    ) const ;
+    bool contains(const Point& aPoint) const;
 
-        /// @brief              Check if plane contains point
-        ///
-        /// @code
-        ///                     Plane plane = ... ;
-        ///                     Point point = ... ;
-        ///                     plane.contains(point) ;
-        /// @endcode
-        ///
-        /// @param              [in] aPoint A point
-        /// @return             True if plane contains point
+    /// @brief              Check if plane contains point set
+    ///
+    /// @code
+    ///                     Point plane = ... ;
+    ///                     PointSet pointSet = ... ;
+    ///                     plane.contains(pointSet) ;
+    /// @endcode
+    ///
+    /// @param              [in] aPointSet A point set
+    /// @return             True if plane contains point set
 
-        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+    bool contains(const PointSet& aPointSet) const;
 
-        /// @brief              Check if plane contains point set
-        ///
-        /// @code
-        ///                     Point plane = ... ;
-        ///                     PointSet pointSet = ... ;
-        ///                     plane.contains(pointSet) ;
-        /// @endcode
-        ///
-        /// @param              [in] aPointSet A point set
-        /// @return             True if plane contains point set
+    /// @brief              Check if plane contains line
+    ///
+    /// @code
+    ///                     Point plane = ... ;
+    ///                     Line line = ... ;
+    ///                     plane.contains(line) ;
+    /// @endcode
+    ///
+    /// @param              [in] aLine A line
+    /// @return             True if plane contains line
 
-        bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
+    bool contains(const Line& aLine) const;
 
-        /// @brief              Check if plane contains line
-        ///
-        /// @code
-        ///                     Point plane = ... ;
-        ///                     Line line = ... ;
-        ///                     plane.contains(line) ;
-        /// @endcode
-        ///
-        /// @param              [in] aLine A line
-        /// @return             True if plane contains line
+    /// @brief              Check if plane contains ray
+    ///
+    /// @code
+    ///                     Point plane = ... ;
+    ///                     Ray ray = ... ;
+    ///                     plane.contains(ray) ;
+    /// @endcode
+    ///
+    /// @param              [in] aRay A ray
+    /// @return             True if plane contains ray
 
-        bool                    contains                                    (   const   Line&                       aLine                                       ) const ;
+    bool contains(const Ray& aRay) const;
 
-        /// @brief              Check if plane contains ray
-        ///
-        /// @code
-        ///                     Point plane = ... ;
-        ///                     Ray ray = ... ;
-        ///                     plane.contains(ray) ;
-        /// @endcode
-        ///
-        /// @param              [in] aRay A ray
-        /// @return             True if plane contains ray
+    /// @brief              Check if plane contains segment
+    ///
+    /// @code
+    ///                     Point plane = ... ;
+    ///                     Segment segment = ... ;
+    ///                     plane.contains(segment) ;
+    /// @endcode
+    ///
+    /// @param              [in] aSegment A segment
+    /// @return             True if plane contains segment
 
-        bool                    contains                                    (   const   Ray&                        aRay                                        ) const ;
+    bool contains(const Segment& aSegment) const;
 
-        /// @brief              Check if plane contains segment
-        ///
-        /// @code
-        ///                     Point plane = ... ;
-        ///                     Segment segment = ... ;
-        ///                     plane.contains(segment) ;
-        /// @endcode
-        ///
-        /// @param              [in] aSegment A segment
-        /// @return             True if plane contains segment
+    /// @brief              Get plane point
+    ///
+    /// @code
+    ///                     Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getPoint() ; // [0.0, 0.0, 0.0]
+    /// @endcode
+    ///
+    /// @return             Plane point
 
-        bool                    contains                                    (   const   Segment&                    aSegment                                    ) const ;
+    Point getPoint() const;
 
-        /// @brief              Get plane point
-        ///
-        /// @code
-        ///                     Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getPoint() ; // [0.0, 0.0, 0.0]
-        /// @endcode
-        ///
-        /// @return             Plane point
+    /// @brief              Get plane normal vector
+    ///
+    /// @code
+    ///                     Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getNormalVector() ; // [0.0, 0.0, 1.0]
+    /// @endcode
+    ///
+    /// @return             Plane normal vector
 
-        Point                   getPoint                                    ( ) const ;
+    Vector3d getNormalVector() const;
 
-        /// @brief              Get plane normal vector
-        ///
-        /// @code
-        ///                     Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).getNormalVector() ; // [0.0, 0.0, 1.0]
-        /// @endcode
-        ///
-        /// @return             Plane normal vector
+    /// @brief              Compute intersection of plane with point
+    ///
+    /// @param              [in] aPoint A point
+    /// @return             Intersection of plane with point
 
-        Vector3d                getNormalVector                             ( ) const ;
+    Intersection intersectionWith(const Point& aPoint) const;
 
-        /// @brief              Compute intersection of plane with point
-        ///
-        /// @param              [in] aPoint A point
-        /// @return             Intersection of plane with point
+    /// @brief              Compute intersection of plane with point set
+    ///
+    /// @param              [in] aPointSet A point set
+    /// @return             Intersection of plane with point set
 
-        Intersection            intersectionWith                            (   const   Point&                      aPoint                                      ) const ;
+    Intersection intersectionWith(const PointSet& aPointSet) const;
 
-        /// @brief              Compute intersection of plane with point set
-        ///
-        /// @param              [in] aPointSet A point set
-        /// @return             Intersection of plane with point set
+    /// @brief              Compute intersection of plane with line
+    ///
+    /// @param              [in] aLine A line
+    /// @return             Intersection of plane with line
 
-        Intersection            intersectionWith                            (   const   PointSet&                   aPointSet                                   ) const ;
+    Intersection intersectionWith(const Line& aLine) const;
 
-        /// @brief              Compute intersection of plane with line
-        ///
-        /// @param              [in] aLine A line
-        /// @return             Intersection of plane with line
+    /// @brief              Compute intersection of plane with ray
+    ///
+    /// @param              [in] aRay A ray
+    /// @return             Intersection of plane with ray
 
-        Intersection            intersectionWith                            (   const   Line&                       aLine                                       ) const ;
+    Intersection intersectionWith(const Ray& aRay) const;
 
-        /// @brief              Compute intersection of plane with ray
-        ///
-        /// @param              [in] aRay A ray
-        /// @return             Intersection of plane with ray
+    /// @brief              Compute intersection of plane with segment
+    ///
+    /// @param              [in] aSegment A segment
+    /// @return             Intersection of plane with segment
 
-        Intersection            intersectionWith                            (   const   Ray&                        aRay                                        ) const ;
+    Intersection intersectionWith(const Segment& aSegment) const;
 
-        /// @brief              Compute intersection of plane with segment
-        ///
-        /// @param              [in] aSegment A segment
-        /// @return             Intersection of plane with segment
+    /// @brief              Print plane
+    ///
+    /// @param              [in] anOutputStream An output stream
+    /// @param              [in] (optional) displayDecorators If true, display decorators
 
-        Intersection            intersectionWith                            (   const   Segment&                    aSegment                                    ) const ;
+    virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
-        /// @brief              Print plane
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] (optional) displayDecorators If true, display decorators
+    /// @brief              Apply transformation to plane
+    ///
+    /// @param              [in] aTransformation A transformation
 
-        virtual void            print                                       (           std::ostream&               anOutputStream,
-                                                                                        bool                        displayDecorators                           =   true ) const override ;
+    virtual void applyTransformation(const Transformation& aTransformation) override;
 
-        /// @brief              Apply transformation to plane
-        ///
-        /// @param              [in] aTransformation A transformation
+    /// @brief              Constructs an undefined plane
+    ///
+    /// @code
+    ///                     Plane plane = Plane::Undefined() ; // Undefined
+    /// @endcode
+    ///
+    /// @return             Undefined plane
 
-        virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) override ;
+    static Plane Undefined();
 
-        /// @brief              Constructs an undefined plane
-        ///
-        /// @code
-        ///                     Plane plane = Plane::Undefined() ; // Undefined
-        /// @endcode
-        ///
-        /// @return             Undefined plane
+   private:
+    Point point_;
+    Vector3d normal_;
+};
 
-        static Plane            Undefined                                   ( ) ;
-
-    private:
-
-        Point                   point_ ;
-        Vector3d                normal_ ;
-
-} ;
-
-
-}
-}
-}
-}
-}
-
+}  // namespace objects
+}  // namespace d3
+}  // namespace geom
+}  // namespace math
+}  // namespace ostk
 
 #endif
-

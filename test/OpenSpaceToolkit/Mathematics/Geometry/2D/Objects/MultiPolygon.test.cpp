@@ -1,12 +1,11 @@
 // Copyright © Loft Orbital Solutions Inc.
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp>
-
 #include <OpenSpaceToolkit/Core/Containers/Tuple.hpp>
 
-#include <Global.test.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
 
+#include <Global.test.hpp>
 
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon, Constructor)
 // {
@@ -376,22 +375,30 @@
 
 //         const Array<Tuple<Polygon, Polygon, bool>> testCases =
 //         {
-//             { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, true },
-//             { Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, true },
-//             { Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, false },
-//             { Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, true },
-//             { Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 } } }, true },
-//             { Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, true },
-//             { Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, false },
-//             { Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, false },
-//             { Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 } } }, false },
-//             { Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, true },
-//             { Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, true },
-//             { Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, false },
-//             { Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 } } }, true },
-//             { Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 } } }, Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, true },
-//             { Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 } } }, Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, false },
-//             { Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, true },
+//             { Polygon { { { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, Polygon { { { 0.0, 0.0 }, {
+//             0.0, 1.0 }, { 1.0, 1.0 }, { 1.0, 0.0 } } }, true }, { Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0
+//             }, { 0.0, 1.0 } } }, Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, true }, {
+//             Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, Polygon { { { 5.0, 0.0 }, { 5.0,
+//             0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, false }, { Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, {
+//             0.0, 1.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, true }, { Polygon
+//             { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, {
+//             0.0, 0.0 }, { 0.0, 0.0 } } }, true }, { Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0
+//             } } }, Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, true }, { Polygon { {
+//             { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 },
+//             { 1.0, 1.0 }, { 0.0, 1.0 } } }, false }, { Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, {
+//             0.0, 5.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, false }, {
+//             Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.0,
+//             0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 } } }, false }, { Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, {
+//             0.0, 0.5 } } }, Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, true }, { Polygon
+//             { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 },
+//             { 1.0, 1.0 }, { 0.0, 1.0 } } }, true }, { Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0,
+//             0.5 } } }, Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 }, { 6.0, 6.0 }, { 0.0, 5.0 } } }, false }, { Polygon { {
+//             { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, {
+//             0.0, 0.0 }, { 0.0, 0.0 } } }, true }, { Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0
+//             } } }, Polygon { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, true }, { Polygon { { {
+//             0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 } } }, Polygon { { { 5.0, 0.0 }, { 5.0, 0.0 },
+//             { 6.0, 6.0 }, { 0.0, 5.0 } } }, false }, { Polygon { { { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0, 0.0 }, { 0.0,
+//             0.0 } } }, Polygon { { { 0.0, 0.0 }, { 0.5, 0.0 }, { 0.5, 0.5 }, { 0.0, 0.5 } } }, true },
 //         } ;
 
 //         for (const auto& testCase : testCases)
@@ -974,11 +981,10 @@
 
 // }
 
-TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon, GetConvexHull)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon, GetConvexHull)
 {
-
-    using ostk::math::geom::d2::objects::Polygon ;
-    using ostk::math::geom::d2::objects::MultiPolygon ;
+    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geom::d2::objects::MultiPolygon;
 
     {
 
@@ -986,161 +992,63 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon, GetConvexHu
 
         {
 
-            const Polygon polygon =
-            {
-                {
-                    { 0.0, 0.0 },
-                    { 0.0, 1.0 },
-                    { 1.0, 1.0 },
-                    { 1.0, 0.0 }
-                }
-            } ;
+            const Polygon polygon = {{{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}};
 
-            const MultiPolygon multiPolygon = { { polygon } } ;
+    const MultiPolygon multiPolygon = {{polygon}};
 
-            const Polygon convexHull = multiPolygon.getConvexHull() ;
+    const Polygon convexHull = multiPolygon.getConvexHull();
 
-            ASSERT_TRUE(convexHull == polygon) ;
+    ASSERT_TRUE(convexHull == polygon);
+}
 
-        }
+// Convex hull of concave polygon
 
-        // Convex hull of concave polygon
+{
+    const Polygon polygon = {{{0.0, 0.0}, {0.5, 0.5}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}};
 
-        {
+    const MultiPolygon multiPolygon = {{polygon}};
 
-            const Polygon polygon =
-            {
-                {
-                    { 0.0, 0.0 },
-                    { 0.5, 0.5 },
-                    { 0.0, 1.0 },
-                    { 1.0, 1.0 },
-                    { 1.0, 0.0 }
-                }
-            } ;
+    const Polygon convexHull = multiPolygon.getConvexHull();
 
-            const MultiPolygon multiPolygon = { { polygon } } ;
+    const Polygon referencePolygon = {{{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}};
 
-            const Polygon convexHull = multiPolygon.getConvexHull() ;
+    ASSERT_TRUE(convexHull == referencePolygon);
+}
 
-            const Polygon referencePolygon =
-            {
-                {
-                    { 0.0, 0.0 },
-                    { 0.0, 1.0 },
-                    { 1.0, 1.0 },
-                    { 1.0, 0.0 }
-                }
-            } ;
+// Convex hull of convex polygons
 
-            ASSERT_TRUE(convexHull == referencePolygon) ;
+{
+    const MultiPolygon multiPolygon = {
+        {Polygon {{{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}},
+         Polygon {{{2.0, 2.0}, {2.0, 3.0}, {3.0, 3.0}, {3.0, 2.0}}}}};
 
-        }
+    const Polygon convexHull = multiPolygon.getConvexHull();
 
-        // Convex hull of convex polygons
+    const Polygon referencePolygon = {{{0.0, 0.0}, {0.0, 1.0}, {2.0, 3.0}, {3.0, 3.0}, {3.0, 2.0}, {1.0, 0.0}}};
 
-        {
+    ASSERT_TRUE(convexHull == referencePolygon);
+}
 
-            const MultiPolygon multiPolygon =
-            {
-                {
-                    Polygon
-                    {
-                        {
-                            { 0.0, 0.0 },
-                            { 0.0, 1.0 },
-                            { 1.0, 1.0 },
-                            { 1.0, 0.0 }
-                        }
-                    },
-                    Polygon
-                    {
-                        {
-                            { 2.0, 2.0 },
-                            { 2.0, 3.0 },
-                            { 3.0, 3.0 },
-                            { 3.0, 2.0 }
-                        }
-                    }
-                }
-            } ;
+// Convex hull of concave polygons
 
-            const Polygon convexHull = multiPolygon.getConvexHull() ;
+{
+    const MultiPolygon multiPolygon = {
+        {Polygon {{{0.0, 0.0}, {0.5, 0.5}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}},
+         Polygon {{{2.0, 2.0}, {2.5, 2.5}, {2.0, 3.0}, {3.0, 3.0}, {3.0, 2.0}}}}};
 
-            const Polygon referencePolygon =
-            {
-                {
-                    { 0.0, 0.0 },
-                    { 0.0, 1.0 },
-                    { 2.0, 3.0 },
-                    { 3.0, 3.0 },
-                    { 3.0, 2.0 },
-                    { 1.0, 0.0 }
-                }
-            } ;
+    const Polygon convexHull = multiPolygon.getConvexHull();
 
-            ASSERT_TRUE(convexHull == referencePolygon) ;
+    const Polygon referencePolygon = {{{0.0, 0.0}, {0.0, 1.0}, {2.0, 3.0}, {3.0, 3.0}, {3.0, 2.0}, {1.0, 0.0}}};
 
-        }
+    ASSERT_TRUE(convexHull == referencePolygon);
+}
+}
 
-        // Convex hull of concave polygons
+// Undefined throws
 
-        {
-
-            const MultiPolygon multiPolygon =
-            {
-                {
-                    Polygon
-                    {
-                        {
-                            { 0.0, 0.0 },
-                            { 0.5, 0.5 },
-                            { 0.0, 1.0 },
-                            { 1.0, 1.0 },
-                            { 1.0, 0.0 }
-                        }
-                    },
-                    Polygon
-                    {
-                        {
-                            { 2.0, 2.0 },
-                            { 2.5, 2.5 },
-                            { 2.0, 3.0 },
-                            { 3.0, 3.0 },
-                            { 3.0, 2.0 }
-                        }
-                    }
-                }
-            } ;
-
-            const Polygon convexHull = multiPolygon.getConvexHull() ;
-
-            const Polygon referencePolygon =
-            {
-                {
-                    { 0.0, 0.0 },
-                    { 0.0, 1.0 },
-                    { 2.0, 3.0 },
-                    { 3.0, 3.0 },
-                    { 3.0, 2.0 },
-                    { 1.0, 0.0 }
-                }
-            } ;
-
-            ASSERT_TRUE(convexHull == referencePolygon) ;
-
-        }
-
-    }
-
-    // Undefined throws
-
-    {
-
-        EXPECT_ANY_THROW(MultiPolygon::Undefined().getConvexHull()) ;
-
-    }
-
+{
+    EXPECT_ANY_THROW(MultiPolygon::Undefined().getConvexHull());
+}
 }
 
 // // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon, IntersectionWith)
@@ -1203,8 +1111,12 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon, GetConvexHu
 //             { 1.0, 0.0 }
 //         } ;
 
-//         EXPECT_EQ("POLYGON((0.0000000000 0.0000000000,0.0000000000 1.0000000000,1.0000000000 1.0000000000,1.0000000000 0.0000000000,0.0000000000 0.0000000000))", Polygon(vertices).toString(Polygon::Format::Standard, 10)) ;
-//         EXPECT_EQ("POLYGON((0.0000000000 0.0000000000,0.0000000000 1.0000000000,1.0000000000 1.0000000000,1.0000000000 0.0000000000,0.0000000000 0.0000000000))", Polygon(vertices).toString(Polygon::Format::WKT, 10)) ;
+//         EXPECT_EQ("POLYGON((0.0000000000
+//         0.0000000000,0.0000000000 1.0000000000,1.0000000000 1.0000000000,1.0000000000 0.0000000000,0.0000000000
+//         0.0000000000))", Polygon(vertices).toString(Polygon::Format::Standard, 10)) ;
+//         EXPECT_EQ("POLYGON((0.0000000000
+//         0.0000000000,0.0000000000 1.0000000000,1.0000000000 1.0000000000,1.0000000000 0.0000000000,0.0000000000
+//         0.0000000000))", Polygon(vertices).toString(Polygon::Format::WKT, 10)) ;
 
 //     }
 
@@ -1234,9 +1146,11 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon, GetConvexHu
 //             }
 //         } ;
 
-//         EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0 0.5,0.5 0.5,0.5 0,0 0),(0 0,0 0.1,0.1 0.1,0.1 0,0 0))", Polygon(outerRing, innerRings).toString()) ;
-//         EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0 0.5,0.5 0.5,0.5 0,0 0),(0 0,0 0.1,0.1 0.1,0.1 0,0 0))", Polygon(outerRing, innerRings).toString(Polygon::Format::Standard)) ;
-//         EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0 0.5,0.5 0.5,0.5 0,0 0),(0 0,0 0.1,0.1 0.1,0.1 0,0 0))", Polygon(outerRing, innerRings).toString(Polygon::Format::WKT)) ;
+//         EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0 0.5,0.5 0.5,0.5 0,0 0),(0 0,0 0.1,0.1 0.1,0.1 0,0 0))",
+//         Polygon(outerRing, innerRings).toString()) ; EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0 0.5,0.5 0.5,0.5
+//         0,0 0),(0 0,0 0.1,0.1 0.1,0.1 0,0 0))", Polygon(outerRing, innerRings).toString(Polygon::Format::Standard)) ;
+//         EXPECT_EQ("POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0 0.5,0.5 0.5,0.5 0,0 0),(0 0,0 0.1,0.1 0.1,0.1 0,0 0))",
+//         Polygon(outerRing, innerRings).toString(Polygon::Format::WKT)) ;
 
 //     }
 
@@ -1295,43 +1209,28 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon, GetConvexHu
 
 // }
 
-TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon, Undefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon, Undefined)
 {
-
-    using ostk::math::geom::d2::objects::MultiPolygon ;
+    using ostk::math::geom::d2::objects::MultiPolygon;
 
     {
-
-        EXPECT_NO_THROW(MultiPolygon::Undefined()) ;
-        EXPECT_FALSE(MultiPolygon::Undefined().isDefined()) ;
-
+        EXPECT_NO_THROW(MultiPolygon::Undefined());
+        EXPECT_FALSE(MultiPolygon::Undefined().isDefined());
     }
-
 }
 
-TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon, Polygon)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon, Polygon)
 {
+    using ostk::core::ctnr::Array;
 
-    using ostk::core::ctnr::Array ;
-
-    using ostk::math::geom::d2::objects::Polygon ;
-    using ostk::math::geom::d2::objects::MultiPolygon ;
+    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geom::d2::objects::MultiPolygon;
 
     {
+        const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
 
-        const Array<Polygon::Vertex> vertices =
-        {
-            { 0.0, 0.0 },
-            { 0.0, 1.0 },
-            { 1.0, 1.0 },
-            { 1.0, 0.0 }
-        } ;
+        const Polygon polygon = {vertices};
 
-        const Polygon polygon = { vertices } ;
-
-        EXPECT_NO_THROW(MultiPolygon::Polygon(polygon)) ;
-
+        EXPECT_NO_THROW(MultiPolygon::Polygon(polygon));
     }
-
 }
-

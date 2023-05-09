@@ -1,12 +1,11 @@
 // Copyright © Loft Orbital Solutions Inc.
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/LineString.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Segment.hpp>
-
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utilities.hpp>
 
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/LineString.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
 
 namespace ostk
 {
@@ -19,310 +18,270 @@ namespace d2
 namespace objects
 {
 
-
-                                LineString::LineString                      (   const   Array<Point>&               aPointArray                                 )
-                                :   Object(),
-                                    points_(aPointArray)
+LineString::LineString(const Array<Point>& aPointArray)
+    : Object(),
+      points_(aPointArray)
 {
-
 }
 
-LineString*                     LineString::clone                           ( ) const
+LineString* LineString::clone() const
 {
-    return new LineString(*this) ;
+    return new LineString(*this);
 }
 
-bool                            LineString::operator ==                     (   const   LineString&                 aLineString                                 ) const
+bool LineString::operator==(const LineString& aLineString) const
 {
-    return points_ == aLineString.points_ ;
+    return points_ == aLineString.points_;
 }
 
-bool                            LineString::operator !=                     (   const   LineString&                 aLineString                                 ) const
+bool LineString::operator!=(const LineString& aLineString) const
 {
-    return !((*this) == aLineString) ;
+    return !((*this) == aLineString);
 }
 
-bool                            LineString::isDefined                       ( ) const
+bool LineString::isDefined() const
 {
-    return !points_.isEmpty() ;
+    return !points_.isEmpty();
 }
 
-bool                            LineString::isEmpty                         ( ) const
+bool LineString::isEmpty() const
 {
-    return points_.isEmpty() ;
+    return points_.isEmpty();
 }
 
-bool                            LineString::contains                        (   const   Point&                      aPoint                                      ) const
+bool LineString::contains(const Point& aPoint) const
 {
-
     if (!aPoint.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("LineString") ;
+        throw ostk::core::error::runtime::Undefined("LineString");
     }
 
-    int pointCount = this->getPointCount() ;
+    int pointCount = this->getPointCount();
 
     if (pointCount == 1)
     {
-        return (this->accessPointAt(0) == aPoint) ;
+        return (this->accessPointAt(0) == aPoint);
     }
 
     else
     {
-
         for (int index = 0; index < (pointCount - 1); index++)
         {
+            Point firstPoint = this->accessPointAt(index);
+            Point secondPoint = this->accessPointAt(index + 1);
 
-            Point firstPoint = this->accessPointAt(index) ;
-            Point secondPoint = this->accessPointAt(index + 1) ;
-
-            objects::Segment segment = objects::Segment(firstPoint, secondPoint) ;
+            objects::Segment segment = objects::Segment(firstPoint, secondPoint);
 
             if (segment.contains(aPoint))
             {
-                return true ;
+                return true;
             }
-
         }
-
     }
 
-    return false ;
-
+    return false;
 }
 
-bool                            LineString::isNear                          (   const   LineString&                 aLineString,
-                                                                                const   Real&                       aTolerance                                  ) const
+bool LineString::isNear(const LineString& aLineString, const Real& aTolerance) const
 {
-
     if ((this->isEmpty()) || (aLineString.isEmpty()))
     {
-        return false ;
+        return false;
     }
 
     if (points_.getSize() != aLineString.points_.getSize())
     {
-        return false ;
+        return false;
     }
 
     for (const auto pointTuple : ostk::core::ctnr::iterators::Zip(points_, aLineString.points_))
     {
-
         if (!std::get<0>(pointTuple).isNear(std::get<1>(pointTuple), aTolerance))
         {
-            return false ;
+            return false;
         }
-
     }
 
-    return true ;
-
+    return true;
 }
 
-const Array<Point>&             LineString::getPointArray                ( ) const
+const Array<Point>& LineString::getPointArray() const
 {
-    return points_ ;
+    return points_;
 }
 
-const Point&                    LineString::accessPointAt                   (   const   Index&                      anIndex                                     ) const
+const Point& LineString::accessPointAt(const Index& anIndex) const
 {
-
     if (anIndex >= points_.getSize())
     {
-        throw ostk::core::error::RuntimeError("Point index [{}] out of bounds [0 - {}].", anIndex, points_.getSize()) ;
+        throw ostk::core::error::RuntimeError("Point index [{}] out of bounds [0 - {}].", anIndex, points_.getSize());
     }
 
-    return points_.at(anIndex) ;
-
+    return points_.at(anIndex);
 }
 
-Size                            LineString::getPointCount                   ( ) const
+Size LineString::getPointCount() const
 {
-    return points_.getSize() ;
+    return points_.getSize();
 }
 
-Point                           LineString::getPointClosestTo               (   const   Point&                      aPoint                                      ) const
+Point LineString::getPointClosestTo(const Point& aPoint) const
 {
-
     if (!aPoint.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point");
     }
 
     if (this->isEmpty())
     {
-        throw ostk::core::error::runtime::Undefined("Line string") ;
+        throw ostk::core::error::runtime::Undefined("Line string");
     }
 
-    Point const* pointPtr = nullptr ;
-    Real minDistance = Real::Undefined() ;
+    Point const* pointPtr = nullptr;
+    Real minDistance = Real::Undefined();
 
     for (const auto& point : points_)
     {
-
-        const Real distance = (point - aPoint).squaredNorm() ;
+        const Real distance = (point - aPoint).squaredNorm();
 
         if ((!minDistance.isDefined()) || (distance < minDistance))
         {
+            pointPtr = &point;
 
-            pointPtr = &point ;
-
-            minDistance = distance ;
-
+            minDistance = distance;
         }
-
     }
 
-    return *pointPtr ;
-
+    return *pointPtr;
 }
 
-String                          LineString::toString                        (   const   Object::Format&             aFormat,
-                                                                                const   Integer&                    aPrecision                                  ) const
+String LineString::toString(const Object::Format& aFormat, const Integer& aPrecision) const
 {
-
     switch (aFormat)
     {
-
         case Object::Format::Standard:
         {
+            String lineStringString = "[";
 
-            String lineStringString = "[" ;
-
-            Index pointIndex = 0 ;
-            const Size pointCount = this->getPointCount() ;
+            Index pointIndex = 0;
+            const Size pointCount = this->getPointCount();
 
             for (const auto& point : points_)
             {
-
-                lineStringString += point.toString(Object::Format::Standard, aPrecision) ;
+                lineStringString += point.toString(Object::Format::Standard, aPrecision);
 
                 if ((pointIndex + 1) < pointCount)
                 {
-                    lineStringString += " -> " ;
+                    lineStringString += " -> ";
                 }
 
-                pointIndex++ ;
-
+                pointIndex++;
             }
 
-            lineStringString += "]" ;
+            lineStringString += "]";
 
-            return lineStringString ;
-
+            return lineStringString;
         }
 
         case Object::Format::WKT:
         {
+            String lineStringString = "LINESTRING(";
 
-            String lineStringString = "LINESTRING(" ;
-
-            Index pointIndex = 0 ;
-            const Size pointCount = this->getPointCount() ;
+            Index pointIndex = 0;
+            const Size pointCount = this->getPointCount();
 
             for (const auto& point : points_)
             {
-
-                lineStringString += String::Format("{} {}", Real(point.x()).toString(aPrecision), Real(point.y()).toString(aPrecision)) ;
+                lineStringString +=
+                    String::Format("{} {}", Real(point.x()).toString(aPrecision), Real(point.y()).toString(aPrecision));
 
                 if ((pointIndex + 1) < pointCount)
                 {
-                    lineStringString += ", " ;
+                    lineStringString += ", ";
                 }
 
-                pointIndex++ ;
-
+                pointIndex++;
             }
 
-            lineStringString += ")" ;
+            lineStringString += ")";
 
-            return lineStringString ;
-
+            return lineStringString;
         }
 
         default:
-            throw ostk::core::error::runtime::Wrong("Format") ;
-            break ;
-
+            throw ostk::core::error::runtime::Wrong("Format");
+            break;
     }
 
-    return String::Empty() ;
-
+    return String::Empty();
 }
 
-void                            LineString::print                           (           std::ostream&               anOutputStream,
-                                                                                        bool                        displayDecorators                           ) const
+void LineString::print(std::ostream& anOutputStream, bool displayDecorators) const
 {
-
-    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Line string") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Line string") : void();
 
     for (const auto& point : points_)
     {
-        ostk::core::utils::Print::Line(anOutputStream)                       << (point.isDefined() ? point.toString() : "Undefined") ;
+        ostk::core::utils::Print::Line(anOutputStream) << (point.isDefined() ? point.toString() : "Undefined");
     }
 
-    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
-
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
 }
 
-LineString::ConstIterator       LineString::begin                           ( ) const
+LineString::ConstIterator LineString::begin() const
 {
-    return points_.begin() ;
+    return points_.begin();
 }
 
-LineString::ConstIterator       LineString::end                             ( ) const
+LineString::ConstIterator LineString::end() const
 {
-    return points_.end() ;
+    return points_.end();
 }
 
-void                            LineString::applyTransformation             (   const   Transformation&             aTransformation                             )
+void LineString::applyTransformation(const Transformation& aTransformation)
 {
-
     if (!aTransformation.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Line string") ;
+        throw ostk::core::error::runtime::Undefined("Line string");
     }
 
     for (auto& point : points_)
     {
-        point = aTransformation.applyTo(point) ;
+        point = aTransformation.applyTo(point);
     }
-
 }
 
-LineString                      LineString::Empty                           ( )
+LineString LineString::Empty()
 {
-    return { Array<Point>::Empty() } ;
+    return {Array<Point>::Empty()};
 }
 
-LineString                      LineString::Segment                         (   const   objects::Segment&           aSegment                                    )
+LineString LineString::Segment(const objects::Segment& aSegment)
 {
-
     if (!aSegment.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment");
     }
 
-    return { { aSegment.getFirstPoint(), aSegment.getSecondPoint() } } ;
-
+    return {{aSegment.getFirstPoint(), aSegment.getSecondPoint()}};
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}
-}
-}
-}
-}
+}  // namespace objects
+}  // namespace d2
+}  // namespace geom
+}  // namespace math
+}  // namespace ostk
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

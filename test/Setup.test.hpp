@@ -2,7 +2,6 @@
 
 #include <Global.test.hpp>
 
-
 namespace ostk
 {
 namespace math
@@ -10,60 +9,39 @@ namespace math
 namespace test
 {
 
-
 namespace global
 {
 
-
-std::string someGlobalString ;
-
+std::string someGlobalString;
 
 }
-
 
 class Environment : public testing::Environment
 {
-
-    public:
-
-                                Environment                                 (   const   std::string&                aCommandLineArg                     )
-                                :   commandLineArg_(aCommandLineArg)
+   public:
+    Environment(const std::string& aCommandLineArg)
+        : commandLineArg_(aCommandLineArg)
+    {
+        if (commandLineArg_ != "")
         {
-
-            if (commandLineArg_ != "")
-            {
-                global::someGlobalString = commandLineArg_ ;
-            }
-            else
-            {
-                global::someGlobalString = "World" ;
-            }
-
+            global::someGlobalString = commandLineArg_;
         }
-
-        virtual                 ~Environment                                ( )
+        else
         {
-
+            global::someGlobalString = "World";
         }
+    }
 
-        virtual void            SetUp                                       ( )
-        {
+    virtual ~Environment() {}
 
-        }
+    virtual void SetUp() {}
 
-        virtual void            TearDown                                    ( )
-        {
+    virtual void TearDown() {}
 
-        }
+   private:
+    std::string commandLineArg_;
+};
 
-    private:
-
-        std::string             commandLineArg_ ;
-
-} ;
-
-
-}
-}
-}
-
+}  // namespace test
+}  // namespace math
+}  // namespace ostk

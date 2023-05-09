@@ -3,45 +3,47 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cuboid.hpp>
 
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cuboid (        pybind11::module& aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cuboid(pybind11::module& aModule)
 {
+    using namespace pybind11;
 
-    using namespace pybind11 ;
+    using ostk::core::types::Real;
 
-    using ostk::core::types::Real ;
-
-    using ostk::math::obj::Vector3d ;
-    using ostk::math::geom::d3::Object ;
-    using ostk::math::geom::d3::objects::Point ;
-    using ostk::math::geom::d3::objects::PointSet ;
-    using ostk::math::geom::d3::objects::Line ;
-    using ostk::math::geom::d3::objects::Ray ;
-    using ostk::math::geom::d3::objects::Segment ;
-    using ostk::math::geom::d3::objects::Plane ;
-    using ostk::math::geom::d3::objects::Sphere ;
-    using ostk::math::geom::d3::objects::Cuboid ;
-    using ostk::math::geom::d3::objects::Pyramid ;
-    using ostk::math::geom::d3::Intersection ;
-    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::obj::Vector3d;
+    using ostk::math::geom::d3::Object;
+    using ostk::math::geom::d3::objects::Point;
+    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::geom::d3::objects::Segment;
+    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geom::d3::objects::Sphere;
+    using ostk::math::geom::d3::objects::Cuboid;
+    using ostk::math::geom::d3::objects::Pyramid;
+    using ostk::math::geom::d3::Intersection;
+    using ostk::math::geom::d3::trf::rot::Quaternion;
 
     //     scope in_Cuboid = class_<Cuboid, Shared<Cuboid>, bases<Object>>("Cuboid", no_init)
     class_<Cuboid, Object>(aModule, "Cuboid")
 
-        .def
-        (
+        .def(
             "__init__",
-            [] (Cuboid &aCuboid, const Point& aCenter, const pybind11::list& anAxisList, const pybind11::list& anExtent)
+            [](Cuboid& aCuboid, const Point& aCenter, const pybind11::list& anAxisList, const pybind11::list& anExtent)
             {
+                const std::array<Vector3d, 3> axes = {
+                    pybind11::cast<Vector3d>(anAxisList[0]),
+                    pybind11::cast<Vector3d>(anAxisList[1]),
+                    pybind11::cast<Vector3d>(anAxisList[2])};
+                const std::array<Real, 3> extent = {
+                    pybind11::cast<Real>(anExtent[0]),
+                    pybind11::cast<Real>(anExtent[1]),
+                    pybind11::cast<Real>(anExtent[2])};
 
-                const std::array<Vector3d, 3> axes = { pybind11::cast<Vector3d>(anAxisList[0]), pybind11::cast<Vector3d>(anAxisList[1]), pybind11::cast<Vector3d>(anAxisList[2]) } ;
-                const std::array<Real, 3> extent = { pybind11::cast<Real>(anExtent[0]), pybind11::cast<Real>(anExtent[1]), pybind11::cast<Real>(anExtent[2]) } ;
-
-                new (&aCuboid) Cuboid(aCenter, axes, extent) ;
+                new (&aCuboid) Cuboid(aCenter, axes, extent);
                 // Default policy is unique pointer
                 // return std::make_shared<Cuboid>(aCenter, axes, extent) ;
-                // return std::shared_ptr<Cuboid>(new Cuboid(aCenter, axes, extent)) ;  // Check if that one provides the correct behavior
-
+                // return std::shared_ptr<Cuboid>(new Cuboid(aCenter, axes, extent)) ;  // Check if that one provides
+                // the correct behavior
             },
             arg("center"),
             arg("axes"),
@@ -75,7 +77,5 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def_static("undefined", &Cuboid::Undefined)
         .def_static("cube", &Cuboid::Cube, arg("center"), arg("extent"))
 
-    ;
-
+        ;
 }
-

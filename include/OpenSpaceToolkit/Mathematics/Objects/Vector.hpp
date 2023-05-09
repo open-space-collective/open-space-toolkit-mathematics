@@ -9,7 +9,7 @@
 
 // Disable Eigen warnings
 
-#pragma GCC diagnostic push // Save diagnostic state
+#pragma GCC diagnostic push  // Save diagnostic state
 
 #pragma GCC diagnostic ignored "-Wshadow"
 #pragma GCC diagnostic ignored "-Wunused-parameter"
@@ -19,8 +19,7 @@
 #include <Eigen/Core>
 #include <Eigen/Geometry>
 
-#pragma GCC diagnostic pop // Turn the warnings back on
-
+#pragma GCC diagnostic pop  // Turn the warnings back on
 
 namespace ostk
 {
@@ -29,38 +28,34 @@ namespace math
 namespace obj
 {
 
+using Vector2i = Eigen::Vector2i;
+using Vector3i = Eigen::Vector3i;
+using Vector4i = Eigen::Vector4i;
 
-using Vector2i = Eigen::Vector2i ;
-using Vector3i = Eigen::Vector3i ;
-using Vector4i = Eigen::Vector4i ;
+using VectorXi = Eigen::VectorXi;
 
-using VectorXi = Eigen::VectorXi ;
+using Vector2d = Eigen::Vector2d;
+using Vector3d = Eigen::Vector3d;
+using Vector4d = Eigen::Vector4d;
 
-using Vector2d = Eigen::Vector2d ;
-using Vector3d = Eigen::Vector3d ;
-using Vector4d = Eigen::Vector4d ;
+using VectorXd = Eigen::VectorXd;
 
-using VectorXd = Eigen::VectorXd ;
+using RowVectorXd = Eigen::RowVectorXd;
 
-using RowVectorXd = Eigen::RowVectorXd ;
+using Matrix2i = Eigen::Matrix2i;
+using Matrix3i = Eigen::Matrix3i;
+using Matrix4i = Eigen::Matrix4i;
 
-using Matrix2i = Eigen::Matrix2i ;
-using Matrix3i = Eigen::Matrix3i ;
-using Matrix4i = Eigen::Matrix4i ;
+using MatrixXi = Eigen::MatrixXi;
 
-using MatrixXi = Eigen::MatrixXi ;
+using Matrix2d = Eigen::Matrix2d;
+using Matrix3d = Eigen::Matrix3d;
+using Matrix4d = Eigen::Matrix4d;
 
-using Matrix2d = Eigen::Matrix2d ;
-using Matrix3d = Eigen::Matrix3d ;
-using Matrix4d = Eigen::Matrix4d ;
+using MatrixXd = Eigen::MatrixXd;
 
-using MatrixXd = Eigen::MatrixXd ;
-
-
-}
-}
-}
-
+}  // namespace obj
+}  // namespace math
+}  // namespace ostk
 
 #endif
-

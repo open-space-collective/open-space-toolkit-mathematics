@@ -2,11 +2,10 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
 // #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Composite.hpp>
-
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utilities.hpp>
 
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Composite.hpp>
 
 namespace ostk
 {
@@ -19,334 +18,390 @@ namespace d2
 namespace objects
 {
 
-
-                                Composite::Composite                        (   const   Object&                     anObject                                    )
-                                :   Object(),
-                                    defined_(true),
-                                    objects_(Array<Unique<Object>>::Empty())
+Composite::Composite(const Object& anObject)
+    : Object(),
+      defined_(true),
+      objects_(Array<Unique<Object>>::Empty())
 {
-
-    objects_.emplace_back(Unique<Object>(anObject.clone())) ;
-
+    objects_.emplace_back(Unique<Object>(anObject.clone()));
 }
 
-                                Composite::Composite                        (   const   Unique<Object>&             anObjectUPtr                                )
-                                :   Object(),
-                                    defined_(true),
-                                    objects_(Array<Unique<Object>>::Empty())
+Composite::Composite(const Unique<Object>& anObjectUPtr)
+    : Object(),
+      defined_(true),
+      objects_(Array<Unique<Object>>::Empty())
 {
-
-    objects_.emplace_back(Unique<Object>(anObjectUPtr->clone())) ;
-
+    objects_.emplace_back(Unique<Object>(anObjectUPtr->clone()));
 }
 
-                                Composite::Composite                        (           Array<Unique<Object>>&&     anObjectArray                               )
-                                :   Object(),
-                                    defined_(true),
-                                    objects_(Array<Unique<Object>>::Empty())
+Composite::Composite(Array<Unique<Object>>&& anObjectArray)
+    : Object(),
+      defined_(true),
+      objects_(Array<Unique<Object>>::Empty())
 {
+    objects_.reserve(anObjectArray.getSize());
 
-    objects_.reserve(anObjectArray.getSize()) ;
-
-    std::transform(anObjectArray.begin(), anObjectArray.end(), std::back_inserter(objects_), [] (const Unique<Object>& anObjectUPtr) -> Unique<Object> { return Unique<Object>(anObjectUPtr->clone()) ; }) ;
-
+    std::transform(
+        anObjectArray.begin(),
+        anObjectArray.end(),
+        std::back_inserter(objects_),
+        [](const Unique<Object>& anObjectUPtr) -> Unique<Object>
+        {
+            return Unique<Object>(anObjectUPtr->clone());
+        }
+    );
 }
 
-                                Composite::Composite                        (   const   Composite&                  aComposite                                  )
-                                :   Object(),
-                                    defined_(aComposite.defined_),
-                                    objects_(Array<Unique<Object>>::Empty())
+Composite::Composite(const Composite& aComposite)
+    : Object(),
+      defined_(aComposite.defined_),
+      objects_(Array<Unique<Object>>::Empty())
 {
+    objects_.reserve(aComposite.objects_.getSize());
 
-    objects_.reserve(aComposite.objects_.getSize()) ;
-
-    std::transform(aComposite.objects_.begin(), aComposite.objects_.end(), std::back_inserter(objects_), [] (const Unique<Object>& anObjectUPtr) -> Unique<Object> { return Unique<Object>(anObjectUPtr->clone()) ; }) ;
-
+    std::transform(
+        aComposite.objects_.begin(),
+        aComposite.objects_.end(),
+        std::back_inserter(objects_),
+        [](const Unique<Object>& anObjectUPtr) -> Unique<Object>
+        {
+            return Unique<Object>(anObjectUPtr->clone());
+        }
+    );
 }
 
-Composite*                      Composite::clone                            ( ) const
+Composite* Composite::clone() const
 {
-    return new Composite(*this) ;
+    return new Composite(*this);
 }
 
-Composite&                      Composite::operator =                       (   const   Composite&                  aComposite                                  )
+Composite& Composite::operator=(const Composite& aComposite)
 {
-
     if (this != &aComposite)
     {
+        defined_ = aComposite.defined_;
 
-        defined_ = aComposite.defined_ ;
+        objects_.clear();
 
-        objects_.clear() ;
+        objects_.reserve(aComposite.objects_.getSize());
 
-        objects_.reserve(aComposite.objects_.getSize()) ;
-
-        std::transform(aComposite.objects_.begin(), aComposite.objects_.end(), std::back_inserter(objects_), [] (const Unique<Object>& anObjectUPtr) -> Unique<Object> { return Unique<Object>(anObjectUPtr->clone()) ; }) ;
-
+        std::transform(
+            aComposite.objects_.begin(),
+            aComposite.objects_.end(),
+            std::back_inserter(objects_),
+            [](const Unique<Object>& anObjectUPtr) -> Unique<Object>
+            {
+                return Unique<Object>(anObjectUPtr->clone());
+            }
+        );
     }
 
-    return *this ;
-
+    return *this;
 }
 
-bool                            Composite::operator ==                      (   const   Composite&                  aComposite                                  ) const
+bool Composite::operator==(const Composite& aComposite) const
 {
-
     if ((!this->isDefined()) || (!aComposite.isDefined()))
     {
-        return false ;
+        return false;
     }
 
     if (objects_.getSize() != aComposite.objects_.getSize())
     {
-        return false ;
+        return false;
     }
 
     for (const auto objectTuple : ostk::core::ctnr::iterators::Zip(objects_, aComposite.objects_))
     {
-
         if ((*std::get<0>(objectTuple)) != (*std::get<1>(objectTuple)))
         {
-            return false ;
+            return false;
         }
-
     }
 
-    return true ;
-
+    return true;
 }
 
-bool                            Composite::operator !=                      (   const   Composite&                  aComposite                                  ) const
+bool Composite::operator!=(const Composite& aComposite) const
 {
-    return !((*this) == aComposite) ;
+    return !((*this) == aComposite);
 }
 
-Composite                       Composite::operator +                       (   const   Composite&                  aComposite                                  ) const
+Composite Composite::operator+(const Composite& aComposite) const
 {
-
     if (!aComposite.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
-    Composite composite = Composite::Empty() ;
+    Composite composite = Composite::Empty();
 
-    composite.objects_.reserve(objects_.getSize() + aComposite.objects_.getSize()) ;
+    composite.objects_.reserve(objects_.getSize() + aComposite.objects_.getSize());
 
-    std::transform(objects_.begin(), objects_.end(), std::back_inserter(composite.objects_), [] (const Unique<Object>& anObjectUPtr) -> Unique<Object> { return Unique<Object>(anObjectUPtr->clone()) ; }) ;
-    std::transform(aComposite.objects_.begin(), aComposite.objects_.end(), std::back_inserter(composite.objects_), [] (const Unique<Object>& anObjectUPtr) -> Unique<Object> { return Unique<Object>(anObjectUPtr->clone()) ; }) ;
+    std::transform(
+        objects_.begin(),
+        objects_.end(),
+        std::back_inserter(composite.objects_),
+        [](const Unique<Object>& anObjectUPtr) -> Unique<Object>
+        {
+            return Unique<Object>(anObjectUPtr->clone());
+        }
+    );
+    std::transform(
+        aComposite.objects_.begin(),
+        aComposite.objects_.end(),
+        std::back_inserter(composite.objects_),
+        [](const Unique<Object>& anObjectUPtr) -> Unique<Object>
+        {
+            return Unique<Object>(anObjectUPtr->clone());
+        }
+    );
 
-    return composite ;
-
+    return composite;
 }
 
-Composite&                      Composite::operator +=                      (   const   Composite&                  aComposite                                  )
+Composite& Composite::operator+=(const Composite& aComposite)
 {
-
     if (!aComposite.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
-    objects_.reserve(objects_.getSize() + aComposite.objects_.getSize()) ;
+    objects_.reserve(objects_.getSize() + aComposite.objects_.getSize());
 
-    std::transform(aComposite.objects_.begin(), aComposite.objects_.end(), std::back_inserter(objects_), [] (const Unique<Object>& anObjectUPtr) -> Unique<Object> { return Unique<Object>(anObjectUPtr->clone()) ; }) ;
+    std::transform(
+        aComposite.objects_.begin(),
+        aComposite.objects_.end(),
+        std::back_inserter(objects_),
+        [](const Unique<Object>& anObjectUPtr) -> Unique<Object>
+        {
+            return Unique<Object>(anObjectUPtr->clone());
+        }
+    );
 
-    return *this ;
-
+    return *this;
 }
 
-bool                            Composite::isDefined                        ( ) const
+bool Composite::isDefined() const
 {
-    return defined_ && std::all_of(objects_.begin(), objects_.end(), [] (const Unique<Object>& anObjectUPtr) -> bool { return anObjectUPtr->isDefined() ; }) ;
+    return defined_ && std::all_of(
+                           objects_.begin(),
+                           objects_.end(),
+                           [](const Unique<Object>& anObjectUPtr) -> bool
+                           {
+                               return anObjectUPtr->isDefined();
+                           }
+                       );
 }
 
-bool                            Composite::isEmpty                          ( ) const
+bool Composite::isEmpty() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
-    return objects_.isEmpty() ;
-
+    return objects_.isEmpty();
 }
 
-bool                            Composite::intersects                       (   const   Object&                     anObject                                    ) const
+bool Composite::intersects(const Object& anObject) const
 {
-
     if (!anObject.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Object") ;
+        throw ostk::core::error::runtime::Undefined("Object");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
-    return std::any_of(objects_.begin(), objects_.end(), [&anObject] (const Unique<Object>& anObjectUPtr) -> bool { return anObjectUPtr->intersects(anObject) ; }) ;
-
+    return std::any_of(
+        objects_.begin(),
+        objects_.end(),
+        [&anObject](const Unique<Object>& anObjectUPtr) -> bool
+        {
+            return anObjectUPtr->intersects(anObject);
+        }
+    );
 }
 
-bool                            Composite::intersects                       (   const   Composite&                  aComposite                                  ) const
+bool Composite::intersects(const Composite& aComposite) const
 {
-
     if (!aComposite.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
-    return std::any_of(aComposite.objects_.begin(), aComposite.objects_.end(), [this] (const Unique<Object>& anObjectUPtr) -> bool { return this->intersects(*anObjectUPtr) ; }) ;
-
+    return std::any_of(
+        aComposite.objects_.begin(),
+        aComposite.objects_.end(),
+        [this](const Unique<Object>& anObjectUPtr) -> bool
+        {
+            return this->intersects(*anObjectUPtr);
+        }
+    );
 }
 
-bool                            Composite::contains                         (   const   Object&                     anObject                                    ) const
+bool Composite::contains(const Object& anObject) const
 {
-
     if (!anObject.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Object") ;
+        throw ostk::core::error::runtime::Undefined("Object");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
     if (this->isEmpty())
     {
-        return false ;
+        return false;
     }
 
-    return std::all_of(objects_.begin(), objects_.end(), [&anObject] (const Unique<Object>& anObjectUPtr) -> bool { return anObjectUPtr->contains(anObject) ; }) ;
-
+    return std::all_of(
+        objects_.begin(),
+        objects_.end(),
+        [&anObject](const Unique<Object>& anObjectUPtr) -> bool
+        {
+            return anObjectUPtr->contains(anObject);
+        }
+    );
 }
 
-bool                            Composite::contains                         (   const   Composite&                  aComposite                                  ) const
+bool Composite::contains(const Composite& aComposite) const
 {
-
     if (!aComposite.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
     if (this->isEmpty())
     {
-        return false ;
+        return false;
     }
 
-    return std::all_of(aComposite.objects_.begin(), aComposite.objects_.end(), [this] (const Unique<Object>& anObjectUPtr) -> bool { return this->contains(*anObjectUPtr) ; }) ;
-
+    return std::all_of(
+        aComposite.objects_.begin(),
+        aComposite.objects_.end(),
+        [this](const Unique<Object>& anObjectUPtr) -> bool
+        {
+            return this->contains(*anObjectUPtr);
+        }
+    );
 }
 
-bool                            Composite::anyContains                      (   const   Object&                     anObject                                    ) const
+bool Composite::anyContains(const Object& anObject) const
 {
-
     if (!anObject.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Object") ;
+        throw ostk::core::error::runtime::Undefined("Object");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
     if (this->isEmpty())
     {
-        return false ;
+        return false;
     }
 
-    return std::any_of(objects_.begin(), objects_.end(), [&anObject] (const Unique<Object>& anObjectUPtr) -> bool { return anObjectUPtr->contains(anObject) ; }) ;
-
+    return std::any_of(
+        objects_.begin(),
+        objects_.end(),
+        [&anObject](const Unique<Object>& anObjectUPtr) -> bool
+        {
+            return anObjectUPtr->contains(anObject);
+        }
+    );
 }
 
-bool                            Composite::anyContains                      (   const   Composite&                  aComposite                                  ) const
+bool Composite::anyContains(const Composite& aComposite) const
 {
-
     if (!aComposite.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
     if (this->isEmpty())
     {
-        return false ;
+        return false;
     }
 
-    return std::any_of(aComposite.objects_.begin(), aComposite.objects_.end(), [this] (const Unique<Object>& anObjectUPtr) -> bool { return this->contains(*anObjectUPtr) ; }) ;
-
+    return std::any_of(
+        aComposite.objects_.begin(),
+        aComposite.objects_.end(),
+        [this](const Unique<Object>& anObjectUPtr) -> bool
+        {
+            return this->contains(*anObjectUPtr);
+        }
+    );
 }
 
-const Object&                   Composite::accessObjectAt                   (   const   Index&                      anIndex                                     ) const
+const Object& Composite::accessObjectAt(const Index& anIndex) const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
     if (anIndex >= objects_.getSize())
     {
-        throw ostk::core::error::RuntimeError("Object index [{}] out of bounds [{}].", anIndex, objects_.getSize()) ;
+        throw ostk::core::error::RuntimeError("Object index [{}] out of bounds [{}].", anIndex, objects_.getSize());
     }
 
-    return *(objects_.at(anIndex).get()) ;
-
+    return *(objects_.at(anIndex).get());
 }
 
-const Array<Unique<Object>>&    Composite::accessObjects                    ( ) const
+const Array<Unique<Object>>& Composite::accessObjects() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
-    return objects_ ;
-
+    return objects_;
 }
 
-Size                            Composite::getObjectCount                   ( ) const
+Size Composite::getObjectCount() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
-    return objects_.getSize() ;
-
+    return objects_.getSize();
 }
 
-// Intersection                    Composite::intersectionWith                 (   const   Object&                     anObject                                    ) const
+// Intersection                    Composite::intersectionWith                 (   const   Object& anObject ) const
 // {
 
 //     if (!anObject.isDefined())
@@ -377,7 +432,7 @@ Size                            Composite::getObjectCount                   ( ) 
 
 // }
 
-// Intersection                    Composite::intersectionWith                 (   const   Composite&                  aComposite                                  ) const
+// Intersection                    Composite::intersectionWith                 (   const   Composite& aComposite ) const
 // {
 
 //     if (!aComposite.isDefined())
@@ -408,125 +463,107 @@ Size                            Composite::getObjectCount                   ( ) 
 
 // }
 
-Composite::ConstIterator        Composite::begin                            ( ) const
+Composite::ConstIterator Composite::begin() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
-    return objects_.begin() ;
-
+    return objects_.begin();
 }
 
-Composite::ConstIterator        Composite::end                              ( ) const
+Composite::ConstIterator Composite::end() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
-    return objects_.end() ;
-
+    return objects_.end();
 }
 
-String                          Composite::toString                         (   const   Object::Format&             aFormat,
-                                                                                const   Integer&                    aPrecision                                  ) const
+String Composite::toString(const Object::Format& aFormat, const Integer& aPrecision) const
 {
-
-    (void) aPrecision ;
+    (void)aPrecision;
 
     switch (aFormat)
     {
-
         case Object::Format::Standard:
-            return String::Empty() ;  // TBI
+            return String::Empty();  // TBI
 
         default:
-            throw ostk::core::error::runtime::Wrong("Format") ;
-            break ;
-
+            throw ostk::core::error::runtime::Wrong("Format");
+            break;
     }
 
-    return String::Empty() ;
-
+    return String::Empty();
 }
 
-void                            Composite::print                            (           std::ostream&               anOutputStream,
-                                                                                        bool                        displayDecorators                           ) const
+void Composite::print(std::ostream& anOutputStream, bool displayDecorators) const
 {
-
-    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Composite") : void () ;
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Composite") : void();
 
     if (!objects_.isEmpty())
     {
-
-        ostk::core::utils::Print::Separator(anOutputStream, "Objects") ;
+        ostk::core::utils::Print::Separator(anOutputStream, "Objects");
 
         for (const auto& objectUPtr : objects_)
         {
-            anOutputStream << (*objectUPtr) ;
+            anOutputStream << (*objectUPtr);
         }
-
     }
     else
     {
-        ostk::core::utils::Print::Line(anOutputStream) << "Empty" ;
+        ostk::core::utils::Print::Line(anOutputStream) << "Empty";
     }
 
-    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
-
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
 }
 
-void                            Composite::applyTransformation              (   const   Transformation&             aTransformation                             )
+void Composite::applyTransformation(const Transformation& aTransformation)
 {
-
     if (!aTransformation.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Composite") ;
+        throw ostk::core::error::runtime::Undefined("Composite");
     }
 
     if (aTransformation.isIdentity())
     {
-        return ;
+        return;
     }
 
     for (auto& objectUPtr : objects_)
     {
-        objectUPtr->applyTransformation(aTransformation) ;
+        objectUPtr->applyTransformation(aTransformation);
     }
-
 }
 
-Composite                       Composite::Undefined                        ( )
+Composite Composite::Undefined()
 {
+    Composite composite = Composite::Empty();
 
-    Composite composite = Composite::Empty() ;
+    composite.defined_ = false;
 
-    composite.defined_ = false ;
-
-    return composite ;
-
+    return composite;
 }
 
-Composite                       Composite::Empty                            ( )
+Composite Composite::Empty()
 {
-    return Composite { Array<Unique<Object>>::Empty() } ;
+    return Composite {Array<Unique<Object>>::Empty()};
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}
-}
-}
-}
-}
+}  // namespace objects
+}  // namespace d2
+}  // namespace geom
+}  // namespace math
+}  // namespace ostk
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

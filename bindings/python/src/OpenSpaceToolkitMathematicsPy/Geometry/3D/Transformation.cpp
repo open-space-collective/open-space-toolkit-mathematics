@@ -2,23 +2,21 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
 
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation (    pybind11::module&     aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::module& aModule)
 {
+    using namespace pybind11;
 
-    using namespace pybind11 ;
+    using ostk::math::obj::Vector3d;
+    using ostk::math::obj::Matrix4d;
+    using ostk::math::geom::d3::objects::Point;
+    using ostk::math::geom::d3::Transformation;
+    using ostk::math::geom::d3::trf::rot::RotationVector;
+    using ostk::math::geom::d3::trf::rot::RotationMatrix;
 
-    using ostk::math::obj::Vector3d ;
-    using ostk::math::obj::Matrix4d ;
-    using ostk::math::geom::d3::objects::Point ;
-    using ostk::math::geom::d3::Transformation ;
-    using ostk::math::geom::d3::trf::rot::RotationVector ;
-    using ostk::math::geom::d3::trf::rot::RotationMatrix ;
-
-    class_<Transformation> transformation(aModule, "Transformation") ;
+    class_<Transformation> transformation(aModule, "Transformation");
 
     // Define constructor
-    transformation.def(init<const Matrix4d&>(), arg("matrix")) ;
+    transformation.def(init<const Matrix4d&>(), arg("matrix"));
 
     // Define methods
     transformation.def(self == self)
@@ -45,7 +43,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def_static("string_from_type", &Transformation::StringFromType, arg("type"))
         .def_static("type_of_matrix", &Transformation::TypeOfMatrix, arg("matrix"))
 
-    ;
+        ;
 
     // Define enumeration type for a transformation
     enum_<Transformation::Type>(transformation, "Type")
@@ -59,7 +57,5 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .value("Shear", Transformation::Type::Shear)
         .value("Affine", Transformation::Type::Affine)
 
-    ;
-
+        ;
 }
-

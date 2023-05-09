@@ -1,12 +1,11 @@
 // Copyright © Loft Orbital Solutions Inc.
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Plane.hpp>
-
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utilities.hpp>
 
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Plane.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
 
 namespace ostk
 {
@@ -19,280 +18,268 @@ namespace d3
 namespace objects
 {
 
-
-                                Plane::Plane                                (   const   Point&                      aPoint,
-                                                                                const   Vector3d&                   aNormalVector                               )
-                                :   Object(),
-                                    point_(aPoint),
-                                    normal_(aNormalVector.normalized())
+Plane::Plane(const Point& aPoint, const Vector3d& aNormalVector)
+    : Object(),
+      point_(aPoint),
+      normal_(aNormalVector.normalized())
 {
-
 }
 
-Plane*                          Plane::clone                                ( ) const
+Plane* Plane::clone() const
 {
-    return new Plane(*this) ;
+    return new Plane(*this);
 }
 
-bool                            Plane::operator ==                          (   const   Plane&                      aPlane                                      ) const
+bool Plane::operator==(const Plane& aPlane) const
 {
-
     if ((!this->isDefined()) || (!aPlane.isDefined()))
     {
-        return false ;
+        return false;
     }
 
     if ((normal_ == aPlane.normal_) || (normal_ == -aPlane.normal_))
     {
-        return (point_ == aPlane.point_) || this->contains(aPlane.point_) ;
+        return (point_ == aPlane.point_) || this->contains(aPlane.point_);
     }
 
-    return false ;
-
+    return false;
 }
 
-bool                            Plane::operator !=                          (   const   Plane&                      aPlane                                      ) const
+bool Plane::operator!=(const Plane& aPlane) const
 {
-    return !((*this) == aPlane) ;
+    return !((*this) == aPlane);
 }
 
-bool                            Plane::isDefined                            ( ) const
+bool Plane::isDefined() const
 {
-    return point_.isDefined() && normal_.isDefined() ;
+    return point_.isDefined() && normal_.isDefined();
 }
 
-bool                            Plane::intersects                           (   const   Point&                      aPoint                                      ) const
+bool Plane::intersects(const Point& aPoint) const
 {
-    return this->contains(aPoint) ;
+    return this->contains(aPoint);
 }
 
-bool                            Plane::intersects                           (   const   PointSet&                   aPointSet                                   ) const
+bool Plane::intersects(const PointSet& aPointSet) const
 {
-
     if (!aPointSet.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Point Set") ;
+        throw ostk::core::error::runtime::Undefined("Point Set");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane");
     }
 
-    return (!aPointSet.isEmpty()) && std::any_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
-
+    return (!aPointSet.isEmpty()) && std::any_of(
+                                         aPointSet.begin(),
+                                         aPointSet.end(),
+                                         [this](const Point& aPoint) -> bool
+                                         {
+                                             return this->contains(aPoint);
+                                         }
+                                     );
 }
 
-bool                            Plane::intersects                           (   const   Line&                       aLine                                       ) const
+bool Plane::intersects(const Line& aLine) const
 {
-    return aLine.intersects(*this) ;
+    return aLine.intersects(*this);
 }
 
-bool                            Plane::intersects                           (   const   Ray&                        aRay                                        ) const
+bool Plane::intersects(const Ray& aRay) const
 {
-    return aRay.intersects(*this) ;
+    return aRay.intersects(*this);
 }
 
-bool                            Plane::intersects                           (   const   Segment&                    aSegment                                    ) const
+bool Plane::intersects(const Segment& aSegment) const
 {
-    return aSegment.intersects(*this) ;
+    return aSegment.intersects(*this);
 }
 
-bool                            Plane::contains                             (   const   Point&                      aPoint                                      ) const
+bool Plane::contains(const Point& aPoint) const
 {
-
     if (!aPoint.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Point") ;
+        throw ostk::core::error::runtime::Undefined("Point");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane");
     }
 
-    return (aPoint - point_).dot(normal_) == 0.0 ;
-
+    return (aPoint - point_).dot(normal_) == 0.0;
 }
 
-bool                            Plane::contains                             (   const   PointSet&                   aPointSet                                   ) const
+bool Plane::contains(const PointSet& aPointSet) const
 {
-
     if (!aPointSet.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Point Set") ;
+        throw ostk::core::error::runtime::Undefined("Point Set");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane");
     }
 
-    return (!aPointSet.isEmpty()) && std::all_of(aPointSet.begin(), aPointSet.end(), [this] (const Point& aPoint) -> bool { return this->contains(aPoint) ; }) ;
-
+    return (!aPointSet.isEmpty()) && std::all_of(
+                                         aPointSet.begin(),
+                                         aPointSet.end(),
+                                         [this](const Point& aPoint) -> bool
+                                         {
+                                             return this->contains(aPoint);
+                                         }
+                                     );
 }
 
-bool                            Plane::contains                             (   const   Line&                       aLine                                       ) const
+bool Plane::contains(const Line& aLine) const
 {
-
     if (!aLine.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Line") ;
+        throw ostk::core::error::runtime::Undefined("Line");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane");
     }
 
-    return this->contains(aLine.getOrigin()) && (normal_.dot(aLine.getDirection()) == 0.0) ;
-
+    return this->contains(aLine.getOrigin()) && (normal_.dot(aLine.getDirection()) == 0.0);
 }
 
-bool                            Plane::contains                             (   const   Ray&                        aRay                                        ) const
+bool Plane::contains(const Ray& aRay) const
 {
-
     if (!aRay.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Ray") ;
+        throw ostk::core::error::runtime::Undefined("Ray");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane");
     }
 
-    return this->contains(aRay.getOrigin()) && (normal_.dot(aRay.getDirection()) == 0.0) ;
-
+    return this->contains(aRay.getOrigin()) && (normal_.dot(aRay.getDirection()) == 0.0);
 }
 
-bool                            Plane::contains                             (   const   Segment&                    aSegment                                    ) const
+bool Plane::contains(const Segment& aSegment) const
 {
-
     if (!aSegment.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Segment") ;
+        throw ostk::core::error::runtime::Undefined("Segment");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane");
     }
 
-    return this->contains(aSegment.getFirstPoint()) && this->contains(aSegment.getSecondPoint()) ;
-
+    return this->contains(aSegment.getFirstPoint()) && this->contains(aSegment.getSecondPoint());
 }
 
-Point                           Plane::getPoint                             ( ) const
+Point Plane::getPoint() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane");
     }
 
-    return point_ ;
-
+    return point_;
 }
 
-Vector3d                        Plane::getNormalVector                      ( ) const
+Vector3d Plane::getNormalVector() const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane");
     }
 
-    return normal_ ;
-
+    return normal_;
 }
 
-Intersection                    Plane::intersectionWith                     (   const   Point&                      aPoint                                      ) const
+Intersection Plane::intersectionWith(const Point& aPoint) const
 {
-    return this->contains(aPoint) ? Intersection::Point(aPoint) : Intersection::Empty() ;
+    return this->contains(aPoint) ? Intersection::Point(aPoint) : Intersection::Empty();
 }
 
-Intersection                    Plane::intersectionWith                     (   const   PointSet&                   aPointSet                                   ) const
+Intersection Plane::intersectionWith(const PointSet& aPointSet) const
 {
-
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane");
     }
 
-    Array<Point> points = Array<Point>::Empty() ;
+    Array<Point> points = Array<Point>::Empty();
 
     for (const auto& point : aPointSet)
     {
-
         if (this->contains(point))
         {
-            points.add(point) ;
+            points.add(point);
         }
-
     }
 
-    return (!points.isEmpty()) ? ((points.getSize() == 1) ? Intersection::Point(points.accessFirst()) : Intersection::PointSet({ points })) : Intersection::Empty() ;
-
+    return (!points.isEmpty())
+             ? ((points.getSize() == 1) ? Intersection::Point(points.accessFirst()) : Intersection::PointSet({points}))
+             : Intersection::Empty();
 }
 
-Intersection                    Plane::intersectionWith                     (   const   Line&                       aLine                                       ) const
+Intersection Plane::intersectionWith(const Line& aLine) const
 {
-    return aLine.intersectionWith(*this) ;
+    return aLine.intersectionWith(*this);
 }
 
-Intersection                    Plane::intersectionWith                     (   const   Ray&                        aRay                                        ) const
+Intersection Plane::intersectionWith(const Ray& aRay) const
 {
-    return aRay.intersectionWith(*this) ;
+    return aRay.intersectionWith(*this);
 }
 
-Intersection                    Plane::intersectionWith                     (   const   Segment&                    aSegment                                    ) const
+Intersection Plane::intersectionWith(const Segment& aSegment) const
 {
-    return aSegment.intersectionWith(*this) ;
+    return aSegment.intersectionWith(*this);
 }
 
-void                            Plane::print                                (           std::ostream&               anOutputStream,
-                                                                                        bool                        displayDecorators                           ) const
+void Plane::print(std::ostream& anOutputStream, bool displayDecorators) const
 {
+    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Plane") : void();
 
-    displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Plane") : void () ;
+    ostk::core::utils::Print::Line(anOutputStream)
+        << "Point:" << (point_.isDefined() ? point_.toString() : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream)
+        << "Normal vector:" << (normal_.isDefined() ? normal_.toString() : "Undefined");
 
-    ostk::core::utils::Print::Line(anOutputStream) << "Point:"               << (point_.isDefined() ? point_.toString() : "Undefined") ;
-    ostk::core::utils::Print::Line(anOutputStream) << "Normal vector:"       << (normal_.isDefined() ? normal_.toString() : "Undefined") ;
-
-    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void () ;
-
+    displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
 }
 
-void                            Plane::applyTransformation                  (   const   Transformation&             aTransformation                             )
+void Plane::applyTransformation(const Transformation& aTransformation)
 {
-
     if (!aTransformation.isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Transformation") ;
+        throw ostk::core::error::runtime::Undefined("Transformation");
     }
 
     if (!this->isDefined())
     {
-        throw ostk::core::error::runtime::Undefined("Plane") ;
+        throw ostk::core::error::runtime::Undefined("Plane");
     }
 
-    point_.applyTransformation(aTransformation) ;
-    normal_ = aTransformation.applyTo(normal_) ;
-
+    point_.applyTransformation(aTransformation);
+    normal_ = aTransformation.applyTo(normal_);
 }
 
-Plane                           Plane::Undefined                            ( )
+Plane Plane::Undefined()
 {
-    return { Point::Undefined(), Vector3d::Undefined() } ;
+    return {Point::Undefined(), Vector3d::Undefined()};
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}
-}
-}
-}
-}
+}  // namespace objects
+}  // namespace d3
+}  // namespace geom
+}  // namespace math
+}  // namespace ostk
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

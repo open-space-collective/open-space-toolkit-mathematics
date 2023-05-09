@@ -1,43 +1,39 @@
 // Copyright © Loft Orbital Solutions Inc.
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 
+using ostk::core::ctnr::Array;
+using ostk::math::geom::d3::trf::rot::Quaternion;
 
-using ostk::core::ctnr::Array ;
-using ostk::math::geom::d3::trf::rot::Quaternion ;
-
-void                            set_quaternion_array                        (   const   Array<Quaternion>&          anArray                                     )
+void set_quaternion_array(const Array<Quaternion>& anArray)
 {
-
-    (void) anArray ;
-
+    (void)anArray;
 }
 
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_Quaternion ( pybind11::module& aModule                      )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_Quaternion(pybind11::module& aModule)
 {
-    using namespace pybind11 ;
+    using namespace pybind11;
 
-    using ostk::core::types::Real ;
-    using ostk::core::types::String ;
+    using ostk::core::types::Real;
+    using ostk::core::types::String;
 
-    using ostk::math::obj::Vector3d ;
-    using ostk::math::obj::Vector4d ;
-    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::obj::Vector3d;
+    using ostk::math::obj::Vector4d;
+    using ostk::math::geom::d3::trf::rot::Quaternion;
 
-    class_<Quaternion> quaternion(aModule, "Quaternion") ;
+    class_<Quaternion> quaternion(aModule, "Quaternion");
 
-    quaternion.def
-    (
-        init<const Real&, const Real&, const Real&, const Real&, const Quaternion::Format&>(),
-        arg("first_component"),
-        arg("second_component"),
-        arg("third_component"),
-        arg("fourth_component"),
-        arg("format")
-    )
+    quaternion
+        .def(
+            init<const Real&, const Real&, const Real&, const Real&, const Quaternion::Format&>(),
+            arg("first_component"),
+            arg("second_component"),
+            arg("third_component"),
+            arg("fourth_component"),
+            arg("format")
+        )
 
         .def(init<const Vector4d&, const Quaternion::Format&>(), arg("vector"), arg("format"))
         .def(init<const Vector3d&, const Real&>(), arg("vector_part"), arg("scalar_part"))
@@ -46,19 +42,32 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def(self == self)
         .def(self != self)
 
-		.def(self + self)
-		.def(self += self)
-		.def(self * self)
-		.def(self * Vector3d())
-		.def(self * double())
-		.def(double() * self)
+        .def(self + self)
+        .def(self += self)
+        .def(self * self)
+        .def(self * Vector3d())
+        .def(self * double())
+        .def(double() * self)
 
-		.def(self / self)
+        .def(self / self)
 
-        .def("__pow__", +[] (const Quaternion& aQuaternion, double aScalar) -> Quaternion { return aQuaternion ^ aScalar ; }, is_operator())
+        .def(
+            "__pow__",
+            +[](const Quaternion& aQuaternion, double aScalar) -> Quaternion
+            {
+                return aQuaternion ^ aScalar;
+            },
+            is_operator()
+        )
 
         .def("__str__", &(shiftToString<Quaternion>))
-        .def("__repr__", +[] (const Quaternion& aQuaternion) -> std::string { return aQuaternion.toString() ; })
+        .def(
+            "__repr__",
+            +[](const Quaternion& aQuaternion) -> std::string
+            {
+                return aQuaternion.toString();
+            }
+        )
 
         .def("is_defined", &Quaternion::isDefined)
         .def("is_unitary", &Quaternion::isUnitary)
@@ -82,17 +91,60 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def("dot_product", &Quaternion::dotProduct, arg("quaternion"))
         .def("rotate_vector", &Quaternion::rotateVector, arg("vector"))
         .def("to_vector", &Quaternion::toVector, arg("format"))
-        .def("to_string", +[] (const Quaternion& aQuaternion) -> String { return aQuaternion.toString() ; })
-        .def("to_string", +[] (const Quaternion& aQuaternion, const Quaternion::Format aFormat) -> String { return aQuaternion.toString(aFormat) ; })
-        .def("normalize", +[] (Quaternion& aQuaternion) -> void { aQuaternion.normalize() ; })
-        .def("conjugate", +[] (Quaternion& aQuaternion) -> void { aQuaternion.conjugate() ; })
-        .def("inverse", +[] (Quaternion& aQuaternion) -> void { aQuaternion.inverse() ; })
-        .def("rectify", +[] (Quaternion& aQuaternion) -> void { aQuaternion.rectify() ; })
+        .def(
+            "to_string",
+            +[](const Quaternion& aQuaternion) -> String
+            {
+                return aQuaternion.toString();
+            }
+        )
+        .def(
+            "to_string",
+            +[](const Quaternion& aQuaternion, const Quaternion::Format aFormat) -> String
+            {
+                return aQuaternion.toString(aFormat);
+            }
+        )
+        .def(
+            "normalize",
+            +[](Quaternion& aQuaternion) -> void
+            {
+                aQuaternion.normalize();
+            }
+        )
+        .def(
+            "conjugate",
+            +[](Quaternion& aQuaternion) -> void
+            {
+                aQuaternion.conjugate();
+            }
+        )
+        .def(
+            "inverse",
+            +[](Quaternion& aQuaternion) -> void
+            {
+                aQuaternion.inverse();
+            }
+        )
+        .def(
+            "rectify",
+            +[](Quaternion& aQuaternion) -> void
+            {
+                aQuaternion.rectify();
+            }
+        )
         .def("angular_difference_with", &Quaternion::angularDifferenceWith, arg("quaternion"))
 
         .def_static("undefined", &Quaternion::Undefined)
         .def_static("unit", &Quaternion::Unit)
-        .def_static("xyzs", &Quaternion::XYZS, arg("first_component"), arg("second_component"), arg("third_component"), arg("fourth_component"))
+        .def_static(
+            "xyzs",
+            &Quaternion::XYZS,
+            arg("first_component"),
+            arg("second_component"),
+            arg("third_component"),
+            arg("fourth_component")
+        )
         .def_static("rotation_vector", &Quaternion::RotationVector, arg("rotation_vector"))
         .def_static("rotation_matrix", &Quaternion::RotationMatrix, arg("rotation_matrix"))
         .def_static("parse", &Quaternion::Parse, arg("string"), arg("format"))
@@ -101,16 +153,14 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
         .def_static("nlerp", &Quaternion::NLERP, arg("first_quaternion"), arg("second_quaternion"), arg("ratio"))
         .def_static("slerp", &Quaternion::SLERP, arg("first_quaternion"), arg("second_quaternion"), arg("ratio"))
 
-    ;
+        ;
 
     enum_<Quaternion::Format>(quaternion, "Format")
 
         .value("XYZS", Quaternion::Format::XYZS)
         .value("SXYZ", Quaternion::Format::SXYZ)
 
-    ;
+        ;
 
-    aModule.def("set_quaternion_array", overload_cast<const Array<Quaternion>&>(&set_quaternion_array)) ;
-
+    aModule.def("set_quaternion_array", overload_cast<const Array<Quaternion>&>(&set_quaternion_array));
 }
-

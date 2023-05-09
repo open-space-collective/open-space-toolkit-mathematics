@@ -3,28 +3,26 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Intersection__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Intersection__
 
-
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Composite.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cuboid.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Sphere.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Plane.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Polygon.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/LineString.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ray.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/PointSet.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
-
 #include <OpenSpaceToolkit/Core/Containers/Array.hpp>
-#include <OpenSpaceToolkit/Core/Types/Size.hpp>
-#include <OpenSpaceToolkit/Core/Types/Index.hpp>
-#include <OpenSpaceToolkit/Core/Types/Unique.hpp>
 #include <OpenSpaceToolkit/Core/Error.hpp>
+#include <OpenSpaceToolkit/Core/Types/Index.hpp>
+#include <OpenSpaceToolkit/Core/Types/Size.hpp>
+#include <OpenSpaceToolkit/Core/Types/Unique.hpp>
 
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Composite.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cuboid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/LineString.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Plane.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/PointSet.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Polygon.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ray.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Sphere.hpp>
 
 namespace ostk
 {
@@ -35,291 +33,279 @@ namespace geom
 namespace d3
 {
 
+using ostk::core::types::Unique;
+using ostk::core::types::Index;
+using ostk::core::types::Size;
+using ostk::core::ctnr::Array;
 
-using ostk::core::types::Unique ;
-using ostk::core::types::Index ;
-using ostk::core::types::Size ;
-using ostk::core::ctnr::Array ;
-
-using ostk::math::geom::d3::Object ;
-using ostk::math::geom::d3::objects::Composite ;
-
+using ostk::math::geom::d3::Object;
+using ostk::math::geom::d3::objects::Composite;
 
 /// @brief                      3D intersection
 
 class Intersection
 {
+   public:
+    enum class Type
+    {
 
-    public:
+        Undefined,
+        Empty,
+        Point,
+        PointSet,
+        Line,
+        Ray,
+        Segment,
+        LineString,
+        Polygon,
+        Plane,
+        Cuboid,
+        Sphere,
+        Ellipsoid,
+        Pyramid,
+        Complex
 
-        enum class Type
+    };
+
+    /// @brief              Constructor
+    ///
+    /// @param              [in] anObjectArray An array of objects
+
+    Intersection(Array<Unique<Object>>&& anObjectArray);
+
+    /// @brief              Copy constructor
+    ///
+    /// @param              [in] anIntersection An intersection
+
+    Intersection(const Intersection& anIntersection);
+
+    /// @brief              Destructor
+
+    ~Intersection();
+
+    /// @brief              Copy assignment operator
+    ///
+    /// @param              [in] anIntersection An intersection
+    /// @return             Reference to intersection
+
+    Intersection& operator=(const Intersection& anIntersection);
+
+    /// @brief              Equal to operator
+    ///
+    /// @param              [in] anIntersection An intersection
+    /// @return             True if intersections are equal
+
+    bool operator==(const Intersection& anIntersection) const;
+
+    /// @brief              Not equal to operator
+    ///
+    /// @param              [in] anIntersection An intersection
+    /// @return             True if intersections are not equal
+
+    bool operator!=(const Intersection& anIntersection) const;
+
+    /// @brief              Addition operator (intersection concatenation)
+    ///
+    ///                     Concatenate (merge) intersection with another intersection.
+    ///
+    /// @param              [in] anIntersection An intersection
+    /// @return             Concatenated intersection
+
+    Intersection operator+(const Intersection& anIntersection) const;
+
+    /// @brief              Addition assignment operator (intersection concatenation)
+    ///
+    ///                     Concatenate (merge) intersection with another intersection.
+    ///
+    /// @param              [in] anIntersection An intersection
+    /// @return             Reference to concatenated intersection
+
+    Intersection& operator+=(const Intersection& anIntersection);
+
+    /// @brief              Output stream operator
+    ///
+    /// @code
+    ///                     std::cout << Intersection(...) ;
+    /// @endcode
+    ///
+    /// @param              [in] anOutputStream An output stream
+    /// @param              [in] anIntersection An intersection
+    /// @return             A reference to output stream
+
+    friend std::ostream& operator<<(std::ostream& anOutputStream, const Intersection& anIntersection);
+
+    /// @brief              Check if intersection is defined
+    ///
+    /// @return             True if intersection is defined
+
+    bool isDefined() const;
+
+    /// @brief              Check if intersection is empty
+    ///
+    /// @return             True if intersection is empty
+
+    bool isEmpty() const;
+
+    /// @brief              Check if intersection is complex
+    ///
+    ///                     A complex intersection contains more than one object.
+    ///
+    /// @return             True if intersection is complex
+
+    bool isComplex() const;
+
+    /// @brief              Returns true if intersection can be converted to underlying object
+    ///
+    ///                     Only valid if the intersection only contains one object.
+    ///
+    /// @return             True if intersection can be converted to underlying object
+
+    template <class Type>
+    bool is() const
+    {
+        if (!this->isDefined())
         {
-
-            Undefined,
-            Empty,
-            Point,
-            PointSet,
-            Line,
-            Ray,
-            Segment,
-            LineString,
-            Polygon,
-            Plane,
-            Cuboid,
-            Sphere,
-            Ellipsoid,
-            Pyramid,
-            Complex
-
-        } ;
-
-        /// @brief              Constructor
-        ///
-        /// @param              [in] anObjectArray An array of objects
-
-                                Intersection                                (           Array<Unique<Object>>&&     anObjectArray                               ) ;
-
-        /// @brief              Copy constructor
-        ///
-        /// @param              [in] anIntersection An intersection
-
-                                Intersection                                (   const   Intersection&               anIntersection                              ) ;
-
-        /// @brief              Destructor
-
-                                ~Intersection                               ( ) ;
-
-        /// @brief              Copy assignment operator
-        ///
-        /// @param              [in] anIntersection An intersection
-        /// @return             Reference to intersection
-
-        Intersection&           operator =                                  (   const   Intersection&               anIntersection                              ) ;
-
-        /// @brief              Equal to operator
-        ///
-        /// @param              [in] anIntersection An intersection
-        /// @return             True if intersections are equal
-
-        bool                    operator ==                                 (   const   Intersection&               anIntersection                              ) const ;
-
-        /// @brief              Not equal to operator
-        ///
-        /// @param              [in] anIntersection An intersection
-        /// @return             True if intersections are not equal
-
-        bool                    operator !=                                 (   const   Intersection&               anIntersection                              ) const ;
-
-        /// @brief              Addition operator (intersection concatenation)
-        ///
-        ///                     Concatenate (merge) intersection with another intersection.
-        ///
-        /// @param              [in] anIntersection An intersection
-        /// @return             Concatenated intersection
-
-        Intersection            operator +                                  (   const   Intersection&               anIntersection                              ) const ;
-
-        /// @brief              Addition assignment operator (intersection concatenation)
-        ///
-        ///                     Concatenate (merge) intersection with another intersection.
-        ///
-        /// @param              [in] anIntersection An intersection
-        /// @return             Reference to concatenated intersection
-
-        Intersection&           operator +=                                 (   const   Intersection&               anIntersection                              ) ;
-
-        /// @brief              Output stream operator
-        ///
-        /// @code
-        ///                     std::cout << Intersection(...) ;
-        /// @endcode
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] anIntersection An intersection
-        /// @return             A reference to output stream
-
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Intersection&               anIntersection                              ) ;
-
-        /// @brief              Check if intersection is defined
-        ///
-        /// @return             True if intersection is defined
-
-        bool                    isDefined                                   ( ) const ;
-
-        /// @brief              Check if intersection is empty
-        ///
-        /// @return             True if intersection is empty
-
-        bool                    isEmpty                                     ( ) const ;
-
-        /// @brief              Check if intersection is complex
-        ///
-        ///                     A complex intersection contains more than one object.
-        ///
-        /// @return             True if intersection is complex
-
-        bool                    isComplex                                   ( ) const ;
-
-        /// @brief              Returns true if intersection can be converted to underlying object
-        ///
-        ///                     Only valid if the intersection only contains one object.
-        ///
-        /// @return             True if intersection can be converted to underlying object
-
-        template <class Type>
-        bool                    is                                          ( ) const
-        {
-
-            if (!this->isDefined())
-            {
-                throw ostk::core::error::runtime::Undefined("Intersection") ;
-            }
-
-            return composite_.is<Type>() ;
-
+            throw ostk::core::error::runtime::Undefined("Intersection");
         }
 
-        /// @brief              Access intersection as its underlying object
-        ///
-        ///                     Only valid if the intersection only contains one object.
-        ///
-        /// @return             Reference to underlying object
+        return composite_.is<Type>();
+    }
 
-        template <class Type>
-        const Type&             as                                          ( ) const
+    /// @brief              Access intersection as its underlying object
+    ///
+    ///                     Only valid if the intersection only contains one object.
+    ///
+    /// @return             Reference to underlying object
+
+    template <class Type>
+    const Type& as() const
+    {
+        if (!this->isDefined())
         {
-
-            if (!this->isDefined())
-            {
-                throw ostk::core::error::runtime::Undefined("Intersection") ;
-            }
-
-            return composite_.as<Type>() ;
-
+            throw ostk::core::error::runtime::Undefined("Intersection");
         }
 
-        /// @brief              Access composite object
-        ///
-        /// @return             Reference to composite object
+        return composite_.as<Type>();
+    }
 
-        const Composite&        accessComposite                             ( ) const ;
+    /// @brief              Access composite object
+    ///
+    /// @return             Reference to composite object
 
-        /// @brief              Get intersection type
-        ///
-        /// @return             Intersection type
+    const Composite& accessComposite() const;
 
-        Intersection::Type      getType                                     ( ) const ;
+    /// @brief              Get intersection type
+    ///
+    /// @return             Intersection type
 
-        /// @brief              Constructs an undefined intersection
-        ///
-        /// @code
-        ///                     Intersection intersection = Intersection::Undefined() ; // Undefined
-        /// @endcode
-        ///
-        /// @return             Undefined intersection
+    Intersection::Type getType() const;
 
-        static Intersection     Undefined                                   ( ) ;
+    /// @brief              Constructs an undefined intersection
+    ///
+    /// @code
+    ///                     Intersection intersection = Intersection::Undefined() ; // Undefined
+    /// @endcode
+    ///
+    /// @return             Undefined intersection
 
-        /// @brief              Constructs an empty intersection
-        ///
-        /// @code
-        ///                     Intersection intersection = Intersection::Empty() ;
-        /// @endcode
-        ///
-        /// @return             Empty intersection
+    static Intersection Undefined();
 
-        static Intersection     Empty                                       ( ) ;
+    /// @brief              Constructs an empty intersection
+    ///
+    /// @code
+    ///                     Intersection intersection = Intersection::Empty() ;
+    /// @endcode
+    ///
+    /// @return             Empty intersection
 
-        /// @brief              Constructs a point intersection
-        ///
-        /// @code
-        ///                     Intersection intersection = Intersection::Point(Point(0.0, 0.0, 0.0)) ;
-        /// @endcode
-        ///
-        /// @return             Point intersection
+    static Intersection Empty();
 
-        static Intersection     Point                                       (   const   objects::Point&             aPoint                                      ) ;
+    /// @brief              Constructs a point intersection
+    ///
+    /// @code
+    ///                     Intersection intersection = Intersection::Point(Point(0.0, 0.0, 0.0)) ;
+    /// @endcode
+    ///
+    /// @return             Point intersection
 
-        /// @brief              Constructs a point set intersection
-        ///
-        /// @code
-        ///                     Intersection intersection = Intersection::PointSet({ Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0) }) ;
-        /// @endcode
-        ///
-        /// @return             Point set intersection
+    static Intersection Point(const objects::Point& aPoint);
 
-        static Intersection     PointSet                                    (   const   objects::PointSet&          aPointSet                                   ) ;
+    /// @brief              Constructs a point set intersection
+    ///
+    /// @code
+    ///                     Intersection intersection = Intersection::PointSet({ Point(0.0, 0.0, 0.0), Point(1.0, 0.0,
+    ///                     0.0) }) ;
+    /// @endcode
+    ///
+    /// @return             Point set intersection
 
-        /// @brief              Constructs a line string intersection
-        ///
-        /// @code
-        ///                     Intersection intersection = Intersection::LineString({ Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0), Point(1.0, 0.0, 1.0) }) ;
-        /// @endcode
-        ///
-        /// @return             Line string intersection
+    static Intersection PointSet(const objects::PointSet& aPointSet);
 
-        static Intersection     LineString                                  (   const   objects::LineString&        aLineString                                 ) ;
+    /// @brief              Constructs a line string intersection
+    ///
+    /// @code
+    ///                     Intersection intersection = Intersection::LineString({ Point(0.0, 0.0, 0.0), Point(1.0, 0.0,
+    ///                     0.0), Point(1.0, 0.0, 1.0) }) ;
+    /// @endcode
+    ///
+    /// @return             Line string intersection
 
-        /// @brief              Constructs a line intersection
-        ///
-        /// @code
-        ///                     Intersection intersection = Intersection::Line(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 })) ;
-        /// @endcode
-        ///
-        /// @return             Line intersection
+    static Intersection LineString(const objects::LineString& aLineString);
 
-        static Intersection     Line                                        (   const   objects::Line&              aLine                                       ) ;
+    /// @brief              Constructs a line intersection
+    ///
+    /// @code
+    ///                     Intersection intersection = Intersection::Line(Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 })) ;
+    /// @endcode
+    ///
+    /// @return             Line intersection
 
-        /// @brief              Constructs a ray intersection
-        ///
-        /// @code
-        ///                     Intersection intersection = Intersection::Ray(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 })) ;
-        /// @endcode
-        ///
-        /// @return             Ray intersection
+    static Intersection Line(const objects::Line& aLine);
 
-        static Intersection     Ray                                         (   const   objects::Ray&               aRay                                        ) ;
+    /// @brief              Constructs a ray intersection
+    ///
+    /// @code
+    ///                     Intersection intersection = Intersection::Ray(Ray({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 })) ;
+    /// @endcode
+    ///
+    /// @return             Ray intersection
 
-        /// @brief              Constructs a segment intersection
-        ///
-        /// @code
-        ///                     Intersection intersection = Intersection::Segment(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 })) ;
-        /// @endcode
-        ///
-        /// @return             Segment intersection
+    static Intersection Ray(const objects::Ray& aRay);
 
-        static Intersection     Segment                                     (   const   objects::Segment&           aSegment                                    ) ;
+    /// @brief              Constructs a segment intersection
+    ///
+    /// @code
+    ///                     Intersection intersection = Intersection::Segment(Segment({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0
+    ///                     })) ;
+    /// @endcode
+    ///
+    /// @return             Segment intersection
 
-        /// @brief              Converts intersection type to string
-        ///
-        /// @return             String
+    static Intersection Segment(const objects::Segment& aSegment);
 
-        static String           StringFromType                              (   const   Intersection::Type&         aType                                       ) ;
+    /// @brief              Converts intersection type to string
+    ///
+    /// @return             String
 
-    private:
+    static String StringFromType(const Intersection::Type& aType);
 
-        Intersection::Type      type_ ;
+   private:
+    Intersection::Type type_;
 
-        Composite               composite_ ;
+    Composite composite_;
 
-                                Intersection                                ( ) ;
+    Intersection();
 
-                                Intersection                                (   const   Intersection::Type&         aType,
-                                                                                const   Array<Unique<Object>>&      anObjectArray                               ) ;
+    Intersection(const Intersection::Type& aType, const Array<Unique<Object>>& anObjectArray);
 
-        static Intersection::Type TypeFromObjects                           (   const   Array<Unique<Object>>&      anObjectArray                               ) ;
+    static Intersection::Type TypeFromObjects(const Array<Unique<Object>>& anObjectArray);
 
-        static Intersection::Type TypeFromObject                            (   const   Unique<Object>&             anObjectUPtr                                ) ;
+    static Intersection::Type TypeFromObject(const Unique<Object>& anObjectUPtr);
+};
 
-} ;
-
-
-}
-}
-}
-}
-
+}  // namespace d3
+}  // namespace geom
+}  // namespace math
+}  // namespace ostk
 
 #endif
-

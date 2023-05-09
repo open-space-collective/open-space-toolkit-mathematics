@@ -1,18 +1,16 @@
 // Copyright © Loft Orbital Solutions Inc.
 
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
 
 #include <Global.test.hpp>
 
-
-TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, Constructor)
 {
-
-    using ostk::math::geom::Angle ;
-    using ostk::math::geom::d3::trf::rot::RotationMatrix ;
+    using ostk::math::geom::Angle;
+    using ostk::math::geom::d3::trf::rot::RotationMatrix;
 
     // {
 
@@ -26,8 +24,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotatio
 
     // {
 
-
-
     // }
 
     // {
@@ -36,7 +32,6 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotatio
     //     EXPECT_ANY_THROW(RotationMatrix({ 0.0, 0.0, 1.1 }, Angle::Degrees(45.0))) ;
 
     // }
-
 }
 
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, EqualToOperator)
@@ -47,23 +42,28 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotatio
 
 //     {
 
-//         EXPECT_TRUE(RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0)) == RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0))) ;
-//         EXPECT_TRUE(RotationMatrix({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0)) == RotationMatrix({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0))) ;
-//         EXPECT_TRUE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(20.0)) == RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(20.0))) ;
+//         EXPECT_TRUE(RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0)) == RotationMatrix({ 1.0, 0.0, 0.0 },
+//         Angle::Degrees(0.0))) ; EXPECT_TRUE(RotationMatrix({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0)) ==
+//         RotationMatrix({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0))) ; EXPECT_TRUE(RotationMatrix({ 0.0, 0.0, 1.0 },
+//         Angle::Degrees(20.0)) == RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(20.0))) ;
 
-//         EXPECT_TRUE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) == RotationMatrix({ 0.0, 0.0, +1.0 }, Angle::Degrees(+30.0))) ;
-//         EXPECT_TRUE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) == RotationMatrix({ 0.0, 0.0, -1.0 }, Angle::Degrees(-30.0))) ;
+//         EXPECT_TRUE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) == RotationMatrix({ 0.0, 0.0, +1.0 },
+//         Angle::Degrees(+30.0))) ; EXPECT_TRUE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) ==
+//         RotationMatrix({ 0.0, 0.0, -1.0 }, Angle::Degrees(-30.0))) ;
 
-//         EXPECT_TRUE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(0.0)) == RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(+360.0))) ;
-//         EXPECT_TRUE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(0.0)) == RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(-360.0))) ;
+//         EXPECT_TRUE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(0.0)) == RotationMatrix({ 0.0, 0.0, 1.0 },
+//         Angle::Degrees(+360.0))) ; EXPECT_TRUE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(0.0)) ==
+//         RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(-360.0))) ;
 
-//         EXPECT_TRUE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(+180.0)) == RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(-180.0))) ;
+//         EXPECT_TRUE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(+180.0)) == RotationMatrix({ 0.0, 0.0, 1.0 },
+//         Angle::Degrees(-180.0))) ;
 
 //     }
 
 //     {
 
-//         EXPECT_FALSE(RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0)) == RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(1.0))) ;
+//         EXPECT_FALSE(RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0)) == RotationMatrix({ 1.0, 0.0, 0.0 },
+//         Angle::Degrees(1.0))) ;
 
 //     }
 
@@ -85,7 +85,8 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotatio
 
 //     {
 
-//         EXPECT_TRUE(RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0)) != RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(1.0))) ;
+//         EXPECT_TRUE(RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0)) != RotationMatrix({ 1.0, 0.0, 0.0 },
+//         Angle::Degrees(1.0))) ;
 
 //     }
 
@@ -99,17 +100,21 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotatio
 
 //     {
 
-//         EXPECT_FALSE(RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0)) != RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0))) ;
-//         EXPECT_FALSE(RotationMatrix({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0)) != RotationMatrix({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0))) ;
-//         EXPECT_FALSE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(20.0)) != RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(20.0))) ;
+//         EXPECT_FALSE(RotationMatrix({ 1.0, 0.0, 0.0 }, Angle::Degrees(0.0)) != RotationMatrix({ 1.0, 0.0, 0.0 },
+//         Angle::Degrees(0.0))) ; EXPECT_FALSE(RotationMatrix({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0)) !=
+//         RotationMatrix({ 0.0, 1.0, 0.0 }, Angle::Degrees(10.0))) ; EXPECT_FALSE(RotationMatrix({ 0.0, 0.0, 1.0 },
+//         Angle::Degrees(20.0)) != RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(20.0))) ;
 
-//         EXPECT_FALSE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) != RotationMatrix({ 0.0, 0.0, +1.0 }, Angle::Degrees(+30.0))) ;
-//         EXPECT_FALSE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) != RotationMatrix({ 0.0, 0.0, -1.0 }, Angle::Degrees(-30.0))) ;
+//         EXPECT_FALSE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) != RotationMatrix({ 0.0, 0.0, +1.0 },
+//         Angle::Degrees(+30.0))) ; EXPECT_FALSE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(30.0)) !=
+//         RotationMatrix({ 0.0, 0.0, -1.0 }, Angle::Degrees(-30.0))) ;
 
-//         EXPECT_FALSE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(0.0)) != RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(+360.0))) ;
-//         EXPECT_FALSE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(0.0)) != RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(-360.0))) ;
+//         EXPECT_FALSE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(0.0)) != RotationMatrix({ 0.0, 0.0, 1.0 },
+//         Angle::Degrees(+360.0))) ; EXPECT_FALSE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(0.0)) !=
+//         RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(-360.0))) ;
 
-//         EXPECT_FALSE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(+180.0)) != RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(-180.0))) ;
+//         EXPECT_FALSE(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(+180.0)) != RotationMatrix({ 0.0, 0.0, 1.0 },
+//         Angle::Degrees(-180.0))) ;
 
 //     }
 
@@ -253,7 +258,8 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotatio
 
 //         EXPECT_EQ(RotationMatrix::Unit(), RotationMatrix::Quaternion(Quaternion::Unit())) ;
 
-//         EXPECT_EQ(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(180.0)), RotationMatrix::Quaternion(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0))) ;
+//         EXPECT_EQ(RotationMatrix({ 0.0, 0.0, 1.0 }, Angle::Degrees(180.0)),
+//         RotationMatrix::Quaternion(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0))) ;
 
 //     }
 
@@ -264,4 +270,3 @@ TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotatio
 //     }
 
 // }
-

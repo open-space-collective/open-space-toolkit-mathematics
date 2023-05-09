@@ -2,21 +2,19 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp>
 
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_MultiPolygon  ( pybind11::module& aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_MultiPolygon(pybind11::module& aModule)
 {
+    using namespace pybind11;
 
-    using namespace pybind11 ;
+    using ostk::core::types::Integer;
+    using ostk::core::ctnr::Array;
 
-    using ostk::core::types::Integer ;
-    using ostk::core::ctnr::Array ;
-
-    using ostk::math::obj::Vector2d ;
-    using ostk::math::geom::d2::Object ;
-    using ostk::math::geom::d2::objects::Point ;
-    using ostk::math::geom::d2::objects::PointSet ;
-    using ostk::math::geom::d2::objects::Polygon ;
-    using ostk::math::geom::d2::objects::MultiPolygon ;
+    using ostk::math::obj::Vector2d;
+    using ostk::math::geom::d2::Object;
+    using ostk::math::geom::d2::objects::Point;
+    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geom::d2::objects::MultiPolygon;
 
     class_<MultiPolygon, Object>(aModule, "MultiPolygon")
 
@@ -36,13 +34,16 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("get_polygons", &MultiPolygon::getPolygons)
         .def("get_convex_hull", &MultiPolygon::getConvexHull)
         .def("union_with", &MultiPolygon::unionWith, arg("multipolygon"))
-        .def("to_string", &MultiPolygon::toString, arg("format") = Object::Format::Standard, arg("precision") = Integer::Undefined())
+        .def(
+            "to_string",
+            &MultiPolygon::toString,
+            arg("format") = Object::Format::Standard,
+            arg("precision") = Integer::Undefined()
+        )
         .def("apply_transformation", &MultiPolygon::applyTransformation, arg("transformation"))
 
         .def_static("undefined", &MultiPolygon::Undefined)
         .def_static("polygon", &MultiPolygon::Polygon, arg("polygon"))
 
-    ;
-
+        ;
 }
-

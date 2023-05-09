@@ -2,19 +2,17 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Line.hpp>
 
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Line (         pybind11::module&  aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Line(pybind11::module& aModule)
 {
+    using namespace pybind11;
 
-    using namespace pybind11 ;
+    using ostk::core::types::Real;
 
-    using ostk::core::types::Real ;
-
-    using ostk::math::obj::Vector2d ;
-    using ostk::math::geom::d2::Object ;
-    using ostk::math::geom::d2::objects::Point ;
-    using ostk::math::geom::d2::objects::PointSet ;
-    using ostk::math::geom::d2::objects::Line ;
+    using ostk::math::obj::Vector2d;
+    using ostk::math::geom::d2::Object;
+    using ostk::math::geom::d2::objects::Point;
+    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geom::d2::objects::Line;
 
     class_<Line, Object>(aModule, "Line")
 
@@ -39,7 +37,5 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def_static("undefined", &Line::Undefined)
         .def_static("points", &Line::Points, arg("first_point"), arg("second_point"))
 
-    ;
-
+        ;
 }
-

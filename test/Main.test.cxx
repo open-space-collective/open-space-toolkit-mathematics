@@ -2,16 +2,11 @@
 
 #include <Setup.test.hpp>
 
-
-int                             main                                        (           int                         argc,
-                                                                                        char**                      argv                                )
+int main(int argc, char** argv)
 {
+    ::testing::InitGoogleTest(&argc, argv);
 
-    ::testing::InitGoogleTest(&argc, argv) ;
+    ::testing::AddGlobalTestEnvironment(new ostk::math::test::Environment(argc >= 2 ? argv[1] : ""));
 
-    ::testing::AddGlobalTestEnvironment(new ostk::math::test::Environment(argc >= 2 ? argv[1] : "")) ;
-
-    return RUN_ALL_TESTS() ;
-
+    return RUN_ALL_TESTS();
 }
-

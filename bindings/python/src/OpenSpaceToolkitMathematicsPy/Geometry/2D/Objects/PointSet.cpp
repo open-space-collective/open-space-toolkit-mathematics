@@ -2,18 +2,16 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.hpp>
 
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet  (     pybind11::module& aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_PointSet(pybind11::module& aModule)
 {
+    using namespace pybind11;
 
-    using namespace pybind11 ;
+    using ostk::core::types::Integer;
+    using ostk::core::ctnr::Array;
 
-    using ostk::core::types::Integer ;
-    using ostk::core::ctnr::Array ;
-
-    using ostk::math::geom::d2::Object ;
-    using ostk::math::geom::d2::objects::Point ;
-    using ostk::math::geom::d2::objects::PointSet ;
+    using ostk::math::geom::d2::Object;
+    using ostk::math::geom::d2::objects::Point;
+    using ostk::math::geom::d2::objects::PointSet;
 
     class_<PointSet, Object>(aModule, "PointSet")
 
@@ -32,14 +30,18 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("get_size", &PointSet::getSize)
         .def("distance_to", overload_cast<const Point&>(&PointSet::distanceTo, const_), arg("point"))
         .def("get_point_closest_to", &PointSet::getPointClosestTo, arg("point"))
-        .def("to_string", &PointSet::toString, arg("format") = Object::Format::Standard, arg("precision") = Integer::Undefined())
+        .def(
+            "to_string",
+            &PointSet::toString,
+            arg("format") = Object::Format::Standard,
+            arg("precision") = Integer::Undefined()
+        )
         .def("apply_transformation", &PointSet::applyTransformation, arg("transformation"))
 
         .def_static("empty", &PointSet::Empty)
 
-        // .def("__iter__", boost::python::range(static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::begin), static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::end)))
+        // .def("__iter__", boost::python::range(static_cast<PointSet::ConstIterator (PointSet::*)() const>
+        // (&PointSet::begin), static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::end)))
 
-    ;
-
+        ;
 }
-

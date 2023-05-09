@@ -3,9 +3,7 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Object__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Object__
 
-
 #include <OpenSpaceToolkit/Core/Error.hpp>
-
 
 namespace ostk
 {
@@ -16,151 +14,139 @@ namespace geom
 namespace d3
 {
 
-
-class Transformation ;
-class Intersection ;
-
+class Transformation;
+class Intersection;
 
 /// @brief                      3D object
 
 class Object
 {
+   public:
+    /// @brief              Default constructor (default)
 
-    public:
+    Object() = default;
 
-        /// @brief              Default constructor (default)
+    /// @brief              Destructor (pure virtual)
 
-                                Object                                      ( ) = default ;
+    virtual ~Object() = 0;
 
-        /// @brief              Destructor (pure virtual)
+    /// @brief              Clone object (pure virtual)
+    ///
+    /// @return             Pointer to cloned object
 
-        virtual                 ~Object                                     ( ) = 0 ;
+    virtual Object* clone() const = 0;
 
-        /// @brief              Clone object (pure virtual)
-        ///
-        /// @return             Pointer to cloned object
+    /// @brief              Equal to operator
+    ///
+    /// @param              [in] anObject An object
+    /// @return             True if objects are equal
 
-        virtual Object*         clone                                       ( ) const = 0 ;
+    bool operator==(const Object& anObject) const;
 
-        /// @brief              Equal to operator
-        ///
-        /// @param              [in] anObject An object
-        /// @return             True if objects are equal
+    /// @brief              Not equal to operator
+    ///
+    /// @param              [in] anObject An object
+    /// @return             True if objects are not equal
 
-        bool                    operator ==                                 (   const   Object&                     anObject                                    ) const ;
+    bool operator!=(const Object& anObject) const;
 
-        /// @brief              Not equal to operator
-        ///
-        /// @param              [in] anObject An object
-        /// @return             True if objects are not equal
+    /// @brief              Output stream operator
+    ///
+    /// @param              [in] anOutputStream An output stream
+    /// @param              [in] anObject An object
+    /// @return             A reference to output stream
 
-        bool                    operator !=                                 (   const   Object&                     anObject                                    ) const ;
+    friend std::ostream& operator<<(std::ostream& anOutputStream, const Object& anObject);
 
-        /// @brief              Output stream operator
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] anObject An object
-        /// @return             A reference to output stream
+    /// @brief              Check if object is defined
+    ///
+    /// @return             True if object is defined
 
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Object&                     anObject                                    ) ;
+    virtual bool isDefined() const = 0;
 
-        /// @brief              Check if object is defined
-        ///
-        /// @return             True if object is defined
+    /// @brief              Returns true if object can be converted to type
+    ///
+    /// @return             True if object can be converted to type
 
-        virtual bool            isDefined                                   ( ) const = 0 ;
+    template <class Type>
+    bool is() const
+    {
+        return dynamic_cast<const Type*>(this) != nullptr;
+    }
 
-        /// @brief              Returns true if object can be converted to type
-        ///
-        /// @return             True if object can be converted to type
+    /// @brief              Check if object intersects another object
+    ///
+    /// @code
+    ///                     Unique<Object> objectUPtr = ... ;
+    ///                     Unique<Object> anotherObjectUPtr = ... ;
+    ///                     objectUPtr->intersects(*anotherObjectUPtr) ;
+    /// @endcode
+    ///
+    /// @param              [in] anObject An object
+    /// @return             True if object intersects another object
 
-        template <class Type>
-        bool                    is                                          ( ) const
+    virtual bool intersects(const Object& anObject) const;
+
+    /// @brief              Check if object contains another object
+    ///
+    /// @code
+    ///                     Unique<Object> objectUPtr = ... ;
+    ///                     Unique<Object> anotherObjectUPtr = ... ;
+    ///                     objectUPtr->contains(*anotherObjectUPtr) ;
+    /// @endcode
+    ///
+    /// @param              [in] anObject An object
+    /// @return             True if object contains another object
+
+    virtual bool contains(const Object& anObject) const;
+
+    /// @brief              Access object as its underlying type
+    ///
+    /// @return             Reference to underlying type
+
+    template <class Type>
+    const Type& as() const
+    {
+        const Type* objectPtr = dynamic_cast<const Type*>(this);
+
+        if (objectPtr == nullptr)
         {
-            return dynamic_cast<const Type*>(this) != nullptr ;
+            throw ostk::core::error::RuntimeError("Cannot convert object to underlying type.");
         }
 
-        /// @brief              Check if object intersects another object
-        ///
-        /// @code
-        ///                     Unique<Object> objectUPtr = ... ;
-        ///                     Unique<Object> anotherObjectUPtr = ... ;
-        ///                     objectUPtr->intersects(*anotherObjectUPtr) ;
-        /// @endcode
-        ///
-        /// @param              [in] anObject An object
-        /// @return             True if object intersects another object
+        return *objectPtr;
+    }
 
-        virtual bool            intersects                                  (   const   Object&                     anObject                                    ) const ;
+    /// @brief              Compute intersection of object with another object
+    ///
+    /// @code
+    ///                     Unique<Object> objectUPtr = ... ;
+    ///                     Unique<Object> anotherObjectUPtr = ... ;
+    ///                     Intersection intersection = objectUPtr->intersectionWith(*anotherObjectUPtr) ;
+    /// @endcode
+    ///
+    /// @param              [in] anObject An object
+    /// @return             Intersection of object with another object
 
-        /// @brief              Check if object contains another object
-        ///
-        /// @code
-        ///                     Unique<Object> objectUPtr = ... ;
-        ///                     Unique<Object> anotherObjectUPtr = ... ;
-        ///                     objectUPtr->contains(*anotherObjectUPtr) ;
-        /// @endcode
-        ///
-        /// @param              [in] anObject An object
-        /// @return             True if object contains another object
+    virtual Intersection intersectionWith(const Object& anObject) const;
 
-        virtual bool            contains                                    (   const   Object&                     anObject                                    ) const ;
+    /// @brief              Print object
+    ///
+    /// @param              [in] anOutputStream An output stream
+    /// @param              [in] (optional) displayDecorators If true, display decorators
 
-        /// @brief              Access object as its underlying type
-        ///
-        /// @return             Reference to underlying type
+    virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const = 0;
 
-        template <class Type>
-        const Type&             as                                          ( ) const
-        {
+    /// @brief              Apply transformation to object
+    ///
+    /// @param              [in] aTransformation A transformation
 
-            const Type* objectPtr = dynamic_cast<const Type*>(this) ;
+    virtual void applyTransformation(const Transformation& aTransformation) = 0;
+};
 
-            if (objectPtr == nullptr)
-            {
-                throw ostk::core::error::RuntimeError("Cannot convert object to underlying type.") ;
-            }
-
-            return *objectPtr ;
-
-        }
-
-        /// @brief              Compute intersection of object with another object
-        ///
-        /// @code
-        ///                     Unique<Object> objectUPtr = ... ;
-        ///                     Unique<Object> anotherObjectUPtr = ... ;
-        ///                     Intersection intersection = objectUPtr->intersectionWith(*anotherObjectUPtr) ;
-        /// @endcode
-        ///
-        /// @param              [in] anObject An object
-        /// @return             Intersection of object with another object
-
-        virtual Intersection    intersectionWith                            (   const   Object&                     anObject                                    ) const ;
-
-        /// @brief              Print object
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] (optional) displayDecorators If true, display decorators
-
-        virtual void            print                                       (           std::ostream&               anOutputStream,
-                                                                                        bool                        displayDecorators                           =   true ) const = 0 ;
-
-        /// @brief              Apply transformation to object
-        ///
-        /// @param              [in] aTransformation A transformation
-
-        virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) = 0 ;
-
-} ;
-
-
-}
-}
-}
-}
-
+}  // namespace d3
+}  // namespace geom
+}  // namespace math
+}  // namespace ostk
 
 #endif
-

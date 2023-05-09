@@ -7,22 +7,17 @@
 
 #include <Global.test.hpp>
 
+using ostk::math::obj::VectorXd;
 
-using ostk::math::obj::VectorXd ;
-
-
-bool VectorEquality (const VectorXd& aFirstVector, const VectorXd& aSecondVector, const double& aTolerance)
+bool VectorEquality(const VectorXd& aFirstVector, const VectorXd& aSecondVector, const double& aTolerance)
 {
-    return aFirstVector.isApprox(aSecondVector, aTolerance) ;
+    return aFirstVector.isApprox(aSecondVector, aTolerance);
 }
 
-
 #define EXPECT_VECTOR_EQUALITY(aFirstVector, aSecondVector, aTolerance) \
-    EXPECT_PRED3(VectorEquality, aFirstVector, aSecondVector, aTolerance) ;
+    EXPECT_PRED3(VectorEquality, aFirstVector, aSecondVector, aTolerance);
 
 #define ASSERT_VECTOR_EQUALITY(aFirstVector, aSecondVector, aTolerance) \
-    ASSERT_PRED3(VectorEquality, aFirstVector, aSecondVector, aTolerance) ;
-
+    ASSERT_PRED3(VectorEquality, aFirstVector, aSecondVector, aTolerance);
 
 #endif
-
