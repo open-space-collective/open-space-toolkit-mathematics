@@ -1,11 +1,4 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/EulerAngle.hpp
-/// @author         Lucas Brémond <lucas@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Copyright © Loft Orbital Solutions Inc.
 
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_EulerAngle__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_EulerAngle__
