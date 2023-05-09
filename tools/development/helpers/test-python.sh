@@ -1,13 +1,6 @@
 #!/bin/bash
 
-################################################################################################################################################################
-
-# @project        Open Space Toolkit ▸ Mathematics
-# @file           tools/development/helpers/test-python.sh
-# @author         Lucas Brémond <lucas@loftorbital.com>
-# @license        Apache License 2.0
-
-################################################################################################################################################################
+# Copyright © Loft Orbital Solutions Inc.
 
 PYTHON_VERSION="3.11"
 

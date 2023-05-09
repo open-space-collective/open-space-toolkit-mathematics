@@ -1,13 +1,6 @@
 #!/bin/bash
 
-################################################################################################################################################################
-
-# @project        Open Space Toolkit ▸ Mathematics
-# @file           tools/development/start.sh
-# @author         Lucas Brémond <lucas@loftorbital.com>
-# @license        Apache License 2.0
-
-################################################################################################################################################################
+# Copyright © Loft Orbital Solutions Inc.
 
 # Check input arguments
 

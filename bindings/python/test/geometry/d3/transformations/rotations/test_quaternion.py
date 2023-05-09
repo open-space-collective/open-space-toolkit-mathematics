@@ -1,11 +1,4 @@
-################################################################################################################################################################
-
-# @project        Open Space Toolkit ▸ Mathematics
-# @file           bindings/python/test/geometry/d3/transformations/rotations/test_quaternion.py
-# @author         Lucas Brémond <lucas@loftorbital.com>
-# @license        Apache License 2.0
-
-################################################################################################################################################################
+# Copyright © Loft Orbital Solutions Inc.
 
 import pytest
 

@@ -1,11 +1,4 @@
-################################################################################################################################################################
-
-# @project        Open Space Toolkit ▸ Mathematics
-# @file           bindings/python/test/curve_fitting/interpolator/test_barycentric_rational.py
-# @author         Vishwa Shah <vishwa@loftorbital.com>
-# @license        Apache License 2.0
-
-################################################################################################################################################################
+# Copyright © Loft Orbital Solutions Inc.
 
 from ostk.mathematics.curve_fitting.interpolator import BarycentricRational
 

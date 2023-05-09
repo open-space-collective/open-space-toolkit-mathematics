@@ -1,11 +1,4 @@
-################################################################################################################################################################
-
-# @project        Open Space Toolkit ▸ Mathematics
-# @file           tools/cmake/OpenSpaceToolkitMathematicsConfig.cmake.in
-# @author         Lucas Brémond <lucas@loftorbital.com>
-# @license        Apache License 2.0
-
-################################################################################################################################################################
+# Copyright © Loft Orbital Solutions Inc.
 
 SET (OpenSpaceToolkitMathematics_ROOT_DIR ${OpenSpaceToolkitMathematics_ROOT_DIR} @CMAKE_INSTALL_PREFIX@)
 

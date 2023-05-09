@@ -1,11 +1,4 @@
-################################################################################################################################################################
-
-# @project        Open Space Toolkit ▸ Mathematics
-# @file           docker/jupyter/Dockerfile
-# @author         Lucas Brémond <lucas@loftorbital.com>
-# @license        Apache License 2.0
-
-################################################################################################################################################################
+# Copyright © Loft Orbital Solutions Inc.
 
 ARG JUPYTER_NOTEBOOK_IMAGE_REPOSITORY="jupyter/scipy-notebook:latest"
 
