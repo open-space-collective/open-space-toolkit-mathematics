@@ -9,14 +9,12 @@ import ostk.mathematics as mathematics
 
 from ostk.core.types import String
 
-################################################################################################################################################################
 
 Object = mathematics.geometry.d3.Object
 Point = mathematics.geometry.d3.objects.Point
 LineString = mathematics.geometry.d3.objects.LineString
 Transformation = mathematics.geometry.d3.Transformation
 
-################################################################################################################################################################
 
 def test_geometry_d3_objects_linestring_constructor ():
 
@@ -175,4 +173,3 @@ def test_geometry_d3_objects_linestring_getitem ():
 
 # def test_geometry_d3_objects_linestring_apply_transformation ():
 
-################################################################################################################################################################

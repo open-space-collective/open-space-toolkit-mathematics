@@ -4,14 +4,12 @@ import pytest
 
 import ostk.mathematics as mathematics
 
-################################################################################################################################################################
 
 Object = mathematics.geometry.d3.Object
 Point = mathematics.geometry.d3.objects.Point
 PointSet = mathematics.geometry.d3.objects.PointSet
 Transformation = mathematics.geometry.d3.Transformation
 
-################################################################################################################################################################
 
 @pytest.fixture
 def point_set () -> PointSet:
@@ -21,7 +19,6 @@ def point_set () -> PointSet:
         Point(3.0, 4.0, 1.0),
     ])
 
-################################################################################################################################################################
 
 class TestPointSet:
 
@@ -106,4 +103,3 @@ class TestPointSet:
 
     # def test_apply_transformation_success (self):
 
-################################################################################################################################################################

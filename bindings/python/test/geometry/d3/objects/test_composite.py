@@ -4,7 +4,6 @@ import pytest
 
 import ostk.mathematics as mathematics
 
-################################################################################################################################################################
 
 Point2d = mathematics.geometry.d2.objects.Point
 Polygon2d = mathematics.geometry.d2.objects.Polygon
@@ -14,7 +13,6 @@ Point3d = mathematics.geometry.d3.objects.Point
 Segment = mathematics.geometry.d3.objects.Segment
 Polygon3d = mathematics.geometry.d3.objects.Polygon
 
-################################################################################################################################################################
 
 def test_geometry_d3_objects_composite_constructor ():
 
@@ -145,4 +143,3 @@ def test_geometry_d3_objects_composite_access_object_at ():
     with pytest.raises(RuntimeError):
         composite_3.access_object_at(2)
 
-################################################################################################################################################################

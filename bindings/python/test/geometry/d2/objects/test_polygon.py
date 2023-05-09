@@ -6,7 +6,6 @@ import numpy as np
 
 import ostk.mathematics as mathematics
 
-################################################################################################################################################################
 
 Object = mathematics.geometry.d2.Object
 Point = mathematics.geometry.d2.objects.Point
@@ -17,7 +16,6 @@ LineString = mathematics.geometry.d2.objects.LineString
 Segment = mathematics.geometry.d2.objects.Segment
 Intersection = mathematics.geometry.d2.Intersection
 
-################################################################################################################################################################
 
 class TestPolygon:
 
@@ -371,4 +369,3 @@ class TestPolygon:
         assert difference_2.as_polygon() == Polygon([Point(0.0, 0.5), Point(-0.5, 0.5), Point(-0.5, -0.5), Point(0.0, -0.5)])
         assert difference_2.get_type() == Intersection.Type.Polygon
 
-################################################################################################################################################################

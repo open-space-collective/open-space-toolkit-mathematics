@@ -8,13 +8,11 @@ import ostk.mathematics as mathematics
 
 from ostk.core.types import String
 
-################################################################################################################################################################
 
 Object = mathematics.geometry.d2.Object
 Polygon = mathematics.geometry.d2.objects.Polygon
 MultiPolygon = mathematics.geometry.d2.objects.MultiPolygon
 
-################################################################################################################################################################
 
 class TestMultipolygon:
 
@@ -115,4 +113,3 @@ class TestMultipolygon:
 
     # def test_apply_transformation_success (self):
 
-################################################################################################################################################################

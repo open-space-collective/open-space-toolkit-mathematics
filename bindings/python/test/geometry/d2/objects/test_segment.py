@@ -6,7 +6,6 @@ import numpy as np
 
 import ostk.mathematics as mathematics
 
-################################################################################################################################################################
 
 Object = mathematics.geometry.d2.Object
 Point = mathematics.geometry.d2.objects.Point
@@ -14,7 +13,6 @@ PointSet = mathematics.geometry.d2.objects.PointSet
 Segment = mathematics.geometry.d2.objects.Segment
 Line = mathematics.geometry.d2.objects.Line
 
-################################################################################################################################################################
 
 class TestSegment:
 
@@ -114,4 +112,3 @@ class TestSegment:
 
     # def test_apply_transformation_success (self):
 
-################################################################################################################################################################

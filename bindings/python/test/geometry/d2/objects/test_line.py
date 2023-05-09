@@ -6,14 +6,12 @@ import numpy as np
 
 import ostk.mathematics as mathematics
 
-################################################################################################################################################################
 
 Object = mathematics.geometry.d2.Object
 Point = mathematics.geometry.d2.objects.Point
 PointSet = mathematics.geometry.d2.objects.PointSet
 Line = mathematics.geometry.d2.objects.Line
 
-################################################################################################################################################################
 
 class TestLine:
 
@@ -64,4 +62,3 @@ class TestLine:
         assert isinstance(line, Object)
         assert line.is_defined() is True
 
-################################################################################################################################################################

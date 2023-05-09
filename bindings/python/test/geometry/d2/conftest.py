@@ -6,7 +6,6 @@ import numpy as np
 
 import ostk.mathematics as mathematics
 
-################################################################################################################################################################
 
 Point = mathematics.geometry.d2.objects.Point
 PointSet = mathematics.geometry.d2.objects.PointSet
@@ -15,7 +14,6 @@ Segment = mathematics.geometry.d2.objects.Segment
 Polygon = mathematics.geometry.d2.objects.Polygon
 Composite = mathematics.geometry.d2.objects.Composite
 
-################################################################################################################################################################
 
 @pytest.fixture
 def point () -> Point:
@@ -87,4 +85,3 @@ def composite (
 
     return composite
 
-################################################################################################################################################################

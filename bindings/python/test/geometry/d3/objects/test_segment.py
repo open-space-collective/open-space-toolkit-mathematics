@@ -6,7 +6,6 @@ import numpy as np
 
 import ostk.mathematics as mathematics
 
-################################################################################################################################################################
 
 Object = mathematics.geometry.d3.Object
 Point = mathematics.geometry.d3.objects.Point
@@ -19,7 +18,6 @@ Ellipsoid = mathematics.geometry.d3.objects.Ellipsoid
 Intersection = mathematics.geometry.d3.Intersection
 Transformation = mathematics.geometry.d3.Transformation
 
-################################################################################################################################################################
 
 @pytest.fixture
 def segment () -> Segment:
@@ -29,7 +27,6 @@ def segment () -> Segment:
         Point(0.0, 0.0, 2.0),
     )
 
-################################################################################################################################################################
 
 class TestSegment:
 
@@ -130,4 +127,3 @@ class TestSegment:
 
     # def test_apply_transformation_success (self):
 
-################################################################################################################################################################

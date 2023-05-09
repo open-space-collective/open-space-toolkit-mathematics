@@ -2,7 +2,6 @@
 
 import ostk.mathematics as mathematics
 
-################################################################################################################################################################
 
 Angle = mathematics.geometry.Angle
 
@@ -24,4 +23,3 @@ Quaternion = mathematics.geometry.d3.transformations.rotations.Quaternion
 RotationVector = mathematics.geometry.d3.transformations.rotations.RotationVector
 RotationMatrix = mathematics.geometry.d3.transformations.rotations.RotationMatrix
 
-################################################################################################################################################################

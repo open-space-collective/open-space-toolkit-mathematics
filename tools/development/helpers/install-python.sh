@@ -4,7 +4,6 @@
 
 PYTHON_VERSION="3.11"
 
-################################################################################################################################################################
 
 project_directory="$(git rev-parse --show-toplevel)"
 python_directory="${project_directory}/build/bindings/python/OpenSpaceToolkitMathematicsPy-python-package-${PYTHON_VERSION}"
@@ -15,4 +14,3 @@ python${PYTHON_VERSION} -m pip install . --force-reinstall
 
 popd > /dev/null
 
-################################################################################################################################################################

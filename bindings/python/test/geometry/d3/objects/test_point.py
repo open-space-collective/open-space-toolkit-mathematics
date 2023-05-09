@@ -10,13 +10,11 @@ import ostk.mathematics as mathematics
 
 from ostk.core.types import String
 
-################################################################################################################################################################
 
 Object = mathematics.geometry.d3.Object
 Point = mathematics.geometry.d3.objects.Point
 Transformation = mathematics.geometry.d3.Transformation
 
-################################################################################################################################################################
 
 def test_geometry_d3_objects_point_constructor ():
 
@@ -233,4 +231,3 @@ def test_geometry_d3_objects_point_distance_to ():
 
 #     point: Point = Point(4.5, 5.4, 3.1)
 
-################################################################################################################################################################

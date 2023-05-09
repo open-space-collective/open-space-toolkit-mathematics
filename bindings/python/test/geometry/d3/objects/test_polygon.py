@@ -8,7 +8,6 @@ import ostk.mathematics as mathematics
 
 from ostk.core.types import String
 
-################################################################################################################################################################
 
 Point3d = mathematics.geometry.d3.objects.Point
 Point2d = mathematics.geometry.d2.objects.Point
@@ -17,7 +16,6 @@ Object3d = mathematics.geometry.d3.Object
 Polygon2d = mathematics.geometry.d2.objects.Polygon
 Transformation = mathematics.geometry.d3.Transformation
 
-################################################################################################################################################################
 
 def test_geometry_d3_objects_polygon ():
 
@@ -141,4 +139,3 @@ def test_geometry_d3_objects_polygon ():
 
     ## apply_transformation
 
-################################################################################################################################################################

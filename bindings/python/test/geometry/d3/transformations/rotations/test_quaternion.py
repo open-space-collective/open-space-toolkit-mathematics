@@ -6,21 +6,18 @@ import numpy as np
 
 from ostk.mathematics import geometry
 
-################################################################################################################################################################
 
 Angle = geometry.Angle
 Quaternion = geometry.d3.transformations.rotations.Quaternion
 RotationVector = geometry.d3.transformations.rotations.RotationVector
 RotationMatrix = geometry.d3.transformations.rotations.RotationMatrix
 
-################################################################################################################################################################
 
 @pytest.fixture
 def quaternion () -> Quaternion:
 
     return Quaternion.xyzs(0.0, 0.0, 0.0, 1.0)
 
-################################################################################################################################################################
 
 class TestQuaternion:
 
@@ -198,4 +195,3 @@ class TestQuaternion:
 
         assert Quaternion.slerp(quaternion, quaternion, 0.0) == quaternion
 
-################################################################################################################################################################

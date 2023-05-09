@@ -29,4 +29,3 @@ ENV PYTHONPATH="/opt/conda/lib/python3.8/site-packages:/home/jovyan/lib"
 
 RUN pip install open-space-toolkit-mathematics
 
-################################################################################################################################################################

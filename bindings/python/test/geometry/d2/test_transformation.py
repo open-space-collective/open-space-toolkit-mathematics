@@ -6,13 +6,11 @@ import pytest
 
 import ostk.mathematics as mathematics
 
-################################################################################################################################################################
 
 Transformation = mathematics.geometry.d2.Transformation
 Type = Transformation.Type
 Point = mathematics.geometry.d2.objects.Point
 
-################################################################################################################################################################
 
 def test_geometry_d2_transformation_type ():
 
@@ -85,4 +83,3 @@ def test_geometry_d2_transformation_defined ():
 
 # def test_geometry_d2_transformation_rotation_around ():
 
-################################################################################################################################################################

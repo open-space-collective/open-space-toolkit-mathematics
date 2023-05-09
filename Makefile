@@ -19,7 +19,6 @@ jupyter_python_version := 3.8
 project_name_camel_case := $(shell echo $(project_name) | sed -r 's/(^|-)([a-z])/\U\2/g')
 jupyter_project_name_python_shared_object := $(shell echo "OpenSpaceToolkit${project_name_camel_case}.cpython-38-x86_64-linux-gnu")
 
-################################################################################################################################################################
 
 pull: ## Pull all images
 
@@ -66,7 +65,6 @@ pull-release-image-jupyter:
 	docker pull $(docker_release_image_jupyter_repository):$(docker_image_version) || true
 	docker pull $(docker_release_image_jupyter_repository):latest || true
 
-################################################################################################################################################################
 
 build: build-images ## Build all images
 
@@ -195,7 +193,6 @@ build-packages-python-standalone: ## Build Python packages (standalone)
 		&& mkdir -p /app/packages/python \
 		&& mv /app/build/bindings/python/dist/*.whl /app/packages/python"
 
-################################################################################################################################################################
 
 start-development-no-link: build-development-image ## Start development environment
 
@@ -263,7 +260,6 @@ debug-jupyter-notebook: build-release-image-jupyter
 		$(docker_release_image_jupyter_repository):$(docker_image_version) \
 		bash -c "start-notebook.sh --ServerApp.token=''"
 
-################################################################################################################################################################
 
 debug-development: build-development-image ## Debug development environment
 
@@ -295,7 +291,6 @@ debug-python-release: build-release-image-python ## Debug Python release environ
 		--entrypoint=/bin/bash \
 		$(docker_release_image_python_repository):$(docker_image_version)
 
-################################################################################################################################################################
 
 test: ## Run tests
 
@@ -379,7 +374,6 @@ test-coverage-cpp-standalone: ## Run C++ tests with coverage (standalone)
 		&& mkdir /app/coverage \
 		&& mv /app/build/coverage* /app/coverage"
 
-################################################################################################################################################################
 
 clean: ## Clean
 
@@ -394,7 +388,6 @@ clean: ## Clean
 	rm -rf "$(CURDIR)/packages"
 	rm -rf "$(CURDIR)/.open-space-toolkit"
 
-################################################################################################################################################################
 
 .PHONY: pull pull-development-image \
 		build build-images build-development-image \
@@ -406,7 +399,6 @@ clean: ## Clean
 		test test-unit test-unit-cpp test-unit-python test-coverage test-coverage-cpp \
 		clean
 
-################################################################################################################################################################
 
 help:
 
@@ -416,4 +408,3 @@ export DOCKER_BUILDKIT = 1
 
 .DEFAULT_GOAL := help
 
-################################################################################################################################################################

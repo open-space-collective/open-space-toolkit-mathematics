@@ -9,13 +9,11 @@ import ostk.mathematics as mathematics
 
 from ostk.core.types import String
 
-################################################################################################################################################################
 
 Object = mathematics.geometry.d2.Object
 Point = mathematics.geometry.d2.objects.Point
 LineString = mathematics.geometry.d2.objects.LineString
 
-################################################################################################################################################################
 
 class TestLineString:
 
@@ -174,4 +172,3 @@ class TestLineString:
 
     # def test_apply_transformation_success (self):
 
-################################################################################################################################################################

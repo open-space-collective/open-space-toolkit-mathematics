@@ -4,13 +4,11 @@ import numpy
 
 from ostk.mathematics import geometry
 
-################################################################################################################################################################
 
 Angle = geometry.Angle
 Quaternion = geometry.d3.transformations.rotations.Quaternion
 RotationVector = geometry.d3.transformations.rotations.RotationVector
 
-################################################################################################################################################################
 
 def test_geometry_d3_transformations_rotations_rotation_vector ():
 
@@ -29,4 +27,3 @@ def test_geometry_d3_transformations_rotations_rotation_vector ():
     assert RotationVector.quaternion(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion.Format.XYZS)).is_defined() is True
     # assert RotationVector.RotationMatrix().is_defined() is True
 
-################################################################################################################################################################

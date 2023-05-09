@@ -25,7 +25,6 @@ RUN cmake .. \
  && make -j $(nproc) \
  && make install
 
-################################################################################################################################################################
 
 FROM debian:buster as cpp-release
 
@@ -38,7 +37,6 @@ COPY --from=cpp-builder /usr/local/test/OpenSpaceToolkit /usr/local/test/OpenSpa
 
 ENTRYPOINT ["/usr/local/test/OpenSpaceToolkit/Mathematics/open-space-toolkit-mathematics.test"]
 
-################################################################################################################################################################
 
 FROM python:3.11-slim as python-builder
 
@@ -46,7 +44,6 @@ COPY --from=cpp-builder /app/build/bindings/python/dist /dist
 
 RUN python3.11 -m pip install /dist/*311*.whl
 
-################################################################################################################################################################
 
 FROM python:3.11-slim as python-release
 
@@ -58,4 +55,3 @@ COPY --from=python-builder /usr/local/lib/python3.11/site-packages/ostk /usr/loc
 
 ENTRYPOINT ["ipython"]
 
-################################################################################################################################################################

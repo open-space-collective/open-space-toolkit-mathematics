@@ -2,13 +2,11 @@
 
 from ostk.mathematics import geometry
 
-################################################################################################################################################################
 
 Angle = geometry.Angle
 Quaternion = geometry.d3.transformations.rotations.Quaternion
 RotationMatrix = geometry.d3.transformations.rotations.RotationMatrix
 
-################################################################################################################################################################
 
 # isDefined
 # getRowAt
@@ -25,4 +23,3 @@ RotationMatrix = geometry.d3.transformations.rotations.RotationMatrix
 # Quaternion
 # RotationVector
 
-################################################################################################################################################################

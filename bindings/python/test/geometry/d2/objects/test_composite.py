@@ -4,14 +4,12 @@ import pytest
 
 import ostk.mathematics as mathematics
 
-################################################################################################################################################################
 
 Object = mathematics.geometry.d2.Object
 Point = mathematics.geometry.d2.objects.Point
 Polygon = mathematics.geometry.d2.objects.Polygon
 Composite = mathematics.geometry.d2.objects.Composite
 
-################################################################################################################################################################
 
 class TestComposite:
 
@@ -108,4 +106,3 @@ class TestComposite:
         with pytest.raises(RuntimeError):
             composite.access_object_at(2)
 
-################################################################################################################################################################
