@@ -12,19 +12,18 @@ Type = Transformation.Type
 Point = mathematics.geometry.d2.objects.Point
 
 
-def test_geometry_d2_transformation_type ():
-
+def test_geometry_d2_transformation_type():
     enum_members = Type.__members__
 
     list_keys = [
-        'Undefined',
-        'Identity',
-        'Translation',
-        'Rotation',
-        'Scaling',
-        'Reflection',
-        'Shear',
-        'Affine'
+        "Undefined",
+        "Identity",
+        "Translation",
+        "Rotation",
+        "Scaling",
+        "Reflection",
+        "Shear",
+        "Affine",
     ]
 
     list_values = [
@@ -35,14 +34,14 @@ def test_geometry_d2_transformation_type ():
         Type.Scaling,
         Type.Reflection,
         Type.Shear,
-        Type.Affine
+        Type.Affine,
     ]
 
     assert list(enum_members.keys()) == list_keys
     assert list(enum_members.values()) == list_values
 
-def test_geometry_d2_transformation_constructor ():
 
+def test_geometry_d2_transformation_constructor():
     # Construction using python matrix
     M = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
     transformation: Transformation = Transformation(M)
@@ -59,19 +58,20 @@ def test_geometry_d2_transformation_constructor ():
     assert isinstance(transformation, Transformation)
     assert transformation.is_defined()
 
-def test_geometry_d2_transformation_comparators ():
 
+def test_geometry_d2_transformation_comparators():
     M1 = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
 
     transformation: Transformation = Transformation(M1)
 
-def test_geometry_d2_transformation_defined ():
 
+def test_geometry_d2_transformation_defined():
     transformation: Transformation = Transformation.undefined()
 
     assert transformation is not None
     assert isinstance(transformation, Transformation)
     assert transformation.is_defined() is False
+
 
 # def test_geometry_d2_transformation_getters ():
 
@@ -82,4 +82,3 @@ def test_geometry_d2_transformation_defined ():
 # def test_geometry_d2_transformation_rotation ():
 
 # def test_geometry_d2_transformation_rotation_around ():
-

@@ -16,9 +16,7 @@ Point = mathematics.geometry.d2.objects.Point
 
 
 class TestPoint:
-
-    def test_constructor_success (self):
-
+    def test_constructor_success(self):
         point: Point = Point(1.0, 2.0)
 
         assert point is not None
@@ -26,8 +24,7 @@ class TestPoint:
         assert isinstance(point, Object)
         assert point.is_defined()
 
-    def test_undefined_constructor_success (self):
-
+    def test_undefined_constructor_success(self):
         point: Point = Point.undefined()
 
         assert point is not None
@@ -35,8 +32,7 @@ class TestPoint:
         assert isinstance(point, Object)
         assert point.is_defined() is False
 
-    def test_origin_constructor_success (self):
-
+    def test_origin_constructor_success(self):
         point: Point = Point.origin()
 
         assert point is not None
@@ -46,8 +42,7 @@ class TestPoint:
         assert point.x() - 0.0 <= 1e-12
         assert point.y() - 0.0 <= 1e-12
 
-    def test_vector_constructor_success (self):
-
+    def test_vector_constructor_success(self):
         # Construction using a python list
         point: Point = Point.vector([3.4, -6.7])
 
@@ -78,12 +73,16 @@ class TestPoint:
         assert (point.x() - 3.4) <= 1e-15
         assert (point.y() + 6.7) <= 1e-15
 
-    def test_comparators_success (self):
-
+    def test_comparators_success(self):
         point_1: Point = Point(3.4, -6.7)
         point_2: Point = Point.vector([3.4, -6.7])
         point_3: Point = Point(3.3, -6.5)
-        point_4: Point = Point.vector((3.4, -6.7,))
+        point_4: Point = Point.vector(
+            (
+                3.4,
+                -6.7,
+            )
+        )
         point_5: Point = Point.vector(np.array((3.4, -6.7)))
 
         assert point_1 == point_1
@@ -96,8 +95,7 @@ class TestPoint:
         assert point_2 == point_5
         assert point_3 != point_4
 
-    def test_operators_success (self):
-
+    def test_operators_success(self):
         point_1: Point = Point(3.4, -6.7)
         point_2: Point = Point.vector([3.4, -6.7])
         point_3: Point = Point.vector((3.4, -6.7))
@@ -158,15 +156,13 @@ class TestPoint:
         # assert point.y == 0.0
         # assert point == Point.origin()
 
-    def test_is_defined (self):
-
+    def test_is_defined(self):
         point: Point = Point(3.5, 5.6)
 
         assert point.is_defined()
         assert Point.undefined().is_defined() is False
 
-    def test_is_near (self):
-
+    def test_is_near(self):
         point_1: Point = Point(3.5, 5.6)
         point_2: Point = Point(3.4999999999, 5.5999999999)
 
@@ -175,23 +171,20 @@ class TestPoint:
         assert point_1.is_near(point_2, 1e-11) is False
         assert point_1.is_near(point_2, 1e-9) is True
 
-    def test_coordinates (self):
-
+    def test_coordinates(self):
         point: Point = Point(4.5, 34.5)
 
         assert point.x() == 4.5
         assert point.y() == 34.5
 
-    def test_as_vector (self):
-
+    def test_as_vector(self):
         point: Point = Point(3.4, -3.5)
         vec: np.ndarray = point.as_vector()
 
         assert vec is not None
         assert isinstance(vec, np.ndarray)
 
-    def test_distance_to (self):
-
+    def test_distance_to(self):
         point_1: Point = Point(0.0, 4.0)
         point_2: Point = Point(0.0, 3.0)
         point_3: Point = Point(3.0, 0.0)
@@ -207,17 +200,14 @@ class TestPoint:
         assert point_4.distance_to(point_1) == math.sqrt((1.1 * 1.1) + 9.0)
 
         with pytest.raises(TypeError):
-
             point_1.distance_to((0.0, 0.0))
 
-    def test_to_string (self):
-
+    def test_to_string(self):
         point: Point = Point(3.0, 5.0)
 
         assert isinstance(point.to_string(), String)
-        assert point.to_string() == '[3.0, 5.0]'
+        assert point.to_string() == "[3.0, 5.0]"
 
     # def test_apply_transformation_success (self):
 
     #     point: Point = Point(4.5, 5.4)
-

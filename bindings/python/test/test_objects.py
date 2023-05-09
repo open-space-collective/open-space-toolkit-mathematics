@@ -22,4 +22,3 @@ Transformation3d = mathematics.geometry.d3.Transformation
 Quaternion = mathematics.geometry.d3.transformations.rotations.Quaternion
 RotationVector = mathematics.geometry.d3.transformations.rotations.RotationVector
 RotationMatrix = mathematics.geometry.d3.transformations.rotations.RotationMatrix
-

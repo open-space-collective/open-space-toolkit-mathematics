@@ -8,21 +8,13 @@ import ostk.mathematics as mathematics
 
 
 Angle = mathematics.geometry.Angle
-Unit  = Angle.Unit
+Unit = Angle.Unit
 
 
-def test_angle_unit ():
-
+def test_angle_unit():
     enum_members = Unit.__members__
 
-    list_keys = [
-        'Undefined',
-        'Radian',
-        'Degree',
-        'Arcminute',
-        'Arcsecond',
-        'Revolution'
-        ]
+    list_keys = ["Undefined", "Radian", "Degree", "Arcminute", "Arcsecond", "Revolution"]
 
     list_values = [
         Unit.Undefined,
@@ -30,14 +22,14 @@ def test_angle_unit ():
         Unit.Degree,
         Unit.Arcminute,
         Unit.Arcsecond,
-        Unit.Revolution
+        Unit.Revolution,
     ]
 
     assert list(enum_members.keys()) == list_keys
     assert list(enum_members.values()) == list_values
 
-def test_angle_default_constructor ():
 
+def test_angle_default_constructor():
     # Default constructor with Degree Unit
     angle: Angle = Angle(12.34, Unit.Degree)
 
@@ -93,19 +85,18 @@ def test_angle_default_constructor ():
 
     # Invalid construction
     with pytest.raises(TypeError):
+        angle: Angle = Angle(45, Unit.Degree)
 
-        angle: Angle =  Angle(45, Unit.Degree)
 
-def test_angle_undefined_constructor ():
-
+def test_angle_undefined_constructor():
     angle: Angle = Angle.undefined()
 
     assert angle is not None
     assert isinstance(angle, Angle)
     assert angle.is_defined() is False
 
-def test_angle_zero_constructor ():
 
+def test_angle_zero_constructor():
     angle: Angle = Angle.zero()
 
     assert angle is not None
@@ -119,8 +110,8 @@ def test_angle_zero_constructor ():
     assert angle.in_arcseconds() == 0.0
     assert angle.in_revolutions() == 0.0
 
-def test_angle_pi_constructors ():
 
+def test_angle_pi_constructors():
     angle: Angle = Angle.half_pi()
 
     assert angle is not None
@@ -145,8 +136,8 @@ def test_angle_pi_constructors ():
     assert angle.get_unit() == Unit.Radian
     assert angle.in_radians() == 2 * math.pi
 
-def test_angle_unit_constructors ():
 
+def test_angle_unit_constructors():
     # Radian
     angle: Angle = Angle.radians(3.4)
 
@@ -192,8 +183,8 @@ def test_angle_unit_constructors ():
     assert angle.get_unit() == Unit.Revolution
     assert angle.in_revolutions() == 3.9
 
-def test_angle_unit_conversion ():
 
+def test_angle_unit_conversion():
     angle: Angle = Angle(60.0, Unit.Degree)
 
     assert angle.in_degrees() == 60.0
@@ -201,8 +192,8 @@ def test_angle_unit_conversion ():
     assert angle.in_arcminutes() == 60.0 * 60.0
     assert (angle.in_arcseconds() - 60.0 * 3600.0) <= 1e-10
 
-def test_angle_comparators ():
 
+def test_angle_comparators():
     angle_deg: Angle = Angle(60.0, Unit.Degree)
     angle_rad: Angle = Angle(60.0 * math.pi / 180.0, Unit.Radian)
 
@@ -211,8 +202,8 @@ def test_angle_comparators ():
     assert angle_deg == angle_rad
     assert angle_deg != Angle(59.0, Unit.Degree)
 
-def test_angle_operators ():
 
+def test_angle_operators():
     angle: Angle = Angle(30.0, Unit.Degree)
     half_angle: Angle = angle / 2.0
     double_angle: Angle = angle * 2.0
@@ -264,25 +255,25 @@ def test_angle_operators ():
     assert angle.get_unit() == Unit.Degree
     assert angle.in_degrees() == 90.0
 
+
 # def test_angle_between_vector2d ():
 
 # def test_angle_between_vector3d ():
 
 # def test_angle_to_string ():
 
-def test_angle_string_from_unit ():
 
-    assert Angle.string_from_unit(Unit.Degree) == 'Degree'
-    assert Angle.string_from_unit(Unit.Radian) == 'Radian'
-    assert Angle.string_from_unit(Unit.Arcminute) == 'Arcminute'
-    assert Angle.string_from_unit(Unit.Arcsecond) == 'Arcsecond'
-    assert Angle.string_from_unit(Unit.Revolution) == 'Revolution'
+def test_angle_string_from_unit():
+    assert Angle.string_from_unit(Unit.Degree) == "Degree"
+    assert Angle.string_from_unit(Unit.Radian) == "Radian"
+    assert Angle.string_from_unit(Unit.Arcminute) == "Arcminute"
+    assert Angle.string_from_unit(Unit.Arcsecond) == "Arcsecond"
+    assert Angle.string_from_unit(Unit.Revolution) == "Revolution"
 
-def test_angle_string_symbol_from_unit ():
 
-    assert Angle.symbol_from_unit(Unit.Degree) == 'deg'
-    assert Angle.symbol_from_unit(Unit.Radian) == 'rad'
-    assert Angle.symbol_from_unit(Unit.Arcminute) == 'amin'
-    assert Angle.symbol_from_unit(Unit.Arcsecond) == 'asec'
-    assert Angle.symbol_from_unit(Unit.Revolution) == 'rev'
-
+def test_angle_string_symbol_from_unit():
+    assert Angle.symbol_from_unit(Unit.Degree) == "deg"
+    assert Angle.symbol_from_unit(Unit.Radian) == "rad"
+    assert Angle.symbol_from_unit(Unit.Arcminute) == "amin"
+    assert Angle.symbol_from_unit(Unit.Arcsecond) == "asec"
+    assert Angle.symbol_from_unit(Unit.Revolution) == "rev"

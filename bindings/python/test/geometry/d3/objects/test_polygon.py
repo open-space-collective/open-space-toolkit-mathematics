@@ -17,8 +17,7 @@ Polygon2d = mathematics.geometry.d2.objects.Polygon
 Transformation = mathematics.geometry.d3.Transformation
 
 
-def test_geometry_d3_objects_polygon ():
-
+def test_geometry_d3_objects_polygon():
     ## Constructors
 
     # Construct a Polygon2d
@@ -34,7 +33,7 @@ def test_geometry_d3_objects_polygon ():
     assert polygon2d.is_defined()
 
     # Construct a Polygon3d using python list constructors for vectors
-    point_5: Point3d =  Point3d(1.0, 1.0, 1.0)
+    point_5: Point3d = Point3d(1.0, 1.0, 1.0)
     vector_1 = [1.0, 0.0, 0.0]
     vector_2 = [0.0, 1.0, 0.0]
 
@@ -46,7 +45,7 @@ def test_geometry_d3_objects_polygon ():
     assert polygon3d_1.is_defined()
 
     # Construct a Polygon3d using python tuple constructors for vectors
-    point_5: Point3d =  Point3d(1.0, 1.0, 1.0)
+    point_5: Point3d = Point3d(1.0, 1.0, 1.0)
     vector_1 = (1.0, 0.0, 0.0)
     vector_2 = (0.0, 1.0, 0.0)
 
@@ -58,7 +57,7 @@ def test_geometry_d3_objects_polygon ():
     assert polygon3d_2.is_defined()
 
     # Construct a Polygon3d using python numpy array constructors for vectors
-    point_5: Point3d =  Point3d(1.0, 1.0, 1.0)
+    point_5: Point3d = Point3d(1.0, 1.0, 1.0)
     vector_3 = np.array((1.0, 0.0, 0.0))
     vector_4 = (0.0, 1.0, 1.0)
 
@@ -131,11 +130,12 @@ def test_geometry_d3_objects_polygon ():
 
     assert np.array_equal(yaxis_1, np.array(vector_2))
     assert np.array_equal(yaxis_2, np.array(vector_2))
-    assert np.array_equal(yaxis_3, np.array(vector_4) / np.linalg.norm(np.array(vector_4)))
+    assert np.array_equal(
+        yaxis_3, np.array(vector_4) / np.linalg.norm(np.array(vector_4))
+    )
 
     ## is_near
 
     ## get_normal_vector
 
     ## apply_transformation
-

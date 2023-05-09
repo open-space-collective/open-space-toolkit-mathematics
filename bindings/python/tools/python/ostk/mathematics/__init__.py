@@ -3,4 +3,3 @@
 from ostk.core import *
 
 from .OpenSpaceToolkitMathematicsPy import *
-

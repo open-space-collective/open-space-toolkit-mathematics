@@ -18,4 +18,3 @@ Transformation = mathematics.geometry.d3.Transformation
 
 
 # def test_geometry_d3_objects_cuboid ():
-

@@ -14,9 +14,7 @@ Line = mathematics.geometry.d2.objects.Line
 
 
 class TestLine:
-
-    def test_constructor_success (self):
-
+    def test_constructor_success(self):
         line = Line(
             Point(1.0, 2.0),
             np.array((3.4, 1.0)),
@@ -32,19 +30,16 @@ class TestLine:
         line: Line,
         point_set: PointSet,
     ):
-
         assert line.contains(point_set) is True
 
-    def test_distance_to_success_point (
+    def test_distance_to_success_point(
         self,
         line: Line,
     ):
-
         assert float(line.distance_to(Point(2.0, 3.0))) == pytest.approx(0.0, 1e-5)
         assert float(line.distance_to(Point(1.0, 5.0))) == pytest.approx(2.12132, 1e-5)
 
-    def test_undefined_success (self):
-
+    def test_undefined_success(self):
         line = Line.undefined()
 
         assert line is not None
@@ -52,13 +47,11 @@ class TestLine:
         assert isinstance(line, Object)
         assert line.is_defined() is False
 
-    def test_points_success (
+    def test_points_success(
         self,
         line: Line,
     ):
-
         assert line is not None
         assert isinstance(line, Line)
         assert isinstance(line, Object)
         assert line.is_defined() is True
-

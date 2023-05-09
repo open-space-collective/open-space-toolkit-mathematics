@@ -3,6 +3,3 @@
 import pytest
 
 import ostk.mathematics as mathematics
-
-
-

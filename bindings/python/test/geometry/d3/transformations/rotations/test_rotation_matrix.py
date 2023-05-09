@@ -22,4 +22,3 @@ RotationMatrix = geometry.d3.transformations.rotations.RotationMatrix
 # Columns
 # Quaternion
 # RotationVector
-

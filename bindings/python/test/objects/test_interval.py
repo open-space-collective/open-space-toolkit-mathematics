@@ -12,16 +12,25 @@ Type = RealInterval.Type
 
 
 class TestInterval:
-
-    def test_type (self):
-
+    def test_type(self):
         enum_members = Type.__members__
 
-        assert list(enum_members.keys()) == ['Undefined', 'Closed', 'Open', 'HalfOpenLeft', 'HalfOpenRight']
-        assert list(enum_members.values()) == [Type.Undefined, Type.Closed, Type.Open, Type.HalfOpenLeft, Type.HalfOpenRight]
+        assert list(enum_members.keys()) == [
+            "Undefined",
+            "Closed",
+            "Open",
+            "HalfOpenLeft",
+            "HalfOpenRight",
+        ]
+        assert list(enum_members.values()) == [
+            Type.Undefined,
+            Type.Closed,
+            Type.Open,
+            Type.HalfOpenLeft,
+            Type.HalfOpenRight,
+        ]
 
-    def test_default_constructor (self):
-
+    def test_default_constructor(self):
         # Input types for RealInterval
         interval_1 = RealInterval(-4.31, 1.0, Type.Open)
         interval_2 = RealInterval(-2.0, -1.0, Type.Closed)
@@ -41,7 +50,6 @@ class TestInterval:
         assert interval_5 is not None
 
         with pytest.raises(TypeError):
-
             interval = RealInterval(3.0, 1, Type.Closed)
 
         interval_6 = RealInterval(Real(-4.31), Real(1.0), Type.Open)
@@ -81,31 +89,25 @@ class TestInterval:
         # Unvalid interval definition
 
         with pytest.raises(RuntimeError):
-
             invalid_interval_1 = RealInterval(4.8, 3.5, Type.Open)
 
         with pytest.raises(RuntimeError):
-
             invalid_interval_2 = RealInterval(4.8, 3.5, Type.Closed)
 
         with pytest.raises(RuntimeError):
-
             invalid_interval_3 = RealInterval(4.8, 3.5, Type.HalfOpenLeft)
 
         with pytest.raises(RuntimeError):
-
             invalid_interval_4 = RealInterval(4.8, 3.5, Type.HalfOpenRight)
 
-    def test_undefined_constructor (self):
-
+    def test_undefined_constructor(self):
         undefined_interval = RealInterval.undefined()
 
         assert isinstance(undefined_interval, RealInterval)
         assert undefined_interval is not None
         assert undefined_interval.is_defined() is False
 
-    def test_closed_constructor (self):
-
+    def test_closed_constructor(self):
         a = -3.1
         b = 45.6
 
@@ -117,8 +119,7 @@ class TestInterval:
         assert closed_interval.get_lower_bound() == a
         assert closed_interval.get_upper_bound() == b
 
-    def test_is_defined (self):
-
+    def test_is_defined(self):
         # Interval Bounds
         a = -4.31
         b = 3.0
@@ -139,8 +140,7 @@ class TestInterval:
 
     # def test_is_degenerate ():
 
-    def test_intersects (self):
-
+    def test_intersects(self):
         # Interval Bounds
         a = -4.31
         b = 3.0
@@ -205,8 +205,7 @@ class TestInterval:
         assert interval_halfopenright.intersects(interval_between) is True
         assert interval_halfopenright.intersects(interval_bigger) is True
 
-    def test_contains_real (self):
-
+    def test_contains_real(self):
         # Interval Bounds
         a = -4.31
         b = 3.0
@@ -229,7 +228,6 @@ class TestInterval:
         # Test contains on undefined
 
         with pytest.raises(RuntimeError):
-
             interval_undefined.contains(real_left)
 
         # Test contains on closed
@@ -268,8 +266,7 @@ class TestInterval:
         assert interval_halfopenright.contains(real_between_1) is True
         assert interval_halfopenright.contains(real_between_2) is True
 
-    def test_contains_interval (self):
-
+    def test_contains_interval(self):
         # Interval Bounds
         a = -4.31
         b = 3.0
@@ -294,7 +291,6 @@ class TestInterval:
         # Test contains on undefined
 
         with pytest.raises(RuntimeError):
-
             interval_undefined.contains(interval_left)
 
         # Test contains on closed
@@ -333,8 +329,7 @@ class TestInterval:
         assert interval_halfopenright.contains(interval_between) is True
         assert interval_halfopenright.contains(interval_bigger) is False
 
-    def test_get_bounds (self):
-
+    def test_get_bounds(self):
         # Interval Bounds
         a = -4.31
         b = 3.0
@@ -348,7 +343,6 @@ class TestInterval:
 
         # get_lower_bound
         with pytest.raises(RuntimeError):
-
             interval_undefined.get_lower_bound()
 
         assert interval_closed.get_lower_bound() == a
@@ -358,7 +352,6 @@ class TestInterval:
 
         # get_upper_bound
         with pytest.raises(RuntimeError):
-
             interval_undefined.get_upper_bound()
 
         assert interval_closed.get_upper_bound() == b
@@ -366,8 +359,7 @@ class TestInterval:
         assert interval_halfopenleft.get_upper_bound() == b
         assert interval_halfopenright.get_upper_bound() == b
 
-    def test_to_string (self):
-
+    def test_to_string(self):
         # Interval Bounds
         a = -4.31
         b = 3.0
@@ -380,22 +372,36 @@ class TestInterval:
         interval_halfopenright = RealInterval(a, b, Type.HalfOpenRight)
 
         with pytest.raises(RuntimeError):
-
             interval_undefined.to_string()
 
         assert isinstance(interval_closed.to_string(), String)
-        assert interval_closed.to_string() == '[-4.3099999999999996, 3.0]'
-        assert interval_open.to_string() == ']-4.3099999999999996, 3.0['
-        assert interval_halfopenleft.to_string() == ']-4.3099999999999996, 3.0]'
-        assert interval_halfopenright.to_string() == '[-4.3099999999999996, 3.0['
+        assert interval_closed.to_string() == "[-4.3099999999999996, 3.0]"
+        assert interval_open.to_string() == "]-4.3099999999999996, 3.0["
+        assert interval_halfopenleft.to_string() == "]-4.3099999999999996, 3.0]"
+        assert interval_halfopenright.to_string() == "[-4.3099999999999996, 3.0["
 
-    def test_get_intersection_with (self):
-
+    def test_get_intersection_with(self):
         test_cases = [
-            (RealInterval(0.0, 10.0, Type.HalfOpenLeft),  RealInterval(5.0, 7.0,  Type.HalfOpenLeft),    RealInterval(5.0, 7.0, Type.HalfOpenLeft)),
-            (RealInterval(0.0, 10.0, Type.HalfOpenRight), RealInterval(-15.0, 25.0, Type.HalfOpenRight), RealInterval(0.0, 10.0, Type.HalfOpenRight)),
-            (RealInterval(0.0, 10.0, Type.Open),          RealInterval(-5.0, 7.0, Type.Open),            RealInterval(0.0, 7.0, Type.Open)),
-            (RealInterval(0.0, 10.0, Type.Closed),        RealInterval(5.0, 15.0,  Type.Closed),         RealInterval(5.0, 10.0, Type.Closed)),
+            (
+                RealInterval(0.0, 10.0, Type.HalfOpenLeft),
+                RealInterval(5.0, 7.0, Type.HalfOpenLeft),
+                RealInterval(5.0, 7.0, Type.HalfOpenLeft),
+            ),
+            (
+                RealInterval(0.0, 10.0, Type.HalfOpenRight),
+                RealInterval(-15.0, 25.0, Type.HalfOpenRight),
+                RealInterval(0.0, 10.0, Type.HalfOpenRight),
+            ),
+            (
+                RealInterval(0.0, 10.0, Type.Open),
+                RealInterval(-5.0, 7.0, Type.Open),
+                RealInterval(0.0, 7.0, Type.Open),
+            ),
+            (
+                RealInterval(0.0, 10.0, Type.Closed),
+                RealInterval(5.0, 15.0, Type.Closed),
+                RealInterval(5.0, 10.0, Type.Closed),
+            ),
         ]
 
         for test_case in test_cases:
@@ -403,15 +409,32 @@ class TestInterval:
             second_interval = test_case[1]
             expected_interval = test_case[2]
 
-            assert first_interval.get_intersection_with(second_interval) == expected_interval
+            assert (
+                first_interval.get_intersection_with(second_interval) == expected_interval
+            )
 
-    def test_get_union_with (self):
-
+    def test_get_union_with(self):
         test_cases = [
-            (RealInterval(0.0, 10.0, Type.HalfOpenLeft),  RealInterval(5.0, 7.0, Type.HalfOpenLeft),     RealInterval(0.0, 10.0, Type.HalfOpenLeft)),
-            (RealInterval(0.0, 10.0, Type.HalfOpenRight), RealInterval(-15.0, 25.0, Type.HalfOpenRight), RealInterval(-15.0, 25.0, Type.HalfOpenRight)),
-            (RealInterval(0.0, 10.0, Type.Open),          RealInterval(-5.0, 7.0, Type.Open),            RealInterval(-5.0, 10.0, Type.Open)),
-            (RealInterval(0.0, 10.0, Type.Closed),        RealInterval(5.0, 15.0, Type.Closed),          RealInterval(0.0, 15.0, Type.Closed)),
+            (
+                RealInterval(0.0, 10.0, Type.HalfOpenLeft),
+                RealInterval(5.0, 7.0, Type.HalfOpenLeft),
+                RealInterval(0.0, 10.0, Type.HalfOpenLeft),
+            ),
+            (
+                RealInterval(0.0, 10.0, Type.HalfOpenRight),
+                RealInterval(-15.0, 25.0, Type.HalfOpenRight),
+                RealInterval(-15.0, 25.0, Type.HalfOpenRight),
+            ),
+            (
+                RealInterval(0.0, 10.0, Type.Open),
+                RealInterval(-5.0, 7.0, Type.Open),
+                RealInterval(-5.0, 10.0, Type.Open),
+            ),
+            (
+                RealInterval(0.0, 10.0, Type.Closed),
+                RealInterval(5.0, 15.0, Type.Closed),
+                RealInterval(0.0, 15.0, Type.Closed),
+            ),
         ]
 
         for test_case in test_cases:
@@ -420,4 +443,3 @@ class TestInterval:
             expected_interval = test_case[2]
 
             assert first_interval.get_union_with(second_interval) == expected_interval
-

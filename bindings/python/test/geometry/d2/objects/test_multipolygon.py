@@ -15,13 +15,7 @@ MultiPolygon = mathematics.geometry.d2.objects.MultiPolygon
 
 
 class TestMultipolygon:
-
-    def test_constructor_success (
-        self,
-        square_1: Polygon,
-        square_2: Polygon
-    ):
-
+    def test_constructor_success(self, square_1: Polygon, square_2: Polygon):
         # Construction using a python list of polygons
         multipolygon: MultiPolygon = MultiPolygon([square_1, square_2])
 
@@ -62,12 +56,7 @@ class TestMultipolygon:
         assert isinstance(multipolygon, Object)
         assert multipolygon.is_defined()
 
-    def test_comparators_success (
-        self,
-        square_1: Polygon,
-        square_2: Polygon
-    ):
-
+    def test_comparators_success(self, square_1: Polygon, square_2: Polygon):
         # Multiple MultiPolygons
         multipolygon_1: MultiPolygon = MultiPolygon([square_1, square_2])
         multipolygon_2: MultiPolygon = MultiPolygon([square_1])
@@ -78,8 +67,7 @@ class TestMultipolygon:
         assert multipolygon_1 != multipolygon_3
         assert multipolygon_2 == multipolygon_3
 
-    def test_undefined_constructor_success (self):
-
+    def test_undefined_constructor_success(self):
         multipolygon: MultiPolygon = MultiPolygon.undefined()
 
         assert multipolygon is not None
@@ -87,12 +75,11 @@ class TestMultipolygon:
         assert isinstance(multipolygon, Object)
         assert multipolygon.is_defined() is False
 
-    def test_getters_success (
+    def test_getters_success(
         self,
         square_1: Polygon,
         square_2: Polygon,
     ):
-
         # Multiple Polygons
         multipolygon: MultiPolygon = MultiPolygon([square_1, square_2])
 
@@ -112,4 +99,3 @@ class TestMultipolygon:
     # def test_to_string_success (self):
 
     # def test_apply_transformation_success (self):
-

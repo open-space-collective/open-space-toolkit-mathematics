@@ -18,9 +18,7 @@ Intersection = mathematics.geometry.d2.Intersection
 
 
 class TestPolygon:
-
-    def test_constructor_empty_inner_ring (self):
-
+    def test_constructor_empty_inner_ring(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
         point_3: Point = Point(1.0, -1.0)
@@ -60,19 +58,15 @@ class TestPolygon:
 
         # Invalid constructions
         with pytest.raises(RuntimeError):
-
             polygon: Polygon = Polygon([point_1, point_2])
 
         with pytest.raises(RuntimeError):
-
             polygon: Polygon = Polygon((point_1, point_2))
 
         with pytest.raises(RuntimeError):
-
             polygon: Polygon = Polygon([point_1])
 
-    def test_constructor_nonempty_inner_ring (self):
-
+    def test_constructor_nonempty_inner_ring(self):
         # Outer Ring Vertices
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
@@ -96,9 +90,13 @@ class TestPolygon:
         inner_ring_numpy = np.array(inner_ring_tuple)
 
         # Inner Rings Definitions
-        inner_rings_list_list = [inner_ring_list,]
+        inner_rings_list_list = [
+            inner_ring_list,
+        ]
         inner_rings_list_tuple = (inner_ring_list,)
-        inner_rings_tuple_list = [inner_ring_tuple,]
+        inner_rings_tuple_list = [
+            inner_ring_tuple,
+        ]
         inner_rings_tuple_tuple = (inner_ring_tuple,)
         inner_rings_numpy = np.array(inner_rings_list_list)
 
@@ -192,8 +190,7 @@ class TestPolygon:
 
         # ...
 
-    def test_comparators (self):
-
+    def test_comparators(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
         point_3: Point = Point(1.0, -1.0)
@@ -206,22 +203,20 @@ class TestPolygon:
         assert polygon_2 == polygon_2
         assert polygon_1 != polygon_2
 
-    def test_intersects_polygon (
+    def test_intersects_polygon(
         self,
         square_1: Polygon,
         square_2: Polygon,
         square_3: Polygon,
         square_4: Polygon,
     ):
-
         assert square_1.intersects(square_2) is False
         assert square_1.intersects(square_3) is True
         assert square_1.intersects(square_4) is True
         assert square_2.intersects(square_4) is False
         assert square_2.intersects(square_3) is False
 
-    def test_contains (self):
-
+    def test_contains(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
         point_3: Point = Point(1.0, -1.0)
@@ -239,8 +234,7 @@ class TestPolygon:
 
         assert polygon.contains(point_set)
 
-    def test_getters (self):
-
+    def test_getters(self):
         # Outer Ring Vertices
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
@@ -255,7 +249,9 @@ class TestPolygon:
 
         # Rings Definitions
         outer_ring = [point_1, point_2, point_3, point_4]
-        inner_rings = [[point_5, point_6, point_7, point_8],]
+        inner_rings = [
+            [point_5, point_6, point_7, point_8],
+        ]
 
         # Define polygon
         polygon: Polygon = Polygon(outer_ring, inner_rings)
@@ -271,14 +267,17 @@ class TestPolygon:
 
         # get_outer_ring
         assert isinstance(polygon.get_outer_ring(), LineString)
-        assert polygon.get_outer_ring() == LineString([point_1, point_2, point_3, point_4, point_1])
+        assert polygon.get_outer_ring() == LineString(
+            [point_1, point_2, point_3, point_4, point_1]
+        )
 
         # get_inner_ring_at
         assert isinstance(polygon.get_inner_ring_at(0), LineString)
-        assert polygon.get_inner_ring_at(0) == LineString([point_5, point_6, point_7, point_8, point_5])
+        assert polygon.get_inner_ring_at(0) == LineString(
+            [point_5, point_6, point_7, point_8, point_5]
+        )
 
         with pytest.raises(RuntimeError):
-
             polygon.get_inner_ring_at(1)
 
         # get_edge_at
@@ -311,24 +310,22 @@ class TestPolygon:
 
         # get_convex_hull
 
-    def test_union_with (
+    def test_union_with(
         self,
         square_1: Polygon,
         square_4: Polygon,
     ):
-
         multipolygon: MultiPolygon = square_1.union_with(square_4)
 
         assert multipolygon is not None
         assert isinstance(multipolygon, MultiPolygon)
         assert multipolygon.is_defined()
 
-    def test_intersection_with (
+    def test_intersection_with(
         self,
         square_1: Polygon,
         square_4: Polygon,
     ):
-
         intersection: Intersection = square_1.intersection_with(square_1)
 
         assert intersection is not None
@@ -344,15 +341,16 @@ class TestPolygon:
         assert isinstance(intersection_2, Intersection)
         assert intersection_2.is_defined()
         assert intersection_2.is_line_string()
-        assert intersection_2.as_line_string() == LineString([Point(0.5, 0.5), Point(0.5, -0.5)])
+        assert intersection_2.as_line_string() == LineString(
+            [Point(0.5, 0.5), Point(0.5, -0.5)]
+        )
         assert intersection_2.get_type() == Intersection.Type.LineString
 
-    def test_difference_with (
+    def test_difference_with(
         self,
         square_1: Polygon,
         square_3: Polygon,
     ):
-
         difference: Intersection = square_1.difference_with(square_1)
 
         assert difference is not None
@@ -366,6 +364,7 @@ class TestPolygon:
         assert isinstance(difference_2, Intersection)
         assert difference_2.is_defined()
         assert difference_2.is_polygon()
-        assert difference_2.as_polygon() == Polygon([Point(0.0, 0.5), Point(-0.5, 0.5), Point(-0.5, -0.5), Point(0.0, -0.5)])
+        assert difference_2.as_polygon() == Polygon(
+            [Point(0.0, 0.5), Point(-0.5, 0.5), Point(-0.5, -0.5), Point(0.0, -0.5)]
+        )
         assert difference_2.get_type() == Intersection.Type.Polygon
-

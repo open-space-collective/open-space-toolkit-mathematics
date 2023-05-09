@@ -10,9 +10,10 @@ Quaternion = geometry.d3.transformations.rotations.Quaternion
 RotationVector = geometry.d3.transformations.rotations.RotationVector
 
 
-def test_geometry_d3_transformations_rotations_rotation_vector ():
-
-    rv: RotationVector = RotationVector(numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.zero())
+def test_geometry_d3_transformations_rotations_rotation_vector():
+    rv: RotationVector = RotationVector(
+        numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.zero()
+    )
 
     assert (rv == rv) is True
     assert (rv != rv) is False
@@ -24,6 +25,10 @@ def test_geometry_d3_transformations_rotations_rotation_vector ():
 
     assert RotationVector.undefined().is_defined() is False
     assert RotationVector.unit().is_defined() is True
-    assert RotationVector.quaternion(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion.Format.XYZS)).is_defined() is True
+    assert (
+        RotationVector.quaternion(
+            Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion.Format.XYZS)
+        ).is_defined()
+        is True
+    )
     # assert RotationVector.RotationMatrix().is_defined() is True
-
