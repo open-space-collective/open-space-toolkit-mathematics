@@ -25,7 +25,6 @@
 #include <Gte/Mathematics/GteIntrSegment3OrientedBox3.h>
 #include <Gte/Mathematics/GteIntrLine3OrientedBox3.h>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace ostk
 {
@@ -38,7 +37,6 @@ namespace d3
 namespace objects
 {
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 gte::Vector3<double>            CuboidGteVectorFromPoint                    (   const   Point&                      aPoint                                      )
 {
@@ -55,7 +53,6 @@ Point                           CuboidPointFromGteVector                    (   
     return { aVector[0], aVector[1], aVector[2] } ;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                                 Cuboid::Cuboid                              (   const   Point&                      aCenter,
                                                                                 const   std::array<Vector3d, 3>&    aAxisArray,

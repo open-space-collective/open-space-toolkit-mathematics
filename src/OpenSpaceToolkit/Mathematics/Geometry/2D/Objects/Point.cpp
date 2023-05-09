@@ -6,7 +6,6 @@
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utilities.hpp>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace ostk
 {
@@ -19,7 +18,6 @@ namespace d2
 namespace objects
 {
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                                 Point::Point                                (   const   Real&                       aFirstCoordinate,
                                                                                 const   Real&                       aSecondCoordinate                           )

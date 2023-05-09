@@ -9,7 +9,6 @@
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utilities.hpp>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace ostk
 {
@@ -22,7 +21,6 @@ namespace d2
 namespace objects
 {
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                                 Segment::Segment                            (   const   Point&                      aFirstPoint,
                                                                                 const   Point&                      aSecondPoint                                )

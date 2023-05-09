@@ -4,7 +4,6 @@
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformations/Rotations/RotationVector.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformations/Rotations/RotationMatrix.cpp>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations ( pybind11::module& aModule                                 )
 {
@@ -22,4 +21,3 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transf
 
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

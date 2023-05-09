@@ -7,7 +7,6 @@
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utilities.hpp>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace ostk
 {
@@ -20,7 +19,6 @@ namespace d3
 namespace objects
 {
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                                 Plane::Plane                                (   const   Point&                      aPoint,
                                                                                 const   Vector3d&                   aNormalVector                               )

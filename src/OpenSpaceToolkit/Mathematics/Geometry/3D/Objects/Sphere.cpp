@@ -22,7 +22,6 @@
 #include <Gte/Mathematics/GteIntrRay3Sphere3.h>
 #include <Gte/Mathematics/GteIntrLine3Sphere3.h>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace ostk
 {
@@ -35,7 +34,6 @@ namespace d3
 namespace objects
 {
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 gte::Vector3<double>            SphereGteVectorFromPoint                    (   const   Point&                      aPoint                                      )
 {
@@ -52,7 +50,6 @@ Point                           SpherePointFromGteVector                    (   
     return { aVector[0], aVector[1], aVector[2] } ;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                                 Sphere::Sphere                              (   const   Point&                      aCenter,
                                                                                 const   Real&                       aRadius                                     )
