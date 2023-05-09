@@ -300,7 +300,7 @@ format-python: build-development-image  ## Runs the black format tool against py
 		--volume="$(CURDIR):/app:delegated" \
 		--workdir=/app \
 		$(docker_development_image_repository):$(docker_image_version) \
-		/bin/bash -c "pip install black && python3.11 -m black --line-length=90 bindings/python/"
+		/bin/bash -c "python3.11 -m black --line-length=90 bindings/python/"
 
 
 debug-cpp-release: build-release-image-cpp ## Debug C++ release environment
