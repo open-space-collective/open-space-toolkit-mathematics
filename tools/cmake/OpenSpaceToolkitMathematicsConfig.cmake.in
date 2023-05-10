@@ -1,4 +1,4 @@
-# Copyright © Loft Orbital Solutions Inc.
+# Apache License 2.0 
 
 SET (OpenSpaceToolkitMathematics_ROOT_DIR ${OpenSpaceToolkitMathematics_ROOT_DIR} @CMAKE_INSTALL_PREFIX@)
 

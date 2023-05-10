@@ -1,4 +1,4 @@
-// Copyright © Loft Orbital Solutions Inc.
+/// Apache License 2.0 
 
 #ifndef __OpenSpaceToolkitMathematicsPy_Utilities_IterableConverter__
 #define __OpenSpaceToolkitMathematicsPy_Utilities_IterableConverter__

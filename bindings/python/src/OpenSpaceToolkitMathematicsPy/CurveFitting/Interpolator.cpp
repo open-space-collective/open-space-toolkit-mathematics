@@ -1,4 +1,4 @@
-// Copyright © Loft Orbital Solutions Inc.
+/// Apache License 2.0 
 
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/BarycentricRational.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CubicSpline.cpp>

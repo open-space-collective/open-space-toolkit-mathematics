@@ -1,4 +1,4 @@
-// Copyright © Loft Orbital Solutions Inc.
+/// Apache License 2.0 
 
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid__

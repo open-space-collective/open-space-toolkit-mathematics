@@ -1,4 +1,4 @@
-# Copyright © Loft Orbital Solutions Inc.
+# Apache License 2.0 
 
 project_name := mathematics
 project_version := $(shell git describe --tags --always)

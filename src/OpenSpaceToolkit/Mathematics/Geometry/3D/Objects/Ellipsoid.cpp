@@ -1,4 +1,4 @@
-// Copyright © Loft Orbital Solutions Inc.
+/// Apache License 2.0 
 
 #include <Gte/Mathematics/GteIntrEllipsoid3Ellipsoid3.h>
 

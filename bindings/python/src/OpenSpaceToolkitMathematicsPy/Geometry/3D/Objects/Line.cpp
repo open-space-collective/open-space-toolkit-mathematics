@@ -1,4 +1,4 @@
-// Copyright © Loft Orbital Solutions Inc.
+/// Apache License 2.0 
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp>
 

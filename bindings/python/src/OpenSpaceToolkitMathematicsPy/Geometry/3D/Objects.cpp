@@ -1,4 +1,4 @@
-// Copyright © Loft Orbital Solutions Inc.
+/// Apache License 2.0 
 
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Objects/Composite.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Objects/Cone.cpp>

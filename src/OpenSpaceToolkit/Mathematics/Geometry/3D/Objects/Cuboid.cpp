@@ -1,4 +1,4 @@
-// Copyright © Loft Orbital Solutions Inc.
+/// Apache License 2.0 
 
 #include <Gte/Mathematics/GteIntrOrientedBox3Cone3.h>
 #include <Gte/Mathematics/GteIntrOrientedBox3Frustum3.h>

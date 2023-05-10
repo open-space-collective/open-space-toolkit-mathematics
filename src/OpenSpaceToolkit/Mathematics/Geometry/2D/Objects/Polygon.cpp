@@ -1,4 +1,4 @@
-// Copyright © Loft Orbital Solutions Inc.
+/// Apache License 2.0 
 
 #include <boost/geometry.hpp>
 #include <boost/geometry/geometries/point_xy.hpp>
