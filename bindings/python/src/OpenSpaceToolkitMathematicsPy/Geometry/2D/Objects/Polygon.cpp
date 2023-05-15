@@ -1,29 +1,19 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           bindings/python/src/OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Polygon.cpp
-/// @author         Lucas Brémond <lucas@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Apache License 2.0
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Polygon  (     pybind11::module&  aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Polygon(pybind11::module& aModule)
 {
+    using namespace pybind11;
 
-    using namespace pybind11 ;
+    using ostk::core::types::Integer;
+    using ostk::core::ctnr::Array;
 
-    using ostk::core::types::Integer ;
-    using ostk::core::ctnr::Array ;
-
-    using ostk::math::obj::Vector2d ;
-    using ostk::math::geom::d2::Object ;
-    using ostk::math::geom::d2::objects::Point ;
-    using ostk::math::geom::d2::objects::PointSet ;
-    using ostk::math::geom::d2::objects::Polygon ;
+    using ostk::math::obj::Vector2d;
+    using ostk::math::geom::d2::Object;
+    using ostk::math::geom::d2::objects::Point;
+    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geom::d2::objects::Polygon;
 
     class_<Polygon, Object>(aModule, "Polygon")
 
@@ -56,13 +46,15 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .def("get_vertices", &Polygon::getVertices)
         .def("get_convex_hull", &Polygon::getConvexHull)
         .def("union_with", &Polygon::unionWith, arg("polygon"))
-        .def("to_string", &Polygon::toString, arg("format") = Object::Format::Standard, arg("precision") = Integer::Undefined())
+        .def(
+            "to_string",
+            &Polygon::toString,
+            arg("format") = Object::Format::Standard,
+            arg("precision") = Integer::Undefined()
+        )
         .def("apply_transformation", &Polygon::applyTransformation, arg("transformation"))
 
         .def_static("undefined", &Polygon::Undefined)
 
-    ;
-
+        ;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

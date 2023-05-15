@@ -1,17 +1,9 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Apache License 2.0
 
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           bindings/python/src/OpenSpaceToolkitMathematicsPy/Geometry/2D/Object.cpp
-/// @author         Lucas Brémond <lucas@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#include <OpenSpaceToolkit/Core/Types/Integer.hpp>
+#include <OpenSpaceToolkit/Core/Types/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
-#include <OpenSpaceToolkit/Core/Types/Integer.hpp>
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // The following trampoline function might be used if the virtual functions defined in C++ are to be overriden in Python
 // Probably not needed for now. To be included if writing python extension classes
@@ -48,7 +40,8 @@
 //     }
 
 //     virtual String toString (   const   Object::Format&             aFormat
-//                                                                                 const   Integer&                    aPrecision                                  ) const override {
+//                                                                                 const   Integer& aPrecision ) const
+//                                                                                 override {
 //         PYBIND11_OVERRIDE_PURE(
 //             String,             /* Return type */
 //             Object,             /* Parent class */
@@ -58,8 +51,9 @@
 //         );
 //     }
 
-//     virtual void print                                            (           std::ostream&               anOutputStream,
-//                                                                                         bool                        displayDecorators) const override {
+//     virtual void print                                            (           std::ostream& anOutputStream,
+//                                                                                         bool displayDecorators) const
+//                                                                                         override {
 //         PYBIND11_OVERRIDE_PURE(
 //             void,             /* Return type */
 //             Object,             /* Parent class */
@@ -69,7 +63,8 @@
 //         );
 //     }
 
-//     virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) override {
+//     virtual void            applyTransformation                         (   const   Transformation& aTransformation
+//     ) override {
 //         PYBIND11_OVERRIDE_PURE(
 //             void,               /* Return type */
 //             Object,             /* Parent class */
@@ -79,22 +74,31 @@
 //     }
 // };
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object  (        pybind11::module&        aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object(pybind11::module &aModule)
 {
+    using namespace pybind11;
 
-    using namespace pybind11 ;
-
-    using ostk::math::geom::d2::Object ;
+    using ostk::math::geom::d2::Object;
 
     // noncopyable class with Boost, removed in Pybind11
     class_<Object> ob(aModule, "Object");
 
     ob
 
-        .def("__eq__", [](const Object &self, const Object &other){ return self == other; })
-        .def("__ne__", [](const Object &self, const Object &other){ return self != other; })
+        .def(
+            "__eq__",
+            [](const Object &self, const Object &other)
+            {
+                return self == other;
+            }
+        )
+        .def(
+            "__ne__",
+            [](const Object &self, const Object &other)
+            {
+                return self != other;
+            }
+        )
 
         .def("__str__", &(shiftToString<Object>))
         .def("__repr__", &(shiftToString<Object>))
@@ -106,7 +110,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         // .def("to_string", &Object::toString)
         .def("apply_transformation", &Object::applyTransformation, arg("transformation"))
 
-    ;
+        ;
 
     enum_<Object::Format>(ob, "Format")
 
@@ -114,8 +118,5 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_2D_Object
         .value("Standard", Object::Format::Standard)
         .value("WKT", Object::Format::WKT)
 
-    ;
-
+        ;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

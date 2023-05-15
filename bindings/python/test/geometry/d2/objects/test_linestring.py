@@ -1,11 +1,4 @@
-################################################################################################################################################################
-
-# @project        Open Space Toolkit ▸ Mathematics
-# @file           bindings/python/test/geometry/d2/objects/test_linestring.py
-# @author         Remy Derollez <remy@loftorbital.com>
-# @license        Apache License 2.0
-
-################################################################################################################################################################
+# Apache License 2.0
 
 import pytest
 
@@ -16,18 +9,14 @@ import ostk.mathematics as mathematics
 
 from ostk.core.types import String
 
-################################################################################################################################################################
 
 Object = mathematics.geometry.d2.Object
 Point = mathematics.geometry.d2.objects.Point
 LineString = mathematics.geometry.d2.objects.LineString
 
-################################################################################################################################################################
 
 class TestLineString:
-
-    def test_constructor_success (self):
-
+    def test_constructor_success(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
         point_3: Point = Point(1.0, -1.0)
@@ -50,15 +39,16 @@ class TestLineString:
         assert linestring.is_defined()
 
         # Construction with Array of Points using python numpy array
-        linestring: LineString = LineString(np.array((point_1, point_2, point_3, point_4)))
+        linestring: LineString = LineString(
+            np.array((point_1, point_2, point_3, point_4))
+        )
 
         assert linestring is not None
         assert isinstance(linestring, LineString)
         assert isinstance(linestring, Object)
         assert linestring.is_defined()
 
-    def test_empty_constructor_success (self):
-
+    def test_empty_constructor_success(self):
         linestring: LineString = LineString.empty()
 
         assert linestring is not None
@@ -67,8 +57,7 @@ class TestLineString:
         assert linestring.is_defined() is False
         assert linestring.is_empty()
 
-    def test_comparators_success (self):
-
+    def test_comparators_success(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
 
@@ -84,8 +73,7 @@ class TestLineString:
         assert linestring_2 != linestring_4
         assert linestring_3 != linestring_4
 
-    def test_is_near_success (self):
-
+    def test_is_near_success(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
 
@@ -109,8 +97,7 @@ class TestLineString:
         assert linestring_2.is_near(linestring_1, 1e-1)
         assert linestring_2.is_near(linestring_1, 1e-2)
 
-    def test_getters_success (self):
-
+    def test_getters_success(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
 
@@ -127,8 +114,7 @@ class TestLineString:
         assert linestring_2.get_point_closest_to(Point(-0.9, 1.0)) == point_1
         assert linestring_2.get_point_closest_to(Point(0.9, 1.0)) == point_2
 
-    def test_get_point_count_success (self):
-
+    def test_get_point_count_success(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
 
@@ -138,23 +124,20 @@ class TestLineString:
         assert len(linestring) == linestring.get_point_count()
         assert len(LineString.empty()) == 0
 
-    def test_iter_success (self):
-
+    def test_iter_success(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
 
         linestring: LineString = LineString([point_1, point_2])
 
         for point in linestring:
-
             assert isinstance(point, Point)
 
         assert iter(linestring) is not None
         assert isinstance(iter(linestring), Iterator)
         assert isinstance(iter(linestring), Iterable)
 
-    def test_getitem (self):
-
+    def test_getitem(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
 
@@ -167,7 +150,6 @@ class TestLineString:
         assert isinstance(linestring[1], Point)
 
         with pytest.raises(RuntimeError):
-
             point = linestring[2]
 
         linestring_list = list(linestring)
@@ -180,5 +162,3 @@ class TestLineString:
     # def test_to_string_success (self):
 
     # def test_apply_transformation_success (self):
-
-################################################################################################################################################################

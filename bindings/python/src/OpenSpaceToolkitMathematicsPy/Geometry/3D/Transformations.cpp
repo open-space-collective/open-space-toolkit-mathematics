@@ -1,28 +1,15 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           bindings/python/src/OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformations.cpp
-/// @author         Lucas Brémond <lucas@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Apache License 2.0
 
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformations/Rotations.cpp>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations (  pybind11::module&      aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations(pybind11::module& aModule)
 {
-
     // Create "transformations" python submodule
-    auto transformations = aModule.def_submodule("transformations") ;
+    auto transformations = aModule.def_submodule("transformations");
 
     // Add __path__ attribute for "transformations" submodule
-    transformations.attr("__path__") = "ostk.mathematics.geometry.d3.transformations" ;
+    transformations.attr("__path__") = "ostk.mathematics.geometry.d3.transformations";
 
     // Add objects to python "transformations" submodules
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations(transformations) ;
-
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations(transformations);
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

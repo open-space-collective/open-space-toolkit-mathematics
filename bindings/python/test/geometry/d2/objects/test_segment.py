@@ -1,11 +1,4 @@
-################################################################################################################################################################
-
-# @project        Open Space Toolkit ▸ Mathematics
-# @file           bindings/python/test/geometry/d2/objects/test_segment.py
-# @author         Remy Derollez <remy@loftorbital.com>
-# @license        Apache License 2.0
-
-################################################################################################################################################################
+# Apache License 2.0
 
 import pytest
 
@@ -13,7 +6,6 @@ import numpy as np
 
 import ostk.mathematics as mathematics
 
-################################################################################################################################################################
 
 Object = mathematics.geometry.d2.Object
 Point = mathematics.geometry.d2.objects.Point
@@ -21,12 +13,9 @@ PointSet = mathematics.geometry.d2.objects.PointSet
 Segment = mathematics.geometry.d2.objects.Segment
 Line = mathematics.geometry.d2.objects.Line
 
-################################################################################################################################################################
 
 class TestSegment:
-
-    def test_constructor_success (self):
-
+    def test_constructor_success(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
 
@@ -44,8 +33,7 @@ class TestSegment:
         assert isinstance(segment, Object)
         assert segment.is_defined()
 
-    def test_defined_success (self):
-
+    def test_defined_success(self):
         segment: Segment = Segment.undefined()
 
         assert segment is not None
@@ -53,8 +41,7 @@ class TestSegment:
         assert isinstance(segment, Object)
         assert segment.is_defined() is False
 
-    def test_degenerate_success (self):
-
+    def test_degenerate_success(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
 
@@ -64,8 +51,7 @@ class TestSegment:
         assert segment_1.is_degenerate() is False
         assert segment_2.is_degenerate() is True
 
-    def test_comparators_success (self):
-
+    def test_comparators_success(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
 
@@ -75,8 +61,7 @@ class TestSegment:
         assert segment_1 == segment_1
         assert segment_1 != segment_2
 
-    def test_getters_success (self):
-
+    def test_getters_success(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
 
@@ -96,29 +81,24 @@ class TestSegment:
 
         assert segment.get_length() == 2.0
 
-    def test_distance_to_success_point (
+    def test_distance_to_success_point(
         self,
         segment: Segment,
     ):
-
         assert segment.distance_to(Point(0.0, 0.0)) == 0.0
 
-    def test_distance_to_success_point_set (
+    def test_distance_to_success_point_set(
         self,
         segment: Segment,
     ):
-
         assert segment.distance_to(PointSet([Point(0.0, 0.0), Point(1.0, 0.0)])) == 0.0
 
-    def test_to_line_success (
+    def test_to_line_success(
         self,
         segment: Segment,
     ):
-
         assert segment.to_line() == Line(Point(0.0, 0.0), np.array((0.0, 1.0)))
 
     # def test_to_string_success (self):
 
     # def test_apply_transformation_success (self):
-
-################################################################################################################################################################

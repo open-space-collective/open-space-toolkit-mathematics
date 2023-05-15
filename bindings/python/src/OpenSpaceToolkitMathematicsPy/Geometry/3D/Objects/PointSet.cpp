@@ -1,26 +1,16 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           bindings/python/src/OpenSpaceToolkitMathematicsPy/Geometry/3D/Objects/PointSet.cpp
-/// @author         Lucas Brémond <lucas@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Apache License 2.0
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/PointSet.hpp>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_PointSet (      pybind11::module& aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_PointSet(pybind11::module& aModule)
 {
+    using namespace pybind11;
 
-    using namespace pybind11 ;
+    using ostk::core::ctnr::Array;
 
-    using ostk::core::ctnr::Array ;
-
-    using ostk::math::geom::d3::Object ;
-    using ostk::math::geom::d3::objects::Point ;
-    using ostk::math::geom::d3::objects::PointSet ;
+    using ostk::math::geom::d3::Object;
+    using ostk::math::geom::d3::objects::Point;
+    using ostk::math::geom::d3::objects::PointSet;
 
     class_<PointSet, Object>(aModule, "PointSet")
 
@@ -43,10 +33,8 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
         .def_static("empty", &PointSet::Empty)
 
-        // .def_static("__iter__", boost::python::range(static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::begin), static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::end)))
+        // .def_static("__iter__", boost::python::range(static_cast<PointSet::ConstIterator (PointSet::*)() const>
+        // (&PointSet::begin), static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::end)))
 
-    ;
-
+        ;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

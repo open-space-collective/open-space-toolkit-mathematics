@@ -1,23 +1,14 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/LineString.hpp
-/// @author         Lucas Brémond <lucas@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Apache License 2.0
 
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_LineString__
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
-
 #include <OpenSpaceToolkit/Core/Containers/Array.hpp>
-#include <OpenSpaceToolkit/Core/Types/Size.hpp>
 #include <OpenSpaceToolkit/Core/Types/Index.hpp>
+#include <OpenSpaceToolkit/Core/Types/Size.hpp>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
 
 namespace ostk
 {
@@ -30,21 +21,15 @@ namespace d2
 namespace objects
 {
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+using ostk::core::types::Index;
+using ostk::core::types::Size;
+using ostk::core::ctnr::Array;
 
-using ostk::core::types::Index ;
-using ostk::core::types::Size ;
-using ostk::core::ctnr::Array ;
+using ostk::math::obj::Vector2d;
+using ostk::math::geom::d2::Object;
+using ostk::math::geom::d2::objects::Point;
 
-using ostk::math::obj::Vector2d ;
-using ostk::math::geom::d2::Object ;
-using ostk::math::geom::d2::objects::Point ;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-class Segment ;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+class Segment;
 
 /// @brief                      Line string
 ///
@@ -54,181 +39,171 @@ class Segment ;
 
 class LineString : public Object
 {
+   public:
+    typedef Array<Point>::ConstIterator ConstIterator;
 
-    public:
+    /// @brief              Constructor
+    ///
+    /// @code
+    ///                     LineString lineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) ;
+    /// @endcode
+    ///
+    /// @param              [in] aPointArray A point array
 
-        typedef                 Array<Point>::ConstIterator                     ConstIterator ;
+    LineString(const Array<Point>& aPointArray);
 
-        /// @brief              Constructor
-        ///
-        /// @code
-        ///                     LineString lineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) ;
-        /// @endcode
-        ///
-        /// @param              [in] aPointArray A point array
+    /// @brief              Clone line string
+    ///
+    /// @return             Pointer to cloned line string
 
-                                LineString                                  (   const   Array<Point>&               aPointArray                                 ) ;
+    virtual LineString* clone() const override;
 
-        /// @brief              Clone line string
-        ///
-        /// @return             Pointer to cloned line string
+    /// @brief              Equal to operator
+    ///
+    /// @param              [in] aLineString A line string
+    /// @return             True if line strings are equal
 
-        virtual LineString*     clone                                       ( ) const override ;
+    bool operator==(const LineString& aLineString) const;
 
-        /// @brief              Equal to operator
-        ///
-        /// @param              [in] aLineString A line string
-        /// @return             True if line strings are equal
+    /// @brief              Not equal to operator
+    ///
+    /// @param              [in] aLineString A line string
+    /// @return             True if line strings are not equal
 
-        bool                    operator ==                                 (   const   LineString&                 aLineString                                 ) const ;
+    bool operator!=(const LineString& aLineString) const;
 
-        /// @brief              Not equal to operator
-        ///
-        /// @param              [in] aLineString A line string
-        /// @return             True if line strings are not equal
+    /// @brief              Check if line string is defined
+    ///
+    /// @code
+    ///                     LineString(0.0, 0.0).isDefined() ; // True
+    /// @endcode
+    ///
+    /// @return             True if line string is defined
 
-        bool                    operator !=                                 (   const   LineString&                 aLineString                                 ) const ;
+    virtual bool isDefined() const override;
 
-        /// @brief              Check if line string is defined
-        ///
-        /// @code
-        ///                     LineString(0.0, 0.0).isDefined() ; // True
-        /// @endcode
-        ///
-        /// @return             True if line string is defined
+    /// @brief              Check if line string is empty
+    ///
+    /// @code
+    ///                     LineString::Empty().isEmpty() ; // True
+    /// @endcode
+    ///
+    /// @return             True if line string is empty
 
-        virtual bool            isDefined                                   ( ) const override ;
+    bool isEmpty() const;
 
-        /// @brief              Check if line string is empty
-        ///
-        /// @code
-        ///                     LineString::Empty().isEmpty() ; // True
-        /// @endcode
-        ///
-        /// @return             True if line string is empty
+    /// @brief              Check if line string contains a point
+    ///
+    /// @code
+    ///                     LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).contains({ 0.0, 0.5 }) ; // True
+    /// @endcode
+    ///
+    /// @return             True if line string contains a point
 
-        bool                    isEmpty                                     ( ) const ;
+    bool contains(const Point& aPoint) const;
 
-        /// @brief              Check if line string contains a point
-        ///
-        /// @code
-        ///                     LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).contains({ 0.0, 0.5 }) ; // True
-        /// @endcode
-        ///
-        /// @return             True if line string contains a point
+    /// @brief              Check if line string is near another line string
+    ///
+    /// @code
+    ///                     LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).isNear(LineString({ { 0.0, 0.0 }, {
+    ///                     0.0, 1.0 }, { 1.0, 1e-15 } }), 1e-15) ; // True
+    /// @endcode
+    ///
+    /// @param              [in] aLineString A line string
+    /// @param              [in] aTolerance A tolerance
+    /// @return             True if line string is near another line string
 
-        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+    bool isNear(const LineString& aLineString, const Real& aTolerance) const;
 
-        /// @brief              Check if line string is near another line string
-        ///
-        /// @code
-        ///                     LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }).isNear(LineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 1e-15 } }), 1e-15) ; // True
-        /// @endcode
-        ///
-        /// @param              [in] aLineString A line string
-        /// @param              [in] aTolerance A tolerance
-        /// @return             True if line string is near another line string
+    /// @brief              Get point array
+    ///
+    /// @return             Point array
 
-        bool                    isNear                                      (   const   LineString&                 aLineString,
-                                                                                const   Real&                       aTolerance                                  ) const ;
+    const Array<Point>& getPointArray() const;
 
-        /// @brief              Get point array
-        ///
-        /// @return             Point array
+    /// @brief              Access point at index
+    ///
+    /// @brief              [in] anIndex A point index
+    /// @return             Reference to point at index
 
-        const Array<Point>&     getPointArray                            ( ) const ;
+    const Point& accessPointAt(const Index& anIndex) const;
 
-        /// @brief              Access point at index
-        ///
-        /// @brief              [in] anIndex A point index
-        /// @return             Reference to point at index
+    /// @brief              Get point count
+    ///
+    /// @return             Point count
 
-        const Point&            accessPointAt                               (   const   Index&                      anIndex                                     ) const ;
+    Size getPointCount() const;
 
-        /// @brief              Get point count
-        ///
-        /// @return             Point count
+    /// @brief              Get point closest to another point
+    ///
+    /// @param              [in] aPoint A point
+    /// @return             Closest point
 
-        Size                    getPointCount                               ( ) const ;
+    Point getPointClosestTo(const Point& aPoint) const;
 
-        /// @brief              Get point closest to another point
-        ///
-        /// @param              [in] aPoint A point
-        /// @return             Closest point
+    /// @brief              Get string representation
+    ///
+    /// @param              [in] aFormat A format
+    /// @return             String representation
 
-        Point                   getPointClosestTo                           (   const   Point&                      aPoint                                      ) const ;
+    virtual String toString(
+        const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
+    ) const override;
 
-        /// @brief              Get string representation
-        ///
-        /// @param              [in] aFormat A format
-        /// @return             String representation
+    /// @brief              Print point
+    ///
+    /// @param              [in] anOutputStream An output stream
+    /// @param              [in] (optional) displayDecorators If true, display decorators
 
-        virtual String          toString                                    (   const   Object::Format&             aFormat                                     =   Object::Format::Standard,
-                                                                                const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const override ;
+    virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
-        /// @brief              Print point
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] (optional) displayDecorators If true, display decorators
+    /// @brief              Get begin const iterator
+    ///
+    /// @return             Begin const iterator
 
-        virtual void            print                                       (           std::ostream&               anOutputStream,
-                                                                                        bool                        displayDecorators                           =   true ) const override ;
+    LineString::ConstIterator begin() const;
 
-        /// @brief              Get begin const iterator
-        ///
-        /// @return             Begin const iterator
+    /// @brief              Get end const iterator
+    ///
+    /// @return             End const iterator
 
-        LineString::ConstIterator begin                                     ( ) const ;
+    LineString::ConstIterator end() const;
 
-        /// @brief              Get end const iterator
-        ///
-        /// @return             End const iterator
+    /// @brief              Apply transformation to line string
+    ///
+    /// @param              [in] aTransformation A transformation
 
-        LineString::ConstIterator end                                       ( ) const ;
+    virtual void applyTransformation(const Transformation& aTransformation) override;
 
-        /// @brief              Apply transformation to line string
-        ///
-        /// @param              [in] aTransformation A transformation
+    /// @brief              Constructs an empty line string
+    ///
+    /// @code
+    ///                     LineString lineString = LineString::Empty() ;
+    /// @endcode
+    ///
+    /// @return             Empty line string
 
-        virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) override ;
+    static LineString Empty();
 
-        /// @brief              Constructs an empty line string
-        ///
-        /// @code
-        ///                     LineString lineString = LineString::Empty() ;
-        /// @endcode
-        ///
-        /// @return             Empty line string
+    /// @brief              Constructs a line string from a segment
+    ///
+    /// @code
+    ///                     Segment segment = { { 0.0, 0.0 }, { 0.0, 1.0 } } ;
+    ///                     LineString lineString = LineString::Segment(segment) ;
+    /// @endcode
+    ///
+    /// @return             Line string
 
-        static LineString       Empty                                       ( ) ;
+    static LineString Segment(const objects::Segment& aSegment);
 
-        /// @brief              Constructs a line string from a segment
-        ///
-        /// @code
-        ///                     Segment segment = { { 0.0, 0.0 }, { 0.0, 1.0 } } ;
-        ///                     LineString lineString = LineString::Segment(segment) ;
-        /// @endcode
-        ///
-        /// @return             Line string
+   private:
+    Array<Point> points_;
+};
 
-        static LineString       Segment                                     (   const   objects::Segment&           aSegment                                    ) ;
-
-    private:
-
-        Array<Point>            points_ ;
-
-} ;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-}
-}
-}
-}
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+}  // namespace objects
+}  // namespace d2
+}  // namespace geom
+}  // namespace math
+}  // namespace ostk
 
 #endif
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

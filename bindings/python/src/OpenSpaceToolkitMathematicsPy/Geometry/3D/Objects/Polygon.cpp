@@ -1,31 +1,20 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           bindings/python/src/OpenSpaceToolkitMathematicsPy/Geometry/3D/Objects/Polygon.cpp
-/// @author         Lucas Brémond <lucas@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Apache License 2.0
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Polygon.hpp>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Polygon ( pybind11::module&       aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Polygon(pybind11::module& aModule)
 {
+    using namespace pybind11;
 
-    using namespace pybind11 ;
-
-    using ostk::math::obj::Vector3d ;
-    using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
-    using ostk::math::geom::d3::Object ;
-    using ostk::math::geom::d3::objects::Point ;
-    using ostk::math::geom::d3::objects::Polygon ;
+    using ostk::math::obj::Vector3d;
+    using Polygon2d = ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geom::d3::Object;
+    using ostk::math::geom::d3::objects::Point;
+    using ostk::math::geom::d3::objects::Polygon;
 
     class_<Polygon, Object>(aModule, "Polygon")
 
-        .def
-        (
+        .def(
             init<const Polygon2d&, const Point&, const Vector3d&, const Vector3d&>(),
             arg("polygon"),
             arg("origin"),
@@ -56,8 +45,5 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
 
         .def_static("undefined", &Polygon::Undefined)
 
-    ;
-
+        ;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

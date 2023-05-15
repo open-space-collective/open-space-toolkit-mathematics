@@ -1,34 +1,24 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           bindings/python/src/OpenSpaceToolkitMathematicsPy/Geometry/3D/Objects/Sphere.cpp
-/// @author         Lucas Brémond <lucas@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Apache License 2.0
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Sphere.hpp>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Sphere ( pybind11::module&        aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Sphere(pybind11::module& aModule)
 {
+    using namespace pybind11;
 
-    using namespace pybind11 ;
+    using ostk::core::types::Real;
 
-    using ostk::core::types::Real ;
-
-    using ostk::math::geom::d3::Object ;
-    using ostk::math::geom::d3::objects::Point ;
-    using ostk::math::geom::d3::objects::PointSet ;
-    using ostk::math::geom::d3::objects::Line ;
-    using ostk::math::geom::d3::objects::Ray ;
-    using ostk::math::geom::d3::objects::Segment ;
-    using ostk::math::geom::d3::objects::Plane ;
-    using ostk::math::geom::d3::objects::Sphere ;
-    using ostk::math::geom::d3::objects::Ellipsoid ;
-    using ostk::math::geom::d3::objects::Pyramid ;
-    using ostk::math::geom::d3::Intersection ;
+    using ostk::math::geom::d3::Object;
+    using ostk::math::geom::d3::objects::Point;
+    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::geom::d3::objects::Segment;
+    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geom::d3::objects::Sphere;
+    using ostk::math::geom::d3::objects::Ellipsoid;
+    using ostk::math::geom::d3::objects::Pyramid;
+    using ostk::math::geom::d3::Intersection;
 
     class_<Sphere, Object>(aModule, "Sphere")
 
@@ -56,14 +46,16 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("get_radius", &Sphere::getRadius)
 
         .def("intersection_with", overload_cast<const Line&>(&Sphere::intersectionWith, const_), arg("line"))
-        .def("intersection_with", overload_cast<const Ray&, const bool>(&Sphere::intersectionWith, const_), arg("ray"), arg("only_in_sight") = DEFAULT_ONLY_IN_SIGHT)
+        .def(
+            "intersection_with",
+            overload_cast<const Ray&, const bool>(&Sphere::intersectionWith, const_),
+            arg("ray"),
+            arg("only_in_sight") = DEFAULT_ONLY_IN_SIGHT
+        )
         .def("apply_transformation", &Sphere::applyTransformation, arg("transformation"))
 
         .def_static("undefined", &Sphere::Undefined)
         .def_static("unit", &Sphere::Unit, arg("center"))
 
-    ;
-
+        ;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

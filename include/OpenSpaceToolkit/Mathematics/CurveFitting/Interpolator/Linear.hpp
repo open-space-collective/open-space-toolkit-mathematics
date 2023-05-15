@@ -1,24 +1,15 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp
-/// @author         Vishwa Shah <vishwa@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Apache License 2.0
 
 #ifndef __OpenSpaceToolkit_Mathematics_Interpolator_Linear__
 #define __OpenSpaceToolkit_Mathematics_Interpolator_Linear__
 
+#include <OpenSpaceToolkit/Core/Containers/Pair.hpp>
+#include <OpenSpaceToolkit/Core/Types/Index.hpp>
 #include <OpenSpaceToolkit/Core/Types/Real.hpp>
 #include <OpenSpaceToolkit/Core/Types/Size.hpp>
-#include <OpenSpaceToolkit/Core/Types/Index.hpp>
-#include <OpenSpaceToolkit/Core/Containers/Pair.hpp>
 
-#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
 
 namespace ostk
 {
@@ -29,91 +20,78 @@ namespace curvefitting
 namespace interp
 {
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+using ostk::core::types::Real;
+using ostk::core::types::Size;
+using ostk::core::types::Index;
+using ostk::core::ctnr::Pair;
 
-using ostk::core::types::Real ;
-using ostk::core::types::Size ;
-using ostk::core::types::Index ;
-using ostk::core::ctnr::Pair ;
-
-using ostk::math::obj::VectorXd ;
-using ostk::math::curvefitting::interp::Interpolator ;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+using ostk::math::obj::VectorXd;
+using ostk::math::curvefitting::interp::Interpolator;
 
 /// @brief                      Linear
 ///
-///                             In mathematics, linear interpolator is a method of curve fitting using linear polynomials to construct new data
-///                             points within the range of a discrete set of known data points.
+///                             In mathematics, linear interpolator is a method of curve fitting using linear
+///                             polynomials to construct new data points within the range of a discrete set of known
+///                             data points.
 ///
-/// @ref                        https://en.wikipedia.org/wiki/Linear_interpolator#:~:text=In%20mathematics%2C%20linear%20interpolator%20is,set%20of%20known%20data%20points.
+/// @ref
+/// https://en.wikipedia.org/wiki/Linear_interpolator#:~:text=In%20mathematics%2C%20linear%20interpolator%20is,set%20of%20known%20data%20points.
 
-class Linear: public Interpolator
+class Linear : public Interpolator
 {
+   public:
+    /// @brief              Constructor
+    ///
+    /// @code
+    ///                     Linear linear(x, y) ;
+    /// @endcode
+    ///
+    /// @param              [in] anXVector A vector of x values
+    /// @param              [in] aYVector A vector of y values
+    ///
+    /// @warning            The x values must be sorted in ascending order
+    /// @warning            The x values must be equally spaced
 
-    public:
+    Linear(const VectorXd& anXVector, const VectorXd& aYVector);
 
-        /// @brief              Constructor
-        ///
-        /// @code
-        ///                     Linear linear(x, y) ;
-        /// @endcode
-        ///
-        /// @param              [in] anXVector A vector of x values
-        /// @param              [in] aYVector A vector of y values
-        ///
-        /// @warning            The x values must be sorted in ascending order
-        /// @warning            The x values must be equally spaced
+    /// @brief              Clone linear
+    ///
+    /// @return             Pointer to cloned linear interpolator
 
-                                Linear                                      (   const   VectorXd&                   anXVector,
-                                                                                const   VectorXd&                   aYVector                                    ) ;
+    virtual Linear* clone() const;
 
-        /// @brief              Clone linear
-        ///
-        /// @return             Pointer to cloned linear interpolator
+    /// @brief              Evaluate the linear interpolator
+    ///
+    /// @code
+    ///                     VectorXd values = linear.evaluate({1.0, 5.0, 6.0}) ;
+    /// @endcode
+    ///
+    /// @param              [in] aQueryVector A vector of x values
+    /// @return             Vector of y values
 
-        virtual Linear*         clone                                       ( ) const ;
+    VectorXd evaluate(const VectorXd& aQueryVector) const;
 
-        /// @brief              Evaluate the linear interpolator
-        ///
-        /// @code
-        ///                     VectorXd values = linear.evaluate({1.0, 5.0, 6.0}) ;
-        /// @endcode
-        ///
-        /// @param              [in] aQueryVector A vector of x values
-        /// @return             Vector of y values
+    /// @brief              Evaluate the linear interpolator
+    ///
+    /// @code
+    ///                     double values = linear.evaluate(5.0) ;
+    /// @endcode
+    ///
+    /// @param              [in] aQueryValue An x value
+    /// @return             Vector of y values
 
-        VectorXd                evaluate                                    (   const   VectorXd&                   aQueryVector                                ) const ;
+    double evaluate(const double& aQueryValue) const;
 
-        /// @brief              Evaluate the linear interpolator
-        ///
-        /// @code
-        ///                     double values = linear.evaluate(5.0) ;
-        /// @endcode
-        ///
-        /// @param              [in] aQueryValue An x value
-        /// @return             Vector of y values
+   private:
+    VectorXd x_;
+    VectorXd y_;
 
-        double                  evaluate                                    (   const   double&                     aQueryValue                                 ) const ;
+    Pair<Index, Index> findIndexRange(const double& aQueryValue) const;
+};
 
-    private:
-
-        VectorXd                x_ ;
-        VectorXd                y_ ;
-
-        Pair<Index, Index>      findIndexRange                              (   const   double&                     aQueryValue                                 ) const ;
-
-} ;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-}
-}
-}
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+}  // namespace interp
+}  // namespace curvefitting
+}  // namespace math
+}  // namespace ostk
 
 #endif
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

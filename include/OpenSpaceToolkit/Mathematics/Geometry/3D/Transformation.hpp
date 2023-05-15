@@ -1,25 +1,16 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp
-/// @author         Lucas Brémond <lucas@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Apache License 2.0
 
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation__
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
-#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
-
 #include <OpenSpaceToolkit/Core/Types/String.hpp>
 #include <OpenSpaceToolkit/Core/Types/Unique.hpp>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
+#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
 
 namespace ostk
 {
@@ -30,138 +21,118 @@ namespace geom
 namespace d3
 {
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+class Transformation;
 
-class Transformation ;
+using ostk::core::types::Unique;
+using ostk::core::types::String;
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-using ostk::core::types::Unique ;
-using ostk::core::types::String ;
-
-using ostk::math::obj::Vector3d ;
-using ostk::math::obj::Vector4d ;
-using ostk::math::obj::Matrix4d ;
-using ostk::math::geom::Angle ;
-using ostk::math::geom::d3::Object ;
-using ostk::math::geom::d3::objects::Point ;
-using ostk::math::geom::d3::trf::rot::RotationVector ;
-using ostk::math::geom::d3::trf::rot::RotationMatrix ;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+using ostk::math::obj::Vector3d;
+using ostk::math::obj::Vector4d;
+using ostk::math::obj::Matrix4d;
+using ostk::math::geom::Angle;
+using ostk::math::geom::d3::Object;
+using ostk::math::geom::d3::objects::Point;
+using ostk::math::geom::d3::trf::rot::RotationVector;
+using ostk::math::geom::d3::trf::rot::RotationMatrix;
 
 class Transformation
 {
+   public:
+    enum class Type
+    {
 
-    public:
+        Undefined,
+        Identity,
+        Translation,
+        Rotation,
+        Scaling,
+        Reflection,
+        Shear,
+        Affine
 
-        enum class Type
-        {
+    };
 
-            Undefined,
-            Identity,
-            Translation,
-            Rotation,
-            Scaling,
-            Reflection,
-            Shear,
-            Affine
+    /// @brief              Constructor
+    ///
+    /// @param              [in] aMatrix A transformation matrix
 
-        } ;
+    Transformation(const Matrix4d& aMatrix);
 
-        /// @brief              Constructor
-        ///
-        /// @param              [in] aMatrix A transformation matrix
+    bool operator==(const Transformation& aTransformation) const;
 
-                                Transformation                              (   const   Matrix4d&                   aMatrix                                     ) ;
+    bool operator!=(const Transformation& aTransformation) const;
 
-        bool                    operator ==                                 (   const   Transformation&             aTransformation                             ) const ;
+    Transformation operator*(const Transformation& aTransformation) const;
 
-        bool                    operator !=                                 (   const   Transformation&             aTransformation                             ) const ;
+    Vector4d operator*(const Vector4d& aVector) const;
 
-        Transformation          operator *                                  (   const   Transformation&             aTransformation                             ) const ;
+    Transformation& operator*=(const Transformation& aTransformation);
 
-        Vector4d                operator *                                  (   const   Vector4d&                   aVector                                     ) const ;
+    friend std::ostream& operator<<(std::ostream& anOutputStream, const Transformation& aTransformation);
 
-        Transformation&         operator *=                                 (   const   Transformation&             aTransformation                             ) ;
+    bool isDefined() const;
 
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   Transformation&             aTransformation                             ) ;
+    bool isIdentity() const;
 
-        bool                    isDefined                                   ( ) const ;
+    /// @brief              Returns true if transformation is rigid
+    ///
+    ///                     A rigid transformation preserves the Euclidean distance between every pair of points.
+    ///                     The rigid transformations include rotations, translations, reflections, or their
+    ///                     combination.
+    ///
+    /// @ref                https://en.wikipedia.org/wiki/Rigid_transformation
+    ///
+    /// @return             True if transformation is rigid
 
-        bool                    isIdentity                                  ( ) const ;
+    bool isRigid() const;
 
-        /// @brief              Returns true if transformation is rigid
-        ///
-        ///                     A rigid transformation preserves the Euclidean distance between every pair of points.
-        ///                     The rigid transformations include rotations, translations, reflections, or their combination.
-        ///
-        /// @ref                https://en.wikipedia.org/wiki/Rigid_transformation
-        ///
-        /// @return             True if transformation is rigid
+    Transformation::Type getType() const;
 
-        bool                    isRigid                                     ( ) const ;
+    Matrix4d getMatrix() const;
 
-        Transformation::Type    getType                                     ( ) const ;
+    Transformation getInverse() const;
 
-        Matrix4d                getMatrix                                   ( ) const ;
+    Point applyTo(const Point& aPoint) const;
 
-        Transformation          getInverse                                  ( ) const ;
+    Vector3d applyTo(const Vector3d& aVector) const;
 
-        Point                   applyTo                                     (   const   Point&                      aPoint                                      ) const ;
+    /// @brief              Print transformation
+    ///
+    /// @param              [in] anOutputStream An output stream
+    /// @param              [in] (optional) displayDecorators If true, display decorators
 
-        Vector3d                applyTo                                     (   const   Vector3d&                   aVector                                     ) const ;
+    virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const;
 
-        /// @brief              Print transformation
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] (optional) displayDecorators If true, display decorators
+    static Transformation Undefined();
 
-        virtual void            print                                       (           std::ostream&               anOutputStream,
-                                                                                        bool                        displayDecorators                           =   true ) const ;
+    static Transformation Identity();
 
-        static Transformation   Undefined                                   ( ) ;
+    static Transformation Translation(const Vector3d& aTranslationVector);
 
-        static Transformation   Identity                                    ( ) ;
+    static Transformation Rotation(const RotationVector& aRotationVector);
 
-        static Transformation   Translation                                 (   const   Vector3d&                   aTranslationVector                          ) ;
+    static Transformation Rotation(const RotationMatrix& aRotationMatrix);
 
-        static Transformation   Rotation                                    (   const   RotationVector&             aRotationVector                             ) ;
+    static Transformation RotationAround(const Point& aPoint, const RotationVector& aRotationVector);
 
-        static Transformation   Rotation                                    (   const   RotationMatrix&             aRotationMatrix                             ) ;
+    static String StringFromType(const Transformation::Type& aType);
 
-        static Transformation   RotationAround                              (   const   Point&                      aPoint,
-                                                                                const   RotationVector&             aRotationVector                             ) ;
+    static Transformation::Type TypeOfMatrix(const Matrix4d& aMatrix);
 
-        static String           StringFromType                              (   const   Transformation::Type&       aType                                       ) ;
+    static bool IsRigid(const Matrix4d& aMatrix);
 
-        static Transformation::Type TypeOfMatrix                            (   const   Matrix4d&                   aMatrix                                     ) ;
+   private:
+    Transformation::Type type_;
+    Matrix4d matrix_;
 
-        static bool             IsRigid                                     (   const   Matrix4d&                   aMatrix                                     ) ;
+    bool isRigid_;
 
-    private:
+    Transformation(const Transformation::Type& aType, const Matrix4d& aMatrix, const bool isRigid);
+};
 
-        Transformation::Type    type_ ;
-        Matrix4d                matrix_ ;
-
-        bool                    isRigid_ ;
-
-                                Transformation                              (   const   Transformation::Type&       aType,
-                                                                                const   Matrix4d&                   aMatrix,
-                                                                                const   bool                        isRigid                                     ) ;
-
-} ;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-}
-}
-}
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+}  // namespace d3
+}  // namespace geom
+}  // namespace math
+}  // namespace ostk
 
 #endif
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

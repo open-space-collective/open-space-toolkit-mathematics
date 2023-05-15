@@ -1,15 +1,7 @@
-################################################################################################################################################################
-
-# @project        Open Space Toolkit ▸ Mathematics
-# @file           bindings/python/test/test_objects.py
-# @author         Lucas Brémond <lucas@loftorbital.com>
-# @license        Apache License 2.0
-
-################################################################################################################################################################
+# Apache License 2.0
 
 import ostk.mathematics as mathematics
 
-################################################################################################################################################################
 
 Angle = mathematics.geometry.Angle
 
@@ -30,5 +22,3 @@ Transformation3d = mathematics.geometry.d3.Transformation
 Quaternion = mathematics.geometry.d3.transformations.rotations.Quaternion
 RotationVector = mathematics.geometry.d3.transformations.rotations.RotationVector
 RotationMatrix = mathematics.geometry.d3.transformations.rotations.RotationMatrix
-
-################################################################################################################################################################

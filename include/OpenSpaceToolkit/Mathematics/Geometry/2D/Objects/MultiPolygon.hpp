@@ -1,28 +1,19 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp
-/// @author         Lucas Brémond <lucas@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Apache License 2.0
 
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon__
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/LineString.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Segment.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
-
 #include <OpenSpaceToolkit/Core/Containers/Array.hpp>
-#include <OpenSpaceToolkit/Core/Types/Size.hpp>
 #include <OpenSpaceToolkit/Core/Types/Index.hpp>
+#include <OpenSpaceToolkit/Core/Types/Size.hpp>
 #include <OpenSpaceToolkit/Core/Types/Unique.hpp>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/LineString.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Segment.hpp>
 
 namespace ostk
 {
@@ -35,205 +26,191 @@ namespace d2
 namespace objects
 {
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+using ostk::core::types::Unique;
+using ostk::core::ctnr::Index;
+using ostk::core::ctnr::Size;
+using ostk::core::ctnr::Array;
 
-using ostk::core::types::Unique ;
-using ostk::core::ctnr::Index ;
-using ostk::core::ctnr::Size ;
-using ostk::core::ctnr::Array ;
+using ostk::math::geom::d2::Object;
+using ostk::math::geom::d2::objects::Point;
+using ostk::math::geom::d2::objects::Segment;
+using ostk::math::geom::d2::objects::LineString;
 
-using ostk::math::geom::d2::Object ;
-using ostk::math::geom::d2::objects::Point ;
-using ostk::math::geom::d2::objects::Segment ;
-using ostk::math::geom::d2::objects::LineString ;
-
-using Polygon2d = ostk::math::geom::d2::objects::Polygon ;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+using Polygon2d = ostk::math::geom::d2::objects::Polygon;
 
 /// @brief                      Multi-polygon
 
 class MultiPolygon : public Object
 {
+   public:
+    typedef Array<Polygon2d>::ConstIterator ConstIterator;
 
-    public:
+    /// @brief              Constructor
+    ///
+    /// @param              [in] aPolygonArray An array of polygons
 
-        typedef                 Array<Polygon2d>::ConstIterator                 ConstIterator ;
+    MultiPolygon(const Array<Polygon2d>& aPolygonArray = Array<Polygon2d>::Empty());
 
-        /// @brief              Constructor
-        ///
-        /// @param              [in] aPolygonArray An array of polygons
+    /// @brief              Copy constructor
+    ///
+    /// @param              [in] aMultiPolygon A multi-polygon
 
-                                MultiPolygon                                (   const   Array<Polygon2d>&           aPolygonArray                               =   Array<Polygon2d>::Empty() ) ;
+    MultiPolygon(const MultiPolygon& aMultiPolygon);
 
-        /// @brief              Copy constructor
-        ///
-        /// @param              [in] aMultiPolygon A multi-polygon
+    /// @brief              Destructor (virtual)
 
-                                MultiPolygon                                (   const   MultiPolygon&               aMultiPolygon                               ) ;
+    virtual ~MultiPolygon() override;
 
-        /// @brief              Destructor (virtual)
+    /// @brief              Copy assignment operator
+    ///
+    /// @param              [in] aMultiPolygon A multi-polygon
+    /// @return             Reference to multi-polygon
 
-        virtual                 ~MultiPolygon                               ( ) override ;
+    MultiPolygon& operator=(const MultiPolygon& aMultiPolygon);
 
-        /// @brief              Copy assignment operator
-        ///
-        /// @param              [in] aMultiPolygon A multi-polygon
-        /// @return             Reference to multi-polygon
+    /// @brief              Clone multi-polygon
+    ///
+    /// @return             Pointer to cloned multi-polygon
 
-        MultiPolygon&           operator =                                  (   const   MultiPolygon&               aMultiPolygon                               ) ;
+    virtual MultiPolygon* clone() const override;
 
-        /// @brief              Clone multi-polygon
-        ///
-        /// @return             Pointer to cloned multi-polygon
+    /// @brief              Equal to operator
+    ///
+    /// @param              [in] aMultiPolygon A multi-polygon
+    /// @return             True if multi-polygons are equal
 
-        virtual MultiPolygon*   clone                                       ( ) const override ;
+    bool operator==(const MultiPolygon& aMultiPolygon) const;
 
-        /// @brief              Equal to operator
-        ///
-        /// @param              [in] aMultiPolygon A multi-polygon
-        /// @return             True if multi-polygons are equal
+    /// @brief              Not equal to operator
+    ///
+    /// @param              [in] aMultiPolygon A multi-polygon
+    /// @return             True if multi-polygons are not equal
 
-        bool                    operator ==                                 (   const   MultiPolygon&               aMultiPolygon                               ) const ;
+    bool operator!=(const MultiPolygon& aMultiPolygon) const;
 
-        /// @brief              Not equal to operator
-        ///
-        /// @param              [in] aMultiPolygon A multi-polygon
-        /// @return             True if multi-polygons are not equal
+    /// @brief              Check if multi-polygon is defined
+    ///
+    /// @return             True if multi-polygon is defined
 
-        bool                    operator !=                                 (   const   MultiPolygon&               aMultiPolygon                               ) const ;
+    virtual bool isDefined() const override;
 
-        /// @brief              Check if multi-polygon is defined
-        ///
-        /// @return             True if multi-polygon is defined
+    /// @brief              Check if multi-polygon contains point
+    ///
+    /// @code
+    ///                     MultiPolygon multiPolygon = ... ;
+    ///                     Point point = ... ;
+    ///                     multiPolygon.contains(point) ;
+    /// @endcode
+    ///
+    /// @param              [in] aPoint A point
+    /// @return             True if multi-polygon contains point
 
-        virtual bool            isDefined                                   ( ) const override ;
+    bool contains(const Point& aPoint) const;
 
-        /// @brief              Check if multi-polygon contains point
-        ///
-        /// @code
-        ///                     MultiPolygon multiPolygon = ... ;
-        ///                     Point point = ... ;
-        ///                     multiPolygon.contains(point) ;
-        /// @endcode
-        ///
-        /// @param              [in] aPoint A point
-        /// @return             True if multi-polygon contains point
+    /// @brief              Check if multi-polygon contains point set
+    ///
+    /// @code
+    ///                     MultiPolygon multiPolygon = ... ;
+    ///                     PointSet pointSet = ... ;
+    ///                     multiPolygon.contains(pointSet) ;
+    /// @endcode
+    ///
+    /// @param              [in] aPointSet A point set
+    /// @return             True if multi-polygon contains point set
 
-        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+    bool contains(const PointSet& aPointSet) const;
 
-        /// @brief              Check if multi-polygon contains point set
-        ///
-        /// @code
-        ///                     MultiPolygon multiPolygon = ... ;
-        ///                     PointSet pointSet = ... ;
-        ///                     multiPolygon.contains(pointSet) ;
-        /// @endcode
-        ///
-        /// @param              [in] aPointSet A point set
-        /// @return             True if multi-polygon contains point set
+    /// @brief              Get number of polygons
+    ///
+    /// @return             Number of polygons
 
-        bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
+    Size getPolygonCount() const;
 
-        /// @brief              Get number of polygons
-        ///
-        /// @return             Number of polygons
+    /// @brief              Get polygons
+    ///
+    /// @return             Array of polygons
 
-        Size                    getPolygonCount                             ( ) const ;
+    Array<Polygon2d> getPolygons() const;
 
-        /// @brief              Get polygons
-        ///
-        /// @return             Array of polygons
+    /// @brief              Get multi-polygon convex hull
+    ///
+    ///                     https://en.wikipedia.org/wiki/Convex_hull
+    ///
+    /// @return             Multi-polygon convex hull
 
-        Array<Polygon2d>        getPolygons                                 ( ) const ;
+    Polygon2d getConvexHull() const;
 
-        /// @brief              Get multi-polygon convex hull
-        ///
-        ///                     https://en.wikipedia.org/wiki/Convex_hull
-        ///
-        /// @return             Multi-polygon convex hull
+    /// @brief              Compute intersection of multi-polygon with multi-polygon
+    ///
+    /// @param              [in] aMultiPolygon A multi-polygon
+    /// @return             A multi-polygon
 
-        Polygon2d               getConvexHull                               ( ) const ;
+    MultiPolygon unionWith(const MultiPolygon& aMultiPolygon) const;
 
-        /// @brief              Compute intersection of multi-polygon with multi-polygon
-        ///
-        /// @param              [in] aMultiPolygon A multi-polygon
-        /// @return             A multi-polygon
+    /// @brief              Get string representation
+    ///
+    /// @param              [in] aFormat A format
+    /// @return             String representation
 
-        MultiPolygon            unionWith                                   (   const   MultiPolygon&               aMultiPolygon                               ) const ;
+    virtual String toString(
+        const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
+    ) const override;
 
-        /// @brief              Get string representation
-        ///
-        /// @param              [in] aFormat A format
-        /// @return             String representation
+    /// @brief              Print multi-polygon
+    ///
+    /// @param              [in] anOutputStream An output stream
+    /// @param              [in] (optional) displayDecorators If true, display decorators
 
-        virtual String          toString                                    (   const   Object::Format&             aFormat                                     =   Object::Format::Standard,
-                                                                                const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const override ;
+    virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
-        /// @brief              Print multi-polygon
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] (optional) displayDecorators If true, display decorators
+    /// @brief              Get begin const iterator over polygons
+    ///
+    /// @return             Const iterator
 
-        virtual void            print                                       (           std::ostream&               anOutputStream,
-                                                                                        bool                        displayDecorators                           =   true ) const override ;
+    MultiPolygon::ConstIterator begin() const;
 
-        /// @brief              Get begin const iterator over polygons
-        ///
-        /// @return             Const iterator
+    /// @brief              Get end const iterator over polygons
+    ///
+    /// @return             Const iterator
 
-        MultiPolygon::ConstIterator begin                                   ( ) const ;
+    MultiPolygon::ConstIterator end() const;
 
-        /// @brief              Get end const iterator over polygons
-        ///
-        /// @return             Const iterator
+    /// @brief              Apply transformation to multi-polygon
+    ///
+    /// @param              [in] aTransformation A transformation
 
-        MultiPolygon::ConstIterator end                                     ( ) const ;
+    virtual void applyTransformation(const Transformation& aTransformation) override;
 
-        /// @brief              Apply transformation to multi-polygon
-        ///
-        /// @param              [in] aTransformation A transformation
+    /// @brief              Constructs an undefined multi-polygon
+    ///
+    /// @code
+    ///                     MultiPolygon multiPolygon = MultiPolygon::Undefined() ; // Undefined
+    /// @endcode
+    ///
+    /// @return             Undefined multi-polygon
 
-        virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) override ;
+    static MultiPolygon Undefined();
 
-        /// @brief              Constructs an undefined multi-polygon
-        ///
-        /// @code
-        ///                     MultiPolygon multiPolygon = MultiPolygon::Undefined() ; // Undefined
-        /// @endcode
-        ///
-        /// @return             Undefined multi-polygon
+    /// @brief              Constructs a multi-polygon from a polygon
+    ///
+    /// @code
+    ///                     MultiPolygon multiPolygon = MultiPolygon::Polygon(polygon) ;
+    /// @endcode
+    ///
+    /// @return             Multi-polygon
 
-        static MultiPolygon     Undefined                                   ( ) ;
+    static MultiPolygon Polygon(const Polygon2d& aPolygon);
 
-        /// @brief              Constructs a multi-polygon from a polygon
-        ///
-        /// @code
-        ///                     MultiPolygon multiPolygon = MultiPolygon::Polygon(polygon) ;
-        /// @endcode
-        ///
-        /// @return             Multi-polygon
+   private:
+    class Impl;
 
-        static MultiPolygon     Polygon                                     (   const   Polygon2d&                  aPolygon                                    ) ;
+    Unique<MultiPolygon::Impl> implUPtr_;
+};
 
-    private:
-
-        class Impl ;
-
-        Unique<MultiPolygon::Impl> implUPtr_ ;
-
-} ;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-}
-}
-}
-}
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+}  // namespace objects
+}  // namespace d2
+}  // namespace geom
+}  // namespace math
+}  // namespace ostk
 
 #endif
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

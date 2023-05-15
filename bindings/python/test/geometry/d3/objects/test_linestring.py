@@ -1,11 +1,4 @@
-################################################################################################################################################################
-
-# @project        Open Space Toolkit ▸ Mathematics
-# @file           bindings/python/test/geometry/d3/objects/test_linestring.py
-# @author         Remy Derollez <remy@loftorbital.com>
-# @license        Apache License 2.0
-
-################################################################################################################################################################
+# Apache License 2.0
 
 import pytest
 
@@ -16,17 +9,14 @@ import ostk.mathematics as mathematics
 
 from ostk.core.types import String
 
-################################################################################################################################################################
 
 Object = mathematics.geometry.d3.Object
 Point = mathematics.geometry.d3.objects.Point
 LineString = mathematics.geometry.d3.objects.LineString
 Transformation = mathematics.geometry.d3.Transformation
 
-################################################################################################################################################################
 
-def test_geometry_d3_objects_linestring_constructor ():
-
+def test_geometry_d3_objects_linestring_constructor():
     point_1: Point = Point(-1.0, 1.0, 1.0)
     point_2: Point = Point(1.0, 1.0, -1.0)
     point_3: Point = Point(1.0, -1.0, 1.0)
@@ -56,8 +46,8 @@ def test_geometry_d3_objects_linestring_constructor ():
     assert isinstance(linestring, Object)
     assert linestring.is_defined()
 
-def test_geometry_d3_objects_linestring_empty ():
 
+def test_geometry_d3_objects_linestring_empty():
     linestring: LineString = LineString.empty()
 
     assert linestring is not None
@@ -66,8 +56,8 @@ def test_geometry_d3_objects_linestring_empty ():
     assert linestring.is_defined() is False
     assert linestring.is_empty()
 
-def test_geometry_d3_objects_linestring_comparators ():
 
+def test_geometry_d3_objects_linestring_comparators():
     point_1: Point = Point(-1.0, 1.0, 0.0)
     point_2: Point = Point(1.0, 1.0, -1.0)
 
@@ -83,8 +73,8 @@ def test_geometry_d3_objects_linestring_comparators ():
     assert linestring_2 != linestring_4
     assert linestring_3 != linestring_4
 
-def test_geometry_d3_objects_linestring_is_near ():
 
+def test_geometry_d3_objects_linestring_is_near():
     point_1: Point = Point(-1.0, 1.0, 0.0)
     point_2: Point = Point(1.0, 1.0, 0.0)
 
@@ -108,8 +98,8 @@ def test_geometry_d3_objects_linestring_is_near ():
     assert linestring_2.is_near(linestring_1, 1e-1)
     assert linestring_2.is_near(linestring_1, 1e-2)
 
-def test_geometry_d3_objects_linestring_getters ():
 
+def test_geometry_d3_objects_linestring_getters():
     point_1: Point = Point(-1.0, 1.0, 0.0)
     point_2: Point = Point(1.0, 1.0, 0.0)
 
@@ -126,8 +116,8 @@ def test_geometry_d3_objects_linestring_getters ():
     assert linestring_2.get_point_closest_to(Point(-0.9, 1.0, 0.0)) == point_1
     assert linestring_2.get_point_closest_to(Point(0.9, 1.0, 0.0)) == point_2
 
-def test_geometry_d3_objects_linestring_len ():
 
+def test_geometry_d3_objects_linestring_len():
     point_1: Point = Point(-1.0, 1.0, 0.0)
     point_2: Point = Point(1.0, 1.0, 0.0)
 
@@ -141,23 +131,22 @@ def test_geometry_d3_objects_linestring_len ():
     assert len(linestring) == 2
     assert len(linestring) == linestring.get_point_count()
 
-def test_geometry_d3_objects_linestring_iter ():
 
+def test_geometry_d3_objects_linestring_iter():
     point_1: Point = Point(-1.0, 1.0, 0.0)
     point_2: Point = Point(1.0, 1.0, 1.0)
 
     linestring: LineString = LineString([point_1, point_2])
 
     for point in linestring:
-
         assert isinstance(point, Point)
 
     assert iter(linestring) is not None
     assert isinstance(iter(linestring), Iterator)
     assert isinstance(iter(linestring), Iterable)
 
-def test_geometry_d3_objects_linestring_getitem ():
 
+def test_geometry_d3_objects_linestring_getitem():
     point_1: Point = Point(-1.0, 1.0, 0.0)
     point_2: Point = Point(1.0, 1.0, 1.0)
 
@@ -170,7 +159,6 @@ def test_geometry_d3_objects_linestring_getitem ():
     assert isinstance(linestring[1], Point)
 
     with pytest.raises(RuntimeError):
-
         point = linestring[2]
 
     linestring_list = list(linestring)
@@ -180,6 +168,5 @@ def test_geometry_d3_objects_linestring_getitem ():
     assert isinstance(linestring_list[1], Point)
     assert len(linestring_list) == 2
 
-# def test_geometry_d3_objects_linestring_apply_transformation ():
 
-################################################################################################################################################################
+# def test_geometry_d3_objects_linestring_apply_transformation ():

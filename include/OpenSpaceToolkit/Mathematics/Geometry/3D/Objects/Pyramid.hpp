@@ -1,25 +1,16 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Pyramid.hpp
-/// @author         Lucas Brémond <lucas@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Apache License 2.0
 
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid__
 
+#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
+#include <OpenSpaceToolkit/Core/Types/Index.hpp>
+#include <OpenSpaceToolkit/Core/Types/Size.hpp>
+
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Polygon.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ray.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
-
-#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
-#include <OpenSpaceToolkit/Core/Types/Size.hpp>
-#include <OpenSpaceToolkit/Core/Types/Index.hpp>
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace ostk
 {
@@ -32,269 +23,250 @@ namespace d3
 namespace objects
 {
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+using ostk::core::ctnr::Index;
+using ostk::core::ctnr::Size;
+using ostk::core::ctnr::Array;
 
-using ostk::core::ctnr::Index ;
-using ostk::core::ctnr::Size ;
-using ostk::core::ctnr::Array ;
+using ostk::math::geom::d3::Object;
+using ostk::math::geom::d3::objects::Point;
+using ostk::math::geom::d3::objects::Ray;
+using ostk::math::geom::d3::objects::Polygon;
+using ostk::math::geom::d3::Intersection;
 
-using ostk::math::geom::d3::Object ;
-using ostk::math::geom::d3::objects::Point ;
-using ostk::math::geom::d3::objects::Ray ;
-using ostk::math::geom::d3::objects::Polygon ;
-using ostk::math::geom::d3::Intersection ;
+#define DEFAULT_ONLY_IN_SIGHT false
+#define DEFAULT_DISCRETIZATION_LEVEL 40
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-#define                         DEFAULT_ONLY_IN_SIGHT                           false
-#define                         DEFAULT_DISCRETIZATION_LEVEL                    40
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-class Line ;
-class Ray ;
-class Segment ;
-class Plane ;
-class Polygon ;
-class Sphere ;
-class Ellipsoid ;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+class Line;
+class Ray;
+class Segment;
+class Plane;
+class Polygon;
+class Sphere;
+class Ellipsoid;
 
 /// @brief                      Pyramid
 ///
-///                             A pyramid is a polyhedron formed by connecting a polygonal base and a point, called the apex.
-///                             Each base edge and apex form a triangle, called a lateral face.
+///                             A pyramid is a polyhedron formed by connecting a polygonal base and a point, called the
+///                             apex. Each base edge and apex form a triangle, called a lateral face.
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Pyramid_(geometry)
 
 class Pyramid : public Object
 {
+   public:
+    /// @brief              Constructor
+    ///
+    /// @code
+    ///                     Polygon base = ... ;
+    ///                     Point apex = { 0.0, 0.0, 1.0 } ;
+    ///                     Pyramid pyramid = { base, apex } ;
+    /// @endcode
+    ///
+    /// @param              [in] aBase A pyramid base
+    /// @param              [in] anApex A pyramid apex
 
-    public:
+    Pyramid(const Polygon& aBase, const Point& anApex);
 
-        /// @brief              Constructor
-        ///
-        /// @code
-        ///                     Polygon base = ... ;
-        ///                     Point apex = { 0.0, 0.0, 1.0 } ;
-        ///                     Pyramid pyramid = { base, apex } ;
-        /// @endcode
-        ///
-        /// @param              [in] aBase A pyramid base
-        /// @param              [in] anApex A pyramid apex
+    /// @brief              Clone pyramid
+    ///
+    /// @return             Pointer to cloned pyramid
 
-                                Pyramid                                     (   const   Polygon&                    aBase,
-                                                                                const   Point&                      anApex                                      ) ;
+    virtual Pyramid* clone() const override;
 
-        /// @brief              Clone pyramid
-        ///
-        /// @return             Pointer to cloned pyramid
+    /// @brief              Equal to operator
+    ///
+    /// @param              [in] aPyramid A pyramid
+    /// @return             True if pyramids are equal
 
-        virtual Pyramid*        clone                                       ( ) const override ;
+    bool operator==(const Pyramid& aPyramid) const;
 
-        /// @brief              Equal to operator
-        ///
-        /// @param              [in] aPyramid A pyramid
-        /// @return             True if pyramids are equal
+    /// @brief              Not equal to operator
+    ///
+    /// @param              [in] aPyramid A pyramid
+    /// @return             True if pyramids are not equal
 
-        bool                    operator ==                                 (   const   Pyramid&                    aPyramid                                    ) const ;
+    bool operator!=(const Pyramid& aPyramid) const;
 
-        /// @brief              Not equal to operator
-        ///
-        /// @param              [in] aPyramid A pyramid
-        /// @return             True if pyramids are not equal
+    /// @brief              Check if pyramid is defined
+    ///
+    /// @return             True if pyramid is defined
 
-        bool                    operator !=                                 (   const   Pyramid&                    aPyramid                                    ) const ;
+    virtual bool isDefined() const override;
 
-        /// @brief              Check if pyramid is defined
-        ///
-        /// @return             True if pyramid is defined
+    /// @brief              Check if pyramid intersects sphere
+    ///
+    /// @code
+    ///                     Pyramid pyramid = ... ;
+    ///                     Sphere sphere = ... ;
+    ///                     pyramid.intersects(sphere) ;
+    /// @endcode
+    ///
+    /// @param              [in] aSphere A sphere
+    /// @param              [in] aDiscretizationLevel (optional) The polygonal discretization level
+    /// @return             True if pyramid intersects sphere
 
-        virtual bool            isDefined                                   ( ) const override ;
+    bool intersects(const Sphere& aSphere, const Size aDiscretizationLevel = DEFAULT_DISCRETIZATION_LEVEL) const;
 
-        /// @brief              Check if pyramid intersects sphere
-        ///
-        /// @code
-        ///                     Pyramid pyramid = ... ;
-        ///                     Sphere sphere = ... ;
-        ///                     pyramid.intersects(sphere) ;
-        /// @endcode
-        ///
-        /// @param              [in] aSphere A sphere
-        /// @param              [in] aDiscretizationLevel (optional) The polygonal discretization level
-        /// @return             True if pyramid intersects sphere
+    /// @brief              Check if pyramid intersects ellipsoid
+    ///
+    /// @code
+    ///                     Pyramid pyramid = ... ;
+    ///                     Ellipsoid ellipsoid = ... ;
+    ///                     pyramid.intersects(ellipsoid) ;
+    /// @endcode
+    ///
+    /// @param              [in] anEllipsoid An ellipsoid
+    /// @param              [in] aDiscretizationLevel (optional) The polygonal discretization level
+    /// @return             True if pyramid intersects ellipsoid
 
-        bool                    intersects                                  (   const   Sphere&                     aSphere,
-                                                                                const   Size                        aDiscretizationLevel                        =   DEFAULT_DISCRETIZATION_LEVEL ) const ;
+    bool intersects(const Ellipsoid& anEllipsoid, const Size aDiscretizationLevel = DEFAULT_DISCRETIZATION_LEVEL) const;
 
-        /// @brief              Check if pyramid intersects ellipsoid
-        ///
-        /// @code
-        ///                     Pyramid pyramid = ... ;
-        ///                     Ellipsoid ellipsoid = ... ;
-        ///                     pyramid.intersects(ellipsoid) ;
-        /// @endcode
-        ///
-        /// @param              [in] anEllipsoid An ellipsoid
-        /// @param              [in] aDiscretizationLevel (optional) The polygonal discretization level
-        /// @return             True if pyramid intersects ellipsoid
+    /// @brief              Check if pyramid contains point
+    ///
+    /// @code
+    ///                     Pyramid pyramid = ... ;
+    ///                     Point point = ... ;
+    ///                     pyramid.contains(point) ;
+    /// @endcode
+    ///
+    /// @param              [in] aPoint A point
+    /// @return             True if pyramid contains point
 
-        bool                    intersects                                  (   const   Ellipsoid&                  anEllipsoid,
-                                                                                const   Size                        aDiscretizationLevel                        =   DEFAULT_DISCRETIZATION_LEVEL ) const ;
+    bool contains(const Point& aPoint) const;
 
-        /// @brief              Check if pyramid contains point
-        ///
-        /// @code
-        ///                     Pyramid pyramid = ... ;
-        ///                     Point point = ... ;
-        ///                     pyramid.contains(point) ;
-        /// @endcode
-        ///
-        /// @param              [in] aPoint A point
-        /// @return             True if pyramid contains point
+    /// @brief              Check if pyramid contains point set
+    ///
+    /// @code
+    ///                     Pyramid pyramid = ... ;
+    ///                     PointSet pointSet = ... ;
+    ///                     pyramid.contains(pointSet) ;
+    /// @endcode
+    ///
+    /// @param              [in] aPointSet A point set
+    /// @return             True if pyramid contains point set
 
-        bool                    contains                                    (   const   Point&                      aPoint                                      ) const ;
+    bool contains(const PointSet& aPointSet) const;
 
-        /// @brief              Check if pyramid contains point set
-        ///
-        /// @code
-        ///                     Pyramid pyramid = ... ;
-        ///                     PointSet pointSet = ... ;
-        ///                     pyramid.contains(pointSet) ;
-        /// @endcode
-        ///
-        /// @param              [in] aPointSet A point set
-        /// @return             True if pyramid contains point set
+    /// @brief              Check if pyramid contains segment
+    ///
+    /// @code
+    ///                     Pyramid pyramid = ... ;
+    ///                     Segment segment = ... ;
+    ///                     pyramid.contains(segment) ;
+    /// @endcode
+    ///
+    /// @param              [in] aSegment A segment
+    /// @return             True if pyramid contains segment
 
-        bool                    contains                                    (   const   PointSet&                   aPointSet                                   ) const ;
+    bool contains(const Segment& aSegment) const;
 
-        /// @brief              Check if pyramid contains segment
-        ///
-        /// @code
-        ///                     Pyramid pyramid = ... ;
-        ///                     Segment segment = ... ;
-        ///                     pyramid.contains(segment) ;
-        /// @endcode
-        ///
-        /// @param              [in] aSegment A segment
-        /// @return             True if pyramid contains segment
+    /// @brief              Check if pyramid contains ellipsoid
+    ///
+    /// @code
+    ///                     Pyramid pyramid = ... ;
+    ///                     Ellipsoid ellipsoid = ... ;
+    ///                     pyramid.contains(ellipsoid) ;
+    /// @endcode
+    ///
+    /// @param              [in] anEllipsoid An ellipsoid
+    /// @return             True if pyramid contains ellipsoid
 
-        bool                    contains                                    (   const   Segment&                    aSegment                                    ) const ;
+    bool contains(const Ellipsoid& anEllipsoid) const;
 
-        /// @brief              Check if pyramid contains ellipsoid
-        ///
-        /// @code
-        ///                     Pyramid pyramid = ... ;
-        ///                     Ellipsoid ellipsoid = ... ;
-        ///                     pyramid.contains(ellipsoid) ;
-        /// @endcode
-        ///
-        /// @param              [in] anEllipsoid An ellipsoid
-        /// @return             True if pyramid contains ellipsoid
+    /// @brief              Get pyramid base
+    ///
+    /// @return             Pyramid base
 
-        bool                    contains                                    (   const   Ellipsoid&                  anEllipsoid                                 ) const ;
+    Polygon getBase() const;
 
-        /// @brief              Get pyramid base
-        ///
-        /// @return             Pyramid base
+    /// @brief              Get pyramid apex
+    ///
+    /// @return             Pyramid apex
 
-        Polygon                 getBase                                     ( ) const ;
+    Point getApex() const;
 
-        /// @brief              Get pyramid apex
-        ///
-        /// @return             Pyramid apex
+    /// @brief              Get number of lateral faces
+    ///
+    /// @return             Number of lateral faces
 
-        Point                   getApex                                     ( ) const ;
+    Size getLateralFaceCount() const;
 
-        /// @brief              Get number of lateral faces
-        ///
-        /// @return             Number of lateral faces
+    /// @brief              Get lateral face at index
+    ///
+    /// @param              [in] aLateralFaceIndex A lateral face index
+    /// @return             Lateral face
 
-        Size                    getLateralFaceCount                         ( ) const ;
+    Polygon getLateralFaceAt(const Index aLateralFaceIndex) const;
 
-        /// @brief              Get lateral face at index
-        ///
-        /// @param              [in] aLateralFaceIndex A lateral face index
-        /// @return             Lateral face
+    /// @brief              Get rays of lateral face at index
+    ///
+    /// @param              [in] aLateralFaceIndex A lateral face index
+    /// @param              [in] aRayCount A number of rays (at least 2)
+    /// @return             Array of rays
 
-        Polygon                 getLateralFaceAt                            (   const   Index                       aLateralFaceIndex                           ) const ;
+    Array<Ray> getRaysOfLateralFaceAt(const Index aLateralFaceIndex, const Size aRayCount = 2) const;
 
-        /// @brief              Get rays of lateral face at index
-        ///
-        /// @param              [in] aLateralFaceIndex A lateral face index
-        /// @param              [in] aRayCount A number of rays (at least 2)
-        /// @return             Array of rays
+    /// @brief              Get rays of lateral faces
+    ///
+    /// @param              [in] aRayCount A number of rays (at least face count)
+    /// @return             Array of rays
 
-        Array<Ray>              getRaysOfLateralFaceAt                      (   const   Index                       aLateralFaceIndex,
-                                                                                const   Size                        aRayCount                                   =   2 ) const ;
+    Array<Ray> getRaysOfLateralFaces(const Size aRayCount = 0) const;
 
-        /// @brief              Get rays of lateral faces
-        ///
-        /// @param              [in] aRayCount A number of rays (at least face count)
-        /// @return             Array of rays
+    /// @brief              Compute intersection of pyramid with sphere
+    ///
+    /// @param              [in] aSphere A sphere
+    /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
+    /// @param              [in] aDiscretizationLevel (optional) The polygonal discretization level
+    /// @return             Intersection of pyramid with sphere
 
-        Array<Ray>              getRaysOfLateralFaces                       (   const   Size                        aRayCount                                   =   0 ) const ;
+    Intersection intersectionWith(
+        const Sphere& aSphere,
+        const bool onlyInSight = DEFAULT_ONLY_IN_SIGHT,
+        const Size aDiscretizationLevel = DEFAULT_DISCRETIZATION_LEVEL
+    ) const;
 
-        /// @brief              Compute intersection of pyramid with sphere
-        ///
-        /// @param              [in] aSphere A sphere
-        /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
-        /// @param              [in] aDiscretizationLevel (optional) The polygonal discretization level
-        /// @return             Intersection of pyramid with sphere
+    /// @brief              Compute intersection of pyramid with ellipsoid
+    ///
+    /// @param              [in] anEllipsoid An ellipsoid
+    /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
+    /// @param              [in] aDiscretizationLevel (optional) The polygonal discretization level
+    /// @return             Intersection of pyramid with ellipsoid
 
-        Intersection            intersectionWith                            (   const   Sphere&                     aSphere,
-                                                                                const   bool                        onlyInSight                                 =   DEFAULT_ONLY_IN_SIGHT,
-                                                                                const   Size                        aDiscretizationLevel                        =   DEFAULT_DISCRETIZATION_LEVEL ) const ;
+    Intersection intersectionWith(
+        const Ellipsoid& anEllipsoid,
+        const bool onlyInSight = DEFAULT_ONLY_IN_SIGHT,
+        const Size aDiscretizationLevel = DEFAULT_DISCRETIZATION_LEVEL
+    ) const;
 
-        /// @brief              Compute intersection of pyramid with ellipsoid
-        ///
-        /// @param              [in] anEllipsoid An ellipsoid
-        /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
-        /// @param              [in] aDiscretizationLevel (optional) The polygonal discretization level
-        /// @return             Intersection of pyramid with ellipsoid
+    /// @brief              Print pyramid
+    ///
+    /// @param              [in] anOutputStream An output stream
+    /// @param              [in] (optional) displayDecorators If true, display decorators
 
-        Intersection            intersectionWith                            (   const   Ellipsoid&                  anEllipsoid,
-                                                                                const   bool                        onlyInSight                                 =   DEFAULT_ONLY_IN_SIGHT,
-                                                                                const   Size                        aDiscretizationLevel                        =   DEFAULT_DISCRETIZATION_LEVEL ) const ;
+    virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
-        /// @brief              Print pyramid
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] (optional) displayDecorators If true, display decorators
+    /// @brief              Apply transformation to pyramid
+    ///
+    /// @param              [in] aTransformation A transformation
 
-        virtual void            print                                       (           std::ostream&               anOutputStream,
-                                                                                        bool                        displayDecorators                           =   true ) const override ;
+    virtual void applyTransformation(const Transformation& aTransformation) override;
 
-        /// @brief              Apply transformation to pyramid
-        ///
-        /// @param              [in] aTransformation A transformation
+    /// @brief              Constructs an undefined pyramid
+    ///
+    /// @return             Undefined pyramid
 
-        virtual void            applyTransformation                         (   const   Transformation&             aTransformation                             ) override ;
+    static Pyramid Undefined();
 
-        /// @brief              Constructs an undefined pyramid
-        ///
-        /// @return             Undefined pyramid
+   private:
+    Polygon base_;
+    Point apex_;
+};
 
-        static Pyramid          Undefined                                   ( ) ;
-
-    private:
-
-        Polygon                 base_ ;
-        Point                   apex_ ;
-
-} ;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-}
-}
-}
-}
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+}  // namespace objects
+}  // namespace d3
+}  // namespace geom
+}  // namespace math
+}  // namespace ostk
 
 #endif
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,29 +1,19 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           bindings/python/src/OpenSpaceToolkitMathematicsPy/Geometry/3D/Objects/Segment.cpp
-/// @author         Lucas Brémond <lucas@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Apache License 2.0
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Segment ( pybind11::module&       aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Segment(pybind11::module& aModule)
 {
-
     using namespace pybind11;
 
-    using ostk::math::geom::d3::Object ;
-    using ostk::math::geom::d3::objects::Point ;
-    using ostk::math::geom::d3::objects::PointSet ;
-    using ostk::math::geom::d3::objects::Segment ;
-    using ostk::math::geom::d3::objects::Plane ;
-    using ostk::math::geom::d3::objects::Sphere ;
-    using ostk::math::geom::d3::objects::Ellipsoid ;
-    using ostk::math::geom::d3::Intersection ;
+    using ostk::math::geom::d3::Object;
+    using ostk::math::geom::d3::objects::Point;
+    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geom::d3::objects::Segment;
+    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geom::d3::objects::Sphere;
+    using ostk::math::geom::d3::objects::Ellipsoid;
+    using ostk::math::geom::d3::Intersection;
 
     class_<Segment, Object>(aModule, "Segment")
 
@@ -53,9 +43,5 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("to_line", &Segment::toLine)
         .def("apply_transformation", &Segment::applyTransformation, arg("transformation"))
 
-        .def_static("undefined", &Segment::Undefined)
-    ;
-
+        .def_static("undefined", &Segment::Undefined);
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,31 +1,27 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           bindings/python/src/OpenSpaceToolkitMathematicsPy/Objects/Interval.cpp
-/// @author         Lucas Brémond <lucas@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Apache License 2.0
 
 #include <OpenSpaceToolkit/Core/Types/Real.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Objects/Interval.hpp>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval (        pybind11::module&           aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Objects_Interval(pybind11::module& aModule)
 {
+    using namespace pybind11;
 
-    using namespace pybind11 ;
+    using ostk::core::types::Real;
 
-    using ostk::core::types::Real ;
+    using ostk::math::obj::Interval;
 
-    using ostk::math::obj::Interval ;
-
-    class_<Interval<Real>> real_interval(aModule, "RealInterval") ;
+    class_<Interval<Real>> real_interval(aModule, "RealInterval");
 
     // Define constructor
-    real_interval.def(init<const Real&, const Real&, const Interval<Real>::Type&>(), arg("lower_bound"), arg("upper_bound"), arg("type"))
+    real_interval
+        .def(
+            init<const Real&, const Real&, const Interval<Real>::Type&>(),
+            arg("lower_bound"),
+            arg("upper_bound"),
+            arg("type")
+        )
 
         // Define methods
         .def(self == self)
@@ -48,8 +44,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval (
 
         // Define static methods
         .def_static("undefined", &Interval<Real>::Undefined)
-        .def_static("closed", &Interval<Real>::Closed, arg("lower_bound"), arg("upper_bound"))
-    ;
+        .def_static("closed", &Interval<Real>::Closed, arg("lower_bound"), arg("upper_bound"));
 
     // Add other interval types
     // ...
@@ -63,8 +58,5 @@ inline void                     OpenSpaceToolkitMathematicsPy_Objects_Interval (
         .value("HalfOpenLeft", Interval<Real>::Type::HalfOpenLeft)
         .value("HalfOpenRight", Interval<Real>::Type::HalfOpenRight)
 
-    ;
-
+        ;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

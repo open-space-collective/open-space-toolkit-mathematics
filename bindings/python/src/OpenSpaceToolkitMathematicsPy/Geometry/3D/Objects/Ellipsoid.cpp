@@ -1,42 +1,31 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           bindings/python/src/OpenSpaceToolkitMathematicsPy/Geometry/3D/Objects/Ellipsoid.cpp
-/// @author         Lucas Brémond <lucas@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Apache License 2.0
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Ellipsoid ( pybind11::module&     aModule                                     )
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Ellipsoid(pybind11::module& aModule)
 {
+    using namespace pybind11;
 
-    using namespace pybind11 ;
+    using ostk::core::types::Real;
 
-    using ostk::core::types::Real ;
-
-    using ostk::math::geom::d3::Object ;
-    using ostk::math::geom::d3::objects::Point ;
-    using ostk::math::geom::d3::objects::PointSet ;
-    using ostk::math::geom::d3::objects::Line ;
-    using ostk::math::geom::d3::objects::Ray ;
-    using ostk::math::geom::d3::objects::Segment ;
-    using ostk::math::geom::d3::objects::Plane ;
-    using ostk::math::geom::d3::objects::Sphere ;
-    using ostk::math::geom::d3::objects::Ellipsoid ;
-    using ostk::math::geom::d3::objects::Pyramid ;
-    using ostk::math::geom::d3::objects::Cone ;
-    using ostk::math::geom::d3::Intersection ;
-    using ostk::math::geom::d3::trf::rot::Quaternion ;
+    using ostk::math::geom::d3::Object;
+    using ostk::math::geom::d3::objects::Point;
+    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::geom::d3::objects::Segment;
+    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geom::d3::objects::Sphere;
+    using ostk::math::geom::d3::objects::Ellipsoid;
+    using ostk::math::geom::d3::objects::Pyramid;
+    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::geom::d3::Intersection;
+    using ostk::math::geom::d3::trf::rot::Quaternion;
 
     class_<Ellipsoid, Object>(aModule, "Ellipsoid")
 
-        .def
-        (
+        .def(
             init<const Point&, const Real&, const Real&, const Real&>(),
             arg("center"),
             arg("first_principal_semi_axis"),
@@ -44,8 +33,7 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
             arg("third_principal_semi_axis")
         )
 
-        .def
-        (
+        .def(
             init<const Point&, const Real&, const Real&, const Real&, const Quaternion&>(),
             arg("center"),
             arg("first_principal_semi_axis"),
@@ -82,16 +70,28 @@ inline void                     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object
         .def("get_orientation", &Ellipsoid::getOrientation)
         .def("get_matrix", &Ellipsoid::getMatrix)
         .def("intersection", overload_cast<const Line&>(&Ellipsoid::intersectionWith, const_), arg("line"))
-        .def("intersection", overload_cast<const Ray&, const bool>(&Ellipsoid::intersectionWith, const_), arg("ray"), arg("only_in_sight"))
+        .def(
+            "intersection",
+            overload_cast<const Ray&, const bool>(&Ellipsoid::intersectionWith, const_),
+            arg("ray"),
+            arg("only_in_sight")
+        )
         .def("intersection", overload_cast<const Segment&>(&Ellipsoid::intersectionWith, const_), arg("segment"))
-        .def("intersection", overload_cast<const Pyramid&, const bool>(&Ellipsoid::intersectionWith, const_), arg("pyramid"), arg("only_in_sight"))
-        .def("intersection", overload_cast<const Cone&, const bool>(&Ellipsoid::intersectionWith, const_), arg("cone"), arg("only_in_sight"))
+        .def(
+            "intersection",
+            overload_cast<const Pyramid&, const bool>(&Ellipsoid::intersectionWith, const_),
+            arg("pyramid"),
+            arg("only_in_sight")
+        )
+        .def(
+            "intersection",
+            overload_cast<const Cone&, const bool>(&Ellipsoid::intersectionWith, const_),
+            arg("cone"),
+            arg("only_in_sight")
+        )
         .def("apply_transformation", &Ellipsoid::applyTransformation, arg("transformation"))
 
         .def_static("undefined", &Ellipsoid::Undefined)
 
-    ;
-
+        ;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

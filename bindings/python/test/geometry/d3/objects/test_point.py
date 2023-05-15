@@ -1,11 +1,4 @@
-################################################################################################################################################################
-
-# @project        Open Space Toolkit ▸ Mathematics
-# @file           bindings/python/test/geometry/d3/objects/test_point.py
-# @author         Remy Derollez <remy@loftorbital.com>
-# @license        Apache License 2.0
-
-################################################################################################################################################################
+# Apache License 2.0
 
 import pytest
 
@@ -17,16 +10,13 @@ import ostk.mathematics as mathematics
 
 from ostk.core.types import String
 
-################################################################################################################################################################
 
 Object = mathematics.geometry.d3.Object
 Point = mathematics.geometry.d3.objects.Point
 Transformation = mathematics.geometry.d3.Transformation
 
-################################################################################################################################################################
 
-def test_geometry_d3_objects_point_constructor ():
-
+def test_geometry_d3_objects_point_constructor():
     point: Point = Point(1.0, 2.0, 3.0)
 
     assert point is not None
@@ -34,8 +24,8 @@ def test_geometry_d3_objects_point_constructor ():
     assert isinstance(point, Object)
     assert point.is_defined()
 
-def test_geometry_d3_objects_point_undefined ():
 
+def test_geometry_d3_objects_point_undefined():
     point: Point = Point.undefined()
 
     assert point is not None
@@ -43,8 +33,8 @@ def test_geometry_d3_objects_point_undefined ():
     assert isinstance(point, Object)
     assert point.is_defined() is False
 
-def test_geometry_d3_objects_point_origin ():
 
+def test_geometry_d3_objects_point_origin():
     point: Point = Point.origin()
 
     assert point is not None
@@ -55,8 +45,8 @@ def test_geometry_d3_objects_point_origin ():
     assert point.y() == 0.0
     assert point.z() == 0.0
 
-def test_geometry_d3_objects_point_vector ():
 
+def test_geometry_d3_objects_point_vector():
     # Construction using a python list
     point: Point = Point.vector([3.4, -6.7, 1.0])
 
@@ -66,7 +56,7 @@ def test_geometry_d3_objects_point_vector ():
     assert point.is_defined()
     assert (point.x() - 3.4) <= 1e-15
     assert (point.y() + 6.7) <= 1e-15
-    assert (point.z() -  1.0) <= 1e-15
+    assert (point.z() - 1.0) <= 1e-15
 
     # Construction using a python tuple
     point: Point = Point.vector((3.4, -6.7, 1.0))
@@ -90,12 +80,18 @@ def test_geometry_d3_objects_point_vector ():
     assert (point.y() + 6.7) <= 1e-15
     assert (point.z() - 1.0) <= 1e-15
 
-def test_geometry_d3_objects_point_comparators ():
 
+def test_geometry_d3_objects_point_comparators():
     point_1: Point = Point(3.4, -6.7, 1.0)
     point_2: Point = Point.vector([3.4, -6.7, 1.0])
     point_3: Point = Point(3.3, -6.5, 1.0)
-    point_4: Point = Point.vector((3.4, -6.7, 1.0,))
+    point_4: Point = Point.vector(
+        (
+            3.4,
+            -6.7,
+            1.0,
+        )
+    )
     point_5: Point = Point.vector(np.array((3.4, -6.7, 1.0)))
 
     assert point_1 == point_1
@@ -108,8 +104,8 @@ def test_geometry_d3_objects_point_comparators ():
     assert point_2 == point_5
     assert point_3 != point_4
 
-def test_geometry_d3_objects_point_operators ():
 
+def test_geometry_d3_objects_point_operators():
     point_1: Point = Point(3.4, -6.7, 1.0)
     point_2: Point = Point.vector([3.4, -6.7, 1.0])
     point_3: Point = Point.vector((3.4, -6.7, 1.0))
@@ -173,15 +169,15 @@ def test_geometry_d3_objects_point_operators ():
     # assert point.y == 0.0
     # assert point == Point.origin()
 
-def test_geometry_d3_objects_point_is_defined ():
 
+def test_geometry_d3_objects_point_is_defined():
     point: Point = Point(3.5, 5.6, 4.3)
 
     assert point.is_defined()
     assert Point.undefined().is_defined() is False
 
-def test_geometry_d3_objects_point_is_near ():
 
+def test_geometry_d3_objects_point_is_near():
     point_1: Point = Point(3.5, 5.6, 4.3)
     point_2: Point = Point(3.4999999999, 5.5999999999, 4.30000000000001)
 
@@ -190,16 +186,16 @@ def test_geometry_d3_objects_point_is_near ():
     assert point_1.is_near(point_2, 1e-11) is False
     assert point_1.is_near(point_2, 1e-9) is True
 
-def test_geometry_d3_objects_point_components ():
 
+def test_geometry_d3_objects_point_components():
     point: Point = Point(4.5, 34.5, 3.9)
 
     assert point.x() == 4.5
     assert point.y() == 34.5
     assert point.z() == 3.9
 
-def test_geometry_d3_objects_point_as_vector ():
 
+def test_geometry_d3_objects_point_as_vector():
     point: Point = Point(3.4, -3.5, 1.0)
     vec: np.ndarray = point.as_vector()
 
@@ -209,8 +205,8 @@ def test_geometry_d3_objects_point_as_vector ():
     assert (vec[1] + 3.5) <= 1e-12
     assert (vec[2] - 1.0) <= 1e-12
 
-def test_geometry_d3_objects_point_distance_to ():
 
+def test_geometry_d3_objects_point_distance_to():
     point_1: Point = Point(0.0, 4.0, 0.0)
     point_2: Point = Point(0.0, 3.0, 0.0)
     point_3: Point = Point(3.0, 0.0, 0.0)
@@ -226,8 +222,8 @@ def test_geometry_d3_objects_point_distance_to ():
     assert point_4.distance_to(point_1) == math.sqrt((1.1 * 1.1) + 9.0)
 
     with pytest.raises(TypeError):
-
         point_1.distance_to((0.0, 0.0, 0.0))
+
 
 # def test_geometry_d3_objects_point_to_string ():
 
@@ -239,5 +235,3 @@ def test_geometry_d3_objects_point_distance_to ():
 # def test_geometry_d3_objects_point_apply_transformation ():
 
 #     point: Point = Point(4.5, 5.4, 3.1)
-
-################################################################################################################################################################

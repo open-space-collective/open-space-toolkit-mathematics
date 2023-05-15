@@ -1,22 +1,13 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-/// @project        Open Space Toolkit ▸ Mathematics
-/// @file           OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp
-/// @author         Lucas Brémond <lucas@loftorbital.com>
-/// @license        Apache License 2.0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/// Apache License 2.0
 
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector__
 
+#include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Types/String.hpp>
+
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
 #include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
-
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 namespace ostk
 {
@@ -31,20 +22,14 @@ namespace trf
 namespace rot
 {
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+using ostk::core::types::Real;
+using ostk::core::types::String;
 
-using ostk::core::types::Real ;
-using ostk::core::types::String ;
+using ostk::math::obj::Vector3d;
+using ostk::math::geom::Angle;
 
-using ostk::math::obj::Vector3d ;
-using ostk::math::geom::Angle ;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-class Quaternion ;
-class RotationMatrix ;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+class Quaternion;
+class RotationMatrix;
 
 /// @brief                      Rotation vector
 ///
@@ -52,180 +37,172 @@ class RotationMatrix ;
 
 class RotationVector
 {
+   public:
+    /// @brief              Constructor
+    ///
+    /// @param              [in] anAxis A rotation axis
+    /// @param              [in] anAngle A rotation angle
 
-    public:
+    RotationVector(const Vector3d& anAxis, const Angle& anAngle);
 
-        /// @brief              Constructor
-        ///
-        /// @param              [in] anAxis A rotation axis
-        /// @param              [in] anAngle A rotation angle
+    /// @brief              Equal to operator
+    ///
+    /// @code
+    ///                     RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)) ==
+    ///                     RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)) ; // True
+    /// @endcode
+    ///
+    /// @param              [in] aRotationVector A rotation vector
+    /// @return             True if rotation vectors are equal
 
-                                RotationVector                              (   const   Vector3d&                   anAxis,
-                                                                                const   Angle&                      anAngle                                     ) ;
+    bool operator==(const RotationVector& aRotationVector) const;
 
-        /// @brief              Equal to operator
-        ///
-        /// @code
-        ///                     RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)) == RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)) ; // True
-        /// @endcode
-        ///
-        /// @param              [in] aRotationVector A rotation vector
-        /// @return             True if rotation vectors are equal
+    /// @brief              Not equal to operator
+    ///
+    /// @code
+    ///                     RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)) !=
+    ///                     RotationVector(Vector3d(1.0, 0.0, 0.0), Angle::Degrees(90.0)) ; // True
+    /// @endcode
+    ///
+    /// @param              [in] aRotationVector A rotation vector
+    /// @return             True if rotation vectors are not equal
 
-        bool                    operator ==                                 (   const   RotationVector&             aRotationVector                             ) const ;
+    bool operator!=(const RotationVector& aRotationVector) const;
 
-        /// @brief              Not equal to operator
-        ///
-        /// @code
-        ///                     RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)) != RotationVector(Vector3d(1.0, 0.0, 0.0), Angle::Degrees(90.0)) ; // True
-        /// @endcode
-        ///
-        /// @param              [in] aRotationVector A rotation vector
-        /// @return             True if rotation vectors are not equal
+    /// @brief              Output stream operator
+    ///
+    /// @code
+    ///                     std::cout << RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)) ;
+    /// @endcode
+    ///
+    /// @param              [in] anOutputStream An output stream
+    /// @param              [in] aRotationVector A rotation vector
+    /// @return             A reference to output stream
 
-        bool                    operator !=                                 (   const   RotationVector&             aRotationVector                             ) const ;
+    friend std::ostream& operator<<(std::ostream& anOutputStream, const RotationVector& aRotationVector);
 
-        /// @brief              Output stream operator
-        ///
-        /// @code
-        ///                     std::cout << RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)) ;
-        /// @endcode
-        ///
-        /// @param              [in] anOutputStream An output stream
-        /// @param              [in] aRotationVector A rotation vector
-        /// @return             A reference to output stream
+    /// @brief              Check if rotation vector is defined
+    ///
+    /// @code
+    ///                     RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)).isDefined() ; // True
+    /// @endcode
+    ///
+    /// @return             True if rotation vector is defined
 
-        friend std::ostream&    operator <<                                 (           std::ostream&               anOutputStream,
-                                                                                const   RotationVector&             aRotationVector                             ) ;
+    bool isDefined() const;
 
-        /// @brief              Check if rotation vector is defined
-        ///
-        /// @code
-        ///                     RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)).isDefined() ; // True
-        /// @endcode
-        ///
-        /// @return             True if rotation vector is defined
+    /// @brief              Get rotation axis
+    ///
+    /// @return             Rotation axis
 
-        bool                    isDefined                                   ( ) const ;
+    Vector3d getAxis() const;
 
-        /// @brief              Get rotation axis
-        ///
-        /// @return             Rotation axis
+    /// @brief              Get rotation angle
+    ///
+    /// @return             Rotation angle
 
-        Vector3d                getAxis                                     ( ) const ;
+    Angle getAngle() const;
 
-        /// @brief              Get rotation angle
-        ///
-        /// @return             Rotation angle
+    /// @brief              Convert rotation vector to its string representation
+    ///
+    /// @code
+    ///                     RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)).toString() ; // "[0.0,
+    ///                     0.0, 1.0] : 90.0 [deg]"
+    /// @endcode
+    ///
+    /// @param              [in] (optional) aPrecision A precision
+    /// @return             String representation
 
-        Angle                   getAngle                                    ( ) const ;
+    String toString(const Integer& aPrecision = Integer::Undefined()) const;
 
-        /// @brief              Convert rotation vector to its string representation
-        ///
-        /// @code
-        ///                     RotationVector(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)).toString() ; // "[0.0, 0.0, 1.0] : 90.0 [deg]"
-        /// @endcode
-        ///
-        /// @param              [in] (optional) aPrecision A precision
-        /// @return             String representation
+    /// @brief              Constructs an undefined rotation vector
+    ///
+    /// @code
+    ///                     RotationVector rotationVector = RotationVector::Undefined() ; // Undefined
+    /// @endcode
+    ///
+    /// @return             Undefined rotation vector
 
-        String                  toString                                    (   const   Integer&                    aPrecision                                  =   Integer::Undefined() ) const ;
+    static RotationVector Undefined();
 
-        /// @brief              Constructs an undefined rotation vector
-        ///
-        /// @code
-        ///                     RotationVector rotationVector = RotationVector::Undefined() ; // Undefined
-        /// @endcode
-        ///
-        /// @return             Undefined rotation vector
+    /// @brief              Constructs a unit rotation vector
+    ///
+    /// @code
+    ///                     RotationVector rotationVector = RotationVector::Unit() ;
+    /// @endcode
+    ///
+    /// @return             Unit rotation vector
 
-        static RotationVector   Undefined                                   ( ) ;
+    static RotationVector Unit();
 
-        /// @brief              Constructs a unit rotation vector
-        ///
-        /// @code
-        ///                     RotationVector rotationVector = RotationVector::Unit() ;
-        /// @endcode
-        ///
-        /// @return             Unit rotation vector
+    /// @brief              Constructs a rotation vector around X-axis
+    ///
+    /// @code
+    ///                     RotationVector rotationVector = RotationVector::X(Angle::Degrees(45.0)) ;
+    /// @endcode
+    ///
+    /// @param              [in] anAngle A rotation angle
+    /// @return             Rotation vector
 
-        static RotationVector   Unit                                        ( ) ;
+    static RotationVector X(const Angle& anAngle);
 
-        /// @brief              Constructs a rotation vector around X-axis
-        ///
-        /// @code
-        ///                     RotationVector rotationVector = RotationVector::X(Angle::Degrees(45.0)) ;
-        /// @endcode
-        ///
-        /// @param              [in] anAngle A rotation angle
-        /// @return             Rotation vector
+    /// @brief              Constructs a rotation vector around Y-axis
+    ///
+    /// @code
+    ///                     RotationVector rotationVector = RotationVector::X(Angle::Degrees(45.0)) ;
+    /// @endcode
+    ///
+    /// @param              [in] anAngle A rotation angle
+    /// @return             Rotation vector
 
-        static RotationVector   X                                           (   const   Angle&                      anAngle                                     ) ;
+    static RotationVector Y(const Angle& anAngle);
 
-        /// @brief              Constructs a rotation vector around Y-axis
-        ///
-        /// @code
-        ///                     RotationVector rotationVector = RotationVector::X(Angle::Degrees(45.0)) ;
-        /// @endcode
-        ///
-        /// @param              [in] anAngle A rotation angle
-        /// @return             Rotation vector
+    /// @brief              Constructs a rotation vector around Z-axis
+    ///
+    /// @code
+    ///                     RotationVector rotationVector = RotationVector::X(Angle::Degrees(45.0)) ;
+    /// @endcode
+    ///
+    /// @param              [in] anAngle A rotation angle
+    /// @return             Rotation vector
 
-        static RotationVector   Y                                           (   const   Angle&                      anAngle                                     ) ;
+    static RotationVector Z(const Angle& anAngle);
 
-        /// @brief              Constructs a rotation vector around Z-axis
-        ///
-        /// @code
-        ///                     RotationVector rotationVector = RotationVector::X(Angle::Degrees(45.0)) ;
-        /// @endcode
-        ///
-        /// @param              [in] anAngle A rotation angle
-        /// @return             Rotation vector
+    /// @brief              Constructs a rotation vector from a quaternion
+    ///
+    /// @code
+    ///                     RotationVector rotationVector = RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0,
+    ///                     0.0, 1.0)) ;
+    /// @endcode
+    ///
+    /// @param              [in] aQuaternion A quaternion
+    /// @return             Rotation vector
 
-        static RotationVector   Z                                           (   const   Angle&                      anAngle                                     ) ;
+    static RotationVector Quaternion(const rot::Quaternion& aQuaternion);
 
-        /// @brief              Constructs a rotation vector from a quaternion
-        ///
-        /// @code
-        ///                     RotationVector rotationVector = RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)) ;
-        /// @endcode
-        ///
-        /// @param              [in] aQuaternion A quaternion
-        /// @return             Rotation vector
+    /// @brief              Constructs a rotation vector from a rotation matrix
+    ///
+    /// @code
+    ///                     RotationVector rotationVector = RotationVector::RotationMatrix(RotationMatrix::Unit()) ;
+    /// @endcode
+    ///
+    /// @param              [in] aRotationMatrix A rotation matrix
+    /// @return             Rotation vector
 
-        static RotationVector   Quaternion                                  (   const   rot::Quaternion&            aQuaternion                                 ) ;
+    static RotationVector RotationMatrix(const rot::RotationMatrix& aRotationMatrix);
 
-        /// @brief              Constructs a rotation vector from a rotation matrix
-        ///
-        /// @code
-        ///                     RotationVector rotationVector = RotationVector::RotationMatrix(RotationMatrix::Unit()) ;
-        /// @endcode
-        ///
-        /// @param              [in] aRotationMatrix A rotation matrix
-        /// @return             Rotation vector
+   private:
+    Vector3d axis_;
+    Angle angle_;
 
-        static RotationVector   RotationMatrix                              (   const   rot::RotationMatrix&        aRotationMatrix                             ) ;
+    RotationVector();
+};
 
-    private:
-
-        Vector3d                axis_ ;
-        Angle                   angle_ ;
-
-                                RotationVector                              ( ) ;
-
-} ;
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-}
-}
-}
-}
-}
-}
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+}  // namespace rot
+}  // namespace trf
+}  // namespace d3
+}  // namespace geom
+}  // namespace math
+}  // namespace ostk
 
 #endif
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
