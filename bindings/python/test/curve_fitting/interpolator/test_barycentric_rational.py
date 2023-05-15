@@ -1,4 +1,4 @@
-# Apache License 2.0 
+# Apache License 2.0
 
 from ostk.mathematics.curve_fitting.interpolator import BarycentricRational
 

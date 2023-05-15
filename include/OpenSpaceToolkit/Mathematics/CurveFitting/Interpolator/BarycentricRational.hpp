@@ -1,4 +1,4 @@
-/// Apache License 2.0 
+/// Apache License 2.0
 
 #ifndef __OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational__
 #define __OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational__

@@ -1,4 +1,4 @@
-/// Apache License 2.0 
+/// Apache License 2.0
 
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/Composite.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Objects/MultiPolygon.cpp>

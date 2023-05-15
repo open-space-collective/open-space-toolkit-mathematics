@@ -1,4 +1,4 @@
-/// Apache License 2.0 
+/// Apache License 2.0
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
 

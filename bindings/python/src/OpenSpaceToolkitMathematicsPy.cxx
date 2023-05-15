@@ -1,4 +1,4 @@
-/// Apache License 2.0 
+/// Apache License 2.0
 
 #include <OpenSpaceToolkitMathematicsPy/Utilities/ArrayCasting.hpp>
 #include <OpenSpaceToolkitMathematicsPy/Utilities/ShiftToString.hpp>

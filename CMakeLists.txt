@@ -254,8 +254,6 @@ IF (NOT OpenSpaceToolkitCore_FOUND)
 
 ENDIF ()
 
-#####################################################################################3###########################################################################
-
 ## Versioning
 
 IF (DEFINED PROJECT_VERSION_STRING AND EXISTS "${PROJECT_SOURCE_DIR}/src/${PROJECT_PATH}/Utilities/Version.cpp.in")

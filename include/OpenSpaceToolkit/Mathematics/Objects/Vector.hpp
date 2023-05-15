@@ -1,4 +1,4 @@
-/// Apache License 2.0 
+/// Apache License 2.0
 
 #ifndef __OpenSpaceToolkit_Mathematics_Objects_Vector__
 #define __OpenSpaceToolkit_Mathematics_Objects_Vector__

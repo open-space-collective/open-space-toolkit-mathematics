@@ -1,4 +1,4 @@
-/// Apache License 2.0 
+/// Apache License 2.0
 
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Intersection.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object.cpp>

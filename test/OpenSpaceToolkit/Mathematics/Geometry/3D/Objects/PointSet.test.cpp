@@ -1,4 +1,4 @@
-/// Apache License 2.0 
+/// Apache License 2.0
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/PointSet.hpp>

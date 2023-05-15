@@ -1,4 +1,4 @@
-/// Apache License 2.0 
+/// Apache License 2.0
 
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformations/Rotations.cpp>
 
