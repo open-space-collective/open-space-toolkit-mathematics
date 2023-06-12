@@ -1,4 +1,4 @@
-# Apache License 2.0 
+# Apache License 2.0
 
 ## Project Properties
 
@@ -13,7 +13,6 @@ SET (PROJECT_VENDOR_ID "com.bremond.lucas")
 SET (PROJECT_VENDOR_NAME "Lucas Brémond")
 SET (PROJECT_VENDOR_CONTACT "lucas.bremond@gmail.com")
 SET (PROJECT_VENDOR_URL "lucas.bremond.info")
-
 
 ## Setup
 
@@ -126,15 +125,15 @@ FUNCTION (PY_ADD_PACKAGE_DIRECTORY NAME)
     # Get python extension for relevant shared library spotting
     STRING (REPLACE "." "" EXTENSION "${PYTHON_VERSION}")
 
-    # Configure setup.py file
-    SET (SETUP_PY_IN "${CMAKE_CURRENT_SOURCE_DIR}/tools/python/setup.py.in")
-    SET (SETUP_PY "${CMAKE_CURRENT_BINARY_DIR}/${NAME}/setup.py")
-    CONFIGURE_FILE (${SETUP_PY_IN} ${SETUP_PY})
-
     # Configure setup.cfg file
-    # SET (SETUP_CFG_IN "${CMAKE_CURRENT_SOURCE_DIR}/tools/python/setup.cfg.in")
-    # SET (SETUP_CFG "${CMAKE_CURRENT_BINARY_DIR}/${NAME}/setup.cfg")
-    # CONFIGURE_FILE (${SETUP_CFG_IN} ${SETUP_CFG})
+    SET (SETUP_CFG_IN "${CMAKE_CURRENT_SOURCE_DIR}/tools/python/setup.cfg.in")
+    SET (SETUP_CFG "${CMAKE_CURRENT_BINARY_DIR}/${NAME}/setup.cfg")
+    CONFIGURE_FILE (${SETUP_CFG_IN} ${SETUP_CFG})
+
+    # Configure pyproject.toml file
+    SET (PYPROJECT_TOML_IN "${CMAKE_CURRENT_SOURCE_DIR}/tools/python/pyproject.toml.in")
+    SET (PYPROJECT_TOML "${CMAKE_CURRENT_BINARY_DIR}/${NAME}/pyproject.toml")
+    CONFIGURE_FILE (${PYPROJECT_TOML_IN} ${PYPROJECT_TOML})
 
     IF (BUILD_WHEELS_IN_CMAKE)
 
@@ -146,11 +145,12 @@ FUNCTION (PY_ADD_PACKAGE_DIRECTORY NAME)
                             COMMAND cp "${CMAKE_CURRENT_SOURCE_DIR}/tools/python/${PROJECT_PATH}/__init__.py" "${CMAKE_CURRENT_BINARY_DIR}/${NAME}/${PROJECT_PATH}/__init__.py"
                             COMMAND cp "${CMAKE_SOURCE_DIR}/lib/${SHARED_LIBRARY_TARGET}" "${CMAKE_CURRENT_BINARY_DIR}/${NAME}/${PROJECT_PATH}/libopen-space-toolkit-mathematics.so.0"
                             COMMAND cp "${CMAKE_SOURCE_DIR}/lib/${LIBRARY_TARGET}.*${EXTENSION}*.so" "${CMAKE_CURRENT_BINARY_DIR}/${NAME}/${PROJECT_PATH}/"
-                            COMMAND python${PYTHON_VERSION} ${SETUP_PY} build --build-base=./lib${EXTENSION} bdist_wheel --python-tag=py${EXTENSION} --bdist-dir=./dist${EXTENSION}
+                            COMMAND cp "${CMAKE_CURRENT_SOURCE_DIR}/requirements.txt" "${CMAKE_CURRENT_BINARY_DIR}/${NAME}/requirements.txt"
+                            COMMAND cp "${CMAKE_CURRENT_SOURCE_DIR}/README.md" "${CMAKE_CURRENT_BINARY_DIR}/${NAME}/README.md"
+                            COMMAND cd "${CMAKE_CURRENT_BINARY_DIR}/${NAME}" && python${PYTHON_VERSION} -m build --no-isolation -w
+                            COMMAND mkdir -p "${CMAKE_CURRENT_BINARY_DIR}/dist"
+                            COMMAND cp "${CMAKE_CURRENT_BINARY_DIR}/${NAME}/dist/*" "${CMAKE_CURRENT_BINARY_DIR}/dist"
                             DEPENDS ${DEPS})
-
-        # Install package on the machine
-        # INSTALL (CODE "execute_process(COMMAND python${PYTHON_VERSION} ${SETUP_PY} install)")
     ELSE ()
 
         # Build package directories only to integrate with a ci build wheel process
@@ -167,7 +167,6 @@ FUNCTION (PY_ADD_PACKAGE_DIRECTORY NAME)
     ADD_DEPENDENCIES (${NAME} "${LIBRARY_TARGET}_${PYTHON_VERSION}")
 ENDFUNCTION ()
 
-
 ## Dependencies
 
 ### Pybind11
@@ -178,7 +177,7 @@ FIND_PACKAGE (pybind11 2.6.0 REQUIRED)
 ### Python
 
 # Decide on the versions to build for and support
-SET (PYTHON_SEARCH_VERSIONS 2.7 3.5 3.6 3.7 3.8 3.9 3.10 3.11)
+SET (PYTHON_SEARCH_VERSIONS 3.8 3.9 3.10 3.11)
 
 MESSAGE (STATUS "Looking for available python versions...")
 FOREACH (PYTHON_VERSION ${PYTHON_SEARCH_VERSIONS})
@@ -198,7 +197,6 @@ SET (NUMPY_INCLUDE_DIR "/usr/lib/python3/dist-packages/numpy/core/include")
 ### Boost.NumPy Eigen
 
 SET (EIGEN_NUMPY_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/thirdparty/boost_numpy_eigen")
-
 
 ## Target
 
@@ -223,7 +221,6 @@ FOREACH (PYTHON_VERSION ${PYTHON_VERSIONS})
     INSTALL (FILES "${PROJECT_SOURCE_DIR}/tools/python/${PROJECT_PATH}/__init__.py" DESTINATION "${INSTALL_LIB}/${PROJECT_PATH}" COMPONENT "python")
 ENDFOREACH ()
 
-
 ## Generate python package directory/wheels
 
 # Generate a python-package target for each of the python versions that are considered here
@@ -235,5 +232,3 @@ FOREACH (PYTHON_VERSION ${PYTHON_VERSIONS})
     MESSAGE (STATUS "Building package directory for python ${PYTHON_VERSION}...")
     PY_ADD_PACKAGE_DIRECTORY ("${PACKAGE_TARGET}-${PYTHON_VERSION}" PYTHON_VERSION ${PYTHON_VERSION})
 ENDFOREACH ()
-
-
