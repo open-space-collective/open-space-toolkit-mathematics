@@ -1,4 +1,4 @@
-# Apache License 2.0 
+# Apache License 2.0
 
 ARG BASE_IMAGE_VERSION="latest"
 
@@ -48,7 +48,7 @@ RUN git clone --branch ${GEOMETRIC_TOOLS_ENGINE_VERSION} --depth 1 https://githu
 
 ## Open Space Toolkit ▸ Core
 
-ARG OSTK_CORE_VERSION="0.5.0"
+ARG OSTK_CORE_VERSION="0.6.0"
 
 RUN mkdir -p /tmp/open-space-toolkit-core \
  && cd /tmp/open-space-toolkit-core \
@@ -66,4 +66,3 @@ LABEL VERSION="${VERSION}"
 # Execution
 
 CMD ["/bin/bash"]
-
