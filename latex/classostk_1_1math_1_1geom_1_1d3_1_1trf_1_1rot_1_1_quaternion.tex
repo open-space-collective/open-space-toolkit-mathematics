@@ -126,9 +126,10 @@ std\+::ostream \& \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion}{Quaternion}}. 
 
-\begin{DoxyVerb}                        Provide a convenient mathematical notation for representing orientations and rotations of objects in three dimensions.
-                        Compared to Euler angles they are simpler to compose and avoid the problem of gimbal lock.
-                        Compared to rotation matrices they are more compact, more numerically stable, and more efficient.
+\begin{DoxyVerb}                        Provide a convenient mathematical notation for representing orientations and rotations
+                        of objects in three dimensions. Compared to Euler angles they are simpler to compose and
+                        avoid the problem of gimbal lock. Compared to rotation matrices they are more compact,
+                        more numerically stable, and more efficient.
 \end{DoxyVerb}
 
 
@@ -248,7 +249,8 @@ Get angular difference with quaternion.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0).\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a9bd5620623586c102dfb92081e6651b5}{angularDifferenceWith}}(\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0)) ; \textcolor{comment}{// 0.0 [rad]}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0).\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a9bd5620623586c102dfb92081e6651b5}{angularDifferenceWith}}(\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0,}
+\DoxyCodeLine{0.0, 1.0)) ; \textcolor{comment}{// 0.0 [rad]}}
 \end{DoxyCode}
 
 
@@ -272,8 +274,9 @@ Conjugate quaternion.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.70710678118, 0.70710678118) ; \textcolor{comment}{// [0.0, 0.0, 0.70710678118, 0.70710678118]}}
-\DoxyCodeLine{quaternion.conjugate() ; \textcolor{comment}{// [0.0, 0.0, -\/0.70710678118, 0.70710678118]}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.70710678118, 0.70710678118) ; \textcolor{comment}{// [0.0,}}
+\DoxyCodeLine{0.0, 0.70710678118, 0.70710678118] quaternion.conjugate() ; \textcolor{comment}{// [0.0, 0.0, -\/0.70710678118,}}
+\DoxyCodeLine{0.70710678118]}
 \end{DoxyCode}
 
 
@@ -297,7 +300,7 @@ Get quaternion norm.
 \DoxyCodeLine{   }
 \DoxyCodeLine{    @\textcolor{keywordflow}{return}             \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} norm}
 \DoxyCodeLine{}
-\DoxyCodeLine{Real                    norm                                        ( ) \textcolor{keyword}{const} ;}
+\DoxyCodeLine{Real norm() \textcolor{keyword}{const};}
 \DoxyCodeLine{}
 \DoxyCodeLine{    @brief              Multiply quaternion \textcolor{keyword}{using} cross multiplication}
 \DoxyCodeLine{   }
@@ -385,27 +388,29 @@ Get normalized quaternion.
 \DoxyCodeLine{   }
 \DoxyCodeLine{    @\textcolor{keywordflow}{return}             Normalized quaternion}
 \DoxyCodeLine{}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}}              toNormalized                                ( ) \textcolor{keyword}{const} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} toNormalized() \textcolor{keyword}{const};}
 \DoxyCodeLine{}
 \DoxyCodeLine{    @brief              Get \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a7d975785f2a7f4cc83d9410e37908b11}{conjugate}} quaternion}
 \DoxyCodeLine{   }
 \DoxyCodeLine{    @code}
-\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.70710678118, 0.70710678118).toConjugate() ; \textcolor{comment}{// [0.0, 0.0, -\/0.70710678118, 0.70710678118]}}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.70710678118, 0.70710678118).toConjugate() ; \textcolor{comment}{// [0.0, 0.0,}}
+\DoxyCodeLine{                        -\/0.70710678118, 0.70710678118]}
 \DoxyCodeLine{    @encode}
 \DoxyCodeLine{   }
 \DoxyCodeLine{    @\textcolor{keywordflow}{return}             Conjugate quaternion}
 \DoxyCodeLine{}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}}              toConjugate                                 ( ) \textcolor{keyword}{const} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} toConjugate() \textcolor{keyword}{const};}
 \DoxyCodeLine{}
 \DoxyCodeLine{    @brief              Get \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a75b09159acd3346e3ad848b0162181f4}{inverse}} quaternion}
 \DoxyCodeLine{   }
 \DoxyCodeLine{    @code}
-\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.70710678118, 0.70710678118).toInverse() ; \textcolor{comment}{// [0.0, 0.0, -\/0.70710678118, 0.70710678118]}}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.70710678118, 0.70710678118).toInverse() ; \textcolor{comment}{// [0.0, 0.0,}}
+\DoxyCodeLine{                        -\/0.70710678118, 0.70710678118]}
 \DoxyCodeLine{    @encode}
 \DoxyCodeLine{   }
 \DoxyCodeLine{    @\textcolor{keywordflow}{return}             Inverse quaternion}
 \DoxyCodeLine{}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}}              toInverse                                   ( ) \textcolor{keyword}{const} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} toInverse() \textcolor{keyword}{const};}
 \DoxyCodeLine{}
 \DoxyCodeLine{    @brief              Get exponential}
 \DoxyCodeLine{   }
@@ -468,8 +473,9 @@ Inverse quaternion.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.70710678118, 0.70710678118) ; \textcolor{comment}{// [0.0, 0.0, 0.70710678118, 0.70710678118]}}
-\DoxyCodeLine{quaternion.inverse() ; \textcolor{comment}{// [0.0, 0.0, -\/0.70710678118, 0.70710678118]}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.70710678118, 0.70710678118) ; \textcolor{comment}{// [0.0,}}
+\DoxyCodeLine{0.0, 0.70710678118, 0.70710678118] quaternion.inverse() ; \textcolor{comment}{// [0.0, 0.0, -\/0.70710678118,}}
+\DoxyCodeLine{0.70710678118]}
 \end{DoxyCode}
 
 
@@ -507,7 +513,8 @@ Check if quaternion is near a given quaternion.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0).\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_abb1535e6e8cfbe38dd7ce4e153374962}{isNear}}(\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0 + 1e-\/19), \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1_angle_a67a2ddc3c185e3c1424988b20ce08441}{Angle::Radians}}(1e-\/6)) ; \textcolor{comment}{// True}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0).\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_abb1535e6e8cfbe38dd7ce4e153374962}{isNear}}(\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0 + 1e-\/19),}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1_angle_a67a2ddc3c185e3c1424988b20ce08441}{Angle::Radians}}(1e-\/6)) ; \textcolor{comment}{// True}}
 \end{DoxyCode}
 
 
@@ -632,8 +639,8 @@ Normalize quaternion.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.000000000000001) ; \textcolor{comment}{// [0.0, 0.0, 0.0, 1.000000000000001]}}
-\DoxyCodeLine{quaternion.normalize() ; \textcolor{comment}{// [0.0, 0.0, 0.0, 1.0]}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.000000000000001) ; \textcolor{comment}{// [0.0, 0.0,}}
+\DoxyCodeLine{0.0, 1.000000000000001] quaternion.normalize() ; \textcolor{comment}{// [0.0, 0.0, 0.0, 1.0]}}
 \end{DoxyCode}
 
 
@@ -710,7 +717,7 @@ Addition operator (quaternion)
 \DoxyCodeLine{    @param              [in] aQuaternion A quaternion}
 \DoxyCodeLine{    @\textcolor{keywordflow}{return}             \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}}}
 \DoxyCodeLine{}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}}              operator +                                  (   \textcolor{keyword}{const}   \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}}\&                 aQuaternion                                 ) \textcolor{keyword}{const} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}}\& aQuaternion) \textcolor{keyword}{const};}
 \DoxyCodeLine{}
 \DoxyCodeLine{    @brief              Multiplication operator (quaternion)}
 \DoxyCodeLine{   }
@@ -725,7 +732,7 @@ Addition operator (quaternion)
 \DoxyCodeLine{    @param              [in] aQuaternion A quaternion}
 \DoxyCodeLine{    @\textcolor{keywordflow}{return}             \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}}}
 \DoxyCodeLine{}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}}              \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a26bf54c393d70c812538b119d4cb10a3}{operator *                                  }}(   \textcolor{keyword}{const}   \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}}\&                 aQuaternion                                 ) \textcolor{keyword}{const} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_a26bf54c393d70c812538b119d4cb10a3}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}}\& aQuaternion) \textcolor{keyword}{const};}
 \DoxyCodeLine{}
 \DoxyCodeLine{    @brief              Multiplication operator (vector)}
 \DoxyCodeLine{   }
@@ -951,8 +958,9 @@ Rectify quaternion (enforce positive scalar part)
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, -\/0.70710678118, -\/0.70710678118) ; \textcolor{comment}{// [0.0, 0.0, -\/0.70710678118, -\/0.70710678118]}}
-\DoxyCodeLine{quaternion.rectify() ; \textcolor{comment}{// [0.0, 0.0, 0.70710678118, 0.70710678118]}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ac57ea57a4033622ed1389101b2e58c76}{Quaternion::XYZS}}(0.0, 0.0, -\/0.70710678118, -\/0.70710678118) ; \textcolor{comment}{//}}
+\DoxyCodeLine{[0.0, 0.0, -\/0.70710678118, -\/0.70710678118] quaternion.rectify() ; \textcolor{comment}{// [0.0, 0.0,}}
+\DoxyCodeLine{0.70710678118, 0.70710678118]}
 \end{DoxyCode}
 
 
@@ -1024,7 +1032,8 @@ Constructs a quaternion from a rotation vector.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa5d053db4429218243bef0ed8967a4e7}{Quaternion::RotationVector}}(\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa5d053db4429218243bef0ed8967a4e7}{RotationVector}}(\mbox{\hyperlink{namespaceostk_1_1math_1_1obj_a18744cbf433bce59f6758d9fe3b1dff1}{Vector3d}}(0.0, 0.0, 1.0), \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1_angle_a2cefda601167af07f61f0477776203ca}{Angle::Degrees}}(0.0))) ; \textcolor{comment}{// [0.0, 0.0, 0.0, 1.0]}}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_ad9fd7d8eb5effb4d4e0394bbb5bb86dc}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa5d053db4429218243bef0ed8967a4e7}{Quaternion::RotationVector}}(\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1d3_1_1trf_1_1rot_1_1_quaternion_aa5d053db4429218243bef0ed8967a4e7}{RotationVector}}(\mbox{\hyperlink{namespaceostk_1_1math_1_1obj_a18744cbf433bce59f6758d9fe3b1dff1}{Vector3d}}(0.0, 0.0, 1.0),}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geom_1_1_angle_a2cefda601167af07f61f0477776203ca}{Angle::Degrees}}(0.0))) ; \textcolor{comment}{// [0.0, 0.0, 0.0, 1.0]}}
 \end{DoxyCode}
 
 
