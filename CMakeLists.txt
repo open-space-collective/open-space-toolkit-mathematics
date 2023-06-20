@@ -492,20 +492,5 @@ SET (CPACK_COMPONENT_GROUP_PYTHON_DESCRIPTION "Python bindings")
 SET (CPACK_PACKAGING_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX})
 
 SET (CPACK_DEB_COMPONENT_INSTALL "ON")
-SET (CPACK_RPM_COMPONENT_INSTALL "ON")
-
-SET (CPACK_RPM_EXCLUDE_FROM_AUTO_FILELIST
-    /usr
-    /usr/bin
-    /usr/include
-    /usr/lib
-    /usr/share
-    /usr/local
-    /usr/local/bin
-    /usr/local/include
-    /usr/local/lib
-    /usr/local/share
-    /usr/share/man
-)
 
 INCLUDE (CPack)

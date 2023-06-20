@@ -77,14 +77,6 @@ After downloading the relevant `.deb` binary packages, install:
 apt install open-space-toolkit-mathematics-*.deb
 ```
 
-#### Fedora / CentOS
-
-After downloading the relevant `.rpm` binary packages, install:
-
-```bash
-dnf install open-space-toolkit-mathematics-*.rpm
-```
-
 ### Python
 
 Install from [PyPI](https://pypi.org/project/open-space-toolkit-mathematics/):
