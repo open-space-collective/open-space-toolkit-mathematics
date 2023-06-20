@@ -176,7 +176,7 @@ class Composite : public Object
     /// @param              [in] anObject An object
     /// @return             True if composite intersects object
 
-    bool intersects(const Object& anObject) const;
+    bool intersects(const Object& anObject) const override;
 
     /// @brief              Check if composite intersects composite
     ///
@@ -190,7 +190,7 @@ class Composite : public Object
     /// @param              [in] anObject An object
     /// @return             True if composite contains object
 
-    bool contains(const Object& anObject) const;
+    bool contains(const Object& anObject) const override;
 
     /// @brief              Check if composite contains composite
     ///

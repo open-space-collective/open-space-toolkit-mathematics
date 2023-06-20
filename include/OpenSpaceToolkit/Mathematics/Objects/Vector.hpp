@@ -9,17 +9,23 @@
 
 // Disable Eigen warnings
 
-#pragma GCC diagnostic push  // Save diagnostic state
+#ifndef CLANG
 
-#pragma GCC diagnostic ignored "-Wshadow"
-#pragma GCC diagnostic ignored "-Wunused-parameter"
-#pragma GCC diagnostic ignored "-Wint-in-bool-context"
-#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
+    #pragma GCC diagnostic push  // Save diagnostic state
 
-#include <Eigen/Core>
-#include <Eigen/Geometry>
+    #pragma GCC diagnostic ignored "-Wshadow"
+    #pragma GCC diagnostic ignored "-Wunused-parameter"
+    #pragma GCC diagnostic ignored "-Wint-in-bool-context"
+    #pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
 
-#pragma GCC diagnostic pop  // Turn the warnings back on
+    #include <Eigen/Core>
+    #include <Eigen/Geometry>
+
+    #pragma GCC diagnostic pop  // Turn the warnings back on
+#else
+    #include <Eigen/Core>
+    #include <Eigen/Geometry>
+#endif
 
 namespace ostk
 {
