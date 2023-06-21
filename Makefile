@@ -324,7 +324,25 @@ debug-development: build-development-image ## Debug development environment
 
 .PHONY: debug-development
 
-format: build-development-image ## Format all of the source code with the rules in .clang-format
+format: ## Runs formatting
+
+	@ echo "Formatting..."
+
+	@ $(MAKE) format-cpp
+	@ $(MAKE) format-python
+
+.PHONY: format
+
+format-check: ## Runs format checking
+
+	@ echo "Checking format..."
+
+	@ $(MAKE) format-check-cpp
+	@ $(MAKE) format-check-python
+
+.PHONY: format-check
+
+format-cpp: build-development-image ## Format all of the source code with the rules in .clang-format
 
 	docker run \
 		--rm \
@@ -336,7 +354,7 @@ format: build-development-image ## Format all of the source code with the rules 
 
 .PHONY: format
 
-format-check: build-development-image ## Runs the clang-format tool to check the code against rules and formatting
+format-check-cpp: build-development-image ## Runs the clang-format tool to check the code against rules and formatting
 
 	docker run \
 		--rm \
@@ -346,7 +364,7 @@ format-check: build-development-image ## Runs the clang-format tool to check the
 		"$(docker_development_image_repository):$(docker_image_version)" \
 		clang-format -Werror --dry-run -style=file:thirdparty/clang/.clang-format ${clang_format_sources_path}
 
-.PHONY: format-check
+.PHONY: format-check-cpp
 
 format-python: build-development-image  ## Runs the black format tool against python code
 
@@ -359,6 +377,18 @@ format-python: build-development-image  ## Runs the black format tool against py
 		/bin/bash -c "python3.11 -m black --line-length=90 bindings/python/"
 
 .PHONY: format-python
+
+format-check-python: build-development-image  ## Runs the black format tool against python code
+
+	docker run \
+		--rm \
+		--privileged \
+		--volume="$(CURDIR):/app:delegated" \
+		--workdir=/app \
+		$(docker_development_image_repository):$(docker_image_version) \
+		/bin/bash -c "python3.11 -m black --check --diff bindings/python/"
+
+.PHONY: format-check-python
 
 debug-cpp-release: build-release-image-cpp ## Debug C++ release environment
 
