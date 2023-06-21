@@ -1,4 +1,4 @@
-# Open Space Toolkit ▸ Mathematics
+# Open Space Toolkit ▸ Mathematics 
 
 [![Build and Test](https://github.com/open-space-collective/open-space-toolkit-mathematics/actions/workflows/build-test.yml/badge.svg?branch=main)](https://github.com/open-space-collective/open-space-toolkit-mathematics/actions/workflows/build-test.yml)
 [![Code Coverage](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics/branch/main/graph/badge.svg)](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics)
