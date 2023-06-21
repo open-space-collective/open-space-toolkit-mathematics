@@ -386,7 +386,7 @@ format-check-python: build-development-image  ## Runs the black format tool agai
 		--volume="$(CURDIR):/app:delegated" \
 		--workdir=/app \
 		$(docker_development_image_repository):$(docker_image_version) \
-		/bin/bash -c "python3.11 -m black --check --diff bindings/python/"
+		/bin/bash -c "python3.11 -m black --line-length=90 --check --diff bindings/python/"
 
 .PHONY: format-check-python
 
