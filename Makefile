@@ -324,7 +324,7 @@ debug-development: build-development-image ## Debug development environment
 
 .PHONY: debug-development
 
-format: ## Runs formatting
+format: ## Run formatting
 
 	@ echo "Formatting..."
 
