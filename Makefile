@@ -333,15 +333,6 @@ format: ## Runs formatting
 
 .PHONY: format
 
-format-check: ## Runs format checking
-
-	@ echo "Checking format..."
-
-	@ $(MAKE) format-check-cpp
-	@ $(MAKE) format-check-python
-
-.PHONY: format-check
-
 format-cpp: build-development-image ## Format all of the source code with the rules in .clang-format
 
 	docker run \
@@ -354,18 +345,6 @@ format-cpp: build-development-image ## Format all of the source code with the ru
 
 .PHONY: format
 
-format-check-cpp: build-development-image ## Runs the clang-format tool to check the code against rules and formatting
-
-	docker run \
-		--rm \
-		--volume="$(CURDIR):/app" \
-		--workdir=/app \
-		--user="$(shell id -u):$(shell id -g)" \
-		"$(docker_development_image_repository):$(docker_image_version)" \
-		clang-format -Werror --dry-run -style=file:thirdparty/clang/.clang-format ${clang_format_sources_path}
-
-.PHONY: format-check-cpp
-
 format-python: build-development-image  ## Runs the black format tool against python code
 
 	docker run \
@@ -377,6 +356,27 @@ format-python: build-development-image  ## Runs the black format tool against py
 		/bin/bash -c "python3.11 -m black --line-length=90 bindings/python/"
 
 .PHONY: format-python
+
+format-check: ## Runs format checking
+
+	@ echo "Checking format..."
+
+	@ $(MAKE) format-check-cpp
+	@ $(MAKE) format-check-python
+
+.PHONY: format-check
+
+format-check-cpp: build-development-image ## Runs the clang-format tool to check the code against rules and formatting
+
+	docker run \
+		--rm \
+		--volume="$(CURDIR):/app" \
+		--workdir=/app \
+		--user="$(shell id -u):$(shell id -g)" \
+		"$(docker_development_image_repository):$(docker_image_version)" \
+		clang-format -Werror --dry-run -style=file:thirdparty/clang/.clang-format ${clang_format_sources_path}
+
+.PHONY: format-check-cpp
 
 format-check-python: build-development-image  ## Runs the black format tool against python code
 
