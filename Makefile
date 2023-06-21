@@ -345,7 +345,7 @@ format-cpp: build-development-image ## Format all of the source code with the ru
 
 .PHONY: format
 
-format-python: build-development-image  ## Runs the black format tool against python code
+format-python: build-development-image ## Run the black format tool against python code
 
 	docker run \
 		--rm \
