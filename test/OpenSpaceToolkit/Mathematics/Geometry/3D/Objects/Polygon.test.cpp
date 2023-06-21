@@ -58,9 +58,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, EqualToOperator)
     }
 
     {
-
         // [TBI] Implement similarities
-
     }
 
     {
@@ -92,9 +90,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, NotEqualToOperato
     }
 
     {
-
         // [TBI] Implement similarities
-
     }
 
     {

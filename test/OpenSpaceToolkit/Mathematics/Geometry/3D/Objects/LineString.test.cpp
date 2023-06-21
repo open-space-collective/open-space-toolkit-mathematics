@@ -307,9 +307,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, ApplyTransform
     // Rotation
 
     {
-
         // [TBI]
-
     }
 
     {
