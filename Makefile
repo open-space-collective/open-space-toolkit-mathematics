@@ -357,7 +357,7 @@ format-python: build-development-image ## Run the black format tool against pyth
 
 .PHONY: format-python
 
-format-check: ## Runs format checking
+format-check: ## Run format checking
 
 	@ echo "Checking format..."
 
