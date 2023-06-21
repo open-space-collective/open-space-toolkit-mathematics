@@ -366,7 +366,7 @@ format-check: ## Run format checking
 
 .PHONY: format-check
 
-format-check-cpp: build-development-image ## Runs the clang-format tool to check the code against rules and formatting
+format-check-cpp: build-development-image ## Run the clang-format tool to check the code against rules and formatting
 
 	docker run \
 		--rm \
