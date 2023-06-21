@@ -378,7 +378,7 @@ format-check-cpp: build-development-image ## Run the clang-format tool to check 
 
 .PHONY: format-check-cpp
 
-format-check-python: build-development-image  ## Runs the black format tool against python code
+format-check-python: build-development-image ## Run the black format tool against python code
 
 	docker run \
 		--rm \
