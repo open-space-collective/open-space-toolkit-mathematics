@@ -599,9 +599,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetEdgeAt)
     }
 
     {
-
         // [TBI] Inner ring support
-
     }
 
     {
@@ -629,9 +627,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetVertexAt)
     }
 
     {
-
         // [TBI] Inner ring support
-
     }
 
     {
@@ -660,9 +656,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetEdges)
     }
 
     {
-
         // [TBI] Inner ring support
-
     }
 
     {
@@ -692,36 +686,34 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetConvexHull)
     using ostk::math::geom::d2::objects::Polygon;
 
     {
-
         // Convex hull of convex polygon
 
         {
-
             const Polygon polygon = {{{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}};
 
-    const Polygon convexHull = polygon.getConvexHull();
+            const Polygon convexHull = polygon.getConvexHull();
 
-    ASSERT_TRUE(convexHull == polygon);
-}
+            ASSERT_TRUE(convexHull == polygon);
+        }
 
-// Convex hull of concave polygon
+        // Convex hull of concave polygon
 
-{
-    const Polygon polygon = {{{0.0, 0.0}, {0.5, 0.5}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}};
+        {
+            const Polygon polygon = {{{0.0, 0.0}, {0.5, 0.5}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}};
 
-    const Polygon convexHull = polygon.getConvexHull();
+            const Polygon convexHull = polygon.getConvexHull();
 
-    const Polygon referencePolygon = {{{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}};
+            const Polygon referencePolygon = {{{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}};
 
-    ASSERT_TRUE(convexHull == referencePolygon);
-}
-}
+            ASSERT_TRUE(convexHull == referencePolygon);
+        }
+    }
 
-// Undefined throws
+    // Undefined throws
 
-{
-    EXPECT_ANY_THROW(Polygon::Undefined().getConvexHull());
-}
+    {
+        EXPECT_ANY_THROW(Polygon::Undefined().getConvexHull());
+    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith)

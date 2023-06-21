@@ -331,9 +331,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, ApplyTransformat
     // Rotation
 
     {
-
         // [TBI]
-
     }
 
     {

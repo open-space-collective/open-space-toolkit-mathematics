@@ -56,9 +56,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, EqualToOperator)
     }
 
     {
-
         // [TBI] Implement similarities
-
     }
 
     {
@@ -88,9 +86,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, NotEqualToOperato
     }
 
     {
-
         // [TBI] Implement similarities
-
     }
 
     {
