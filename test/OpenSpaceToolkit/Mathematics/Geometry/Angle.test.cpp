@@ -6,11 +6,11 @@
 
 #include <Global.test.hpp>
 
+using ostk::core::types::Real;
+using ostk::math::geom::Angle;
+
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Constructor)
 {
-    using ostk::core::types::Real;
-    using ostk::math::geom::Angle;
-
     {
         const Real value = 123.456;
         const Angle::Unit unit = Angle::Unit::Radian;
@@ -28,9 +28,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Constructor)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, EqualToOperator)
 {
-    using ostk::core::types::Real;
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_TRUE(Angle(0.0, Angle::Unit::Radian) == Angle(0.0, Angle::Unit::Radian));
 
@@ -84,9 +81,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, EqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, NotEqualToOperator)
 {
-    using ostk::core::types::Real;
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_TRUE(Angle(1.0, Angle::Unit::Radian) != Angle(2.0, Angle::Unit::Radian));
         EXPECT_TRUE(Angle(+1.0, Angle::Unit::Radian) != Angle(-1.0, Angle::Unit::Radian));
@@ -140,8 +134,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, NotEqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, AdditionOperator)
 {
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(Angle(2.0, Angle::Unit::Radian), Angle(1.0, Angle::Unit::Radian) + Angle(1.0, Angle::Unit::Radian));
         EXPECT_EQ(Angle(0.0, Angle::Unit::Radian), Angle(-1.0, Angle::Unit::Radian) + Angle(+1.0, Angle::Unit::Radian));
@@ -218,8 +210,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, AdditionOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, SubtractionOperator)
 {
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(Angle(0.0, Angle::Unit::Radian), Angle(1.0, Angle::Unit::Radian) - Angle(1.0, Angle::Unit::Radian));
         EXPECT_EQ(
@@ -300,9 +290,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, SubtractionOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, MultiplicationOperator)
 {
-    using ostk::core::types::Real;
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(Angle(+1.0, Angle::Unit::Radian), Angle(+1.0, Angle::Unit::Radian) * +1.0);
         EXPECT_EQ(Angle(-1.0, Angle::Unit::Radian), Angle(-1.0, Angle::Unit::Radian) * +1.0);
@@ -349,9 +336,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, MultiplicationOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, DivisionOperator)
 {
-    using ostk::core::types::Real;
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(Angle(+1.0, Angle::Unit::Radian), Angle(+1.0, Angle::Unit::Radian) / +1.0);
         EXPECT_EQ(Angle(-1.0, Angle::Unit::Radian), Angle(-1.0, Angle::Unit::Radian) / +1.0);
@@ -381,8 +365,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, DivisionOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, AdditionAssignmentOperator)
 {
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(Angle(2.0, Angle::Unit::Radian), Angle(1.0, Angle::Unit::Radian) += Angle(1.0, Angle::Unit::Radian));
         EXPECT_EQ(
@@ -464,8 +446,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, AdditionAssignmentOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, SubtractionAssignmentOperator)
 {
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(Angle(0.0, Angle::Unit::Radian), Angle(1.0, Angle::Unit::Radian) -= Angle(1.0, Angle::Unit::Radian));
         EXPECT_EQ(
@@ -547,9 +527,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, SubtractionAssignmentOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, MultiplicationAssignmentOperator)
 {
-    using ostk::core::types::Real;
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(Angle(+1.0, Angle::Unit::Radian), Angle(+1.0, Angle::Unit::Radian) *= +1.0);
         EXPECT_EQ(Angle(-1.0, Angle::Unit::Radian), Angle(-1.0, Angle::Unit::Radian) *= +1.0);
@@ -578,9 +555,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, MultiplicationAssignmentOperat
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, DivisionAssignmentOperator)
 {
-    using ostk::core::types::Real;
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(Angle(+1.0, Angle::Unit::Radian), Angle(+1.0, Angle::Unit::Radian) /= +1.0);
         EXPECT_EQ(Angle(-1.0, Angle::Unit::Radian), Angle(-1.0, Angle::Unit::Radian) /= +1.0);
@@ -610,8 +584,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, DivisionAssignmentOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, UnaryAdditionOperator)
 {
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(Angle(0.0, Angle::Unit::Radian), +Angle(0.0, Angle::Unit::Radian));
 
@@ -635,8 +607,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, UnaryAdditionOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, UnarySubtractionOperator)
 {
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(Angle(0.0, Angle::Unit::Radian), -Angle(0.0, Angle::Unit::Radian));
 
@@ -660,8 +630,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, UnarySubtractionOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, StreamOperator)
 {
-    using ostk::math::geom::Angle;
-
     {
         testing::internal::CaptureStdout();
 
@@ -673,9 +641,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, StreamOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, IsDefined)
 {
-    using ostk::core::types::Real;
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_TRUE(Angle(0.0, Angle::Unit::Radian).isDefined());
 
@@ -695,9 +660,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, IsZero)
 {
-    using ostk::core::types::Real;
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_TRUE(Angle(0.0, Angle::Unit::Radian).isZero());
         EXPECT_TRUE(Angle(0.0, Angle::Unit::Degree).isZero());
@@ -724,8 +686,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, IsZero)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, GetUnit)
 {
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(Angle::Unit::Radian, Angle(1.0, Angle::Unit::Radian).getUnit());
         EXPECT_EQ(Angle::Unit::Degree, Angle(1.0, Angle::Unit::Degree).getUnit());
@@ -741,8 +701,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, GetUnit)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, In)
 {
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(1.0, Angle(1.0, Angle::Unit::Radian).in(Angle::Unit::Radian));
         EXPECT_EQ(1.0, Angle(1.0, Angle::Unit::Degree).in(Angle::Unit::Degree));
@@ -758,10 +716,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, In)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, InRadians)
 {
-    using ostk::core::types::Real;
-
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(123.456, Angle(123.456, Angle::Unit::Radian).inRadians());
     }
@@ -809,9 +763,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, InRadians)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, InDegrees)
 {
-    using ostk::core::types::Real;
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(360.0, Angle(Real::TwoPi(), Angle::Unit::Radian).inDegrees());
     }
@@ -857,9 +808,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, InDegrees)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, InArcminutes)
 {
-    using ostk::core::types::Real;
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(360.0 * 60.0, Angle(Real::TwoPi(), Angle::Unit::Radian).inArcminutes());
     }
@@ -909,9 +857,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, InArcminutes)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, InArcseconds)
 {
-    using ostk::core::types::Real;
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(360.0 * 3600.0, Angle(Real::TwoPi(), Angle::Unit::Radian).inArcseconds());
     }
@@ -966,9 +911,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, InArcseconds)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, InRevolutions)
 {
-    using ostk::core::types::Real;
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ(1.0, Angle(Real::TwoPi(), Angle::Unit::Radian).inRevolutions());
     }
@@ -980,8 +922,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, InRevolutions)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, ToString)
 {
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_EQ("1.0 [rad]", Angle(1.0, Angle::Unit::Radian).toString());
         EXPECT_EQ("1.0 [deg]", Angle(1.0, Angle::Unit::Degree).toString());
@@ -1029,8 +969,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, ToString)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Undefined)
 {
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_NO_THROW(Angle::Undefined());
         EXPECT_FALSE(Angle::Undefined().isDefined());
@@ -1039,8 +977,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Undefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Radians)
 {
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_NO_THROW(Angle::Radians(123.456));
         EXPECT_TRUE(Angle::Radians(123.456).isDefined());
@@ -1051,8 +987,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Radians)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Degrees)
 {
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_NO_THROW(Angle::Degrees(123.456));
         EXPECT_TRUE(Angle::Degrees(123.456).isDefined());
@@ -1063,8 +997,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Degrees)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Arcminutes)
 {
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_NO_THROW(Angle::Arcminutes(123.456));
         EXPECT_TRUE(Angle::Arcminutes(123.456).isDefined());
@@ -1075,8 +1007,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Arcminutes)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Arcseconds)
 {
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_NO_THROW(Angle::Arcseconds(123.456));
         EXPECT_TRUE(Angle::Arcseconds(123.456).isDefined());
@@ -1087,8 +1017,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Arcseconds)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Revolutions)
 {
-    using ostk::math::geom::Angle;
-
     {
         EXPECT_NO_THROW(Angle::Revolutions(123.456));
         EXPECT_TRUE(Angle::Revolutions(123.456).isDefined());
