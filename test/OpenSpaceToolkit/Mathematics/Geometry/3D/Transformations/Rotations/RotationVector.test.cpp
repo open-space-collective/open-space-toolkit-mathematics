@@ -389,6 +389,110 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
     }
 
     {
+        EXPECT_EQ(
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.9999619230641713, 0.0, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.9999619230641713, 0.0, 0.0, -0.008726535498373997))
+        );
+        EXPECT_EQ(
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(-179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(-0.9999619230641713, 0.0, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(-181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(-0.9999619230641713, 0.0, 0.0, -0.008726535498373997))
+        );
+
+        EXPECT_EQ(
+            RotationVector({0.0, 1.0, 0.0}, Angle::Degrees(179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.9999619230641713, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 1.0, 0.0}, Angle::Degrees(181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.9999619230641713, 0.0, -0.008726535498373997))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 1.0, 0.0}, Angle::Degrees(-179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, -0.9999619230641713, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 1.0, 0.0}, Angle::Degrees(-181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, -0.9999619230641713, 0.0, -0.008726535498373997))
+        );
+
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 0.9999619230641713, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 0.9999619230641713, -0.008726535498373997))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(-179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, -0.9999619230641713, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(-181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, -0.9999619230641713, -0.008726535498373997))
+        );
+
+        EXPECT_EQ(
+            RotationVector({-1.0, 0.0, 0.0}, Angle::Degrees(179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(-0.9999619230641713, 0.0, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({-1.0, 0.0, 0.0}, Angle::Degrees(181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(-0.9999619230641713, 0.0, 0.0, -0.008726535498373997))
+        );
+        EXPECT_EQ(
+            RotationVector({-1.0, 0.0, 0.0}, Angle::Degrees(-179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.9999619230641713, 0.0, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({-1.0, 0.0, 0.0}, Angle::Degrees(-181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.9999619230641713, 0.0, 0.0, -0.008726535498373997))
+        );
+
+        EXPECT_EQ(
+            RotationVector({0.0, -1.0, 0.0}, Angle::Degrees(179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, -0.9999619230641713, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, -1.0, 0.0}, Angle::Degrees(181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, -0.9999619230641713, 0.0, -0.008726535498373997))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, -1.0, 0.0}, Angle::Degrees(-179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.9999619230641713, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, -1.0, 0.0}, Angle::Degrees(-181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.9999619230641713, 0.0, -0.008726535498373997))
+        );
+
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, -1.0}, Angle::Degrees(179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, -0.9999619230641713, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, -1.0}, Angle::Degrees(181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, -0.9999619230641713, -0.008726535498373997))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, -1.0}, Angle::Degrees(-179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 0.9999619230641713, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, -1.0}, Angle::Degrees(-181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 0.9999619230641713, -0.008726535498373997))
+        );
+    }
+
+    {
         EXPECT_ANY_THROW(RotationVector::Quaternion(Quaternion::Undefined()));
     }
 }
