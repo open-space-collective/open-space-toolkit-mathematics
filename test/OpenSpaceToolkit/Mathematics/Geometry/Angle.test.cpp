@@ -787,11 +787,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, InRadians)
         EXPECT_EQ(0.0, Angle(Real::TwoPi(), Angle::Unit::Radian).inRadians(-Real::Pi(), Real::Pi()));
         EXPECT_EQ(-Real::Pi(), Angle(3.0 * Real::Pi(), Angle::Unit::Radian).inRadians(-Real::Pi(), Real::Pi()));
         EXPECT_EQ(0.0, Angle(4.0 * Real::Pi(), Angle::Unit::Radian).inRadians(-Real::Pi(), Real::Pi()));
+        EXPECT_EQ(-Real::Pi(), Angle(5.0 * Real::Pi(), Angle::Unit::Radian).inRadians(-Real::Pi(), Real::Pi()));
 
         EXPECT_EQ(-Real::Pi(), Angle(-Real::Pi(), Angle::Unit::Radian).inRadians(-Real::Pi(), Real::Pi()));
         EXPECT_EQ(0.0, Angle(-Real::TwoPi(), Angle::Unit::Radian).inRadians(-Real::Pi(), Real::Pi()));
         EXPECT_EQ(-Real::Pi(), Angle(-3.0 * Real::Pi(), Angle::Unit::Radian).inRadians(-Real::Pi(), Real::Pi()));
         EXPECT_EQ(0.0, Angle(-4.0 * Real::Pi(), Angle::Unit::Radian).inRadians(-Real::Pi(), Real::Pi()));
+        EXPECT_EQ(-Real::Pi(), Angle(-5.0 * Real::Pi(), Angle::Unit::Radian).inRadians(-Real::Pi(), Real::Pi()));
     }
 
     {
