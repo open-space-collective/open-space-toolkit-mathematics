@@ -6,11 +6,14 @@
 
 #include <Global.test.hpp>
 
+using ostk::math::geom::Angle;
+using ostk::math::geom::d3::trf::rot::Quaternion;
+using ostk::math::geom::d3::trf::rot::RotationVector;
+using ostk::math::obj::Vector3d;
+using ostk::core::types::Real;
+
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Constructor)
 {
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
-
     {
         EXPECT_NO_THROW(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(45.0)));
 
@@ -27,9 +30,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, EqualToOperator)
 {
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
-
     {
         EXPECT_TRUE(
             RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(0.0)) == RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(0.0))
@@ -60,16 +60,32 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
             RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(0.0)) ==
             RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(-360.0))
         );
-
         EXPECT_TRUE(
             RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(+180.0)) ==
             RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(-180.0))
+        );
+
+        EXPECT_TRUE(
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(Real::Pi())) ==
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(-Real::Pi()))
+        );
+        EXPECT_TRUE(
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(0)) ==
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(Real::TwoPi()))
+        );
+        EXPECT_TRUE(
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(Real::Pi())) ==
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(3.0 * Real::Pi()))
         );
     }
 
     {
         EXPECT_FALSE(
             RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(0.0)) == RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(1.0))
+        );
+        EXPECT_FALSE(
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(1.0)) ==
+            RotationVector({-1.0, 0.0, 0.0}, Angle::Degrees(1.0))
         );
     }
 
@@ -82,9 +98,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, NotEqualToOperator)
 {
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
-
     {
         EXPECT_TRUE(
             RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(0.0)) != RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(1.0))
@@ -127,19 +140,28 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
             RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(0.0)) !=
             RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(-360.0))
         );
-
         EXPECT_FALSE(
             RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(+180.0)) !=
             RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(-180.0))
+        );
+
+        EXPECT_FALSE(
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(Real::Pi())) !=
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(-Real::Pi()))
+        );
+        EXPECT_FALSE(
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(0)) !=
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(Real::TwoPi()))
+        );
+        EXPECT_FALSE(
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(Real::Pi())) !=
+            RotationVector({0.0, 0.0, 1.0}, Angle::Radians(3.0 * Real::Pi()))
         );
     }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, StreamOperator)
 {
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
-
     {
         testing::internal::CaptureStdout();
 
@@ -151,10 +173,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, IsDefined)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
-
     {
         EXPECT_TRUE(RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(10.0)).isDefined());
     }
@@ -168,10 +186,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, GetAxis)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
-
     {
         EXPECT_EQ(Vector3d(1.0, 0.0, 0.0), RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(10.0)).getAxis());
         EXPECT_EQ(Vector3d(0.0, 1.0, 0.0), RotationVector({0.0, 1.0, 0.0}, Angle::Degrees(20.0)).getAxis());
@@ -185,9 +199,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, GetAngle)
 {
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
-
     {
         EXPECT_EQ(Angle::Degrees(0.0), RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(0.0)).getAngle());
 
@@ -208,9 +219,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, ToString)
 {
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
-
     {
         EXPECT_EQ("[1.0, 0.0, 0.0] : 0.0 [deg]", RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(0.0)).toString());
 
@@ -259,8 +267,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Undefined)
 {
-    using ostk::math::geom::d3::trf::rot::RotationVector;
-
     {
         EXPECT_NO_THROW(RotationVector::Undefined());
         EXPECT_FALSE(RotationVector::Undefined().isDefined());
@@ -269,9 +275,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Unit)
 {
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
-
     {
         EXPECT_NO_THROW(RotationVector::Unit());
         EXPECT_EQ(RotationVector({0.0, 0.0, 1.0}, Angle::Zero()), RotationVector::Unit());
@@ -280,10 +283,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, X)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
-
     {
         EXPECT_NO_THROW(RotationVector::X(Angle::Degrees(45.0)));
 
@@ -300,10 +299,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Y)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
-
     {
         EXPECT_NO_THROW(RotationVector::Y(Angle::Degrees(45.0)));
 
@@ -320,10 +315,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Z)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
-
     {
         EXPECT_NO_THROW(RotationVector::Z(Angle::Degrees(45.0)));
 
@@ -340,17 +331,164 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Quaternion)
 {
-    using ostk::core::types::Real;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::trf::rot::Quaternion;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
-
     {
         EXPECT_EQ(RotationVector::Unit(), RotationVector::Quaternion(Quaternion::Unit()));
+    }
+
+    {
+        EXPECT_EQ(
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(180.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0))
+        );
+        EXPECT_EQ(
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(180.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(-1.0, 0.0, 0.0, 0.0))
+        );
+        EXPECT_EQ(
+            RotationVector({-1.0, 0.0, 0.0}, Angle::Degrees(180.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0))
+        );
+        EXPECT_EQ(
+            RotationVector({-1.0, 0.0, 0.0}, Angle::Degrees(180.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(-1.0, 0.0, 0.0, 0.0))
+        );
+
+        EXPECT_EQ(
+            RotationVector({0.0, 1.0, 0.0}, Angle::Degrees(180.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 1.0, 0.0, 0.0))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 1.0, 0.0}, Angle::Degrees(180.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, -1.0, 0.0, 0.0))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, -1.0, 0.0}, Angle::Degrees(180.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 1.0, 0.0, 0.0))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, -1.0, 0.0}, Angle::Degrees(180.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, -1.0, 0.0, 0.0))
+        );
 
         EXPECT_EQ(
             RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(180.0)),
             RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(180.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, -1.0, 0.0))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, -1.0}, Angle::Degrees(180.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, -1.0}, Angle::Degrees(180.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, -1.0, 0.0))
+        );
+    }
+
+    {
+        EXPECT_EQ(
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.9999619230641713, 0.0, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.9999619230641713, 0.0, 0.0, -0.008726535498373997))
+        );
+        EXPECT_EQ(
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(-179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(-0.9999619230641713, 0.0, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(-181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(-0.9999619230641713, 0.0, 0.0, -0.008726535498373997))
+        );
+
+        EXPECT_EQ(
+            RotationVector({0.0, 1.0, 0.0}, Angle::Degrees(179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.9999619230641713, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 1.0, 0.0}, Angle::Degrees(181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.9999619230641713, 0.0, -0.008726535498373997))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 1.0, 0.0}, Angle::Degrees(-179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, -0.9999619230641713, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 1.0, 0.0}, Angle::Degrees(-181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, -0.9999619230641713, 0.0, -0.008726535498373997))
+        );
+
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 0.9999619230641713, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 0.9999619230641713, -0.008726535498373997))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(-179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, -0.9999619230641713, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(-181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, -0.9999619230641713, -0.008726535498373997))
+        );
+
+        EXPECT_EQ(
+            RotationVector({-1.0, 0.0, 0.0}, Angle::Degrees(179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(-0.9999619230641713, 0.0, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({-1.0, 0.0, 0.0}, Angle::Degrees(181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(-0.9999619230641713, 0.0, 0.0, -0.008726535498373997))
+        );
+        EXPECT_EQ(
+            RotationVector({-1.0, 0.0, 0.0}, Angle::Degrees(-179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.9999619230641713, 0.0, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({-1.0, 0.0, 0.0}, Angle::Degrees(-181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.9999619230641713, 0.0, 0.0, -0.008726535498373997))
+        );
+
+        EXPECT_EQ(
+            RotationVector({0.0, -1.0, 0.0}, Angle::Degrees(179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, -0.9999619230641713, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, -1.0, 0.0}, Angle::Degrees(181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, -0.9999619230641713, 0.0, -0.008726535498373997))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, -1.0, 0.0}, Angle::Degrees(-179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.9999619230641713, 0.0, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, -1.0, 0.0}, Angle::Degrees(-181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.9999619230641713, 0.0, -0.008726535498373997))
+        );
+
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, -1.0}, Angle::Degrees(179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, -0.9999619230641713, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, -1.0}, Angle::Degrees(181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, -0.9999619230641713, -0.008726535498373997))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, -1.0}, Angle::Degrees(-179.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 0.9999619230641713, 0.008726535498373897))
+        );
+        EXPECT_EQ(
+            RotationVector({0.0, 0.0, -1.0}, Angle::Degrees(-181.0)),
+            RotationVector::Quaternion(Quaternion::XYZS(0.0, 0.0, 0.9999619230641713, -0.008726535498373997))
         );
     }
 
