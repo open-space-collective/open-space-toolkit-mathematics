@@ -10,7 +10,7 @@ USER root
 
 # Install extensions
 
-RUN pip install "plotly>=5" "ipywidgets>=7.6"
+RUN pip install "ipywidgets>=7.6"
 
 COPY ./shortcuts-extension /home/jovyan/.jupyter/lab/user-settings/@jupyterlab/shortcuts-extension
 
