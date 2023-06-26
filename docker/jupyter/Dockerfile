@@ -1,4 +1,4 @@
-# Apache License 2.0 
+# Apache License 2.0
 
 ARG JUPYTER_NOTEBOOK_IMAGE_REPOSITORY="jupyter/scipy-notebook:latest"
 
@@ -10,7 +10,7 @@ USER root
 
 # Install extensions
 
-RUN jupyter labextension install jupyterlab-plotly
+RUN pip install "plotly>=5" "ipywidgets>=7.6"
 
 COPY ./shortcuts-extension /home/jovyan/.jupyter/lab/user-settings/@jupyterlab/shortcuts-extension
 
@@ -28,4 +28,3 @@ ENV LD_LIBRARY_PATH="/usr/local/lib:/usr/lib/x86_64-linux-gnu:/opt/conda/lib/pyt
 ENV PYTHONPATH="/opt/conda/lib/python3.8/site-packages:/home/jovyan/lib"
 
 RUN pip install open-space-toolkit-mathematics
-
