@@ -97,6 +97,7 @@ build-development-image: pull-development-image ## Build development image
 	@ echo "Building development image..."
 
 	docker build \
+		--no-cache \
 		--file="$(CURDIR)/docker/development/Dockerfile" \
 		--tag=$(docker_development_image_repository):$(docker_image_version) \
 		--tag=$(docker_development_image_repository):latest \
