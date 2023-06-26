@@ -159,29 +159,8 @@ RotationVector RotationVector::Quaternion(const rot::Quaternion& aQuaternion)
         return RotationVector::Unit();
     }
 
-    // if (aQuaternion.isNear(rot::Quaternion::Unit(), Angle::Radians(Real::Epsilon())))
-    // {
-    //     return RotationVector::Unit() ;
-    // }
-
-    // std::cout << "aQuaternion = " << aQuaternion.toString() << std::endl ;
-    // std::cout << "1.0 - aQuaternion.s() * aQuaternion.s() = " << (1.0 - aQuaternion.s() * aQuaternion.s()).toString()
-    // << std::endl ;
-
-    // if ((1.0 - aQuaternion.s() * aQuaternion.s()).abs() < Real::Epsilon())
-    // {
-    //     return RotationVector::Unit() ;
-    // }
-
-    // if (aQuaternion.s() < 0.0)
-    // {
-    //     return RotationVector::Quaternion(Quaternion(aQuaternion).rectify()) ;
-    // }
-
     const Vector3d axis = (aQuaternion.getVectorPart() / (1.0 - aQuaternion.s() * aQuaternion.s()).sqrt()).normalized();
-
-    const Angle angle = Angle::Radians(2.0 * std::acos(std::abs(aQuaternion.s())));
-    // const Angle angle = Angle::Radians(2.0 * std::atan2(aQuaternion.getVectorPart().norm(), aQuaternion.s())) ;
+    const Angle angle = Angle::Radians(2.0 * std::acos(aQuaternion.s()));
 
     return RotationVector(axis, angle);
 }
