@@ -1,13 +1,8 @@
 #!/bin/bash
 
-# Apache License 2.0 
+# Apache License 2.0
 
 # Check input arguments
-
-if [[ -z ${project_directory} ]]; then
-    echo "Variable [project_directory] is undefined."
-    exit 1
-fi
 
 if [[ -z ${docker_development_image_repository} ]]; then
     echo "Variable [docker_development_image_repository] is undefined."
