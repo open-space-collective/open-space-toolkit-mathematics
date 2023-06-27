@@ -132,15 +132,11 @@ C++</h2>
 Debian / Ubuntu</h3>
 <p>After downloading the relevant <code>.deb</code> binary packages, install:</p>
 <div class="fragment"><div class="line">apt install open-space-toolkit-mathematics-*.deb</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md9"></a>
-Fedora / CentOS</h3>
-<p>After downloading the relevant <code>.rpm</code> binary packages, install:</p>
-<div class="fragment"><div class="line">dnf install open-space-toolkit-mathematics-*.rpm</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md9"></a>
 Python</h2>
 <p>Install from <a href="https://pypi.org/project/open-space-toolkit-mathematics/">PyPI</a>:</p>
 <div class="fragment"><div class="line">pip install open-space-toolkit-mathematics</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md10"></a>
 Documentation</h1>
 <p>Documentation is available here:</p>
 <ul>
@@ -222,16 +218,16 @@ Documentation</h1>
 <div class="line">│           └── Swarm</div>
 <div class="line">└── Statistics</div>
 </div><!-- fragment --><p>&lt;/details&gt;</p>
-<h1><a class="anchor" id="autotoc_md12"></a>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Tutorials</h1>
 <p>Tutorials are available here:</p>
 <ul>
 <li><a href="./tutorials/cpp">C++</a></li>
 <li><a href="./tutorials/python">Python</a></li>
 </ul>
-<h1><a class="anchor" id="autotoc_md13"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 Features</h1>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Geometry Queries</h2>
 <ul>
 <li><code>○</code>: query only</li>
@@ -239,7 +235,7 @@ Geometry Queries</h2>
 <li>: to be implemented</li>
 <li><code>-</code>: undefined</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md15"></a>
+<h3><a class="anchor" id="autotoc_md14"></a>
 3D</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -305,9 +301,9 @@ Geometry Queries</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><b>Composite</b> </td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td><td class="markdownTableBodyNone"></td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md15"></a>
 Setup</h1>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Development Environment</h2>
 <p>Using <a href="https://www.docker.com">Docker</a> for development is recommended, to simplify the installation of the necessary build tools and dependencies. Instructions on how to install Docker are available <a href="https://docs.docker.com/install/">here</a>.</p>
 <p>To start the development environment:</p>
@@ -319,20 +315,20 @@ Development Environment</h2>
 <li>Start a <code>bash</code> shell from the <code>./build</code> working directory.</li>
 </ol>
 <p>If installing Docker is not an option, you can manually install the development tools (GCC, CMake) and all required dependencies, by following a procedure similar to the one described in the <a href="./docker/development/Dockerfile">Development Dockerfile</a>.</p>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md17"></a>
 Build</h2>
 <p>From the <code>./build</code> directory:</p>
 <div class="fragment"><div class="line">cmake ..</div>
 <div class="line">make</div>
 </div><!-- fragment --><p><em>Tip: <code>helpers/build.sh</code> simplifies building from within the development environment.</em></p>
-<h2><a class="anchor" id="autotoc_md19"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 Test</h2>
 <p>To start a container to build and run the tests:</p>
 <div class="fragment"><div class="line">make test</div>
 </div><!-- fragment --><p>Or to run them manually:</p>
 <div class="fragment"><div class="line">./bin/open-space-toolkit-mathematics.test</div>
 </div><!-- fragment --><p><em>Tip: <code>helpers/test.sh</code> simplifies running tests from within the development environment.</em></p>
-<h1><a class="anchor" id="autotoc_md20"></a>
+<h1><a class="anchor" id="autotoc_md19"></a>
 Dependencies</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -348,14 +344,14 @@ Dependencies</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Core </td><td class="markdownTableBodyNone"><code>main</code> </td><td class="markdownTableBodyNone">Apache License 2.0 </td><td class="markdownTableBodyNone"><a href="https://github.com/open-space-collective/open-space-toolkit-core">github.com/open-space-collective/open-space-toolkit-core</a>  </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md20"></a>
 Contribution</h1>
 <p>Contributions are more than welcome!</p>
 <p>Please read our <a class="el" href="_c_o_n_t_r_i_b_u_t_i_n_g_8md.html">contributing guide</a> to learn about our development process, how to propose fixes and improvements, and how to build and test the code.</p>
-<h1><a class="anchor" id="autotoc_md22"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 Special Thanks</h1>
 <p><a href="https://www.loftorbital.com/"><img src="https://github.com/open-space-collective/open-space-toolkit/blob/main/assets/thanks/loft_orbital.png" alt="Loft Orbital" class="inline"/></a></p>
-<h1><a class="anchor" id="autotoc_md23"></a>
+<h1><a class="anchor" id="autotoc_md22"></a>
 License</h1>
 <p>Apache License 2.0 </p>
 </div></div><!-- PageDoc -->

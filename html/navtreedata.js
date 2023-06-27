@@ -34,27 +34,26 @@ var NAVTREE =
       ] ],
       [ "Installation", "index.html#autotoc_md6", [
         [ "C++", "index.html#autotoc_md7", [
-          [ "Debian / Ubuntu", "index.html#autotoc_md8", null ],
-          [ "Fedora / CentOS", "index.html#autotoc_md9", null ]
+          [ "Debian / Ubuntu", "index.html#autotoc_md8", null ]
         ] ],
-        [ "Python", "index.html#autotoc_md10", null ]
+        [ "Python", "index.html#autotoc_md9", null ]
       ] ],
-      [ "Documentation", "index.html#autotoc_md11", null ],
-      [ "Tutorials", "index.html#autotoc_md12", null ],
-      [ "Features", "index.html#autotoc_md13", [
-        [ "Geometry Queries", "index.html#autotoc_md14", [
-          [ "3D", "index.html#autotoc_md15", null ]
+      [ "Documentation", "index.html#autotoc_md10", null ],
+      [ "Tutorials", "index.html#autotoc_md11", null ],
+      [ "Features", "index.html#autotoc_md12", [
+        [ "Geometry Queries", "index.html#autotoc_md13", [
+          [ "3D", "index.html#autotoc_md14", null ]
         ] ]
       ] ],
-      [ "Setup", "index.html#autotoc_md16", [
-        [ "Development Environment", "index.html#autotoc_md17", null ],
-        [ "Build", "index.html#autotoc_md18", null ],
-        [ "Test", "index.html#autotoc_md19", null ]
+      [ "Setup", "index.html#autotoc_md15", [
+        [ "Development Environment", "index.html#autotoc_md16", null ],
+        [ "Build", "index.html#autotoc_md17", null ],
+        [ "Test", "index.html#autotoc_md18", null ]
       ] ],
-      [ "Dependencies", "index.html#autotoc_md20", null ],
-      [ "Contribution", "index.html#autotoc_md21", null ],
-      [ "Special Thanks", "index.html#autotoc_md22", null ],
-      [ "License", "index.html#autotoc_md23", null ]
+      [ "Dependencies", "index.html#autotoc_md19", null ],
+      [ "Contribution", "index.html#autotoc_md20", null ],
+      [ "Special Thanks", "index.html#autotoc_md21", null ],
+      [ "License", "index.html#autotoc_md22", null ]
     ] ],
     [ "Contributing", "md__c_o_n_t_r_i_b_u_t_i_n_g.html", [
       [ "Introduction", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#Introduction", null ],
