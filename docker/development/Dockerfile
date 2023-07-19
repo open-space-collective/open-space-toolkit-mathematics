@@ -8,6 +8,11 @@ LABEL maintainer="lucas@loftorbital.com"
 
 # Dependencies
 
+# jq
+RUN apt-get update \
+ && apt-get install -y jq \
+ && rm -rf /var/lib/apt/lists/*
+
 ## {fmt}
 
 ARG FMT_VERSION="5.2.0"
@@ -48,12 +53,17 @@ RUN git clone --branch ${GEOMETRIC_TOOLS_ENGINE_VERSION} --depth 1 https://githu
 
 ## Open Space Toolkit ▸ Core
 
-ARG OSTK_CORE_VERSION="0.7.2"
+ARG OSTK_CORE_MAJOR="0"
+ARG OSTK_CORE_MINOR="7"
+
+## Force an image rebuild when new Core patch versions are detected
+ADD https://api.github.com/repos/open-space-collective/open-space-toolkit-core/git/matching-refs/tags/${OSTK_CORE_MAJOR}.${OSTK_CORE_MINOR} /tmp/open-space-toolkit-core/versions.json
 
 RUN mkdir -p /tmp/open-space-toolkit-core \
  && cd /tmp/open-space-toolkit-core \
- && wget --quiet https://github.com/open-space-collective/open-space-toolkit-core/releases/download/${OSTK_CORE_VERSION}/open-space-toolkit-core-${OSTK_CORE_VERSION}-1.x86_64-runtime.deb \
- && wget --quiet https://github.com/open-space-collective/open-space-toolkit-core/releases/download/${OSTK_CORE_VERSION}/open-space-toolkit-core-${OSTK_CORE_VERSION}-1.x86_64-devel.deb \
+ && export LATEST_PATCH_VERSION=$(jq -r .[-1].ref versions.json | cut -d "/" -f3) \
+ && wget --quiet https://github.com/open-space-collective/open-space-toolkit-core/releases/download/${LATEST_PATCH_VERSION}/open-space-toolkit-core-${LATEST_PATCH_VERSION}-1.x86_64-runtime.deb \
+ && wget --quiet https://github.com/open-space-collective/open-space-toolkit-core/releases/download/${LATEST_PATCH_VERSION}/open-space-toolkit-core-${LATEST_PATCH_VERSION}-1.x86_64-devel.deb \
  && apt-get install -y ./*.deb \
  && rm -rf /tmp/open-space-toolkit-core
 
