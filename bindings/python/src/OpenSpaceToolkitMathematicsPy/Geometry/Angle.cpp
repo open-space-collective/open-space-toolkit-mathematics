@@ -121,10 +121,24 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
             }
         )
         .def(
+            "in_arcminutes",
+            +[](const Angle& anAngle, const Real& aLowerBound, const Real& anUpperBound) -> Real
+            {
+                return anAngle.inArcminutes(aLowerBound, anUpperBound);
+            }
+        )
+        .def(
             "in_arcseconds",
             +[](const Angle& anAngle) -> Real
             {
                 return anAngle.inArcseconds();
+            }
+        )
+        .def(
+            "in_arcseconds",
+            +[](const Angle& anAngle, const Real& aLowerBound, const Real& anUpperBound) -> Real
+            {
+                return anAngle.inArcseconds(aLowerBound, anUpperBound);
             }
         )
         .def("in_revolutions", &Angle::inRevolutions)

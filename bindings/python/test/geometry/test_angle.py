@@ -304,3 +304,29 @@ def test_angle_in_radians_reduction():
 
     angle: Angle = Angle(math.pi, Unit.Radian)
     assert angle.in_radians(-math.pi, math.pi) == -math.pi
+
+def test_angle_in_arcminutes_reduction():
+    angle: Angle = Angle(359.0*60.0, Unit.Arcminute)
+    assert angle.in_arcminutes(-180.0*60.0, 180.0*60.0) == -60.0
+
+    angle: Angle = Angle(60.0, Unit.Arcminute)
+    assert angle.in_arcminutes(-180.0*60.0, 180.0*60.0) == 60.0
+
+    angle: Angle = Angle(-180.0*60.0, Unit.Arcminute)
+    assert angle.in_arcminutes(-180.0*60.0, 180.0*60.0) == -180.0*60.0
+
+    angle: Angle = Angle(180.0*60.0, Unit.Arcminute)
+    assert angle.in_arcminutes(-180.0*60.0, 180.0*60.0) == -180.0*60.0
+
+def test_angle_in_arcseconds_reduction():
+    angle: Angle = Angle(359.0*3600.0, Unit.Arcsecond)
+    assert angle.in_arcseconds(-180.0*3600.0, 180.0*3600.0) == -3600.0
+
+    angle: Angle = Angle(3600.0, Unit.Arcsecond)
+    assert angle.in_arcseconds(-180.0*3600.0, 180.0*3600.0) == 3600.0
+
+    angle: Angle = Angle(-180*3600.0, Unit.Arcsecond)
+    assert angle.in_arcseconds(-180.0*3600.0, 180.0*3600.0) == -180.0*3600.0
+
+    angle: Angle = Angle(180.0*3600.0, Unit.Arcsecond)
+    assert angle.in_arcseconds(-180.0*3600.0, 180.0*3600.0) == -180.0*3600.0
