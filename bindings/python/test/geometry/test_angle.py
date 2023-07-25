@@ -278,6 +278,7 @@ def test_angle_string_symbol_from_unit():
     assert Angle.symbol_from_unit(Unit.Arcsecond) == "asec"
     assert Angle.symbol_from_unit(Unit.Revolution) == "rev"
 
+
 def test_angle_in_degrees_reduction():
     angle: Angle = Angle(359.0, Unit.Degree)
     assert angle.in_degrees(-180.0, 180.0) == -1.0
