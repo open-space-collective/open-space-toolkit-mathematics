@@ -93,6 +93,13 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
             }
         )
         .def(
+            "in_radians",
+            +[](const Angle& anAngle, const Real& aLowerBound, const Real& anUpperBound) -> Real
+            {
+                return anAngle.inRadians(aLowerBound, anUpperBound);
+            }
+        )
+        .def(
             "in_degrees",
             +[](const Angle& anAngle) -> Real
             {

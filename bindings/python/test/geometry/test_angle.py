@@ -291,3 +291,16 @@ def test_angle_in_degrees_reduction():
 
     angle: Angle = Angle(180.0, Unit.Degree)
     assert angle.in_degrees(-180.0, 180.0) == -180.0
+
+def test_angle_in_radians_reduction():
+    angle: Angle = Angle(math.pi*3/2, Unit.Radian)
+    assert angle.in_radians(-math.pi, math.pi) == -math.pi/2
+
+    angle: Angle = Angle(math.pi/2, Unit.Radian)
+    assert angle.in_radians(-math.pi, math.pi) == math.pi/2
+
+    angle: Angle = Angle(-math.pi, Unit.Radian)
+    assert angle.in_radians(-math.pi, math.pi) == -math.pi
+
+    angle: Angle = Angle(math.pi, Unit.Radian)
+    assert angle.in_radians(-math.pi, math.pi) == -math.pi
