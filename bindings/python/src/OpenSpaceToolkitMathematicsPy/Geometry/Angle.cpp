@@ -97,7 +97,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
             +[](const Angle& anAngle, const Real& aLowerBound, const Real& anUpperBound) -> Real
             {
                 return anAngle.inRadians(aLowerBound, anUpperBound);
-            }
+            },
+            arg("lower_bound"),
+            arg("upper_bound")
         )
         .def(
             "in_degrees",
@@ -111,7 +113,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
             +[](const Angle& anAngle, const Real& aLowerBound, const Real& anUpperBound) -> Real
             {
                 return anAngle.inDegrees(aLowerBound, anUpperBound);
-            }
+            },
+            arg("lower_bound"),
+            arg("upper_bound")
         )
         .def(
             "in_arcminutes",
@@ -125,7 +129,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
             +[](const Angle& anAngle, const Real& aLowerBound, const Real& anUpperBound) -> Real
             {
                 return anAngle.inArcminutes(aLowerBound, anUpperBound);
-            }
+            },
+            arg("lower_bound"),
+            arg("upper_bound")
         )
         .def(
             "in_arcseconds",
@@ -139,7 +145,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
             +[](const Angle& anAngle, const Real& aLowerBound, const Real& anUpperBound) -> Real
             {
                 return anAngle.inArcseconds(aLowerBound, anUpperBound);
-            }
+            },
+            arg("lower_bound"),
+            arg("upper_bound")
         )
         .def("in_revolutions", &Angle::inRevolutions)
         .def("to_string", &Angle::toString, arg("do_sanitize") = false)
