@@ -85,40 +85,33 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
 
         .def("get_unit", &Angle::getUnit)
         .def("in_unit", &Angle::in, arg("unit"))
+        .def("in_radians", overload_cast<>(&Angle::inRadians, const_))
         .def(
             "in_radians",
-            +[](const Angle& anAngle) -> Real
-            {
-                return anAngle.inRadians();
-            }
+            overload_cast<const Real&, const Real&>(&Angle::inRadians, const_),
+            arg("lower_bound"),
+            arg("upper_bound")
         )
+        .def("in_degrees", overload_cast<>(&Angle::inDegrees, const_))
         .def(
             "in_degrees",
-            +[](const Angle& anAngle) -> Real
-            {
-                return anAngle.inDegrees();
-            }
+            overload_cast<const Real&, const Real&>(&Angle::inDegrees, const_),
+            arg("lower_bound"),
+            arg("upper_bound")
         )
-        .def(
-            "in_degrees",
-            +[](const Angle& anAngle, const Real& aLowerBound, const Real& anUpperBound) -> Real
-            {
-                return anAngle.inDegrees(aLowerBound, anUpperBound);
-            }
-        )
+        .def("in_arcminutes", overload_cast<>(&Angle::inArcminutes, const_))
         .def(
             "in_arcminutes",
-            +[](const Angle& anAngle) -> Real
-            {
-                return anAngle.inArcminutes();
-            }
+            overload_cast<const Real&, const Real&>(&Angle::inArcminutes, const_),
+            arg("lower_bound"),
+            arg("upper_bound")
         )
+        .def("in_arcseconds", overload_cast<>(&Angle::inArcseconds, const_))
         .def(
             "in_arcseconds",
-            +[](const Angle& anAngle) -> Real
-            {
-                return anAngle.inArcseconds();
-            }
+            overload_cast<const Real&, const Real&>(&Angle::inArcseconds, const_),
+            arg("lower_bound"),
+            arg("upper_bound")
         )
         .def("in_revolutions", &Angle::inRevolutions)
         .def("to_string", &Angle::toString, arg("do_sanitize") = false)

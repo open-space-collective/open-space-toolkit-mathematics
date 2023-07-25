@@ -279,15 +279,67 @@ def test_angle_string_symbol_from_unit():
     assert Angle.symbol_from_unit(Unit.Revolution) == "rev"
 
 
+def test_angle_in_radians_reduction():
+    angle: Angle = Angle(math.pi * 3 / 2, Unit.Radian)
+    assert angle.in_radians(lower_bound=-math.pi, upper_bound=math.pi) == -math.pi / 2
+
+    angle: Angle = Angle(math.pi / 2, Unit.Radian)
+    assert angle.in_radians(lower_bound=-math.pi, upper_bound=math.pi) == math.pi / 2
+
+    angle: Angle = Angle(-math.pi, Unit.Radian)
+    assert angle.in_radians(-math.pi, math.pi) == -math.pi
+
+    angle: Angle = Angle(math.pi, Unit.Radian)
+    assert angle.in_radians(-math.pi, math.pi) == -math.pi
+
+
 def test_angle_in_degrees_reduction():
     angle: Angle = Angle(359.0, Unit.Degree)
-    assert angle.in_degrees(-180.0, 180.0) == -1.0
+    assert angle.in_degrees(lower_bound=-180.0, upper_bound=180.0) == -1.0
 
     angle: Angle = Angle(1.0, Unit.Degree)
-    assert angle.in_degrees(-180.0, 180.0) == 1.0
+    assert angle.in_degrees(lower_bound=-180.0, upper_bound=180.0) == 1.0
 
     angle: Angle = Angle(-180.0, Unit.Degree)
     assert angle.in_degrees(-180.0, 180.0) == -180.0
 
     angle: Angle = Angle(180.0, Unit.Degree)
     assert angle.in_degrees(-180.0, 180.0) == -180.0
+
+
+def test_angle_in_arcminutes_reduction():
+    angle: Angle = Angle(359.0 * 60.0, Unit.Arcminute)
+    assert (
+        angle.in_arcminutes(lower_bound=-180.0 * 60.0, upper_bound=180.0 * 60.0) == -60.0
+    )
+
+    angle: Angle = Angle(60.0, Unit.Arcminute)
+    assert (
+        angle.in_arcminutes(lower_bound=-180.0 * 60.0, upper_bound=180.0 * 60.0) == 60.0
+    )
+
+    angle: Angle = Angle(-180.0 * 60.0, Unit.Arcminute)
+    assert angle.in_arcminutes(-180.0 * 60.0, 180.0 * 60.0) == -180.0 * 60.0
+
+    angle: Angle = Angle(180.0 * 60.0, Unit.Arcminute)
+    assert angle.in_arcminutes(-180.0 * 60.0, 180.0 * 60.0) == -180.0 * 60.0
+
+
+def test_angle_in_arcseconds_reduction():
+    angle: Angle = Angle(359.0 * 3600.0, Unit.Arcsecond)
+    assert (
+        angle.in_arcseconds(lower_bound=-180.0 * 3600.0, upper_bound=180.0 * 3600.0)
+        == -3600.0
+    )
+
+    angle: Angle = Angle(3600.0, Unit.Arcsecond)
+    assert (
+        angle.in_arcseconds(lower_bound=-180.0 * 3600.0, upper_bound=180.0 * 3600.0)
+        == 3600.0
+    )
+
+    angle: Angle = Angle(-180 * 3600.0, Unit.Arcsecond)
+    assert angle.in_arcseconds(-180.0 * 3600.0, 180.0 * 3600.0) == -180.0 * 3600.0
+
+    angle: Angle = Angle(180.0 * 3600.0, Unit.Arcsecond)
+    assert angle.in_arcseconds(-180.0 * 3600.0, 180.0 * 3600.0) == -180.0 * 3600.0
