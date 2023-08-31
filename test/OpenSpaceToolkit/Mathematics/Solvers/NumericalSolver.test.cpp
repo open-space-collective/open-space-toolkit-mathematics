@@ -8,7 +8,6 @@
 #include <OpenSpaceToolkit/Core/Types/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
-
 #include <OpenSpaceToolkit/Mathematics/Solvers/NumericalSolver.hpp>
 
 #include <Global.test.hpp>
@@ -92,7 +91,7 @@ class OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver : public ::testing::T
     }
 };
 
-class OpenSpaceToolkit_AstrodynamicsMathematics_Solversver_Parametrized
+class OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized
     : public OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver,
       public ::testing::WithParamInterface<Tuple<NumericalSolver::StepperType>>
 {
@@ -100,7 +99,7 @@ class OpenSpaceToolkit_AstrodynamicsMathematics_Solversver_Parametrized
 
 INSTANTIATE_TEST_SUITE_P(
     Integration,
-    OpenSpaceToolkit_AstrodynamicsMathematics_Solversver_Parametrized,
+    OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized,
     ::testing::Values(
         std::make_tuple(NumericalSolver::StepperType::RungeKutta4),
         std::make_tuple(NumericalSolver::StepperType::RungeKuttaCashKarp54),
@@ -182,6 +181,10 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, EqualToOperator)
         };
 
         EXPECT_FALSE(defaultRK54_ == numericalSolver_5);
+    }
+
+    {
+        EXPECT_FALSE(NumericalSolver::Undefined() == defaultRK54_);
     }
 }
 
@@ -304,11 +307,14 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, GetType)
             1.0e-15,
         };
         EXPECT_EQ(numericalSolver_LogAdaptive.getLogType(), NumericalSolver::LogType::LogAdaptive);
+
+        EXPECT_THROW(NumericalSolver::Undefined().getLogType(), ostk::core::error::runtime::Undefined);
     }
 
     {
         EXPECT_EQ(defaultRK54_.getStepperType(), NumericalSolver::StepperType::RungeKuttaCashKarp54);
         EXPECT_EQ(defaultRKF78_.getStepperType(), NumericalSolver::StepperType::RungeKuttaFehlberg78);
+        EXPECT_THROW(NumericalSolver::Undefined().getStepperType(), ostk::core::error::runtime::Undefined);
     }
 }
 
@@ -318,6 +324,12 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, GetNumbers)
         EXPECT_EQ(defaultRK54_.getTimeStep(), 5.0);
         EXPECT_EQ(defaultRK54_.getRelativeTolerance(), 1.0e-15);
         EXPECT_EQ(defaultRK54_.getAbsoluteTolerance(), 1.0e-15);
+    }
+
+    {
+        EXPECT_THROW(NumericalSolver::Undefined().getTimeStep(), ostk::core::error::runtime::Undefined);
+        EXPECT_THROW(NumericalSolver::Undefined().getRelativeTolerance(), ostk::core::error::runtime::Undefined);
+        EXPECT_THROW(NumericalSolver::Undefined().getAbsoluteTolerance(), ostk::core::error::runtime::Undefined);
     }
 }
 
@@ -360,7 +372,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, StringFromType)
     }
 }
 
-TEST_P(OpenSpaceToolkit_AstrodynamicsMathematics_Solversver_Parametrized, integrateDuration)
+TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, integrateDuration)
 {
     const auto parameters = GetParam();
 
@@ -372,24 +384,35 @@ TEST_P(OpenSpaceToolkit_AstrodynamicsMathematics_Solversver_Parametrized, integr
         1.0e-15,
     };
 
-    const Array<Real> durations = {
-        defaultDuration_,
-        -defaultDuration_,
-    };
-
-    for (const Real &duration : durations)
     {
-        const NumericalSolver::StateVector propagatedStateVector =
-            numericalSolver.integrateDuration(defaultStateVector_, duration, systemOfEquations_).first;
+        const Array<Real> durations = {
+            defaultDuration_,
+            -defaultDuration_,
+        };
 
-        // Validate the output against an analytical function
+        for (const Real &duration : durations)
+        {
+            const NumericalSolver::StateVector propagatedStateVector =
+                numericalSolver.integrateDuration(defaultStateVector_, duration, systemOfEquations_).first;
 
-        EXPECT_GT(2e-8, std::abs(propagatedStateVector[0] - std::sin(duration)));
-        EXPECT_GT(2e-8, std::abs(propagatedStateVector[1] - std::cos(duration)));
+            // Validate the output against an analytical function
+
+            EXPECT_GT(2e-8, std::abs(propagatedStateVector[0] - std::sin(duration)));
+            EXPECT_GT(2e-8, std::abs(propagatedStateVector[1] - std::cos(duration)));
+        }
+    }
+
+    {
+        const NumericalSolver::Solution solution =
+            numericalSolver.integrateDuration(defaultStateVector_, 0.0, systemOfEquations_);
+
+        EXPECT_DOUBLE_EQ(defaultStateVector_[0], solution.first[0]);
+        EXPECT_DOUBLE_EQ(defaultStateVector_[1], solution.first[1]);
+        EXPECT_DOUBLE_EQ(0.0, solution.second);
     }
 }
 
-TEST_P(OpenSpaceToolkit_AstrodynamicsMathematics_Solversver_Parametrized, IntegrateDuration_Comparison)
+TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, IntegrateDuration_Comparison)
 {
     const auto parameters = GetParam();
 
@@ -427,7 +450,7 @@ TEST_P(OpenSpaceToolkit_AstrodynamicsMathematics_Solversver_Parametrized, Integr
     }
 }
 
-TEST_P(OpenSpaceToolkit_AstrodynamicsMathematics_Solversver_Parametrized, IntegrateDuration_Array)
+TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, IntegrateDuration_Array)
 {
     const auto parameters = GetParam();
 
@@ -453,7 +476,7 @@ TEST_P(OpenSpaceToolkit_AstrodynamicsMathematics_Solversver_Parametrized, Integr
     }
 }
 
-TEST_P(OpenSpaceToolkit_AstrodynamicsMathematics_Solversver_Parametrized, IntegrateTime)
+TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, IntegrateTime)
 {
     const auto parameters = GetParam();
 
@@ -482,7 +505,7 @@ TEST_P(OpenSpaceToolkit_AstrodynamicsMathematics_Solversver_Parametrized, Integr
     }
 }
 
-TEST_P(OpenSpaceToolkit_AstrodynamicsMathematics_Solversver_Parametrized, IntegrateTime_Comparison)
+TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, IntegrateTime_Comparison)
 {
     const auto parameters = GetParam();
     // Performance test comparing results of integrate_adaptive and integrate_const
@@ -526,7 +549,7 @@ TEST_P(OpenSpaceToolkit_AstrodynamicsMathematics_Solversver_Parametrized, Integr
     }
 }
 
-TEST_P(OpenSpaceToolkit_AstrodynamicsMathematics_Solversver_Parametrized, IntegrateTime_Array)
+TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, IntegrateTime_Array)
 {
     const auto parameters = GetParam();
 
@@ -549,6 +572,23 @@ TEST_P(OpenSpaceToolkit_AstrodynamicsMathematics_Solversver_Parametrized, Integr
             numericalSolver.integrateTime(defaultStateVector_, defaultStartTime_, timeArray, systemOfEquations_);
 
         validatePropagatedStates(timeArray, propagatedStateVectorArray, 2e-8);
+    }
+
+    {
+        EXPECT_THROW(
+            numericalSolver.integrateTime(defaultStateVector_, defaultStartTime_, Array<Real> {}, systemOfEquations_),
+            ostk::core::error::RuntimeError
+        );
+    }
+
+    {
+        const NumericalSolver::Solution solution = numericalSolver.integrateTime(
+            defaultStateVector_, defaultStartTime_, {defaultStartTime_}, systemOfEquations_
+        );
+
+        EXPECT_DOUBLE_EQ(defaultStateVector_[0], solution.first[0]);
+        EXPECT_DOUBLE_EQ(defaultStateVector_[1], solution.first[1]);
+        EXPECT_DOUBLE_EQ(defaultStartTime_, solution.second);
     }
 }
 

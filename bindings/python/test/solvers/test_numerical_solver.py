@@ -125,9 +125,6 @@ class TestNumericalSolver:
         self, numerical_solver: NumericalSolver, initial_state_vec: np.ndarray
     ):
         integration_duration: float = 100.0
-        
-        import IPython
-        IPython.embed()
 
         state_vector, _ = numerical_solver.integrate_duration(
             initial_state_vec, integration_duration, oscillator

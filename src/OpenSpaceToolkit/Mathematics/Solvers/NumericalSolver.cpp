@@ -40,11 +40,6 @@ NumericalSolver::NumericalSolver(
 {
 }
 
-NumericalSolver* NumericalSolver::clone() const
-{
-    return new NumericalSolver(*this);
-}
-
 bool NumericalSolver::operator==(const NumericalSolver& aNumericalSolver) const
 {
     if ((!this->isDefined()) || (!aNumericalSolver.isDefined()))
@@ -546,5 +541,5 @@ double NumericalSolver::getSignedTimeStep(const Real& aReal) const
 }
 
 }  // namespace solvers
-}  // namespace astro
+}  // namespace math
 }  // namespace ostk
