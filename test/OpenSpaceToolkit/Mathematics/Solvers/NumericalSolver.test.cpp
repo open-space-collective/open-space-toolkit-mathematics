@@ -573,14 +573,3 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, Default)
         EXPECT_TRUE(NumericalSolver::Default().isDefined());
     }
 }
-
-TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, DefaultConditional)
-{
-    {
-        EXPECT_NO_THROW(NumericalSolver::DefaultConditional());
-    }
-
-    {
-        EXPECT_TRUE(NumericalSolver::DefaultConditional().isDefined());
-    }
-}
