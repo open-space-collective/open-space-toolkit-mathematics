@@ -3,13 +3,16 @@
 #include <OpenSpaceToolkitMathematicsPy/Utilities/ArrayCasting.hpp>
 #include <OpenSpaceToolkitMathematicsPy/Utilities/ShiftToString.hpp>
 #include <pybind11/eigen.h>
+#include <pybind11/functional.h>
 #include <pybind11/numpy.h>
 #include <pybind11/operators.h>
 #include <pybind11/pybind11.h>
+#include <pybind11/stl.h>
 
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Objects.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Solvers.cpp>
 
 PYBIND11_MODULE(OpenSpaceToolkitMathematicsPy, m)
 {
@@ -33,4 +36,5 @@ PYBIND11_MODULE(OpenSpaceToolkitMathematicsPy, m)
     OpenSpaceToolkitMathematicsPy_Objects(m);
     OpenSpaceToolkitMathematicsPy_Geometry(m);
     OpenSpaceToolkitMathematicsPy_CurveFitting(m);
+    OpenSpaceToolkitMathematicsPy_Solvers(m);
 }
