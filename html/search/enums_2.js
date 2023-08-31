@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unit_710',['Unit',['../classostk_1_1math_1_1geom_1_1_angle.html#abb73526d3f7f94a3b33e8358e1b18027',1,'ostk::math::geom::Angle']]]
+  ['steppertype_778',['StepperType',['../classostk_1_1math_1_1solvers_1_1_numerical_solver.html#a674cda991536b2832e177a11acc2d4ae',1,'ostk::math::solvers::NumericalSolver']]]
 ];

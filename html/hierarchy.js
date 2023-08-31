@@ -13,6 +13,7 @@ var hierarchy =
     [ "ostk::math::obj::IntervalBase", "classostk_1_1math_1_1obj_1_1_interval_base.html", [
       [ "ostk::math::obj::Interval< T >", "classostk_1_1math_1_1obj_1_1_interval.html", null ]
     ] ],
+    [ "ostk::math::solvers::NumericalSolver", "classostk_1_1math_1_1solvers_1_1_numerical_solver.html", null ],
     [ "ostk::math::geom::d2::Object", "classostk_1_1math_1_1geom_1_1d2_1_1_object.html", [
       [ "ostk::math::geom::d2::objects::Composite", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_composite.html", null ],
       [ "ostk::math::geom::d2::objects::Line", "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_line.html", null ],

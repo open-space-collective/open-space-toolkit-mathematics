@@ -55,20 +55,7 @@ var NAVTREE =
       [ "Special Thanks", "index.html#autotoc_md21", null ],
       [ "License", "index.html#autotoc_md22", null ]
     ] ],
-    [ "Contributing", "md__c_o_n_t_r_i_b_u_t_i_n_g.html", [
-      [ "Introduction", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#Introduction", null ],
-      [ "Guidelines", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#Guidelines", [
-        [ "Codebase", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#Codebase", [
-          [ "C++", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#C", null ],
-          [ "Python", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#Python", null ]
-        ] ],
-        [ "Version Control", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#Version", [
-          [ "Rules", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#Rules", null ],
-          [ "Commit Messages", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#Commit", null ]
-        ] ]
-      ] ],
-      [ "Code of Conduct", "md__c_o_n_t_r_i_b_u_t_i_n_g.html#CodeOfConduct", null ]
-    ] ],
+    [ "Contributing", "md__c_o_n_t_r_i_b_u_t_i_n_g.html", null ],
     [ "Tutorial", "md_docs__tutorial.html", [
       [ "Setup", "md_docs__tutorial.html#Setup", null ],
       [ "Examples", "md_docs__tutorial.html#Examples", null ]
@@ -87,6 +74,7 @@ var NAVTREE =
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", "functions_func" ],
+        [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Enumerations", "functions_enum.html", null ],
         [ "Related Functions", "functions_rela.html", null ]
@@ -106,10 +94,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "2_d_2_intersection_8cpp.html",
-"classostk_1_1math_1_1geom_1_1d2_1_1_intersection.html#a6a5cd04fff08e2bd74d99a29544b7fe2",
-"classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#ad0ba7ee144638335e4f02da0de38beab",
-"classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane.html#a9db422bcf962c77b11c1d93325aebfd9",
-"classostk_1_1math_1_1obj_1_1_interval_base.html#a0dd9bd29a9bfefa26de9b88ac81de92aab5e08f9173f660e791d3ba99ff8281d7"
+"classostk_1_1math_1_1geom_1_1_angle.html#af7c5cff42aec2b9ccd6c246974df5d0c",
+"classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a691c0ef8268b6c3628e1cb69beb9ed74",
+"classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_plane.html#a5113cf47ca5ef948fa8f43074291108d",
+"classostk_1_1math_1_1obj_1_1_interval.html#ad7d805288e161a123593991f90c437ff"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
