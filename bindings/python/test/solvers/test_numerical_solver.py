@@ -171,9 +171,6 @@ class TestNumericalSolver:
     def test_default(self):
         assert NumericalSolver.default() is not None
 
-    def test_default_conditional(self):
-        assert NumericalSolver.default_conditional() is not None
-
     def test_undefined(self):
         assert NumericalSolver.undefined() is not None
         assert NumericalSolver.undefined().is_defined() is False
