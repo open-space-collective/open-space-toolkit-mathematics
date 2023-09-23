@@ -18,7 +18,7 @@ Transformation = mathematics.geometry.d3.Transformation
 
 
 class TestLineString:
-    def test_constructor_success():
+    def test_constructor_success(self):
         point_1: Point = Point(-1.0, 1.0, 1.0)
         point_2: Point = Point(1.0, 1.0, -1.0)
         point_3: Point = Point(1.0, -1.0, 1.0)
@@ -48,7 +48,7 @@ class TestLineString:
         assert isinstance(linestring, Object)
         assert linestring.is_defined()
 
-    def test_empty_success():
+    def test_empty_success(self):
         linestring: LineString = LineString.empty()
 
         assert linestring is not None
@@ -57,7 +57,7 @@ class TestLineString:
         assert linestring.is_defined() is False
         assert linestring.is_empty()
 
-    def test_comparators_success():
+    def test_comparators_success(self):
         point_1: Point = Point(-1.0, 1.0, 0.0)
         point_2: Point = Point(1.0, 1.0, -1.0)
 
@@ -73,7 +73,7 @@ class TestLineString:
         assert linestring_2 != linestring_4
         assert linestring_3 != linestring_4
 
-    def test_is_near_success():
+    def test_is_near_success(self):
         point_1: Point = Point(-1.0, 1.0, 0.0)
         point_2: Point = Point(1.0, 1.0, 0.0)
 
@@ -97,7 +97,7 @@ class TestLineString:
         assert linestring_2.is_near(linestring_1, 1e-1)
         assert linestring_2.is_near(linestring_1, 1e-2)
 
-    def test_getters_success():
+    def test_getters_success(self):
         point_1: Point = Point(-1.0, 1.0, 0.0)
         point_2: Point = Point(1.0, 1.0, 0.0)
 
@@ -114,7 +114,7 @@ class TestLineString:
         assert linestring_2.get_point_closest_to(Point(-0.9, 1.0, 0.0)) == point_1
         assert linestring_2.get_point_closest_to(Point(0.9, 1.0, 0.0)) == point_2
 
-    def test_len_success():
+    def test_len_success(self):
         point_1: Point = Point(-1.0, 1.0, 0.0)
         point_2: Point = Point(1.0, 1.0, 0.0)
 
@@ -128,7 +128,7 @@ class TestLineString:
         assert len(linestring) == 2
         assert len(linestring) == linestring.get_point_count()
 
-    def test_getitem_success():
+    def test_getitem_success(self):
         point_1: Point = Point(-1.0, 1.0, 0.0)
         point_2: Point = Point(1.0, 1.0, 1.0)
 
@@ -150,7 +150,7 @@ class TestLineString:
         assert isinstance(linestring_list[1], Point)
         assert len(linestring_list) == 2
 
-    def test_iter_success():
+    def test_iter_success(self):
         point_1: Point = Point(-1.0, 1.0, 0.0)
         point_2: Point = Point(1.0, 1.0, 1.0)
 
@@ -163,4 +163,4 @@ class TestLineString:
         assert isinstance(iter(linestring), Iterator)
         assert isinstance(iter(linestring), Iterable)
 
-    # def test_apply_transformation_success ():
+    # def test_apply_transformation_success(self):

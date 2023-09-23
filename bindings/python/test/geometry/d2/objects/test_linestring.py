@@ -169,6 +169,6 @@ class TestLineString:
         assert isinstance(iter(linestring), Iterator)
         assert isinstance(iter(linestring), Iterable)
 
-    # def test_to_string_success (self):
+    # def test_to_string_success(self):
 
-    # def test_apply_transformation_success (self):
+    # def test_apply_transformation_success(self):

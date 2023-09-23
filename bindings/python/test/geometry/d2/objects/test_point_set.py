@@ -93,10 +93,10 @@ class TestPointSet:
         assert isinstance(iter(point_set), Iterator)
         assert isinstance(iter(point_set), Iterable)
 
-    # def test_is_near_success (self):
+    # def test_is_near_success(self):
 
-    # def test_get_point_closest_to_success (self):
+    # def test_get_point_closest_to_success(self):
 
-    # def test_to_string_success (self):
+    # def test_to_string_success(self):
 
-    # def test_apply_transformation_success (self):
+    # def test_apply_transformation_success(self):
