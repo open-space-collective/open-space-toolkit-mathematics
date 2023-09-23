@@ -1,5 +1,7 @@
 # Apache License 2.0
 
+from collections.abc import Iterator, Iterable
+
 import pytest
 
 import ostk.mathematics as mathematics
