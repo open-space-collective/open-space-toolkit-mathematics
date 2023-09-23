@@ -33,8 +33,15 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_PointSet(pybind11:
 
         .def_static("empty", &PointSet::Empty)
 
-        // .def_static("__iter__", boost::python::range(static_cast<PointSet::ConstIterator (PointSet::*)() const>
-        // (&PointSet::begin), static_cast<PointSet::ConstIterator (PointSet::*)() const> (&PointSet::end)))
+        .def("__len__", &PointSet::getSize)
+        .def(
+            "__iter__",
+            [](const PointSet& aPointSet)
+            {
+                return make_iterator(aPointSet.begin(), aPointSet.end());
+            },
+            keep_alive<0, 1>()
+        )  // Keep vector alive while iterator is used
 
         ;
 }

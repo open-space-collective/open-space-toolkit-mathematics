@@ -58,19 +58,6 @@ class TestPointSet:
         assert point_set.is_defined() is False
         assert point_set.is_empty()
 
-    def test_comparators_success(self):
-        point_1: Point = Point(1.0, 2.0, 1.0)
-        point_2: Point = Point(3.0, 4.0, 1.0)
-
-        point_set_1: PointSet = PointSet([point_1, point_2])
-        point_set_2: PointSet = PointSet((point_2, point_1))
-        point_set_3: PointSet = PointSet([point_2])
-
-        assert point_set_1 == point_set_2
-        assert point_set_1 == point_set_2
-        assert point_set_3 != point_set_1
-        assert point_set_2 != point_set_3
-
     def test_get_size_success(self):
         point_1: Point = Point(1.0, 2.0, 1.0)
         point_2: Point = Point(3.0, 4.0, 1.0)
@@ -87,8 +74,33 @@ class TestPointSet:
         assert point_set_4.get_size() == 0
         assert point_set_5.get_size() == 1
 
+    def test_comparators_success(self):
+        point_1: Point = Point(1.0, 2.0, 1.0)
+        point_2: Point = Point(3.0, 4.0, 1.0)
+
+        point_set_1: PointSet = PointSet([point_1, point_2])
+        point_set_2: PointSet = PointSet((point_2, point_1))
+        point_set_3: PointSet = PointSet([point_2])
+
+        assert point_set_1 == point_set_2
+        assert point_set_1 == point_set_2
+        assert point_set_3 != point_set_1
+        assert point_set_2 != point_set_3
+
     def test_distance_to_success_point(self, point_set: PointSet):
         assert point_set.distance_to(Point(1.0, 2.0, 3.0)) == 2.0
+
+    def test_len_success(self, point_set: PointSet):
+        assert len(point_set) == 2
+        assert len(PointSet.empty()) == 0
+
+    def test_iter_success(self, point_set: PointSet):
+        for point in point_set:
+            assert isinstance(point, Point)
+
+        assert iter(point_set) is not None
+        assert isinstance(iter(point_set), Iterator)
+        assert isinstance(iter(point_set), Iterable)
 
     # def test_is_near_success (self):
 

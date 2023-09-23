@@ -1,13 +1,14 @@
 # Apache License 2.0
 
-import pytest
-
-import numpy as np
 from collections.abc import Iterator, Iterable
 
-import ostk.mathematics as mathematics
+import numpy as np
+
+import pytest
 
 from ostk.core.types import String
+
+import ostk.mathematics as mathematics
 
 
 Object = mathematics.geometry.d2.Object
@@ -124,20 +125,16 @@ class TestLineString:
         assert len(linestring) == linestring.get_point_count()
         assert len(LineString.empty()) == 0
 
-    def test_iter_success(self):
+    def test_len_success(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
 
         linestring: LineString = LineString([point_1, point_2])
 
-        for point in linestring:
-            assert isinstance(point, Point)
+        assert len(linestring) == 2
+        assert len(LineString.empty()) == 0
 
-        assert iter(linestring) is not None
-        assert isinstance(iter(linestring), Iterator)
-        assert isinstance(iter(linestring), Iterable)
-
-    def test_getitem(self):
+    def test_getitem_success(self):
         point_1: Point = Point(-1.0, 1.0)
         point_2: Point = Point(1.0, 1.0)
 
@@ -158,6 +155,19 @@ class TestLineString:
         assert isinstance(linestring_list[0], Point)
         assert isinstance(linestring_list[1], Point)
         assert len(linestring_list) == 2
+
+    def test_iter_success(self):
+        point_1: Point = Point(-1.0, 1.0)
+        point_2: Point = Point(1.0, 1.0)
+
+        linestring: LineString = LineString([point_1, point_2])
+
+        for point in linestring:
+            assert isinstance(point, Point)
+
+        assert iter(linestring) is not None
+        assert isinstance(iter(linestring), Iterator)
+        assert isinstance(iter(linestring), Iterable)
 
     # def test_to_string_success (self):
 
