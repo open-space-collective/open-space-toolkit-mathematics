@@ -42,7 +42,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_LineString(pybind1
             {
                 return aLineString.accessPointAt(anIndex);
             },
-            return_value_policy::reference_internal
+            return_value_policy::reference_internal,
+            arg("index")
         )
         .def(
             "__iter__",
