@@ -37,6 +37,7 @@ using VectorXi = Eigen::VectorXi;
 using Vector2d = Eigen::Vector2d;
 using Vector3d = Eigen::Vector3d;
 using Vector4d = Eigen::Vector4d;
+using Vector6d = Eigen::Matrix<double, 1, 6>;
 
 using VectorXd = Eigen::VectorXd;
 
