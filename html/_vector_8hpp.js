@@ -16,6 +16,7 @@ var _vector_8hpp =
     [ "Vector3i", "_vector_8hpp.html#a8e5bafdb8928c3fd53af1efa47f3727d", null ],
     [ "Vector4d", "_vector_8hpp.html#a1eb1eefe1cb56bfc7d2b88d55acfb817", null ],
     [ "Vector4i", "_vector_8hpp.html#a5f75d55c72fdf6221b158406f36eba43", null ],
+    [ "Vector6d", "_vector_8hpp.html#a34c3dfe1b98bae13d19869a9eb5f2e81", null ],
     [ "VectorXd", "_vector_8hpp.html#a84bdc62967e939556fb94869024693ff", null ],
     [ "VectorXi", "_vector_8hpp.html#a69128b2659fb8f6ff4f927c6e8b87341", null ]
 ];

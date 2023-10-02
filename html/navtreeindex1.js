@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"classostk_1_1math_1_1geom_1_1_angle.html#af699984b24759466957ecddaa7e61fc9":[4,0,0,0,1,2,28],
 "classostk_1_1math_1_1geom_1_1_angle.html#af7c5cff42aec2b9ccd6c246974df5d0c":[4,0,0,0,1,2,3],
 "classostk_1_1math_1_1geom_1_1_angle.html#aff9a9b5df3b3d1f274230e2787a868bd":[4,0,0,0,1,2,23],
 "classostk_1_1math_1_1geom_1_1d2_1_1_intersection.html":[4,0,0,0,1,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a35a46e06daf7d791b0069641cf684f91":[4,0,0,0,1,0,0,8,13],
 "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a3a2de88cdbd141be1bfd22945e3fa100":[4,0,0,0,1,0,0,8,14],
 "classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a475ba5efb353218779018b9be88be276":[4,0,0,0,1,0,0,8,16],
-"classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a4e7397f14fd36b0aecd7afddd4fddf84":[4,0,0,0,1,0,0,8,12],
-"classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a56c91f22315d7cefe9d5e9973330028d":[4,0,0,0,1,0,0,8,0]
+"classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_segment.html#a4e7397f14fd36b0aecd7afddd4fddf84":[4,0,0,0,1,0,0,8,12]
 };

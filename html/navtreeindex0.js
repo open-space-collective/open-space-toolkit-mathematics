@@ -179,10 +179,11 @@ var NAVTREEINDEX0 =
 "_vector_8hpp.html#a1eb1eefe1cb56bfc7d2b88d55acfb817":[5,0,1,0,0,2,3,14],
 "_vector_8hpp.html#a21413c9f36b149c4bb9cdf407a6c95e7":[5,0,1,0,0,2,3,4],
 "_vector_8hpp.html#a2e17f4d2058bd34d8b17b8ab90980d5e":[5,0,1,0,0,2,3,7],
+"_vector_8hpp.html#a34c3dfe1b98bae13d19869a9eb5f2e81":[5,0,1,0,0,2,3,16],
 "_vector_8hpp.html#a5ce374bc225ecfb685da4fed9aa67e6e":[5,0,1,0,0,2,3,10],
 "_vector_8hpp.html#a5f75d55c72fdf6221b158406f36eba43":[5,0,1,0,0,2,3,15],
-"_vector_8hpp.html#a69128b2659fb8f6ff4f927c6e8b87341":[5,0,1,0,0,2,3,17],
-"_vector_8hpp.html#a84bdc62967e939556fb94869024693ff":[5,0,1,0,0,2,3,16],
+"_vector_8hpp.html#a69128b2659fb8f6ff4f927c6e8b87341":[5,0,1,0,0,2,3,18],
+"_vector_8hpp.html#a84bdc62967e939556fb94869024693ff":[5,0,1,0,0,2,3,17],
 "_vector_8hpp.html#a8e5bafdb8928c3fd53af1efa47f3727d":[5,0,1,0,0,2,3,13],
 "_vector_8hpp.html#a9c878091175c26e703a4099171cadc5a":[5,0,1,0,0,2,3,2],
 "_vector_8hpp.html#aca824852c53eba10924e5f0fb80cbb87":[5,0,1,0,0,2,3,8],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "classostk_1_1math_1_1geom_1_1_angle.html#ac1f4386571a0441ce35adc02af5adbd4":[4,0,0,0,1,2,21],
 "classostk_1_1math_1_1geom_1_1_angle.html#aca8e2c560e71b020464a0b118d185f36":[4,0,0,0,1,2,26],
 "classostk_1_1math_1_1geom_1_1_angle.html#ae2156e2979ac231c4f35206efacd2714":[4,0,0,0,1,2,5],
-"classostk_1_1math_1_1geom_1_1_angle.html#ae545d79270fdf143d008d7aa4af46a55":[4,0,0,0,1,2,1],
-"classostk_1_1math_1_1geom_1_1_angle.html#af699984b24759466957ecddaa7e61fc9":[4,0,0,0,1,2,28]
+"classostk_1_1math_1_1geom_1_1_angle.html#ae545d79270fdf143d008d7aa4af46a55":[4,0,0,0,1,2,1]
 };
