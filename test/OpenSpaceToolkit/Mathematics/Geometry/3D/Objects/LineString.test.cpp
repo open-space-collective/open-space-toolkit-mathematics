@@ -8,8 +8,8 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, Constructor)
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::LineString;
 
     {
         EXPECT_NO_THROW(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}));
@@ -22,7 +22,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, Constructor)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, Clone)
 {
-    using ostk::math::geom::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::LineString;
 
     {
         EXPECT_NO_THROW(const LineString* lineStringPtr =
@@ -33,7 +33,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, Clone)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, EqualToOperator)
 {
-    using ostk::math::geom::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::LineString;
 
     {
         EXPECT_TRUE(
@@ -69,7 +69,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, EqualToOperato
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, NotEqualToOperator)
 {
-    using ostk::math::geom::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::LineString;
 
     {
         EXPECT_FALSE(
@@ -105,7 +105,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, NotEqualToOper
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, StreamOperator)
 {
-    using ostk::math::geom::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::LineString;
 
     {
         testing::internal::CaptureStdout();
@@ -118,7 +118,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, StreamOperator
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, IsDefined)
 {
-    using ostk::math::geom::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::LineString;
 
     {
         EXPECT_TRUE(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}).isDefined());
@@ -132,7 +132,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, IsEmpty)
 {
-    using ostk::math::geom::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::LineString;
 
     {
         EXPECT_FALSE(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}).isEmpty());
@@ -148,7 +148,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, IsNear)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geom::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::LineString;
 
     {
         EXPECT_TRUE(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}
@@ -183,8 +183,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, IsNear)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, AccessPointAt)
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::LineString;
 
     {
         EXPECT_EQ(
@@ -216,7 +216,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, AccessPointAt)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, GetPointCount)
 {
-    using ostk::math::geom::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::LineString;
 
     {
         EXPECT_EQ(4, LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}, {0.0, 0.0, 0.0}}).getPointCount());
@@ -230,8 +230,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, GetPointCount)
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, ToString) // [TBI]
 // {
 
-//     using ostk::math::geom::d3::objects::Point ;
-//     using ostk::math::geom::d3::objects::LineString ;
+//     using ostk::math::geometry::d3::objects::Point ;
+//     using ostk::math::geometry::d3::objects::LineString ;
 
 //     {
 
@@ -265,7 +265,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, ConstIterator)
 {
     using ostk::core::types::Index;
 
-    using ostk::math::geom::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::LineString;
 
     {
         const LineString lineString = {{{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}};
@@ -287,12 +287,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, ApplyTransform
 {
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::LineString;
-    using ostk::math::geom::d3::Transformation;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::LineString;
+    using ostk::math::geometry::d3::Transformation;
+    using ostk::math::geometry::d3::trf::rot::RotationVector;
 
     // Translation
 
@@ -318,7 +318,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, ApplyTransform
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, Empty)
 {
-    using ostk::math::geom::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::LineString;
 
     {
         EXPECT_NO_THROW(LineString::Empty());
@@ -328,8 +328,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, Empty)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, Segment)
 {
-    using ostk::math::geom::d3::objects::Segment;
-    using ostk::math::geom::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::math::geometry::d3::objects::LineString;
 
     {
         EXPECT_EQ(

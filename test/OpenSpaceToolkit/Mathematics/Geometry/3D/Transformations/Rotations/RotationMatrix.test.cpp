@@ -9,8 +9,8 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, Constructor)
 {
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::trf::rot::RotationMatrix;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::trf::rot::RotationMatrix;
 
     // {
 
@@ -37,8 +37,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, EqualToOperator)
 // {
 
-//     using ostk::math::geom::Angle ;
-//     using ostk::math::geom::d3::trf::rot::RotationMatrix ;
+//     using ostk::math::geometry::Angle ;
+//     using ostk::math::geometry::d3::trf::rot::RotationMatrix ;
 
 //     {
 
@@ -80,8 +80,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, NotEqualToOperator)
 // {
 
-//     using ostk::math::geom::Angle ;
-//     using ostk::math::geom::d3::trf::rot::RotationMatrix ;
+//     using ostk::math::geometry::Angle ;
+//     using ostk::math::geometry::d3::trf::rot::RotationMatrix ;
 
 //     {
 
@@ -123,8 +123,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, StreamOperator)
 // {
 
-//     using ostk::math::geom::Angle ;
-//     using ostk::math::geom::d3::trf::rot::RotationMatrix ;
+//     using ostk::math::geometry::Angle ;
+//     using ostk::math::geometry::d3::trf::rot::RotationMatrix ;
 
 //     {
 
@@ -141,9 +141,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, IsDefined)
 // {
 
-//     using ostk::math::obj::Vector3d ;
-//     using ostk::math::geom::Angle ;
-//     using ostk::math::geom::d3::trf::rot::RotationMatrix ;
+//     using ostk::math::object::Vector3d ;
+//     using ostk::math::geometry::Angle ;
+//     using ostk::math::geometry::d3::trf::rot::RotationMatrix ;
 
 //     {
 
@@ -164,9 +164,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, GetAxis)
 // {
 
-//     using ostk::math::obj::Vector3d ;
-//     using ostk::math::geom::Angle ;
-//     using ostk::math::geom::d3::trf::rot::RotationMatrix ;
+//     using ostk::math::object::Vector3d ;
+//     using ostk::math::geometry::Angle ;
+//     using ostk::math::geometry::d3::trf::rot::RotationMatrix ;
 
 //     {
 
@@ -187,8 +187,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, GetAngle)
 // {
 
-//     using ostk::math::geom::Angle ;
-//     using ostk::math::geom::d3::trf::rot::RotationMatrix ;
+//     using ostk::math::geometry::Angle ;
+//     using ostk::math::geometry::d3::trf::rot::RotationMatrix ;
 
 //     {
 
@@ -216,7 +216,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, Undefined)
 // {
 
-//     using ostk::math::geom::d3::trf::rot::RotationMatrix ;
+//     using ostk::math::geometry::d3::trf::rot::RotationMatrix ;
 
 //     {
 
@@ -230,8 +230,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, Unit)
 // {
 
-//     using ostk::math::geom::Angle ;
-//     using ostk::math::geom::d3::trf::rot::RotationMatrix ;
+//     using ostk::math::geometry::Angle ;
+//     using ostk::math::geometry::d3::trf::rot::RotationMatrix ;
 
 //     {
 
@@ -250,9 +250,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 // {
 
 //     using ostk::core::types::Real ;
-//     using ostk::math::geom::Angle ;
-//     using ostk::math::geom::d3::trf::rot::Quaternion ;
-//     using ostk::math::geom::d3::trf::rot::RotationMatrix ;
+//     using ostk::math::geometry::Angle ;
+//     using ostk::math::geometry::d3::trf::rot::Quaternion ;
+//     using ostk::math::geometry::d3::trf::rot::RotationMatrix ;
 
 //     {
 

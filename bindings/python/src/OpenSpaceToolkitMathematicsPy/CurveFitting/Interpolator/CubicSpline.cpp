@@ -7,9 +7,9 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(
     using namespace pybind11;
 
     using ostk::core::types::Real;
-    using ostk::math::obj::VectorXd;
+    using ostk::math::object::VectorXd;
 
-    using ostk::math::curvefitting::interp::CubicSpline;
+    using ostk::math::curvefitting::interpolator::CubicSpline;
 
     // noncopyable class with Boost, removed in Pybind11
     class_<CubicSpline>(aModule, "CubicSpline")

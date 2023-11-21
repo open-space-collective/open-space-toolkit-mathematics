@@ -6,12 +6,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 {
     using namespace pybind11;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::obj::Matrix4d;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::Transformation;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
-    using ostk::math::geom::d3::trf::rot::RotationMatrix;
+    using ostk::math::object::Vector3d;
+    using ostk::math::object::Matrix4d;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::Transformation;
+    using ostk::math::geometry::d3::trf::rot::RotationVector;
+    using ostk::math::geometry::d3::trf::rot::RotationMatrix;
 
     class_<Transformation> transformation(aModule, "Transformation");
 

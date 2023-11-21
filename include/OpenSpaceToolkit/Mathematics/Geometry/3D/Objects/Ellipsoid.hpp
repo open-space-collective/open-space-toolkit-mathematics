@@ -13,7 +13,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -22,11 +22,11 @@ namespace objects
 
 using ostk::core::types::Real;
 
-using ostk::math::obj::Matrix3d;
-using ostk::math::geom::d3::Object;
-using ostk::math::geom::d3::objects::Point;
-using ostk::math::geom::d3::Intersection;
-using ostk::math::geom::d3::trf::rot::Quaternion;
+using ostk::math::object::Matrix3d;
+using ostk::math::geometry::d3::Object;
+using ostk::math::geometry::d3::objects::Point;
+using ostk::math::geometry::d3::Intersection;
+using ostk::math::geometry::d3::trf::rot::Quaternion;
 
 #define DEFAULT_ORIENTATION Quaternion::Unit()
 
@@ -428,7 +428,7 @@ class Ellipsoid : public Object
 
 }  // namespace objects
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
 

@@ -6,11 +6,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Polygon(pybind11::
 {
     using namespace pybind11;
 
-    using ostk::math::obj::Vector3d;
-    using Polygon2d = ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d3::Object;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Polygon;
+    using ostk::math::object::Vector3d;
+    using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d3::Object;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Polygon;
 
     class_<Polygon, Object>(aModule, "Polygon")
 

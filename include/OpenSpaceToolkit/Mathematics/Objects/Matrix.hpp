@@ -7,7 +7,7 @@ namespace ostk
 {
 namespace math
 {
-namespace obj
+namespace object
 {
 
 }

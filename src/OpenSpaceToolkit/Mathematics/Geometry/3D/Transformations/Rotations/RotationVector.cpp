@@ -11,7 +11,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -198,6 +198,6 @@ RotationVector::RotationVector()
 }  // namespace rot
 }  // namespace trf
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk

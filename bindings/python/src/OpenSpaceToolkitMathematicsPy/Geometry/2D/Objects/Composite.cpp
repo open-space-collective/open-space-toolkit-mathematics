@@ -12,15 +12,15 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Composite(pybind11
     using ostk::core::types::Shared;
     using ostk::core::types::Real;
 
-    using ostk::math::geom::d2::Object;
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::PointSet;
-    using ostk::math::geom::d2::objects::Line;
-    using ostk::math::geom::d2::objects::Segment;
-    using ostk::math::geom::d2::objects::LineString;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
-    using ostk::math::geom::d2::Intersection;
+    using ostk::math::geometry::d2::Object;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::Line;
+    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::math::geometry::d2::objects::LineString;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
+    using ostk::math::geometry::d2::Intersection;
 
     class_<Composite, Object>(aModule, "Composite")
 

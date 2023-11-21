@@ -22,7 +22,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d2
 {
@@ -32,8 +32,8 @@ using ostk::core::types::Index;
 using ostk::core::types::Size;
 using ostk::core::ctnr::Array;
 
-using ostk::math::geom::d2::Object;
-using ostk::math::geom::d2::objects::Composite;
+using ostk::math::geometry::d2::Object;
+using ostk::math::geometry::d2::objects::Composite;
 
 /// @brief                      2D intersection
 
@@ -290,7 +290,7 @@ class Intersection
 };
 
 }  // namespace d2
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
 

@@ -9,21 +9,21 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
     using ostk::core::types::Unique;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d3::Object;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::PointSet;
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Segment;
-    using ostk::math::geom::d3::objects::LineString;
-    using ostk::math::geom::d3::objects::Polygon;
-    using ostk::math::geom::d3::objects::Plane;
-    using ostk::math::geom::d3::objects::Sphere;
-    using ostk::math::geom::d3::objects::Ellipsoid;
-    using ostk::math::geom::d3::objects::Cuboid;
-    using ostk::math::geom::d3::objects::Pyramid;
-    using ostk::math::geom::d3::objects::Composite;
-    using ostk::math::geom::d3::Intersection;
+    using ostk::math::geometry::d3::Object;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::math::geometry::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::math::geometry::d3::objects::Ellipsoid;
+    using ostk::math::geometry::d3::objects::Cuboid;
+    using ostk::math::geometry::d3::objects::Pyramid;
+    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::math::geometry::d3::Intersection;
 
     // scope in_Intersection = class_<Intersection>("Intersection", init<const Array<Unique<Object>>>())
     class_<Intersection> intersection(aModule, "Intersection");

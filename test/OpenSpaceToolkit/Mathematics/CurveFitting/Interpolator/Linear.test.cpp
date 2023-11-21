@@ -15,9 +15,9 @@ using ostk::core::ctnr::Table;
 using ostk::core::fs::Path;
 using ostk::core::fs::File;
 
-using ostk::math::obj::VectorXd;
-using ostk::math::obj::MatrixXd;
-using ostk::math::curvefitting::interp::Linear;
+using ostk::math::object::VectorXd;
+using ostk::math::object::MatrixXd;
+using ostk::math::curvefitting::interpolator::Linear;
 
 TEST(OpenSpaceToolkit_Mathematics_Interpolator_Linear, Constructor)
 {

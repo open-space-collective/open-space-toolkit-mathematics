@@ -9,9 +9,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
     using ostk::core::types::Real;
     using ostk::core::types::String;
 
-    using ostk::math::obj::Vector2d;
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
+    using ostk::math::object::Vector2d;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
 
     class_<Angle> angle(aModule, "Angle");
 

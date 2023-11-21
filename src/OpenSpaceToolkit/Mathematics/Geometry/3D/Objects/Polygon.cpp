@@ -10,7 +10,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -170,8 +170,8 @@ Size Polygon::getVertexCount() const
 
 Polygon::Edge Polygon::getEdgeAt(const Index anEdgeIndex) const
 {
-    using Point2d = ostk::math::geom::d2::objects::Point;
-    using Segment2d = ostk::math::geom::d2::objects::Segment;
+    using Point2d = ostk::math::geometry::d2::objects::Point;
+    using Segment2d = ostk::math::geometry::d2::objects::Segment;
 
     if (!this->isDefined())
     {
@@ -191,7 +191,7 @@ Polygon::Edge Polygon::getEdgeAt(const Index anEdgeIndex) const
 
 Polygon::Vertex Polygon::getVertexAt(const Index aVertexIndex) const
 {
-    using Point2d = ostk::math::geom::d2::objects::Point;
+    using Point2d = ostk::math::geometry::d2::objects::Point;
 
     if (!this->isDefined())
     {
@@ -205,7 +205,7 @@ Polygon::Vertex Polygon::getVertexAt(const Index aVertexIndex) const
 
 Array<Polygon::Edge> Polygon::getEdges() const
 {
-    using Point2d = ostk::math::geom::d2::objects::Point;
+    using Point2d = ostk::math::geometry::d2::objects::Point;
 
     Array<Polygon::Edge> edges = Array<Polygon::Edge>::Empty();
 
@@ -290,6 +290,6 @@ Polygon Polygon::Undefined()
 
 }  // namespace objects
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk

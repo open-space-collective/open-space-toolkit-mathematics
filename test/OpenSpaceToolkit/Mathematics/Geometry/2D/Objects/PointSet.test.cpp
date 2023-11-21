@@ -7,8 +7,8 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, Constructor)
 {
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::PointSet;
 
     {
         EXPECT_NO_THROW(PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}));
@@ -21,7 +21,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, Constructor)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, Clone)
 {
-    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::PointSet;
 
     {
         EXPECT_NO_THROW(const PointSet* pointSetPtr = PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}).clone();
@@ -31,7 +31,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, Clone)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, EqualToOperator)
 {
-    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::PointSet;
 
     {
         EXPECT_TRUE(PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}) == PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}));
@@ -60,7 +60,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, EqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, NotEqualToOperator)
 {
-    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::PointSet;
 
     {
         EXPECT_FALSE(PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}) != PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}));
@@ -89,7 +89,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, NotEqualToOperat
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, StreamOperator)
 {
-    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::PointSet;
 
     {
         testing::internal::CaptureStdout();
@@ -102,7 +102,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, StreamOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, IsDefined)
 {
-    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::PointSet;
 
     {
         EXPECT_TRUE(PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}).isDefined());
@@ -116,7 +116,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, IsEmpty)
 {
-    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::PointSet;
 
     {
         EXPECT_FALSE(PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}).isEmpty());
@@ -132,7 +132,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, IsNear)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::PointSet;
 
     {
         EXPECT_TRUE(PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}
@@ -158,7 +158,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, IsNear)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, GetSize)
 {
-    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::PointSet;
 
     {
         EXPECT_EQ(3, PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}).getSize());
@@ -171,8 +171,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, GetSize)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, DistanceToPoint)
 {
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::PointSet;
 
     {
         EXPECT_EQ(0.0, PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}).distanceTo(Point({0.0, 0.0})));
@@ -190,8 +190,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, DistanceToPoint)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, GetPointClosestTo)
 {
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::PointSet;
 
     {
         EXPECT_EQ(Point(0.0, 0.0), PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}).getPointClosestTo({0.0, 0.0}));
@@ -208,8 +208,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, GetPointClosestT
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, ToString)
 {
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::PointSet;
 
     {
         EXPECT_EQ("[[0.0, 2.0], [0.0, 1.0], [0.0, 0.0]]", PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}).toString());
@@ -239,7 +239,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, ConstIterator)
 {
     using ostk::core::types::Index;
 
-    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::PointSet;
 
     {
         const PointSet pointSet = {{{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}};
@@ -259,10 +259,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, ConstIterator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, ApplyTransformation)
 {
-    using ostk::math::obj::Vector2d;
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::PointSet;
-    using ostk::math::geom::d2::Transformation;
+    using ostk::math::object::Vector2d;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::PointSet;
+    using ostk::math::geometry::d2::Transformation;
 
     // Translation
 
@@ -282,7 +282,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, ApplyTransformat
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, Empty)
 {
-    using ostk::math::geom::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::PointSet;
 
     {
         EXPECT_NO_THROW(PointSet::Empty());

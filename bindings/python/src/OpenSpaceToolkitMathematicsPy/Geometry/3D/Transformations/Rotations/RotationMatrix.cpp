@@ -12,9 +12,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_
     using ostk::core::types::Real;
     using ostk::core::types::String;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::obj::Matrix3d;
-    using ostk::math::geom::d3::trf::rot::RotationMatrix;
+    using ostk::math::object::Vector3d;
+    using ostk::math::object::Matrix3d;
+    using ostk::math::geometry::d3::trf::rot::RotationMatrix;
 
     class_<RotationMatrix>(aModule, "RotationMatrix")
 

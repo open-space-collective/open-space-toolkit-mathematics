@@ -12,7 +12,7 @@ namespace math
 {
 namespace curvefitting
 {
-namespace interp
+namespace interpolator
 {
 
 CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
@@ -73,7 +73,7 @@ double CubicSpline::evaluate(const double& aQueryValue) const
     return interpolator_(aQueryValue);
 }
 
-}  // namespace interp
+}  // namespace interpolator
 }  // namespace curvefitting
 }  // namespace math
 }  // namespace ostk

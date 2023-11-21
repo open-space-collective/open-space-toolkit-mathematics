@@ -9,7 +9,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d2
 {
@@ -321,6 +321,6 @@ Intersection::Type Intersection::TypeFromObject(const Unique<Object>& anObjectUP
 }
 
 }  // namespace d2
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk

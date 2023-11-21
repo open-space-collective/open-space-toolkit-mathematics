@@ -18,7 +18,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -29,12 +29,12 @@ using ostk::core::ctnr::Index;
 using ostk::core::ctnr::Size;
 using ostk::core::ctnr::Array;
 
-using Polygon2d = ostk::math::geom::d2::objects::Polygon;
-using ostk::math::geom::d3::Object;
-using ostk::math::geom::d3::objects::Point;
-using ostk::math::geom::d3::objects::Segment;
-using ostk::math::geom::d3::objects::LineString;
-using ostk::math::geom::d3::objects::Plane;
+using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
+using ostk::math::geometry::d3::Object;
+using ostk::math::geometry::d3::objects::Point;
+using ostk::math::geometry::d3::objects::Segment;
+using ostk::math::geometry::d3::objects::LineString;
+using ostk::math::geometry::d3::objects::Plane;
 
 /// @brief                      Polygon
 ///
@@ -207,7 +207,7 @@ class Polygon : public Object
 
 }  // namespace objects
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
 

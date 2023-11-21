@@ -14,7 +14,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -27,9 +27,9 @@ using ostk::core::types::Integer;
 using ostk::core::types::Real;
 using ostk::core::types::String;
 
-using ostk::math::obj::Vector3d;
-using ostk::math::obj::Vector4d;
-using ostk::math::geom::Angle;
+using ostk::math::object::Vector3d;
+using ostk::math::object::Vector4d;
+using ostk::math::geometry::Angle;
 
 class RotationVector;
 class RotationMatrix;
@@ -716,7 +716,7 @@ class Quaternion
 }  // namespace rot
 }  // namespace trf
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
 

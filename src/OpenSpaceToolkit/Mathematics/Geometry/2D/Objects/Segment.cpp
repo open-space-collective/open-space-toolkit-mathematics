@@ -13,7 +13,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d2
 {
@@ -70,7 +70,7 @@ bool Segment::isDegenerate() const
 
 bool Segment::contains(const Point& aPoint) const
 {
-    using ostk::math::obj::Vector3d;
+    using ostk::math::object::Vector3d;
 
     if (!aPoint.isDefined())
     {
@@ -238,7 +238,7 @@ Line Segment::toLine() const
 
 String Segment::toString(const Object::Format& aFormat, const Integer& aPrecision) const
 {
-    using ostk::math::geom::d2::objects::LineString;
+    using ostk::math::geometry::d2::objects::LineString;
 
     switch (aFormat)
     {
@@ -295,6 +295,6 @@ Segment Segment::Undefined()
 
 }  // namespace objects
 }  // namespace d2
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk

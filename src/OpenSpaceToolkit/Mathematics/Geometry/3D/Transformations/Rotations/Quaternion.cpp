@@ -11,7 +11,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -571,7 +571,7 @@ Quaternion Quaternion::RotationMatrix(const rot::RotationMatrix& aRotationMatrix
 
 Quaternion Quaternion::Parse(const String& aString, const Quaternion::Format& aFormat)
 {
-    using ostk::math::obj::VectorXd;
+    using ostk::math::object::VectorXd;
 
     if (aString.isEmpty())
     {
@@ -657,6 +657,6 @@ Quaternion Quaternion::SLERP(
 }  // namespace rot
 }  // namespace trf
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk

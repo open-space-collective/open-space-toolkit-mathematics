@@ -6,10 +6,10 @@
 
 #include <Global.test.hpp>
 
-using ostk::math::geom::Angle;
-using ostk::math::geom::d3::trf::rot::Quaternion;
-using ostk::math::geom::d3::trf::rot::RotationVector;
-using ostk::math::obj::Vector3d;
+using ostk::math::geometry::Angle;
+using ostk::math::geometry::d3::trf::rot::Quaternion;
+using ostk::math::geometry::d3::trf::rot::RotationVector;
+using ostk::math::object::Vector3d;
 using ostk::core::types::Real;
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Constructor)

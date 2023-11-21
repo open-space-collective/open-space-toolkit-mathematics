@@ -9,12 +9,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_MultiPolygon(pybin
     using ostk::core::types::Integer;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::obj::Vector2d;
-    using ostk::math::geom::d2::Object;
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::PointSet;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::MultiPolygon;
+    using ostk::math::object::Vector2d;
+    using ostk::math::geometry::d2::Object;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::MultiPolygon;
 
     class_<MultiPolygon, Object>(aModule, "MultiPolygon")
 

@@ -9,15 +9,15 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::mod
     using ostk::core::types::Unique;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::Object;
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::PointSet;
-    using ostk::math::geom::d2::objects::Line;
-    using ostk::math::geom::d2::objects::Segment;
-    using ostk::math::geom::d2::objects::LineString;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
-    using ostk::math::geom::d2::Intersection;
+    using ostk::math::geometry::d2::Object;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::Line;
+    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::math::geometry::d2::objects::LineString;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
+    using ostk::math::geometry::d2::Intersection;
 
     class_<Intersection> intersection(aModule, "Intersection");
 

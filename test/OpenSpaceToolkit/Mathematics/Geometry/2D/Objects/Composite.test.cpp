@@ -14,10 +14,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Constructor)
     using ostk::core::types::Unique;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::Object;
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::Object;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -37,9 +37,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Constructor)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Clone)
 {
-    using ostk::math::geom::d2::Object;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::Object;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -50,10 +50,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Clone)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, CopyConstructor)
 {
-    using ostk::math::geom::d2::Object;
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::Object;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -66,9 +66,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, CopyConstructor
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, EqualToOperator)
 {
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -91,9 +91,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, EqualToOperator
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, NotEqualToOperator)
 {
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -116,9 +116,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, NotEqualToOpera
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AdditionOperator)
 {
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -150,9 +150,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AdditionOperato
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AdditionAssignmentOperator)
 {
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -184,8 +184,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AdditionAssignm
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, StreamOperator)
 {
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -202,8 +202,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, StreamOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, IsDefined)
 {
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -220,9 +220,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, IsEmpty)
 {
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -243,8 +243,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, IsEmpty)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Intersects)
 {
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -260,11 +260,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Intersects)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Contains)
 {
-    using ostk::math::geom::d2::Object;
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::LineString;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::Object;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::LineString;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Point point = {1.0, 0.0};
@@ -374,10 +374,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Contains)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AnyContains)
 {
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::LineString;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::LineString;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Point point = {1.0, 0.0};
@@ -502,9 +502,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AnyContains)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Is)
 {
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -522,11 +522,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Is)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, As)
 {
-    using ostk::math::geom::d2::Object;
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::LineString;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::Object;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::LineString;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -559,9 +559,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, As)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AccessObjectAt)
 {
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -597,9 +597,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AccessObjects)
     using ostk::core::types::Unique;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::Object;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::Object;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -620,9 +620,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AccessObjects)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, GetObjectCount)
 {
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -653,10 +653,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, GetObjectCount)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, ConstIterator)
 {
-    using ostk::math::geom::d2::Object;
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::Object;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -688,11 +688,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, ConstIterator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, ApplyTransformation)
 {
-    using ostk::math::geom::d2::Object;
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::objects::Composite;
-    using ostk::math::geom::d2::Transformation;
+    using ostk::math::geometry::d2::Object;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Composite;
+    using ostk::math::geometry::d2::Transformation;
 
     {
         const Polygon polygon = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -715,7 +715,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, ApplyTransforma
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Undefined)
 {
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         EXPECT_NO_THROW(Composite::Undefined());
@@ -725,7 +725,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Undefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Empty)
 {
-    using ostk::math::geom::d2::objects::Composite;
+    using ostk::math::geometry::d2::objects::Composite;
 
     {
         EXPECT_NO_THROW(Composite::Empty());

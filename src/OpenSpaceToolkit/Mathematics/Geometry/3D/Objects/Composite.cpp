@@ -11,7 +11,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -434,7 +434,7 @@ void Composite::print(std::ostream& anOutputStream, bool displayDecorators) cons
 
 void Composite::applyTransformation(const Transformation& aTransformation)
 {
-    using ostk::math::geom::d3::trf::rot::RotationMatrix;
+    using ostk::math::geometry::d3::trf::rot::RotationMatrix;
 
     if (!aTransformation.isDefined())
     {
@@ -473,6 +473,6 @@ Composite Composite::Empty()
 
 }  // namespace objects
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk

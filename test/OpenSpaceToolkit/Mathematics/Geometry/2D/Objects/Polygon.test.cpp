@@ -21,7 +21,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, Constructor)
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -74,7 +74,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, Clone)
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -87,7 +87,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, EqualToOperator)
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -124,7 +124,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, NotEqualToOperato
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -161,7 +161,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, StreamOperator)
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         testing::internal::CaptureStdout();
@@ -178,7 +178,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IsDefined)
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -195,7 +195,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IsNear)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     // Is near ifself
 
@@ -243,7 +243,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectsPolygon
     using ostk::core::ctnr::Tuple;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Tuple<Polygon, Polygon, bool>> testCases = {
@@ -323,8 +323,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ContainsPoint)
     using ostk::core::ctnr::Tuple;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Tuple<Polygon, Point, bool>> testCases = {
@@ -376,8 +376,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ContainsPointSet)
     using ostk::core::ctnr::Tuple;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::PointSet;
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Tuple<Polygon, PointSet, bool>> testCases = {
@@ -421,7 +421,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingCount
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -451,7 +451,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetEdgeCount)
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -481,7 +481,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetVertexCount)
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -511,7 +511,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetOuterRing)
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -545,7 +545,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetInnerRingAt)
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -583,7 +583,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetEdgeAt)
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -611,7 +611,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetVertexAt)
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -639,7 +639,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetEdges)
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -668,7 +668,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -683,7 +683,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetVertices)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetConvexHull)
 {
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         // Convex hull of convex polygon
@@ -718,10 +718,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, GetConvexHull)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith)
 {
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::LineString;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::Intersection;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::LineString;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::Intersection;
 
     // TBI: Intersection type to be improved
 
@@ -869,10 +869,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, IntersectionWith)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, DifferenceWith)
 {
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::LineString;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::Intersection;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::LineString;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::Intersection;
 
     // Polygon difference between two intersecting simple convex polygons
 
@@ -942,12 +942,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, DifferenceWith)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, UnionWith)
 {
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         using ostk::core::ctnr::Array;
 
-        using ostk::math::geom::d2::objects::MultiPolygon;
+        using ostk::math::geometry::d2::objects::MultiPolygon;
 
         // Union with itself
 
@@ -1063,8 +1063,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ToString)
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::obj::Vector2d;
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::object::Vector2d;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -1118,9 +1118,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ApplyTransformati
 {
     using ostk::core::ctnr::Array;
 
-    using ostk::math::obj::Vector2d;
-    using ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d2::Transformation;
+    using ostk::math::object::Vector2d;
+    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d2::Transformation;
 
     // Translation
 
@@ -1145,7 +1145,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, ApplyTransformati
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Polygon, Undefined)
 {
-    using ostk::math::geom::d2::objects::Polygon;
+    using ostk::math::geometry::d2::objects::Polygon;
 
     {
         EXPECT_NO_THROW(Polygon::Undefined());

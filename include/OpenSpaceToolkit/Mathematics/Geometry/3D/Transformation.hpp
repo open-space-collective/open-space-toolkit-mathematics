@@ -16,7 +16,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -26,14 +26,14 @@ class Transformation;
 using ostk::core::types::Unique;
 using ostk::core::types::String;
 
-using ostk::math::obj::Vector3d;
-using ostk::math::obj::Vector4d;
-using ostk::math::obj::Matrix4d;
-using ostk::math::geom::Angle;
-using ostk::math::geom::d3::Object;
-using ostk::math::geom::d3::objects::Point;
-using ostk::math::geom::d3::trf::rot::RotationVector;
-using ostk::math::geom::d3::trf::rot::RotationMatrix;
+using ostk::math::object::Vector3d;
+using ostk::math::object::Vector4d;
+using ostk::math::object::Matrix4d;
+using ostk::math::geometry::Angle;
+using ostk::math::geometry::d3::Object;
+using ostk::math::geometry::d3::objects::Point;
+using ostk::math::geometry::d3::trf::rot::RotationVector;
+using ostk::math::geometry::d3::trf::rot::RotationMatrix;
 
 class Transformation
 {
@@ -131,7 +131,7 @@ class Transformation
 };
 
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
 

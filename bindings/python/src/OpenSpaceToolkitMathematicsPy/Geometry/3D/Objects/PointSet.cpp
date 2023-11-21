@@ -8,9 +8,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_PointSet(pybind11:
 
     using ostk::core::ctnr::Array;
 
-    using ostk::math::geom::d3::Object;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::Object;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     class_<PointSet, Object>(aModule, "PointSet")
 

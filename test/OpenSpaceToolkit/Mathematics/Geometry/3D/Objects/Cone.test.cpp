@@ -10,10 +10,10 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Constructor)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         const Point apex = {0.0, 0.0, 0.0};
@@ -26,10 +26,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Constructor)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Clone)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         const Point apex = {0.0, 0.0, 0.0};
@@ -42,10 +42,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Clone)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, EqualToOperator)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         const Point apex = {0.0, 0.0, 0.0};
@@ -84,10 +84,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, EqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, NotEqualToOperator)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         const Point apex = {0.0, 0.0, 0.0};
@@ -126,10 +126,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, NotEqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, StreamOperator)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         testing::internal::CaptureStdout();
@@ -146,10 +146,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, StreamOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, IsDefined)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         const Point apex = {0.0, 0.0, 0.0};
@@ -166,11 +166,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Intersects_Ellipsoid)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Ellipsoid;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Ellipsoid;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         const Point apex = {-10.0, 0.0, 10.0};
@@ -191,10 +191,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Intersects_Ellipsoid
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Point)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         const Point apex = {-10.0, 0.0, 10.0};
@@ -226,11 +226,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_PointSet)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::PointSet;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         const Point apex = {-10.0, 0.0, 10.0};
@@ -253,11 +253,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_PointSet)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Segment)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Segment;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         const Point apex = {-10.0, 0.0, 10.0};
@@ -287,11 +287,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Sphere)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Sphere;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         const Point apex = {-10.0, 0.0, 10.0};
@@ -321,10 +321,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Contains_Sphere)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, GetApex)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         const Point apex = {0.0, 0.0, 0.0};
@@ -341,10 +341,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, GetApex)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, GetAxis)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         const Point apex = {0.0, 0.0, 0.0};
@@ -361,10 +361,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, GetAxis)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, GetAngle)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         const Point apex = {0.0, 0.0, 0.0};
@@ -384,11 +384,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, GetRaysOfLateralSurf
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         const Point apex = {0.0, 0.0, 0.0};
@@ -420,10 +420,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, GetRaysOfLateralSurf
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, DistanceTo_Point)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         const Point apex = {-10.0, 0.0, 10.0};
@@ -463,13 +463,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, IntersectionWith_Ell
 {
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::LineString;
-    using ostk::math::geom::d3::objects::Ellipsoid;
-    using ostk::math::geom::d3::objects::Cone;
-    using ostk::math::geom::d3::Intersection;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::Ellipsoid;
+    using ostk::math::geometry::d3::objects::Cone;
+    using ostk::math::geometry::d3::Intersection;
 
     {
         const Point apex = {10.0, 0.0, 10.0};
@@ -509,12 +509,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, ApplyTransformation)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Cone;
-    using ostk::math::geom::d3::Transformation;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Cone;
+    using ostk::math::geometry::d3::Transformation;
+    using ostk::math::geometry::d3::trf::rot::RotationVector;
 
     // Translation
 
@@ -568,7 +568,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, ApplyTransformation)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone, Undefined)
 {
-    using ostk::math::geom::d3::objects::Cone;
+    using ostk::math::geometry::d3::objects::Cone;
 
     {
         EXPECT_NO_THROW(Cone::Undefined());

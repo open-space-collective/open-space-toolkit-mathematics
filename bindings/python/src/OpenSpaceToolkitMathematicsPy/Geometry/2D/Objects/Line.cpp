@@ -8,11 +8,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Line(pybind11::mod
 
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector2d;
-    using ostk::math::geom::d2::Object;
-    using ostk::math::geom::d2::objects::Point;
-    using ostk::math::geom::d2::objects::PointSet;
-    using ostk::math::geom::d2::objects::Line;
+    using ostk::math::object::Vector2d;
+    using ostk::math::geometry::d2::Object;
+    using ostk::math::geometry::d2::objects::Point;
+    using ostk::math::geometry::d2::objects::PointSet;
+    using ostk::math::geometry::d2::objects::Line;
 
     class_<Line, Object>(aModule, "Line")
 

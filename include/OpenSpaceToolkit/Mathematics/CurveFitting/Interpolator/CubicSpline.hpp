@@ -16,14 +16,14 @@ namespace math
 {
 namespace curvefitting
 {
-namespace interp
+namespace interpolator
 {
 
 using ostk::core::types::Real;
 using ostk::core::types::Size;
 
-using ostk::math::obj::VectorXd;
-using ostk::math::curvefitting::interp::Interpolator;
+using ostk::math::object::VectorXd;
+using ostk::math::curvefitting::Interpolator;
 
 using boost::math::interpolators::cardinal_cubic_b_spline;
 
@@ -100,7 +100,7 @@ class CubicSpline : public Interpolator
     cardinal_cubic_b_spline<double> interpolator_;
 };
 
-}  // namespace interp
+}  // namespace interpolator
 }  // namespace curvefitting
 }  // namespace math
 }  // namespace ostk

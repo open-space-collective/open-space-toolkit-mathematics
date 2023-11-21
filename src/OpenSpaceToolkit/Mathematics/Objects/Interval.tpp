@@ -9,7 +9,7 @@ namespace ostk
 {
 namespace math
 {
-namespace obj
+namespace object
 {
 
 template <class T>
@@ -500,6 +500,6 @@ types::String Interval<T>::StringFromType(const Interval::Type& anIntervalType)
     return types::String::Empty();
 }
 
-}  // namespace obj
+}  // namespace object
 }  // namespace math
 }  // namespace ostk

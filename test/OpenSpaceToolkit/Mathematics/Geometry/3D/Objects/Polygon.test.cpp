@@ -8,10 +8,10 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, Constructor)
 {
-    using ostk::math::obj::Vector3d;
-    using Polygon2d = ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Polygon;
+    using ostk::math::object::Vector3d;
+    using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Polygon;
 
     {
         const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -25,10 +25,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, Constructor)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, Clone)
 {
-    using ostk::math::obj::Vector3d;
-    using Polygon2d = ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Polygon;
+    using ostk::math::object::Vector3d;
+    using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Polygon;
 
     {
         const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -43,10 +43,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, Clone)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, EqualToOperator)
 {
-    using ostk::math::obj::Vector3d;
-    using Polygon2d = ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Polygon;
+    using ostk::math::object::Vector3d;
+    using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Polygon;
 
     {
         const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -75,10 +75,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, EqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, NotEqualToOperator)
 {
-    using ostk::math::obj::Vector3d;
-    using Polygon2d = ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Polygon;
+    using ostk::math::object::Vector3d;
+    using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Polygon;
 
     {
         const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -107,10 +107,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, NotEqualToOperato
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, StreamOperator)
 {
-    using ostk::math::obj::Vector3d;
-    using Polygon2d = ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Polygon;
+    using ostk::math::object::Vector3d;
+    using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Polygon;
 
     {
         testing::internal::CaptureStdout();
@@ -128,10 +128,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, StreamOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, IsDefined)
 {
-    using ostk::math::obj::Vector3d;
-    using Polygon2d = ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Polygon;
+    using ostk::math::object::Vector3d;
+    using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Polygon;
 
     {
         const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -151,10 +151,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, IsNear)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector3d;
-    using Polygon2d = ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Polygon;
+    using ostk::math::object::Vector3d;
+    using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Polygon;
 
     {
         const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -217,10 +217,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, IsNear)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetPolygon2d)
 {
-    using ostk::math::obj::Vector3d;
-    using Polygon2d = ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Polygon;
+    using ostk::math::object::Vector3d;
+    using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Polygon;
 
     {
         const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -238,10 +238,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetPolygon2d)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetOrigin)
 {
-    using ostk::math::obj::Vector3d;
-    using Polygon2d = ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Polygon;
+    using ostk::math::object::Vector3d;
+    using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Polygon;
 
     {
         const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -259,10 +259,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetOrigin)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetXAxis)
 {
-    using ostk::math::obj::Vector3d;
-    using Polygon2d = ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Polygon;
+    using ostk::math::object::Vector3d;
+    using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Polygon;
 
     {
         const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -280,10 +280,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetXAxis)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetYAxis)
 {
-    using ostk::math::obj::Vector3d;
-    using Polygon2d = ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Polygon;
+    using ostk::math::object::Vector3d;
+    using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Polygon;
 
     {
         const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -301,10 +301,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetYAxis)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetNormalVector)
 {
-    using ostk::math::obj::Vector3d;
-    using Polygon2d = ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Polygon;
+    using ostk::math::object::Vector3d;
+    using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Polygon;
 
     {
         const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
@@ -324,13 +324,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, ApplyTransformati
 {
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using Polygon2d = ostk::math::geom::d2::objects::Polygon;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Polygon;
-    using ostk::math::geom::d3::Transformation;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Polygon;
+    using ostk::math::geometry::d3::Transformation;
+    using ostk::math::geometry::d3::trf::rot::RotationVector;
 
     // Translation
 
@@ -386,7 +386,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, ApplyTransformati
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, Undefined)
 {
-    using ostk::math::geom::d3::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Polygon;
 
     {
         EXPECT_NO_THROW(Polygon::Undefined());

@@ -10,7 +10,7 @@ inline void OpenSpaceToolkitMathematicsPy_Objects_Interval(pybind11::module& aMo
 
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Interval;
+    using ostk::math::object::Interval;
 
     class_<Interval<Real>> real_interval(aModule, "RealInterval");
 

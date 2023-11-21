@@ -13,7 +13,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -22,10 +22,10 @@ namespace objects
 
 using ostk::core::types::Real;
 
-using ostk::math::geom::d3::Object;
-using ostk::math::geom::d3::objects::Point;
-using ostk::math::geom::d3::objects::PointSet;
-using ostk::math::geom::d3::objects::Line;
+using ostk::math::geometry::d3::Object;
+using ostk::math::geometry::d3::objects::Point;
+using ostk::math::geometry::d3::objects::PointSet;
+using ostk::math::geometry::d3::objects::Line;
 
 class PointSet;
 class Plane;
@@ -262,7 +262,7 @@ class Segment : public Object
 
 }  // namespace objects
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
 

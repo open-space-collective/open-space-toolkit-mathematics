@@ -6,7 +6,7 @@
 
 using ostk::core::ctnr::Array;
 
-void set_point_3_array(const Array<ostk::math::geom::d3::objects::Point>& anArray)
+void set_point_3_array(const Array<ostk::math::geometry::d3::objects::Point>& anArray)
 {
     (void)anArray;
 }
@@ -19,9 +19,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Point(pybind11::mo
     using ostk::core::types::Integer;
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::d3::Object;
-    using ostk::math::geom::d3::objects::Point;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::d3::Object;
+    using ostk::math::geometry::d3::objects::Point;
 
     class_<Point, Object>(aModule, "Point")
 

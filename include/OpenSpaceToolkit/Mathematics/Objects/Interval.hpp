@@ -11,7 +11,7 @@ namespace ostk
 {
 namespace math
 {
-namespace obj
+namespace object
 {
 
 namespace types = ostk::core::types;
@@ -360,7 +360,7 @@ class Interval : public IntervalBase
     T upperBound_;
 };
 
-}  // namespace obj
+}  // namespace object
 }  // namespace math
 }  // namespace ostk
 
