@@ -9,7 +9,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 
 Angle::Angle(const Real& aValue, const Angle::Unit& aUnit)
@@ -639,6 +639,6 @@ Real Angle::ReduceRange(const Real& aValue, const Real& aRangeLowerBound, const 
     return value;
 }
 
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk

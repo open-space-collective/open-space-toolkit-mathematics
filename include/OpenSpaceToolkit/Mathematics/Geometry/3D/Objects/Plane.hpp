@@ -15,20 +15,20 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
 namespace objects
 {
 
-using ostk::math::obj::Vector3d;
-using ostk::math::geom::d3::Object;
-using ostk::math::geom::d3::objects::Point;
-using ostk::math::geom::d3::objects::PointSet;
-using ostk::math::geom::d3::objects::Line;
-using ostk::math::geom::d3::objects::Ray;
-using ostk::math::geom::d3::objects::Segment;
+using ostk::math::object::Vector3d;
+using ostk::math::geometry::d3::Object;
+using ostk::math::geometry::d3::objects::Point;
+using ostk::math::geometry::d3::objects::PointSet;
+using ostk::math::geometry::d3::objects::Line;
+using ostk::math::geometry::d3::objects::Ray;
+using ostk::math::geometry::d3::objects::Segment;
 
 /// @brief                      Plane
 ///
@@ -305,7 +305,7 @@ class Plane : public Object
 
 }  // namespace objects
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
 

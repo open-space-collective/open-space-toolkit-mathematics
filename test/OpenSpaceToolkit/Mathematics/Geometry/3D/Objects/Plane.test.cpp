@@ -9,7 +9,7 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Constructor)
 {
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_NO_THROW(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}));
@@ -18,7 +18,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Constructor)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Clone)
 {
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_NO_THROW(const Plane* planePtr = Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).clone(); delete planePtr;);
@@ -27,7 +27,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Clone)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, EqualToOperator)
 {
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_TRUE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) == Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}));
@@ -50,7 +50,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, EqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, NotEqualToOperator)
 {
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_FALSE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) != Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}));
@@ -73,7 +73,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, NotEqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, StreamOperator)
 {
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         testing::internal::CaptureStdout();
@@ -86,7 +86,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, StreamOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IsDefined)
 {
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_TRUE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).isDefined());
@@ -100,8 +100,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_Point)
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_TRUE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Point(0.0, 0.0, 0.0)));
@@ -128,8 +128,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_PointSet)
 {
-    using ostk::math::geom::d3::objects::PointSet;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_TRUE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0})
@@ -158,8 +158,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_PointSet
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_Line)
 {
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line.Intersects_Plane
@@ -170,8 +170,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_Line)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_Ray)
 {
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray.Intersects_Plane
@@ -182,8 +182,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_Ray)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_Segment)
 {
-    using ostk::math::geom::d3::objects::Segment;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment.Intersects_Plane
@@ -194,8 +194,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Intersects_Segment)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Contains_Point)
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_TRUE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Point(0.0, 0.0, 0.0)));
@@ -222,8 +222,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Contains_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Contains_PointSet)
 {
-    using ostk::math::geom::d3::objects::PointSet;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_TRUE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0})
@@ -251,8 +251,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Contains_PointSet)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Contains_Line)
 {
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_TRUE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Line({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0})));
@@ -280,8 +280,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Contains_Line)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Contains_Ray)
 {
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_TRUE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Ray({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0})));
@@ -309,8 +309,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Contains_Ray)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Contains_Segment)
 {
-    using ostk::math::geom::d3::objects::Segment;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_TRUE(Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0})));
@@ -339,8 +339,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Contains_Segment)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, GetPoint)
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Plane({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}).getPoint());
@@ -354,9 +354,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, GetPoint)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, GetNormalVector)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Plane({0.0, 0.0, 0.0}, {0.0, 0.0, +2.0}).getNormalVector());
@@ -372,9 +372,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Po
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Plane;
-    using ostk::math::geom::d3::Intersection;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Plane;
+    using ostk::math::geometry::d3::Intersection;
 
     const auto expectPointIntersection = [](const Plane& aPlane, const Point& aPoint, const Point& anIntersectionPoint
                                          ) -> void
@@ -425,10 +425,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Po
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::PointSet;
-    using ostk::math::geom::d3::objects::Plane;
-    using ostk::math::geom::d3::Intersection;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Plane;
+    using ostk::math::geometry::d3::Intersection;
 
     const auto expectPointIntersection =
         [](const Plane& aPlane, const PointSet& aPointSet, const Point& anIntersectionPoint) -> void
@@ -527,8 +527,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Po
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Line)
 {
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line.IntersectionWith_Plane
@@ -543,8 +543,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Li
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Ray)
 {
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray.IntersectionWith_Plane
@@ -559,8 +559,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Ra
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Segment)
 {
-    using ostk::math::geom::d3::objects::Segment;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment.IntersectionWith_Plane
@@ -577,11 +577,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, ApplyTransformation
 {
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Plane;
-    using ostk::math::geom::d3::Transformation;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Plane;
+    using ostk::math::geometry::d3::Transformation;
+    using ostk::math::geometry::d3::trf::rot::RotationVector;
 
     // Translation
 
@@ -615,7 +615,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, ApplyTransformation
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, Undefined)
 {
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_NO_THROW(Plane::Undefined());

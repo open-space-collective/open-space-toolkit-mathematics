@@ -21,7 +21,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d2
 {
@@ -231,7 +231,7 @@ String MultiPolygon::Impl::toString(const Object::Format& aFormat, const Integer
 
 void MultiPolygon::Impl::applyTransformation(const Transformation& aTransformation)
 {
-    using ostk::math::obj::Matrix3d;
+    using ostk::math::object::Matrix3d;
 
     MultiPolygon::Impl::BoostMultiPolygon transformedMultiPolygon;
 
@@ -525,6 +525,6 @@ MultiPolygon MultiPolygon::Polygon(const Polygon2d& aPolygon)
 
 }  // namespace objects
 }  // namespace d2
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk

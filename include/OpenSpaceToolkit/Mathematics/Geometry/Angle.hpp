@@ -13,15 +13,15 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 
 using ostk::core::types::Integer;
 using ostk::core::types::Real;
 using ostk::core::types::String;
 
-using ostk::math::obj::Vector2d;
-using ostk::math::obj::Vector3d;
+using ostk::math::object::Vector2d;
+using ostk::math::object::Vector3d;
 
 /// @brief                      Angle
 ///
@@ -151,7 +151,7 @@ class Angle
     static Real ReduceRange(const Real& aValue, const Real& aRangeLowerBound, const Real& aRangeUpperBound);
 };
 
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
 

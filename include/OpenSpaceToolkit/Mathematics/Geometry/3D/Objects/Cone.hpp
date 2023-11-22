@@ -15,7 +15,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -26,12 +26,12 @@ using ostk::core::ctnr::Index;
 using ostk::core::ctnr::Size;
 using ostk::core::ctnr::Array;
 
-using ostk::math::obj::Vector3d;
-using ostk::math::geom::Angle;
-using ostk::math::geom::d3::Object;
-using ostk::math::geom::d3::objects::Point;
-using ostk::math::geom::d3::objects::Ray;
-using ostk::math::geom::d3::Intersection;
+using ostk::math::object::Vector3d;
+using ostk::math::geometry::Angle;
+using ostk::math::geometry::d3::Object;
+using ostk::math::geometry::d3::objects::Point;
+using ostk::math::geometry::d3::objects::Ray;
+using ostk::math::geometry::d3::Intersection;
 
 #define DEFAULT_RAY_COUNT 0
 #define DEFAULT_DISCRETIZATION_LEVEL 40
@@ -285,7 +285,7 @@ class Cone : public Object
 
 }  // namespace objects
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
 

@@ -17,7 +17,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d2
 {
@@ -28,10 +28,10 @@ using ostk::core::types::Index;
 using ostk::core::types::Size;
 using ostk::core::ctnr::Array;
 
-using ostk::math::obj::Vector2d;
-using ostk::math::geom::d2::Object;
-using ostk::math::geom::d2::objects::Point;
-using ostk::math::geom::d2::objects::LineString;
+using ostk::math::object::Vector2d;
+using ostk::math::geometry::d2::Object;
+using ostk::math::geometry::d2::objects::Point;
+using ostk::math::geometry::d2::objects::LineString;
 
 /// @brief                      Multi Line string
 
@@ -159,7 +159,7 @@ class MultiLineString : public Object
 
 }  // namespace objects
 }  // namespace d2
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
 

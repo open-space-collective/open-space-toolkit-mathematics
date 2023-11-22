@@ -10,7 +10,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d2
 {
@@ -127,7 +127,7 @@ class Object
 };
 
 }  // namespace d2
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
 

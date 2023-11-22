@@ -21,7 +21,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -110,7 +110,7 @@ bool Pyramid::intersects(const Ellipsoid& anEllipsoid, const Size aDiscretizatio
 
 bool Pyramid::contains(const Point& aPoint) const
 {
-    using Point2d = ostk::math::geom::d2::objects::Point;
+    using Point2d = ostk::math::geometry::d2::objects::Point;
 
     if (!aPoint.isDefined())
     {
@@ -241,8 +241,8 @@ Size Pyramid::getLateralFaceCount() const
 
 Polygon Pyramid::getLateralFaceAt(const Index aLateralFaceIndex) const
 {
-    using ostk::math::obj::Vector2d;
-    using Point2d = ostk::math::geom::d2::objects::Point;
+    using ostk::math::object::Vector2d;
+    using Point2d = ostk::math::geometry::d2::objects::Point;
 
     if (!this->isDefined())
     {
@@ -271,9 +271,9 @@ Polygon Pyramid::getLateralFaceAt(const Index aLateralFaceIndex) const
 
 Array<Ray> Pyramid::getRaysOfLateralFaceAt(const Index aLateralFaceIndex, const Size aRayCount) const
 {
-    using ostk::math::obj::Interval;
-    using ostk::math::geom::d3::trf::rot::Quaternion;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
+    using ostk::math::object::Interval;
+    using ostk::math::geometry::d3::trf::rot::Quaternion;
+    using ostk::math::geometry::d3::trf::rot::RotationVector;
 
     // if (aRayCount < 2)
     // {
@@ -529,6 +529,6 @@ Pyramid Pyramid::Undefined()
 
 }  // namespace objects
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk

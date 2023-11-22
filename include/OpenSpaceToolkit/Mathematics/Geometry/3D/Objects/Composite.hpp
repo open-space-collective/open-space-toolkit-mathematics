@@ -15,7 +15,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -27,7 +27,7 @@ using ostk::core::types::Index;
 using ostk::core::types::Size;
 using ostk::core::ctnr::Array;
 
-using ostk::math::geom::d3::Object;
+using ostk::math::geometry::d3::Object;
 
 /// @brief                      Composite object
 
@@ -284,7 +284,7 @@ class Composite : public Object
 
 }  // namespace objects
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
 

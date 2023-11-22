@@ -17,7 +17,7 @@ namespace math
 {
 namespace curvefitting
 {
-namespace interp
+namespace interpolator
 {
 
 using ostk::core::types::Real;
@@ -25,8 +25,8 @@ using ostk::core::types::Size;
 using ostk::core::types::Index;
 using ostk::core::ctnr::Pair;
 
-using ostk::math::obj::VectorXd;
-using ostk::math::curvefitting::interp::Interpolator;
+using ostk::math::object::VectorXd;
+using ostk::math::curvefitting::Interpolator;
 
 /// @brief                      Linear
 ///
@@ -89,7 +89,7 @@ class Linear : public Interpolator
     Pair<Index, Index> findIndexRange(const double& aQueryValue) const;
 };
 
-}  // namespace interp
+}  // namespace interpolator
 }  // namespace curvefitting
 }  // namespace math
 }  // namespace ostk

@@ -13,13 +13,11 @@ namespace math
 {
 namespace curvefitting
 {
-namespace interp
-{
 
 using ostk::core::types::Real;
 using ostk::core::types::Size;
 
-using ostk::math::obj::VectorXd;
+using ostk::math::object::VectorXd;
 
 /// @brief                      Interpolator
 ///
@@ -60,7 +58,6 @@ class Interpolator
     virtual double evaluate(const double& aQueryValue) const;
 };
 
-}  // namespace interp
 }  // namespace curvefitting
 }  // namespace math
 }  // namespace ostk

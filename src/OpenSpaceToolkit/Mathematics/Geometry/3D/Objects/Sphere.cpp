@@ -26,7 +26,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -259,7 +259,7 @@ bool Sphere::intersects(const Cone& aCone) const
 
 bool Sphere::contains(const Point& aPoint) const
 {
-    using ostk::math::obj::Vector3d;
+    using ostk::math::object::Vector3d;
 
     if (!aPoint.isDefined())
     {
@@ -313,7 +313,7 @@ Real Sphere::getRadius() const
 
 Intersection Sphere::intersectionWith(const Line& aLine) const
 {
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     if (!aLine.isDefined())
     {
@@ -366,7 +366,7 @@ Intersection Sphere::intersectionWith(const Line& aLine) const
 
 Intersection Sphere::intersectionWith(const Ray& aRay, const bool onlyInSight) const
 {
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     if (!aRay.isDefined())
     {
@@ -444,7 +444,7 @@ Intersection Sphere::intersectionWith(const Ray& aRay, const bool onlyInSight) c
 
 Intersection Sphere::intersectionWith(const Segment& aSegment) const
 {
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     if (!aSegment.isDefined())
     {
@@ -603,6 +603,6 @@ Sphere Sphere::Unit(const Point& aCenter)
 
 }  // namespace objects
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk

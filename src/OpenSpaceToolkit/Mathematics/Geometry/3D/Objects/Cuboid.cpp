@@ -29,7 +29,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -452,7 +452,7 @@ void Cuboid::print(std::ostream& anOutputStream, bool displayDecorators) const
 
 void Cuboid::applyTransformation(const Transformation& aTransformation)
 {
-    using ostk::math::geom::d3::trf::rot::RotationMatrix;
+    using ostk::math::geometry::d3::trf::rot::RotationMatrix;
 
     if (!aTransformation.isDefined())
     {
@@ -509,6 +509,6 @@ Cuboid Cuboid::Cube(const Point& aCenter, const Real& anExtent)
 
 }  // namespace objects
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk

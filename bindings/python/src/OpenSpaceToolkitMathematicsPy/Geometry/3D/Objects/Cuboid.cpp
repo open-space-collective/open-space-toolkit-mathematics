@@ -9,19 +9,19 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cuboid(pybind11::m
 
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::d3::Object;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::PointSet;
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Segment;
-    using ostk::math::geom::d3::objects::Plane;
-    using ostk::math::geom::d3::objects::Sphere;
-    using ostk::math::geom::d3::objects::Cuboid;
-    using ostk::math::geom::d3::objects::Pyramid;
-    using ostk::math::geom::d3::Intersection;
-    using ostk::math::geom::d3::trf::rot::Quaternion;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::d3::Object;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::math::geometry::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::math::geometry::d3::objects::Cuboid;
+    using ostk::math::geometry::d3::objects::Pyramid;
+    using ostk::math::geometry::d3::Intersection;
+    using ostk::math::geometry::d3::trf::rot::Quaternion;
 
     //     scope in_Cuboid = class_<Cuboid, Shared<Cuboid>, bases<Object>>("Cuboid", no_init)
     class_<Cuboid, Object>(aModule, "Cuboid")

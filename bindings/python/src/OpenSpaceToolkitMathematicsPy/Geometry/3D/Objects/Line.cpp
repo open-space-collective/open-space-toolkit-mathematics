@@ -8,15 +8,15 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Line(pybind11::mod
 
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::d3::Object;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::PointSet;
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::objects::Plane;
-    using ostk::math::geom::d3::objects::Sphere;
-    using ostk::math::geom::d3::objects::Ellipsoid;
-    using ostk::math::geom::d3::Intersection;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::d3::Object;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::math::geometry::d3::objects::Ellipsoid;
+    using ostk::math::geometry::d3::Intersection;
 
     class_<Line, Object>(aModule, "Line")
 

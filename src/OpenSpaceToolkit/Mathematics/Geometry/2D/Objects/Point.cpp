@@ -10,7 +10,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d2
 {
@@ -214,6 +214,6 @@ Point Point::Vector(const Vector2d& aVector)
 
 }  // namespace objects
 }  // namespace d2
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk

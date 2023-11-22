@@ -3,8 +3,8 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
 
 using ostk::core::ctnr::Array;
-using ostk::math::geom::d2::objects::Point;
-using ostk::math::obj::VectorXd;
+using ostk::math::geometry::d2::objects::Point;
+using ostk::math::object::VectorXd;
 
 void set_point_array(const Array<Point>& anArray)
 {
@@ -23,9 +23,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Point(pybind11::mo
     using ostk::core::types::Integer;
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector2d;
-    using ostk::math::geom::d2::Object;
-    using ostk::math::geom::d2::objects::Point;
+    using ostk::math::object::Vector2d;
+    using ostk::math::geometry::d2::Object;
+    using ostk::math::geometry::d2::objects::Point;
 
     class_<Point, Object>(aModule, "Point")
 

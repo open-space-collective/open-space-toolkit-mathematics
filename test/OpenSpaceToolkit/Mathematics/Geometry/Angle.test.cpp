@@ -7,7 +7,7 @@
 #include <Global.test.hpp>
 
 using ostk::core::types::Real;
-using ostk::math::geom::Angle;
+using ostk::math::geometry::Angle;
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Constructor)
 {
@@ -1029,7 +1029,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Revolutions)
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_Angle, Parse)
 // {
 
-//     using ostk::math::geom::Angle ;
+//     using ostk::math::geometry::Angle ;
 
 //     {
 
@@ -1069,7 +1069,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Revolutions)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, StringFromUnit)
 {
-    using ostk::math::geom::Angle;
+    using ostk::math::geometry::Angle;
 
     {
         EXPECT_EQ("Undefined", Angle::StringFromUnit(Angle::Unit::Undefined));

@@ -12,15 +12,13 @@ namespace math
 {
 namespace curvefitting
 {
-namespace interp
-{
 
 Interpolator::~Interpolator() {}
 
 double Interpolator::evaluate(const double& aQueryValue) const
 {
-    using ostk::math::curvefitting::interp::CubicSpline;
-    using ostk::math::curvefitting::interp::BarycentricRational;
+    using ostk::math::curvefitting::interpolator::CubicSpline;
+    using ostk::math::curvefitting::interpolator::BarycentricRational;
 
     if (const CubicSpline* interpolatorPtr = dynamic_cast<const CubicSpline*>(this))
     {
@@ -39,8 +37,8 @@ double Interpolator::evaluate(const double& aQueryValue) const
 
 VectorXd Interpolator::evaluate(const VectorXd& aQueryVector) const
 {
-    using ostk::math::curvefitting::interp::CubicSpline;
-    using ostk::math::curvefitting::interp::BarycentricRational;
+    using ostk::math::curvefitting::interpolator::CubicSpline;
+    using ostk::math::curvefitting::interpolator::BarycentricRational;
 
     if (const CubicSpline* interpolatorPtr = dynamic_cast<const CubicSpline*>(this))
     {
@@ -57,7 +55,6 @@ VectorXd Interpolator::evaluate(const VectorXd& aQueryVector) const
     return VectorXd::Zero(aQueryVector.size());
 }
 
-}  // namespace interp
 }  // namespace curvefitting
 }  // namespace math
 }  // namespace ostk

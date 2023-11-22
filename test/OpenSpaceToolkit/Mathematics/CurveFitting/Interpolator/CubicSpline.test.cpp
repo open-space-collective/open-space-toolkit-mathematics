@@ -12,12 +12,12 @@ using ostk::core::types::Size;
 using ostk::core::types::String;
 using ostk::core::ctnr::Array;
 using ostk::core::ctnr::Table;
-using ostk::core::fs::Path;
-using ostk::core::fs::File;
+using ostk::core::filesystem::Path;
+using ostk::core::filesystem::File;
 
-using ostk::math::obj::VectorXd;
-using ostk::math::obj::MatrixXd;
-using ostk::math::curvefitting::interp::CubicSpline;
+using ostk::math::object::VectorXd;
+using ostk::math::object::MatrixXd;
+using ostk::math::curvefitting::interpolator::CubicSpline;
 
 TEST(OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, Constructor)
 {

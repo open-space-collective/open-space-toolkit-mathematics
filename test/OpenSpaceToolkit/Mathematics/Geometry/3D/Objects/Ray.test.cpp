@@ -11,7 +11,7 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Constructor)
 {
-    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Ray;
 
     {
         EXPECT_NO_THROW(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}));
@@ -20,7 +20,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Constructor)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Clone)
 {
-    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Ray;
 
     {
         EXPECT_NO_THROW(const Ray* rayPtr = Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).clone(); delete rayPtr;);
@@ -29,7 +29,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Clone)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, EqualToOperator)
 {
-    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Ray;
 
     {
         EXPECT_TRUE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) == Ray({0.0, 0.0, +0.0}, {0.0, 0.0, +1.0}));
@@ -53,7 +53,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, EqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, NotEqualToOperator)
 {
-    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Ray;
 
     {
         EXPECT_FALSE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) != Ray({0.0, 0.0, +0.0}, {0.0, 0.0, +1.0}));
@@ -82,7 +82,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, NotEqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, StreamOperator)
 {
-    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Ray;
 
     {
         testing::internal::CaptureStdout();
@@ -95,7 +95,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, StreamOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, IsDefined)
 {
-    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Ray;
 
     {
         EXPECT_TRUE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).isDefined());
@@ -108,8 +108,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Intersects_Point)
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Ray;
 
     {
         EXPECT_TRUE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Point(0.0, 0.0, 0.0)));
@@ -133,8 +133,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Intersects_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Intersects_Plane)
 {
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_TRUE(Ray({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}).intersects(Plane({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0})));
@@ -166,8 +166,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Intersects_Plane)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Intersects_Sphere)
 {
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Sphere;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Sphere;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere.Intersects_Ray
@@ -183,8 +183,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Intersects_Sphere)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Intersects_Ellipsoid)
 {
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Ellipsoid;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Ellipsoid;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid.Intersects_Ray
@@ -200,8 +200,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Intersects_Ellipsoid)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Contains_Point)
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Ray;
 
     {
         EXPECT_TRUE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Point(0.0, 0.0, +0.0)));
@@ -226,8 +226,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Contains_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Contains_PointSet)
 {
-    using ostk::math::geom::d3::objects::PointSet;
-    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Ray;
 
     {
         EXPECT_TRUE(Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(PointSet({{0.0, 0.0, 0.0}})));
@@ -253,8 +253,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Contains_PointSet)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, GetOrigin)
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Ray;
 
     {
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).getOrigin());
@@ -270,9 +270,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, GetOrigin)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, GetDirection)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Ray;
 
     {
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Ray({0.0, 0.0, 0.0}, {0.0, 0.0, +2.0}).getDirection());
@@ -286,8 +286,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, GetDirection)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, DistanceTo_Point)
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Ray;
 
     {
         EXPECT_EQ(0.0, Ray({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).distanceTo(Point(0.0, 0.0, 0.0)));
@@ -314,10 +314,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Plan
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Plane;
-    using ostk::math::geom::d3::Intersection;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Plane;
+    using ostk::math::geometry::d3::Intersection;
 
     const auto expectRayIntersection = [](const Ray& aRay, const Plane& aPlane, const Ray& anIntersectionRay) -> void
     {
@@ -406,8 +406,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Plan
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Ellipsoid)
 {
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Ellipsoid;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Ellipsoid;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid.IntersectionWith_Ray
@@ -424,11 +424,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, ApplyTransformation)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::Transformation;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::Transformation;
+    using ostk::math::geometry::d3::trf::rot::RotationVector;
 
     // Translation
 
@@ -462,7 +462,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, ApplyTransformation)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, Undefined)
 {
-    using ostk::math::geom::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Ray;
 
     {
         EXPECT_NO_THROW(Ray::Undefined());

@@ -12,7 +12,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -21,8 +21,8 @@ namespace objects
 
 using ostk::core::types::Real;
 
-using ostk::math::geom::d3::Object;
-using ostk::math::geom::d3::objects::Point;
+using ostk::math::geometry::d3::Object;
+using ostk::math::geometry::d3::objects::Point;
 
 #define DEFAULT_ONLY_IN_SIGHT false
 
@@ -348,7 +348,7 @@ class Sphere : public Object
 
 }  // namespace objects
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
 

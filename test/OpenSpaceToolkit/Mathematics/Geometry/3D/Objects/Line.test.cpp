@@ -11,7 +11,7 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Constructor)
 {
-    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Line;
 
     {
         EXPECT_NO_THROW(Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}));
@@ -20,7 +20,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Constructor)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Clone)
 {
-    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Line;
 
     {
         EXPECT_NO_THROW(const Line* linePtr = Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).clone(); delete linePtr;);
@@ -29,7 +29,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Clone)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, EqualToOperator)
 {
-    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Line;
 
     {
         EXPECT_TRUE(Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) == Line({0.0, 0.0, 0.0}, {0.0, 0.0, +1.0}));
@@ -55,7 +55,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, EqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, NotEqualToOperator)
 {
-    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Line;
 
     {
         EXPECT_FALSE(Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) != Line({0.0, 0.0, 0.0}, {0.0, 0.0, +1.0}));
@@ -81,7 +81,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, NotEqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, StreamOperator)
 {
-    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Line;
 
     {
         testing::internal::CaptureStdout();
@@ -94,7 +94,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, StreamOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, IsDefined)
 {
-    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Line;
 
     {
         EXPECT_TRUE(Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).isDefined());
@@ -107,8 +107,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Intersects_Point)
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Line;
 
     {
         EXPECT_TRUE(Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Point(0.0, 0.0, 0.0)));
@@ -135,8 +135,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Intersects_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Intersects_Plane)
 {
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Plane;
 
     {
         EXPECT_TRUE(Line({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}).intersects(Plane({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0})));
@@ -167,8 +167,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Intersects_Plane)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Intersects_Sphere)
 {
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::objects::Sphere;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Sphere;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere.Intersects_Line
@@ -184,8 +184,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Intersects_Sphere)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Intersects_Ellipsoid)
 {
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::objects::Ellipsoid;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Ellipsoid;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid.Intersects_Line
@@ -201,8 +201,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Intersects_Ellipsoid
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Contains_Point)
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Line;
 
     {
         EXPECT_TRUE(Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Point(0.0, 0.0, -2.0)));
@@ -227,8 +227,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Contains_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Contains_PointSet)
 {
-    using ostk::math::geom::d3::objects::PointSet;
-    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Line;
 
     {
         EXPECT_TRUE(Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(PointSet({{0.0, 0.0, -2.0}})));
@@ -255,8 +255,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Contains_PointSet)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, GetOrigin)
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Line;
 
     {
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).getOrigin());
@@ -272,9 +272,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, GetOrigin)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, GetDirection)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Line;
 
     {
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Line({0.0, 0.0, 0.0}, {0.0, 0.0, +2.0}).getDirection());
@@ -290,8 +290,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, DistanceTo_Point)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Line;
 
     {
         EXPECT_EQ(Line({0.0, 0.0, 0.0}, {0.0, 0.0, +1.0}).distanceTo({0.0, 0.0, 0.0}), 0.0);
@@ -333,10 +333,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, IntersectionWith_Pla
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::objects::Plane;
-    using ostk::math::geom::d3::Intersection;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Plane;
+    using ostk::math::geometry::d3::Intersection;
 
     const auto expectLineIntersection = [](const Line& aLine, const Plane& aPlane, const Line& anIntersectionLine
                                         ) -> void
@@ -429,11 +429,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, ApplyTransformation)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::Transformation;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::Transformation;
+    using ostk::math::geometry::d3::trf::rot::RotationVector;
 
     // Translation
 
@@ -467,7 +467,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, ApplyTransformation)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Undefined)
 {
-    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Line;
 
     {
         EXPECT_NO_THROW(Line::Undefined());
@@ -477,9 +477,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Undefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, Points)
 {
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::Line;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::Line;
 
     {
         const Line line = Line::Points(Point(1.0, 2.0, 3.0), Point(2.0, 3.0, 4.0));

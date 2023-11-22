@@ -23,7 +23,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d2
 {
@@ -617,7 +617,7 @@ String Polygon::Impl::toString(const Object::Format& aFormat, const Integer& aPr
 
 void Polygon::Impl::applyTransformation(const Transformation& aTransformation)
 {
-    using ostk::math::obj::Matrix3d;
+    using ostk::math::object::Matrix3d;
 
     Polygon::Impl::BoostPolygon transformedPolygon;
 
@@ -1058,6 +1058,6 @@ Polygon Polygon::Undefined()
 
 }  // namespace objects
 }  // namespace d2
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk

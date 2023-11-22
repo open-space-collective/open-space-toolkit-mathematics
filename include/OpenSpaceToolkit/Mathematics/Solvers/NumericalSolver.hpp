@@ -25,7 +25,7 @@ using ostk::core::types::Real;
 using ostk::core::types::Size;
 using ostk::core::types::String;
 
-using ostk::math::obj::VectorXd;
+using ostk::math::object::VectorXd;
 
 /// @brief                      Defines a numerical ODE solver that use the Boost Odeint libraries. This class will be
 /// moved into OSTk-math in the future.

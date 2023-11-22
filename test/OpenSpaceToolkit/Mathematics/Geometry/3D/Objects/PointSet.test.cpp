@@ -8,8 +8,8 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, Constructor)
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     {
         EXPECT_NO_THROW(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}));
@@ -22,7 +22,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, Constructor)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, Clone)
 {
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     {
         EXPECT_NO_THROW(const PointSet* pointSetPtr =
@@ -33,7 +33,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, Clone)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, EqualToOperator)
 {
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     {
         EXPECT_TRUE(
@@ -84,7 +84,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, EqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, NotEqualToOperator)
 {
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     {
         EXPECT_FALSE(
@@ -135,7 +135,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, NotEqualToOperat
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, StreamOperator)
 {
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     {
         testing::internal::CaptureStdout();
@@ -148,7 +148,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, StreamOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, IsDefined)
 {
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     {
         EXPECT_TRUE(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}).isDefined());
@@ -162,7 +162,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, IsEmpty)
 {
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     {
         EXPECT_FALSE(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}).isEmpty());
@@ -178,7 +178,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, IsNear)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     {
         EXPECT_TRUE(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}
@@ -219,7 +219,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, IsNear)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, GetSize)
 {
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     {
         EXPECT_EQ(3, PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}).getSize());
@@ -232,8 +232,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, GetSize)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, DistanceToPoint)
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     {
         EXPECT_EQ(
@@ -259,8 +259,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, DistanceToPoint)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, GetPointClosestTo)
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     {
         EXPECT_EQ(
@@ -289,7 +289,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, ConstIterator)
 {
     using ostk::core::types::Index;
 
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     {
         const PointSet pointSet = {{{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}};
@@ -311,12 +311,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, ApplyTransformat
 {
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::PointSet;
-    using ostk::math::geom::d3::Transformation;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::PointSet;
+    using ostk::math::geometry::d3::Transformation;
+    using ostk::math::geometry::d3::trf::rot::RotationVector;
 
     // Translation
 
@@ -342,7 +342,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, ApplyTransformat
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_PointSet, Empty)
 {
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     {
         EXPECT_NO_THROW(PointSet::Empty());

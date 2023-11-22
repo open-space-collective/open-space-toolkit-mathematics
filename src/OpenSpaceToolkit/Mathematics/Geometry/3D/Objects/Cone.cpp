@@ -19,7 +19,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -241,9 +241,9 @@ Angle Cone::getAngle() const
 
 Array<Ray> Cone::getRaysOfLateralSurface(const Size aRayCount) const
 {
-    using ostk::math::obj::Interval;
-    using ostk::math::geom::d3::trf::rot::Quaternion;
-    using ostk::math::geom::d3::trf::rot::RotationVector;
+    using ostk::math::object::Interval;
+    using ostk::math::geometry::d3::trf::rot::Quaternion;
+    using ostk::math::geometry::d3::trf::rot::RotationVector;
 
     if (aRayCount == 0)
     {
@@ -496,6 +496,6 @@ Cone Cone::Undefined()
 
 }  // namespace objects
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk

@@ -19,7 +19,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d2
 {
@@ -31,12 +31,12 @@ using ostk::core::ctnr::Index;
 using ostk::core::ctnr::Size;
 using ostk::core::ctnr::Array;
 
-using ostk::math::geom::d2::Object;
-using ostk::math::geom::d2::objects::Point;
-using ostk::math::geom::d2::objects::Segment;
-using ostk::math::geom::d2::objects::LineString;
+using ostk::math::geometry::d2::Object;
+using ostk::math::geometry::d2::objects::Point;
+using ostk::math::geometry::d2::objects::Segment;
+using ostk::math::geometry::d2::objects::LineString;
 
-using Polygon2d = ostk::math::geom::d2::objects::Polygon;
+using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
 
 /// @brief                      Multi-polygon
 
@@ -209,7 +209,7 @@ class MultiPolygon : public Object
 
 }  // namespace objects
 }  // namespace d2
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
 

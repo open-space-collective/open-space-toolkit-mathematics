@@ -14,7 +14,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -25,8 +25,8 @@ using ostk::core::types::Integer;
 using ostk::core::types::Real;
 using ostk::core::types::String;
 
-using ostk::math::obj::Vector3d;
-using ostk::math::geom::d3::Object;
+using ostk::math::object::Vector3d;
+using ostk::math::geometry::d3::Object;
 
 #define DEFAULT_PRECISION Integer::Undefined()
 
@@ -225,7 +225,7 @@ class Point : public Object
 
 }  // namespace objects
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
 

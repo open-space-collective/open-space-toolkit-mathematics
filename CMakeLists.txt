@@ -255,7 +255,7 @@ ENDIF ()
 
 ### Open Space Toolkit ▸ Core [0.2.x]
 
-FIND_PACKAGE ("OpenSpaceToolkitCore" "0.2" REQUIRED)
+FIND_PACKAGE ("OpenSpaceToolkitCore" "1.0" REQUIRED)
 
 IF (NOT OpenSpaceToolkitCore_FOUND)
 

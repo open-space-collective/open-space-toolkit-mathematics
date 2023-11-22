@@ -7,7 +7,7 @@
 
 #include <Global.test.hpp>
 
-using ostk::math::obj::VectorXd;
+using ostk::math::object::VectorXd;
 
 bool VectorEquality(const VectorXd& aFirstVector, const VectorXd& aSecondVector, const double& aTolerance)
 {

@@ -10,21 +10,21 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cone(pybind11::mod
     using ostk::core::types::Size;
     using ostk::core::types::Real;
 
-    using ostk::math::obj::Vector3d;
-    using ostk::math::geom::Angle;
-    using ostk::math::geom::d3::Object;
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::PointSet;
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Segment;
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Plane;
-    using ostk::math::geom::d3::objects::Polygon;
-    using ostk::math::geom::d3::objects::Sphere;
-    using ostk::math::geom::d3::objects::Ellipsoid;
-    using ostk::math::geom::d3::objects::Cone;
-    using ostk::math::geom::d3::Intersection;
+    using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
+    using ostk::math::geometry::d3::Object;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::math::geometry::d3::objects::Ellipsoid;
+    using ostk::math::geometry::d3::objects::Cone;
+    using ostk::math::geometry::d3::Intersection;
 
     class_<Cone, Object>(aModule, "Cone")
 

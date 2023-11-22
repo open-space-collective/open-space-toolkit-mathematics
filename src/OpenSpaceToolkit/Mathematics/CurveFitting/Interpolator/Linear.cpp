@@ -12,7 +12,7 @@ namespace math
 {
 namespace curvefitting
 {
-namespace interp
+namespace interpolator
 {
 
 Linear::Linear(const VectorXd& anXVector, const VectorXd& aYVector)
@@ -86,7 +86,7 @@ Pair<Index, Index> Linear::findIndexRange(const double& aQueryValue) const
     return {index - 1, index};
 }
 
-}  // namespace interp
+}  // namespace interpolator
 }  // namespace curvefitting
 }  // namespace math
 }  // namespace ostk

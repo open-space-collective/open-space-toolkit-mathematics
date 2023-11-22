@@ -25,7 +25,7 @@ namespace ostk
 {
 namespace math
 {
-namespace obj
+namespace object
 {
 
 using Vector2i = Eigen::Vector2i;
@@ -55,7 +55,7 @@ using Matrix4d = Eigen::Matrix4d;
 
 using MatrixXd = Eigen::MatrixXd;
 
-}  // namespace obj
+}  // namespace object
 }  // namespace math
 }  // namespace ostk
 

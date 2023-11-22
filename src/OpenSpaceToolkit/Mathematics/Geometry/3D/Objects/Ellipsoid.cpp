@@ -41,7 +41,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -226,7 +226,7 @@ bool Ellipsoid::intersects(const Ray& aRay) const
 
 bool Ellipsoid::intersects(const Segment& aSegment) const
 {
-    using ostk::math::obj::Interval;
+    using ostk::math::object::Interval;
 
     if (!this->isDefined())
     {
@@ -452,7 +452,7 @@ bool Ellipsoid::intersects(const Cone& aCone) const
 
 bool Ellipsoid::contains(const Point& aPoint) const
 {
-    using ostk::math::obj::Vector3d;
+    using ostk::math::object::Vector3d;
 
     if (!aPoint.isDefined())
     {
@@ -610,7 +610,7 @@ Matrix3d Ellipsoid::getMatrix() const
 
 Intersection Ellipsoid::intersectionWith(const Line& aLine) const
 {
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     if (!aLine.isDefined())
     {
@@ -668,7 +668,7 @@ Intersection Ellipsoid::intersectionWith(const Line& aLine) const
 
 Intersection Ellipsoid::intersectionWith(const Ray& aRay, const bool onlyInSight) const
 {
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     if (!aRay.isDefined())
     {
@@ -756,7 +756,7 @@ Intersection Ellipsoid::intersectionWith(const Ray& aRay, const bool onlyInSight
 
 Intersection Ellipsoid::intersectionWith(const Segment& aSegment) const
 {
-    using ostk::math::geom::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::PointSet;
 
     if (!aSegment.isDefined())
     {
@@ -914,7 +914,7 @@ void Ellipsoid::print(std::ostream& anOutputStream, bool displayDecorators) cons
 
 void Ellipsoid::applyTransformation(const Transformation& aTransformation)
 {
-    using ostk::math::geom::d3::trf::rot::RotationMatrix;
+    using ostk::math::geometry::d3::trf::rot::RotationMatrix;
 
     if (!aTransformation.isDefined())
     {
@@ -961,6 +961,6 @@ Ellipsoid Ellipsoid::Undefined()
 
 }  // namespace objects
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk

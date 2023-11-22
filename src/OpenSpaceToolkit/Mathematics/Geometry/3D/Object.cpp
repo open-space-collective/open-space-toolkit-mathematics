@@ -24,7 +24,7 @@ namespace ostk
 {
 namespace math
 {
-namespace geom
+namespace geometry
 {
 namespace d3
 {
@@ -33,20 +33,20 @@ Object::~Object() {}
 
 bool Object::operator==(const Object& anObject) const
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::PointSet;
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Segment;
-    using ostk::math::geom::d3::objects::LineString;
-    using ostk::math::geom::d3::objects::Polygon;
-    using ostk::math::geom::d3::objects::Plane;
-    using ostk::math::geom::d3::objects::Cuboid;
-    using ostk::math::geom::d3::objects::Sphere;
-    using ostk::math::geom::d3::objects::Ellipsoid;
-    using ostk::math::geom::d3::objects::Pyramid;
-    using ostk::math::geom::d3::objects::Cone;
-    using ostk::math::geom::d3::objects::Composite;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::math::geometry::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Cuboid;
+    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::math::geometry::d3::objects::Ellipsoid;
+    using ostk::math::geometry::d3::objects::Pyramid;
+    using ostk::math::geometry::d3::objects::Cone;
+    using ostk::math::geometry::d3::objects::Composite;
 
     if ((!this->isDefined()) || (!anObject.isDefined()))
     {
@@ -220,20 +220,20 @@ std::ostream& operator<<(std::ostream& anOutputStream, const Object& anObject)
 
 bool Object::intersects(const Object& anObject) const
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::PointSet;
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Segment;
-    using ostk::math::geom::d3::objects::LineString;
-    using ostk::math::geom::d3::objects::Polygon;
-    using ostk::math::geom::d3::objects::Plane;
-    using ostk::math::geom::d3::objects::Cuboid;
-    using ostk::math::geom::d3::objects::Sphere;
-    using ostk::math::geom::d3::objects::Ellipsoid;
-    using ostk::math::geom::d3::objects::Pyramid;
-    using ostk::math::geom::d3::objects::Cone;
-    using ostk::math::geom::d3::objects::Composite;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::math::geometry::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Cuboid;
+    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::math::geometry::d3::objects::Ellipsoid;
+    using ostk::math::geometry::d3::objects::Pyramid;
+    using ostk::math::geometry::d3::objects::Cone;
+    using ostk::math::geometry::d3::objects::Composite;
 
     if (!anObject.isDefined())
     {
@@ -493,20 +493,20 @@ bool Object::intersects(const Object& anObject) const
 
 bool Object::contains(const Object& anObject) const
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::PointSet;
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Segment;
-    using ostk::math::geom::d3::objects::LineString;
-    using ostk::math::geom::d3::objects::Polygon;
-    using ostk::math::geom::d3::objects::Plane;
-    using ostk::math::geom::d3::objects::Cuboid;
-    using ostk::math::geom::d3::objects::Sphere;
-    using ostk::math::geom::d3::objects::Ellipsoid;
-    using ostk::math::geom::d3::objects::Pyramid;
-    using ostk::math::geom::d3::objects::Cone;
-    using ostk::math::geom::d3::objects::Composite;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::math::geometry::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Cuboid;
+    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::math::geometry::d3::objects::Ellipsoid;
+    using ostk::math::geometry::d3::objects::Pyramid;
+    using ostk::math::geometry::d3::objects::Cone;
+    using ostk::math::geometry::d3::objects::Composite;
 
     if (!anObject.isDefined())
     {
@@ -680,20 +680,20 @@ bool Object::contains(const Object& anObject) const
 
 Intersection Object::intersectionWith(const Object& anObject) const
 {
-    using ostk::math::geom::d3::objects::Point;
-    using ostk::math::geom::d3::objects::PointSet;
-    using ostk::math::geom::d3::objects::Line;
-    using ostk::math::geom::d3::objects::Ray;
-    using ostk::math::geom::d3::objects::Segment;
-    using ostk::math::geom::d3::objects::LineString;
-    using ostk::math::geom::d3::objects::Polygon;
-    using ostk::math::geom::d3::objects::Plane;
-    using ostk::math::geom::d3::objects::Cuboid;
-    using ostk::math::geom::d3::objects::Sphere;
-    using ostk::math::geom::d3::objects::Ellipsoid;
-    using ostk::math::geom::d3::objects::Pyramid;
-    using ostk::math::geom::d3::objects::Cone;
-    using ostk::math::geom::d3::objects::Composite;
+    using ostk::math::geometry::d3::objects::Point;
+    using ostk::math::geometry::d3::objects::PointSet;
+    using ostk::math::geometry::d3::objects::Line;
+    using ostk::math::geometry::d3::objects::Ray;
+    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::math::geometry::d3::objects::LineString;
+    using ostk::math::geometry::d3::objects::Polygon;
+    using ostk::math::geometry::d3::objects::Plane;
+    using ostk::math::geometry::d3::objects::Cuboid;
+    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::math::geometry::d3::objects::Ellipsoid;
+    using ostk::math::geometry::d3::objects::Pyramid;
+    using ostk::math::geometry::d3::objects::Cone;
+    using ostk::math::geometry::d3::objects::Composite;
 
     if (!anObject.isDefined())
     {
@@ -854,6 +854,6 @@ Intersection Object::intersectionWith(const Object& anObject) const
 }
 
 }  // namespace d3
-}  // namespace geom
+}  // namespace geometry
 }  // namespace math
 }  // namespace ostk
