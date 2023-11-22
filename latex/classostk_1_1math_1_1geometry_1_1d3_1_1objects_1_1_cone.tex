@@ -1,0 +1,573 @@
+\hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}{}\doxysection{ostk\+::math\+::geometry\+::d3\+::objects\+::Cone Class Reference}
+\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+
+
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}{Cone}}.  
+
+
+
+
+{\ttfamily \#include $<$Cone.\+hpp$>$}
+
+Inheritance diagram for ostk\+::math\+::geometry\+::d3\+::objects\+::Cone\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_abd78cc477f94835ff84405c8455d2887}{Cone}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&an\+Apex, const Vector3d \&an\+Axis, const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&an\+Angle)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}{Cone}} $\ast$ \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_adc671b57dd08efb1db381208ab05c76d}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clone cone. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a01e136b133400a6d9920104aa0286ade}{operator==}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}{Cone}} \&a\+Cone) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a08cd0e22798abf327cf350205d3abe4c}{operator!=}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}{Cone}} \&a\+Cone) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a3948c864cefc8a88f90ad776bf47ab19}{is\+Defined}} () const override
+\begin{DoxyCompactList}\small\item\em Check if cone is defined. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a97fd79f49b2596f684ce5183a75199c6}{intersects}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_sphere}{Sphere}} \&a\+Sphere, const Size a\+Discretization\+Level=\mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}) const
+\begin{DoxyCompactList}\small\item\em Check if cone intersects sphere. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_aabb8e086271232894d8b7dbe06758f33}{intersects}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid}} \&an\+Ellipsoid, const Size a\+Discretization\+Level=\mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}) const
+\begin{DoxyCompactList}\small\item\em Check if cone intersects ellipsoid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a70254c69578a6073c1242ef583bc3a60}{contains}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if cone contains point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a837c61bd1c4436820bf4df8125487100}{contains}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_set}{Point\+Set}} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if cone contains point set. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_ab35b67b557dea797f0da57f1ad5a6a33}{contains}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_segment}{Segment}} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Check if cone contains segment. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a52f6c54a9f22dd6ba6e7018524b80c38}{contains}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_ray}{Ray}} \&a\+Ray) const
+\begin{DoxyCompactList}\small\item\em Check if cone contains ray. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a44864c997d27d2118d2b4e2677d4d3d6}{contains}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_sphere}{Sphere}} \&a\+Sphere) const
+\begin{DoxyCompactList}\small\item\em Check if cone contains sphere. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a5ade37565dceec051997a1acd5bf24e3}{contains}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid}} \&an\+Ellipsoid) const
+\begin{DoxyCompactList}\small\item\em Check if cone contains ellipsoid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a8b9544be94613699ed1f6fab257baf77}{get\+Apex}} () const
+\begin{DoxyCompactList}\small\item\em Get cone apex. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a00ddfbb371f6d5493b54bd6c46fce5f3}{get\+Axis}} () const
+\begin{DoxyCompactList}\small\item\em Get cone axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a368a4e7817a6e2cb6f62a1c8aec8b843}{get\+Angle}} () const
+\begin{DoxyCompactList}\small\item\em Get cone angle. \end{DoxyCompactList}\item 
+Array$<$ \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_ray}{Ray}} $>$ \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_aaf83d884eb075b76042d43a6e1632967}{get\+Rays\+Of\+Lateral\+Surface}} (const Size a\+Ray\+Count=\mbox{\hyperlink{_cone_8hpp_a95759f940e1d5e70e977d66fa8fcb5ec}{D\+E\+F\+A\+U\+L\+T\+\_\+\+R\+A\+Y\+\_\+\+C\+O\+U\+NT}}) const
+\begin{DoxyCompactList}\small\item\em Get rays of lateral surface. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_aba6a157db9ec99d469a33f41080b6362}{distance\+To}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Compute distance of cone to point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a247b2799f359bfa395ce317e131421e4}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_sphere}{Sphere}} \&a\+Sphere, const bool only\+In\+Sight=false, const Size a\+Discretization\+Level=\mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of cone with sphere. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a824663438e99dc6e60e7ad5faf66589c}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid}} \&an\+Ellipsoid, const bool only\+In\+Sight=false, const Size a\+Discretization\+Level=\mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of cone with ellipsoid. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a320ee03b7b194c3e071b52626cb6f037}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print cone. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a65e06eb32c0b0d147c075cd99a9558d9}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to cone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}{Cone}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_af588b485663e7e7f905c84b2fc4a20fa}{Undefined}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined cone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}{Cone}}. 
+
+\begin{DoxyVerb}                        A cone is a three-dimensional geometric shape that tapers smoothly from a flat circular
+                        base to a point called the apex.
+\end{DoxyVerb}
+
+
+\href{https://en.wikipedia.org/wiki/Cone}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Cone}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_abd78cc477f94835ff84405c8455d2887}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_abd78cc477f94835ff84405c8455d2887}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!Cone@{Cone}}
+\index{Cone@{Cone}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{Cone()}{Cone()}}
+{\footnotesize\ttfamily ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::\+Cone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&}]{an\+Apex,  }\item[{const Vector3d \&}]{an\+Axis,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&}]{an\+Angle }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Point apex = \{ 0.0, 0.0, 0.0 \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1math_1_1object_af1e4ea23badc8f45931ae724e71b00f1}{Vector3d}} axis = \{ 0.0, 0.0, 1.0 \} ;}
+\DoxyCodeLine{Angle angle = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a2952d2585813ef1e6cc96277a41c4e44}{Angle::Degrees}}(15.0) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_abd78cc477f94835ff84405c8455d2887}{Cone}} cone = \{ apex, axis, angle \} ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Apex} & A cone apex \\
+\hline
+\mbox{\texttt{ in}}  & {\em an\+Axis} & A cone axis \\
+\hline
+\mbox{\texttt{ in}}  & {\em an\+Angle} & A cone angle \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a65e06eb32c0b0d147c075cd99a9558d9}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a65e06eb32c0b0d147c075cd99a9558d9}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!applyTransformation@{applyTransformation}}
+\index{applyTransformation@{applyTransformation}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{applyTransformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to cone. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_object_a6a67dbc42048c7ff7facafb548f38199}{ostk\+::math\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_adc671b57dd08efb1db381208ab05c76d}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_adc671b57dd08efb1db381208ab05c76d}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!clone@{clone}}
+\index{clone@{clone}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}{Cone}} $\ast$ ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone cone. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned cone 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_object_a7224add32195768dba78acc215ec86a3}{ostk\+::math\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a5ade37565dceec051997a1acd5bf24e3}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a5ade37565dceec051997a1acd5bf24e3}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!contains@{contains}}
+\index{contains@{contains}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid}} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
+
+
+
+Check if cone contains ellipsoid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_abd78cc477f94835ff84405c8455d2887}{Cone}} cone = ... ;}
+\DoxyCodeLine{Ellipsoid ellipsoid = ... ;}
+\DoxyCodeLine{cone.contains(ellipsoid) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cone contains ellipsoid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a70254c69578a6073c1242ef583bc3a60}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a70254c69578a6073c1242ef583bc3a60}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!contains@{contains}}
+\index{contains@{contains}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if cone contains point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_abd78cc477f94835ff84405c8455d2887}{Cone}} cone = ... ;}
+\DoxyCodeLine{Point point = ... ;}
+\DoxyCodeLine{cone.contains(point) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cone contains point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a837c61bd1c4436820bf4df8125487100}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a837c61bd1c4436820bf4df8125487100}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!contains@{contains}}
+\index{contains@{contains}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_set}{Point\+Set}} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if cone contains point set. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_abd78cc477f94835ff84405c8455d2887}{Cone}} cone = ... ;}
+\DoxyCodeLine{PointSet pointSet = ... ;}
+\DoxyCodeLine{cone.contains(pointSet) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cone contains point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a52f6c54a9f22dd6ba6e7018524b80c38}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a52f6c54a9f22dd6ba6e7018524b80c38}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!contains@{contains}}
+\index{contains@{contains}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_ray}{Ray}} \&}]{a\+Ray }\end{DoxyParamCaption}) const}
+
+
+
+Check if cone contains ray. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_abd78cc477f94835ff84405c8455d2887}{Cone}} cone = ... ;}
+\DoxyCodeLine{Ray ray = ... ;}
+\DoxyCodeLine{cone.contains(ray) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Ray} & A ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cone contains ray 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_ab35b67b557dea797f0da57f1ad5a6a33}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_ab35b67b557dea797f0da57f1ad5a6a33}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!contains@{contains}}
+\index{contains@{contains}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_segment}{Segment}} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Check if cone contains segment. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_abd78cc477f94835ff84405c8455d2887}{Cone}} cone = ... ;}
+\DoxyCodeLine{Segment segment = ... ;}
+\DoxyCodeLine{cone.contains(segment) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cone contains segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a44864c997d27d2118d2b4e2677d4d3d6}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a44864c997d27d2118d2b4e2677d4d3d6}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!contains@{contains}}
+\index{contains@{contains}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_sphere}{Sphere}} \&}]{a\+Sphere }\end{DoxyParamCaption}) const}
+
+
+
+Check if cone contains sphere. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_abd78cc477f94835ff84405c8455d2887}{Cone}} cone = ... ;}
+\DoxyCodeLine{Sphere sphere = ... ;}
+\DoxyCodeLine{cone.contains(sphere) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Sphere} & A sphere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cone contains sphere 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_aba6a157db9ec99d469a33f41080b6362}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_aba6a157db9ec99d469a33f41080b6362}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!distanceTo@{distanceTo}}
+\index{distanceTo@{distanceTo}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{distanceTo()}{distanceTo()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::distance\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Compute distance of cone to point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance of cone to point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a368a4e7817a6e2cb6f62a1c8aec8b843}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a368a4e7817a6e2cb6f62a1c8aec8b843}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!getAngle@{getAngle}}
+\index{getAngle@{getAngle}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{getAngle()}{getAngle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cone angle. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}{Cone}} angle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a8b9544be94613699ed1f6fab257baf77}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a8b9544be94613699ed1f6fab257baf77}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!getApex@{getApex}}
+\index{getApex@{getApex}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{getApex()}{getApex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::get\+Apex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cone apex. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}{Cone}} apex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a00ddfbb371f6d5493b54bd6c46fce5f3}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a00ddfbb371f6d5493b54bd6c46fce5f3}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!getAxis@{getAxis}}
+\index{getAxis@{getAxis}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{getAxis()}{getAxis()}}
+{\footnotesize\ttfamily Vector3d ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::get\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get cone axis. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}{Cone}} axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_aaf83d884eb075b76042d43a6e1632967}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_aaf83d884eb075b76042d43a6e1632967}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!getRaysOfLateralSurface@{getRaysOfLateralSurface}}
+\index{getRaysOfLateralSurface@{getRaysOfLateralSurface}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{getRaysOfLateralSurface()}{getRaysOfLateralSurface()}}
+{\footnotesize\ttfamily Array$<$ \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_ray}{Ray}} $>$ ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::get\+Rays\+Of\+Lateral\+Surface (\begin{DoxyParamCaption}\item[{const Size}]{a\+Ray\+Count = {\ttfamily \mbox{\hyperlink{_cone_8hpp_a95759f940e1d5e70e977d66fa8fcb5ec}{D\+E\+F\+A\+U\+L\+T\+\_\+\+R\+A\+Y\+\_\+\+C\+O\+U\+NT}}} }\end{DoxyParamCaption}) const}
+
+
+
+Get rays of lateral surface. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Ray\+Count} & A number of rays (at least face count) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array of rays 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a824663438e99dc6e60e7ad5faf66589c}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a824663438e99dc6e60e7ad5faf66589c}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid}} \&}]{an\+Ellipsoid,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false},  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily \mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of cone with ellipsoid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\mbox{\texttt{ in}}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Discretization\+Level} & (optional) The polygonal discretization level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of cone with ellipsoid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a247b2799f359bfa395ce317e131421e4}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a247b2799f359bfa395ce317e131421e4}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_sphere}{Sphere}} \&}]{a\+Sphere,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false},  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily \mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of cone with sphere. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Sphere} & A sphere \\
+\hline
+\mbox{\texttt{ in}}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Discretization\+Level} & (optional) The polygonal discretization level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of cone with sphere 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_aabb8e086271232894d8b7dbe06758f33}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_aabb8e086271232894d8b7dbe06758f33}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_ellipsoid}{Ellipsoid}} \&}]{an\+Ellipsoid,  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily \mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}} }\end{DoxyParamCaption}) const}
+
+
+
+Check if cone intersects ellipsoid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_abd78cc477f94835ff84405c8455d2887}{Cone}} cone = ... ;}
+\DoxyCodeLine{Ellipsoid ellipsoid = ... ;}
+\DoxyCodeLine{cone.intersects(ellipsoid) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Discretization\+Level} & (optional) The polygonal discretization level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cone intersects ellipsoid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a97fd79f49b2596f684ce5183a75199c6}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a97fd79f49b2596f684ce5183a75199c6}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_sphere}{Sphere}} \&}]{a\+Sphere,  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily \mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}} }\end{DoxyParamCaption}) const}
+
+
+
+Check if cone intersects sphere. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_abd78cc477f94835ff84405c8455d2887}{Cone}} cone = ... ;}
+\DoxyCodeLine{Sphere sphere = ... ;}
+\DoxyCodeLine{cone.intersects(sphere) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Sphere} & A sphere \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Discretization\+Level} & (optional) The polygonal discretization level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cone intersects sphere 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a3948c864cefc8a88f90ad776bf47ab19}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a3948c864cefc8a88f90ad776bf47ab19}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!isDefined@{isDefined}}
+\index{isDefined@{isDefined}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if cone is defined. 
+
+\begin{DoxyReturn}{Returns}
+True if cone is defined 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_object_a02377f6417051dff2cfd34efb0920072}{ostk\+::math\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a08cd0e22798abf327cf350205d3abe4c}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a08cd0e22798abf327cf350205d3abe4c}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}{Cone}} \&}]{a\+Cone }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Cone} & A cone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cones are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a01e136b133400a6d9920104aa0286ade}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a01e136b133400a6d9920104aa0286ade}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}{Cone}} \&}]{a\+Cone }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Cone} & A cone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if cones are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a320ee03b7b194c3e071b52626cb6f037}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_a320ee03b7b194c3e071b52626cb6f037}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!print@{print}}
+\index{print@{print}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print cone. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_object_aca0b5a7cc158de5ed2c877ed2693c7ec}{ostk\+::math\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_af588b485663e7e7f905c84b2fc4a20fa}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone_af588b485663e7e7f905c84b2fc4a20fa}} 
+\index{ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!ostk::math::geometry::d3::objects::Cone@{ostk::math::geometry::d3::objects::Cone}}
+\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cone}{Cone}} ostk\+::math\+::geometry\+::d3\+::objects\+::\+Cone\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined cone. 
+
+\begin{DoxyReturn}{Returns}
+Undefined cone 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Objects/\mbox{\hyperlink{_cone_8hpp}{Cone.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Objects/\mbox{\hyperlink{_cone_8cpp}{Cone.\+cpp}}\end{DoxyCompactItemize}

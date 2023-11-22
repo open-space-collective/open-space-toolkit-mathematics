@@ -1,0 +1,462 @@
+\hypertarget{classostk_1_1math_1_1geometry_1_1_angle}{}\doxysection{ostk\+::math\+::geometry\+::Angle Class Reference}
+\label{classostk_1_1math_1_1geometry_1_1_angle}\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+
+
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}}.  
+
+
+
+
+{\ttfamily \#include $<$Angle.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207}{Unit}} \{ \newline
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207aec0fc0100c4fc1ce4eea230c3dc10360}{Unit\+::\+Undefined}}, 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207a50c62e3ca8d8ec8732a7f968a3bf2c7c}{Unit\+::\+Radian}}, 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207a6669c4dc00cb161446821b3529ca07d8}{Unit\+::\+Degree}}, 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207a6d59f6ca1b5de72cbdc10a6792bcf090}{Unit\+::\+Arcminute}}, 
+\newline
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207a7839ceecae19481f2e21e0ce3e11d3aa}{Unit\+::\+Arcsecond}}, 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207aad09b2d48b2811c68e5a2bf421f7f2f2}{Unit\+::\+Revolution}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a4573c82dfb010457308e98151894301d}{Angle}} (const Real \&a\+Value, const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207}{Angle\+::\+Unit}} \&a\+Unit)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a23ba2c1725c58c0a63fda5a81432af1a}{operator==}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&an\+Angle) const
+\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a7d15fe6b8cc6d107ef3c040dd9186585}{operator!=}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&an\+Angle) const
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a3c3d4eff1377889128c447791d51ab78}{operator+}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&an\+Angle) const
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a25b50add67d71f42f70f65f85bc7ba29}{operator-\/}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&an\+Angle) const
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a91c8df965e2d8480f7f61936e8f3e569}{operator$\ast$}} (const Real \&a\+Real) const
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a4458407eb5b3479bdb79622f2a2e1d42}{operator/}} (const Real \&a\+Real) const
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a0cab17b74fc91281bc01f18efa545761}{operator+=}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&an\+Angle)
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_ab567083bcd2485d703b9fd10f445fb9e}{operator-\/=}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&an\+Angle)
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_aa10132639d03e57977dedc1e015c9704}{operator$\ast$=}} (const Real \&a\+Real)
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a9a8654d161b4ca376fe78d7c6bb3354c}{operator/=}} (const Real \&a\+Real)
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_aa9a198ea7876c9f17a1d1a9f14cd0cb1}{operator+}} () const
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a8e0df26f9bd3602ccdbed5085f11362b}{operator-\/}} () const
+\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_ab207fe20b4c579d1f15da57203e0c665}{is\+Defined}} () const
+\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a7547bc807e442ad0b1b4d48832c083ee}{is\+Zero}} () const
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207}{Angle\+::\+Unit}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a8988573b00d9a321bb54f684e1d92a60}{get\+Unit}} () const
+\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a0d3fdc5e87fc4f1d1fe61636c60fc613}{in}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207}{Angle\+::\+Unit}} \&a\+Unit) const
+\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a2f70ef9f077eba7e4346eed7c723d172}{in\+Radians}} () const
+\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a08a3e97108ade38390fde02689db0e53}{in\+Radians}} (const Real \&a\+Lower\+Bound, const Real \&an\+Upper\+Bound) const
+\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_ad04485ead71978b68a3f4668463184cd}{in\+Degrees}} () const
+\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_ae62d3ca6b629b105748a71e0431c80bd}{in\+Degrees}} (const Real \&a\+Lower\+Bound, const Real \&an\+Upper\+Bound) const
+\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a6bd4913012481564393dc6a68a9dbba3}{in\+Arcminutes}} () const
+\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_ad128d85e8f17fbb0cfafab0f60dfd1d9}{in\+Arcminutes}} (const Real \&a\+Lower\+Bound, const Real \&an\+Upper\+Bound) const
+\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_af598863aefdc65208f0af1c440dead48}{in\+Arcseconds}} () const
+\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_adbc1e9c0a508290fb39af16d712e345c}{in\+Arcseconds}} (const Real \&a\+Lower\+Bound, const Real \&an\+Upper\+Bound) const
+\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a6e571649953c53fbbf06de32bab36137}{in\+Revolutions}} () const
+\item 
+String \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a1bede19fd845aa8964e5ac1f9090c652}{to\+String}} (const Integer \&a\+Precision=Integer\+::\+Undefined()) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_ac23b2ae37d71d99a3d986e4c56a22633}{Undefined}} ()
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a306091ed29b8e37156b62e0e7db1fa40}{Zero}} ()
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_aec58422c7e7794064c58e66a9db9f1ea}{Half\+Pi}} ()
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_aad6b01ad6948efab5ddd1dcfd842470f}{Pi}} ()
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a905fdfb13117b06e162d0165b7b6f336}{Two\+Pi}} ()
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a1f0486acd8d12fda53c733530df87f67}{Radians}} (const Real \&a\+Value)
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a2952d2585813ef1e6cc96277a41c4e44}{Degrees}} (const Real \&a\+Value)
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_adfecb26e2aea637f679f7052914dbb79}{Arcminutes}} (const Real \&a\+Value)
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_aebad0b98c82bc79000ad3a24d7696009}{Arcseconds}} (const Real \&a\+Value)
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_ae0c3b64875e4c0b38083f8ab491486ac}{Revolutions}} (const Real \&a\+Value)
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a8af4841879cb5347425b2b3c04a26750}{Between}} (const Vector2d \&a\+First\+Vector, const Vector2d \&a\+Second\+Vector)
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a1d85a0c896da51cb0972289222b97bcf}{Between}} (const Vector3d \&a\+First\+Vector, const Vector3d \&a\+Second\+Vector)
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_ab0b920a70ceb88ac7f565fb0fecf2067}{Parse}} (const String \&a\+String)
+\item 
+static String \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a7ca2644b73353c4f08729c12735de792}{String\+From\+Unit}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207}{Angle\+::\+Unit}} \&a\+Unit)
+\item 
+static String \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_af9c9496653f5cf031d9e8c7f5845d59e}{Symbol\+From\+Unit}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207}{Angle\+::\+Unit}} \&a\+Unit)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_af699984b24759466957ecddaa7e61fc9}{operator$\ast$}} (const Real \&a\+Real, const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&an\+Angle)
+\item 
+std\+::ostream \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a0846b77ee3281e8a559197c3c3208eed}{operator$<$$<$}} (std\+::ostream \&an\+Output\+Stream, const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&an\+Angle)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}}. 
+
+\begin{DoxyVerb}                        In plane geometry, an angle is the figure formed by two rays, called the sides of the
+                        angle, sharing a common endpoint, called the vertex of the angle.
+\end{DoxyVerb}
+
+
+\href{https://en.wikipedia.org/wiki/Angle}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Angle}} 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207}\label{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Unit@{Unit}}
+\index{Unit@{Unit}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{Unit}{Unit}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207}{ostk\+::math\+::geometry\+::\+Angle\+::\+Unit}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Undefined@{Undefined}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Undefined@{Undefined}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207aec0fc0100c4fc1ce4eea230c3dc10360}\label{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207aec0fc0100c4fc1ce4eea230c3dc10360}} 
+Undefined&Undefined. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Radian@{Radian}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Radian@{Radian}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207a50c62e3ca8d8ec8732a7f968a3bf2c7c}\label{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207a50c62e3ca8d8ec8732a7f968a3bf2c7c}} 
+Radian&Radian. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Degree@{Degree}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Degree@{Degree}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207a6669c4dc00cb161446821b3529ca07d8}\label{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207a6669c4dc00cb161446821b3529ca07d8}} 
+Degree&Degree. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Arcminute@{Arcminute}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Arcminute@{Arcminute}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207a6d59f6ca1b5de72cbdc10a6792bcf090}\label{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207a6d59f6ca1b5de72cbdc10a6792bcf090}} 
+Arcminute&Arcminute. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Arcsecond@{Arcsecond}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Arcsecond@{Arcsecond}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207a7839ceecae19481f2e21e0ce3e11d3aa}\label{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207a7839ceecae19481f2e21e0ce3e11d3aa}} 
+Arcsecond&Arcsecond. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Revolution@{Revolution}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Revolution@{Revolution}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207aad09b2d48b2811c68e5a2bf421f7f2f2}\label{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207aad09b2d48b2811c68e5a2bf421f7f2f2}} 
+Revolution&Revolution. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a4573c82dfb010457308e98151894301d}\label{classostk_1_1math_1_1geometry_1_1_angle_a4573c82dfb010457308e98151894301d}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Angle@{Angle}}
+\index{Angle@{Angle}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{Angle()}{Angle()}}
+{\footnotesize\ttfamily ostk\+::math\+::geometry\+::\+Angle\+::\+Angle (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Value,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207}{Angle\+::\+Unit}} \&}]{a\+Unit }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a4573c82dfb010457308e98151894301d}{Angle}} angle(90.0, \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207a6669c4dc00cb161446821b3529ca07d8}{Angle::Unit::Degree}}) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Value} & A value \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Unit} & An angle unit \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_adfecb26e2aea637f679f7052914dbb79}\label{classostk_1_1math_1_1geometry_1_1_angle_adfecb26e2aea637f679f7052914dbb79}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Arcminutes@{Arcminutes}}
+\index{Arcminutes@{Arcminutes}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{Arcminutes()}{Arcminutes()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::\+Arcminutes (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_aebad0b98c82bc79000ad3a24d7696009}\label{classostk_1_1math_1_1geometry_1_1_angle_aebad0b98c82bc79000ad3a24d7696009}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Arcseconds@{Arcseconds}}
+\index{Arcseconds@{Arcseconds}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{Arcseconds()}{Arcseconds()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::\+Arcseconds (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a8af4841879cb5347425b2b3c04a26750}\label{classostk_1_1math_1_1geometry_1_1_angle_a8af4841879cb5347425b2b3c04a26750}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Between@{Between}}
+\index{Between@{Between}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{Between()}{Between()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::\+Between (\begin{DoxyParamCaption}\item[{const Vector2d \&}]{a\+First\+Vector,  }\item[{const Vector2d \&}]{a\+Second\+Vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a1d85a0c896da51cb0972289222b97bcf}\label{classostk_1_1math_1_1geometry_1_1_angle_a1d85a0c896da51cb0972289222b97bcf}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Between@{Between}}
+\index{Between@{Between}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{Between()}{Between()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::\+Between (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+First\+Vector,  }\item[{const Vector3d \&}]{a\+Second\+Vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a2952d2585813ef1e6cc96277a41c4e44}\label{classostk_1_1math_1_1geometry_1_1_angle_a2952d2585813ef1e6cc96277a41c4e44}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Degrees@{Degrees}}
+\index{Degrees@{Degrees}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{Degrees()}{Degrees()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::\+Degrees (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a8988573b00d9a321bb54f684e1d92a60}\label{classostk_1_1math_1_1geometry_1_1_angle_a8988573b00d9a321bb54f684e1d92a60}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!getUnit@{getUnit}}
+\index{getUnit@{getUnit}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{getUnit()}{getUnit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207}{Angle\+::\+Unit}} ostk\+::math\+::geometry\+::\+Angle\+::get\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_aec58422c7e7794064c58e66a9db9f1ea}\label{classostk_1_1math_1_1geometry_1_1_angle_aec58422c7e7794064c58e66a9db9f1ea}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!HalfPi@{HalfPi}}
+\index{HalfPi@{HalfPi}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{HalfPi()}{HalfPi()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::\+Half\+Pi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a0d3fdc5e87fc4f1d1fe61636c60fc613}\label{classostk_1_1math_1_1geometry_1_1_angle_a0d3fdc5e87fc4f1d1fe61636c60fc613}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!in@{in}}
+\index{in@{in}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{in()}{in()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::\+Angle\+::in (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207}{Angle\+::\+Unit}} \&}]{a\+Unit }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a6bd4913012481564393dc6a68a9dbba3}\label{classostk_1_1math_1_1geometry_1_1_angle_a6bd4913012481564393dc6a68a9dbba3}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!inArcminutes@{inArcminutes}}
+\index{inArcminutes@{inArcminutes}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{inArcminutes()}{inArcminutes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::\+Angle\+::in\+Arcminutes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_ad128d85e8f17fbb0cfafab0f60dfd1d9}\label{classostk_1_1math_1_1geometry_1_1_angle_ad128d85e8f17fbb0cfafab0f60dfd1d9}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!inArcminutes@{inArcminutes}}
+\index{inArcminutes@{inArcminutes}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{inArcminutes()}{inArcminutes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::\+Angle\+::in\+Arcminutes (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Lower\+Bound,  }\item[{const Real \&}]{an\+Upper\+Bound }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_af598863aefdc65208f0af1c440dead48}\label{classostk_1_1math_1_1geometry_1_1_angle_af598863aefdc65208f0af1c440dead48}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!inArcseconds@{inArcseconds}}
+\index{inArcseconds@{inArcseconds}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{inArcseconds()}{inArcseconds()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::\+Angle\+::in\+Arcseconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_adbc1e9c0a508290fb39af16d712e345c}\label{classostk_1_1math_1_1geometry_1_1_angle_adbc1e9c0a508290fb39af16d712e345c}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!inArcseconds@{inArcseconds}}
+\index{inArcseconds@{inArcseconds}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{inArcseconds()}{inArcseconds()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::\+Angle\+::in\+Arcseconds (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Lower\+Bound,  }\item[{const Real \&}]{an\+Upper\+Bound }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_ad04485ead71978b68a3f4668463184cd}\label{classostk_1_1math_1_1geometry_1_1_angle_ad04485ead71978b68a3f4668463184cd}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!inDegrees@{inDegrees}}
+\index{inDegrees@{inDegrees}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{inDegrees()}{inDegrees()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::\+Angle\+::in\+Degrees (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_ae62d3ca6b629b105748a71e0431c80bd}\label{classostk_1_1math_1_1geometry_1_1_angle_ae62d3ca6b629b105748a71e0431c80bd}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!inDegrees@{inDegrees}}
+\index{inDegrees@{inDegrees}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{inDegrees()}{inDegrees()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::\+Angle\+::in\+Degrees (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Lower\+Bound,  }\item[{const Real \&}]{an\+Upper\+Bound }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a2f70ef9f077eba7e4346eed7c723d172}\label{classostk_1_1math_1_1geometry_1_1_angle_a2f70ef9f077eba7e4346eed7c723d172}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!inRadians@{inRadians}}
+\index{inRadians@{inRadians}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{inRadians()}{inRadians()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::\+Angle\+::in\+Radians (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a08a3e97108ade38390fde02689db0e53}\label{classostk_1_1math_1_1geometry_1_1_angle_a08a3e97108ade38390fde02689db0e53}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!inRadians@{inRadians}}
+\index{inRadians@{inRadians}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{inRadians()}{inRadians()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::\+Angle\+::in\+Radians (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Lower\+Bound,  }\item[{const Real \&}]{an\+Upper\+Bound }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a6e571649953c53fbbf06de32bab36137}\label{classostk_1_1math_1_1geometry_1_1_angle_a6e571649953c53fbbf06de32bab36137}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!inRevolutions@{inRevolutions}}
+\index{inRevolutions@{inRevolutions}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{inRevolutions()}{inRevolutions()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::\+Angle\+::in\+Revolutions (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_ab207fe20b4c579d1f15da57203e0c665}\label{classostk_1_1math_1_1geometry_1_1_angle_ab207fe20b4c579d1f15da57203e0c665}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!isDefined@{isDefined}}
+\index{isDefined@{isDefined}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::\+Angle\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a7547bc807e442ad0b1b4d48832c083ee}\label{classostk_1_1math_1_1geometry_1_1_angle_a7547bc807e442ad0b1b4d48832c083ee}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!isZero@{isZero}}
+\index{isZero@{isZero}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{isZero()}{isZero()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::\+Angle\+::is\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a7d15fe6b8cc6d107ef3c040dd9186585}\label{classostk_1_1math_1_1geometry_1_1_angle_a7d15fe6b8cc6d107ef3c040dd9186585}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::\+Angle\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&}]{an\+Angle }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a91c8df965e2d8480f7f61936e8f3e569}\label{classostk_1_1math_1_1geometry_1_1_angle_a91c8df965e2d8480f7f61936e8f3e569}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Real }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_aa10132639d03e57977dedc1e015c9704}\label{classostk_1_1math_1_1geometry_1_1_angle_aa10132639d03e57977dedc1e015c9704}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \& ostk\+::math\+::geometry\+::\+Angle\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Real }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_aa9a198ea7876c9f17a1d1a9f14cd0cb1}\label{classostk_1_1math_1_1geometry_1_1_angle_aa9a198ea7876c9f17a1d1a9f14cd0cb1}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!operator+@{operator+}}
+\index{operator+@{operator+}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::operator+ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a3c3d4eff1377889128c447791d51ab78}\label{classostk_1_1math_1_1geometry_1_1_angle_a3c3d4eff1377889128c447791d51ab78}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!operator+@{operator+}}
+\index{operator+@{operator+}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&}]{an\+Angle }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a0cab17b74fc91281bc01f18efa545761}\label{classostk_1_1math_1_1geometry_1_1_angle_a0cab17b74fc91281bc01f18efa545761}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \& ostk\+::math\+::geometry\+::\+Angle\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&}]{an\+Angle }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a8e0df26f9bd3602ccdbed5085f11362b}\label{classostk_1_1math_1_1geometry_1_1_angle_a8e0df26f9bd3602ccdbed5085f11362b}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::operator-\/ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a25b50add67d71f42f70f65f85bc7ba29}\label{classostk_1_1math_1_1geometry_1_1_angle_a25b50add67d71f42f70f65f85bc7ba29}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&}]{an\+Angle }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_ab567083bcd2485d703b9fd10f445fb9e}\label{classostk_1_1math_1_1geometry_1_1_angle_ab567083bcd2485d703b9fd10f445fb9e}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \& ostk\+::math\+::geometry\+::\+Angle\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&}]{an\+Angle }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a4458407eb5b3479bdb79622f2a2e1d42}\label{classostk_1_1math_1_1geometry_1_1_angle_a4458407eb5b3479bdb79622f2a2e1d42}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!operator/@{operator/}}
+\index{operator/@{operator/}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::operator/ (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Real }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a9a8654d161b4ca376fe78d7c6bb3354c}\label{classostk_1_1math_1_1geometry_1_1_angle_a9a8654d161b4ca376fe78d7c6bb3354c}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \& ostk\+::math\+::geometry\+::\+Angle\+::operator/= (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Real }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a23ba2c1725c58c0a63fda5a81432af1a}\label{classostk_1_1math_1_1geometry_1_1_angle_a23ba2c1725c58c0a63fda5a81432af1a}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::\+Angle\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&}]{an\+Angle }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_ab0b920a70ceb88ac7f565fb0fecf2067}\label{classostk_1_1math_1_1geometry_1_1_angle_ab0b920a70ceb88ac7f565fb0fecf2067}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Parse@{Parse}}
+\index{Parse@{Parse}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::\+Parse (\begin{DoxyParamCaption}\item[{const String \&}]{a\+String }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_aad6b01ad6948efab5ddd1dcfd842470f}\label{classostk_1_1math_1_1geometry_1_1_angle_aad6b01ad6948efab5ddd1dcfd842470f}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Pi@{Pi}}
+\index{Pi@{Pi}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{Pi()}{Pi()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::\+Pi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a1f0486acd8d12fda53c733530df87f67}\label{classostk_1_1math_1_1geometry_1_1_angle_a1f0486acd8d12fda53c733530df87f67}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Radians@{Radians}}
+\index{Radians@{Radians}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{Radians()}{Radians()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::\+Radians (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_ae0c3b64875e4c0b38083f8ab491486ac}\label{classostk_1_1math_1_1geometry_1_1_angle_ae0c3b64875e4c0b38083f8ab491486ac}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Revolutions@{Revolutions}}
+\index{Revolutions@{Revolutions}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{Revolutions()}{Revolutions()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::\+Revolutions (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a7ca2644b73353c4f08729c12735de792}\label{classostk_1_1math_1_1geometry_1_1_angle_a7ca2644b73353c4f08729c12735de792}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!StringFromUnit@{StringFromUnit}}
+\index{StringFromUnit@{StringFromUnit}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{StringFromUnit()}{StringFromUnit()}}
+{\footnotesize\ttfamily String ostk\+::math\+::geometry\+::\+Angle\+::\+String\+From\+Unit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207}{Angle\+::\+Unit}} \&}]{a\+Unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_af9c9496653f5cf031d9e8c7f5845d59e}\label{classostk_1_1math_1_1geometry_1_1_angle_af9c9496653f5cf031d9e8c7f5845d59e}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!SymbolFromUnit@{SymbolFromUnit}}
+\index{SymbolFromUnit@{SymbolFromUnit}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{SymbolFromUnit()}{SymbolFromUnit()}}
+{\footnotesize\ttfamily String ostk\+::math\+::geometry\+::\+Angle\+::\+Symbol\+From\+Unit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a143235e3b456a012adcef64046b03207}{Angle\+::\+Unit}} \&}]{a\+Unit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a1bede19fd845aa8964e5ac1f9090c652}\label{classostk_1_1math_1_1geometry_1_1_angle_a1bede19fd845aa8964e5ac1f9090c652}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!toString@{toString}}
+\index{toString@{toString}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily String ostk\+::math\+::geometry\+::\+Angle\+::to\+String (\begin{DoxyParamCaption}\item[{const Integer \&}]{a\+Precision = {\ttfamily Integer\+:\+:Undefined()} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a905fdfb13117b06e162d0165b7b6f336}\label{classostk_1_1math_1_1geometry_1_1_angle_a905fdfb13117b06e162d0165b7b6f336}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!TwoPi@{TwoPi}}
+\index{TwoPi@{TwoPi}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{TwoPi()}{TwoPi()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::\+Two\+Pi (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_ac23b2ae37d71d99a3d986e4c56a22633}\label{classostk_1_1math_1_1geometry_1_1_angle_ac23b2ae37d71d99a3d986e4c56a22633}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a306091ed29b8e37156b62e0e7db1fa40}\label{classostk_1_1math_1_1geometry_1_1_angle_a306091ed29b8e37156b62e0e7db1fa40}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!Zero@{Zero}}
+\index{Zero@{Zero}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{Zero()}{Zero()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::\+Angle\+::\+Zero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_af699984b24759466957ecddaa7e61fc9}\label{classostk_1_1math_1_1geometry_1_1_angle_af699984b24759466957ecddaa7e61fc9}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} operator$\ast$ (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Real,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&}]{an\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1_angle_a0846b77ee3281e8a559197c3c3208eed}\label{classostk_1_1math_1_1geometry_1_1_angle_a0846b77ee3281e8a559197c3c3208eed}} 
+\index{ostk::math::geometry::Angle@{ostk::math::geometry::Angle}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ostk::math::geometry::Angle@{ostk::math::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&}]{an\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/\mbox{\hyperlink{_angle_8hpp}{Angle.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/\mbox{\hyperlink{_angle_8cpp}{Angle.\+cpp}}\end{DoxyCompactItemize}

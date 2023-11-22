@@ -1,0 +1,348 @@
+\hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string}{}\doxysection{ostk\+::math\+::geometry\+::d2\+::objects\+::Multi\+Line\+String Class Reference}
+\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string}\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+
+
+Multi \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_line}{Line}} string.  
+
+
+
+
+{\ttfamily \#include $<$Multi\+Line\+String.\+hpp$>$}
+
+Inheritance diagram for ostk\+::math\+::geometry\+::d2\+::objects\+::Multi\+Line\+String\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Array$<$ \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_line_string}{Line\+String}} $>$\+::\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_ac71af68ec152e3f7fd9d83304a0e8a0c}{Const\+Iterator}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_ac71af68ec152e3f7fd9d83304a0e8a0c}{Const\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_aa6a5f2650b71b09ff29cb9fa3338930d}{Multi\+Line\+String}} (const Array$<$ \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_line_string}{Line\+String}} $>$ \&a\+Line\+String\+Array)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string}{Multi\+Line\+String}} $\ast$ \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_aace3d2a30b9a2391461b9ee7431f7eae}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clone multi line string. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a2b0c0e6a539d75c3223539ffb7931418}{operator==}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string}{Multi\+Line\+String}} \&a\+Multi\+Line\+String) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_add38e98691713f0d5cc001aa695db549}{operator!=}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string}{Multi\+Line\+String}} \&a\+Multi\+Line\+String) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_ac2aa91bfa91efd528024df63e2268d38}{is\+Defined}} () const override
+\begin{DoxyCompactList}\small\item\em Check if multi multi line string is defined. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a4edf9aa04a2f87c09af7185e99b83704}{is\+Empty}} () const
+\begin{DoxyCompactList}\small\item\em Check if multi multi line string is empty. \end{DoxyCompactList}\item 
+Size \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_abb99cdfb456869ec4b130d127aec016f}{get\+Line\+String\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get multi line string count. \end{DoxyCompactList}\item 
+Size \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_abf8ac7d799634a473f2c3861173192b1}{get\+Point\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get point count. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a2a3d1e49548fcf551f01dad2785c6294}{get\+Point\+Closest\+To}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Get point closest to another point. \end{DoxyCompactList}\item 
+virtual String \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a960db437f8a7b9e23fd44738978e5480}{to\+String}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_af00c412326684ba5360cf16b5e752ef8}{Object\+::\+Format}} \&a\+Format=\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_af00c412326684ba5360cf16b5e752ef8aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}, const Integer \&a\+Precision=Integer\+::\+Undefined()) const override
+\begin{DoxyCompactList}\small\item\em Get string representation. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a676a7bc78f67d744981f2b4cfe2793c6}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_ac71af68ec152e3f7fd9d83304a0e8a0c}{Multi\+Line\+String\+::\+Const\+Iterator}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a4daf8f83d7c5d3d85cd049385bc97d80}{begin}} () const
+\begin{DoxyCompactList}\small\item\em Get begin const iterator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_ac71af68ec152e3f7fd9d83304a0e8a0c}{Multi\+Line\+String\+::\+Const\+Iterator}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a15efd2803fde8c29818e160fb37ffa4f}{end}} () const
+\begin{DoxyCompactList}\small\item\em Get end const iterator. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a8e152b16c74df716139b884c0a0330b8}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_transformation}{Transformation}} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to multi line string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string}{Multi\+Line\+String}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a295daa8b3f7b2a3eefbd27bf8fce716b}{Empty}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an empty multi line string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Multi \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_line}{Line}} string. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_ac71af68ec152e3f7fd9d83304a0e8a0c}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_ac71af68ec152e3f7fd9d83304a0e8a0c}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!ConstIterator@{ConstIterator}}
+\index{ConstIterator@{ConstIterator}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{ConstIterator}{ConstIterator}}
+{\footnotesize\ttfamily typedef Array$<$\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_line_string}{Line\+String}}$>$\+::\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_ac71af68ec152e3f7fd9d83304a0e8a0c}{Const\+Iterator}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_ac71af68ec152e3f7fd9d83304a0e8a0c}{ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::\+Const\+Iterator}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_aa6a5f2650b71b09ff29cb9fa3338930d}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_aa6a5f2650b71b09ff29cb9fa3338930d}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!MultiLineString@{MultiLineString}}
+\index{MultiLineString@{MultiLineString}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{MultiLineString()}{MultiLineString()}}
+{\footnotesize\ttfamily ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::\+Multi\+Line\+String (\begin{DoxyParamCaption}\item[{const Array$<$ \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_line_string}{Line\+String}} $>$ \&}]{a\+Line\+String\+Array }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_aa6a5f2650b71b09ff29cb9fa3338930d}{MultiLineString}} multiLineString(\{ \{ 0.0, 0.0 \}, \{ 0.0, 1.0 \}, \{ 1.0, 0.0 \} \}) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point\+Array} & A point array \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a8e152b16c74df716139b884c0a0330b8}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a8e152b16c74df716139b884c0a0330b8}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!applyTransformation@{applyTransformation}}
+\index{applyTransformation@{applyTransformation}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{applyTransformation()}{applyTransformation()}}
+{\footnotesize\ttfamily virtual void ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to multi line string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_a90c1cba0df42529b4de624597af64eda}{ostk\+::math\+::geometry\+::d2\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a4daf8f83d7c5d3d85cd049385bc97d80}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a4daf8f83d7c5d3d85cd049385bc97d80}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!begin@{begin}}
+\index{begin@{begin}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_ac71af68ec152e3f7fd9d83304a0e8a0c}{Multi\+Line\+String\+::\+Const\+Iterator}} ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get begin const iterator. 
+
+\begin{DoxyReturn}{Returns}
+Begin const iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_aace3d2a30b9a2391461b9ee7431f7eae}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_aace3d2a30b9a2391461b9ee7431f7eae}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!clone@{clone}}
+\index{clone@{clone}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string}{Multi\+Line\+String}}$\ast$ ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone multi line string. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned multi line string 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_af477732bd8402975a9bc158deea130e5}{ostk\+::math\+::geometry\+::d2\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a295daa8b3f7b2a3eefbd27bf8fce716b}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a295daa8b3f7b2a3eefbd27bf8fce716b}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!Empty@{Empty}}
+\index{Empty@{Empty}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{Empty()}{Empty()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string}{Multi\+Line\+String}} ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an empty multi line string. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_aa6a5f2650b71b09ff29cb9fa3338930d}{MultiLineString}} multiLineString = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a295daa8b3f7b2a3eefbd27bf8fce716b}{MultiLineString::Empty}}() ;}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Empty multi line string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a15efd2803fde8c29818e160fb37ffa4f}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a15efd2803fde8c29818e160fb37ffa4f}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!end@{end}}
+\index{end@{end}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_ac71af68ec152e3f7fd9d83304a0e8a0c}{Multi\+Line\+String\+::\+Const\+Iterator}} ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get end const iterator. 
+
+\begin{DoxyReturn}{Returns}
+End const iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_abb99cdfb456869ec4b130d127aec016f}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_abb99cdfb456869ec4b130d127aec016f}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!getLineStringCount@{getLineStringCount}}
+\index{getLineStringCount@{getLineStringCount}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{getLineStringCount()}{getLineStringCount()}}
+{\footnotesize\ttfamily Size ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::get\+Line\+String\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get multi line string count. 
+
+\begin{DoxyReturn}{Returns}
+multi \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_line}{Line}} string count 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a2a3d1e49548fcf551f01dad2785c6294}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a2a3d1e49548fcf551f01dad2785c6294}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!getPointClosestTo@{getPointClosestTo}}
+\index{getPointClosestTo@{getPointClosestTo}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{getPointClosestTo()}{getPointClosestTo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_point}{Point}} ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::get\+Point\+Closest\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Get point closest to another point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Closest point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_abf8ac7d799634a473f2c3861173192b1}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_abf8ac7d799634a473f2c3861173192b1}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!getPointCount@{getPointCount}}
+\index{getPointCount@{getPointCount}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{getPointCount()}{getPointCount()}}
+{\footnotesize\ttfamily Size ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::get\+Point\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get point count. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_point}{Point}} count 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_ac2aa91bfa91efd528024df63e2268d38}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_ac2aa91bfa91efd528024df63e2268d38}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!isDefined@{isDefined}}
+\index{isDefined@{isDefined}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
+{\footnotesize\ttfamily virtual bool ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if multi multi line string is defined. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_aa6a5f2650b71b09ff29cb9fa3338930d}{MultiLineString}}(0.0, 0.0).isDefined() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if multi multi line string is defined 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_a4dfc9219551e567facf302d7d31a025a}{ostk\+::math\+::geometry\+::d2\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a4edf9aa04a2f87c09af7185e99b83704}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a4edf9aa04a2f87c09af7185e99b83704}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::is\+Empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if multi multi line string is empty. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a295daa8b3f7b2a3eefbd27bf8fce716b}{MultiLineString::Empty}}().\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a4edf9aa04a2f87c09af7185e99b83704}{isEmpty}}() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if multi multi line string is empty 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_add38e98691713f0d5cc001aa695db549}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_add38e98691713f0d5cc001aa695db549}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string}{Multi\+Line\+String}} \&}]{a\+Multi\+Line\+String }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Multi\+Line\+String} & A multi multi line string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if multi multi line strings are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a2b0c0e6a539d75c3223539ffb7931418}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a2b0c0e6a539d75c3223539ffb7931418}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string}{Multi\+Line\+String}} \&}]{a\+Multi\+Line\+String }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Multi\+Line\+String} & A multi multi line string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if multi multi line strings are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a676a7bc78f67d744981f2b4cfe2793c6}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a676a7bc78f67d744981f2b4cfe2793c6}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!print@{print}}
+\index{print@{print}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily virtual void ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_a6520181b4e69e34676e679ce99310228}{ostk\+::math\+::geometry\+::d2\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a960db437f8a7b9e23fd44738978e5480}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string_a960db437f8a7b9e23fd44738978e5480}} 
+\index{ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}!toString@{toString}}
+\index{toString@{toString}!ostk::math::geometry::d2::objects::MultiLineString@{ostk::math::geometry::d2::objects::MultiLineString}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily virtual String ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Line\+String\+::to\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_af00c412326684ba5360cf16b5e752ef8}{Object\+::\+Format}} \&}]{a\+Format = {\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_af00c412326684ba5360cf16b5e752ef8aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}},  }\item[{const Integer \&}]{a\+Precision = {\ttfamily Integer\+:\+:Undefined()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get string representation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Format} & A format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_a28b7c8e8118267e3b69f9e3ff7dc020a}{ostk\+::math\+::geometry\+::d2\+::\+Object}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/2\+D/\+Objects/\mbox{\hyperlink{_multi_line_string_8hpp}{Multi\+Line\+String.\+hpp}}\end{DoxyCompactItemize}

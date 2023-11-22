@@ -1,0 +1,437 @@
+\hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{}\doxysection{ostk\+::math\+::geometry\+::d3\+::objects\+::Point Class Reference}
+\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+
+
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}}.  
+
+
+
+
+{\ttfamily \#include $<$Point.\+hpp$>$}
+
+Inheritance diagram for ostk\+::math\+::geometry\+::d3\+::objects\+::Point\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}} (const Real \&a\+First\+Coordinate, const Real \&a\+Second\+Coordinate, const Real \&a\+Third\+Coordinate)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} $\ast$ \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_ae90badd81112d2724418c680fe4798cd}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clone point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a6c642328a196cf3da4c5e90b3849133e}{operator==}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a9b7094ccc65c4631292ade5476fa4bf7}{operator!=}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_aae4f392189645388aa4d98f71bf936ad}{is\+Defined}} () const override
+\begin{DoxyCompactList}\small\item\em Addition operator\+: translate point along vector. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a84d89b83ebb86c49eb5898bf06bbeada}{is\+Near}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&a\+Point, const Real \&a\+Tolerance) const
+\begin{DoxyCompactList}\small\item\em Check if point is near another point. \end{DoxyCompactList}\item 
+const Real \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a018ba1d5bbdf26adb9b4e85e266017a1}{x}} () const
+\begin{DoxyCompactList}\small\item\em Get reference to first coordinate. \end{DoxyCompactList}\item 
+const Real \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_aa179d32287a4e9e6ca100c7b2cefca27}{y}} () const
+\begin{DoxyCompactList}\small\item\em Get reference to second coordinate. \end{DoxyCompactList}\item 
+const Real \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a7e2371221f1408e4e255b3f1bbc3fed1}{z}} () const
+\begin{DoxyCompactList}\small\item\em Get reference to third coordinate. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_ae96b5a3c7a2f3e8cf70c83b46bddeaf3}{as\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Get vector representation of point. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a902a7427defaf0762e081e75998c5012}{distance\+To}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Get distance to another point. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a3f644794603f8cec31c4b96a857aa75e}{to\+String}} (const Integer \&a\+Precision=\mbox{\hyperlink{3_d_2_objects_2_point_8hpp_a6d81881a7883657dbc659ca545d9085d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON}}) const
+\begin{DoxyCompactList}\small\item\em Get string representation. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a7922f09382d93b45ba8d8e652b886b68}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print point. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_aae4671fc60726d2de01333ff3fa709ff}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_adb20e31e260146cf0e91a8370ecc812d}{Undefined}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined point. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a37d0cf4afe754061b76e17796b00897b}{Origin}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a point at origin. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a2806347e065789edea4a0553e7727c19}{Vector}} (const Vector3d \&a\+Vector)
+\begin{DoxyCompactList}\small\item\em Constructs a point from a vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}}. 
+
+\href{https://en.wikipedia.org/wiki/Point_}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Point\+\_\+}}(geometry) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!Point@{Point}}
+\index{Point@{Point}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}}
+{\footnotesize\ttfamily ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::\+Point (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+First\+Coordinate,  }\item[{const Real \&}]{a\+Second\+Coordinate,  }\item[{const Real \&}]{a\+Third\+Coordinate }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}} point(0.0, 0.0, 0.0) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+First\+Coordinate} & A first coordinate \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Second\+Coordinate} & A second coordinate \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Third\+Coordinate} & A third coordinate \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_aae4671fc60726d2de01333ff3fa709ff}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_aae4671fc60726d2de01333ff3fa709ff}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!applyTransformation@{applyTransformation}}
+\index{applyTransformation@{applyTransformation}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{applyTransformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_object_a6a67dbc42048c7ff7facafb548f38199}{ostk\+::math\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_ae96b5a3c7a2f3e8cf70c83b46bddeaf3}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_ae96b5a3c7a2f3e8cf70c83b46bddeaf3}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!asVector@{asVector}}
+\index{asVector@{asVector}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{asVector()}{asVector()}}
+{\footnotesize\ttfamily Vector3d ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::as\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get vector representation of point. 
+
+\begin{DoxyReturn}{Returns}
+Vector representation of point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_ae90badd81112d2724418c680fe4798cd}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_ae90badd81112d2724418c680fe4798cd}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!clone@{clone}}
+\index{clone@{clone}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} $\ast$ ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone point. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned point 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_object_a7224add32195768dba78acc215ec86a3}{ostk\+::math\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a902a7427defaf0762e081e75998c5012}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a902a7427defaf0762e081e75998c5012}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!distanceTo@{distanceTo}}
+\index{distanceTo@{distanceTo}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{distanceTo()}{distanceTo()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::distance\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Get distance to another point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance to point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_aae4f392189645388aa4d98f71bf936ad}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_aae4f392189645388aa4d98f71bf936ad}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!isDefined@{isDefined}}
+\index{isDefined@{isDefined}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Addition operator\+: translate point along vector. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}}(0.0, 0.0, 0.0) + \mbox{\hyperlink{namespaceostk_1_1math_1_1object_af1e4ea23badc8f45931ae724e71b00f1}{Vector3d}}(0.0, 0.0, 1.0) ; \textcolor{comment}{// [0.0, 0.0, 1.0]}}
+\DoxyCodeLine{    @encode}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @param              [in] aVector A translation vector}
+\DoxyCodeLine{    @\textcolor{keywordflow}{return}             A point}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{namespaceostk_1_1math_1_1object_af1e4ea23badc8f45931ae724e71b00f1}{Vector3d}}\& aVector) \textcolor{keyword}{const};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    @brief              Subtraction \textcolor{keyword}{operator}: translate point along opposite vector}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @code}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}}(0.0, 0.0, 1.0) -\/ \mbox{\hyperlink{namespaceostk_1_1math_1_1object_af1e4ea23badc8f45931ae724e71b00f1}{Vector3d}}(0.0, 0.0, 1.0) ; \textcolor{comment}{// [0.0, 0.0, 0.0]}}
+\DoxyCodeLine{    @encode}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @param              [in] aVector A translation vector}
+\DoxyCodeLine{    @\textcolor{keywordflow}{return}             A point}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{namespaceostk_1_1math_1_1object_af1e4ea23badc8f45931ae724e71b00f1}{Vector3d}}\& aVector) \textcolor{keyword}{const};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    @brief              Subtraction \textcolor{keyword}{operator}: get translation vector between two points}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @code}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}}(0.0, 0.0, 1.0) -\/ \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}}(0.0, 0.0, 0.0)  ; \textcolor{comment}{// [0.0, 0.0, 1.0]}}
+\DoxyCodeLine{    @encode}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @param              [in] aPoint A point}
+\DoxyCodeLine{    @\textcolor{keywordflow}{return}             A translation vector}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1math_1_1object_af1e4ea23badc8f45931ae724e71b00f1}{Vector3d}} operator-\/(\textcolor{keyword}{const} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}}\& aPoint) \textcolor{keyword}{const};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    @brief              Check \textcolor{keywordflow}{if} point \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_object_aea02e518a8e5309fdd13c43dad8e7d0b}{is}} defined}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @code}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}}(0.0, 0.0, 0.0).isDefined() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if point is defined 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_object_a02377f6417051dff2cfd34efb0920072}{ostk\+::math\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a84d89b83ebb86c49eb5898bf06bbeada}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a84d89b83ebb86c49eb5898bf06bbeada}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!isNear@{isNear}}
+\index{isNear@{isNear}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{isNear()}{isNear()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::is\+Near (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&}]{a\+Point,  }\item[{const Real \&}]{a\+Tolerance }\end{DoxyParamCaption}) const}
+
+
+
+Check if point is near another point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}}(0.0, 0.0, 0.0).isNear(\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}}(0.0, 0.0, 0.0), 1e-\/15) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Tolerance} & A tolerance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if point is near another point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a9b7094ccc65c4631292ade5476fa4bf7}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a9b7094ccc65c4631292ade5476fa4bf7}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if points are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a6c642328a196cf3da4c5e90b3849133e}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a6c642328a196cf3da4c5e90b3849133e}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if points are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a37d0cf4afe754061b76e17796b00897b}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a37d0cf4afe754061b76e17796b00897b}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!Origin@{Origin}}
+\index{Origin@{Origin}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{Origin()}{Origin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a point at origin. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}} point = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a37d0cf4afe754061b76e17796b00897b}{Point::Origin}}() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} at origin 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a7922f09382d93b45ba8d8e652b886b68}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a7922f09382d93b45ba8d8e652b886b68}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!print@{print}}
+\index{print@{print}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_object_aca0b5a7cc158de5ed2c877ed2693c7ec}{ostk\+::math\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a3f644794603f8cec31c4b96a857aa75e}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a3f644794603f8cec31c4b96a857aa75e}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!toString@{toString}}
+\index{toString@{toString}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily String ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::to\+String (\begin{DoxyParamCaption}\item[{const Integer \&}]{a\+Precision = {\ttfamily \mbox{\hyperlink{3_d_2_objects_2_point_8hpp_a6d81881a7883657dbc659ca545d9085d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+R\+E\+C\+I\+S\+I\+ON}}} }\end{DoxyParamCaption}) const}
+
+
+
+Get string representation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em (optional)} & a\+Precision A precision \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_adb20e31e260146cf0e91a8370ecc812d}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_adb20e31e260146cf0e91a8370ecc812d}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}} point = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_adb20e31e260146cf0e91a8370ecc812d}{Point::Undefined}}() ; \textcolor{comment}{// Undefined}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a2806347e065789edea4a0553e7727c19}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a2806347e065789edea4a0553e7727c19}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!Vector@{Vector}}
+\index{Vector@{Vector}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::\+Vector (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a point from a vector. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}} point = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a2806347e065789edea4a0553e7727c19}{Point::Vector}}(\{ 0.0, 0.0, 0.0 \}) ; \textcolor{comment}{// [0.0, 0.0, 0.0]}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a018ba1d5bbdf26adb9b4e85e266017a1}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a018ba1d5bbdf26adb9b4e85e266017a1}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!x@{x}}
+\index{x@{x}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{x()}{x()}}
+{\footnotesize\ttfamily const Real \& ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get reference to first coordinate. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}}(1.0, 2.0).x() ; \textcolor{comment}{// \&1.0}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to first coordinate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_aa179d32287a4e9e6ca100c7b2cefca27}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_aa179d32287a4e9e6ca100c7b2cefca27}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!y@{y}}
+\index{y@{y}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{y()}{y()}}
+{\footnotesize\ttfamily const Real \& ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get reference to second coordinate. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}}(1.0, 2.0).y() ; \textcolor{comment}{// \&2.0}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to second coordinate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a7e2371221f1408e4e255b3f1bbc3fed1}\label{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a7e2371221f1408e4e255b3f1bbc3fed1}} 
+\index{ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}!z@{z}}
+\index{z@{z}!ostk::math::geometry::d3::objects::Point@{ostk::math::geometry::d3::objects::Point}}
+\doxysubsubsection{\texorpdfstring{z()}{z()}}
+{\footnotesize\ttfamily const Real \& ostk\+::math\+::geometry\+::d3\+::objects\+::\+Point\+::z (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get reference to third coordinate. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point_a33d557bde374d7947215029747b222b7}{Point}}(1.0, 2.0, 3.0).z() ; \textcolor{comment}{// \&3.0}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to third coordinate 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Objects/\mbox{\hyperlink{3_d_2_objects_2_point_8hpp}{Point.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Objects/\mbox{\hyperlink{3_d_2_objects_2_point_8cpp}{Point.\+cpp}}\end{DoxyCompactItemize}

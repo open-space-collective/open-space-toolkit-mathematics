@@ -1,0 +1,323 @@
+\hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{}\doxysection{ostk\+::math\+::geometry\+::d3\+::Transformation Class Reference}
+\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+
+
+{\ttfamily \#include $<$Transformation.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1d}{Type}} \{ \newline
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1daec0fc0100c4fc1ce4eea230c3dc10360}{Type\+::\+Undefined}}, 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1dac9c5c65fb4af9cf90eb99b3b84424189}{Type\+::\+Identity}}, 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1da6dd08874f83507e9c7b23f1a46b7fa7c}{Type\+::\+Translation}}, 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1daf1a42bd417390fc63b030a519624607a}{Type\+::\+Rotation}}, 
+\newline
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1dabc967dc2d57e6eff184a821bf7577a80}{Type\+::\+Scaling}}, 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1daaea1e492943ccbad7ee270ec1e064758}{Type\+::\+Reflection}}, 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1da02414922b70cc0f9d7c841b0c70a0f94}{Type\+::\+Shear}}, 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1da5b525aab6e200981a842101f1bcbafc6}{Type\+::\+Affine}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a2e1543e0b4bfb1cdb6e4fc85a067f696}{Transformation}} (const Matrix4d \&a\+Matrix)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a2d2ef9b2d663af2a25ec4635e0f2f1df}{operator==}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation) const
+\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a6943e5c230b03f43484bd2b501d87b26}{operator!=}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation) const
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a5ae82129599d861b832f942022ce254e}{operator$\ast$}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation) const
+\item 
+Vector4d \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a2feab250436165be72de8da26b9d8062}{operator$\ast$}} (const Vector4d \&a\+Vector) const
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a4017dc2c46add53a16b9d1143915add2}{operator$\ast$=}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation)
+\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a4346cc01135db17e59beb18d0eac2106}{is\+Defined}} () const
+\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_ae18dd16e9c8ebbc602215e98882e4121}{is\+Identity}} () const
+\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_adb66870bac59c5c047a60995fc6af87c}{is\+Rigid}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if transformation is rigid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1d}{Transformation\+::\+Type}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a8f45cdeca541dfefdda30ff007358ec7}{get\+Type}} () const
+\item 
+Matrix4d \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a405f0d1c6fc923c99a5e2a261b721d21}{get\+Matrix}} () const
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a1f8586bf1be1725268c4c231f91ec9df}{get\+Inverse}} () const
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_aedf8f585189220471b33d1ac889622c6}{apply\+To}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&a\+Point) const
+\item 
+Vector3d \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a36a4fb946cc889b656103edd2b2944d2}{apply\+To}} (const Vector3d \&a\+Vector) const
+\item 
+virtual void \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a1ac689ed868e6463cd446eaf1898bdfc}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const
+\begin{DoxyCompactList}\small\item\em Print transformation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a981a4c03b325e03a876919ec3e5067d8}{Undefined}} ()
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_ab1eac807de98b7527d70d16066e56a04}{Identity}} ()
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_ac60fa4adb36b538bb881003035d93816}{Translation}} (const Vector3d \&a\+Translation\+Vector)
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a00da9a2961a96dde6db5c325f3853d04}{Rotation}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1trf_1_1rot_1_1_rotation_vector}{Rotation\+Vector}} \&a\+Rotation\+Vector)
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a3c737f2194ffbb2b455a567d6783589e}{Rotation}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix}} \&a\+Rotation\+Matrix)
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a4e7ba9bde9b6bd551a2d701a3b5b8e04}{Rotation\+Around}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&a\+Point, const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1trf_1_1rot_1_1_rotation_vector}{Rotation\+Vector}} \&a\+Rotation\+Vector)
+\item 
+static String \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a5506ae63742145321d4e959160af7889}{String\+From\+Type}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1d}{Transformation\+::\+Type}} \&a\+Type)
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1d}{Transformation\+::\+Type}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a42ef07049f4c6245fb92d90011edfe56}{Type\+Of\+Matrix}} (const Matrix4d \&a\+Matrix)
+\item 
+static bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_ad18e238ce37e6f0e3817466862961d0e}{Is\+Rigid}} (const Matrix4d \&a\+Matrix)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_afb2829e106dc4aeab1c706d1eaa357e8}{operator$<$$<$}} (std\+::ostream \&an\+Output\+Stream, const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1d}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1d}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!Type@{Type}}
+\index{Type@{Type}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1d}{ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Undefined@{Undefined}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!Undefined@{Undefined}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1daec0fc0100c4fc1ce4eea230c3dc10360}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1daec0fc0100c4fc1ce4eea230c3dc10360}} 
+Undefined&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Identity@{Identity}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!Identity@{Identity}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1dac9c5c65fb4af9cf90eb99b3b84424189}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1dac9c5c65fb4af9cf90eb99b3b84424189}} 
+Identity&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Translation@{Translation}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!Translation@{Translation}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1da6dd08874f83507e9c7b23f1a46b7fa7c}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1da6dd08874f83507e9c7b23f1a46b7fa7c}} 
+Translation&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Rotation@{Rotation}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!Rotation@{Rotation}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1daf1a42bd417390fc63b030a519624607a}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1daf1a42bd417390fc63b030a519624607a}} 
+Rotation&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Scaling@{Scaling}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!Scaling@{Scaling}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1dabc967dc2d57e6eff184a821bf7577a80}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1dabc967dc2d57e6eff184a821bf7577a80}} 
+Scaling&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Reflection@{Reflection}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!Reflection@{Reflection}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1daaea1e492943ccbad7ee270ec1e064758}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1daaea1e492943ccbad7ee270ec1e064758}} 
+Reflection&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Shear@{Shear}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!Shear@{Shear}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1da02414922b70cc0f9d7c841b0c70a0f94}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1da02414922b70cc0f9d7c841b0c70a0f94}} 
+Shear&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Affine@{Affine}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!Affine@{Affine}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1da5b525aab6e200981a842101f1bcbafc6}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1da5b525aab6e200981a842101f1bcbafc6}} 
+Affine&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a2e1543e0b4bfb1cdb6e4fc85a067f696}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a2e1543e0b4bfb1cdb6e4fc85a067f696}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!Transformation@{Transformation}}
+\index{Transformation@{Transformation}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{Transformation()}{Transformation()}}
+{\footnotesize\ttfamily ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::\+Transformation (\begin{DoxyParamCaption}\item[{const Matrix4d \&}]{a\+Matrix }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Matrix} & A transformation matrix \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_aedf8f585189220471b33d1ac889622c6}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_aedf8f585189220471b33d1ac889622c6}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!applyTo@{applyTo}}
+\index{applyTo@{applyTo}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{applyTo()}{applyTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::apply\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a36a4fb946cc889b656103edd2b2944d2}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a36a4fb946cc889b656103edd2b2944d2}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!applyTo@{applyTo}}
+\index{applyTo@{applyTo}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{applyTo()}{applyTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector3d ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::apply\+To (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Vector }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a1f8586bf1be1725268c4c231f91ec9df}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a1f8586bf1be1725268c4c231f91ec9df}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!getInverse@{getInverse}}
+\index{getInverse@{getInverse}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{getInverse()}{getInverse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::get\+Inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a405f0d1c6fc923c99a5e2a261b721d21}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a405f0d1c6fc923c99a5e2a261b721d21}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!getMatrix@{getMatrix}}
+\index{getMatrix@{getMatrix}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{getMatrix()}{getMatrix()}}
+{\footnotesize\ttfamily Matrix4d ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::get\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a8f45cdeca541dfefdda30ff007358ec7}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a8f45cdeca541dfefdda30ff007358ec7}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!getType@{getType}}
+\index{getType@{getType}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1d}{Transformation\+::\+Type}} ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_ab1eac807de98b7527d70d16066e56a04}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_ab1eac807de98b7527d70d16066e56a04}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!Identity@{Identity}}
+\index{Identity@{Identity}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{Identity()}{Identity()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::\+Identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a4346cc01135db17e59beb18d0eac2106}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a4346cc01135db17e59beb18d0eac2106}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!isDefined@{isDefined}}
+\index{isDefined@{isDefined}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_ae18dd16e9c8ebbc602215e98882e4121}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_ae18dd16e9c8ebbc602215e98882e4121}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!isIdentity@{isIdentity}}
+\index{isIdentity@{isIdentity}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{isIdentity()}{isIdentity()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::is\+Identity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_adb66870bac59c5c047a60995fc6af87c}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_adb66870bac59c5c047a60995fc6af87c}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!isRigid@{isRigid}}
+\index{isRigid@{isRigid}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{isRigid()}{isRigid()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::is\+Rigid (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if transformation is rigid. 
+
+\begin{DoxyVerb}                A rigid transformation preserves the Euclidean distance between every pair of points.
+                The rigid transformations include rotations, translations, reflections, or their
+                combination.
+\end{DoxyVerb}
+
+
+\href{https://en.wikipedia.org/wiki/Rigid_transformation}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Rigid\+\_\+transformation}}
+
+\begin{DoxyReturn}{Returns}
+True if transformation is rigid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_ad18e238ce37e6f0e3817466862961d0e}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_ad18e238ce37e6f0e3817466862961d0e}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!IsRigid@{IsRigid}}
+\index{IsRigid@{IsRigid}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{IsRigid()}{IsRigid()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::\+Is\+Rigid (\begin{DoxyParamCaption}\item[{const Matrix4d \&}]{a\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a6943e5c230b03f43484bd2b501d87b26}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a6943e5c230b03f43484bd2b501d87b26}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a5ae82129599d861b832f942022ce254e}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a5ae82129599d861b832f942022ce254e}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a2feab250436165be72de8da26b9d8062}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a2feab250436165be72de8da26b9d8062}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector4d ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const Vector4d \&}]{a\+Vector }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a4017dc2c46add53a16b9d1143915add2}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a4017dc2c46add53a16b9d1143915add2}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \& ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a2d2ef9b2d663af2a25ec4635e0f2f1df}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a2d2ef9b2d663af2a25ec4635e0f2f1df}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a1ac689ed868e6463cd446eaf1898bdfc}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a1ac689ed868e6463cd446eaf1898bdfc}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!print@{print}}
+\index{print@{print}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Print transformation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a3c737f2194ffbb2b455a567d6783589e}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a3c737f2194ffbb2b455a567d6783589e}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{Rotation()}{Rotation()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::\+Rotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1trf_1_1rot_1_1_rotation_matrix}{Rotation\+Matrix}} \&}]{a\+Rotation\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a00da9a2961a96dde6db5c325f3853d04}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a00da9a2961a96dde6db5c325f3853d04}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!Rotation@{Rotation}}
+\index{Rotation@{Rotation}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{Rotation()}{Rotation()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::\+Rotation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1trf_1_1rot_1_1_rotation_vector}{Rotation\+Vector}} \&}]{a\+Rotation\+Vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a4e7ba9bde9b6bd551a2d701a3b5b8e04}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a4e7ba9bde9b6bd551a2d701a3b5b8e04}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!RotationAround@{RotationAround}}
+\index{RotationAround@{RotationAround}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{RotationAround()}{RotationAround()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::\+Rotation\+Around (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_point}{Point}} \&}]{a\+Point,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1trf_1_1rot_1_1_rotation_vector}{Rotation\+Vector}} \&}]{a\+Rotation\+Vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a5506ae63742145321d4e959160af7889}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a5506ae63742145321d4e959160af7889}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!StringFromType@{StringFromType}}
+\index{StringFromType@{StringFromType}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{StringFromType()}{StringFromType()}}
+{\footnotesize\ttfamily String ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::\+String\+From\+Type (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1d}{Transformation\+::\+Type}} \&}]{a\+Type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_ac60fa4adb36b538bb881003035d93816}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_ac60fa4adb36b538bb881003035d93816}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!Translation@{Translation}}
+\index{Translation@{Translation}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{Translation()}{Translation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::\+Translation (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Translation\+Vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a42ef07049f4c6245fb92d90011edfe56}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a42ef07049f4c6245fb92d90011edfe56}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!TypeOfMatrix@{TypeOfMatrix}}
+\index{TypeOfMatrix@{TypeOfMatrix}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{TypeOfMatrix()}{TypeOfMatrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a728f480246c6435fc744f431dbbfbb1d}{Transformation\+::\+Type}} ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::\+Type\+Of\+Matrix (\begin{DoxyParamCaption}\item[{const Matrix4d \&}]{a\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a981a4c03b325e03a876919ec3e5067d8}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_a981a4c03b325e03a876919ec3e5067d8}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} ostk\+::math\+::geometry\+::d3\+::\+Transformation\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_afb2829e106dc4aeab1c706d1eaa357e8}\label{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation_afb2829e106dc4aeab1c706d1eaa357e8}} 
+\index{ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ostk::math::geometry::d3::Transformation@{ostk::math::geometry::d3::Transformation}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\mbox{\hyperlink{3_d_2_transformation_8hpp}{Transformation.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\mbox{\hyperlink{3_d_2_transformation_8cpp}{Transformation.\+cpp}}\end{DoxyCompactItemize}

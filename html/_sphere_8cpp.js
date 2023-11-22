@@ -1,6 +1,6 @@
 var _sphere_8cpp =
 [
-    [ "SphereGteVectorFromPoint", "_sphere_8cpp.html#ab5e5801a03f5bdf9e4bb1fd4ef912e1a", null ],
-    [ "SphereGteVectorFromVector3d", "_sphere_8cpp.html#a994fd988c1cb50ee37d241e56be9829c", null ],
-    [ "SpherePointFromGteVector", "_sphere_8cpp.html#a0305d0045730dca82b7129534cedbf8e", null ]
+    [ "SphereGteVectorFromPoint", "_sphere_8cpp.html#a6d69d13bd6eaa699b9e2a1e0ec9a83cf", null ],
+    [ "SphereGteVectorFromVector3d", "_sphere_8cpp.html#aeb79f82f7f79b2c9a552633b046a2004", null ],
+    [ "SpherePointFromGteVector", "_sphere_8cpp.html#aeef35d292fbba2577feafa1706e46ac1", null ]
 ];

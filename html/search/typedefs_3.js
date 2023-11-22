@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['matrix2d_753',['Matrix2d',['../namespaceostk_1_1math_1_1obj.html#ad0ed61f6cb3d96626ef2895a959c8274',1,'ostk::math::obj']]],
-  ['matrix2i_754',['Matrix2i',['../namespaceostk_1_1math_1_1obj.html#a9c878091175c26e703a4099171cadc5a',1,'ostk::math::obj']]],
-  ['matrix3d_755',['Matrix3d',['../namespaceostk_1_1math_1_1obj.html#adf5c6ffd20b3822e8686661761213fb1',1,'ostk::math::obj']]],
-  ['matrix3i_756',['Matrix3i',['../namespaceostk_1_1math_1_1obj.html#a21413c9f36b149c4bb9cdf407a6c95e7',1,'ostk::math::obj']]],
-  ['matrix4d_757',['Matrix4d',['../namespaceostk_1_1math_1_1obj.html#a178d5237467762d8b20ed6ed2dd3d096',1,'ostk::math::obj']]],
-  ['matrix4i_758',['Matrix4i',['../namespaceostk_1_1math_1_1obj.html#aca98b6e5d7e788f61ca7a026bc970de1',1,'ostk::math::obj']]],
-  ['matrixxd_759',['MatrixXd',['../namespaceostk_1_1math_1_1obj.html#a2e17f4d2058bd34d8b17b8ab90980d5e',1,'ostk::math::obj']]],
-  ['matrixxi_760',['MatrixXi',['../namespaceostk_1_1math_1_1obj.html#aca824852c53eba10924e5f0fb80cbb87',1,'ostk::math::obj']]]
+  ['matrix2d_752',['Matrix2d',['../namespaceostk_1_1math_1_1object.html#a573cdb3a474d929f1121c8a8ca157a6e',1,'ostk::math::object']]],
+  ['matrix2i_753',['Matrix2i',['../namespaceostk_1_1math_1_1object.html#a8642cc78e1b9b7362bb1ed3b487341bb',1,'ostk::math::object']]],
+  ['matrix3d_754',['Matrix3d',['../namespaceostk_1_1math_1_1object.html#a7910900b853471a3df7a6a201a6f58e6',1,'ostk::math::object']]],
+  ['matrix3i_755',['Matrix3i',['../namespaceostk_1_1math_1_1object.html#a3bba2987f1c946c9cfdbfc17cc8025a1',1,'ostk::math::object']]],
+  ['matrix4d_756',['Matrix4d',['../namespaceostk_1_1math_1_1object.html#a782645ccdbdfe866c80f7106dc36bfaa',1,'ostk::math::object']]],
+  ['matrix4i_757',['Matrix4i',['../namespaceostk_1_1math_1_1object.html#a045ee82faf52014f282a10ffddc2ab8c',1,'ostk::math::object']]],
+  ['matrixxd_758',['MatrixXd',['../namespaceostk_1_1math_1_1object.html#a8c8a5a5f7a62b6c6aaf84d8bdf2e6b6a',1,'ostk::math::object']]],
+  ['matrixxi_759',['MatrixXi',['../namespaceostk_1_1math_1_1object.html#a8743072512400d178f8ef13480dcf9c0',1,'ostk::math::object']]]
 ];

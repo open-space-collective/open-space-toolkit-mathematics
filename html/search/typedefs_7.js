@@ -1,13 +1,13 @@
 var searchData=
 [
-  ['vector2d_768',['Vector2d',['../namespaceostk_1_1math_1_1obj.html#a5ce374bc225ecfb685da4fed9aa67e6e',1,'ostk::math::obj']]],
-  ['vector2i_769',['Vector2i',['../namespaceostk_1_1math_1_1obj.html#af19f95215c05a66d8f991863fb0e062c',1,'ostk::math::obj']]],
-  ['vector3d_770',['Vector3d',['../namespaceostk_1_1math_1_1obj.html#a18744cbf433bce59f6758d9fe3b1dff1',1,'ostk::math::obj']]],
-  ['vector3i_771',['Vector3i',['../namespaceostk_1_1math_1_1obj.html#a8e5bafdb8928c3fd53af1efa47f3727d',1,'ostk::math::obj']]],
-  ['vector4d_772',['Vector4d',['../namespaceostk_1_1math_1_1obj.html#a1eb1eefe1cb56bfc7d2b88d55acfb817',1,'ostk::math::obj']]],
-  ['vector4i_773',['Vector4i',['../namespaceostk_1_1math_1_1obj.html#a5f75d55c72fdf6221b158406f36eba43',1,'ostk::math::obj']]],
-  ['vector6d_774',['Vector6d',['../namespaceostk_1_1math_1_1obj.html#a24065d34c32484b2b71ec4900fa04e35',1,'ostk::math::obj']]],
-  ['vectorxd_775',['VectorXd',['../namespaceostk_1_1math_1_1obj.html#a84bdc62967e939556fb94869024693ff',1,'ostk::math::obj']]],
-  ['vectorxi_776',['VectorXi',['../namespaceostk_1_1math_1_1obj.html#a69128b2659fb8f6ff4f927c6e8b87341',1,'ostk::math::obj']]],
-  ['vertex_777',['Vertex',['../classostk_1_1math_1_1geom_1_1d2_1_1objects_1_1_polygon.html#a2fdf6254b42f087bd9cd0b8b0d7df91c',1,'ostk::math::geom::d2::objects::Polygon::Vertex()'],['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_cuboid.html#a0d3440e0c30348ece10f3658130e9b55',1,'ostk::math::geom::d3::objects::Cuboid::Vertex()'],['../classostk_1_1math_1_1geom_1_1d3_1_1objects_1_1_polygon.html#a314eaf277355d59f5e6ab775702c47c2',1,'ostk::math::geom::d3::objects::Polygon::Vertex()']]]
+  ['vector2d_767',['Vector2d',['../namespaceostk_1_1math_1_1object.html#a6b03dc4b69f3bb634f3883eb6b24fdb5',1,'ostk::math::object']]],
+  ['vector2i_768',['Vector2i',['../namespaceostk_1_1math_1_1object.html#aa26b9aa79ea7ef3d39b085742cf7c656',1,'ostk::math::object']]],
+  ['vector3d_769',['Vector3d',['../namespaceostk_1_1math_1_1object.html#af1e4ea23badc8f45931ae724e71b00f1',1,'ostk::math::object']]],
+  ['vector3i_770',['Vector3i',['../namespaceostk_1_1math_1_1object.html#ad33089b0b3281b72ae445d520694df41',1,'ostk::math::object']]],
+  ['vector4d_771',['Vector4d',['../namespaceostk_1_1math_1_1object.html#ab2af8b2204f9f7e586782f2ef0cbd351',1,'ostk::math::object']]],
+  ['vector4i_772',['Vector4i',['../namespaceostk_1_1math_1_1object.html#a3b9cfe94d31c9d631ab987fb0573372c',1,'ostk::math::object']]],
+  ['vector6d_773',['Vector6d',['../namespaceostk_1_1math_1_1object.html#a578f00a56757d3cd37f9f010f33096ce',1,'ostk::math::object']]],
+  ['vectorxd_774',['VectorXd',['../namespaceostk_1_1math_1_1object.html#af98a2c0790213f8fcb2867be103503fe',1,'ostk::math::object']]],
+  ['vectorxi_775',['VectorXi',['../namespaceostk_1_1math_1_1object.html#abf7b4bd1f9541cb98b2045fa2bebde28',1,'ostk::math::object']]],
+  ['vertex_776',['Vertex',['../classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_polygon.html#a97f15ce57a88e5532560e5a58f914ba9',1,'ostk::math::geometry::d2::objects::Polygon::Vertex()'],['../classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_cuboid.html#a7c246fb9c682a832f792987416919e8f',1,'ostk::math::geometry::d3::objects::Cuboid::Vertex()'],['../classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_polygon.html#a14d7b78349d0ac3665b3a19c516c46e4',1,'ostk::math::geometry::d3::objects::Polygon::Vertex()']]]
 ];

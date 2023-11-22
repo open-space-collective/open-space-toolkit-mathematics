@@ -1,0 +1,461 @@
+\hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{}\doxysection{ostk\+::math\+::geometry\+::d2\+::objects\+::Multi\+Polygon Class Reference}
+\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+
+
+Multi-\/polygon.  
+
+
+
+
+{\ttfamily \#include $<$Multi\+Polygon.\+hpp$>$}
+
+Inheritance diagram for ostk\+::math\+::geometry\+::d2\+::objects\+::Multi\+Polygon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef Array$<$ \mbox{\hyperlink{namespaceostk_1_1math_1_1geometry_1_1d2_1_1objects_af45d2fa16152f0427f22fd56652812d6}{Polygon2d}} $>$\+::\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a3b41efbfe9f1d3c9c8628898d2be0fe8}{Const\+Iterator}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a3b41efbfe9f1d3c9c8628898d2be0fe8}{Const\+Iterator}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a8bd5c0a22bb9c1fd62c9f8d7c15ba0e4}{Multi\+Polygon}} (const Array$<$ \mbox{\hyperlink{namespaceostk_1_1math_1_1geometry_1_1d2_1_1objects_af45d2fa16152f0427f22fd56652812d6}{Polygon2d}} $>$ \&a\+Polygon\+Array=Array$<$ \mbox{\hyperlink{namespaceostk_1_1math_1_1geometry_1_1d2_1_1objects_af45d2fa16152f0427f22fd56652812d6}{Polygon2d}} $>$\+::Empty())
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_afe692e2335f70530cad02ffe539c5967}{Multi\+Polygon}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} \&a\+Multi\+Polygon)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_aaa73e7ce22fc1e2cffa91c8dc6113011}{$\sim$\+Multi\+Polygon}} () override
+\begin{DoxyCompactList}\small\item\em Destructor (virtual) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a3ad906032b5b888655783561c5378f6a}{operator=}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} \&a\+Multi\+Polygon)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} $\ast$ \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a8fee3f3e85461c1cbc4b03892046b0a7}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clone multi-\/polygon. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_ac7241483e6fbafb78237943cbd2217b3}{operator==}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} \&a\+Multi\+Polygon) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_acb17e09d74776a9cda2219470ddea812}{operator!=}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} \&a\+Multi\+Polygon) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_aaa9ba811bca56d54a0179b2b6206c3ef}{is\+Defined}} () const override
+\begin{DoxyCompactList}\small\item\em Check if multi-\/polygon is defined. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_ab31a5a499aafe3dd36e973343a032926}{contains}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if multi-\/polygon contains point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_abcd498c7e73d8ee12172c6943b716ef4}{contains}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_point_set}{Point\+Set}} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if multi-\/polygon contains point set. \end{DoxyCompactList}\item 
+Size \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_aa285884bcbe6bee0b5f3b131c1f8eb85}{get\+Polygon\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get number of polygons. \end{DoxyCompactList}\item 
+Array$<$ \mbox{\hyperlink{namespaceostk_1_1math_1_1geometry_1_1d2_1_1objects_af45d2fa16152f0427f22fd56652812d6}{Polygon2d}} $>$ \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a8c7e702b1be34a382e831b6dca9bfa37}{get\+Polygons}} () const
+\begin{DoxyCompactList}\small\item\em Get polygons. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceostk_1_1math_1_1geometry_1_1d2_1_1objects_af45d2fa16152f0427f22fd56652812d6}{Polygon2d}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a86d6408efe154f420d03671e691a4270}{get\+Convex\+Hull}} () const
+\begin{DoxyCompactList}\small\item\em Get multi-\/polygon convex hull. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a9a07926ae18a114eb839be96d4e64b03}{union\+With}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} \&a\+Multi\+Polygon) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of multi-\/polygon with multi-\/polygon. \end{DoxyCompactList}\item 
+virtual String \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a1873b7bc67ec7927364bfd50103a2120}{to\+String}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_af00c412326684ba5360cf16b5e752ef8}{Object\+::\+Format}} \&a\+Format=\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_af00c412326684ba5360cf16b5e752ef8aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}, const Integer \&a\+Precision=Integer\+::\+Undefined()) const override
+\begin{DoxyCompactList}\small\item\em Get string representation. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a503bb37fac1c878ad74fb28bf6bc776a}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print multi-\/polygon. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a3b41efbfe9f1d3c9c8628898d2be0fe8}{Multi\+Polygon\+::\+Const\+Iterator}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a05b5943192b2f649d61c8a9812b7618f}{begin}} () const
+\begin{DoxyCompactList}\small\item\em Get begin const iterator over polygons. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a3b41efbfe9f1d3c9c8628898d2be0fe8}{Multi\+Polygon\+::\+Const\+Iterator}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a24f1c59364a6724601ba5d5780f70d36}{end}} () const
+\begin{DoxyCompactList}\small\item\em Get end const iterator over polygons. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a04eee7748707e39cad8cc2f3bd8ac8e7}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_transformation}{Transformation}} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to multi-\/polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_ad2a240de40ca67516f4d7c6056909cff}{Undefined}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined multi-\/polygon. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a91bcb806a61e2206f9ddd4cf2392aa87}{Polygon}} (const \mbox{\hyperlink{namespaceostk_1_1math_1_1geometry_1_1d2_1_1objects_af45d2fa16152f0427f22fd56652812d6}{Polygon2d}} \&a\+Polygon)
+\begin{DoxyCompactList}\small\item\em Constructs a multi-\/polygon from a polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Multi-\/polygon. 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a3b41efbfe9f1d3c9c8628898d2be0fe8}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a3b41efbfe9f1d3c9c8628898d2be0fe8}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!ConstIterator@{ConstIterator}}
+\index{ConstIterator@{ConstIterator}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{ConstIterator}{ConstIterator}}
+{\footnotesize\ttfamily typedef Array$<$\mbox{\hyperlink{namespaceostk_1_1math_1_1geometry_1_1d2_1_1objects_af45d2fa16152f0427f22fd56652812d6}{Polygon2d}}$>$\+::\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a3b41efbfe9f1d3c9c8628898d2be0fe8}{Const\+Iterator}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a3b41efbfe9f1d3c9c8628898d2be0fe8}{ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::\+Const\+Iterator}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a8bd5c0a22bb9c1fd62c9f8d7c15ba0e4}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a8bd5c0a22bb9c1fd62c9f8d7c15ba0e4}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!MultiPolygon@{MultiPolygon}}
+\index{MultiPolygon@{MultiPolygon}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{MultiPolygon()}{MultiPolygon()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::\+Multi\+Polygon (\begin{DoxyParamCaption}\item[{const Array$<$ \mbox{\hyperlink{namespaceostk_1_1math_1_1geometry_1_1d2_1_1objects_af45d2fa16152f0427f22fd56652812d6}{Polygon2d}} $>$ \&}]{a\+Polygon\+Array = {\ttfamily Array$<$\mbox{\hyperlink{namespaceostk_1_1math_1_1geometry_1_1d2_1_1objects_af45d2fa16152f0427f22fd56652812d6}{Polygon2d}}$>$\+:\+:Empty()} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Polygon\+Array} & An array of polygons \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_afe692e2335f70530cad02ffe539c5967}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_afe692e2335f70530cad02ffe539c5967}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!MultiPolygon@{MultiPolygon}}
+\index{MultiPolygon@{MultiPolygon}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{MultiPolygon()}{MultiPolygon()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::\+Multi\+Polygon (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} \&}]{a\+Multi\+Polygon }\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Multi\+Polygon} & A multi-\/polygon \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_aaa73e7ce22fc1e2cffa91c8dc6113011}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_aaa73e7ce22fc1e2cffa91c8dc6113011}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!````~MultiPolygon@{$\sim$MultiPolygon}}
+\index{````~MultiPolygon@{$\sim$MultiPolygon}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{$\sim$MultiPolygon()}{~MultiPolygon()}}
+{\footnotesize\ttfamily ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::$\sim$\+Multi\+Polygon (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Destructor (virtual) 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a04eee7748707e39cad8cc2f3bd8ac8e7}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a04eee7748707e39cad8cc2f3bd8ac8e7}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!applyTransformation@{applyTransformation}}
+\index{applyTransformation@{applyTransformation}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{applyTransformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to multi-\/polygon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_a90c1cba0df42529b4de624597af64eda}{ostk\+::math\+::geometry\+::d2\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a05b5943192b2f649d61c8a9812b7618f}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a05b5943192b2f649d61c8a9812b7618f}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!begin@{begin}}
+\index{begin@{begin}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a3b41efbfe9f1d3c9c8628898d2be0fe8}{Multi\+Polygon\+::\+Const\+Iterator}} ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get begin const iterator over polygons. 
+
+\begin{DoxyReturn}{Returns}
+Const iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a8fee3f3e85461c1cbc4b03892046b0a7}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a8fee3f3e85461c1cbc4b03892046b0a7}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!clone@{clone}}
+\index{clone@{clone}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} $\ast$ ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone multi-\/polygon. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned multi-\/polygon 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_af477732bd8402975a9bc158deea130e5}{ostk\+::math\+::geometry\+::d2\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_ab31a5a499aafe3dd36e973343a032926}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_ab31a5a499aafe3dd36e973343a032926}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!contains@{contains}}
+\index{contains@{contains}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if multi-\/polygon contains point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a8bd5c0a22bb9c1fd62c9f8d7c15ba0e4}{MultiPolygon}} multiPolygon = ... ;}
+\DoxyCodeLine{Point point = ... ;}
+\DoxyCodeLine{multiPolygon.contains(point) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if multi-\/polygon contains point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_abcd498c7e73d8ee12172c6943b716ef4}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_abcd498c7e73d8ee12172c6943b716ef4}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!contains@{contains}}
+\index{contains@{contains}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_point_set}{Point\+Set}} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if multi-\/polygon contains point set. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a8bd5c0a22bb9c1fd62c9f8d7c15ba0e4}{MultiPolygon}} multiPolygon = ... ;}
+\DoxyCodeLine{PointSet pointSet = ... ;}
+\DoxyCodeLine{multiPolygon.contains(pointSet) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if multi-\/polygon contains point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a24f1c59364a6724601ba5d5780f70d36}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a24f1c59364a6724601ba5d5780f70d36}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!end@{end}}
+\index{end@{end}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a3b41efbfe9f1d3c9c8628898d2be0fe8}{Multi\+Polygon\+::\+Const\+Iterator}} ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get end const iterator over polygons. 
+
+\begin{DoxyReturn}{Returns}
+Const iterator 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a86d6408efe154f420d03671e691a4270}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a86d6408efe154f420d03671e691a4270}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!getConvexHull@{getConvexHull}}
+\index{getConvexHull@{getConvexHull}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{getConvexHull()}{getConvexHull()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceostk_1_1math_1_1geometry_1_1d2_1_1objects_af45d2fa16152f0427f22fd56652812d6}{Polygon2d}} ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::get\+Convex\+Hull (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get multi-\/polygon convex hull. 
+
+\begin{DoxyVerb}                https://en.wikipedia.org/wiki/Convex_hull
+\end{DoxyVerb}
+
+
+\begin{DoxyReturn}{Returns}
+Multi-\/polygon convex hull 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_aa285884bcbe6bee0b5f3b131c1f8eb85}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_aa285884bcbe6bee0b5f3b131c1f8eb85}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!getPolygonCount@{getPolygonCount}}
+\index{getPolygonCount@{getPolygonCount}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{getPolygonCount()}{getPolygonCount()}}
+{\footnotesize\ttfamily Size ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::get\+Polygon\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get number of polygons. 
+
+\begin{DoxyReturn}{Returns}
+Number of polygons 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a8c7e702b1be34a382e831b6dca9bfa37}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a8c7e702b1be34a382e831b6dca9bfa37}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!getPolygons@{getPolygons}}
+\index{getPolygons@{getPolygons}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{getPolygons()}{getPolygons()}}
+{\footnotesize\ttfamily Array$<$ \mbox{\hyperlink{namespaceostk_1_1math_1_1geometry_1_1d2_1_1objects_af45d2fa16152f0427f22fd56652812d6}{Polygon2d}} $>$ ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::get\+Polygons (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get polygons. 
+
+\begin{DoxyReturn}{Returns}
+Array of polygons 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_aaa9ba811bca56d54a0179b2b6206c3ef}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_aaa9ba811bca56d54a0179b2b6206c3ef}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!isDefined@{isDefined}}
+\index{isDefined@{isDefined}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if multi-\/polygon is defined. 
+
+\begin{DoxyReturn}{Returns}
+True if multi-\/polygon is defined 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_a4dfc9219551e567facf302d7d31a025a}{ostk\+::math\+::geometry\+::d2\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_acb17e09d74776a9cda2219470ddea812}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_acb17e09d74776a9cda2219470ddea812}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} \&}]{a\+Multi\+Polygon }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Multi\+Polygon} & A multi-\/polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if multi-\/polygons are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a3ad906032b5b888655783561c5378f6a}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a3ad906032b5b888655783561c5378f6a}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!operator=@{operator=}}
+\index{operator=@{operator=}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} \& ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} \&}]{a\+Multi\+Polygon }\end{DoxyParamCaption})}
+
+
+
+Copy assignment operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Multi\+Polygon} & A multi-\/polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to multi-\/polygon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_ac7241483e6fbafb78237943cbd2217b3}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_ac7241483e6fbafb78237943cbd2217b3}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} \&}]{a\+Multi\+Polygon }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Multi\+Polygon} & A multi-\/polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if multi-\/polygons are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a91bcb806a61e2206f9ddd4cf2392aa87}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a91bcb806a61e2206f9ddd4cf2392aa87}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!Polygon@{Polygon}}
+\index{Polygon@{Polygon}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{Polygon()}{Polygon()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::\+Polygon (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceostk_1_1math_1_1geometry_1_1d2_1_1objects_af45d2fa16152f0427f22fd56652812d6}{Polygon2d}} \&}]{a\+Polygon }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a multi-\/polygon from a polygon. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a8bd5c0a22bb9c1fd62c9f8d7c15ba0e4}{MultiPolygon}} multiPolygon = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a91bcb806a61e2206f9ddd4cf2392aa87}{MultiPolygon::Polygon}}(polygon) ;}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Multi-\/polygon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a503bb37fac1c878ad74fb28bf6bc776a}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a503bb37fac1c878ad74fb28bf6bc776a}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!print@{print}}
+\index{print@{print}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print multi-\/polygon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_a6520181b4e69e34676e679ce99310228}{ostk\+::math\+::geometry\+::d2\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a1873b7bc67ec7927364bfd50103a2120}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a1873b7bc67ec7927364bfd50103a2120}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!toString@{toString}}
+\index{toString@{toString}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily String ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::to\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_af00c412326684ba5360cf16b5e752ef8}{Object\+::\+Format}} \&}]{a\+Format = {\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_af00c412326684ba5360cf16b5e752ef8aeb6d8ae6f20283755b339c0dc273988b}{Object\+::\+Format\+::\+Standard}}},  }\item[{const Integer \&}]{a\+Precision = {\ttfamily Integer\+:\+:Undefined()} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get string representation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Format} & A format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1_object_a28b7c8e8118267e3b69f9e3ff7dc020a}{ostk\+::math\+::geometry\+::d2\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_ad2a240de40ca67516f4d7c6056909cff}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_ad2a240de40ca67516f4d7c6056909cff}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined multi-\/polygon. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a8bd5c0a22bb9c1fd62c9f8d7c15ba0e4}{MultiPolygon}} multiPolygon = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_ad2a240de40ca67516f4d7c6056909cff}{MultiPolygon::Undefined}}() ; \textcolor{comment}{// Undefined}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined multi-\/polygon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a9a07926ae18a114eb839be96d4e64b03}\label{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon_a9a07926ae18a114eb839be96d4e64b03}} 
+\index{ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}!unionWith@{unionWith}}
+\index{unionWith@{unionWith}!ostk::math::geometry::d2::objects::MultiPolygon@{ostk::math::geometry::d2::objects::MultiPolygon}}
+\doxysubsubsection{\texorpdfstring{unionWith()}{unionWith()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} ostk\+::math\+::geometry\+::d2\+::objects\+::\+Multi\+Polygon\+::union\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon}{Multi\+Polygon}} \&}]{a\+Multi\+Polygon }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of multi-\/polygon with multi-\/polygon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Multi\+Polygon} & A multi-\/polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A multi-\/polygon 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/2\+D/\+Objects/\mbox{\hyperlink{_multi_polygon_8hpp}{Multi\+Polygon.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/2\+D/\+Objects/\mbox{\hyperlink{_multi_polygon_8cpp}{Multi\+Polygon.\+cpp}}\end{DoxyCompactItemize}
