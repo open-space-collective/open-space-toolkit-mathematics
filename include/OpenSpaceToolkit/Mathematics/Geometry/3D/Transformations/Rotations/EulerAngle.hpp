@@ -11,13 +11,13 @@ namespace geometry
 {
 namespace d3
 {
-namespace transformation
+namespace transformations
 {
-namespace rotation
+namespace rotations
 {
 
 }
-}  // namespace transformation
+}  // namespace transformations
 }  // namespace d3
 }  // namespace geometry
 }  // namespace math

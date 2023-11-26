@@ -17,9 +17,9 @@ namespace geometry
 {
 namespace d3
 {
-namespace transformation
+namespace transformations
 {
-namespace rotation
+namespace rotations
 {
 
 using ostk::core::types::Real;
@@ -178,7 +178,7 @@ class RotationVector
     /// @param              [in] aQuaternion A quaternion
     /// @return             Rotation vector
 
-    static RotationVector Quaternion(const rot::Quaternion& aQuaternion);
+    static RotationVector Quaternion(const rotations::Quaternion& aQuaternion);
 
     /// @brief              Constructs a rotation vector from a rotation matrix
     ///
@@ -189,7 +189,7 @@ class RotationVector
     /// @param              [in] aRotationMatrix A rotation matrix
     /// @return             Rotation vector
 
-    static RotationVector RotationMatrix(const rot::RotationMatrix& aRotationMatrix);
+    static RotationVector RotationMatrix(const rotations::RotationMatrix& aRotationMatrix);
 
    private:
     Vector3d axis_;
@@ -198,8 +198,8 @@ class RotationVector
     RotationVector();
 };
 
-}  // namespace rotation
-}  // namespace transformation
+}  // namespace rotations
+}  // namespace transformations
 }  // namespace d3
 }  // namespace geometry
 }  // namespace math
