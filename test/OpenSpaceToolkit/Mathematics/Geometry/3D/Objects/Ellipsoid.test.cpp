@@ -16,7 +16,7 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, Constructor)
 {
-    using ostk::math::geometry::d3::trf::rot::Quaternion;
+    using ostk::math::geometry::d3::transformations::rotations::Quaternion;
     using ostk::math::geometry::d3::objects::Ellipsoid;
 
     {
@@ -42,8 +42,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, EqualToOperator
 {
     using ostk::math::geometry::Angle;
     using ostk::math::geometry::d3::objects::Ellipsoid;
-    using ostk::math::geometry::d3::trf::rot::Quaternion;
-    using ostk::math::geometry::d3::trf::rot::RotationVector;
+    using ostk::math::geometry::d3::transformations::rotations::Quaternion;
+    using ostk::math::geometry::d3::transformations::rotations::RotationVector;
 
     {
         ASSERT_TRUE(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0) == Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0));
@@ -88,8 +88,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, NotEqualToOpera
 {
     using ostk::math::geometry::Angle;
     using ostk::math::geometry::d3::objects::Ellipsoid;
-    using ostk::math::geometry::d3::trf::rot::Quaternion;
-    using ostk::math::geometry::d3::trf::rot::RotationVector;
+    using ostk::math::geometry::d3::transformations::rotations::Quaternion;
+    using ostk::math::geometry::d3::transformations::rotations::RotationVector;
 
     {
         ASSERT_TRUE(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0) != Ellipsoid({1.0, 2.0, 4.0}, 4.0, 5.0, 6.0));
@@ -842,8 +842,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, GetFirstAxis)
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::Angle;
     using ostk::math::geometry::d3::objects::Ellipsoid;
-    using ostk::math::geometry::d3::trf::rot::Quaternion;
-    using ostk::math::geometry::d3::trf::rot::RotationVector;
+    using ostk::math::geometry::d3::transformations::rotations::Quaternion;
+    using ostk::math::geometry::d3::transformations::rotations::RotationVector;
 
     {
         ASSERT_EQ(Vector3d(1.0, 0.0, 0.0), Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).getFirstAxis());
@@ -871,8 +871,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, GetSecondAxis)
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::Angle;
     using ostk::math::geometry::d3::objects::Ellipsoid;
-    using ostk::math::geometry::d3::trf::rot::Quaternion;
-    using ostk::math::geometry::d3::trf::rot::RotationVector;
+    using ostk::math::geometry::d3::transformations::rotations::Quaternion;
+    using ostk::math::geometry::d3::transformations::rotations::RotationVector;
 
     {
         ASSERT_EQ(Vector3d(0.0, 1.0, 0.0), Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).getSecondAxis());
@@ -900,8 +900,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, GetThirdAxis)
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::Angle;
     using ostk::math::geometry::d3::objects::Ellipsoid;
-    using ostk::math::geometry::d3::trf::rot::Quaternion;
-    using ostk::math::geometry::d3::trf::rot::RotationVector;
+    using ostk::math::geometry::d3::transformations::rotations::Quaternion;
+    using ostk::math::geometry::d3::transformations::rotations::RotationVector;
 
     {
         ASSERT_EQ(Vector3d(0.0, 0.0, 1.0), Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).getThirdAxis());
@@ -924,7 +924,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, GetThirdAxis)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, GetOrientation)
 {
-    using ostk::math::geometry::d3::trf::rot::Quaternion;
+    using ostk::math::geometry::d3::transformations::rotations::Quaternion;
     using ostk::math::geometry::d3::objects::Ellipsoid;
 
     {
@@ -950,9 +950,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, GetMatrix)
     using ostk::math::object::Matrix3d;
     using ostk::math::geometry::Angle;
     using ostk::math::geometry::d3::objects::Ellipsoid;
-    using ostk::math::geometry::d3::trf::rot::Quaternion;
-    using ostk::math::geometry::d3::trf::rot::RotationVector;
-    using ostk::math::geometry::d3::trf::rot::RotationMatrix;
+    using ostk::math::geometry::d3::transformations::rotations::Quaternion;
+    using ostk::math::geometry::d3::transformations::rotations::RotationVector;
+    using ostk::math::geometry::d3::transformations::rotations::RotationMatrix;
 
     {
         Matrix3d referenceEllipsoidMatrix;
@@ -1561,8 +1561,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, ApplyTransforma
     using ostk::math::geometry::Angle;
     using ostk::math::geometry::d3::objects::Ellipsoid;
     using ostk::math::geometry::d3::Transformation;
-    using ostk::math::geometry::d3::trf::rot::Quaternion;
-    using ostk::math::geometry::d3::trf::rot::RotationVector;
+    using ostk::math::geometry::d3::transformations::rotations::Quaternion;
+    using ostk::math::geometry::d3::transformations::rotations::RotationVector;
 
     // Translation
 

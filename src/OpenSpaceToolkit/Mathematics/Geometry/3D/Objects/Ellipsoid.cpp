@@ -914,7 +914,7 @@ void Ellipsoid::print(std::ostream& anOutputStream, bool displayDecorators) cons
 
 void Ellipsoid::applyTransformation(const Transformation& aTransformation)
 {
-    using ostk::math::geometry::d3::trf::rot::RotationMatrix;
+    using ostk::math::geometry::d3::transformations::rotations::RotationMatrix;
 
     if (!aTransformation.isDefined())
     {

@@ -15,9 +15,9 @@ namespace geometry
 {
 namespace d3
 {
-namespace trf
+namespace transformation
 {
-namespace rot
+namespace rotation
 {
 
 RotationVector::RotationVector(const Vector3d& anAxis, const Angle& anAngle)
@@ -195,8 +195,8 @@ RotationVector::RotationVector()
 {
 }
 
-}  // namespace rot
-}  // namespace trf
+}  // namespace rotation
+}  // namespace transformation
 }  // namespace d3
 }  // namespace geometry
 }  // namespace math

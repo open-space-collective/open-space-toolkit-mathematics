@@ -44,7 +44,7 @@ def test_geometry_d2_transformation_type():
 def test_geometry_d2_transformation_constructor():
     # Construction using python matrix
     M = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
-    transformation: Transformation = Transformation(M)
+    transformations: Transformation = Transformation(M)
 
     assert transformation is not None
     assert isinstance(transformation, Transformation)
@@ -52,7 +52,7 @@ def test_geometry_d2_transformation_constructor():
 
     # Construction using python numpy array
     M = np.array(M)
-    transformation: Transformation = Transformation(M)
+    transformations: Transformation = Transformation(M)
 
     assert transformation is not None
     assert isinstance(transformation, Transformation)
@@ -62,11 +62,11 @@ def test_geometry_d2_transformation_constructor():
 def test_geometry_d2_transformation_comparators():
     M1 = [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]]
 
-    transformation: Transformation = Transformation(M1)
+    transformations: Transformation = Transformation(M1)
 
 
 def test_geometry_d2_transformation_defined():
-    transformation: Transformation = Transformation.undefined()
+    transformations: Transformation = Transformation.undefined()
 
     assert transformation is not None
     assert isinstance(transformation, Transformation)

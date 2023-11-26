@@ -21,7 +21,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cuboid(pybind11::m
     using ostk::math::geometry::d3::objects::Cuboid;
     using ostk::math::geometry::d3::objects::Pyramid;
     using ostk::math::geometry::d3::Intersection;
-    using ostk::math::geometry::d3::trf::rot::Quaternion;
+    using ostk::math::geometry::d3::transformations::rotations::Quaternion;
 
     //     scope in_Cuboid = class_<Cuboid, Shared<Cuboid>, bases<Object>>("Cuboid", no_init)
     class_<Cuboid, Object>(aModule, "Cuboid")

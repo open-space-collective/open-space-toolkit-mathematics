@@ -15,9 +15,9 @@ namespace geometry
 {
 namespace d3
 {
-namespace trf
+namespace transformation
 {
-namespace rot
+namespace rotation
 {
 
 Quaternion::Quaternion(
@@ -654,8 +654,8 @@ Quaternion Quaternion::SLERP(
     return (aFirstQuaternion * ((aFirstQuaternion.toInverse() * (-1.0) * aSecondQuaternion) ^ aRatio)).toNormalized();
 }
 
-}  // namespace rot
-}  // namespace trf
+}  // namespace rotation
+}  // namespace transformation
 }  // namespace d3
 }  // namespace geometry
 }  // namespace math

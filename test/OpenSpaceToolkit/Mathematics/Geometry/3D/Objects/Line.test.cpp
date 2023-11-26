@@ -433,7 +433,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Line, ApplyTransformation)
     using ostk::math::geometry::Angle;
     using ostk::math::geometry::d3::objects::Line;
     using ostk::math::geometry::d3::Transformation;
-    using ostk::math::geometry::d3::trf::rot::RotationVector;
+    using ostk::math::geometry::d3::transformations::rotations::RotationVector;
 
     // Translation
 

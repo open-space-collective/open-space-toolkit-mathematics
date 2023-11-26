@@ -17,9 +17,9 @@ namespace geometry
 {
 namespace d3
 {
-namespace trf
+namespace transformation
 {
-namespace rot
+namespace rotation
 {
 
 using ostk::core::types::Real;
@@ -198,8 +198,8 @@ class RotationVector
     RotationVector();
 };
 
-}  // namespace rot
-}  // namespace trf
+}  // namespace rotation
+}  // namespace transformation
 }  // namespace d3
 }  // namespace geometry
 }  // namespace math
