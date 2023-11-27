@@ -8,9 +8,9 @@ from ostk.mathematics import geometry
 
 
 Angle = geometry.Angle
-Quaternion = geometry.d3.transformations.rotations.Quaternion
-RotationVector = geometry.d3.transformations.rotations.RotationVector
-RotationMatrix = geometry.d3.transformations.rotations.RotationMatrix
+Quaternion = geometry.d3.transformation.rotation.Quaternion
+RotationVector = geometry.d3.transformation.rotation.RotationVector
+RotationMatrix = geometry.d3.transformation.rotation.RotationMatrix
 
 
 @pytest.fixture

@@ -32,8 +32,8 @@ using ostk::math::object::Matrix4d;
 using ostk::math::geometry::Angle;
 using ostk::math::geometry::d3::Object;
 using ostk::math::geometry::d3::objects::Point;
-using ostk::math::geometry::d3::transformations::rotations::RotationVector;
-using ostk::math::geometry::d3::transformations::rotations::RotationMatrix;
+using ostk::math::geometry::d3::transformation::rotation::RotationVector;
+using ostk::math::geometry::d3::transformation::rotation::RotationMatrix;
 
 class Transformation
 {
@@ -77,7 +77,7 @@ class Transformation
     /// @brief              Returns true if transformation is rigid
     ///
     ///                     A rigid transformation preserves the Euclidean distance between every pair of points.
-    ///                     The rigid transformations include rotations, translations, reflections, or their
+    ///                     The rigid transformation include rotation, translations, reflections, or their
     ///                     combination.
     ///
     /// @ref                https://en.wikipedia.org/wiki/Rigid_transformation

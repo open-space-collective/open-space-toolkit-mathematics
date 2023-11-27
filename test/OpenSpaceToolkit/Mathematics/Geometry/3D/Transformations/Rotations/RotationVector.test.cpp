@@ -7,8 +7,8 @@
 #include <Global.test.hpp>
 
 using ostk::math::geometry::Angle;
-using ostk::math::geometry::d3::transformations::rotations::Quaternion;
-using ostk::math::geometry::d3::transformations::rotations::RotationVector;
+using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+using ostk::math::geometry::d3::transformation::rotation::RotationVector;
 using ostk::math::object::Vector3d;
 using ostk::core::types::Real;
 

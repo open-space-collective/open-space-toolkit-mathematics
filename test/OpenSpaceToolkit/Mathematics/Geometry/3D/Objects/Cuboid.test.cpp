@@ -1001,8 +1001,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cuboid, ApplyTransformatio
     using ostk::math::geometry::d3::objects::Point;
     using ostk::math::geometry::d3::objects::Cuboid;
     using ostk::math::geometry::d3::Transformation;
-    using ostk::math::geometry::d3::transformations::rotations::Quaternion;
-    using ostk::math::geometry::d3::transformations::rotations::RotationVector;
+    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::math::geometry::d3::transformation::rotation::RotationVector;
 
     // Translation
 

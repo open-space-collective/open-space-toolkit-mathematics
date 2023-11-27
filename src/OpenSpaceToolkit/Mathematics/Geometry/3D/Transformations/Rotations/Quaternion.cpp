@@ -15,9 +15,9 @@ namespace geometry
 {
 namespace d3
 {
-namespace transformations
+namespace transformation
 {
-namespace rotations
+namespace rotation
 {
 
 Quaternion::Quaternion(
@@ -496,7 +496,7 @@ Quaternion Quaternion::XYZS(
     return {aFirstComponent, aSecondComponent, aThirdComponent, aFourthComponent, Quaternion::Format::XYZS};
 }
 
-Quaternion Quaternion::RotationVector(const rotations::RotationVector& aRotationVector)
+Quaternion Quaternion::RotationVector(const rotation::RotationVector& aRotationVector)
 {
     /// @ref Markley F. L.: Fundamentals of Spacecraft Attitude Determination and Control, 45
 
@@ -508,7 +508,7 @@ Quaternion Quaternion::RotationVector(const rotations::RotationVector& aRotation
     return Quaternion(vectorPart, scalarPart).normalize();
 }
 
-Quaternion Quaternion::RotationMatrix(const rotations::RotationMatrix& aRotationMatrix)
+Quaternion Quaternion::RotationMatrix(const rotation::RotationMatrix& aRotationMatrix)
 {
     /// @ref Markley F. L.: Fundamentals of Spacecraft Attitude Determination and Control, 48
     /// @note Should we use this method instead?
@@ -654,8 +654,8 @@ Quaternion Quaternion::SLERP(
     return (aFirstQuaternion * ((aFirstQuaternion.toInverse() * (-1.0) * aSecondQuaternion) ^ aRatio)).toNormalized();
 }
 
-}  // namespace rotations
-}  // namespace transformations
+}  // namespace rotation
+}  // namespace transformation
 }  // namespace d3
 }  // namespace geometry
 }  // namespace math

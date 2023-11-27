@@ -452,7 +452,7 @@ void Cuboid::print(std::ostream& anOutputStream, bool displayDecorators) const
 
 void Cuboid::applyTransformation(const Transformation& aTransformation)
 {
-    using ostk::math::geometry::d3::transformations::rotations::RotationMatrix;
+    using ostk::math::geometry::d3::transformation::rotation::RotationMatrix;
 
     if (!aTransformation.isDefined())
     {

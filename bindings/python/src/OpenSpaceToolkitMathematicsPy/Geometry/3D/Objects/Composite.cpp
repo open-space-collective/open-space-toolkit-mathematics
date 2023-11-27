@@ -28,7 +28,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Composite(pybind11
     using ostk::math::geometry::d3::objects::Pyramid;
     using ostk::math::geometry::d3::objects::Composite;
     using ostk::math::geometry::d3::Intersection;
-    using ostk::math::geometry::d3::transformations::rotations::Quaternion;
+    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
 
     class_<Composite, Object>(aModule, "Composite")
 

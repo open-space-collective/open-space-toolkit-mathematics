@@ -36,8 +36,8 @@ Once the shell is up and running, playing with it is easy:
 ```py
 import numpy
 from ostk.mathematics.geometry import Angle
-from ostk.mathematics.geometry.d3.transformations.rotations import Quaternion
-from ostk.mathematics.geometry.d3.transformations.rotations import RotationVector
+from ostk.mathematics.geometry.d3.transformation.rotation import Quaternion
+from ostk.mathematics.geometry.d3.transformation.rotation import RotationVector
 
 rv = RotationVector(numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.degrees(15.0)) # Construct rotation vector
 

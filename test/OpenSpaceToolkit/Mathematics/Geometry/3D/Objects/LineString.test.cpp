@@ -292,7 +292,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, ApplyTransform
     using ostk::math::geometry::d3::objects::Point;
     using ostk::math::geometry::d3::objects::LineString;
     using ostk::math::geometry::d3::Transformation;
-    using ostk::math::geometry::d3::transformations::rotations::RotationVector;
+    using ostk::math::geometry::d3::transformation::rotation::RotationVector;
 
     // Translation
 

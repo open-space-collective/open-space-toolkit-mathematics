@@ -15,7 +15,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d3::transformations::rotations::RotationVector;
+    using ostk::math::geometry::d3::transformation::rotation::RotationVector;
 
     class_<RotationVector>(aModule, "RotationVector")
 
