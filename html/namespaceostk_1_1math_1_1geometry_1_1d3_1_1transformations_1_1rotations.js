@@ -1,6 +1,0 @@
-var namespaceostk_1_1math_1_1geometry_1_1d3_1_1transformations_1_1rotations =
-[
-    [ "Quaternion", "classostk_1_1math_1_1geometry_1_1d3_1_1transformations_1_1rotations_1_1_quaternion.html", "classostk_1_1math_1_1geometry_1_1d3_1_1transformations_1_1rotations_1_1_quaternion" ],
-    [ "RotationMatrix", "classostk_1_1math_1_1geometry_1_1d3_1_1transformations_1_1rotations_1_1_rotation_matrix.html", "classostk_1_1math_1_1geometry_1_1d3_1_1transformations_1_1rotations_1_1_rotation_matrix" ],
-    [ "RotationVector", "classostk_1_1math_1_1geometry_1_1d3_1_1transformations_1_1rotations_1_1_rotation_vector.html", "classostk_1_1math_1_1geometry_1_1d3_1_1transformations_1_1rotations_1_1_rotation_vector" ]
-];

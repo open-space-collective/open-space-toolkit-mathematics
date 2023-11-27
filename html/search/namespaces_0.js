@@ -9,7 +9,7 @@ var searchData=
   ['object_428',['object',['../namespaceostk_1_1math_1_1object.html',1,'ostk::math']]],
   ['objects_429',['objects',['../namespaceostk_1_1math_1_1geometry_1_1d2_1_1objects.html',1,'ostk::math::geometry::d2::objects'],['../namespaceostk_1_1math_1_1geometry_1_1d3_1_1objects.html',1,'ostk::math::geometry::d3::objects']]],
   ['ostk_430',['ostk',['../namespaceostk.html',1,'']]],
-  ['rotations_431',['rotations',['../namespaceostk_1_1math_1_1geometry_1_1d3_1_1transformations_1_1rotations.html',1,'ostk::math::geometry::d3::transformations']]],
+  ['rotation_431',['rotation',['../namespaceostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation.html',1,'ostk::math::geometry::d3::transformation']]],
   ['solvers_432',['solvers',['../namespaceostk_1_1math_1_1solvers.html',1,'ostk::math']]],
-  ['transformations_433',['transformations',['../namespaceostk_1_1math_1_1geometry_1_1d3_1_1transformations.html',1,'ostk::math::geometry::d3']]]
+  ['transformation_433',['transformation',['../namespaceostk_1_1math_1_1geometry_1_1d3_1_1transformation.html',1,'ostk::math::geometry::d3']]]
 ];

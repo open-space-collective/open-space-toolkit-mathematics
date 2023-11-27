@@ -1,5 +1,5 @@
 var _quaternion_8cpp =
 [
-    [ "operator*", "_quaternion_8cpp.html#aad72a854ed0b95e77a64dfdf2b7ed458", null ],
-    [ "operator<<", "_quaternion_8cpp.html#afbb24c4c776d7729c5b9a2e4c4973062", null ]
+    [ "operator*", "_quaternion_8cpp.html#a1bc3c64d80879b21cccc05958d777893", null ],
+    [ "operator<<", "_quaternion_8cpp.html#aa27a20870d1f45329df055e1dfc1214a", null ]
 ];

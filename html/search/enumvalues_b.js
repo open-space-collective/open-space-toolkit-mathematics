@@ -5,5 +5,5 @@ var searchData=
   ['shear_816',['Shear',['../classostk_1_1math_1_1geometry_1_1d2_1_1_transformation.html#af99da20a62bb516dbc3737c8432a06baa02414922b70cc0f9d7c841b0c70a0f94',1,'ostk::math::geometry::d2::Transformation::Shear()'],['../classostk_1_1math_1_1geometry_1_1d3_1_1_transformation.html#a728f480246c6435fc744f431dbbfbb1da02414922b70cc0f9d7c841b0c70a0f94',1,'ostk::math::geometry::d3::Transformation::Shear()']]],
   ['sphere_817',['Sphere',['../classostk_1_1math_1_1geometry_1_1d3_1_1_intersection.html#a8846dd419f7d0292a2ce1adf2b087d72ab7095f057db3fefa7325ad93a04e14fd',1,'ostk::math::geometry::d3::Intersection']]],
   ['standard_818',['Standard',['../classostk_1_1math_1_1geometry_1_1d2_1_1_object.html#af00c412326684ba5360cf16b5e752ef8aeb6d8ae6f20283755b339c0dc273988b',1,'ostk::math::geometry::d2::Object']]],
-  ['sxyz_819',['SXYZ',['../classostk_1_1math_1_1geometry_1_1d3_1_1transformations_1_1rotations_1_1_quaternion.html#ad4f605c57558ebd0ae3104171583c053abd514d63fd7944bc7d3718aeef3684be',1,'ostk::math::geometry::d3::transformations::rotations::Quaternion']]]
+  ['sxyz_819',['SXYZ',['../classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#a00851e8f438ace1c539b788f7b42069babd514d63fd7944bc7d3718aeef3684be',1,'ostk::math::geometry::d3::transformation::rotation::Quaternion']]]
 ];

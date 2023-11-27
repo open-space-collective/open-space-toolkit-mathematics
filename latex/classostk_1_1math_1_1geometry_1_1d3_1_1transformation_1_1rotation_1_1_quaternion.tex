@@ -1,0 +1,1366 @@
+\hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{}\doxysection{ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::Quaternion Class Reference}
+\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+
+
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}}.  
+
+
+
+
+{\ttfamily \#include $<$Quaternion.\+hpp$>$}
+
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}{Format}} \{ \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069ba11c51ecd5dc6f86ba3c1ae79e21482f5}{Format\+::\+X\+Y\+ZS}}, 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069babd514d63fd7944bc7d3718aeef3684be}{Format\+::\+S\+X\+YZ}}
+ \}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} (const Real \&a\+First\+Component, const Real \&a\+Second\+Component, const Real \&a\+Third\+Component, const Real \&a\+Fourth\+Component, const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}{Quaternion\+::\+Format}} \&a\+Format)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a83974d71b61defb95f4e6f91d269f151}{Quaternion}} (const Vector4d \&a\+Vector, const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}{Quaternion\+::\+Format}} \&a\+Format)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ae1a8c1d2f012650b8de69f2c80f3f4c4}{Quaternion}} (const Vector3d \&a\+Vector\+Part, const Real \&a\+Scalar\+Part)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a8a12b48467b81673a0d7f42cce1cbcaa}{operator==}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a22ddf005db9dfb94f2c7612c3d65c3ea}{operator!=}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_aafffb896ce2ae7cfa2b3e36b49b29a1d}{operator$\ast$}} (const Vector3d \&a\+Vector) const
+\begin{DoxyCompactList}\small\item\em Addition operator (quaternion) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a8515ce622e9730dcf3eb5a527207510e}{operator$\ast$}} (const Real \&a\+Scalar) const
+\begin{DoxyCompactList}\small\item\em Multiplication operator (scalar) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a3abdcbeceb9ebc880a793a23d615b4dc}{operator/}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion) const
+\begin{DoxyCompactList}\small\item\em Division operator (quaternion) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab25803959485d06cf74611fd540c7408}{operator$^\wedge$}} (const Real \&a\+Scalar) const
+\begin{DoxyCompactList}\small\item\em Power operator (quaternion) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a28882a77f55c65ac011bfa90cc9a9583}{operator+=}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion)
+\begin{DoxyCompactList}\small\item\em Addition assignment operator (quaternion) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_aa5cb7c426a43eeeb62d717521d83d99b}{operator$\ast$=}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion)
+\begin{DoxyCompactList}\small\item\em Multiplication assignment operator (quaternion) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ae9943b7f3953346ba20530331df1dc14}{operator/=}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion)
+\begin{DoxyCompactList}\small\item\em Division assignment operator (quaternion) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_acb1348bb1cb97508369aa2c40cf95db9}{is\+Defined}} () const
+\begin{DoxyCompactList}\small\item\em Check if quaternion is defined. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a1c34178364ca7013c46b51de2001ac84}{is\+Unitary}} () const
+\begin{DoxyCompactList}\small\item\em Check if quaternion is unitary, i.\+e. its norm is equal to 1.\+0. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_abb081acef9ac53c508e89a0e129c7cca}{is\+Near}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion, const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&an\+Angular\+Tolerance) const
+\begin{DoxyCompactList}\small\item\em Check if quaternion is near a given quaternion. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a2cf248edddcae7bf8097e3d7895e8b50}{x}} () const
+\begin{DoxyCompactList}\small\item\em Get first component of vector part. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_abfabd6c2e2510f3859ab627cc309dcd5}{y}} () const
+\begin{DoxyCompactList}\small\item\em Get second component of vector part. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a3b67f5ac564ab636f639ef463f46448b}{z}} () const
+\begin{DoxyCompactList}\small\item\em Get third component of vector part. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab5aece5c7dc92236bde8ce4a8090056b}{s}} () const
+\item 
+Vector3d \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a5588785c1ec5318407cc94f02a42ff8b}{get\+Vector\+Part}} () const
+\begin{DoxyCompactList}\small\item\em Get vector part. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a2a7ca176ae6dd472528c800b95ea782b}{get\+Scalar\+Part}} () const
+\begin{DoxyCompactList}\small\item\em Get scalar part. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a75e8ba0c358cdbe056257bf97aba462a}{exp}} () const
+\begin{DoxyCompactList}\small\item\em Get normalized quaternion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a5385919bd93638b1bc894b306c5f7abf}{log}} () const
+\begin{DoxyCompactList}\small\item\em Get logarithm. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a1b601462f4c401ecc9591664fbe6920d}{pow}} (const Real \&a\+Value) const
+\begin{DoxyCompactList}\small\item\em Get power. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_accd3387bc2113df208783ee1d0957642}{cross\+Multiply}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion) const
+\begin{DoxyCompactList}\small\item\em Get quaternion norm. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afd53991e57073653b7af105b79d525d9}{dot\+Multiply}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion) const
+\begin{DoxyCompactList}\small\item\em Multiply quaternion using dot multiplication. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ac639edcfa9f81be8e48fc033d14c0d42}{dot\+Product}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion) const
+\begin{DoxyCompactList}\small\item\em Calculate quaternion dot product. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afbbc59b4d999130250c8f817c7288e60}{rotate\+Vector}} (const Vector3d \&a\+Vector) const
+\begin{DoxyCompactList}\small\item\em Rotate vector using quaternion. \end{DoxyCompactList}\item 
+Vector4d \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a8d533c09efdf2b17971778be9608206b}{to\+Vector}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}{Quaternion\+::\+Format}} \&a\+Format=\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069ba11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion\+::\+Format\+::\+X\+Y\+ZS}}) const
+\begin{DoxyCompactList}\small\item\em Convert quaternion to its vector representation. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a4b5a1b3d51a108ebc72d0f319dced9d2}{to\+String}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}{Quaternion\+::\+Format}} \&a\+Format) const
+\begin{DoxyCompactList}\small\item\em Convert quaternion to its string representation. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_adac0dec87ee3e99960a501324a320abe}{to\+String}} (const Integer \&a\+Precision=Integer\+::\+Undefined(), const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}{Quaternion\+::\+Format}} \&a\+Format=\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069ba11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion\+::\+Format\+::\+X\+Y\+ZS}}) const
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a6db7d29b102c1264e5003d6f0e1b1663}{normalize}} ()
+\begin{DoxyCompactList}\small\item\em Normalize quaternion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a1dbbcc4105c86e99df3e306533a1ed94}{conjugate}} ()
+\begin{DoxyCompactList}\small\item\em Conjugate quaternion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ac37b92590b2126c0f84b665659afae65}{inverse}} ()
+\begin{DoxyCompactList}\small\item\em Inverse quaternion. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a4c0e3fa9370736d92f8111a0ef80335d}{rectify}} ()
+\begin{DoxyCompactList}\small\item\em Rectify quaternion (enforce positive scalar part) \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a8033bb442994408291fdc082e6bba03a}{angular\+Difference\+With}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion) const
+\begin{DoxyCompactList}\small\item\em Get angular difference with quaternion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a0f54f681a7a50b972369cd2089138ff6}{Undefined}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined quaternion. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab7283c4170a8d563edba7ba6d4700b38}{Unit}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a unit quaternion. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{X\+Y\+ZS}} (const Real \&a\+First\+Component, const Real \&a\+Second\+Component, const Real \&a\+Third\+Component, const Real \&a\+Fourth\+Component)
+\begin{DoxyCompactList}\small\item\em Constructs a quaternion using the vector-\/scalar format. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_aba5bfdffc57cd1e3bdfe17f83accafee}{Rotation\+Vector}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{rotation\+::\+Rotation\+Vector}} \&a\+Rotation\+Vector)
+\begin{DoxyCompactList}\small\item\em Constructs a quaternion from a rotation vector. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ac0f0cc3322a2e4ff8a7ab12d76b38b64}{Rotation\+Matrix}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix}{rotation\+::\+Rotation\+Matrix}} \&a\+Rotation\+Matrix)
+\begin{DoxyCompactList}\small\item\em Constructs a rquaternion from a rotation matrix. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a81808d7a3d410eceba9934609609d729}{Parse}} (const String \&a\+String, const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}{Quaternion\+::\+Format}} \&a\+Format=\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069ba11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion\+::\+Format\+::\+X\+Y\+ZS}})
+\begin{DoxyCompactList}\small\item\em Constructs a quaternion from a string. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a6d1689f8a4be5ed1be13c89ca0cc544a}{Shortest\+Rotation}} (const Vector3d \&a\+First\+Vector, const Vector3d \&a\+Second\+Vector)
+\begin{DoxyCompactList}\small\item\em Constructs a quaternion describing the shortest rotation between two vectors. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab3c19de7cbcefbf80b1ffeffe4327866}{L\+E\+RP}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+First\+Quaternion, const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Second\+Quaternion, const Real \&a\+Ratio)
+\begin{DoxyCompactList}\small\item\em Linear interpolator method. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a017d48d58059358c4601c9d60bf8278a}{N\+L\+E\+RP}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+First\+Quaternion, const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Second\+Quaternion, const Real \&a\+Ratio)
+\begin{DoxyCompactList}\small\item\em Normalized linear interpolator method. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ad8028c367a6cf6bc29504341ffc309a3}{S\+L\+E\+RP}} (const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+First\+Quaternion, const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Second\+Quaternion, const Real \&a\+Ratio)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a2806bc2f5b9d299c075c51740cfa48ea}{operator$\ast$}} (const Real \&a\+Scalar, const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion)
+\begin{DoxyCompactList}\small\item\em Multiplication operator (scalar) \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab9414dc117f260055d0a1a565eb93708}{operator$<$$<$}} (std\+::ostream \&an\+Output\+Stream, const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion)
+\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}}. 
+
+\begin{DoxyVerb}                        Provide a convenient mathematical notation for representing orientations and rotation
+                        of objects in three dimensions. Compared to Euler angles they are simpler to compose and
+                        avoid the problem of gimbal lock. Compared to rotation matrices they are more compact,
+                        more numerically stable, and more efficient.
+\end{DoxyVerb}
+
+
+\href{https://en.wikipedia.org/wiki/Quaternion}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Quaternion}} \href{https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Quaternions\+\_\+and\+\_\+spatial\+\_\+rotation}} 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!Format@{Format}}
+\index{Format@{Format}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{Format}{Format}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}{ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::\+Format}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} format. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{XYZS@{XYZS}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!XYZS@{XYZS}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069ba11c51ecd5dc6f86ba3c1ae79e21482f5}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069ba11c51ecd5dc6f86ba3c1ae79e21482f5}} 
+X\+Y\+ZS&Vector-\/scalar format. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SXYZ@{SXYZ}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!SXYZ@{SXYZ}}}\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069babd514d63fd7944bc7d3718aeef3684be}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069babd514d63fd7944bc7d3718aeef3684be}} 
+S\+X\+YZ&Scalar-\/vector format. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+First\+Component,  }\item[{const Real \&}]{a\+Second\+Component,  }\item[{const Real \&}]{a\+Third\+Component,  }\item[{const Real \&}]{a\+Fourth\+Component,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}{Quaternion\+::\+Format}} \&}]{a\+Format }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} quaternion = \{ 0.0, 0.0, 0.0, 0.1, \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069ba11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion::Format::XYZS}} \} ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+First\+Component} & A first component \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Second\+Component} & A second component \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Third\+Component} & A third component \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Fourth\+Component} & A fourth component \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Format} & A quaternion format \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a83974d71b61defb95f4e6f91d269f151}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a83974d71b61defb95f4e6f91d269f151}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{const Vector4d \&}]{a\+Vector,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}{Quaternion\+::\+Format}} \&}]{a\+Format }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} quaternion = \{ \mbox{\hyperlink{namespaceostk_1_1math_1_1object_ab2af8b2204f9f7e586782f2ef0cbd351}{Vector4d}}(0.0, 0.0, 0.0, 0.1), \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069ba11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion::Format::XYZS}} \} ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Vector} & A 4D vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Format} & A quaternion format \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ae1a8c1d2f012650b8de69f2c80f3f4c4}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ae1a8c1d2f012650b8de69f2c80f3f4c4}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{Quaternion()}{Quaternion()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::\+Quaternion (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Vector\+Part,  }\item[{const Real \&}]{a\+Scalar\+Part }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} quaternion = \{ \mbox{\hyperlink{namespaceostk_1_1math_1_1object_af1e4ea23badc8f45931ae724e71b00f1}{Vector3d}}(0.0, 0.0, 0.0), 1.0 \} ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Vector\+Part} & A vector part \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Vector\+Part} & A scalar part \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a8033bb442994408291fdc082e6bba03a}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a8033bb442994408291fdc082e6bba03a}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!angularDifferenceWith@{angularDifferenceWith}}
+\index{angularDifferenceWith@{angularDifferenceWith}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{angularDifferenceWith()}{angularDifferenceWith()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::angular\+Difference\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption}) const}
+
+
+
+Get angular difference with quaternion. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0).\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a8033bb442994408291fdc082e6bba03a}{angularDifferenceWith}}(\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0,}
+\DoxyCodeLine{0.0, 1.0)) ; \textcolor{comment}{// 0.0 [rad]}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Angular difference 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a1dbbcc4105c86e99df3e306533a1ed94}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a1dbbcc4105c86e99df3e306533a1ed94}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!conjugate@{conjugate}}
+\index{conjugate@{conjugate}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{conjugate()}{conjugate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::conjugate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Conjugate quaternion. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.70710678118, 0.70710678118) ; \textcolor{comment}{// [0.0,}}
+\DoxyCodeLine{0.0, 0.70710678118, 0.70710678118] quaternion.conjugate() ; \textcolor{comment}{// [0.0, 0.0, -\/0.70710678118,}}
+\DoxyCodeLine{0.70710678118]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_accd3387bc2113df208783ee1d0957642}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_accd3387bc2113df208783ee1d0957642}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!crossMultiply@{crossMultiply}}
+\index{crossMultiply@{crossMultiply}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{crossMultiply()}{crossMultiply()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::cross\+Multiply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption}) const}
+
+
+
+Get quaternion norm. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, -\/0.70710678118, 0.70710678118).norm() ; \textcolor{comment}{// 1.0}}
+\DoxyCodeLine{    @encode}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @\textcolor{keywordflow}{return}             \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} norm}
+\DoxyCodeLine{}
+\DoxyCodeLine{Real norm() \textcolor{keyword}{const};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    @brief              Multiply quaternion \textcolor{keyword}{using} cross multiplication}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @code}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_1 = ...}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_2 = ...}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_3 = q\_1.crossMultiply(q\_2)}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afd53991e57073653b7af105b79d525d9}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afd53991e57073653b7af105b79d525d9}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!dotMultiply@{dotMultiply}}
+\index{dotMultiply@{dotMultiply}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{dotMultiply()}{dotMultiply()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::dot\+Multiply (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption}) const}
+
+
+
+Multiply quaternion using dot multiplication. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_1 = ...}
+\DoxyCodeLine{Quaternion q\_2 = ...}
+\DoxyCodeLine{Quaternion q\_3 = q\_1.dotMultiply(q\_2)}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ac639edcfa9f81be8e48fc033d14c0d42}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ac639edcfa9f81be8e48fc033d14c0d42}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!dotProduct@{dotProduct}}
+\index{dotProduct@{dotProduct}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{dotProduct()}{dotProduct()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::dot\+Product (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption}) const}
+
+
+
+Calculate quaternion dot product. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_1 = ...}
+\DoxyCodeLine{Quaternion q\_2 = ...}
+\DoxyCodeLine{Real q\_3 = q\_1.dotProduct(q\_2)}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a75e8ba0c358cdbe056257bf97aba462a}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a75e8ba0c358cdbe056257bf97aba462a}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!exp@{exp}}
+\index{exp@{exp}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{exp()}{exp()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::exp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get normalized quaternion. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.000000000000001).toNormalized() ; \textcolor{comment}{// [0.0, 0.0, 0.0, 1.0]}}
+\DoxyCodeLine{    @encode}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @\textcolor{keywordflow}{return}             Normalized quaternion}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} toNormalized() \textcolor{keyword}{const};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    @brief              Get \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a1dbbcc4105c86e99df3e306533a1ed94}{conjugate}} quaternion}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @code}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.70710678118, 0.70710678118).toConjugate() ; \textcolor{comment}{// [0.0, 0.0,}}
+\DoxyCodeLine{                        -\/0.70710678118, 0.70710678118]}
+\DoxyCodeLine{    @encode}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @\textcolor{keywordflow}{return}             Conjugate quaternion}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} toConjugate() \textcolor{keyword}{const};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    @brief              Get \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ac37b92590b2126c0f84b665659afae65}{inverse}} quaternion}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @code}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.70710678118, 0.70710678118).toInverse() ; \textcolor{comment}{// [0.0, 0.0,}}
+\DoxyCodeLine{                        -\/0.70710678118, 0.70710678118]}
+\DoxyCodeLine{    @encode}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @\textcolor{keywordflow}{return}             Inverse quaternion}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} toInverse() \textcolor{keyword}{const};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    @brief              Get exponential}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @code}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_1 = ...}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_2 = q\_1.exp() ;}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Exponential 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a2a7ca176ae6dd472528c800b95ea782b}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a2a7ca176ae6dd472528c800b95ea782b}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!getScalarPart@{getScalarPart}}
+\index{getScalarPart@{getScalarPart}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{getScalarPart()}{getScalarPart()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::get\+Scalar\+Part (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get scalar part. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).getScalarPart() ; \textcolor{comment}{// 1.0}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Scalar part 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a5588785c1ec5318407cc94f02a42ff8b}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a5588785c1ec5318407cc94f02a42ff8b}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!getVectorPart@{getVectorPart}}
+\index{getVectorPart@{getVectorPart}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{getVectorPart()}{getVectorPart()}}
+{\footnotesize\ttfamily Vector3d ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::get\+Vector\+Part (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get vector part. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).getVectorPart() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Vector part 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ac37b92590b2126c0f84b665659afae65}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ac37b92590b2126c0f84b665659afae65}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!inverse@{inverse}}
+\index{inverse@{inverse}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{inverse()}{inverse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::inverse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inverse quaternion. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.70710678118, 0.70710678118) ; \textcolor{comment}{// [0.0,}}
+\DoxyCodeLine{0.0, 0.70710678118, 0.70710678118] quaternion.inverse() ; \textcolor{comment}{// [0.0, 0.0, -\/0.70710678118,}}
+\DoxyCodeLine{0.70710678118]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_acb1348bb1cb97508369aa2c40cf95db9}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_acb1348bb1cb97508369aa2c40cf95db9}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!isDefined@{isDefined}}
+\index{isDefined@{isDefined}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if quaternion is defined. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0).\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_acb1348bb1cb97508369aa2c40cf95db9}{isDefined}}() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if quaternion is defined 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_abb081acef9ac53c508e89a0e129c7cca}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_abb081acef9ac53c508e89a0e129c7cca}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!isNear@{isNear}}
+\index{isNear@{isNear}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{isNear()}{isNear()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::is\+Near (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle}{Angle}} \&}]{an\+Angular\+Tolerance }\end{DoxyParamCaption}) const}
+
+
+
+Check if quaternion is near a given quaternion. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0).\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_abb081acef9ac53c508e89a0e129c7cca}{isNear}}(\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0 + 1e-\/19),}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a1f0486acd8d12fda53c733530df87f67}{Angle::Radians}}(1e-\/6)) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\mbox{\texttt{ in}}  & {\em an\+Angular\+Tolerance} & An angular tolerance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if quaternions are near each other 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a1c34178364ca7013c46b51de2001ac84}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a1c34178364ca7013c46b51de2001ac84}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!isUnitary@{isUnitary}}
+\index{isUnitary@{isUnitary}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{isUnitary()}{isUnitary()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::is\+Unitary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if quaternion is unitary, i.\+e. its norm is equal to 1.\+0. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0).\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a1c34178364ca7013c46b51de2001ac84}{isUnitary}}() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if quaternion is unitary 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab3c19de7cbcefbf80b1ffeffe4327866}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab3c19de7cbcefbf80b1ffeffe4327866}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!LERP@{LERP}}
+\index{LERP@{LERP}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{LERP()}{LERP()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::\+L\+E\+RP (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+First\+Quaternion,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Second\+Quaternion,  }\item[{const Real \&}]{a\+Ratio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Linear interpolator method. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_1 = ...}
+\DoxyCodeLine{Quaternion q\_2 = ...}
+\DoxyCodeLine{Quaternion q = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}}.LERP(q\_1, q\_2, 0.5)}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+First\+Quaternion} & A first quaternion \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Second\+Quaternion} & A second quaternion \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Ratio} & An interpolator ratio \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a5385919bd93638b1bc894b306c5f7abf}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a5385919bd93638b1bc894b306c5f7abf}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!log@{log}}
+\index{log@{log}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{log()}{log()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::log (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get logarithm. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_1 = ...}
+\DoxyCodeLine{Quaternion q\_2 = q\_1.log() ;}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Logarithm 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a017d48d58059358c4601c9d60bf8278a}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a017d48d58059358c4601c9d60bf8278a}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!NLERP@{NLERP}}
+\index{NLERP@{NLERP}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{NLERP()}{NLERP()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::\+N\+L\+E\+RP (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+First\+Quaternion,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Second\+Quaternion,  }\item[{const Real \&}]{a\+Ratio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Normalized linear interpolator method. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_1 = ...}
+\DoxyCodeLine{Quaternion q\_2 = ...}
+\DoxyCodeLine{Quaternion q = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}}.NLERP(q\_1, q\_2, 0.5)}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+First\+Quaternion} & A first quaternion \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Second\+Quaternion} & A second quaternion \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Ratio} & An interpolator ratio \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a6db7d29b102c1264e5003d6f0e1b1663}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a6db7d29b102c1264e5003d6f0e1b1663}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!normalize@{normalize}}
+\index{normalize@{normalize}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Normalize quaternion. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.000000000000001) ; \textcolor{comment}{// [0.0, 0.0,}}
+\DoxyCodeLine{0.0, 1.000000000000001] quaternion.normalize() ; \textcolor{comment}{// [0.0, 0.0, 0.0, 1.0]}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a22ddf005db9dfb94f2c7612c3d65c3ea}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a22ddf005db9dfb94f2c7612c3d65c3ea}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0) != \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(1.0, 0.0, 0.0, 0.0) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if quaternions are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a8515ce622e9730dcf3eb5a527207510e}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a8515ce622e9730dcf3eb5a527207510e}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Scalar }\end{DoxyParamCaption}) const}
+
+
+
+Multiplication operator (scalar) 
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_1 = ... ;}
+\DoxyCodeLine{Real scalar = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_2 = q\_1 * scalar ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Scalar} & A scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_aafffb896ce2ae7cfa2b3e36b49b29a1d}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_aafffb896ce2ae7cfa2b3e36b49b29a1d}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector3d ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Vector }\end{DoxyParamCaption}) const}
+
+
+
+Addition operator (quaternion) 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_1 = ... ;}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_2 = ... ;}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_3 = q\_1 + q\_2 ;}
+\DoxyCodeLine{    @encode}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @param              [in] aQuaternion A quaternion}
+\DoxyCodeLine{    @\textcolor{keywordflow}{return}             \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} operator+(\textcolor{keyword}{const} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}}\& aQuaternion) \textcolor{keyword}{const};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    @brief              Multiplication operator (quaternion)}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @code}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_B\_A = ... ;}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_C\_B = ... ;}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_C\_A = q\_C\_B * q\_B\_A ;}
+\DoxyCodeLine{    @encode}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @note               This \textcolor{keyword}{operator} uses cross multiplication}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    @param              [in] aQuaternion A quaternion}
+\DoxyCodeLine{    @\textcolor{keywordflow}{return}             \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_aafffb896ce2ae7cfa2b3e36b49b29a1d}{operator*}}(\textcolor{keyword}{const} \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}}\& aQuaternion) \textcolor{keyword}{const};}
+\DoxyCodeLine{}
+\DoxyCodeLine{    @brief              Multiplication operator (vector)}
+\DoxyCodeLine{   }
+\DoxyCodeLine{    Example:}
+\DoxyCodeLine{    @code}
+\DoxyCodeLine{                        \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_B\_A = ... ;}
+\DoxyCodeLine{                        \mbox{\hyperlink{namespaceostk_1_1math_1_1object_af1e4ea23badc8f45931ae724e71b00f1}{Vector3d}} v\_A = ... ;}
+\DoxyCodeLine{                        \mbox{\hyperlink{namespaceostk_1_1math_1_1object_af1e4ea23badc8f45931ae724e71b00f1}{Vector3d}} v\_B = q\_B\_A * v\_A ;}
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+This operator uses transform\+Vector
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Vector} & A vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_aa5cb7c426a43eeeb62d717521d83d99b}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_aa5cb7c426a43eeeb62d717521d83d99b}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$=()}{operator*=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::operator$\ast$= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption})}
+
+
+
+Multiplication assignment operator (quaternion) 
+
+\begin{DoxyNote}{Note}
+This operator uses cross multiplication
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a28882a77f55c65ac011bfa90cc9a9583}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a28882a77f55c65ac011bfa90cc9a9583}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption})}
+
+
+
+Addition assignment operator (quaternion) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a3abdcbeceb9ebc880a793a23d615b4dc}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a3abdcbeceb9ebc880a793a23d615b4dc}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!operator/@{operator/}}
+\index{operator/@{operator/}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption}) const}
+
+
+
+Division operator (quaternion) 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_A\_B = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_C\_B = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_C\_A = q\_C\_B / q\_A\_B ;}
+\end{DoxyCode}
+
+
+\begin{DoxyNote}{Note}
+This is equivalent to multiplying with the inverse
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ae9943b7f3953346ba20530331df1dc14}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ae9943b7f3953346ba20530331df1dc14}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::operator/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption})}
+
+
+
+Division assignment operator (quaternion) 
+
+\begin{DoxyNote}{Note}
+This is equivalent to multiplying with the inverse
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a8a12b48467b81673a0d7f42cce1cbcaa}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a8a12b48467b81673a0d7f42cce1cbcaa}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0) == \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if quaternions are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab25803959485d06cf74611fd540c7408}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab25803959485d06cf74611fd540c7408}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!operator$^\wedge$@{operator$^\wedge$}}
+\index{operator$^\wedge$@{operator$^\wedge$}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator$^\wedge$()}{operator^()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::operator$^\wedge$ (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Scalar }\end{DoxyParamCaption}) const}
+
+
+
+Power operator (quaternion) 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_1 = ... ;}
+\DoxyCodeLine{Real scalar = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_2 = q\_1 \string^ scalar ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Scalar} & A scalar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a81808d7a3d410eceba9934609609d729}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a81808d7a3d410eceba9934609609d729}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!Parse@{Parse}}
+\index{Parse@{Parse}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{Parse()}{Parse()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::\+Parse (\begin{DoxyParamCaption}\item[{const String \&}]{a\+String,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}{Quaternion\+::\+Format}} \&}]{a\+Format = {\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069ba11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion\+::\+Format\+::\+X\+Y\+ZS}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a quaternion from a string. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a81808d7a3d410eceba9934609609d729}{Quaternion::Parse}}(\textcolor{stringliteral}{"[0.0, 0.0, 0.0, 1.0]"}) ; \textcolor{comment}{// [0.0, 0.0, 0.0, 1.0]}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+String} & A string \\
+\hline
+\mbox{\texttt{ in}}  & {\em (optional)} & a\+Format A quaternion format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a1b601462f4c401ecc9591664fbe6920d}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a1b601462f4c401ecc9591664fbe6920d}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!pow@{pow}}
+\index{pow@{pow}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{pow()}{pow()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::pow (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Value }\end{DoxyParamCaption}) const}
+
+
+
+Get power. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_1 = ...}
+\DoxyCodeLine{Real scalar = ...}
+\DoxyCodeLine{Quaternion q\_2 = q\_1 \string^ scalar ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Value} & A power value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Power 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a4c0e3fa9370736d92f8111a0ef80335d}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a4c0e3fa9370736d92f8111a0ef80335d}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!rectify@{rectify}}
+\index{rectify@{rectify}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{rectify()}{rectify()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \& ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::rectify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Rectify quaternion (enforce positive scalar part) 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, -\/0.70710678118, -\/0.70710678118) ; \textcolor{comment}{//}}
+\DoxyCodeLine{[0.0, 0.0, -\/0.70710678118, -\/0.70710678118] quaternion.rectify() ; \textcolor{comment}{// [0.0, 0.0,}}
+\DoxyCodeLine{0.70710678118, 0.70710678118]}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Reference to quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afbbc59b4d999130250c8f817c7288e60}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afbbc59b4d999130250c8f817c7288e60}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!rotateVector@{rotateVector}}
+\index{rotateVector@{rotateVector}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{rotateVector()}{rotateVector()}}
+{\footnotesize\ttfamily Vector3d ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::rotate\+Vector (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+Vector }\end{DoxyParamCaption}) const}
+
+
+
+Rotate vector using quaternion. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q = ...}
+\DoxyCodeLine{Vector3d v\_1 = ...}
+\DoxyCodeLine{Vector3d v\_2 = q.rotateVector(v\_1)}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ac0f0cc3322a2e4ff8a7ab12d76b38b64}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ac0f0cc3322a2e4ff8a7ab12d76b38b64}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!RotationMatrix@{RotationMatrix}}
+\index{RotationMatrix@{RotationMatrix}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{RotationMatrix()}{RotationMatrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::\+Rotation\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix}{rotation\+::\+Rotation\+Matrix}} \&}]{a\+Rotation\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rquaternion from a rotation matrix. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ac0f0cc3322a2e4ff8a7ab12d76b38b64}{Quaternion::RotationMatrix}}(\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_a9c9b8020e80864fdfe23de6a95d536db}{RotationMatrix::Unit}}()) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Rotation\+Matrix} & A rotation matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+Markley F. L.\+: Fundamentals of Spacecraft Attitude Determination and Control, 48 \begin{DoxyNote}{Note}
+Should we use this method instead? \href{https://d3cw3dd2w32x2b.cloudfront.net/wp-content/uploads/2015/01/matrix-to-quat.pdf}{\texttt{ https\+://d3cw3dd2w32x2b.\+cloudfront.\+net/wp-\/content/uploads/2015/01/matrix-\/to-\/quat.\+pdf}}
+\end{DoxyNote}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_aba5bfdffc57cd1e3bdfe17f83accafee}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_aba5bfdffc57cd1e3bdfe17f83accafee}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!RotationVector@{RotationVector}}
+\index{RotationVector@{RotationVector}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{RotationVector()}{RotationVector()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::\+Rotation\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{rotation\+::\+Rotation\+Vector}} \&}]{a\+Rotation\+Vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a quaternion from a rotation vector. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_aba5bfdffc57cd1e3bdfe17f83accafee}{Quaternion::RotationVector}}(\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_aba5bfdffc57cd1e3bdfe17f83accafee}{RotationVector}}(\mbox{\hyperlink{namespaceostk_1_1math_1_1object_af1e4ea23badc8f45931ae724e71b00f1}{Vector3d}}(0.0, 0.0, 1.0),}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1_angle_a2952d2585813ef1e6cc96277a41c4e44}{Angle::Degrees}}(0.0))) ; \textcolor{comment}{// [0.0, 0.0, 0.0, 1.0]}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Rotation\+Vector} & A rotation vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+Markley F. L.\+: Fundamentals of Spacecraft Attitude Determination and Control, 45\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab5aece5c7dc92236bde8ce4a8090056b}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab5aece5c7dc92236bde8ce4a8090056b}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!s@{s}}
+\index{s@{s}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{s()}{s()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::s (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+@bref Get scalar part
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).s() ; \textcolor{comment}{// \&1.0}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Scalar part 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a6d1689f8a4be5ed1be13c89ca0cc544a}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a6d1689f8a4be5ed1be13c89ca0cc544a}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!ShortestRotation@{ShortestRotation}}
+\index{ShortestRotation@{ShortestRotation}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{ShortestRotation()}{ShortestRotation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::\+Shortest\+Rotation (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{a\+First\+Vector,  }\item[{const Vector3d \&}]{a\+Second\+Vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a quaternion describing the shortest rotation between two vectors. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1math_1_1object_af1e4ea23badc8f45931ae724e71b00f1}{Vector3d}} v\_1 = ...}
+\DoxyCodeLine{Vector3d v\_2 = ...}
+\DoxyCodeLine{Quaternion q = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}}.ShortestRotation(v\_1, v\_2)}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+First\+Vector} & A first vector \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Second\+Vector} & A second vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ad8028c367a6cf6bc29504341ffc309a3}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ad8028c367a6cf6bc29504341ffc309a3}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!SLERP@{SLERP}}
+\index{SLERP@{SLERP}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{SLERP()}{SLERP()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::\+S\+L\+E\+RP (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+First\+Quaternion,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Second\+Quaternion,  }\item[{const Real \&}]{a\+Ratio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Spherical linear interpolator method
+
+\href{https://en.wikipedia.org/wiki/Slerp}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Slerp}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_1 = ...}
+\DoxyCodeLine{Quaternion q\_2 = ...}
+\DoxyCodeLine{Quaternion q = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}}.SLERP(q\_1, q\_2, 0.5)}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+First\+Quaternion} & A first quaternion \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Second\+Quaternion} & A second quaternion \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Ratio} & An interpolator ratio \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_adac0dec87ee3e99960a501324a320abe}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_adac0dec87ee3e99960a501324a320abe}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!toString@{toString}}
+\index{toString@{toString}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily String ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::to\+String (\begin{DoxyParamCaption}\item[{const Integer \&}]{a\+Precision = {\ttfamily Integer\+:\+:Undefined()},  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}{Quaternion\+::\+Format}} \&}]{a\+Format = {\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069ba11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion\+::\+Format\+::\+X\+Y\+ZS}}} }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a4b5a1b3d51a108ebc72d0f319dced9d2}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a4b5a1b3d51a108ebc72d0f319dced9d2}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!toString@{toString}}
+\index{toString@{toString}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily String ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::to\+String (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}{Quaternion\+::\+Format}} \&}]{a\+Format }\end{DoxyParamCaption}) const}
+
+
+
+Convert quaternion to its string representation. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).toString() ; \textcolor{comment}{// "[0.0, 0.0, 0.0, 1.0]"}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em (optional)} & a\+Precision A quaternion precision \\
+\hline
+\mbox{\texttt{ in}}  & {\em (optional)} & a\+Format A quaternion format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a8d533c09efdf2b17971778be9608206b}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a8d533c09efdf2b17971778be9608206b}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!toVector@{toVector}}
+\index{toVector@{toVector}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{toVector()}{toVector()}}
+{\footnotesize\ttfamily Vector4d ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::to\+Vector (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069b}{Quaternion\+::\+Format}} \&}]{a\+Format = {\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a00851e8f438ace1c539b788f7b42069ba11c51ecd5dc6f86ba3c1ae79e21482f5}{Quaternion\+::\+Format\+::\+X\+Y\+ZS}}} }\end{DoxyParamCaption}) const}
+
+
+
+Convert quaternion to its vector representation. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).toVector() ; \textcolor{comment}{// [0.0, 0.0, 0.0, 1.0]}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em (optional)} & a\+Format A quaternion format \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector representation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a0f54f681a7a50b972369cd2089138ff6}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a0f54f681a7a50b972369cd2089138ff6}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined quaternion. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a0f54f681a7a50b972369cd2089138ff6}{Quaternion::Undefined}}() ; \textcolor{comment}{// Undefined}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab7283c4170a8d563edba7ba6d4700b38}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab7283c4170a8d563edba7ba6d4700b38}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!Unit@{Unit}}
+\index{Unit@{Unit}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{Unit()}{Unit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a unit quaternion. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab7283c4170a8d563edba7ba6d4700b38}{Quaternion::Unit}}() ; \textcolor{comment}{// [0.0, 0.0, 0.0, 1.0]}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Unit quaternion 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a2cf248edddcae7bf8097e3d7895e8b50}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a2cf248edddcae7bf8097e3d7895e8b50}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!x@{x}}
+\index{x@{x}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{x()}{x()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::x (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get first component of vector part. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).x() ; \textcolor{comment}{// \&0.0}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+First component of vector part 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!XYZS@{XYZS}}
+\index{XYZS@{XYZS}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{XYZS()}{XYZS()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::\+X\+Y\+ZS (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+First\+Component,  }\item[{const Real \&}]{a\+Second\+Component,  }\item[{const Real \&}]{a\+Third\+Component,  }\item[{const Real \&}]{a\+Fourth\+Component }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a quaternion using the vector-\/scalar format. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} quaternion = \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0) ; \textcolor{comment}{// [0.0, 0.0, 0.0, 1.0]}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+First\+Component} & A first component \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Second\+Component} & A second component \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Third\+Component} & A third component \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Fourth\+Component} & A fourth component \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_abfabd6c2e2510f3859ab627cc309dcd5}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_abfabd6c2e2510f3859ab627cc309dcd5}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!y@{y}}
+\index{y@{y}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{y()}{y()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::y (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get second component of vector part. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).y() ; \textcolor{comment}{// \&0.0}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Second component of vector part 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a3b67f5ac564ab636f639ef463f46448b}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a3b67f5ac564ab636f639ef463f46448b}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!z@{z}}
+\index{z@{z}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{z()}{z()}}
+{\footnotesize\ttfamily Real ostk\+::math\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::z (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get third component of vector part. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).z() ; \textcolor{comment}{// \&0.0}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Third component of vector part 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a2806bc2f5b9d299c075c51740cfa48ea}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a2806bc2f5b9d299c075c51740cfa48ea}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator$\ast$}{operator*}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} operator$\ast$ (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Scalar,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Multiplication operator (scalar) 
+
+Example\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Real scalar = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_1 = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a44f2c8fb74983535064942fc36b1690e}{Quaternion}} q\_2 = scalar * q\_1 ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Scalar} & A scalar \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab9414dc117f260055d0a1a565eb93708}\label{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab9414dc117f260055d0a1a565eb93708}} 
+\index{ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ostk::math::geometry::d3::transformation::rotation::Quaternion@{ostk::math::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::cout << \mbox{\hyperlink{classostk_1_1math_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_afc40b6f1c4878e6d23392c4c4f373e09}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to output stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Transformations/\+Rotations/\mbox{\hyperlink{_quaternion_8hpp}{Quaternion.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Transformations/\+Rotations/\mbox{\hyperlink{_quaternion_8cpp}{Quaternion.\+cpp}}\end{DoxyCompactItemize}
