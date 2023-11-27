@@ -26,7 +26,7 @@ using ostk::math::object::Matrix3d;
 using ostk::math::geometry::d3::Object;
 using ostk::math::geometry::d3::objects::Point;
 using ostk::math::geometry::d3::Intersection;
-using ostk::math::geometry::d3::trf::rot::Quaternion;
+using ostk::math::geometry::d3::transformations::rotations::Quaternion;
 
 #define DEFAULT_ORIENTATION Quaternion::Unit()
 

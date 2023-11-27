@@ -434,7 +434,7 @@ void Composite::print(std::ostream& anOutputStream, bool displayDecorators) cons
 
 void Composite::applyTransformation(const Transformation& aTransformation)
 {
-    using ostk::math::geometry::d3::trf::rot::RotationMatrix;
+    using ostk::math::geometry::d3::transformations::rotations::RotationMatrix;
 
     if (!aTransformation.isDefined())
     {

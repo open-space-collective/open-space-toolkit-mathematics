@@ -18,9 +18,9 @@ namespace geometry
 {
 namespace d3
 {
-namespace trf
+namespace transformations
 {
-namespace rot
+namespace rotations
 {
 
 using ostk::core::types::Index;
@@ -302,7 +302,7 @@ class RotationMatrix
     /// @param              [in] aQuaternion A quaternion
     /// @return             Rotation matrix
 
-    static RotationMatrix Quaternion(const rot::Quaternion& aQuaternion);
+    static RotationMatrix Quaternion(const rotations::Quaternion& aQuaternion);
 
     /// @brief              Constructs a rotation matrix from a rotation vector
     ///
@@ -314,7 +314,7 @@ class RotationMatrix
     /// @param              [in] aRotationVector A rotation vector
     /// @return             Rotation matrix
 
-    static RotationMatrix RotationVector(const rot::RotationVector& aRotationVector);
+    static RotationMatrix RotationVector(const rotations::RotationVector& aRotationVector);
 
    private:
     Matrix3d matrix_;
@@ -322,8 +322,8 @@ class RotationMatrix
     RotationMatrix();
 };
 
-}  // namespace rot
-}  // namespace trf
+}  // namespace rotations
+}  // namespace transformations
 }  // namespace d3
 }  // namespace geometry
 }  // namespace math

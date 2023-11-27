@@ -32,8 +32,8 @@ using ostk::math::object::Matrix4d;
 using ostk::math::geometry::Angle;
 using ostk::math::geometry::d3::Object;
 using ostk::math::geometry::d3::objects::Point;
-using ostk::math::geometry::d3::trf::rot::RotationVector;
-using ostk::math::geometry::d3::trf::rot::RotationMatrix;
+using ostk::math::geometry::d3::transformations::rotations::RotationVector;
+using ostk::math::geometry::d3::transformations::rotations::RotationMatrix;
 
 class Transformation
 {

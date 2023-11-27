@@ -222,7 +222,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation, RotationAround)
     using ostk::math::geometry::Angle;
     using ostk::math::geometry::d3::objects::Point;
     using ostk::math::geometry::d3::Transformation;
-    using ostk::math::geometry::d3::trf::rot::RotationVector;
+    using ostk::math::geometry::d3::transformations::rotations::RotationVector;
 
     {
         const Point rotationCenter = {0.0, 0.0, 0.0};
