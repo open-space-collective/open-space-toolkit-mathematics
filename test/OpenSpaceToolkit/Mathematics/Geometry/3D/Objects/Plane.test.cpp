@@ -581,7 +581,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, ApplyTransformation
     using ostk::math::geometry::Angle;
     using ostk::math::geometry::d3::objects::Plane;
     using ostk::math::geometry::d3::Transformation;
-    using ostk::math::geometry::d3::transformations::rotations::RotationVector;
+    using ostk::math::geometry::d3::transformation::rotation::RotationVector;
 
     // Translation
 

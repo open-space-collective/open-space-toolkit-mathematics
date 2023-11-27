@@ -15,9 +15,9 @@ namespace geometry
 {
 namespace d3
 {
-namespace transformations
+namespace transformation
 {
-namespace rotations
+namespace rotation
 {
 
 RotationVector::RotationVector(const Vector3d& anAxis, const Angle& anAngle)
@@ -142,7 +142,7 @@ RotationVector RotationVector::Z(const Angle& anAngle)
     return {Vector3d::Z(), anAngle};
 }
 
-RotationVector RotationVector::Quaternion(const rotations::Quaternion& aQuaternion)
+RotationVector RotationVector::Quaternion(const rotation::Quaternion& aQuaternion)
 {
     if (!aQuaternion.isDefined())
     {
@@ -165,7 +165,7 @@ RotationVector RotationVector::Quaternion(const rotations::Quaternion& aQuaterni
     return RotationVector(axis, angle);
 }
 
-RotationVector RotationVector::RotationMatrix(const rotations::RotationMatrix& aRotationMatrix)
+RotationVector RotationVector::RotationMatrix(const rotation::RotationMatrix& aRotationMatrix)
 {
     if (!aRotationMatrix.isDefined())
     {
@@ -195,8 +195,8 @@ RotationVector::RotationVector()
 {
 }
 
-}  // namespace rotations
-}  // namespace transformations
+}  // namespace rotation
+}  // namespace transformation
 }  // namespace d3
 }  // namespace geometry
 }  // namespace math

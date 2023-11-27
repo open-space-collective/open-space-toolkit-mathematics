@@ -15,9 +15,9 @@ namespace geometry
 {
 namespace d3
 {
-namespace transformations
+namespace transformation
 {
-namespace rotations
+namespace rotation
 {
 
 RotationMatrix::RotationMatrix(const Matrix3d& aMatrix)
@@ -453,7 +453,7 @@ RotationMatrix RotationMatrix::Columns(
     return RotationMatrix(matrix);
 }
 
-RotationMatrix RotationMatrix::Quaternion(const rotations::Quaternion& aQuaternion)
+RotationMatrix RotationMatrix::Quaternion(const rotation::Quaternion& aQuaternion)
 {
     if (!aQuaternion.isDefined())
     {
@@ -465,7 +465,7 @@ RotationMatrix RotationMatrix::Quaternion(const rotations::Quaternion& aQuaterni
         throw ostk::core::error::RuntimeError("Quaternion is not unitary.");
     }
 
-    if (aQuaternion == rotations::Quaternion::Unit())
+    if (aQuaternion == rotation::Quaternion::Unit())
     {
         return RotationMatrix::Unit();
     }
@@ -494,7 +494,7 @@ RotationMatrix RotationMatrix::Quaternion(const rotations::Quaternion& aQuaterni
     return RotationMatrix(matrix);
 }
 
-RotationMatrix RotationMatrix::RotationVector(const rotations::RotationVector& aRotationVector)
+RotationMatrix RotationMatrix::RotationVector(const rotation::RotationVector& aRotationVector)
 {
     if (!aRotationVector.isDefined())
     {
@@ -533,8 +533,8 @@ RotationMatrix::RotationMatrix()
 {
 }
 
-}  // namespace rotations
-}  // namespace transformations
+}  // namespace rotation
+}  // namespace transformation
 }  // namespace d3
 }  // namespace geometry
 }  // namespace math

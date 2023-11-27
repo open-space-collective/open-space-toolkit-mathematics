@@ -18,9 +18,9 @@ namespace geometry
 {
 namespace d3
 {
-namespace transformations
+namespace transformation
 {
-namespace rotations
+namespace rotation
 {
 
 using ostk::core::types::Integer;
@@ -36,7 +36,7 @@ class RotationMatrix;
 
 /// @brief                      Quaternion
 ///
-///                             Provide a convenient mathematical notation for representing orientations and rotations
+///                             Provide a convenient mathematical notation for representing orientations and rotation
 ///                             of objects in three dimensions. Compared to Euler angles they are simpler to compose and
 ///                             avoid the problem of gimbal lock. Compared to rotation matrices they are more compact,
 ///                             more numerically stable, and more efficient.
@@ -616,7 +616,7 @@ class Quaternion
     /// @param              [in] aRotationVector A rotation vector
     /// @return             Quaternion
 
-    static Quaternion RotationVector(const rotations::RotationVector& aRotationVector);
+    static Quaternion RotationVector(const rotation::RotationVector& aRotationVector);
 
     /// @brief              Constructs a rquaternion from a rotation matrix
     ///
@@ -627,7 +627,7 @@ class Quaternion
     /// @param              [in] aRotationMatrix A rotation matrix
     /// @return             Quaternion
 
-    static Quaternion RotationMatrix(const rotations::RotationMatrix& aRotationMatrix);
+    static Quaternion RotationMatrix(const rotation::RotationMatrix& aRotationMatrix);
 
     /// @brief              Constructs a quaternion from a string
     ///
@@ -713,8 +713,8 @@ class Quaternion
     Real s_;
 };
 
-}  // namespace rotations
-}  // namespace transformations
+}  // namespace rotation
+}  // namespace transformation
 }  // namespace d3
 }  // namespace geometry
 }  // namespace math

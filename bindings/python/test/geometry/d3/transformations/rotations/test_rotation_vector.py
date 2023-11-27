@@ -6,8 +6,8 @@ from ostk.mathematics import geometry
 
 
 Angle = geometry.Angle
-Quaternion = geometry.d3.transformations.rotations.Quaternion
-RotationVector = geometry.d3.transformations.rotations.RotationVector
+Quaternion = geometry.d3.transformation.rotation.Quaternion
+RotationVector = geometry.d3.transformation.rotation.RotationVector
 
 
 def test_geometry_d3_transformations_rotations_rotation_vector():
