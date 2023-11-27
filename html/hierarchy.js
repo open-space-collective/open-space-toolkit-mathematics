@@ -41,9 +41,9 @@ var hierarchy =
       [ "ostk::math::geometry::d3::objects::Segment", "classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_segment.html", null ],
       [ "ostk::math::geometry::d3::objects::Sphere", "classostk_1_1math_1_1geometry_1_1d3_1_1objects_1_1_sphere.html", null ]
     ] ],
-    [ "ostk::math::geometry::d3::trf::rot::Quaternion", "classostk_1_1math_1_1geometry_1_1d3_1_1trf_1_1rot_1_1_quaternion.html", null ],
-    [ "ostk::math::geometry::d3::trf::rot::RotationMatrix", "classostk_1_1math_1_1geometry_1_1d3_1_1trf_1_1rot_1_1_rotation_matrix.html", null ],
-    [ "ostk::math::geometry::d3::trf::rot::RotationVector", "classostk_1_1math_1_1geometry_1_1d3_1_1trf_1_1rot_1_1_rotation_vector.html", null ],
+    [ "ostk::math::geometry::d3::transformations::rotations::Quaternion", "classostk_1_1math_1_1geometry_1_1d3_1_1transformations_1_1rotations_1_1_quaternion.html", null ],
+    [ "ostk::math::geometry::d3::transformations::rotations::RotationMatrix", "classostk_1_1math_1_1geometry_1_1d3_1_1transformations_1_1rotations_1_1_rotation_matrix.html", null ],
+    [ "ostk::math::geometry::d3::transformations::rotations::RotationVector", "classostk_1_1math_1_1geometry_1_1d3_1_1transformations_1_1rotations_1_1_rotation_vector.html", null ],
     [ "ostk::math::geometry::d3::Transformation", "classostk_1_1math_1_1geometry_1_1d3_1_1_transformation.html", null ],
     [ "ostk::math::geometry::d2::Transformation", "classostk_1_1math_1_1geometry_1_1d2_1_1_transformation.html", null ]
 ];
