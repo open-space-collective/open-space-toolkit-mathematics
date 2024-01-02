@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Apache License 2.0
 
@@ -56,10 +56,12 @@ if [[ ! -z ${1} ]] && [[ ${1} == "--link" ]]; then
         command="${command} \
         rm -rf /usr/local/include/OpenSpaceToolkit/${project_name_capitalized}; \
         rm -f /usr/local/lib/lib${dep}.so*; \
+        rm -f /usr/local/lib/OpenSpaceToolkit${project_name_capitalized}/*; \
         cp -as /mnt/${dep}/include/OpenSpaceToolkit/${project_name_capitalized} /usr/local/include/OpenSpaceToolkit/${project_name_capitalized}; \
         cp -as /mnt/${dep}/src/OpenSpaceToolkit/${project_name_capitalized}/* /usr/local/include/OpenSpaceToolkit/${project_name_capitalized}/; \
         ln -s /mnt/${dep}/lib/lib${dep}.so /usr/local/lib/; \
         ln -s /mnt/${dep}/lib/lib${dep}.so.* /usr/local/lib/; \
+        cp -as /mnt/${dep}/build/OpenSpaceToolkit${project_name_capitalized}Config* /usr/local/lib/OpenSpaceToolkit${project_name_capitalized}/; \
         cp -as /mnt/${dep}/build/bindings/python/dist/* /usr/local/share;"
 
     done
@@ -73,12 +75,10 @@ fi
 docker run \
     -it \
     --rm \
-    --privileged \
+    --name=open-space-toolkit-${project_name}-dev \
     "${options[@]}" \
     --volume="${project_directory}:/app:delegated" \
-    --volume="${project_directory}/tools/development/helpers:/app/build/helpers:ro,delegated" \
     --env="deps=${deps}" \
     --workdir="/app/build" \
     ${docker_development_image_repository}:${docker_image_version} \
     /bin/bash -c "${command}"
-
