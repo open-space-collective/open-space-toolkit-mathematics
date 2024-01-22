@@ -6,7 +6,7 @@
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace curvefitting
 {
@@ -46,5 +46,5 @@ double BarycentricRational::evaluate(const double& aQueryValue) const
 
 }  // namespace interpolator
 }  // namespace curvefitting
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk

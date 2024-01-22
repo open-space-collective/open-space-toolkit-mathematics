@@ -7,7 +7,7 @@
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace geometry
 {
@@ -39,14 +39,14 @@ class Object
     /// @brief              Equal to operator
     ///
     /// @param              [in] anObject An object
-    /// @return             True if objects are equal
+    /// @return             True if object are equal
 
     bool operator==(const Object& anObject) const;
 
     /// @brief              Not equal to operator
     ///
     /// @param              [in] anObject An object
-    /// @return             True if objects are not equal
+    /// @return             True if object are not equal
 
     bool operator!=(const Object& anObject) const;
 
@@ -146,7 +146,7 @@ class Object
 
 }  // namespace d3
 }  // namespace geometry
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk
 
 #endif

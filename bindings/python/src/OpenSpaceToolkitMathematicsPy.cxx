@@ -11,7 +11,7 @@
 
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry.cpp>
-#include <OpenSpaceToolkitMathematicsPy/Objects.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Object.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Solvers.cpp>
 
 PYBIND11_MODULE(OpenSpaceToolkitMathematicsPy, m)
@@ -33,7 +33,7 @@ PYBIND11_MODULE(OpenSpaceToolkitMathematicsPy, m)
 #endif
 
     // Add python submodules to OpenSpaceToolkitMathematicsPy
-    OpenSpaceToolkitMathematicsPy_Objects(m);
+    OpenSpaceToolkitMathematicsPy_Object(m);
     OpenSpaceToolkitMathematicsPy_Geometry(m);
     OpenSpaceToolkitMathematicsPy_CurveFitting(m);
     OpenSpaceToolkitMathematicsPy_Solvers(m);

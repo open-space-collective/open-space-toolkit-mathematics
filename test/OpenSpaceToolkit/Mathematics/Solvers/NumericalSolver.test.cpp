@@ -7,7 +7,7 @@
 #include <OpenSpaceToolkit/Core/Types/Shared.hpp>
 #include <OpenSpaceToolkit/Core/Types/String.hpp>
 
-#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 #include <OpenSpaceToolkit/Mathematics/Solvers/NumericalSolver.hpp>
 
 #include <Global.test.hpp>
@@ -19,9 +19,9 @@ using ostk::core::types::Real;
 using ostk::core::types::String;
 using ostk::core::types::Shared;
 
-using ostk::math::object::VectorXd;
+using ostk::mathematics::object::VectorXd;
 
-using ostk::math::solvers::NumericalSolver;
+using ostk::mathematics::solvers::NumericalSolver;
 
 // Simple duration based condition
 

@@ -10,7 +10,7 @@
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace geometry
 {
@@ -362,7 +362,7 @@ Transformation::Type Transformation::TypeOfMatrix(const Matrix4d& aMatrix)
 
 bool Transformation::IsRigid(const Matrix4d& aMatrix)
 {
-    using ostk::math::object::Matrix3d;
+    using ostk::mathematics::object::Matrix3d;
 
     if (!aMatrix.isDefined())
     {
@@ -388,5 +388,5 @@ Transformation::Transformation(const Transformation::Type& aType, const Matrix4d
 
 }  // namespace d3
 }  // namespace geometry
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk

@@ -3,11 +3,11 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Test__
 #define __OpenSpaceToolkit_Mathematics_Test__
 
-#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 
 #include <Global.test.hpp>
 
-using ostk::math::object::VectorXd;
+using ostk::mathematics::object::VectorXd;
 
 bool VectorEquality(const VectorXd& aFirstVector, const VectorXd& aSecondVector, const double& aTolerance)
 {

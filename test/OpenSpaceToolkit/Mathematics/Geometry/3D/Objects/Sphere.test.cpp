@@ -1,41 +1,41 @@
 /// Apache License 2.0
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Plane.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/PointSet.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ray.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Sphere.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Line.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 
 #include <Global.test.hpp>
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Constructor)
 {
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         EXPECT_NO_THROW(Sphere({1.0, 2.0, 3.0}, 4.0));
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Clone)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Clone)
 {
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         EXPECT_NO_THROW(const Sphere* spherePtr = Sphere({1.0, 2.0, 3.0}, 4.0).clone(); delete spherePtr;);
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, EqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, EqualToOperator)
 {
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         EXPECT_TRUE(Sphere({1.0, 2.0, 3.0}, 4.0) == Sphere({1.0, 2.0, 3.0}, 4.0));
@@ -53,9 +53,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, EqualToOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, NotEqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, NotEqualToOperator)
 {
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         EXPECT_TRUE(Sphere({1.0, 2.0, 3.0}, 4.0) != Sphere({1.0, 2.0, 4.0}, 4.0));
@@ -73,9 +73,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, NotEqualToOperator
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, StreamOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, StreamOperator)
 {
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         testing::internal::CaptureStdout();
@@ -86,9 +86,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, StreamOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, IsDefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, IsDefined)
 {
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         EXPECT_TRUE(Sphere({0.0, 0.0, 0.0}, 1.0).isDefined());
@@ -100,9 +100,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, IsDefined)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, IsUnitary)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, IsUnitary)
 {
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         EXPECT_TRUE(Sphere({0.0, 0.0, 0.0}, 1.0).isUnitary());
@@ -119,10 +119,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, IsUnitary)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Point)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Point)
 {
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         EXPECT_TRUE(Sphere({1.0, 2.0, 3.0}, 4.0).intersects(Point(+5.0, +2.0, +3.0)));
@@ -146,11 +146,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Point)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Intersects_PointSet)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_PointSet)
 {
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::PointSet;
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::PointSet;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         EXPECT_TRUE(Sphere({1.0, 2.0, 3.0}, 4.0)
@@ -175,13 +175,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Intersects_PointSe
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Line)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Line)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Line;
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         const Sphere sphere = {Point::Origin(), 2.0};
@@ -332,13 +332,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Line)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Ray)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Ray)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Ray;
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Ray;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         const Sphere sphere = {Point::Origin(), 2.0};
@@ -511,13 +511,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Ray)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Segment)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Segment)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Segment;
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Segment;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         const Sphere sphere = {Point::Origin(), 2.0};
@@ -637,13 +637,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Segment
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Plane)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Plane)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Plane;
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Plane;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         const Sphere sphere = {Point::Origin(), 2.0};
@@ -682,14 +682,14 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Plane)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Pyramid)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Pyramid)
 {
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Sphere;
-    using ostk::math::geometry::d3::objects::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Sphere;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
 
     {
-        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid.Intersects_Sphere
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid.Intersects_Sphere
 
         SUCCEED();
     }
@@ -700,10 +700,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Intersects_Pyramid
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Contains_Point)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Contains_Point)
 {
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         EXPECT_TRUE(Sphere({1.0, 2.0, 3.0}, 4.0).contains(Point(+5.0, +2.0, +3.0)));
@@ -727,11 +727,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Contains_Point)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Contains_PointSet)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Contains_PointSet)
 {
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::PointSet;
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::PointSet;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         EXPECT_TRUE(Sphere({1.0, 2.0, 3.0}, 4.0)
@@ -767,10 +767,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Contains_PointSet)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, GetCenter)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, GetCenter)
 {
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         EXPECT_EQ(Point(1.0, 2.0, 3.0), Sphere({1.0, 2.0, 3.0}, 4.0).getCenter());
@@ -781,9 +781,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, GetCenter)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, GetRadius)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, GetRadius)
 {
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         EXPECT_EQ(4.0, Sphere({1.0, 2.0, 3.0}, 4.0).getRadius());
@@ -794,15 +794,15 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, GetRadius)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, ApplyTransformation)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, ApplyTransformation)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d3::objects::Sphere;
-    using ostk::math::geometry::d3::Transformation;
-    using ostk::math::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::object::Sphere;
+    using ostk::mathematics::geometry::d3::Transformation;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
 
     // Translation
 
@@ -834,9 +834,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, ApplyTransformatio
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Undefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Undefined)
 {
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         EXPECT_NO_THROW(Sphere::Undefined());
@@ -844,9 +844,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Undefined)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere, Unit)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Unit)
 {
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         EXPECT_NO_THROW(Sphere::Unit({0.0, 0.0, 0.0}));

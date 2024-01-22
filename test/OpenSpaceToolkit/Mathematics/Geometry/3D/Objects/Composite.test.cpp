@@ -3,34 +3,34 @@
 #include <OpenSpaceToolkit/Core/Types/Real.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Composite.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cuboid.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Plane.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/PointSet.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ray.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Line.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 
 #include <Global.test.hpp>
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Constructor)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -66,23 +66,23 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Constructor)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> objects = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> object = Array<Unique<Object>>::Empty();
 
-        objects.emplace_back(std::move(pyramidUPtr));
-        objects.emplace_back(std::move(cuboidUPtr));
+        object.emplace_back(std::move(pyramidUPtr));
+        object.emplace_back(std::move(cuboidUPtr));
 
-        EXPECT_NO_THROW(Composite composite(std::move(objects)););
+        EXPECT_NO_THROW(Composite composite(std::move(object)););
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Clone)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Clone)
 {
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -95,14 +95,14 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Clone)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, CopyConstructor)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, CopyConstructor)
 {
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -117,19 +117,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, CopyConstructor
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, EqualToOperator)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -157,12 +157,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> objects = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> object = Array<Unique<Object>>::Empty();
 
-        objects.emplace_back(std::move(pyramidUPtr));
-        objects.emplace_back(std::move(cuboidUPtr));
+        object.emplace_back(std::move(pyramidUPtr));
+        object.emplace_back(std::move(cuboidUPtr));
 
-        const Composite composite = Composite {std::move(objects)};
+        const Composite composite = Composite {std::move(object)};
 
         EXPECT_TRUE(composite == composite);
     }
@@ -202,19 +202,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator
 
         const Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> firstObjects = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> firstObject = Array<Unique<Object>>::Empty();
 
-        firstObjects.emplace_back(std::move(pyramidUPtr->clone()));
-        firstObjects.emplace_back(std::move(cuboidUPtr->clone()));
+        firstObject.emplace_back(std::move(pyramidUPtr->clone()));
+        firstObject.emplace_back(std::move(cuboidUPtr->clone()));
 
-        const Composite firstComposite = Composite {std::move(firstObjects)};
+        const Composite firstComposite = Composite {std::move(firstObject)};
 
-        Array<Unique<Object>> secondObjects = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> secondObject = Array<Unique<Object>>::Empty();
 
-        secondObjects.emplace_back(std::move(cuboidUPtr->clone()));
-        secondObjects.emplace_back(std::move(pyramidUPtr->clone()));
+        secondObject.emplace_back(std::move(cuboidUPtr->clone()));
+        secondObject.emplace_back(std::move(pyramidUPtr->clone()));
 
-        const Composite secondComposite = Composite {std::move(secondObjects)};
+        const Composite secondComposite = Composite {std::move(secondObject)};
 
         EXPECT_FALSE(firstComposite == secondComposite);
     }
@@ -234,19 +234,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, NotEqualToOperator)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -274,12 +274,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOpera
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> objects = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> object = Array<Unique<Object>>::Empty();
 
-        objects.emplace_back(std::move(pyramidUPtr));
-        objects.emplace_back(std::move(cuboidUPtr));
+        object.emplace_back(std::move(pyramidUPtr));
+        object.emplace_back(std::move(cuboidUPtr));
 
-        const Composite composite = Composite {std::move(objects)};
+        const Composite composite = Composite {std::move(object)};
 
         EXPECT_FALSE(composite != composite);
     }
@@ -319,19 +319,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOpera
 
         const Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> firstObjects = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> firstObject = Array<Unique<Object>>::Empty();
 
-        firstObjects.emplace_back(std::move(pyramidUPtr->clone()));
-        firstObjects.emplace_back(std::move(cuboidUPtr->clone()));
+        firstObject.emplace_back(std::move(pyramidUPtr->clone()));
+        firstObject.emplace_back(std::move(cuboidUPtr->clone()));
 
-        const Composite firstComposite = Composite {std::move(firstObjects)};
+        const Composite firstComposite = Composite {std::move(firstObject)};
 
-        Array<Unique<Object>> secondObjects = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> secondObject = Array<Unique<Object>>::Empty();
 
-        secondObjects.emplace_back(std::move(cuboidUPtr->clone()));
-        secondObjects.emplace_back(std::move(pyramidUPtr->clone()));
+        secondObject.emplace_back(std::move(cuboidUPtr->clone()));
+        secondObject.emplace_back(std::move(pyramidUPtr->clone()));
 
-        const Composite secondComposite = Composite {std::move(secondObjects)};
+        const Composite secondComposite = Composite {std::move(secondObject)};
 
         EXPECT_TRUE(firstComposite != secondComposite);
     }
@@ -351,19 +351,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOpera
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AdditionOperator)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -391,19 +391,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionOperato
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionAssignmentOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AdditionAssignmentOperator)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -431,19 +431,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionAssignm
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, StreamOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, StreamOperator)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -462,19 +462,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, StreamOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, IsDefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, IsDefined)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -493,19 +493,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, IsDefined)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, IsEmpty)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, IsEmpty)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -528,19 +528,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, IsEmpty)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Intersects)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Intersects)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     // [TBI]
 
@@ -572,19 +572,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Intersects)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Contains)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Contains)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     // [TBI]
 
@@ -616,19 +616,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Contains)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Is)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Is)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -649,19 +649,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Is)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, As)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, As)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -682,19 +682,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, As)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjectAt)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjectAt)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -724,12 +724,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjectAt)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> objects = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> object = Array<Unique<Object>>::Empty();
 
-        objects.emplace_back(std::move(pyramidUPtr));
-        objects.emplace_back(std::move(cuboidUPtr));
+        object.emplace_back(std::move(pyramidUPtr));
+        object.emplace_back(std::move(cuboidUPtr));
 
-        const Composite composite = Composite {std::move(objects)};
+        const Composite composite = Composite {std::move(object)};
 
         EXPECT_TRUE(composite.accessObjectAt(0).is<Pyramid>());
         EXPECT_TRUE(composite.accessObjectAt(1).is<Cuboid>());
@@ -742,19 +742,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjectAt)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjects)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObject)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -765,7 +765,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjects)
 
         const Composite composite = Composite {pyramid};
 
-        EXPECT_EQ(1, composite.accessObjects().getSize());
+        EXPECT_EQ(1, composite.accessObject().getSize());
     }
 
     {
@@ -782,34 +782,34 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjects)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> objects = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> object = Array<Unique<Object>>::Empty();
 
-        objects.emplace_back(std::move(pyramidUPtr));
-        objects.emplace_back(std::move(cuboidUPtr));
+        object.emplace_back(std::move(pyramidUPtr));
+        object.emplace_back(std::move(cuboidUPtr));
 
-        const Composite composite = Composite {std::move(objects)};
+        const Composite composite = Composite {std::move(object)};
 
-        EXPECT_EQ(2, composite.accessObjects().getSize());
+        EXPECT_EQ(2, composite.accessObject().getSize());
     }
 
     {
-        EXPECT_ANY_THROW(Composite::Undefined().accessObjects());
+        EXPECT_ANY_THROW(Composite::Undefined().accessObject());
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, GetObjectCount)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, GetObjectCount)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -837,12 +837,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, GetObjectCount)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> objects = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> object = Array<Unique<Object>>::Empty();
 
-        objects.emplace_back(std::move(pyramidUPtr));
-        objects.emplace_back(std::move(cuboidUPtr));
+        object.emplace_back(std::move(pyramidUPtr));
+        object.emplace_back(std::move(cuboidUPtr));
 
-        const Composite composite = Composite {std::move(objects)};
+        const Composite composite = Composite {std::move(object)};
 
         EXPECT_EQ(2, composite.getObjectCount());
     }
@@ -852,19 +852,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, GetObjectCount)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, ConstIterator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, ConstIterator)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         const Polygon base = {
@@ -897,12 +897,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, ConstIterator)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> objects = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> object = Array<Unique<Object>>::Empty();
 
-        objects.emplace_back(std::move(pyramidUPtr));
-        objects.emplace_back(std::move(cuboidUPtr));
+        object.emplace_back(std::move(pyramidUPtr));
+        object.emplace_back(std::move(cuboidUPtr));
 
-        const Composite composite = Composite {std::move(objects)};
+        const Composite composite = Composite {std::move(object)};
 
         EXPECT_NO_THROW(
 
@@ -922,20 +922,20 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, ConstIterator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, ApplyTransformation)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, ApplyTransformation)
 {
     using ostk::core::types::Unique;
     using ostk::core::types::Real;
     using ostk::core::ctnr::Array;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
-    using ostk::math::geometry::d3::Transformation;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
+    using ostk::mathematics::geometry::d3::Transformation;
 
     {
         const Polygon base = {
@@ -964,9 +964,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, ApplyTransforma
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Undefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Undefined)
 {
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         EXPECT_NO_THROW(Composite::Undefined());
@@ -974,9 +974,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Undefined)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Empty)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Empty)
 {
-    using ostk::math::geometry::d3::objects::Composite;
+    using ostk::mathematics::geometry::d3::object::Composite;
 
     {
         EXPECT_NO_THROW(Composite::Empty());

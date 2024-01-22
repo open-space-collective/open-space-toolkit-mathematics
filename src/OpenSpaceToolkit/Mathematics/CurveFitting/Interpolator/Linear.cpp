@@ -8,7 +8,7 @@
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace curvefitting
 {
@@ -88,5 +88,5 @@ Pair<Index, Index> Linear::findIndexRange(const double& aQueryValue) const
 
 }  // namespace interpolator
 }  // namespace curvefitting
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk

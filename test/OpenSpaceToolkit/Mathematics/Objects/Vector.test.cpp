@@ -1,12 +1,12 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 
 #include <Global.test.hpp>
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_Vector2i, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Object_Vector2i, Constructor)
 {
-    using ostk::math::object::Vector2i;
+    using ostk::mathematics::object::Vector2i;
 
     {
         const Vector2i vector(1, 2);
@@ -16,9 +16,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Vector2i, Constructor)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_Vector2i, ToString)
+TEST(OpenSpaceToolkit_Mathematics_Object_Vector2i, ToString)
 {
-    using ostk::math::object::Vector2i;
+    using ostk::mathematics::object::Vector2i;
 
     {
         const Vector2i vector(1, 2);
@@ -31,9 +31,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Vector2i, ToString)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_Vector3i, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Object_Vector3i, Constructor)
 {
-    using ostk::math::object::Vector3i;
+    using ostk::mathematics::object::Vector3i;
 
     {
         const Vector3i vector(1, 2, 3);
@@ -68,9 +68,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Vector3i, Constructor)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_Vector3i, ToString)
+TEST(OpenSpaceToolkit_Mathematics_Object_Vector3i, ToString)
 {
-    using ostk::math::object::Vector3i;
+    using ostk::mathematics::object::Vector3i;
 
     {
         const Vector3i vector(1, 2, 3);
@@ -83,9 +83,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Vector3i, ToString)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_Vector2d, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Object_Vector2d, Constructor)
 {
-    using ostk::math::object::Vector2d;
+    using ostk::mathematics::object::Vector2d;
 
     {
         const Vector2d vector(1.0, 2.0);
@@ -119,9 +119,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Vector2d, Constructor)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_Vector2d, ToString)
+TEST(OpenSpaceToolkit_Mathematics_Object_Vector2d, ToString)
 {
-    using ostk::math::object::Vector2d;
+    using ostk::mathematics::object::Vector2d;
 
     {
         const Vector2d vector(1.0, 2.0);
@@ -144,9 +144,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Vector2d, ToString)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_Vector3d, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Object_Vector3d, Constructor)
 {
-    using ostk::math::object::Vector3d;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Vector3d vector(1.0, 2.0, 3.0);
@@ -205,9 +205,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Vector3d, Constructor)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_Vector3d, ToString)
+TEST(OpenSpaceToolkit_Mathematics_Object_Vector3d, ToString)
 {
-    using ostk::math::object::Vector3d;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Vector3d vector(1.0, 2.0, 3.0);
@@ -231,9 +231,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Vector3d, ToString)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_Vector4d, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Object_Vector4d, Constructor)
 {
-    using ostk::math::object::Vector4d;
+    using ostk::mathematics::object::Vector4d;
 
     {
         const Vector4d vector(1.0, 2.0, 3.0, 4.0);
@@ -269,9 +269,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Vector4d, Constructor)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_Vector4d, IsNear)
+TEST(OpenSpaceToolkit_Mathematics_Object_Vector4d, IsNear)
 {
-    using ostk::math::object::Vector4d;
+    using ostk::mathematics::object::Vector4d;
 
     {
         const Vector4d vector(1.0, 2.0, 3.0, 4.0);
@@ -292,9 +292,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Vector4d, IsNear)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_Vector4d, ToString)
+TEST(OpenSpaceToolkit_Mathematics_Object_Vector4d, ToString)
 {
-    using ostk::math::object::Vector4d;
+    using ostk::mathematics::object::Vector4d;
 
     {
         const Vector4d vector(1.0, 2.0, 3.0, 4.0);
@@ -319,9 +319,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Vector4d, ToString)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_Vector4d, Parse)
+TEST(OpenSpaceToolkit_Mathematics_Object_Vector4d, Parse)
 {
-    using ostk::math::object::Vector4d;
+    using ostk::mathematics::object::Vector4d;
 
     {
         const Vector4d vector = Vector4d::Parse("[1.000000, 2.000000, 3.000000, 4.000000]");
@@ -341,9 +341,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Vector4d, Parse)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_VectorXd, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Object_VectorXd, Constructor)
 {
-    using ostk::math::object::VectorXd;
+    using ostk::mathematics::object::VectorXd;
 
     {
         VectorXd vector(5);
@@ -386,9 +386,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_VectorXd, Constructor)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_VectorXd, IsNear)
+TEST(OpenSpaceToolkit_Mathematics_Object_VectorXd, IsNear)
 {
-    using ostk::math::object::VectorXd;
+    using ostk::mathematics::object::VectorXd;
 
     {
         VectorXd vector(5);
@@ -437,9 +437,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_VectorXd, IsNear)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_VectorXd, ToString)
+TEST(OpenSpaceToolkit_Mathematics_Object_VectorXd, ToString)
 {
-    using ostk::math::object::VectorXd;
+    using ostk::mathematics::object::VectorXd;
 
     {
         VectorXd vector(5);
@@ -480,9 +480,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_VectorXd, ToString)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Objects_VectorXd, Parse)
+TEST(OpenSpaceToolkit_Mathematics_Object_VectorXd, Parse)
 {
-    using ostk::math::object::VectorXd;
+    using ostk::mathematics::object::VectorXd;
 
     {
         const VectorXd vector = VectorXd::Parse("[1.000000, 2.000000, 3.000000, 4.000000, 5.000000]");

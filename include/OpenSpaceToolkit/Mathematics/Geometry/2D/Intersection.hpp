@@ -10,17 +10,17 @@
 #include <OpenSpaceToolkit/Core/Types/Unique.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Composite.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Line.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/LineString.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp>
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace geometry
 {
@@ -32,8 +32,8 @@ using ostk::core::types::Index;
 using ostk::core::types::Size;
 using ostk::core::ctnr::Array;
 
-using ostk::math::geometry::d2::Object;
-using ostk::math::geometry::d2::objects::Composite;
+using ostk::mathematics::geometry::d2::Object;
+using ostk::mathematics::geometry::d2::object::Composite;
 
 /// @brief                      2D intersection
 
@@ -57,7 +57,7 @@ class Intersection
 
     /// @brief              Constructor
     ///
-    /// @param              [in] anObjectArray An array of objects
+    /// @param              [in] anObjectArray An array of object
 
     Intersection(Array<Unique<Object>>&& anObjectArray);
 
@@ -216,7 +216,7 @@ class Intersection
     ///
     /// @return             Point intersection
 
-    static Intersection Point(const objects::Point& aPoint);
+    static Intersection Point(const object::Point& aPoint);
 
     /// @brief              Constructs a point set intersection
     ///
@@ -226,7 +226,7 @@ class Intersection
     ///
     /// @return             Point set intersection
 
-    static Intersection PointSet(const objects::PointSet& aPointSet);
+    static Intersection PointSet(const object::PointSet& aPointSet);
 
     /// @brief              Constructs a line string intersection
     ///
@@ -237,7 +237,7 @@ class Intersection
     ///
     /// @return             Line string intersection
 
-    static Intersection LineString(const objects::LineString& aLineString);
+    static Intersection LineString(const object::LineString& aLineString);
 
     /// @brief              Constructs a line intersection
     ///
@@ -247,7 +247,7 @@ class Intersection
     ///
     /// @return             Line intersection
 
-    static Intersection Line(const objects::Line& aLine);
+    static Intersection Line(const object::Line& aLine);
 
     /// @brief              Constructs a segment intersection
     ///
@@ -257,7 +257,7 @@ class Intersection
     ///
     /// @return             Segment intersection
 
-    static Intersection Segment(const objects::Segment& aSegment);
+    static Intersection Segment(const object::Segment& aSegment);
 
     /// @brief              Constructs a polygon intersection
     ///
@@ -267,7 +267,7 @@ class Intersection
     ///
     /// @return             Polygon intersection
 
-    static Intersection Polygon(const objects::Polygon& aPolygon);
+    static Intersection Polygon(const object::Polygon& aPolygon);
 
     /// @brief              Converts intersection type to string
     ///
@@ -284,14 +284,14 @@ class Intersection
 
     Intersection(const Intersection::Type& aType, const Array<Unique<Object>>& anObjectArray);
 
-    static Intersection::Type TypeFromObjects(const Array<Unique<Object>>& anObjectArray);
+    static Intersection::Type TypeFromObject(const Array<Unique<Object>>& anObjectArray);
 
     static Intersection::Type TypeFromObject(const Unique<Object>& anObjectUPtr);
 };
 
 }  // namespace d2
 }  // namespace geometry
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk
 
 #endif

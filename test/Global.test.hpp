@@ -4,7 +4,7 @@
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace test
 {
@@ -15,5 +15,5 @@ extern std::string someGlobalString;
 
 }
 }  // namespace test
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk

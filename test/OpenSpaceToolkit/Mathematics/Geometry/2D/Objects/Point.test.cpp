@@ -1,32 +1,32 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
 
 #include <Global.test.hpp>
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, Constructor)
 {
-    using ostk::math::geometry::d2::objects::Point;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_NO_THROW(Point(1.0, 2.0));
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, Clone)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, Clone)
 {
-    using ostk::math::geometry::d2::objects::Point;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_NO_THROW(const Point* pointPtr = Point(1.0, 2.0).clone(); delete pointPtr;);
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, AdditionOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, AdditionOperator)
 {
-    using ostk::math::object::Vector2d;
-    using ostk::math::geometry::d2::objects::Point;
+    using ostk::mathematics::object::Vector2d;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_EQ(Point(1.0, 2.0), Point(1.0, 2.0) + Vector2d(0.0, 0.0));
@@ -39,10 +39,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, AdditionOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, SubtractionOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, SubtractionOperator)
 {
-    using ostk::math::object::Vector2d;
-    using ostk::math::geometry::d2::objects::Point;
+    using ostk::mathematics::object::Vector2d;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_EQ(Point(1.0, 2.0), Point(1.0, 2.0) - Vector2d(0.0, 0.0));
@@ -65,9 +65,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, SubtractionOperator
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, EqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, EqualToOperator)
 {
-    using ostk::math::geometry::d2::objects::Point;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_TRUE(Point(1.0, 2.0) == Point(1.0, 2.0));
@@ -84,9 +84,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, EqualToOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, NotEqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, NotEqualToOperator)
 {
-    using ostk::math::geometry::d2::objects::Point;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_TRUE(Point(1.0, 2.0) != Point(1.0, 3.0));
@@ -103,9 +103,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, NotEqualToOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, StreamOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, StreamOperator)
 {
-    using ostk::math::geometry::d2::objects::Point;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         testing::internal::CaptureStdout();
@@ -116,9 +116,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, StreamOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, IsDefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, IsDefined)
 {
-    using ostk::math::geometry::d2::objects::Point;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_TRUE(Point(0.0, 0.0).isDefined());
@@ -130,11 +130,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, IsDefined)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, IsNear)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, IsNear)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geometry::d2::objects::Point;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_TRUE(Point(0.0, 0.0).isNear(Point(0.0, 0.0), 0.0));
@@ -151,10 +151,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, IsNear)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, AsVector)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, AsVector)
 {
-    using ostk::math::object::Vector2d;
-    using ostk::math::geometry::d2::objects::Point;
+    using ostk::mathematics::object::Vector2d;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_EQ(Vector2d(1.0, 2.0), Point(1.0, 2.0).asVector());
@@ -165,11 +165,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, AsVector)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, DistanceTo)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, DistanceTo)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geometry::d2::objects::Point;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_EQ(0.0, Point(0.0, 0.0).distanceTo(Point(0.0, 0.0)));
@@ -209,9 +209,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, DistanceTo)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, ToString)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, ToString)
 {
-    using ostk::math::geometry::d2::objects::Point;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_EQ("[1.0, 2.0]", Point(1.0, 2.0).toString());
@@ -229,14 +229,14 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, ToString)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, ApplyTransformation)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, ApplyTransformation)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::object::Vector2d;
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::Transformation;
+    using ostk::mathematics::object::Vector2d;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::Transformation;
 
     // Translation
 
@@ -275,9 +275,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, ApplyTransformation
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, Undefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, Undefined)
 {
-    using ostk::math::geometry::d2::objects::Point;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_NO_THROW(Point::Undefined());
@@ -285,9 +285,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, Undefined)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, Origin)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, Origin)
 {
-    using ostk::math::geometry::d2::objects::Point;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_NO_THROW(Point::Origin());
@@ -295,10 +295,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, Origin)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, Vector)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point, Vector)
 {
-    using ostk::math::object::Vector2d;
-    using ostk::math::geometry::d2::objects::Point;
+    using ostk::mathematics::object::Vector2d;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_NO_THROW(Point::Vector(Vector2d(1.0, 2.0)));

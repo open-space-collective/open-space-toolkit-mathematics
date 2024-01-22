@@ -1,33 +1,33 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Line.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
 
 #include <Global.test.hpp>
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, Constructor)
 {
-    using ostk::math::geometry::d2::objects::Line;
+    using ostk::mathematics::geometry::d2::object::Line;
 
     {
         EXPECT_NO_THROW(Line({0.0, 0.0}, {0.0, 1.0}));
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, Clone)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, Clone)
 {
-    using ostk::math::geometry::d2::objects::Line;
+    using ostk::mathematics::geometry::d2::object::Line;
 
     {
         EXPECT_NO_THROW(const Line* linePtr = Line({0.0, 0.0}, {0.0, 1.0}).clone(); delete linePtr;);
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, EqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, EqualToOperator)
 {
-    using ostk::math::geometry::d2::objects::Line;
+    using ostk::mathematics::geometry::d2::object::Line;
 
     {
         EXPECT_TRUE(Line({0.0, 0.0}, {0.0, 1.0}) == Line({0.0, 0.0}, {0.0, +1.0}));
@@ -51,9 +51,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, EqualToOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, NotEqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, NotEqualToOperator)
 {
-    using ostk::math::geometry::d2::objects::Line;
+    using ostk::mathematics::geometry::d2::object::Line;
 
     {
         EXPECT_FALSE(Line({0.0, 0.0}, {0.0, 1.0}) != Line({0.0, 0.0}, {0.0, +1.0}));
@@ -77,9 +77,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, NotEqualToOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, StreamOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, StreamOperator)
 {
-    using ostk::math::geometry::d2::objects::Line;
+    using ostk::mathematics::geometry::d2::object::Line;
 
     {
         testing::internal::CaptureStdout();
@@ -90,9 +90,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, StreamOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, IsDefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, IsDefined)
 {
-    using ostk::math::geometry::d2::objects::Line;
+    using ostk::mathematics::geometry::d2::object::Line;
 
     {
         EXPECT_TRUE(Line({0.0, 0.0}, {0.0, 1.0}).isDefined());
@@ -103,10 +103,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, IsDefined)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, Intersects_Point)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, Intersects_Point)
 {
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::Line;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::Line;
 
     {
         EXPECT_TRUE(Line({0.0, 0.0}, {0.0, 1.0}).intersects(Point(0.0, 0.0)));
@@ -131,10 +131,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, Intersects_Point)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, Contains_Point)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, Contains_Point)
 {
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::Line;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::Line;
 
     {
         EXPECT_TRUE(Line({0.0, 0.0}, {0.0, 1.0}).contains(Point(0.0, -2.0)));
@@ -157,11 +157,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, Contains_Point)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, Contains_PointSet)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, Contains_PointSet)
 {
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::PointSet;
-    using ostk::math::geometry::d2::objects::Line;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::PointSet;
+    using ostk::mathematics::geometry::d2::object::Line;
 
     {
         EXPECT_TRUE(Line({0.0, 0.0}, {0.0, 1.0}).contains(PointSet({Point {0.0, -2.0}})));
@@ -186,10 +186,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, Contains_PointSet)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, GetOrigin)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, GetOrigin)
 {
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::Line;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::Line;
 
     {
         EXPECT_EQ(Point(0.0, 0.0), Line({0.0, 0.0}, {0.0, 1.0}).getOrigin());
@@ -203,11 +203,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, GetOrigin)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, GetDirection)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, GetDirection)
 {
-    using ostk::math::object::Vector2d;
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::Line;
+    using ostk::mathematics::object::Vector2d;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::Line;
 
     {
         EXPECT_EQ(Vector2d(0.0, +1.0), Line({0.0, 0.0}, {0.0, +2.0}).getDirection());
@@ -219,12 +219,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, GetDirection)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, DistanceTo_Point)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, DistanceTo_Point)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::Line;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::Line;
 
     {
         EXPECT_EQ(Line({0.0, 0.0}, {0.0, +1.0}).distanceTo({0.0, 0.0}), 0.0);
@@ -264,13 +264,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, DistanceTo_Point)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, ApplyTransformation)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, ApplyTransformation)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::object::Vector2d;
-    using ostk::math::geometry::d2::objects::Line;
-    using ostk::math::geometry::d2::Transformation;
+    using ostk::mathematics::object::Vector2d;
+    using ostk::mathematics::geometry::d2::object::Line;
+    using ostk::mathematics::geometry::d2::Transformation;
 
     // Translation
 
@@ -289,9 +289,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, ApplyTransformation)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, Undefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, Undefined)
 {
-    using ostk::math::geometry::d2::objects::Line;
+    using ostk::mathematics::geometry::d2::object::Line;
 
     {
         EXPECT_NO_THROW(Line::Undefined());
@@ -299,11 +299,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, Undefined)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, Points)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line, Points)
 {
-    using ostk::math::object::Vector2d;
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::Line;
+    using ostk::mathematics::object::Vector2d;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::Line;
 
     {
         const Line line = Line::Points(Point(1.0, 2.0), Point(2.0, 3.0));

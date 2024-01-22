@@ -99,13 +99,13 @@ Documentation is available here:
 The library exhibits the following structure:
 
 ```txt
-├── Objects
+├── Object
 │   ├── Vector
 │   ├── Matrix
 │   └── Interval
 ├── Geometry
 │   ├── 2D
-|   │   ├── Objects
+|   │   ├── Object
 │   │   │   ├── Point
 │   │   │   ├── Point Set
 │   │   │   ├── Line
@@ -121,7 +121,7 @@ The library exhibits the following structure:
 │   │       ├── Scaling
 │   │       └── Shear
 │   ├── 3D
-|   │   ├── Objects
+|   │   ├── Object
 │   │   │   ├── Point
 │   │   │   ├── Point Set
 │   │   │   ├── Line

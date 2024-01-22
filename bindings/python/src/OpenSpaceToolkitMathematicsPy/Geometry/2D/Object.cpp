@@ -4,12 +4,22 @@
 #include <OpenSpaceToolkit/Core/Types/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Composite.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/MultiPolygon.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Polygon.cpp>
+// #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/MultiLineString.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/LineString.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Segment.cpp>
+// #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Ray.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Line.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Point.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/PointSet.cpp>
 
 // The following trampoline function might be used if the virtual functions defined in C++ are to be overriden in Python
 // Probably not needed for now. To be included if writing python extension classes
 
-// using ostk::math::geometry::d2::Object ;
-// using ostk::math::geometry::d2::Transformation ;
+// using ostk::mathematics::geometry::d2::Object ;
+// using ostk::mathematics::geometry::d2::Transformation ;
 // using ostk::core::types::String ;
 // using ostk::core::types::Integer ;
 
@@ -18,7 +28,7 @@
 // {
 // public:
 //     /* Inherit the constructors */
-//     using ostk::math::geometry::d2::Object::Object;
+//     using ostk::mathematics::geometry::d2::Object::Object;
 
 //     /* Trampoline (need one for each virtual function) */
 //     virtual Object* clone() const override {
@@ -78,7 +88,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object(pybind11::module &a
 {
     using namespace pybind11;
 
-    using ostk::math::geometry::d2::Object;
+    using ostk::mathematics::geometry::d2::Object;
 
     // noncopyable class with Boost, removed in Pybind11
     class_<Object> ob(aModule, "Object");
@@ -119,4 +129,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object(pybind11::module &a
         .value("WKT", Object::Format::WKT)
 
         ;
+
+    // Create "object" python submodule
+    auto object = aModule.def_submodule("object");
+
+    // Add __path__ attribute for "object" submodule
+    object.attr("__path__") = "ostk.mathematics.geometry.d2.object";
+
+    // Add object to python "object" submodules
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Point(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_PointSet(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Line(object);
+    // OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Ray(object) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Segment(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(object);
+    // OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_MultiLineString(object) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Polygon(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_MultiPolygon(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Composite(object);
 }

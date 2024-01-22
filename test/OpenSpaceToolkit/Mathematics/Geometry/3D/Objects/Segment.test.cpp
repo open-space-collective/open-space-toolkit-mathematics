@@ -1,26 +1,26 @@
 /// Apache License 2.0
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Sphere.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 
 #include <Global.test.hpp>
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Constructor)
 {
-    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_NO_THROW(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}));
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Clone)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Clone)
 {
-    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_NO_THROW(const Segment* segmentPtr = Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).clone();
@@ -28,9 +28,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Clone)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, EqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, EqualToOperator)
 {
-    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_TRUE(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) == Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}));
@@ -48,9 +48,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, EqualToOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, NotEqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, NotEqualToOperator)
 {
-    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_FALSE(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}) != Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}));
@@ -68,9 +68,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, NotEqualToOperato
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, StreamOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, StreamOperator)
 {
-    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         testing::internal::CaptureStdout();
@@ -81,9 +81,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, StreamOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, IsDefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, IsDefined)
 {
-    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_TRUE(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}).isDefined());
@@ -95,9 +95,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, IsDefined)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, IsDegenerate)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, IsDegenerate)
 {
-    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_TRUE(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}).isDegenerate());
@@ -114,10 +114,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, IsDegenerate)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Intersects_Plane)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Intersects_Plane)
 {
-    using ostk::math::geometry::d3::objects::Segment;
-    using ostk::math::geometry::d3::objects::Plane;
+    using ostk::mathematics::geometry::d3::object::Segment;
+    using ostk::mathematics::geometry::d3::object::Plane;
 
     {
         EXPECT_TRUE(Segment({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}).intersects(Plane({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0})));
@@ -147,13 +147,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Intersects_Plane)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Intersects_Sphere)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Intersects_Sphere)
 {
-    using ostk::math::geometry::d3::objects::Segment;
-    using ostk::math::geometry::d3::objects::Sphere;
+    using ostk::mathematics::geometry::d3::object::Segment;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
-        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Sphere.Intersects
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere.Intersects
 
         SUCCEED();
     }
@@ -164,13 +164,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Intersects_Sphere
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Intersects_Ellipsoid)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Intersects_Ellipsoid)
 {
-    using ostk::math::geometry::d3::objects::Segment;
-    using ostk::math::geometry::d3::objects::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Segment;
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
 
     {
-        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid.Intersects
+        // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid.Intersects
 
         SUCCEED();
     }
@@ -181,10 +181,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Intersects_Ellips
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Contains_Point)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Contains_Point)
 {
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_TRUE(Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}).contains(Point(0.0, 0.0, 0.0)));
@@ -207,10 +207,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Contains_Point)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, GetCenter)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, GetCenter)
 {
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}).getCenter());
@@ -224,11 +224,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, GetCenter)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, GetDirection)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, GetDirection)
 {
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Segment({0.0, 0.0, 0.0}, {0.0, 0.0, +2.0}).getDirection());
@@ -243,10 +243,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, GetDirection)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, GetLength)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, GetLength)
 {
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_EQ(0.0, Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}).getLength());
@@ -263,10 +263,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, GetLength)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, DistanceToPoint)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, DistanceToPoint)
 {
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_EQ(0.0, Segment({0.0, 0.0, 0.0}, {0.0, +1.0, 0.0}).distanceTo(Point({0.0, 0.0, 0.0})));
@@ -312,11 +312,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, DistanceToPoint)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, DistanceToPointSet)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, DistanceToPointSet)
 {
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::PointSet;
-    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::PointSet;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_EQ(
@@ -339,14 +339,14 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, DistanceToPointSe
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, IntersectionWith_Plane)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, IntersectionWith_Plane)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::Segment;
-    using ostk::math::geometry::d3::objects::Plane;
-    using ostk::math::geometry::d3::Intersection;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Segment;
+    using ostk::mathematics::geometry::d3::object::Plane;
+    using ostk::mathematics::geometry::d3::Intersection;
 
     const auto expectSegmentIntersection =
         [](const Segment& aSegment, const Plane& aPlane, const Segment& anIntersectionSegment) -> void
@@ -442,10 +442,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, IntersectionWith_
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, ToLine)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, ToLine)
 {
-    using ostk::math::geometry::d3::objects::Line;
-    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_EQ(Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}), Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).toLine());
@@ -462,15 +462,15 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, ToLine)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, ApplyTransformation)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, ApplyTransformation)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d3::objects::Segment;
-    using ostk::math::geometry::d3::Transformation;
-    using ostk::math::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::object::Segment;
+    using ostk::mathematics::geometry::d3::Transformation;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
 
     // Translation
 
@@ -502,9 +502,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, ApplyTransformati
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, Undefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Undefined)
 {
-    using ostk::math::geometry::d3::objects::Segment;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_NO_THROW(Segment::Undefined());

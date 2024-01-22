@@ -1,32 +1,32 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
 
 #include <Global.test.hpp>
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, Constructor)
 {
-    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         EXPECT_NO_THROW(Segment({0.0, 0.0}, {0.0, 1.0}));
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, Clone)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, Clone)
 {
-    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         EXPECT_NO_THROW(const Segment* segmentPtr = Segment({0.0, 0.0}, {0.0, 1.0}).clone(); delete segmentPtr;);
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, EqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, EqualToOperator)
 {
-    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         EXPECT_TRUE(Segment({0.0, 0.0}, {0.0, 1.0}) == Segment({0.0, 0.0}, {0.0, 1.0}));
@@ -44,9 +44,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, EqualToOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, NotEqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, NotEqualToOperator)
 {
-    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         EXPECT_FALSE(Segment({0.0, 0.0}, {0.0, 1.0}) != Segment({0.0, 0.0}, {0.0, 1.0}));
@@ -64,9 +64,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, NotEqualToOperato
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, StreamOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, StreamOperator)
 {
-    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         testing::internal::CaptureStdout();
@@ -77,9 +77,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, StreamOperator)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, IsDefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, IsDefined)
 {
-    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         EXPECT_TRUE(Segment({0.0, 0.0}, {0.0, 0.0}).isDefined());
@@ -91,9 +91,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, IsDefined)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, IsDegenerate)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, IsDegenerate)
 {
-    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         EXPECT_TRUE(Segment({0.0, 0.0}, {0.0, 0.0}).isDegenerate());
@@ -110,10 +110,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, IsDegenerate)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, Contains_Point)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, Contains_Point)
 {
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         EXPECT_TRUE(Segment({0.0, 0.0}, {0.0, 0.0}).contains(Point(0.0, 0.0)));
@@ -136,10 +136,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, Contains_Point)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, GetCenter)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, GetCenter)
 {
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         EXPECT_EQ(Point(0.0, 0.0), Segment({0.0, 0.0}, {0.0, 0.0}).getCenter());
@@ -153,11 +153,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, GetCenter)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, GetDirection)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, GetDirection)
 {
-    using ostk::math::object::Vector2d;
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::mathematics::object::Vector2d;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         EXPECT_EQ(Vector2d(0.0, +1.0), Segment({0.0, 0.0}, {0.0, +2.0}).getDirection());
@@ -172,10 +172,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, GetDirection)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, GetLength)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, GetLength)
 {
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         EXPECT_EQ(0.0, Segment({0.0, 0.0}, {0.0, 0.0}).getLength());
@@ -192,10 +192,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, GetLength)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, DistanceToPoint)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, DistanceToPoint)
 {
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         EXPECT_EQ(0.0, Segment({0.0, 0.0}, {0.0, +1.0}).distanceTo(Point({0.0, 0.0})));
@@ -241,11 +241,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, DistanceToPoint)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, DistanceToPointSet)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, DistanceToPointSet)
 {
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::PointSet;
-    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::PointSet;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         EXPECT_EQ(0.0, Segment({0.0, 0.0}, {0.0, +1.0}).distanceTo(PointSet({{0.0, 0.0}, {0.0, 10.0}})));
@@ -260,10 +260,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, DistanceToPointSe
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, ToLine)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, ToLine)
 {
-    using ostk::math::geometry::d2::objects::Line;
-    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::mathematics::geometry::d2::object::Line;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         EXPECT_EQ(Line({0.0, 0.0}, {0.0, 1.0}), Segment({0.0, 0.0}, {0.0, 1.0}).toLine());
@@ -280,13 +280,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, ToLine)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, ApplyTransformation)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, ApplyTransformation)
 {
     using ostk::core::types::Real;
 
-    using ostk::math::object::Vector2d;
-    using ostk::math::geometry::d2::objects::Segment;
-    using ostk::math::geometry::d2::Transformation;
+    using ostk::mathematics::object::Vector2d;
+    using ostk::mathematics::geometry::d2::object::Segment;
+    using ostk::mathematics::geometry::d2::Transformation;
 
     // Translation
 
@@ -305,9 +305,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, ApplyTransformati
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, Undefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, Undefined)
 {
-    using ostk::math::geometry::d2::objects::Segment;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         EXPECT_NO_THROW(Segment::Undefined());
