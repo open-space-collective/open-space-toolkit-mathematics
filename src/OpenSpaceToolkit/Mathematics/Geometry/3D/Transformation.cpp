@@ -6,7 +6,7 @@
 #include <OpenSpaceToolkit/Core/Utilities.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
 
 namespace ostk
 {

@@ -1,8 +1,8 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 
 using ostk::core::ctnr::Array;
 using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
@@ -12,7 +12,7 @@ void set_quaternion_array(const Array<Quaternion>& anArray)
     (void)anArray;
 }
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_Quaternion(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Quaternion(pybind11::module& aModule)
 {
     using namespace pybind11;
 

@@ -1,8 +1,8 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Mathematics/Solvers/NumericalSolver.hpp>
+#include <OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Solvers_NumericalSolver(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::module& aModule)
 {
     using namespace pybind11;
 
@@ -11,7 +11,7 @@ inline void OpenSpaceToolkitMathematicsPy_Solvers_NumericalSolver(pybind11::modu
     using ostk::core::types::Real;
     using ostk::core::types::String;
 
-    using ostk::mathematics::solvers::NumericalSolver;
+    using ostk::mathematics::solver::NumericalSolver;
 
     typedef std::function<NumericalSolver::StateVector(
         const NumericalSolver::StateVector& x, NumericalSolver::StateVector& dxdt, const double t

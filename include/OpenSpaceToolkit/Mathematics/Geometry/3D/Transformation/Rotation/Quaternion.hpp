@@ -1,7 +1,7 @@
 /// Apache License 2.0
 
-#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion__
-#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion__
+#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion__
 
 #include <OpenSpaceToolkit/Core/Types/Integer.hpp>
 #include <OpenSpaceToolkit/Core/Types/Real.hpp>

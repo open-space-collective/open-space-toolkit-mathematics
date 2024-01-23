@@ -1,13 +1,13 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
 
 #include <Global.test.hpp>
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, Constructor)
 {
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix;
@@ -34,7 +34,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
     // }
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, EqualToOperator)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, EqualToOperator)
 // {
 
 //     using ostk::mathematics::geometry::Angle ;
@@ -77,7 +77,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, NotEqualToOperator)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, NotEqualToOperator)
 // {
 
 //     using ostk::mathematics::geometry::Angle ;
@@ -120,7 +120,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, StreamOperator)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, StreamOperator)
 // {
 
 //     using ostk::mathematics::geometry::Angle ;
@@ -138,7 +138,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, IsDefined)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, IsDefined)
 // {
 
 //     using ostk::mathematics::object::Vector3d ;
@@ -161,7 +161,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, GetAxis)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, GetAxis)
 // {
 
 //     using ostk::mathematics::object::Vector3d ;
@@ -184,7 +184,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, GetAngle)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, GetAngle)
 // {
 
 //     using ostk::mathematics::geometry::Angle ;
@@ -213,7 +213,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, Undefined)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, Undefined)
 // {
 
 //     using ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix ;
@@ -227,7 +227,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, Unit)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, Unit)
 // {
 
 //     using ostk::mathematics::geometry::Angle ;
@@ -242,11 +242,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, RX)
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, RY)
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, RZ)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, RX)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, RY)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, RZ)
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, Quaternion)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, Quaternion)
 // {
 
 //     using ostk::core::types::Real ;

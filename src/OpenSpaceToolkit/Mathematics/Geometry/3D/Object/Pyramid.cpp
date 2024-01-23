@@ -12,9 +12,9 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Interval.hpp>
 
 namespace ostk

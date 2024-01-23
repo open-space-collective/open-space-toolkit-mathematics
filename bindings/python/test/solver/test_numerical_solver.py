@@ -5,7 +5,7 @@ import pytest
 import numpy as np
 import math
 
-from ostk.mathematics.solvers import NumericalSolver
+from ostk.mathematics.solver import NumericalSolver
 
 
 def oscillator(x, dxdt, _):

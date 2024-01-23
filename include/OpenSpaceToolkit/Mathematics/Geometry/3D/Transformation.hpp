@@ -8,7 +8,7 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 

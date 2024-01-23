@@ -1,7 +1,7 @@
 /// Apache License 2.0
 
-#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_EulerAngle__
-#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_EulerAngle__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle__
+#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle__
 
 namespace ostk
 {

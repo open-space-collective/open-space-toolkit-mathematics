@@ -6,13 +6,13 @@
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utilities.hpp>
 
-#include <OpenSpaceToolkit/Mathematics/Solvers/NumericalSolver.hpp>
+#include <OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp>
 
 namespace ostk
 {
 namespace mathematics
 {
-namespace solvers
+namespace solver
 {
 
 using namespace boost::numeric::odeint;
@@ -540,6 +540,6 @@ double NumericalSolver::getSignedTimeStep(const Real& aReal) const
     return timeStep_ * durationSign;
 }
 
-}  // namespace solvers
+}  // namespace solver
 }  // namespace mathematics
 }  // namespace ostk

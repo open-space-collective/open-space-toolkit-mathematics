@@ -5,7 +5,7 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Line.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 
 #include <Global.test.hpp>
 

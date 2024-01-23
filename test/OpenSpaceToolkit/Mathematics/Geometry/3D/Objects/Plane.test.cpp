@@ -3,7 +3,7 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 
 #include <Global.test.hpp>
 

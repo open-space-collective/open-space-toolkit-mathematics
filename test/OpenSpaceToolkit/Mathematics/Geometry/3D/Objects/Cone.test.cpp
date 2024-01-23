@@ -4,7 +4,7 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 
 #include <Global.test.hpp>
 

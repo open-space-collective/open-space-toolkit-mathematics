@@ -1,7 +1,7 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkitMathematicsPy/Utilities/ArrayCasting.hpp>
-#include <OpenSpaceToolkitMathematicsPy/Utilities/ShiftToString.hpp>
+#include <OpenSpaceToolkitMathematicsPy/Utility/ArrayCasting.hpp>
+#include <OpenSpaceToolkitMathematicsPy/Utility/ShiftToString.hpp>
 #include <pybind11/eigen.h>
 #include <pybind11/functional.h>
 #include <pybind11/numpy.h>
@@ -12,7 +12,7 @@
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Object.cpp>
-#include <OpenSpaceToolkitMathematicsPy/Solvers.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Solver.cpp>
 
 PYBIND11_MODULE(OpenSpaceToolkitMathematicsPy, m)
 {
@@ -36,5 +36,5 @@ PYBIND11_MODULE(OpenSpaceToolkitMathematicsPy, m)
     OpenSpaceToolkitMathematicsPy_Object(m);
     OpenSpaceToolkitMathematicsPy_Geometry(m);
     OpenSpaceToolkitMathematicsPy_CurveFitting(m);
-    OpenSpaceToolkitMathematicsPy_Solvers(m);
+    OpenSpaceToolkitMathematicsPy_Solver(m);
 }

@@ -1,15 +1,15 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkitMathematicsPy/Solvers/NumericalSolver.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Solver/NumericalSolver.cpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Solvers(pybind11::module& aModule)
+inline void OpenSpaceToolkitMathematicsPy_Solver(pybind11::module& aModule)
 {
     // Create "object" python submodule
-    auto solvers = aModule.def_submodule("solvers");
+    auto solver = aModule.def_submodule("solver");
 
     // Add __path__ attribute for "interpolators" submodule
-    solvers.attr("__path__") = "ostk.mathematics.solvers";
+    solver.attr("__path__") = "ostk.mathematics.solver";
 
     // Add object to python "interpolators" submodules
-    OpenSpaceToolkitMathematicsPy_Solvers_NumericalSolver(solvers);
+    OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(solver);
 }

@@ -8,7 +8,7 @@
 #include <OpenSpaceToolkit/Core/Types/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
-#include <OpenSpaceToolkit/Mathematics/Solvers/NumericalSolver.hpp>
+#include <OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp>
 
 #include <Global.test.hpp>
 
@@ -21,11 +21,11 @@ using ostk::core::types::Shared;
 
 using ostk::mathematics::object::VectorXd;
 
-using ostk::mathematics::solvers::NumericalSolver;
+using ostk::mathematics::solver::NumericalSolver;
 
 // Simple duration based condition
 
-class OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver : public ::testing::Test
+class OpenSpaceToolkit_Mathematics_Solver_NumericalSolver : public ::testing::Test
 {
     void SetUp() override
     {
@@ -91,15 +91,15 @@ class OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver : public ::testing::T
     }
 };
 
-class OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized
-    : public OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver,
+class OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized
+    : public OpenSpaceToolkit_Mathematics_Solver_NumericalSolver,
       public ::testing::WithParamInterface<Tuple<NumericalSolver::StepperType>>
 {
 };
 
 INSTANTIATE_TEST_SUITE_P(
     Integration,
-    OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized,
+    OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized,
     ::testing::Values(
         std::make_tuple(NumericalSolver::StepperType::RungeKutta4),
         std::make_tuple(NumericalSolver::StepperType::RungeKuttaCashKarp54),
@@ -108,7 +108,7 @@ INSTANTIATE_TEST_SUITE_P(
     )
 );
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, Constructor)
+TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, Constructor)
 {
     {
         EXPECT_NO_THROW(NumericalSolver numericalsolver(
@@ -117,14 +117,14 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, Constructor)
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, CopyConstructor)
+TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, CopyConstructor)
 {
     {
         EXPECT_NO_THROW(NumericalSolver numericalsolverCopy(defaultRK54_));
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, EqualToOperator)
+TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, EqualToOperator)
 {
     {
         EXPECT_TRUE(defaultRK54_ == defaultRK54_);
@@ -188,7 +188,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, EqualToOperator)
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, NotEqualToOperator)
+TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, NotEqualToOperator)
 {
     {
         EXPECT_FALSE(defaultRK54_ != defaultRK54_);
@@ -249,14 +249,14 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, NotEqualToOperator)
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, IsDefined)
+TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, IsDefined)
 {
     {
         EXPECT_TRUE(defaultRK54_.isDefined());
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, StreamOperator)
+TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, StreamOperator)
 {
     {
         testing::internal::CaptureStdout();
@@ -267,7 +267,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, StreamOperator)
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, Print)
+TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, Print)
 {
     {
         testing::internal::CaptureStdout();
@@ -278,14 +278,14 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, Print)
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, Accessors)
+TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, Accessors)
 {
     {
         EXPECT_NO_THROW(defaultRK54_.accessObservedStateVectors());
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, GetType)
+TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, GetType)
 {
     {
         EXPECT_EQ(defaultRK54_.getLogType(), NumericalSolver::LogType::NoLog);
@@ -318,7 +318,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, GetType)
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, GetNumbers)
+TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, GetNumbers)
 {
     {
         EXPECT_EQ(defaultRK54_.getTimeStep(), 5.0);
@@ -333,7 +333,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, GetNumbers)
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, GetObservedStates)
+TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, GetObservedStates)
 {
     {
         EXPECT_NO_THROW(defaultRK54_.getObservedStateVectors());
@@ -348,7 +348,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, GetObservedStates)
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, StringFromType)
+TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, StringFromType)
 {
     {
         EXPECT_TRUE(NumericalSolver::StringFromStepperType(NumericalSolver::StepperType::RungeKutta4) == "RungeKutta4");
@@ -372,7 +372,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, StringFromType)
     }
 }
 
-TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, integrateDuration)
+TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, integrateDuration)
 {
     const auto parameters = GetParam();
 
@@ -412,7 +412,7 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, integr
     }
 }
 
-TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, IntegrateDuration_Comparison)
+TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, IntegrateDuration_Comparison)
 {
     const auto parameters = GetParam();
 
@@ -450,7 +450,7 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, Integr
     }
 }
 
-TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, IntegrateDuration_Array)
+TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, IntegrateDuration_Array)
 {
     const auto parameters = GetParam();
 
@@ -476,7 +476,7 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, Integr
     }
 }
 
-TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, IntegrateTime)
+TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, IntegrateTime)
 {
     const auto parameters = GetParam();
 
@@ -505,7 +505,7 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, Integr
     }
 }
 
-TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, IntegrateTime_Comparison)
+TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, IntegrateTime_Comparison)
 {
     const auto parameters = GetParam();
     // Performance test comparing results of integrate_adaptive and integrate_const
@@ -549,7 +549,7 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, Integr
     }
 }
 
-TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, IntegrateTime_Array)
+TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, IntegrateTime_Array)
 {
     const auto parameters = GetParam();
 
@@ -592,7 +592,7 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver_Parametrized, Integr
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, Undefined)
+TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, Undefined)
 {
     {
         EXPECT_NO_THROW(NumericalSolver::Undefined());
@@ -603,7 +603,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, Undefined)
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver, Default)
+TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, Default)
 {
     {
         EXPECT_NO_THROW(NumericalSolver::Default());

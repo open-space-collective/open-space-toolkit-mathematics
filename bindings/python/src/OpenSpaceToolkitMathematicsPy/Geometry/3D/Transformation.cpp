@@ -2,7 +2,7 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
 
-#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformations/Rotations.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformation/Rotation.cpp>
 
 inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::module& aModule)
 {
@@ -62,11 +62,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
         ;
 
     // Create "transformation" python submodule
-    auto transformation = aModule.def_submodule("transformation");
+    auto transformation_module = aModule.def_submodule("transformation");
 
     // Add __path__ attribute for "transformation" submodule
-    transformation.attr("__path__") = "ostk.mathematics.geometry.d3.transformation";
+    transformation_module.attr("__path__") = "ostk.mathematics.geometry.d3.transformation";
 
     // Add object to python "transformation" submodules
-    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations(transformation);
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation(transformation_module);
 }

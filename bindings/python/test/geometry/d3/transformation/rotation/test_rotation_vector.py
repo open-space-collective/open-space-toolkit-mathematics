@@ -10,7 +10,7 @@ Quaternion = geometry.d3.transformation.rotation.Quaternion
 RotationVector = geometry.d3.transformation.rotation.RotationVector
 
 
-def test_geometry_d3_transformations_rotations_rotation_vector():
+def test_geometry_d3_transformation_rotation_rotation_vector():
     rv: RotationVector = RotationVector(
         numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.zero()
     )

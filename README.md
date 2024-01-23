@@ -113,7 +113,7 @@ The library exhibits the following structure:
 │   │   │   ├── Multi Line String
 │   │   │   └── Polygon
 │   │   ├── Intersection
-│   │   └── Transformations
+│   │   └── Transformation
 │   │       ├── Identity
 │   │       ├── Translation
 │   │       ├── Rotation
@@ -137,10 +137,10 @@ The library exhibits the following structure:
 │   │   │   ├── Pyramid
 │   │   │   └── Composite
 │   │   ├── Intersection
-│   │   └── Transformations
+│   │   └── Transformation
 │   │       ├── Identity
 │   │       ├── Translation
-│   │       ├── Rotations
+│   │       ├── Rotation
 │   │       │   ├── Quaternion
 │   │       │   ├── Euler Angle
 │   │       │   ├── Rotation Vector
@@ -150,7 +150,7 @@ The library exhibits the following structure:
 │   │       └── Shear
 ├── Dynamics
 │   ├── State
-│   ├── Solvers
+│   ├── Solver
 │   │   ├── Runge–Kutta 4 (RK4)
 │   │   ├── Dormand–Prince 5 (DP5)
 │   │   └── Runge–Kutta–Fehlberg 78 (F78)

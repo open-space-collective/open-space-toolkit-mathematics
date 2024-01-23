@@ -25,7 +25,7 @@ using ostk::core::types::Size;
 using ostk::mathematics::object::VectorXd;
 using ostk::mathematics::curvefitting::Interpolator;
 
-using boost::mathematics::interpolators::cardinal_cubic_b_spline;
+using boost::math::interpolators::cardinal_cubic_b_spline;
 
 /// @brief                      CubicSpline
 ///

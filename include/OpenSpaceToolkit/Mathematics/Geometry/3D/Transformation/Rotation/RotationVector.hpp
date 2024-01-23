@@ -1,7 +1,7 @@
 /// Apache License 2.0
 
-#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector__
-#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector__
+#ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector__
+#define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector__
 
 #include <OpenSpaceToolkit/Core/Types/Real.hpp>
 #include <OpenSpaceToolkit/Core/Types/String.hpp>

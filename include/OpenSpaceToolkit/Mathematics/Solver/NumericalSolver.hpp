@@ -1,7 +1,7 @@
 /// Apache License 2.0
 
-#ifndef __OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver__
-#define __OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver__
+#ifndef __OpenSpaceToolkit_Mathematics_Solver_NumericalSolver__
+#define __OpenSpaceToolkit_Mathematics_Solver_NumericalSolver__
 
 #include <OpenSpaceToolkit/Core/Containers/Array.hpp>
 #include <OpenSpaceToolkit/Core/Containers/Pair.hpp>
@@ -15,7 +15,7 @@ namespace ostk
 {
 namespace mathematics
 {
-namespace solvers
+namespace solver
 {
 
 using ostk::core::ctnr::Array;
@@ -308,7 +308,7 @@ class NumericalSolver
     void observeNumericalIntegration(const StateVector& x, const double t);
 };
 
-}  // namespace solvers
+}  // namespace solver
 }  // namespace astro
 }  // namespace ostk
 

@@ -1,7 +1,7 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
 
 #include <Global.test.hpp>
@@ -12,7 +12,7 @@ using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
 using ostk::mathematics::object::Vector3d;
 using ostk::core::types::Real;
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Constructor)
 {
     {
         EXPECT_NO_THROW(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(45.0)));
@@ -28,7 +28,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, EqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, EqualToOperator)
 {
     {
         EXPECT_TRUE(
@@ -96,7 +96,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, NotEqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, NotEqualToOperator)
 {
     {
         EXPECT_TRUE(
@@ -160,7 +160,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, StreamOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, StreamOperator)
 {
     {
         testing::internal::CaptureStdout();
@@ -171,7 +171,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, IsDefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, IsDefined)
 {
     {
         EXPECT_TRUE(RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(10.0)).isDefined());
@@ -184,7 +184,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, GetAxis)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, GetAxis)
 {
     {
         EXPECT_EQ(Vector3d(1.0, 0.0, 0.0), RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(10.0)).getAxis());
@@ -197,7 +197,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, GetAngle)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, GetAngle)
 {
     {
         EXPECT_EQ(Angle::Degrees(0.0), RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(0.0)).getAngle());
@@ -217,7 +217,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, ToString)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, ToString)
 {
     {
         EXPECT_EQ("[1.0, 0.0, 0.0] : 0.0 [deg]", RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(0.0)).toString());
@@ -265,7 +265,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Undefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Undefined)
 {
     {
         EXPECT_NO_THROW(RotationVector::Undefined());
@@ -273,7 +273,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Unit)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Unit)
 {
     {
         EXPECT_NO_THROW(RotationVector::Unit());
@@ -281,7 +281,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, X)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, X)
 {
     {
         EXPECT_NO_THROW(RotationVector::X(Angle::Degrees(45.0)));
@@ -297,7 +297,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Y)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Y)
 {
     {
         EXPECT_NO_THROW(RotationVector::Y(Angle::Degrees(45.0)));
@@ -313,7 +313,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Z)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Z)
 {
     {
         EXPECT_NO_THROW(RotationVector::Z(Angle::Degrees(45.0)));
@@ -329,7 +329,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationVector, Quaternion)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Quaternion)
 {
     {
         EXPECT_EQ(RotationVector::Unit(), RotationVector::Quaternion(Quaternion::Unit()));

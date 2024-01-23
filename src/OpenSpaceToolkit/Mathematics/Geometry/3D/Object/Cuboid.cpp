@@ -15,7 +15,7 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Interval.hpp>
 // #include <Gte/Mathematics/GteIntrOrientedBox3Cylinder3.h>
 #include <Gte/Mathematics/GteIntrLine3OrientedBox3.h>

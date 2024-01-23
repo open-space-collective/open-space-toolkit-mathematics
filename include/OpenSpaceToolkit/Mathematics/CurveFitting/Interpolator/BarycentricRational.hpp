@@ -25,7 +25,7 @@ using ostk::core::types::Size;
 using ostk::mathematics::object::VectorXd;
 using ostk::mathematics::curvefitting::Interpolator;
 
-using boost::mathematics::interpolators::barycentric_rational;
+using boost::math::interpolators::barycentric_rational;
 
 /// @brief                      BarycentricRational
 ///

@@ -4,7 +4,7 @@
 
 inline void OpenSpaceToolkitMathematicsPy_CurveFitting(pybind11::module& aModule)
 {
-    // Create "object" python submodule
+    // Create "curve fitting" python submodule
     auto curve_fitting = aModule.def_submodule("curve_fitting");
 
     // Add __path__ attribute for "interpolators" submodule

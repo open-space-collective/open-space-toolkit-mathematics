@@ -3,7 +3,7 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 
 #include <Global.test.hpp>
 

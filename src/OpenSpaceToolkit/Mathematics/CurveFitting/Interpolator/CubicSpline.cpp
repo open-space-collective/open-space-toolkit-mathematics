@@ -37,7 +37,7 @@ CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
     }
 
     interpolator_ =
-        boost::mathematics::interpolators::cardinal_cubic_b_spline<double>(aYVector.begin(), aYVector.end(), anXVector(0), h);
+        boost::math::interpolators::cardinal_cubic_b_spline<double>(aYVector.begin(), aYVector.end(), anXVector(0), h);
 }
 
 CubicSpline::CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h)
@@ -48,7 +48,7 @@ CubicSpline::CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h
     }
 
     interpolator_ =
-        boost::mathematics::interpolators::cardinal_cubic_b_spline<double>(aYVector.begin(), aYVector.end(), x0, h);
+        boost::math::interpolators::cardinal_cubic_b_spline<double>(aYVector.begin(), aYVector.end(), x0, h);
 }
 
 CubicSpline* CubicSpline::clone() const
