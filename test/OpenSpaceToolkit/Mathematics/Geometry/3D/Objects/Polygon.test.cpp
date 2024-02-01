@@ -301,6 +301,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetYAxis)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetNormalVector)
 {
+    using ostk::core::types::Real;
+
     using ostk::math::object::Vector3d;
     using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
     using ostk::math::geometry::d3::objects::Point;
@@ -313,6 +315,23 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetNormalVector)
         const Vector3d yAxis = {0.0, 1.0, 0.0};
 
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Polygon(polygon2d, origin, xAxis, yAxis).getNormalVector());
+    }
+
+    {
+        const Polygon2d polygon2d = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
+        const Point origin = {1.0, 2.0, 3.0};
+        const Vector3d xAxis = {1.0000000000000006, 0.0, 0.0};
+
+        const Vector3d yAxis = {0.0, 1.0000000000000006, 0.0};
+
+        // X and Y axes can be considered unitary while their cross product is not
+        EXPECT_TRUE(
+            (xAxis.norm() - 1.0) < Real::Epsilon() && (yAxis.norm() - 1.0) < Real::Epsilon() &&
+            (xAxis.cross(yAxis).norm() - 1.0) > Real::Epsilon()
+        );
+
+        // The `getNormalVector` function normalizes the output
+        EXPECT_TRUE((Polygon(polygon2d, origin, xAxis, yAxis).getNormalVector().norm() - 1.0) < Real::Epsilon());
     }
 
     {
