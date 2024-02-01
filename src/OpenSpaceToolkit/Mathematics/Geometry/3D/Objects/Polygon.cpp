@@ -145,7 +145,7 @@ Vector3d Polygon::getNormalVector() const
         throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return xAxis_.cross(yAxis_);
+    return xAxis_.cross(yAxis_).normalized();
 }
 
 Size Polygon::getEdgeCount() const
