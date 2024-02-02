@@ -275,7 +275,7 @@ bool Composite::contains(const Object& anObject) const
         return false;
     }
 
-    return std::all_of(
+    return std::any_of(
         objects_.begin(),
         objects_.end(),
         [&anObject](const Unique<Object>& anObjectUPtr) -> bool

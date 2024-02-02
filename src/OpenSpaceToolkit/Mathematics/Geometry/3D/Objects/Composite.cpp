@@ -270,7 +270,7 @@ bool Composite::contains(const Object& anObject) const
         throw ostk::core::error::runtime::Undefined("Composite");
     }
 
-    return std::all_of(
+    return std::any_of(
         objects_.begin(),
         objects_.end(),
         [&anObject](const Unique<Object>& anObjectUPtr) -> bool

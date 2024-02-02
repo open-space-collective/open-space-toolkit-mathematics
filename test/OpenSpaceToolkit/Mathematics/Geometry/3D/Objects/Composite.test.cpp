@@ -4,6 +4,7 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Composite.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cone.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cuboid.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Plane.hpp>
@@ -34,7 +35,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Constructor)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -44,7 +46,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Constructor)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex);
@@ -54,14 +57,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Constructor)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex);
 
         const Point center = {0.0, 0.0, 0.0};
         const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}};
+            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
+        };
         const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
@@ -86,7 +91,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Clone)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -106,7 +112,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, CopyConstructor
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -133,7 +140,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -145,14 +153,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex);
 
         const Point center = {0.0, 0.0, 0.0};
         const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}};
+            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
+        };
         const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
@@ -169,7 +179,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -178,7 +189,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator
 
         const Point center = {0.0, 0.0, 0.0};
         const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}};
+            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
+        };
         const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
@@ -190,14 +202,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex);
 
         const Point center = {0.0, 0.0, 0.0};
         const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}};
+            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
+        };
         const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
 
         const Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
@@ -221,7 +235,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -250,7 +265,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOpera
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -262,14 +278,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOpera
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex);
 
         const Point center = {0.0, 0.0, 0.0};
         const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}};
+            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
+        };
         const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
@@ -286,7 +304,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOpera
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -295,7 +314,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOpera
 
         const Point center = {0.0, 0.0, 0.0};
         const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}};
+            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
+        };
         const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
 
         const Cuboid cuboid = {center, axes, extent};
@@ -307,14 +327,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOpera
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex);
 
         const Point center = {0.0, 0.0, 0.0};
         const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}};
+            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
+        };
         const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
 
         const Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
@@ -338,7 +360,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOpera
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -367,7 +390,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionOperato
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -379,7 +403,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionOperato
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -407,7 +432,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionAssignm
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -419,7 +445,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionAssignm
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -447,7 +474,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, StreamOperator)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -478,7 +506,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, IsDefined)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -509,7 +538,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, IsEmpty)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -559,7 +589,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Intersects)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -579,15 +610,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Contains)
     using ostk::core::ctnr::Array;
 
     using ostk::math::object::Vector3d;
+    using ostk::math::geometry::Angle;
     using ostk::math::geometry::d3::Object;
     using ostk::math::geometry::d3::objects::Point;
     using ostk::math::geometry::d3::objects::Polygon;
     using ostk::math::geometry::d3::objects::Cuboid;
     using ostk::math::geometry::d3::objects::Pyramid;
+    using ostk::math::geometry::d3::objects::Cone;
     using ostk::math::geometry::d3::objects::Composite;
 
     // [TBI]
-
     // {
 
     //     const Polygon base = { { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } }, { 0.0, 0.0, 0.0 },
@@ -603,7 +635,46 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Contains)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
+
+        const Point apex = {0.0, 0.0, 1.0};
+        const Pyramid pyramid = {base, apex};
+
+        const Composite composite = Composite {pyramid};
+
+        const Point testPoint = {0.0, 0.0, 0.5};
+
+        EXPECT_TRUE(composite.contains(testPoint));
+    }
+
+    {
+        const Point apex = {0.0, 0.0, 0.0};
+
+        const Vector3d vec1 = {0.0, 0.0, 1.0};
+        const Angle angle1 = Angle::Degrees(30.0);
+        const Cone cone1 = Cone {apex, vec1, angle1};
+
+        const Vector3d vec2 = {0.0, 0.0, -1.0};
+        const Angle angle2 = Angle::Degrees(30.0);
+        const Cone cone2 = Cone(apex, vec2, angle2);
+
+        Composite composite1 = Composite {cone1};
+        Composite composite2 = Composite {cone2};
+
+        Composite multiComposite = composite1 + composite2;
+
+        const Point testPoint = {0.0, 0.0, 0.5};
+
+        EXPECT_TRUE(composite1.contains(testPoint));
+        EXPECT_FALSE(composite2.contains(testPoint));
+        EXPECT_TRUE(multiComposite.contains(testPoint));
+    }
+
+    {
+        const Polygon base = {
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -632,7 +703,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Is)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -665,7 +737,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, As)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -698,7 +771,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjectAt)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -712,14 +786,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjectAt)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex);
 
         const Point center = {0.0, 0.0, 0.0};
         const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}};
+            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
+        };
         const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
@@ -758,7 +834,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjects)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -770,14 +847,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjects)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex);
 
         const Point center = {0.0, 0.0, 0.0};
         const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}};
+            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
+        };
         const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
@@ -813,7 +892,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, GetObjectCount)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -825,14 +905,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, GetObjectCount)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex);
 
         const Point center = {0.0, 0.0, 0.0};
         const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}};
+            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
+        };
         const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
@@ -868,7 +950,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, ConstIterator)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -885,14 +968,16 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, ConstIterator)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         Unique<Object> pyramidUPtr = std::make_unique<Pyramid>(base, apex);
 
         const Point center = {0.0, 0.0, 0.0};
         const std::array<Vector3d, 3> axes = {
-            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}};
+            Vector3d {1.0, 0.0, 0.0}, Vector3d {0.0, 1.0, 0.0}, Vector3d {0.0, 0.0, 1.0}
+        };
         const std::array<Real, 3> extent = {1.0, 2.0, 3.0};
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
@@ -939,7 +1024,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, ApplyTransforma
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};
@@ -951,7 +1037,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, ApplyTransforma
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         const Pyramid pyramid = {base, apex};

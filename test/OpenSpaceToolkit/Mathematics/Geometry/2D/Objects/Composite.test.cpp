@@ -370,6 +370,20 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Contains)
 
         EXPECT_TRUE(composite.contains(point));
     }
+
+    // Point contained in the interior of one Polygon, in the exterior of a second Polygon
+
+    {
+        const Polygon polygon1 = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
+        const Polygon polygon2 = {{{0.0, 0.0}, {-1.0, 0.0}, {-1.0, -1.0}, {0.0, -1.0}}};
+
+        Composite composite = Composite {polygon1};
+        composite += Composite {polygon2};
+
+        const Point point = {0.5, 0.5};
+
+        EXPECT_TRUE(composite.contains(point));
+    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, AnyContains)
