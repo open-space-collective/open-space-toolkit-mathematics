@@ -3,9 +3,9 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString__
 
-#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
-#include <OpenSpaceToolkit/Core/Types/Index.hpp>
-#include <OpenSpaceToolkit/Core/Types/Size.hpp>
+#include <OpenSpaceToolkit/Core/Container/Array.hpp>
+#include <OpenSpaceToolkit/Core/Type/Index.hpp>
+#include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp>
@@ -21,9 +21,9 @@ namespace d2
 namespace object
 {
 
-using ostk::core::types::Index;
-using ostk::core::types::Size;
-using ostk::core::ctnr::Array;
+using ostk::core::type::Index;
+using ostk::core::type::Size;
+using ostk::core::container::Array;
 
 using ostk::mathematics::object::Vector2d;
 using ostk::mathematics::geometry::d2::Object;

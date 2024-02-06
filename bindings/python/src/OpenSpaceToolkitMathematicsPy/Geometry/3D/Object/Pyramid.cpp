@@ -7,8 +7,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 {
     using namespace pybind11;
 
-    using ostk::core::types::Size;
-    using ostk::core::types::Real;
+    using ostk::core::type::Size;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::d3::Object;
     using ostk::mathematics::geometry::d3::object::Point;

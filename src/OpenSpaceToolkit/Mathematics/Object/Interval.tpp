@@ -1,7 +1,7 @@
 /// Apache License 2.0
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
-#include <OpenSpaceToolkit/Core/Utilities.hpp>
+#include <OpenSpaceToolkit/Core/Utility.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Object/Interval.hpp>
 
@@ -258,8 +258,8 @@ template <class T>
 template <class U>
 ctnr::Array<T> Interval<T>::generateArrayWithStep(const U& aStep) const
 {
-    using ostk::core::types::Index;
-    using ostk::core::types::Size;
+    using ostk::core::type::Index;
+    using ostk::core::type::Size;
 
     if (!this->isDefined())
     {

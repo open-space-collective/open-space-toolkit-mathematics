@@ -288,7 +288,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, GetDirection)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, DistanceTo_Point)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Line;
@@ -331,7 +331,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, DistanceTo_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, IntersectionWith_Plane)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Line;
@@ -427,7 +427,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, IntersectionWith_Plan
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, ApplyTransformation)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;

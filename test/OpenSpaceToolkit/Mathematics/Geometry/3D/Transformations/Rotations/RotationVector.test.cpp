@@ -10,7 +10,7 @@ using ostk::mathematics::geometry::Angle;
 using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
 using ostk::mathematics::object::Vector3d;
-using ostk::core::types::Real;
+using ostk::core::type::Real;
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Constructor)
 {

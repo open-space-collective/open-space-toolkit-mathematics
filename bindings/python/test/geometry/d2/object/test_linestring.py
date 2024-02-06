@@ -6,7 +6,7 @@ import numpy as np
 
 import pytest
 
-from ostk.core.types import String
+from ostk.core.type import String
 
 import ostk.mathematics as mathematics
 

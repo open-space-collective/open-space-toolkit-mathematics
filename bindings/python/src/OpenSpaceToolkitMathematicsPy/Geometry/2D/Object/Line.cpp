@@ -6,7 +6,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Line(pybind11::modu
 {
     using namespace pybind11;
 
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::object::Vector2d;
     using ostk::mathematics::geometry::d2::Object;

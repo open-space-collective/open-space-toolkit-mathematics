@@ -3,9 +3,9 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid__
 
-#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
-#include <OpenSpaceToolkit/Core/Types/Index.hpp>
-#include <OpenSpaceToolkit/Core/Types/Size.hpp>
+#include <OpenSpaceToolkit/Core/Container/Array.hpp>
+#include <OpenSpaceToolkit/Core/Type/Index.hpp>
+#include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp>
@@ -23,9 +23,9 @@ namespace d3
 namespace object
 {
 
-using ostk::core::ctnr::Index;
-using ostk::core::ctnr::Size;
-using ostk::core::ctnr::Array;
+using ostk::core::container::Index;
+using ostk::core::container::Size;
+using ostk::core::container::Array;
 
 using ostk::mathematics::geometry::d3::Object;
 using ostk::mathematics::geometry::d3::object::Point;

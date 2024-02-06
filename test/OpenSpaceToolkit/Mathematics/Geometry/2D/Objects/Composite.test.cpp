@@ -1,6 +1,6 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp>
@@ -11,8 +11,8 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, Constructor)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::Object;
     using ostk::mathematics::geometry::d2::object::Point;
@@ -594,8 +594,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, AccessObjectAt)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, AccessObject)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::Object;
     using ostk::mathematics::geometry::d2::object::Polygon;

@@ -4,7 +4,7 @@ import pytest
 
 import ostk.mathematics as mathematics
 
-from ostk.core.types import Real, String
+from ostk.core.type import Real, String
 
 
 RealInterval = mathematics.object.RealInterval

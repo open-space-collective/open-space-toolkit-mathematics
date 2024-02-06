@@ -3,11 +3,11 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite__
 
-#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
+#include <OpenSpaceToolkit/Core/Container/Array.hpp>
 #include <OpenSpaceToolkit/Core/Error.hpp>
-#include <OpenSpaceToolkit/Core/Types/Index.hpp>
-#include <OpenSpaceToolkit/Core/Types/Size.hpp>
-#include <OpenSpaceToolkit/Core/Types/Unique.hpp>
+#include <OpenSpaceToolkit/Core/Type/Index.hpp>
+#include <OpenSpaceToolkit/Core/Type/Size.hpp>
+#include <OpenSpaceToolkit/Core/Type/Unique.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
 
@@ -22,10 +22,10 @@ namespace d2
 namespace object
 {
 
-using ostk::core::types::Unique;
-using ostk::core::types::Index;
-using ostk::core::types::Size;
-using ostk::core::ctnr::Array;
+using ostk::core::type::Unique;
+using ostk::core::type::Index;
+using ostk::core::type::Size;
+using ostk::core::container::Array;
 
 using ostk::mathematics::geometry::d2::Object;
 
@@ -139,7 +139,7 @@ class Composite : public Object
             throw ostk::core::error::runtime::Undefined("Composite");
         }
 
-        return (object_.getSize() == 1) && (dynamic_cast<const Type*>(object_.accessFirst().get()) != nullptr);
+        return (object_.getSize() == 1) && (dynamic_cast<const Type*>(objects_.accessFirst().get()) != nullptr);
     }
 
     /// @brief              Access composite as its underlying object
@@ -156,12 +156,12 @@ class Composite : public Object
             throw ostk::core::error::runtime::Undefined("Composite");
         }
 
-        if (object_.getSize() != 1)
+        if (objects_.getSize() != 1)
         {
             throw ostk::core::error::RuntimeError("Cannot convert composite: it is complex.");
         }
 
-        const Type* objectPtr = dynamic_cast<const Type*>(object_.accessFirst().get());
+        const Type* objectPtr = dynamic_cast<const Type*>(objects_.accessFirst().get());
 
         if (objectPtr == nullptr)
         {
@@ -302,7 +302,7 @@ class Composite : public Object
 
    private:
     bool defined_;
-    Array<Unique<Object>> object_;
+    Array<Unique<Object>> objects_;
 };
 
 }  // namespace object

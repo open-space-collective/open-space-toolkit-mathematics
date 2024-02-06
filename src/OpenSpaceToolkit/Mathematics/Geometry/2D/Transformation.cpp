@@ -1,9 +1,9 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Containers/Map.hpp>
-#include <OpenSpaceToolkit/Core/Containers/Pair.hpp>
+#include <OpenSpaceToolkit/Core/Container/Map.hpp>
+#include <OpenSpaceToolkit/Core/Container/Pair.hpp>
 #include <OpenSpaceToolkit/Core/Error.hpp>
-#include <OpenSpaceToolkit/Core/Utilities.hpp>
+#include <OpenSpaceToolkit/Core/Utility.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
 
@@ -63,8 +63,8 @@ Vector3d Transformation::operator*(const Vector3d& aVector) const
 
 Transformation& Transformation::operator*=(const Transformation& aTransformation)
 {
-    using ostk::core::ctnr::Pair;
-    using ostk::core::ctnr::Map;
+    using ostk::core::container::Pair;
+    using ostk::core::container::Map;
 
     if (!aTransformation.isDefined())
     {

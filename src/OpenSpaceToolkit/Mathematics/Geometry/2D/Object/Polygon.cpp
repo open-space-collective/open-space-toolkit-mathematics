@@ -9,10 +9,10 @@
 #include <boost/numeric/ublas/matrix.hpp>
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
-#include <OpenSpaceToolkit/Core/Types/Index.hpp>
-#include <OpenSpaceToolkit/Core/Types/Size.hpp>
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
-#include <OpenSpaceToolkit/Core/Utilities.hpp>
+#include <OpenSpaceToolkit/Core/Type/Index.hpp>
+#include <OpenSpaceToolkit/Core/Type/Size.hpp>
+#include <OpenSpaceToolkit/Core/Type/String.hpp>
+#include <OpenSpaceToolkit/Core/Utility.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp>
@@ -36,9 +36,9 @@ using boost::geometry::model::ring;
 using boost::geometry::model::polygon;
 using boost::geometry::model::d2::point_xy;
 
-using ostk::core::types::Index;
-using ostk::core::types::Size;
-using ostk::core::types::String;
+using ostk::core::type::Index;
+using ostk::core::type::Size;
+using ostk::core::type::String;
 
 class Polygon::Impl
 {
@@ -786,8 +786,8 @@ bool Polygon::isNear(const Polygon& aPolygon, const Real& aTolerance) const
     const Array<Polygon::Vertex> firstVertices = this->getVertices();
     const Array<Polygon::Vertex> secondVertices = aPolygon.getVertices();
 
-    // for (const auto vertexTuple : ostk::core::ctnr::iterators::Zip(this->getVertices(), aPolygon.getVertices()))
-    for (const auto vertexTuple : ostk::core::ctnr::iterators::Zip(firstVertices, secondVertices))
+    // for (const auto vertexTuple : ostk::core::container::iterator::Zip(this->getVertices(), aPolygon.getVertices()))
+    for (const auto vertexTuple : ostk::core::container::iterator::Zip(firstVertices, secondVertices))
     {
         if (!std::get<0>(vertexTuple).isNear(std::get<1>(vertexTuple), aTolerance))
         {

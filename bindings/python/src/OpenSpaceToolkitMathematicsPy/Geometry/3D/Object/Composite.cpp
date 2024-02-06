@@ -1,6 +1,6 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Types/Shared.hpp>
+#include <OpenSpaceToolkit/Core/Type/Shared.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp>
@@ -9,8 +9,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11:
 {
     using namespace pybind11;
 
-    using ostk::core::types::Shared;
-    using ostk::core::types::Real;
+    using ostk::core::type::Shared;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::Object;

@@ -6,7 +6,7 @@
 #include <limits>
 #include <sstream>
 
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 bool isDefined() const
 {

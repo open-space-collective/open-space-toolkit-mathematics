@@ -3,8 +3,8 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation__
 
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
-#include <OpenSpaceToolkit/Core/Types/Unique.hpp>
+#include <OpenSpaceToolkit/Core/Type/String.hpp>
+#include <OpenSpaceToolkit/Core/Type/Unique.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp>
@@ -23,8 +23,8 @@ namespace d3
 
 class Transformation;
 
-using ostk::core::types::Unique;
-using ostk::core::types::String;
+using ostk::core::type::Unique;
+using ostk::core::type::String;
 
 using ostk::mathematics::object::Vector3d;
 using ostk::mathematics::object::Vector4d;

@@ -3,8 +3,8 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid__
 
-#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Container/Array.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
@@ -21,8 +21,8 @@ namespace d3
 namespace object
 {
 
-using ostk::core::types::Real;
-using ostk::core::ctnr::Array;
+using ostk::core::type::Real;
+using ostk::core::container::Array;
 
 using ostk::mathematics::object::Vector3d;
 using ostk::mathematics::geometry::d3::Object;

@@ -3,9 +3,9 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion__
 
-#include <OpenSpaceToolkit/Core/Types/Integer.hpp>
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Type/Integer.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
@@ -23,9 +23,9 @@ namespace transformation
 namespace rotation
 {
 
-using ostk::core::types::Integer;
-using ostk::core::types::Real;
-using ostk::core::types::String;
+using ostk::core::type::Integer;
+using ostk::core::type::Real;
+using ostk::core::type::String;
 
 using ostk::mathematics::object::Vector3d;
 using ostk::mathematics::object::Vector4d;

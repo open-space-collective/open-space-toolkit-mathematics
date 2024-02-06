@@ -3,7 +3,7 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment__
 
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp>
@@ -20,7 +20,7 @@ namespace d2
 namespace object
 {
 
-using ostk::core::types::Real;
+using ostk::core::type::Real;
 
 using ostk::mathematics::geometry::d2::Object;
 using ostk::mathematics::geometry::d2::object::Point;

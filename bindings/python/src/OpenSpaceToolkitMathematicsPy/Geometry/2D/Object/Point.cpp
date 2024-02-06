@@ -2,7 +2,7 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp>
 
-using ostk::core::ctnr::Array;
+using ostk::core::container::Array;
 using ostk::mathematics::geometry::d2::object::Point;
 using ostk::mathematics::object::VectorXd;
 
@@ -20,8 +20,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Point(pybind11::mod
 {
     using namespace pybind11;
 
-    using ostk::core::types::Integer;
-    using ostk::core::types::Real;
+    using ostk::core::type::Integer;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::object::Vector2d;
     using ostk::mathematics::geometry::d2::Object;
@@ -68,9 +68,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Point(pybind11::mod
         .def_static("vector", &Point::Vector, arg("vector"))
 
         ;
-
-    // implicitly_convertible<Point, Vector2d>() ;
-    // implicitly_convertible<Vector2d, Point>() ;
 
     aModule.def("set_point_array", overload_cast<const Array<Point>&>(&set_point_array));
     aModule.def("set_point_2_array", overload_cast<const Array<Array<Point>>&>(&set_point_2_array));

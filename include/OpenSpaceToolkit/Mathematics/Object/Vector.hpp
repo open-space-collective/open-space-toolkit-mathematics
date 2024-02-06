@@ -3,7 +3,7 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Object_Vector__
 #define __OpenSpaceToolkit_Mathematics_Object_Vector__
 
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #define EIGEN_MATRIXBASE_PLUGIN "OpenSpaceToolkit/Mathematics/Object/Eigen.hpp"
 

@@ -8,7 +8,7 @@
 #include <boost/geometry/geometries/point_xy.hpp>
 #include <boost/geometry/geometries/polygon.hpp>
 
-#include <OpenSpaceToolkit/Core/Containers/Tuple.hpp>
+#include <OpenSpaceToolkit/Core/Container/Tuple.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp>
@@ -19,7 +19,7 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, Constructor)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -74,7 +74,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, Constructor)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, Clone)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -87,7 +87,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, Clone)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, EqualToOperator)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -124,7 +124,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, EqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, NotEqualToOperator)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -161,7 +161,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, NotEqualToOperator
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, StreamOperator)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -178,7 +178,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, StreamOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IsDefined)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -195,7 +195,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IsNear)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -242,8 +242,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IsNear)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectsPolygon)
 {
-    using ostk::core::ctnr::Tuple;
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Tuple;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -322,8 +322,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectsPolygon)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ContainsPoint)
 {
-    using ostk::core::ctnr::Tuple;
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Tuple;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::Polygon;
@@ -377,8 +377,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ContainsPoint)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ContainsPointSet)
 {
-    using ostk::core::ctnr::Tuple;
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Tuple;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::PointSet;
     using ostk::mathematics::geometry::d2::object::Polygon;
@@ -423,7 +423,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ContainsPointSet)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetInnerRingCount)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -454,7 +454,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetInnerRingCount)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetEdgeCount)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -485,7 +485,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetEdgeCount)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetVertexCount)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -516,7 +516,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetVertexCount)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetOuterRing)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -551,7 +551,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetOuterRing)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetInnerRingAt)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -590,7 +590,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetInnerRingAt)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetEdgeAt)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -618,7 +618,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetEdgeAt)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetVertexAt)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -646,7 +646,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetVertexAt)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetEdges)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -676,7 +676,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetEdges)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetVertices)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -963,7 +963,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, UnionWith)
     using ostk::mathematics::geometry::d2::object::Polygon;
 
     {
-        using ostk::core::ctnr::Array;
+        using ostk::core::container::Array;
 
         using ostk::mathematics::geometry::d2::object::MultiPolygon;
 
@@ -1080,7 +1080,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, UnionWith)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ToString)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::object::Vector2d;
     using ostk::mathematics::geometry::d2::object::Polygon;
@@ -1136,7 +1136,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ToString)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ApplyTransformation)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::object::Vector2d;
     using ostk::mathematics::geometry::d2::object::Polygon;

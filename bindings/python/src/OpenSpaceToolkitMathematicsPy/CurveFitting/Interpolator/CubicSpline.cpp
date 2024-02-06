@@ -6,7 +6,7 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(
 {
     using namespace pybind11;
 
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::mathematics::object::VectorXd;
 
     using ostk::mathematics::curvefitting::interpolator::CubicSpline;

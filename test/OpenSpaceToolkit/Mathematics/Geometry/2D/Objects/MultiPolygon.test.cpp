@@ -1,6 +1,6 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Containers/Tuple.hpp>
+#include <OpenSpaceToolkit/Core/Container/Tuple.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
@@ -10,7 +10,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, Constructor)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -121,7 +121,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, Clone)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -144,7 +144,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, EqualToOperator)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -227,7 +227,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, NotEqualToOperator)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -310,7 +310,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, StreamOperator)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -337,7 +337,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, IsDefined)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -366,8 +366,8 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, IntersectsPolygon)
 // {
 
-//     using ostk::core::ctnr::Tuple ;
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Tuple ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -463,7 +463,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetInnerRingCount)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -526,7 +526,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetEdgeCount)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -589,7 +589,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetVertexCount)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -652,7 +652,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetOuterRing)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -737,7 +737,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetInnerRingAt)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -826,7 +826,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetEdgeAt)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -868,7 +868,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetVertexAt)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -910,7 +910,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetEdges)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -955,7 +955,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetVertices)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
 
@@ -1080,7 +1080,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetConvexHull
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, ToString)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::object::Vector2d ;
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
@@ -1165,7 +1165,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetConvexHull
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, ApplyTransformation)
 // {
 
-//     using ostk::core::ctnr::Array ;
+//     using ostk::core::container::Array ;
 
 //     using ostk::mathematics::object::Vector2d ;
 //     using ostk::mathematics::geometry::d2::object::MultiPolygon ;
@@ -1221,7 +1221,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, Undefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, Polygon)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
     using ostk::mathematics::geometry::d2::object::MultiPolygon;

@@ -7,8 +7,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::modu
 {
     using namespace pybind11;
 
-    using ostk::core::types::Size;
-    using ostk::core::types::Real;
+    using ostk::core::type::Size;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;

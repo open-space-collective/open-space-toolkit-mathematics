@@ -1,7 +1,7 @@
 /// Apache License 2.0
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
-#include <OpenSpaceToolkit/Core/Utilities.hpp>
+#include <OpenSpaceToolkit/Core/Utility.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
@@ -61,7 +61,7 @@ bool LineString::isNear(const LineString& aLineString, const Real& aTolerance) c
         return false;
     }
 
-    for (const auto pointTuple : ostk::core::ctnr::iterators::Zip(points_, aLineString.points_))
+    for (const auto pointTuple : ostk::core::container::iterator::Zip(points_, aLineString.points_))
     {
         if (!std::get<0>(pointTuple).isNear(std::get<1>(pointTuple), aTolerance))
         {

@@ -6,7 +6,7 @@ import numpy as np
 
 import ostk.mathematics as mathematics
 
-from ostk.core.types import String
+from ostk.core.type import String
 
 
 Point3d = mathematics.geometry.d3.object.Point

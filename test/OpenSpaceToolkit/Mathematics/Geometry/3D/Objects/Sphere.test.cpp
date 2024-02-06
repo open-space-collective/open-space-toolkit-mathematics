@@ -177,7 +177,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_PointSet
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Line)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Line;
@@ -334,7 +334,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Line)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Ray)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Ray;
@@ -513,7 +513,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Ray)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Segment)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Segment;
@@ -639,7 +639,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Segment)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Plane)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Plane;
@@ -796,7 +796,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, GetRadius)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, ApplyTransformation)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;

@@ -163,7 +163,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, IsEmpty)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, Contains)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::LineString;
@@ -217,7 +217,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, Contains)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, IsNear)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::d2::object::LineString;
 
@@ -243,7 +243,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, IsNear)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, GetPointArray)
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::LineString;
@@ -329,7 +329,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, ToString)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, ConstIterator)
 {
-    using ostk::core::types::Index;
+    using ostk::core::type::Index;
 
     using ostk::mathematics::geometry::d2::object::LineString;
 

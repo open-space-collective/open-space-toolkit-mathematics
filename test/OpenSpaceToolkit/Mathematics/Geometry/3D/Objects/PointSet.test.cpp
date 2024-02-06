@@ -176,7 +176,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, IsEmpty)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, IsNear)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::d3::object::PointSet;
 
@@ -287,7 +287,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, GetPointClosestTo
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, ConstIterator)
 {
-    using ostk::core::types::Index;
+    using ostk::core::type::Index;
 
     using ostk::mathematics::geometry::d3::object::PointSet;
 
@@ -309,7 +309,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, ConstIterator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, ApplyTransformation)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;

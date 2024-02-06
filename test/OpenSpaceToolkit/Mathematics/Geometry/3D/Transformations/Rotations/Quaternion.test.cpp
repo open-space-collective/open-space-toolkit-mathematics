@@ -4,7 +4,6 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
-#include <OpenSpaceToolkit/Mathematics/Test.hpp>
 
 #include <Global.test.hpp>
 
@@ -245,7 +244,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, MultiplicationOperator_Real)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
@@ -278,7 +277,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, PowerOperator)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
@@ -580,7 +579,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Pow)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
@@ -811,7 +810,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, RotationVector)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
@@ -837,7 +836,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, RotationMatrix)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
@@ -934,7 +933,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
         const Quaternion q_B_A = Quaternion::ShortestRotation(v_A, v_B);
 
-        ASSERT_VECTOR_EQUALITY(v_B, q_B_A * v_A, 1e-9);
+        ASSERT_TRUE(v_B.isApprox(q_B_A * v_A, 1.0e-9));
     }
 
     {
@@ -945,7 +944,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, LERP)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
@@ -970,7 +969,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, NLERP)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
@@ -1005,7 +1004,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, SLERP)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;

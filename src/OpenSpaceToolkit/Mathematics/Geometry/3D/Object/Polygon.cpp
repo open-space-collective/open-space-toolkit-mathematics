@@ -1,7 +1,7 @@
 /// Apache License 2.0
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
-#include <OpenSpaceToolkit/Core/Utilities.hpp>
+#include <OpenSpaceToolkit/Core/Utility.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
@@ -86,8 +86,8 @@ bool Polygon::isNear(const Polygon& aPolygon, const Real& aTolerance) const
     const Array<Polygon::Vertex> firstVertices = this->getVertices();
     const Array<Polygon::Vertex> secondVertices = aPolygon.getVertices();
 
-    // for (const auto vertexTuple : ostk::core::ctnr::iterators::Zip(this->getVertices(), aPolygon.getVertices()))
-    for (const auto vertexTuple : ostk::core::ctnr::iterators::Zip(firstVertices, secondVertices))
+    // for (const auto vertexTuple : ostk::core::container::iterator::Zip(this->getVertices(), aPolygon.getVertices()))
+    for (const auto vertexTuple : ostk::core::container::iterator::Zip(firstVertices, secondVertices))
     {
         if (!std::get<0>(vertexTuple).isNear(std::get<1>(vertexTuple), aTolerance))
         {
@@ -145,7 +145,7 @@ Vector3d Polygon::getNormalVector() const
         throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return xAxis_.cross(yAxis_);
+    return xAxis_.cross(yAxis_).normalized();
 }
 
 Size Polygon::getEdgeCount() const

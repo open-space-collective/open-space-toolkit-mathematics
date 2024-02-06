@@ -6,8 +6,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Polygon(pybind11::m
 {
     using namespace pybind11;
 
-    using ostk::core::types::Integer;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Integer;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::object::Vector2d;
     using ostk::mathematics::geometry::d2::Object;

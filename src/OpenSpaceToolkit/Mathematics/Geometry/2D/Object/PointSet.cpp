@@ -1,7 +1,7 @@
 /// Apache License 2.0
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
-#include <OpenSpaceToolkit/Core/Utilities.hpp>
+#include <OpenSpaceToolkit/Core/Utility.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
@@ -105,7 +105,7 @@ Size PointSet::getSize() const
 
 Real PointSet::distanceTo(const Point& aPoint) const
 {
-    using ostk::core::ctnr::Array;
+    using ostk::core::container::Array;
 
     if (!aPoint.isDefined())
     {

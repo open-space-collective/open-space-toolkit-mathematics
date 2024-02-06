@@ -1,17 +1,15 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Types/Integer.hpp>
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Type/Integer.hpp>
+#include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
 
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Composite.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/MultiPolygon.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Polygon.cpp>
-// #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/MultiLineString.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/LineString.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Segment.cpp>
-// #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Ray.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Line.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Point.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/PointSet.cpp>

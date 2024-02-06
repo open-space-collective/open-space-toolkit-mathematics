@@ -285,7 +285,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Contains_Ray)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Contains_Sphere)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
@@ -381,8 +381,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, GetAngle)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, GetRaysOfLateralSurface)
 {
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
@@ -462,7 +462,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, DistanceTo_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, IntersectionWith_Ellipsoid)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
@@ -508,7 +508,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, IntersectionWith_Elli
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, ApplyTransformation)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;

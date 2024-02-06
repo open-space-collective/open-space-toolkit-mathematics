@@ -6,10 +6,10 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::modul
 {
     using namespace pybind11;
 
-    using ostk::core::ctnr::Array;
-    using ostk::core::types::Integer;
-    using ostk::core::types::Real;
-    using ostk::core::types::String;
+    using ostk::core::container::Array;
+    using ostk::core::type::Integer;
+    using ostk::core::type::Real;
+    using ostk::core::type::String;
 
     using ostk::mathematics::solver::NumericalSolver;
 

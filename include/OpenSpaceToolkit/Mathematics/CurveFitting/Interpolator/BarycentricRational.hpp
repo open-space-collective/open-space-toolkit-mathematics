@@ -5,7 +5,7 @@
 
 #include <boost/math/interpolators/barycentric_rational.hpp>
 
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
@@ -19,8 +19,8 @@ namespace curvefitting
 namespace interpolator
 {
 
-using ostk::core::types::Real;
-using ostk::core::types::Size;
+using ostk::core::type::Real;
+using ostk::core::type::Size;
 
 using ostk::mathematics::object::VectorXd;
 using ostk::mathematics::curvefitting::Interpolator;
