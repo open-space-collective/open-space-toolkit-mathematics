@@ -11,6 +11,9 @@ Geometry, curve fitting, optimization.
 
 ## Getting Started
 
+
+TESTING_PIPELINE
+
 Want to get started? This is the simplest and quickest way:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/open-space-collective/open-space-toolkit/main?urlpath=lab/tree/notebooks)
@@ -189,43 +192,43 @@ Tutorials are available here:
 
 - `○`: query only
 - `✔`: query / intersection set
-- ` `: to be implemented
+- : to be implemented
 - `-`: undefined
 
 #### 3D
 
-| Intersect       | Point | Point Set | Line | Ray | Segment | Line String | Polygon | Plane | Cuboid | Sphere | Ellipsoid | Cone | Pyramid | Composite |
-| --------------- | ----- | --------- | ---- | --- | ------- | ----------- | ------- | ----- | ------ | ------ | --------- | ---- | ------- | --------- |
-| **Point**       |       |           | ○    | ○   |         |             |         | ✔     | ○      | ○      | ○         |      |         |           |
-| **Point Set**   |       |           |      |     |         |             |         | ✔     | ○      | ○      | ○         |      |         |           |
-| **Line**        | ○     |           |      |     |         |             |         | ✔     | ○      | ○      | ✔         |      |         |           |
-| **Ray**         | ○     |           |      |     |         |             |         | ✔     |        | ○      | ✔         |      |         |           |
-| **Segment**     |       |           |      |     |         |             |         | ✔     |        | ○      | ✔         |      |         |           |
+| Intersect             | Point | Point Set | Line | Ray | Segment | Line String | Polygon | Plane | Cuboid | Sphere | Ellipsoid | Cone | Pyramid | Composite |
+| --------------------- | ----- | --------- | ---- | --- | ------- | ----------- | ------- | ----- | ------ | ------ | --------- | ---- | ------- | --------- |
+| **Point**       |       |           | ○   | ○  |         |             |         | ✔    | ○     | ○     | ○        |      |         |           |
+| **Point Set**   |       |           |      |     |         |             |         | ✔    | ○     | ○     | ○        |      |         |           |
+| **Line**        | ○    |           |      |     |         |             |         | ✔    | ○     | ○     | ✔        |      |         |           |
+| **Ray**         | ○    |           |      |     |         |             |         | ✔    |        | ○     | ✔        |      |         |           |
+| **Segment**     |       |           |      |     |         |             |         | ✔    |        | ○     | ✔        |      |         |           |
 | **Line String** |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
 | **Polygon**     |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
-| **Plane**       | ✔     | ✔         | ✔    | ✔   | ✔       |             |         |       |        | ○      | ○         |      |         |           |
-| **Cuboid**      | ○     | ○         | ○    |     |         |             |         |       |        |        |           |      |         |           |
-| **Sphere**      | ○     | ○         | ○    | ○   | ○       |             |         | ○     |        |        |           |      | ○       |           |
-| **Ellipsoid**   | ○     | ○         | ✔    | ✔   | ✔       |             |         | ○     |        |        |           | ✔    | ✔       |           |
-| **Cone**        |       |           |      |     |         |             |         |       |        |        | ✔         |      |         |           |
-| **Pyramid**     |       |           |      |     |         |             |         |       |        | ○      | ✔         |      |         |           |
+| **Plane**       | ✔    | ✔        | ✔   | ✔  | ✔      |             |         |       |        | ○     | ○        |      |         |           |
+| **Cuboid**      | ○    | ○        | ○   |     |         |             |         |       |        |        |           |      |         |           |
+| **Sphere**      | ○    | ○        | ○   | ○  | ○      |             |         | ○    |        |        |           |      | ○      |           |
+| **Ellipsoid**   | ○    | ○        | ✔   | ✔  | ✔      |             |         | ○    |        |        |           | ✔   | ✔      |           |
+| **Cone**        |       |           |      |     |         |             |         |       |        |        | ✔        |      |         |           |
+| **Pyramid**     |       |           |      |     |         |             |         |       |        | ○     | ✔        |      |         |           |
 | **Composite**   |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
 
-| Contain         | Point | Point Set | Line | Ray | Segment | Line String | Polygon | Plane | Cuboid | Sphere | Ellipsoid | Cone | Pyramid | Composite |
-| --------------- | ----- | --------- | ---- | --- | ------- | ----------- | ------- | ----- | ------ | ------ | --------- | ---- | ------- | --------- |
+| Contain               | Point | Point Set | Line | Ray | Segment | Line String | Polygon | Plane | Cuboid | Sphere | Ellipsoid | Cone | Pyramid | Composite |
+| --------------------- | ----- | --------- | ---- | --- | ------- | ----------- | ------- | ----- | ------ | ------ | --------- | ---- | ------- | --------- |
 | **Point**       |       |           | -    | -   | -       | -           | -       | -     | -      | -      | -         | -    | -       |           |
 | **Point Set**   |       |           | -    | -   | -       | -           | -       | -     | -      | -      | -         | -    | -       |           |
-| **Line**        | ✔     |           |      |     |         |             | -       | -     | -      | -      | -         | -    | -       |           |
-| **Ray**         | ✔     | ✔         | -    |     |         |             | -       | -     | -      | -      | -         | -    | -       |           |
-| **Segment**     | ✔     |           | -    | -   |         |             | -       | -     | -      | -      | -         | -    | -       |           |
+| **Line**        | ✔    |           |      |     |         |             | -       | -     | -      | -      | -         | -    | -       |           |
+| **Ray**         | ✔    | ✔        | -    |     |         |             | -       | -     | -      | -      | -         | -    | -       |           |
+| **Segment**     | ✔    |           | -    | -   |         |             | -       | -     | -      | -      | -         | -    | -       |           |
 | **Line String** |       |           | -    | -   |         |             | -       | -     | -      | -      | -         | -    | -       |           |
 | **Polygon**     |       |           | -    | -   |         |             |         | -     | -      | -      | -         | -    | -       |           |
-| **Plane**       | ✔     | ✔         | ✔    | ✔   | ✔       |             |         |       | -      | -      | -         | -    | -       |           |
-| **Cuboid**      | ✔     | ✔         | -    | -   |         |             |         | -     |        |        |           |      |         |           |
-| **Sphere**      | ✔     | ✔         | -    | -   | -       | -           | -       | -     |        |        |           |      |         |           |
-| **Ellipsoid**   | ✔     | ✔         | -    | -   | -       | -           | -       | -     |        |        |           |      |         |           |
+| **Plane**       | ✔    | ✔        | ✔   | ✔  | ✔      |             |         |       | -      | -      | -         | -    | -       |           |
+| **Cuboid**      | ✔    | ✔        | -    | -   |         |             |         | -     |        |        |           |      |         |           |
+| **Sphere**      | ✔    | ✔        | -    | -   | -       | -           | -       | -     |        |        |           |      |         |           |
+| **Ellipsoid**   | ✔    | ✔        | -    | -   | -       | -           | -       | -     |        |        |           |      |         |           |
 | **Cone**        |       |           |      |     |         | -           | -       | -     |        |        |           |      |         |           |
-| **Pyramid**     | ✔     |           |      |     |         |             |         | -     |        |        |           |      |         |           |
+| **Pyramid**     | ✔    |           |      |     |         |             |         | -     |        |        |           |      |         |           |
 | **Composite**   |       |           |      |     |         |             |         |       |        |        |           |      |         |           |
 
 ## Setup
@@ -279,8 +282,8 @@ Or to run them manually:
 
 ## Dependencies
 
-| Name                   | Version  | License                | Link                                                                                                                         |
-| ---------------------- | -------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Name                   | Version    | License                | Link                                                                                                                      |
+| ---------------------- | ---------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | Pybind11               | `2.10.1` | BSD-3-Clause           | [github.com/pybind/pybind11](https://github.com/pybind/pybind11)                                                             |
 | {fmt}                  | `5.2.0`  | BSD-2-Clause           | [github.com/fmtlib/fmt](https://github.com/fmtlib/fmt)                                                                       |
 | Eigen                  | `3.3.7`  | MPL2                   | [eigen.tuxfamily.org](http://eigen.tuxfamily.org/index.php)                                                                  |
