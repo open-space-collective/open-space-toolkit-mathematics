@@ -17,7 +17,6 @@
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Segment.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Sphere.cpp>
 
-
 inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& aModule)
 {
     using namespace pybind11;
@@ -223,7 +222,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
         ;
 
-
     // Create "object" python submodule
     auto object = aModule.def_submodule("object");
 
@@ -246,5 +244,4 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(object);
     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(object);
     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(object);
-
 }

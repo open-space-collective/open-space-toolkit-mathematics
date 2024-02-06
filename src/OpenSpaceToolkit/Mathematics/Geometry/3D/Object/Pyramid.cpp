@@ -307,7 +307,8 @@ Array<Ray> Pyramid::getRaysOfLateralFaceAt(const Index aLateralFaceIndex, const 
         const Ray ray = {
             apex_,
             Quaternion::RotationVector(RotationVector(rotationAxis, Angle::Radians(angle_rad))).conjugate() *
-                firstRayDirection};
+                firstRayDirection
+        };
 
         rays.emplace_back(ray);
     }

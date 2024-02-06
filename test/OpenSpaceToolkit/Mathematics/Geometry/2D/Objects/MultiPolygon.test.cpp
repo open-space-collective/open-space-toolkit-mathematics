@@ -1018,7 +1018,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetConvexHull
         {
             const MultiPolygon multiPolygon = {
                 {Polygon {{{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}},
-                 Polygon {{{2.0, 2.0}, {2.0, 3.0}, {3.0, 3.0}, {3.0, 2.0}}}}};
+                 Polygon {{{2.0, 2.0}, {2.0, 3.0}, {3.0, 3.0}, {3.0, 2.0}}}}
+            };
 
             const Polygon convexHull = multiPolygon.getConvexHull();
 
@@ -1032,7 +1033,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetConvexHull
         {
             const MultiPolygon multiPolygon = {
                 {Polygon {{{0.0, 0.0}, {0.5, 0.5}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}},
-                 Polygon {{{2.0, 2.0}, {2.5, 2.5}, {2.0, 3.0}, {3.0, 3.0}, {3.0, 2.0}}}}};
+                 Polygon {{{2.0, 2.0}, {2.5, 2.5}, {2.0, 3.0}, {3.0, 3.0}, {3.0, 2.0}}}}
+            };
 
             const Polygon convexHull = multiPolygon.getConvexHull();
 

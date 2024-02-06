@@ -309,7 +309,7 @@ class NumericalSolver
 };
 
 }  // namespace solver
-}  // namespace astro
+}  // namespace mathematics
 }  // namespace ostk
 
 #endif

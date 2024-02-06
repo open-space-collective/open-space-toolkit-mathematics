@@ -246,7 +246,8 @@ void MultiPolygon::Impl::applyTransformation(const Transformation& aTransformati
         transformationMatrix(1, 2),
         transformationMatrix(2, 0),
         transformationMatrix(2, 1),
-        transformationMatrix(2, 2)};
+        transformationMatrix(2, 2)
+    };
 
     boost::geometry::transform(multiPolygon_, transformedMultiPolygon, transform);
 

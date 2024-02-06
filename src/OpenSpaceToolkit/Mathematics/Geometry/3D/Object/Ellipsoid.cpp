@@ -165,7 +165,8 @@ bool Ellipsoid::intersects(const Line& aLine) const
     // Line
 
     const gte::Line3<double> line = {
-        EllipsoidGteVectorFromPoint(aLine.getOrigin()), EllipsoidGteVectorFromVector3d(aLine.getDirection())};
+        EllipsoidGteVectorFromPoint(aLine.getOrigin()), EllipsoidGteVectorFromVector3d(aLine.getDirection())
+    };
 
     // Ellipsoid
 
@@ -173,7 +174,8 @@ bool Ellipsoid::intersects(const Line& aLine) const
     const std::array<gte::Vector3<double>, 3> axes = {
         EllipsoidGteVectorFromVector3d(this->getFirstAxis()),
         EllipsoidGteVectorFromVector3d(this->getSecondAxis()),
-        EllipsoidGteVectorFromVector3d(this->getThirdAxis())};
+        EllipsoidGteVectorFromVector3d(this->getThirdAxis())
+    };
     const gte::Vector3<double> extent = {a_, b_, c_};
 
     const gte::Ellipsoid3<double> ellipsoid = {center, axes, extent};
@@ -202,7 +204,8 @@ bool Ellipsoid::intersects(const Ray& aRay) const
     // Ray
 
     const gte::Ray3<double> ray = {
-        EllipsoidGteVectorFromPoint(aRay.getOrigin()), EllipsoidGteVectorFromVector3d(aRay.getDirection())};
+        EllipsoidGteVectorFromPoint(aRay.getOrigin()), EllipsoidGteVectorFromVector3d(aRay.getDirection())
+    };
 
     // Ellipsoid
 
@@ -210,7 +213,8 @@ bool Ellipsoid::intersects(const Ray& aRay) const
     const std::array<gte::Vector3<double>, 3> axes = {
         EllipsoidGteVectorFromVector3d(this->getFirstAxis()),
         EllipsoidGteVectorFromVector3d(this->getSecondAxis()),
-        EllipsoidGteVectorFromVector3d(this->getThirdAxis())};
+        EllipsoidGteVectorFromVector3d(this->getThirdAxis())
+    };
     const gte::Vector3<double> extent = {a_, b_, c_};
 
     const gte::Ellipsoid3<double> ellipsoid = {center, axes, extent};
@@ -364,7 +368,8 @@ bool Ellipsoid::intersects(const Plane& aPlane) const
     const std::array<gte::Vector3<double>, 3> axes = {
         EllipsoidGteVectorFromVector3d(this->getFirstAxis()),
         EllipsoidGteVectorFromVector3d(this->getSecondAxis()),
-        EllipsoidGteVectorFromVector3d(this->getThirdAxis())};
+        EllipsoidGteVectorFromVector3d(this->getThirdAxis())
+    };
     const gte::Vector3<double> extent = {a_, b_, c_};
 
     const gte::Ellipsoid3<double> ellipsoid = {center, axes, extent};
@@ -625,7 +630,8 @@ Intersection Ellipsoid::intersectionWith(const Line& aLine) const
     // Line
 
     const gte::Line3<double> segment = {
-        EllipsoidGteVectorFromPoint(aLine.getOrigin()), EllipsoidGteVectorFromVector3d(aLine.getDirection())};
+        EllipsoidGteVectorFromPoint(aLine.getOrigin()), EllipsoidGteVectorFromVector3d(aLine.getDirection())
+    };
 
     // Ellipsoid
 
@@ -633,7 +639,8 @@ Intersection Ellipsoid::intersectionWith(const Line& aLine) const
     const std::array<gte::Vector3<double>, 3> axes = {
         EllipsoidGteVectorFromVector3d(this->getFirstAxis()),
         EllipsoidGteVectorFromVector3d(this->getSecondAxis()),
-        EllipsoidGteVectorFromVector3d(this->getThirdAxis())};
+        EllipsoidGteVectorFromVector3d(this->getThirdAxis())
+    };
     const gte::Vector3<double> extent = {a_, b_, c_};
 
     const gte::Ellipsoid3<double> ellipsoid = {center, axes, extent};
@@ -683,7 +690,8 @@ Intersection Ellipsoid::intersectionWith(const Ray& aRay, const bool onlyInSight
     // Ray
 
     const gte::Ray3<double> ray = {
-        EllipsoidGteVectorFromPoint(aRay.getOrigin()), EllipsoidGteVectorFromVector3d(aRay.getDirection())};
+        EllipsoidGteVectorFromPoint(aRay.getOrigin()), EllipsoidGteVectorFromVector3d(aRay.getDirection())
+    };
 
     // Ellipsoid
 
@@ -691,7 +699,8 @@ Intersection Ellipsoid::intersectionWith(const Ray& aRay, const bool onlyInSight
     const std::array<gte::Vector3<double>, 3> axes = {
         EllipsoidGteVectorFromVector3d(this->getFirstAxis()),
         EllipsoidGteVectorFromVector3d(this->getSecondAxis()),
-        EllipsoidGteVectorFromVector3d(this->getThirdAxis())};
+        EllipsoidGteVectorFromVector3d(this->getThirdAxis())
+    };
     const gte::Vector3<double> extent = {a_, b_, c_};
 
     const gte::Ellipsoid3<double> ellipsoid = {center, axes, extent};
@@ -776,7 +785,8 @@ Intersection Ellipsoid::intersectionWith(const Segment& aSegment) const
     // Segment
 
     const gte::Segment3<double> segment = {
-        EllipsoidGteVectorFromPoint(aSegment.getFirstPoint()), EllipsoidGteVectorFromPoint(aSegment.getSecondPoint())};
+        EllipsoidGteVectorFromPoint(aSegment.getFirstPoint()), EllipsoidGteVectorFromPoint(aSegment.getSecondPoint())
+    };
     ;
 
     // Ellipsoid
@@ -785,7 +795,8 @@ Intersection Ellipsoid::intersectionWith(const Segment& aSegment) const
     const std::array<gte::Vector3<double>, 3> axes = {
         EllipsoidGteVectorFromVector3d(this->getFirstAxis()),
         EllipsoidGteVectorFromVector3d(this->getSecondAxis()),
-        EllipsoidGteVectorFromVector3d(this->getThirdAxis())};
+        EllipsoidGteVectorFromVector3d(this->getThirdAxis())
+    };
     const gte::Vector3<double> extent = {a_, b_, c_};
 
     const gte::Ellipsoid3<double> ellipsoid = {center, axes, extent};

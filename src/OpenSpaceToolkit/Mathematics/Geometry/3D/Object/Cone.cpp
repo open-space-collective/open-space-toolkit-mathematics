@@ -255,7 +255,8 @@ Array<Ray> Cone::getRaysOfLateralSurface(const Size aRayCount) const
                                           : axis_.cross(Vector3d::Y()).normalized();
 
     const Ray referenceRay = {
-        apex_, Quaternion::RotationVector(RotationVector(referenceDirection, angle_)).toConjugate() * axis_};
+        apex_, Quaternion::RotationVector(RotationVector(referenceDirection, angle_)).toConjugate() * axis_
+    };
 
     const Array<Real> angles_rad = (aRayCount > 1)
                                      ? Interval<Real>::HalfOpenRight(0.0, 360.0).generateArrayWithSize(aRayCount)
@@ -270,8 +271,8 @@ Array<Ray> Cone::getRaysOfLateralSurface(const Size aRayCount) const
         const Angle angle = Angle::Degrees(angle_rad);
 
         const Ray ray = {
-            apex_,
-            Quaternion::RotationVector(RotationVector(axis_, angle)).toConjugate() * referenceRay.getDirection()};
+            apex_, Quaternion::RotationVector(RotationVector(axis_, angle)).toConjugate() * referenceRay.getDirection()
+        };
 
         rays.add(ray);
     }

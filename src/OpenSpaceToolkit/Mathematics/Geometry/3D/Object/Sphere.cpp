@@ -132,7 +132,8 @@ bool Sphere::intersects(const Line& aLine) const
     // Line
 
     const gte::Line3<double> line = {
-        SphereGteVectorFromPoint(aLine.getOrigin()), SphereGteVectorFromVector3d(aLine.getDirection())};
+        SphereGteVectorFromPoint(aLine.getOrigin()), SphereGteVectorFromVector3d(aLine.getDirection())
+    };
 
     // Sphere
 
@@ -164,7 +165,8 @@ bool Sphere::intersects(const Ray& aRay) const
     // Ray
 
     const gte::Ray3<double> ray = {
-        SphereGteVectorFromPoint(aRay.getOrigin()), SphereGteVectorFromVector3d(aRay.getDirection())};
+        SphereGteVectorFromPoint(aRay.getOrigin()), SphereGteVectorFromVector3d(aRay.getDirection())
+    };
 
     // Sphere
 
@@ -196,7 +198,8 @@ bool Sphere::intersects(const Segment& aSegment) const
     // Segment
 
     const gte::Segment3<double> segment = {
-        SphereGteVectorFromPoint(aSegment.getFirstPoint()), SphereGteVectorFromPoint(aSegment.getSecondPoint())};
+        SphereGteVectorFromPoint(aSegment.getFirstPoint()), SphereGteVectorFromPoint(aSegment.getSecondPoint())
+    };
 
     // Sphere
 
@@ -328,7 +331,8 @@ Intersection Sphere::intersectionWith(const Line& aLine) const
     // Line
 
     const gte::Line3<double> segment = {
-        SphereGteVectorFromPoint(aLine.getOrigin()), SphereGteVectorFromVector3d(aLine.getDirection())};
+        SphereGteVectorFromPoint(aLine.getOrigin()), SphereGteVectorFromVector3d(aLine.getDirection())
+    };
 
     // Sphere
 
@@ -381,7 +385,8 @@ Intersection Sphere::intersectionWith(const Ray& aRay, const bool onlyInSight) c
     // Ray
 
     const gte::Ray3<double> segment = {
-        SphereGteVectorFromPoint(aRay.getOrigin()), SphereGteVectorFromVector3d(aRay.getDirection())};
+        SphereGteVectorFromPoint(aRay.getOrigin()), SphereGteVectorFromVector3d(aRay.getDirection())
+    };
 
     // Sphere
 
@@ -459,7 +464,8 @@ Intersection Sphere::intersectionWith(const Segment& aSegment) const
     // Segment
 
     const gte::Segment3<double> segment = {
-        SphereGteVectorFromPoint(aSegment.getFirstPoint()), SphereGteVectorFromPoint(aSegment.getSecondPoint())};
+        SphereGteVectorFromPoint(aSegment.getFirstPoint()), SphereGteVectorFromPoint(aSegment.getSecondPoint())
+    };
     ;
 
     // Sphere

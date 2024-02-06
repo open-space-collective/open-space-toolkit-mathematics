@@ -33,7 +33,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, Constructor)
         const Array<Polygon::Vertex> outerRing = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
 
         const Array<Array<Polygon::Vertex>> innerRings = {
-            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}, {0.1, 0.1}, {0.1, 0.0}}};
+            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}, {0.1, 0.1}, {0.1, 0.0}}
+        };
 
         EXPECT_NO_THROW(Polygon polygon(outerRing, innerRings););
     }
@@ -64,7 +65,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, Constructor)
         const Array<Polygon::Vertex> outerRing = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
 
         const Array<Array<Polygon::Vertex>> innerRings = {
-            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}}};
+            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}}
+        };
 
         EXPECT_ANY_THROW(Polygon polygon(outerRing, innerRings););
     }
@@ -346,9 +348,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ContainsPoint)
             {Polygon {{{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}}, {0.9999, 0.9999}, true},
             {Polygon {{{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}}}, {1.0001, 1.0001}, false},
             {Polygon {
-                 {{1.49999970000006, 4.0}, {2.49999970000006, 4.0}, {2.49999970000006, 3.0}, {1.49999970000006, 3.0}}},
+                 {{1.49999970000006, 4.0}, {2.49999970000006, 4.0}, {2.49999970000006, 3.0}, {1.49999970000006, 3.0}}
+             },
              {1.49999970000006, 4.0},
-             true}};
+             true}
+        };
 
         for (const auto& testCase : testCases)
         {
@@ -435,7 +439,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetInnerRingCount)
         const Array<Polygon::Vertex> outerRing = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
 
         const Array<Array<Polygon::Vertex>> innerRings = {
-            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}, {0.1, 0.1}, {0.1, 0.0}}};
+            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}, {0.1, 0.1}, {0.1, 0.0}}
+        };
 
         const Polygon polygon = {outerRing, innerRings};
 
@@ -465,7 +470,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetEdgeCount)
         const Array<Polygon::Vertex> outerRing = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
 
         const Array<Array<Polygon::Vertex>> innerRings = {
-            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}, {0.1, 0.1}, {0.1, 0.0}}};
+            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}, {0.1, 0.1}, {0.1, 0.0}}
+        };
 
         const Polygon polygon = {outerRing, innerRings};
 
@@ -495,7 +501,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetVertexCount)
         const Array<Polygon::Vertex> outerRing = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
 
         const Array<Array<Polygon::Vertex>> innerRings = {
-            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}, {0.1, 0.1}, {0.1, 0.0}}};
+            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}, {0.1, 0.1}, {0.1, 0.0}}
+        };
 
         const Polygon polygon = {outerRing, innerRings};
 
@@ -527,7 +534,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetOuterRing)
         const Array<Polygon::Vertex> outerRing = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
 
         const Array<Array<Polygon::Vertex>> innerRings = {
-            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}, {0.1, 0.1}, {0.1, 0.0}}};
+            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}, {0.1, 0.1}, {0.1, 0.0}}
+        };
 
         const Polygon polygon = {outerRing, innerRings};
 
@@ -559,7 +567,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetInnerRingAt)
         const Array<Polygon::Vertex> outerRing = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
 
         const Array<Array<Polygon::Vertex>> innerRings = {
-            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}, {0.1, 0.1}, {0.1, 0.0}}};
+            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}, {0.1, 0.1}, {0.1, 0.0}}
+        };
 
         const Polygon polygon = {outerRing, innerRings};
 
@@ -650,7 +659,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetEdges)
             Polygon::Edge({0.0, 0.0}, {0.0, 1.0}),
             Polygon::Edge({0.0, 1.0}, {1.0, 1.0}),
             Polygon::Edge({1.0, 1.0}, {1.0, 0.0}),
-            Polygon::Edge({1.0, 0.0}, {0.0, 0.0})};
+            Polygon::Edge({1.0, 0.0}, {0.0, 0.0})
+        };
 
         EXPECT_EQ(referencePolygonEdges, polygon.getEdges());
     }
@@ -774,7 +784,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
 
     {
         const Polygon polygon_1 = {
-            {{0.0, 0.0}, {0.0, 4.0}, {4.0, 4.0}, {4.0, 0.0}}, {{{1.0, 1.0}, {3.0, 1.0}, {3.0, 3.0}, {1.0, 3.0}}}};
+            {{0.0, 0.0}, {0.0, 4.0}, {4.0, 4.0}, {4.0, 0.0}}, {{{1.0, 1.0}, {3.0, 1.0}, {3.0, 3.0}, {1.0, 3.0}}}
+        };
 
         const Polygon polygon_2 = {{{0.0, -1.0}, {0.0, 5.0}, {2.5, 5.0}, {2.5, -1.0}}};
 
@@ -790,7 +801,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
 
     {
         const Polygon polygon_1 = {
-            {{0.0, 0.0}, {0.0, 4.0}, {4.0, 4.0}, {4.0, 0.0}}, {{{1.0, 1.0}, {3.0, 1.0}, {3.0, 3.0}, {1.0, 3.0}}}};
+            {{0.0, 0.0}, {0.0, 4.0}, {4.0, 4.0}, {4.0, 0.0}}, {{{1.0, 1.0}, {3.0, 1.0}, {3.0, 3.0}, {1.0, 3.0}}}
+        };
 
         const Polygon polygon_2 = {{{1.5, -1.0}, {1.5, 5.0}, {2.5, 5.0}, {2.5, -1.0}}};
 
@@ -845,7 +857,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
              {4.9, 0.8},
              {2.9, 0.7},
              {2.0, 1.3}},
-            {{{4.0, 2.0}, {4.2, 1.4}, {4.8, 1.9}, {4.4, 2.2}, {4.0, 2.0}}}};
+            {{{4.0, 2.0}, {4.2, 1.4}, {4.8, 1.9}, {4.4, 2.2}, {4.0, 2.0}}}
+        };
 
         const Polygon polygon_2 = {
             {{4.0, -0.5},
@@ -856,7 +869,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
              {4.5, 2.0},
              {6.0, 1.5},
              {4.5, 1.0},
-             {4.0, -0.5}}};
+             {4.0, -0.5}}
+        };
 
         Intersection intersection = polygon_1.intersectionWith(polygon_2);
 
@@ -883,10 +897,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, DifferenceWith)
              {-109.05, 37.055},
              {-94.702, 37.09},
              {-96.46, 45.921},
-             {-111.006, 45.042}}};
+             {-111.006, 45.042}}
+        };
 
         const Polygon polygon_2 = {
-            {{-104.062, 40.947}, {-104.062, 45.461}, {-96.46, 45.921}, {-95.282, 40.006}, {-104.062, 40.947}}};
+            {{-104.062, 40.947}, {-104.062, 45.461}, {-96.46, 45.921}, {-95.282, 40.006}, {-104.062, 40.947}}
+        };
 
         Intersection difference = polygon_1.differenceWith(polygon_2);
 
@@ -913,7 +929,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, DifferenceWith)
              {4.9, 0.8},
              {2.9, 0.7},
              {2.0, 1.3}},
-            {{{4.0, 2.0}, {4.2, 1.4}, {4.8, 1.9}, {4.4, 2.2}, {4.0, 2.0}}}};
+            {{{4.0, 2.0}, {4.2, 1.4}, {4.8, 1.9}, {4.4, 2.2}, {4.0, 2.0}}}
+        };
 
         const Polygon polygon_2 = {
             {{4.0, -0.5},
@@ -924,7 +941,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, DifferenceWith)
              {4.5, 2.0},
              {6.0, 1.5},
              {4.5, 1.0},
-             {4.0, -0.5}}};
+             {4.0, -0.5}}
+        };
 
         Intersection difference1minus2 = polygon_1.differenceWith(polygon_2);
 
@@ -995,7 +1013,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, UnionWith)
             const Polygon unionPolygon = unionMultiPolygon.getPolygons().accessFirst();
 
             const Polygon referencePolygon = {
-                {{0.5, 1.0}, {0.5, 1.5}, {1.5, 1.5}, {1.5, 0.5}, {1.0, 0.5}, {1.0, 0.0}, {0.0, 0.0}, {0.0, 1.0}}};
+                {{0.5, 1.0}, {0.5, 1.5}, {1.5, 1.5}, {1.5, 0.5}, {1.0, 0.5}, {1.0, 0.0}, {0.0, 0.0}, {0.0, 1.0}}
+            };
 
             ASSERT_TRUE(unionPolygon.isNear(referencePolygon, 1e-6));
         }
@@ -1093,7 +1112,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ToString)
         const Array<Polygon::Vertex> outerRing = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
 
         const Array<Array<Polygon::Vertex>> innerRings = {
-            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}, {0.1, 0.1}, {0.1, 0.0}}};
+            {{0.0, 0.0}, {0.0, 0.5}, {0.5, 0.5}, {0.5, 0.0}}, {{0.0, 0.0}, {0.0, 0.1}, {0.1, 0.1}, {0.1, 0.0}}
+        };
 
         EXPECT_EQ(
             "POLYGON((0 0,0 1,1 1,1 0,0 0),(0 0,0.5 0,0.5 0.5,0 0.5,0 0),(0 0,0.1 0,0.1 0.1,0 0.1,0 0))",

@@ -17,7 +17,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Constructor)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         EXPECT_NO_THROW(Pyramid(base, apex));
@@ -33,7 +34,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Clone)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         EXPECT_NO_THROW(const Pyramid* pyramidPtr = Pyramid(base, apex).clone(); delete pyramidPtr;);
@@ -49,7 +51,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, EqualToOperator)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         EXPECT_TRUE(Pyramid(base, apex) == Pyramid(base, apex));
@@ -61,7 +64,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, EqualToOperator)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         EXPECT_FALSE(Pyramid(base, apex) == Pyramid::Undefined());
@@ -79,7 +83,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, NotEqualToOperator
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         EXPECT_FALSE(Pyramid(base, apex) != Pyramid(base, apex));
@@ -91,7 +96,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, NotEqualToOperator
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         EXPECT_TRUE(Pyramid(base, apex) != Pyramid::Undefined());
@@ -111,7 +117,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, StreamOperator)
         testing::internal::CaptureStdout();
 
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         EXPECT_NO_THROW(std::cout << Pyramid(base, apex) << std::endl);
@@ -129,7 +136,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, IsDefined)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         EXPECT_TRUE(Pyramid(base, apex).isDefined());
@@ -153,7 +161,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Intersects_Ellipso
             {{{-0.1, -0.1}, {+0.1, -0.1}, {+0.1, +0.1}, {-0.1, +0.1}}},
             {0.0, 0.0, 1.0},
             {1.0, 0.0, 0.0},
-            {0.0, 1.0, 0.0}};
+            {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 0.0};
 
         const Pyramid pyramid = {base, apex};
@@ -180,7 +189,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_Point)
             {{{-0.1, -0.1}, {+0.1, -0.1}, {+0.1, +0.1}, {-0.1, +0.1}}},
             {0.0, 0.0, 1.0},
             {1.0, 0.0, 0.0},
-            {0.0, 1.0, 0.0}};
+            {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 0.0};
 
         const Pyramid pyramid = {base, apex};
@@ -208,7 +218,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_Point)
             {{{-0.1, -0.1}, {+0.1, -0.1}, {+0.1, +0.1}, {-0.1, +0.1}}},
             {0.0, 0.0, -1.0},
             {1.0, 0.0, 0.0},
-            {0.0, 1.0, 0.0}};
+            {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 0.0};
 
         const Pyramid pyramid = {base, apex};
@@ -236,7 +247,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_Point)
             {{{-0.1, -0.1}, {+0.1, -0.1}, {+0.1, +0.1}, {-0.1, +0.1}}},
             {0.0, 2.0, 0.0},
             {1.0, 0.0, 0.0},
-            {0.0, 0.0, -1.0}};
+            {0.0, 0.0, -1.0}
+        };
         const Point apex = {0.0, 1.0, 0.0};
 
         const Pyramid pyramid = {base, apex};
@@ -265,7 +277,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_Point)
             {{{-1.0, -1.0}, {+1.0, -1.0}, {+1.0, +1.0}, {-1.0, +1.0}}},
             {2.0, 2.0, 0.0},
             {0.0, 0.0, -1.0},
-            {0.0, 1.0, 0.0}};
+            {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 0.0};
 
         const Pyramid pyramid = {base, apex};
@@ -297,7 +310,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_PointSet)
             {{{-0.1, -0.1}, {+0.1, -0.1}, {+0.1, +0.1}, {-0.1, +0.1}}},
             {0.0, 0.0, 1.0},
             {1.0, 0.0, 0.0},
-            {0.0, 1.0, 0.0}};
+            {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 0.0};
 
         const Pyramid pyramid = {base, apex};
@@ -328,7 +342,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_Segment)
             {{{-0.1, -0.1}, {+0.1, -0.1}, {+0.1, +0.1}, {-0.1, +0.1}}},
             {0.0, 0.0, 1.0},
             {1.0, 0.0, 0.0},
-            {0.0, 1.0, 0.0}};
+            {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 0.0};
 
         const Pyramid pyramid = {base, apex};
@@ -355,7 +370,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, GetBase)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         EXPECT_EQ(base, Pyramid(base, apex).getBase());
@@ -375,7 +391,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, GetApex)
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         EXPECT_EQ(apex, Pyramid(base, apex).getApex());
@@ -403,7 +420,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, IntersectionWith_E
             {{{-0.1, -0.1}, {+0.1, -0.1}, {+0.1, +0.1}, {-0.1, +0.1}}},
             {0.0, 0.0, 1.0},
             {1.0, 0.0, 0.0},
-            {0.0, 1.0, 0.0}};
+            {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 0.0};
 
         const Pyramid pyramid = {base, apex};
@@ -428,7 +446,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, IntersectionWith_E
              {0.505129425743498, 0.505129425743498, 5.05129425743498},
              {0.505129425743498, -0.505129425743499, 5.05129425743498},
              {0.505129425743498, -0.505129425743498, 5.05129425743498},
-             {-0.505129425743499, -0.505129425743498, 5.05129425743498}}};
+             {-0.505129425743499, -0.505129425743498, 5.05129425743498}}
+        };
 
         EXPECT_TRUE(intersectionLineString.isNear(referenceLineString, 1e-10));
     }
@@ -454,7 +473,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, ApplyTransformatio
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         Pyramid pyramid = {base, apex};
@@ -463,10 +483,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, ApplyTransformatio
 
         EXPECT_EQ(
             Pyramid(
-                {{{{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}},
-                  {4.0, 5.0, 6.0},
-                  {1.0, 0.0, 0.0},
-                  {0.0, 1.0, 0.0}},
+                {{{{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {4.0, 5.0, 6.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+                 },
                  {4.0, 5.0, 7.0}}
             ),
             pyramid
@@ -477,7 +495,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, ApplyTransformatio
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 2.0, 0.0}, {0.0, 0.0, 1.0}, {1.0, 0.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 2.0, 0.0}, {0.0, 0.0, 1.0}, {1.0, 0.0, 0.0}
+        };
         const Point apex = {0.0, 1.0, 0.0};
 
         Pyramid pyramid = {base, apex};
@@ -485,7 +504,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, ApplyTransformatio
         pyramid.applyTransformation(Transformation::Rotation(RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(90.0))));
 
         const Polygon referenceBase = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 2.0}, {0.0, -1.0, 0.0}, {1.0, 0.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 2.0}, {0.0, -1.0, 0.0}, {1.0, 0.0, 0.0}
+        };
         const Point referenceApex = {0.0, 0.0, 1.0};
 
         const Pyramid referencePyramid = {referenceBase, referenceApex};
@@ -498,7 +518,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, ApplyTransformatio
 
     {
         const Polygon base = {
-            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}};
+            {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}}, {0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        };
         const Point apex = {0.0, 0.0, 1.0};
 
         EXPECT_ANY_THROW(Pyramid::Undefined().applyTransformation(Transformation::Undefined()));

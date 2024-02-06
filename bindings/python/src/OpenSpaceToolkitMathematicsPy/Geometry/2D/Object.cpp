@@ -4,6 +4,7 @@
 #include <OpenSpaceToolkit/Core/Types/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
+
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Composite.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/MultiPolygon.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Polygon.cpp>

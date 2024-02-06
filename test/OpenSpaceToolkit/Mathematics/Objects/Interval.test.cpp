@@ -903,7 +903,8 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
              Interval<Real>(5.0, 10.0, Interval<Real>::Type::Closed)},
             {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),
              Interval<Real>(10.0, 15.0, Interval<Real>::Type::Closed),
-             Interval<Real>(10.0, 10.0, Interval<Real>::Type::Closed)}};
+             Interval<Real>(10.0, 10.0, Interval<Real>::Type::Closed)}
+        };
 
         for (const auto& testCase : testCases)
         {
@@ -965,7 +966,8 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUnionWith)
              Interval<Real>(0.0, 15.0, Interval<Real>::Type::Closed)},
             {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),
              Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),
-             Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed)}};
+             Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed)}
+        };
 
         for (const auto& testCase : testCases)
         {

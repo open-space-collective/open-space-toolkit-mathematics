@@ -33,11 +33,13 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(pybind11::mo
                 const std::array<Vector3d, 3> axes = {
                     pybind11::cast<Vector3d>(anAxisList[0]),
                     pybind11::cast<Vector3d>(anAxisList[1]),
-                    pybind11::cast<Vector3d>(anAxisList[2])};
+                    pybind11::cast<Vector3d>(anAxisList[2])
+                };
                 const std::array<Real, 3> extent = {
                     pybind11::cast<Real>(anExtent[0]),
                     pybind11::cast<Real>(anExtent[1]),
-                    pybind11::cast<Real>(anExtent[2])};
+                    pybind11::cast<Real>(anExtent[2])
+                };
 
                 new (&aCuboid) Cuboid(aCenter, axes, extent);
                 // Default policy is unique pointer
