@@ -4,7 +4,6 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
-#include <OpenSpaceToolkit/Mathematics/Test.hpp>
 
 #include <Global.test.hpp>
 
@@ -934,7 +933,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
 
         const Quaternion q_B_A = Quaternion::ShortestRotation(v_A, v_B);
 
-        ASSERT_VECTOR_EQUALITY(v_B, q_B_A * v_A, 1e-9);
+        ASSERT_TRUE(v_B.isApprox(q_B_A * v_A, 1.0e-9));
     }
 
     {
