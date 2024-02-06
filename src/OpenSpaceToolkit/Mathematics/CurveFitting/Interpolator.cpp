@@ -13,46 +13,16 @@ namespace mathematics
 namespace curvefitting
 {
 
-Interpolator::~Interpolator() {}
-
-double Interpolator::evaluate(const double& aQueryValue) const
+Interpolator::Interpolator(const InterpolationType& anInterpolationType)
+    : interpolationType_(anInterpolationType)
 {
-    using ostk::mathematics::curvefitting::interpolator::CubicSpline;
-    using ostk::mathematics::curvefitting::interpolator::BarycentricRational;
-
-    if (const CubicSpline* interpolatorPtr = dynamic_cast<const CubicSpline*>(this))
-    {
-        return interpolatorPtr->evaluate(aQueryValue);
-    }
-
-    if (const BarycentricRational* interpolatorPtr = dynamic_cast<const BarycentricRational*>(this))
-    {
-        return interpolatorPtr->evaluate(aQueryValue);
-    }
-
-    throw ostk::core::error::runtime::ToBeImplemented("Interpolator :: evaluate");
-
-    return 0.0;
 }
 
-VectorXd Interpolator::evaluate(const VectorXd& aQueryVector) const
+Interpolator::~Interpolator() {}
+
+Interpolator::InterpolationType Interpolator::getInterpolationType() const
 {
-    using ostk::mathematics::curvefitting::interpolator::CubicSpline;
-    using ostk::mathematics::curvefitting::interpolator::BarycentricRational;
-
-    if (const CubicSpline* interpolatorPtr = dynamic_cast<const CubicSpline*>(this))
-    {
-        return interpolatorPtr->evaluate(aQueryVector);
-    }
-
-    if (const BarycentricRational* interpolatorPtr = dynamic_cast<const BarycentricRational*>(this))
-    {
-        return interpolatorPtr->evaluate(aQueryVector);
-    }
-
-    throw ostk::core::error::runtime::ToBeImplemented("Interpolator :: evaluate");
-
-    return VectorXd::Zero(aQueryVector.size());
+    return interpolationType_;
 }
 
 }  // namespace curvefitting

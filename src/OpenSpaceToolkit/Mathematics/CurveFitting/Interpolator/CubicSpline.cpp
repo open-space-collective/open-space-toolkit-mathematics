@@ -16,6 +16,7 @@ namespace interpolator
 {
 
 CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
+    : Interpolator(Interpolator::InterpolationType::CubicSpline)
 {
     if (aYVector.size() < 5)
     {
@@ -41,6 +42,7 @@ CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
 }
 
 CubicSpline::CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h)
+    : Interpolator(Interpolator::InterpolationType::CubicSpline)
 {
     if (aYVector.size() < 5)
     {
@@ -51,10 +53,7 @@ CubicSpline::CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h
         boost::math::interpolators::cardinal_cubic_b_spline<double>(aYVector.begin(), aYVector.end(), x0, h);
 }
 
-CubicSpline* CubicSpline::clone() const
-{
-    return new CubicSpline(*this);
-}
+CubicSpline::~CubicSpline() {}
 
 VectorXd CubicSpline::evaluate(const VectorXd& aQueryVector) const
 {

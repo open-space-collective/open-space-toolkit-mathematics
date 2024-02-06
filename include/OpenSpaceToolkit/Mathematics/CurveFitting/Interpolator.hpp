@@ -19,43 +19,46 @@ using ostk::core::type::Size;
 
 using ostk::mathematics::object::VectorXd;
 
-/// @brief                      Interpolator
+/// @brief Interpolator (abstract class)
 ///
-///                             In mathematics, an interpolator is a type of estimator allowing to construct new data
-///                             points based on a range of a discrete set of known data points.
+/// In mathematics, an interpolator is a type of estimator allowing to construct new data
+/// points based on a range of a discrete set of known data points.
 ///
-/// @ref                        https://en.wikipedia.org/wiki/Interpolator.
-
+/// @ref https://en.wikipedia.org/wiki/Interpolator.
 class Interpolator
 {
    public:
-    /// @brief              Default constructor
-    ///
-    Interpolator() = default;
+    enum class InterpolationType
+    {
+        Linear,
+        BarycentricRational,
+        CubicSpline
+    };
 
-    /// @brief              Destructor (pure virtual)
+    /// @brief Constructor
+    Interpolator(const InterpolationType& anInterpolationType);
 
+    /// @brief Destructor (pure virtual)
     virtual ~Interpolator() = 0;
 
-    /// @brief              Clone interpolator
+    /// @brief Get the interpolation type
+    /// @return Interpolation type
+    InterpolationType getInterpolationType() const;
+
+    /// @brief Evaluate the interpolator
     ///
-    /// @return             Pointer to cloned interpolator
+    /// @param aQueryVector A vector of x values
+    /// @return Vector of y values
+    virtual VectorXd evaluate(const VectorXd& aQueryVector) const = 0;
 
-    virtual Interpolator* clone() const = 0;
-
-    /// @brief              Evaluate the interpolator
+    /// @brief Evaluate the interpolator
     ///
-    /// @param              [in] aQueryVector A vector of x values
-    /// @return             Vector of y values
+    /// @param aQueryValue An x value
+    /// @return Vector of y values
+    virtual double evaluate(const double& aQueryValue) const = 0;
 
-    virtual VectorXd evaluate(const VectorXd& aQueryVector) const;
-
-    /// @brief              Evaluate the interpolator
-    ///
-    /// @param              [in] aQueryValue An x value
-    /// @return             Vector of y values
-
-    virtual double evaluate(const double& aQueryValue) const;
+   private:
+    InterpolationType interpolationType_;
 };
 
 }  // namespace curvefitting

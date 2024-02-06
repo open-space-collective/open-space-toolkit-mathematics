@@ -42,6 +42,19 @@ TEST(OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, SecondConstructor)
     }
 }
 
+TEST(OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, GetInterpolationType)
+{
+    VectorXd x(6);
+    x << 0.0, 1.0, 2.0, 3.0, 4.0, 5.0;
+
+    VectorXd y(6);
+    y << 0.0, 3.0, 5.0, 6.0, 9.0, 15.0;
+
+    CubicSpline interpolator = CubicSpline(x, y);
+
+    EXPECT_EQ(CubicSpline::InterpolationType::CubicSpline, interpolator.getInterpolationType());
+}
+
 TEST(OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, Evaluate)
 {
     const Table referenceData = Table::Load(

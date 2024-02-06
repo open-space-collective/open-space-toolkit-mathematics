@@ -32,6 +32,19 @@ TEST(OpenSpaceToolkit_Mathematics_Interpolator_Linear, Constructor)
     }
 }
 
+TEST(OpenSpaceToolkit_Mathematics_Interpolator_Linear, GetInterpolationType)
+{
+    VectorXd x(6);
+    x << 0.0, 1.0, 2.0, 3.0, 4.0, 5.0;
+
+    VectorXd y(6);
+    y << 0.0, 3.0, 5.0, 6.0, 9.0, 15.0;
+
+    Linear interpolator = Linear(x, y);
+
+    EXPECT_EQ(Linear::InterpolationType::Linear, interpolator.getInterpolationType());
+}
+
 TEST(OpenSpaceToolkit_Mathematics_Interpolator_Linear, Evaluate)
 {
     const Table referenceData = Table::Load(
