@@ -6,7 +6,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Sphere(pybind11::m
 {
     using namespace pybind11;
 
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d3::Object;
     using ostk::math::geometry::d3::objects::Point;

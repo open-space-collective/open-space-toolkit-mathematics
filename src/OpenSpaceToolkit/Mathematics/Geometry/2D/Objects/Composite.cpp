@@ -3,7 +3,7 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
 // #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp>
 #include <OpenSpaceToolkit/Core/Error.hpp>
-#include <OpenSpaceToolkit/Core/Utilities.hpp>
+#include <OpenSpaceToolkit/Core/Utility.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Composite.hpp>
 
@@ -111,7 +111,7 @@ bool Composite::operator==(const Composite& aComposite) const
         return false;
     }
 
-    for (const auto objectTuple : ostk::core::ctnr::iterators::Zip(objects_, aComposite.objects_))
+    for (const auto objectTuple : ostk::core::container::iterator::Zip(objects_, aComposite.objects_))
     {
         if ((*std::get<0>(objectTuple)) != (*std::get<1>(objectTuple)))
         {

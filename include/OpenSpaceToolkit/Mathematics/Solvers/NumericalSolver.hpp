@@ -3,11 +3,11 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver__
 #define __OpenSpaceToolkit_Mathematics_Solvers_NumericalSolver__
 
-#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
-#include <OpenSpaceToolkit/Core/Containers/Pair.hpp>
-#include <OpenSpaceToolkit/Core/Types/Integer.hpp>
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Container/Array.hpp>
+#include <OpenSpaceToolkit/Core/Container/Pair.hpp>
+#include <OpenSpaceToolkit/Core/Type/Integer.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
 
@@ -18,12 +18,12 @@ namespace math
 namespace solvers
 {
 
-using ostk::core::ctnr::Array;
-using ostk::core::ctnr::Pair;
-using ostk::core::types::Integer;
-using ostk::core::types::Real;
-using ostk::core::types::Size;
-using ostk::core::types::String;
+using ostk::core::container::Array;
+using ostk::core::container::Pair;
+using ostk::core::type::Integer;
+using ostk::core::type::Real;
+using ostk::core::type::Size;
+using ostk::core::type::String;
 
 using ostk::math::object::VectorXd;
 

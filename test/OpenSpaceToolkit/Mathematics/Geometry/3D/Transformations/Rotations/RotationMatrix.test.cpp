@@ -249,7 +249,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Rotation
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_RotationMatrix, Quaternion)
 // {
 
-//     using ostk::core::types::Real ;
+//     using ostk::core::type::Real ;
 //     using ostk::math::geometry::Angle ;
 //     using ostk::math::geometry::d3::transformation::rotation::Quaternion ;
 //     using ostk::math::geometry::d3::transformation::rotation::RotationMatrix ;

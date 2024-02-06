@@ -146,7 +146,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, IsEmpty)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, IsNear)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d3::objects::LineString;
 
@@ -263,7 +263,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, GetPointCount)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, ConstIterator)
 {
-    using ostk::core::types::Index;
+    using ostk::core::type::Index;
 
     using ostk::math::geometry::d3::objects::LineString;
 
@@ -285,7 +285,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, ConstIterator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_LineString, ApplyTransformation)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::Angle;

@@ -4,7 +4,7 @@
 #include <boost/numeric/odeint/external/eigen/eigen.hpp>
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
-#include <OpenSpaceToolkit/Core/Utilities.hpp>
+#include <OpenSpaceToolkit/Core/Utility.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Solvers/NumericalSolver.hpp>
 
@@ -17,7 +17,7 @@ namespace solvers
 
 using namespace boost::numeric::odeint;
 
-using ostk::core::types::Index;
+using ostk::core::type::Index;
 
 typedef runge_kutta4<NumericalSolver::StateVector> stepper_type_4;
 typedef runge_kutta_cash_karp54<NumericalSolver::StateVector> error_stepper_type_54;

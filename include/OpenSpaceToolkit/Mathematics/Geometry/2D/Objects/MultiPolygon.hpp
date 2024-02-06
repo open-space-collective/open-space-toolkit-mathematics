@@ -3,10 +3,10 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_MultiPolygon__
 
-#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
-#include <OpenSpaceToolkit/Core/Types/Index.hpp>
-#include <OpenSpaceToolkit/Core/Types/Size.hpp>
-#include <OpenSpaceToolkit/Core/Types/Unique.hpp>
+#include <OpenSpaceToolkit/Core/Container/Array.hpp>
+#include <OpenSpaceToolkit/Core/Type/Index.hpp>
+#include <OpenSpaceToolkit/Core/Type/Size.hpp>
+#include <OpenSpaceToolkit/Core/Type/Unique.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/LineString.hpp>
@@ -26,10 +26,10 @@ namespace d2
 namespace objects
 {
 
-using ostk::core::types::Unique;
-using ostk::core::ctnr::Index;
-using ostk::core::ctnr::Size;
-using ostk::core::ctnr::Array;
+using ostk::core::type::Unique;
+using ostk::core::container::Index;
+using ostk::core::container::Size;
+using ostk::core::container::Array;
 
 using ostk::math::geometry::d2::Object;
 using ostk::math::geometry::d2::objects::Point;

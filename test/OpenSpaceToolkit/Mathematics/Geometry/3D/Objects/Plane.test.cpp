@@ -370,7 +370,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, GetNormalVector)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Point)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d3::objects::Point;
     using ostk::math::geometry::d3::objects::Plane;
@@ -423,7 +423,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Po
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_PointSet)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d3::objects::Point;
     using ostk::math::geometry::d3::objects::PointSet;
@@ -575,7 +575,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, IntersectionWith_Se
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Plane, ApplyTransformation)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::Angle;

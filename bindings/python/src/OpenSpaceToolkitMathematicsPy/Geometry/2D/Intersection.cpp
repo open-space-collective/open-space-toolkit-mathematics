@@ -6,8 +6,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::mod
 {
     using namespace pybind11;
 
-    using ostk::core::types::Unique;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::container::Array;
 
     using ostk::math::geometry::d2::Object;
     using ostk::math::geometry::d2::objects::Point;

@@ -217,7 +217,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Poin
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Line)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d3::objects::Point;
     using ostk::math::geometry::d3::objects::Line;
@@ -363,7 +363,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Line
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Ray)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d3::objects::Point;
     using ostk::math::geometry::d3::objects::Ray;
@@ -531,7 +531,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Ray)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Segment)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d3::objects::Point;
     using ostk::math::geometry::d3::objects::Segment;
@@ -654,7 +654,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Segm
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, Intersects_Plane)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d3::objects::Point;
     using ostk::math::geometry::d3::objects::Plane;
@@ -837,7 +837,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, GetThirdPrincip
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, GetFirstAxis)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::Angle;
@@ -866,7 +866,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, GetFirstAxis)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, GetSecondAxis)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::Angle;
@@ -895,7 +895,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, GetSecondAxis)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, GetThirdAxis)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::Angle;
@@ -945,7 +945,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, GetOrientation)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, GetMatrix)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Matrix3d;
     using ostk::math::geometry::Angle;
@@ -995,7 +995,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, GetMatrix)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Line)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d3::objects::Point;
     using ostk::math::geometry::d3::objects::PointSet;
@@ -1105,7 +1105,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWit
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Ray)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d3::objects::Point;
     using ostk::math::geometry::d3::objects::PointSet;
@@ -1356,7 +1356,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWit
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWith_Segment)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d3::objects::Point;
     using ostk::math::geometry::d3::objects::PointSet;
@@ -1555,7 +1555,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, IntersectionWit
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ellipsoid, ApplyTransformation)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::Angle;

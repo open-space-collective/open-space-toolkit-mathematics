@@ -1,8 +1,8 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
-#include <OpenSpaceToolkit/Core/Containers/Tuple.hpp>
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Container/Array.hpp>
+#include <OpenSpaceToolkit/Core/Container/Tuple.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Objects/Interval.hpp>
 
@@ -10,7 +10,7 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, Constructor)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -33,7 +33,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, Constructor)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, EqualToOperator)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -72,7 +72,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, EqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, NotEqualToOperator)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -111,7 +111,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, NotEqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, IsDefined)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -132,7 +132,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, IsDegenerate)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -160,7 +160,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, IsDegenerate)
 // TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, Intersects)
 // {
 
-//     using ostk::core::types::Real ;
+//     using ostk::core::type::Real ;
 
 //     using ostk::math::object::Interval ;
 
@@ -175,7 +175,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, IsDegenerate)
 // TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, Contains)
 // {
 
-//     using ostk::core::types::Real ;
+//     using ostk::core::type::Real ;
 
 //     using ostk::math::object::Interval ;
 
@@ -723,7 +723,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, IsDegenerate)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, AccessLowerBound)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -760,7 +760,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, AccessLowerBound)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, AccessUpperBound)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -797,7 +797,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, AccessUpperBound)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, GetType)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -818,7 +818,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, GetType)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, GetLowerBound)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -849,7 +849,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, GetLowerBound)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, GetUpperBound)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -880,10 +880,10 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, GetUpperBound)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, GetIntersectionWith)
 {
-    using ostk::core::types::String;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
-    using ostk::core::ctnr::Tuple;
+    using ostk::core::type::String;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
+    using ostk::core::container::Tuple;
 
     using ostk::math::object::Interval;
 
@@ -942,10 +942,10 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, GetIntersectionWith)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, GetUnionWith)
 {
-    using ostk::core::types::String;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
-    using ostk::core::ctnr::Tuple;
+    using ostk::core::type::String;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
+    using ostk::core::container::Tuple;
 
     using ostk::math::object::Interval;
 
@@ -1007,7 +1007,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, GetUnionWith)
 // TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, GenerateArrayWithStep)
 // {
 
-//     using ostk::core::types::Real ;
+//     using ostk::core::type::Real ;
 
 //     using ostk::math::object::Interval ;
 
@@ -1021,9 +1021,9 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, GetUnionWith)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, GenerateArrayWithSize)
 {
-    using ostk::core::types::Size;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Size;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Interval;
 
@@ -1115,7 +1115,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, GenerateArrayWithSize)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, ToString)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Interval;
 
@@ -1147,7 +1147,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, ToString)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, SetType)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -1167,7 +1167,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, SetType)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, SetLowerBound)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -1195,7 +1195,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, SetLowerBound)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, SetUpperBound)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -1223,7 +1223,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, SetUpperBound)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, Undefined)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -1235,7 +1235,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, Undefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, Closed)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -1249,7 +1249,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, Closed)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, Open)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -1263,7 +1263,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, Open)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, HalfOpenLeft)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -1277,7 +1277,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, HalfOpenLeft)
 
 TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, HalfOpenRight)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
     using ostk::math::object::Interval;
 
     {
@@ -1292,7 +1292,7 @@ TEST(OpenSpaceToolkit_Mathematics_Objects_Interval, HalfOpenRight)
 // TEST (OpenSpaceToolkit_Mathematics_Objects_Interval, Parse)
 // {
 
-//     using ostk::core::types::Real ;
+//     using ostk::core::type::Real ;
 
 //     using ostk::math::object::Interval ;
 

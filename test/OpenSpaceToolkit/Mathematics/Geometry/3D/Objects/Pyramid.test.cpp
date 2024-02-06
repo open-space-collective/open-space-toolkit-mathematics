@@ -388,7 +388,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, GetApex)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, IntersectionWith_Ellipsoid)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::objects::Point;
@@ -440,7 +440,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, IntersectionWith_
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Pyramid, ApplyTransformation)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::Angle;

@@ -3,9 +3,9 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Objects_Interval__
 #define __OpenSpaceToolkit_Mathematics_Objects_Interval__
 
-#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
-#include <OpenSpaceToolkit/Core/Types/Size.hpp>
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Container/Array.hpp>
+#include <OpenSpaceToolkit/Core/Type/Size.hpp>
+#include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 namespace ostk
 {
@@ -14,8 +14,8 @@ namespace math
 namespace object
 {
 
-namespace types = ostk::core::types;
-namespace ctnr = ostk::core::ctnr;
+namespace types = ostk::core::type;
+namespace ctnr = ostk::core::container;
 
 /// @brief                      Interval base (used to avoid having a templated enum)
 

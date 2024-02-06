@@ -3,8 +3,8 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Object__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Object__
 
-#include <OpenSpaceToolkit/Core/Types/Integer.hpp>
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Type/Integer.hpp>
+#include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 namespace ostk
 {
@@ -18,8 +18,8 @@ namespace d2
 class Transformation;
 class Intersection;
 
-using ostk::core::types::Integer;
-using ostk::core::types::String;
+using ostk::core::type::Integer;
+using ostk::core::type::String;
 
 /// @brief                      2D object
 

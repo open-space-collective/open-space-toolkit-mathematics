@@ -1,17 +1,17 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
-#include <OpenSpaceToolkit/Core/Containers/Table.hpp>
+#include <OpenSpaceToolkit/Core/Container/Array.hpp>
+#include <OpenSpaceToolkit/Core/Container/Table.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp>
 
 #include <Global.test.hpp>
 
-using ostk::core::types::Real;
-using ostk::core::types::Size;
-using ostk::core::types::String;
-using ostk::core::ctnr::Array;
-using ostk::core::ctnr::Table;
+using ostk::core::type::Real;
+using ostk::core::type::Size;
+using ostk::core::type::String;
+using ostk::core::container::Array;
+using ostk::core::container::Table;
 using ostk::core::filesystem::Path;
 using ostk::core::filesystem::File;
 

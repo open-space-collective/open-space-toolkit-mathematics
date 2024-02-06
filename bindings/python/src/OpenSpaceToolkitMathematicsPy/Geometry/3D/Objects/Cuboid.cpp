@@ -7,7 +7,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Cuboid(pybind11::m
 {
     using namespace pybind11;
 
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
