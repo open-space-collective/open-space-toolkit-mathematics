@@ -139,7 +139,7 @@ class Composite : public Object
             throw ostk::core::error::runtime::Undefined("Composite");
         }
 
-        return (object_.getSize() == 1) && (dynamic_cast<const Type*>(objects_.accessFirst().get()) != nullptr);
+        return (objects_.getSize() == 1) && (dynamic_cast<const Type*>(objects_.accessFirst().get()) != nullptr);
     }
 
     /// @brief              Access composite as its underlying object
