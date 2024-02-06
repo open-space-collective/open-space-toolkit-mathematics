@@ -4,7 +4,7 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
 
-using ostk::core::ctnr::Array;
+using ostk::core::container::Array;
 using ostk::math::geometry::d3::transformation::rotation::Quaternion;
 
 void set_quaternion_array(const Array<Quaternion>& anArray)
@@ -16,8 +16,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_
 {
     using namespace pybind11;
 
-    using ostk::core::types::Real;
-    using ostk::core::types::String;
+    using ostk::core::type::Real;
+    using ostk::core::type::String;
 
     using ostk::math::object::Vector3d;
     using ostk::math::object::Vector4d;

@@ -3,9 +3,9 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_Angle__
 #define __OpenSpaceToolkit_Mathematics_Geometry_Angle__
 
-#include <OpenSpaceToolkit/Core/Types/Integer.hpp>
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Type/Integer.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
 
@@ -16,9 +16,9 @@ namespace math
 namespace geometry
 {
 
-using ostk::core::types::Integer;
-using ostk::core::types::Real;
-using ostk::core::types::String;
+using ostk::core::type::Integer;
+using ostk::core::type::Real;
+using ostk::core::type::String;
 
 using ostk::math::object::Vector2d;
 using ostk::math::object::Vector3d;

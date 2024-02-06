@@ -149,7 +149,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, IsNear)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector3d;
     using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
@@ -301,7 +301,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetYAxis)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetNormalVector)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector3d;
     using Polygon2d = ostk::math::geometry::d2::objects::Polygon;
@@ -341,7 +341,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, GetNormalVector)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Polygon, ApplyTransformation)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::Angle;

@@ -282,7 +282,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, ToLine)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Segment, ApplyTransformation)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector2d;
     using ostk::math::geometry::d2::objects::Segment;

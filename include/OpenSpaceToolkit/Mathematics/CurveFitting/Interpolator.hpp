@@ -3,7 +3,7 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Interpolator__
 #define __OpenSpaceToolkit_Mathematics_Interpolator__
 
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
 
@@ -14,8 +14,8 @@ namespace math
 namespace curvefitting
 {
 
-using ostk::core::types::Real;
-using ostk::core::types::Size;
+using ostk::core::type::Real;
+using ostk::core::type::Size;
 
 using ostk::math::object::VectorXd;
 

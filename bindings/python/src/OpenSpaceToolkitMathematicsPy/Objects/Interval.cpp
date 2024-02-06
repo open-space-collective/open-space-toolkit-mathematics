@@ -1,6 +1,6 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Objects/Interval.hpp>
 
@@ -8,7 +8,7 @@ inline void OpenSpaceToolkitMathematicsPy_Objects_Interval(pybind11::module& aMo
 {
     using namespace pybind11;
 
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Interval;
 

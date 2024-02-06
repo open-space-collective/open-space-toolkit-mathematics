@@ -7,7 +7,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Ellipsoid(pybind11
 {
     using namespace pybind11;
 
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d3::Object;
     using ostk::math::geometry::d3::objects::Point;

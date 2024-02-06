@@ -55,8 +55,8 @@ RUN git clone --branch ${GEOMETRIC_TOOLS_ENGINE_VERSION} --depth 1 https://githu
 
 ## Open Space Toolkit ▸ Core
 
-ARG OSTK_CORE_MAJOR="1"
-ARG OSTK_CORE_MINOR="0"
+ARG OSTK_CORE_MAJOR="2"
+ARG OSTK_CORE_MINOR="1"
 
 ## Force an image rebuild when new Core patch versions are detected
 ADD https://api.github.com/repos/open-space-collective/open-space-toolkit-core/git/matching-refs/tags/${OSTK_CORE_MAJOR}.${OSTK_CORE_MINOR} /tmp/open-space-toolkit-core/versions.json

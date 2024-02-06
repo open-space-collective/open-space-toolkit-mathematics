@@ -341,7 +341,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, DistanceToPointSe
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, IntersectionWith_Plane)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d3::objects::Point;
     using ostk::math::geometry::d3::objects::Segment;
@@ -464,7 +464,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, ToLine)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Segment, ApplyTransformation)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::Angle;

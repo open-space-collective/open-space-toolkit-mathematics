@@ -3,7 +3,7 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point__
 
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
@@ -19,7 +19,7 @@ namespace d2
 namespace objects
 {
 
-using ostk::core::types::Real;
+using ostk::core::type::Real;
 
 using ostk::math::object::Vector2d;
 using ostk::math::geometry::d2::Object;

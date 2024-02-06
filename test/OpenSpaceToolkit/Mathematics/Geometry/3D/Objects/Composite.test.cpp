@@ -1,6 +1,6 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Composite.hpp>
@@ -20,9 +20,9 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Constructor)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -119,9 +119,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, CopyConstructor
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -236,9 +236,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, EqualToOperator
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOperator)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -353,9 +353,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, NotEqualToOpera
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionOperator)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -393,9 +393,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionOperato
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionAssignmentOperator)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -433,9 +433,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AdditionAssignm
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, StreamOperator)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -464,9 +464,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, StreamOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, IsDefined)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -495,9 +495,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, IsEmpty)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -530,9 +530,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, IsEmpty)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Intersects)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -574,9 +574,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Intersects)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Contains)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -618,9 +618,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Contains)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Is)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -651,9 +651,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, Is)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, As)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -684,9 +684,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, As)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjectAt)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -744,9 +744,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjectAt)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjects)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -799,9 +799,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, AccessObjects)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, GetObjectCount)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -854,9 +854,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, GetObjectCount)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, ConstIterator)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;
@@ -924,9 +924,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, ConstIterator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Composite, ApplyTransformation)
 {
-    using ostk::core::types::Unique;
-    using ostk::core::types::Real;
-    using ostk::core::ctnr::Array;
+    using ostk::core::type::Unique;
+    using ostk::core::type::Real;
+    using ostk::core::container::Array;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;

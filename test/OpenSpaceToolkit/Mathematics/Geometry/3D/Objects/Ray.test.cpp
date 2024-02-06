@@ -312,7 +312,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, DistanceTo_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Plane)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d3::objects::Point;
     using ostk::math::geometry::d3::objects::Ray;
@@ -422,7 +422,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, IntersectionWith_Elli
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Ray, ApplyTransformation)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::Angle;

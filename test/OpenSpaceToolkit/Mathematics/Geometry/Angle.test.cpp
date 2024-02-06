@@ -1,12 +1,12 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
 
 #include <Global.test.hpp>
 
-using ostk::core::types::Real;
+using ostk::core::type::Real;
 using ostk::math::geometry::Angle;
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, Constructor)

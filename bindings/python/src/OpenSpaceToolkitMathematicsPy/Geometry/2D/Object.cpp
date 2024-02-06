@@ -1,7 +1,7 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Types/Integer.hpp>
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Type/Integer.hpp>
+#include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
 
@@ -10,8 +10,8 @@
 
 // using ostk::math::geometry::d2::Object ;
 // using ostk::math::geometry::d2::Transformation ;
-// using ostk::core::types::String ;
-// using ostk::core::types::Integer ;
+// using ostk::core::type::String ;
+// using ostk::core::type::Integer ;
 
 // // Not to be confused with PyObject Python C API class used to represent any python object in C++
 // class PyObject2D : public Object

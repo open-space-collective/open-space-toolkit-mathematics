@@ -1,10 +1,10 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Core/Types/Shared.hpp>
+#include <OpenSpaceToolkit/Core/Type/Shared.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
 
-using ostk::core::ctnr::Array;
+using ostk::core::container::Array;
 
 void set_point_3_array(const Array<ostk::math::geometry::d3::objects::Point>& anArray)
 {
@@ -15,9 +15,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Objects_Point(pybind11::mo
 {
     using namespace pybind11;
 
-    using ostk::core::types::Shared;
-    using ostk::core::types::Integer;
-    using ostk::core::types::Real;
+    using ostk::core::type::Shared;
+    using ostk::core::type::Integer;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector3d;
     using ostk::math::geometry::d3::Object;

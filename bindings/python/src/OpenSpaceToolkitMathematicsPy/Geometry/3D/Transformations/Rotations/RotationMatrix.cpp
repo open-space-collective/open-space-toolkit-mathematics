@@ -9,8 +9,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformations_Rotations_
 {
     using namespace pybind11;
 
-    using ostk::core::types::Real;
-    using ostk::core::types::String;
+    using ostk::core::type::Real;
+    using ostk::core::type::String;
 
     using ostk::math::object::Vector3d;
     using ostk::math::object::Matrix3d;

@@ -49,7 +49,7 @@ VectorXd Linear::evaluate(const VectorXd& aQueryVector) const
 
 double Linear::evaluate(const double& aQueryValue) const
 {
-    using ostk::core::ctnr::Unpack;
+    using ostk::core::container::Unpack;
 
     Index previousIndex;
     Index nextIndex;

@@ -3,9 +3,9 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Point__
 
-#include <OpenSpaceToolkit/Core/Types/Integer.hpp>
-#include <OpenSpaceToolkit/Core/Types/Real.hpp>
-#include <OpenSpaceToolkit/Core/Types/String.hpp>
+#include <OpenSpaceToolkit/Core/Type/Integer.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
@@ -21,9 +21,9 @@ namespace d3
 namespace objects
 {
 
-using ostk::core::types::Integer;
-using ostk::core::types::Real;
-using ostk::core::types::String;
+using ostk::core::type::Integer;
+using ostk::core::type::Real;
+using ostk::core::type::String;
 
 using ostk::math::object::Vector3d;
 using ostk::math::geometry::d3::Object;

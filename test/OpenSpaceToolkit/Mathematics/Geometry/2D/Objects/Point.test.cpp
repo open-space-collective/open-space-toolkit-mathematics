@@ -132,7 +132,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, IsNear)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d2::objects::Point;
 
@@ -167,7 +167,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, AsVector)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, DistanceTo)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d2::objects::Point;
 
@@ -231,7 +231,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, ToString)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Point, ApplyTransformation)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector2d;
     using ostk::math::geometry::Angle;

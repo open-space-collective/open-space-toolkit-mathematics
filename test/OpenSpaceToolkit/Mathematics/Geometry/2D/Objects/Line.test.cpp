@@ -221,7 +221,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, GetDirection)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, DistanceTo_Point)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d2::objects::Point;
     using ostk::math::geometry::d2::objects::Line;
@@ -266,7 +266,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, DistanceTo_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Line, ApplyTransformation)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector2d;
     using ostk::math::geometry::d2::objects::Line;

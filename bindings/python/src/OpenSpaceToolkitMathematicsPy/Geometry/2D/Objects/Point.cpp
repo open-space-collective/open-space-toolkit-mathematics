@@ -2,7 +2,7 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
 
-using ostk::core::ctnr::Array;
+using ostk::core::container::Array;
 using ostk::math::geometry::d2::objects::Point;
 using ostk::math::object::VectorXd;
 
@@ -20,8 +20,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Objects_Point(pybind11::mo
 {
     using namespace pybind11;
 
-    using ostk::core::types::Integer;
-    using ostk::core::types::Real;
+    using ostk::core::type::Integer;
+    using ostk::core::type::Real;
 
     using ostk::math::object::Vector2d;
     using ostk::math::geometry::d2::Object;

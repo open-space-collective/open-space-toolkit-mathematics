@@ -130,7 +130,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, IsEmpty)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, IsNear)
 {
-    using ostk::core::types::Real;
+    using ostk::core::type::Real;
 
     using ostk::math::geometry::d2::objects::PointSet;
 
@@ -237,7 +237,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, ToString)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_PointSet, ConstIterator)
 {
-    using ostk::core::types::Index;
+    using ostk::core::type::Index;
 
     using ostk::math::geometry::d2::objects::PointSet;
 

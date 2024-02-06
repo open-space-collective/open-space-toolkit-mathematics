@@ -3,9 +3,9 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Objects_Cone__
 
-#include <OpenSpaceToolkit/Core/Containers/Array.hpp>
-#include <OpenSpaceToolkit/Core/Types/Index.hpp>
-#include <OpenSpaceToolkit/Core/Types/Size.hpp>
+#include <OpenSpaceToolkit/Core/Container/Array.hpp>
+#include <OpenSpaceToolkit/Core/Type/Index.hpp>
+#include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ray.hpp>
@@ -22,9 +22,9 @@ namespace d3
 namespace objects
 {
 
-using ostk::core::ctnr::Index;
-using ostk::core::ctnr::Size;
-using ostk::core::ctnr::Array;
+using ostk::core::container::Index;
+using ostk::core::container::Size;
+using ostk::core::container::Array;
 
 using ostk::math::object::Vector3d;
 using ostk::math::geometry::Angle;

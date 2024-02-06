@@ -204,7 +204,7 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, RotationAround)
 {
-    using ostk::core::types::String;
+    using ostk::core::type::String;
 
     using ostk::math::geometry::Angle;
     using ostk::math::geometry::d2::objects::Point;
