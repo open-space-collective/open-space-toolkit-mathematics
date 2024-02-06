@@ -933,7 +933,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
 
         const Quaternion q_B_A = Quaternion::ShortestRotation(v_A, v_B);
 
-        EXPECT_TRUE(v_B.isApprox(q_B_A * v_A, 1.0e-9));
+        ASSERT_TRUE(v_B.isApprox(q_B_A * v_A, 1.0e-9));
     }
 
     {
