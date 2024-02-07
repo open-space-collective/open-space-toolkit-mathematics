@@ -54,7 +54,7 @@ bool isNear(const Derived& aMatrix, const RealScalar aTolerance) const
 
     if (this->size() != aMatrix.size())
     {
-        throw std::runtime_error("Cannot compare object of different size.");
+        throw std::runtime_error("Cannot compare objects of different size.");
     }
 
     return ((*this) - aMatrix).norm() <= aTolerance;

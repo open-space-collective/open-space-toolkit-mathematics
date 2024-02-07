@@ -15,7 +15,7 @@ namespace d3
 {
 
 Intersection::Intersection(Array<Unique<Object>>&& anObjectArray)
-    : type_(Intersection::TypeFromObject(anObjectArray)),
+    : type_(Intersection::TypeFromObjects(anObjectArray)),
       composite_(std::move(anObjectArray))
 {
 }
@@ -65,7 +65,7 @@ Intersection Intersection::operator+(const Intersection& anIntersection) const
 
     intersection.composite_ = composite_ + anIntersection.composite_;
 
-    intersection.type_ = Intersection::TypeFromObject(intersection.composite_.accessObject());
+    intersection.type_ = Intersection::TypeFromObjects(intersection.composite_.accessObjects());
 
     return intersection;
 }
@@ -79,7 +79,7 @@ Intersection& Intersection::operator+=(const Intersection& anIntersection)
 
     composite_ += anIntersection.composite_;
 
-    type_ = Intersection::TypeFromObject(composite_.accessObject());
+    type_ = Intersection::TypeFromObjects(composite_.accessObjects());
 
     return *this;
 }
@@ -274,7 +274,7 @@ Intersection::Intersection()
 {
 }
 
-Intersection::Type Intersection::TypeFromObject(const Array<Unique<Object>>& anObjectArray)
+Intersection::Type Intersection::TypeFromObjects(const Array<Unique<Object>>& anObjectArray)
 {
     if (anObjectArray.isEmpty())
     {
@@ -285,7 +285,7 @@ Intersection::Type Intersection::TypeFromObject(const Array<Unique<Object>>& anO
 
     for (const auto& objectUPtr : anObjectArray)
     {
-        const Intersection::Type objectType = Intersection::TypeFromObject(objectUPtr);
+        const Intersection::Type objectType = Intersection::TypeFromObjects(objectUPtr);
 
         if (type == Intersection::Type::Undefined)
         {
@@ -300,7 +300,7 @@ Intersection::Type Intersection::TypeFromObject(const Array<Unique<Object>>& anO
     return type;
 }
 
-Intersection::Type Intersection::TypeFromObject(const Unique<Object>& anObjectUPtr)
+Intersection::Type Intersection::TypeFromObjects(const Unique<Object>& anObjectUPtr)
 {
     if (dynamic_cast<const object::Point*>(anObjectUPtr.get()))
     {

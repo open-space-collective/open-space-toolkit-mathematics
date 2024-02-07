@@ -206,15 +206,15 @@ class Composite : public Object
 
     const Object& accessObjectAt(const Index& anIndex) const;
 
-    /// @brief              Access object in composite
+    /// @brief              Access objects in composite
     ///
-    /// @return             Reference to object in composite
+    /// @return             Reference to objects in composite
 
-    const Array<Unique<Object>>& accessObject() const;
+    const Array<Unique<Object>>& accessObjects() const;
 
-    /// @brief              Get number of object in composite
+    /// @brief              Get number of objects in composite
     ///
-    /// @return             Number of object in composite
+    /// @return             Number of objects in composite
 
     Size getObjectCount() const;
 

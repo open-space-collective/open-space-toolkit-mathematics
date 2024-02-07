@@ -215,7 +215,7 @@ bool Cuboid::intersects(const Line& aLine) const
     const std::array<gte::Vector3<double>, 3> axis = {
         CuboidGteVectorFromVector3d(axes_[0]),
         CuboidGteVectorFromVector3d(axes_[1]),
-        CuboidGteVectorFromVector3d(axes_[2])
+        CuboidGteVectorFromVector3d(axes_[2]),
     };
     const gte::Vector3<double> extent = {extent_[0], extent_[1], extent_[2]};
 
@@ -248,7 +248,7 @@ bool Cuboid::intersects(const Cuboid& aCuboid) const
     const std::array<gte::Vector3<double>, 3> firstAxis = {
         CuboidGteVectorFromVector3d(axes_[0]),
         CuboidGteVectorFromVector3d(axes_[1]),
-        CuboidGteVectorFromVector3d(axes_[2])
+        CuboidGteVectorFromVector3d(axes_[2]),
     };
     const gte::Vector3<double> firstExtent = {extent_[0], extent_[1], extent_[2]};
 
@@ -260,7 +260,7 @@ bool Cuboid::intersects(const Cuboid& aCuboid) const
     const std::array<gte::Vector3<double>, 3> secondAxis = {
         CuboidGteVectorFromVector3d(aCuboid.axes_[0]),
         CuboidGteVectorFromVector3d(aCuboid.axes_[1]),
-        CuboidGteVectorFromVector3d(aCuboid.axes_[2])
+        CuboidGteVectorFromVector3d(aCuboid.axes_[2]),
     };
     const gte::Vector3<double> secondExtent = {aCuboid.extent_[0], aCuboid.extent_[1], aCuboid.extent_[2]};
 

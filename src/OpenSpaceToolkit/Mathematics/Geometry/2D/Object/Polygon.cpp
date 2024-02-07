@@ -335,7 +335,7 @@ Polygon::Vertex Polygon::Impl::getVertexAt(const Index aVertexIndex) const
 
     return {
         boost::geometry::get<0>(polygon_.outer().at(aVertexIndex)),
-        boost::geometry::get<1>(polygon_.outer().at(aVertexIndex))
+        boost::geometry::get<1>(polygon_.outer().at(aVertexIndex)),
     };
 }
 
@@ -633,7 +633,7 @@ void Polygon::Impl::applyTransformation(const Transformation& aTransformation)
         transformationMatrix(1, 2),
         transformationMatrix(2, 0),
         transformationMatrix(2, 1),
-        transformationMatrix(2, 2)
+        transformationMatrix(2, 2),
     };
 
     boost::geometry::transform(polygon_, transformedPolygon, transform);

@@ -70,12 +70,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Constructor)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> object = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> objects= Array<Unique<Object>>::Empty();
 
-        object.emplace_back(std::move(pyramidUPtr));
-        object.emplace_back(std::move(cuboidUPtr));
+        objects.emplace_back(std::move(pyramidUPtr));
+        objects.emplace_back(std::move(cuboidUPtr));
 
-        EXPECT_NO_THROW(Composite composite(std::move(object)););
+        EXPECT_NO_THROW(Composite composite(std::move(objects)););
     }
 }
 
@@ -166,12 +166,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, EqualToOperator)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> object = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> objects= Array<Unique<Object>>::Empty();
 
-        object.emplace_back(std::move(pyramidUPtr));
-        object.emplace_back(std::move(cuboidUPtr));
+        objects.emplace_back(std::move(pyramidUPtr));
+        objects.emplace_back(std::move(cuboidUPtr));
 
-        const Composite composite = Composite {std::move(object)};
+        const Composite composite = Composite {std::move(objects)};
 
         EXPECT_TRUE(composite == composite);
     }
@@ -215,19 +215,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, EqualToOperator)
 
         const Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> firstObject = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> firstObjects = Array<Unique<Object>>::Empty();
 
-        firstObject.emplace_back(std::move(pyramidUPtr->clone()));
-        firstObject.emplace_back(std::move(cuboidUPtr->clone()));
+        firstObjects.emplace_back(std::move(pyramidUPtr->clone()));
+        firstObjects.emplace_back(std::move(cuboidUPtr->clone()));
 
-        const Composite firstComposite = Composite {std::move(firstObject)};
+        const Composite firstComposite = Composite {std::move(firstObjects)};
 
-        Array<Unique<Object>> secondObject = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> secondObjects = Array<Unique<Object>>::Empty();
 
-        secondObject.emplace_back(std::move(cuboidUPtr->clone()));
-        secondObject.emplace_back(std::move(pyramidUPtr->clone()));
+        secondObjects.emplace_back(std::move(cuboidUPtr->clone()));
+        secondObjects.emplace_back(std::move(pyramidUPtr->clone()));
 
-        const Composite secondComposite = Composite {std::move(secondObject)};
+        const Composite secondComposite = Composite {std::move(secondObjects)};
 
         EXPECT_FALSE(firstComposite == secondComposite);
     }
@@ -291,12 +291,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, NotEqualToOperat
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> object = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> objects= Array<Unique<Object>>::Empty();
 
-        object.emplace_back(std::move(pyramidUPtr));
-        object.emplace_back(std::move(cuboidUPtr));
+        objects.emplace_back(std::move(pyramidUPtr));
+        objects.emplace_back(std::move(cuboidUPtr));
 
-        const Composite composite = Composite {std::move(object)};
+        const Composite composite = Composite {std::move(objects)};
 
         EXPECT_FALSE(composite != composite);
     }
@@ -340,19 +340,19 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, NotEqualToOperat
 
         const Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> firstObject = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> firstObjects = Array<Unique<Object>>::Empty();
 
-        firstObject.emplace_back(std::move(pyramidUPtr->clone()));
-        firstObject.emplace_back(std::move(cuboidUPtr->clone()));
+        firstObjects.emplace_back(std::move(pyramidUPtr->clone()));
+        firstObjects.emplace_back(std::move(cuboidUPtr->clone()));
 
-        const Composite firstComposite = Composite {std::move(firstObject)};
+        const Composite firstComposite = Composite {std::move(firstObjects)};
 
-        Array<Unique<Object>> secondObject = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> secondObjects = Array<Unique<Object>>::Empty();
 
-        secondObject.emplace_back(std::move(cuboidUPtr->clone()));
-        secondObject.emplace_back(std::move(pyramidUPtr->clone()));
+        secondObjects.emplace_back(std::move(cuboidUPtr->clone()));
+        secondObjects.emplace_back(std::move(pyramidUPtr->clone()));
 
-        const Composite secondComposite = Composite {std::move(secondObject)};
+        const Composite secondComposite = Composite {std::move(secondObjects)};
 
         EXPECT_TRUE(firstComposite != secondComposite);
     }
@@ -760,12 +760,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjectAt)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> object = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> objects= Array<Unique<Object>>::Empty();
 
-        object.emplace_back(std::move(pyramidUPtr));
-        object.emplace_back(std::move(cuboidUPtr));
+        objects.emplace_back(std::move(pyramidUPtr));
+        objects.emplace_back(std::move(cuboidUPtr));
 
-        const Composite composite = Composite {std::move(object)};
+        const Composite composite = Composite {std::move(objects)};
 
         EXPECT_TRUE(composite.accessObjectAt(0).is<Pyramid>());
         EXPECT_TRUE(composite.accessObjectAt(1).is<Cuboid>());
@@ -778,7 +778,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjectAt)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObject)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjects)
 {
     using ostk::core::type::Unique;
     using ostk::core::type::Real;
@@ -802,7 +802,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObject)
 
         const Composite composite = Composite {pyramid};
 
-        EXPECT_EQ(1, composite.accessObject().getSize());
+        EXPECT_EQ(1, composite.accessObjects().getSize());
     }
 
     {
@@ -821,18 +821,18 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObject)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> object = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> objects= Array<Unique<Object>>::Empty();
 
-        object.emplace_back(std::move(pyramidUPtr));
-        object.emplace_back(std::move(cuboidUPtr));
+        objects.emplace_back(std::move(pyramidUPtr));
+        objects.emplace_back(std::move(cuboidUPtr));
 
-        const Composite composite = Composite {std::move(object)};
+        const Composite composite = Composite {std::move(objects)};
 
-        EXPECT_EQ(2, composite.accessObject().getSize());
+        EXPECT_EQ(2, composite.accessObjects().getSize());
     }
 
     {
-        EXPECT_ANY_THROW(Composite::Undefined().accessObject());
+        EXPECT_ANY_THROW(Composite::Undefined().accessObjects());
     }
 }
 
@@ -879,12 +879,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, GetObjectCount)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> object = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> objects= Array<Unique<Object>>::Empty();
 
-        object.emplace_back(std::move(pyramidUPtr));
-        object.emplace_back(std::move(cuboidUPtr));
+        objects.emplace_back(std::move(pyramidUPtr));
+        objects.emplace_back(std::move(cuboidUPtr));
 
-        const Composite composite = Composite {std::move(object)};
+        const Composite composite = Composite {std::move(objects)};
 
         EXPECT_EQ(2, composite.getObjectCount());
     }
@@ -942,12 +942,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, ConstIterator)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> object = Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> objects= Array<Unique<Object>>::Empty();
 
-        object.emplace_back(std::move(pyramidUPtr));
-        object.emplace_back(std::move(cuboidUPtr));
+        objects.emplace_back(std::move(pyramidUPtr));
+        objects.emplace_back(std::move(cuboidUPtr));
 
-        const Composite composite = Composite {std::move(object)};
+        const Composite composite = Composite {std::move(objects)};
 
         EXPECT_NO_THROW(
 

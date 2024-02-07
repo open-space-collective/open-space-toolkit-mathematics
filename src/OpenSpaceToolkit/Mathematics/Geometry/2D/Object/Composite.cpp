@@ -381,7 +381,7 @@ const Object& Composite::accessObjectAt(const Index& anIndex) const
     return *(objects_.at(anIndex).get());
 }
 
-const Array<Unique<Object>>& Composite::accessObject() const
+const Array<Unique<Object>>& Composite::accessObjects() const
 {
     if (!this->isDefined())
     {
@@ -506,7 +506,7 @@ void Composite::print(std::ostream& anOutputStream, bool displayDecorators) cons
 
     if (!objects_.isEmpty())
     {
-        ostk::core::utils::Print::Separator(anOutputStream, "Object");
+        ostk::core::utils::Print::Separator(anOutputStream, "Objects");
 
         for (const auto& objectUPtr : objects_)
         {

@@ -592,7 +592,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, AccessObjectAt)
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, AccessObject)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, AccessObjects)
 {
     using ostk::core::type::Unique;
     using ostk::core::container::Array;
@@ -606,15 +606,15 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite, AccessObject)
 
         const Composite composite = Composite {polygon};
 
-        EXPECT_EQ(1, composite.accessObject().getSize());
+        EXPECT_EQ(1, composite.accessObjects().getSize());
     }
 
     {
-        EXPECT_ANY_THROW(Composite::Undefined().accessObject());
+        EXPECT_ANY_THROW(Composite::Undefined().accessObjects());
     }
 
     {
-        EXPECT_EQ(Array<Unique<Object>>::Empty(), Composite::Empty().accessObject());
+        EXPECT_EQ(Array<Unique<Object>>::Empty(), Composite::Empty().accessObjects());
     }
 }
 

@@ -69,7 +69,7 @@ class Intersection
 
     /// @brief              Constructor
     ///
-    /// @param              [in] anObjectArray An array of object
+    /// @param              [in] anObjectArray An array of objects
 
     Intersection(Array<Unique<Object>>&& anObjectArray);
 
@@ -298,9 +298,9 @@ class Intersection
 
     Intersection(const Intersection::Type& aType, const Array<Unique<Object>>& anObjectArray);
 
-    static Intersection::Type TypeFromObject(const Array<Unique<Object>>& anObjectArray);
+    static Intersection::Type TypeFromObjects(const Array<Unique<Object>>& anObjectArray);
 
-    static Intersection::Type TypeFromObject(const Unique<Object>& anObjectUPtr);
+    static Intersection::Type TypeFromObjects(const Unique<Object>& anObjectUPtr);
 };
 
 }  // namespace d3
