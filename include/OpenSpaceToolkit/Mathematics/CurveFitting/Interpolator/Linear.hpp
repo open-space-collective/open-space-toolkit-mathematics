@@ -9,11 +9,11 @@
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
-#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace curvefitting
 {
@@ -25,8 +25,8 @@ using ostk::core::type::Size;
 using ostk::core::type::Index;
 using ostk::core::container::Pair;
 
-using ostk::math::object::VectorXd;
-using ostk::math::curvefitting::Interpolator;
+using ostk::mathematics::object::VectorXd;
+using ostk::mathematics::curvefitting::Interpolator;
 
 /// @brief                      Linear
 ///
@@ -91,7 +91,7 @@ class Linear : public Interpolator
 
 }  // namespace interpolator
 }  // namespace curvefitting
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk
 
 #endif

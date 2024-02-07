@@ -9,7 +9,7 @@ import ostk.mathematics as mathematics
 
 Transformation = mathematics.geometry.d2.Transformation
 Type = Transformation.Type
-Point = mathematics.geometry.d2.objects.Point
+Point = mathematics.geometry.d2.object.Point
 
 
 def test_geometry_d2_transformation_type():

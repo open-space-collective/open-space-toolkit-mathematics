@@ -7,12 +7,12 @@ import numpy as np
 import ostk.mathematics as mathematics
 
 
-Point = mathematics.geometry.d2.objects.Point
-PointSet = mathematics.geometry.d2.objects.PointSet
-Line = mathematics.geometry.d2.objects.Line
-Segment = mathematics.geometry.d2.objects.Segment
-Polygon = mathematics.geometry.d2.objects.Polygon
-Composite = mathematics.geometry.d2.objects.Composite
+Point = mathematics.geometry.d2.object.Point
+PointSet = mathematics.geometry.d2.object.PointSet
+Line = mathematics.geometry.d2.object.Line
+Segment = mathematics.geometry.d2.object.Segment
+Polygon = mathematics.geometry.d2.object.Polygon
+Composite = mathematics.geometry.d2.object.Composite
 
 
 @pytest.fixture

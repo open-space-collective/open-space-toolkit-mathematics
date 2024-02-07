@@ -7,7 +7,7 @@
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace geometry
 {
@@ -146,7 +146,7 @@ class Object
 
 }  // namespace d3
 }  // namespace geometry
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk
 
 #endif

@@ -9,21 +9,21 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
     using ostk::core::type::Unique;
     using ostk::core::container::Array;
 
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::PointSet;
-    using ostk::math::geometry::d3::objects::Line;
-    using ostk::math::geometry::d3::objects::Ray;
-    using ostk::math::geometry::d3::objects::Segment;
-    using ostk::math::geometry::d3::objects::LineString;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Plane;
-    using ostk::math::geometry::d3::objects::Sphere;
-    using ostk::math::geometry::d3::objects::Ellipsoid;
-    using ostk::math::geometry::d3::objects::Cuboid;
-    using ostk::math::geometry::d3::objects::Pyramid;
-    using ostk::math::geometry::d3::objects::Composite;
-    using ostk::math::geometry::d3::Intersection;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::PointSet;
+    using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Ray;
+    using ostk::mathematics::geometry::d3::object::Segment;
+    using ostk::mathematics::geometry::d3::object::LineString;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Plane;
+    using ostk::mathematics::geometry::d3::object::Sphere;
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Composite;
+    using ostk::mathematics::geometry::d3::Intersection;
 
     // scope in_Intersection = class_<Intersection>("Intersection", init<const Array<Unique<Object>>>())
     class_<Intersection> intersection(aModule, "Intersection");

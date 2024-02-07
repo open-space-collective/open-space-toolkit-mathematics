@@ -5,14 +5,14 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/MultiPolygon.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/PointSet.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Polygon.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp>
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace geometry
 {
@@ -23,9 +23,9 @@ Object::~Object() {}
 
 bool Object::operator==(const Object& anObject) const
 {
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::Polygon;
-    using ostk::math::geometry::d2::objects::MultiPolygon;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::Polygon;
+    using ostk::mathematics::geometry::d2::object::MultiPolygon;
 
     if ((!this->isDefined()) || (!anObject.isDefined()))
     {
@@ -78,8 +78,8 @@ std::ostream& operator<<(std::ostream& anOutputStream, const Object& anObject)
 
 bool Object::intersects(const Object& anObject) const
 {
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::Polygon;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::Polygon;
 
     if (!anObject.isDefined())
     {
@@ -93,11 +93,11 @@ bool Object::intersects(const Object& anObject) const
 
 bool Object::contains(const Object& anObject) const
 {
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::objects::PointSet;
-    using ostk::math::geometry::d2::objects::LineString;
-    using ostk::math::geometry::d2::objects::Polygon;
-    using ostk::math::geometry::d2::objects::MultiPolygon;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::PointSet;
+    using ostk::mathematics::geometry::d2::object::LineString;
+    using ostk::mathematics::geometry::d2::object::Polygon;
+    using ostk::mathematics::geometry::d2::object::MultiPolygon;
 
     if (!anObject.isDefined())
     {
@@ -168,5 +168,5 @@ bool Object::contains(const Object& anObject) const
 
 }  // namespace d2
 }  // namespace geometry
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk

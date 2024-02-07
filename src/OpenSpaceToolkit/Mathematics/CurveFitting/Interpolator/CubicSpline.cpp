@@ -8,7 +8,7 @@
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace curvefitting
 {
@@ -75,5 +75,5 @@ double CubicSpline::evaluate(const double& aQueryValue) const
 
 }  // namespace interpolator
 }  // namespace curvefitting
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk

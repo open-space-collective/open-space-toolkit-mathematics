@@ -1,7 +1,7 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
 
@@ -10,7 +10,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, Constructor)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -23,7 +23,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, EqualToOperator)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -36,7 +36,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, NotEqualToOperator)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -49,7 +49,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, MultiplicationOperator)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -62,7 +62,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, MultiplicationAssignmentOperator)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -75,7 +75,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, StreamOperator)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -88,7 +88,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, IsDefined)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -101,7 +101,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, GetType)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -114,7 +114,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, GetMatrix)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -127,7 +127,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, GetInverse)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -140,7 +140,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, ApplyTo)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -153,7 +153,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, Undefined)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -166,7 +166,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, Identity)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -179,7 +179,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, Translation)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -192,7 +192,7 @@
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, Rotation)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -206,9 +206,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, RotationAround)
 {
     using ostk::core::type::String;
 
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d2::objects::Point;
-    using ostk::math::geometry::d2::Transformation;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::Transformation;
 
     {
         const Point rotationCenter = {0.0, 0.0};
@@ -287,7 +287,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, RotationAround)
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, StringFromType)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 
@@ -300,7 +300,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, RotationAround)
 // TEST (OpenSpaceToolkit_Mathematics_Geometry_2D_Transformation, TypeOfMatrix)
 // {
 
-//     using ostk::math::geometry::d2::Transformation ;
+//     using ostk::mathematics::geometry::d2::Transformation ;
 
 //     {
 

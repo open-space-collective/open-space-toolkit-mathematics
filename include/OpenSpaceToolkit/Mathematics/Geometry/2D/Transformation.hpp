@@ -7,13 +7,13 @@
 #include <OpenSpaceToolkit/Core/Type/Unique.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Objects/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
-#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace geometry
 {
@@ -23,12 +23,12 @@ namespace d2
 using ostk::core::type::Unique;
 using ostk::core::type::String;
 
-using ostk::math::object::Vector2d;
-using ostk::math::object::Vector3d;
-using ostk::math::object::Matrix3d;
-using ostk::math::geometry::Angle;
-using ostk::math::geometry::d2::Object;
-using ostk::math::geometry::d2::objects::Point;
+using ostk::mathematics::object::Vector2d;
+using ostk::mathematics::object::Vector3d;
+using ostk::mathematics::object::Matrix3d;
+using ostk::mathematics::geometry::Angle;
+using ostk::mathematics::geometry::d2::Object;
+using ostk::mathematics::geometry::d2::object::Point;
 
 class Transformation
 {
@@ -122,7 +122,7 @@ class Transformation
 
 }  // namespace d2
 }  // namespace geometry
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk
 
 #endif

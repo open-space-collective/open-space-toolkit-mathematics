@@ -7,11 +7,11 @@
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
-#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace geometry
 {
@@ -20,8 +20,8 @@ using ostk::core::type::Integer;
 using ostk::core::type::Real;
 using ostk::core::type::String;
 
-using ostk::math::object::Vector2d;
-using ostk::math::object::Vector3d;
+using ostk::mathematics::object::Vector2d;
+using ostk::mathematics::object::Vector3d;
 
 /// @brief                      Angle
 ///
@@ -152,7 +152,7 @@ class Angle
 };
 
 }  // namespace geometry
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk
 
 #endif

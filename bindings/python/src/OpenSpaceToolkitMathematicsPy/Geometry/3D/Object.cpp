@@ -2,22 +2,37 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
 
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Composite.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Cone.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Cuboid.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Ellipsoid.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Line.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/LineString.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Plane.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Point.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/PointSet.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Polygon.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Pyramid.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Ray.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Segment.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Object/Sphere.cpp>
+
 inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& aModule)
 {
     using namespace pybind11;
 
-    using ostk::math::geometry::d3::Object;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::objects::PointSet;
-    using ostk::math::geometry::d3::objects::Line;
-    using ostk::math::geometry::d3::objects::Ray;
-    using ostk::math::geometry::d3::objects::Segment;
-    using ostk::math::geometry::d3::objects::LineString;
-    using ostk::math::geometry::d3::objects::Polygon;
-    using ostk::math::geometry::d3::objects::Plane;
-    using ostk::math::geometry::d3::objects::Sphere;
-    using ostk::math::geometry::d3::objects::Ellipsoid;
-    using ostk::math::geometry::d3::objects::Pyramid;
+    using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::PointSet;
+    using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Ray;
+    using ostk::mathematics::geometry::d3::object::Segment;
+    using ostk::mathematics::geometry::d3::object::LineString;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Plane;
+    using ostk::mathematics::geometry::d3::object::Sphere;
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
 
     // class_<Object, boost::noncopyable>("Object", no_init)
     class_<Object>(aModule, "Object")
@@ -206,4 +221,27 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
         .def("apply_transformation", &Object::applyTransformation, arg("transformation"))
 
         ;
+
+    // Create "object" python submodule
+    auto object = aModule.def_submodule("object");
+
+    // Add __path__ attribute for "object" submodule
+    object.attr("__path__") = "ostk.mathematics.geometry.d3.object";
+
+    // Add object to python "object" submodules
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_PointSet(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Line(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ray(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Segment(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_LineString(object);
+    // OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_MultiLineString(object) ;
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Plane(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Sphere(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(object);
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(object);
 }

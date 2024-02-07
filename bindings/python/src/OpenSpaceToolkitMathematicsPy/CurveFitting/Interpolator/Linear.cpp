@@ -6,9 +6,9 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_Linear(pybin
 {
     using namespace pybind11;
 
-    using ostk::math::object::VectorXd;
+    using ostk::mathematics::object::VectorXd;
 
-    using ostk::math::curvefitting::interpolator::Linear;
+    using ostk::mathematics::curvefitting::interpolator::Linear;
 
     // noncopyable class with Boost, removed in Pybind11
     class_<Linear>(aModule, "Linear")

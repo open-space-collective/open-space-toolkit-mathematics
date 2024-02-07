@@ -7,14 +7,14 @@
 #include <OpenSpaceToolkit/Core/Type/Unique.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
-#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace geometry
 {
@@ -26,14 +26,14 @@ class Transformation;
 using ostk::core::type::Unique;
 using ostk::core::type::String;
 
-using ostk::math::object::Vector3d;
-using ostk::math::object::Vector4d;
-using ostk::math::object::Matrix4d;
-using ostk::math::geometry::Angle;
-using ostk::math::geometry::d3::Object;
-using ostk::math::geometry::d3::objects::Point;
-using ostk::math::geometry::d3::transformation::rotation::RotationVector;
-using ostk::math::geometry::d3::transformation::rotation::RotationMatrix;
+using ostk::mathematics::object::Vector3d;
+using ostk::mathematics::object::Vector4d;
+using ostk::mathematics::object::Matrix4d;
+using ostk::mathematics::geometry::Angle;
+using ostk::mathematics::geometry::d3::Object;
+using ostk::mathematics::geometry::d3::object::Point;
+using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+using ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix;
 
 class Transformation
 {
@@ -132,7 +132,7 @@ class Transformation
 
 }  // namespace d3
 }  // namespace geometry
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk
 
 #endif

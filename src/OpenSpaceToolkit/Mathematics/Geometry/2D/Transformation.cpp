@@ -9,7 +9,7 @@
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace geometry
 {
@@ -373,5 +373,5 @@ Transformation::Transformation(const Transformation::Type& aType, const Matrix3d
 
 }  // namespace d2
 }  // namespace geometry
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk

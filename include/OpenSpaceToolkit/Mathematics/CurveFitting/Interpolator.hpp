@@ -5,11 +5,11 @@
 
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
 
-#include <OpenSpaceToolkit/Mathematics/Objects/Vector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace curvefitting
 {
@@ -17,7 +17,7 @@ namespace curvefitting
 using ostk::core::type::Real;
 using ostk::core::type::Size;
 
-using ostk::math::object::VectorXd;
+using ostk::mathematics::object::VectorXd;
 
 /// @brief                      Interpolator
 ///
@@ -59,7 +59,7 @@ class Interpolator
 };
 
 }  // namespace curvefitting
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk
 
 #endif

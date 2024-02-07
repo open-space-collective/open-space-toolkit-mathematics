@@ -4,7 +4,7 @@
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace test
 {
@@ -43,5 +43,5 @@ class Environment : public testing::Environment
 };
 
 }  // namespace test
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk

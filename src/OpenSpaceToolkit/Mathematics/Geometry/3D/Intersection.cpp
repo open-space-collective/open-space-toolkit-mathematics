@@ -7,7 +7,7 @@
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace geometry
 {
@@ -148,7 +148,7 @@ Intersection Intersection::Empty()
     return {Array<Unique<Object>>::Empty()};
 }
 
-Intersection Intersection::Point(const objects::Point& aPoint)
+Intersection Intersection::Point(const object::Point& aPoint)
 {
     Intersection intersection;
 
@@ -159,7 +159,7 @@ Intersection Intersection::Point(const objects::Point& aPoint)
     return intersection;
 }
 
-Intersection Intersection::PointSet(const objects::PointSet& aPointSet)
+Intersection Intersection::PointSet(const object::PointSet& aPointSet)
 {
     Intersection intersection;
 
@@ -170,7 +170,7 @@ Intersection Intersection::PointSet(const objects::PointSet& aPointSet)
     return intersection;
 }
 
-Intersection Intersection::LineString(const objects::LineString& aLineString)
+Intersection Intersection::LineString(const object::LineString& aLineString)
 {
     Intersection intersection;
 
@@ -181,7 +181,7 @@ Intersection Intersection::LineString(const objects::LineString& aLineString)
     return intersection;
 }
 
-Intersection Intersection::Line(const objects::Line& aLine)
+Intersection Intersection::Line(const object::Line& aLine)
 {
     Intersection intersection;
 
@@ -192,7 +192,7 @@ Intersection Intersection::Line(const objects::Line& aLine)
     return intersection;
 }
 
-Intersection Intersection::Ray(const objects::Ray& aRay)
+Intersection Intersection::Ray(const object::Ray& aRay)
 {
     Intersection intersection;
 
@@ -203,7 +203,7 @@ Intersection Intersection::Ray(const objects::Ray& aRay)
     return intersection;
 }
 
-Intersection Intersection::Segment(const objects::Segment& aSegment)
+Intersection Intersection::Segment(const object::Segment& aSegment)
 {
     Intersection intersection;
 
@@ -285,7 +285,7 @@ Intersection::Type Intersection::TypeFromObjects(const Array<Unique<Object>>& an
 
     for (const auto& objectUPtr : anObjectArray)
     {
-        const Intersection::Type objectType = Intersection::TypeFromObject(objectUPtr);
+        const Intersection::Type objectType = Intersection::TypeFromObjects(objectUPtr);
 
         if (type == Intersection::Type::Undefined)
         {
@@ -300,64 +300,64 @@ Intersection::Type Intersection::TypeFromObjects(const Array<Unique<Object>>& an
     return type;
 }
 
-Intersection::Type Intersection::TypeFromObject(const Unique<Object>& anObjectUPtr)
+Intersection::Type Intersection::TypeFromObjects(const Unique<Object>& anObjectUPtr)
 {
-    if (dynamic_cast<const objects::Point*>(anObjectUPtr.get()))
+    if (dynamic_cast<const object::Point*>(anObjectUPtr.get()))
     {
         return Intersection::Type::Point;
     }
 
-    if (dynamic_cast<const objects::PointSet*>(anObjectUPtr.get()))
+    if (dynamic_cast<const object::PointSet*>(anObjectUPtr.get()))
     {
         return Intersection::Type::PointSet;
     }
 
-    if (dynamic_cast<const objects::Line*>(anObjectUPtr.get()))
+    if (dynamic_cast<const object::Line*>(anObjectUPtr.get()))
     {
         return Intersection::Type::Line;
     }
 
-    if (dynamic_cast<const objects::Ray*>(anObjectUPtr.get()))
+    if (dynamic_cast<const object::Ray*>(anObjectUPtr.get()))
     {
         return Intersection::Type::Ray;
     }
 
-    if (dynamic_cast<const objects::Segment*>(anObjectUPtr.get()))
+    if (dynamic_cast<const object::Segment*>(anObjectUPtr.get()))
     {
         return Intersection::Type::Segment;
     }
 
-    if (dynamic_cast<const objects::LineString*>(anObjectUPtr.get()))
+    if (dynamic_cast<const object::LineString*>(anObjectUPtr.get()))
     {
         return Intersection::Type::LineString;
     }
 
-    if (dynamic_cast<const objects::Polygon*>(anObjectUPtr.get()))
+    if (dynamic_cast<const object::Polygon*>(anObjectUPtr.get()))
     {
         return Intersection::Type::Polygon;
     }
 
-    if (dynamic_cast<const objects::Plane*>(anObjectUPtr.get()))
+    if (dynamic_cast<const object::Plane*>(anObjectUPtr.get()))
     {
         return Intersection::Type::Plane;
     }
 
-    if (dynamic_cast<const objects::Cuboid*>(anObjectUPtr.get()))
+    if (dynamic_cast<const object::Cuboid*>(anObjectUPtr.get()))
     {
         return Intersection::Type::Cuboid;
     }
 
-    if (dynamic_cast<const objects::Sphere*>(anObjectUPtr.get()))
+    if (dynamic_cast<const object::Sphere*>(anObjectUPtr.get()))
     {
         return Intersection::Type::Sphere;
     }
 
-    if (dynamic_cast<const objects::Ellipsoid*>(anObjectUPtr.get()))
+    if (dynamic_cast<const object::Ellipsoid*>(anObjectUPtr.get()))
     {
         return Intersection::Type::Ellipsoid;
     }
 
-    if (dynamic_cast<const objects::Pyramid*>(anObjectUPtr.get()))
+    if (dynamic_cast<const object::Pyramid*>(anObjectUPtr.get()))
     {
         return Intersection::Type::Pyramid;
     }
@@ -367,5 +367,5 @@ Intersection::Type Intersection::TypeFromObject(const Unique<Object>& anObjectUP
 
 }  // namespace d3
 }  // namespace geometry
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk

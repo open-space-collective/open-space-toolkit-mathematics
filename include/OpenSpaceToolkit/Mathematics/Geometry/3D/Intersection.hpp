@@ -10,23 +10,23 @@
 #include <OpenSpaceToolkit/Core/Type/Unique.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Composite.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cuboid.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/LineString.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Plane.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/PointSet.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Polygon.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Pyramid.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ray.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Sphere.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Line.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp>
 
 namespace ostk
 {
-namespace math
+namespace mathematics
 {
 namespace geometry
 {
@@ -38,8 +38,8 @@ using ostk::core::type::Index;
 using ostk::core::type::Size;
 using ostk::core::container::Array;
 
-using ostk::math::geometry::d3::Object;
-using ostk::math::geometry::d3::objects::Composite;
+using ostk::mathematics::geometry::d3::Object;
+using ostk::mathematics::geometry::d3::object::Composite;
 
 /// @brief                      3D intersection
 
@@ -228,7 +228,7 @@ class Intersection
     ///
     /// @return             Point intersection
 
-    static Intersection Point(const objects::Point& aPoint);
+    static Intersection Point(const object::Point& aPoint);
 
     /// @brief              Constructs a point set intersection
     ///
@@ -239,7 +239,7 @@ class Intersection
     ///
     /// @return             Point set intersection
 
-    static Intersection PointSet(const objects::PointSet& aPointSet);
+    static Intersection PointSet(const object::PointSet& aPointSet);
 
     /// @brief              Constructs a line string intersection
     ///
@@ -250,7 +250,7 @@ class Intersection
     ///
     /// @return             Line string intersection
 
-    static Intersection LineString(const objects::LineString& aLineString);
+    static Intersection LineString(const object::LineString& aLineString);
 
     /// @brief              Constructs a line intersection
     ///
@@ -260,7 +260,7 @@ class Intersection
     ///
     /// @return             Line intersection
 
-    static Intersection Line(const objects::Line& aLine);
+    static Intersection Line(const object::Line& aLine);
 
     /// @brief              Constructs a ray intersection
     ///
@@ -270,7 +270,7 @@ class Intersection
     ///
     /// @return             Ray intersection
 
-    static Intersection Ray(const objects::Ray& aRay);
+    static Intersection Ray(const object::Ray& aRay);
 
     /// @brief              Constructs a segment intersection
     ///
@@ -281,7 +281,7 @@ class Intersection
     ///
     /// @return             Segment intersection
 
-    static Intersection Segment(const objects::Segment& aSegment);
+    static Intersection Segment(const object::Segment& aSegment);
 
     /// @brief              Converts intersection type to string
     ///
@@ -300,12 +300,12 @@ class Intersection
 
     static Intersection::Type TypeFromObjects(const Array<Unique<Object>>& anObjectArray);
 
-    static Intersection::Type TypeFromObject(const Unique<Object>& anObjectUPtr);
+    static Intersection::Type TypeFromObjects(const Unique<Object>& anObjectUPtr);
 };
 
 }  // namespace d3
 }  // namespace geometry
-}  // namespace math
+}  // namespace mathematics
 }  // namespace ostk
 
 #endif

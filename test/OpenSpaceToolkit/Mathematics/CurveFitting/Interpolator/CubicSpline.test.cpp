@@ -15,9 +15,9 @@ using ostk::core::container::Table;
 using ostk::core::filesystem::Path;
 using ostk::core::filesystem::File;
 
-using ostk::math::object::VectorXd;
-using ostk::math::object::MatrixXd;
-using ostk::math::curvefitting::interpolator::CubicSpline;
+using ostk::mathematics::object::VectorXd;
+using ostk::mathematics::object::MatrixXd;
+using ostk::mathematics::curvefitting::interpolator::CubicSpline;
 
 TEST(OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, Constructor)
 {

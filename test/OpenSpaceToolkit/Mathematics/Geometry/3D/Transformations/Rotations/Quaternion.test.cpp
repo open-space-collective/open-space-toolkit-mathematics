@@ -1,17 +1,17 @@
 /// Apache License 2.0
 
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/Quaternion.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationMatrix.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/RotationVector.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
 
 #include <Global.test.hpp>
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Constructor)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Constructor)
 {
-    using ostk::math::object::Vector3d;
-    using ostk::math::object::Vector4d;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::object::Vector4d;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_NO_THROW(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS));
@@ -38,9 +38,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, EqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, EqualToOperator)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_TRUE(
@@ -117,9 +117,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, NotEqualToOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, NotEqualToOperator)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_TRUE(
@@ -196,9 +196,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, AdditionOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, AdditionOperator)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(
@@ -213,9 +213,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, MultiplicationOperator_Quaternion)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, MultiplicationOperator_Quaternion)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(Quaternion::Unit(), Quaternion::Unit() * Quaternion::Unit());
@@ -227,10 +227,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, MultiplicationOperator_Vector3d)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, MultiplicationOperator_Vector3d)
 {
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(Vector3d::X(), Quaternion::Unit() * Vector3d::X());
@@ -242,11 +242,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, MultiplicationOperator_Real)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, MultiplicationOperator_Real)
 {
     using ostk::core::type::Real;
 
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(Quaternion::Unit(), Quaternion::Unit() * 1.0);
@@ -262,10 +262,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, DivisionOperator)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, DivisionOperator)
 // {
 
-//     using ostk::math::geometry::d3::transformation::rotation::Quaternion ;
+//     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion ;
 
 //     {
 
@@ -275,12 +275,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
 
 // }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, PowerOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, PowerOperator)
 {
     using ostk::core::type::Real;
 
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(Quaternion::Unit(), Quaternion::Unit() ^ 1.0);
@@ -294,11 +294,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion,
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion,
 // MultiplicationAssignmentOperator)
 // {
 
-//     using ostk::math::geometry::d3::transformation::rotation::Quaternion ;
+//     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion ;
 
 //     {
 
@@ -308,10 +308,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, DivisionAssignmentOperator)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, DivisionAssignmentOperator)
 // {
 
-//     using ostk::math::geometry::d3::transformation::rotation::Quaternion ;
+//     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion ;
 
 //     {
 
@@ -321,9 +321,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
 
 // }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, StreamOperator)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, StreamOperator)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         testing::internal::CaptureStdout();
@@ -334,9 +334,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, IsDefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, IsDefined)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0).isDefined());
@@ -354,9 +354,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, IsUnitary)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, IsUnitary)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0).isUnitary());
@@ -374,10 +374,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, IsNear)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, IsNear)
 {
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0).isNear(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0), Angle::Zero()));
@@ -419,9 +419,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, X)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, X)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(1.0, Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).x());
@@ -432,9 +432,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Y)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Y)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(2.0, Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).y());
@@ -445,9 +445,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Z)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Z)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(3.0, Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).z());
@@ -458,9 +458,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, S)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, S)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(4.0, Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).s());
@@ -471,10 +471,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, GetVectorPart)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, GetVectorPart)
 {
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(Vector3d(1.0, 2.0, 3.0), Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).getVectorPart());
@@ -485,9 +485,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, GetScalarPart)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, GetScalarPart)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(4.0, Quaternion::XYZS(1.0, 2.0, 3.0, 4.0).getScalarPart());
@@ -498,10 +498,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToNormalized)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, ToNormalized)
 // {
 
-//     using ostk::math::geometry::d3::transformation::rotation::Quaternion ;
+//     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion ;
 
 //     {
 
@@ -511,9 +511,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
 
 // }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToConjugate)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, ToConjugate)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(Quaternion::XYZS(-1.0, -2.0, -3.0, +4.0), Quaternion::XYZS(+1.0, +2.0, +3.0, +4.0).toConjugate());
@@ -528,10 +528,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToInverse)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, ToInverse)
 // {
 
-//     using ostk::math::geometry::d3::transformation::rotation::Quaternion ;
+//     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion ;
 
 //     {
 
@@ -541,10 +541,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
 
 // }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Exp)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Exp)
 {
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(Quaternion::Unit(), Quaternion::Unit().exp());
@@ -559,10 +559,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Log)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Log)
 {
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(Quaternion({0.0, 0.0, 0.0}, 0.0), Quaternion::Unit().log());
@@ -577,12 +577,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Pow)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Pow)
 {
     using ostk::core::type::Real;
 
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(Quaternion::Unit(), Quaternion::Unit().pow(1.0));
@@ -597,10 +597,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Norm)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Norm)
 // {
 
-//     using ostk::math::geometry::d3::transformation::rotation::Quaternion ;
+//     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion ;
 
 //     {
 
@@ -610,10 +610,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, CrossMultiply)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, CrossMultiply)
 // {
 
-//     using ostk::math::geometry::d3::transformation::rotation::Quaternion ;
+//     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion ;
 
 //     {
 
@@ -623,10 +623,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, DotMultiply)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, DotMultiply)
 // {
 
-//     using ostk::math::geometry::d3::transformation::rotation::Quaternion ;
+//     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion ;
 
 //     {
 
@@ -636,10 +636,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, RotateVector)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, RotateVector)
 // {
 
-//     using ostk::math::geometry::d3::transformation::rotation::Quaternion ;
+//     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion ;
 
 //     {
 
@@ -649,10 +649,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
 
 // }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToVector)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, ToVector)
 {
-    using ostk::math::object::Vector4d;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::object::Vector4d;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(
@@ -668,9 +668,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ToString)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, ToString)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ("[0.0, 0.0, 0.0, 1.0]", Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).toString(Quaternion::Format::XYZS));
@@ -698,10 +698,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Normalize)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Normalize)
 // {
 
-//     using ostk::math::geometry::d3::transformation::rotation::Quaternion ;
+//     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion ;
 
 //     {
 
@@ -711,10 +711,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Conjugate)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Conjugate)
 // {
 
-//     using ostk::math::geometry::d3::transformation::rotation::Quaternion ;
+//     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion ;
 
 //     {
 
@@ -724,10 +724,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Inverse)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Inverse)
 // {
 
-//     using ostk::math::geometry::d3::transformation::rotation::Quaternion ;
+//     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion ;
 
 //     {
 
@@ -737,10 +737,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
 
 // }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Rectify)
+// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Rectify)
 // {
 
-//     using ostk::math::geometry::d3::transformation::rotation::Quaternion ;
+//     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion ;
 
 //     {
 
@@ -750,10 +750,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
 
 // }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, AngularDifferenceWith)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, AngularDifferenceWith)
 {
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_EQ(Angle::Zero(), Quaternion::Unit().angularDifferenceWith(Quaternion::Unit()));
@@ -778,9 +778,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Undefined)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Undefined)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_NO_THROW(Quaternion::Undefined());
@@ -788,9 +788,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Unit)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Unit)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_NO_THROW(Quaternion::Unit());
@@ -798,9 +798,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, XYZS)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, XYZS)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_NO_THROW(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0));
@@ -808,13 +808,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, RotationVector)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, RotationVector)
 {
     using ostk::core::type::Real;
 
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d3::transformation::rotation::RotationVector;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_TRUE(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS)
@@ -834,15 +834,15 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, RotationMatrix)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, RotationMatrix)
 {
     using ostk::core::type::Real;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d3::transformation::rotation::RotationVector;
-    using ostk::math::geometry::d3::transformation::rotation::RotationMatrix;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_TRUE(Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion::Format::XYZS)
@@ -886,9 +886,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, Parse)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Parse)
 {
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         EXPECT_NO_THROW(Quaternion::Parse("[0.0, 0.0, 0.0, 1.0]", Quaternion::Format::XYZS));
@@ -910,12 +910,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, ShortestRotation)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, ShortestRotation)
 {
-    using ostk::math::object::Vector3d;
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
-    using ostk::math::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
 
     {
         EXPECT_TRUE(Quaternion::ShortestRotation({1.0, 0.0, 0.0}, {1.0, 0.0, 0.0})
@@ -942,13 +942,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, LERP)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, LERP)
 {
     using ostk::core::type::Real;
 
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
-    using ostk::math::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
 
     {
         EXPECT_TRUE(Quaternion::LERP(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), 0.0)
@@ -967,13 +967,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, NLERP)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, NLERP)
 {
     using ostk::core::type::Real;
 
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
-    using ostk::math::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
 
     {
         EXPECT_TRUE(Quaternion::NLERP(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), 0.0)
@@ -1002,13 +1002,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaterni
     }
 }
 
-TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformations_Rotations_Quaternion, SLERP)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, SLERP)
 {
     using ostk::core::type::Real;
 
-    using ostk::math::geometry::Angle;
-    using ostk::math::geometry::d3::transformation::rotation::Quaternion;
-    using ostk::math::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
 
     {
         EXPECT_TRUE(Quaternion::SLERP(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), 0.0)

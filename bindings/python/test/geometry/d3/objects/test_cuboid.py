@@ -9,11 +9,11 @@ import ostk.mathematics as mathematics
 from ostk.core.type import String
 
 
-Point3d = mathematics.geometry.d3.objects.Point
-Point2d = mathematics.geometry.d2.objects.Point
-Polygon3d = mathematics.geometry.d3.objects.Polygon
+Point3d = mathematics.geometry.d3.object.Point
+Point2d = mathematics.geometry.d2.object.Point
+Polygon3d = mathematics.geometry.d3.object.Polygon
 Object3d = mathematics.geometry.d3.Object
-Polygon2d = mathematics.geometry.d2.objects.Polygon
+Polygon2d = mathematics.geometry.d2.object.Polygon
 Transformation = mathematics.geometry.d3.Transformation
 
 

@@ -2,7 +2,7 @@
 
 SET (OpenSpaceToolkitMathematics_ROOT_DIR ${OpenSpaceToolkitMathematics_ROOT_DIR} @CMAKE_INSTALL_PREFIX@)
 
-FIND_PATH (OpenSpaceToolkitMathematics_INCLUDE_DIR "OpenSpaceToolkit/Mathematics/Objects.hpp" PATHS ${OpenSpaceToolkitMathematics_ROOT_DIR} PATH_SUFFIXES "include" NO_DEFAULT_PATH)
+FIND_PATH (OpenSpaceToolkitMathematics_INCLUDE_DIR "OpenSpaceToolkit/Mathematics/Object.hpp" PATHS ${OpenSpaceToolkitMathematics_ROOT_DIR} PATH_SUFFIXES "include" NO_DEFAULT_PATH)
 FIND_LIBRARY (OpenSpaceToolkitMathematics_LIBRARY NAMES "libopen-space-toolkit-mathematics.so" PATHS ${OpenSpaceToolkitMathematics_ROOT_DIR} PATH_SUFFIXES "lib" NO_DEFAULT_PATH)
 
 # MESSAGE (STATUS "OpenSpaceToolkitMathematics_ROOT_DIR = ${OpenSpaceToolkitMathematics_ROOT_DIR}")

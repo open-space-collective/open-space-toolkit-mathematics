@@ -2,16 +2,18 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
 
+#include <OpenSpaceToolkitMathematicsPy/Geometry/3D/Transformation/Rotation.cpp>
+
 inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::module& aModule)
 {
     using namespace pybind11;
 
-    using ostk::math::object::Vector3d;
-    using ostk::math::object::Matrix4d;
-    using ostk::math::geometry::d3::objects::Point;
-    using ostk::math::geometry::d3::Transformation;
-    using ostk::math::geometry::d3::transformation::rotation::RotationVector;
-    using ostk::math::geometry::d3::transformation::rotation::RotationMatrix;
+    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::object::Matrix4d;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::Transformation;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix;
 
     class_<Transformation> transformation(aModule, "Transformation");
 
@@ -58,4 +60,13 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
         .value("Affine", Transformation::Type::Affine)
 
         ;
+
+    // Create "transformation" python submodule
+    auto transformation_module = aModule.def_submodule("transformation");
+
+    // Add __path__ attribute for "transformation" submodule
+    transformation_module.attr("__path__") = "ostk.mathematics.geometry.d3.transformation";
+
+    // Add object to python "transformation" submodules
+    OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation(transformation_module);
 }
