@@ -1,7 +1,6 @@
 /// Apache License 2.0
 
 #include <deque>
-#include <iostream>
 
 #include <boost/foreach.hpp>
 #include <boost/geometry.hpp>

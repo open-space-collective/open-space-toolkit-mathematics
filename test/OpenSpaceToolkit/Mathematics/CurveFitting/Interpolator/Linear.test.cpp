@@ -2,22 +2,28 @@
 
 #include <OpenSpaceToolkit/Core/Container/Array.hpp>
 #include <OpenSpaceToolkit/Core/Container/Table.hpp>
+#include <OpenSpaceToolkit/Core/FileSystem/File.hpp>
+#include <OpenSpaceToolkit/Core/FileSystem/Path.hpp>
+#include <OpenSpaceToolkit/Core/Type/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Size.hpp>
+#include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp>
+#include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 
 #include <Global.test.hpp>
 
+using ostk::core::container::Array;
+using ostk::core::container::Table;
+using ostk::core::filesystem::File;
+using ostk::core::filesystem::Path;
 using ostk::core::type::Real;
 using ostk::core::type::Size;
 using ostk::core::type::String;
-using ostk::core::container::Array;
-using ostk::core::container::Table;
-using ostk::core::filesystem::Path;
-using ostk::core::filesystem::File;
 
-using ostk::mathematics::object::VectorXd;
-using ostk::mathematics::object::MatrixXd;
 using ostk::mathematics::curvefitting::interpolator::Linear;
+using ostk::mathematics::object::MatrixXd;
+using ostk::mathematics::object::VectorXd;
 
 TEST(OpenSpaceToolkit_Mathematics_Interpolator_Linear, Constructor)
 {

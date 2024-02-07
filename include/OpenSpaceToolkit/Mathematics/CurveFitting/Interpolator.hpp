@@ -4,6 +4,8 @@
 #define __OpenSpaceToolkit_Mathematics_Interpolator__
 
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Size.hpp>
+#include <OpenSpaceToolkit/Core/Type/Unique.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 
@@ -16,6 +18,7 @@ namespace curvefitting
 
 using ostk::core::type::Real;
 using ostk::core::type::Size;
+using ostk::core::type::Unique;
 
 using ostk::mathematics::object::VectorXd;
 
@@ -56,6 +59,16 @@ class Interpolator
     /// @param aQueryValue An x value
     /// @return Vector of y values
     virtual double evaluate(const double& aQueryValue) const = 0;
+
+    /// @brief Generate an interpolator
+    ///
+    /// @param anInterpolationType Interpolation type
+    /// @param anXVector A vector of x values
+    /// @param aYVector A vector of y values
+    /// @return Unique pointer to correct Interpolator
+    static const Unique<const Interpolator> GenerateInterpolator(
+        const InterpolationType& anInterpolationType, const VectorXd& anXVector, const VectorXd& aYVector
+    );
 
    private:
     InterpolationType interpolationType_;

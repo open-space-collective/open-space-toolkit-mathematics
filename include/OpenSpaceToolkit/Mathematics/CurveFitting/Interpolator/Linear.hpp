@@ -20,13 +20,13 @@ namespace curvefitting
 namespace interpolator
 {
 
+using ostk::core::container::Pair;
+using ostk::core::type::Index;
 using ostk::core::type::Real;
 using ostk::core::type::Size;
-using ostk::core::type::Index;
-using ostk::core::container::Pair;
 
-using ostk::mathematics::object::VectorXd;
 using ostk::mathematics::curvefitting::Interpolator;
+using ostk::mathematics::object::VectorXd;
 
 /// @brief                      Linear
 ///

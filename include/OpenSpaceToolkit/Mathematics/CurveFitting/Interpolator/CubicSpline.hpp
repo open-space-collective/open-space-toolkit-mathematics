@@ -6,6 +6,7 @@
 #include <boost/math/interpolators/cardinal_cubic_b_spline.hpp>
 
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
@@ -22,8 +23,8 @@ namespace interpolator
 using ostk::core::type::Real;
 using ostk::core::type::Size;
 
-using ostk::mathematics::object::VectorXd;
 using ostk::mathematics::curvefitting::Interpolator;
+using ostk::mathematics::object::VectorXd;
 
 using boost::math::interpolators::cardinal_cubic_b_spline;
 

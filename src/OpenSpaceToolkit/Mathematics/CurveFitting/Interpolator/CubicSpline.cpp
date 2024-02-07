@@ -1,7 +1,5 @@
 /// Apache License 2.0
 
-#include <iostream>
-
 #include <OpenSpaceToolkit/Core/Error.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp>
