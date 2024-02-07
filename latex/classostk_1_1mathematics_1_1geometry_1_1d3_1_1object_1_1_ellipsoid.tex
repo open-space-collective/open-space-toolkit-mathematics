@@ -1,0 +1,876 @@
+\hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{}\doxysection{ostk\+::mathematics\+::geometry\+::d3\+::object\+::Ellipsoid Class Reference}
+\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+
+
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}}.  
+
+
+
+
+{\ttfamily \#include $<$Ellipsoid.\+hpp$>$}
+
+Inheritance diagram for ostk\+::mathematics\+::geometry\+::d3\+::object\+::Ellipsoid\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Center, const Real \&a\+First\+Principal\+Semi\+Axis, const Real \&a\+Second\+Principal\+Semi\+Axis, const Real \&a\+Third\+Principal\+Semi\+Axis, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&an\+Orientation=\mbox{\hyperlink{_ellipsoid_8hpp_a5c684aeaeb24d197904b5a34839d2dd9}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON}})
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} $\ast$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aca293bcf279702b8b59d72fe4dd09217}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clone ellipsoid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a24d5de8f8d462000ad16f99cb08b6bbe}{operator==}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&an\+Ellipsoid) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a6ad34b0e40e0a1b59ba503bbacb15db5}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&an\+Ellipsoid) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a3e36099693bccb2d2e68d8673d86e5f6}{is\+Defined}} () const override
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid is defined. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a9b031c4f2a63121d6b5060dea2fd85dc}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid intersects point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a8a8d5655286857611c174afd3e324d45}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid intersects point set. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ae3f7633c6157c430980af3832d0a73b9}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \&a\+Line) const
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid intersects line. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ae93d460a11c18dcc589501535db52622}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} \&a\+Ray) const
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid intersects ray. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a00bfb5a8d081333b080b586f4b81f8cc}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid intersects segment. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ad0c47ee2cbdc18795a00c72a47f83a33}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \&a\+Plane) const
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid intersects plane. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a1d17071a0fe4ae568bffcbbb3a12aeb8}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \&a\+Sphere) const
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid intersects sphere. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a376af728b387ddc84152ad2fea9076ad}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&an\+Ellipsoid) const
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid intersects ellipsoid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a7176ac82c4684066d3656db93673fe8c}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} \&a\+Pyramid) const
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid intersects pyramid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a9903921f3b39326751b64198af6e9044}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} \&a\+Cone) const
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid intersects cone. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_acd6265aa0324a0a42782255c6c68fd6c}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid contains point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aa0d3177d1ed9985503ec6055f40768a8}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid contains point set. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a2f6d64044fbfaa53a018f3f0e62fa2ce}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Check if ellipsoid contains segment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aaffdeef56c13f84501e5e303c932890a}{get\+Center}} () const
+\begin{DoxyCompactList}\small\item\em Get ellipsoid center. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aee9a534a5fe0d981f240778a675592f0}{get\+First\+Principal\+Semi\+Axis}} () const
+\begin{DoxyCompactList}\small\item\em Get ellipsoid first principal semi-\/axis. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a87c58137ec69a852e079274838b1f1f5}{get\+Second\+Principal\+Semi\+Axis}} () const
+\begin{DoxyCompactList}\small\item\em Get ellipsoid second principal semi-\/axis. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aca6b3792410def0bef84025ffd981836}{get\+Third\+Principal\+Semi\+Axis}} () const
+\begin{DoxyCompactList}\small\item\em Get ellipsoid third principal semi-\/axis. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a67ec6b3fcf80a18b0dbb6521c321e003}{get\+First\+Axis}} () const
+\begin{DoxyCompactList}\small\item\em Get ellipsoid first axis. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a71329b4763d0b8dc247f73167e69308c}{get\+Second\+Axis}} () const
+\begin{DoxyCompactList}\small\item\em Get ellipsoid second axis. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a5fe355055f5fdce92375fa04ff1851e9}{get\+Third\+Axis}} () const
+\begin{DoxyCompactList}\small\item\em Get ellipsoid third axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a68cbd49084f102aa99f9135bd0fce3db}{get\+Orientation}} () const
+\begin{DoxyCompactList}\small\item\em Get ellipsoid orientation. \end{DoxyCompactList}\item 
+Matrix3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ad28f3cc4c201d12054da52ce51bdb6a3}{get\+Matrix}} () const
+\begin{DoxyCompactList}\small\item\em Get ellipsoid matrix. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a5c3062e7f2f271c470821e3addbd3698}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \&a\+Line) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of ellipsoid with line. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a81a3f44b8b4a26c8c7db2fa5f1ea98c3}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} \&a\+Ray, const bool only\+In\+Sight=false) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of ellipsoid with ray. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac3f1b3592db2bbfb25890382a2276878}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of ellipsoid with segment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_abcbc9b4bbcb64628471f7b233639d645}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} \&a\+Pyramid, const bool only\+In\+Sight=false) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of ellipsoid with pyramid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a2d6ef8385352f67912edbf2b2db7e3c2}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} \&a\+Cone, const bool only\+In\+Sight=false) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of ellipsoid with cone. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a7c5c1f79b1c0533073ef48e38dc5e18b}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print ellipsoid. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a3e8568dfcf2f261ea99c5a1c4edc2c1a}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to ellipsoid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a926b28952c1364fff54b2cf2ace854ff}{Undefined}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined ellipsoid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}}. 
+
+\href{https://en.wikipedia.org/wiki/Ellipsoid}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Ellipsoid}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!Ellipsoid@{Ellipsoid}}
+\index{Ellipsoid@{Ellipsoid}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{Ellipsoid()}{Ellipsoid()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::\+Ellipsoid (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Center,  }\item[{const Real \&}]{a\+First\+Principal\+Semi\+Axis,  }\item[{const Real \&}]{a\+Second\+Principal\+Semi\+Axis,  }\item[{const Real \&}]{a\+Third\+Principal\+Semi\+Axis,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{an\+Orientation = {\ttfamily \mbox{\hyperlink{_ellipsoid_8hpp_a5c684aeaeb24d197904b5a34839d2dd9}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+R\+I\+E\+N\+T\+A\+T\+I\+ON}}} }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid(\{ 0.0, 0.0, 0.0 \}, 1.0, 2.0, 3.0) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Center} & An ellipsoid center \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+First\+Principal\+Semi\+Axis} & An ellipsoid first principal semi-\/axis \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Second\+Principal\+Semi\+Axis} & An ellipsoid second principal semi-\/axis \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Third\+Principal\+Semi\+Axis} & An ellipsoid third principal semi-\/axis \\
+\hline
+\mbox{\texttt{ in}}  & {\em (optional)} & an\+Orientation An ellipsoid orientation \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a3e8568dfcf2f261ea99c5a1c4edc2c1a}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a3e8568dfcf2f261ea99c5a1c4edc2c1a}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!applyTransformation@{applyTransformation}}
+\index{applyTransformation@{applyTransformation}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{applyTransformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to ellipsoid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a925a50c2bb1c31f396e469b74595e42a}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aca293bcf279702b8b59d72fe4dd09217}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aca293bcf279702b8b59d72fe4dd09217}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!clone@{clone}}
+\index{clone@{clone}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} $\ast$ ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone ellipsoid. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned ellipsoid 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a8ea8d4074bfaaa3d996d760d5d5751db}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_acd6265aa0324a0a42782255c6c68fd6c}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_acd6265aa0324a0a42782255c6c68fd6c}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if ellipsoid contains point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{Point point = ... ;}
+\DoxyCodeLine{ellipsoid.contains(point) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoid contains point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aa0d3177d1ed9985503ec6055f40768a8}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aa0d3177d1ed9985503ec6055f40768a8}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if ellipsoid contains point set. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{PointSet pointSet = ... ;}
+\DoxyCodeLine{ellipsoid.contains(pointSet) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoid contains point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a2f6d64044fbfaa53a018f3f0e62fa2ce}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a2f6d64044fbfaa53a018f3f0e62fa2ce}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Check if ellipsoid contains segment. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{Segment segment = ... ;}
+\DoxyCodeLine{ellipsoid.contains(segment) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoid contains segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aaffdeef56c13f84501e5e303c932890a}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aaffdeef56c13f84501e5e303c932890a}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!getCenter@{getCenter}}
+\index{getCenter@{getCenter}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{getCenter()}{getCenter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get ellipsoid center. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0).getCenter() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} center 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a67ec6b3fcf80a18b0dbb6521c321e003}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a67ec6b3fcf80a18b0dbb6521c321e003}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!getFirstAxis@{getFirstAxis}}
+\index{getFirstAxis@{getFirstAxis}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{getFirstAxis()}{getFirstAxis()}}
+{\footnotesize\ttfamily Vector3d ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+First\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get ellipsoid first axis. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} first axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aee9a534a5fe0d981f240778a675592f0}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aee9a534a5fe0d981f240778a675592f0}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!getFirstPrincipalSemiAxis@{getFirstPrincipalSemiAxis}}
+\index{getFirstPrincipalSemiAxis@{getFirstPrincipalSemiAxis}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{getFirstPrincipalSemiAxis()}{getFirstPrincipalSemiAxis()}}
+{\footnotesize\ttfamily Real ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+First\+Principal\+Semi\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get ellipsoid first principal semi-\/axis. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0).getFirstPrincipalSemiAxis() ; \textcolor{comment}{// 1.0}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} first principal semi-\/axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ad28f3cc4c201d12054da52ce51bdb6a3}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ad28f3cc4c201d12054da52ce51bdb6a3}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!getMatrix@{getMatrix}}
+\index{getMatrix@{getMatrix}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{getMatrix()}{getMatrix()}}
+{\footnotesize\ttfamily Matrix3d ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+Matrix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get ellipsoid matrix. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab065862f2a77807e42f6feaadc0637e2}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0)).getMatrix()}
+\DoxyCodeLine{;}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} matrix 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a68cbd49084f102aa99f9135bd0fce3db}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a68cbd49084f102aa99f9135bd0fce3db}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!getOrientation@{getOrientation}}
+\index{getOrientation@{getOrientation}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{getOrientation()}{getOrientation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+Orientation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get ellipsoid orientation. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab065862f2a77807e42f6feaadc0637e2}{Quaternion::XYZS}}(0.0, 0.0,}
+\DoxyCodeLine{0.0, 1.0)).getOrientation() ; \textcolor{comment}{// Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} orientation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a71329b4763d0b8dc247f73167e69308c}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a71329b4763d0b8dc247f73167e69308c}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!getSecondAxis@{getSecondAxis}}
+\index{getSecondAxis@{getSecondAxis}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{getSecondAxis()}{getSecondAxis()}}
+{\footnotesize\ttfamily Vector3d ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+Second\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get ellipsoid second axis. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} second axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a87c58137ec69a852e079274838b1f1f5}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a87c58137ec69a852e079274838b1f1f5}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!getSecondPrincipalSemiAxis@{getSecondPrincipalSemiAxis}}
+\index{getSecondPrincipalSemiAxis@{getSecondPrincipalSemiAxis}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{getSecondPrincipalSemiAxis()}{getSecondPrincipalSemiAxis()}}
+{\footnotesize\ttfamily Real ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+Second\+Principal\+Semi\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get ellipsoid second principal semi-\/axis. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0).getSecondPrincipalSemiAxis() ; \textcolor{comment}{// 2.0}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} second principal semi-\/axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a5fe355055f5fdce92375fa04ff1851e9}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a5fe355055f5fdce92375fa04ff1851e9}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!getThirdAxis@{getThirdAxis}}
+\index{getThirdAxis@{getThirdAxis}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{getThirdAxis()}{getThirdAxis()}}
+{\footnotesize\ttfamily Vector3d ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+Third\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get ellipsoid third axis. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} third axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aca6b3792410def0bef84025ffd981836}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aca6b3792410def0bef84025ffd981836}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!getThirdPrincipalSemiAxis@{getThirdPrincipalSemiAxis}}
+\index{getThirdPrincipalSemiAxis@{getThirdPrincipalSemiAxis}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{getThirdPrincipalSemiAxis()}{getThirdPrincipalSemiAxis()}}
+{\footnotesize\ttfamily Real ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::get\+Third\+Principal\+Semi\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get ellipsoid third principal semi-\/axis. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0).getThirdPrincipalSemiAxis() ; \textcolor{comment}{// 3.0}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} third principal semi-\/axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a2d6ef8385352f67912edbf2b2db7e3c2}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a2d6ef8385352f67912edbf2b2db7e3c2}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} \&}]{a\+Cone,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of ellipsoid with cone. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Cone} & A cone \\
+\hline
+\mbox{\texttt{ in}}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of ellipsoid with cone 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a5c3062e7f2f271c470821e3addbd3698}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a5c3062e7f2f271c470821e3addbd3698}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \&}]{a\+Line }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of ellipsoid with line. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Line} & A line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of ellipsoid with line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_abcbc9b4bbcb64628471f7b233639d645}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_abcbc9b4bbcb64628471f7b233639d645}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} \&}]{a\+Pyramid,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of ellipsoid with pyramid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Pyramid} & A pyramid \\
+\hline
+\mbox{\texttt{ in}}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of ellipsoid with pyramid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a81a3f44b8b4a26c8c7db2fa5f1ea98c3}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a81a3f44b8b4a26c8c7db2fa5f1ea98c3}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} \&}]{a\+Ray,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of ellipsoid with ray. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Ray} & A ray \\
+\hline
+\mbox{\texttt{ in}}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of ellipsoid with ray 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac3f1b3592db2bbfb25890382a2276878}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ac3f1b3592db2bbfb25890382a2276878}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of ellipsoid with segment. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of ellipsoid with segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a9903921f3b39326751b64198af6e9044}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a9903921f3b39326751b64198af6e9044}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} \&}]{a\+Cone }\end{DoxyParamCaption}) const}
+
+
+
+Check if ellipsoid intersects cone. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{Cone cone = ... ;}
+\DoxyCodeLine{ellipsoid.intersects(cone) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Cone} & A cone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoid intersects cone 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a376af728b387ddc84152ad2fea9076ad}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a376af728b387ddc84152ad2fea9076ad}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
+
+
+
+Check if ellipsoid intersects ellipsoid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} anotherEllipsoid = ... ;}
+\DoxyCodeLine{ellipsoid.intersects(anotherEllipsoid) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoid intersects ellipsoid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ae3f7633c6157c430980af3832d0a73b9}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ae3f7633c6157c430980af3832d0a73b9}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \&}]{a\+Line }\end{DoxyParamCaption}) const}
+
+
+
+Check if ellipsoid intersects line. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{Line line = ... ;}
+\DoxyCodeLine{ellipsoid.intersects(line) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Line} & A line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoid intersects line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ad0c47ee2cbdc18795a00c72a47f83a33}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ad0c47ee2cbdc18795a00c72a47f83a33}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
+
+
+
+Check if ellipsoid intersects plane. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{Plane plane = ... ;}
+\DoxyCodeLine{ellipsoid.intersects(plane) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Plane} & A plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoid intersects plane 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a9b031c4f2a63121d6b5060dea2fd85dc}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a9b031c4f2a63121d6b5060dea2fd85dc}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if ellipsoid intersects point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{Point point = ... ;}
+\DoxyCodeLine{ellipsoid.intersects(point) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoid intersects point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a8a8d5655286857611c174afd3e324d45}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a8a8d5655286857611c174afd3e324d45}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if ellipsoid intersects point set. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{PointSet pointSet = ... ;}
+\DoxyCodeLine{ellipsoid.intersects(pointSet) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoid intersects point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a7176ac82c4684066d3656db93673fe8c}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a7176ac82c4684066d3656db93673fe8c}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} \&}]{a\+Pyramid }\end{DoxyParamCaption}) const}
+
+
+
+Check if ellipsoid intersects pyramid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{Pyramid pyramid = ... ;}
+\DoxyCodeLine{ellipsoid.intersects(pyramid) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Pyramid} & A pyramid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoid intersects pyramid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ae93d460a11c18dcc589501535db52622}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_ae93d460a11c18dcc589501535db52622}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} \&}]{a\+Ray }\end{DoxyParamCaption}) const}
+
+
+
+Check if ellipsoid intersects ray. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{Ray ray = ... ;}
+\DoxyCodeLine{ellipsoid.intersects(ray) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Ray} & A ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoid intersects ray 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a00bfb5a8d081333b080b586f4b81f8cc}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a00bfb5a8d081333b080b586f4b81f8cc}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Check if ellipsoid intersects segment. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{Segment segment = ... ;}
+\DoxyCodeLine{ellipsoid.intersects(segment) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoid intersects segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a1d17071a0fe4ae568bffcbbb3a12aeb8}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a1d17071a0fe4ae568bffcbbb3a12aeb8}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \&}]{a\+Sphere }\end{DoxyParamCaption}) const}
+
+
+
+Check if ellipsoid intersects sphere. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = ... ;}
+\DoxyCodeLine{Sphere sphere = ... ;}
+\DoxyCodeLine{ellipsoid.intersects(sphere) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Sphere} & A sphere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoid intersects sphere 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a3e36099693bccb2d2e68d8673d86e5f6}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a3e36099693bccb2d2e68d8673d86e5f6}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!isDefined@{isDefined}}
+\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if ellipsoid is defined. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0).isDefined() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if ellipsoid is defined 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a1962edbcdde0f851361b60324ab9ce2b}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a6ad34b0e40e0a1b59ba503bbacb15db5}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a6ad34b0e40e0a1b59ba503bbacb15db5}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) != \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(2.0, 1.0, 3.0) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoids are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a24d5de8f8d462000ad16f99cb08b6bbe}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a24d5de8f8d462000ad16f99cb08b6bbe}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) == \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0, 2.0, 3.0) ; \textcolor{comment}{//}}
+\DoxyCodeLine{True}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if ellipsoids are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a7c5c1f79b1c0533073ef48e38dc5e18b}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a7c5c1f79b1c0533073ef48e38dc5e18b}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!print@{print}}
+\index{print@{print}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print ellipsoid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a5063e1f902e1b08d36f6b6cecab0bd95}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a926b28952c1364fff54b2cf2ace854ff}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a926b28952c1364fff54b2cf2ace854ff}} 
+\index{ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::object::Ellipsoid@{ostk::mathematics::geometry::d3::object::Ellipsoid}}
+\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined ellipsoid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a770daad95f02aec5ed9e124592548152}{Ellipsoid}} ellipsoid = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a926b28952c1364fff54b2cf2ace854ff}{Ellipsoid::Undefined}}() ; \textcolor{comment}{// Undefined}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined ellipsoid 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Object/\mbox{\hyperlink{_ellipsoid_8hpp}{Ellipsoid.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Object/\mbox{\hyperlink{_ellipsoid_8cpp}{Ellipsoid.\+cpp}}\end{DoxyCompactItemize}

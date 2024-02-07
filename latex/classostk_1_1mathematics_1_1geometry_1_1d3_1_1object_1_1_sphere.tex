@@ -1,0 +1,731 @@
+\hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{}\doxysection{ostk\+::mathematics\+::geometry\+::d3\+::object\+::Sphere Class Reference}
+\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+
+
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}}.  
+
+
+
+
+{\ttfamily \#include $<$Sphere.\+hpp$>$}
+
+Inheritance diagram for ostk\+::mathematics\+::geometry\+::d3\+::object\+::Sphere\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Center, const Real \&a\+Radius)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} $\ast$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a28e9a96d726b5eea0da0696647912780}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clone sphere. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a86fab4da986e79ea843646b859a54b7b}{operator==}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \&a\+Sphere) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a48d995d87aaf80ffae9629d33137e50a}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \&a\+Sphere) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a5311446aca36ccadbd8ae323502dba44}{is\+Defined}} () const override
+\begin{DoxyCompactList}\small\item\em Check if sphere is defined. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a9dbed5ac4eec1c9a79eedf5408191021}{is\+Unitary}} () const
+\begin{DoxyCompactList}\small\item\em Check if sphere is unitary, i.\+e. its radius is equal to 1.\+0. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_afc06f6968104f1207b1f3da7ceaae4aa}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if sphere intersects point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_adbdedf8a33a33ecf34f4c8a45f365c0d}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if sphere intersects point set. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_aa26ce6b341283ea77b99207a05368a52}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \&a\+Line) const
+\begin{DoxyCompactList}\small\item\em Check if sphere intersects line. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a669b7ac4228e1bf40fa0ffabc3cddde9}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} \&a\+Ray) const
+\begin{DoxyCompactList}\small\item\em Check if sphere intersects ray. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a26a485b4674c7f852f07652297adf8b4}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Check if sphere intersects segment. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a38e7ed98b7f10761bdf7c5d87315a460}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \&a\+Plane) const
+\begin{DoxyCompactList}\small\item\em Check if sphere intersects plane. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ad2c172f9ed998e785986b13bffeb6c93}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&an\+Ellipsoid) const
+\begin{DoxyCompactList}\small\item\em Check if sphere intersects ellipsoid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a3ec429fe276d4da08dea92c56c008fc5}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} \&a\+Pyramid) const
+\begin{DoxyCompactList}\small\item\em Check if sphere intersects pyramid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a3b3ce9155edeeab7fbaec2cbdde06f41}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} \&a\+Cone) const
+\begin{DoxyCompactList}\small\item\em Check if sphere intersects cone. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a4a3a9cec2f8df6799344ea779a635fd5}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if sphere contains point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ac55784d01e1ab5c8ea2b800dc844448b}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if sphere contains point set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a02fcea7a4eaae6f396bc09e09bcc6966}{get\+Center}} () const
+\begin{DoxyCompactList}\small\item\em Get sphere center. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a391da737aed2cd3615f9992949c07abe}{get\+Radius}} () const
+\begin{DoxyCompactList}\small\item\em Get sphere radius. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_af155cd1d10cd5b010b134a29e6d67492}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \&a\+Line) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of sphere with line. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_abfdfa4f19cb716271505c28d7085d2da}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} \&a\+Ray, const bool only\+In\+Sight=\mbox{\hyperlink{_sphere_8hpp_af424617f7c785f4835e2feba5a5640f2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+I\+N\+\_\+\+S\+I\+G\+HT}}) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of sphere with ray. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a66e7d89eaf128a2ee1277a605f25ab7e}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of sphere with segment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ad710eeb805c0152d53dc874131f5f758}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} \&a\+Pyramid, const bool only\+In\+Sight=\mbox{\hyperlink{_sphere_8hpp_af424617f7c785f4835e2feba5a5640f2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+I\+N\+\_\+\+S\+I\+G\+HT}}) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of sphere with pyramid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ae16d1ba9ed85bb8b7716202a651c262c}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} \&a\+Cone, const bool only\+In\+Sight=\mbox{\hyperlink{_sphere_8hpp_af424617f7c785f4835e2feba5a5640f2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+I\+N\+\_\+\+S\+I\+G\+HT}}) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of sphere with cone. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ae7a968c5f386c5f9019389e6e3fca138}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print sphere. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_aec7fa1a21969f2175948bd57ac8a46ff}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to sphere. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a74397702d3224ec9a01897273de8f590}{Undefined}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined sphere. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a81b2f22059fd4a1235795783e0cfcbb3}{Unit}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Center)
+\begin{DoxyCompactList}\small\item\em Constructs a unit sphere. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}}. 
+
+\begin{DoxyVerb}                        A sphere is a perfectly round geometrical object in three-dimensional space that is the
+                        surface of a completely round ball.
+\end{DoxyVerb}
+
+
+\href{https://en.wikipedia.org/wiki/Sphere}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Sphere}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!Sphere@{Sphere}}
+\index{Sphere@{Sphere}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{Sphere()}{Sphere()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::\+Sphere (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Center,  }\item[{const Real \&}]{a\+Radius }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere(\{ 0.0, 0.0, 0.0 \}, 1.0) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Center} & A sphere center \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Radius} & A sphere radius \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_aec7fa1a21969f2175948bd57ac8a46ff}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_aec7fa1a21969f2175948bd57ac8a46ff}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!applyTransformation@{applyTransformation}}
+\index{applyTransformation@{applyTransformation}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{applyTransformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to sphere. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a925a50c2bb1c31f396e469b74595e42a}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a28e9a96d726b5eea0da0696647912780}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a28e9a96d726b5eea0da0696647912780}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!clone@{clone}}
+\index{clone@{clone}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} $\ast$ ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone sphere. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned sphere 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a8ea8d4074bfaaa3d996d760d5d5751db}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a4a3a9cec2f8df6799344ea779a635fd5}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a4a3a9cec2f8df6799344ea779a635fd5}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if sphere contains point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = ... ;}
+\DoxyCodeLine{Point point = ... ;}
+\DoxyCodeLine{sphere.contains(point) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sphere contains point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ac55784d01e1ab5c8ea2b800dc844448b}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ac55784d01e1ab5c8ea2b800dc844448b}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if sphere contains point set. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = ... ;}
+\DoxyCodeLine{PointSet pointSet = ... ;}
+\DoxyCodeLine{sphere.contains(pointSet) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sphere contains point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a02fcea7a4eaae6f396bc09e09bcc6966}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a02fcea7a4eaae6f396bc09e09bcc6966}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!getCenter@{getCenter}}
+\index{getCenter@{getCenter}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{getCenter()}{getCenter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get sphere center. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0).getCenter() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} center 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a391da737aed2cd3615f9992949c07abe}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a391da737aed2cd3615f9992949c07abe}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!getRadius@{getRadius}}
+\index{getRadius@{getRadius}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{getRadius()}{getRadius()}}
+{\footnotesize\ttfamily Real ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::get\+Radius (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get sphere radius. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0).getRadius() ; \textcolor{comment}{// 1.0}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} radius 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ae16d1ba9ed85bb8b7716202a651c262c}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ae16d1ba9ed85bb8b7716202a651c262c}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} \&}]{a\+Cone,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily \mbox{\hyperlink{_sphere_8hpp_af424617f7c785f4835e2feba5a5640f2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+I\+N\+\_\+\+S\+I\+G\+HT}}} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of sphere with cone. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Cone} & A cone \\
+\hline
+\mbox{\texttt{ in}}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of sphere with cone 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_af155cd1d10cd5b010b134a29e6d67492}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_af155cd1d10cd5b010b134a29e6d67492}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \&}]{a\+Line }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of sphere with line. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Line} & A line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of sphere with line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ad710eeb805c0152d53dc874131f5f758}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ad710eeb805c0152d53dc874131f5f758}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} \&}]{a\+Pyramid,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily \mbox{\hyperlink{_sphere_8hpp_af424617f7c785f4835e2feba5a5640f2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+I\+N\+\_\+\+S\+I\+G\+HT}}} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of sphere with pyramid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Pyramid} & A pyramid \\
+\hline
+\mbox{\texttt{ in}}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of sphere with pyramid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_abfdfa4f19cb716271505c28d7085d2da}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_abfdfa4f19cb716271505c28d7085d2da}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} \&}]{a\+Ray,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily \mbox{\hyperlink{_sphere_8hpp_af424617f7c785f4835e2feba5a5640f2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+I\+N\+\_\+\+S\+I\+G\+HT}}} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of sphere with ray. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Ray} & A ray \\
+\hline
+\mbox{\texttt{ in}}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of sphere with ray 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a66e7d89eaf128a2ee1277a605f25ab7e}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a66e7d89eaf128a2ee1277a605f25ab7e}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of sphere with segment. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of sphere with segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a3b3ce9155edeeab7fbaec2cbdde06f41}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a3b3ce9155edeeab7fbaec2cbdde06f41}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone}{Cone}} \&}]{a\+Cone }\end{DoxyParamCaption}) const}
+
+
+
+Check if sphere intersects cone. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = ... ;}
+\DoxyCodeLine{Cone cone = ... ;}
+\DoxyCodeLine{sphere.intersects(cone) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Cone} & A cone \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sphere intersects cone 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ad2c172f9ed998e785986b13bffeb6c93}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ad2c172f9ed998e785986b13bffeb6c93}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
+
+
+
+Check if sphere intersects ellipsoid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = ... ;}
+\DoxyCodeLine{Ellipsoid ellipsoid = ... ;}
+\DoxyCodeLine{sphere.intersects(ellipsoid) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sphere intersects ellipsoid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_aa26ce6b341283ea77b99207a05368a52}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_aa26ce6b341283ea77b99207a05368a52}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \&}]{a\+Line }\end{DoxyParamCaption}) const}
+
+
+
+Check if sphere intersects line. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = ... ;}
+\DoxyCodeLine{Line line = ... ;}
+\DoxyCodeLine{sphere.intersects(line) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Line} & A line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sphere intersects line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a38e7ed98b7f10761bdf7c5d87315a460}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a38e7ed98b7f10761bdf7c5d87315a460}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
+
+
+
+Check if sphere intersects plane. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = ... ;}
+\DoxyCodeLine{Plane plane = ... ;}
+\DoxyCodeLine{sphere.intersects(plane) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Plane} & A plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sphere intersects plane 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_afc06f6968104f1207b1f3da7ceaae4aa}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_afc06f6968104f1207b1f3da7ceaae4aa}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if sphere intersects point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = ... ;}
+\DoxyCodeLine{Point point = ... ;}
+\DoxyCodeLine{sphere.intersects(point) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sphere intersects point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_adbdedf8a33a33ecf34f4c8a45f365c0d}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_adbdedf8a33a33ecf34f4c8a45f365c0d}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if sphere intersects point set. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = ... ;}
+\DoxyCodeLine{PointSet pointSet = ... ;}
+\DoxyCodeLine{sphere.intersects(pointSet) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sphere intersects point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a3ec429fe276d4da08dea92c56c008fc5}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a3ec429fe276d4da08dea92c56c008fc5}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} \&}]{a\+Pyramid }\end{DoxyParamCaption}) const}
+
+
+
+Check if sphere intersects pyramid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = ... ;}
+\DoxyCodeLine{Pyramid pyramid = ... ;}
+\DoxyCodeLine{sphere.intersects(pyramid) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Pyramid} & A pyramid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sphere intersects pyramid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a669b7ac4228e1bf40fa0ffabc3cddde9}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a669b7ac4228e1bf40fa0ffabc3cddde9}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} \&}]{a\+Ray }\end{DoxyParamCaption}) const}
+
+
+
+Check if sphere intersects ray. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = ... ;}
+\DoxyCodeLine{Ray ray = ... ;}
+\DoxyCodeLine{sphere.intersects(ray) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Ray} & A ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sphere intersects ray 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a26a485b4674c7f852f07652297adf8b4}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a26a485b4674c7f852f07652297adf8b4}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Check if sphere intersects segment. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = ... ;}
+\DoxyCodeLine{Segment segment = ... ;}
+\DoxyCodeLine{sphere.intersects(segment) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if sphere intersects segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a5311446aca36ccadbd8ae323502dba44}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a5311446aca36ccadbd8ae323502dba44}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!isDefined@{isDefined}}
+\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if sphere is defined. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0).isDefined() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if sphere is defined 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a1962edbcdde0f851361b60324ab9ce2b}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a9dbed5ac4eec1c9a79eedf5408191021}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a9dbed5ac4eec1c9a79eedf5408191021}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!isUnitary@{isUnitary}}
+\index{isUnitary@{isUnitary}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{isUnitary()}{isUnitary()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::is\+Unitary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if sphere is unitary, i.\+e. its radius is equal to 1.\+0. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0).isUnitary() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if sphere is unitary 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a48d995d87aaf80ffae9629d33137e50a}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a48d995d87aaf80ffae9629d33137e50a}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \&}]{a\+Sphere }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0) != \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 2.0) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Sphere} & A sphere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if spheres are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a86fab4da986e79ea843646b859a54b7b}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a86fab4da986e79ea843646b859a54b7b}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \&}]{a\+Sphere }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0) == \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a2e0dc90fe04fb9befb79ec9874dcebc4}{Point::Origin}}(), 1.0) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Sphere} & A sphere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if spheres are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ae7a968c5f386c5f9019389e6e3fca138}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ae7a968c5f386c5f9019389e6e3fca138}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!print@{print}}
+\index{print@{print}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print sphere. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a5063e1f902e1b08d36f6b6cecab0bd95}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a74397702d3224ec9a01897273de8f590}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a74397702d3224ec9a01897273de8f590}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined sphere. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a74397702d3224ec9a01897273de8f590}{Sphere::Undefined}}() ; \textcolor{comment}{// Undefined}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined sphere 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a81b2f22059fd4a1235795783e0cfcbb3}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a81b2f22059fd4a1235795783e0cfcbb3}} 
+\index{ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}!Unit@{Unit}}
+\index{Unit@{Unit}!ostk::mathematics::geometry::d3::object::Sphere@{ostk::mathematics::geometry::d3::object::Sphere}}
+\doxysubsubsection{\texorpdfstring{Unit()}{Unit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere\+::\+Unit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Center }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a unit sphere. 
+
+\href{https://en.wikipedia.org/wiki/Unit_sphere}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Unit\+\_\+sphere}}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a44cf858e4351d1890cc1116bb85f9850}{Sphere}} sphere = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a81b2f22059fd4a1235795783e0cfcbb3}{Sphere::Unit}}(\{ 0.0, 0.0, 0.0 \}) ;}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Unit sphere 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Object/\mbox{\hyperlink{_sphere_8hpp}{Sphere.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Object/\mbox{\hyperlink{_sphere_8cpp}{Sphere.\+cpp}}\end{DoxyCompactItemize}

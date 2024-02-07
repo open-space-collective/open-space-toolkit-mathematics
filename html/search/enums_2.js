@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['steppertype_779',['StepperType',['../classostk_1_1math_1_1solvers_1_1_numerical_solver.html#a674cda991536b2832e177a11acc2d4ae',1,'ostk::math::solvers::NumericalSolver']]]
+  ['steppertype_769',['StepperType',['../classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a6d9ca28da654c92c6f36878e6a5efd97',1,'ostk::mathematics::solver::NumericalSolver']]]
 ];

@@ -1,32 +1,32 @@
-\hypertarget{_numerical_solver_8cpp}{}\doxysection{src/\+Open\+Space\+Toolkit/\+Mathematics/\+Solvers/\+Numerical\+Solver.cpp File Reference}
-\label{_numerical_solver_8cpp}\index{src/OpenSpaceToolkit/Mathematics/Solvers/NumericalSolver.cpp@{src/OpenSpaceToolkit/Mathematics/Solvers/NumericalSolver.cpp}}
+\hypertarget{_numerical_solver_8cpp}{}\doxysection{src/\+Open\+Space\+Toolkit/\+Mathematics/\+Solver/\+Numerical\+Solver.cpp File Reference}
+\label{_numerical_solver_8cpp}\index{src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp@{src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp}}
 {\ttfamily \#include $<$boost/numeric/odeint.\+hpp$>$}\newline
 {\ttfamily \#include $<$boost/numeric/odeint/external/eigen/eigen.\+hpp$>$}\newline
 {\ttfamily \#include $<$Open\+Space\+Toolkit/\+Core/\+Error.\+hpp$>$}\newline
-{\ttfamily \#include $<$Open\+Space\+Toolkit/\+Core/\+Utilities.\+hpp$>$}\newline
-{\ttfamily \#include $<$Open\+Space\+Toolkit/\+Mathematics/\+Solvers/\+Numerical\+Solver.\+hpp$>$}\newline
+{\ttfamily \#include $<$Open\+Space\+Toolkit/\+Core/\+Utility.\+hpp$>$}\newline
+{\ttfamily \#include $<$Open\+Space\+Toolkit/\+Mathematics/\+Solver/\+Numerical\+Solver.\+hpp$>$}\newline
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
  \mbox{\hyperlink{namespaceostk}{ostk}}
 \begin{DoxyCompactList}\small\item\em Apache License 2.\+0. \end{DoxyCompactList}\item 
- \mbox{\hyperlink{namespaceostk_1_1math}{ostk\+::math}}
+ \mbox{\hyperlink{namespaceostk_1_1mathematics}{ostk\+::mathematics}}
 \item 
- \mbox{\hyperlink{namespaceostk_1_1math_1_1solvers}{ostk\+::math\+::solvers}}
+ \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1solver}{ostk\+::mathematics\+::solver}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef runge\+\_\+kutta4$<$ Numerical\+Solver\+::\+State\+Vector $>$ \mbox{\hyperlink{namespaceostk_1_1math_1_1solvers_abf294fbaef72eb84f5d6a8f6f9ea4eb0}{ostk\+::math\+::solvers\+::stepper\+\_\+type\+\_\+4}}
+typedef runge\+\_\+kutta4$<$ Numerical\+Solver\+::\+State\+Vector $>$ \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1solver_a239397c5452cb7026b6b7bd5909c49ea}{ostk\+::mathematics\+::solver\+::stepper\+\_\+type\+\_\+4}}
 \item 
-typedef runge\+\_\+kutta\+\_\+cash\+\_\+karp54$<$ Numerical\+Solver\+::\+State\+Vector $>$ \mbox{\hyperlink{namespaceostk_1_1math_1_1solvers_aa679fe886e1f433a76edf61108548e4a}{ostk\+::math\+::solvers\+::error\+\_\+stepper\+\_\+type\+\_\+54}}
+typedef runge\+\_\+kutta\+\_\+cash\+\_\+karp54$<$ Numerical\+Solver\+::\+State\+Vector $>$ \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1solver_aff57be115a1ef18c0a53de6e79b00023}{ostk\+::mathematics\+::solver\+::error\+\_\+stepper\+\_\+type\+\_\+54}}
 \item 
-typedef runge\+\_\+kutta\+\_\+fehlberg78$<$ Numerical\+Solver\+::\+State\+Vector $>$ \mbox{\hyperlink{namespaceostk_1_1math_1_1solvers_a6deb9536f7096ccec20942409de6fcd6}{ostk\+::math\+::solvers\+::error\+\_\+stepper\+\_\+type\+\_\+78}}
+typedef runge\+\_\+kutta\+\_\+fehlberg78$<$ Numerical\+Solver\+::\+State\+Vector $>$ \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1solver_a446382cbb767b2c1a4413b9f6f4fee34}{ostk\+::mathematics\+::solver\+::error\+\_\+stepper\+\_\+type\+\_\+78}}
 \item 
-typedef runge\+\_\+kutta\+\_\+dopri5$<$ Numerical\+Solver\+::\+State\+Vector $>$ \mbox{\hyperlink{namespaceostk_1_1math_1_1solvers_aa070d1582a9c54885737d46dadef3c92}{ostk\+::math\+::solvers\+::dense\+\_\+stepper\+\_\+type\+\_\+5}}
+typedef runge\+\_\+kutta\+\_\+dopri5$<$ Numerical\+Solver\+::\+State\+Vector $>$ \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1solver_a9e0e29898fea269d43fccf27c4fedd60}{ostk\+::mathematics\+::solver\+::dense\+\_\+stepper\+\_\+type\+\_\+5}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-std\+::ostream \& \mbox{\hyperlink{namespaceostk_1_1math_1_1solvers_a4600a5e066dcbdb155221e66ef7788a2}{ostk\+::math\+::solvers\+::operator$<$$<$}} (std\+::ostream \&an\+Output\+Stream, const Numerical\+Solver \&a\+Numerical\+Solver)
+std\+::ostream \& \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1solver_a880f6ab73ddfe8eae45c0c7f4c6aaaeb}{ostk\+::mathematics\+::solver\+::operator$<$$<$}} (std\+::ostream \&an\+Output\+Stream, const Numerical\+Solver \&a\+Numerical\+Solver)
 \end{DoxyCompactItemize}

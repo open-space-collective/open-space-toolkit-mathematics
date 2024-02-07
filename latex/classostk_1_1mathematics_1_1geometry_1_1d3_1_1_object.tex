@@ -1,0 +1,337 @@
+\hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}{}\doxysection{ostk\+::mathematics\+::geometry\+::d3\+::Object Class Reference}
+\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}\index{ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}}
+
+
+3D object  
+
+
+
+
+{\ttfamily \#include $<$Object.\+hpp$>$}
+
+Inheritance diagram for ostk\+::mathematics\+::geometry\+::d3\+::Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_af003ad733beface98466830078a83875}{Object}} ()=default
+\begin{DoxyCompactList}\small\item\em Default constructor (default) \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_aae1324c306129cce2e7d42a28c0de181}{$\sim$\+Object}} ()=0
+\begin{DoxyCompactList}\small\item\em Destructor (pure virtual) \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}{Object}} $\ast$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a8ea8d4074bfaaa3d996d760d5d5751db}{clone}} () const =0
+\begin{DoxyCompactList}\small\item\em Clone object (pure virtual) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_aeb99dd25ff1c0683d9c0a058c8200e4d}{operator==}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}{Object}} \&an\+Object) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a550754b8f5576ce2465979657325d5df}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}{Object}} \&an\+Object) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a1962edbcdde0f851361b60324ab9ce2b}{is\+Defined}} () const =0
+\begin{DoxyCompactList}\small\item\em Check if object is defined. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Type $>$ }\\bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_ad9e6f5027d14e3c7d7bead94052611ed}{is}} () const
+\begin{DoxyCompactList}\small\item\em Returns true if object can be converted to type. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a0d8ddc7a929bb3b0b1c70ad82742e64e}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}{Object}} \&an\+Object) const
+\begin{DoxyCompactList}\small\item\em Check if object intersects another object. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_af60902b6b025fdaf8839c08e532dd2b0}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}{Object}} \&an\+Object) const
+\begin{DoxyCompactList}\small\item\em Check if object contains another object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Type $>$ }\\const Type \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_acc1ec9fde56128d7fde8b96fa57180c4}{as}} () const
+\begin{DoxyCompactList}\small\item\em Access object as its underlying type. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_ac1325aba0fa3796c9ddc5d39dfe40aa6}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}{Object}} \&an\+Object) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of object with another object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a5063e1f902e1b08d36f6b6cecab0bd95}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const =0
+\begin{DoxyCompactList}\small\item\em Print object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a925a50c2bb1c31f396e469b74595e42a}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation)=0
+\begin{DoxyCompactList}\small\item\em Apply transformation to object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a418df9bf4a73078f3d494edef1743f8d}{operator$<$$<$}} (std\+::ostream \&an\+Output\+Stream, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}{Object}} \&an\+Object)
+\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+3D object 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_af003ad733beface98466830078a83875}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_af003ad733beface98466830078a83875}} 
+\index{ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}!Object@{Object}}
+\index{Object@{Object}!ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}}
+\doxysubsubsection{\texorpdfstring{Object()}{Object()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::geometry\+::d3\+::\+Object\+::\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Default constructor (default) 
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_aae1324c306129cce2e7d42a28c0de181}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_aae1324c306129cce2e7d42a28c0de181}} 
+\index{ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}!````~Object@{$\sim$Object}}
+\index{````~Object@{$\sim$Object}!ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}}
+\doxysubsubsection{\texorpdfstring{$\sim$Object()}{~Object()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::geometry\+::d3\+::\+Object\+::$\sim$\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Destructor (pure virtual) 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a925a50c2bb1c31f396e469b74595e42a}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a925a50c2bb1c31f396e469b74595e42a}} 
+\index{ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}!applyTransformation@{applyTransformation}}
+\index{applyTransformation@{applyTransformation}!ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}}
+\doxysubsubsection{\texorpdfstring{applyTransformation()}{applyTransformation()}}
+{\footnotesize\ttfamily virtual void ostk\+::mathematics\+::geometry\+::d3\+::\+Object\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Apply transformation to object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a3e8568dfcf2f261ea99c5a1c4edc2c1a}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_a8471b1cbbaa3498833f6fb6f9d2bab5a}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cuboid}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_aec7fa1a21969f2175948bd57ac8a46ff}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ab4e329b825fa0a3aa24c2c4b7ebfb432}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_ae0eb36a3ddb55789fb3fd382ad5a5b1b}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cone}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_a07770aa678f84c74355bf7488b4df425}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Composite}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_aec8ebca28ff89fd03a088d399de8e6e4}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_af3da3893add570615236f1e5ab4971ff}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a3a226ee06322255306b029e004dac647}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ray}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_a5d3a7527694d5581fbd8ea6cf438d74c}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Line}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ad2265d32b954c38b63c273acd45bdc4d}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a99c3b0b78faa977d4c6bd526286a0815}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Point}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a750ddc45120fa67b224c65f5ae782ce2}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Point\+Set}}, and \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_a2bfff9b3a14df67fac884fd122315145}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Line\+String}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_acc1ec9fde56128d7fde8b96fa57180c4}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_acc1ec9fde56128d7fde8b96fa57180c4}} 
+\index{ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}!as@{as}}
+\index{as@{as}!ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}}
+\doxysubsubsection{\texorpdfstring{as()}{as()}}
+{\footnotesize\ttfamily template$<$class Type $>$ \\
+const Type\& ostk\+::mathematics\+::geometry\+::d3\+::\+Object\+::as (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Access object as its underlying type. 
+
+\begin{DoxyReturn}{Returns}
+Reference to underlying type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a8ea8d4074bfaaa3d996d760d5d5751db}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a8ea8d4074bfaaa3d996d760d5d5751db}} 
+\index{ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}!clone@{clone}}
+\index{clone@{clone}!ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}{Object}}$\ast$ ostk\+::mathematics\+::geometry\+::d3\+::\+Object\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Clone object (pure virtual) 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned object 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a1ab0dfee99b56b4324e782a406ca1687}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Point\+Set}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a0c99b116c5a6f6e0915cb5375fc66149}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cone}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a0502f752850b36aa89c4fc443f7e4376}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_aca293bcf279702b8b59d72fe4dd09217}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a61cb86ec44359755cc1edc8dec1604c0}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_a4d5a9ea98d5a028f2792d3b11e9fd6e8}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Composite}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_ab67f8c5204e7d81204f80ca1298073a8}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cuboid}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a28e9a96d726b5eea0da0696647912780}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_ad6ef8e1e883a675f054a790093c152b8}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ray}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_aaaed581dfea7bf716e1125a088ba963c}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a07a393740306e4f8363920a8d82823e7}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_adf6a7e433d64879df60ea17403bf4694}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Point}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_a34fd0962885cf69d1a70a5d62395acc9}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Line}}, and \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_a6d27eb6359000685e81a6a5d79fbb807}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Line\+String}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_af60902b6b025fdaf8839c08e532dd2b0}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_af60902b6b025fdaf8839c08e532dd2b0}} 
+\index{ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::\+Object\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}{Object}} \&}]{an\+Object }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if object contains another object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Unique<Object> objectUPtr = ... ;}
+\DoxyCodeLine{Unique<Object> anotherObjectUPtr = ... ;}
+\DoxyCodeLine{objectUPtr-\/>contains(*anotherObjectUPtr) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Object} & An object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if object contains another object 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_a9a69a179318ed283eb977f7ed6649061}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Composite}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_ac1325aba0fa3796c9ddc5d39dfe40aa6}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_ac1325aba0fa3796c9ddc5d39dfe40aa6}} 
+\index{ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::\+Object\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}{Object}} \&}]{an\+Object }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Compute intersection of object with another object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Unique<Object> objectUPtr = ... ;}
+\DoxyCodeLine{Unique<Object> anotherObjectUPtr = ... ;}
+\DoxyCodeLine{Intersection intersection = objectUPtr-\/>intersectionWith(*anotherObjectUPtr) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Object} & An object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of object with another object 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_a17316a3b66d1459e5a152d71af82d28c}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Composite}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a0d8ddc7a929bb3b0b1c70ad82742e64e}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a0d8ddc7a929bb3b0b1c70ad82742e64e}} 
+\index{ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::\+Object\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}{Object}} \&}]{an\+Object }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Check if object intersects another object. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Unique<Object> objectUPtr = ... ;}
+\DoxyCodeLine{Unique<Object> anotherObjectUPtr = ... ;}
+\DoxyCodeLine{objectUPtr-\/>intersects(*anotherObjectUPtr) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Object} & An object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if object intersects another object 
+\end{DoxyReturn}
+
+
+Reimplemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_afb414dd80dce2ea9aad5513c8f466e94}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Composite}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_ad9e6f5027d14e3c7d7bead94052611ed}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_ad9e6f5027d14e3c7d7bead94052611ed}} 
+\index{ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}!is@{is}}
+\index{is@{is}!ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}}
+\doxysubsubsection{\texorpdfstring{is()}{is()}}
+{\footnotesize\ttfamily template$<$class Type $>$ \\
+bool ostk\+::mathematics\+::geometry\+::d3\+::\+Object\+::is (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if object can be converted to type. 
+
+\begin{DoxyReturn}{Returns}
+True if object can be converted to type 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a1962edbcdde0f851361b60324ab9ce2b}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a1962edbcdde0f851361b60324ab9ce2b}} 
+\index{ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}!isDefined@{isDefined}}
+\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}}
+\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
+{\footnotesize\ttfamily virtual bool ostk\+::mathematics\+::geometry\+::d3\+::\+Object\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if object is defined. 
+
+\begin{DoxyReturn}{Returns}
+True if object is defined 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_a8ccf639112d5c08aa7d2bb831072ca2f}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Composite}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a151a3020d20a0ae2847f5ce99bd7ee06}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Point}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a3e36099693bccb2d2e68d8673d86e5f6}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_ae9749637798c6670bb1c2b8cc2850ba8}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cuboid}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a6b8187ba8b67220e7562357ad846edaa}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Point\+Set}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_a5311446aca36ccadbd8ae323502dba44}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a927c5cfa7196f425f8cd153efde8e90f}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cone}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ab2e3d42d2420cd0d3029f1d14e126a6c}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_a402bf991d7974383a2766f12367681cd}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ray}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8b85f9aa5f4b1cdf0047c8010fdb7645}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a682162f29a5597e61f0eaac2f9762518}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a0a39c2a1bd1e330e8cc15aa4a5e19d47}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_ae07b5282c948df716fc1fa5bedeec344}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Line}}, and \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_ac79b6efa23440fa61690181c6ade42ec}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Line\+String}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a550754b8f5576ce2465979657325d5df}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a550754b8f5576ce2465979657325d5df}} 
+\index{ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::\+Object\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}{Object}} \&}]{an\+Object }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Object} & An object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if objects are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_aeb99dd25ff1c0683d9c0a058c8200e4d}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_aeb99dd25ff1c0683d9c0a058c8200e4d}} 
+\index{ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::\+Object\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}{Object}} \&}]{an\+Object }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Object} & An object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if objects are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a5063e1f902e1b08d36f6b6cecab0bd95}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a5063e1f902e1b08d36f6b6cecab0bd95}} 
+\index{ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}!print@{print}}
+\index{print@{print}!ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily virtual void ostk\+::mathematics\+::geometry\+::d3\+::\+Object\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Print object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_a7c5c1f79b1c0533073ef48e38dc5e18b}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ellipsoid}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_aa60fe81325d3fa897e6bc7517c28d071}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cuboid}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_ae7a968c5f386c5f9019389e6e3fca138}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Sphere}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a69cc28d37f97308cd2d0a9b58d50c18f}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_a4683504c6cc0933811bf909c96f5ef17}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Cone}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_a7d59b2b6538e28c9faa5ad94249e0d5d}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Composite}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_aba0fd8b256f78bb7bb0725103287f681}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_aa5283e30e7ddb452b048bd54f841c63e}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_af5e5dea5fe393ea9a76fd3b2638f9446}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Ray}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_adbfd6a95b2edf22a2540e449d07e499c}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Line}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a3a3719dc361d969338a34cce892fff94}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_a9395ae58a8f65a13328bc581586955c3}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Point}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_a54b5df386104fa9e13d7a982c3a99589}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Point\+Set}}, and \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_a3f55f08a54e8341f3381f1402ace1b09}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Line\+String}}.
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a418df9bf4a73078f3d494edef1743f8d}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a418df9bf4a73078f3d494edef1743f8d}} 
+\index{ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ostk::mathematics::geometry::d3::Object@{ostk::mathematics::geometry::d3::Object}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object}{Object}} \&}]{an\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em an\+Object} & An object \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to output stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\mbox{\hyperlink{_geometry_23_d_2_object_8hpp}{Object.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\mbox{\hyperlink{3_d_2_object_8cpp}{Object.\+cpp}}\end{DoxyCompactItemize}

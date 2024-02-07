@@ -21,9 +21,9 @@ Once the shell is up and running, playing with it is easy\+:
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\textcolor{keyword}{import} numpy}
-\DoxyCodeLine{\textcolor{keyword}{from} ostk.mathematics.geometry \textcolor{keyword}{import} Angle}
-\DoxyCodeLine{\textcolor{keyword}{from} ostk.mathematics.geometry.d3.transformation.rotation \textcolor{keyword}{import} Quaternion}
-\DoxyCodeLine{\textcolor{keyword}{from} ostk.mathematics.geometry.d3.transformation.rotation \textcolor{keyword}{import} RotationVector}
+\DoxyCodeLine{\textcolor{keyword}{from} \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry}{ostk.mathematics.geometry}} \textcolor{keyword}{import} Angle}
+\DoxyCodeLine{\textcolor{keyword}{from} \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation}{ostk.mathematics.geometry.d3.transformation.rotation}} \textcolor{keyword}{import} Quaternion}
+\DoxyCodeLine{\textcolor{keyword}{from} \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation}{ostk.mathematics.geometry.d3.transformation.rotation}} \textcolor{keyword}{import} RotationVector}
 \DoxyCodeLine{}
 \DoxyCodeLine{rv = RotationVector(numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.degrees(15.0)) \textcolor{comment}{\# Construct rotation vector}}
 \DoxyCodeLine{}
@@ -81,13 +81,13 @@ The library exhibits the following structure\+:
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{├── Objects}
+\DoxyCodeLine{├── Object}
 \DoxyCodeLine{│   ├── Vector}
 \DoxyCodeLine{│   ├── Matrix}
 \DoxyCodeLine{│   └── Interval}
 \DoxyCodeLine{├── Geometry}
 \DoxyCodeLine{│   ├── 2D}
-\DoxyCodeLine{|   │   ├── Objects}
+\DoxyCodeLine{|   │   ├── Object}
 \DoxyCodeLine{│   │   │   ├── Point}
 \DoxyCodeLine{│   │   │   ├── Point Set}
 \DoxyCodeLine{│   │   │   ├── Line}
@@ -95,7 +95,7 @@ The library exhibits the following structure\+:
 \DoxyCodeLine{│   │   │   ├── Multi Line String}
 \DoxyCodeLine{│   │   │   └── Polygon}
 \DoxyCodeLine{│   │   ├── Intersection}
-\DoxyCodeLine{│   │   └── Transformations}
+\DoxyCodeLine{│   │   └── Transformation}
 \DoxyCodeLine{│   │       ├── Identity}
 \DoxyCodeLine{│   │       ├── Translation}
 \DoxyCodeLine{│   │       ├── Rotation}
@@ -103,7 +103,7 @@ The library exhibits the following structure\+:
 \DoxyCodeLine{│   │       ├── Scaling}
 \DoxyCodeLine{│   │       └── Shear}
 \DoxyCodeLine{│   ├── 3D}
-\DoxyCodeLine{|   │   ├── Objects}
+\DoxyCodeLine{|   │   ├── Object}
 \DoxyCodeLine{│   │   │   ├── Point}
 \DoxyCodeLine{│   │   │   ├── Point Set}
 \DoxyCodeLine{│   │   │   ├── Line}
@@ -119,10 +119,10 @@ The library exhibits the following structure\+:
 \DoxyCodeLine{│   │   │   ├── Pyramid}
 \DoxyCodeLine{│   │   │   └── Composite}
 \DoxyCodeLine{│   │   ├── Intersection}
-\DoxyCodeLine{│   │   └── Transformations}
+\DoxyCodeLine{│   │   └── Transformation}
 \DoxyCodeLine{│   │       ├── Identity}
 \DoxyCodeLine{│   │       ├── Translation}
-\DoxyCodeLine{│   │       ├── Rotations}
+\DoxyCodeLine{│   │       ├── Rotation}
 \DoxyCodeLine{│   │       │   ├── Quaternion}
 \DoxyCodeLine{│   │       │   ├── Euler Angle}
 \DoxyCodeLine{│   │       │   ├── Rotation Vector}
@@ -132,7 +132,7 @@ The library exhibits the following structure\+:
 \DoxyCodeLine{│   │       └── Shear}
 \DoxyCodeLine{├── Dynamics}
 \DoxyCodeLine{│   ├── State}
-\DoxyCodeLine{│   ├── Solvers}
+\DoxyCodeLine{│   ├── Solver}
 \DoxyCodeLine{│   │   ├── Runge–Kutta 4 (RK4)}
 \DoxyCodeLine{│   │   ├── Dormand–Prince 5 (DP5)}
 \DoxyCodeLine{│   │   └── Runge–Kutta–Fehlberg 78 (F78)}

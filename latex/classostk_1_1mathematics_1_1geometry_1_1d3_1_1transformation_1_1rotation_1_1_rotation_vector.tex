@@ -1,0 +1,392 @@
+\hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{}\doxysection{ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::Rotation\+Vector Class Reference}
+\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+
+
+Rotation vector.  
+
+
+
+
+{\ttfamily \#include $<$Rotation\+Vector.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}{Rotation\+Vector}} (const Vector3d \&an\+Axis, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \&an\+Angle)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a951bcc257b60ab3ec2f45e1b4eb0cb70}{operator==}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \&a\+Rotation\+Vector) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a1ab7d9369961e7f7e2bc9c6afb76f234}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \&a\+Rotation\+Vector) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a7eb8f0bba73e0e36fa7a6f1bbd88da2d}{is\+Defined}} () const
+\begin{DoxyCompactList}\small\item\em Check if rotation vector is defined. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a177b242ce75f1631de02e15e50804958}{get\+Axis}} () const
+\begin{DoxyCompactList}\small\item\em Get rotation axis. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ac9544a31482220e580b6ad383c888bb5}{get\+Angle}} () const
+\begin{DoxyCompactList}\small\item\em Get rotation angle. \end{DoxyCompactList}\item 
+String \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a9ce94326aaddb6e9e967acc388b39f44}{to\+String}} (const Integer \&a\+Precision=Integer\+::\+Undefined()) const
+\begin{DoxyCompactList}\small\item\em Convert rotation vector to its string representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ac296ba2d49497a1d7a5b1d1aa1628294}{Undefined}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined rotation vector. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a31c276c930ed9d5ff4cb406be6a48f7e}{Unit}} ()
+\begin{DoxyCompactList}\small\item\em Constructs a unit rotation vector. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ad5a563a069f6665a086b2ba5fc20ea76}{X}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \&an\+Angle)
+\begin{DoxyCompactList}\small\item\em Constructs a rotation vector around X-\/axis. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a30ecbac5afd7470bc9cb68079997fc0c}{Y}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \&an\+Angle)
+\begin{DoxyCompactList}\small\item\em Constructs a rotation vector around Y-\/axis. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a4985f992a53c3d1412a06b2ebedd4bca}{Z}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \&an\+Angle)
+\begin{DoxyCompactList}\small\item\em Constructs a rotation vector around Z-\/axis. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ae2257efa00cf6358d7135f4fb67f42c0}{Quaternion}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{rotation\+::\+Quaternion}} \&a\+Quaternion)
+\begin{DoxyCompactList}\small\item\em Constructs a rotation vector from a quaternion. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a11b732b431882d3e29d63b5b350b88bc}{Rotation\+Matrix}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix}{rotation\+::\+Rotation\+Matrix}} \&a\+Rotation\+Matrix)
+\begin{DoxyCompactList}\small\item\em Constructs a rotation vector from a rotation matrix. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_aa66ba2fd706a441ee39d06857842ecfe}{operator$<$$<$}} (std\+::ostream \&an\+Output\+Stream, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \&a\+Rotation\+Vector)
+\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Rotation vector. 
+
+–angle\+\_\+representation\#\+Rotation\+\_\+vector 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!RotationVector@{RotationVector}}
+\index{RotationVector@{RotationVector}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+\doxysubsubsection{\texorpdfstring{RotationVector()}{RotationVector()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::\+Rotation\+Vector (\begin{DoxyParamCaption}\item[{const Vector3d \&}]{an\+Axis,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \&}]{an\+Angle }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Axis} & A rotation axis \\
+\hline
+\mbox{\texttt{ in}}  & {\em an\+Angle} & A rotation angle \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ac9544a31482220e580b6ad383c888bb5}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ac9544a31482220e580b6ad383c888bb5}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!getAngle@{getAngle}}
+\index{getAngle@{getAngle}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+\doxysubsubsection{\texorpdfstring{getAngle()}{getAngle()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::get\+Angle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get rotation angle. 
+
+\begin{DoxyReturn}{Returns}
+Rotation angle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a177b242ce75f1631de02e15e50804958}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a177b242ce75f1631de02e15e50804958}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!getAxis@{getAxis}}
+\index{getAxis@{getAxis}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+\doxysubsubsection{\texorpdfstring{getAxis()}{getAxis()}}
+{\footnotesize\ttfamily Vector3d ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::get\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get rotation axis. 
+
+\begin{DoxyReturn}{Returns}
+Rotation axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a7eb8f0bba73e0e36fa7a6f1bbd88da2d}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a7eb8f0bba73e0e36fa7a6f1bbd88da2d}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!isDefined@{isDefined}}
+\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if rotation vector is defined. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}{RotationVector}}(\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}}(0.0, 0.0, 1.0), \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(90.0)).isDefined() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if rotation vector is defined 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a1ab7d9369961e7f7e2bc9c6afb76f234}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a1ab7d9369961e7f7e2bc9c6afb76f234}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \&}]{a\+Rotation\+Vector }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}{RotationVector}}(\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}}(0.0, 0.0, 1.0), \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(90.0)) !=}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}{RotationVector}}(\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}}(1.0, 0.0, 0.0), \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(90.0)) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Rotation\+Vector} & A rotation vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if rotation vectors are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a951bcc257b60ab3ec2f45e1b4eb0cb70}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a951bcc257b60ab3ec2f45e1b4eb0cb70}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \&}]{a\+Rotation\+Vector }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}{RotationVector}}(\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}}(0.0, 0.0, 1.0), \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(90.0)) ==}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}{RotationVector}}(\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}}(0.0, 0.0, 1.0), \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(90.0)) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Rotation\+Vector} & A rotation vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if rotation vectors are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ae2257efa00cf6358d7135f4fb67f42c0}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ae2257efa00cf6358d7135f4fb67f42c0}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!Quaternion@{Quaternion}}
+\index{Quaternion@{Quaternion}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+\doxysubsubsection{\texorpdfstring{Quaternion()}{Quaternion()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::\+Quaternion (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{rotation\+::\+Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rotation vector from a quaternion. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}{RotationVector}} rotationVector = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ae2257efa00cf6358d7135f4fb67f42c0}{RotationVector::Quaternion}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab065862f2a77807e42f6feaadc0637e2}{Quaternion::XYZS}}(0.0, 0.0,}
+\DoxyCodeLine{0.0, 1.0)) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a11b732b431882d3e29d63b5b350b88bc}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a11b732b431882d3e29d63b5b350b88bc}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!RotationMatrix@{RotationMatrix}}
+\index{RotationMatrix@{RotationMatrix}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+\doxysubsubsection{\texorpdfstring{RotationMatrix()}{RotationMatrix()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::\+Rotation\+Matrix (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix}{rotation\+::\+Rotation\+Matrix}} \&}]{a\+Rotation\+Matrix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rotation vector from a rotation matrix. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}{RotationVector}} rotationVector = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a11b732b431882d3e29d63b5b350b88bc}{RotationVector::RotationMatrix}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_a54cce35b27cb061a457bf0011f1312ba}{RotationMatrix::Unit}}()) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Rotation\+Matrix} & A rotation matrix \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a9ce94326aaddb6e9e967acc388b39f44}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a9ce94326aaddb6e9e967acc388b39f44}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!toString@{toString}}
+\index{toString@{toString}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+\doxysubsubsection{\texorpdfstring{toString()}{toString()}}
+{\footnotesize\ttfamily String ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::to\+String (\begin{DoxyParamCaption}\item[{const Integer \&}]{a\+Precision = {\ttfamily Integer\+:\+:Undefined()} }\end{DoxyParamCaption}) const}
+
+
+
+Convert rotation vector to its string representation. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}{RotationVector}}(\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}}(0.0, 0.0, 1.0), \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(90.0)).toString() ; \textcolor{comment}{// "[0.0,}}
+\DoxyCodeLine{0.0, 1.0] : 90.0 [deg]\textcolor{stringliteral}{"}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em (optional)} & a\+Precision A precision \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String representation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ac296ba2d49497a1d7a5b1d1aa1628294}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ac296ba2d49497a1d7a5b1d1aa1628294}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined rotation vector. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}{RotationVector}} rotationVector = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ac296ba2d49497a1d7a5b1d1aa1628294}{RotationVector::Undefined}}() ; \textcolor{comment}{// Undefined}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined rotation vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a31c276c930ed9d5ff4cb406be6a48f7e}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a31c276c930ed9d5ff4cb406be6a48f7e}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!Unit@{Unit}}
+\index{Unit@{Unit}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+\doxysubsubsection{\texorpdfstring{Unit()}{Unit()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a unit rotation vector. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}{RotationVector}} rotationVector = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a31c276c930ed9d5ff4cb406be6a48f7e}{RotationVector::Unit}}() ;}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Unit rotation vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ad5a563a069f6665a086b2ba5fc20ea76}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ad5a563a069f6665a086b2ba5fc20ea76}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!X@{X}}
+\index{X@{X}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+\doxysubsubsection{\texorpdfstring{X()}{X()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::X (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \&}]{an\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rotation vector around X-\/axis. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}{RotationVector}} rotationVector = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ad5a563a069f6665a086b2ba5fc20ea76}{RotationVector::X}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(45.0)) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Angle} & A rotation angle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a30ecbac5afd7470bc9cb68079997fc0c}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a30ecbac5afd7470bc9cb68079997fc0c}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!Y@{Y}}
+\index{Y@{Y}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+\doxysubsubsection{\texorpdfstring{Y()}{Y()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::Y (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \&}]{an\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rotation vector around Y-\/axis. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}{RotationVector}} rotationVector = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ad5a563a069f6665a086b2ba5fc20ea76}{RotationVector::X}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(45.0)) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Angle} & A rotation angle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a4985f992a53c3d1412a06b2ebedd4bca}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a4985f992a53c3d1412a06b2ebedd4bca}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!Z@{Z}}
+\index{Z@{Z}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+\doxysubsubsection{\texorpdfstring{Z()}{Z()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Vector\+::Z (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \&}]{an\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs a rotation vector around Z-\/axis. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}{RotationVector}} rotationVector = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_ad5a563a069f6665a086b2ba5fc20ea76}{RotationVector::X}}(\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(45.0)) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Angle} & A rotation angle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Rotation vector 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_aa66ba2fd706a441ee39d06857842ecfe}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_aa66ba2fd706a441ee39d06857842ecfe}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ostk::mathematics::geometry::d3::transformation::rotation::RotationVector@{ostk::mathematics::geometry::d3::transformation::rotation::RotationVector}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \&}]{a\+Rotation\+Vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::cout << \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a85786a4e81f7107c8367ed0ae783c79f}{RotationVector}}(\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}}(0.0, 0.0, 1.0), \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(90.0)) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Rotation\+Vector} & A rotation vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to output stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Transformation/\+Rotation/\mbox{\hyperlink{_rotation_vector_8hpp}{Rotation\+Vector.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Transformation/\+Rotation/\mbox{\hyperlink{_rotation_vector_8cpp}{Rotation\+Vector.\+cpp}}\end{DoxyCompactItemize}

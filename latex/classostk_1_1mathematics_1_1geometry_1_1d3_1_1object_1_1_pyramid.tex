@@ -1,0 +1,536 @@
+\hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{}\doxysection{ostk\+::mathematics\+::geometry\+::d3\+::object\+::Pyramid Class Reference}
+\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+
+
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}}.  
+
+
+
+
+{\ttfamily \#include $<$Pyramid.\+hpp$>$}
+
+Inheritance diagram for ostk\+::mathematics\+::geometry\+::d3\+::object\+::Pyramid\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} \&a\+Base, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&an\+Apex)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} $\ast$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a61cb86ec44359755cc1edc8dec1604c0}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clone pyramid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a77efda8908205d41517ed65ad8a09cf9}{operator==}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} \&a\+Pyramid) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a3fa7abd7265937266cb59f19f63db3bf}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} \&a\+Pyramid) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8b85f9aa5f4b1cdf0047c8010fdb7645}{is\+Defined}} () const override
+\begin{DoxyCompactList}\small\item\em Check if pyramid is defined. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a4676717f067f8fd710fc9073d0b1709d}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \&a\+Sphere, const Size a\+Discretization\+Level=\mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}) const
+\begin{DoxyCompactList}\small\item\em Check if pyramid intersects sphere. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_ae2daf13e58b060a4085944e3c3171910}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&an\+Ellipsoid, const Size a\+Discretization\+Level=\mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}) const
+\begin{DoxyCompactList}\small\item\em Check if pyramid intersects ellipsoid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8b9e0648b92e137af003fa83b0a7d882}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if pyramid contains point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a24f4e1fe595451ef6cb1c3acef15d894}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if pyramid contains point set. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a4df37b7e74dcdbce1d4485e5531a6f65}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Check if pyramid contains segment. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_afb8fc0cc19a2ed253abf288c91d6a769}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&an\+Ellipsoid) const
+\begin{DoxyCompactList}\small\item\em Check if pyramid contains ellipsoid. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8438922f810553cb5ca34e777ef809bd}{get\+Base}} () const
+\begin{DoxyCompactList}\small\item\em Get pyramid base. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a11b0783c46852783670d9d0aa82fc61a}{get\+Apex}} () const
+\begin{DoxyCompactList}\small\item\em Get pyramid apex. \end{DoxyCompactList}\item 
+Size \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_aed535ef84d792822dd1105148fb76451}{get\+Lateral\+Face\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get number of lateral faces. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_aca6a2bed3e225add46016583f1c3baec}{get\+Lateral\+Face\+At}} (const Index a\+Lateral\+Face\+Index) const
+\begin{DoxyCompactList}\small\item\em Get lateral face at index. \end{DoxyCompactList}\item 
+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a83e11f308ae9cd0cdfd10a15c4c11335}{get\+Rays\+Of\+Lateral\+Face\+At}} (const Index a\+Lateral\+Face\+Index, const Size a\+Ray\+Count=2) const
+\begin{DoxyCompactList}\small\item\em Get rays of lateral face at index. \end{DoxyCompactList}\item 
+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8674910a0a9b4a158c0a538c646fe971}{get\+Rays\+Of\+Lateral\+Faces}} (const Size a\+Ray\+Count=0) const
+\begin{DoxyCompactList}\small\item\em Get rays of lateral faces. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a93113d23dee9ac80c7cba6198ce272a2}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \&a\+Sphere, const bool only\+In\+Sight=\mbox{\hyperlink{_sphere_8hpp_af424617f7c785f4835e2feba5a5640f2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+I\+N\+\_\+\+S\+I\+G\+HT}}, const Size a\+Discretization\+Level=\mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of pyramid with sphere. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a5ed8e14c5ca36792c887d534d446ce4f}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&an\+Ellipsoid, const bool only\+In\+Sight=\mbox{\hyperlink{_sphere_8hpp_af424617f7c785f4835e2feba5a5640f2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+I\+N\+\_\+\+S\+I\+G\+HT}}, const Size a\+Discretization\+Level=\mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of pyramid with ellipsoid. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_aba0fd8b256f78bb7bb0725103287f681}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print pyramid. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_aec8ebca28ff89fd03a088d399de8e6e4}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to pyramid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a631ca947390c95b73c78b42c3d840b12}{Undefined}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined pyramid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}}. 
+
+\begin{DoxyVerb}                        A pyramid is a polyhedron formed by connecting a polygonal base and a point, called the
+                        apex. Each base edge and apex form a triangle, called a lateral face.
+\end{DoxyVerb}
+
+
+\href{https://en.wikipedia.org/wiki/Pyramid_}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Pyramid\+\_\+}}(geometry) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!Pyramid@{Pyramid}}
+\index{Pyramid@{Pyramid}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{Pyramid()}{Pyramid()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::\+Pyramid (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} \&}]{a\+Base,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{an\+Apex }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Polygon base = ... ;}
+\DoxyCodeLine{Point apex = \{ 0.0, 0.0, 1.0 \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = \{ base, apex \} ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Base} & A pyramid base \\
+\hline
+\mbox{\texttt{ in}}  & {\em an\+Apex} & A pyramid apex \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_aec8ebca28ff89fd03a088d399de8e6e4}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_aec8ebca28ff89fd03a088d399de8e6e4}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!applyTransformation@{applyTransformation}}
+\index{applyTransformation@{applyTransformation}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{applyTransformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to pyramid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a925a50c2bb1c31f396e469b74595e42a}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a61cb86ec44359755cc1edc8dec1604c0}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a61cb86ec44359755cc1edc8dec1604c0}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!clone@{clone}}
+\index{clone@{clone}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} $\ast$ ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone pyramid. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned pyramid 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a8ea8d4074bfaaa3d996d760d5d5751db}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_afb8fc0cc19a2ed253abf288c91d6a769}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_afb8fc0cc19a2ed253abf288c91d6a769}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
+
+
+
+Check if pyramid contains ellipsoid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{Ellipsoid ellipsoid = ... ;}
+\DoxyCodeLine{pyramid.contains(ellipsoid) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if pyramid contains ellipsoid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8b9e0648b92e137af003fa83b0a7d882}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8b9e0648b92e137af003fa83b0a7d882}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if pyramid contains point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{Point point = ... ;}
+\DoxyCodeLine{pyramid.contains(point) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if pyramid contains point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a24f4e1fe595451ef6cb1c3acef15d894}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a24f4e1fe595451ef6cb1c3acef15d894}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if pyramid contains point set. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{PointSet pointSet = ... ;}
+\DoxyCodeLine{pyramid.contains(pointSet) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if pyramid contains point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a4df37b7e74dcdbce1d4485e5531a6f65}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a4df37b7e74dcdbce1d4485e5531a6f65}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Check if pyramid contains segment. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{Segment segment = ... ;}
+\DoxyCodeLine{pyramid.contains(segment) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if pyramid contains segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a11b0783c46852783670d9d0aa82fc61a}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a11b0783c46852783670d9d0aa82fc61a}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!getApex@{getApex}}
+\index{getApex@{getApex}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{getApex()}{getApex()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::get\+Apex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get pyramid apex. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} apex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8438922f810553cb5ca34e777ef809bd}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8438922f810553cb5ca34e777ef809bd}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!getBase@{getBase}}
+\index{getBase@{getBase}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{getBase()}{getBase()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::get\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get pyramid base. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} base 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_aca6a2bed3e225add46016583f1c3baec}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_aca6a2bed3e225add46016583f1c3baec}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!getLateralFaceAt@{getLateralFaceAt}}
+\index{getLateralFaceAt@{getLateralFaceAt}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{getLateralFaceAt()}{getLateralFaceAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::get\+Lateral\+Face\+At (\begin{DoxyParamCaption}\item[{const Index}]{a\+Lateral\+Face\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Get lateral face at index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Lateral\+Face\+Index} & A lateral face index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Lateral face 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_aed535ef84d792822dd1105148fb76451}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_aed535ef84d792822dd1105148fb76451}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!getLateralFaceCount@{getLateralFaceCount}}
+\index{getLateralFaceCount@{getLateralFaceCount}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{getLateralFaceCount()}{getLateralFaceCount()}}
+{\footnotesize\ttfamily Size ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::get\+Lateral\+Face\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get number of lateral faces. 
+
+\begin{DoxyReturn}{Returns}
+Number of lateral faces 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a83e11f308ae9cd0cdfd10a15c4c11335}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a83e11f308ae9cd0cdfd10a15c4c11335}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!getRaysOfLateralFaceAt@{getRaysOfLateralFaceAt}}
+\index{getRaysOfLateralFaceAt@{getRaysOfLateralFaceAt}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{getRaysOfLateralFaceAt()}{getRaysOfLateralFaceAt()}}
+{\footnotesize\ttfamily Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} $>$ ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::get\+Rays\+Of\+Lateral\+Face\+At (\begin{DoxyParamCaption}\item[{const Index}]{a\+Lateral\+Face\+Index,  }\item[{const Size}]{a\+Ray\+Count = {\ttfamily 2} }\end{DoxyParamCaption}) const}
+
+
+
+Get rays of lateral face at index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Lateral\+Face\+Index} & A lateral face index \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Ray\+Count} & A number of rays (at least 2) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array of rays 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8674910a0a9b4a158c0a538c646fe971}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8674910a0a9b4a158c0a538c646fe971}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!getRaysOfLateralFaces@{getRaysOfLateralFaces}}
+\index{getRaysOfLateralFaces@{getRaysOfLateralFaces}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{getRaysOfLateralFaces()}{getRaysOfLateralFaces()}}
+{\footnotesize\ttfamily Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} $>$ ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::get\+Rays\+Of\+Lateral\+Faces (\begin{DoxyParamCaption}\item[{const Size}]{a\+Ray\+Count = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+
+Get rays of lateral faces. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Ray\+Count} & A number of rays (at least face count) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Array of rays 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a5ed8e14c5ca36792c887d534d446ce4f}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a5ed8e14c5ca36792c887d534d446ce4f}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&}]{an\+Ellipsoid,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily \mbox{\hyperlink{_sphere_8hpp_af424617f7c785f4835e2feba5a5640f2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+I\+N\+\_\+\+S\+I\+G\+HT}}},  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily \mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of pyramid with ellipsoid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\mbox{\texttt{ in}}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Discretization\+Level} & (optional) The polygonal discretization level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of pyramid with ellipsoid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a93113d23dee9ac80c7cba6198ce272a2}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a93113d23dee9ac80c7cba6198ce272a2}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \&}]{a\+Sphere,  }\item[{const bool}]{only\+In\+Sight = {\ttfamily \mbox{\hyperlink{_sphere_8hpp_af424617f7c785f4835e2feba5a5640f2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+O\+N\+L\+Y\+\_\+\+I\+N\+\_\+\+S\+I\+G\+HT}}},  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily \mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}} }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of pyramid with sphere. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Sphere} & A sphere \\
+\hline
+\mbox{\texttt{ in}}  & {\em only\+In\+Sight} & (optional) If true, only return intersection points that are in sight \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Discretization\+Level} & (optional) The polygonal discretization level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of pyramid with sphere 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_ae2daf13e58b060a4085944e3c3171910}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_ae2daf13e58b060a4085944e3c3171910}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&}]{an\+Ellipsoid,  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily \mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}} }\end{DoxyParamCaption}) const}
+
+
+
+Check if pyramid intersects ellipsoid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{Ellipsoid ellipsoid = ... ;}
+\DoxyCodeLine{pyramid.intersects(ellipsoid) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Discretization\+Level} & (optional) The polygonal discretization level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if pyramid intersects ellipsoid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a4676717f067f8fd710fc9073d0b1709d}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a4676717f067f8fd710fc9073d0b1709d}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \&}]{a\+Sphere,  }\item[{const Size}]{a\+Discretization\+Level = {\ttfamily \mbox{\hyperlink{_pyramid_8hpp_a3eb9931e85ba4c9718113211e549e91d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+C\+R\+E\+T\+I\+Z\+A\+T\+I\+O\+N\+\_\+\+L\+E\+V\+EL}}} }\end{DoxyParamCaption}) const}
+
+
+
+Check if pyramid intersects sphere. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_adddec5b182cdca50f62190d899179460}{Pyramid}} pyramid = ... ;}
+\DoxyCodeLine{Sphere sphere = ... ;}
+\DoxyCodeLine{pyramid.intersects(sphere) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Sphere} & A sphere \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Discretization\+Level} & (optional) The polygonal discretization level \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if pyramid intersects sphere 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8b85f9aa5f4b1cdf0047c8010fdb7645}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a8b85f9aa5f4b1cdf0047c8010fdb7645}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!isDefined@{isDefined}}
+\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if pyramid is defined. 
+
+\begin{DoxyReturn}{Returns}
+True if pyramid is defined 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a1962edbcdde0f851361b60324ab9ce2b}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a3fa7abd7265937266cb59f19f63db3bf}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a3fa7abd7265937266cb59f19f63db3bf}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} \&}]{a\+Pyramid }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Pyramid} & A pyramid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if pyramids are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a77efda8908205d41517ed65ad8a09cf9}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a77efda8908205d41517ed65ad8a09cf9}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} \&}]{a\+Pyramid }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Pyramid} & A pyramid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if pyramids are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_aba0fd8b256f78bb7bb0725103287f681}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_aba0fd8b256f78bb7bb0725103287f681}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!print@{print}}
+\index{print@{print}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print pyramid. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a5063e1f902e1b08d36f6b6cecab0bd95}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a631ca947390c95b73c78b42c3d840b12}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_a631ca947390c95b73c78b42c3d840b12}} 
+\index{ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::object::Pyramid@{ostk::mathematics::geometry::d3::object::Pyramid}}
+\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid}{Pyramid}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Pyramid\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined pyramid. 
+
+\begin{DoxyReturn}{Returns}
+Undefined pyramid 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Object/\mbox{\hyperlink{_pyramid_8hpp}{Pyramid.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Object/\mbox{\hyperlink{_pyramid_8cpp}{Pyramid.\+cpp}}\end{DoxyCompactItemize}

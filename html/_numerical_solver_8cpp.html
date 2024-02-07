@@ -91,34 +91,34 @@ $(document).ready(function(){initNavTree('_numerical_solver_8cpp.html',''); init
 <div class="textblock"><code>#include &lt;boost/numeric/odeint.hpp&gt;</code><br />
 <code>#include &lt;boost/numeric/odeint/external/eigen/eigen.hpp&gt;</code><br />
 <code>#include &lt;OpenSpaceToolkit/Core/Error.hpp&gt;</code><br />
-<code>#include &lt;OpenSpaceToolkit/Core/Utilities.hpp&gt;</code><br />
-<code>#include &lt;<a class="el" href="_numerical_solver_8hpp_source.html">OpenSpaceToolkit/Mathematics/Solvers/NumericalSolver.hpp</a>&gt;</code><br />
+<code>#include &lt;OpenSpaceToolkit/Core/Utility.hpp&gt;</code><br />
+<code>#include &lt;<a class="el" href="_numerical_solver_8hpp_source.html">OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp</a>&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceostk"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk.html">ostk</a></td></tr>
 <tr class="memdesc:namespaceostk"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apache License 2.0. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceostk_1_1math"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math.html">ostk::math</a></td></tr>
+<tr class="memitem:namespaceostk_1_1mathematics"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics.html">ostk::mathematics</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceostk_1_1math_1_1solvers"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math_1_1solvers.html">ostk::math::solvers</a></td></tr>
+<tr class="memitem:namespaceostk_1_1mathematics_1_1solver"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1solver.html">ostk::mathematics::solver</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:abf294fbaef72eb84f5d6a8f6f9ea4eb0"><td class="memItemLeft" align="right" valign="top">typedef runge_kutta4&lt; NumericalSolver::StateVector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math_1_1solvers.html#abf294fbaef72eb84f5d6a8f6f9ea4eb0">ostk::math::solvers::stepper_type_4</a></td></tr>
-<tr class="separator:abf294fbaef72eb84f5d6a8f6f9ea4eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa679fe886e1f433a76edf61108548e4a"><td class="memItemLeft" align="right" valign="top">typedef runge_kutta_cash_karp54&lt; NumericalSolver::StateVector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math_1_1solvers.html#aa679fe886e1f433a76edf61108548e4a">ostk::math::solvers::error_stepper_type_54</a></td></tr>
-<tr class="separator:aa679fe886e1f433a76edf61108548e4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6deb9536f7096ccec20942409de6fcd6"><td class="memItemLeft" align="right" valign="top">typedef runge_kutta_fehlberg78&lt; NumericalSolver::StateVector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math_1_1solvers.html#a6deb9536f7096ccec20942409de6fcd6">ostk::math::solvers::error_stepper_type_78</a></td></tr>
-<tr class="separator:a6deb9536f7096ccec20942409de6fcd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa070d1582a9c54885737d46dadef3c92"><td class="memItemLeft" align="right" valign="top">typedef runge_kutta_dopri5&lt; NumericalSolver::StateVector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math_1_1solvers.html#aa070d1582a9c54885737d46dadef3c92">ostk::math::solvers::dense_stepper_type_5</a></td></tr>
-<tr class="separator:aa070d1582a9c54885737d46dadef3c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a239397c5452cb7026b6b7bd5909c49ea"><td class="memItemLeft" align="right" valign="top">typedef runge_kutta4&lt; NumericalSolver::StateVector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1solver.html#a239397c5452cb7026b6b7bd5909c49ea">ostk::mathematics::solver::stepper_type_4</a></td></tr>
+<tr class="separator:a239397c5452cb7026b6b7bd5909c49ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff57be115a1ef18c0a53de6e79b00023"><td class="memItemLeft" align="right" valign="top">typedef runge_kutta_cash_karp54&lt; NumericalSolver::StateVector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1solver.html#aff57be115a1ef18c0a53de6e79b00023">ostk::mathematics::solver::error_stepper_type_54</a></td></tr>
+<tr class="separator:aff57be115a1ef18c0a53de6e79b00023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a446382cbb767b2c1a4413b9f6f4fee34"><td class="memItemLeft" align="right" valign="top">typedef runge_kutta_fehlberg78&lt; NumericalSolver::StateVector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1solver.html#a446382cbb767b2c1a4413b9f6f4fee34">ostk::mathematics::solver::error_stepper_type_78</a></td></tr>
+<tr class="separator:a446382cbb767b2c1a4413b9f6f4fee34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e0e29898fea269d43fccf27c4fedd60"><td class="memItemLeft" align="right" valign="top">typedef runge_kutta_dopri5&lt; NumericalSolver::StateVector &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1solver.html#a9e0e29898fea269d43fccf27c4fedd60">ostk::mathematics::solver::dense_stepper_type_5</a></td></tr>
+<tr class="separator:a9e0e29898fea269d43fccf27c4fedd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4600a5e066dcbdb155221e66ef7788a2"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math_1_1solvers.html#a4600a5e066dcbdb155221e66ef7788a2">ostk::math::solvers::operator&lt;&lt;</a> (std::ostream &amp;anOutputStream, const NumericalSolver &amp;aNumericalSolver)</td></tr>
-<tr class="separator:a4600a5e066dcbdb155221e66ef7788a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a880f6ab73ddfe8eae45c0c7f4c6aaaeb"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1solver.html#a880f6ab73ddfe8eae45c0c7f4c6aaaeb">ostk::mathematics::solver::operator&lt;&lt;</a> (std::ostream &amp;anOutputStream, const NumericalSolver &amp;aNumericalSolver)</td></tr>
+<tr class="separator:a880f6ab73ddfe8eae45c0c7f4c6aaaeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -126,7 +126,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_fdc2ce6839bd9a3b87630c53f2ae038b.html">OpenSpaceToolkit</a></li><li class="navelem"><a class="el" href="dir_ec35093c29384bc5ef7574e05d10a239.html">Mathematics</a></li><li class="navelem"><a class="el" href="dir_8c1186ac73cb6983ced32bc1089a487a.html">Solvers</a></li><li class="navelem"><a class="el" href="_numerical_solver_8cpp.html">NumericalSolver.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_fdc2ce6839bd9a3b87630c53f2ae038b.html">OpenSpaceToolkit</a></li><li class="navelem"><a class="el" href="dir_ec35093c29384bc5ef7574e05d10a239.html">Mathematics</a></li><li class="navelem"><a class="el" href="dir_9123a984f0dd74ff42dc1c9b2df78636.html">Solver</a></li><li class="navelem"><a class="el" href="_numerical_solver_8cpp.html">NumericalSolver.cpp</a></li>
   </ul>
 </div>
 </body>

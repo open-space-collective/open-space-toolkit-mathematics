@@ -89,17 +89,17 @@ $(document).ready(function(){initNavTree('_sphere_8cpp.html',''); initResizable(
 <div class="contents">
 <div class="textblock"><code>#include &lt;Gte/Mathematics/GteIntrSphere3Sphere3.h&gt;</code><br />
 <code>#include &lt;OpenSpaceToolkit/Core/Error.hpp&gt;</code><br />
-<code>#include &lt;OpenSpaceToolkit/Core/Utilities.hpp&gt;</code><br />
+<code>#include &lt;OpenSpaceToolkit/Core/Utility.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="3_d_2_intersection_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_cone_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cone.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_ellipsoid_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="3_d_2_objects_2_line_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_plane_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Plane.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="3_d_2_objects_2_point_set_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/PointSet.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_pyramid_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Pyramid.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_ray_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ray.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="3_d_2_objects_2_segment_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_sphere_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Sphere.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_cone_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_ellipsoid_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="3_d_2_object_2_line_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Line.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_plane_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="3_d_2_object_2_point_set_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_pyramid_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_ray_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="3_d_2_object_2_segment_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_sphere_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="3_d_2_transformation_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp</a>&gt;</code><br />
 <code>#include &lt;Gte/Mathematics/GteIntrLine3Sphere3.h&gt;</code><br />
 <code>#include &lt;Gte/Mathematics/GteIntrPlane3Sphere3.h&gt;</code><br />
@@ -111,23 +111,23 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceostk"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk.html">ostk</a></td></tr>
 <tr class="memdesc:namespaceostk"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apache License 2.0. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceostk_1_1math"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math.html">ostk::math</a></td></tr>
+<tr class="memitem:namespaceostk_1_1mathematics"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics.html">ostk::mathematics</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceostk_1_1math_1_1geometry"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math_1_1geometry.html">ostk::math::geometry</a></td></tr>
+<tr class="memitem:namespaceostk_1_1mathematics_1_1geometry"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1geometry.html">ostk::mathematics::geometry</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceostk_1_1math_1_1geometry_1_1d3"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math_1_1geometry_1_1d3.html">ostk::math::geometry::d3</a></td></tr>
+<tr class="memitem:namespaceostk_1_1mathematics_1_1geometry_1_1d3"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1geometry_1_1d3.html">ostk::mathematics::geometry::d3</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceostk_1_1math_1_1geometry_1_1d3_1_1objects"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math_1_1geometry_1_1d3_1_1objects.html">ostk::math::geometry::d3::objects</a></td></tr>
+<tr class="memitem:namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object.html">ostk::mathematics::geometry::d3::object</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6d69d13bd6eaa699b9e2a1e0ec9a83cf"><td class="memItemLeft" align="right" valign="top">gte::Vector3&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math_1_1geometry_1_1d3_1_1objects.html#a6d69d13bd6eaa699b9e2a1e0ec9a83cf">ostk::math::geometry::d3::objects::SphereGteVectorFromPoint</a> (const Point &amp;aPoint)</td></tr>
-<tr class="separator:a6d69d13bd6eaa699b9e2a1e0ec9a83cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb79f82f7f79b2c9a552633b046a2004"><td class="memItemLeft" align="right" valign="top">gte::Vector3&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math_1_1geometry_1_1d3_1_1objects.html#aeb79f82f7f79b2c9a552633b046a2004">ostk::math::geometry::d3::objects::SphereGteVectorFromVector3d</a> (const Vector3d &amp;aVector)</td></tr>
-<tr class="separator:aeb79f82f7f79b2c9a552633b046a2004"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeef35d292fbba2577feafa1706e46ac1"><td class="memItemLeft" align="right" valign="top">Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math_1_1geometry_1_1d3_1_1objects.html#aeef35d292fbba2577feafa1706e46ac1">ostk::math::geometry::d3::objects::SpherePointFromGteVector</a> (const gte::Vector3&lt; double &gt; &amp;aVector)</td></tr>
-<tr class="separator:aeef35d292fbba2577feafa1706e46ac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2373bb69e26976644af9d80cc0921e3e"><td class="memItemLeft" align="right" valign="top">gte::Vector3&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object.html#a2373bb69e26976644af9d80cc0921e3e">ostk::mathematics::geometry::d3::object::SphereGteVectorFromPoint</a> (const Point &amp;aPoint)</td></tr>
+<tr class="separator:a2373bb69e26976644af9d80cc0921e3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae919c4084c1540b6b56fc219efdcc30a"><td class="memItemLeft" align="right" valign="top">gte::Vector3&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object.html#ae919c4084c1540b6b56fc219efdcc30a">ostk::mathematics::geometry::d3::object::SphereGteVectorFromVector3d</a> (const Vector3d &amp;aVector)</td></tr>
+<tr class="separator:ae919c4084c1540b6b56fc219efdcc30a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31af6093bf793c50cfaa72b62da029e3"><td class="memItemLeft" align="right" valign="top">Point&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object.html#a31af6093bf793c50cfaa72b62da029e3">ostk::mathematics::geometry::d3::object::SpherePointFromGteVector</a> (const gte::Vector3&lt; double &gt; &amp;aVector)</td></tr>
+<tr class="separator:a31af6093bf793c50cfaa72b62da029e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -135,7 +135,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_fdc2ce6839bd9a3b87630c53f2ae038b.html">OpenSpaceToolkit</a></li><li class="navelem"><a class="el" href="dir_ec35093c29384bc5ef7574e05d10a239.html">Mathematics</a></li><li class="navelem"><a class="el" href="dir_23877e1b8bf1bd659bdf1341af7960ec.html">Geometry</a></li><li class="navelem"><a class="el" href="dir_6150ed08e87cbb7e90b0bc64f795131a.html">3D</a></li><li class="navelem"><a class="el" href="dir_2bf14245caa1f25d734acd8573ccbeb3.html">Objects</a></li><li class="navelem"><a class="el" href="_sphere_8cpp.html">Sphere.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_fdc2ce6839bd9a3b87630c53f2ae038b.html">OpenSpaceToolkit</a></li><li class="navelem"><a class="el" href="dir_ec35093c29384bc5ef7574e05d10a239.html">Mathematics</a></li><li class="navelem"><a class="el" href="dir_23877e1b8bf1bd659bdf1341af7960ec.html">Geometry</a></li><li class="navelem"><a class="el" href="dir_6150ed08e87cbb7e90b0bc64f795131a.html">3D</a></li><li class="navelem"><a class="el" href="dir_c107e7a335cd9ab91f2bf7a261efa78d.html">Object</a></li><li class="navelem"><a class="el" href="_sphere_8cpp.html">Sphere.cpp</a></li>
   </ul>
 </div>
 </body>

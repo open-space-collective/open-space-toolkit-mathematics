@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['relativetolerance_5f_743',['relativeTolerance_',['../classostk_1_1math_1_1solvers_1_1_numerical_solver.html#a0947340e16ed1d8de8a84db0caddbd3c',1,'ostk::math::solvers::NumericalSolver']]]
+  ['relativetolerance_5f_733',['relativeTolerance_',['../classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a45eb77bb99f110923f802b93556747f0',1,'ostk::mathematics::solver::NumericalSolver']]]
 ];

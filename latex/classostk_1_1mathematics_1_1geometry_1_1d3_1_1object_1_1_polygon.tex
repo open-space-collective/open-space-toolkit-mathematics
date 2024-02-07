@@ -1,0 +1,453 @@
+\hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{}\doxysection{ostk\+::mathematics\+::geometry\+::d3\+::object\+::Polygon Class Reference}
+\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+
+
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}}.  
+
+
+
+
+{\ttfamily \#include $<$Polygon.\+hpp$>$}
+
+Inheritance diagram for ostk\+::mathematics\+::geometry\+::d3\+::object\+::Polygon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a33d84704d7e18430f2a86399103eb84d}{Vertex}}
+\item 
+typedef \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a58c843dbce8d1d9eca6203b027477e11}{Edge}}
+\item 
+typedef \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string}{Line\+String}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a0def0d0862a7b5a429699d9e49b09edf}{Ring}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} (const \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_ae4c84293a1f85b2e2c0d2e8aa5f281c0}{Polygon2d}} \&a\+Polygon, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&an\+Origin, const Vector3d \&a\+X\+Axis, const Vector3d \&a\+Y\+Axis)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} $\ast$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a0502f752850b36aa89c4fc443f7e4376}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clone polygon. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a31ea0eaea624719d90d2d5477234fbc4}{operator==}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} \&a\+Polygon) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ab8c48ac69bca62018cbb75dda88d38a1}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} \&a\+Polygon) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ab2e3d42d2420cd0d3029f1d14e126a6c}{is\+Defined}} () const override
+\begin{DoxyCompactList}\small\item\em Check if polygon is defined. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_af6dbda995c2077e6b6865710122e39c0}{is\+Near}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} \&a\+Polygon, const Real \&a\+Tolerance) const
+\begin{DoxyCompactList}\small\item\em Check if polygon is near another polygon. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_ae4c84293a1f85b2e2c0d2e8aa5f281c0}{Polygon2d}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a59a5f8d88d61da7f2875b1dee2b0acae}{get\+Polygon2d}} () const
+\begin{DoxyCompactList}\small\item\em Get polygon 2D polygon. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a2a9544f0a707b1760b0a1d52aed42623}{get\+Origin}} () const
+\begin{DoxyCompactList}\small\item\em Get polygon origin. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_aba824d7c22a6609d103f910ec7c3d646}{get\+X\+Axis}} () const
+\begin{DoxyCompactList}\small\item\em Get polygon X axis. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ae0d384044e734cc18867358ac9d690f1}{get\+Y\+Axis}} () const
+\begin{DoxyCompactList}\small\item\em Get polygon Y axis. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a7a4c4b31702b6fce4d15b00a602ab033}{get\+Normal\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Get polygon normal vector. \end{DoxyCompactList}\item 
+Size \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a331693f8f195c7074b7eb012207d944e}{get\+Edge\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get edge count. \end{DoxyCompactList}\item 
+Size \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_abd7c3950f920132bf429342772102058}{get\+Vertex\+Count}} () const
+\begin{DoxyCompactList}\small\item\em Get vertex count. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a58c843dbce8d1d9eca6203b027477e11}{Polygon\+::\+Edge}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_af2becfe7fb55b38515336f000c321b2f}{get\+Edge\+At}} (const Index an\+Edge\+Index) const
+\begin{DoxyCompactList}\small\item\em Get edge at index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a33d84704d7e18430f2a86399103eb84d}{Polygon\+::\+Vertex}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a6d1e6c86c77796b38b006e60a4e42501}{get\+Vertex\+At}} (const Index a\+Vertex\+Index) const
+\begin{DoxyCompactList}\small\item\em Get vertex at index. \end{DoxyCompactList}\item 
+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a58c843dbce8d1d9eca6203b027477e11}{Polygon\+::\+Edge}} $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a061e927858c6ae9e318561c9bb76f02a}{get\+Edges}} () const
+\begin{DoxyCompactList}\small\item\em Get polygon edges. \end{DoxyCompactList}\item 
+Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a33d84704d7e18430f2a86399103eb84d}{Polygon\+::\+Vertex}} $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_aa882c5688de60db3e90fb540f5016b65}{get\+Vertices}} () const
+\begin{DoxyCompactList}\small\item\em Get polygon vertices. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a3a3719dc361d969338a34cce892fff94}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Compute intersection of polygon with another polygon. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ad2265d32b954c38b63c273acd45bdc4d}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a446de1b35f71c1ac2be694b9c258b6cc}{Undefined}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined polygon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}}. 
+
+\begin{DoxyVerb}                        A polygon is a plane figure that is bounded by a finite chain of straight line segments
+                        closing in a loop to form a closed polygonal chain or circuit. These segments are called
+                        its edges, and the points where two edges meet are the polygon's vertices.
+\end{DoxyVerb}
+
+
+\href{https://en.wikipedia.org/wiki/Polygon}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Polygon}} 
+
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a58c843dbce8d1d9eca6203b027477e11}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a58c843dbce8d1d9eca6203b027477e11}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!Edge@{Edge}}
+\index{Edge@{Edge}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{Edge}{Edge}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a58c843dbce8d1d9eca6203b027477e11}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::\+Edge}}}
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a0def0d0862a7b5a429699d9e49b09edf}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a0def0d0862a7b5a429699d9e49b09edf}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!Ring@{Ring}}
+\index{Ring@{Ring}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{Ring}{Ring}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string}{Line\+String}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a0def0d0862a7b5a429699d9e49b09edf}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::\+Ring}}}
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a33d84704d7e18430f2a86399103eb84d}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a33d84704d7e18430f2a86399103eb84d}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{Vertex}{Vertex}}
+{\footnotesize\ttfamily typedef \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a33d84704d7e18430f2a86399103eb84d}{ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::\+Vertex}}}
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!Polygon@{Polygon}}
+\index{Polygon@{Polygon}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{Polygon()}{Polygon()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::\+Polygon (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_ae4c84293a1f85b2e2c0d2e8aa5f281c0}{Polygon2d}} \&}]{a\+Polygon,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{an\+Origin,  }\item[{const Vector3d \&}]{a\+X\+Axis,  }\item[{const Vector3d \&}]{a\+Y\+Axis }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_ae4c84293a1f85b2e2c0d2e8aa5f281c0}{Polygon2d}} polygon2d = \{ \{ \{ 0.0, 0.0 \}, \{ 1.0, 0.0 \}, \{ 1.0, 1.0 \}, \{ 0.0, 1.0 \} \} \} ;}
+\DoxyCodeLine{Point origin = \{ 1.0, 2.0, 3.0 \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} xAxis = \{ 1.0, 0.0, 0.0 \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}} yAxis = \{ 0.0, 1.0, 0.0 \} ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a4a3afb176b3e70d5f174d0a7f6b57272}{Polygon}} polygon = \{ polygon2d, origin, xAxis, yAxis \} ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Polygon} & A 2D polygon \\
+\hline
+\mbox{\texttt{ in}}  & {\em an\+Origin} & An origin \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+X\+Axis} & A X axis \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Y\+Axis} & A Y axis \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ad2265d32b954c38b63c273acd45bdc4d}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ad2265d32b954c38b63c273acd45bdc4d}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!applyTransformation@{applyTransformation}}
+\index{applyTransformation@{applyTransformation}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{applyTransformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to polygon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a925a50c2bb1c31f396e469b74595e42a}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a0502f752850b36aa89c4fc443f7e4376}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a0502f752850b36aa89c4fc443f7e4376}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!clone@{clone}}
+\index{clone@{clone}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} $\ast$ ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone polygon. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned polygon 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a8ea8d4074bfaaa3d996d760d5d5751db}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_af2becfe7fb55b38515336f000c321b2f}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_af2becfe7fb55b38515336f000c321b2f}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!getEdgeAt@{getEdgeAt}}
+\index{getEdgeAt@{getEdgeAt}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{getEdgeAt()}{getEdgeAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a58c843dbce8d1d9eca6203b027477e11}{Polygon\+::\+Edge}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::get\+Edge\+At (\begin{DoxyParamCaption}\item[{const Index}]{an\+Edge\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Get edge at index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Edge\+Index} & An edge index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Edge (segment) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a331693f8f195c7074b7eb012207d944e}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a331693f8f195c7074b7eb012207d944e}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!getEdgeCount@{getEdgeCount}}
+\index{getEdgeCount@{getEdgeCount}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{getEdgeCount()}{getEdgeCount()}}
+{\footnotesize\ttfamily Size ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::get\+Edge\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get edge count. 
+
+\begin{DoxyReturn}{Returns}
+Edge count 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a061e927858c6ae9e318561c9bb76f02a}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a061e927858c6ae9e318561c9bb76f02a}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!getEdges@{getEdges}}
+\index{getEdges@{getEdges}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{getEdges()}{getEdges()}}
+{\footnotesize\ttfamily Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a58c843dbce8d1d9eca6203b027477e11}{Polygon\+::\+Edge}} $>$ ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::get\+Edges (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get polygon edges. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} edges 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a7a4c4b31702b6fce4d15b00a602ab033}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a7a4c4b31702b6fce4d15b00a602ab033}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!getNormalVector@{getNormalVector}}
+\index{getNormalVector@{getNormalVector}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{getNormalVector()}{getNormalVector()}}
+{\footnotesize\ttfamily Vector3d ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::get\+Normal\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get polygon normal vector. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} normal vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a2a9544f0a707b1760b0a1d52aed42623}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a2a9544f0a707b1760b0a1d52aed42623}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!getOrigin@{getOrigin}}
+\index{getOrigin@{getOrigin}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{getOrigin()}{getOrigin()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::get\+Origin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get polygon origin. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} origin 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a59a5f8d88d61da7f2875b1dee2b0acae}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a59a5f8d88d61da7f2875b1dee2b0acae}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!getPolygon2d@{getPolygon2d}}
+\index{getPolygon2d@{getPolygon2d}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{getPolygon2d()}{getPolygon2d()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_ae4c84293a1f85b2e2c0d2e8aa5f281c0}{Polygon2d}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::get\+Polygon2d (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get polygon 2D polygon. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} 2D polygon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a6d1e6c86c77796b38b006e60a4e42501}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a6d1e6c86c77796b38b006e60a4e42501}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!getVertexAt@{getVertexAt}}
+\index{getVertexAt@{getVertexAt}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{getVertexAt()}{getVertexAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a33d84704d7e18430f2a86399103eb84d}{Polygon\+::\+Vertex}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::get\+Vertex\+At (\begin{DoxyParamCaption}\item[{const Index}]{a\+Vertex\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Get vertex at index. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Vertex\+Index} & A vertex index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vertex 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_abd7c3950f920132bf429342772102058}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_abd7c3950f920132bf429342772102058}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!getVertexCount@{getVertexCount}}
+\index{getVertexCount@{getVertexCount}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{getVertexCount()}{getVertexCount()}}
+{\footnotesize\ttfamily Size ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::get\+Vertex\+Count (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get vertex count. 
+
+\begin{DoxyReturn}{Returns}
+Vertex count 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_aa882c5688de60db3e90fb540f5016b65}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_aa882c5688de60db3e90fb540f5016b65}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!getVertices@{getVertices}}
+\index{getVertices@{getVertices}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{getVertices()}{getVertices()}}
+{\footnotesize\ttfamily Array$<$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a33d84704d7e18430f2a86399103eb84d}{Polygon\+::\+Vertex}} $>$ ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::get\+Vertices (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get polygon vertices. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} vertices 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_aba824d7c22a6609d103f910ec7c3d646}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_aba824d7c22a6609d103f910ec7c3d646}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!getXAxis@{getXAxis}}
+\index{getXAxis@{getXAxis}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{getXAxis()}{getXAxis()}}
+{\footnotesize\ttfamily Vector3d ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::get\+X\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get polygon X axis. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} X axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ae0d384044e734cc18867358ac9d690f1}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ae0d384044e734cc18867358ac9d690f1}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!getYAxis@{getYAxis}}
+\index{getYAxis@{getYAxis}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{getYAxis()}{getYAxis()}}
+{\footnotesize\ttfamily Vector3d ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::get\+Y\+Axis (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get polygon Y axis. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} Y axis 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ab2e3d42d2420cd0d3029f1d14e126a6c}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ab2e3d42d2420cd0d3029f1d14e126a6c}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!isDefined@{isDefined}}
+\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if polygon is defined. 
+
+\begin{DoxyReturn}{Returns}
+True if polygon is defined 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a1962edbcdde0f851361b60324ab9ce2b}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_af6dbda995c2077e6b6865710122e39c0}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_af6dbda995c2077e6b6865710122e39c0}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!isNear@{isNear}}
+\index{isNear@{isNear}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{isNear()}{isNear()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::is\+Near (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} \&}]{a\+Polygon,  }\item[{const Real \&}]{a\+Tolerance }\end{DoxyParamCaption}) const}
+
+
+
+Check if polygon is near another polygon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Polygon} & A polygon \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Tolerance} & A tolerance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if polygon is near another polygon 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ab8c48ac69bca62018cbb75dda88d38a1}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_ab8c48ac69bca62018cbb75dda88d38a1}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} \&}]{a\+Polygon }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Polygon} & A polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if polygons are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a31ea0eaea624719d90d2d5477234fbc4}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a31ea0eaea624719d90d2d5477234fbc4}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} \&}]{a\+Polygon }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Polygon} & A polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if polygons are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a3a3719dc361d969338a34cce892fff94}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a3a3719dc361d969338a34cce892fff94}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!print@{print}}
+\index{print@{print}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute intersection of polygon with another polygon. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Polygon} & A polygon \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}}
+\end{DoxyReturn}
+Print polygon
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a5063e1f902e1b08d36f6b6cecab0bd95}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a446de1b35f71c1ac2be694b9c258b6cc}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_a446de1b35f71c1ac2be694b9c258b6cc}} 
+\index{ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::object::Polygon@{ostk::mathematics::geometry::d3::object::Polygon}}
+\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon}{Polygon}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Polygon\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined polygon. 
+
+\begin{DoxyReturn}{Returns}
+Undefined polygon 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Object/\mbox{\hyperlink{3_d_2_object_2_polygon_8hpp}{Polygon.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Object/\mbox{\hyperlink{3_d_2_object_2_polygon_8cpp}{Polygon.\+cpp}}\end{DoxyCompactItemize}

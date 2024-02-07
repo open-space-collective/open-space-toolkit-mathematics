@@ -1,0 +1,654 @@
+\hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{}\doxysection{ostk\+::mathematics\+::geometry\+::d3\+::object\+::Plane Class Reference}
+\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+
+
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}}.  
+
+
+
+
+{\ttfamily \#include $<$Plane.\+hpp$>$}
+
+Inheritance diagram for ostk\+::mathematics\+::geometry\+::d3\+::object\+::Plane\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point, const Vector3d \&a\+Normal\+Vector)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} $\ast$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a07a393740306e4f8363920a8d82823e7}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clone plane. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a52ef325acb9072394c691b2511f875e9}{operator==}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \&a\+Plane) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a7503e1325f4900f22279659c7b56c211}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \&a\+Plane) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a0a39c2a1bd1e330e8cc15aa4a5e19d47}{is\+Defined}} () const override
+\begin{DoxyCompactList}\small\item\em Check if plane is defined. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ac55945830db7e46ae59bca73f4a0c800}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if plane intersects point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_aa4ef1e875568bd35e5a0c502cd9576a3}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if plane intersects point set. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a532ab8dd1b23858a0ecba19353d1ff7f}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \&a\+Line) const
+\begin{DoxyCompactList}\small\item\em Check if plane intersects line. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a8c2cb7d5c1378a400dce11cb78bbe1d4}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} \&a\+Ray) const
+\begin{DoxyCompactList}\small\item\em Check if plane intersects ray. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a04c4eacdc8f5d1edd6a1ff0da1d6e0fa}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Check if plane intersects segment. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a524aa96a108be7503f1ff86394a08f2c}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if plane contains point. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ab0b9146d7ba1edd4386336b6838fa27f}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Check if plane contains point set. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a28361bb8bf43e6a73c4347385f5e27e2}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \&a\+Line) const
+\begin{DoxyCompactList}\small\item\em Check if plane contains line. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a6ccf2471ed3a0c7ca9d52b96aecfd01d}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} \&a\+Ray) const
+\begin{DoxyCompactList}\small\item\em Check if plane contains ray. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a1c62f4dcef9ff0a578e656fd18c2d40c}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Check if plane contains segment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a27ac75e7c17511ca313236d2048dfac0}{get\+Point}} () const
+\begin{DoxyCompactList}\small\item\em Get plane point. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a8637b16118f31b362eb371c3550a430b}{get\+Normal\+Vector}} () const
+\begin{DoxyCompactList}\small\item\em Get plane normal vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_abc6de4b10a4db6f07a8d0e0358d52c5c}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of plane with point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_aefbcaaa5d805230fb4414211e330beb4}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of plane with point set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a10c0772740b3e8db07cf6e9a3a95986c}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \&a\+Line) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of plane with line. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a365705683c88be776018f682e0fe0899}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} \&a\+Ray) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of plane with ray. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a8074e08abe264931aedb9662ae818ee0}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of plane with segment. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a69cc28d37f97308cd2d0a9b58d50c18f}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print plane. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ab4e329b825fa0a3aa24c2c4b7ebfb432}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a426953082cf45d17f80fde82753583df}{Undefined}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined plane. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}}. 
+
+\begin{DoxyVerb}                        A plane is a flat, two-dimensional surface that extends infinitely far.
+\end{DoxyVerb}
+
+
+\href{https://en.wikipedia.org/wiki/Plane_}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Plane\+\_\+}}(geometry) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!Plane@{Plane}}
+\index{Plane@{Plane}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{Plane()}{Plane()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::\+Plane (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point,  }\item[{const Vector3d \&}]{a\+Normal\+Vector }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Normal\+Vector} & A normal vector \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ab4e329b825fa0a3aa24c2c4b7ebfb432}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ab4e329b825fa0a3aa24c2c4b7ebfb432}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!applyTransformation@{applyTransformation}}
+\index{applyTransformation@{applyTransformation}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{applyTransformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to plane. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a925a50c2bb1c31f396e469b74595e42a}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a07a393740306e4f8363920a8d82823e7}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a07a393740306e4f8363920a8d82823e7}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!clone@{clone}}
+\index{clone@{clone}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} $\ast$ ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone plane. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned plane 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a8ea8d4074bfaaa3d996d760d5d5751db}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a28361bb8bf43e6a73c4347385f5e27e2}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a28361bb8bf43e6a73c4347385f5e27e2}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \&}]{a\+Line }\end{DoxyParamCaption}) const}
+
+
+
+Check if plane contains line. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Point plane = ... ;}
+\DoxyCodeLine{Line line = ... ;}
+\DoxyCodeLine{plane.contains(line) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Line} & A line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if plane contains line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a524aa96a108be7503f1ff86394a08f2c}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a524aa96a108be7503f1ff86394a08f2c}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if plane contains point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane = ... ;}
+\DoxyCodeLine{Point point = ... ;}
+\DoxyCodeLine{plane.contains(point) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if plane contains point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ab0b9146d7ba1edd4386336b6838fa27f}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ab0b9146d7ba1edd4386336b6838fa27f}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if plane contains point set. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Point plane = ... ;}
+\DoxyCodeLine{PointSet pointSet = ... ;}
+\DoxyCodeLine{plane.contains(pointSet) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if plane contains point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a6ccf2471ed3a0c7ca9d52b96aecfd01d}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a6ccf2471ed3a0c7ca9d52b96aecfd01d}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} \&}]{a\+Ray }\end{DoxyParamCaption}) const}
+
+
+
+Check if plane contains ray. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Point plane = ... ;}
+\DoxyCodeLine{Ray ray = ... ;}
+\DoxyCodeLine{plane.contains(ray) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Ray} & A ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if plane contains ray 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a1c62f4dcef9ff0a578e656fd18c2d40c}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a1c62f4dcef9ff0a578e656fd18c2d40c}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Check if plane contains segment. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Point plane = ... ;}
+\DoxyCodeLine{Segment segment = ... ;}
+\DoxyCodeLine{plane.contains(segment) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if plane contains segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a8637b16118f31b362eb371c3550a430b}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a8637b16118f31b362eb371c3550a430b}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!getNormalVector@{getNormalVector}}
+\index{getNormalVector@{getNormalVector}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{getNormalVector()}{getNormalVector()}}
+{\footnotesize\ttfamily Vector3d ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::get\+Normal\+Vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get plane normal vector. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a8637b16118f31b362eb371c3550a430b}{getNormalVector}}() ; \textcolor{comment}{// [0.0, 0.0, 1.0]}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} normal vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a27ac75e7c17511ca313236d2048dfac0}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a27ac75e7c17511ca313236d2048dfac0}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{getPoint()}{getPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::get\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get plane point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a27ac75e7c17511ca313236d2048dfac0}{getPoint}}() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a10c0772740b3e8db07cf6e9a3a95986c}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a10c0772740b3e8db07cf6e9a3a95986c}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \&}]{a\+Line }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of plane with line. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Line} & A line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of plane with line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_abc6de4b10a4db6f07a8d0e0358d52c5c}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_abc6de4b10a4db6f07a8d0e0358d52c5c}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of plane with point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of plane with point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_aefbcaaa5d805230fb4414211e330beb4}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_aefbcaaa5d805230fb4414211e330beb4}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of plane with point set. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of plane with point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a365705683c88be776018f682e0fe0899}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a365705683c88be776018f682e0fe0899}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} \&}]{a\+Ray }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of plane with ray. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Ray} & A ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of plane with ray 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a8074e08abe264931aedb9662ae818ee0}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a8074e08abe264931aedb9662ae818ee0}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of plane with segment. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of plane with segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a532ab8dd1b23858a0ecba19353d1ff7f}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a532ab8dd1b23858a0ecba19353d1ff7f}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \&}]{a\+Line }\end{DoxyParamCaption}) const}
+
+
+
+Check if plane intersects line. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane = ... ;}
+\DoxyCodeLine{Line line = ... ;}
+\DoxyCodeLine{plane.intersects(line) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Line} & A line \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if plane intersects line 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ac55945830db7e46ae59bca73f4a0c800}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ac55945830db7e46ae59bca73f4a0c800}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if plane intersects point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane = ... ;}
+\DoxyCodeLine{Point point = ... ;}
+\DoxyCodeLine{plane.intersects(point) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if plane intersects point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_aa4ef1e875568bd35e5a0c502cd9576a3}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_aa4ef1e875568bd35e5a0c502cd9576a3}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Check if plane intersects point set. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane = ... ;}
+\DoxyCodeLine{PointSet pointSet = ... ;}
+\DoxyCodeLine{plane.intersects(pointSet) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if plane intersects point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a8c2cb7d5c1378a400dce11cb78bbe1d4}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a8c2cb7d5c1378a400dce11cb78bbe1d4}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray}{Ray}} \&}]{a\+Ray }\end{DoxyParamCaption}) const}
+
+
+
+Check if plane intersects ray. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane = ... ;}
+\DoxyCodeLine{Ray ray = ... ;}
+\DoxyCodeLine{plane.intersects(ray) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Ray} & A ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if plane intersects ray 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a04c4eacdc8f5d1edd6a1ff0da1d6e0fa}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a04c4eacdc8f5d1edd6a1ff0da1d6e0fa}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Check if plane intersects segment. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane = ... ;}
+\DoxyCodeLine{Segment segment = ... ;}
+\DoxyCodeLine{plane.intersects(segment) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if plane intersects segment 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a0a39c2a1bd1e330e8cc15aa4a5e19d47}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a0a39c2a1bd1e330e8cc15aa4a5e19d47}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!isDefined@{isDefined}}
+\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if plane is defined. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a0a39c2a1bd1e330e8cc15aa4a5e19d47}{isDefined}}() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if plane is defined 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a1962edbcdde0f851361b60324ab9ce2b}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a7503e1325f4900f22279659c7b56c211}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a7503e1325f4900f22279659c7b56c211}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) != \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 1.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{\textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Plane} & A plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if planes are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a52ef325acb9072394c691b2511f875e9}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a52ef325acb9072394c691b2511f875e9}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) == \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\DoxyCodeLine{\textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Plane} & A plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if planes are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a69cc28d37f97308cd2d0a9b58d50c18f}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a69cc28d37f97308cd2d0a9b58d50c18f}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!print@{print}}
+\index{print@{print}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print plane. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a5063e1f902e1b08d36f6b6cecab0bd95}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a426953082cf45d17f80fde82753583df}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a426953082cf45d17f80fde82753583df}} 
+\index{ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::object::Plane@{ostk::mathematics::geometry::d3::object::Plane}}
+\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Plane\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined plane. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_ae1c8e4e15ce5c0ec7ace2e1b61b17358}{Plane}} plane = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_a426953082cf45d17f80fde82753583df}{Plane::Undefined}}() ; \textcolor{comment}{// Undefined}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined plane 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Object/\mbox{\hyperlink{_plane_8hpp}{Plane.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Object/\mbox{\hyperlink{_plane_8cpp}{Plane.\+cpp}}\end{DoxyCompactItemize}

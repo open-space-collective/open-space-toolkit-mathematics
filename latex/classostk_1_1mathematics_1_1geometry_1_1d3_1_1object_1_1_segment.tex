@@ -1,0 +1,546 @@
+\hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{}\doxysection{ostk\+::mathematics\+::geometry\+::d3\+::object\+::Segment Class Reference}
+\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+
+
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}}.  
+
+
+
+
+{\ttfamily \#include $<$Segment.\+hpp$>$}
+
+Inheritance diagram for ostk\+::mathematics\+::geometry\+::d3\+::object\+::Segment\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+First\+Point, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Second\+Point)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} $\ast$ \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_aaaed581dfea7bf716e1125a088ba963c}{clone}} () const override
+\begin{DoxyCompactList}\small\item\em Clone segment. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ae2d84ea0ab5dc2f1bcfb066e8c7e3f62}{operator==}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Equal to operator. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a8c015def3a784e29270361f93925e1ef}{operator!=}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&a\+Segment) const
+\begin{DoxyCompactList}\small\item\em Not equal to operator. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a682162f29a5597e61f0eaac2f9762518}{is\+Defined}} () const override
+\begin{DoxyCompactList}\small\item\em Check if segment is defined. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a26a65f0f44cbde006a084bbdc9300089}{is\+Degenerate}} () const
+\begin{DoxyCompactList}\small\item\em Check if segment is degenerate, i.\+e. its length is zero. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_acca8f1805ebeda2a26ae27c51ec4839b}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \&a\+Plane) const
+\begin{DoxyCompactList}\small\item\em Check if segment intersects plane. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a310c09a4a237994b6cb89de517e763a5}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \&a\+Sphere) const
+\begin{DoxyCompactList}\small\item\em Check if segment intersects sphere. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a665f8e3612d42576658fcd4e1ab5090d}{intersects}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&an\+Ellipsoid) const
+\begin{DoxyCompactList}\small\item\em Check if segment intersects ellipsoid. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a1848ffef38a11b7014ae9fbdbf293503}{contains}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Check if segment contains point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_aa382709e1071932f9fbf51f6863f4ab0}{get\+First\+Point}} () const
+\begin{DoxyCompactList}\small\item\em Get segment first point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a06820598f214bcd39275d7a5b92c7247}{get\+Second\+Point}} () const
+\begin{DoxyCompactList}\small\item\em Get segment second point. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_afef142ebd804a348980d9ba1b86bc955}{get\+Center}} () const
+\begin{DoxyCompactList}\small\item\em Get segment center. \end{DoxyCompactList}\item 
+Vector3d \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ae164dfde1de40b86054ec6b945b7e274}{get\+Direction}} () const
+\begin{DoxyCompactList}\small\item\em Get segment direction. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_adf1fed29cbbb81556c3a512efcf917aa}{get\+Length}} () const
+\begin{DoxyCompactList}\small\item\em Get segment length. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a827fa4980d4799eb154256c59e21e406}{distance\+To}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&a\+Point) const
+\begin{DoxyCompactList}\small\item\em Get distance to point. \end{DoxyCompactList}\item 
+Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a916bf81d9f186f4712cde0b04d28176a}{distance\+To}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&a\+Point\+Set) const
+\begin{DoxyCompactList}\small\item\em Get distance to point set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_af5450d87b31c03fb1fb1ffd14547783d}{intersection\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \&a\+Plane) const
+\begin{DoxyCompactList}\small\item\em Compute intersection of segment with plane. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_afb05593ca4e9cd6c3f7df6bac574d6c1}{to\+Line}} () const
+\begin{DoxyCompactList}\small\item\em Get line from segment. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_aa5283e30e7ddb452b048bd54f841c63e}{print}} (std\+::ostream \&an\+Output\+Stream, bool display\+Decorators=true) const override
+\begin{DoxyCompactList}\small\item\em Print segment. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_af3da3893add570615236f1e5ab4971ff}{apply\+Transformation}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&a\+Transformation) override
+\begin{DoxyCompactList}\small\item\em Apply transformation to segment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a350e73ef7a773419e87b5cec077f9482}{Undefined}} ()
+\begin{DoxyCompactList}\small\item\em Constructs an undefined segment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}}. 
+
+\begin{DoxyVerb}                        A segment is a part of a line that is bounded by two distinct end points,
+                        and contains every point on the line between its endpoints.
+\end{DoxyVerb}
+
+
+\href{https://en.wikipedia.org/wiki/Line_segment}{\texttt{ https\+://en.\+wikipedia.\+org/wiki/\+Line\+\_\+segment}} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!Segment@{Segment}}
+\index{Segment@{Segment}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{Segment()}{Segment()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::\+Segment (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+First\+Point,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Second\+Point }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}} segment(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+First\+Point} & A first point \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Second\+Point} & A second point \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_af3da3893add570615236f1e5ab4971ff}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_af3da3893add570615236f1e5ab4971ff}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!applyTransformation@{applyTransformation}}
+\index{applyTransformation@{applyTransformation}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{applyTransformation()}{applyTransformation()}}
+{\footnotesize\ttfamily void ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::apply\+Transformation (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation}{Transformation}} \&}]{a\+Transformation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Apply transformation to segment. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Transformation} & A transformation \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a925a50c2bb1c31f396e469b74595e42a}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_aaaed581dfea7bf716e1125a088ba963c}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_aaaed581dfea7bf716e1125a088ba963c}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!clone@{clone}}
+\index{clone@{clone}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} $\ast$ ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Clone segment. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to cloned segment 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a8ea8d4074bfaaa3d996d760d5d5751db}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a1848ffef38a11b7014ae9fbdbf293503}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a1848ffef38a11b7014ae9fbdbf293503}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!contains@{contains}}
+\index{contains@{contains}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::contains (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Check if segment contains point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}} segment = ... ;}
+\DoxyCodeLine{Point point = ... ;}
+\DoxyCodeLine{segment.contains(point) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if segment contains point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a827fa4980d4799eb154256c59e21e406}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a827fa4980d4799eb154256c59e21e406}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!distanceTo@{distanceTo}}
+\index{distanceTo@{distanceTo}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{distanceTo()}{distanceTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Real ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::distance\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} \&}]{a\+Point }\end{DoxyParamCaption}) const}
+
+
+
+Get distance to point. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point} & A point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance to point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a916bf81d9f186f4712cde0b04d28176a}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a916bf81d9f186f4712cde0b04d28176a}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!distanceTo@{distanceTo}}
+\index{distanceTo@{distanceTo}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{distanceTo()}{distanceTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Real ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::distance\+To (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set}{Point\+Set}} \&}]{a\+Point\+Set }\end{DoxyParamCaption}) const}
+
+
+
+Get distance to point set. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Point\+Set} & A point set \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Distance to point set 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_afef142ebd804a348980d9ba1b86bc955}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_afef142ebd804a348980d9ba1b86bc955}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!getCenter@{getCenter}}
+\index{getCenter@{getCenter}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{getCenter()}{getCenter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::get\+Center (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get segment center. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 2.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_afef142ebd804a348980d9ba1b86bc955}{getCenter}}() ; \textcolor{comment}{// [0.0, 0.0, 1.0]}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} center 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ae164dfde1de40b86054ec6b945b7e274}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ae164dfde1de40b86054ec6b945b7e274}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!getDirection@{getDirection}}
+\index{getDirection@{getDirection}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{getDirection()}{getDirection()}}
+{\footnotesize\ttfamily Vector3d ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get segment direction. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 2.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ae164dfde1de40b86054ec6b945b7e274}{getDirection}}() ; \textcolor{comment}{// [0.0, 0.0, 1.0]}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} direction 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_aa382709e1071932f9fbf51f6863f4ab0}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_aa382709e1071932f9fbf51f6863f4ab0}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!getFirstPoint@{getFirstPoint}}
+\index{getFirstPoint@{getFirstPoint}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{getFirstPoint()}{getFirstPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::get\+First\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get segment first point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_aa382709e1071932f9fbf51f6863f4ab0}{getFirstPoint}}() ; \textcolor{comment}{// [0.0, 0.0, 0.0]}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} first point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_adf1fed29cbbb81556c3a512efcf917aa}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_adf1fed29cbbb81556c3a512efcf917aa}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!getLength@{getLength}}
+\index{getLength@{getLength}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{getLength()}{getLength()}}
+{\footnotesize\ttfamily Real ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::get\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get segment length. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 2.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_adf1fed29cbbb81556c3a512efcf917aa}{getLength}}() ; \textcolor{comment}{// 2.0}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} length 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a06820598f214bcd39275d7a5b92c7247}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a06820598f214bcd39275d7a5b92c7247}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!getSecondPoint@{getSecondPoint}}
+\index{getSecondPoint@{getSecondPoint}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{getSecondPoint()}{getSecondPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point}{Point}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::get\+Second\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get segment second point. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a06820598f214bcd39275d7a5b92c7247}{getSecondPoint}}() ; \textcolor{comment}{// [0.0, 0.0, 1.0]}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} second point 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_af5450d87b31c03fb1fb1ffd14547783d}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_af5450d87b31c03fb1fb1ffd14547783d}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!intersectionWith@{intersectionWith}}
+\index{intersectionWith@{intersectionWith}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{intersectionWith()}{intersectionWith()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::intersection\+With (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
+
+
+
+Compute intersection of segment with plane. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Plane} & A plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection}{Intersection}} of segment with plane 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a665f8e3612d42576658fcd4e1ab5090d}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a665f8e3612d42576658fcd4e1ab5090d}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid}{Ellipsoid}} \&}]{an\+Ellipsoid }\end{DoxyParamCaption}) const}
+
+
+
+Check if segment intersects ellipsoid. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}} segment = ... ;}
+\DoxyCodeLine{Ellipsoid ellipsoid = ... ;}
+\DoxyCodeLine{segment.intersects(ellipsoid) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Ellipsoid} & An ellipsoid \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if segment intersects ellipsoid 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_acca8f1805ebeda2a26ae27c51ec4839b}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_acca8f1805ebeda2a26ae27c51ec4839b}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane}{Plane}} \&}]{a\+Plane }\end{DoxyParamCaption}) const}
+
+
+
+Check if segment intersects plane. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}} segment = ... ;}
+\DoxyCodeLine{Plane plane = ... ;}
+\DoxyCodeLine{segment.intersects(plane) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Plane} & A plane \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if segment intersects plane 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a310c09a4a237994b6cb89de517e763a5}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a310c09a4a237994b6cb89de517e763a5}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!intersects@{intersects}}
+\index{intersects@{intersects}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{intersects()}{intersects()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::intersects (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere}{Sphere}} \&}]{a\+Sphere }\end{DoxyParamCaption}) const}
+
+
+
+Check if segment intersects sphere. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}} segment = ... ;}
+\DoxyCodeLine{Sphere sphere = ... ;}
+\DoxyCodeLine{segment.intersects(sphere) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Sphere} & A sphere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if segment intersects sphere 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a682162f29a5597e61f0eaac2f9762518}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a682162f29a5597e61f0eaac2f9762518}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!isDefined@{isDefined}}
+\index{isDefined@{isDefined}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Check if segment is defined. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a682162f29a5597e61f0eaac2f9762518}{isDefined}}() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if segment is defined 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a1962edbcdde0f851361b60324ab9ce2b}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a26a65f0f44cbde006a084bbdc9300089}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a26a65f0f44cbde006a084bbdc9300089}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!isDegenerate@{isDegenerate}}
+\index{isDegenerate@{isDegenerate}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{isDegenerate()}{isDegenerate()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::is\+Degenerate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if segment is degenerate, i.\+e. its length is zero. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 0.0 \}).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a26a65f0f44cbde006a084bbdc9300089}{isDegenerate}}() ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if segment is degenerate 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a8c015def3a784e29270361f93925e1ef}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a8c015def3a784e29270361f93925e1ef}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Not equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) != \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 2.0}
+\DoxyCodeLine{\}) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if segments are not equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ae2d84ea0ab5dc2f1bcfb066e8c7e3f62}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ae2d84ea0ab5dc2f1bcfb066e8c7e3f62}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!operator==@{operator==}}
+\index{operator==@{operator==}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} \&}]{a\+Segment }\end{DoxyParamCaption}) const}
+
+
+
+Equal to operator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0 \}) == \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}}(\{ 0.0, 0.0, 0.0 \}, \{ 0.0, 0.0, 1.0}
+\DoxyCodeLine{\}) ; \textcolor{comment}{// True}}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Segment} & A segment \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if segments are equal 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_aa5283e30e7ddb452b048bd54f841c63e}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_aa5283e30e7ddb452b048bd54f841c63e}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!print@{print}}
+\index{print@{print}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::print (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{bool}]{display\+Decorators = {\ttfamily true} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Print segment. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em (optional)} & display\+Decorators If true, display decorators \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_a5063e1f902e1b08d36f6b6cecab0bd95}{ostk\+::mathematics\+::geometry\+::d3\+::\+Object}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_afb05593ca4e9cd6c3f7df6bac574d6c1}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_afb05593ca4e9cd6c3f7df6bac574d6c1}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!toLine@{toLine}}
+\index{toLine@{toLine}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{toLine()}{toLine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::to\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get line from segment. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line}{Line}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a350e73ef7a773419e87b5cec077f9482}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a350e73ef7a773419e87b5cec077f9482}} 
+\index{ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}!Undefined@{Undefined}}
+\index{Undefined@{Undefined}!ostk::mathematics::geometry::d3::object::Segment@{ostk::mathematics::geometry::d3::object::Segment}}
+\doxysubsubsection{\texorpdfstring{Undefined()}{Undefined()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment}{Segment}} ostk\+::mathematics\+::geometry\+::d3\+::object\+::\+Segment\+::\+Undefined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Constructs an undefined segment. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_ab79700bcf0eb146f1fc37d3cffc44fb4}{Segment}} segment = \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_a350e73ef7a773419e87b5cec077f9482}{Segment::Undefined}}() ; \textcolor{comment}{// Undefined}}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+Undefined segment 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Object/\mbox{\hyperlink{3_d_2_object_2_segment_8hpp}{Segment.\+hpp}}\item 
+src/\+Open\+Space\+Toolkit/\+Mathematics/\+Geometry/3\+D/\+Object/\mbox{\hyperlink{3_d_2_object_2_segment_8cpp}{Segment.\+cpp}}\end{DoxyCompactItemize}

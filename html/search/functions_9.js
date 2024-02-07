@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['multilinestring_655',['MultiLineString',['../classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_line_string.html#aa6a5f2650b71b09ff29cb9fa3338930d',1,'ostk::math::geometry::d2::objects::MultiLineString']]],
-  ['multipolygon_656',['MultiPolygon',['../classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon.html#a8bd5c0a22bb9c1fd62c9f8d7c15ba0e4',1,'ostk::math::geometry::d2::objects::MultiPolygon::MultiPolygon(const Array&lt; Polygon2d &gt; &amp;aPolygonArray=Array&lt; Polygon2d &gt;::Empty())'],['../classostk_1_1math_1_1geometry_1_1d2_1_1objects_1_1_multi_polygon.html#afe692e2335f70530cad02ffe539c5967',1,'ostk::math::geometry::d2::objects::MultiPolygon::MultiPolygon(const MultiPolygon &amp;aMultiPolygon)']]]
+  ['multilinestring_646',['MultiLineString',['../classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string.html#a2be4b3e1608f466d294ef5884684bab1',1,'ostk::mathematics::geometry::d2::object::MultiLineString']]],
+  ['multipolygon_647',['MultiPolygon',['../classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a387e29bd423e834d10e30d1b55e4a2d7',1,'ostk::mathematics::geometry::d2::object::MultiPolygon::MultiPolygon(const Array&lt; Polygon2d &gt; &amp;aPolygonArray=Array&lt; Polygon2d &gt;::Empty())'],['../classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon.html#a255ed57cc7b1617df7ee07277d3efd66',1,'ostk::mathematics::geometry::d2::object::MultiPolygon::MultiPolygon(const MultiPolygon &amp;aMultiPolygon)']]]
 ];

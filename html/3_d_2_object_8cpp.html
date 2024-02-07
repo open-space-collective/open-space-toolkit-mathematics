@@ -88,40 +88,40 @@ $(document).ready(function(){initNavTree('3_d_2_object_8cpp.html',''); initResiz
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;OpenSpaceToolkit/Core/Error.hpp&gt;</code><br />
-<code>#include &lt;OpenSpaceToolkit/Core/Utilities.hpp&gt;</code><br />
+<code>#include &lt;OpenSpaceToolkit/Core/Utility.hpp&gt;</code><br />
 <code>#include &lt;<a class="el" href="3_d_2_intersection_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="3_d_2_object_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="3_d_2_objects_2_composite_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Composite.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_cone_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cone.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_cuboid_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Cuboid.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_ellipsoid_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ellipsoid.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="3_d_2_objects_2_line_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Line.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="3_d_2_objects_2_line_string_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/LineString.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_plane_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Plane.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="3_d_2_objects_2_point_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Point.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="3_d_2_objects_2_point_set_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/PointSet.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="3_d_2_objects_2_polygon_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Polygon.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_pyramid_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Pyramid.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_ray_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Ray.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="3_d_2_objects_2_segment_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Segment.hpp</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="_sphere_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Objects/Sphere.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_geometry_23_d_2_object_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="3_d_2_object_2_composite_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_cone_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_cuboid_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_ellipsoid_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="3_d_2_object_2_line_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Line.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="3_d_2_object_2_line_string_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_plane_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="3_d_2_object_2_point_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="3_d_2_object_2_point_set_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="3_d_2_object_2_polygon_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_pyramid_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_ray_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="3_d_2_object_2_segment_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="_sphere_8hpp_source.html">OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp</a>&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceostk"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk.html">ostk</a></td></tr>
 <tr class="memdesc:namespaceostk"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apache License 2.0. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceostk_1_1math"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math.html">ostk::math</a></td></tr>
+<tr class="memitem:namespaceostk_1_1mathematics"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics.html">ostk::mathematics</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceostk_1_1math_1_1geometry"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math_1_1geometry.html">ostk::math::geometry</a></td></tr>
+<tr class="memitem:namespaceostk_1_1mathematics_1_1geometry"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1geometry.html">ostk::mathematics::geometry</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:namespaceostk_1_1math_1_1geometry_1_1d3"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math_1_1geometry_1_1d3.html">ostk::math::geometry::d3</a></td></tr>
+<tr class="memitem:namespaceostk_1_1mathematics_1_1geometry_1_1d3"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1geometry_1_1d3.html">ostk::mathematics::geometry::d3</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a0f88d2e4376ebe908ed69739fbff826f"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1math_1_1geometry_1_1d3.html#a0f88d2e4376ebe908ed69739fbff826f">ostk::math::geometry::d3::operator&lt;&lt;</a> (std::ostream &amp;anOutputStream, const Object &amp;anObject)</td></tr>
-<tr class="separator:a0f88d2e4376ebe908ed69739fbff826f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5315286506c8a28a01474c943c8847c2"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1geometry_1_1d3.html#a5315286506c8a28a01474c943c8847c2">ostk::mathematics::geometry::d3::operator&lt;&lt;</a> (std::ostream &amp;anOutputStream, const Object &amp;anObject)</td></tr>
+<tr class="separator:a5315286506c8a28a01474c943c8847c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->
