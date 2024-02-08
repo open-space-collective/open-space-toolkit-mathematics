@@ -31,22 +31,22 @@ using ostk::mathematics::object::VectorXd;
 class Interpolator
 {
    public:
-    enum class InterpolationType
+    enum class Type
     {
         BarycentricRational,
         CubicSpline,
         Linear
     };
 
-    /// @brief Constructor
-    Interpolator(const InterpolationType& anInterpolationType);
+    /// @brief Constructor (can only be called by derived classes since it is pure virtual)
+    Interpolator(const Type& aType);
 
     /// @brief Destructor (pure virtual)
     virtual ~Interpolator() = 0;
 
     /// @brief Get the interpolation type
     /// @return Interpolation type
-    InterpolationType getInterpolationType() const;
+    Type getInterpolationType() const;
 
     /// @brief Evaluate the interpolator
     ///
@@ -62,16 +62,16 @@ class Interpolator
 
     /// @brief Generate an interpolator
     ///
-    /// @param anInterpolationType Interpolation type
+    /// @param aType Interpolation type
     /// @param anXVector A vector of x values
     /// @param aYVector A vector of y values
     /// @return Shared pointer to correct Interpolator
     static const Shared<const Interpolator> GenerateInterpolator(
-        const InterpolationType& anInterpolationType, const VectorXd& anXVector, const VectorXd& aYVector
+        const Type& aType, const VectorXd& anXVector, const VectorXd& aYVector
     );
 
    private:
-    InterpolationType interpolationType_;
+    const Type type_;
 };
 
 }  // namespace curvefitting

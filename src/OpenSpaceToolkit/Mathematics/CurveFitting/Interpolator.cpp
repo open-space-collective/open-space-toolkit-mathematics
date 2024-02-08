@@ -18,30 +18,30 @@ using ostk::mathematics::curvefitting::interpolator::BarycentricRational;
 using ostk::mathematics::curvefitting::interpolator::CubicSpline;
 using ostk::mathematics::curvefitting::interpolator::Linear;
 
-Interpolator::Interpolator(const InterpolationType& anInterpolationType)
-    : interpolationType_(anInterpolationType)
+Interpolator::Interpolator(const Type& aType)
+    : type_(aType)
 {
 }
 
 Interpolator::~Interpolator() {}
 
-Interpolator::InterpolationType Interpolator::getInterpolationType() const
+Interpolator::Type Interpolator::getInterpolationType() const
 {
-    return interpolationType_;
+    return type_;
 }
 
 const Shared<const Interpolator> Interpolator::GenerateInterpolator(
-    const InterpolationType& anInterpolationType, const VectorXd& anXVector, const VectorXd& aYVector
+    const Type& aType, const VectorXd& anXVector, const VectorXd& aYVector
 )
 {
-    switch (anInterpolationType)
+    switch (aType)
     {
-        case InterpolationType::Linear:
-            return std::make_shared<Linear>(anXVector, aYVector);
-        case InterpolationType::BarycentricRational:
+        case Type::BarycentricRational:
             return std::make_shared<BarycentricRational>(anXVector, aYVector);
-        case InterpolationType::CubicSpline:
+        case Type::CubicSpline:
             return std::make_shared<CubicSpline>(anXVector, aYVector);
+        case Type::Linear:
+            return std::make_shared<Linear>(anXVector, aYVector);
         default:
             throw ostk::core::error::runtime::Wrong("Invalid interpolation type.");
     }

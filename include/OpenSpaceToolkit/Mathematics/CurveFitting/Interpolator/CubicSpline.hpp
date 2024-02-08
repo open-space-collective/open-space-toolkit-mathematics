@@ -43,7 +43,7 @@ class CubicSpline : public Interpolator
     /// @brief Constructor
     ///
     /// @code{.cpp}
-    ///                     CubicSpline cubicSpline(x, y) ;
+    ///                     CubicSpline cubicSpline(x, y);
     /// @endcode
     ///
     /// @param anXVector A vector of x values

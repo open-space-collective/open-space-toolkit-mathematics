@@ -19,8 +19,6 @@ class TestBarycentricRational:
         assert isinstance(interpolator, Interpolator)
         assert isinstance(interpolator, BarycentricRational)
 
-        )
-
     def test_evaluate(self, interpolator: BarycentricRational):
 
         assert interpolator.evaluate(0.0) == 0.0

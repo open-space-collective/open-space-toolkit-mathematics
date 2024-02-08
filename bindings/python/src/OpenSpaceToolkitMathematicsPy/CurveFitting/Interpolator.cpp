@@ -36,17 +36,17 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
 {
     class_<Interpolator, PyInterpolator, Shared<Interpolator>> interpolator_class(aModule, "Interpolator");
 
-    enum_<Interpolator::InterpolationType>(interpolator_class, "InterpolationType")
+    enum_<Interpolator::Type>(interpolator_class, "Type")
 
-        .value("BarycentricRational", Interpolator::InterpolationType::BarycentricRational)
-        .value("CubicSpline", Interpolator::InterpolationType::CubicSpline)
-        .value("Linear", Interpolator::InterpolationType::Linear)
+        .value("BarycentricRational", Interpolator::Type::BarycentricRational)
+        .value("CubicSpline", Interpolator::Type::CubicSpline)
+        .value("Linear", Interpolator::Type::Linear)
 
         ;
 
     interpolator_class
 
-        .def(init<const Interpolator::InterpolationType&>(), arg("interpolation_type"))
+        .def(init<const Interpolator::Type&>(), arg("interpolation_type"))
 
         .def("get_interpolation_type", &Interpolator::getInterpolationType)
 

@@ -14,7 +14,7 @@ namespace interpolator
 {
 
 CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
-    : Interpolator(Interpolator::InterpolationType::CubicSpline)
+    : Interpolator(Interpolator::Type::CubicSpline)
 {
     if (aYVector.size() < 5)
     {
@@ -40,7 +40,7 @@ CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
 }
 
 CubicSpline::CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h)
-    : Interpolator(Interpolator::InterpolationType::CubicSpline)
+    : Interpolator(Interpolator::Type::CubicSpline)
 {
     if (aYVector.size() < 5)
     {

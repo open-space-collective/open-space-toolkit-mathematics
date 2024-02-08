@@ -14,7 +14,7 @@ namespace interpolator
 {
 
 Linear::Linear(const VectorXd& anXVector, const VectorXd& aYVector)
-    : Interpolator(Interpolator::InterpolationType::Linear),
+    : Interpolator(Interpolator::Type::Linear),
       x_(anXVector),
       y_(aYVector)
 {

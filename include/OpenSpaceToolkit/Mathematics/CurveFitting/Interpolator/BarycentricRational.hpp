@@ -48,7 +48,6 @@ class BarycentricRational : public Interpolator
     /// @param aYVector A vector of y values
     ///
     /// @warning The x values must be sorted in ascending order
-    /// @warning The x values must be equally spaced
     BarycentricRational(const VectorXd& anXVector, const VectorXd& aYVector);
 
     /// @brief Destructor

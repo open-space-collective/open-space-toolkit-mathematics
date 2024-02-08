@@ -43,14 +43,13 @@ class Linear : public Interpolator
     /// @brief Constructor
     ///
     /// @code{.cpp}
-    ///                     Linear linear(x, y) ;
+    ///                     Linear linear(x, y);
     /// @endcode
     ///
     /// @param anXVector A vector of x values
     /// @param aYVector A vector of y values
     ///
     /// @warning The x values must be sorted in ascending order
-    /// @warning The x values must be equally spaced
     Linear(const VectorXd& anXVector, const VectorXd& aYVector);
 
     /// @brief Destructor

@@ -14,7 +14,7 @@ namespace interpolator
 {
 
 BarycentricRational::BarycentricRational(const VectorXd& anXVector, const VectorXd& aYVector)
-    : Interpolator(Interpolator::InterpolationType::BarycentricRational),
+    : Interpolator(Interpolator::Type::BarycentricRational),
       interpolator_(anXVector.begin(), anXVector.end(), aYVector.begin())
 {
     if (anXVector.size() != aYVector.size())

@@ -19,8 +19,8 @@ using ostk::mathematics::object::VectorXd;
 class MockInterpolator : public Interpolator
 {
    public:
-    MockInterpolator(const Interpolator::InterpolationType& anInterpolationType)
-        : Interpolator(anInterpolationType)
+    MockInterpolator(const Interpolator::Type& aType)
+        : Interpolator(aType)
     {
     }
 
@@ -31,19 +31,19 @@ class MockInterpolator : public Interpolator
 class OpenSpaceToolkit_Mathematics_Interpolator : public ::testing::Test
 {
    protected:
-    const Interpolator::InterpolationType defaultInterpolationType_ =
-        Interpolator::InterpolationType::BarycentricRational;
-    const MockInterpolator defaultInterpolator_ {defaultInterpolationType_};
+    const Interpolator::Type defaulttype_ =
+        Interpolator::Type::BarycentricRational;
+    const MockInterpolator defaultInterpolator_ {defaulttype_};
 };
 
 TEST_F(OpenSpaceToolkit_Mathematics_Interpolator, Constructor)
 {
-    EXPECT_NO_THROW(MockInterpolator mockInterpolator(defaultInterpolationType_));
+    EXPECT_NO_THROW(MockInterpolator mockInterpolator(defaulttype_));
 }
 
 TEST_F(OpenSpaceToolkit_Mathematics_Interpolator, GetInterpolationType)
 {
-    EXPECT_EQ(defaultInterpolationType_, defaultInterpolator_.getInterpolationType());
+    EXPECT_EQ(defaulttype_, defaultInterpolator_.getInterpolationType());
 }
 
 TEST_F(OpenSpaceToolkit_Mathematics_Interpolator, GenerateInterpolator)
@@ -56,22 +56,22 @@ TEST_F(OpenSpaceToolkit_Mathematics_Interpolator, GenerateInterpolator)
 
     {
         const Shared<const Interpolator> interpolatorSPtr =
-            Interpolator::GenerateInterpolator(Interpolator::InterpolationType::BarycentricRational, x, y);
+            Interpolator::GenerateInterpolator(Interpolator::Type::BarycentricRational, x, y);
         EXPECT_TRUE(interpolatorSPtr != nullptr);
-        EXPECT_EQ(Interpolator::InterpolationType::BarycentricRational, interpolatorSPtr->getInterpolationType());
+        EXPECT_EQ(Interpolator::Type::BarycentricRational, interpolatorSPtr->getInterpolationType());
     }
 
     {
         const Shared<const Interpolator> interpolatorSPtr =
-            Interpolator::GenerateInterpolator(Interpolator::InterpolationType::CubicSpline, x, y);
+            Interpolator::GenerateInterpolator(Interpolator::Type::CubicSpline, x, y);
         EXPECT_TRUE(interpolatorSPtr != nullptr);
-        EXPECT_EQ(Interpolator::InterpolationType::CubicSpline, interpolatorSPtr->getInterpolationType());
+        EXPECT_EQ(Interpolator::Type::CubicSpline, interpolatorSPtr->getInterpolationType());
     }
 
     {
         const Shared<const Interpolator> interpolatorSPtr =
-            Interpolator::GenerateInterpolator(Interpolator::InterpolationType::Linear, x, y);
+            Interpolator::GenerateInterpolator(Interpolator::Type::Linear, x, y);
         EXPECT_TRUE(interpolatorSPtr != nullptr);
-        EXPECT_EQ(Interpolator::InterpolationType::Linear, interpolatorSPtr->getInterpolationType());
+        EXPECT_EQ(Interpolator::Type::Linear, interpolatorSPtr->getInterpolationType());
     }
 }
