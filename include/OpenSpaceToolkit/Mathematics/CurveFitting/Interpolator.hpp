@@ -39,6 +39,8 @@ class Interpolator
     };
 
     /// @brief Constructor (can only be called by derived classes since it is pure virtual)
+    ///
+    /// @param aType Interpolation type
     Interpolator(const Type& aType);
 
     /// @brief Destructor (pure virtual)
