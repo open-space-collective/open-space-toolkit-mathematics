@@ -4,8 +4,8 @@
 #define __OpenSpaceToolkit_Mathematics_Interpolator__
 
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Shared.hpp>
 #include <OpenSpaceToolkit/Core/Type/Size.hpp>
-#include <OpenSpaceToolkit/Core/Type/Unique.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
 
@@ -18,7 +18,7 @@ namespace curvefitting
 
 using ostk::core::type::Real;
 using ostk::core::type::Size;
-using ostk::core::type::Unique;
+using ostk::core::type::Shared;
 
 using ostk::mathematics::object::VectorXd;
 
@@ -33,9 +33,9 @@ class Interpolator
    public:
     enum class InterpolationType
     {
-        Linear,
         BarycentricRational,
-        CubicSpline
+        CubicSpline,
+        Linear
     };
 
     /// @brief Constructor
@@ -65,8 +65,8 @@ class Interpolator
     /// @param anInterpolationType Interpolation type
     /// @param anXVector A vector of x values
     /// @param aYVector A vector of y values
-    /// @return Unique pointer to correct Interpolator
-    static const Unique<const Interpolator> GenerateInterpolator(
+    /// @return Shared pointer to correct Interpolator
+    static const Shared<const Interpolator> GenerateInterpolator(
         const InterpolationType& anInterpolationType, const VectorXd& anXVector, const VectorXd& aYVector
     );
 

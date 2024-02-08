@@ -4,15 +4,31 @@ import pytest
 
 import numpy as np
 
+from ostk.mathematics.curve_fitting import Interpolator
 from ostk.mathematics.curve_fitting.interpolator import CubicSpline
 
 
+@pytest.fixture
+def interpolator() -> CubicSpline:
+    return CubicSpline(
+        x=[0.0, 1.0, 2.0, 3.0, 4.0, 5.0], y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0]
+    )
+
+
 class TestCubicSpline:
-    def test_default_constructor(self):
-        CubicSpline(x=[0.0, 1.0, 2.0, 3.0, 4.0, 5.0], y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
+    def test_constructors(self, interpolator: CubicSpline):
+        assert interpolator is not None
+        assert isinstance(interpolator, Interpolator)
+        assert isinstance(interpolator, CubicSpline)
 
     def test_default_constructor_2(self):
         CubicSpline(y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0], x_0=0.0, h=1.0)
+
+    def test_get_interpolation_type(self, interpolator: CubicSpline):
+        assert (
+            interpolator.get_interpolation_type()
+            == Interpolator.InterpolationType.CubicSpline
+        )
 
     def test_evaluate(self):
         y: list[float] = [
@@ -27,9 +43,9 @@ class TestCubicSpline:
             -4.671290719512360170e06,
             -4.673730319758670405e06,
         ]
-        spline = CubicSpline(y, 0.0, 10.0)
+        interpolator = CubicSpline(y, 0.0, 10.0)
 
         for i in range(10):
-            assert pytest.approx(spline.evaluate(i * 10.0)) == y[i]
+            assert pytest.approx(interpolator.evaluate(i * 10.0)) == y[i]
 
-        assert pytest.approx(spline.evaluate(np.linspace(0.0, 90.0, 10))) == y
+        assert pytest.approx(interpolator.evaluate(np.linspace(0.0, 90.0, 10))) == y

@@ -7,12 +7,14 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(
     using namespace pybind11;
 
     using ostk::core::type::Real;
+    using ostk::core::type::Shared;
+
+    using ostk::mathematics::curvefitting::Interpolator;
     using ostk::mathematics::object::VectorXd;
 
     using ostk::mathematics::curvefitting::interpolator::CubicSpline;
 
-    // noncopyable class with Boost, removed in Pybind11
-    class_<CubicSpline>(aModule, "CubicSpline")
+    class_<CubicSpline, Interpolator, Shared<CubicSpline>>(aModule, "CubicSpline")
 
         .def(init<const VectorXd&, const VectorXd&>(), arg("x"), arg("y"))
         .def(init<const VectorXd&, const Real&, const Real&>(), arg("y"), arg("x_0"), arg("h"))

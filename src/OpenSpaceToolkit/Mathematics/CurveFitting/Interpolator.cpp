@@ -30,18 +30,18 @@ Interpolator::InterpolationType Interpolator::getInterpolationType() const
     return interpolationType_;
 }
 
-const Unique<const Interpolator> Interpolator::GenerateInterpolator(
+const Shared<const Interpolator> Interpolator::GenerateInterpolator(
     const InterpolationType& anInterpolationType, const VectorXd& anXVector, const VectorXd& aYVector
 )
 {
     switch (anInterpolationType)
     {
         case InterpolationType::Linear:
-            return std::make_unique<Linear>(anXVector, aYVector);
+            return std::make_shared<Linear>(anXVector, aYVector);
         case InterpolationType::BarycentricRational:
-            return std::make_unique<BarycentricRational>(anXVector, aYVector);
+            return std::make_shared<BarycentricRational>(anXVector, aYVector);
         case InterpolationType::CubicSpline:
-            return std::make_unique<CubicSpline>(anXVector, aYVector);
+            return std::make_shared<CubicSpline>(anXVector, aYVector);
         default:
             throw ostk::core::error::runtime::Wrong("Invalid interpolation type.");
     }
