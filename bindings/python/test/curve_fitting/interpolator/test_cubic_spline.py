@@ -24,12 +24,6 @@ class TestCubicSpline:
     def test_default_constructor_2(self):
         CubicSpline(y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0], x_0=0.0, h=1.0)
 
-    def test_get_interpolation_type(self, interpolator: CubicSpline):
-        assert (
-            interpolator.get_interpolation_type()
-            == Interpolator.InterpolationType.CubicSpline
-        )
-
     def test_evaluate(self):
         y: list[float] = [
             -4.632122947015880607e06,

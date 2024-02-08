@@ -34,30 +34,17 @@ class TestInterpolator:
     ):
         assert interpolator.get_interpolation_type() == interpolation_type
 
-    def test_generate_interpolators(self):
-        interpolator: Interpolator = Interpolator.generate_interpolator(
-            Interpolator.InterpolationType.BarycentricRational,
-            x=[0.0, 1.0, 2.0, 4.0, 5.0, 6.0],
-            y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0],
-        )
+@pytest.mark.parametrize("interpolation_type, x, y", [
+    (Interpolator.InterpolationType.BarycentricRational, [0.0, 1.0, 2.0, 4.0, 5.0, 6.0], [0.0, 3.0, 6.0, 9.0, 17.0, 5.0]),
+    (Interpolator.InterpolationType.CubicSpline, [0.0, 1.0, 2.0, 3.0, 4.0, 5.0], [0.0, 3.0, 6.0, 9.0, 17.0, 5.0]),
+    (Interpolator.InterpolationType.Linear, [0.0, 1.0, 2.0, 4.0, 5.0, 6.0], [0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
+])
+def test_generate_interpolators(self, interpolation_type: Interpolator.Type, x: list[float], y: list[float]):
+    interpolator: Interpolator = Interpolator.generate_interpolator(
+        interpolator_type=interpolator_type,
+        x=x,
+        y=y,
+    )
 
-        assert interpolator is not None
-        assert isinstance(interpolator, Interpolator)
-
-        interpolator: Interpolator = Interpolator.generate_interpolator(
-            Interpolator.InterpolationType.CubicSpline,
-            x=[0.0, 1.0, 2.0, 3.0, 4.0, 5.0],
-            y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0],
-        )
-
-        assert interpolator is not None
-        assert isinstance(interpolator, Interpolator)
-
-        interpolator: Interpolator = Interpolator.generate_interpolator(
-            Interpolator.InterpolationType.Linear,
-            x=[0.0, 1.0, 2.0, 4.0, 5.0, 6.0],
-            y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0],
-        )
-
-        assert interpolator is not None
-        assert isinstance(interpolator, Interpolator)
+    assert interpolator is not None
+    assert isinstance(interpolator, Interpolator)

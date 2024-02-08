@@ -17,10 +17,6 @@ class TestLinear:
         assert isinstance(interpolator, Interpolator)
         assert isinstance(interpolator, Linear)
 
-    def test_get_interpolation_type(self, interpolator: Linear):
-        assert (
-            interpolator.get_interpolation_type() == Interpolator.InterpolationType.Linear
-        )
 
     def test_evaluate(self):
         interpolator = Linear(
