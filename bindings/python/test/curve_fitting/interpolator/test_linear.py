@@ -1,11 +1,22 @@
 # Apache License 2.0
 
+import pytest
+
+from ostk.mathematics.curve_fitting import Interpolator
 from ostk.mathematics.curve_fitting.interpolator import Linear
 
 
+@pytest.fixture
+def interpolator() -> Linear:
+    return Linear(x=[0.0, 1.0, 2.0, 4.0, 5.0, 6.0], y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
+
+
 class TestLinear:
-    def test_default_constructor(self):
-        Linear(x=[0.0, 1.0, 2.0, 4.0, 5.0, 6.0], y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0])
+    def test_constructors(self, interpolator: Linear):
+        assert interpolator is not None
+        assert isinstance(interpolator, Interpolator)
+        assert isinstance(interpolator, Linear)
+
 
     def test_evaluate(self):
         interpolator = Linear(

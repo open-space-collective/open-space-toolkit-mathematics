@@ -6,12 +6,14 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricR
 {
     using namespace pybind11;
 
+    using ostk::core::type::Shared;
+
+    using ostk::mathematics::curvefitting::Interpolator;
     using ostk::mathematics::object::VectorXd;
 
     using ostk::mathematics::curvefitting::interpolator::BarycentricRational;
 
-    // noncopyable class with Boost, removed in Pybind11
-    class_<BarycentricRational>(aModule, "BarycentricRational")
+    class_<BarycentricRational, Interpolator, Shared<BarycentricRational>>(aModule, "BarycentricRational")
 
         .def(init<const VectorXd&, const VectorXd&>(), arg("x"), arg("y"))
 

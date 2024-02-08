@@ -5,6 +5,7 @@
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp>
+#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp>
 
 namespace ostk
 {
@@ -13,46 +14,37 @@ namespace mathematics
 namespace curvefitting
 {
 
-Interpolator::~Interpolator() {}
+using ostk::mathematics::curvefitting::interpolator::BarycentricRational;
+using ostk::mathematics::curvefitting::interpolator::CubicSpline;
+using ostk::mathematics::curvefitting::interpolator::Linear;
 
-double Interpolator::evaluate(const double& aQueryValue) const
+Interpolator::Interpolator(const Type& aType)
+    : type_(aType)
 {
-    using ostk::mathematics::curvefitting::interpolator::CubicSpline;
-    using ostk::mathematics::curvefitting::interpolator::BarycentricRational;
-
-    if (const CubicSpline* interpolatorPtr = dynamic_cast<const CubicSpline*>(this))
-    {
-        return interpolatorPtr->evaluate(aQueryValue);
-    }
-
-    if (const BarycentricRational* interpolatorPtr = dynamic_cast<const BarycentricRational*>(this))
-    {
-        return interpolatorPtr->evaluate(aQueryValue);
-    }
-
-    throw ostk::core::error::runtime::ToBeImplemented("Interpolator :: evaluate");
-
-    return 0.0;
 }
 
-VectorXd Interpolator::evaluate(const VectorXd& aQueryVector) const
+Interpolator::~Interpolator() {}
+
+Interpolator::Type Interpolator::getInterpolationType() const
 {
-    using ostk::mathematics::curvefitting::interpolator::CubicSpline;
-    using ostk::mathematics::curvefitting::interpolator::BarycentricRational;
+    return type_;
+}
 
-    if (const CubicSpline* interpolatorPtr = dynamic_cast<const CubicSpline*>(this))
+const Shared<const Interpolator> Interpolator::GenerateInterpolator(
+    const Type& aType, const VectorXd& anXVector, const VectorXd& aYVector
+)
+{
+    switch (aType)
     {
-        return interpolatorPtr->evaluate(aQueryVector);
+        case Type::BarycentricRational:
+            return std::make_shared<BarycentricRational>(anXVector, aYVector);
+        case Type::CubicSpline:
+            return std::make_shared<CubicSpline>(anXVector, aYVector);
+        case Type::Linear:
+            return std::make_shared<Linear>(anXVector, aYVector);
+        default:
+            throw ostk::core::error::runtime::Wrong("Invalid interpolation type.");
     }
-
-    if (const BarycentricRational* interpolatorPtr = dynamic_cast<const BarycentricRational*>(this))
-    {
-        return interpolatorPtr->evaluate(aQueryVector);
-    }
-
-    throw ostk::core::error::runtime::ToBeImplemented("Interpolator :: evaluate");
-
-    return VectorXd::Zero(aQueryVector.size());
 }
 
 }  // namespace curvefitting

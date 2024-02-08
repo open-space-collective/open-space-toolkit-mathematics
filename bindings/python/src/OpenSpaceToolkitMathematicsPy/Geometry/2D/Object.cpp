@@ -6,13 +6,13 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp>
 
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Composite.cpp>
-#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/MultiPolygon.cpp>
-#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Polygon.cpp>
-#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/LineString.cpp>
-#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Segment.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Line.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/LineString.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/MultiPolygon.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Point.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/PointSet.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Polygon.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Segment.cpp>
 
 inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object(pybind11::module &aModule)
 {
@@ -20,7 +20,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object(pybind11::module &a
 
     using ostk::mathematics::geometry::d2::Object;
 
-    // noncopyable class with Boost, removed in Pybind11
     class_<Object> ob(aModule, "Object");
 
     ob

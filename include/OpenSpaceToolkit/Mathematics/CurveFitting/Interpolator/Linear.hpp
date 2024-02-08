@@ -20,13 +20,13 @@ namespace curvefitting
 namespace interpolator
 {
 
+using ostk::core::container::Pair;
+using ostk::core::type::Index;
 using ostk::core::type::Real;
 using ostk::core::type::Size;
-using ostk::core::type::Index;
-using ostk::core::container::Pair;
 
-using ostk::mathematics::object::VectorXd;
 using ostk::mathematics::curvefitting::Interpolator;
+using ostk::mathematics::object::VectorXd;
 
 /// @brief                      Linear
 ///
@@ -40,47 +40,40 @@ using ostk::mathematics::curvefitting::Interpolator;
 class Linear : public Interpolator
 {
    public:
-    /// @brief              Constructor
+    /// @brief Constructor
     ///
-    /// @code
-    ///                     Linear linear(x, y) ;
+    /// @code{.cpp}
+    ///                     Linear linear(x, y);
     /// @endcode
     ///
-    /// @param              [in] anXVector A vector of x values
-    /// @param              [in] aYVector A vector of y values
+    /// @param anXVector A vector of x values
+    /// @param aYVector A vector of y values
     ///
-    /// @warning            The x values must be sorted in ascending order
-    /// @warning            The x values must be equally spaced
-
+    /// @warning The x values must be sorted in ascending order
     Linear(const VectorXd& anXVector, const VectorXd& aYVector);
 
-    /// @brief              Clone linear
-    ///
-    /// @return             Pointer to cloned linear interpolator
+    /// @brief Destructor
+    virtual ~Linear() override;
 
-    virtual Linear* clone() const;
-
-    /// @brief              Evaluate the linear interpolator
+    /// @brief Evaluate the linear interpolator
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     VectorXd values = linear.evaluate({1.0, 5.0, 6.0}) ;
     /// @endcode
     ///
-    /// @param              [in] aQueryVector A vector of x values
-    /// @return             Vector of y values
+    /// @param aQueryVector A vector of x values
+    /// @return Vector of y values
+    virtual VectorXd evaluate(const VectorXd& aQueryVector) const override;
 
-    VectorXd evaluate(const VectorXd& aQueryVector) const;
-
-    /// @brief              Evaluate the linear interpolator
+    /// @brief Evaluate the linear interpolator
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     double values = linear.evaluate(5.0) ;
     /// @endcode
     ///
-    /// @param              [in] aQueryValue An x value
-    /// @return             Vector of y values
-
-    double evaluate(const double& aQueryValue) const;
+    /// @param aQueryValue An x value
+    /// @return Vector of y values
+    virtual double evaluate(const double& aQueryValue) const override;
 
    private:
     VectorXd x_;

@@ -1,7 +1,5 @@
 /// Apache License 2.0
 
-#include <iostream>
-
 #include <OpenSpaceToolkit/Core/Error.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp>
@@ -16,6 +14,7 @@ namespace interpolator
 {
 
 CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
+    : Interpolator(Interpolator::Type::CubicSpline)
 {
     if (aYVector.size() < 5)
     {
@@ -41,6 +40,7 @@ CubicSpline::CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector)
 }
 
 CubicSpline::CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h)
+    : Interpolator(Interpolator::Type::CubicSpline)
 {
     if (aYVector.size() < 5)
     {
@@ -51,10 +51,7 @@ CubicSpline::CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h
         boost::math::interpolators::cardinal_cubic_b_spline<double>(aYVector.begin(), aYVector.end(), x0, h);
 }
 
-CubicSpline* CubicSpline::clone() const
-{
-    return new CubicSpline(*this);
-}
+CubicSpline::~CubicSpline() {}
 
 VectorXd CubicSpline::evaluate(const VectorXd& aQueryVector) const
 {

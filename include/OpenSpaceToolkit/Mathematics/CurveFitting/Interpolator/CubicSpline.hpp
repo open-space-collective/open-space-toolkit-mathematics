@@ -6,6 +6,7 @@
 #include <boost/math/interpolators/cardinal_cubic_b_spline.hpp>
 
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
@@ -22,16 +23,16 @@ namespace interpolator
 using ostk::core::type::Real;
 using ostk::core::type::Size;
 
-using ostk::mathematics::object::VectorXd;
 using ostk::mathematics::curvefitting::Interpolator;
+using ostk::mathematics::object::VectorXd;
 
 using boost::math::interpolators::cardinal_cubic_b_spline;
 
-/// @brief                      CubicSpline
+/// @brief CubicSpline
 ///
-///                             A cubic Spline interpolator is a spline where each piece is a third-degree polynomial
-///                             specified in Spline form, that is by its values and first derivatives at the end points
-///                             of the corresponding domain interval.
+/// A cubic Spline interpolator is a spline where each piece is a third-degree polynomial
+/// specified in Spline form, that is by its values and first derivatives at the end points
+/// of the corresponding domain interval.
 ///
 /// @ref
 /// https://en.wikipedia.org/wiki/Cubic_Spline_spline#:~:text=In%20numerical%20analysis%2C%20a%20cubic,of%20the%20corresponding%20domain%20interval.
@@ -39,62 +40,55 @@ using boost::math::interpolators::cardinal_cubic_b_spline;
 class CubicSpline : public Interpolator
 {
    public:
-    /// @brief              Constructor
+    /// @brief Constructor
     ///
-    /// @code
-    ///                     CubicSpline cubicSpline(x, y) ;
+    /// @code{.cpp}
+    ///                     CubicSpline cubicSpline(x, y);
     /// @endcode
     ///
-    /// @param              [in] anXVector A vector of x values
-    /// @param              [in] aYVector A vector of y values
+    /// @param anXVector A vector of x values
+    /// @param aYVector A vector of y values
     ///
-    /// @warning            The x values must be sorted in ascending order
-    /// @warning            The x values must be equally spaced
-
+    /// @warning The x values must be sorted in ascending order
+    /// @warning The x values must be equally spaced
     CubicSpline(const VectorXd& anXVector, const VectorXd& aYVector);
 
-    /// @brief              Constructor
+    /// @brief Constructor
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     CubicSpline cubicSpline(y, x0, h) ;
     /// @endcode
     ///
-    /// @param              [in] aYVector A vector of y values
-    /// @param              [in] x0 The first x value
-    /// @param              [in] h The spacing between x values
+    /// @param aYVector A vector of y values
+    /// @param x0 The first x value
+    /// @param h The spacing between x values
     ///
-    /// @warning            The x values must be sorted in ascending order
-    /// @warning            The x values must be equally spaced
-
+    /// @warning The x values must be sorted in ascending order
+    /// @warning The x values must be equally spaced
     CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h);
 
-    /// @brief              Clone cubic spline
-    ///
-    /// @return             Pointer to cloned cubic spline interpolator
+    /// @brief Destructor
+    virtual ~CubicSpline() override;
 
-    virtual CubicSpline* clone() const;
-
-    /// @brief              Evaluate the cubic spline interpolator
+    /// @brief Evaluate the cubic spline interpolator
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     VectorXd values = cubicSpline.evaluate({1.0, 5.0, 6.0}) ;
     /// @endcode
     ///
-    /// @param              [in] aQueryVector A vector of x values
-    /// @return             Vector of y values
+    /// @param aQueryVector A vector of x values
+    /// @return Vector of y values
+    virtual VectorXd evaluate(const VectorXd& aQueryVector) const override;
 
-    VectorXd evaluate(const VectorXd& aQueryVector) const;
-
-    /// @brief              Evaluate the cubic spline interpolator
+    /// @brief Evaluate the cubic spline interpolator
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     double values = cubicSpline.evaluate(5.0) ;
     /// @endcode
     ///
-    /// @param              [in] aQueryValue An x value
-    /// @return             Vector of y values
-
-    double evaluate(const double& aQueryValue) const;
+    /// @param aQueryValue An x value
+    /// @return Vector of y values
+    virtual double evaluate(const double& aQueryValue) const override;
 
    private:
     cardinal_cubic_b_spline<double> interpolator_;

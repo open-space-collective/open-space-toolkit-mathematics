@@ -1,7 +1,5 @@
 /// Apache License 2.0
 
-#include <iostream>
-
 #include <OpenSpaceToolkit/Core/Error.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp>
@@ -16,7 +14,8 @@ namespace interpolator
 {
 
 Linear::Linear(const VectorXd& anXVector, const VectorXd& aYVector)
-    : x_(anXVector),
+    : Interpolator(Interpolator::Type::Linear),
+      x_(anXVector),
       y_(aYVector)
 {
     if (aYVector.size() < 2)
@@ -30,10 +29,7 @@ Linear::Linear(const VectorXd& anXVector, const VectorXd& aYVector)
     }
 }
 
-Linear* Linear::clone() const
-{
-    return new Linear(*this);
-}
+Linear::~Linear() {}
 
 VectorXd Linear::evaluate(const VectorXd& aQueryVector) const
 {

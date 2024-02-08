@@ -6,6 +6,7 @@
 #include <boost/math/interpolators/barycentric_rational.hpp>
 
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
+#include <OpenSpaceToolkit/Core/Type/Size.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Vector.hpp>
@@ -22,63 +23,55 @@ namespace interpolator
 using ostk::core::type::Real;
 using ostk::core::type::Size;
 
-using ostk::mathematics::object::VectorXd;
 using ostk::mathematics::curvefitting::Interpolator;
+using ostk::mathematics::object::VectorXd;
 
 using boost::math::interpolators::barycentric_rational;
 
-/// @brief                      BarycentricRational
+/// @brief BarycentricRational
 ///
-///                             Barycentric rational interpolator is a high-accuracy interpolator method for
-///                             non-uniformly spaced samples. It requires 𝑶(N) time for construction, and 𝑶(N) time for
-///                             each evaluation.
+/// Barycentric rational interpolator is a high-accuracy interpolator method for
+/// non-uniformly spaced samples. It requires 𝑶(N) time for construction, and 𝑶(N) time for
+/// each evaluation.
 ///
-/// @ref                        https://www.boost.org/doc/libs/1_81_0/libs/math/doc/html/math_toolkit/barycentric.html
-
+/// @ref https://www.boost.org/doc/libs/1_81_0/libs/math/doc/html/math_toolkit/barycentric.html
 class BarycentricRational : public Interpolator
 {
    public:
-    /// @brief              Constructor
+    /// @brief Constructor
     ///
-    /// @code
-    ///                     BarycentricRational barycentricRational(x, y) ;
+    /// @code{.cpp}
+    ///                  BarycentricRational barycentricRational(x, y);
     /// @endcode
     ///
-    /// @param              [in] anXVector A vector of x values
-    /// @param              [in] aYVector A vector of y values
+    /// @param anXVector A vector of x values
+    /// @param aYVector A vector of y values
     ///
-    /// @warning            The x values must be sorted in ascending order
-    /// @warning            The x values must be equally spaced
-
+    /// @warning The x values must be sorted in ascending order
     BarycentricRational(const VectorXd& anXVector, const VectorXd& aYVector);
 
-    /// @brief              Clone barycentric rational
-    ///
-    /// @return             Pointer to cloned barycentric rational
+    /// @brief Destructor
+    virtual ~BarycentricRational() override;
 
-    BarycentricRational* clone() const;
-
-    /// @brief              Evaluate the spline
+    /// @brief Evaluate the spline
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     VectorXd values = barycentricRational.evaluate({1.0, 5.0, 6.0}) ;
     /// @endcode
     ///
-    /// @param              [in] aQueryVector A vector of x values
-    /// @return             Vector of y values
+    /// @param aQueryVector A vector of x values
+    /// @return Vector of y values
+    virtual VectorXd evaluate(const VectorXd& aQueryVector) const override;
 
-    VectorXd evaluate(const VectorXd& aQueryVector) const;
-
-    /// @brief              Evaluate the spline
+    /// @brief Evaluate the spline
     ///
-    /// @code
-    ///                     double values = barycentricRational.evaluate(5.0) ;
+    /// @code{.cpp}
+    /// double values = barycentricRational.evaluate(5.0) ;
     /// @endcode
     ///
-    /// @param              [in] aQueryValue An x value
-    /// @return             Vector of y values
-
-    double evaluate(const double& aQueryValue) const;
+    /// @param aQueryValue An x value
+    /// @return Vector of y values
+    virtual double evaluate(const double& aQueryValue) const override;
 
    private:
     barycentric_rational<double> interpolator_;
