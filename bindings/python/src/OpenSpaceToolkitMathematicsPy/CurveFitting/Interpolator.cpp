@@ -62,8 +62,6 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
     // Create "interpolator" python submodule
     auto interpolator = aModule.def_submodule("interpolator");
 
-    // Add __path__ attribute for "interpolator" submodule
-    interpolator.attr("__path__") = "ostk.mathematics.curve_fitting.interpolator";
 
     // Add object to python "interpolator" submodules
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricRational(interpolator);

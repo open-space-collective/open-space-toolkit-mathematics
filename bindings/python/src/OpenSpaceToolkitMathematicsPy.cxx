@@ -19,9 +19,6 @@ PYBIND11_MODULE(OpenSpaceToolkitMathematicsPy, m)
     // Add optional docstring for package OpenSpaceToolkitMathematicsPy
     m.doc() = "Geometry, curve fitting, optimization for OpenSpaceToolkit";
 
-    // Add __path__ attribute to python package
-    m.attr("__path__") = "ostk.mathematics";
-
     // Change attribute __name__ to make OpenSpaceToolkitMathematicsPy invisible in modules path
     m.attr("__name__") = "ostk.mathematics";
 

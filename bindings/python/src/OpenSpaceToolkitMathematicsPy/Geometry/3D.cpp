@@ -9,8 +9,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D(pybind11::module& aModule)
     // Create "d3" python submodule
     auto d3 = aModule.def_submodule("d3");
 
-    // Add __path__ attribute for "d3" submodule
-    d3.attr("__path__") = "ostk.mathematics.geometry.d3";
 
     // Add object to python "d3" submodules
     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(d3);
