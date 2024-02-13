@@ -9,8 +9,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation(py
     // Create "rotation" python submodule
     auto rotation = aModule.def_submodule("rotation");
 
-    // Add __path__ attribute for "rotation" submodule
-    rotation.attr("__path__") = "ostk.mathematics.geometry.d3.transformation.rotation";
 
     // Add object to python "rotation" submodules
     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Quaternion(rotation);

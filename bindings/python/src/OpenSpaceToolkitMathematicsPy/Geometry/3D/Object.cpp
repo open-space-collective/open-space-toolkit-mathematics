@@ -225,8 +225,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
     // Create "object" python submodule
     auto object = aModule.def_submodule("object");
 
-    // Add __path__ attribute for "object" submodule
-    object.attr("__path__") = "ostk.mathematics.geometry.d3.object";
 
     // Add object to python "object" submodules
     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(object);
