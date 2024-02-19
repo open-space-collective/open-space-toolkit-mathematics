@@ -94,10 +94,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "2_d_2_intersection_8cpp.html",
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a4908a1b0edd4fb1b77bf13051f524a70",
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a7e8e8108964812282c0bd08bd8020116",
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a69cc28d37f97308cd2d0a9b58d50c18f",
-"classostk_1_1mathematics_1_1object_1_1_interval_base.html"
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#af699984b24759466957ecddaa7e61fc9",
+"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a529eb85f7ac09d930579f9c1523feb36",
+"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a365705683c88be776018f682e0fe0899",
+"classostk_1_1mathematics_1_1object_1_1_interval.html#ad1636246dd97c94a67d38b5d2a8eb868"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

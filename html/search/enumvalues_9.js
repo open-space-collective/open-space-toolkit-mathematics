@@ -1,8 +1,4 @@
 var searchData=
 [
-  ['plane_790',['Plane',['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#ae7e12ecebd39f90c9ac81a69db3233cda0d3adee051531c15b3509b4d4d75ce7b',1,'ostk::mathematics::geometry::d3::Intersection']]],
-  ['point_791',['Point',['../classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#ab05d25c82a3b3118aea0aecc2570faaea2a3cd5946cfd317eb99c3d32e35e2d4c',1,'ostk::mathematics::geometry::d2::Intersection::Point()'],['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#ae7e12ecebd39f90c9ac81a69db3233cda2a3cd5946cfd317eb99c3d32e35e2d4c',1,'ostk::mathematics::geometry::d3::Intersection::Point()']]],
-  ['pointset_792',['PointSet',['../classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#ab05d25c82a3b3118aea0aecc2570faaeaaedf8f48dfa5b704b6c12b415707a1da',1,'ostk::mathematics::geometry::d2::Intersection::PointSet()'],['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#ae7e12ecebd39f90c9ac81a69db3233cdaaedf8f48dfa5b704b6c12b415707a1da',1,'ostk::mathematics::geometry::d3::Intersection::PointSet()']]],
-  ['polygon_793',['Polygon',['../classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#ab05d25c82a3b3118aea0aecc2570faaea4c0a11247d92f73fb84baa51e37a3263',1,'ostk::mathematics::geometry::d2::Intersection::Polygon()'],['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#ae7e12ecebd39f90c9ac81a69db3233cda4c0a11247d92f73fb84baa51e37a3263',1,'ostk::mathematics::geometry::d3::Intersection::Polygon()']]],
-  ['pyramid_794',['Pyramid',['../classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection.html#ae7e12ecebd39f90c9ac81a69db3233cda5e5b0d93bab61584149905b5e5dc71a0',1,'ostk::mathematics::geometry::d3::Intersection']]]
+  ['open_802',['Open',['../classostk_1_1mathematics_1_1object_1_1_interval_base.html#a2ad76e98fc37333faeb21490c7b4f201ac3bf447eabe632720a3aa1a7ce401274',1,'ostk::mathematics::object::IntervalBase']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['open_789',['Open',['../classostk_1_1mathematics_1_1object_1_1_interval_base.html#a2ad76e98fc37333faeb21490c7b4f201ac3bf447eabe632720a3aa1a7ce401274',1,'ostk::mathematics::object::IntervalBase']]]
+  ['nolog_801',['NoLog',['../classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#ad8a0c981770c8ee40f765cc17cf0c1a5ac224e58a49e83bb9b94e2bd594fd5231',1,'ostk::mathematics::solver::NumericalSolver']]]
 ];

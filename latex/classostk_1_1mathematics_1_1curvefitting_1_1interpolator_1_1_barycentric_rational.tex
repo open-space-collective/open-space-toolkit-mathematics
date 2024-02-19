@@ -20,22 +20,19 @@ Inheritance diagram for ostk\+::mathematics\+::curvefitting\+::interpolator\+::B
 \item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a864926f51a4eb2c3566649d0fcf03fd3}{Barycentric\+Rational}} (const Vector\+Xd \&an\+X\+Vector, const Vector\+Xd \&a\+Y\+Vector)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational}{Barycentric\+Rational}} $\ast$ \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a08809c8657efa59e0848e577d6b548cb}{clone}} () const
-\begin{DoxyCompactList}\small\item\em Clone barycentric rational. \end{DoxyCompactList}\item 
-Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_adc176cc5c66b1a976425447de5e624cb}{evaluate}} (const Vector\+Xd \&a\+Query\+Vector) const
+virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a084b79dfcfae56e18cd7c1dd5269e007}{$\sim$\+Barycentric\+Rational}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a0a440a296a04347ed9b4a9a22f1cf57f}{evaluate}} (const Vector\+Xd \&a\+Query\+Vector) const override
 \begin{DoxyCompactList}\small\item\em Evaluate the spline. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_aff2d05d4c85303542212f05ee50d8c73}{evaluate}} (const double \&a\+Query\+Value) const
+virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a343d5f5f554639ce936706ea75109006}{evaluate}} (const double \&a\+Query\+Value) const override
 \begin{DoxyCompactList}\small\item\em Evaluate the spline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational}{Barycentric\+Rational}}. 
 
-\begin{DoxyVerb}                        Barycentric rational interpolator is a high-accuracy interpolator method for
-                        non-uniformly spaced samples. It requires 𝑶(N) time for construction, and 𝑶(N) time for
-                        each evaluation.
-\end{DoxyVerb}
-
+Barycentric rational interpolator is a high-\/accuracy interpolator method for non-\/uniformly spaced samples. It requires 𝑶(\+N) time for construction, and 𝑶(\+N) time for each evaluation.
 
 \href{https://www.boost.org/doc/libs/1_81_0/libs/math/doc/html/math_toolkit/barycentric.html}{\texttt{ https\+://www.\+boost.\+org/doc/libs/1\+\_\+81\+\_\+0/libs/math/doc/html/math\+\_\+toolkit/barycentric.\+html}} 
 
@@ -52,47 +49,38 @@ Constructor.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a864926f51a4eb2c3566649d0fcf03fd3}{BarycentricRational}} barycentricRational(x, y) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a864926f51a4eb2c3566649d0fcf03fd3}{BarycentricRational}} barycentricRational(x, y);}
 \end{DoxyCode}
 
 
 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em an\+X\+Vector} & A vector of x values \\
+\begin{DoxyParams}{Parameters}
+{\em an\+X\+Vector} & A vector of x values \\
 \hline
-\mbox{\texttt{ in}}  & {\em a\+Y\+Vector} & A vector of y values\\
+{\em a\+Y\+Vector} & A vector of y values\\
 \hline
 \end{DoxyParams}
 \begin{DoxyWarning}{Warning}
 The x values must be sorted in ascending order 
-
-The x values must be equally spaced 
 \end{DoxyWarning}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a084b79dfcfae56e18cd7c1dd5269e007}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a084b79dfcfae56e18cd7c1dd5269e007}} 
+\index{ostk::mathematics::curvefitting::interpolator::BarycentricRational@{ostk::mathematics::curvefitting::interpolator::BarycentricRational}!````~BarycentricRational@{$\sim$BarycentricRational}}
+\index{````~BarycentricRational@{$\sim$BarycentricRational}!ostk::mathematics::curvefitting::interpolator::BarycentricRational@{ostk::mathematics::curvefitting::interpolator::BarycentricRational}}
+\doxysubsubsection{\texorpdfstring{$\sim$BarycentricRational()}{~BarycentricRational()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational\+::$\sim$\+Barycentric\+Rational (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a08809c8657efa59e0848e577d6b548cb}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a08809c8657efa59e0848e577d6b548cb}} 
-\index{ostk::mathematics::curvefitting::interpolator::BarycentricRational@{ostk::mathematics::curvefitting::interpolator::BarycentricRational}!clone@{clone}}
-\index{clone@{clone}!ostk::mathematics::curvefitting::interpolator::BarycentricRational@{ostk::mathematics::curvefitting::interpolator::BarycentricRational}}
-\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational}{Barycentric\+Rational}} $\ast$ ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Clone barycentric rational. 
-
-\begin{DoxyReturn}{Returns}
-Pointer to cloned barycentric rational 
-\end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a4acd8225302a3aa669d8ab44ecdabfd3}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
-
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_aff2d05d4c85303542212f05ee50d8c73}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_aff2d05d4c85303542212f05ee50d8c73}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a343d5f5f554639ce936706ea75109006}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a343d5f5f554639ce936706ea75109006}} 
 \index{ostk::mathematics::curvefitting::interpolator::BarycentricRational@{ostk::mathematics::curvefitting::interpolator::BarycentricRational}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::BarycentricRational@{ostk::mathematics::curvefitting::interpolator::BarycentricRational}}
 \doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational\+::evaluate (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational\+::evaluate (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -105,8 +93,8 @@ Evaluate the spline.
 
 
 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em a\+Query\+Value} & An x value \\
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -114,13 +102,13 @@ Vector of y values
 \end{DoxyReturn}
 
 
-Reimplemented from \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a06c18540444f03f56281b6ca4adffa30}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_aae0c8423f11e7aa9f764ee4973070c36}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_adc176cc5c66b1a976425447de5e624cb}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_adc176cc5c66b1a976425447de5e624cb}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a0a440a296a04347ed9b4a9a22f1cf57f}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a0a440a296a04347ed9b4a9a22f1cf57f}} 
 \index{ostk::mathematics::curvefitting::interpolator::BarycentricRational@{ostk::mathematics::curvefitting::interpolator::BarycentricRational}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::BarycentricRational@{ostk::mathematics::curvefitting::interpolator::BarycentricRational}}
 \doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational\+::evaluate (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational\+::evaluate (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -133,8 +121,8 @@ Evaluate the spline.
 
 
 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em a\+Query\+Vector} & A vector of x values \\
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -142,7 +130,7 @@ Vector of y values
 \end{DoxyReturn}
 
 
-Reimplemented from \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_ad1337a9aab4cf04c51e49f9d76520c8a}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a2e5f87beae48daf0ebbd4da6c0fdcb77}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
 
 
 

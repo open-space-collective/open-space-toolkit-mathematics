@@ -20,12 +20,13 @@ Inheritance diagram for ostk\+::mathematics\+::curvefitting\+::interpolator\+::L
 \item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a66f13250b306128dacc988a56961eda8}{Linear}} (const Vector\+Xd \&an\+X\+Vector, const Vector\+Xd \&a\+Y\+Vector)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear}{Linear}} $\ast$ \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a4747b59ccaad1c0b486e1894f31914df}{clone}} () const
-\begin{DoxyCompactList}\small\item\em Clone linear. \end{DoxyCompactList}\item 
-Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a11a9dc9978fc50406e729df432e41337}{evaluate}} (const Vector\+Xd \&a\+Query\+Vector) const
+virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a6e6d93d0ac658408b32a8bb8dd66d069}{$\sim$\+Linear}} () override
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_ac1332768995f471149cd3852b3ba2782}{evaluate}} (const Vector\+Xd \&a\+Query\+Vector) const override
 \begin{DoxyCompactList}\small\item\em Evaluate the linear interpolator. \end{DoxyCompactList}\item 
-double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a9f398bb2af1890b5af04babf1db3fff4}{evaluate}} (const double \&a\+Query\+Value) const
+virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a741b61d24af15b3332721b0751ec3a7a}{evaluate}} (const double \&a\+Query\+Value) const override
 \begin{DoxyCompactList}\small\item\em Evaluate the linear interpolator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
 
 
 \doxysubsection{Detailed Description}
@@ -52,47 +53,38 @@ Constructor.
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a66f13250b306128dacc988a56961eda8}{Linear}} linear(x, y) ;}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a66f13250b306128dacc988a56961eda8}{Linear}} linear(x, y);}
 \end{DoxyCode}
 
 
 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em an\+X\+Vector} & A vector of x values \\
+\begin{DoxyParams}{Parameters}
+{\em an\+X\+Vector} & A vector of x values \\
 \hline
-\mbox{\texttt{ in}}  & {\em a\+Y\+Vector} & A vector of y values\\
+{\em a\+Y\+Vector} & A vector of y values\\
 \hline
 \end{DoxyParams}
 \begin{DoxyWarning}{Warning}
 The x values must be sorted in ascending order 
-
-The x values must be equally spaced 
 \end{DoxyWarning}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a6e6d93d0ac658408b32a8bb8dd66d069}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a6e6d93d0ac658408b32a8bb8dd66d069}} 
+\index{ostk::mathematics::curvefitting::interpolator::Linear@{ostk::mathematics::curvefitting::interpolator::Linear}!````~Linear@{$\sim$Linear}}
+\index{````~Linear@{$\sim$Linear}!ostk::mathematics::curvefitting::interpolator::Linear@{ostk::mathematics::curvefitting::interpolator::Linear}}
+\doxysubsubsection{\texorpdfstring{$\sim$Linear()}{~Linear()}}
+{\footnotesize\ttfamily ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear\+::$\sim$\+Linear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Destructor. 
+
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a4747b59ccaad1c0b486e1894f31914df}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a4747b59ccaad1c0b486e1894f31914df}} 
-\index{ostk::mathematics::curvefitting::interpolator::Linear@{ostk::mathematics::curvefitting::interpolator::Linear}!clone@{clone}}
-\index{clone@{clone}!ostk::mathematics::curvefitting::interpolator::Linear@{ostk::mathematics::curvefitting::interpolator::Linear}}
-\doxysubsubsection{\texorpdfstring{clone()}{clone()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear}{Linear}} $\ast$ ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear\+::clone (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
-
-
-
-Clone linear. 
-
-\begin{DoxyReturn}{Returns}
-Pointer to cloned linear interpolator 
-\end{DoxyReturn}
-
-
-Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a4acd8225302a3aa669d8ab44ecdabfd3}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
-
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a9f398bb2af1890b5af04babf1db3fff4}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a9f398bb2af1890b5af04babf1db3fff4}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a741b61d24af15b3332721b0751ec3a7a}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a741b61d24af15b3332721b0751ec3a7a}} 
 \index{ostk::mathematics::curvefitting::interpolator::Linear@{ostk::mathematics::curvefitting::interpolator::Linear}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::Linear@{ostk::mathematics::curvefitting::interpolator::Linear}}
 \doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear\+::evaluate (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear\+::evaluate (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -105,8 +97,8 @@ Evaluate the linear interpolator.
 
 
 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em a\+Query\+Value} & An x value \\
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -114,13 +106,13 @@ Vector of y values
 \end{DoxyReturn}
 
 
-Reimplemented from \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a06c18540444f03f56281b6ca4adffa30}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_aae0c8423f11e7aa9f764ee4973070c36}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
 
-\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a11a9dc9978fc50406e729df432e41337}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a11a9dc9978fc50406e729df432e41337}} 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_ac1332768995f471149cd3852b3ba2782}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_ac1332768995f471149cd3852b3ba2782}} 
 \index{ostk::mathematics::curvefitting::interpolator::Linear@{ostk::mathematics::curvefitting::interpolator::Linear}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::Linear@{ostk::mathematics::curvefitting::interpolator::Linear}}
 \doxysubsubsection{\texorpdfstring{evaluate()}{evaluate()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear\+::evaluate (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear\+::evaluate (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
@@ -133,8 +125,8 @@ Evaluate the linear interpolator.
 
 
 
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em a\+Query\+Vector} & A vector of x values \\
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -142,7 +134,7 @@ Vector of y values
 \end{DoxyReturn}
 
 
-Reimplemented from \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_ad1337a9aab4cf04c51e49f9d76520c8a}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a2e5f87beae48daf0ebbd4da6c0fdcb77}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
 
 
 

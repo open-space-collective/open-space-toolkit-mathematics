@@ -1,5 +1,9 @@
 var NAVTREEINDEX1 =
 {
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#af699984b24759466957ecddaa7e61fc9":[4,0,0,0,1,2,28],
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#aff2915c9dfacf75a3c601688b3ab0d6b":[4,0,0,0,1,2,12],
+"classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html":[4,0,0,0,1,0,1],
+"classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a0f8d688de5a4819053d1f69a50e5a78e":[4,0,0,0,1,0,1,3],
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a4908a1b0edd4fb1b77bf13051f524a70":[4,0,0,0,1,0,1,10],
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a4b5775a7a48175d24ff520f3686526a2":[4,0,0,0,1,0,1,11],
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a5078dd27fbdbff7de1eeaa0a49eaea18":[4,0,0,0,1,0,1,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a1963e9bad746b355e0b340804622b2b9":[4,0,0,0,1,0,0,8,8],
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a23def062fef6c1210fa528ff078930a3":[4,0,0,0,1,0,0,8,4],
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a336bfa4add0cea6ca7ce52a2e2b5e341":[4,0,0,0,1,0,0,8,18],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a354e489eed79ff4e87deea504eeccb54":[4,0,0,0,1,0,0,8,2],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a529eb85f7ac09d930579f9c1523feb36":[4,0,0,0,1,0,0,8,6],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a678b14d476c41b11372b86e9db54b3a6":[4,0,0,0,1,0,0,8,1],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a694a856a4e694e0c570b3e0bbbee9f53":[4,0,0,0,1,0,0,8,3],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a6a88d19e8e5978c2fe9eeeb88d6cf8d7":[4,0,0,0,1,0,0,8,12]
+"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a354e489eed79ff4e87deea504eeccb54":[4,0,0,0,1,0,0,8,2]
 };

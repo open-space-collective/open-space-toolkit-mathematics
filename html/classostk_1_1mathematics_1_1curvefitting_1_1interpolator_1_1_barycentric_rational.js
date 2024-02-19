@@ -1,7 +1,7 @@
 var classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational =
 [
     [ "BarycentricRational", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#a864926f51a4eb2c3566649d0fcf03fd3", null ],
-    [ "clone", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#a08809c8657efa59e0848e577d6b548cb", null ],
-    [ "evaluate", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#aff2d05d4c85303542212f05ee50d8c73", null ],
-    [ "evaluate", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#adc176cc5c66b1a976425447de5e624cb", null ]
+    [ "~BarycentricRational", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#a084b79dfcfae56e18cd7c1dd5269e007", null ],
+    [ "evaluate", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#a343d5f5f554639ce936706ea75109006", null ],
+    [ "evaluate", "classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#a0a440a296a04347ed9b4a9a22f1cf57f", null ]
 ];
