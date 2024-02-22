@@ -372,7 +372,6 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Objects_Composite, Contains)
     }
 
     // Point contained in the interior of one Polygon, in the exterior of a second Polygon
-
     {
         const Polygon polygon1 = {{{0.0, 0.0}, {1.0, 0.0}, {1.0, 1.0}, {0.0, 1.0}}};
         const Polygon polygon2 = {{{0.0, 0.0}, {-1.0, 0.0}, {-1.0, -1.0}, {0.0, -1.0}}};
