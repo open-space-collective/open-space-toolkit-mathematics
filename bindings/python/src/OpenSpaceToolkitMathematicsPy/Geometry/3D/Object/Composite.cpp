@@ -4,6 +4,7 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp>
 
 inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11::module& aModule)
 {
@@ -26,6 +27,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11:
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Cone;
     using ostk::mathematics::geometry::d3::object::Composite;
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
@@ -124,6 +126,13 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11:
             }
         )
         .def(
+            "is_cone",
+            +[](const Composite& aComposite) -> bool
+            {
+                return aComposite.is<Cone>();
+            }
+        )
+        .def(
             "is_composite",
             +[](const Composite& aComposite) -> bool
             {
@@ -211,6 +220,13 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11:
             +[](const Composite& aComposite) -> Pyramid
             {
                 return aComposite.as<Pyramid>();
+            }
+        )
+        .def(
+            "as_cone",
+            +[](const Composite& aComposite) -> Cone
+            {
+                return aComposite.as<Cone>();
             }
         )
         .def(

@@ -8,9 +8,6 @@ import numpy as np
 
 import ostk.mathematics as mathematics
 
-from ostk.core.type import String
-
-
 Object = mathematics.geometry.d3.Object
 Point = mathematics.geometry.d3.object.Point
 Transformation = mathematics.geometry.d3.Transformation
