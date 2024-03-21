@@ -267,7 +267,7 @@ ENDIF ()
 
 # INCLUDE_DIRECTORIES ("/usr/local/include/Gte")  # This thing was already commented out
 
-### Open Space Toolkit ▸ Core [2.2.x]
+### Open Space Toolkit ▸ Core
 
 FIND_PACKAGE ("OpenSpaceToolkitCore" "2.2" REQUIRED)
 

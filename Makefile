@@ -21,6 +21,7 @@ extract_python_package_version := $(shell echo $(project_version) | sed 's/-/./'
 
 dev_username := developer
 
+
 ifeq ($(PLATFORM),amd64)
 platform := x86_64
 endif
@@ -31,6 +32,7 @@ endif
 
 platform ?= x86_64
 $(info Platform value is $(platform))
+
 
 pull: ## Pull all images
 
