@@ -56,6 +56,7 @@ RUN git clone --branch ${GEOMETRIC_TOOLS_ENGINE_VERSION} --depth 1 https://githu
 
 ## Open Space Toolkit ▸ Core
 
+ARG TARGETPLATFORM
 ARG OSTK_CORE_MAJOR="3"
 ARG OSTK_CORE_MINOR="0"
 
