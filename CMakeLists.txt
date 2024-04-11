@@ -267,9 +267,9 @@ ENDIF ()
 
 # INCLUDE_DIRECTORIES ("/usr/local/include/Gte")  # This thing was already commented out
 
-### Open Space Toolkit ▸ Core [3.0.x]
+### Open Space Toolkit ▸ Core [3.x.y]
 
-FIND_PACKAGE ("OpenSpaceToolkitCore" "3.0" REQUIRED)
+FIND_PACKAGE ("OpenSpaceToolkitCore" "3" REQUIRED)
 
 IF (NOT OpenSpaceToolkitCore_FOUND)
 
