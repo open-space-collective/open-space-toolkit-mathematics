@@ -20,6 +20,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
 
         // Define constructor
         .def(init<const Vector3d&, const Angle&>(), arg("axis"), arg("angle"))
+        .def(init<const Vector3d&, const Angle::Unit&>(), arg("vector"), arg("angle_unit"))
 
         // Define methods
         .def(self == self)
@@ -47,6 +48,14 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
             }
         )
 
+        .def(
+            "rectify",
+            +[](RotationVector& aRotationVector) -> void
+            {
+                aRotationVector.rectify();
+            }
+        )
+
         // Define static methods
         .def_static("undefined", &RotationVector::Undefined)
         .def_static("unit", &RotationVector::Unit)
@@ -55,6 +64,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
         .def_static("z", &RotationVector::Z, arg("angle"))
         .def_static("quaternion", &RotationVector::Quaternion, arg("quaternion"))
         .def_static("rotation_matrix", &RotationVector::RotationMatrix, arg("rotation_matrix"))
+        .def_static("euler_angle", &RotationVector::EulerAngle, arg("euler_angle"))
 
         ;
 }

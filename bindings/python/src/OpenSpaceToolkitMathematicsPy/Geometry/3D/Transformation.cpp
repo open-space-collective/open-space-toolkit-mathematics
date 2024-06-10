@@ -64,7 +64,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
     // Create "transformation" python submodule
     auto transformation_module = aModule.def_submodule("transformation");
 
-
     // Add object to python "transformation" submodules
     OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation(transformation_module);
 }

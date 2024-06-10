@@ -3,6 +3,7 @@
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
 
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
@@ -540,21 +541,24 @@ Quaternion Quaternion::RotationMatrix(const rotation::RotationMatrix& aRotationM
         z = rotationMatrix_12 - rotationMatrix_21;
         s = 1.0 + trace;
     }
-    else if ((rotationMatrix_11 >= trace) && (rotationMatrix_11 >= rotationMatrix_22) && (rotationMatrix_11 >= rotationMatrix_33))
+    else if ((rotationMatrix_11 >= trace) && (rotationMatrix_11 >= rotationMatrix_22) &&
+             (rotationMatrix_11 >= rotationMatrix_33))
     {
         x = 1.0 + 2.0 * rotationMatrix_11 - trace;
         y = rotationMatrix_12 + rotationMatrix_21;
         z = rotationMatrix_13 + rotationMatrix_31;
         s = rotationMatrix_23 - rotationMatrix_32;
     }
-    else if ((rotationMatrix_22 >= rotationMatrix_11) && (rotationMatrix_22 >= trace) && (rotationMatrix_22 >= rotationMatrix_33))
+    else if ((rotationMatrix_22 >= rotationMatrix_11) && (rotationMatrix_22 >= trace) &&
+             (rotationMatrix_22 >= rotationMatrix_33))
     {
         x = rotationMatrix_21 + rotationMatrix_12;
         y = 1.0 + 2.0 * rotationMatrix_22 - trace;
         z = rotationMatrix_23 + rotationMatrix_32;
         s = rotationMatrix_31 - rotationMatrix_13;
     }
-    else if ((rotationMatrix_33 >= rotationMatrix_11) && (rotationMatrix_33 >= rotationMatrix_22) && (rotationMatrix_33 >= trace))
+    else if ((rotationMatrix_33 >= rotationMatrix_11) && (rotationMatrix_33 >= rotationMatrix_22) &&
+             (rotationMatrix_33 >= trace))
     {
         x = rotationMatrix_31 + rotationMatrix_13;
         y = rotationMatrix_32 + rotationMatrix_23;
@@ -567,6 +571,66 @@ Quaternion Quaternion::RotationMatrix(const rotation::RotationMatrix& aRotationM
     }
 
     return Quaternion::XYZS(x, y, z, s).normalize();
+}
+
+Quaternion Quaternion::EulerAngle(const rotation::EulerAngle& aEulerAngle)
+{
+    // Fundamentals of Spacecraft Attitude Determination and Control
+    // F. Landis Markley and John L. Crassidis, Springer
+    // Table B.5, p. 364
+
+    if (!aEulerAngle.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Euler angle");
+    }
+
+    const Real phi = aEulerAngle.getPhi().inRadians();
+    const Real theta = aEulerAngle.getTheta().inRadians();
+    const Real psi = aEulerAngle.getPsi().inRadians();
+
+    const Real c_phi = std::cos(phi / 2.0);
+    const Real c_theta = std::cos(theta / 2.0);
+    const Real c_psi = std::cos(psi / 2.0);
+
+    const Real s_phi = std::sin(phi / 2.0);
+    const Real s_theta = std::sin(theta / 2.0);
+    const Real s_psi = std::sin(psi / 2.0);
+
+    switch (aEulerAngle.getAxisSequence())
+    {
+        case EulerAngle::AxisSequence::XYZ:  // 1-2-3
+        {
+            const Real x = s_phi * c_theta * c_psi + c_phi * s_theta * s_psi;
+            const Real y = c_phi * s_theta * c_psi - s_phi * c_theta * s_psi;
+            const Real z = c_phi * c_theta * s_psi + s_phi * s_theta * c_psi;
+            const Real s = c_phi * c_theta * c_psi - s_phi * s_theta * s_psi;
+
+            return Quaternion::XYZS(x, y, z, s).toNormalized();
+        }
+
+        case EulerAngle::AxisSequence::ZXY:  // 3-1-2
+        {
+            const Real x = c_phi * s_theta * c_psi - s_phi * c_theta * s_psi;
+            const Real y = c_phi * c_theta * s_psi + s_phi * s_theta * c_psi;
+            const Real z = c_phi * s_theta * s_psi + s_phi * c_theta * c_psi;
+            const Real s = c_phi * c_theta * c_psi - s_phi * s_theta * s_psi;
+
+            return Quaternion::XYZS(x, y, z, s).toNormalized();
+        }
+
+        case EulerAngle::AxisSequence::ZYX:  // 3-2-1
+        {
+            const Real x = c_phi * c_theta * s_psi - s_phi * s_theta * c_psi;
+            const Real y = c_phi * s_theta * c_psi + s_phi * c_theta * s_psi;
+            const Real z = s_phi * c_theta * c_psi - c_phi * s_theta * s_psi;
+            const Real s = c_phi * c_theta * c_psi + s_phi * s_theta * s_psi;
+
+            return Quaternion::XYZS(x, y, z, s).toNormalized();
+        }
+
+        default:
+            throw ostk::core::error::runtime::ToBeImplemented("Axis sequence is not supported.");
+    }
 }
 
 Quaternion Quaternion::Parse(const String& aString, const Quaternion::Format& aFormat)

@@ -1,23 +1,43 @@
 /// Apache License 2.0
 
+#include <OpenSpaceToolkit/Core/Container/Table.hpp>
+#include <OpenSpaceToolkit/Core/Type/String.hpp>
+
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
 
 #include <Global.test.hpp>
 
+using ostk::core::type::Real;
+using ostk::core::type::String;
+using ostk::core::filesystem::Path;
+using ostk::core::filesystem::File;
+using ostk::core::container::Table;
+
+using ostk::mathematics::object::Vector3d;
 using ostk::mathematics::geometry::Angle;
 using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
-using ostk::mathematics::object::Vector3d;
-using ostk::core::type::Real;
+using ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle;
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Constructor)
 {
     {
-        EXPECT_NO_THROW(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(45.0)));
-
         RotationVector rotationVector = {{0.0, 0.0, 1.0}, Angle::Degrees(45.0)};
+
+        EXPECT_TRUE(rotationVector.isDefined());
+    }
+
+    {
+        RotationVector rotationVector = {{0.0, 0.0, 1.0}, Angle::Unit::Degree};
+
+        EXPECT_TRUE(rotationVector.isDefined());
+    }
+
+    {
+        RotationVector rotationVector = {{0.0, 0.0, 0.0}, Angle::Unit::Degree};
 
         EXPECT_TRUE(rotationVector.isDefined());
     }
@@ -265,6 +285,35 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
     }
 }
 
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Rectify)
+{
+    {
+        EXPECT_EQ(
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(0.0)),
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(0.0)).rectify()
+        );
+
+        EXPECT_EQ(
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(0.0)),
+            RotationVector({-1.0, 0.0, 0.0}, Angle::Degrees(0.0)).rectify()
+        );
+
+        EXPECT_EQ(
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(45.0)),
+            RotationVector({-1.0, 0.0, 0.0}, Angle::Degrees(-45.0)).rectify()
+        );
+
+        EXPECT_EQ(
+            RotationVector({-1.0, 0.0, 0.0}, Angle::Degrees(180.0 - 45.0)),
+            RotationVector({1.0, 0.0, 0.0}, Angle::Degrees(180.0 + 45.0)).rectify()
+        );
+    }
+
+    {
+        EXPECT_ANY_THROW(RotationVector::Undefined().rectify());
+    }
+}
+
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, Undefined)
 {
     {
@@ -494,5 +543,148 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVe
 
     {
         EXPECT_ANY_THROW(RotationVector::Quaternion(Quaternion::Undefined()));
+    }
+}
+
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector, EulerAngle)
+{
+    {
+        EXPECT_EQ(RotationVector::Unit(), RotationVector::EulerAngle(EulerAngle::Unit()));
+    }
+
+    // XYZ
+
+    {
+        const Table referenceDataTable = Table::Load(
+            File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
+                                   "EulerAngle/RotationVector-EulerAngle-XYZ.csv")),
+            Table::Format::CSV,
+            true
+        );
+
+        const Real tolerance = 1e-9;
+        const Angle angularTolerance = Angle::Degrees(1e-9);
+
+        for (const auto& referenceDataRow : referenceDataTable)
+        {
+            const RotationVector referenceRotationVector = RotationVector(
+                                                               Vector3d(
+                                                                   referenceDataRow[0].accessReal(),
+                                                                   referenceDataRow[1].accessReal(),
+                                                                   referenceDataRow[2].accessReal()
+                                                               ),
+                                                               Angle::Unit::Radian
+            )
+                                                               .rectify();
+
+            const EulerAngle eulerAngle = EulerAngle::XYZ(
+                Angle::Radians(referenceDataRow[3].accessReal()),
+                Angle::Radians(referenceDataRow[4].accessReal()),
+                Angle::Radians(referenceDataRow[5].accessReal())
+            );
+
+            const RotationVector rotationVector = RotationVector::EulerAngle(eulerAngle).rectify();
+
+            EXPECT_TRUE(rotationVector.getAxis().isApprox(referenceRotationVector.getAxis(), tolerance))
+                << String::Format(
+                       "{} / {}", referenceRotationVector.getAxis().toString(), rotationVector.getAxis().toString()
+                   );
+            EXPECT_TRUE(rotationVector.getAngle().isNear(referenceRotationVector.getAngle(), angularTolerance))
+                << String::Format(
+                       "{} / {}", referenceRotationVector.getAngle().toString(), rotationVector.getAngle().toString()
+                   );
+        }
+    }
+
+    // ZXY
+
+    {
+        const Table referenceDataTable = Table::Load(
+            File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
+                                   "EulerAngle/RotationVector-EulerAngle-ZXY.csv")),
+            Table::Format::CSV,
+            true
+        );
+
+        const Real tolerance = 1e-9;
+        const Angle angularTolerance = Angle::Degrees(1e-9);
+
+        for (const auto& referenceDataRow : referenceDataTable)
+        {
+            const RotationVector referenceRotationVector = RotationVector(
+                                                               Vector3d(
+                                                                   referenceDataRow[0].accessReal(),
+                                                                   referenceDataRow[1].accessReal(),
+                                                                   referenceDataRow[2].accessReal()
+                                                               ),
+                                                               Angle::Unit::Radian
+            )
+                                                               .rectify();
+
+            const EulerAngle eulerAngle = EulerAngle::ZXY(
+                Angle::Radians(referenceDataRow[3].accessReal()),
+                Angle::Radians(referenceDataRow[4].accessReal()),
+                Angle::Radians(referenceDataRow[5].accessReal())
+            );
+
+            const RotationVector rotationVector = RotationVector::EulerAngle(eulerAngle).rectify();
+
+            EXPECT_TRUE(rotationVector.getAxis().isApprox(referenceRotationVector.getAxis(), tolerance))
+                << String::Format(
+                       "{} / {}", referenceRotationVector.getAxis().toString(), rotationVector.getAxis().toString()
+                   );
+            EXPECT_TRUE(rotationVector.getAngle().isNear(referenceRotationVector.getAngle(), angularTolerance))
+                << String::Format(
+                       "{} / {}", referenceRotationVector.getAngle().toString(), rotationVector.getAngle().toString()
+                   );
+        }
+    }
+
+    // ZYX
+
+    {
+        const Table referenceDataTable = Table::Load(
+            File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
+                                   "EulerAngle/RotationVector-EulerAngle-ZYX.csv")),
+            Table::Format::CSV,
+            true
+        );
+
+        const Real tolerance = 1e-9;
+        const Angle angularTolerance = Angle::Degrees(1e-9);
+
+        for (const auto& referenceDataRow : referenceDataTable)
+        {
+            const RotationVector referenceRotationVector = RotationVector(
+                                                               Vector3d(
+                                                                   referenceDataRow[0].accessReal(),
+                                                                   referenceDataRow[1].accessReal(),
+                                                                   referenceDataRow[2].accessReal()
+                                                               ),
+                                                               Angle::Unit::Radian
+            )
+                                                               .rectify();
+
+            const EulerAngle eulerAngle = EulerAngle::ZYX(
+                Angle::Radians(referenceDataRow[3].accessReal()),
+                Angle::Radians(referenceDataRow[4].accessReal()),
+                Angle::Radians(referenceDataRow[5].accessReal())
+            );
+
+            const RotationVector rotationVector = RotationVector::EulerAngle(eulerAngle).rectify();
+
+            EXPECT_TRUE(rotationVector.getAxis().isApprox(referenceRotationVector.getAxis(), tolerance))
+                << String::Format(
+                       "{} / {}", referenceRotationVector.getAxis().toString(), rotationVector.getAxis().toString()
+                   );
+            EXPECT_TRUE(rotationVector.getAngle().isNear(referenceRotationVector.getAngle(), angularTolerance))
+                << String::Format(
+                       "{} / {}", referenceRotationVector.getAngle().toString(), rotationVector.getAngle().toString()
+                   );
+        }
+    }
+
+    {
+        EXPECT_ANY_THROW(RotationVector::EulerAngle(EulerAngle::Undefined()));
     }
 }

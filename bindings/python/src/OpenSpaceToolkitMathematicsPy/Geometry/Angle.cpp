@@ -82,6 +82,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
 
         .def("is_defined", &Angle::isDefined)
         .def("is_zero", &Angle::isZero)
+        .def("is_negative", &Angle::isNegative)
+        .def("is_near", &Angle::isNear, arg("angle"), arg("tolerance"))
 
         .def("get_unit", &Angle::getUnit)
         .def("in_unit", &Angle::in, arg("unit"))

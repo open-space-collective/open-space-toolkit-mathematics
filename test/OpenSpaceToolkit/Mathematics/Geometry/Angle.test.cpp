@@ -684,6 +684,60 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, IsZero)
     }
 }
 
+TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, IsNegative)
+{
+    {
+        EXPECT_FALSE(Angle(0.0, Angle::Unit::Radian).isNegative());
+        EXPECT_FALSE(Angle(0.0, Angle::Unit::Degree).isNegative());
+        EXPECT_FALSE(Angle(0.0, Angle::Unit::Arcminute).isNegative());
+        EXPECT_FALSE(Angle(0.0, Angle::Unit::Arcsecond).isNegative());
+        EXPECT_FALSE(Angle(0.0, Angle::Unit::Revolution).isNegative());
+
+        EXPECT_FALSE(Angle(+0.0, Angle::Unit::Radian).isNegative());
+        EXPECT_FALSE(Angle(-0.0, Angle::Unit::Radian).isNegative());
+
+        EXPECT_FALSE(Angle(+1.0, Angle::Unit::Radian).isNegative());
+        EXPECT_TRUE(Angle(-1.0, Angle::Unit::Radian).isNegative());
+
+        EXPECT_FALSE(Angle(+1e-9, Angle::Unit::Radian).isNegative());
+        EXPECT_TRUE(Angle(-1e-9, Angle::Unit::Radian).isNegative());
+    }
+
+    {
+        EXPECT_ANY_THROW(Angle::Undefined().isNegative());
+        EXPECT_ANY_THROW(Angle(Real::Undefined(), Angle::Unit::Radian).isNegative());
+        EXPECT_ANY_THROW(Angle(1.0, Angle::Unit::Undefined).isNegative());
+    }
+}
+
+TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, IsNear)
+{
+    {
+        EXPECT_TRUE(Angle::Radians(0.0).isNear(Angle::Radians(0.0), Angle::Zero()));
+        EXPECT_TRUE(Angle::Degrees(0.0).isNear(Angle::Radians(0.0), Angle::Zero()));
+        EXPECT_TRUE(Angle::Arcseconds(0.0).isNear(Angle::Radians(0.0), Angle::Zero()));
+    }
+
+    {
+        EXPECT_TRUE(Angle::Degrees(0.0).isNear(Angle::Degrees(0.0), Angle::Degrees(1.0)));
+        EXPECT_TRUE(Angle::Degrees(0.0).isNear(Angle::Degrees(1.0), Angle::Degrees(1.0)));
+        EXPECT_TRUE(Angle::Degrees(1.0).isNear(Angle::Degrees(0.0), Angle::Degrees(1.0)));
+        EXPECT_TRUE(Angle::Degrees(-1.0).isNear(Angle::Degrees(0.0), Angle::Degrees(1.0)));
+        EXPECT_TRUE(Angle::Degrees(0.0).isNear(Angle::Degrees(-1.0), Angle::Degrees(1.0)));
+
+        EXPECT_FALSE(Angle::Degrees(0.0).isNear(Angle::Degrees(2.0), Angle::Degrees(1.0)));
+        EXPECT_FALSE(Angle::Degrees(2.0).isNear(Angle::Degrees(0.0), Angle::Degrees(1.0)));
+        EXPECT_FALSE(Angle::Degrees(-2.0).isNear(Angle::Degrees(0.0), Angle::Degrees(1.0)));
+        EXPECT_FALSE(Angle::Degrees(0.0).isNear(Angle::Degrees(-2.0), Angle::Degrees(1.0)));
+    }
+
+    {
+        EXPECT_ANY_THROW(Angle::Undefined().isNear(Angle::Zero(), Angle::Zero()));
+        EXPECT_ANY_THROW(Angle::Zero().isNear(Angle::Undefined(), Angle::Zero()));
+        EXPECT_ANY_THROW(Angle::Zero().isNear(Angle::Zero(), Angle::Undefined()));
+    }
+}
+
 TEST(OpenSpaceToolkit_Mathematics_Geometry_Angle, GetUnit)
 {
     {

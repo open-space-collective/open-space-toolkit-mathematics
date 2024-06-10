@@ -84,7 +84,8 @@ bool Cuboid::operator==(const Cuboid& aCuboid) const
                     return true;  // (0 == 0) && (1 == 1) && (2 == 2)
                 }
             }
-            else if (((axes_[1] == aCuboid.axes_[2]) || (axes_[1] == -aCuboid.axes_[2])) && (extent_[1] == aCuboid.extent_[2]))
+            else if (((axes_[1] == aCuboid.axes_[2]) || (axes_[1] == -aCuboid.axes_[2])) &&
+                     (extent_[1] == aCuboid.extent_[2]))
             {
                 if (((axes_[2] == aCuboid.axes_[1]) || (axes_[2] == -aCuboid.axes_[1])) &&
                     (extent_[2] == aCuboid.extent_[1]))
@@ -93,7 +94,8 @@ bool Cuboid::operator==(const Cuboid& aCuboid) const
                 }
             }
         }
-        else if (((axes_[0] == aCuboid.axes_[1]) || (axes_[0] == -aCuboid.axes_[1])) && (extent_[0] == aCuboid.extent_[1]))
+        else if (((axes_[0] == aCuboid.axes_[1]) || (axes_[0] == -aCuboid.axes_[1])) &&
+                 (extent_[0] == aCuboid.extent_[1]))
         {
             if (((axes_[1] == aCuboid.axes_[0]) || (axes_[1] == -aCuboid.axes_[0])) &&
                 (extent_[1] == aCuboid.extent_[0]))
@@ -104,7 +106,8 @@ bool Cuboid::operator==(const Cuboid& aCuboid) const
                     return true;  // (0 == 1) && (1 == 0) && (2 == 2)
                 }
             }
-            else if (((axes_[1] == aCuboid.axes_[2]) || (axes_[1] == -aCuboid.axes_[2])) && (extent_[1] == aCuboid.extent_[2]))
+            else if (((axes_[1] == aCuboid.axes_[2]) || (axes_[1] == -aCuboid.axes_[2])) &&
+                     (extent_[1] == aCuboid.extent_[2]))
             {
                 if (((axes_[2] == aCuboid.axes_[0]) || (axes_[2] == -aCuboid.axes_[0])) &&
                     (extent_[2] == aCuboid.extent_[0]))
@@ -113,7 +116,8 @@ bool Cuboid::operator==(const Cuboid& aCuboid) const
                 }
             }
         }
-        else if (((axes_[0] == aCuboid.axes_[2]) || (axes_[0] == -aCuboid.axes_[2])) && (extent_[0] == aCuboid.extent_[2]))
+        else if (((axes_[0] == aCuboid.axes_[2]) || (axes_[0] == -aCuboid.axes_[2])) &&
+                 (extent_[0] == aCuboid.extent_[2]))
         {
             if (((axes_[1] == aCuboid.axes_[0]) || (axes_[1] == -aCuboid.axes_[0])) &&
                 (extent_[1] == aCuboid.extent_[0]))
@@ -124,7 +128,8 @@ bool Cuboid::operator==(const Cuboid& aCuboid) const
                     return true;  // (0 == 2) && (1 == 0) && (2 == 1)
                 }
             }
-            else if (((axes_[1] == aCuboid.axes_[1]) || (axes_[1] == -aCuboid.axes_[1])) && (extent_[1] == aCuboid.extent_[1]))
+            else if (((axes_[1] == aCuboid.axes_[1]) || (axes_[1] == -aCuboid.axes_[1])) &&
+                     (extent_[1] == aCuboid.extent_[1]))
             {
                 if (((axes_[2] == aCuboid.axes_[0]) || (axes_[2] == -aCuboid.axes_[0])) &&
                     (extent_[2] == aCuboid.extent_[0]))

@@ -225,7 +225,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
     // Create "object" python submodule
     auto object = aModule.def_submodule("object");
 
-
     // Add object to python "object" submodules
     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(object);
     OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_PointSet(object);

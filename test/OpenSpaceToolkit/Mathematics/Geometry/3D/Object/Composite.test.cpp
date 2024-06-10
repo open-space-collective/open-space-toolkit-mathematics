@@ -70,7 +70,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, Constructor)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> objects= Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> objects = Array<Unique<Object>>::Empty();
 
         objects.emplace_back(std::move(pyramidUPtr));
         objects.emplace_back(std::move(cuboidUPtr));
@@ -166,7 +166,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, EqualToOperator)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> objects= Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> objects = Array<Unique<Object>>::Empty();
 
         objects.emplace_back(std::move(pyramidUPtr));
         objects.emplace_back(std::move(cuboidUPtr));
@@ -291,7 +291,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, NotEqualToOperat
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> objects= Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> objects = Array<Unique<Object>>::Empty();
 
         objects.emplace_back(std::move(pyramidUPtr));
         objects.emplace_back(std::move(cuboidUPtr));
@@ -760,7 +760,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjectAt)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> objects= Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> objects = Array<Unique<Object>>::Empty();
 
         objects.emplace_back(std::move(pyramidUPtr));
         objects.emplace_back(std::move(cuboidUPtr));
@@ -821,7 +821,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, AccessObjects)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> objects= Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> objects = Array<Unique<Object>>::Empty();
 
         objects.emplace_back(std::move(pyramidUPtr));
         objects.emplace_back(std::move(cuboidUPtr));
@@ -879,7 +879,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, GetObjectCount)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> objects= Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> objects = Array<Unique<Object>>::Empty();
 
         objects.emplace_back(std::move(pyramidUPtr));
         objects.emplace_back(std::move(cuboidUPtr));
@@ -942,7 +942,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, ConstIterator)
 
         Unique<Object> cuboidUPtr = std::make_unique<Cuboid>(center, axes, extent);
 
-        Array<Unique<Object>> objects= Array<Unique<Object>>::Empty();
+        Array<Unique<Object>> objects = Array<Unique<Object>>::Empty();
 
         objects.emplace_back(std::move(pyramidUPtr));
         objects.emplace_back(std::move(cuboidUPtr));

@@ -9,7 +9,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry(pybind11::module& aModule)
     // Create "geometry" python submodule
     auto geometry = aModule.def_submodule("geometry");
 
-
     // Add object to python "geometry" submodules
     OpenSpaceToolkitMathematicsPy_Geometry_2D(geometry);
     OpenSpaceToolkitMathematicsPy_Geometry_3D(geometry);

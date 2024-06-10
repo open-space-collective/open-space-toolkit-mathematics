@@ -1225,10 +1225,8 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, SetUpperBound)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Undefined)
 {
-
     using ostk::core::type::Real;
     using ostk::mathematics::object::Interval;
-
 
     {
         EXPECT_NO_THROW(Interval<Real>::Undefined());
@@ -1239,10 +1237,8 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Undefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Closed)
 {
-
     using ostk::core::type::Real;
     using ostk::mathematics::object::Interval;
-
 
     {
         EXPECT_NO_THROW(Interval<Real>::Closed(0.0, 1.0));
@@ -1255,10 +1251,8 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Closed)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Open)
 {
-
     using ostk::core::type::Real;
     using ostk::mathematics::object::Interval;
-
 
     {
         EXPECT_NO_THROW(Interval<Real>::Open(0.0, 1.0));
@@ -1271,10 +1265,8 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Open)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, HalfOpenLeft)
 {
-
     using ostk::core::type::Real;
     using ostk::mathematics::object::Interval;
-
 
     {
         EXPECT_NO_THROW(Interval<Real>::HalfOpenLeft(0.0, 1.0));
@@ -1287,10 +1279,8 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, HalfOpenLeft)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, HalfOpenRight)
 {
-
     using ostk::core::type::Real;
     using ostk::mathematics::object::Interval;
-
 
     {
         EXPECT_NO_THROW(Interval<Real>::HalfOpenRight(0.0, 1.0));

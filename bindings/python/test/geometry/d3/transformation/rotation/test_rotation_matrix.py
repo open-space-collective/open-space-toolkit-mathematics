@@ -1,24 +1,23 @@
 # Apache License 2.0
 
-from ostk.mathematics import geometry
+import pytest
+
+from ostk.mathematics.geometry.d3.transformation.rotation import Quaternion
+from ostk.mathematics.geometry.d3.transformation.rotation import RotationMatrix
+from ostk.mathematics.geometry.d3.transformation.rotation import EulerAngle
 
 
-Angle = geometry.Angle
-Quaternion = geometry.d3.transformation.rotation.Quaternion
-RotationMatrix = geometry.d3.transformation.rotation.RotationMatrix
+@pytest.fixture
+def rotation_matrix() -> RotationMatrix:
+    return RotationMatrix.unit()
 
 
-# isDefined
-# getRowAt
-# getColumnAt
-# toTransposed
-# transpose
-# Undefined
-# Unit
-# RX
-# RY
-# RZ
-# Rows
-# Columns
-# Quaternion
-# RotationVector
+class TestRotationMatrix:
+    def test_is_defined_success(self, rotation_matrix: RotationMatrix):
+        assert rotation_matrix.is_defined() is True
+
+    def test_quaternion_success(self, rotation_matrix: RotationMatrix):
+        assert RotationMatrix.quaternion(Quaternion.unit()) == rotation_matrix
+
+    def test_euler_angle_success(self, rotation_matrix: RotationMatrix):
+        assert RotationMatrix.euler_angle(EulerAngle.unit()) == rotation_matrix

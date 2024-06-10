@@ -31,8 +31,7 @@ class MockInterpolator : public Interpolator
 class OpenSpaceToolkit_Mathematics_Interpolator : public ::testing::Test
 {
    protected:
-    const Interpolator::Type defaulttype_ =
-        Interpolator::Type::BarycentricRational;
+    const Interpolator::Type defaulttype_ = Interpolator::Type::BarycentricRational;
     const MockInterpolator defaultInterpolator_ {defaulttype_};
 };
 

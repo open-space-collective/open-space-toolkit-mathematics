@@ -12,11 +12,10 @@ def interpolator() -> Linear:
 
 
 class TestLinear:
-    def test_constructors(self, interpolator: Linear):
+    def test_constructor_success(self, interpolator: Linear):
         assert interpolator is not None
         assert isinstance(interpolator, Interpolator)
         assert isinstance(interpolator, Linear)
-
 
     def test_evaluate(self):
         interpolator = Linear(

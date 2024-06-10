@@ -75,6 +75,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
         .def_static("columns", &RotationMatrix::Columns, arg("first_column"), arg("second_column"), arg("third_column"))
         .def_static("quaternion", &RotationMatrix::Quaternion, arg("quaternion"))
         .def_static("rotation_vector", &RotationMatrix::RotationVector, arg("rotation_vector"))
+        .def_static("euler_angle", &RotationMatrix::EulerAngle, arg("euler_angle"))
 
         ;
 }
