@@ -1,34 +1,47 @@
 # Apache License 2.0
 
-import numpy
+import pytest
 
-from ostk.mathematics import geometry
+import numpy as np
+
+from ostk.mathematics.geometry import Angle
+from ostk.mathematics.geometry.d3.transformation.rotation import Quaternion
+from ostk.mathematics.geometry.d3.transformation.rotation import RotationVector
+from ostk.mathematics.geometry.d3.transformation.rotation import EulerAngle
 
 
-Angle = geometry.Angle
-Quaternion = geometry.d3.transformation.rotation.Quaternion
-RotationVector = geometry.d3.transformation.rotation.RotationVector
+@pytest.fixture
+def rotation_vector() -> RotationVector:
+    return RotationVector.unit()
 
 
-def test_geometry_d3_transformation_rotation_rotation_vector():
-    rv: RotationVector = RotationVector(
-        numpy.array([[0.0], [0.0], [1.0]], dtype=float), Angle.zero()
-    )
+class TestRotationVector:
+    def test_constructor_success(self):
+        RotationVector(
+            axis=(0.0, 0.0, 1.0),
+            angle=Angle.zero(),
+        )
 
-    assert (rv == rv) is True
-    assert (rv != rv) is False
+        RotationVector(
+            vector=(0.0, 0.0, 1.0),
+            angle_unit=Angle.Unit.Degree,
+        )
 
-    assert rv.is_defined() is True
+    def test_operators_success(self, rotation_vector: RotationVector):
+        assert (rotation_vector == rotation_vector) is True
+        assert (rotation_vector != rotation_vector) is False
 
-    # assert numpy.array_equal(rv.get_axis(), numpy.array([[0.0], [0.0], [1.0]], dtype=float))
-    assert rv.get_angle() == Angle.zero()
+    def test_get_angle_success(self, rotation_vector: RotationVector):
+        assert rotation_vector.get_angle() == Angle.zero()
 
-    assert RotationVector.undefined().is_defined() is False
-    assert RotationVector.unit().is_defined() is True
-    assert (
-        RotationVector.quaternion(
-            Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion.Format.XYZS)
-        ).is_defined()
-        is True
-    )
-    # assert RotationVector.RotationMatrix().is_defined() is True
+    def test_is_defined_success(self, rotation_vector: RotationVector):
+        assert rotation_vector.is_defined() is True
+
+    def test_is_defined_success(self, rotation_vector: RotationVector):
+        rotation_vector.rectify()
+
+    def test_quaternion_success(self, rotation_vector: RotationVector):
+        assert RotationVector.quaternion(Quaternion.unit()) == rotation_vector
+
+    def test_euler_angle_success(self, rotation_vector: RotationVector):
+        assert RotationVector.euler_angle(EulerAngle.unit()) == rotation_vector

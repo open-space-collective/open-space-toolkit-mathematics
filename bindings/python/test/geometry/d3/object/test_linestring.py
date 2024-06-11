@@ -41,7 +41,9 @@ class TestLineString:
         assert linestring.is_defined()
 
         # Construction with Array of Points using python numpy array
-        linestring: LineString = LineString(np.array((point_1, point_2, point_3, point_4)))
+        linestring: LineString = LineString(
+            np.array((point_1, point_2, point_3, point_4))
+        )
 
         assert linestring is not None
         assert isinstance(linestring, LineString)

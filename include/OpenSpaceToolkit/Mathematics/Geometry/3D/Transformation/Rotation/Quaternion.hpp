@@ -33,6 +33,7 @@ using ostk::mathematics::geometry::Angle;
 
 class RotationVector;
 class RotationMatrix;
+class EulerAngle;
 
 /// @brief                      Quaternion
 ///
@@ -47,7 +48,7 @@ class RotationMatrix;
 class Quaternion
 {
    public:
-    /// @brief              Quaternion format
+    /// @brief                  Quaternion format
 
     enum class Format
     {
@@ -57,17 +58,17 @@ class Quaternion
 
     };
 
-    /// @brief              Constructor
+    /// @brief                  Constructor
     ///
     /// @code
-    ///                     Quaternion quaternion = { 0.0, 0.0, 0.0, 0.1, Quaternion::Format::XYZS } ;
+    ///                         Quaternion(0.0, 0.0, 0.0, 0.1, Quaternion::Format::XYZS) ;
     /// @endcode
     ///
-    /// @param              [in] aFirstComponent A first component
-    /// @param              [in] aSecondComponent A second component
-    /// @param              [in] aThirdComponent A third component
-    /// @param              [in] aFourthComponent A fourth component
-    /// @param              [in] aFormat A quaternion format
+    /// @param                  [in] aFirstComponent A first component
+    /// @param                  [in] aSecondComponent A second component
+    /// @param                  [in] aThirdComponent A third component
+    /// @param                  [in] aFourthComponent A fourth component
+    /// @param                  [in] aFormat A Quaternion format
 
     Quaternion(
         const Real& aFirstComponent,
@@ -77,430 +78,426 @@ class Quaternion
         const Quaternion::Format& aFormat
     );
 
-    /// @brief              Constructor
+    /// @brief                  Constructor
     ///
     /// @code
-    ///                     Quaternion quaternion = { Vector4d(0.0, 0.0, 0.0, 0.1), Quaternion::Format::XYZS } ;
+    ///                         Quaternion({0.0, 0.0, 0.0, 0.1}, Quaternion::Format::XYZS) ;
     /// @endcode
     ///
-    /// @param              [in] aVector A 4D vector
-    /// @param              [in] aFormat A quaternion format
+    /// @param                  [in] aVector A 4D vector
+    /// @param                  [in] aFormat A Quaternion format
 
     Quaternion(const Vector4d& aVector, const Quaternion::Format& aFormat);
 
-    /// @brief              Constructor
+    /// @brief                  Constructor
     ///
     /// @code
-    ///                     Quaternion quaternion = { Vector3d(0.0, 0.0, 0.0), 1.0 } ;
+    ///                         Quaternion({0.0, 0.0, 0.0}, 1.0);
     /// @endcode
     ///
-    /// @param              [in] aVectorPart A vector part
-    /// @param              [in] aVectorPart A scalar part
+    /// @param                  [in] aVectorPart A vector part
+    /// @param                  [in] aVectorPart A scalar part
 
     Quaternion(const Vector3d& aVectorPart, const Real& aScalarPart);
 
-    /// @brief              Equal to operator
+    /// @brief                  Equal to operator
     ///
     /// @code
-    ///                     Quaternion::XYZS(0.0, 0.0, 0.0, 1.0) == Quaternion::XYZS(0.0, 0.0, 0.0, 1.0) ; // True
+    ///                         Quaternion::Unit() == Quaternion::Unit()
     /// @endcode
     ///
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             True if quaternions are equal
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 True if Quaternions are equal
 
     bool operator==(const Quaternion& aQuaternion) const;
 
-    /// @brief              Not equal to operator
+    /// @brief                  Not equal to operator
     ///
     /// @code
-    ///                     Quaternion::XYZS(0.0, 0.0, 0.0, 1.0) != Quaternion::XYZS(1.0, 0.0, 0.0, 0.0) ; // True
+    ///                         Quaternion::Unit() != Quaternion::Unit();
     /// @endcode
     ///
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             True if quaternions are not equal
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 True if Quaternions are not equal
 
     bool operator!=(const Quaternion& aQuaternion) const;
 
-    /// @brief              Addition operator (quaternion)
+    /// @brief                  Addition operator
     ///
     /// @code
-    ///                     Quaternion q_1 = ... ;
-    ///                     Quaternion q_2 = ... ;
-    ///                     Quaternion q_3 = q_1 + q_2 ;
-    /// @encode
+    ///                         Quaternion q_1 = ... ;
+    ///                         Quaternion q_2 = ... ;
+    ///                         Quaternion q_3 = q_1 + q_2 ;
+    /// @endcode
     ///
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             Quaternion
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 Quaternion
 
     Quaternion operator+(const Quaternion& aQuaternion) const;
 
-    /// @brief              Multiplication operator (quaternion)
+    /// @brief                  Multiplication operator (Quaternion)
     ///
     /// @code
-    ///                     Quaternion q_B_A = ... ;
-    ///                     Quaternion q_C_B = ... ;
-    ///                     Quaternion q_C_A = q_C_B * q_B_A ;
-    /// @encode
+    ///                         Quaternion q_B_A = ... ;
+    ///                         Quaternion q_C_B = ... ;
+    ///                         Quaternion q_C_A = q_C_B * q_B_A ;
+    /// @endcode
     ///
-    /// @note               This operator uses cross multiplication
+    /// @note                   This operator uses cross multiplication
     ///
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             Quaternion
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 Quaternion
 
     Quaternion operator*(const Quaternion& aQuaternion) const;
 
-    /// @brief              Multiplication operator (vector)
+    /// @brief                  Multiplication operator (vector)
     ///
-    /// Example:
     /// @code
-    ///                     Quaternion q_B_A = ... ;
-    ///                     Vector3d v_A = ... ;
-    ///                     Vector3d v_B = q_B_A * v_A ;
+    ///                         Quaternion q_B_A = ... ;
+    ///                         Vector3d v_A = ... ;
+    ///                         Vector3d v_B = q_B_A * v_A ;
     /// @endcode
     ///
-    /// @note               This operator uses transformVector
+    /// @note                   This operator uses transformVector
     ///
-    /// @param              [in] aVector A vector
-    /// @return             Vector
+    /// @param                  [in] aVector A vector
+    /// @return                 Vector
 
     Vector3d operator*(const Vector3d& aVector) const;
 
-    /// @brief              Multiplication operator (scalar)
+    /// @brief                  Multiplication operator (scalar)
     ///
-    /// Example:
     /// @code
-    ///                     Quaternion q_1 = ... ;
-    ///                     Real scalar = ... ;
-    ///                     Quaternion q_2 = q_1 * scalar ;
+    ///                         Quaternion q_1 = ... ;
+    ///                         Real scalar = ... ;
+    ///                         Quaternion q_2 = q_1 * scalar ;
     /// @endcode
     ///
-    /// @param              [in] aScalar A scalar
-    /// @return             Quaternion
+    /// @param                  [in] aScalar A scalar
+    /// @return                 Quaternion
 
     Quaternion operator*(const Real& aScalar) const;
 
-    /// @brief              Multiplication operator (scalar)
+    /// @brief                  Multiplication operator (scalar)
     ///
-    /// Example:
     /// @code
-    ///                     Real scalar = ... ;
-    ///                     Quaternion q_1 = ... ;
-    ///                     Quaternion q_2 = scalar * q_1 ;
+    ///                         Real scalar = ... ;
+    ///                         Quaternion q_1 = ... ;
+    ///                         Quaternion q_2 = scalar * q_1 ;
     /// @endcode
     ///
-    /// @param              [in] aScalar A scalar
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             Quaternion
+    /// @param                  [in] aScalar A scalar
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 Quaternion
 
     friend Quaternion operator*(const Real& aScalar, const Quaternion& aQuaternion);
 
-    /// @brief              Division operator (quaternion)
+    /// @brief                  Division operator (Quaternion)
     ///
     /// @code
-    ///                     Quaternion q_A_B = ... ;
-    ///                     Quaternion q_C_B = ... ;
-    ///                     Quaternion q_C_A = q_C_B / q_A_B ;
+    ///                         Quaternion q_A_B = ... ;
+    ///                         Quaternion q_C_B = ... ;
+    ///                         Quaternion q_C_A = q_C_B / q_A_B ;
     /// @endcode
     ///
-    /// @note               This is equivalent to multiplying with the inverse
+    /// @note                   This is equivalent to multiplying with the inverse
     ///
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             Quaternion
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 Quaternion
 
     Quaternion operator/(const Quaternion& aQuaternion) const;
 
-    /// @brief              Power operator (quaternion)
+    /// @brief                  Power operator (Quaternion)
     ///
     /// @code
-    ///                     Quaternion q_1 = ... ;
-    ///                     Real scalar = ... ;
-    ///                     Quaternion q_2 = q_1 ^ scalar ;
+    ///                         Quaternion q_1 = ... ;
+    ///                         Real scalar = ... ;
+    ///                         Quaternion q_2 = q_1 ^ scalar ;
     /// @endcode
     ///
-    /// @param              [in] aScalar A scalar
-    /// @return             Quaternion
+    /// @param                  [in] aScalar A scalar
+    /// @return                 Quaternion
 
     Quaternion operator^(const Real& aScalar) const;
 
-    /// @brief              Addition assignment operator (quaternion)
+    /// @brief                  Addition assignment operator (Quaternion)
     ///
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             Reference to quaternion
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 Quaternion reference
 
     Quaternion& operator+=(const Quaternion& aQuaternion);
 
-    /// @brief              Multiplication assignment operator (quaternion)
+    /// @brief                  Multiplication assignment operator (Quaternion)
     ///
-    /// @note               This operator uses cross multiplication
+    /// @note                   This operator uses cross multiplication
     ///
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             Reference to quaternion
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 Quaternion reference
 
     Quaternion& operator*=(const Quaternion& aQuaternion);
 
-    /// @brief              Division assignment operator (quaternion)
+    /// @brief                  Division assignment operator (Quaternion)
     ///
-    /// @note               This is equivalent to multiplying with the inverse
+    /// @note                   This is equivalent to multiplying with the inverse
     ///
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             Reference to quaternion
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 Quaternion reference
 
     Quaternion& operator/=(const Quaternion& aQuaternion);
 
-    /// @brief              Output stream operator
+    /// @brief                  Output stream operator
     ///
     /// @code
-    ///                     std::cout << Quaternion::XYZS(0.0, 0.0, 0.0, 1.0) ;
+    ///                         std::cout << Quaternion::XYZS(0.0, 0.0, 0.0, 1.0);
     /// @endcode
     ///
-    /// @param              [in] anOutputStream An output stream
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             A reference to output stream
+    /// @param                  [in] anOutputStream An output stream
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 Output stream reference
 
     friend std::ostream& operator<<(std::ostream& anOutputStream, const Quaternion& aQuaternion);
 
-    /// @brief              Check if quaternion is defined
+    /// @brief                  Check if Quaternion is defined
     ///
     /// @code
-    ///                     Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).isDefined() ; // True
+    ///                         Quaternion::Unit().isDefined();
     /// @endcode
     ///
-    /// @return             True if quaternion is defined
+    /// @return                 True if Quaternion is defined
 
     bool isDefined() const;
 
-    /// @brief              Check if quaternion is unitary, i.e. its norm is equal to 1.0
+    /// @brief                  Check if Quaternion is unitary (i.e., its norm is equal to 1.0)
     ///
     /// @code
-    ///                     Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).isUnitary() ; // True
+    ///                         Quaternion::Unit().isUnitary();
     /// @endcode
     ///
-    /// @return             True if quaternion is unitary
+    /// @return                 True if Quaternion is unitary
 
     bool isUnitary() const;
 
-    /// @brief              Check if quaternion is near a given quaternion
+    /// @brief                  Check if Quaternion is near another Quaternion
     ///
     /// @code
-    ///                     Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0 + 1e-19),
-    ///                     Angle::Radians(1e-6)) ; // True
+    ///                         Quaternion::Unit().isNear(
+    ///                             Quaternion::XYZS(0.0, 0.0, 0.0, 1.0 + 1e-19),
+    ///                             Angle::Radians(1e-6)
+    ///                         );
     /// @endcode
     ///
-    /// @param              [in] aQuaternion A quaternion
-    /// @param              [in] anAngularTolerance An angular tolerance
-    /// @return             True if quaternions are near each other
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @param                  [in] anAngularTolerance An angular tolerance
+    /// @return                 True if Quaternions are near each other
 
     bool isNear(const Quaternion& aQuaternion, const Angle& anAngularTolerance) const;
 
-    /// @brief              Get first component of vector part
+    /// @brief                  Get first component of vector part
     ///
     /// @code
-    ///                     Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).x() ; // &0.0
+    ///                         Quaternion::Unit().x();
     /// @endcode
     ///
-    /// @return             First component of vector part
+    /// @return                 Real
 
     Real x() const;
 
-    /// @brief              Get second component of vector part
+    /// @brief                  Get second component of vector part
     ///
     /// @code
-    ///                     Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).y() ; // &0.0
+    ///                         Quaternion::Unit().y();
     /// @endcode
     ///
-    /// @return             Second component of vector part
+    /// @return                 Real
 
     Real y() const;
 
-    /// @brief              Get third component of vector part
+    /// @brief                  Get third component of vector part
     ///
     /// @code
-    ///                     Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).z() ; // &0.0
+    ///                         Quaternion::Unit().z();
     /// @endcode
     ///
-    /// @return             Third component of vector part
+    /// @return                 Real
 
     Real z() const;
 
-    /// @bref               Get scalar part
+    /// @bref                   Get scalar part
     ///
     /// @code
-    ///                     Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).s() ; // &1.0
+    ///                         Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).s();
     /// @endcode
     ///
-    /// @return             Scalar part
+    /// @return                 Real
 
     Real s() const;
 
-    /// @brief              Get vector part
+    /// @brief                  Get vector part
     ///
     /// @code
-    ///                     Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).getVectorPart() ; // [0.0, 0.0, 0.0]
+    ///                         Quaternion::Unit().getVectorPart();
     /// @endcode
     ///
-    /// @return             Vector part
+    /// @return                 Vector
 
     Vector3d getVectorPart() const;
 
-    /// @brief              Get scalar part
+    /// @brief                  Get scalar part
     ///
     /// @code
-    ///                     Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).getScalarPart() ; // 1.0
+    ///                         Quaternion::Unit().getScalarPart();
     /// @endcode
     ///
-    /// @return             Scalar part
+    /// @return                 Real
 
     Real getScalarPart() const;
 
-    /// @brief              Get normalized quaternion
+    /// @brief                  Calculate normalized Quaternion
     ///
     /// @code
-    ///                     Quaternion::XYZS(0.0, 0.0, 0.0, 1.000000000000001).toNormalized() ; // [0.0, 0.0, 0.0, 1.0]
-    /// @encode
+    ///                         Quaternion::XYZS(0.0, 0.0, 0.0, 1.000000000000001).toNormalized();
+    /// @endcode
     ///
-    /// @return             Normalized quaternion
+    /// @return                 Quaternion
 
     Quaternion toNormalized() const;
 
-    /// @brief              Get conjugate quaternion
+    /// @brief                  Calculate conjugate of Quaternion
     ///
     /// @code
-    ///                     Quaternion::XYZS(0.0, 0.0, 0.70710678118, 0.70710678118).toConjugate() ; // [0.0, 0.0,
-    ///                     -0.70710678118, 0.70710678118]
-    /// @encode
+    ///                         Quaternion::XYZS(0.0, 0.0, 0.70710678118, 0.70710678118).toConjugate();
+    /// @endcode
     ///
-    /// @return             Conjugate quaternion
+    /// @return                 Quaternion
 
     Quaternion toConjugate() const;
 
-    /// @brief              Get inverse quaternion
+    /// @brief                  Calculate inverse of Quaternion
     ///
     /// @code
-    ///                     Quaternion::XYZS(0.0, 0.0, 0.70710678118, 0.70710678118).toInverse() ; // [0.0, 0.0,
-    ///                     -0.70710678118, 0.70710678118]
-    /// @encode
+    ///                         Quaternion::XYZS(0.0, 0.0, 0.70710678118, 0.70710678118).toInverse();
+    /// @endcode
     ///
-    /// @return             Inverse quaternion
+    /// @return                 Quaternion
 
     Quaternion toInverse() const;
 
-    /// @brief              Get exponential
+    /// @brief                  Calculate exponential of Quaternion
     ///
     /// @code
-    ///                     Quaternion q_1 = ...
-    ///                     Quaternion q_2 = q_1.exp() ;
+    ///                         Quaternion q_1 = ...
+    ///                         Quaternion q_2 = q_1.exp();
     /// @endcode
     ///
-    /// @return             Exponential
+    /// @return                 Quaternion
 
     Quaternion exp() const;
 
-    /// @brief              Get logarithm
+    /// @brief                  Calculate logarithm of Quaternion
     ///
     /// @code
-    ///                     Quaternion q_1 = ...
-    ///                     Quaternion q_2 = q_1.log() ;
+    ///                         Quaternion q_1 = ...
+    ///                         Quaternion q_2 = q_1.log();
     /// @endcode
     ///
-    /// @return             Logarithm
+    /// @return                 Quaternion
 
     Quaternion log() const;
 
-    /// @brief              Get power
+    /// @brief                  Calculate power of Quaternion
     ///
     /// @code
-    ///                     Quaternion q_1 = ...
-    ///                     Real scalar = ...
-    ///                     Quaternion q_2 = q_1 ^ scalar ;
+    ///                         Quaternion q_1 = ...
+    ///                         Real scalar = ...
+    ///                         Quaternion q_2 = q_1 ^ scalar ;
     /// @endcode
     ///
-    /// @param              [in] aValue A power value
-    /// @return             Power
+    /// @param                  [in] aValue A power value
+    /// @return                 Quaternion
 
     Quaternion pow(const Real& aValue) const;
 
-    /// @brief              Get quaternion norm
+    /// @brief                  Calculate norm of Quaternion
     ///
     /// @code
-    ///                     Quaternion::XYZS(0.0, 0.0, -0.70710678118, 0.70710678118).norm() ; // 1.0
-    /// @encode
+    ///                         Quaternion::XYZS(0.0, 0.0, -0.70710678118, 0.70710678118).norm();
+    /// @endcode
     ///
-    /// @return             Quaternion norm
+    /// @return                 Quaternion norm
 
     Real norm() const;
 
-    /// @brief              Multiply quaternion using cross multiplication
+    /// @brief                  Multiply Quaternion using cross multiplication
     ///
     /// @code
-    ///                     Quaternion q_1 = ...
-    ///                     Quaternion q_2 = ...
-    ///                     Quaternion q_3 = q_1.crossMultiply(q_2)
+    ///                         Quaternion q_1 = ...
+    ///                         Quaternion q_2 = ...
+    ///                         Quaternion q_3 = q_1.crossMultiply(q_2)
     /// @endcode
     ///
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             Quaternion
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 Quaternion
 
     Quaternion crossMultiply(const Quaternion& aQuaternion) const;
 
-    /// @brief              Multiply quaternion using dot multiplication
+    /// @brief                  Multiply Quaternion using dot multiplication
     ///
     /// @code
-    ///                     Quaternion q_1 = ...
-    ///                     Quaternion q_2 = ...
-    ///                     Quaternion q_3 = q_1.dotMultiply(q_2)
+    ///                         Quaternion q_1 = ...
+    ///                         Quaternion q_2 = ...
+    ///                         Quaternion q_3 = q_1.dotMultiply(q_2)
     /// @endcode
     ///
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             Quaternion
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 Quaternion
 
     Quaternion dotMultiply(const Quaternion& aQuaternion) const;
 
-    /// @brief              Calculate quaternion dot product
+    /// @brief                  Calculate Quaternion dot product
     ///
     /// @code
-    ///                     Quaternion q_1 = ...
-    ///                     Quaternion q_2 = ...
-    ///                     Real q_3 = q_1.dotProduct(q_2)
+    ///                         Quaternion q_1 = ...
+    ///                         Quaternion q_2 = ...
+    ///                         Real q_3 = q_1.dotProduct(q_2)
     /// @endcode
     ///
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             Quaternion
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 Quaternion
 
     Real dotProduct(const Quaternion& aQuaternion) const;
 
-    /// @brief              Rotate vector using quaternion
+    /// @brief                  Rotate vector using Quaternion
     ///
     /// @code
-    ///                     Quaternion q = ...
-    ///                     Vector3d v_1 = ...
-    ///                     Vector3d v_2 = q.rotateVector(v_1)
+    ///                         Vector3d v_1 = ...
+    ///                         Vector3d v_2 = q.rotateVector(v_1);
     /// @endcode
     ///
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             Vector
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 Vector
 
     Vector3d rotateVector(const Vector3d& aVector) const;
 
-    /// @brief              Convert quaternion to its vector representation
+    /// @brief                  Convert Quaternion to its vector representation
     ///
     /// @code
-    ///                     Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).toVector() ; // [0.0, 0.0, 0.0, 1.0]
+    ///                         Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).toVector();
     /// @endcode
     ///
-    /// @param              [in] (optional) aFormat A quaternion format
-    /// @return             Vector representation
+    /// @param                  [in] (optional) aFormat A Quaternion format
+    /// @return                 Vector representation
 
     Vector4d toVector(const Quaternion::Format& aFormat = Quaternion::Format::XYZS) const;
 
-    /// @brief              Convert quaternion to its string representation
+    /// @brief                  Convert Quaternion to its string representation
     ///
     /// @code
-    ///                     Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).toString() ; // "[0.0, 0.0, 0.0, 1.0]"
+    ///                         Quaternion::XYSZ(0.0, 0.0, 0.0, 1.0).toString();
     /// @endcode
     ///
-    /// @param              [in] (optional) aPrecision A quaternion precision
-    /// @param              [in] (optional) aFormat A quaternion format
-    /// @return             String representation
+    /// @param                  [in] (optional) aPrecision A Quaternion precision
+    /// @param                  [in] (optional) aFormat A Quaternion format
+    /// @return                 String representation
 
     String toString(const Quaternion::Format& aFormat) const;
 
@@ -508,96 +505,88 @@ class Quaternion
         const Integer& aPrecision = Integer::Undefined(), const Quaternion::Format& aFormat = Quaternion::Format::XYZS
     ) const;
 
-    /// @brief              Normalize quaternion
+    /// @brief                  Normalize Quaternion
     ///
     /// @code
-    ///                     Quaternion quaternion = Quaternion::XYZS(0.0, 0.0, 0.0, 1.000000000000001) ; // [0.0, 0.0,
-    ///                     0.0, 1.000000000000001] quaternion.normalize() ; // [0.0, 0.0, 0.0, 1.0]
+    ///                         Quaternion::XYZS(0.0, 0.0, 0.0, 1.000000000000001).normalize();
     /// @endcode
     ///
-    /// @return             Reference to quaternion
+    /// @return                 Quaternion reference
 
     Quaternion& normalize();
 
-    /// @brief              Conjugate quaternion
+    /// @brief                  Conjugate Quaternion
     ///
     /// @code
-    ///                     Quaternion quaternion = Quaternion::XYZS(0.0, 0.0, 0.70710678118, 0.70710678118) ; // [0.0,
-    ///                     0.0, 0.70710678118, 0.70710678118] quaternion.conjugate() ; // [0.0, 0.0, -0.70710678118,
-    ///                     0.70710678118]
+    ///                         Quaternion::XYZS(0.0, 0.0, 0.70710678118, 0.70710678118).conjugate();
     /// @endcode
     ///
-    /// @return             Reference to quaternion
+    /// @return                 Quaternion reference
 
     Quaternion& conjugate();
 
-    /// @brief              Inverse quaternion
+    /// @brief                  Inverse Quaternion
     ///
     /// @code
-    ///                     Quaternion quaternion = Quaternion::XYZS(0.0, 0.0, 0.70710678118, 0.70710678118) ; // [0.0,
-    ///                     0.0, 0.70710678118, 0.70710678118] quaternion.inverse() ; // [0.0, 0.0, -0.70710678118,
-    ///                     0.70710678118]
+    ///                         Quaternion::XYZS(0.0, 0.0, 0.70710678118, 0.70710678118).inverse();
     /// @endcode
     ///
-    /// @return             Reference to quaternion
+    /// @return                 Quaternion reference
 
     Quaternion& inverse();
 
-    /// @brief              Rectify quaternion (enforce positive scalar part)
+    /// @brief                  Rectify Quaternion (enforce positive scalar part)
     ///
     /// @code
-    ///                     Quaternion quaternion = Quaternion::XYZS(0.0, 0.0, -0.70710678118, -0.70710678118) ; //
-    ///                     [0.0, 0.0, -0.70710678118, -0.70710678118] quaternion.rectify() ; // [0.0, 0.0,
-    ///                     0.70710678118, 0.70710678118]
+    ///                         Quaternion::XYZS(0.0, 0.0, -0.70710678118, -0.70710678118).rectify();
     /// @endcode
     ///
-    /// @return             Reference to quaternion
+    /// @return                 Quaternion reference
 
     Quaternion& rectify();
 
-    /// @brief              Get angular difference with quaternion
+    /// @brief                  Compute angular difference with Quaternion
     ///
     /// @code
-    ///                     Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).angularDifferenceWith(Quaternion::XYZS(0.0, 0.0,
-    ///                     0.0, 1.0)) ; // 0.0 [rad]
+    ///                         Quaternion::Unit().angularDifferenceWith(Quaternion::Unit());
     /// @endcode
     ///
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             Angular difference
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 Angular difference
 
     Angle angularDifferenceWith(const Quaternion& aQuaternion) const;
 
-    /// @brief              Constructs an undefined quaternion
+    /// @brief                  Construct undefined Quaternion
     ///
     /// @code
-    ///                     Quaternion quaternion = Quaternion::Undefined() ; // Undefined
+    ///                         Quaternion::Undefined();
     /// @endcode
     ///
-    /// @return             Undefined quaternion
+    /// @return                 Quaternion
 
     static Quaternion Undefined();
 
-    /// @brief              Constructs a unit quaternion
+    /// @brief                  Construct unitary Quaternion
     ///
     /// @code
-    ///                     Quaternion quaternion = Quaternion::Unit() ; // [0.0, 0.0, 0.0, 1.0]
+    ///                         Quaternion::Unit();
     /// @endcode
     ///
-    /// @return             Unit quaternion
+    /// @return                 Quaternion
 
     static Quaternion Unit();
 
-    /// @brief              Constructs a quaternion using the vector-scalar format
+    /// @brief                  Construct Quaternion using the vector-scalar format
     ///
     /// @code
-    ///                     Quaternion quaternion = Quaternion::XYZS(0.0, 0.0, 0.0, 1.0) ; // [0.0, 0.0, 0.0, 1.0]
+    ///                         Quaternion::XYZS(0.0, 0.0, 0.0, 1.0);
     /// @endcode
     ///
-    /// @param              [in] aFirstComponent A first component
-    /// @param              [in] aSecondComponent A second component
-    /// @param              [in] aThirdComponent A third component
-    /// @param              [in] aFourthComponent A fourth component
-    /// @return             Quaternion
+    /// @param                  [in] aFirstComponent A first component
+    /// @param                  [in] aSecondComponent A second component
+    /// @param                  [in] aThirdComponent A third component
+    /// @param                  [in] aFourthComponent A fourth component
+    /// @return                 Quaternion
 
     static Quaternion XYZS(
         const Real& aFirstComponent,
@@ -606,101 +595,109 @@ class Quaternion
         const Real& aFourthComponent
     );
 
-    /// @brief              Constructs a quaternion from a rotation vector
+    /// @brief                  Construct Quaternion from rotation vector
     ///
     /// @code
-    ///                     Quaternion quaternion = Quaternion::RotationVector(RotationVector(Vector3d(0.0, 0.0, 1.0),
-    ///                     Angle::Degrees(0.0))) ; // [0.0, 0.0, 0.0, 1.0]
+    ///                         Quaternion::RotationVector(RotationVector::Unit());
     /// @endcode
     ///
-    /// @param              [in] aRotationVector A rotation vector
-    /// @return             Quaternion
+    /// @param                  [in] aRotationVector A Rotation Vector
+    /// @return                 Quaternion
 
     static Quaternion RotationVector(const rotation::RotationVector& aRotationVector);
 
-    /// @brief              Constructs a rquaternion from a rotation matrix
+    /// @brief                  Construct Quaternion from Rotation Matrix
     ///
     /// @code
-    ///                     Quaternion quaternion = Quaternion::RotationMatrix(RotationMatrix::Unit()) ;
+    ///                         Quaternion::RotationMatrix(RotationMatrix::Unit());
     /// @endcode
     ///
-    /// @param              [in] aRotationMatrix A rotation matrix
-    /// @return             Quaternion
+    /// @param                  [in] aRotationMatrix A Rotation Matrix
+    /// @return                 Quaternion
 
     static Quaternion RotationMatrix(const rotation::RotationMatrix& aRotationMatrix);
 
-    /// @brief              Constructs a quaternion from a string
+    /// @brief                  Construct Quaternion from Euler Angle
     ///
     /// @code
-    ///                     Quaternion quaternion = Quaternion::Parse("[0.0, 0.0, 0.0, 1.0]") ; // [0.0, 0.0, 0.0, 1.0]
+    ///                         Quaternion::EulerAngle(EulerAngle::Unit());
     /// @endcode
     ///
-    /// @param              [in] aString A string
-    /// @param              [in] (optional) aFormat A quaternion format
-    /// @return             Quaternion
+    /// @param                  [in] EulerAngle A Euler Angle
+    /// @return                 Quaternion
+
+    static Quaternion EulerAngle(const rotation::EulerAngle& aEulerAngle);
+
+    /// @brief                  Construct Quaternion from string
+    ///
+    /// @code
+    ///                         Quaternion::Parse("[0.0, 0.0, 0.0, 1.0]");
+    /// @endcode
+    ///
+    /// @param                  [in] aString A string
+    /// @param                  [in] (optional) aFormat A Quaternion format
+    /// @return                 Quaternion
 
     static Quaternion Parse(const String& aString, const Quaternion::Format& aFormat = Quaternion::Format::XYZS);
 
-    /// @brief              Constructs a quaternion describing the shortest rotation between two vectors
+    /// @brief                  Construct Quaternion describing the shortest rotation between two vectors
     ///
     /// @code
-    ///                     Vector3d v_1 = ...
-    ///                     Vector3d v_2 = ...
-    ///                     Quaternion q = Quaternion.ShortestRotation(v_1, v_2)
+    ///                         Quaternion::ShortestRotation({1.0, 0.0, 0.0}, {0.0, 1.0, 0.0});
     /// @endcode
     ///
-    /// @param              [in] aFirstVector A first vector
-    /// @param              [in] aSecondVector A second vector
-    /// @return             Quaternion
+    /// @param                  [in] aFirstVector A first vector
+    /// @param                  [in] aSecondVector A second vector
+    /// @return                 Quaternion
 
     static Quaternion ShortestRotation(const Vector3d& aFirstVector, const Vector3d& aSecondVector);
 
-    /// @brief              Linear interpolator method
+    /// @brief                  Linear interpolator method
     ///
     /// @code
-    ///                     Quaternion q_1 = ...
-    ///                     Quaternion q_2 = ...
-    ///                     Quaternion q = Quaternion.LERP(q_1, q_2, 0.5)
+    ///                         Quaternion q_1 = ...
+    ///                         Quaternion q_2 = ...
+    ///                         Quaternion::LERP(q_1, q_2, 0.5);
     /// @endcode
     ///
-    /// @param              [in] aFirstQuaternion A first quaternion
-    /// @param              [in] aSecondQuaternion A second quaternion
-    /// @param              [in] aRatio An interpolator ratio
-    /// @return             Quaternion
+    /// @param                  [in] aFirstQuaternion A first Quaternion
+    /// @param                  [in] aSecondQuaternion A second Quaternion
+    /// @param                  [in] aRatio An interpolator ratio
+    /// @return                 Quaternion
 
     static Quaternion LERP(const Quaternion& aFirstQuaternion, const Quaternion& aSecondQuaternion, const Real& aRatio);
 
-    /// @brief              Normalized linear interpolator method
+    /// @brief                  Normalized linear interpolator method
     ///
     /// @code
-    ///                     Quaternion q_1 = ...
-    ///                     Quaternion q_2 = ...
-    ///                     Quaternion q = Quaternion.NLERP(q_1, q_2, 0.5)
+    ///                         Quaternion q_1 = ...
+    ///                         Quaternion q_2 = ...
+    ///                         Quaternion::NLERP(q_1, q_2, 0.5);
     /// @endcode
     ///
-    /// @param              [in] aFirstQuaternion A first quaternion
-    /// @param              [in] aSecondQuaternion A second quaternion
-    /// @param              [in] aRatio An interpolator ratio
-    /// @return             Quaternion
+    /// @param                  [in] aFirstQuaternion A first Quaternion
+    /// @param                  [in] aSecondQuaternion A second Quaternion
+    /// @param                  [in] aRatio An interpolator ratio
+    /// @return                 Quaternion
 
     static Quaternion NLERP(
         const Quaternion& aFirstQuaternion, const Quaternion& aSecondQuaternion, const Real& aRatio
     );
 
-    ///                     Spherical linear interpolator method
+    ///                         Spherical linear interpolator method
     ///
-    /// @ref                https://en.wikipedia.org/wiki/Slerp
+    /// @ref                    https://en.wikipedia.org/wiki/Slerp
     ///
     /// @code
-    ///                     Quaternion q_1 = ...
-    ///                     Quaternion q_2 = ...
-    ///                     Quaternion q = Quaternion.SLERP(q_1, q_2, 0.5)
+    ///                         Quaternion q_1 = ...
+    ///                         Quaternion q_2 = ...
+    ///                         Quaternion::SLERP(q_1, q_2, 0.5);
     /// @endcode
     ///
-    /// @param              [in] aFirstQuaternion A first quaternion
-    /// @param              [in] aSecondQuaternion A second quaternion
-    /// @param              [in] aRatio An interpolator ratio
-    /// @return             Quaternion
+    /// @param                  [in] aFirstQuaternion A first Quaternion
+    /// @param                  [in] aSecondQuaternion A second Quaternion
+    /// @param                  [in] aRatio An interpolator ratio
+    /// @return                 Quaternion
 
     static Quaternion SLERP(
         const Quaternion& aFirstQuaternion, const Quaternion& aSecondQuaternion, const Real& aRatio

@@ -88,6 +88,31 @@ class Angle
 
     bool isZero() const;
 
+    /// @brief                  Check if angle is negative
+    ///
+    /// @code
+    ///                         Angle::Zero().isNegative();
+    /// @endcode
+    ///
+    /// @return                 True if angle is negative
+
+    bool isNegative() const;
+
+    /// @brief                  Check if angles are near within an angular tolerance
+    ///
+    /// @code
+    ///                         Angle::Zero().isNear(
+    ///                             Angle::Degrees(1.0),
+    ///                             Angle::Degrees(2.0)
+    ///                         );
+    /// @endcode
+    ///
+    /// @param                  [in] anAngle An angle
+    /// @param                  [in] aTolerance A tolerance
+    /// @return                 True if angles are near
+
+    bool isNear(const Angle& anAngle, const Angle& aTolerance) const;
+
     Angle::Unit getUnit() const;
 
     Real in(const Angle::Unit& aUnit) const;

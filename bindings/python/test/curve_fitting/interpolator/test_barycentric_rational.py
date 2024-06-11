@@ -14,7 +14,7 @@ def interpolator() -> BarycentricRational:
 
 
 class TestBarycentricRational:
-    def test_constructors(self, interpolator: BarycentricRational):
+    def test_constructor_success(self, interpolator: BarycentricRational):
         assert interpolator is not None
         assert isinstance(interpolator, Interpolator)
         assert isinstance(interpolator, BarycentricRational)

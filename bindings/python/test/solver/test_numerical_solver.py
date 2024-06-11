@@ -59,7 +59,7 @@ def numerical_solver_conditional() -> NumericalSolver:
 
 
 class TestNumericalSolver:
-    def test_constructors(self, numerical_solver: NumericalSolver):
+    def test_constructor_success(self, numerical_solver: NumericalSolver):
         assert numerical_solver is not None
         assert isinstance(numerical_solver, NumericalSolver)
         assert numerical_solver.is_defined()

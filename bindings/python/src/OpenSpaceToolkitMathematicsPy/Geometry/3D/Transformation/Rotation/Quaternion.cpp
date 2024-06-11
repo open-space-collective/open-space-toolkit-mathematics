@@ -147,6 +147,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
         )
         .def_static("rotation_vector", &Quaternion::RotationVector, arg("rotation_vector"))
         .def_static("rotation_matrix", &Quaternion::RotationMatrix, arg("rotation_matrix"))
+        .def_static("euler_angle", &Quaternion::EulerAngle, arg("euler_angle"))
         .def_static("parse", &Quaternion::Parse, arg("string"), arg("format"))
         .def_static("shortest_rotation", &Quaternion::ShortestRotation, arg("first_vector"), arg("second_vector"))
         .def_static("lerp", &Quaternion::LERP, arg("first_quaternion"), arg("second_quaternion"), arg("ratio"))

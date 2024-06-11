@@ -260,6 +260,37 @@ bool Angle::isZero() const
     return value_ == 0.0;
 }
 
+bool Angle::isNegative() const
+{
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Angle");
+    }
+
+    return value_ < 0.0;
+}
+
+bool Angle::isNear(const Angle& anAngle, const Angle& aTolerance) const
+{
+    if ((!this->isDefined()) || (!anAngle.isDefined()))
+    {
+        throw ostk::core::error::runtime::Undefined("Angle");
+    }
+
+    if (!aTolerance.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Tolerance");
+    }
+
+    const Real normalizedAngle_1 = Angle::ReduceRange(this->inDegrees(), 0.0, 360.0);
+    const Real normalizedAngle_2 = Angle::ReduceRange(anAngle.inDegrees(), 0.0, 360.0);
+
+    const Real diff = (normalizedAngle_2 - normalizedAngle_1).abs();
+    const Real tolerance = aTolerance.inDegrees().abs();
+
+    return (diff <= tolerance) || (360.0 - diff <= tolerance);
+}
+
 Angle::Unit Angle::getUnit() const
 {
     if (!this->isDefined())

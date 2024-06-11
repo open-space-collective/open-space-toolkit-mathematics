@@ -3,6 +3,7 @@
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
 
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
@@ -275,7 +276,8 @@ RotationMatrix& RotationMatrix::transpose()
         throw ostk::core::error::runtime::Undefined("Rotation matrix");
     }
 
-    matrix_ = matrix_.transpose();
+    // https://eigen.tuxfamily.org/dox/group__TutorialMatrixArithmetic.html
+    matrix_.transposeInPlace();
 
     return *this;
 }
@@ -526,6 +528,38 @@ RotationMatrix RotationMatrix::RotationVector(const rotation::RotationVector& aR
     matrix(2, 2) = cosAngle + ((1.0 - cosAngle) * z * z);
 
     return RotationMatrix(matrix);
+}
+
+RotationMatrix RotationMatrix::EulerAngle(const rotation::EulerAngle& aEulerAngle)
+{
+    if (!aEulerAngle.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Euler Angle");
+    }
+
+    switch (aEulerAngle.getAxisSequence())
+    {
+        case EulerAngle::AxisSequence::XYZ:  // 1-2-3
+        {
+            return RotationMatrix::RX(aEulerAngle.getPhi()) * RotationMatrix::RY(aEulerAngle.getTheta()) *
+                   RotationMatrix::RZ(aEulerAngle.getPsi());
+        }
+
+        case EulerAngle::AxisSequence::ZXY:  // 3-1-2
+        {
+            return RotationMatrix::RX(aEulerAngle.getPsi()) * RotationMatrix::RY(aEulerAngle.getPhi()) *
+                   RotationMatrix::RZ(aEulerAngle.getTheta());
+        }
+
+        case EulerAngle::AxisSequence::ZYX:  // 3-2-1
+        {
+            return RotationMatrix::RX(aEulerAngle.getPsi()) * RotationMatrix::RY(aEulerAngle.getTheta()) *
+                   RotationMatrix::RZ(aEulerAngle.getPhi());
+        }
+
+        default:
+            throw ostk::core::error::runtime::ToBeImplemented("Axis sequence is not supported.");
+    }
 }
 
 RotationMatrix::RotationMatrix()

@@ -31,6 +31,7 @@ using ostk::mathematics::geometry::Angle;
 
 class Quaternion;
 class RotationVector;
+class EulerAngle;
 
 /// @brief                      Rotation matrix
 ///
@@ -39,23 +40,23 @@ class RotationVector;
 class RotationMatrix
 {
    public:
-    /// @brief              Constructor
+    /// @brief                  Constructor
     ///
-    /// @param              [in] aMatrix A matrix
+    /// @param                  [in] aMatrix A matrix
 
     RotationMatrix(const Matrix3d& aMatrix);
 
-    /// @brief              Constructor
+    /// @brief                  Constructor
     ///
-    /// @param              [in] aFirstCoefficient A first coefficient
-    /// @param              [in] aSecondCoefficient A second coefficient
-    /// @param              [in] aThirdCoefficient A third coefficient
-    /// @param              [in] aFourthCoefficient A fourth coefficient
-    /// @param              [in] aFifthCoefficient A fifth coefficient
-    /// @param              [in] aSixthCoefficient A sixth coefficient
-    /// @param              [in] aSeventhCoefficient A seventh coefficient
-    /// @param              [in] aEighthCoefficient A eighth coefficient
-    /// @param              [in] aNinthCoefficient A ninth coefficient
+    /// @param                  [in] aFirstCoefficient A first coefficient
+    /// @param                  [in] aSecondCoefficient A second coefficient
+    /// @param                  [in] aThirdCoefficient A third coefficient
+    /// @param                  [in] aFourthCoefficient A fourth coefficient
+    /// @param                  [in] aFifthCoefficient A fifth coefficient
+    /// @param                  [in] aSixthCoefficient A sixth coefficient
+    /// @param                  [in] aSeventhCoefficient A seventh coefficient
+    /// @param                  [in] aEighthCoefficient A eighth coefficient
+    /// @param                  [in] aNinthCoefficient A ninth coefficient
 
     RotationMatrix(
         const Real& aFirstCoefficient,
@@ -69,252 +70,261 @@ class RotationMatrix
         const Real& aNinthCoefficient
     );
 
-    /// @brief              Equal to operator
+    /// @brief                  Equal to operator
     ///
     /// @code
-    ///                     RotationMatrix(...) == RotationMatrix(...) ;
+    ///                         RotationMatrix(...) == RotationMatrix(...);
     /// @endcode
     ///
-    /// @param              [in] aRotationMatrix A rotation matrix
-    /// @return             True if rotation matrices are equal
+    /// @param                  [in] aRotationMatrix A Rotation Matrix
+    /// @return                 True if rotation matrices are equal
 
     bool operator==(const RotationMatrix& aRotationMatrix) const;
 
-    /// @brief              Not equal to operator
+    /// @brief                  Not equal to operator
     ///
     /// @code
-    ///                     RotationMatrix(...) != RotationMatrix(...) ;
+    ///                         RotationMatrix(...) != RotationMatrix(...);
     /// @endcode
     ///
-    /// @param              [in] aRotationMatrix A rotation matrix
-    /// @return             True if rotation matrices are not equal
+    /// @param                  [in] aRotationMatrix A Rotation Matrix
+    /// @return                 True if rotation matrices are not equal
 
     bool operator!=(const RotationMatrix& aRotationMatrix) const;
 
-    /// @brief              Matrix multiplication operator
+    /// @brief                  Matrix multiplication operator
     ///
     /// @code
-    ///                     RotationMatrix rotationMatrix_A_B = ... ;
-    ///                     RotationMatrix rotationMatrix_B_C = ... ;
-    ///                     RotationMatrix rotationMatrix_A_C = rotationMatrix_A_B * rotationMatrix_B_C ;
+    ///                         RotationMatrix rotationMatrix_A_B = ... ;
+    ///                         RotationMatrix rotationMatrix_B_C = ... ;
+    ///                         RotationMatrix rotationMatrix_A_C = rotationMatrix_A_B * rotationMatrix_B_C ;
     /// @endcode
     ///
-    /// @param              [in] aRotationMatrix A rotation matrix
-    /// @return             Rotation matrix
+    /// @param                  [in] aRotationMatrix A Rotation Matrix
+    /// @return                 Rotation matrix
 
     RotationMatrix operator*(const RotationMatrix& aRotationMatrix) const;
 
-    /// @brief              Vector multiplication operator
+    /// @brief                  Vector multiplication operator
     ///
     /// @code
-    ///                     RotationMatrix rotationMatrix_B_A = ... ;
-    ///                     Vector3d vector_A = ... ;
-    ///                     Vector3d vector_B = rotationMatrix_B_A * vector_A ;
+    ///                         RotationMatrix rotationMatrix_B_A = ... ;
+    ///                         Vector3d vector_A = ... ;
+    ///                         Vector3d vector_B = rotationMatrix_B_A * vector_A ;
     /// @endcode
     ///
-    /// @param              [in] aVector A vector
-    /// @return             Vector
+    /// @param                  [in] aVector A vector
+    /// @return                 Vector
 
     Vector3d operator*(const Vector3d& aVector) const;
 
-    /// @brief              Index function operator
+    /// @brief                  Index function operator
     ///
     /// @code
-    ///                     RotationMatrix rotationMatrix = RotationMatrix::Unit() ;
-    ///                     double value_00 = rotationMatrix(0, 0) ; // 1.0
+    ///                         RotationMatrix::Unit();
+    ///                         double value_00 = rotationMatrix(0, 0); // 1.0
     /// @endcode
     ///
-    /// @param              [in] aRowIndex A row index
-    /// @param              [in] aColumnIndex A column index
-    /// @return             Value at index
+    /// @param                  [in] aRowIndex A row index
+    /// @param                  [in] aColumnIndex A column index
+    /// @return                 Value at index
 
     double operator()(const Index& aRowIndex, const Index& aColumnIndex) const;
 
-    /// @brief              Index function operator
+    /// @brief                  Index function operator
     ///
     /// @code
-    ///                     RotationMatrix rotationMatrix = RotationMatrix::Unit() ;
-    ///                     rotationMatrix(0, 0) = 0.0 ;
+    ///                         RotationMatrix::Unit();
+    ///                         rotationMatrix(0, 0) = 0.0 ;
     /// @endcode
     ///
-    /// @param              [in] aRowIndex A row index
-    /// @param              [in] aColumnIndex A column index
-    /// @return             Reference of value at index
+    /// @param                  [in] aRowIndex A row index
+    /// @param                  [in] aColumnIndex A column index
+    /// @return                 Reference of value at index
 
     double& operator()(const Index& aRowIndex, const Index& aColumnIndex);
 
-    /// @brief              Output stream operator
+    /// @brief                  Output stream operator
     ///
     /// @code
-    ///                     std::cout << RotationMatrix(...) ;
+    ///                         std::cout << RotationMatrix(...);
     /// @endcode
     ///
-    /// @param              [in] anOutputStream An output stream
-    /// @param              [in] aRotationMatrix A rotation matrix
-    /// @return             A reference to output stream
+    /// @param                  [in] anOutputStream An output stream
+    /// @param                  [in] aRotationMatrix A Rotation Matrix
+    /// @return                 Output stream reference
 
     friend std::ostream& operator<<(std::ostream& anOutputStream, const RotationMatrix& aRotationMatrix);
 
-    /// @brief              Check if rotation matrix is defined
+    /// @brief                  Check if Rotation Matrix is defined
     ///
     /// @code
-    ///                     RotationMatrix(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)).isDefined() ; // True
+    ///                         RotationMatrix(Vector3d(0.0, 0.0, 1.0), Angle::Degrees(90.0)).isDefined();
     /// @endcode
     ///
-    /// @return             True if rotation matrix is defined
+    /// @return                 True if Rotation Matrix is defined
 
     bool isDefined() const;
 
-    /// @brief              Access underlying rotation matrix
+    /// @brief                  Access underlying 3D Matrix
     ///
-    /// @return             Reference to underlying rotation matrix
+    /// @return                 Matrix reference
 
     const Matrix3d& accessMatrix() const;
 
-    /// @brief              Get row at index
+    /// @brief                  Get row at index
     ///
-    /// @param              [in] aRowIndex Index of row
-    /// @return             Row at index
+    /// @param                  [in] aRowIndex Index of row
+    /// @return                 Vector
 
     Vector3d getRowAt(const Index& aRowIndex) const;
 
-    /// @brief              Get column at index
+    /// @brief                  Get column at index
     ///
-    /// @param              [in] aColumnIndex Index of column
-    /// @return             Column at index
+    /// @param                  [in] aColumnIndex Index of column
+    /// @return                 Vector
 
     Vector3d getColumnAt(const Index& aColumnIndex) const;
 
-    /// @brief              Get underlying rotation matrix
+    /// @brief                  Get underlying 3D Matrix
     ///
-    /// @return             Underlying rotation matrix
+    /// @return                 Matrix
 
     Matrix3d getMatrix() const;
 
-    /// @brief              Get transposed rotation matrix
+    /// @brief                  Calculate transposed Rotation Matrix
     ///
     /// @code
-    ///                     RotationMatrix(...).toTransposed() ;
+    ///                         RotationMatrix(...).toTransposed();
     /// @endcode
     ///
-    /// @return             Transposed rotation matrix
+    /// @return                 Rotation Matrix
 
     RotationMatrix toTransposed() const;
 
-    /// @brief              Transpose rotation matrix
+    /// @brief                  Transpose Rotation Matrix
     ///
     /// @code
-    ///                     RotationMatrix(...).transpose() ;
+    ///                         RotationMatrix(...).transpose();
     /// @endcode
+    ///
+    /// @return                 Rotation Matrix reference
 
     RotationMatrix& transpose();
 
-    /// @brief              Constructs an undefined rotation matrix
+    /// @brief                  Construct an undefined Rotation Matrix
     ///
     /// @code
-    ///                     RotationMatrix rotationMatrix = RotationMatrix::Undefined() ; // Undefined
+    ///                         RotationMatrix::Undefined();
     /// @endcode
     ///
-    /// @return             Undefined rotation matrix
+    /// @return                 Rotation Matrix
 
     static RotationMatrix Undefined();
 
-    /// @brief              Constructs a unit rotation matrix
+    /// @brief                  Construct unitary Rotation Matrix
     ///
     /// @code
-    ///                     RotationMatrix rotationMatrix = RotationMatrix::Unit() ;
+    ///                         RotationMatrix::Unit();
     /// @endcode
     ///
-    /// @return             Unit rotation matrix
+    /// @return                 Rotation Matrix
 
     static RotationMatrix Unit();
 
-    /// @brief              Constructs a rotation matrix representing a rotation around the X-axis
+    /// @brief                  Construct Rotation Matrix representing a rotation around the X-axis
     ///
     /// @code
-    ///                     RotationMatrix rotationMatrix = RotationMatrix::RX(Angle::Degrees(30.0)) ;
+    ///                         RotationMatrix::RX(Angle::Degrees(30.0));
     /// @endcode
     ///
-    /// @param              [in] aRotationAngle A rotation angle
-    /// @return             Rotation matrix
+    /// @param                  [in] aRotationAngle A rotation angle
+    /// @return                 Rotation matrix
 
     static RotationMatrix RX(const Angle& aRotationAngle);
 
-    /// @brief              Constructs a rotation matrix representing a rotation around the Y-axis
+    /// @brief                  Construct Rotation Matrix representing a rotation around the Y-axis
     ///
     /// @code
-    ///                     RotationMatrix rotationMatrix = RotationMatrix::RY(Angle::Degrees(30.0)) ;
+    ///                         RotationMatrix::RY(Angle::Degrees(30.0));
     /// @endcode
     ///
-    /// @param              [in] aRotationAngle A rotation angle
-    /// @return             Rotation matrix
+    /// @param                  [in] aRotationAngle A rotation angle
+    /// @return                 Rotation matrix
 
     static RotationMatrix RY(const Angle& aRotationAngle);
 
-    /// @brief              Constructs a rotation matrix representing a rotation around the Z-axis
+    /// @brief                  Construct Rotation Matrix representing a rotation around the Z-axis
     ///
     /// @code
-    ///                     RotationMatrix rotationMatrix = RotationMatrix::RZ(Angle::Degrees(30.0)) ;
+    ///                         RotationMatrix::RZ(Angle::Degrees(30.0));
     /// @endcode
     ///
-    /// @param              [in] aRotationAngle A rotation angle
-    /// @return             Rotation matrix
+    /// @param                  [in] aRotationAngle A rotation angle
+    /// @return                 Rotation matrix
 
     static RotationMatrix RZ(const Angle& aRotationAngle);
 
-    /// @brief              Constructs a rotation matrix from row vectors
+    /// @brief                  Construct Rotation Matrix from row vectors
     ///
     /// @code
-    ///                     RotationMatrix rotationMatrix = RotationMatrix::Rows(Vector3d(1.0, 0.0, 0.0), Vector3d(1.0,
-    ///                     0.0, 0.0), Vector3d(1.0, 0.0, 0.0)) ;
+    ///                         RotationMatrix::Rows({1.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {1.0, 0.0, 0.0});
     /// @endcode
     ///
-    /// @param              [in] aFirstRow A first row
-    /// @param              [in] aSecondRow A second row
-    /// @param              [in] aThirdRow A third row
-    /// @return             Rotation matrix
+    /// @param                  [in] aFirstRow A first row
+    /// @param                  [in] aSecondRow A second row
+    /// @param                  [in] aThirdRow A third row
+    /// @return                 Rotation matrix
 
     static RotationMatrix Rows(const Vector3d& aFirstRow, const Vector3d& aSecondRow, const Vector3d& aThirdRow);
 
-    /// @brief              Constructs a rotation matrix from column vectors
+    /// @brief                  Construct Rotation Matrix from column vectors
     ///
     /// @code
-    ///                     RotationMatrix rotationMatrix = RotationMatrix::Columns(Vector3d(1.0, 0.0, 0.0),
-    ///                     Vector3d(1.0, 0.0, 0.0), Vector3d(1.0, 0.0, 0.0)) ;
+    ///                         RotationMatrix::Columns({1.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {1.0, 0.0, 0.0});
     /// @endcode
     ///
-    /// @param              [in] aFirstColumn A first column
-    /// @param              [in] aSecondColumn A second column
-    /// @param              [in] aThirdColumn A third column
-    /// @return             Rotation matrix
+    /// @param                  [in] aFirstColumn A first column
+    /// @param                  [in] aSecondColumn A second column
+    /// @param                  [in] aThirdColumn A third column
+    /// @return                 Rotation matrix
 
     static RotationMatrix Columns(
         const Vector3d& aFirstColumn, const Vector3d& aSecondColumn, const Vector3d& aThirdColumn
     );
 
-    /// @brief              Constructs a rotation matrix from a quaternion
+    /// @brief                  Construct Rotation Matrix from Quaternion
     ///
     /// @code
-    ///                     RotationMatrix rotationMatrix = RotationMatrix::Quaternion(Quaternion::XYZS(0.0, 0.0,
-    ///                     0.0, 1.0)) ;
+    ///                         RotationMatrix::Quaternion(Quaternion::Unit());
     /// @endcode
     ///
-    /// @param              [in] aQuaternion A quaternion
-    /// @return             Rotation matrix
+    /// @param                  [in] aQuaternion A Quaternion
+    /// @return                 Rotation matrix
 
     static RotationMatrix Quaternion(const rotation::Quaternion& aQuaternion);
 
-    /// @brief              Constructs a rotation matrix from a rotation vector
+    /// @brief                  Construct Rotation Matrix from Rotation Vector
     ///
     /// @code
-    ///                     RotationMatrix rotationMatrix = RotationMatrix::RotationVector(Vector3d(0.0, 0.0, 1.0),
-    ///                     Angle::Degrees(90.0)) ;
+    ///                         RotationMatrix::RotationVector(RotationVector::Unit());
     /// @endcode
     ///
-    /// @param              [in] aRotationVector A rotation vector
-    /// @return             Rotation matrix
+    /// @param                  [in] aRotationVector A Rotation Vector
+    /// @return                 Rotation matrix
 
     static RotationMatrix RotationVector(const rotation::RotationVector& aRotationVector);
+
+    /// @brief                  Construct Rotation Matrix from Euler Angle
+    ///
+    /// @code
+    ///                         RotationMatrix::EulerAngle(EulerAngle::Unit());
+    /// @endcode
+    ///
+    /// @param                  [in] aEulerAngle A Euler Angle
+    /// @return                 Rotation matrix
+
+    static RotationMatrix EulerAngle(const rotation::EulerAngle& aEulerAngle);
 
    private:
     Matrix3d matrix_;

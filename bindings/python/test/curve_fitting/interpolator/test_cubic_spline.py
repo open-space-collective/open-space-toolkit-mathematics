@@ -16,7 +16,7 @@ def interpolator() -> CubicSpline:
 
 
 class TestCubicSpline:
-    def test_constructors(self, interpolator: CubicSpline):
+    def test_constructor_success(self, interpolator: CubicSpline):
         assert interpolator is not None
         assert isinstance(interpolator, Interpolator)
         assert isinstance(interpolator, CubicSpline)

@@ -4,13 +4,11 @@ import pytest
 
 import numpy as np
 
-from ostk.mathematics import geometry
-
-
-Angle = geometry.Angle
-Quaternion = geometry.d3.transformation.rotation.Quaternion
-RotationVector = geometry.d3.transformation.rotation.RotationVector
-RotationMatrix = geometry.d3.transformation.rotation.RotationMatrix
+from ostk.mathematics.geometry import Angle
+from ostk.mathematics.geometry.d3.transformation.rotation import Quaternion
+from ostk.mathematics.geometry.d3.transformation.rotation import RotationVector
+from ostk.mathematics.geometry.d3.transformation.rotation import RotationMatrix
+from ostk.mathematics.geometry.d3.transformation.rotation import EulerAngle
 
 
 @pytest.fixture
@@ -19,7 +17,7 @@ def quaternion() -> Quaternion:
 
 
 class TestQuaternion:
-    def test_constructors_success(self, quaternion: Quaternion):
+    def test_constructor_success(self, quaternion: Quaternion):
         assert Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion.Format.XYZS) == quaternion
         assert (
             Quaternion(np.array((0.0, 0.0, 0.0, 1.0)), Quaternion.Format.XYZS)
@@ -159,6 +157,9 @@ class TestQuaternion:
 
     def test_rotation_matrix_success(self, quaternion: Quaternion):
         assert Quaternion.rotation_matrix(RotationMatrix.rz(Angle.zero())) == quaternion
+
+    def test_euler_angle_success(self, quaternion: Quaternion):
+        assert Quaternion.euler_angle(EulerAngle.unit()) == quaternion
 
     def test_parse_success(self, quaternion: Quaternion):
         assert (

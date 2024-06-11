@@ -3,6 +3,7 @@
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
 
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
@@ -27,6 +28,16 @@ RotationVector::RotationVector(const Vector3d& anAxis, const Angle& anAngle)
     if (anAxis.isDefined() && (std::abs(anAxis.norm() - 1.0) > Real::Epsilon()))
     {
         throw ostk::core::error::RuntimeError("Axis with norm [{}] is not unitary.", anAxis.norm());
+    }
+}
+
+RotationVector::RotationVector(const Vector3d& aVector, const Angle::Unit& anAngleUnit)
+    : axis_(aVector.isDefined() ? aVector.normalized() : Vector3d::Undefined()),
+      angle_(Angle(aVector.norm(), anAngleUnit))
+{
+    if (axis_ == Vector3d::Zero())
+    {
+        axis_ = Vector3d::Z();
     }
 }
 
@@ -88,6 +99,28 @@ Angle RotationVector::getAngle() const
     }
 
     return angle_;
+}
+
+RotationVector& RotationVector::rectify()
+{
+    if (!this->isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Rotation vector");
+    }
+
+    if (angle_.isNegative())
+    {
+        axis_ = -axis_;
+        angle_ = -angle_;
+    }
+
+    if (angle_.inRadians() > Angle::Pi().inRadians())
+    {
+        axis_ = -axis_;
+        angle_ = Angle::TwoPi() - angle_;
+    }
+
+    return *this;
 }
 
 String RotationVector::toString(const Integer& aPrecision) const
@@ -187,6 +220,11 @@ RotationVector RotationVector::RotationMatrix(const rotation::RotationMatrix& aR
     const Vector3d axis = Vector3d(x, y, z).normalized();
 
     return RotationVector(axis, angle);
+}
+
+RotationVector RotationVector::EulerAngle(const rotation::EulerAngle& aEulerAngle)
+{
+    return RotationVector::Quaternion(Quaternion::EulerAngle(aEulerAngle));
 }
 
 RotationVector::RotationVector()

@@ -101,7 +101,7 @@ class NumericalSolver
     ///
     /// @param                  [in] anOutputStream An output stream
     /// @param                  [in] aNumericalSolver A numerical solver
-    /// @return                 A reference to output stream
+    /// @return                 Output stream reference
 
     friend std::ostream& operator<<(std::ostream& anOutputStream, const NumericalSolver& aNumericalSolver);
 
