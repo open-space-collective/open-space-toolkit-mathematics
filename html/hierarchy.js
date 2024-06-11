@@ -1,6 +1,7 @@
 var hierarchy =
 [
     [ "ostk::mathematics::geometry::Angle", "classostk_1_1mathematics_1_1geometry_1_1_angle.html", null ],
+    [ "ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html", null ],
     [ "ostk::mathematics::geometry::d2::object::PointSet::Hasher", "structostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set_1_1_hasher.html", null ],
     [ "ostk::mathematics::geometry::d3::object::PointSet::Hasher", "structostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1_1_hasher.html", null ],
     [ "ostk::mathematics::curvefitting::Interpolator", "classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html", [

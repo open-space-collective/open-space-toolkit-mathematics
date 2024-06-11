@@ -143,6 +143,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad99d5ff3a95e93b3599248c72b631ff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17449f940c75bc182a9eaa069ae59342"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a17449f940c75bc182a9eaa069ae59342">isZero</a> () const</td></tr>
 <tr class="separator:a17449f940c75bc182a9eaa069ae59342"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80267bbfcf53ac84f70e8c64c0ae4162"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a80267bbfcf53ac84f70e8c64c0ae4162">isNegative</a> () const</td></tr>
+<tr class="memdesc:a80267bbfcf53ac84f70e8c64c0ae4162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if angle is negative.  <a href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a80267bbfcf53ac84f70e8c64c0ae4162">More...</a><br /></td></tr>
+<tr class="separator:a80267bbfcf53ac84f70e8c64c0ae4162"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93759a5dc36449aaa68d749d270fa736"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a93759a5dc36449aaa68d749d270fa736">isNear</a> (const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html">Angle</a> &amp;anAngle, const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html">Angle</a> &amp;aTolerance) const</td></tr>
+<tr class="memdesc:a93759a5dc36449aaa68d749d270fa736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if angles are near within an angular tolerance.  <a href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a93759a5dc36449aaa68d749d270fa736">More...</a><br /></td></tr>
+<tr class="separator:a93759a5dc36449aaa68d749d270fa736"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf5a6fca6315e78ec77c6b4bbc3dd5c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a9c6a3ae1411b75a6c0cac397a6ace371">Angle::Unit</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#aaf5a6fca6315e78ec77c6b4bbc3dd5c9">getUnit</a> () const</td></tr>
 <tr class="separator:aaf5a6fca6315e78ec77c6b4bbc3dd5c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a4a660668c35df6cc2ad47e02727b7e"><td class="memItemLeft" align="right" valign="top">Real&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a5a4a660668c35df6cc2ad47e02727b7e">in</a> (const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a9c6a3ae1411b75a6c0cac397a6ace371">Angle::Unit</a> &amp;aUnit) const</td></tr>
@@ -714,6 +720,69 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="a93759a5dc36449aaa68d749d270fa736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93759a5dc36449aaa68d749d270fa736">&#9670;&nbsp;</a></span>isNear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ostk::mathematics::geometry::Angle::isNear </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html">Angle</a> &amp;&#160;</td>
+          <td class="paramname"><em>anAngle</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html">Angle</a> &amp;&#160;</td>
+          <td class="paramname"><em>aTolerance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if angles are near within an angular tolerance. </p>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a8e6ae32f87c8dd9dbb5b13f0403bb93b">Angle::Zero</a>().<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a93759a5dc36449aaa68d749d270fa736">isNear</a>(</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#adf219273c9f6215c4a47a5530e0a3aa3">Angle::Degrees</a>(1.0),</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#adf219273c9f6215c4a47a5530e0a3aa3">Angle::Degrees</a>(2.0)</div>
+<div class="line">);</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">anAngle</td><td>An angle </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aTolerance</td><td>A tolerance </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if angles are near </dd></dl>
+
+</div>
+</div>
+<a id="a80267bbfcf53ac84f70e8c64c0ae4162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80267bbfcf53ac84f70e8c64c0ae4162">&#9670;&nbsp;</a></span>isNegative()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ostk::mathematics::geometry::Angle::isNegative </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if angle is negative. </p>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a8e6ae32f87c8dd9dbb5b13f0403bb93b">Angle::Zero</a>().<a class="code" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a80267bbfcf53ac84f70e8c64c0ae4162">isNegative</a>();</div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>True if angle is negative </dd></dl>
+
+</div>
+</div>
 <a id="a17449f940c75bc182a9eaa069ae59342"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a17449f940c75bc182a9eaa069ae59342">&#9670;&nbsp;</a></span>isZero()</h2>
 
@@ -1272,8 +1341,12 @@ Friends</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1_angle_html_adf219273c9f6215c4a47a5530e0a3aa3"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#adf219273c9f6215c4a47a5530e0a3aa3">ostk::mathematics::geometry::Angle::Degrees</a></div><div class="ttdeci">static Angle Degrees(const Real &amp;aValue)</div><div class="ttdef"><b>Definition:</b> Angle.cpp:464</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1_angle_html_a0514385b3b70596b16568a4f6a8b89f7"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a0514385b3b70596b16568a4f6a8b89f7">ostk::mathematics::geometry::Angle::Angle</a></div><div class="ttdeci">Angle(const Real &amp;aValue, const Angle::Unit &amp;aUnit)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Angle.cpp:15</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1_angle_html_a8e6ae32f87c8dd9dbb5b13f0403bb93b"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a8e6ae32f87c8dd9dbb5b13f0403bb93b">ostk::mathematics::geometry::Angle::Zero</a></div><div class="ttdeci">static Angle Zero()</div><div class="ttdef"><b>Definition:</b> Angle.cpp:439</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1_angle_html_a93759a5dc36449aaa68d749d270fa736"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a93759a5dc36449aaa68d749d270fa736">ostk::mathematics::geometry::Angle::isNear</a></div><div class="ttdeci">bool isNear(const Angle &amp;anAngle, const Angle &amp;aTolerance) const</div><div class="ttdoc">Check if angles are near within an angular tolerance.</div><div class="ttdef"><b>Definition:</b> Angle.cpp:273</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1_angle_html_a9c6a3ae1411b75a6c0cac397a6ace371a6669c4dc00cb161446821b3529ca07d8"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a9c6a3ae1411b75a6c0cac397a6ace371a6669c4dc00cb161446821b3529ca07d8">ostk::mathematics::geometry::Angle::Unit::Degree</a></div><div class="ttdeci">@ Degree</div><div class="ttdoc">Degree.</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1_angle_html_a80267bbfcf53ac84f70e8c64c0ae4162"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#a80267bbfcf53ac84f70e8c64c0ae4162">ostk::mathematics::geometry::Angle::isNegative</a></div><div class="ttdeci">bool isNegative() const</div><div class="ttdoc">Check if angle is negative.</div><div class="ttdef"><b>Definition:</b> Angle.cpp:263</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

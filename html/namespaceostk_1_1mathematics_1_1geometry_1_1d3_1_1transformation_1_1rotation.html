@@ -90,6 +90,9 @@ $(document).ready(function(){initNavTree('namespaceostk_1_1mathematics_1_1geomet
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html">EulerAngle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Euler <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html" title="Angle.">Angle</a> (intrinsic rotation)  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html">Quaternion</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html" title="Quaternion.">Quaternion</a>.  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -97,11 +100,13 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation matrix.  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html">RotationVector</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation vector.  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotation Vector.  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a4039583c5e12d44db90af36b8420cffd"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation.html#a4039583c5e12d44db90af36b8420cffd">operator&lt;&lt;</a> (std::ostream &amp;anOutputStream, const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html">EulerAngle</a> &amp;aEulerAngle)</td></tr>
+<tr class="separator:a4039583c5e12d44db90af36b8420cffd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6028c92c3bd330713db8cab7bc5122e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html">Quaternion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation.html#a6028c92c3bd330713db8cab7bc5122e1">operator*</a> (const Real &amp;aScalar, const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html">Quaternion</a> &amp;aQuaternion)</td></tr>
 <tr class="separator:a6028c92c3bd330713db8cab7bc5122e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae26404779f77ca73c95975806e5402d1"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation.html#ae26404779f77ca73c95975806e5402d1">operator&lt;&lt;</a> (std::ostream &amp;anOutputStream, const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html">Quaternion</a> &amp;aQuaternion)</td></tr>
@@ -137,13 +142,13 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Example: </p><div class="fragment"><div class="line">Real scalar = ... ;</div>
+<div class="fragment"><div class="line">Real scalar = ... ;</div>
 <div class="line">Quaternion q_1 = ... ;</div>
 <div class="line">Quaternion q_2 = scalar * q_1 ;</div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">aScalar</td><td>A scalar </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aQuaternion</td><td>A quaternion </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aQuaternion</td><td>A <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html" title="Quaternion.">Quaternion</a> </td></tr>
   </table>
   </dd>
 </dl>
@@ -151,8 +156,45 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a4039583c5e12d44db90af36b8420cffd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4039583c5e12d44db90af36b8420cffd">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; ostk::mathematics::geometry::d3::transformation::rotation::operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>anOutputStream</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html">EulerAngle</a> &amp;&#160;</td>
+          <td class="paramname"><em>aEulerAngle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#a970d830a551e4596701281e2cf0a1899">EulerAngle::Unit</a>();</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aEulerAngle</td><td>A Euler <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html" title="Angle.">Angle</a> </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Output stream reference </dd></dl>
+
+</div>
+</div>
 <a id="ae26404779f77ca73c95975806e5402d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae26404779f77ca73c95975806e5402d1">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[1/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae26404779f77ca73c95975806e5402d1">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -176,20 +218,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ab065862f2a77807e42f6feaadc0637e2">Quaternion::XYZS</a>(0.0, 0.0, 0.0, 1.0) ;</div>
+<div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ab065862f2a77807e42f6feaadc0637e2">Quaternion::XYZS</a>(0.0, 0.0, 0.0, 1.0);</div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aQuaternion</td><td>A quaternion </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aQuaternion</td><td>A <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html" title="Quaternion.">Quaternion</a> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to output stream </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Output stream reference </dd></dl>
 
 </div>
 </div>
 <a id="afa8bc95840d3ed51eb2c9726bbd52f23"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa8bc95840d3ed51eb2c9726bbd52f23">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[2/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#afa8bc95840d3ed51eb2c9726bbd52f23">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[3/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,20 +255,20 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">std::cout &lt;&lt; RotationMatrix(...) ;</div>
+<div class="fragment"><div class="line">std::cout &lt;&lt; RotationMatrix(...);</div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aRotationMatrix</td><td>A rotation matrix </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aRotationMatrix</td><td>A Rotation Matrix </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to output stream </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Output stream reference </dd></dl>
 
 </div>
 </div>
 <a id="a89b141f8b9cd2a93dbd9b584bab23d5b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89b141f8b9cd2a93dbd9b584bab23d5b">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[3/3]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a89b141f8b9cd2a93dbd9b584bab23d5b">&#9670;&nbsp;</a></span>operator&lt;&lt;() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -250,23 +292,23 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line">std::cout &lt;&lt; RotationVector(<a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">Vector3d</a>(0.0, 0.0, 1.0), <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#adf219273c9f6215c4a47a5530e0a3aa3">Angle::Degrees</a>(90.0)) ;</div>
+<div class="fragment"><div class="line">std::cout &lt;&lt; <a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#a31c276c930ed9d5ff4cb406be6a48f7e">RotationVector::Unit</a>();</div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">anOutputStream</td><td>An output stream </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">aRotationVector</td><td>A rotation vector </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aRotationVector</td><td>A Rotation Vector </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A reference to output stream </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Reference to output stream </dd></dl>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1_angle_html_adf219273c9f6215c4a47a5530e0a3aa3"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1_angle.html#adf219273c9f6215c4a47a5530e0a3aa3">ostk::mathematics::geometry::Angle::Degrees</a></div><div class="ttdeci">static Angle Degrees(const Real &amp;aValue)</div><div class="ttdef"><b>Definition:</b> Angle.cpp:433</div></div>
-<div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a69d9a055814e9440af219eff448c6c23"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">ostk::mathematics::object::Vector3d</a></div><div class="ttdeci">Eigen::Vector3d Vector3d</div><div class="ttdef"><b>Definition:</b> Vector.hpp:38</div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_html_ab065862f2a77807e42f6feaadc0637e2"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ab065862f2a77807e42f6feaadc0637e2">ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::XYZS</a></div><div class="ttdeci">static Quaternion XYZS(const Real &amp;aFirstComponent, const Real &amp;aSecondComponent, const Real &amp;aThirdComponent, const Real &amp;aFourthComponent)</div><div class="ttdoc">Constructs a quaternion using the vector-scalar format.</div><div class="ttdef"><b>Definition:</b> Quaternion.cpp:492</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_html_a970d830a551e4596701281e2cf0a1899"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html#a970d830a551e4596701281e2cf0a1899">ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::Unit</a></div><div class="ttdeci">static EulerAngle Unit()</div><div class="ttdoc">Construct unitary Euler Angle.</div><div class="ttdef"><b>Definition:</b> EulerAngle.cpp:186</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_html_a31c276c930ed9d5ff4cb406be6a48f7e"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector.html#a31c276c930ed9d5ff4cb406be6a48f7e">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::Unit</a></div><div class="ttdeci">static RotationVector Unit()</div><div class="ttdoc">Construct a unitary Rotation Vector.</div><div class="ttdef"><b>Definition:</b> RotationVector.cpp:143</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_html_ab065862f2a77807e42f6feaadc0637e2"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ab065862f2a77807e42f6feaadc0637e2">ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::XYZS</a></div><div class="ttdeci">static Quaternion XYZS(const Real &amp;aFirstComponent, const Real &amp;aSecondComponent, const Real &amp;aThirdComponent, const Real &amp;aFourthComponent)</div><div class="ttdoc">Construct Quaternion using the vector-scalar format.</div><div class="ttdef"><b>Definition:</b> Quaternion.cpp:493</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

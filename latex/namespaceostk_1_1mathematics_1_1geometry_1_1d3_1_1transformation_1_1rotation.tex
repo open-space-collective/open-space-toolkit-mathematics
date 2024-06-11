@@ -3,14 +3,18 @@
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle}{Euler\+Angle}}
+\begin{DoxyCompactList}\small\item\em Euler \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} (intrinsic rotation) \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}}
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}}. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix}{Rotation\+Matrix}}
 \begin{DoxyCompactList}\small\item\em Rotation matrix. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}}
-\begin{DoxyCompactList}\small\item\em Rotation vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Rotation Vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_a4039583c5e12d44db90af36b8420cffd}{operator$<$$<$}} (std\+::ostream \&an\+Output\+Stream, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle}{Euler\+Angle}} \&a\+Euler\+Angle)
 \item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_a6028c92c3bd330713db8cab7bc5122e1}{operator$\ast$}} (const Real \&a\+Scalar, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&a\+Quaternion)
 \item 
@@ -29,7 +33,7 @@ std\+::ostream \& \mbox{\hyperlink{namespaceostk_1_1mathematics_1_1geometry_1_1d
 \doxysubsubsection{\texorpdfstring{operator$\ast$()}{operator*()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::operator$\ast$ (\begin{DoxyParamCaption}\item[{const Real \&}]{a\+Scalar,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption})}
 
-Example\+: 
+
 \begin{DoxyCode}{0}
 \DoxyCodeLine{Real scalar = ... ;}
 \DoxyCodeLine{Quaternion q\_1 = ... ;}
@@ -41,21 +45,43 @@ Example\+:
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em a\+Scalar} & A scalar \\
 \hline
-\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
 \end{DoxyReturn}
+\mbox{\Hypertarget{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_a4039583c5e12d44db90af36b8420cffd}\label{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_a4039583c5e12d44db90af36b8420cffd}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation@{ostk::mathematics::geometry::d3::transformation::rotation}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ostk::mathematics::geometry::d3::transformation::rotation@{ostk::mathematics::geometry::d3::transformation::rotation}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily std\+::ostream\& ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle}{Euler\+Angle}} \&}]{a\+Euler\+Angle }\end{DoxyParamCaption})}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{std::cout << \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_a970d830a551e4596701281e2cf0a1899}{EulerAngle::Unit}}();}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Euler\+Angle} & A Euler \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Output stream reference 
+\end{DoxyReturn}
 \mbox{\Hypertarget{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_ae26404779f77ca73c95975806e5402d1}\label{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_ae26404779f77ca73c95975806e5402d1}} 
 \index{ostk::mathematics::geometry::d3::transformation::rotation@{ostk::mathematics::geometry::d3::transformation::rotation}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!ostk::mathematics::geometry::d3::transformation::rotation@{ostk::mathematics::geometry::d3::transformation::rotation}}
-\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
 {\footnotesize\ttfamily std\+::ostream\& ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \&}]{a\+Quaternion }\end{DoxyParamCaption})}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{std::cout << \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab065862f2a77807e42f6feaadc0637e2}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0) ;}
+\DoxyCodeLine{std::cout << \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab065862f2a77807e42f6feaadc0637e2}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.0);}
 \end{DoxyCode}
 
 
@@ -63,21 +89,21 @@ Example\+:
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
 \hline
-\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A quaternion \\
+\mbox{\texttt{ in}}  & {\em a\+Quaternion} & A \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A reference to output stream 
+Output stream reference 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_afa8bc95840d3ed51eb2c9726bbd52f23}\label{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_afa8bc95840d3ed51eb2c9726bbd52f23}} 
 \index{ostk::mathematics::geometry::d3::transformation::rotation@{ostk::mathematics::geometry::d3::transformation::rotation}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!ostk::mathematics::geometry::d3::transformation::rotation@{ostk::mathematics::geometry::d3::transformation::rotation}}
-\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
 {\footnotesize\ttfamily std\+::ostream\& ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix}{Rotation\+Matrix}} \&}]{a\+Rotation\+Matrix }\end{DoxyParamCaption})}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{std::cout << RotationMatrix(...) ;}
+\DoxyCodeLine{std::cout << RotationMatrix(...);}
 \end{DoxyCode}
 
 
@@ -85,21 +111,21 @@ A reference to output stream
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
 \hline
-\mbox{\texttt{ in}}  & {\em a\+Rotation\+Matrix} & A rotation matrix \\
+\mbox{\texttt{ in}}  & {\em a\+Rotation\+Matrix} & A Rotation Matrix \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A reference to output stream 
+Output stream reference 
 \end{DoxyReturn}
 \mbox{\Hypertarget{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_a89b141f8b9cd2a93dbd9b584bab23d5b}\label{namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_a89b141f8b9cd2a93dbd9b584bab23d5b}} 
 \index{ostk::mathematics::geometry::d3::transformation::rotation@{ostk::mathematics::geometry::d3::transformation::rotation}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!ostk::mathematics::geometry::d3::transformation::rotation@{ostk::mathematics::geometry::d3::transformation::rotation}}
-\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
 {\footnotesize\ttfamily std\+::ostream\& ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{an\+Output\+Stream,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{Rotation\+Vector}} \&}]{a\+Rotation\+Vector }\end{DoxyParamCaption})}
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{std::cout << RotationVector(\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a69d9a055814e9440af219eff448c6c23}{Vector3d}}(0.0, 0.0, 1.0), \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(90.0)) ;}
+\DoxyCodeLine{std::cout << \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_a31c276c930ed9d5ff4cb406be6a48f7e}{RotationVector::Unit}}();}
 \end{DoxyCode}
 
 
@@ -107,9 +133,9 @@ A reference to output stream
 \begin{DoxyParams}[1]{Parameters}
 \mbox{\texttt{ in}}  & {\em an\+Output\+Stream} & An output stream \\
 \hline
-\mbox{\texttt{ in}}  & {\em a\+Rotation\+Vector} & A rotation vector \\
+\mbox{\texttt{ in}}  & {\em a\+Rotation\+Vector} & A Rotation Vector \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A reference to output stream 
+Reference to output stream 
 \end{DoxyReturn}

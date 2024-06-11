@@ -21,6 +21,8 @@ var classostk_1_1mathematics_1_1geometry_1_1_angle =
     [ "inRadians", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#acfb4ab5bc33ca5bf005bcffae8c02073", null ],
     [ "inRevolutions", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#aff2915c9dfacf75a3c601688b3ab0d6b", null ],
     [ "isDefined", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#ad99d5ff3a95e93b3599248c72b631ff1", null ],
+    [ "isNear", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#a93759a5dc36449aaa68d749d270fa736", null ],
+    [ "isNegative", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#a80267bbfcf53ac84f70e8c64c0ae4162", null ],
     [ "isZero", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#a17449f940c75bc182a9eaa069ae59342", null ],
     [ "operator!=", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#ae42710386b7e29dc17623d606c2f81bd", null ],
     [ "operator*", "classostk_1_1mathematics_1_1geometry_1_1_angle.html#a01a9520273856cb589ef31dd0a9710c7", null ],

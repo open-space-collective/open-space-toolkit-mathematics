@@ -55,6 +55,10 @@ bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_ad99d5ff3a9
 \item 
 bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_a17449f940c75bc182a9eaa069ae59342}{is\+Zero}} () const
 \item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_a80267bbfcf53ac84f70e8c64c0ae4162}{is\+Negative}} () const
+\begin{DoxyCompactList}\small\item\em Check if angle is negative. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_a93759a5dc36449aaa68d749d270fa736}{is\+Near}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \&an\+Angle, const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \&a\+Tolerance) const
+\begin{DoxyCompactList}\small\item\em Check if angles are near within an angular tolerance. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_a9c6a3ae1411b75a6c0cac397a6ace371}{Angle\+::\+Unit}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_aaf5a6fca6315e78ec77c6b4bbc3dd5c9}{get\+Unit}} () const
 \item 
 Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_a5a4a660668c35df6cc2ad47e02727b7e}{in}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_a9c6a3ae1411b75a6c0cac397a6ace371}{Angle\+::\+Unit}} \&a\+Unit) const
@@ -301,6 +305,54 @@ Constructor.
 \doxysubsubsection{\texorpdfstring{isDefined()}{isDefined()}}
 {\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::\+Angle\+::is\+Defined (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1_angle_a93759a5dc36449aaa68d749d270fa736}\label{classostk_1_1mathematics_1_1geometry_1_1_angle_a93759a5dc36449aaa68d749d270fa736}} 
+\index{ostk::mathematics::geometry::Angle@{ostk::mathematics::geometry::Angle}!isNear@{isNear}}
+\index{isNear@{isNear}!ostk::mathematics::geometry::Angle@{ostk::mathematics::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{isNear()}{isNear()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::\+Angle\+::is\+Near (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \&}]{an\+Angle,  }\item[{const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}} \&}]{a\+Tolerance }\end{DoxyParamCaption}) const}
+
+
+
+Check if angles are near within an angular tolerance. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_a8e6ae32f87c8dd9dbb5b13f0403bb93b}{Angle::Zero}}().\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_a93759a5dc36449aaa68d749d270fa736}{isNear}}(}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(1.0),}
+\DoxyCodeLine{    \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_adf219273c9f6215c4a47a5530e0a3aa3}{Angle::Degrees}}(2.0)}
+\DoxyCodeLine{);}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em an\+Angle} & An angle \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Tolerance} & A tolerance \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if angles are near 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1_angle_a80267bbfcf53ac84f70e8c64c0ae4162}\label{classostk_1_1mathematics_1_1geometry_1_1_angle_a80267bbfcf53ac84f70e8c64c0ae4162}} 
+\index{ostk::mathematics::geometry::Angle@{ostk::mathematics::geometry::Angle}!isNegative@{isNegative}}
+\index{isNegative@{isNegative}!ostk::mathematics::geometry::Angle@{ostk::mathematics::geometry::Angle}}
+\doxysubsubsection{\texorpdfstring{isNegative()}{isNegative()}}
+{\footnotesize\ttfamily bool ostk\+::mathematics\+::geometry\+::\+Angle\+::is\+Negative (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Check if angle is negative. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_a8e6ae32f87c8dd9dbb5b13f0403bb93b}{Angle::Zero}}().\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle_a80267bbfcf53ac84f70e8c64c0ae4162}{isNegative}}();}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+True if angle is negative 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1_angle_a17449f940c75bc182a9eaa069ae59342}\label{classostk_1_1mathematics_1_1geometry_1_1_angle_a17449f940c75bc182a9eaa069ae59342}} 
 \index{ostk::mathematics::geometry::Angle@{ostk::mathematics::geometry::Angle}!isZero@{isZero}}
 \index{isZero@{isZero}!ostk::mathematics::geometry::Angle@{ostk::mathematics::geometry::Angle}}

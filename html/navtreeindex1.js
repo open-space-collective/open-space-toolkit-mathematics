@@ -1,6 +1,10 @@
 var NAVTREEINDEX1 =
 {
-"classostk_1_1mathematics_1_1geometry_1_1_angle.html#af699984b24759466957ecddaa7e61fc9":[4,0,0,0,1,2,28],
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#adf9b2d8e3017045706b1fbebc37dc7f1":[4,0,0,0,1,2,26],
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#ae07e7bb66c4f60565d19343124ff0cc7":[4,0,0,0,1,2,10],
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#ae42710386b7e29dc17623d606c2f81bd":[4,0,0,0,1,2,17],
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#ae865c49d71cb316df83a11f2a7f9996b":[4,0,0,0,1,2,5],
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#af699984b24759466957ecddaa7e61fc9":[4,0,0,0,1,2,30],
 "classostk_1_1mathematics_1_1geometry_1_1_angle.html#aff2915c9dfacf75a3c601688b3ab0d6b":[4,0,0,0,1,2,12],
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html":[4,0,0,0,1,0,1],
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection.html#a0f8d688de5a4819053d1f69a50e5a78e":[4,0,0,0,1,0,1,3],
@@ -245,9 +249,5 @@ var NAVTREEINDEX1 =
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a0417919bc94c59ae23492d591514b6c9":[4,0,0,0,1,0,0,8,11],
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a0fa9db689dceda267581043aab6bc8b9":[4,0,0,0,1,0,0,8,5],
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a104bbc842576324e46876838e92b18c9":[4,0,0,0,1,0,0,8,16],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a12d65189283e7c180d4046238be766f0":[4,0,0,0,1,0,0,8,17],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a1963e9bad746b355e0b340804622b2b9":[4,0,0,0,1,0,0,8,8],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a23def062fef6c1210fa528ff078930a3":[4,0,0,0,1,0,0,8,4],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a336bfa4add0cea6ca7ce52a2e2b5e341":[4,0,0,0,1,0,0,8,18],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a354e489eed79ff4e87deea504eeccb54":[4,0,0,0,1,0,0,8,2]
+"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a12d65189283e7c180d4046238be766f0":[4,0,0,0,1,0,0,8,17]
 };
