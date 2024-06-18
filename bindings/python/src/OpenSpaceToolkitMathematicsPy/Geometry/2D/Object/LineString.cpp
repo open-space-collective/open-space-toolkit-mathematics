@@ -33,7 +33,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(pybind11
             "to_string",
             &LineString::toString,
             arg("format") = Object::Format::Standard,
-            arg("precision") = Integer::Undefined()
+            arg_v("precision", Integer::Undefined(), "Integer.undefined()")
         )
 
         .def("apply_transformation", &LineString::applyTransformation, arg("transformation"))

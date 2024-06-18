@@ -38,7 +38,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Segment(pybind11::m
             "to_string",
             &Segment::toString,
             arg("format") = Object::Format::Standard,
-            arg("precision") = Integer::Undefined()
+            arg_v("precision", Integer::Undefined(), "Integer.undefined()")
         )
         .def("apply_transformation", &Segment::applyTransformation, arg("transformation"))
 

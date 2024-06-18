@@ -38,7 +38,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_MultiPolygon(pybind
             "to_string",
             &MultiPolygon::toString,
             arg("format") = Object::Format::Standard,
-            arg("precision") = Integer::Undefined()
+            arg_v("precision", Integer::Undefined(), "Integer.undefined()")
         )
         .def("apply_transformation", &MultiPolygon::applyTransformation, arg("transformation"))
 

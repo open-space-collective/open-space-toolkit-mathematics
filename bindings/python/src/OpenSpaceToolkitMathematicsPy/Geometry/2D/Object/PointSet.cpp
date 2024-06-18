@@ -34,7 +34,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_PointSet(pybind11::
             "to_string",
             &PointSet::toString,
             arg("format") = Object::Format::Standard,
-            arg("precision") = Integer::Undefined()
+            arg_v("precision", Integer::Undefined(), "Integer.undefined()")
         )
         .def("apply_transformation", &PointSet::applyTransformation, arg("transformation"))
 

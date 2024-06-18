@@ -59,7 +59,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Point(pybind11::mod
             "to_string",
             &Point::toString,
             arg("format") = Object::Format::Standard,
-            arg("precision") = Integer::Undefined()
+            arg_v("precision", Integer::Undefined(), "Integer.undefined()")
         )
         .def("apply_transformation", &Point::applyTransformation, arg("transformation"))
 

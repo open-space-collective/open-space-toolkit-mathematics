@@ -21,6 +21,21 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::mod
 
     class_<Intersection> intersection(aModule, "Intersection");
 
+    // Define Intersection types
+    enum_<Intersection::Type>(intersection, "Type")
+
+        .value("Undefined", Intersection::Type::Undefined)
+        .value("Empty", Intersection::Type::Empty)
+        .value("Point", Intersection::Type::Point)
+        .value("PointSet", Intersection::Type::PointSet)
+        .value("Line", Intersection::Type::Line)
+        .value("LineString", Intersection::Type::LineString)
+        .value("Segment", Intersection::Type::Segment)
+        .value("Polygon", Intersection::Type::Polygon)
+        .value("Complex", Intersection::Type::Complex)
+
+        ;
+
     intersection
 
         .def(self == self)
@@ -149,21 +164,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::mod
         .def_static("segment", &Intersection::Segment, arg("segment"))
 
         .def_static("string_from_type", &Intersection::StringFromType)
-
-        ;
-
-    // Define Intersection types
-    enum_<Intersection::Type>(intersection, "Type")
-
-        .value("Undefined", Intersection::Type::Undefined)
-        .value("Empty", Intersection::Type::Empty)
-        .value("Point", Intersection::Type::Point)
-        .value("PointSet", Intersection::Type::PointSet)
-        .value("Line", Intersection::Type::Line)
-        .value("LineString", Intersection::Type::LineString)
-        .value("Segment", Intersection::Type::Segment)
-        .value("Polygon", Intersection::Type::Polygon)
-        .value("Complex", Intersection::Type::Complex)
 
         ;
 }

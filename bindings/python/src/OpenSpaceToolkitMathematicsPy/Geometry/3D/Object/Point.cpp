@@ -51,7 +51,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(pybind11::mod
         .def("z", &Point::z, return_value_policy::reference)
         .def("as_vector", &Point::asVector)
         .def("distance_to", &Point::distanceTo, arg("point"))
-        .def("to_string", &Point::toString, arg("precision") = DEFAULT_PRECISION)
+        .def("to_string", &Point::toString, arg_v("precision", Integer::Undefined(), "Integer.undefined()"))
         .def("apply_transformation", &Point::applyTransformation, arg("transformation"))
 
         .def_static("undefined", &Point::Undefined)

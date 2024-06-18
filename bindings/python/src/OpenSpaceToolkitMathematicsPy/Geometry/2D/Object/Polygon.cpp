@@ -50,7 +50,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Polygon(pybind11::m
             "to_string",
             &Polygon::toString,
             arg("format") = Object::Format::Standard,
-            arg("precision") = Integer::Undefined()
+            arg_v("precision", Integer::Undefined(), "Integer.undefined()")
         )
         .def("apply_transformation", &Polygon::applyTransformation, arg("transformation"))
 

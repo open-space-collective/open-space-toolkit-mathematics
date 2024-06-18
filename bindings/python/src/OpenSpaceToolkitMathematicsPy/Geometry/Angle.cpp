@@ -15,6 +15,17 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
 
     class_<Angle> angle(aModule, "Angle");
 
+    // Define emuneration unit for "angle"
+    enum_<Angle::Unit>(angle, "Unit")
+        .value("Undefined", Angle::Unit::Undefined)
+        .value("Radian", Angle::Unit::Radian)
+        .value("Degree", Angle::Unit::Degree)
+        .value("Arcminute", Angle::Unit::Arcminute)
+        .value("Arcsecond", Angle::Unit::Arcsecond)
+        .value("Revolution", Angle::Unit::Revolution)
+
+        ;
+
     // Define constructor
     angle
         .def(init<Real, Angle::Unit>(), arg("value"), arg("unit"))
@@ -144,17 +155,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
 
         .def_static("string_from_unit", &Angle::StringFromUnit, arg("unit"))
         .def_static("symbol_from_unit", &Angle::SymbolFromUnit, arg("unit"))
-
-        ;
-
-    // Define emuneration unit for "angle"
-    enum_<Angle::Unit>(angle, "Unit")
-        .value("Undefined", Angle::Unit::Undefined)
-        .value("Radian", Angle::Unit::Radian)
-        .value("Degree", Angle::Unit::Degree)
-        .value("Arcminute", Angle::Unit::Arcminute)
-        .value("Arcsecond", Angle::Unit::Arcsecond)
-        .value("Revolution", Angle::Unit::Revolution)
 
         ;
 }
