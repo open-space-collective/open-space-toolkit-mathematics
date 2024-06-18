@@ -29,7 +29,7 @@ Want to get started? This is the simplest and quickest way:
 The following command will start an [iPython](https://ipython.org/) shell within a container where the OSTk components are already installed:
 
 ```bash
-docker run -it openspacecollective/open-space-toolkit-mathematics-python
+docker run -it openspacecollective/open-space-toolkit-mathematics-development python3.11 -m IPython
 ```
 
 Once the shell is up and running, playing with it is easy:
@@ -260,7 +260,7 @@ cmake ..
 make
 ```
 
-*Tip: `helpers/build.sh` simplifies building from within the development environment.*
+*Tip: `ostk-build` simplifies building from within the development environment.*
 
 ### Test
 
@@ -276,13 +276,13 @@ Or to run them manually:
 ./bin/open-space-toolkit-mathematics.test
 ```
 
-*Tip: `helpers/test.sh` simplifies running tests from within the development environment.*
+*Tip: `ostk-test` simplifies running tests from within the development environment.*
 
 ## Dependencies
 
 | Name                   | Version  | License                | Link                                                                                                                         |
 | ---------------------- | -------- | ---------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Pybind11               | `2.10.1` | BSD-3-Clause           | [github.com/pybind/pybind11](https://github.com/pybind/pybind11)                                                             |
+| Pybind11               | `2.12.0` | BSD-3-Clause           | [github.com/pybind/pybind11](https://github.com/pybind/pybind11)                                                             |
 | {fmt}                  | `5.2.0`  | BSD-2-Clause           | [github.com/fmtlib/fmt](https://github.com/fmtlib/fmt)                                                                       |
 | Eigen                  | `3.3.7`  | MPL2                   | [eigen.tuxfamily.org](http://eigen.tuxfamily.org/index.php)                                                                  |
 | Geometric Tools Engine | `3.28`   | Boost Software License | [geometrictools.com](https://www.geometrictools.com)                                                                         |
