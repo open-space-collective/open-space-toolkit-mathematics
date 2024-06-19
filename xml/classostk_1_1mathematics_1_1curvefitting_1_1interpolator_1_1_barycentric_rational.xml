@@ -1,0 +1,193 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::curvefitting::interpolator::BarycentricRational</compoundname>
+    <basecompoundref refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator" prot="public" virt="non-virtual">ostk::mathematics::curvefitting::Interpolator</basecompoundref>
+    <includes refid="_barycentric_rational_8hpp" local="no">BarycentricRational.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1afd7c8301ae3a5871516541e7e8cc3bdc" prot="private" static="no" mutable="no">
+        <type>barycentric_rational&lt; double &gt;</type>
+        <definition>barycentric_rational&lt;double&gt; ostk::mathematics::curvefitting::interpolator::BarycentricRational::interpolator_</definition>
+        <argsstring></argsstring>
+        <name>interpolator_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="77" column="26" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a864926f51a4eb2c3566649d0fcf03fd3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::interpolator::BarycentricRational::BarycentricRational</definition>
+        <argsstring>(const VectorXd &amp;anXVector, const VectorXd &amp;aYVector)</argsstring>
+        <name>BarycentricRational</name>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>anXVector</declname>
+        </param>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aYVector</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a864926f51a4eb2c3566649d0fcf03fd3" kindref="member">BarycentricRational</ref><sp/>barycentricRational(x,<sp/>y);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>anXVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aYVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of y values</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>The x values must be sorted in ascending order </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="51" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.cpp" bodystart="16" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a084b79dfcfae56e18cd7c1dd5269e007" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::interpolator::BarycentricRational::~BarycentricRational</definition>
+        <argsstring>() override</argsstring>
+        <name>~BarycentricRational</name>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="54" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.cpp" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a0a440a296a04347ed9b4a9a22f1cf57f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>VectorXd</type>
+        <definition>VectorXd ostk::mathematics::curvefitting::interpolator::BarycentricRational::evaluate</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const override</argsstring>
+        <name>evaluate</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a2e5f87beae48daf0ebbd4da6c0fdcb77">evaluate</reimplements>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate the spline. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>values<sp/>=<sp/>barycentricRational.evaluate({1.0,<sp/>5.0,<sp/>6.0})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of y values </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="64" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.cpp" bodystart="28" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a343d5f5f554639ce936706ea75109006" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::curvefitting::interpolator::BarycentricRational::evaluate</definition>
+        <argsstring>(const double &amp;aQueryValue) const override</argsstring>
+        <name>evaluate</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1aae0c8423f11e7aa9f764ee4973070c36">evaluate</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate the spline. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>values<sp/>=<sp/>barycentricRational.evaluate(5.0)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An x value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of y values </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="74" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.cpp" bodystart="40" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational" kindref="compound">BarycentricRational</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Barycentric rational interpolator is a high-accuracy interpolator method for non-uniformly spaced samples. It requires 𝑶(N) time for construction, and 𝑶(N) time for each evaluation.</para>
+<para><ulink url="https://www.boost.org/doc/libs/1_81_0/libs/math/doc/html/math_toolkit/barycentric.html">https://www.boost.org/doc/libs/1_81_0/libs/math/doc/html/math_toolkit/barycentric.html</ulink> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ostk::mathematics::curvefitting::Interpolator</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"/>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::curvefitting::interpolator::BarycentricRational</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ostk::mathematics::curvefitting::Interpolator</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"/>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::curvefitting::interpolator::BarycentricRational</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="39" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" bodystart="38" bodyend="78"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a864926f51a4eb2c3566649d0fcf03fd3" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>BarycentricRational</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a0a440a296a04347ed9b4a9a22f1cf57f" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>evaluate</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a343d5f5f554639ce936706ea75109006" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>evaluate</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a41019cdd1cad7b5c5c818ff25a122536" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>GenerateInterpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a3e596528cd5e416546dabe45e9100e04" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>getInterpolationType</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6593f90bb974214f6f2b264bc114b96e" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>Interpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1afd7c8301ae3a5871516541e7e8cc3bdc" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>interpolator_</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>Type</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a084b79dfcfae56e18cd7c1dd5269e007" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>~BarycentricRational</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ac980e413bfeb65eceb347e787899c1f4" prot="public" virt="pure-virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>~Interpolator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -99,7 +99,7 @@ Docker Images</h3>
 <h4><a class="anchor" id="autotoc_md4"></a>
 iPython</h4>
 <p>The following command will start an <a href="https://ipython.org/">iPython</a> shell within a container where the OSTk components are already installed:</p>
-<div class="fragment"><div class="line">docker run -it openspacecollective/open-space-toolkit-mathematics-python</div>
+<div class="fragment"><div class="line">docker run -it openspacecollective/open-space-toolkit-mathematics-development python3.11 -m IPython</div>
 </div><!-- fragment --><p>Once the shell is up and running, playing with it is easy:</p>
 <div class="fragment"><div class="line">import numpy</div>
 <div class="line"><span class="keyword">from</span> <a class="code" href="namespaceostk_1_1mathematics_1_1geometry.html">ostk.mathematics.geometry</a> <span class="keyword">import</span> Angle</div>
@@ -320,21 +320,21 @@ Build</h2>
 <p>From the <code>./build</code> directory:</p>
 <div class="fragment"><div class="line">cmake ..</div>
 <div class="line">make</div>
-</div><!-- fragment --><p><em>Tip: <code>helpers/build.sh</code> simplifies building from within the development environment.</em></p>
+</div><!-- fragment --><p><em>Tip: <code>ostk-build</code> simplifies building from within the development environment.</em></p>
 <h2><a class="anchor" id="autotoc_md18"></a>
 Test</h2>
 <p>To start a container to build and run the tests:</p>
 <div class="fragment"><div class="line">make test</div>
 </div><!-- fragment --><p>Or to run them manually:</p>
 <div class="fragment"><div class="line">./bin/open-space-toolkit-mathematics.test</div>
-</div><!-- fragment --><p><em>Tip: <code>helpers/test.sh</code> simplifies running tests from within the development environment.</em></p>
+</div><!-- fragment --><p><em>Tip: <code>ostk-test</code> simplifies running tests from within the development environment.</em></p>
 <h1><a class="anchor" id="autotoc_md19"></a>
 Dependencies</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Name </th><th class="markdownTableHeadNone">Version </th><th class="markdownTableHeadNone">License </th><th class="markdownTableHeadNone">Link  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Pybind11 </td><td class="markdownTableBodyNone"><code>2.10.1</code> </td><td class="markdownTableBodyNone">BSD-3-Clause </td><td class="markdownTableBodyNone"><a href="https://github.com/pybind/pybind11">github.com/pybind/pybind11</a>  </td></tr>
+<td class="markdownTableBodyNone">Pybind11 </td><td class="markdownTableBodyNone"><code>2.12.0</code> </td><td class="markdownTableBodyNone">BSD-3-Clause </td><td class="markdownTableBodyNone"><a href="https://github.com/pybind/pybind11">github.com/pybind/pybind11</a>  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">{fmt} </td><td class="markdownTableBodyNone"><code>5.2.0</code> </td><td class="markdownTableBodyNone">BSD-2-Clause </td><td class="markdownTableBodyNone"><a href="https://github.com/fmtlib/fmt">github.com/fmtlib/fmt</a>  </td></tr>
 <tr class="markdownTableRowOdd">

@@ -1,0 +1,561 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_interval_8tpp" kind="file" language="C++">
+    <compoundname>Interval.tpp</compoundname>
+    <includedby refid="_interval_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp</includedby>
+    <invincdepgraph>
+      <node id="5">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp</label>
+        <link refid="_cuboid_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp</label>
+        <link refid="_cone_8cpp"/>
+      </node>
+      <node id="7">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp</label>
+        <link refid="_pyramid_8cpp"/>
+      </node>
+      <node id="3">
+        <label>include/OpenSpaceToolkit/Mathematics/Object.hpp</label>
+        <link refid="_object_8hpp"/>
+      </node>
+      <node id="2">
+        <label>include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp</label>
+        <link refid="_interval_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp</label>
+        <link refid="_ellipsoid_8cpp"/>
+      </node>
+      <node id="1">
+        <label>src/OpenSpaceToolkit/Mathematics/Object/Interval.tpp</label>
+        <link refid="_interval_8tpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">///<sp/>Apache<sp/>License<sp/>2.0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;OpenSpaceToolkit/Core/Error.hpp&gt;</highlight></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;OpenSpaceToolkit/Core/Utility.hpp&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#include<sp/>&lt;OpenSpaceToolkit/Mathematics/Object/Interval.hpp&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">namespace<sp/>ostk</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal">namespace<sp/>mathematics</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal">namespace<sp/>object</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">Interval&lt;T&gt;::Interval(const<sp/>T&amp;<sp/>aLowerBound,<sp/>const<sp/>T&amp;<sp/>anUpperBound,<sp/>const<sp/>Interval::Type&amp;<sp/>anIntervalType)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>type_(anIntervalType),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>lowerBound_(aLowerBound),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>upperBound_(anUpperBound)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(lowerBound_.isDefined()<sp/>&amp;&amp;<sp/>upperBound_.isDefined()<sp/>&amp;&amp;<sp/>(lowerBound_<sp/>&gt;<sp/>upperBound_))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::RuntimeError(&quot;Lower<sp/>bound<sp/>greater<sp/>than<sp/>upper<sp/>bound.&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">bool<sp/>Interval&lt;T&gt;::operator==(const<sp/>Interval&amp;<sp/>anInterval)<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>((!this-&gt;isDefined())<sp/>||<sp/>(!anInterval.isDefined()))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>false;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(type_<sp/>==<sp/>anInterval.type_)<sp/>&amp;&amp;<sp/>(lowerBound_<sp/>==<sp/>anInterval.lowerBound_)<sp/>&amp;&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(upperBound_<sp/>==<sp/>anInterval.upperBound_);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">bool<sp/>Interval&lt;T&gt;::operator!=(const<sp/>Interval&amp;<sp/>anInterval)<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>!((*this)<sp/>==<sp/>anInterval);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>U&gt;</highlight></codeline>
+<codeline><highlight class="normal">std::ostream&amp;<sp/>operator&lt;&lt;(std::ostream&amp;<sp/>anOutputStream,<sp/>const<sp/>Interval&lt;U&gt;&amp;<sp/>anInterval)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ostk::core::utils::Print::Header(anOutputStream,<sp/>&quot;Interval&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ostk::core::utils::Print::Line(anOutputStream)<sp/>&lt;&lt;<sp/>&quot;Type:&quot;<sp/>&lt;&lt;<sp/>Interval&lt;U&gt;::StringFromType(anInterval.type_);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ostk::core::utils::Print::Line(anOutputStream)<sp/>&lt;&lt;<sp/>&quot;Lower<sp/>Bound:&quot;<sp/>&lt;&lt;<sp/>anInterval.lowerBound_;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ostk::core::utils::Print::Line(anOutputStream)<sp/>&lt;&lt;<sp/>&quot;Upper<sp/>Bound:&quot;<sp/>&lt;&lt;<sp/>anInterval.upperBound_;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ostk::core::utils::Print::Footer(anOutputStream);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>anOutputStream;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">bool<sp/>Interval&lt;T&gt;::isDefined()<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>(type_<sp/>!=<sp/>Interval::Type::Undefined)<sp/>&amp;&amp;<sp/>lowerBound_.isDefined()<sp/>&amp;&amp;<sp/>upperBound_.isDefined();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">bool<sp/>Interval&lt;T&gt;::isDegenerate()<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>lowerBound_<sp/>==<sp/>upperBound_;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">bool<sp/>Interval&lt;T&gt;::intersects(const<sp/>Interval&amp;<sp/>anInterval)<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>this-&gt;contains(anInterval.lowerBound_)<sp/>||<sp/>this-&gt;contains(anInterval.upperBound_)<sp/>||</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>anInterval.contains(lowerBound_)<sp/>||<sp/>anInterval.contains(upperBound_)<sp/>||<sp/>(*this)<sp/>==<sp/>anInterval;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">bool<sp/>Interval&lt;T&gt;::contains(const<sp/>T&amp;<sp/>aValue)<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!aValue.isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Value&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>switch<sp/>(type_)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::Closed:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>(lowerBound_<sp/>&lt;=<sp/>aValue)<sp/>&amp;&amp;<sp/>(aValue<sp/>&lt;=<sp/>upperBound_);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::Open:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>(lowerBound_<sp/>&lt;<sp/>aValue)<sp/>&amp;&amp;<sp/>(aValue<sp/>&lt;<sp/>upperBound_);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::HalfOpenLeft:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>(lowerBound_<sp/>&lt;<sp/>aValue)<sp/>&amp;&amp;<sp/>(aValue<sp/>&lt;=<sp/>upperBound_);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::HalfOpenRight:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>(lowerBound_<sp/>&lt;=<sp/>aValue)<sp/>&amp;&amp;<sp/>(aValue<sp/>&lt;<sp/>upperBound_);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>default:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Wrong(&quot;Type&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>false;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">bool<sp/>Interval&lt;T&gt;::contains(const<sp/>Interval&amp;<sp/>anInterval)<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!anInterval.isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>this-&gt;contains(anInterval.lowerBound_)<sp/>&amp;&amp;<sp/>this-&gt;contains(anInterval.upperBound_);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">const<sp/>T&amp;<sp/>Interval&lt;T&gt;::accessLowerBound()<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>lowerBound_;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">const<sp/>T&amp;<sp/>Interval&lt;T&gt;::accessUpperBound()<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>upperBound_;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">typename<sp/>Interval&lt;T&gt;::Type<sp/>Interval&lt;T&gt;::getType()<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>type_;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">T<sp/>Interval&lt;T&gt;::getLowerBound()<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>lowerBound_;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">T<sp/>Interval&lt;T&gt;::getUpperBound()<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>upperBound_;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">Interval&lt;T&gt;<sp/>Interval&lt;T&gt;::getIntersectionWith(const<sp/>Interval&amp;<sp/>anInterval)<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!anInterval.isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(anInterval.getType()<sp/>!=<sp/>type_)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::ToBeImplemented(&quot;Intersection<sp/>between<sp/>different<sp/>Interval::Type<sp/>of<sp/>interval.&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>T<sp/>lowerBound<sp/>=<sp/>std::max(lowerBound_,<sp/>anInterval.getLowerBound());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>T<sp/>upperBound<sp/>=<sp/>std::min(upperBound_,<sp/>anInterval.getUpperBound());</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(lowerBound<sp/>&gt;<sp/>upperBound)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;::Undefined();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;(lowerBound,<sp/>upperBound,<sp/>type_);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">Interval&lt;T&gt;<sp/>Interval&lt;T&gt;::getUnionWith(const<sp/>Interval&amp;<sp/>anInterval)<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!anInterval.isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(anInterval.getType()<sp/>!=<sp/>type_)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::ToBeImplemented(&quot;Union<sp/>between<sp/>different<sp/>Interval::Type<sp/>of<sp/>interval.&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;intersects(anInterval))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;::Undefined();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>T<sp/>lowerBound<sp/>=<sp/>std::min(lowerBound_,<sp/>anInterval.getLowerBound());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>const<sp/>T<sp/>upperBound<sp/>=<sp/>std::max(upperBound_,<sp/>anInterval.getUpperBound());</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(lowerBound<sp/>&gt;<sp/>upperBound)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;::Undefined();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;(lowerBound,<sp/>upperBound,<sp/>type_);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>U&gt;</highlight></codeline>
+<codeline><highlight class="normal">ctnr::Array&lt;T&gt;<sp/>Interval&lt;T&gt;::generateArrayWithStep(const<sp/>U&amp;<sp/>aStep)<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>using<sp/>ostk::core::type::Index;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>using<sp/>ostk::core::type::Size;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!aStep.isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Step&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(aStep.isZero())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::RuntimeError(&quot;Step<sp/>is<sp/>zero.&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ctnr::Array&lt;T&gt;<sp/>grid<sp/>=<sp/>ctnr::Array&lt;T&gt;::Empty();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(aStep.isPositive())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>value<sp/>=<sp/>this-&gt;accessLowerBound();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(value<sp/>&lt;=<sp/>this-&gt;accessUpperBound())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grid.add(value);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>+=<sp/>aStep;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(grid.accessLast()<sp/>&lt;<sp/>this-&gt;accessUpperBound())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grid.add(this-&gt;accessUpperBound());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>else</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>T<sp/>value<sp/>=<sp/>this-&gt;accessUpperBound();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>while<sp/>(value<sp/>&gt;=<sp/>this-&gt;accessLowerBound())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grid.add(value);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>+=<sp/>aStep;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>if<sp/>(grid.accessLast()<sp/>&gt;<sp/>this-&gt;accessLowerBound())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>grid.add(this-&gt;accessLowerBound());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>grid;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">ctnr::Array&lt;T&gt;<sp/>Interval&lt;T&gt;::generateArrayWithSize(const<sp/>types::Size&amp;<sp/>anArraySize)<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(anArraySize<sp/>&lt;<sp/>2)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Wrong(&quot;Array<sp/>size&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>step<sp/>=<sp/>T::Undefined();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/>value<sp/>=<sp/>T::Undefined();</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>switch<sp/>(type_)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::Closed:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>step<sp/>=<sp/>(this-&gt;accessUpperBound()<sp/>-<sp/>this-&gt;accessLowerBound())<sp/>/<sp/>static_cast&lt;T&gt;(anArraySize<sp/>-<sp/>1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>=<sp/>this-&gt;accessLowerBound();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::Open:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>step<sp/>=<sp/>(this-&gt;accessUpperBound()<sp/>-<sp/>this-&gt;accessLowerBound())<sp/>/<sp/>static_cast&lt;T&gt;(anArraySize<sp/>+<sp/>1);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>=<sp/>this-&gt;accessLowerBound()<sp/>+<sp/>step;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::HalfOpenLeft:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>step<sp/>=<sp/>(this-&gt;accessUpperBound()<sp/>-<sp/>this-&gt;accessLowerBound())<sp/>/<sp/>static_cast&lt;T&gt;(anArraySize);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>=<sp/>this-&gt;accessLowerBound()<sp/>+<sp/>step;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::HalfOpenRight:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>step<sp/>=<sp/>(this-&gt;accessUpperBound()<sp/>-<sp/>this-&gt;accessLowerBound())<sp/>/<sp/>static_cast&lt;T&gt;(anArraySize);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>value<sp/>=<sp/>this-&gt;accessLowerBound();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>default:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Wrong(&quot;Type&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ctnr::Array&lt;T&gt;<sp/>array(anArraySize,<sp/>T::Undefined());</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>typename<sp/>ctnr::Array&lt;T&gt;::Iterator<sp/>arrayIt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>for<sp/>(arrayIt<sp/>=<sp/>array.begin();<sp/>arrayIt<sp/>!=<sp/>array.end();<sp/>++arrayIt,<sp/>value<sp/>+=<sp/>step)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*arrayIt<sp/>=<sp/>value;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>array;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">types::String<sp/>Interval&lt;T&gt;::toString()<sp/>const</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>switch<sp/>(type_)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::Closed:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>types::String::Format(&quot;[{},<sp/>{}]&quot;,<sp/>lowerBound_.toString(),<sp/>upperBound_.toString());</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::Open:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>types::String::Format(&quot;]{},<sp/>{}[&quot;,<sp/>lowerBound_.toString(),<sp/>upperBound_.toString());</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::HalfOpenLeft:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>types::String::Format(&quot;]{},<sp/>{}]&quot;,<sp/>lowerBound_.toString(),<sp/>upperBound_.toString());</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::HalfOpenRight:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>types::String::Format(&quot;[{},<sp/>{}[&quot;,<sp/>lowerBound_.toString(),<sp/>upperBound_.toString());</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>default:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>break;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Wrong(&quot;Type&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>types::String::Empty();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>Interval&lt;T&gt;::setType(const<sp/>Interval&lt;T&gt;::Type&amp;<sp/>aType)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>type_<sp/>=<sp/>aType;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>Interval&lt;T&gt;::setLowerBound(const<sp/>T&amp;<sp/>aLowerBound)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(aLowerBound.isDefined()<sp/>&amp;&amp;<sp/>upperBound_.isDefined()<sp/>&amp;&amp;<sp/>(aLowerBound<sp/>&gt;<sp/>upperBound_))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::RuntimeError(&quot;Lower<sp/>bound<sp/>greater<sp/>than<sp/>upper<sp/>bound.&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>lowerBound_<sp/>=<sp/>aLowerBound;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">void<sp/>Interval&lt;T&gt;::setUpperBound(const<sp/>T&amp;<sp/>anUpperBound)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(!this-&gt;isDefined())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Undefined(&quot;Interval&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>if<sp/>(anUpperBound.isDefined()<sp/>&amp;&amp;<sp/>lowerBound_.isDefined()<sp/>&amp;&amp;<sp/>(anUpperBound<sp/>&lt;<sp/>lowerBound_))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::RuntimeError(&quot;Upper<sp/>bound<sp/>lower<sp/>than<sp/>lower<sp/>bound.&quot;);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>upperBound_<sp/>=<sp/>anUpperBound;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">Interval&lt;T&gt;<sp/>Interval&lt;T&gt;::Undefined()</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;(T::Undefined(),<sp/>T::Undefined(),<sp/>Interval::Type::Undefined);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">Interval&lt;T&gt;<sp/>Interval&lt;T&gt;::Closed(const<sp/>T&amp;<sp/>aLowerBound,<sp/>const<sp/>T&amp;<sp/>anUpperBound)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;(aLowerBound,<sp/>anUpperBound,<sp/>Interval::Type::Closed);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">Interval&lt;T&gt;<sp/>Interval&lt;T&gt;::Open(const<sp/>T&amp;<sp/>aLowerBound,<sp/>const<sp/>T&amp;<sp/>anUpperBound)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;(aLowerBound,<sp/>anUpperBound,<sp/>Interval::Type::Open);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">Interval&lt;T&gt;<sp/>Interval&lt;T&gt;::HalfOpenLeft(const<sp/>T&amp;<sp/>aLowerBound,<sp/>const<sp/>T&amp;<sp/>anUpperBound)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;(aLowerBound,<sp/>anUpperBound,<sp/>Interval::Type::HalfOpenLeft);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">Interval&lt;T&gt;<sp/>Interval&lt;T&gt;::HalfOpenRight(const<sp/>T&amp;<sp/>aLowerBound,<sp/>const<sp/>T&amp;<sp/>anUpperBound)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;(aLowerBound,<sp/>anUpperBound,<sp/>Interval::Type::HalfOpenRight);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>Interval&lt;T&gt;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Interval&lt;T&gt;::Parse<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/><sp/><sp/>const<sp/><sp/><sp/>types::String&amp;<sp/>aString<sp/>)</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>{</highlight></codeline>
+<codeline><highlight class="normal">//<sp/><sp/><sp/><sp/><sp/>return<sp/>Interval&lt;T&gt;::Undefined()<sp/>;<sp/>//<sp/>[TBI]</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">template<sp/>&lt;class<sp/>T&gt;</highlight></codeline>
+<codeline><highlight class="normal">types::String<sp/>Interval&lt;T&gt;::StringFromType(const<sp/>Interval::Type&amp;<sp/>anIntervalType)</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>switch<sp/>(anIntervalType)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::Undefined:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>&quot;Undefined&quot;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::Closed:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>&quot;Closed&quot;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::Open:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>&quot;Open&quot;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::HalfOpenLeft:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>&quot;Half<sp/>Open<sp/>Left&quot;;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>case<sp/>Interval&lt;T&gt;::Type::HalfOpenRight:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>&quot;Half<sp/>Open<sp/>Right&quot;;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>throw<sp/>ostk::core::error::runtime::Wrong(&quot;Type&quot;);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>return<sp/>types::String::Empty();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">}<sp/><sp/>//<sp/>namespace<sp/>object</highlight></codeline>
+<codeline><highlight class="normal">}<sp/><sp/>//<sp/>namespace<sp/>mathematics</highlight></codeline>
+<codeline><highlight class="normal">}<sp/><sp/>//<sp/>namespace<sp/>ostk</highlight></codeline>
+    </programlisting>
+    <location file="src/OpenSpaceToolkit/Mathematics/Object/Interval.tpp"/>
+  </compounddef>
+</doxygen>

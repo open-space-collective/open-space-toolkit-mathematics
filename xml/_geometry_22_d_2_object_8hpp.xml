@@ -1,0 +1,470 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_geometry_22_d_2_object_8hpp" kind="file" language="C++">
+    <compoundname>Object.hpp</compoundname>
+    <includes local="no">OpenSpaceToolkit/Core/Type/Integer.hpp</includes>
+    <includes local="no">OpenSpaceToolkit/Core/Type/String.hpp</includes>
+    <includedby refid="2_d_2_intersection_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp</includedby>
+    <includedby refid="2_d_2_object_2_composite_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp</includedby>
+    <includedby refid="2_d_2_object_2_line_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp</includedby>
+    <includedby refid="2_d_2_object_2_line_string_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp</includedby>
+    <includedby refid="_multi_line_string_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp</includedby>
+    <includedby refid="_multi_polygon_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp</includedby>
+    <includedby refid="2_d_2_object_2_point_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp</includedby>
+    <includedby refid="2_d_2_object_2_point_set_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp</includedby>
+    <includedby refid="2_d_2_object_2_polygon_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp</includedby>
+    <includedby refid="2_d_2_object_2_segment_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp</includedby>
+    <includedby refid="2_d_2_transformation_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp</includedby>
+    <includedby refid="2_d_2_object_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp</label>
+        <link refid="_geometry_22_d_2_object_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>OpenSpaceToolkit/Core/Type/String.hpp</label>
+      </node>
+      <node id="2">
+        <label>OpenSpaceToolkit/Core/Type/Integer.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="36">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.cpp</label>
+        <link refid="2_d_2_object_2_point_set_8cpp"/>
+      </node>
+      <node id="8">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp</label>
+        <link refid="2_d_2_object_2_line_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp</label>
+        <link refid="2_d_2_object_2_composite_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.cpp</label>
+        <link refid="_sphere_8cpp"/>
+      </node>
+      <node id="24">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.cpp</label>
+        <link refid="3_d_2_object_2_segment_8cpp"/>
+      </node>
+      <node id="12">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp</label>
+        <link refid="2_d_2_object_2_polygon_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp</label>
+        <link refid="2_d_2_intersection_8cpp"/>
+      </node>
+      <node id="31">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp</label>
+        <link refid="2_d_2_object_2_line_8cpp"/>
+      </node>
+      <node id="18">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp</label>
+        <link refid="_cuboid_8cpp"/>
+      </node>
+      <node id="2">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp</label>
+        <link refid="2_d_2_intersection_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp</label>
+        <link refid="_ray_8cpp"/>
+      </node>
+      <node id="11">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.cpp</label>
+        <link refid="_multi_polygon_8cpp"/>
+      </node>
+      <node id="37">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp</label>
+        <link refid="2_d_2_transformation_8hpp"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.cpp</label>
+        <link refid="2_d_2_object_2_segment_8cpp"/>
+      </node>
+      <node id="1">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp</label>
+        <link refid="_geometry_22_d_2_object_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.cpp</label>
+        <link refid="3_d_2_object_2_polygon_8cpp"/>
+      </node>
+      <node id="34">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.hpp</label>
+        <link refid="2_d_2_object_2_point_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.cpp</label>
+        <link refid="2_d_2_transformation_8cpp"/>
+      </node>
+      <node id="38">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Point.cpp</label>
+        <link refid="2_d_2_object_2_point_8cpp"/>
+      </node>
+      <node id="9">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Segment.hpp</label>
+        <link refid="2_d_2_object_2_segment_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Line.cpp</label>
+        <link refid="3_d_2_object_2_line_8cpp"/>
+      </node>
+      <node id="17">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp</label>
+        <link refid="_cone_8cpp"/>
+      </node>
+      <node id="29">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.cpp</label>
+        <link refid="2_d_2_object_2_line_string_8cpp"/>
+      </node>
+      <node id="26">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.cpp</label>
+        <link refid="3_d_2_object_8cpp"/>
+      </node>
+      <node id="27">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp</label>
+        <link refid="_pyramid_8hpp"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp</label>
+        <link refid="2_d_2_object_2_composite_8cpp"/>
+      </node>
+      <node id="21">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp</label>
+        <link refid="_plane_8cpp"/>
+      </node>
+      <node id="16">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp</label>
+        <link refid="3_d_2_object_2_composite_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp</label>
+        <link refid="2_d_2_object_2_polygon_8cpp"/>
+      </node>
+      <node id="35">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/PointSet.hpp</label>
+        <link refid="2_d_2_object_2_point_set_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp</label>
+        <link refid="_multi_polygon_8hpp"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp</label>
+        <link refid="3_d_2_intersection_8hpp"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/LineString.hpp</label>
+        <link refid="2_d_2_object_2_line_string_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp</label>
+        <link refid="_pyramid_8cpp"/>
+      </node>
+      <node id="15">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp</label>
+        <link refid="3_d_2_intersection_8cpp"/>
+      </node>
+      <node id="33">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp</label>
+        <link refid="_multi_line_string_8hpp"/>
+      </node>
+      <node id="19">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp</label>
+        <link refid="_ellipsoid_8cpp"/>
+      </node>
+      <node id="13">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.hpp</label>
+        <link refid="3_d_2_object_2_polygon_8hpp"/>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp</label>
+        <link refid="2_d_2_object_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" prot="public">ostk::mathematics::geometry::d2::Object</innerclass>
+    <innernamespace refid="namespaceostk">ostk</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics">ostk::mathematics</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry">ostk::mathematics::geometry</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d2">ostk::mathematics::geometry::d2</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__OpenSpaceToolkit_Mathematics_Geometry_2D_Object__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__OpenSpaceToolkit_Mathematics_Geometry_2D_Object__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OpenSpaceToolkit/Core/Type/Integer.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OpenSpaceToolkit/Core/Type/String.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceostk" kindref="compound">ostk</ref></highlight></codeline>
+<codeline lineno="10"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mathematics</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">geometry</highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">d2</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Transformation;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Intersection;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ostk::core::type::Integer;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ostk::core::type::String;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="29" refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" kindref="member">Format</ref></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13aec0fc0100c4fc1ce4eea230c3dc10360" kindref="member">Undefined</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b" kindref="member">Standard</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13a9ab05752e6beff2c783a6046ed592661" kindref="member">WKT</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a15a959fd5b624d6fcc6725982a8cddf8" kindref="member">Object</ref>()<sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1af11dec981b2e1ab08deae342ec2c4ef8" kindref="member">~Object</ref>()<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref>*<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1af63da855554f9114803103fe2390f5eb" kindref="member">clone</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9617246a3e26d57e5ba78e57387ae05a" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref>&amp;<sp/>anObject)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1afe72ba03919d609d2847b0b4162d083d" kindref="member">operator!=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref>&amp;<sp/>anObject)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a418df9bf4a73078f3d494edef1743f8d" kindref="member">operator&lt;&lt;</ref>(std::ostream&amp;<sp/>anOutputStream,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref>&amp;<sp/>anObject);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1abe5ea18c13bc259fc0da0b0c49fa0dca" kindref="member">isDefined</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a553d7a1e388598c74d0f9fdd57d1ba9d" kindref="member">intersects</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref>&amp;<sp/>anObject)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a43eaa4a59d81e7eb36b80f6695de6ce1" kindref="member">contains</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref>&amp;<sp/>anObject)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1aedf9c7ef5af5892d15cf08da795fa1af" kindref="member">toString</ref>(</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" kindref="member">Object::Format</ref>&amp;<sp/>aFormat<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b" kindref="member">Object::Format::Standard</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Integer&amp;<sp/>aPrecision<sp/>=<sp/>Integer::Undefined()</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1aaf59b52c718ca92c6b6116660077d9f9" kindref="member">print</ref>(std::ostream&amp;<sp/>anOutputStream,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>displayDecorators<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1add0c7edfac25cbd241f82edbb1ce1476" kindref="member">applyTransformation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kindref="compound">Transformation</ref>&amp;<sp/>aTransformation)<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>d2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>geometry</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mathematics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ostk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp"/>
+  </compounddef>
+</doxygen>

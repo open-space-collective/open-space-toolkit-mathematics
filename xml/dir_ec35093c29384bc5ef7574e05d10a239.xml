@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_ec35093c29384bc5ef7574e05d10a239" kind="dir">
+    <compoundname>src/OpenSpaceToolkit/Mathematics</compoundname>
+    <innerdir refid="dir_51aead8cec0dd9dbb6826afe5c2f58cd">src/OpenSpaceToolkit/Mathematics/CurveFitting</innerdir>
+    <innerdir refid="dir_23877e1b8bf1bd659bdf1341af7960ec">src/OpenSpaceToolkit/Mathematics/Geometry</innerdir>
+    <innerdir refid="dir_b7cdcace92c8e98c19d3ebc12ca5ef88">src/OpenSpaceToolkit/Mathematics/Object</innerdir>
+    <innerdir refid="dir_9123a984f0dd74ff42dc1c9b2df78636">src/OpenSpaceToolkit/Mathematics/Solver</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/OpenSpaceToolkit/Mathematics/"/>
+  </compounddef>
+</doxygen>

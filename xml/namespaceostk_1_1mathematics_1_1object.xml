@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceostk_1_1mathematics_1_1object" kind="namespace" language="C++">
+    <compoundname>ostk::mathematics::object</compoundname>
+    <innerclass refid="classostk_1_1mathematics_1_1object_1_1_interval" prot="public">ostk::mathematics::object::Interval</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1object_1_1_interval_base" prot="public">ostk::mathematics::object::IntervalBase</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1ad80cd7b98ff80674edeb802fc9cda7df" prot="public" static="no">
+        <type>Eigen::Vector2i</type>
+        <definition>using ostk::mathematics::object::Vector2i = typedef Eigen::Vector2i</definition>
+        <argsstring></argsstring>
+        <name>Vector2i</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="31" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1ac4d313022be5530ea8ff4587b1738177" prot="public" static="no">
+        <type>Eigen::Vector3i</type>
+        <definition>using ostk::mathematics::object::Vector3i = typedef Eigen::Vector3i</definition>
+        <argsstring></argsstring>
+        <name>Vector3i</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="32" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1a3eb95cd6c5c7d6642071579eadd72e6f" prot="public" static="no">
+        <type>Eigen::Vector4i</type>
+        <definition>using ostk::mathematics::object::Vector4i = typedef Eigen::Vector4i</definition>
+        <argsstring></argsstring>
+        <name>Vector4i</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="33" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1a2b9807c143e8b3bf0dba3aeab50baa57" prot="public" static="no">
+        <type>Eigen::VectorXi</type>
+        <definition>using ostk::mathematics::object::VectorXi = typedef Eigen::VectorXi</definition>
+        <argsstring></argsstring>
+        <name>VectorXi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="35" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1ac86e8f85187dc85c1f935627d56c1beb" prot="public" static="no">
+        <type>Eigen::Vector2d</type>
+        <definition>using ostk::mathematics::object::Vector2d = typedef Eigen::Vector2d</definition>
+        <argsstring></argsstring>
+        <name>Vector2d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="37" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" prot="public" static="no">
+        <type>Eigen::Vector3d</type>
+        <definition>using ostk::mathematics::object::Vector3d = typedef Eigen::Vector3d</definition>
+        <argsstring></argsstring>
+        <name>Vector3d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="38" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1a4a69dcd1bf9592d64b93139e22f15beb" prot="public" static="no">
+        <type>Eigen::Vector4d</type>
+        <definition>using ostk::mathematics::object::Vector4d = typedef Eigen::Vector4d</definition>
+        <argsstring></argsstring>
+        <name>Vector4d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="39" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1a709e40375d597c36635def856021a648" prot="public" static="no">
+        <type>Eigen::Matrix&lt; double, 6, 1 &gt;</type>
+        <definition>using ostk::mathematics::object::Vector6d = typedef Eigen::Matrix&lt;double, 6, 1&gt;</definition>
+        <argsstring></argsstring>
+        <name>Vector6d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="40" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" prot="public" static="no">
+        <type>Eigen::VectorXd</type>
+        <definition>using ostk::mathematics::object::VectorXd = typedef Eigen::VectorXd</definition>
+        <argsstring></argsstring>
+        <name>VectorXd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="42" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1a9be86062a33aac0443deff367090b0a2" prot="public" static="no">
+        <type>Eigen::RowVectorXd</type>
+        <definition>using ostk::mathematics::object::RowVectorXd = typedef Eigen::RowVectorXd</definition>
+        <argsstring></argsstring>
+        <name>RowVectorXd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="44" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1a212c24ca74a37794559bcaa69549137e" prot="public" static="no">
+        <type>Eigen::Matrix2i</type>
+        <definition>using ostk::mathematics::object::Matrix2i = typedef Eigen::Matrix2i</definition>
+        <argsstring></argsstring>
+        <name>Matrix2i</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="46" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1a0da6ed3d3407ebd2c38b982398b90e14" prot="public" static="no">
+        <type>Eigen::Matrix3i</type>
+        <definition>using ostk::mathematics::object::Matrix3i = typedef Eigen::Matrix3i</definition>
+        <argsstring></argsstring>
+        <name>Matrix3i</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="47" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1a2fa26d8f4a7f3ac9ac4a0c97dc547f8c" prot="public" static="no">
+        <type>Eigen::Matrix4i</type>
+        <definition>using ostk::mathematics::object::Matrix4i = typedef Eigen::Matrix4i</definition>
+        <argsstring></argsstring>
+        <name>Matrix4i</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="48" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1a3fccc42715b83350a30545c3b45ba35f" prot="public" static="no">
+        <type>Eigen::MatrixXi</type>
+        <definition>using ostk::mathematics::object::MatrixXi = typedef Eigen::MatrixXi</definition>
+        <argsstring></argsstring>
+        <name>MatrixXi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="50" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1a641962167e941239dfe860ff39dbf0e1" prot="public" static="no">
+        <type>Eigen::Matrix2d</type>
+        <definition>using ostk::mathematics::object::Matrix2d = typedef Eigen::Matrix2d</definition>
+        <argsstring></argsstring>
+        <name>Matrix2d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="52" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1a9f8f6a9f4bd331fb6bc0c66a1aca5e30" prot="public" static="no">
+        <type>Eigen::Matrix3d</type>
+        <definition>using ostk::mathematics::object::Matrix3d = typedef Eigen::Matrix3d</definition>
+        <argsstring></argsstring>
+        <name>Matrix3d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="53" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1adadb22c2eddff1e58abea07ad5cd2b78" prot="public" static="no">
+        <type>Eigen::Matrix4d</type>
+        <definition>using ostk::mathematics::object::Matrix4d = typedef Eigen::Matrix4d</definition>
+        <argsstring></argsstring>
+        <name>Matrix4d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="54" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1object_1a8be483f9d27b70e9009978332171b614" prot="public" static="no">
+        <type>Eigen::MatrixXd</type>
+        <definition>using ostk::mathematics::object::MatrixXd = typedef Eigen::MatrixXd</definition>
+        <argsstring></argsstring>
+        <name>MatrixXd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" line="56" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Vector.hpp" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="15" column="1"/>
+  </compounddef>
+</doxygen>

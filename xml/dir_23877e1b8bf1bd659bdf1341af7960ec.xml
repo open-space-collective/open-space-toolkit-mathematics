@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_23877e1b8bf1bd659bdf1341af7960ec" kind="dir">
+    <compoundname>src/OpenSpaceToolkit/Mathematics/Geometry</compoundname>
+    <innerdir refid="dir_24babb05cc333d424f291bc25c8efc4c">src/OpenSpaceToolkit/Mathematics/Geometry/2D</innerdir>
+    <innerdir refid="dir_6150ed08e87cbb7e90b0bc64f795131a">src/OpenSpaceToolkit/Mathematics/Geometry/3D</innerdir>
+    <innerfile refid="_angle_8cpp">Angle.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/OpenSpaceToolkit/Mathematics/Geometry/"/>
+  </compounddef>
+</doxygen>

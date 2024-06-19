@@ -1,0 +1,257 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_euler_angle_8hpp" kind="file" language="C++">
+    <compoundname>EulerAngle.hpp</compoundname>
+    <includes local="no">OpenSpaceToolkit/Core/Type/Integer.hpp</includes>
+    <includes local="no">OpenSpaceToolkit/Core/Type/Real.hpp</includes>
+    <includes local="no">OpenSpaceToolkit/Core/Type/String.hpp</includes>
+    <includes refid="_angle_8hpp" local="no">OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp</includes>
+    <includes refid="_vector_8hpp" local="no">OpenSpaceToolkit/Mathematics/Object/Vector.hpp</includes>
+    <includedby refid="_euler_angle_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp</includedby>
+    <includedby refid="_quaternion_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp</includedby>
+    <includedby refid="_rotation_matrix_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp</includedby>
+    <includedby refid="_rotation_vector_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>OpenSpaceToolkit/Core/Type/Real.hpp</label>
+      </node>
+      <node id="8">
+        <label>Eigen/Geometry</label>
+      </node>
+      <node id="7">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="5">
+        <label>OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp</label>
+        <link refid="_angle_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>OpenSpaceToolkit/Mathematics/Object/Vector.hpp</label>
+        <link refid="_vector_8hpp"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp</label>
+        <link refid="_euler_angle_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>OpenSpaceToolkit/Core/Type/String.hpp</label>
+      </node>
+      <node id="2">
+        <label>OpenSpaceToolkit/Core/Type/Integer.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="4">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp</label>
+        <link refid="_rotation_matrix_8cpp"/>
+      </node>
+      <node id="5">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp</label>
+        <link refid="_rotation_vector_8cpp"/>
+      </node>
+      <node id="2">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp</label>
+        <link refid="_euler_angle_8cpp"/>
+      </node>
+      <node id="1">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp</label>
+        <link refid="_euler_angle_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp</label>
+        <link refid="_quaternion_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" prot="public">ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</innerclass>
+    <innernamespace refid="namespaceostk">ostk</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics">ostk::mathematics</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry">ostk::mathematics::geometry</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3">ostk::mathematics::geometry::d3</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation">ostk::mathematics::geometry::d3::transformation</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation">ostk::mathematics::geometry::d3::transformation::rotation</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OpenSpaceToolkit/Core/Type/Integer.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OpenSpaceToolkit/Core/Type/Real.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OpenSpaceToolkit/Core/Type/String.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_angle_8hpp" kindref="compound">OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_vector_8hpp" kindref="compound">OpenSpaceToolkit/Mathematics/Object/Vector.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceostk" kindref="compound">ostk</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mathematics</highlight></codeline>
+<codeline lineno="16"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">geometry</highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">d3</highlight></codeline>
+<codeline lineno="20"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="21" refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">transformation</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23" refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">rotation</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ostk::core::type::Integer;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ostk::core::type::Real;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ostk::core::type::String;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">ostk::mathematics::geometry::Angle</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">ostk::mathematics::object::Vector3d</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a4a69dcd1bf9592d64b93139e22f15beb" kindref="member">ostk::mathematics::object::Vector4d</ref>;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref>;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref>;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></highlight></codeline>
+<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="49" refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">AxisSequence</ref></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168caec0fc0100c4fc1ce4eea230c3dc10360" kindref="member">Undefined</ref>,<sp/><sp/></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168cae65075d550f9b5bf9992fa1d71a131be" kindref="member">XYZ</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168ca07bb28478030fc8b86da84000c9860d3" kindref="member">ZXY</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168ca6811254e01b3550bdb2dc46f204730dc" kindref="member">ZYX</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a7d88d303ded4e39e598cdf566796cc9e" kindref="member">EulerAngle</ref>(</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>aFirstAngle,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>aSecondAngle,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>aThirdAngle,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">EulerAngle::AxisSequence</ref>&amp;<sp/>anAxisSequence</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a7d88d303ded4e39e598cdf566796cc9e" kindref="member">EulerAngle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref>&amp;<sp/>aVector,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371" kindref="member">Angle::Unit</ref>&amp;<sp/>anAngleUnit,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">EulerAngle::AxisSequence</ref>&amp;<sp/>anAxisSequence);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a487434e408dd6301e624305f9708a1b2" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref>&amp;<sp/>aEulerAngle)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a5adfa3b7def412a62f25fcb4d154f160" kindref="member">operator!=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref>&amp;<sp/>aEulerAngle)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a88d18669eb768c7f71a92df68c886202" kindref="member">operator&lt;&lt;</ref>(std::ostream&amp;<sp/>anOutputStream,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref>&amp;<sp/>aEulerAngle);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a5140298e4d18f9b63fe1791e2785938c" kindref="member">isDefined</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a75a6bd4f088b43ba2f9e7a9a1a963e64" kindref="member">isUnitary</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ab25e5b93b6cff6716c08d5b9de4ab2c5" kindref="member">isNear</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref>&amp;<sp/>aEulerAngle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>anAngularTolerance)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a6a2ec66eea87c4645cc7815c82d09d0e" kindref="member">getPhi</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a13a35f51cad01171184a1feb3910b68b" kindref="member">getTheta</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a21bb162e148332ca5c36fe4ec1d9de58" kindref="member">getPsi</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">AxisSequence</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a959afa9de94bff84008813662da769e0" kindref="member">getAxisSequence</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a511d16a1d248592a98f6fd3345bd7547" kindref="member">toVector</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371" kindref="member">Angle::Unit</ref>&amp;<sp/>anAngleUnit)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a6ef0461c00dd105f6c38fe5a2ee22c94" kindref="member">toString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371" kindref="member">Angle::Unit</ref>&amp;<sp/>anAngleUnit<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371a6669c4dc00cb161446821b3529ca07d8" kindref="member">Angle::Unit::Degree</ref>)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a65f9ff57748fe200180b4c7ffee03dd5" kindref="member">Undefined</ref>();</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a970d830a551e4596701281e2cf0a1899" kindref="member">Unit</ref>();</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ad67a6f747c305d3528a7d9639ce14bf4" kindref="member">XYZ</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>aFirstAngle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>aSecondAngle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>aThirdAngle);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a5c480a99e25a582539a3d23bbc1cfaad" kindref="member">ZXY</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>aFirstAngle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>aSecondAngle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>aThirdAngle);</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a5a32a18b2e11e5cce47df3f651e22fe8" kindref="member">ZYX</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>aFirstAngle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>aSecondAngle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>aThirdAngle);</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a046912d1e2a21205e51d070b186630f6" kindref="member">Quaternion</ref>(</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">rotation::Quaternion</ref>&amp;<sp/>aQuaternion,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">EulerAngle::AxisSequence</ref>&amp;<sp/>anAxisSequence</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="330"><highlight class="normal"></highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac8579cff213d96389fcb8daa84d81063" kindref="member">RotationVector</ref>(</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">rotation::RotationVector</ref>&amp;<sp/>aRotationVector,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">EulerAngle::AxisSequence</ref>&amp;<sp/>anAxisSequence</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ad52bbd103ee414308394cd4c9e9848c9" kindref="member">RotationMatrix</ref>(</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">rotation::RotationMatrix</ref>&amp;<sp/>aRotationMatrix,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">EulerAngle::AxisSequence</ref>&amp;<sp/>anAxisSequence</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1af8605f8fa6810bdf2043cdb8b4b2f2a2" kindref="member">StringFromAxisSequence</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">EulerAngle::AxisSequence</ref>&amp;<sp/>anAxisSequence);</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref><sp/>phi_;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref><sp/>theta_;</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref><sp/>psi_;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">EulerAngle::AxisSequence</ref><sp/>axisSequence_;</highlight></codeline>
+<codeline lineno="369"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="370"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>rotation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>transformation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>d3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>geometry</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mathematics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ostk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp"/>
+  </compounddef>
+</doxygen>

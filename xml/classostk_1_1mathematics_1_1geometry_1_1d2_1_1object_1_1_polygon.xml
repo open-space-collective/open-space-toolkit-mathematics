@@ -1,0 +1,995 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::geometry::d2::object::Polygon</compoundname>
+    <basecompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" prot="public" virt="non-virtual">ostk::mathematics::geometry::d2::Object</basecompoundref>
+    <includes refid="2_d_2_object_2_polygon_8hpp" local="no">Polygon.hpp</includes>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1_1_impl" prot="public">ostk::mathematics::geometry::d2::object::Polygon::Impl</innerclass>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1adf15f8325e848f3c4e310169aa8e0657" prot="public" static="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref></type>
+        <definition>typedef Point ostk::mathematics::geometry::d2::object::Polygon::Vertex</definition>
+        <argsstring></argsstring>
+        <name>Vertex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="52" column="19" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1afe8fc2aa12ac96c61c7eb213a1be60b5" prot="public" static="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment" kindref="compound">Segment</ref></type>
+        <definition>typedef Segment ostk::mathematics::geometry::d2::object::Polygon::Edge</definition>
+        <argsstring></argsstring>
+        <name>Edge</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="53" column="21" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e1a66ca47ea2cd18df9898d2d7ab014" prot="public" static="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string" kindref="compound">LineString</ref></type>
+        <definition>typedef LineString ostk::mathematics::geometry::d2::object::Polygon::Ring</definition>
+        <argsstring></argsstring>
+        <name>Ring</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="54" column="24" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a84ea99cd3fcfb300faf29f6e4de37955" prot="private" static="no" mutable="no">
+        <type>Unique&lt; Polygon::Impl &gt;</type>
+        <definition>Unique&lt;Polygon::Impl&gt; ostk::mathematics::geometry::d2::object::Polygon::implUPtr_</definition>
+        <argsstring></argsstring>
+        <name>implUPtr_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="297" column="12" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a5389f3ef22d7144b5f01e37c8a221e8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d2::object::Polygon::Polygon</definition>
+        <argsstring>(const Array&lt; Point &gt; &amp;anOuterRing, const Array&lt; Array&lt; Point &gt;&gt; &amp;anInnerRingArray=Array&lt; Array&lt; Point &gt;&gt;::Empty())</argsstring>
+        <name>Polygon</name>
+        <param>
+          <type>const Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &gt; &amp;</type>
+          <declname>anOuterRing</declname>
+        </param>
+        <param>
+          <type>const Array&lt; Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &gt;&gt; &amp;</type>
+          <declname>anInnerRingArray</declname>
+          <defval>Array&lt; Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &gt;&gt;::Empty()</defval>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOuterRing</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An outer ring </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anInnerRingArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of inner rings </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="61" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="713" bodyend="717"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4031148e40aa64e08fe9ee5acdfa9c27" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d2::object::Polygon::Polygon</definition>
+        <argsstring>(const Polygon::Ring &amp;anOuterRing, const Array&lt; Polygon::Ring &gt; &amp;anInnerRingArray=Array&lt; Polygon::Ring &gt;::Empty())</argsstring>
+        <name>Polygon</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e1a66ca47ea2cd18df9898d2d7ab014" kindref="member">Polygon::Ring</ref> &amp;</type>
+          <declname>anOuterRing</declname>
+        </param>
+        <param>
+          <type>const Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e1a66ca47ea2cd18df9898d2d7ab014" kindref="member">Polygon::Ring</ref> &gt; &amp;</type>
+          <declname>anInnerRingArray</declname>
+          <defval>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e1a66ca47ea2cd18df9898d2d7ab014" kindref="member">Polygon::Ring</ref> &gt;::Empty()</defval>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOuterRing</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An outer ring </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anInnerRingArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of inner rings </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="70" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1adc2ef152c4cfc2b2842cf9e215116ea4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d2::object::Polygon::Polygon</definition>
+        <argsstring>(const Polygon &amp;aPolygon)</argsstring>
+        <name>Polygon</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> &amp;</type>
+          <declname>aPolygon</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPolygon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A polygon </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="78" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="719" bodyend="723"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ad145d668431abe12328dc010394684cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d2::object::Polygon::~Polygon</definition>
+        <argsstring>() override</argsstring>
+        <name>~Polygon</name>
+        <briefdescription>
+<para>Destructor (virtual) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="82" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="725" bodyend="725"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1af999d9844abf33d70dae582222582fac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> &amp;</type>
+        <definition>Polygon &amp; ostk::mathematics::geometry::d2::object::Polygon::operator=</definition>
+        <argsstring>(const Polygon &amp;aPolygon)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> &amp;</type>
+          <declname>aPolygon</declname>
+        </param>
+        <briefdescription>
+<para>Copy assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPolygon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A polygon </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to polygon </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="89" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="727" bodyend="737"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a290758ce99124ae08292c683a9d77fc3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> *</type>
+        <definition>Polygon * ostk::mathematics::geometry::d2::object::Polygon::clone</definition>
+        <argsstring>() const override</argsstring>
+        <name>clone</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1af63da855554f9114803103fe2390f5eb">clone</reimplements>
+        <briefdescription>
+<para>Clone polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to cloned polygon </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="95" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="739" bodyend="742"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e45da47629d49cbf83823682b399e54" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::Polygon::operator==</definition>
+        <argsstring>(const Polygon &amp;aPolygon) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> &amp;</type>
+          <declname>aPolygon</declname>
+        </param>
+        <briefdescription>
+<para>Equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPolygon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A polygon </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if polygons are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="102" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="744" bodyend="752"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a9077d4bf7b3d74058f061ef4c2780b1a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::Polygon::operator!=</definition>
+        <argsstring>(const Polygon &amp;aPolygon) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> &amp;</type>
+          <declname>aPolygon</declname>
+        </param>
+        <briefdescription>
+<para>Not equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPolygon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A polygon </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if polygons are not equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="109" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="754" bodyend="757"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a81f715c35ecd0fa424f2daf4ffe59bec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::Polygon::isDefined</definition>
+        <argsstring>() const override</argsstring>
+        <name>isDefined</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1abe5ea18c13bc259fc0da0b0c49fa0dca">isDefined</reimplements>
+        <briefdescription>
+<para>Check if polygon is defined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if polygon is defined </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="115" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="759" bodyend="762"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ad5d51eaab4e20905884893b79ff6bf32" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::Polygon::isNear</definition>
+        <argsstring>(const Polygon &amp;aPolygon, const Real &amp;aTolerance) const</argsstring>
+        <name>isNear</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> &amp;</type>
+          <declname>aPolygon</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aTolerance</declname>
+        </param>
+        <briefdescription>
+<para>Check if polygon is near another polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPolygon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A polygon </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aTolerance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A tolerance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if polygon is near another polygon </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="123" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="764" bodyend="799"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a8292e74414aa470153d0bd6f0884e00d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::Polygon::intersects</definition>
+        <argsstring>(const Polygon &amp;aPolygon) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> &amp;</type>
+          <declname>aPolygon</declname>
+        </param>
+        <briefdescription>
+<para>Check if polygon intersects polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Polygon<sp/>polygon<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Polygon<sp/>anotherPolygon<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">polygon.intersects(anotherPolygon)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPolygon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A polygon </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if polygon intersects polygon </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="136" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="801" bodyend="814"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4b5a24cc8cb60cf10d710aa62f742478" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::Polygon::contains</definition>
+        <argsstring>(const Point &amp;aPoint) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+<para>Check if polygon contains point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Polygon<sp/>polygon<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Point<sp/>point<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">polygon.contains(point)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if polygon contains point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="149" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="816" bodyend="829"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ac1e78b5240370ba32bcfd6078793888c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::Polygon::contains</definition>
+        <argsstring>(const PointSet &amp;aPointSet) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set" kindref="compound">PointSet</ref> &amp;</type>
+          <declname>aPointSet</declname>
+        </param>
+        <briefdescription>
+<para>Check if polygon contains point set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Polygon<sp/>polygon<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">PointSet<sp/>pointSet<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">polygon.contains(pointSet)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPointSet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if polygon contains point set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="162" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="831" bodyend="844"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a0c4427854d9487e06ba35456128692fb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::Polygon::contains</definition>
+        <argsstring>(const LineString &amp;aLineString) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string" kindref="compound">LineString</ref> &amp;</type>
+          <declname>aLineString</declname>
+        </param>
+        <briefdescription>
+<para>Check if polygon contains line string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Polygon<sp/>polygon<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">LineString<sp/>lineString<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">polygon.contains(lineString)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLineSeting</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A line string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if polygon contains line string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="175" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="846" bodyend="859"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ab0e7337f42aace5f1032bb56bd497d77" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Size</type>
+        <definition>Size ostk::mathematics::geometry::d2::object::Polygon::getInnerRingCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getInnerRingCount</name>
+        <briefdescription>
+<para>Get number of inner rings. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Number of inner rings </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="181" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="861" bodyend="869"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a8899fe8a17de74160cf594c41af36d6a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Size</type>
+        <definition>Size ostk::mathematics::geometry::d2::object::Polygon::getEdgeCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getEdgeCount</name>
+        <briefdescription>
+<para>Get edge count. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Edge count </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="187" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="871" bodyend="879"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ac95bb98116f2a2f8daa00c1f128d41d9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Size</type>
+        <definition>Size ostk::mathematics::geometry::d2::object::Polygon::getVertexCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getVertexCount</name>
+        <briefdescription>
+<para>Get vertex count. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Vertex count </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="193" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="881" bodyend="889"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a8cf439cf1110d7046b793123ac10b99d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e1a66ca47ea2cd18df9898d2d7ab014" kindref="member">Polygon::Ring</ref></type>
+        <definition>Polygon::Ring ostk::mathematics::geometry::d2::object::Polygon::getOuterRing</definition>
+        <argsstring>() const</argsstring>
+        <name>getOuterRing</name>
+        <briefdescription>
+<para>Get outer ring. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Outer ring </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="199" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="891" bodyend="899"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ae6ca3b527769f810852bf4c7a05f6b53" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e1a66ca47ea2cd18df9898d2d7ab014" kindref="member">Polygon::Ring</ref></type>
+        <definition>Polygon::Ring ostk::mathematics::geometry::d2::object::Polygon::getInnerRingAt</definition>
+        <argsstring>(const Index &amp;anInnerRingIndex) const</argsstring>
+        <name>getInnerRingAt</name>
+        <param>
+          <type>const Index &amp;</type>
+          <declname>anInnerRingIndex</declname>
+        </param>
+        <briefdescription>
+<para>Get inner ring at index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Inner ring at index </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="205" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="901" bodyend="909"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1accd882308127423cb544a6baa5230e0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1afe8fc2aa12ac96c61c7eb213a1be60b5" kindref="member">Polygon::Edge</ref></type>
+        <definition>Polygon::Edge ostk::mathematics::geometry::d2::object::Polygon::getEdgeAt</definition>
+        <argsstring>(const Index anEdgeIndex) const</argsstring>
+        <name>getEdgeAt</name>
+        <param>
+          <type>const Index</type>
+          <declname>anEdgeIndex</declname>
+        </param>
+        <briefdescription>
+<para>Get edge at index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anEdgeIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An edge index </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Edge (segment) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="212" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="911" bodyend="919"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a40e8429ba11bf27825295b9a4d467bf6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1adf15f8325e848f3c4e310169aa8e0657" kindref="member">Polygon::Vertex</ref></type>
+        <definition>Polygon::Vertex ostk::mathematics::geometry::d2::object::Polygon::getVertexAt</definition>
+        <argsstring>(const Index aVertexIndex) const</argsstring>
+        <name>getVertexAt</name>
+        <param>
+          <type>const Index</type>
+          <declname>aVertexIndex</declname>
+        </param>
+        <briefdescription>
+<para>Get vertex at index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aVertexIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vertex index </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vertex </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="219" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="921" bodyend="929"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ad96e3314523abd27276eca0a7b16f00d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1afe8fc2aa12ac96c61c7eb213a1be60b5" kindref="member">Polygon::Edge</ref> &gt;</type>
+        <definition>Array&lt; Polygon::Edge &gt; ostk::mathematics::geometry::d2::object::Polygon::getEdges</definition>
+        <argsstring>() const</argsstring>
+        <name>getEdges</name>
+        <briefdescription>
+<para>Get polygon edges. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> edges </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="225" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="931" bodyend="939"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a3308ae10e5627e0427dab164bb4b41d8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1adf15f8325e848f3c4e310169aa8e0657" kindref="member">Polygon::Vertex</ref> &gt;</type>
+        <definition>Array&lt; Polygon::Vertex &gt; ostk::mathematics::geometry::d2::object::Polygon::getVertices</definition>
+        <argsstring>() const</argsstring>
+        <name>getVertices</name>
+        <briefdescription>
+<para>Get polygon vertices. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> vertices </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="231" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="941" bodyend="949"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a28f6ead5b5f3b2125330c318e2aee4c5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref></type>
+        <definition>Polygon ostk::mathematics::geometry::d2::object::Polygon::getConvexHull</definition>
+        <argsstring>() const</argsstring>
+        <name>getConvexHull</name>
+        <briefdescription>
+<para>Get polygon convex hull. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>                https://en.wikipedia.org/wiki/Convex_hull
+</verbatim></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> convex hull </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="239" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="951" bodyend="959"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1aeeedeff734bdf3fceae7d17dc9aa2097" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d2::object::Polygon::intersectionWith</definition>
+        <argsstring>(const Polygon &amp;aPolygon) const</argsstring>
+        <name>intersectionWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> &amp;</type>
+          <declname>aPolygon</declname>
+        </param>
+        <briefdescription>
+<para>Compute intersection of polygon with polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPolygon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A polygon </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref> of polygon with polygon </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="246" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1001" bodyend="1009"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a7caedd5217a76f4739ae14c56d7c2387" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d2::object::Polygon::differenceWith</definition>
+        <argsstring>(const Polygon &amp;aPolygon) const</argsstring>
+        <name>differenceWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> &amp;</type>
+          <declname>aPolygon</declname>
+        </param>
+        <briefdescription>
+<para>Compute difference of polygon with polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPolygon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A polygon </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Difference (leveraging <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kindref="compound">Intersection</ref> class) of polygon with polygon </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="253" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1011" bodyend="1019"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1addbc0c8111c2f8c5ce1ff347135d54fe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon" kindref="compound">MultiPolygon</ref></type>
+        <definition>MultiPolygon ostk::mathematics::geometry::d2::object::Polygon::unionWith</definition>
+        <argsstring>(const Polygon &amp;aPolygon) const</argsstring>
+        <name>unionWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref> &amp;</type>
+          <declname>aPolygon</declname>
+        </param>
+        <briefdescription>
+<para>Compute union of polygon with polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPolygon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A polygon </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A multi-polygon </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="260" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1021" bodyend="1029"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1acae5758cc07f2787875897d4392a07a4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>String</type>
+        <definition>String ostk::mathematics::geometry::d2::object::Polygon::toString</definition>
+        <argsstring>(const Object::Format &amp;aFormat=Object::Format::Standard, const Integer &amp;aPrecision=Integer::Undefined()) const override</argsstring>
+        <name>toString</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1aedf9c7ef5af5892d15cf08da795fa1af">toString</reimplements>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" kindref="member">Object::Format</ref> &amp;</type>
+          <declname>aFormat</declname>
+          <defval><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b" kindref="member">Object::Format::Standard</ref></defval>
+        </param>
+        <param>
+          <type>const Integer &amp;</type>
+          <declname>aPrecision</declname>
+          <defval>Integer::Undefined()</defval>
+        </param>
+        <briefdescription>
+<para>Get string representation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFormat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String representation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="267" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1031" bodyend="1039"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e6da736abac853938c0a42e50984191" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ostk::mathematics::geometry::d2::object::Polygon::print</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</argsstring>
+        <name>print</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1aaf59b52c718ca92c6b6116660077d9f9">print</reimplements>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>displayDecorators</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Print polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>displayDecorators If true, display decorators </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="276" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="961" bodyend="999"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a98902fdd8d77f9f6f0d6f833fa007ada" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ostk::mathematics::geometry::d2::object::Polygon::applyTransformation</definition>
+        <argsstring>(const Transformation &amp;aTransformation) override</argsstring>
+        <name>applyTransformation</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1add0c7edfac25cbd241f82edbb1ce1476">applyTransformation</reimplements>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
+          <declname>aTransformation</declname>
+        </param>
+        <briefdescription>
+<para>Apply transformation to polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aTransformation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="282" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1041" bodyend="1054"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1adcfe062c3f4fdf897e701399f3d6fd3c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref></type>
+        <definition>Polygon ostk::mathematics::geometry::d2::object::Polygon::Undefined</definition>
+        <argsstring>()</argsstring>
+        <name>Undefined</name>
+        <briefdescription>
+<para>Constructs an undefined polygon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Polygon<sp/>polygon<sp/>=<sp/>Polygon::Undefined()<sp/>;<sp/>//<sp/>Undefined</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Undefined polygon </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="292" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp" bodystart="1056" bodyend="1059"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">Polygon</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>                        A plane figure that is bounded by a finite chain of straight line segments closing in a
+                        loop to form a closed polygonal chain or circuit. These segments are called its edges,
+                        and the points where two edges meet are the polygon&apos;s vertices.
+</verbatim></para>
+<para><ulink url="https://en.wikipedia.org/wiki/Polygon">https://en.wikipedia.org/wiki/Polygon</ulink> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ostk::mathematics::geometry::d2::object::Polygon</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ostk::mathematics::geometry::d2::Object</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ostk::mathematics::geometry::d2::object::Polygon</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ostk::mathematics::geometry::d2::Object</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" line="50" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.hpp" bodystart="49" bodyend="298"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a98902fdd8d77f9f6f0d6f833fa007ada" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>applyTransformation</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a290758ce99124ae08292c683a9d77fc3" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>clone</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4b5a24cc8cb60cf10d710aa62f742478" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ac1e78b5240370ba32bcfd6078793888c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a0c4427854d9487e06ba35456128692fb" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a43eaa4a59d81e7eb36b80f6695de6ce1" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d2::Object::"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a7caedd5217a76f4739ae14c56d7c2387" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>differenceWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1afe8fc2aa12ac96c61c7eb213a1be60b5" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>Edge</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>Format</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a28f6ead5b5f3b2125330c318e2aee4c5" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>getConvexHull</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1accd882308127423cb544a6baa5230e0a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>getEdgeAt</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a8899fe8a17de74160cf594c41af36d6a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>getEdgeCount</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ad96e3314523abd27276eca0a7b16f00d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>getEdges</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ae6ca3b527769f810852bf4c7a05f6b53" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>getInnerRingAt</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ab0e7337f42aace5f1032bb56bd497d77" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>getInnerRingCount</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a8cf439cf1110d7046b793123ac10b99d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>getOuterRing</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a40e8429ba11bf27825295b9a4d467bf6" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>getVertexAt</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ac95bb98116f2a2f8daa00c1f128d41d9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>getVertexCount</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a3308ae10e5627e0427dab164bb4b41d8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>getVertices</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a84ea99cd3fcfb300faf29f6e4de37955" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>implUPtr_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1aeeedeff734bdf3fceae7d17dc9aa2097" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a8292e74414aa470153d0bd6f0884e00d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a553d7a1e388598c74d0f9fdd57d1ba9d" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d2::Object::"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a81f715c35ecd0fa424f2daf4ffe59bec" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>isDefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ad5d51eaab4e20905884893b79ff6bf32" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>isNear</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a15a959fd5b624d6fcc6725982a8cddf8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>Object</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a9077d4bf7b3d74058f061ef4c2780b1a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1afe72ba03919d609d2847b0b4162d083d" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d2::Object::"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1af999d9844abf33d70dae582222582fac" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>operator=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e45da47629d49cbf83823682b399e54" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9617246a3e26d57e5ba78e57387ae05a" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d2::Object::"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a5389f3ef22d7144b5f01e37c8a221e8e" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>Polygon</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4031148e40aa64e08fe9ee5acdfa9c27" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>Polygon</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1adc2ef152c4cfc2b2842cf9e215116ea4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>Polygon</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e6da736abac853938c0a42e50984191" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>print</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1a4e1a66ca47ea2cd18df9898d2d7ab014" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>Ring</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1acae5758cc07f2787875897d4392a07a4" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>toString</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1adcfe062c3f4fdf897e701399f3d6fd3c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>Undefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1addbc0c8111c2f8c5ce1ff347135d54fe" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>unionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1adf15f8325e848f3c4e310169aa8e0657" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>Vertex</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1af11dec981b2e1ab08deae342ec2c4ef8" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>~Object</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon_1ad145d668431abe12328dc010394684cb" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Polygon</scope><name>~Polygon</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

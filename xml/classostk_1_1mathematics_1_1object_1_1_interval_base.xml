@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1object_1_1_interval_base" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::object::IntervalBase</compoundname>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1object_1_1_interval" prot="public" virt="non-virtual">ostk::mathematics::object::Interval&lt; T &gt;</derivedcompoundref>
+    <includes refid="_interval_8hpp" local="no">Interval.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Type</name>
+        <enumvalue id="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201aec0fc0100c4fc1ce4eea230c3dc10360" prot="public">
+          <name>Undefined</name>
+          <briefdescription>
+<para>Undefined interval type. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e" prot="public">
+          <name>Closed</name>
+          <briefdescription>
+<para>Closed interval type [a, b]. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201ac3bf447eabe632720a3aa1a7ce401274" prot="public">
+          <name>Open</name>
+          <briefdescription>
+<para>Open interval type ]a, b[. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201ab5e08f9173f660e791d3ba99ff8281d7" prot="public">
+          <name>HalfOpenLeft</name>
+          <briefdescription>
+<para>Half-open left interval type ]a, b]. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201a484f1b37e0208f622a1e6f7a3ff8c2c3" prot="public">
+          <name>HalfOpenRight</name>
+          <briefdescription>
+<para>Half-open right interval type [a, b[. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref> type. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="28" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="27" bodyend="36"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref> base (used to avoid having a templated enum) </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ostk::mathematics::object::Interval&lt; T &gt;</label>
+        <link refid="classostk_1_1mathematics_1_1object_1_1_interval"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::object::IntervalBase</label>
+        <link refid="classostk_1_1mathematics_1_1object_1_1_interval_base"/>
+      </node>
+    </inheritancegraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="23" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="22" bodyend="37"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::IntervalBase</scope><name>Type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

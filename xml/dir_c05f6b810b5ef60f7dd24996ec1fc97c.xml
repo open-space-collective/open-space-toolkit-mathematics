@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_c05f6b810b5ef60f7dd24996ec1fc97c" kind="dir">
+    <compoundname>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation</compoundname>
+    <innerdir refid="dir_1db2ca725bce6a597a50db1f9271e018">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/"/>
+  </compounddef>
+</doxygen>

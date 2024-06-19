@@ -1,0 +1,603 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::geometry::d2::object::Line</compoundname>
+    <basecompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" prot="public" virt="non-virtual">ostk::mathematics::geometry::d2::Object</basecompoundref>
+    <includes refid="2_d_2_object_2_line_8hpp" local="no">Line.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a2079e93918ec64cd798b1f6b99665f45" prot="private" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point ostk::mathematics::geometry::d2::object::Line::origin_</definition>
+        <argsstring></argsstring>
+        <name>origin_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="211" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" bodystart="211" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ab3286fd0f1915a23c39b23e1d0925243" prot="private" static="no" mutable="no">
+        <type>Vector2d</type>
+        <definition>Vector2d ostk::mathematics::geometry::d2::object::Line::direction_</definition>
+        <argsstring></argsstring>
+        <name>direction_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="212" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" bodystart="212" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a0a22b94b232fca62ec257f90f3329431" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d2::object::Line::Line</definition>
+        <argsstring>(const Point &amp;anOrigin, const Vector2d &amp;aDirection)</argsstring>
+        <name>Line</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>anOrigin</declname>
+        </param>
+        <param>
+          <type>const Vector2d &amp;</type>
+          <declname>aDirection</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Line<sp/>line({<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOrigin</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A line origin </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aDirection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A line direction </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="47" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="21" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a60f4de4753ac3be12c6084aca4b9cc3a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref> *</type>
+        <definition>Line * ostk::mathematics::geometry::d2::object::Line::clone</definition>
+        <argsstring>() const override</argsstring>
+        <name>clone</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1af63da855554f9114803103fe2390f5eb">clone</reimplements>
+        <briefdescription>
+<para>Clone line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to cloned line </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="53" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a90b8ba896201c7e6207b8deb7d24639a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::Line::operator==</definition>
+        <argsstring>(const Line &amp;aLine) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref> &amp;</type>
+          <declname>aLine</declname>
+        </param>
+        <briefdescription>
+<para>Equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Line({<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>})<sp/>==<sp/>Line({<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>})<sp/>;<sp/>//<sp/>True</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A line </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if lines are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="64" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="42" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a4b591f899c00ed44f98ce718d5d104f4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::Line::operator!=</definition>
+        <argsstring>(const Line &amp;aLine) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref> &amp;</type>
+          <declname>aLine</declname>
+        </param>
+        <briefdescription>
+<para>Not equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Line({<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>})<sp/>!=<sp/>Line({<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>2.0<sp/>})<sp/>;<sp/>//<sp/>True</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A line </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if lines are not equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="75" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="57" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a603f1de0e328c16a829b9e1c9f5c077f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::Line::isDefined</definition>
+        <argsstring>() const override</argsstring>
+        <name>isDefined</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1abe5ea18c13bc259fc0da0b0c49fa0dca">isDefined</reimplements>
+        <briefdescription>
+<para>Check if line is defined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Line({<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>}).isDefined()<sp/>;<sp/>//<sp/>True</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if line is defined </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="85" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="62" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1adda17499fb10cce0898d611ec234817e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::Line::intersects</definition>
+        <argsstring>(const Point &amp;aPoint) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+<para>Check if line intersects point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Line<sp/>line<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Point<sp/>point<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">line.intersects(point)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if line intersects point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="98" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="67" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a8f6979f55c2a971d1b7f1f7dc4b991be" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::Line::intersects</definition>
+        <argsstring>(const Line &amp;aLine) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref> &amp;</type>
+          <declname>aLine</declname>
+        </param>
+        <briefdescription>
+<para>Check if line intersects line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Line<sp/>line<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Line<sp/>otherLine<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">line.intersects(otherLine)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A line </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if line intersects kine </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="111" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1aefb7b93e8cea6c18e38ee2e6627da0e5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::Line::contains</definition>
+        <argsstring>(const Point &amp;aPoint) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+<para>Check if line contains point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Line<sp/>line<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Point<sp/>point<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">line.contains(point)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if line contains point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="124" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="72" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a44ea437739c18c9c49f05d0f7453cb32" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::Line::contains</definition>
+        <argsstring>(const PointSet &amp;aPointSet) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set" kindref="compound">PointSet</ref> &amp;</type>
+          <declname>aPointSet</declname>
+        </param>
+        <briefdescription>
+<para>Check if line contains point set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Line<sp/>line<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">PointSet<sp/>pointSet<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">line.contains(pointSet)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPointSet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if line contains point set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="137" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="102" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a2af43b703748a7eef22d63c7413fc85c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point ostk::mathematics::geometry::d2::object::Line::getOrigin</definition>
+        <argsstring>() const</argsstring>
+        <name>getOrigin</name>
+        <briefdescription>
+<para>Get line origin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Line({<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>}).getOrigin()<sp/>;<sp/>//<sp/>[0.0,<sp/>0.0]</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref> origin </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="147" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="125" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1abe689136d2b21263bfc7a0e4431a4941" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector2d</type>
+        <definition>Vector2d ostk::mathematics::geometry::d2::object::Line::getDirection</definition>
+        <argsstring>() const</argsstring>
+        <name>getDirection</name>
+        <briefdescription>
+<para>Get line direction. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Line({<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>}).getDirection()<sp/>;<sp/>//<sp/>[0.0,<sp/>1.0]</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref> direction </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="157" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="135" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1af81c8fb3c528d9dd47a72628533f6860" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d2::object::Line::distanceTo</definition>
+        <argsstring>(const Point &amp;aPoint) const</argsstring>
+        <name>distanceTo</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+<para>Get distance to point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Distance to point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="164" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="145" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a3c03f6d92663a15da6e2dc6dbdbc46ab" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>String</type>
+        <definition>String ostk::mathematics::geometry::d2::object::Line::toString</definition>
+        <argsstring>(const Object::Format &amp;aFormat=Object::Format::Standard, const Integer &amp;aPrecision=Integer::Undefined()) const override</argsstring>
+        <name>toString</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1aedf9c7ef5af5892d15cf08da795fa1af">toString</reimplements>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" kindref="member">Object::Format</ref> &amp;</type>
+          <declname>aFormat</declname>
+          <defval><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b" kindref="member">Object::Format::Standard</ref></defval>
+        </param>
+        <param>
+          <type>const Integer &amp;</type>
+          <declname>aPrecision</declname>
+          <defval>Integer::Undefined()</defval>
+        </param>
+        <briefdescription>
+<para>Get string representation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFormat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String representation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="171" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="161" bodyend="178"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ad3cdbabb0a5a068923e9c63e6675fa15" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ostk::mathematics::geometry::d2::object::Line::print</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</argsstring>
+        <name>print</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1aaf59b52c718ca92c6b6116660077d9f9">print</reimplements>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>displayDecorators</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Print line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>displayDecorators If true, display decorators </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="180" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="180" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a3a157e132491ce9f98561dff3c4959d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ostk::mathematics::geometry::d2::object::Line::applyTransformation</definition>
+        <argsstring>(const Transformation &amp;aTransformation) override</argsstring>
+        <name>applyTransformation</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1add0c7edfac25cbd241f82edbb1ce1476">applyTransformation</reimplements>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
+          <declname>aTransformation</declname>
+        </param>
+        <briefdescription>
+<para>Apply transformation to line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aTransformation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="186" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="192" bodyend="206"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a728722304ee853205eab876dec1ec632" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref></type>
+        <definition>Line ostk::mathematics::geometry::d2::object::Line::Undefined</definition>
+        <argsstring>()</argsstring>
+        <name>Undefined</name>
+        <briefdescription>
+<para>Constructs an undefined line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Line<sp/>line<sp/>=<sp/>Line::Undefined()<sp/>;<sp/>//<sp/>Undefined</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Undefined line </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="196" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="208" bodyend="211"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ae8c72610b423866bc7c1bca059d3a7e3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref></type>
+        <definition>Line ostk::mathematics::geometry::d2::object::Line::Points</definition>
+        <argsstring>(const Point &amp;aFirstPoint, const Point &amp;aSecondPoint)</argsstring>
+        <name>Points</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aFirstPoint</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aSecondPoint</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a line using two points. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Point<sp/>p_1<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Point<sp/>p_2<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Line<sp/>line<sp/>=<sp/>Line::Points(p_1,<sp/>p_2)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="208" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.cpp" bodystart="213" bodyend="231"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ulink url="https://en.wikipedia.org/wiki/Line_">https://en.wikipedia.org/wiki/Line_</ulink>(geometry) </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ostk::mathematics::geometry::d2::object::Line</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ostk::mathematics::geometry::d2::Object</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ostk::mathematics::geometry::d2::object::Line</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ostk::mathematics::geometry::d2::Object</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" line="36" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Line.hpp" bodystart="35" bodyend="213"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a3a157e132491ce9f98561dff3c4959d4" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>applyTransformation</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a60f4de4753ac3be12c6084aca4b9cc3a" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>clone</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1aefb7b93e8cea6c18e38ee2e6627da0e5" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a44ea437739c18c9c49f05d0f7453cb32" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a43eaa4a59d81e7eb36b80f6695de6ce1" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d2::Object::"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ab3286fd0f1915a23c39b23e1d0925243" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>direction_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1af81c8fb3c528d9dd47a72628533f6860" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>distanceTo</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>Format</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1abe689136d2b21263bfc7a0e4431a4941" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>getDirection</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a2af43b703748a7eef22d63c7413fc85c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>getOrigin</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1adda17499fb10cce0898d611ec234817e" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a8f6979f55c2a971d1b7f1f7dc4b991be" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a553d7a1e388598c74d0f9fdd57d1ba9d" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d2::Object::"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a603f1de0e328c16a829b9e1c9f5c077f" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>isDefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a0a22b94b232fca62ec257f90f3329431" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>Line</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a15a959fd5b624d6fcc6725982a8cddf8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>Object</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a4b591f899c00ed44f98ce718d5d104f4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1afe72ba03919d609d2847b0b4162d083d" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d2::Object::"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a90b8ba896201c7e6207b8deb7d24639a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9617246a3e26d57e5ba78e57387ae05a" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d2::Object::"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a2079e93918ec64cd798b1f6b99665f45" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>origin_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ae8c72610b423866bc7c1bca059d3a7e3" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>Points</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1ad3cdbabb0a5a068923e9c63e6675fa15" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>print</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a3c03f6d92663a15da6e2dc6dbdbc46ab" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>toString</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_1a728722304ee853205eab876dec1ec632" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>Undefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1af11dec981b2e1ab08deae342ec2c4ef8" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d2::object::Line</scope><name>~Object</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

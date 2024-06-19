@@ -1,0 +1,509 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::geometry::d3::object::LineString</compoundname>
+    <basecompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::Object</basecompoundref>
+    <includes refid="3_d_2_object_2_line_string_8hpp" local="no">LineString.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a5bc4dc999137d0087978e3a1df1d8f7b" prot="public" static="no">
+        <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &gt;::<ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a5bc4dc999137d0087978e3a1df1d8f7b" kindref="member">ConstIterator</ref></type>
+        <definition>typedef Array&lt;Point&gt;::ConstIterator ostk::mathematics::geometry::d3::object::LineString::ConstIterator</definition>
+        <argsstring></argsstring>
+        <name>ConstIterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="39" column="35" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1ac5db8251335aec96df77109870c4b6cc" prot="private" static="no" mutable="no">
+        <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &gt;</type>
+        <definition>Array&lt;Point&gt; ostk::mathematics::geometry::d3::object::LineString::points_</definition>
+        <argsstring></argsstring>
+        <name>points_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="171" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" bodystart="171" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a1cbd0b1900eded1596378ba9a65b4e4e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::object::LineString::LineString</definition>
+        <argsstring>(const Array&lt; Point &gt; &amp;aPointArray)</argsstring>
+        <name>LineString</name>
+        <param>
+          <type>const Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &gt; &amp;</type>
+          <declname>aPointArray</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">LineString<sp/>lineString({<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0,<sp/>1.0<sp/>}<sp/>})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPointArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point array </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="49" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="21" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a6d27eb6359000685e81a6a5d79fbb807" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string" kindref="compound">LineString</ref> *</type>
+        <definition>LineString * ostk::mathematics::geometry::d3::object::LineString::clone</definition>
+        <argsstring>() const override</argsstring>
+        <name>clone</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a8ea8d4074bfaaa3d996d760d5d5751db">clone</reimplements>
+        <briefdescription>
+<para>Clone line string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to cloned line string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="55" column="24" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="27" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a4c81f3eb92c3248c983def441296f9fb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::LineString::operator==</definition>
+        <argsstring>(const LineString &amp;aLineString) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string" kindref="compound">LineString</ref> &amp;</type>
+          <declname>aLineString</declname>
+        </param>
+        <briefdescription>
+<para>Equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLineString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A line string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if line strings are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="62" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a9910ccb0907ba84696f5895362c8906f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::LineString::operator!=</definition>
+        <argsstring>(const LineString &amp;aLineString) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string" kindref="compound">LineString</ref> &amp;</type>
+          <declname>aLineString</declname>
+        </param>
+        <briefdescription>
+<para>Not equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLineString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A line string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if line strings are not equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="69" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1ac79b6efa23440fa61690181c6ade42ec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::LineString::isDefined</definition>
+        <argsstring>() const override</argsstring>
+        <name>isDefined</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a1962edbcdde0f851361b60324ab9ce2b">isDefined</reimplements>
+        <briefdescription>
+<para>Check if line string is defined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">LineString(0.0,<sp/>0.0).isDefined()<sp/>;<sp/>//<sp/>True</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if line string is defined </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="79" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="42" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a2be7308b9a8a52f43b920b01c41c7253" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::LineString::isEmpty</definition>
+        <argsstring>() const</argsstring>
+        <name>isEmpty</name>
+        <briefdescription>
+<para>Check if line string is empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">LineString::Empty().isEmpty()<sp/>;<sp/>//<sp/>True</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if line string is empty </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="89" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="47" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1ac80cff5419ed1a8cbeb2b1b6835d15ae" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::LineString::isNear</definition>
+        <argsstring>(const LineString &amp;aLineString, const Real &amp;aTolerance) const</argsstring>
+        <name>isNear</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string" kindref="compound">LineString</ref> &amp;</type>
+          <declname>aLineString</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aTolerance</declname>
+        </param>
+        <briefdescription>
+<para>Check if line string is near another line string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">LineString({<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0,<sp/>1.0<sp/>}<sp/>}).isNear(LineString({</highlight></codeline>
+<codeline><highlight class="normal">{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0,<sp/>1e-15<sp/>},<sp/>{<sp/>1.0,<sp/>0.0,<sp/>1.0<sp/>}<sp/>}),<sp/>1e-15)<sp/>;<sp/>//<sp/>True</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLineString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A line string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aTolerance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A tolerance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if line string is near another line string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="102" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="52" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a06488a8c9956ec63215f8cceb6380b27" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+        <definition>const Point &amp; ostk::mathematics::geometry::d3::object::LineString::accessPointAt</definition>
+        <argsstring>(const Index &amp;anIndex) const</argsstring>
+        <name>accessPointAt</name>
+        <param>
+          <type>const Index &amp;</type>
+          <declname>anIndex</declname>
+        </param>
+        <briefdescription>
+<para>Access point at index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>[in] anIndex A point index <simplesect kind="return"><para>Reference to point at index </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="109" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="75" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a4e68ff9a60ace16eba53c703828c07e2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Size</type>
+        <definition>Size ostk::mathematics::geometry::d3::object::LineString::getPointCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getPointCount</name>
+        <briefdescription>
+<para>Get point count. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> count </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="115" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="85" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1acdf9a6bdfdf5e8b51c3521367d9adf35" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point ostk::mathematics::geometry::d3::object::LineString::getPointClosestTo</definition>
+        <argsstring>(const Point &amp;aPoint) const</argsstring>
+        <name>getPointClosestTo</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+<para>Get point closest to another point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Closest point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="122" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="90" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a3f55f08a54e8341f3381f1402ace1b09" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ostk::mathematics::geometry::d3::object::LineString::print</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</argsstring>
+        <name>print</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a5063e1f902e1b08d36f6b6cecab0bd95">print</reimplements>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>displayDecorators</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Print point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>displayDecorators If true, display decorators </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="129" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="120" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1aa57ee802638910c77c4b2dd712614192" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a5bc4dc999137d0087978e3a1df1d8f7b" kindref="member">LineString::ConstIterator</ref></type>
+        <definition>LineString::ConstIterator ostk::mathematics::geometry::d3::object::LineString::begin</definition>
+        <argsstring>() const</argsstring>
+        <name>begin</name>
+        <briefdescription>
+<para>Get begin const iterator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Begin const iterator </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="135" column="31" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a1427440792919bda6cc0704fe286cd71" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a5bc4dc999137d0087978e3a1df1d8f7b" kindref="member">LineString::ConstIterator</ref></type>
+        <definition>LineString::ConstIterator ostk::mathematics::geometry::d3::object::LineString::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <briefdescription>
+<para>Get end const iterator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>End const iterator </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="141" column="31" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="137" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a2bfff9b3a14df67fac884fd122315145" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ostk::mathematics::geometry::d3::object::LineString::applyTransformation</definition>
+        <argsstring>(const Transformation &amp;aTransformation) override</argsstring>
+        <name>applyTransformation</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a925a50c2bb1c31f396e469b74595e42a">applyTransformation</reimplements>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
+          <declname>aTransformation</declname>
+        </param>
+        <briefdescription>
+<para>Apply transformation to line string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aTransformation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="147" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="142" bodyend="158"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a5a7f530f442be990ea18c30032f04d45" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string" kindref="compound">LineString</ref></type>
+        <definition>LineString ostk::mathematics::geometry::d3::object::LineString::Empty</definition>
+        <argsstring>()</argsstring>
+        <name>Empty</name>
+        <briefdescription>
+<para>Constructs an empty line string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">LineString<sp/>lineString<sp/>=<sp/>LineString::Empty()<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Empty line string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="157" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="160" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a4a92c1b91c16ae49fe38a3bf347586c0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string" kindref="compound">LineString</ref></type>
+        <definition>LineString ostk::mathematics::geometry::d3::object::LineString::Segment</definition>
+        <argsstring>(const object::Segment &amp;aSegment)</argsstring>
+        <name>Segment</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment" kindref="compound">object::Segment</ref> &amp;</type>
+          <declname>aSegment</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a line string from a segment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Segment<sp/>segment<sp/>=<sp/>{<sp/>{<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0,<sp/>2.0<sp/>}<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">LineString<sp/>lineString<sp/>=<sp/>LineString::Segment(segment)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line" kindref="compound">Line</ref> string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="168" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp" bodystart="165" bodyend="173"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line" kindref="compound">Line</ref> string. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ostk::mathematics::geometry::d3::Object</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object"/>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::geometry::d3::object::LineString</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ostk::mathematics::geometry::d3::Object</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object"/>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::geometry::d3::object::LineString</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" line="37" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.hpp" bodystart="36" bodyend="172"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a06488a8c9956ec63215f8cceb6380b27" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>accessPointAt</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a2bfff9b3a14df67fac884fd122315145" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>applyTransformation</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1acc1ec9fde56128d7fde8b96fa57180c4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>as</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1aa57ee802638910c77c4b2dd712614192" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>begin</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a6d27eb6359000685e81a6a5d79fbb807" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>clone</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a5bc4dc999137d0087978e3a1df1d8f7b" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>ConstIterator</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af60902b6b025fdaf8839c08e532dd2b0" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a5a7f530f442be990ea18c30032f04d45" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>Empty</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a1427440792919bda6cc0704fe286cd71" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>end</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1acdf9a6bdfdf5e8b51c3521367d9adf35" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>getPointClosestTo</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a4e68ff9a60ace16eba53c703828c07e2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>getPointCount</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ac1325aba0fa3796c9ddc5d39dfe40aa6" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a0d8ddc7a929bb3b0b1c70ad82742e64e" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ad9e6f5027d14e3c7d7bead94052611ed" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>is</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1ac79b6efa23440fa61690181c6ade42ec" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>isDefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a2be7308b9a8a52f43b920b01c41c7253" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>isEmpty</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1ac80cff5419ed1a8cbeb2b1b6835d15ae" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>isNear</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a1cbd0b1900eded1596378ba9a65b4e4e" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>LineString</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af003ad733beface98466830078a83875" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>Object</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a9910ccb0907ba84696f5895362c8906f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a550754b8f5576ce2465979657325d5df" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a4c81f3eb92c3248c983def441296f9fb" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aeb99dd25ff1c0683d9c0a058c8200e4d" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1ac5db8251335aec96df77109870c4b6cc" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>points_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a3f55f08a54e8341f3381f1402ace1b09" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>print</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a4a92c1b91c16ae49fe38a3bf347586c0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>Segment</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aae1324c306129cce2e7d42a28c0de181" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d3::object::LineString</scope><name>~Object</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

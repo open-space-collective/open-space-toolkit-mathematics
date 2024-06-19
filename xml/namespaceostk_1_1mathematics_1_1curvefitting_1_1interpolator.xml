@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceostk_1_1mathematics_1_1curvefitting_1_1interpolator" kind="namespace" language="C++">
+    <compoundname>ostk::mathematics::curvefitting::interpolator</compoundname>
+    <innerclass refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational" prot="public">ostk::mathematics::curvefitting::interpolator::BarycentricRational</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline" prot="public">ostk::mathematics::curvefitting::interpolator::CubicSpline</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear" prot="public">ostk::mathematics::curvefitting::interpolator::Linear</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="21" column="1"/>
+  </compounddef>
+</doxygen>

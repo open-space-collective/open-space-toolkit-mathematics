@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="2_d_2_object_2_composite_8hpp" kind="file" language="C++">
+    <compoundname>Composite.hpp</compoundname>
+    <includes local="no">OpenSpaceToolkit/Core/Container/Array.hpp</includes>
+    <includes local="no">OpenSpaceToolkit/Core/Error.hpp</includes>
+    <includes local="no">OpenSpaceToolkit/Core/Type/Index.hpp</includes>
+    <includes local="no">OpenSpaceToolkit/Core/Type/Size.hpp</includes>
+    <includes local="no">OpenSpaceToolkit/Core/Type/Unique.hpp</includes>
+    <includes refid="_geometry_22_d_2_object_8hpp" local="no">OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp</includes>
+    <includedby refid="2_d_2_intersection_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp</includedby>
+    <includedby refid="2_d_2_object_2_composite_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp</label>
+        <link refid="2_d_2_object_2_composite_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp</label>
+        <link refid="_geometry_22_d_2_object_8hpp"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>OpenSpaceToolkit/Core/Type/Size.hpp</label>
+      </node>
+      <node id="3">
+        <label>OpenSpaceToolkit/Core/Error.hpp</label>
+      </node>
+      <node id="6">
+        <label>OpenSpaceToolkit/Core/Type/Unique.hpp</label>
+      </node>
+      <node id="9">
+        <label>OpenSpaceToolkit/Core/Type/String.hpp</label>
+      </node>
+      <node id="8">
+        <label>OpenSpaceToolkit/Core/Type/Integer.hpp</label>
+      </node>
+      <node id="4">
+        <label>OpenSpaceToolkit/Core/Type/Index.hpp</label>
+      </node>
+      <node id="2">
+        <label>OpenSpaceToolkit/Core/Container/Array.hpp</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp</label>
+        <link refid="2_d_2_object_2_composite_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.cpp</label>
+        <link refid="2_d_2_intersection_8cpp"/>
+      </node>
+      <node id="2">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp</label>
+        <link refid="2_d_2_intersection_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.cpp</label>
+        <link refid="2_d_2_object_2_composite_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Polygon.cpp</label>
+        <link refid="2_d_2_object_2_polygon_8cpp"/>
+      </node>
+      <node id="5">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object.cpp</label>
+        <link refid="2_d_2_object_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" prot="public">ostk::mathematics::geometry::d2::object::Composite</innerclass>
+    <innernamespace refid="namespaceostk">ostk</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics">ostk::mathematics</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry">ostk::mathematics::geometry</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d2">ostk::mathematics::geometry::d2</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d2_1_1object">ostk::mathematics::geometry::d2::object</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Composite__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OpenSpaceToolkit/Core/Container/Array.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OpenSpaceToolkit/Core/Error.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OpenSpaceToolkit/Core/Type/Index.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OpenSpaceToolkit/Core/Type/Size.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OpenSpaceToolkit/Core/Type/Unique.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_geometry_22_d_2_object_8hpp" kindref="compound">OpenSpaceToolkit/Mathematics/Geometry/2D/Object.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceostk" kindref="compound">ostk</ref></highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mathematics</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">geometry</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">d2</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22" refid="namespaceostk_1_1mathematics_1_1geometry_1_1d2_1_1object" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">object</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ostk::core::type::Unique;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ostk::core::type::Index;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ostk::core::type::Size;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ostk::core::container::Array;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">ostk::mathematics::geometry::d2::Object</ref>;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref></highlight></codeline>
+<codeline lineno="35"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37" refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a34efd57a99c61f2e4e63fd6444dae04f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>Array&lt;Unique&lt;Object&gt;&gt;<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a34efd57a99c61f2e4e63fd6444dae04f" kindref="member">::ConstIterator</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a34efd57a99c61f2e4e63fd6444dae04f" kindref="member">ConstIterator</ref>;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a46840777485fc459449f36c304ef8989" kindref="member">Composite</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref>&amp;<sp/>anObject);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a46840777485fc459449f36c304ef8989" kindref="member">Composite</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Unique&lt;Object&gt;&amp;<sp/>anObjectUPtr);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a46840777485fc459449f36c304ef8989" kindref="member">Composite</ref>(Array&lt;Unique&lt;Object&gt;&gt;&amp;&amp;<sp/>anObjectArray);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a46840777485fc459449f36c304ef8989" kindref="member">Composite</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref>&amp;<sp/>aComposite);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref>*<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a19f3ba420ea69eefa3a2b948d59a2fab" kindref="member">clone</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref>&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a6ceb4ff7945166c63292269531ecf722" kindref="member">operator=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref>&amp;<sp/>aComposite);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1aaa0ab4bcefcb11d05ddfcdea811f7d0b" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref>&amp;<sp/>aComposite)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a11fcec32f83c456a485ccd5e8bcdc98f" kindref="member">operator!=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref>&amp;<sp/>aComposite)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a6a1d39238f6b47334b4d6d5b57cd766d" kindref="member">operator+</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref>&amp;<sp/>aComposite)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref>&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1af5ed721c02883767d4a2270bfe32a155" kindref="member">operator+=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref>&amp;<sp/>aComposite);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a8978d917810e68bb9e6b484fc97524c3" kindref="member">isDefined</ref>()<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1ac4ad3c0b11203ad5c8eb3e455edaf3a2" kindref="member">isEmpty</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Type&gt;</highlight></codeline>
+<codeline lineno="135" refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a569c373be972804901329c2b2886edba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a569c373be972804901329c2b2886edba" kindref="member">is</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="136"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a8978d917810e68bb9e6b484fc97524c3" kindref="member">isDefined</ref>())</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>ostk::core::error::runtime::Undefined(</highlight><highlight class="stringliteral">&quot;Composite&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(objects_.getSize()<sp/>==<sp/>1)<sp/>&amp;&amp;<sp/>(</highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="keyword">const<sp/></highlight><highlight class="normal">Type*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(objects_.accessFirst().get())<sp/>!=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>Type&gt;</highlight></codeline>
+<codeline lineno="152" refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a1736931ccff0a138dbbf02b87bd6b5a7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a1736931ccff0a138dbbf02b87bd6b5a7" kindref="member">as</ref>()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="153"><highlight class="keyword"><sp/><sp/><sp/><sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!this-&gt;<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a8978d917810e68bb9e6b484fc97524c3" kindref="member">isDefined</ref>())</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>ostk::core::error::runtime::Undefined(</highlight><highlight class="stringliteral">&quot;Composite&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(objects_.getSize()<sp/>!=<sp/>1)</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>ostk::core::error::RuntimeError(</highlight><highlight class="stringliteral">&quot;Cannot<sp/>convert<sp/>composite:<sp/>it<sp/>is<sp/>complex.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Type*<sp/>objectPtr<sp/>=<sp/></highlight><highlight class="keyword">dynamic_cast&lt;</highlight><highlight class="keyword">const<sp/></highlight><highlight class="normal">Type*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(objects_.accessFirst().get());</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(objectPtr<sp/>==<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">throw</highlight><highlight class="normal"><sp/>ostk::core::error::RuntimeError(</highlight><highlight class="stringliteral">&quot;Cannot<sp/>convert<sp/>composite:<sp/>wrong<sp/>type.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>*objectPtr;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a268fb26bb98a77e6ddca626901e9449e" kindref="member">intersects</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref>&amp;<sp/>anObject)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a268fb26bb98a77e6ddca626901e9449e" kindref="member">intersects</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref>&amp;<sp/>aComposite)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a9c1fbdcbb36a4689a047ec6a9e887ebc" kindref="member">contains</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref>&amp;<sp/>anObject)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a9c1fbdcbb36a4689a047ec6a9e887ebc" kindref="member">contains</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref>&amp;<sp/>aComposite)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a2249520e6059ea385d2b7bd2ff4b78ae" kindref="member">anyContains</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref>&amp;<sp/>anObject)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a2249520e6059ea385d2b7bd2ff4b78ae" kindref="member">anyContains</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref>&amp;<sp/>aComposite)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" kindref="compound">Object</ref>&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a05508e89ea2f4af51e9cc5c11f297bf9" kindref="member">accessObjectAt</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Index&amp;<sp/>anIndex)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Array&lt;Unique&lt;Object&gt;&gt;&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a5559e88bf01995f1c798d9083712758c" kindref="member">accessObjects</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/>Size<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a823c0b72b4adcdd660b3d2eb874f0b93" kindref="member">getObjectCount</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Intersection<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intersectionWith<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/><sp/><sp/>const<sp/><sp/><sp/>Object&amp;<sp/>anObject<sp/>)<sp/>const<sp/>;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Compute<sp/>intersection<sp/>of<sp/>composite<sp/>with<sp/>composite</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>@param<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[in]<sp/>aComposite<sp/>A<sp/>composite</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>@return<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Intersection<sp/>of<sp/>composite<sp/>with<sp/>composite</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Intersection<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>intersectionWith<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/><sp/><sp/>const<sp/><sp/><sp/>Composite&amp;<sp/>aComposite<sp/>)<sp/>const<sp/>;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>@brief<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Get<sp/>const<sp/>iterator<sp/>to<sp/>begin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>///</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>///<sp/>@return<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Const<sp/>iterator<sp/>to<sp/>begin</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a34efd57a99c61f2e4e63fd6444dae04f" kindref="member">Composite::ConstIterator</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a89beece656a90043d888c5cdd4504753" kindref="member">begin</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a34efd57a99c61f2e4e63fd6444dae04f" kindref="member">Composite::ConstIterator</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a01d075d05560cae44d5fc4fa17f3594c" kindref="member">end</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a5b9183cde21c414bc8a12e2e079e4ed1" kindref="member">toString</ref>(</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" kindref="member">Object::Format</ref>&amp;<sp/>aFormat<sp/>=<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b" kindref="member">Object::Format::Standard</ref>,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Integer&amp;<sp/>aPrecision<sp/>=<sp/>Integer::Undefined()</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/>)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a68feee2a993e698e796db61bc27a6167" kindref="member">print</ref>(std::ostream&amp;<sp/>anOutputStream,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>displayDecorators<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1aa1fd52d4955be0b4ee647ac2971e72bf" kindref="member">applyTransformation</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kindref="compound">Transformation</ref>&amp;<sp/>aTransformation)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a68ef0c5cbb3fde1c662f60c5f137fe60" kindref="member">Undefined</ref>();</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kindref="compound">Composite</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a5704d4c2404b89ef12ccf562fd48a7f5" kindref="member">Empty</ref>();</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>defined_;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/>Array&lt;Unique&lt;Object&gt;&gt;<sp/>objects_;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>object</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>d2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>geometry</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mathematics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ostk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp"/>
+  </compounddef>
+</doxygen>

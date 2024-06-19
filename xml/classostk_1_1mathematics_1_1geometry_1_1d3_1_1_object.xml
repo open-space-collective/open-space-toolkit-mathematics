@@ -1,0 +1,575 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>ostk::mathematics::geometry::d3::Object</compoundname>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::object::Composite</derivedcompoundref>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::object::Cone</derivedcompoundref>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::object::Cuboid</derivedcompoundref>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::object::Ellipsoid</derivedcompoundref>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::object::Line</derivedcompoundref>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::object::LineString</derivedcompoundref>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::object::Plane</derivedcompoundref>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::object::Point</derivedcompoundref>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::object::PointSet</derivedcompoundref>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::object::Polygon</derivedcompoundref>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::object::Pyramid</derivedcompoundref>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::object::Ray</derivedcompoundref>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::object::Segment</derivedcompoundref>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::object::Sphere</derivedcompoundref>
+    <includes refid="_geometry_23_d_2_object_8hpp" local="no">Object.hpp</includes>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af003ad733beface98466830078a83875" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::Object::Object</definition>
+        <argsstring>()=default</argsstring>
+        <name>Object</name>
+        <briefdescription>
+<para>Default constructor (default) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="27" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aae1324c306129cce2e7d42a28c0de181" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::Object::~Object</definition>
+        <argsstring>()=0</argsstring>
+        <name>~Object</name>
+        <briefdescription>
+<para>Destructor (pure virtual) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="31" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.cpp" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a8ea8d4074bfaaa3d996d760d5d5751db" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kindref="compound">Object</ref> *</type>
+        <definition>virtual Object* ostk::mathematics::geometry::d3::Object::clone</definition>
+        <argsstring>() const =0</argsstring>
+        <name>clone</name>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a6d27eb6359000685e81a6a5d79fbb807">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_1a34fd0962885cf69d1a70a5d62395acc9">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1adf6a7e433d64879df60ea17403bf4694">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a07a393740306e4f8363920a8d82823e7">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_1aaaed581dfea7bf716e1125a088ba963c">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1ad6ef8e1e883a675f054a790093c152b8">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_1a28e9a96d726b5eea0da0696647912780">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ab67f8c5204e7d81204f80ca1298073a8">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a4d5a9ea98d5a028f2792d3b11e9fd6e8">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a61cb86ec44359755cc1edc8dec1604c0">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aca293bcf279702b8b59d72fe4dd09217">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1a0502f752850b36aa89c4fc443f7e4376">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a0c99b116c5a6f6e0915cb5375fc66149">clone</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a1ab0dfee99b56b4324e782a406ca1687">clone</reimplementedby>
+        <briefdescription>
+<para>Clone object (pure virtual) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to cloned object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="37" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aeb99dd25ff1c0683d9c0a058c8200e4d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Object::operator==</definition>
+        <argsstring>(const Object &amp;anObject) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kindref="compound">Object</ref> &amp;</type>
+          <declname>anObject</declname>
+        </param>
+        <briefdescription>
+<para>Equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if objects are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="44" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.cpp" bodystart="34" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a550754b8f5576ce2465979657325d5df" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Object::operator!=</definition>
+        <argsstring>(const Object &amp;anObject) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kindref="compound">Object</ref> &amp;</type>
+          <declname>anObject</declname>
+        </param>
+        <briefdescription>
+<para>Not equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if objects are not equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="51" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.cpp" bodystart="209" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a1962edbcdde0f851361b60324ab9ce2b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>bool</type>
+        <definition>virtual bool ostk::mathematics::geometry::d3::Object::isDefined</definition>
+        <argsstring>() const =0</argsstring>
+        <name>isDefined</name>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1ac79b6efa23440fa61690181c6ade42ec">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_1ae07b5282c948df716fc1fa5bedeec344">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a0a39c2a1bd1e330e8cc15aa4a5e19d47">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_1a682162f29a5597e61f0eaac2f9762518">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a8b85f9aa5f4b1cdf0047c8010fdb7645">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a402bf991d7974383a2766f12367681cd">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1ab2e3d42d2420cd0d3029f1d14e126a6c">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a927c5cfa7196f425f8cd153efde8e90f">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_1a5311446aca36ccadbd8ae323502dba44">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a6b8187ba8b67220e7562357ad846edaa">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ae9749637798c6670bb1c2b8cc2850ba8">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a3e36099693bccb2d2e68d8673d86e5f6">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a151a3020d20a0ae2847f5ce99bd7ee06">isDefined</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a8ccf639112d5c08aa7d2bb831072ca2f">isDefined</reimplementedby>
+        <briefdescription>
+<para>Check if object is defined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if object is defined </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="65" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ad9e6f5027d14e3c7d7bead94052611ed" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Type</type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Object::is</definition>
+        <argsstring>() const</argsstring>
+        <name>is</name>
+        <briefdescription>
+<para>Returns true if object can be converted to type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if object can be converted to type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="72" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a0d8ddc7a929bb3b0b1c70ad82742e64e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Object::intersects</definition>
+        <argsstring>(const Object &amp;anObject) const</argsstring>
+        <name>intersects</name>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1afb414dd80dce2ea9aad5513c8f466e94">intersects</reimplementedby>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kindref="compound">Object</ref> &amp;</type>
+          <declname>anObject</declname>
+        </param>
+        <briefdescription>
+<para>Check if object intersects another object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Unique&lt;Object&gt;<sp/>objectUPtr<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Unique&lt;Object&gt;<sp/>anotherObjectUPtr<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">objectUPtr-&gt;intersects(*anotherObjectUPtr)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if object intersects another object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="88" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.cpp" bodystart="221" bodyend="492"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af60902b6b025fdaf8839c08e532dd2b0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Object::contains</definition>
+        <argsstring>(const Object &amp;anObject) const</argsstring>
+        <name>contains</name>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a9a69a179318ed283eb977f7ed6649061">contains</reimplementedby>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kindref="compound">Object</ref> &amp;</type>
+          <declname>anObject</declname>
+        </param>
+        <briefdescription>
+<para>Check if object contains another object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Unique&lt;Object&gt;<sp/>objectUPtr<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Unique&lt;Object&gt;<sp/>anotherObjectUPtr<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">objectUPtr-&gt;contains(*anotherObjectUPtr)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if object contains another object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="101" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.cpp" bodystart="494" bodyend="679"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1acc1ec9fde56128d7fde8b96fa57180c4" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class Type</type>
+          </param>
+        </templateparamlist>
+        <type>const Type &amp;</type>
+        <definition>const Type&amp; ostk::mathematics::geometry::d3::Object::as</definition>
+        <argsstring>() const</argsstring>
+        <name>as</name>
+        <briefdescription>
+<para>Access object as its underlying type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reference to underlying type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="108" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" bodystart="108" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ac1325aba0fa3796c9ddc5d39dfe40aa6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::Object::intersectionWith</definition>
+        <argsstring>(const Object &amp;anObject) const</argsstring>
+        <name>intersectionWith</name>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a17316a3b66d1459e5a152d71af82d28c">intersectionWith</reimplementedby>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kindref="compound">Object</ref> &amp;</type>
+          <declname>anObject</declname>
+        </param>
+        <briefdescription>
+<para>Compute intersection of object with another object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Unique&lt;Object&gt;<sp/>objectUPtr<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Unique&lt;Object&gt;<sp/>anotherObjectUPtr<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>objectUPtr-&gt;intersectionWith(*anotherObjectUPtr)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> of object with another object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="131" column="26" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.cpp" bodystart="681" bodyend="854"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a5063e1f902e1b08d36f6b6cecab0bd95" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void ostk::mathematics::geometry::d3::Object::print</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, bool displayDecorators=true) const =0</argsstring>
+        <name>print</name>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a3f55f08a54e8341f3381f1402ace1b09">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a54b5df386104fa9e13d7a982c3a99589">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a9395ae58a8f65a13328bc581586955c3">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1a3a3719dc361d969338a34cce892fff94">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_1adbfd6a95b2edf22a2540e449d07e499c">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1af5e5dea5fe393ea9a76fd3b2638f9446">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_1aa5283e30e7ddb452b048bd54f841c63e">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aba0fd8b256f78bb7bb0725103287f681">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a7d59b2b6538e28c9faa5ad94249e0d5d">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a4683504c6cc0933811bf909c96f5ef17">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a69cc28d37f97308cd2d0a9b58d50c18f">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_1ae7a968c5f386c5f9019389e6e3fca138">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1aa60fe81325d3fa897e6bc7517c28d071">print</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a7c5c1f79b1c0533073ef48e38dc5e18b">print</reimplementedby>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>displayDecorators</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Print object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>displayDecorators If true, display decorators </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="138" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a925a50c2bb1c31f396e469b74595e42a" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void ostk::mathematics::geometry::d3::Object::applyTransformation</definition>
+        <argsstring>(const Transformation &amp;aTransformation)=0</argsstring>
+        <name>applyTransformation</name>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string_1a2bfff9b3a14df67fac884fd122315145">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set_1a750ddc45120fa67b224c65f5ae782ce2">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_1a99c3b0b78faa977d4c6bd526286a0815">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon_1ad2265d32b954c38b63c273acd45bdc4d">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_1a5d3a7527694d5581fbd8ea6cf438d74c">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray_1a3a226ee06322255306b029e004dac647">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment_1af3da3893add570615236f1e5ab4971ff">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aec8ebca28ff89fd03a088d399de8e6e4">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite_1a07770aa678f84c74355bf7488b4df425">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1ae0eb36a3ddb55789fb3fd382ad5a5b1b">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1ab4e329b825fa0a3aa24c2c4b7ebfb432">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere_1aec7fa1a21969f2175948bd57ac8a46ff">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1a8471b1cbbaa3498833f6fb6f9d2bab5a">applyTransformation</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a3e8568dfcf2f261ea99c5a1c4edc2c1a">applyTransformation</reimplementedby>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
+          <declname>aTransformation</declname>
+        </param>
+        <briefdescription>
+<para>Apply transformation to object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aTransformation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="144" column="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a418df9bf4a73078f3d494edef1743f8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, const Object &amp;anObject)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kindref="compound">Object</ref> &amp;</type>
+          <declname>anObject</declname>
+        </param>
+        <briefdescription>
+<para>Output stream operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to output stream </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="59" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.cpp" bodystart="214" bodyend="219"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>3D object </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="14">
+        <label>ostk::mathematics::geometry::d3::object::Segment</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>ostk::mathematics::geometry::d3::object::Ray</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>ostk::mathematics::geometry::d3::object::Plane</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>ostk::mathematics::geometry::d3::object::Line</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>ostk::mathematics::geometry::d3::object::Polygon</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::geometry::d3::Object</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object"/>
+      </node>
+      <node id="3">
+        <label>ostk::mathematics::geometry::d3::object::Cone</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>ostk::mathematics::geometry::d3::object::Pyramid</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>ostk::mathematics::geometry::d3::object::Point</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ostk::mathematics::geometry::d3::object::Composite</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>ostk::mathematics::geometry::d3::object::PointSet</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>ostk::mathematics::geometry::d3::object::Cuboid</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>ostk::mathematics::geometry::d3::object::Ellipsoid</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>ostk::mathematics::geometry::d3::object::LineString</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>ostk::mathematics::geometry::d3::object::Sphere</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" line="23" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.hpp" bodystart="22" bodyend="145"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a925a50c2bb1c31f396e469b74595e42a" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d3::Object</scope><name>applyTransformation</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1acc1ec9fde56128d7fde8b96fa57180c4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Object</scope><name>as</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a8ea8d4074bfaaa3d996d760d5d5751db" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d3::Object</scope><name>clone</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af60902b6b025fdaf8839c08e532dd2b0" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::Object</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ac1325aba0fa3796c9ddc5d39dfe40aa6" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::Object</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a0d8ddc7a929bb3b0b1c70ad82742e64e" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::Object</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ad9e6f5027d14e3c7d7bead94052611ed" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Object</scope><name>is</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a1962edbcdde0f851361b60324ab9ce2b" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d3::Object</scope><name>isDefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af003ad733beface98466830078a83875" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Object</scope><name>Object</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a550754b8f5576ce2465979657325d5df" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Object</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a418df9bf4a73078f3d494edef1743f8d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Object</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aeb99dd25ff1c0683d9c0a058c8200e4d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Object</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a5063e1f902e1b08d36f6b6cecab0bd95" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d3::Object</scope><name>print</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aae1324c306129cce2e7d42a28c0de181" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d3::Object</scope><name>~Object</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

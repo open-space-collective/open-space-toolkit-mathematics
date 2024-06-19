@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_9aaaab1d4b611f2597fbfb7276749f02" kind="dir">
+    <compoundname>include/OpenSpaceToolkit/Mathematics/Solver</compoundname>
+    <innerfile refid="_numerical_solver_8hpp">NumericalSolver.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Solver/"/>
+  </compounddef>
+</doxygen>

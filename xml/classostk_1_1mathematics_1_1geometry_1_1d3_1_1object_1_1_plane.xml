@@ -1,0 +1,875 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::geometry::d3::object::Plane</compoundname>
+    <basecompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::Object</basecompoundref>
+    <includes refid="_plane_8hpp" local="no">Plane.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a45f749e1258c87e28fb23f04d56cbc1c" prot="private" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point ostk::mathematics::geometry::d3::object::Plane::point_</definition>
+        <argsstring></argsstring>
+        <name>point_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="302" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1addc43a238f888da7cb7ac2317ce2343d" prot="private" static="no" mutable="no">
+        <type>Vector3d</type>
+        <definition>Vector3d ostk::mathematics::geometry::d3::object::Plane::normal_</definition>
+        <argsstring></argsstring>
+        <name>normal_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="303" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" bodystart="303" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1ae1c8e4e15ce5c0ec7ace2e1b61b17358" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::object::Plane::Plane</definition>
+        <argsstring>(const Point &amp;aPoint, const Vector3d &amp;aNormalVector)</argsstring>
+        <name>Plane</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aNormalVector</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Plane<sp/>plane({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aNormalVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A normal vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="51" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="21" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a07a393740306e4f8363920a8d82823e7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane" kindref="compound">Plane</ref> *</type>
+        <definition>Plane * ostk::mathematics::geometry::d3::object::Plane::clone</definition>
+        <argsstring>() const override</argsstring>
+        <name>clone</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a8ea8d4074bfaaa3d996d760d5d5751db">clone</reimplements>
+        <briefdescription>
+<para>Clone plane. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to cloned plane </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="57" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="28" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a52ef325acb9072394c691b2511f875e9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Plane::operator==</definition>
+        <argsstring>(const Plane &amp;aPlane) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane" kindref="compound">Plane</ref> &amp;</type>
+          <declname>aPlane</declname>
+        </param>
+        <briefdescription>
+<para>Equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Plane({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>})<sp/>==<sp/>Plane({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>})<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>True</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPlane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A plane </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if planes are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="69" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="33" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a7503e1325f4900f22279659c7b56c211" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Plane::operator!=</definition>
+        <argsstring>(const Plane &amp;aPlane) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane" kindref="compound">Plane</ref> &amp;</type>
+          <declname>aPlane</declname>
+        </param>
+        <briefdescription>
+<para>Not equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Plane({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>})<sp/>!=<sp/>Plane({<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>})<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>True</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPlane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A plane </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if planes are not equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="81" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="48" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a0a39c2a1bd1e330e8cc15aa4a5e19d47" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Plane::isDefined</definition>
+        <argsstring>() const override</argsstring>
+        <name>isDefined</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a1962edbcdde0f851361b60324ab9ce2b">isDefined</reimplements>
+        <briefdescription>
+<para>Check if plane is defined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Plane({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>}).isDefined()<sp/>;<sp/>//<sp/>True</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if plane is defined </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="91" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1ac55945830db7e46ae59bca73f4a0c800" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Plane::intersects</definition>
+        <argsstring>(const Point &amp;aPoint) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+<para>Check if plane intersects point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Plane<sp/>plane<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Point<sp/>point<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">plane.intersects(point)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if plane intersects point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="104" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1aa4ef1e875568bd35e5a0c502cd9576a3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Plane::intersects</definition>
+        <argsstring>(const PointSet &amp;aPointSet) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set" kindref="compound">PointSet</ref> &amp;</type>
+          <declname>aPointSet</declname>
+        </param>
+        <briefdescription>
+<para>Check if plane intersects point set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Plane<sp/>plane<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">PointSet<sp/>pointSet<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">plane.intersects(pointSet)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPointSet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if plane intersects point set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="117" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="63" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a532ab8dd1b23858a0ecba19353d1ff7f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Plane::intersects</definition>
+        <argsstring>(const Line &amp;aLine) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line" kindref="compound">Line</ref> &amp;</type>
+          <declname>aLine</declname>
+        </param>
+        <briefdescription>
+<para>Check if plane intersects line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Plane<sp/>plane<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Line<sp/>line<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">plane.intersects(line)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A line </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if plane intersects line </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="130" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="85" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a8c2cb7d5c1378a400dce11cb78bbe1d4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Plane::intersects</definition>
+        <argsstring>(const Ray &amp;aRay) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray" kindref="compound">Ray</ref> &amp;</type>
+          <declname>aRay</declname>
+        </param>
+        <briefdescription>
+<para>Check if plane intersects ray. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Plane<sp/>plane<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Ray<sp/>ray<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">plane.intersects(ray)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A ray </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if plane intersects ray </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="143" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="90" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a04c4eacdc8f5d1edd6a1ff0da1d6e0fa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Plane::intersects</definition>
+        <argsstring>(const Segment &amp;aSegment) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment" kindref="compound">Segment</ref> &amp;</type>
+          <declname>aSegment</declname>
+        </param>
+        <briefdescription>
+<para>Check if plane intersects segment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Plane<sp/>plane<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Segment<sp/>segment<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">plane.intersects(segment)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aSegment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A segment </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if plane intersects segment </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="156" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="95" bodyend="98"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a524aa96a108be7503f1ff86394a08f2c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Plane::contains</definition>
+        <argsstring>(const Point &amp;aPoint) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+<para>Check if plane contains point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Plane<sp/>plane<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Point<sp/>point<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">plane.contains(point)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if plane contains point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="169" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="100" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1ab0b9146d7ba1edd4386336b6838fa27f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Plane::contains</definition>
+        <argsstring>(const PointSet &amp;aPointSet) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set" kindref="compound">PointSet</ref> &amp;</type>
+          <declname>aPointSet</declname>
+        </param>
+        <briefdescription>
+<para>Check if plane contains point set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Point<sp/>plane<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">PointSet<sp/>pointSet<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">plane.contains(pointSet)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPointSet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if plane contains point set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="182" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="115" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a28361bb8bf43e6a73c4347385f5e27e2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Plane::contains</definition>
+        <argsstring>(const Line &amp;aLine) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line" kindref="compound">Line</ref> &amp;</type>
+          <declname>aLine</declname>
+        </param>
+        <briefdescription>
+<para>Check if plane contains line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Point<sp/>plane<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Line<sp/>line<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">plane.contains(line)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A line </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if plane contains line </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="195" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="137" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a6ccf2471ed3a0c7ca9d52b96aecfd01d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Plane::contains</definition>
+        <argsstring>(const Ray &amp;aRay) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray" kindref="compound">Ray</ref> &amp;</type>
+          <declname>aRay</declname>
+        </param>
+        <briefdescription>
+<para>Check if plane contains ray. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Point<sp/>plane<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Ray<sp/>ray<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">plane.contains(ray)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A ray </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if plane contains ray </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="208" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="152" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a1c62f4dcef9ff0a578e656fd18c2d40c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Plane::contains</definition>
+        <argsstring>(const Segment &amp;aSegment) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment" kindref="compound">Segment</ref> &amp;</type>
+          <declname>aSegment</declname>
+        </param>
+        <briefdescription>
+<para>Check if plane contains segment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Point<sp/>plane<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Segment<sp/>segment<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">plane.contains(segment)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aSegment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A segment </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if plane contains segment </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="221" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="167" bodyend="180"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a27ac75e7c17511ca313236d2048dfac0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point ostk::mathematics::geometry::d3::object::Plane::getPoint</definition>
+        <argsstring>() const</argsstring>
+        <name>getPoint</name>
+        <briefdescription>
+<para>Get plane point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Plane({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>}).getPoint()<sp/>;<sp/>//<sp/>[0.0,<sp/>0.0,<sp/>0.0]</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane" kindref="compound">Plane</ref> point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="231" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="182" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a8637b16118f31b362eb371c3550a430b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector3d</type>
+        <definition>Vector3d ostk::mathematics::geometry::d3::object::Plane::getNormalVector</definition>
+        <argsstring>() const</argsstring>
+        <name>getNormalVector</name>
+        <briefdescription>
+<para>Get plane normal vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Plane({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>}).getNormalVector()<sp/>;<sp/>//<sp/>[0.0,<sp/>0.0,<sp/>1.0]</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane" kindref="compound">Plane</ref> normal vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="241" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="192" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1abc6de4b10a4db6f07a8d0e0358d52c5c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::object::Plane::intersectionWith</definition>
+        <argsstring>(const Point &amp;aPoint) const</argsstring>
+        <name>intersectionWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+<para>Compute intersection of plane with point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> of plane with point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="248" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="202" bodyend="205"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1aefbcaaa5d805230fb4414211e330beb4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::object::Plane::intersectionWith</definition>
+        <argsstring>(const PointSet &amp;aPointSet) const</argsstring>
+        <name>intersectionWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set" kindref="compound">PointSet</ref> &amp;</type>
+          <declname>aPointSet</declname>
+        </param>
+        <briefdescription>
+<para>Compute intersection of plane with point set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPointSet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> of plane with point set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="255" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="207" bodyend="227"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a10c0772740b3e8db07cf6e9a3a95986c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::object::Plane::intersectionWith</definition>
+        <argsstring>(const Line &amp;aLine) const</argsstring>
+        <name>intersectionWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line" kindref="compound">Line</ref> &amp;</type>
+          <declname>aLine</declname>
+        </param>
+        <briefdescription>
+<para>Compute intersection of plane with line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A line </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> of plane with line </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="262" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="229" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a365705683c88be776018f682e0fe0899" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::object::Plane::intersectionWith</definition>
+        <argsstring>(const Ray &amp;aRay) const</argsstring>
+        <name>intersectionWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray" kindref="compound">Ray</ref> &amp;</type>
+          <declname>aRay</declname>
+        </param>
+        <briefdescription>
+<para>Compute intersection of plane with ray. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A ray </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> of plane with ray </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="269" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="234" bodyend="237"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a8074e08abe264931aedb9662ae818ee0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::object::Plane::intersectionWith</definition>
+        <argsstring>(const Segment &amp;aSegment) const</argsstring>
+        <name>intersectionWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment" kindref="compound">Segment</ref> &amp;</type>
+          <declname>aSegment</declname>
+        </param>
+        <briefdescription>
+<para>Compute intersection of plane with segment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aSegment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A segment </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> of plane with segment </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="276" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="239" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a69cc28d37f97308cd2d0a9b58d50c18f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ostk::mathematics::geometry::d3::object::Plane::print</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</argsstring>
+        <name>print</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a5063e1f902e1b08d36f6b6cecab0bd95">print</reimplements>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>displayDecorators</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Print plane. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>displayDecorators If true, display decorators </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="283" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="244" bodyend="254"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1ab4e329b825fa0a3aa24c2c4b7ebfb432" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ostk::mathematics::geometry::d3::object::Plane::applyTransformation</definition>
+        <argsstring>(const Transformation &amp;aTransformation) override</argsstring>
+        <name>applyTransformation</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a925a50c2bb1c31f396e469b74595e42a">applyTransformation</reimplements>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
+          <declname>aTransformation</declname>
+        </param>
+        <briefdescription>
+<para>Apply transformation to plane. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aTransformation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="289" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="256" bodyend="270"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a426953082cf45d17f80fde82753583df" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane" kindref="compound">Plane</ref></type>
+        <definition>Plane ostk::mathematics::geometry::d3::object::Plane::Undefined</definition>
+        <argsstring>()</argsstring>
+        <name>Undefined</name>
+        <briefdescription>
+<para>Constructs an undefined plane. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Plane<sp/>plane<sp/>=<sp/>Plane::Undefined()<sp/>;<sp/>//<sp/>Undefined</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Undefined plane </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="299" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp" bodystart="272" bodyend="275"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane" kindref="compound">Plane</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>                        A plane is a flat, two-dimensional surface that extends infinitely far.
+</verbatim></para>
+<para><ulink url="https://en.wikipedia.org/wiki/Plane_">https://en.wikipedia.org/wiki/Plane_</ulink>(geometry) </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ostk::mathematics::geometry::d3::object::Plane</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ostk::mathematics::geometry::d3::Object</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ostk::mathematics::geometry::d3::object::Plane</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ostk::mathematics::geometry::d3::Object</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" line="40" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.hpp" bodystart="39" bodyend="304"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1ab4e329b825fa0a3aa24c2c4b7ebfb432" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>applyTransformation</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1acc1ec9fde56128d7fde8b96fa57180c4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>as</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a07a393740306e4f8363920a8d82823e7" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>clone</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a524aa96a108be7503f1ff86394a08f2c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1ab0b9146d7ba1edd4386336b6838fa27f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a28361bb8bf43e6a73c4347385f5e27e2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a6ccf2471ed3a0c7ca9d52b96aecfd01d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a1c62f4dcef9ff0a578e656fd18c2d40c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af60902b6b025fdaf8839c08e532dd2b0" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a8637b16118f31b362eb371c3550a430b" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>getNormalVector</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a27ac75e7c17511ca313236d2048dfac0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>getPoint</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1abc6de4b10a4db6f07a8d0e0358d52c5c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1aefbcaaa5d805230fb4414211e330beb4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a10c0772740b3e8db07cf6e9a3a95986c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a365705683c88be776018f682e0fe0899" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a8074e08abe264931aedb9662ae818ee0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ac1325aba0fa3796c9ddc5d39dfe40aa6" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1ac55945830db7e46ae59bca73f4a0c800" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1aa4ef1e875568bd35e5a0c502cd9576a3" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a532ab8dd1b23858a0ecba19353d1ff7f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a8c2cb7d5c1378a400dce11cb78bbe1d4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a04c4eacdc8f5d1edd6a1ff0da1d6e0fa" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a0d8ddc7a929bb3b0b1c70ad82742e64e" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ad9e6f5027d14e3c7d7bead94052611ed" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>is</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a0a39c2a1bd1e330e8cc15aa4a5e19d47" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>isDefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1addc43a238f888da7cb7ac2317ce2343d" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>normal_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af003ad733beface98466830078a83875" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>Object</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a7503e1325f4900f22279659c7b56c211" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a550754b8f5576ce2465979657325d5df" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a52ef325acb9072394c691b2511f875e9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aeb99dd25ff1c0683d9c0a058c8200e4d" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1ae1c8e4e15ce5c0ec7ace2e1b61b17358" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>Plane</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a45f749e1258c87e28fb23f04d56cbc1c" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>point_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a69cc28d37f97308cd2d0a9b58d50c18f" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>print</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane_1a426953082cf45d17f80fde82753583df" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>Undefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aae1324c306129cce2e7d42a28c0de181" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d3::object::Plane</scope><name>~Object</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

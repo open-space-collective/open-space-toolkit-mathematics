@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceostk_1_1mathematics_1_1solver" kind="namespace" language="C++">
+    <compoundname>ostk::mathematics::solver</compoundname>
+    <innerclass refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver" prot="public">ostk::mathematics::solver::NumericalSolver</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1solver_1a239397c5452cb7026b6b7bd5909c49ea" prot="public" static="no">
+        <type>runge_kutta4&lt; <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">NumericalSolver::StateVector</ref> &gt;</type>
+        <definition>typedef runge_kutta4&lt;NumericalSolver::StateVector&gt; ostk::mathematics::solver::stepper_type_4</definition>
+        <argsstring></argsstring>
+        <name>stepper_type_4</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="22" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1solver_1aff57be115a1ef18c0a53de6e79b00023" prot="public" static="no">
+        <type>runge_kutta_cash_karp54&lt; <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">NumericalSolver::StateVector</ref> &gt;</type>
+        <definition>typedef runge_kutta_cash_karp54&lt;NumericalSolver::StateVector&gt; ostk::mathematics::solver::error_stepper_type_54</definition>
+        <argsstring></argsstring>
+        <name>error_stepper_type_54</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="23" column="33" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1solver_1a446382cbb767b2c1a4413b9f6f4fee34" prot="public" static="no">
+        <type>runge_kutta_fehlberg78&lt; <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">NumericalSolver::StateVector</ref> &gt;</type>
+        <definition>typedef runge_kutta_fehlberg78&lt;NumericalSolver::StateVector&gt; ostk::mathematics::solver::error_stepper_type_78</definition>
+        <argsstring></argsstring>
+        <name>error_stepper_type_78</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="24" column="32" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1solver_1a9e0e29898fea269d43fccf27c4fedd60" prot="public" static="no">
+        <type>runge_kutta_dopri5&lt; <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">NumericalSolver::StateVector</ref> &gt;</type>
+        <definition>typedef runge_kutta_dopri5&lt;NumericalSolver::StateVector&gt; ostk::mathematics::solver::dense_stepper_type_5</definition>
+        <argsstring></argsstring>
+        <name>dense_stepper_type_5</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="25" column="28" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1solver_1a880f6ab73ddfe8eae45c0c7f4c6aaaeb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; ostk::mathematics::solver::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, const NumericalSolver &amp;aNumericalSolver)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver" kindref="compound">NumericalSolver</ref> &amp;</type>
+          <declname>aNumericalSolver</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aNumericalSolver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A numerical solver </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Output stream reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" line="60" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="60" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="19" column="1"/>
+  </compounddef>
+</doxygen>

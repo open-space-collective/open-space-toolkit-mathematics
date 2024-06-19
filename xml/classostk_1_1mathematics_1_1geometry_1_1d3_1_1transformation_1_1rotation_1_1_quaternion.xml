@@ -1,0 +1,1949 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</compoundname>
+    <includes refid="_quaternion_8hpp" local="no">Quaternion.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a69f1621be80ba171c61830a76d481bfc" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Format</name>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a69f1621be80ba171c61830a76d481bfca11c51ecd5dc6f86ba3c1ae79e21482f5" prot="public">
+          <name>XYZS</name>
+          <briefdescription>
+<para>Vector-scalar format. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a69f1621be80ba171c61830a76d481bfcabd514d63fd7944bc7d3718aeef3684be" prot="public">
+          <name>SXYZ</name>
+          <briefdescription>
+<para>Scalar-vector format. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> format. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="54" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" bodystart="53" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ad7d90b3add9843311184e91fb3d8134e" prot="private" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::x_</definition>
+        <argsstring></argsstring>
+        <name>x_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="707" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" bodystart="707" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a10d30bdf1b958c881dfe33c5da2dd7aa" prot="private" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::y_</definition>
+        <argsstring></argsstring>
+        <name>y_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="708" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" bodystart="708" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ae96403d9d5643977aef7c3e9d428063e" prot="private" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::z_</definition>
+        <argsstring></argsstring>
+        <name>z_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="709" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" bodystart="709" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1aa76ce1d956817f23fafd7a79e1556536" prot="private" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::s_</definition>
+        <argsstring></argsstring>
+        <name>s_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="710" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" bodystart="710" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a473fe143aff59c8d0ef54b7e73138853" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::Quaternion</definition>
+        <argsstring>(const Real &amp;aFirstComponent, const Real &amp;aSecondComponent, const Real &amp;aThirdComponent, const Real &amp;aFourthComponent, const Quaternion::Format &amp;aFormat)</argsstring>
+        <name>Quaternion</name>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aFirstComponent</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aSecondComponent</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aThirdComponent</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aFourthComponent</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a69f1621be80ba171c61830a76d481bfc" kindref="member">Quaternion::Format</ref> &amp;</type>
+          <declname>aFormat</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion(0.0,<sp/>0.0,<sp/>0.0,<sp/>0.1,<sp/>Quaternion::Format::XYZS)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstComponent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A first component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondComponent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A second component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aThirdComponent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A third component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aFourthComponent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A fourth component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aFormat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="73" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="24" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ad3ca378d47be35fa0bf91e9755dd5096" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::Quaternion</definition>
+        <argsstring>(const Vector4d &amp;aVector, const Quaternion::Format &amp;aFormat)</argsstring>
+        <name>Quaternion</name>
+        <param>
+          <type>const Vector4d &amp;</type>
+          <declname>aVector</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a69f1621be80ba171c61830a76d481bfc" kindref="member">Quaternion::Format</ref> &amp;</type>
+          <declname>aFormat</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion({0.0,<sp/>0.0,<sp/>0.0,<sp/>0.1},<sp/>Quaternion::Format::XYZS)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A 4D vector </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aFormat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="90" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="38" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a7b05d9472dad47ee5c1bd8f4dd464261" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::Quaternion</definition>
+        <argsstring>(const Vector3d &amp;aVectorPart, const Real &amp;aScalarPart)</argsstring>
+        <name>Quaternion</name>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aVectorPart</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aScalarPart</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion({0.0,<sp/>0.0,<sp/>0.0},<sp/>1.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aVectorPart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector part </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aVectorPart</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A scalar part </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="101" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="46" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a1e39393c8587024630cd91d312284be4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::operator==</definition>
+        <argsstring>(const Quaternion &amp;aQuaternion) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::Unit()<sp/>==<sp/>Quaternion::Unit()</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if Quaternions are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="112" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="54" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a9bd92ff5c1e57bdc7572b2507363bd15" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::operator!=</definition>
+        <argsstring>(const Quaternion &amp;aQuaternion) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Not equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::Unit()<sp/>!=<sp/>Quaternion::Unit();</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if Quaternions are not equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="123" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="65" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a87ad253260d586f019f07b6ae7202e19" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::operator+</definition>
+        <argsstring>(const Quaternion &amp;aQuaternion) const</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Addition operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion<sp/>q_1<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_2<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_3<sp/>=<sp/>q_1<sp/>+<sp/>q_2<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="136" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="70" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a95aa653a242332b5d3590c81f8819bb8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::operator*</definition>
+        <argsstring>(const Quaternion &amp;aQuaternion) const</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Multiplication operator (<ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion<sp/>q_B_A<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_C_B<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_C_A<sp/>=<sp/>q_C_B<sp/>*<sp/>q_B_A<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="note"><para>This operator uses cross multiplication</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="151" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1af683f4d97a2b3ead7f82d5a5352ccd66" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector3d</type>
+        <definition>Vector3d ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::operator*</definition>
+        <argsstring>(const Vector3d &amp;aVector) const</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aVector</declname>
+        </param>
+        <briefdescription>
+<para>Multiplication operator (vector) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion<sp/>q_B_A<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Vector3d<sp/>v_A<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Vector3d<sp/>v_B<sp/>=<sp/>q_B_A<sp/>*<sp/>v_A<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="note"><para>This operator uses transformVector</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="166" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="82" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1afe9742084b6a328cb8fab233a5485122" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::operator*</definition>
+        <argsstring>(const Real &amp;aScalar) const</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aScalar</declname>
+        </param>
+        <briefdescription>
+<para>Multiplication operator (scalar) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion<sp/>q_1<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Real<sp/>scalar<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_2<sp/>=<sp/>q_1<sp/>*<sp/>scalar<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aScalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A scalar </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="179" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a410602d95ca3038414e373f689ef47ba" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::operator/</definition>
+        <argsstring>(const Quaternion &amp;aQuaternion) const</argsstring>
+        <name>operator/</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Division operator (<ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion<sp/>q_A_B<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_C_B<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_C_A<sp/>=<sp/>q_C_B<sp/>/<sp/>q_A_B<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="note"><para>This is equivalent to multiplying with the inverse</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="208" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="97" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a7b03af85a1a62e2fe18eb684c2dc1c5c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::operator^</definition>
+        <argsstring>(const Real &amp;aScalar) const</argsstring>
+        <name>operator^</name>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aScalar</declname>
+        </param>
+        <briefdescription>
+<para>Power operator (<ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion<sp/>q_1<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Real<sp/>scalar<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_2<sp/>=<sp/>q_1<sp/>^<sp/>scalar<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aScalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A scalar </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="221" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="107" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1acf750e6a9664f75b70c4c1afe50eff7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+        <definition>Quaternion &amp; ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::operator+=</definition>
+        <argsstring>(const Quaternion &amp;aQuaternion)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Addition assignment operator (<ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="228" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="112" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a4aa0b88ebd82e92d05210c0b9d5b1cc3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+        <definition>Quaternion &amp; ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::operator*=</definition>
+        <argsstring>(const Quaternion &amp;aQuaternion)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Multiplication assignment operator (<ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This operator uses cross multiplication</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="237" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="127" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1aa6ec77b7da4aa05500e6551a4797bbb3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+        <definition>Quaternion &amp; ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::operator/=</definition>
+        <argsstring>(const Quaternion &amp;aQuaternion)</argsstring>
+        <name>operator/=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Division assignment operator (<ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This is equivalent to multiplying with the inverse</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="246" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="134" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a25d3f5bd7307918ea70b3b21f80a3001" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::isDefined</definition>
+        <argsstring>() const</argsstring>
+        <name>isDefined</name>
+        <briefdescription>
+<para>Check if <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> is defined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::Unit().isDefined();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> is defined </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="268" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="164" bodyend="167"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1aea4706c3cc65b5a8e7250a042cb1edaa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::isUnitary</definition>
+        <argsstring>() const</argsstring>
+        <name>isUnitary</name>
+        <briefdescription>
+<para>Check if <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> is unitary (i.e., its norm is equal to 1.0) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::Unit().isUnitary();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> is unitary </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="278" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="169" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1afab79d88d91c8fc0a6b888a91f0e52bd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::isNear</definition>
+        <argsstring>(const Quaternion &amp;aQuaternion, const Angle &amp;anAngularTolerance) const</argsstring>
+        <name>isNear</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>anAngularTolerance</declname>
+        </param>
+        <briefdescription>
+<para>Check if <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> is near another <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::Unit().isNear(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Quaternion::XYZS(0.0,<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>+<sp/>1e-19),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Angle::Radians(1e-6)</highlight></codeline>
+<codeline><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngularTolerance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angular tolerance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if Quaternions are near each other </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="293" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="179" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1adfdffa7d538271cddf839224bcb4e738" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::x</definition>
+        <argsstring>() const</argsstring>
+        <name>x</name>
+        <briefdescription>
+<para>Get first component of vector part. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::Unit().x();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Real </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="303" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="190" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a10f6aba9001c60d4e106a7989520c03a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::y</definition>
+        <argsstring>() const</argsstring>
+        <name>y</name>
+        <briefdescription>
+<para>Get second component of vector part. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::Unit().y();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Real </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="313" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="200" bodyend="208"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ab2c7e95b006839e078c0517a320636cf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::z</definition>
+        <argsstring>() const</argsstring>
+        <name>z</name>
+        <briefdescription>
+<para>Get third component of vector part. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::Unit().z();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Real </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="323" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="210" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1aa59ce9764110f86f725a3797bf834764" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::s</definition>
+        <argsstring>() const</argsstring>
+        <name>s</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>@bref Get scalar part</para>
+<para><programlisting><codeline><highlight class="normal">Quaternion::XYSZ(0.0,<sp/>0.0,<sp/>0.0,<sp/>1.0).s();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Real </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="333" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="220" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a3c12f3cb5522ec354d8f2e369135430c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector3d</type>
+        <definition>Vector3d ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::getVectorPart</definition>
+        <argsstring>() const</argsstring>
+        <name>getVectorPart</name>
+        <briefdescription>
+<para>Get vector part. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::Unit().getVectorPart();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="343" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="230" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1af25340ddd9f641d4e3b588b0fa110669" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::getScalarPart</definition>
+        <argsstring>() const</argsstring>
+        <name>getScalarPart</name>
+        <briefdescription>
+<para>Get scalar part. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::Unit().getScalarPart();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Real </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="353" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="240" bodyend="248"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a76d45236d97aca97432d5e6604cf6acf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::toNormalized</definition>
+        <argsstring>() const</argsstring>
+        <name>toNormalized</name>
+        <briefdescription>
+<para>Calculate normalized <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::XYZS(0.0,<sp/>0.0,<sp/>0.0,<sp/>1.000000000000001).toNormalized();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="363" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="250" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1abd6b6809b6be6bff26bf99a4c2afbcdb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::toConjugate</definition>
+        <argsstring>() const</argsstring>
+        <name>toConjugate</name>
+        <briefdescription>
+<para>Calculate conjugate of <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::XYZS(0.0,<sp/>0.0,<sp/>0.70710678118,<sp/>0.70710678118).toConjugate();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="373" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="255" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a57e55414171904bd5126707ec5b1cb1b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::toInverse</definition>
+        <argsstring>() const</argsstring>
+        <name>toInverse</name>
+        <briefdescription>
+<para>Calculate inverse of <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::XYZS(0.0,<sp/>0.0,<sp/>0.70710678118,<sp/>0.70710678118).toInverse();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="383" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="260" bodyend="263"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a1e858e5dbaf5ac0b3385e76320cc449f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::exp</definition>
+        <argsstring>() const</argsstring>
+        <name>exp</name>
+        <briefdescription>
+<para>Calculate exponential of <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion<sp/>q_1<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_2<sp/>=<sp/>q_1.exp();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="394" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="265" bodyend="278"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ad0889624c3960610d94c44c2675fe2d7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::log</definition>
+        <argsstring>() const</argsstring>
+        <name>log</name>
+        <briefdescription>
+<para>Calculate logarithm of <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion<sp/>q_1<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_2<sp/>=<sp/>q_1.log();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="405" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="280" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a8cc3e9ff6728b4857648cf8ffdcc1bc1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::pow</definition>
+        <argsstring>(const Real &amp;aValue) const</argsstring>
+        <name>pow</name>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aValue</declname>
+        </param>
+        <briefdescription>
+<para>Calculate power of <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion<sp/>q_1<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Real<sp/>scalar<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_2<sp/>=<sp/>q_1<sp/>^<sp/>scalar<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A power value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="418" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="295" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1adac286e89986a4dc8cd2791c96bcb979" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::norm</definition>
+        <argsstring>() const</argsstring>
+        <name>norm</name>
+        <briefdescription>
+<para>Calculate norm of <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::XYZS(0.0,<sp/>0.0,<sp/>-0.70710678118,<sp/>0.70710678118).norm();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> norm </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="428" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="302" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a3f4cbf44fdc4f0ef7a054ec12a08e9ca" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::crossMultiply</definition>
+        <argsstring>(const Quaternion &amp;aQuaternion) const</argsstring>
+        <name>crossMultiply</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Multiply <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> using cross multiplication. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion<sp/>q_1<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_2<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_3<sp/>=<sp/>q_1.crossMultiply(q_2)</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="441" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="312" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a50c95b29f1d658560a0005ee47d40e3a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::dotMultiply</definition>
+        <argsstring>(const Quaternion &amp;aQuaternion) const</argsstring>
+        <name>dotMultiply</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Multiply <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> using dot multiplication. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion<sp/>q_1<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_2<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_3<sp/>=<sp/>q_1.dotMultiply(q_2)</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="454" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="327" bodyend="340"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1adbc57819c76d4b481fc84bb20667b796" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::dotProduct</definition>
+        <argsstring>(const Quaternion &amp;aQuaternion) const</argsstring>
+        <name>dotProduct</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Calculate <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> dot product. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion<sp/>q_1<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_2<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Real<sp/>q_3<sp/>=<sp/>q_1.dotProduct(q_2)</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="467" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="342" bodyend="350"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a2f204333466437f149ebf1ec186b4c40" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector3d</type>
+        <definition>Vector3d ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::rotateVector</definition>
+        <argsstring>(const Vector3d &amp;aVector) const</argsstring>
+        <name>rotateVector</name>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aVector</declname>
+        </param>
+        <briefdescription>
+<para>Rotate vector using <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Vector3d<sp/>v_1<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Vector3d<sp/>v_2<sp/>=<sp/>q.rotateVector(v_1);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="479" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="352" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ac23b62bf5637ca0a7a533434641effb3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector4d</type>
+        <definition>Vector4d ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::toVector</definition>
+        <argsstring>(const Quaternion::Format &amp;aFormat=Quaternion::Format::XYZS) const</argsstring>
+        <name>toVector</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a69f1621be80ba171c61830a76d481bfc" kindref="member">Quaternion::Format</ref> &amp;</type>
+          <declname>aFormat</declname>
+          <defval><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a69f1621be80ba171c61830a76d481bfca11c51ecd5dc6f86ba3c1ae79e21482f5" kindref="member">Quaternion::Format::XYZS</ref></defval>
+        </param>
+        <briefdescription>
+<para>Convert <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> to its vector representation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::XYSZ(0.0,<sp/>0.0,<sp/>0.0,<sp/>1.0).toVector();</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>aFormat A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector representation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="490" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="367" bodyend="388"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a2aa46fa76d7a9fcbad21db53e7061f45" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::toString</definition>
+        <argsstring>(const Quaternion::Format &amp;aFormat) const</argsstring>
+        <name>toString</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a69f1621be80ba171c61830a76d481bfc" kindref="member">Quaternion::Format</ref> &amp;</type>
+          <declname>aFormat</declname>
+        </param>
+        <briefdescription>
+<para>Convert <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> to its string representation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::XYSZ(0.0,<sp/>0.0,<sp/>0.0,<sp/>1.0).toString();</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>aPrecision A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> precision </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>aFormat A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String representation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="502" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="390" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1abcc5bbb2b290710f39d2111f155ea8e3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::toString</definition>
+        <argsstring>(const Integer &amp;aPrecision=Integer::Undefined(), const Quaternion::Format &amp;aFormat=Quaternion::Format::XYZS) const</argsstring>
+        <name>toString</name>
+        <param>
+          <type>const Integer &amp;</type>
+          <declname>aPrecision</declname>
+          <defval>Integer::Undefined()</defval>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a69f1621be80ba171c61830a76d481bfc" kindref="member">Quaternion::Format</ref> &amp;</type>
+          <declname>aFormat</declname>
+          <defval><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a69f1621be80ba171c61830a76d481bfca11c51ecd5dc6f86ba3c1ae79e21482f5" kindref="member">Quaternion::Format::XYZS</ref></defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="504" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="395" bodyend="398"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a724528ea23c64ba56a077d2a9aeb5529" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+        <definition>Quaternion &amp; ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::normalize</definition>
+        <argsstring>()</argsstring>
+        <name>normalize</name>
+        <briefdescription>
+<para>Normalize <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::XYZS(0.0,<sp/>0.0,<sp/>0.0,<sp/>1.000000000000001).normalize();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="516" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="400" bodyend="415"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a593e8387b883d1950674e3e4db8f685a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+        <definition>Quaternion &amp; ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::conjugate</definition>
+        <argsstring>()</argsstring>
+        <name>conjugate</name>
+        <briefdescription>
+<para>Conjugate <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::XYZS(0.0,<sp/>0.0,<sp/>0.70710678118,<sp/>0.70710678118).conjugate();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="526" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="417" bodyend="429"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a08f5634f4f48c927635fe781843260fb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+        <definition>Quaternion &amp; ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::inverse</definition>
+        <argsstring>()</argsstring>
+        <name>inverse</name>
+        <briefdescription>
+<para>Inverse <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::XYZS(0.0,<sp/>0.0,<sp/>0.70710678118,<sp/>0.70710678118).inverse();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="536" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="431" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ab4698e830342864f4debb6cb5d4c66bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+        <definition>Quaternion &amp; ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::rectify</definition>
+        <argsstring>()</argsstring>
+        <name>rectify</name>
+        <briefdescription>
+<para>Rectify <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> (enforce positive scalar part) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::XYZS(0.0,<sp/>0.0,<sp/>-0.70710678118,<sp/>-0.70710678118).rectify();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="546" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="453" bodyend="469"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a012834daa1dcccf7a85d69f84b265dfb" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
+        <definition>Angle ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::angularDifferenceWith</definition>
+        <argsstring>(const Quaternion &amp;aQuaternion) const</argsstring>
+        <name>angularDifferenceWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Compute angular difference with <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::Unit().angularDifferenceWith(Quaternion::Unit());</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Angular difference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="557" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="471" bodyend="481"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a2806bc2f5b9d299c075c51740cfa48ea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion operator*</definition>
+        <argsstring>(const Real &amp;aScalar, const Quaternion &amp;aQuaternion)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aScalar</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Multiplication operator (scalar) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Real<sp/>scalar<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_1<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_2<sp/>=<sp/>scalar<sp/>*<sp/>q_1<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aScalar</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A scalar </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="193" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="92" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="friend" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ab9414dc117f260055d0a1a565eb93708" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, const Quaternion &amp;aQuaternion)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Output stream operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>Quaternion::XYZS(0.0,<sp/>0.0,<sp/>0.0,<sp/>1.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Output stream reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="258" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="146" bodyend="162"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a9828e84f2f4b0837912d2a38459e052f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::Undefined</definition>
+        <argsstring>()</argsstring>
+        <name>Undefined</name>
+        <briefdescription>
+<para>Construct undefined <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::Undefined();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="567" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="483" bodyend="486"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1affb9e0b77d6b66dfcfdccb17ec10d1bf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::Unit</definition>
+        <argsstring>()</argsstring>
+        <name>Unit</name>
+        <briefdescription>
+<para>Construct unitary <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::Unit();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="577" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="488" bodyend="491"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ab065862f2a77807e42f6feaadc0637e2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::XYZS</definition>
+        <argsstring>(const Real &amp;aFirstComponent, const Real &amp;aSecondComponent, const Real &amp;aThirdComponent, const Real &amp;aFourthComponent)</argsstring>
+        <name>XYZS</name>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aFirstComponent</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aSecondComponent</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aThirdComponent</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aFourthComponent</declname>
+        </param>
+        <briefdescription>
+<para>Construct <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> using the vector-scalar format. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::XYZS(0.0,<sp/>0.0,<sp/>0.0,<sp/>1.0);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstComponent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A first component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondComponent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A second component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aThirdComponent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A third component </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aFourthComponent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A fourth component </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="591" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="493" bodyend="498"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1aee9309aec1e4543df08f57d40a0e51ed" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::RotationVector</definition>
+        <argsstring>(const rotation::RotationVector &amp;aRotationVector)</argsstring>
+        <name>RotationVector</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">rotation::RotationVector</ref> &amp;</type>
+          <declname>aRotationVector</declname>
+        </param>
+        <briefdescription>
+<para>Construct <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> from rotation vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::RotationVector(RotationVector::Unit());</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Rotation Vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>Markley F. L.: Fundamentals of Spacecraft Attitude Determination and Control, 45</para>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="607" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="500" bodyend="510"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a6622a7bdc0b5a4a05b1924d8efc4b7d7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::RotationMatrix</definition>
+        <argsstring>(const rotation::RotationMatrix &amp;aRotationMatrix)</argsstring>
+        <name>RotationMatrix</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">rotation::RotationMatrix</ref> &amp;</type>
+          <declname>aRotationMatrix</declname>
+        </param>
+        <briefdescription>
+<para>Construct <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> from Rotation Matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::RotationMatrix(RotationMatrix::Unit());</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationMatrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Rotation Matrix </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>Markley F. L.: Fundamentals of Spacecraft Attitude Determination and Control, 48 <simplesect kind="note"><para>Should we use this method instead? <ulink url="https://d3cw3dd2w32x2b.cloudfront.net/wp-content/uploads/2015/01/matrix-to-quat.pdf">https://d3cw3dd2w32x2b.cloudfront.net/wp-content/uploads/2015/01/matrix-to-quat.pdf</ulink></para>
+</simplesect>
+</para>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="618" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="512" bodyend="574"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a2d7a76dced15258282988935a8161cbe" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::EulerAngle</definition>
+        <argsstring>(const rotation::EulerAngle &amp;aEulerAngle)</argsstring>
+        <name>EulerAngle</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">rotation::EulerAngle</ref> &amp;</type>
+          <declname>aEulerAngle</declname>
+        </param>
+        <briefdescription>
+<para>Construct <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> from Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::EulerAngle(EulerAngle::Unit());</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="629" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="576" bodyend="634"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a5b56dc4ce6a820188901e71d02333651" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::Parse</definition>
+        <argsstring>(const String &amp;aString, const Quaternion::Format &amp;aFormat=Quaternion::Format::XYZS)</argsstring>
+        <name>Parse</name>
+        <param>
+          <type>const String &amp;</type>
+          <declname>aString</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a69f1621be80ba171c61830a76d481bfc" kindref="member">Quaternion::Format</ref> &amp;</type>
+          <declname>aFormat</declname>
+          <defval><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a69f1621be80ba171c61830a76d481bfca11c51ecd5dc6f86ba3c1ae79e21482f5" kindref="member">Quaternion::Format::XYZS</ref></defval>
+        </param>
+        <briefdescription>
+<para>Construct <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> from string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::Parse(&quot;[0.0,<sp/>0.0,<sp/>0.0,<sp/>1.0]&quot;);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A string </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>aFormat A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="641" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="636" bodyend="653"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a428dd39d288a6b42d9566733e038fb96" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::ShortestRotation</definition>
+        <argsstring>(const Vector3d &amp;aFirstVector, const Vector3d &amp;aSecondVector)</argsstring>
+        <name>ShortestRotation</name>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aFirstVector</declname>
+        </param>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aSecondVector</declname>
+        </param>
+        <briefdescription>
+<para>Construct <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> describing the shortest rotation between two vectors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion::ShortestRotation({1.0,<sp/>0.0,<sp/>0.0},<sp/>{0.0,<sp/>1.0,<sp/>0.0});</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A first vector </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A second vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="653" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="655" bodyend="675"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a106daf1df7b2ee91f1ef3fb0338c8c1a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::LERP</definition>
+        <argsstring>(const Quaternion &amp;aFirstQuaternion, const Quaternion &amp;aSecondQuaternion, const Real &amp;aRatio)</argsstring>
+        <name>LERP</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aFirstQuaternion</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aSecondQuaternion</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aRatio</declname>
+        </param>
+        <briefdescription>
+<para>Linear interpolator method. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion<sp/>q_1<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_2<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Quaternion::LERP(q_1,<sp/>q_2,<sp/>0.5);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A first <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A second <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aRatio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An interpolator ratio </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="668" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="677" bodyend="690"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a896500b99a8ab9cf38bc7f402001d41b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::NLERP</definition>
+        <argsstring>(const Quaternion &amp;aFirstQuaternion, const Quaternion &amp;aSecondQuaternion, const Real &amp;aRatio)</argsstring>
+        <name>NLERP</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aFirstQuaternion</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aSecondQuaternion</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aRatio</declname>
+        </param>
+        <briefdescription>
+<para>Normalized linear interpolator method. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Quaternion<sp/>q_1<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_2<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Quaternion::NLERP(q_1,<sp/>q_2,<sp/>0.5);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A first <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A second <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aRatio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An interpolator ratio </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="683" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="692" bodyend="697"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a0f9b33ebd521725a1fd852e68cf3bfba" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::SLERP</definition>
+        <argsstring>(const Quaternion &amp;aFirstQuaternion, const Quaternion &amp;aSecondQuaternion, const Real &amp;aRatio)</argsstring>
+        <name>SLERP</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aFirstQuaternion</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>aSecondQuaternion</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aRatio</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Spherical linear interpolator method</para>
+<para><ulink url="https://en.wikipedia.org/wiki/Slerp">https://en.wikipedia.org/wiki/Slerp</ulink></para>
+<para><programlisting><codeline><highlight class="normal">Quaternion<sp/>q_1<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Quaternion<sp/>q_2<sp/>=<sp/>...</highlight></codeline>
+<codeline><highlight class="normal">Quaternion::SLERP(q_1,<sp/>q_2,<sp/>0.5);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A first <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A second <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aRatio</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An interpolator ratio </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="702" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp" bodystart="699" bodyend="719"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>                        Provide a convenient mathematical notation for representing orientations and rotation
+                        of object in three dimensions. Compared to Euler angles they are simpler to compose and
+                        avoid the problem of gimbal lock. Compared to rotation matrices they are more compact,
+                        more numerically stable, and more efficient.
+</verbatim></para>
+<para><ulink url="https://en.wikipedia.org/wiki/Quaternion">https://en.wikipedia.org/wiki/Quaternion</ulink> <ulink url="https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation">https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation</ulink> </para>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" line="49" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp" bodystart="48" bodyend="711"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a012834daa1dcccf7a85d69f84b265dfb" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>angularDifferenceWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a593e8387b883d1950674e3e4db8f685a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>conjugate</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a3f4cbf44fdc4f0ef7a054ec12a08e9ca" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>crossMultiply</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a50c95b29f1d658560a0005ee47d40e3a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>dotMultiply</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1adbc57819c76d4b481fc84bb20667b796" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>dotProduct</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a2d7a76dced15258282988935a8161cbe" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>EulerAngle</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a1e858e5dbaf5ac0b3385e76320cc449f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>exp</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a69f1621be80ba171c61830a76d481bfc" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>Format</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1af25340ddd9f641d4e3b588b0fa110669" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>getScalarPart</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a3c12f3cb5522ec354d8f2e369135430c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>getVectorPart</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a08f5634f4f48c927635fe781843260fb" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>inverse</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a25d3f5bd7307918ea70b3b21f80a3001" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>isDefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1afab79d88d91c8fc0a6b888a91f0e52bd" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>isNear</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1aea4706c3cc65b5a8e7250a042cb1edaa" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>isUnitary</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a106daf1df7b2ee91f1ef3fb0338c8c1a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>LERP</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ad0889624c3960610d94c44c2675fe2d7" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>log</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a896500b99a8ab9cf38bc7f402001d41b" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>NLERP</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1adac286e89986a4dc8cd2791c96bcb979" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>norm</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a724528ea23c64ba56a077d2a9aeb5529" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>normalize</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a9bd92ff5c1e57bdc7572b2507363bd15" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a95aa653a242332b5d3590c81f8819bb8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>operator*</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1af683f4d97a2b3ead7f82d5a5352ccd66" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>operator*</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1afe9742084b6a328cb8fab233a5485122" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>operator*</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a2806bc2f5b9d299c075c51740cfa48ea" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>operator*</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a4aa0b88ebd82e92d05210c0b9d5b1cc3" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>operator*=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a87ad253260d586f019f07b6ae7202e19" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>operator+</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1acf750e6a9664f75b70c4c1afe50eff7d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>operator+=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a410602d95ca3038414e373f689ef47ba" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>operator/</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1aa6ec77b7da4aa05500e6551a4797bbb3" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>operator/=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ab9414dc117f260055d0a1a565eb93708" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a1e39393c8587024630cd91d312284be4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a7b03af85a1a62e2fe18eb684c2dc1c5c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>operator^</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a5b56dc4ce6a820188901e71d02333651" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>Parse</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a8cc3e9ff6728b4857648cf8ffdcc1bc1" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>pow</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a473fe143aff59c8d0ef54b7e73138853" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>Quaternion</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ad3ca378d47be35fa0bf91e9755dd5096" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>Quaternion</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a7b05d9472dad47ee5c1bd8f4dd464261" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>Quaternion</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ab4698e830342864f4debb6cb5d4c66bd" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>rectify</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a2f204333466437f149ebf1ec186b4c40" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>rotateVector</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a6622a7bdc0b5a4a05b1924d8efc4b7d7" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>RotationMatrix</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1aee9309aec1e4543df08f57d40a0e51ed" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>RotationVector</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1aa59ce9764110f86f725a3797bf834764" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>s</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1aa76ce1d956817f23fafd7a79e1556536" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>s_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a428dd39d288a6b42d9566733e038fb96" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>ShortestRotation</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a0f9b33ebd521725a1fd852e68cf3bfba" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>SLERP</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1abd6b6809b6be6bff26bf99a4c2afbcdb" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>toConjugate</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a57e55414171904bd5126707ec5b1cb1b" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>toInverse</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a76d45236d97aca97432d5e6604cf6acf" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>toNormalized</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a2aa46fa76d7a9fcbad21db53e7061f45" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>toString</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1abcc5bbb2b290710f39d2111f155ea8e3" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>toString</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ac23b62bf5637ca0a7a533434641effb3" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>toVector</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a9828e84f2f4b0837912d2a38459e052f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>Undefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1affb9e0b77d6b66dfcfdccb17ec10d1bf" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>Unit</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1adfdffa7d538271cddf839224bcb4e738" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>x</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ad7d90b3add9843311184e91fb3d8134e" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>x_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ab065862f2a77807e42f6feaadc0637e2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>XYZS</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a10f6aba9001c60d4e106a7989520c03a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>y</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a10d30bdf1b958c881dfe33c5da2dd7aa" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>y_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ab2c7e95b006839e078c0517a320636cf" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>z</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ae96403d9d5643977aef7c3e9d428063e" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::Quaternion</scope><name>z_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,318 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_rotation_vector_8hpp" kind="file" language="C++">
+    <compoundname>RotationVector.hpp</compoundname>
+    <includes local="no">OpenSpaceToolkit/Core/Type/Real.hpp</includes>
+    <includes local="no">OpenSpaceToolkit/Core/Type/String.hpp</includes>
+    <includes refid="_angle_8hpp" local="no">OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp</includes>
+    <includes refid="_vector_8hpp" local="no">OpenSpaceToolkit/Mathematics/Object/Vector.hpp</includes>
+    <includedby refid="3_d_2_transformation_8hpp" local="no">include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp</includedby>
+    <includedby refid="_cone_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp</includedby>
+    <includedby refid="_pyramid_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp</includedby>
+    <includedby refid="_euler_angle_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp</includedby>
+    <includedby refid="_quaternion_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp</includedby>
+    <includedby refid="_rotation_matrix_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp</includedby>
+    <includedby refid="_rotation_vector_8cpp" local="no">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>OpenSpaceToolkit/Core/Type/Real.hpp</label>
+      </node>
+      <node id="8">
+        <label>Eigen/Geometry</label>
+      </node>
+      <node id="7">
+        <label>Eigen/Core</label>
+      </node>
+      <node id="4">
+        <label>OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp</label>
+        <link refid="_angle_8hpp"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>OpenSpaceToolkit/Mathematics/Object/Vector.hpp</label>
+        <link refid="_vector_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>OpenSpaceToolkit/Core/Type/String.hpp</label>
+      </node>
+      <node id="5">
+        <label>OpenSpaceToolkit/Core/Type/Integer.hpp</label>
+      </node>
+      <node id="1">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp</label>
+        <link refid="_rotation_vector_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="16">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.cpp</label>
+        <link refid="_sphere_8cpp"/>
+      </node>
+      <node id="20">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp</label>
+        <link refid="_rotation_matrix_8cpp"/>
+      </node>
+      <node id="15">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.cpp</label>
+        <link refid="3_d_2_object_2_segment_8cpp"/>
+      </node>
+      <node id="21">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp</label>
+        <link refid="_rotation_vector_8cpp"/>
+      </node>
+      <node id="5">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp</label>
+        <link refid="_cuboid_8cpp"/>
+      </node>
+      <node id="14">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ray.cpp</label>
+        <link refid="_ray_8cpp"/>
+      </node>
+      <node id="11">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/PointSet.cpp</label>
+        <link refid="3_d_2_object_2_point_set_8cpp"/>
+      </node>
+      <node id="12">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.cpp</label>
+        <link refid="3_d_2_object_2_polygon_8cpp"/>
+      </node>
+      <node id="18">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp</label>
+        <link refid="_euler_angle_8cpp"/>
+      </node>
+      <node id="7">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Line.cpp</label>
+        <link refid="3_d_2_object_2_line_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp</label>
+        <link refid="_cone_8cpp"/>
+      </node>
+      <node id="2">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp</label>
+        <link refid="3_d_2_transformation_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.cpp</label>
+        <link refid="_quaternion_8cpp"/>
+      </node>
+      <node id="9">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Plane.cpp</label>
+        <link refid="_plane_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.cpp</label>
+        <link refid="3_d_2_object_2_composite_8cpp"/>
+      </node>
+      <node id="17">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp</label>
+        <link refid="3_d_2_transformation_8cpp"/>
+      </node>
+      <node id="8">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/LineString.cpp</label>
+        <link refid="3_d_2_object_2_line_string_8cpp"/>
+      </node>
+      <node id="1">
+        <label>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp</label>
+        <link refid="_rotation_vector_8hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp</label>
+        <link refid="_pyramid_8cpp"/>
+      </node>
+      <node id="6">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp</label>
+        <link refid="_ellipsoid_8cpp"/>
+      </node>
+      <node id="10">
+        <label>src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Point.cpp</label>
+        <link refid="3_d_2_object_2_point_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" prot="public">ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</innerclass>
+    <innernamespace refid="namespaceostk">ostk</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics">ostk::mathematics</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry">ostk::mathematics::geometry</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3">ostk::mathematics::geometry::d3</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation">ostk::mathematics::geometry::d3::transformation</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation">ostk::mathematics::geometry::d3::transformation::rotation</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OpenSpaceToolkit/Core/Type/Real.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;OpenSpaceToolkit/Core/Type/String.hpp&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_angle_8hpp" kindref="compound">OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="_vector_8hpp" kindref="compound">OpenSpaceToolkit/Mathematics/Object/Vector.hpp</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="namespaceostk" kindref="compound">ostk</ref></highlight></codeline>
+<codeline lineno="13"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">mathematics</highlight></codeline>
+<codeline lineno="15"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">geometry</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">d3</highlight></codeline>
+<codeline lineno="19"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">transformation</highlight></codeline>
+<codeline lineno="21"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">rotation</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ostk::core::type::Real;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/>ostk::core::type::String;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">ostk::mathematics::object::Vector3d</ref>;</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">ostk::mathematics::geometry::Angle</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">Quaternion;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">RotationMatrix;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">EulerAngle;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39" refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref></highlight></codeline>
+<codeline lineno="40"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref>&amp;<sp/>anAxis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>anAngle);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref>&amp;<sp/>anAxis,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371" kindref="member">Angle::Unit</ref>&amp;<sp/>anAngleUnit);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a951bcc257b60ab3ec2f45e1b4eb0cb70" kindref="member">operator==</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref>&amp;<sp/>aRotationVector)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a1ab7d9369961e7f7e2bc9c6afb76f234" kindref="member">operator!=</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref>&amp;<sp/>aRotationVector)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/>std::ostream&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1aa66ba2fd706a441ee39d06857842ecfe" kindref="member">operator&lt;&lt;</ref>(std::ostream&amp;<sp/>anOutputStream,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref>&amp;<sp/>aRotationVector);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a7eb8f0bba73e0e36fa7a6f1bbd88da2d" kindref="member">isDefined</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a177b242ce75f1631de02e15e50804958" kindref="member">getAxis</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1ac9544a31482220e580b6ad383c888bb5" kindref="member">getAngle</ref>()<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>String<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a9ce94326aaddb6e9e967acc388b39f44" kindref="member">toString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>Integer&amp;<sp/>aPrecision<sp/>=<sp/>Integer::Undefined())<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref>&amp;<sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a02150f4e7ec88996f75eaae63b215cfb" kindref="member">rectify</ref>();</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1ac296ba2d49497a1d7a5b1d1aa1628294" kindref="member">Undefined</ref>();</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a31c276c930ed9d5ff4cb406be6a48f7e" kindref="member">Unit</ref>();</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1ad5a563a069f6665a086b2ba5fc20ea76" kindref="member">X</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>anAngle);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a30ecbac5afd7470bc9cb68079997fc0c" kindref="member">Y</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>anAngle);</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a4985f992a53c3d1412a06b2ebedd4bca" kindref="member">Z</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>&amp;<sp/>anAngle);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1ae2257efa00cf6358d7135f4fb67f42c0" kindref="member">Quaternion</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">rotation::Quaternion</ref>&amp;<sp/>aQuaternion);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a11b732b431882d3e29d63b5b350b88bc" kindref="member">RotationMatrix</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">rotation::RotationMatrix</ref>&amp;<sp/>aRotationMatrix);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1acfff1d3bbd3dc4b5998bed27cca91e7d" kindref="member">EulerAngle</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">rotation::EulerAngle</ref>&amp;<sp/>aEulerAngle);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a69d9a055814e9440af219eff448c6c23" kindref="member">Vector3d</ref><sp/>axis_;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref><sp/>angle_;</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref>();</highlight></codeline>
+<codeline lineno="241"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>rotation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>transformation</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>d3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>geometry</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mathematics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ostk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp"/>
+  </compounddef>
+</doxygen>

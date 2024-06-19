@@ -1,0 +1,284 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>ostk::mathematics::curvefitting::Interpolator</compoundname>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational" prot="public" virt="non-virtual">ostk::mathematics::curvefitting::interpolator::BarycentricRational</derivedcompoundref>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline" prot="public" virt="non-virtual">ostk::mathematics::curvefitting::interpolator::CubicSpline</derivedcompoundref>
+    <derivedcompoundref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear" prot="public" virt="non-virtual">ostk::mathematics::curvefitting::interpolator::Linear</derivedcompoundref>
+    <includes refid="_interpolator_8hpp" local="no">Interpolator.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Type</name>
+        <enumvalue id="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557a98cf9ba70112c998166a82b6f289bb9f" prot="public">
+          <name>BarycentricRational</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557abc050383dcd36a2e1f9481e562332cfa" prot="public">
+          <name>CubicSpline</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557a32a843da6ea40ab3b17a3421ccdf671b" prot="public">
+          <name>Linear</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="35" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" bodystart="34" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a223538405159f000a44ca3c15037380f" prot="private" static="no" mutable="no">
+        <type>const <ref refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557" kindref="member">Type</ref></type>
+        <definition>const Type ostk::mathematics::curvefitting::Interpolator::type_</definition>
+        <argsstring></argsstring>
+        <name>type_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="76" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6593f90bb974214f6f2b264bc114b96e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::Interpolator::Interpolator</definition>
+        <argsstring>(const Type &amp;aType)</argsstring>
+        <name>Interpolator</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557" kindref="member">Type</ref> &amp;</type>
+          <declname>aType</declname>
+        </param>
+        <briefdescription>
+<para>Constructor (can only be called by derived classes since it is pure virtual) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interpolation type </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="44" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.cpp" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ac980e413bfeb65eceb347e787899c1f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type></type>
+        <definition>ostk::mathematics::curvefitting::Interpolator::~Interpolator</definition>
+        <argsstring>()=0</argsstring>
+        <name>~Interpolator</name>
+        <briefdescription>
+<para>Destructor (pure virtual) </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="47" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.cpp" bodystart="26" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a3e596528cd5e416546dabe45e9100e04" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557" kindref="member">Type</ref></type>
+        <definition>Interpolator::Type ostk::mathematics::curvefitting::Interpolator::getInterpolationType</definition>
+        <argsstring>() const</argsstring>
+        <name>getInterpolationType</name>
+        <briefdescription>
+<para>Get the interpolation type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Interpolation type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="51" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.cpp" bodystart="28" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a2e5f87beae48daf0ebbd4da6c0fdcb77" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>VectorXd</type>
+        <definition>virtual VectorXd ostk::mathematics::curvefitting::Interpolator::evaluate</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const =0</argsstring>
+        <name>evaluate</name>
+        <reimplementedby refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a0a440a296a04347ed9b4a9a22f1cf57f">evaluate</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1ac1332768995f471149cd3852b3ba2782">evaluate</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a6852a278bdd114175116ae0e875bd258">evaluate</reimplementedby>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate the interpolator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of y values </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="57" column="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1aae0c8423f11e7aa9f764ee4973070c36" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double ostk::mathematics::curvefitting::Interpolator::evaluate</definition>
+        <argsstring>(const double &amp;aQueryValue) const =0</argsstring>
+        <name>evaluate</name>
+        <reimplementedby refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a343d5f5f554639ce936706ea75109006">evaluate</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a741b61d24af15b3332721b0751ec3a7a">evaluate</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a2f91b443473606d1236a81d24d643368">evaluate</reimplementedby>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Evaluate the interpolator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An x value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of y values </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="63" column="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a41019cdd1cad7b5c5c818ff25a122536" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const Shared&lt; const <ref refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator" kindref="compound">Interpolator</ref> &gt;</type>
+        <definition>const Shared&lt; const Interpolator &gt; ostk::mathematics::curvefitting::Interpolator::GenerateInterpolator</definition>
+        <argsstring>(const Type &amp;aType, const VectorXd &amp;anXVector, const VectorXd &amp;aYVector)</argsstring>
+        <name>GenerateInterpolator</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557" kindref="member">Type</ref> &amp;</type>
+          <declname>aType</declname>
+        </param>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>anXVector</declname>
+        </param>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aYVector</declname>
+        </param>
+        <briefdescription>
+<para>Generate an interpolator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Interpolation type </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>anXVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aYVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of y values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Shared pointer to correct <ref refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator" kindref="compound">Interpolator</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="71" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.cpp" bodystart="33" bodyend="48"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator" kindref="compound">Interpolator</ref> (abstract class) </para>
+    </briefdescription>
+    <detaileddescription>
+<para>In mathematics, an interpolator is a type of estimator allowing to construct new data points based on a range of a discrete set of known data points.</para>
+<para><ulink url="https://en.wikipedia.org/wiki/Interpolator">https://en.wikipedia.org/wiki/Interpolator</ulink>. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="4">
+        <label>ostk::mathematics::curvefitting::interpolator::Linear</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>ostk::mathematics::curvefitting::interpolator::CubicSpline</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::curvefitting::Interpolator</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"/>
+      </node>
+      <node id="2">
+        <label>ostk::mathematics::curvefitting::interpolator::BarycentricRational</label>
+        <link refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="32" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" bodystart="31" bodyend="77"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a2e5f87beae48daf0ebbd4da6c0fdcb77" prot="public" virt="pure-virtual"><scope>ostk::mathematics::curvefitting::Interpolator</scope><name>evaluate</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1aae0c8423f11e7aa9f764ee4973070c36" prot="public" virt="pure-virtual"><scope>ostk::mathematics::curvefitting::Interpolator</scope><name>evaluate</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a41019cdd1cad7b5c5c818ff25a122536" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::Interpolator</scope><name>GenerateInterpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a3e596528cd5e416546dabe45e9100e04" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::Interpolator</scope><name>getInterpolationType</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6593f90bb974214f6f2b264bc114b96e" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::Interpolator</scope><name>Interpolator</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a6318ad43cbddfa9b220213af2ac33557" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::Interpolator</scope><name>Type</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a223538405159f000a44ca3c15037380f" prot="private" virt="non-virtual"><scope>ostk::mathematics::curvefitting::Interpolator</scope><name>type_</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ac980e413bfeb65eceb347e787899c1f4" prot="public" virt="pure-virtual"><scope>ostk::mathematics::curvefitting::Interpolator</scope><name>~Interpolator</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

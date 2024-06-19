@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceostk_1_1mathematics" kind="namespace" language="C++">
+    <compoundname>ostk::mathematics</compoundname>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1curvefitting">ostk::mathematics::curvefitting</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry">ostk::mathematics::geometry</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1object">ostk::mathematics::object</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1solver">ostk::mathematics::solver</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="17" column="1"/>
+  </compounddef>
+</doxygen>

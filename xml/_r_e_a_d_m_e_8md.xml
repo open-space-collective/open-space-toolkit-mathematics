@@ -1,0 +1,316 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Open<sp/>Space<sp/>Toolkit<sp/>▸<sp/>Mathematics</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[![Build<sp/>and<sp/>Test](https://github.com/open-space-collective/open-space-toolkit-mathematics/actions/workflows/build-test.yml/badge.svg?branch=main)](https://github.com/open-space-collective/open-space-toolkit-mathematics/actions/workflows/build-test.yml)</highlight></codeline>
+<codeline><highlight class="normal">[![Release](https://github.com/open-space-collective/open-space-toolkit-mathematics/actions/workflows/release.yml/badge.svg)](https://github.com/open-space-collective/open-space-toolkit-mathematics/actions/workflows/release.yml)</highlight></codeline>
+<codeline><highlight class="normal">[![Code<sp/>Coverage](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics/branch/main/graph/badge.svg)](https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics)</highlight></codeline>
+<codeline><highlight class="normal">[![Documentation](https://img.shields.io/readthedocs/pip/stable.svg)](https://open-space-collective.github.io/open-space-toolkit-mathematics)</highlight></codeline>
+<codeline><highlight class="normal">[![GitHub<sp/>version](https://badge.fury.io/gh/open-space-collective%2Fopen-space-toolkit-mathematics.svg)](https://badge.fury.io/gh/open-space-collective%2Fopen-space-toolkit-mathematics)</highlight></codeline>
+<codeline><highlight class="normal">[![PyPI<sp/>version](https://badge.fury.io/py/open-space-toolkit-mathematics.svg)](https://badge.fury.io/py/open-space-toolkit-mathematics)</highlight></codeline>
+<codeline><highlight class="normal">[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Geometry,<sp/>curve<sp/>fitting,<sp/>optimization.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Getting<sp/>Started</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Want<sp/>to<sp/>get<sp/>started?<sp/>This<sp/>is<sp/>the<sp/>simplest<sp/>and<sp/>quickest<sp/>way:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/open-space-collective/open-space-toolkit/main?urlpath=lab/tree/notebooks)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*Nothing<sp/>to<sp/>download<sp/>or<sp/>install!<sp/>This<sp/>will<sp/>automatically<sp/>start<sp/>a<sp/>[JupyterLab](https://jupyterlab.readthedocs.io/en/stable/)<sp/>environment<sp/>in<sp/>your<sp/>browser<sp/>with<sp/>Open<sp/>Space<sp/>Toolkit<sp/>libraries<sp/>and<sp/>example<sp/>notebooks<sp/>ready<sp/>to<sp/>use.*</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Alternatives</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Docker<sp/>Images</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Docker](https://www.docker.com/)<sp/>must<sp/>be<sp/>installed<sp/>on<sp/>your<sp/>system.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>iPython</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>command<sp/>will<sp/>start<sp/>an<sp/>[iPython](https://ipython.org/)<sp/>shell<sp/>within<sp/>a<sp/>container<sp/>where<sp/>the<sp/>OSTk<sp/>components<sp/>are<sp/>already<sp/>installed:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">docker<sp/>run<sp/>-it<sp/>openspacecollective/open-space-toolkit-mathematics-development<sp/>python3.11<sp/>-m<sp/>IPython</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>the<sp/>shell<sp/>is<sp/>up<sp/>and<sp/>running,<sp/>playing<sp/>with<sp/>it<sp/>is<sp/>easy:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```py</highlight></codeline>
+<codeline><highlight class="normal">import<sp/>numpy</highlight></codeline>
+<codeline><highlight class="normal">from<sp/>ostk.mathematics.geometry<sp/>import<sp/>Angle</highlight></codeline>
+<codeline><highlight class="normal">from<sp/>ostk.mathematics.geometry.d3.transformation.rotation<sp/>import<sp/>Quaternion</highlight></codeline>
+<codeline><highlight class="normal">from<sp/>ostk.mathematics.geometry.d3.transformation.rotation<sp/>import<sp/>RotationVector</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">rv<sp/>=<sp/>RotationVector(numpy.array([[0.0],<sp/>[0.0],<sp/>[1.0]],<sp/>dtype=float),<sp/>Angle.degrees(15.0))<sp/>#<sp/>Construct<sp/>rotation<sp/>vector</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">q_AB<sp/>=<sp/>Quaternion(1.0,<sp/>2.0,<sp/>3.0,<sp/>4.0,<sp/>Quaternion.Format.XYZS).to_normalized()<sp/>#<sp/>Construct<sp/>quaternion<sp/>and<sp/>normalize</highlight></codeline>
+<codeline><highlight class="normal">q_BC<sp/>=<sp/>Quaternion.rotation_vector(rv)<sp/>#<sp/>Construct<sp/>quaternion<sp/>from<sp/>rotation<sp/>vector</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">q_AC<sp/>=<sp/>q_AB<sp/>*<sp/>q_BC<sp/>#<sp/>Multiply<sp/>quaternions</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*Tip:<sp/>Use<sp/>tab<sp/>for<sp/>auto-completion!*</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#####<sp/>JupyterLab</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>command<sp/>will<sp/>start<sp/>a<sp/>[JupyterLab](https://jupyterlab.readthedocs.io/en/stable/)<sp/>server<sp/>within<sp/>a<sp/>container<sp/>where<sp/>the<sp/>OSTk<sp/>components<sp/>are<sp/>already<sp/>installed:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">docker<sp/>run<sp/>--publish=8888:8888<sp/>openspacecollective/open-space-toolkit-mathematics-jupyter</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>the<sp/>container<sp/>is<sp/>running,<sp/>access<sp/>[http://localhost:8888/lab](http://localhost:8888/lab)<sp/>and<sp/>create<sp/>a<sp/>Python<sp/>3<sp/>Notebook.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Installation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>C++</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>binary<sp/>packages<sp/>are<sp/>hosted<sp/>using<sp/>[GitHub<sp/>Releases](https://github.com/open-space-collective/open-space-toolkit-mathematics/releases):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Runtime<sp/>libraries:<sp/>`open-space-toolkit-mathematics-X.Y.Z-1.x86_64-runtime`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>C++<sp/>headers:<sp/>`open-space-toolkit-mathematics-X.Y.Z-1.x86_64-devel`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Python<sp/>bindings:<sp/>`open-space-toolkit-mathematics-X.Y.Z-1.x86_64-python`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Debian<sp/>/<sp/>Ubuntu</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">After<sp/>downloading<sp/>the<sp/>relevant<sp/>`.deb`<sp/>binary<sp/>packages,<sp/>install:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">apt<sp/>install<sp/>open-space-toolkit-mathematics-*.deb</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Python</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Install<sp/>from<sp/>[PyPI](https://pypi.org/project/open-space-toolkit-mathematics/):</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">pip<sp/>install<sp/>open-space-toolkit-mathematics</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Documentation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Documentation<sp/>is<sp/>available<sp/>here:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>[C++](https://open-space-collective.github.io/open-space-toolkit-mathematics)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Python](./bindings/python/docs)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;details&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;summary&gt;Structure&lt;/summary&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;p&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>library<sp/>exhibits<sp/>the<sp/>following<sp/>structure:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```txt</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>Object</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>Vector</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>Matrix</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>└──<sp/>Interval</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>Geometry</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>2D</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Object</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Point</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Point<sp/>Set</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Line</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Line<sp/>String</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Multi<sp/>Line<sp/>String</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>└──<sp/>Polygon</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Intersection</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>└──<sp/>Transformation</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Identity</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Translation</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Rotation</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Reflection</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Scaling</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>└──<sp/>Shear</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>3D</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Object</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Point</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Point<sp/>Set</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Line</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Ray</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Segment</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Line<sp/>String</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Polygon</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Plane</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Cuboid</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Sphere</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Ellipsoid</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Cone</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Pyramid</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>└──<sp/>Composite</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Intersection</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>└──<sp/>Transformation</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Identity</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Translation</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Rotation</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Quaternion</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Euler<sp/>Angle</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Rotation<sp/>Vector</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>│<sp/><sp/><sp/>└──<sp/>Rotation<sp/>Matrix</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Reflection</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Scaling</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>└──<sp/>Shear</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>Dynamics</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>State</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>Solver</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Runge–Kutta<sp/>4<sp/>(RK4)</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Dormand–Prince<sp/>5<sp/>(DP5)</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>└──<sp/>Runge–Kutta–Fehlberg<sp/>78<sp/>(F78)</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>└──<sp/>Systems</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>Curve<sp/>Fitting</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>Interpolator</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Linear</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Barycentric<sp/>Rational</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Cubic<sp/>Spline</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>└──<sp/>Lagrange</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>└──<sp/>Smoothing</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>Optimization</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>Problem</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>└──<sp/>Algorithms</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Gradient<sp/>Descent</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>└──<sp/>Evolutionary</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Genetic</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Differential<sp/>Evolution</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>└──<sp/>Swarm</highlight></codeline>
+<codeline><highlight class="normal">└──<sp/>Statistics</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&lt;/p&gt;</highlight></codeline>
+<codeline><highlight class="normal">&lt;/details&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Tutorials</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Tutorials<sp/>are<sp/>available<sp/>here:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>[C++](./tutorials/cpp)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Python](./tutorials/python)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Features</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Geometry<sp/>Queries</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`○`:<sp/>query<sp/>only</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`✔`:<sp/>query<sp/>/<sp/>intersection<sp/>set</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`<sp/>`:<sp/>to<sp/>be<sp/>implemented</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`-`:<sp/>undefined</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>3D</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Intersect<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Point<sp/>|<sp/>Point<sp/>Set<sp/>|<sp/>Line<sp/>|<sp/>Ray<sp/>|<sp/>Segment<sp/>|<sp/>Line<sp/>String<sp/>|<sp/>Polygon<sp/>|<sp/>Plane<sp/>|<sp/>Cuboid<sp/>|<sp/>Sphere<sp/>|<sp/>Ellipsoid<sp/>|<sp/>Cone<sp/>|<sp/>Pyramid<sp/>|<sp/>Composite<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---------------<sp/>|<sp/>-----<sp/>|<sp/>---------<sp/>|<sp/>----<sp/>|<sp/>---<sp/>|<sp/>-------<sp/>|<sp/>-----------<sp/>|<sp/>-------<sp/>|<sp/>-----<sp/>|<sp/>------<sp/>|<sp/>------<sp/>|<sp/>---------<sp/>|<sp/>----<sp/>|<sp/>-------<sp/>|<sp/>---------<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Point**<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Point<sp/>Set**<sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Line**<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Ray**<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Segment**<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Line<sp/>String**<sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Polygon**<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Plane**<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Cuboid**<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Sphere**<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Ellipsoid**<sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Cone**<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Pyramid**<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>○<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Composite**<sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Contain<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Point<sp/>|<sp/>Point<sp/>Set<sp/>|<sp/>Line<sp/>|<sp/>Ray<sp/>|<sp/>Segment<sp/>|<sp/>Line<sp/>String<sp/>|<sp/>Polygon<sp/>|<sp/>Plane<sp/>|<sp/>Cuboid<sp/>|<sp/>Sphere<sp/>|<sp/>Ellipsoid<sp/>|<sp/>Cone<sp/>|<sp/>Pyramid<sp/>|<sp/>Composite<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---------------<sp/>|<sp/>-----<sp/>|<sp/>---------<sp/>|<sp/>----<sp/>|<sp/>---<sp/>|<sp/>-------<sp/>|<sp/>-----------<sp/>|<sp/>-------<sp/>|<sp/>-----<sp/>|<sp/>------<sp/>|<sp/>------<sp/>|<sp/>---------<sp/>|<sp/>----<sp/>|<sp/>-------<sp/>|<sp/>---------<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Point**<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Point<sp/>Set**<sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Line**<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Ray**<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Segment**<sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Line<sp/>String**<sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Polygon**<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Plane**<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Cuboid**<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Sphere**<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Ellipsoid**<sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Cone**<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Pyramid**<sp/><sp/><sp/><sp/><sp/>|<sp/>✔<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>-<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>**Composite**<sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Setup</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Development<sp/>Environment</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Using<sp/>[Docker](https://www.docker.com)<sp/>for<sp/>development<sp/>is<sp/>recommended,<sp/>to<sp/>simplify<sp/>the<sp/>installation<sp/>of<sp/>the<sp/>necessary<sp/>build<sp/>tools<sp/>and<sp/>dependencies.</highlight></codeline>
+<codeline><highlight class="normal">Instructions<sp/>on<sp/>how<sp/>to<sp/>install<sp/>Docker<sp/>are<sp/>available<sp/>[here](https://docs.docker.com/install/).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>start<sp/>the<sp/>development<sp/>environment:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>start-development</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>will:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Build<sp/>the<sp/>`openspacecollective/open-space-toolkit-mathematics-development`<sp/>Docker<sp/>image.</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Create<sp/>a<sp/>development<sp/>environment<sp/>container<sp/>with<sp/>local<sp/>source<sp/>files<sp/>and<sp/>helper<sp/>scripts<sp/>mounted.</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Start<sp/>a<sp/>`bash`<sp/>shell<sp/>from<sp/>the<sp/>`./build`<sp/>working<sp/>directory.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>installing<sp/>Docker<sp/>is<sp/>not<sp/>an<sp/>option,<sp/>you<sp/>can<sp/>manually<sp/>install<sp/>the<sp/>development<sp/>tools<sp/>(GCC,<sp/>CMake)<sp/>and<sp/>all<sp/>required<sp/>dependencies,</highlight></codeline>
+<codeline><highlight class="normal">by<sp/>following<sp/>a<sp/>procedure<sp/>similar<sp/>to<sp/>the<sp/>one<sp/>described<sp/>in<sp/>the<sp/>[Development<sp/>Dockerfile](./docker/development/Dockerfile).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Build</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">From<sp/>the<sp/>`./build`<sp/>directory:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">cmake<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*Tip:<sp/>`ostk-build`<sp/>simplifies<sp/>building<sp/>from<sp/>within<sp/>the<sp/>development<sp/>environment.*</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Test</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>start<sp/>a<sp/>container<sp/>to<sp/>build<sp/>and<sp/>run<sp/>the<sp/>tests:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">make<sp/>test</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Or<sp/>to<sp/>run<sp/>them<sp/>manually:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">./bin/open-space-toolkit-mathematics.test</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">*Tip:<sp/>`ostk-test`<sp/>simplifies<sp/>running<sp/>tests<sp/>from<sp/>within<sp/>the<sp/>development<sp/>environment.*</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Dependencies</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Name<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Version<sp/><sp/>|<sp/>License<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Link<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>----------------------<sp/>|<sp/>--------<sp/>|<sp/>----------------------<sp/>|<sp/>----------------------------------------------------------------------------------------------------------------------------<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Pybind11<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>`2.12.0`<sp/>|<sp/>BSD-3-Clause<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>[github.com/pybind/pybind11](https://github.com/pybind/pybind11)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>{fmt}<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>`5.2.0`<sp/><sp/>|<sp/>BSD-2-Clause<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>[github.com/fmtlib/fmt](https://github.com/fmtlib/fmt)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Eigen<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>`3.3.7`<sp/><sp/>|<sp/>MPL2<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>[eigen.tuxfamily.org](http://eigen.tuxfamily.org/index.php)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Geometric<sp/>Tools<sp/>Engine<sp/>|<sp/>`3.28`<sp/><sp/><sp/>|<sp/>Boost<sp/>Software<sp/>License<sp/>|<sp/>[geometrictools.com](https://www.geometrictools.com)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Core<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>`main`<sp/><sp/><sp/>|<sp/>Apache<sp/>License<sp/>2.0<sp/><sp/><sp/><sp/><sp/>|<sp/>[github.com/open-space-collective/open-space-toolkit-core](https://github.com/open-space-collective/open-space-toolkit-core)<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Contribution</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Contributions<sp/>are<sp/>more<sp/>than<sp/>welcome!</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Please<sp/>read<sp/>our<sp/>[contributing<sp/>guide](CONTRIBUTING.md)<sp/>to<sp/>learn<sp/>about<sp/>our<sp/>development<sp/>process,<sp/>how<sp/>to<sp/>propose<sp/>fixes<sp/>and<sp/>improvements,<sp/>and<sp/>how<sp/>to<sp/>build<sp/>and<sp/>test<sp/>the<sp/>code.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Special<sp/>Thanks</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[![Loft<sp/>Orbital](https://github.com/open-space-collective/open-space-toolkit/blob/main/assets/thanks/loft_orbital.png)](https://www.loftorbital.com/)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>License</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Apache<sp/>License<sp/>2.0</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

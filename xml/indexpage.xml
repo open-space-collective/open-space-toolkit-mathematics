@@ -1,0 +1,802 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>Open Space Toolkit ▸ Mathematics</title>
+    <briefdescription>
+<para>Structure </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Structure<ulink url="https://github.com/open-space-collective/open-space-toolkit-mathematics/actions/workflows/build-test.yml"><image type="html" name="badge.svg?branch=main" inline="yes"></image>
+</ulink> <ulink url="https://github.com/open-space-collective/open-space-toolkit-mathematics/actions/workflows/release.yml"><image type="html" name="badge.svg" inline="yes"></image>
+</ulink> <ulink url="https://codecov.io/gh/open-space-collective/open-space-toolkit-mathematics"><image type="html" name="badge.svg" inline="yes"></image>
+</ulink> <ulink url="https://open-space-collective.github.io/open-space-toolkit-mathematics"><image type="html" name="stable.svg" inline="yes"></image>
+</ulink> <ulink url="https://badge.fury.io/gh/open-space-collective%2Fopen-space-toolkit-mathematics"><image type="html" name="open-space-collective%2Fopen-space-toolkit-mathematics.svg" inline="yes"></image>
+</ulink> <ulink url="https://badge.fury.io/py/open-space-toolkit-mathematics"><image type="html" name="open-space-toolkit-mathematics.svg" inline="yes"></image>
+</ulink> <ulink url="https://opensource.org/licenses/Apache-2.0"><image type="html" name="License-Apache%202.0-blue.svg" inline="yes"></image>
+</ulink></para>
+<para>Geometry, curve fitting, optimization.</para>
+<sect1 id="index_1autotoc_md1">
+<title>Getting Started</title>
+<para>Want to get started? This is the simplest and quickest way:</para>
+<para><ulink url="https://mybinder.org/v2/gh/open-space-collective/open-space-toolkit/main?urlpath=lab/tree/notebooks"><image type="html" name="badge_logo.svg" inline="yes"></image>
+</ulink></para>
+<para><emphasis>Nothing to download or install! This will automatically start a <ulink url="https://jupyterlab.readthedocs.io/en/stable/">JupyterLab</ulink> environment in your browser with Open Space Toolkit libraries and example notebooks ready to use.</emphasis></para>
+<sect2 id="index_1autotoc_md2">
+<title>Alternatives</title>
+<sect3 id="index_1autotoc_md3">
+<title>Docker Images</title>
+<para><ulink url="https://www.docker.com/">Docker</ulink> must be installed on your system.</para>
+<sect4 id="index_1autotoc_md4">
+<title>iPython</title>
+<para>The following command will start an <ulink url="https://ipython.org/">iPython</ulink> shell within a container where the OSTk components are already installed:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">docker<sp/>run<sp/>-it<sp/>openspacecollective/open-space-toolkit-mathematics-development<sp/>python3.11<sp/>-m<sp/>IPython</highlight></codeline>
+</programlisting></para>
+<para>Once the shell is up and running, playing with it is easy:</para>
+<para><programlisting filename=".py"><codeline><highlight class="keyword">import</highlight><highlight class="normal"><sp/>numpy</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1geometry" kindref="compound">ostk.mathematics.geometry</ref><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Angle</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation" kindref="compound">ostk.mathematics.geometry.d3.transformation.rotation</ref><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>Quaternion</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">from</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation" kindref="compound">ostk.mathematics.geometry.d3.transformation.rotation</ref><sp/></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>RotationVector</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">rv<sp/>=<sp/>RotationVector(numpy.array([[0.0],<sp/>[0.0],<sp/>[1.0]],<sp/>dtype=float),<sp/>Angle.degrees(15.0))<sp/></highlight><highlight class="comment">#<sp/>Construct<sp/>rotation<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">q_AB<sp/>=<sp/>Quaternion(1.0,<sp/>2.0,<sp/>3.0,<sp/>4.0,<sp/>Quaternion.Format.XYZS).to_normalized()<sp/></highlight><highlight class="comment">#<sp/>Construct<sp/>quaternion<sp/>and<sp/>normalize</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">q_BC<sp/>=<sp/>Quaternion.rotation_vector(rv)<sp/></highlight><highlight class="comment">#<sp/>Construct<sp/>quaternion<sp/>from<sp/>rotation<sp/>vector</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">q_AC<sp/>=<sp/>q_AB<sp/>*<sp/>q_BC<sp/></highlight><highlight class="comment">#<sp/>Multiply<sp/>quaternions</highlight></codeline>
+</programlisting></para>
+<para><emphasis>Tip: Use tab for auto-completion!</emphasis></para>
+</sect4>
+<sect4 id="index_1autotoc_md5">
+<title>JupyterLab</title>
+<para>The following command will start a <ulink url="https://jupyterlab.readthedocs.io/en/stable/">JupyterLab</ulink> server within a container where the OSTk components are already installed:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">docker<sp/>run<sp/>--publish=8888:8888<sp/>openspacecollective/open-space-toolkit-mathematics-jupyter</highlight></codeline>
+</programlisting></para>
+<para>Once the container is running, access <ulink url="http://localhost:8888/lab">http://localhost:8888/lab</ulink> and create a Python 3 Notebook.</para>
+</sect4>
+</sect3>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md6">
+<title>Installation</title>
+<sect2 id="index_1autotoc_md7">
+<title>C++</title>
+<para>The binary packages are hosted using <ulink url="https://github.com/open-space-collective/open-space-toolkit-mathematics/releases">GitHub Releases</ulink>:</para>
+<para><itemizedlist>
+<listitem><para>Runtime libraries: <computeroutput>open-space-toolkit-mathematics-X.Y.Z-1.x86_64-runtime</computeroutput></para>
+</listitem><listitem><para>C++ headers: <computeroutput>open-space-toolkit-mathematics-X.Y.Z-1.x86_64-devel</computeroutput></para>
+</listitem><listitem><para>Python bindings: <computeroutput>open-space-toolkit-mathematics-X.Y.Z-1.x86_64-python</computeroutput></para>
+</listitem></itemizedlist>
+</para>
+<sect3 id="index_1autotoc_md8">
+<title>Debian / Ubuntu</title>
+<para>After downloading the relevant <computeroutput>.deb</computeroutput> binary packages, install:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">apt<sp/>install<sp/>open-space-toolkit-mathematics-*.deb</highlight></codeline>
+</programlisting></para>
+</sect3>
+</sect2>
+<sect2 id="index_1autotoc_md9">
+<title>Python</title>
+<para>Install from <ulink url="https://pypi.org/project/open-space-toolkit-mathematics/">PyPI</ulink>:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">pip<sp/>install<sp/>open-space-toolkit-mathematics</highlight></codeline>
+</programlisting></para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md10">
+<title>Documentation</title>
+<para>Documentation is available here:</para>
+<para><itemizedlist>
+<listitem><para><ulink url="https://open-space-collective.github.io/open-space-toolkit-mathematics">C++</ulink></para>
+</listitem><listitem><para><ulink url="./bindings/python/docs">Python</ulink></para>
+</listitem></itemizedlist>
+</para>
+<para>&lt;details&gt;</para>
+<para>The library exhibits the following structure:</para>
+<para><programlisting filename=".txt"><codeline><highlight class="normal">├──<sp/>Object</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>Vector</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>Matrix</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>└──<sp/>Interval</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>Geometry</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>2D</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Object</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Point</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Point<sp/>Set</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Line</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Line<sp/>String</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Multi<sp/>Line<sp/>String</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>└──<sp/>Polygon</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Intersection</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>└──<sp/>Transformation</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Identity</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Translation</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Rotation</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Reflection</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Scaling</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>└──<sp/>Shear</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>3D</highlight></codeline>
+<codeline><highlight class="normal">|<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Object</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Point</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Point<sp/>Set</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Line</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Ray</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Segment</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Line<sp/>String</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Polygon</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Plane</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Cuboid</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Sphere</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Ellipsoid</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Cone</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Pyramid</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>│<sp/><sp/><sp/>└──<sp/>Composite</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Intersection</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>└──<sp/>Transformation</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Identity</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Translation</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Rotation</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Quaternion</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Euler<sp/>Angle</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Rotation<sp/>Vector</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>│<sp/><sp/><sp/>└──<sp/>Rotation<sp/>Matrix</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Reflection</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Scaling</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>└──<sp/>Shear</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>Dynamics</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>State</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>Solver</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Runge–Kutta<sp/>4<sp/>(RK4)</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Dormand–Prince<sp/>5<sp/>(DP5)</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>└──<sp/>Runge–Kutta–Fehlberg<sp/>78<sp/>(F78)</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>└──<sp/>Systems</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>Curve<sp/>Fitting</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>Interpolator</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Linear</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Barycentric<sp/>Rational</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>├──<sp/>Cubic<sp/>Spline</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>│<sp/><sp/><sp/>└──<sp/>Lagrange</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>└──<sp/>Smoothing</highlight></codeline>
+<codeline><highlight class="normal">├──<sp/>Optimization</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>├──<sp/>Problem</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/>└──<sp/>Algorithms</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Gradient<sp/>Descent</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/><sp/><sp/><sp/><sp/>└──<sp/>Evolutionary</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Genetic</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>├──<sp/>Differential<sp/>Evolution</highlight></codeline>
+<codeline><highlight class="normal">│<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>└──<sp/>Swarm</highlight></codeline>
+<codeline><highlight class="normal">└──<sp/>Statistics</highlight></codeline>
+</programlisting></para>
+<para>&lt;/details&gt;</para>
+</sect1>
+<sect1 id="index_1autotoc_md11">
+<title>Tutorials</title>
+<para>Tutorials are available here:</para>
+<para><itemizedlist>
+<listitem><para><ulink url="./tutorials/cpp">C++</ulink></para>
+</listitem><listitem><para><ulink url="./tutorials/python">Python</ulink></para>
+</listitem></itemizedlist>
+</para>
+</sect1>
+<sect1 id="index_1autotoc_md12">
+<title>Features</title>
+<sect2 id="index_1autotoc_md13">
+<title>Geometry Queries</title>
+<para><itemizedlist>
+<listitem><para><computeroutput>○</computeroutput>: query only</para>
+</listitem><listitem><para><computeroutput>✔</computeroutput>: query / intersection set</para>
+</listitem><listitem><para>: to be implemented</para>
+</listitem><listitem><para><computeroutput>-</computeroutput>: undefined</para>
+</listitem></itemizedlist>
+</para>
+<sect3 id="index_1autotoc_md14">
+<title>3D</title>
+<para><table rows="15" cols="15"><row>
+<entry thead="yes"><para>Intersect </para>
+</entry><entry thead="yes"><para>Point </para>
+</entry><entry thead="yes"><para>Point Set </para>
+</entry><entry thead="yes"><para>Line </para>
+</entry><entry thead="yes"><para>Ray </para>
+</entry><entry thead="yes"><para>Segment </para>
+</entry><entry thead="yes"><para>Line String </para>
+</entry><entry thead="yes"><para>Polygon </para>
+</entry><entry thead="yes"><para>Plane </para>
+</entry><entry thead="yes"><para>Cuboid </para>
+</entry><entry thead="yes"><para>Sphere </para>
+</entry><entry thead="yes"><para>Ellipsoid </para>
+</entry><entry thead="yes"><para>Cone </para>
+</entry><entry thead="yes"><para>Pyramid </para>
+</entry><entry thead="yes"><para>Composite  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Point</bold> </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Point Set</bold> </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Line</bold> </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Ray</bold> </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Segment</bold> </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Line String</bold> </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Polygon</bold> </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Plane</bold> </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Cuboid</bold> </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Sphere</bold> </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Ellipsoid</bold> </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Cone</bold> </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Pyramid</bold> </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>○ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Composite</bold> </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+</table>
+</para>
+<para><table rows="15" cols="15"><row>
+<entry thead="yes"><para>Contain </para>
+</entry><entry thead="yes"><para>Point </para>
+</entry><entry thead="yes"><para>Point Set </para>
+</entry><entry thead="yes"><para>Line </para>
+</entry><entry thead="yes"><para>Ray </para>
+</entry><entry thead="yes"><para>Segment </para>
+</entry><entry thead="yes"><para>Line String </para>
+</entry><entry thead="yes"><para>Polygon </para>
+</entry><entry thead="yes"><para>Plane </para>
+</entry><entry thead="yes"><para>Cuboid </para>
+</entry><entry thead="yes"><para>Sphere </para>
+</entry><entry thead="yes"><para>Ellipsoid </para>
+</entry><entry thead="yes"><para>Cone </para>
+</entry><entry thead="yes"><para>Pyramid </para>
+</entry><entry thead="yes"><para>Composite  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Point</bold> </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Point Set</bold> </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Line</bold> </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Ray</bold> </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Segment</bold> </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Line String</bold> </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Polygon</bold> </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Plane</bold> </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Cuboid</bold> </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Sphere</bold> </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Ellipsoid</bold> </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Cone</bold> </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Pyramid</bold> </para>
+</entry><entry thead="no"><para>✔ </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para>- </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+<row>
+<entry thead="no"><para><bold>Composite</bold> </para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry><entry thead="no"><para></para>
+</entry></row>
+</table>
+</para>
+</sect3>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md15">
+<title>Setup</title>
+<sect2 id="index_1autotoc_md16">
+<title>Development Environment</title>
+<para>Using <ulink url="https://www.docker.com">Docker</ulink> for development is recommended, to simplify the installation of the necessary build tools and dependencies. Instructions on how to install Docker are available <ulink url="https://docs.docker.com/install/">here</ulink>.</para>
+<para>To start the development environment:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">make<sp/>start-development</highlight></codeline>
+</programlisting></para>
+<para>This will:</para>
+<para><orderedlist>
+<listitem><para>Build the <computeroutput>openspacecollective/open-space-toolkit-mathematics-development</computeroutput> Docker image.</para>
+</listitem><listitem><para>Create a development environment container with local source files and helper scripts mounted.</para>
+</listitem><listitem><para>Start a <computeroutput>bash</computeroutput> shell from the <computeroutput>./build</computeroutput> working directory.</para>
+</listitem></orderedlist>
+</para>
+<para>If installing Docker is not an option, you can manually install the development tools (GCC, CMake) and all required dependencies, by following a procedure similar to the one described in the <ulink url="./docker/development/Dockerfile">Development Dockerfile</ulink>.</para>
+</sect2>
+<sect2 id="index_1autotoc_md17">
+<title>Build</title>
+<para>From the <computeroutput>./build</computeroutput> directory:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">cmake<sp/>..</highlight></codeline>
+<codeline><highlight class="normal">make</highlight></codeline>
+</programlisting></para>
+<para><emphasis>Tip: <computeroutput>ostk-build</computeroutput> simplifies building from within the development environment.</emphasis></para>
+</sect2>
+<sect2 id="index_1autotoc_md18">
+<title>Test</title>
+<para>To start a container to build and run the tests:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">make<sp/>test</highlight></codeline>
+</programlisting></para>
+<para>Or to run them manually:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">./bin/open-space-toolkit-mathematics.test</highlight></codeline>
+</programlisting></para>
+<para><emphasis>Tip: <computeroutput>ostk-test</computeroutput> simplifies running tests from within the development environment.</emphasis></para>
+</sect2>
+</sect1>
+<sect1 id="index_1autotoc_md19">
+<title>Dependencies</title>
+<para><table rows="6" cols="4"><row>
+<entry thead="yes"><para>Name </para>
+</entry><entry thead="yes"><para>Version </para>
+</entry><entry thead="yes"><para>License </para>
+</entry><entry thead="yes"><para>Link  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Pybind11 </para>
+</entry><entry thead="no"><para><computeroutput>2.12.0</computeroutput> </para>
+</entry><entry thead="no"><para>BSD-3-Clause </para>
+</entry><entry thead="no"><para><ulink url="https://github.com/pybind/pybind11">github.com/pybind/pybind11</ulink>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>{fmt} </para>
+</entry><entry thead="no"><para><computeroutput>5.2.0</computeroutput> </para>
+</entry><entry thead="no"><para>BSD-2-Clause </para>
+</entry><entry thead="no"><para><ulink url="https://github.com/fmtlib/fmt">github.com/fmtlib/fmt</ulink>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Eigen </para>
+</entry><entry thead="no"><para><computeroutput>3.3.7</computeroutput> </para>
+</entry><entry thead="no"><para>MPL2 </para>
+</entry><entry thead="no"><para><ulink url="http://eigen.tuxfamily.org/index.php">eigen.tuxfamily.org</ulink>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Geometric Tools Engine </para>
+</entry><entry thead="no"><para><computeroutput>3.28</computeroutput> </para>
+</entry><entry thead="no"><para>Boost Software License </para>
+</entry><entry thead="no"><para><ulink url="https://www.geometrictools.com">geometrictools.com</ulink>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Core </para>
+</entry><entry thead="no"><para><computeroutput>main</computeroutput> </para>
+</entry><entry thead="no"><para>Apache License 2.0 </para>
+</entry><entry thead="no"><para><ulink url="https://github.com/open-space-collective/open-space-toolkit-core">github.com/open-space-collective/open-space-toolkit-core</ulink>  </para>
+</entry></row>
+</table>
+</para>
+</sect1>
+<sect1 id="index_1autotoc_md20">
+<title>Contribution</title>
+<para>Contributions are more than welcome!</para>
+<para>Please read our <ref refid="_c_o_n_t_r_i_b_u_t_i_n_g_8md" kindref="compound">contributing guide</ref> to learn about our development process, how to propose fixes and improvements, and how to build and test the code.</para>
+</sect1>
+<sect1 id="index_1autotoc_md21">
+<title>Special Thanks</title>
+<para><ulink url="https://www.loftorbital.com/"><image type="html" name="loft_orbital.png" inline="yes"></image>
+</ulink></para>
+</sect1>
+<sect1 id="index_1autotoc_md22">
+<title>License</title>
+<para>Apache License 2.0 </para>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

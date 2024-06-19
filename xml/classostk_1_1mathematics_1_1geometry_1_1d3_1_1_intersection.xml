@@ -1,0 +1,874 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::geometry::d3::Intersection</compoundname>
+    <includes refid="3_d_2_intersection_8hpp" local="no">Intersection.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cd" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Type</name>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cdaec0fc0100c4fc1ce4eea230c3dc10360" prot="public">
+          <name>Undefined</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cdace2c8aed9c2fa0cfbed56cbda4d8bf07" prot="public">
+          <name>Empty</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cda2a3cd5946cfd317eb99c3d32e35e2d4c" prot="public">
+          <name>Point</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cdaaedf8f48dfa5b704b6c12b415707a1da" prot="public">
+          <name>PointSet</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cda4803e6b9e63dabf04de980788d6a13c4" prot="public">
+          <name>Line</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cda9406e3c325bfc9873426e5eda4ba6e18" prot="public">
+          <name>Ray</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cda4b77e2a9d8e9cfc299f504b32d6e3d2b" prot="public">
+          <name>Segment</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cda2e321465690359abbb020a3619b1c937" prot="public">
+          <name>LineString</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cda4c0a11247d92f73fb84baa51e37a3263" prot="public">
+          <name>Polygon</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cda0d3adee051531c15b3509b4d4d75ce7b" prot="public">
+          <name>Plane</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cdadccdaa100fb1b4c91e2e6114ab957e28" prot="public">
+          <name>Cuboid</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cdab7095f057db3fefa7325ad93a04e14fd" prot="public">
+          <name>Sphere</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cdaeee5397cecd880d16ef7244819aa383d" prot="public">
+          <name>Ellipsoid</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cda5e5b0d93bab61584149905b5e5dc71a0" prot="public">
+          <name>Pyramid</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cda10b4eb76294b70d7fd6df997ff06edb1" prot="public">
+          <name>Complex</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="50" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" bodystart="49" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a049cd19b19e80721ac38ef91be214dc0" prot="private" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cd" kindref="member">Intersection::Type</ref></type>
+        <definition>Intersection::Type ostk::mathematics::geometry::d3::Intersection::type_</definition>
+        <argsstring></argsstring>
+        <name>type_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="293" column="24" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" bodystart="293" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1abf3cabb60a6e9689d2d99f4e562994c2" prot="private" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite" kindref="compound">Composite</ref></type>
+        <definition>Composite ostk::mathematics::geometry::d3::Intersection::composite_</definition>
+        <argsstring></argsstring>
+        <name>composite_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="295" column="15" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" bodystart="295" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1aa36acae0dea26436f03216212ca4d571" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::Intersection::Intersection</definition>
+        <argsstring>(Array&lt; Unique&lt; Object &gt;&gt; &amp;&amp;anObjectArray)</argsstring>
+        <name>Intersection</name>
+        <param>
+          <type>Array&lt; Unique&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kindref="compound">Object</ref> &gt;&gt; &amp;&amp;</type>
+          <declname>anObjectArray</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anObjectArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of objects </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="74" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="17" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a516c2bf940b353c16293f49e49064780" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::Intersection::Intersection</definition>
+        <argsstring>(const Intersection &amp;anIntersection)</argsstring>
+        <name>Intersection</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> &amp;</type>
+          <declname>anIntersection</declname>
+        </param>
+        <briefdescription>
+<para>Copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anIntersection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An intersection </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="80" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="23" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1afcedc858d9629b15c995294c81a6b22b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::Intersection::~Intersection</definition>
+        <argsstring>()</argsstring>
+        <name>~Intersection</name>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="84" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="29" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a02a6a83da64f8aec58808f8eb747c249" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> &amp;</type>
+        <definition>Intersection &amp; ostk::mathematics::geometry::d3::Intersection::operator=</definition>
+        <argsstring>(const Intersection &amp;anIntersection)</argsstring>
+        <name>operator=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> &amp;</type>
+          <declname>anIntersection</declname>
+        </param>
+        <briefdescription>
+<para>Copy assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anIntersection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An intersection </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to intersection </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="91" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="31" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1adb34ecf6fc09a6a3b7c2dd349d0ecc31" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Intersection::operator==</definition>
+        <argsstring>(const Intersection &amp;anIntersection) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> &amp;</type>
+          <declname>anIntersection</declname>
+        </param>
+        <briefdescription>
+<para>Equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anIntersection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An intersection </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if intersections are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="98" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="42" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a0b7fa437dc93dbc1e3ab1258f85473c0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Intersection::operator!=</definition>
+        <argsstring>(const Intersection &amp;anIntersection) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> &amp;</type>
+          <declname>anIntersection</declname>
+        </param>
+        <briefdescription>
+<para>Not equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anIntersection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An intersection </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if intersections are not equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="105" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="52" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a3e82b2ee39985232e315e63d9cae048c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::Intersection::operator+</definition>
+        <argsstring>(const Intersection &amp;anIntersection) const</argsstring>
+        <name>operator+</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> &amp;</type>
+          <declname>anIntersection</declname>
+        </param>
+        <briefdescription>
+<para>Addition operator (intersection concatenation) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>                Concatenate (merge) intersection with another intersection.
+</verbatim></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anIntersection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An intersection </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Concatenated intersection </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="114" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="57" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1aaa5aafbae1b9357d3b15b34cf3610174" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> &amp;</type>
+        <definition>Intersection &amp; ostk::mathematics::geometry::d3::Intersection::operator+=</definition>
+        <argsstring>(const Intersection &amp;anIntersection)</argsstring>
+        <name>operator+=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> &amp;</type>
+          <declname>anIntersection</declname>
+        </param>
+        <briefdescription>
+<para>Addition assignment operator (intersection concatenation) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>                Concatenate (merge) intersection with another intersection.
+</verbatim></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anIntersection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An intersection </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to concatenated intersection </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="123" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="73" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a960e02ae1d0b7a1a5f6871ee70b161a0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Intersection::isDefined</definition>
+        <argsstring>() const</argsstring>
+        <name>isDefined</name>
+        <briefdescription>
+<para>Check if intersection is defined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if intersection is defined </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="141" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="102" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a457c09dcf9daaf8c0ebc0af50373936c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Intersection::isEmpty</definition>
+        <argsstring>() const</argsstring>
+        <name>isEmpty</name>
+        <briefdescription>
+<para>Check if intersection is empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if intersection is empty </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="147" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="107" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a08c4ac700f904766b8625ac09f2a3281" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Intersection::isComplex</definition>
+        <argsstring>() const</argsstring>
+        <name>isComplex</name>
+        <briefdescription>
+<para>Check if intersection is complex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>                A complex intersection contains more than one object.
+</verbatim></para>
+<para><simplesect kind="return"><para>True if intersection is complex </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="155" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ad0823d059381f54389ee417b834c9ef8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cd" kindref="member">Type</ref></type>
+          </param>
+        </templateparamlist>
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Intersection::is</definition>
+        <argsstring>() const</argsstring>
+        <name>is</name>
+        <briefdescription>
+<para>Returns true if intersection can be converted to underlying object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>                Only valid if the intersection only contains one object.
+</verbatim></para>
+<para><simplesect kind="return"><para>True if intersection can be converted to underlying object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="164" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" bodystart="164" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ac93f620075e3364e9cdaef6c6191c4f9" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>class <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cd" kindref="member">Type</ref></type>
+          </param>
+        </templateparamlist>
+        <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cd" kindref="member">Type</ref> &amp;</type>
+        <definition>const Type&amp; ostk::mathematics::geometry::d3::Intersection::as</definition>
+        <argsstring>() const</argsstring>
+        <name>as</name>
+        <briefdescription>
+<para>Access intersection as its underlying object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>                Only valid if the intersection only contains one object.
+</verbatim></para>
+<para><simplesect kind="return"><para>Reference to underlying object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="181" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" bodystart="181" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1abefdf18f9b1dd525b49f7a933a9364b1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite" kindref="compound">Composite</ref> &amp;</type>
+        <definition>const Composite &amp; ostk::mathematics::geometry::d3::Intersection::accessComposite</definition>
+        <argsstring>() const</argsstring>
+        <name>accessComposite</name>
+        <briefdescription>
+<para>Access composite object. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reference to composite object </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="195" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="117" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a367b3a8193c36e55d69008429349866f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cd" kindref="member">Intersection::Type</ref></type>
+        <definition>Intersection::Type ostk::mathematics::geometry::d3::Intersection::getType</definition>
+        <argsstring>() const</argsstring>
+        <name>getType</name>
+        <briefdescription>
+<para>Get intersection type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> type </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="201" column="24" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="127" bodyend="135"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a8ff783039001be6a871338148f4f2919" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, const Intersection &amp;anIntersection)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> &amp;</type>
+          <declname>anIntersection</declname>
+        </param>
+        <briefdescription>
+<para>Output stream operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>Intersection(...)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anIntersection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An intersection </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to output stream </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="135" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="87" bodyend="100"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a00b64df4b806356fd959b39e22140856" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::Intersection::Undefined</definition>
+        <argsstring>()</argsstring>
+        <name>Undefined</name>
+        <briefdescription>
+<para>Constructs an undefined intersection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>Intersection::Undefined()<sp/>;<sp/>//<sp/>Undefined</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Undefined intersection </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="211" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="137" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1add4cb4f79cbc36b7de65ca88190ae011" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::Intersection::Empty</definition>
+        <argsstring>()</argsstring>
+        <name>Empty</name>
+        <briefdescription>
+<para>Constructs an empty intersection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>Intersection::Empty()<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Empty intersection </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="221" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="146" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1acbad6f7755a851df8bca64fb8bdef1b6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::Intersection::Point</definition>
+        <argsstring>(const object::Point &amp;aPoint)</argsstring>
+        <name>Point</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">object::Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a point intersection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>Intersection::Point(Point(0.0,<sp/>0.0,<sp/>0.0))<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Point intersection </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="231" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="151" bodyend="160"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a3734219d673b6e159c6e5ac7d51f9b1b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::Intersection::PointSet</definition>
+        <argsstring>(const object::PointSet &amp;aPointSet)</argsstring>
+        <name>PointSet</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set" kindref="compound">object::PointSet</ref> &amp;</type>
+          <declname>aPointSet</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a point set intersection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>Intersection::PointSet({<sp/>Point(0.0,<sp/>0.0,<sp/>0.0),<sp/>Point(1.0,<sp/>0.0,</highlight></codeline>
+<codeline><highlight class="normal">0.0)<sp/>})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Point set intersection </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="242" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="162" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a6f94954fba394952d087e6a2339c356a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::Intersection::LineString</definition>
+        <argsstring>(const object::LineString &amp;aLineString)</argsstring>
+        <name>LineString</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string" kindref="compound">object::LineString</ref> &amp;</type>
+          <declname>aLineString</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a line string intersection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>Intersection::LineString({<sp/>Point(0.0,<sp/>0.0,<sp/>0.0),<sp/>Point(1.0,<sp/>0.0,</highlight></codeline>
+<codeline><highlight class="normal">0.0),<sp/>Point(1.0,<sp/>0.0,<sp/>1.0)<sp/>})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Line string intersection </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="253" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="173" bodyend="182"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a74e48bb7378d4d8780406edb1b6d70db" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::Intersection::Line</definition>
+        <argsstring>(const object::Line &amp;aLine)</argsstring>
+        <name>Line</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line" kindref="compound">object::Line</ref> &amp;</type>
+          <declname>aLine</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a line intersection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>Intersection::Line(Line({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>}))<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Line intersection </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="263" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="184" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a5853d8e020fb534c1c44a6f2350a45fc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::Intersection::Ray</definition>
+        <argsstring>(const object::Ray &amp;aRay)</argsstring>
+        <name>Ray</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray" kindref="compound">object::Ray</ref> &amp;</type>
+          <declname>aRay</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a ray intersection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>Intersection::Ray(Ray({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0,<sp/>0.0<sp/>}))<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Ray intersection </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="273" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="195" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a79cfcb916d8b86acfc012a1e81452a5c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::Intersection::Segment</definition>
+        <argsstring>(const object::Segment &amp;aSegment)</argsstring>
+        <name>Segment</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment" kindref="compound">object::Segment</ref> &amp;</type>
+          <declname>aSegment</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a segment intersection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Intersection<sp/>intersection<sp/>=<sp/>Intersection::Segment(Segment({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0,<sp/>0.0</highlight></codeline>
+<codeline><highlight class="normal">}))<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Segment intersection </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="284" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="206" bodyend="215"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ad4acfac77266ddeaeabbc89150f480c2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String ostk::mathematics::geometry::d3::Intersection::StringFromType</definition>
+        <argsstring>(const Intersection::Type &amp;aType)</argsstring>
+        <name>StringFromType</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cd" kindref="member">Intersection::Type</ref> &amp;</type>
+          <declname>aType</declname>
+        </param>
+        <briefdescription>
+<para>Converts intersection type to string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>String </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="290" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="217" bodyend="269"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1afd693ebd37468f1f6da3cc569803323c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::Intersection::Intersection</definition>
+        <argsstring>()</argsstring>
+        <name>Intersection</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="297" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="271" bodyend="275"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1af0e3db276d970ad53e938a4939e5081d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::Intersection::Intersection</definition>
+        <argsstring>(const Intersection::Type &amp;aType, const Array&lt; Unique&lt; Object &gt;&gt; &amp;anObjectArray)</argsstring>
+        <name>Intersection</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cd" kindref="member">Intersection::Type</ref> &amp;</type>
+          <declname>aType</declname>
+        </param>
+        <param>
+          <type>const Array&lt; Unique&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kindref="compound">Object</ref> &gt;&gt; &amp;</type>
+          <declname>anObjectArray</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="299" column="5"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a0cdded16f35b9ced719ddb5305deed10" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cd" kindref="member">Intersection::Type</ref></type>
+        <definition>Intersection::Type ostk::mathematics::geometry::d3::Intersection::TypeFromObjects</definition>
+        <argsstring>(const Array&lt; Unique&lt; Object &gt;&gt; &amp;anObjectArray)</argsstring>
+        <name>TypeFromObjects</name>
+        <param>
+          <type>const Array&lt; Unique&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kindref="compound">Object</ref> &gt;&gt; &amp;</type>
+          <declname>anObjectArray</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="301" column="31" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="277" bodyend="301"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ab3d412689c73380f2846ced4da12a1cc" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cd" kindref="member">Intersection::Type</ref></type>
+        <definition>Intersection::Type ostk::mathematics::geometry::d3::Intersection::TypeFromObjects</definition>
+        <argsstring>(const Unique&lt; Object &gt; &amp;anObjectUPtr)</argsstring>
+        <name>TypeFromObjects</name>
+        <param>
+          <type>const Unique&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kindref="compound">Object</ref> &gt; &amp;</type>
+          <declname>anObjectUPtr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="303" column="31" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="303" bodyend="366"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>3D intersection </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="47" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" bodystart="46" bodyend="304"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1abefdf18f9b1dd525b49f7a933a9364b1" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>accessComposite</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ac93f620075e3364e9cdaef6c6191c4f9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>as</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1abf3cabb60a6e9689d2d99f4e562994c2" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>composite_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1add4cb4f79cbc36b7de65ca88190ae011" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>Empty</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a367b3a8193c36e55d69008429349866f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>getType</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1aa36acae0dea26436f03216212ca4d571" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>Intersection</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a516c2bf940b353c16293f49e49064780" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>Intersection</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1afd693ebd37468f1f6da3cc569803323c" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>Intersection</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1af0e3db276d970ad53e938a4939e5081d" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>Intersection</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ad0823d059381f54389ee417b834c9ef8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>is</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a08c4ac700f904766b8625ac09f2a3281" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>isComplex</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a960e02ae1d0b7a1a5f6871ee70b161a0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>isDefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a457c09dcf9daaf8c0ebc0af50373936c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>isEmpty</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a74e48bb7378d4d8780406edb1b6d70db" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>Line</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a6f94954fba394952d087e6a2339c356a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>LineString</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a0b7fa437dc93dbc1e3ab1258f85473c0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a3e82b2ee39985232e315e63d9cae048c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>operator+</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1aaa5aafbae1b9357d3b15b34cf3610174" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>operator+=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a8ff783039001be6a871338148f4f2919" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a02a6a83da64f8aec58808f8eb747c249" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>operator=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1adb34ecf6fc09a6a3b7c2dd349d0ecc31" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1acbad6f7755a851df8bca64fb8bdef1b6" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>Point</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a3734219d673b6e159c6e5ac7d51f9b1b" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>PointSet</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a5853d8e020fb534c1c44a6f2350a45fc" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>Ray</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a79cfcb916d8b86acfc012a1e81452a5c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>Segment</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ad4acfac77266ddeaeabbc89150f480c2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>StringFromType</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ae7e12ecebd39f90c9ac81a69db3233cd" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>Type</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a049cd19b19e80721ac38ef91be214dc0" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>type_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a0cdded16f35b9ced719ddb5305deed10" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>TypeFromObjects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1ab3d412689c73380f2846ced4da12a1cc" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>TypeFromObjects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1a00b64df4b806356fd959b39e22140856" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>Undefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection_1afcedc858d9629b15c995294c81a6b22b" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Intersection</scope><name>~Intersection</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,470 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::geometry::d2::object::MultiLineString</compoundname>
+    <basecompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object" prot="public" virt="non-virtual">ostk::mathematics::geometry::d2::Object</basecompoundref>
+    <includes refid="_multi_line_string_8hpp" local="no">MultiLineString.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a56904ee7e27c37e2c3a1c94359ec01c9" prot="public" static="no">
+        <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string" kindref="compound">LineString</ref> &gt;::<ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a56904ee7e27c37e2c3a1c94359ec01c9" kindref="member">ConstIterator</ref></type>
+        <definition>typedef Array&lt;LineString&gt;::ConstIterator ostk::mathematics::geometry::d2::object::MultiLineString::ConstIterator</definition>
+        <argsstring></argsstring>
+        <name>ConstIterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="41" column="35" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a2b7de0f89480dd069a3c6d3c2d6f7cce" prot="private" static="no" mutable="no">
+        <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string" kindref="compound">LineString</ref> &gt;</type>
+        <definition>Array&lt;LineString&gt; ostk::mathematics::geometry::d2::object::MultiLineString::lineStrings_</definition>
+        <argsstring></argsstring>
+        <name>lineStrings_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="157" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a2be4b3e1608f466d294ef5884684bab1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d2::object::MultiLineString::MultiLineString</definition>
+        <argsstring>(const Array&lt; LineString &gt; &amp;aLineStringArray)</argsstring>
+        <name>MultiLineString</name>
+        <param>
+          <type>const Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string" kindref="compound">LineString</ref> &gt; &amp;</type>
+          <declname>aLineStringArray</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">MultiLineString<sp/>multiLineString({<sp/>{<sp/>0.0,<sp/>0.0<sp/>},<sp/>{<sp/>0.0,<sp/>1.0<sp/>},<sp/>{<sp/>1.0,<sp/>0.0<sp/>}<sp/>})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPointArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point array </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="51" column="5"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1aab7aa00392d691582dfc454fd0d7a7c5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string" kindref="compound">MultiLineString</ref> *</type>
+        <definition>virtual MultiLineString* ostk::mathematics::geometry::d2::object::MultiLineString::clone</definition>
+        <argsstring>() const override</argsstring>
+        <name>clone</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1af63da855554f9114803103fe2390f5eb">clone</reimplements>
+        <briefdescription>
+<para>Clone multi line string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to cloned multi line string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="57" column="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a2243a564e4033f557f26b39cfd75ade8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::MultiLineString::operator==</definition>
+        <argsstring>(const MultiLineString &amp;aMultiLineString) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string" kindref="compound">MultiLineString</ref> &amp;</type>
+          <declname>aMultiLineString</declname>
+        </param>
+        <briefdescription>
+<para>Equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aMultiLineString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A multi multi line string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if multi multi line strings are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="64" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a711811c8e62ce8f678958d09ef6913a3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::MultiLineString::operator!=</definition>
+        <argsstring>(const MultiLineString &amp;aMultiLineString) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string" kindref="compound">MultiLineString</ref> &amp;</type>
+          <declname>aMultiLineString</declname>
+        </param>
+        <briefdescription>
+<para>Not equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aMultiLineString</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A multi multi line string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if multi multi line strings are not equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="71" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1ac38eacd742cd2a60eb62d03cf1234b45" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>virtual bool ostk::mathematics::geometry::d2::object::MultiLineString::isDefined</definition>
+        <argsstring>() const override</argsstring>
+        <name>isDefined</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1abe5ea18c13bc259fc0da0b0c49fa0dca">isDefined</reimplements>
+        <briefdescription>
+<para>Check if multi multi line string is defined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">MultiLineString(0.0,<sp/>0.0).isDefined()<sp/>;<sp/>//<sp/>True</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if multi multi line string is defined </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="81" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1af5f5a56165c38b4dc183316189038642" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d2::object::MultiLineString::isEmpty</definition>
+        <argsstring>() const</argsstring>
+        <name>isEmpty</name>
+        <briefdescription>
+<para>Check if multi multi line string is empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">MultiLineString::Empty().isEmpty()<sp/>;<sp/>//<sp/>True</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if multi multi line string is empty </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="91" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a307dced668e40eb38bebea36f1f66dd1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Size</type>
+        <definition>Size ostk::mathematics::geometry::d2::object::MultiLineString::getLineStringCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getLineStringCount</name>
+        <briefdescription>
+<para>Get multi line string count. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>multi <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref> string count </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="97" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1af6b98286c8c872d39d8659d5672f7649" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Size</type>
+        <definition>Size ostk::mathematics::geometry::d2::object::MultiLineString::getPointCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getPointCount</name>
+        <briefdescription>
+<para>Get point count. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> count </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="103" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1ae1e7df5d3840884839e43aa0aca5ba6b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point ostk::mathematics::geometry::d2::object::MultiLineString::getPointClosestTo</definition>
+        <argsstring>(const Point &amp;aPoint) const</argsstring>
+        <name>getPointClosestTo</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+<para>Get point closest to another point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Closest point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="110" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a08e4ad2714d08fc8b90e2f4fd643bcfd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>String</type>
+        <definition>virtual String ostk::mathematics::geometry::d2::object::MultiLineString::toString</definition>
+        <argsstring>(const Object::Format &amp;aFormat=Object::Format::Standard, const Integer &amp;aPrecision=Integer::Undefined()) const override</argsstring>
+        <name>toString</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1aedf9c7ef5af5892d15cf08da795fa1af">toString</reimplements>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" kindref="member">Object::Format</ref> &amp;</type>
+          <declname>aFormat</declname>
+          <defval><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13aeb6d8ae6f20283755b339c0dc273988b" kindref="member">Object::Format::Standard</ref></defval>
+        </param>
+        <param>
+          <type>const Integer &amp;</type>
+          <declname>aPrecision</declname>
+          <defval>Integer::Undefined()</defval>
+        </param>
+        <briefdescription>
+<para>Get string representation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFormat</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A format </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String representation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="117" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1ac1befc9e46d84330636599f164cb2033" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void ostk::mathematics::geometry::d2::object::MultiLineString::print</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</argsstring>
+        <name>print</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1aaf59b52c718ca92c6b6116660077d9f9">print</reimplements>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>displayDecorators</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Print point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>displayDecorators If true, display decorators </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="126" column="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1afb12934caca48b8b55108c2087a3b3e3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a56904ee7e27c37e2c3a1c94359ec01c9" kindref="member">MultiLineString::ConstIterator</ref></type>
+        <definition>MultiLineString::ConstIterator ostk::mathematics::geometry::d2::object::MultiLineString::begin</definition>
+        <argsstring>() const</argsstring>
+        <name>begin</name>
+        <briefdescription>
+<para>Get begin const iterator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Begin const iterator </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="132" column="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a7c91eca1a5cfcbae562a1c709b975cf5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a56904ee7e27c37e2c3a1c94359ec01c9" kindref="member">MultiLineString::ConstIterator</ref></type>
+        <definition>MultiLineString::ConstIterator ostk::mathematics::geometry::d2::object::MultiLineString::end</definition>
+        <argsstring>() const</argsstring>
+        <name>end</name>
+        <briefdescription>
+<para>Get end const iterator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>End const iterator </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="138" column="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1afec5f43815879ddfcb5051dd7ac40009" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>virtual void ostk::mathematics::geometry::d2::object::MultiLineString::applyTransformation</definition>
+        <argsstring>(const Transformation &amp;aTransformation) override</argsstring>
+        <name>applyTransformation</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1add0c7edfac25cbd241f82edbb1ce1476">applyTransformation</reimplements>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
+          <declname>aTransformation</declname>
+        </param>
+        <briefdescription>
+<para>Apply transformation to multi line string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aTransformation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="144" column="18"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a55c60a678817302f5eedabceca6dbf43" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string" kindref="compound">MultiLineString</ref></type>
+        <definition>static MultiLineString ostk::mathematics::geometry::d2::object::MultiLineString::Empty</definition>
+        <argsstring>()</argsstring>
+        <name>Empty</name>
+        <briefdescription>
+<para>Constructs an empty multi line string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">MultiLineString<sp/>multiLineString<sp/>=<sp/>MultiLineString::Empty()<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Empty multi line string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="154" column="28"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Multi <ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" kindref="compound">Line</ref> string. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ostk::mathematics::geometry::d2::object::MultiLineString</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ostk::mathematics::geometry::d2::Object</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ostk::mathematics::geometry::d2::object::MultiLineString</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>ostk::mathematics::geometry::d2::Object</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object"/>
+      </node>
+    </collaborationgraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" line="39" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiLineString.hpp" bodystart="38" bodyend="158"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1afec5f43815879ddfcb5051dd7ac40009" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>applyTransformation</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1afb12934caca48b8b55108c2087a3b3e3" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>begin</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1aab7aa00392d691582dfc454fd0d7a7c5" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>clone</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a56904ee7e27c37e2c3a1c94359ec01c9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>ConstIterator</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a43eaa4a59d81e7eb36b80f6695de6ce1" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a55c60a678817302f5eedabceca6dbf43" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>Empty</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a7c91eca1a5cfcbae562a1c709b975cf5" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>end</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9ba9529b76d02fa7e4d1d285a8cf1c13" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>Format</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a307dced668e40eb38bebea36f1f66dd1" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>getLineStringCount</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1ae1e7df5d3840884839e43aa0aca5ba6b" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>getPointClosestTo</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1af6b98286c8c872d39d8659d5672f7649" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>getPointCount</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a553d7a1e388598c74d0f9fdd57d1ba9d" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1ac38eacd742cd2a60eb62d03cf1234b45" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>isDefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1af5f5a56165c38b4dc183316189038642" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>isEmpty</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a2b7de0f89480dd069a3c6d3c2d6f7cce" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>lineStrings_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a2be4b3e1608f466d294ef5884684bab1" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>MultiLineString</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a15a959fd5b624d6fcc6725982a8cddf8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>Object</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a711811c8e62ce8f678958d09ef6913a3" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1afe72ba03919d609d2847b0b4162d083d" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d2::Object::"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a2243a564e4033f557f26b39cfd75ade8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1a9617246a3e26d57e5ba78e57387ae05a" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d2::Object::"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1ac1befc9e46d84330636599f164cb2033" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>print</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string_1a08e4ad2714d08fc8b90e2f4fd643bcfd" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>toString</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_object_1af11dec981b2e1ab08deae342ec2c4ef8" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d2::object::MultiLineString</scope><name>~Object</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

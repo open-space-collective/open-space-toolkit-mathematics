@@ -1,0 +1,991 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</compoundname>
+    <includes refid="_rotation_matrix_8hpp" local="no">RotationMatrix.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a1f750475a1e00f25d31f0e80e70114e6" prot="private" static="no" mutable="no">
+        <type>Matrix3d</type>
+        <definition>Matrix3d ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::matrix_</definition>
+        <argsstring></argsstring>
+        <name>matrix_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="330" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" bodystart="330" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a74d44755a8c72da68f52106af2bcfdea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RotationMatrix</definition>
+        <argsstring>(const Matrix3d &amp;aMatrix)</argsstring>
+        <name>RotationMatrix</name>
+        <param>
+          <type>const Matrix3d &amp;</type>
+          <declname>aMatrix</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aMatrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A matrix </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="47" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="24" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1afadb0c9335620b1504fe72e81e816a0e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RotationMatrix</definition>
+        <argsstring>(const Real &amp;aFirstCoefficient, const Real &amp;aSecondCoefficient, const Real &amp;aThirdCoefficient, const Real &amp;aFourthCoefficient, const Real &amp;aFifthCoefficient, const Real &amp;aSixthCoefficient, const Real &amp;aSeventhCoefficient, const Real &amp;aEighthCoefficient, const Real &amp;aNinthCoefficient)</argsstring>
+        <name>RotationMatrix</name>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aFirstCoefficient</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aSecondCoefficient</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aThirdCoefficient</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aFourthCoefficient</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aFifthCoefficient</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aSixthCoefficient</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aSeventhCoefficient</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aEighthCoefficient</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aNinthCoefficient</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstCoefficient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A first coefficient </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondCoefficient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A second coefficient </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aThirdCoefficient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A third coefficient </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aFourthCoefficient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A fourth coefficient </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aFifthCoefficient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A fifth coefficient </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSixthCoefficient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A sixth coefficient </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSeventhCoefficient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A seventh coefficient </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aEighthCoefficient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A eighth coefficient </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aNinthCoefficient</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A ninth coefficient </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="61" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="58" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1aebd0b0120e56487f48764ee3541c21e4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::operator==</definition>
+        <argsstring>(const RotationMatrix &amp;aRotationMatrix) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref> &amp;</type>
+          <declname>aRotationMatrix</declname>
+        </param>
+        <briefdescription>
+<para>Equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix(...)<sp/>==<sp/>RotationMatrix(...);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationMatrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Rotation Matrix </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if rotation matrices are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="82" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="111" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a24dd53bd3648655d4ab858d0ce0685b2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::operator!=</definition>
+        <argsstring>(const RotationMatrix &amp;aRotationMatrix) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref> &amp;</type>
+          <declname>aRotationMatrix</declname>
+        </param>
+        <briefdescription>
+<para>Not equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix(...)<sp/>!=<sp/>RotationMatrix(...);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationMatrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Rotation Matrix </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if rotation matrices are not equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="93" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="121" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a3b5d9df2e34ec0a668ea63970361db7f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref></type>
+        <definition>RotationMatrix ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::operator*</definition>
+        <argsstring>(const RotationMatrix &amp;aRotationMatrix) const</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref> &amp;</type>
+          <declname>aRotationMatrix</declname>
+        </param>
+        <briefdescription>
+<para>Matrix multiplication operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix<sp/>rotationMatrix_A_B<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">RotationMatrix<sp/>rotationMatrix_B_C<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">RotationMatrix<sp/>rotationMatrix_A_C<sp/>=<sp/>rotationMatrix_A_B<sp/>*<sp/>rotationMatrix_B_C<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationMatrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Rotation Matrix </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="106" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="126" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a3f942c38013627338c2cd6ed980f434d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector3d</type>
+        <definition>Vector3d ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::operator*</definition>
+        <argsstring>(const Vector3d &amp;aVector) const</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aVector</declname>
+        </param>
+        <briefdescription>
+<para>Vector multiplication operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix<sp/>rotationMatrix_B_A<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Vector3d<sp/>vector_A<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Vector3d<sp/>vector_B<sp/>=<sp/>rotationMatrix_B_A<sp/>*<sp/>vector_A<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="119" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="136" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a925bbc83df88a581a08426bce118d8ba" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::operator()</definition>
+        <argsstring>(const Index &amp;aRowIndex, const Index &amp;aColumnIndex) const</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const Index &amp;</type>
+          <declname>aRowIndex</declname>
+        </param>
+        <param>
+          <type>const Index &amp;</type>
+          <declname>aColumnIndex</declname>
+        </param>
+        <briefdescription>
+<para>Index function operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix::Unit();</highlight></codeline>
+<codeline><highlight class="normal">double<sp/>value_00<sp/>=<sp/>rotationMatrix(0,<sp/>0);<sp/>//<sp/>1.0</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRowIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A row index </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aColumnIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A column index </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Value at index </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="132" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="151" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a7950245c6fd96b7c75676843a63915be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double &amp;</type>
+        <definition>double &amp; ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::operator()</definition>
+        <argsstring>(const Index &amp;aRowIndex, const Index &amp;aColumnIndex)</argsstring>
+        <name>operator()</name>
+        <param>
+          <type>const Index &amp;</type>
+          <declname>aRowIndex</declname>
+        </param>
+        <param>
+          <type>const Index &amp;</type>
+          <declname>aColumnIndex</declname>
+        </param>
+        <briefdescription>
+<para>Index function operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix::Unit();</highlight></codeline>
+<codeline><highlight class="normal">rotationMatrix(0,<sp/>0)<sp/>=<sp/>0.0<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRowIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A row index </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aColumnIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A column index </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference of value at index </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="145" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="171" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1ae17d3b16182ce6110a87534fd5aff6b4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::isDefined</definition>
+        <argsstring>() const</argsstring>
+        <name>isDefined</name>
+        <briefdescription>
+<para>Check if Rotation Matrix is defined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix(Vector3d(0.0,<sp/>0.0,<sp/>1.0),<sp/>Angle::Degrees(90.0)).isDefined();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if Rotation Matrix is defined </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="167" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="207" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a4e911a9772e1740533c371d9c89cefb8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const Matrix3d &amp;</type>
+        <definition>const Matrix3d &amp; ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::accessMatrix</definition>
+        <argsstring>() const</argsstring>
+        <name>accessMatrix</name>
+        <briefdescription>
+<para>Access underlying 3D Matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Matrix reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="173" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="212" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a8f62d9ae197f5f94e168a612be0a9bb1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector3d</type>
+        <definition>Vector3d ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::getRowAt</definition>
+        <argsstring>(const Index &amp;aRowIndex) const</argsstring>
+        <name>getRowAt</name>
+        <param>
+          <type>const Index &amp;</type>
+          <declname>aRowIndex</declname>
+        </param>
+        <briefdescription>
+<para>Get row at index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRowIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of row </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="180" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="222" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a2abb637de6747ef51067aaf00237d9bf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector3d</type>
+        <definition>Vector3d ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::getColumnAt</definition>
+        <argsstring>(const Index &amp;aColumnIndex) const</argsstring>
+        <name>getColumnAt</name>
+        <param>
+          <type>const Index &amp;</type>
+          <declname>aColumnIndex</declname>
+        </param>
+        <briefdescription>
+<para>Get column at index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aColumnIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Index of column </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="187" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="237" bodyend="250"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a2cea2567403768437e4074720996bea2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Matrix3d</type>
+        <definition>Matrix3d ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::getMatrix</definition>
+        <argsstring>() const</argsstring>
+        <name>getMatrix</name>
+        <briefdescription>
+<para>Get underlying 3D Matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="193" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="252" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1ae0b991e0539d9767a4a2bb366b073ded" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref></type>
+        <definition>RotationMatrix ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::toTransposed</definition>
+        <argsstring>() const</argsstring>
+        <name>toTransposed</name>
+        <briefdescription>
+<para>Calculate transposed Rotation Matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix(...).toTransposed();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Rotation Matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="203" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="262" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1adc3e15a05d4efeed5bf2cb3eaf2c7237" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref> &amp;</type>
+        <definition>RotationMatrix &amp; ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::transpose</definition>
+        <argsstring>()</argsstring>
+        <name>transpose</name>
+        <briefdescription>
+<para>Transpose Rotation Matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix(...).transpose();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Rotation Matrix reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="213" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="272" bodyend="283"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1aa9ed0897a6219331deeb7750017a0df9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, const RotationMatrix &amp;aRotationMatrix)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref> &amp;</type>
+          <declname>aRotationMatrix</declname>
+        </param>
+        <briefdescription>
+<para>Output stream operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>RotationMatrix(...);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationMatrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Rotation Matrix </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Output stream reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="157" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="191" bodyend="205"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1aeae6917c12ec1afe40af8d15bcd1ed0c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref></type>
+        <definition>RotationMatrix ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::Undefined</definition>
+        <argsstring>()</argsstring>
+        <name>Undefined</name>
+        <briefdescription>
+<para>Construct an undefined Rotation Matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix::Undefined();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Rotation Matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="223" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="285" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a54cce35b27cb061a457bf0011f1312ba" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref></type>
+        <definition>RotationMatrix ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::Unit</definition>
+        <argsstring>()</argsstring>
+        <name>Unit</name>
+        <briefdescription>
+<para>Construct unitary Rotation Matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix::Unit();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Rotation Matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="233" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="290" bodyend="293"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1ad6019cbe46a2b47ad26470f996214bb0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref></type>
+        <definition>RotationMatrix ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RX</definition>
+        <argsstring>(const Angle &amp;aRotationAngle)</argsstring>
+        <name>RX</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>aRotationAngle</declname>
+        </param>
+        <briefdescription>
+<para>Construct Rotation Matrix representing a rotation around the X-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix::RX(Angle::Degrees(30.0));</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A rotation angle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="244" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="295" bodyend="310"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a580d873ccc82cafaa3e18bedfe54a0f2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref></type>
+        <definition>RotationMatrix ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RY</definition>
+        <argsstring>(const Angle &amp;aRotationAngle)</argsstring>
+        <name>RY</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>aRotationAngle</declname>
+        </param>
+        <briefdescription>
+<para>Construct Rotation Matrix representing a rotation around the Y-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix::RY(Angle::Degrees(30.0));</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A rotation angle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="255" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="312" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a4056e0c5112b76e58df8afbf359cefa6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref></type>
+        <definition>RotationMatrix ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RZ</definition>
+        <argsstring>(const Angle &amp;aRotationAngle)</argsstring>
+        <name>RZ</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>aRotationAngle</declname>
+        </param>
+        <briefdescription>
+<para>Construct Rotation Matrix representing a rotation around the Z-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix::RZ(Angle::Degrees(30.0));</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A rotation angle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="266" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="329" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a803abf578ca73618baf5d92358a1fef5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref></type>
+        <definition>RotationMatrix ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::Rows</definition>
+        <argsstring>(const Vector3d &amp;aFirstRow, const Vector3d &amp;aSecondRow, const Vector3d &amp;aThirdRow)</argsstring>
+        <name>Rows</name>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aFirstRow</declname>
+        </param>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aSecondRow</declname>
+        </param>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aThirdRow</declname>
+        </param>
+        <briefdescription>
+<para>Construct Rotation Matrix from row vectors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix::Rows({1.0,<sp/>0.0,<sp/>0.0},<sp/>{1.0,<sp/>0.0,<sp/>0.0},<sp/>{1.0,<sp/>0.0,<sp/>0.0});</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstRow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A first row </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondRow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A second row </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aThirdRow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A third row </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="279" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="346" bodyend="399"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a255df0da5d9ec95a9842ed312a67beb2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref></type>
+        <definition>RotationMatrix ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::Columns</definition>
+        <argsstring>(const Vector3d &amp;aFirstColumn, const Vector3d &amp;aSecondColumn, const Vector3d &amp;aThirdColumn)</argsstring>
+        <name>Columns</name>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aFirstColumn</declname>
+        </param>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aSecondColumn</declname>
+        </param>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aThirdColumn</declname>
+        </param>
+        <briefdescription>
+<para>Construct Rotation Matrix from column vectors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix::Columns({1.0,<sp/>0.0,<sp/>0.0},<sp/>{1.0,<sp/>0.0,<sp/>0.0},<sp/>{1.0,<sp/>0.0,<sp/>0.0});</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstColumn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A first column </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondColumn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A second column </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aThirdColumn</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A third column </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="292" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="401" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a08706245c522cf0a4b101efdc66ab802" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref></type>
+        <definition>RotationMatrix ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::Quaternion</definition>
+        <argsstring>(const rotation::Quaternion &amp;aQuaternion)</argsstring>
+        <name>Quaternion</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">rotation::Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Construct Rotation Matrix from <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix::Quaternion(Quaternion::Unit());</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="305" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="458" bodyend="497"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1af11a91008ad9a5e8682437777efcfb0d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref></type>
+        <definition>RotationMatrix ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RotationVector</definition>
+        <argsstring>(const rotation::RotationVector &amp;aRotationVector)</argsstring>
+        <name>RotationVector</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">rotation::RotationVector</ref> &amp;</type>
+          <declname>aRotationVector</declname>
+        </param>
+        <briefdescription>
+<para>Construct Rotation Matrix from Rotation Vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix::RotationVector(RotationVector::Unit());</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Rotation Vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="316" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="499" bodyend="531"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a17e0c181b02dd8857a0414331ac54bac" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref></type>
+        <definition>RotationMatrix ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::EulerAngle</definition>
+        <argsstring>(const rotation::EulerAngle &amp;aEulerAngle)</argsstring>
+        <name>EulerAngle</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">rotation::EulerAngle</ref> &amp;</type>
+          <declname>aEulerAngle</declname>
+        </param>
+        <briefdescription>
+<para>Construct Rotation Matrix from Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationMatrix::EulerAngle(EulerAngle::Unit());</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aEulerAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="327" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="533" bodyend="563"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a5edaa28cfdd0fcaf95024f5469c09fd8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RotationMatrix</definition>
+        <argsstring>()</argsstring>
+        <name>RotationMatrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="332" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.cpp" bodystart="565" bodyend="568"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Rotation matrix. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ulink url="https://en.wikipedia.org/wiki/Rotation_matrix">https://en.wikipedia.org/wiki/Rotation_matrix</ulink> </para>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" line="41" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp" bodystart="40" bodyend="333"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a4e911a9772e1740533c371d9c89cefb8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>accessMatrix</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a255df0da5d9ec95a9842ed312a67beb2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>Columns</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a17e0c181b02dd8857a0414331ac54bac" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>EulerAngle</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a2abb637de6747ef51067aaf00237d9bf" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>getColumnAt</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a2cea2567403768437e4074720996bea2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>getMatrix</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a8f62d9ae197f5f94e168a612be0a9bb1" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>getRowAt</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1ae17d3b16182ce6110a87534fd5aff6b4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>isDefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a1f750475a1e00f25d31f0e80e70114e6" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>matrix_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a24dd53bd3648655d4ab858d0ce0685b2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a925bbc83df88a581a08426bce118d8ba" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>operator()</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a7950245c6fd96b7c75676843a63915be" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>operator()</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a3b5d9df2e34ec0a668ea63970361db7f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>operator*</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a3f942c38013627338c2cd6ed980f434d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>operator*</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1aa9ed0897a6219331deeb7750017a0df9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1aebd0b0120e56487f48764ee3541c21e4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a08706245c522cf0a4b101efdc66ab802" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>Quaternion</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a74d44755a8c72da68f52106af2bcfdea" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>RotationMatrix</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1afadb0c9335620b1504fe72e81e816a0e" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>RotationMatrix</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a5edaa28cfdd0fcaf95024f5469c09fd8" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>RotationMatrix</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1af11a91008ad9a5e8682437777efcfb0d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>RotationVector</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a803abf578ca73618baf5d92358a1fef5" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>Rows</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1ad6019cbe46a2b47ad26470f996214bb0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>RX</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a580d873ccc82cafaa3e18bedfe54a0f2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>RY</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a4056e0c5112b76e58df8afbf359cefa6" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>RZ</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1ae0b991e0539d9767a4a2bb366b073ded" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>toTransposed</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1adc3e15a05d4efeed5bf2cb3eaf2c7237" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>transpose</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1aeae6917c12ec1afe40af8d15bcd1ed0c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>Undefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a54cce35b27cb061a457bf0011f1312ba" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix</scope><name>Unit</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

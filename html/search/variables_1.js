@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logtype_5f_774',['logType_',['../classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a7e2b0144bf211d31e61aa932ee900ba1',1,'ostk::mathematics::solver::NumericalSolver']]]
+  ['logtype_5f_777',['logType_',['../classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html#a7e2b0144bf211d31e61aa932ee900ba1',1,'ostk::mathematics::solver::NumericalSolver']]]
 ];

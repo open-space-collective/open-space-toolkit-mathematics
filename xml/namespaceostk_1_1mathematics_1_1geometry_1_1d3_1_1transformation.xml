@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation" kind="namespace" language="C++">
+    <compoundname>ostk::mathematics::geometry::d3::transformation</compoundname>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation">ostk::mathematics::geometry::d3::transformation::rotation</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="22" column="1"/>
+  </compounddef>
+</doxygen>

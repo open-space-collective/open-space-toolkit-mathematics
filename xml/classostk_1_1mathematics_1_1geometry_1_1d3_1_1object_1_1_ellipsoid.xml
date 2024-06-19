@@ -1,0 +1,1231 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::geometry::d3::object::Ellipsoid</compoundname>
+    <basecompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::Object</basecompoundref>
+    <includes refid="_ellipsoid_8hpp" local="no">Ellipsoid.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a601664cd2702c1ef80dc8ea4e70fb90b" prot="private" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point ostk::mathematics::geometry::d3::object::Ellipsoid::center_</definition>
+        <argsstring></argsstring>
+        <name>center_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="420" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="420" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a26812a9cf0ec65f244dcfd23ec7904b2" prot="private" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::object::Ellipsoid::a_</definition>
+        <argsstring></argsstring>
+        <name>a_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="422" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="422" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ae642014abfaaaaefe425208d06fcf837" prot="private" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::object::Ellipsoid::b_</definition>
+        <argsstring></argsstring>
+        <name>b_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="423" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="423" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ae58ad12e3d5fe3c12f1ddbec7d5b9e63" prot="private" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::object::Ellipsoid::c_</definition>
+        <argsstring></argsstring>
+        <name>c_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="424" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="424" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a18ef5e768659a7b9448f8a40ed2df3f5" prot="private" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::object::Ellipsoid::q_</definition>
+        <argsstring></argsstring>
+        <name>q_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="426" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="426" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a770daad95f02aec5ed9e124592548152" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::object::Ellipsoid::Ellipsoid</definition>
+        <argsstring>(const Point &amp;aCenter, const Real &amp;aFirstPrincipalSemiAxis, const Real &amp;aSecondPrincipalSemiAxis, const Real &amp;aThirdPrincipalSemiAxis, const Quaternion &amp;anOrientation=DEFAULT_ORIENTATION)</argsstring>
+        <name>Ellipsoid</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aCenter</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aFirstPrincipalSemiAxis</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aSecondPrincipalSemiAxis</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aThirdPrincipalSemiAxis</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> &amp;</type>
+          <declname>anOrientation</declname>
+          <defval><ref refid="_ellipsoid_8hpp_1a5c684aeaeb24d197904b5a34839d2dd9" kindref="member">DEFAULT_ORIENTATION</ref></defval>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid({<sp/>0.0,<sp/>0.0,<sp/>0.0<sp/>},<sp/>1.0,<sp/>2.0,<sp/>3.0)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aCenter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An ellipsoid center </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstPrincipalSemiAxis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An ellipsoid first principal semi-axis </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondPrincipalSemiAxis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An ellipsoid second principal semi-axis </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aThirdPrincipalSemiAxis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An ellipsoid third principal semi-axis </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>anOrientation An ellipsoid orientation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="62" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="66" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aca293bcf279702b8b59d72fe4dd09217" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> *</type>
+        <definition>Ellipsoid * ostk::mathematics::geometry::d3::object::Ellipsoid::clone</definition>
+        <argsstring>() const override</argsstring>
+        <name>clone</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a8ea8d4074bfaaa3d996d760d5d5751db">clone</reimplements>
+        <briefdescription>
+<para>Clone ellipsoid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to cloned ellipsoid </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="74" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="96" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a24d5de8f8d462000ad16f99cb08b6bbe" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::operator==</definition>
+        <argsstring>(const Ellipsoid &amp;anEllipsoid) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> &amp;</type>
+          <declname>anEllipsoid</declname>
+        </param>
+        <briefdescription>
+<para>Equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid(Point::Origin(),<sp/>1.0,<sp/>2.0,<sp/>3.0)<sp/>==<sp/>Ellipsoid(Point::Origin(),<sp/>1.0,<sp/>2.0,<sp/>3.0)<sp/>;<sp/>//</highlight></codeline>
+<codeline><highlight class="normal">True</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anEllipsoid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An ellipsoid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ellipsoids are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="86" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="101" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a6ad34b0e40e0a1b59ba503bbacb15db5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::operator!=</definition>
+        <argsstring>(const Ellipsoid &amp;anEllipsoid) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> &amp;</type>
+          <declname>anEllipsoid</declname>
+        </param>
+        <briefdescription>
+<para>Not equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid(Point::Origin(),<sp/>1.0,<sp/>2.0,<sp/>3.0)<sp/>!=<sp/>Ellipsoid(2.0,<sp/>1.0,<sp/>3.0)<sp/>;<sp/>//<sp/>True</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anEllipsoid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An ellipsoid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ellipsoids are not equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="97" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="121" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a3e36099693bccb2d2e68d8673d86e5f6" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::isDefined</definition>
+        <argsstring>() const override</argsstring>
+        <name>isDefined</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a1962edbcdde0f851361b60324ab9ce2b">isDefined</reimplements>
+        <briefdescription>
+<para>Check if ellipsoid is defined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid(Point::Origin(),<sp/>1.0,<sp/>2.0,<sp/>3.0).isDefined()<sp/>;<sp/>//<sp/>True</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if ellipsoid is defined </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="107" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="126" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a9b031c4f2a63121d6b5060dea2fd85dc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::intersects</definition>
+        <argsstring>(const Point &amp;aPoint) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+<para>Check if ellipsoid intersects point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Point<sp/>point<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">ellipsoid.intersects(point)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ellipsoid intersects point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="120" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="131" bodyend="134"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a8a8d5655286857611c174afd3e324d45" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::intersects</definition>
+        <argsstring>(const PointSet &amp;aPointSet) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set" kindref="compound">PointSet</ref> &amp;</type>
+          <declname>aPointSet</declname>
+        </param>
+        <briefdescription>
+<para>Check if ellipsoid intersects point set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">PointSet<sp/>pointSet<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">ellipsoid.intersects(pointSet)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPointSet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ellipsoid intersects point set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="133" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="136" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ae3f7633c6157c430980af3832d0a73b9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::intersects</definition>
+        <argsstring>(const Line &amp;aLine) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line" kindref="compound">Line</ref> &amp;</type>
+          <declname>aLine</declname>
+        </param>
+        <briefdescription>
+<para>Check if ellipsoid intersects line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Line<sp/>line<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">ellipsoid.intersects(line)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A line </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ellipsoid intersects line </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="146" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="153" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ae93d460a11c18dcc589501535db52622" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::intersects</definition>
+        <argsstring>(const Ray &amp;aRay) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray" kindref="compound">Ray</ref> &amp;</type>
+          <declname>aRay</declname>
+        </param>
+        <briefdescription>
+<para>Check if ellipsoid intersects ray. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Ray<sp/>ray<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">ellipsoid.intersects(ray)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A ray </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ellipsoid intersects ray </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="159" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="192" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a00bfb5a8d081333b080b586f4b81f8cc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::intersects</definition>
+        <argsstring>(const Segment &amp;aSegment) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment" kindref="compound">Segment</ref> &amp;</type>
+          <declname>aSegment</declname>
+        </param>
+        <briefdescription>
+<para>Check if ellipsoid intersects segment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Segment<sp/>segment<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">ellipsoid.intersects(segment)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aSegment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A segment </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ellipsoid intersects segment </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="172" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="231" bodyend="341"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ad0c47ee2cbdc18795a00c72a47f83a33" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::intersects</definition>
+        <argsstring>(const Plane &amp;aPlane) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane" kindref="compound">Plane</ref> &amp;</type>
+          <declname>aPlane</declname>
+        </param>
+        <briefdescription>
+<para>Check if ellipsoid intersects plane. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Plane<sp/>plane<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">ellipsoid.intersects(plane)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPlane</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A plane </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ellipsoid intersects plane </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="185" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="343" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a1d17071a0fe4ae568bffcbbb3a12aeb8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::intersects</definition>
+        <argsstring>(const Sphere &amp;aSphere) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere" kindref="compound">Sphere</ref> &amp;</type>
+          <declname>aSphere</declname>
+        </param>
+        <briefdescription>
+<para>Check if ellipsoid intersects sphere. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Sphere<sp/>sphere<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">ellipsoid.intersects(sphere)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aSphere</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A sphere </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ellipsoid intersects sphere </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="198" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a376af728b387ddc84152ad2fea9076ad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::intersects</definition>
+        <argsstring>(const Ellipsoid &amp;anEllipsoid) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> &amp;</type>
+          <declname>anEllipsoid</declname>
+        </param>
+        <briefdescription>
+<para>Check if ellipsoid intersects ellipsoid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Ellipsoid<sp/>anotherEllipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">ellipsoid.intersects(anotherEllipsoid)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anEllipsoid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An ellipsoid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ellipsoid intersects ellipsoid </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="211" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a7176ac82c4684066d3656db93673fe8c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::intersects</definition>
+        <argsstring>(const Pyramid &amp;aPyramid) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid" kindref="compound">Pyramid</ref> &amp;</type>
+          <declname>aPyramid</declname>
+        </param>
+        <briefdescription>
+<para>Check if ellipsoid intersects pyramid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">ellipsoid.intersects(pyramid)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPyramid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pyramid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ellipsoid intersects pyramid </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="224" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="448" bodyend="451"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a9903921f3b39326751b64198af6e9044" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::intersects</definition>
+        <argsstring>(const Cone &amp;aCone) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone" kindref="compound">Cone</ref> &amp;</type>
+          <declname>aCone</declname>
+        </param>
+        <briefdescription>
+<para>Check if ellipsoid intersects cone. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Cone<sp/>cone<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">ellipsoid.intersects(cone)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aCone</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A cone </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ellipsoid intersects cone </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="237" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="453" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1acd6265aa0324a0a42782255c6c68fd6c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::contains</definition>
+        <argsstring>(const Point &amp;aPoint) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+<para>Check if ellipsoid contains point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Point<sp/>point<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">ellipsoid.contains(point)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ellipsoid contains point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="250" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="458" bodyend="485"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aa0d3177d1ed9985503ec6055f40768a8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::contains</definition>
+        <argsstring>(const PointSet &amp;aPointSet) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set" kindref="compound">PointSet</ref> &amp;</type>
+          <declname>aPointSet</declname>
+        </param>
+        <briefdescription>
+<para>Check if ellipsoid contains point set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">PointSet<sp/>pointSet<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">ellipsoid.contains(pointSet)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPointSet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ellipsoid contains point set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="263" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="487" bodyend="502"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a2f6d64044fbfaa53a018f3f0e62fa2ce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Ellipsoid::contains</definition>
+        <argsstring>(const Segment &amp;aSegment) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment" kindref="compound">Segment</ref> &amp;</type>
+          <declname>aSegment</declname>
+        </param>
+        <briefdescription>
+<para>Check if ellipsoid contains segment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Segment<sp/>segment<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">ellipsoid.contains(segment)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aSegment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A segment </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if ellipsoid contains segment </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="276" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="504" bodyend="507"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aaffdeef56c13f84501e5e303c932890a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point ostk::mathematics::geometry::d3::object::Ellipsoid::getCenter</definition>
+        <argsstring>() const</argsstring>
+        <name>getCenter</name>
+        <briefdescription>
+<para>Get ellipsoid center. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid(Point::Origin(),<sp/>1.0,<sp/>2.0,<sp/>3.0).getCenter()<sp/>;<sp/>//<sp/>[0.0,<sp/>0.0,<sp/>0.0]</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> center </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="286" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="509" bodyend="517"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aee9a534a5fe0d981f240778a675592f0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::object::Ellipsoid::getFirstPrincipalSemiAxis</definition>
+        <argsstring>() const</argsstring>
+        <name>getFirstPrincipalSemiAxis</name>
+        <briefdescription>
+<para>Get ellipsoid first principal semi-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid(Point::Origin(),<sp/>1.0,<sp/>2.0,<sp/>3.0).getFirstPrincipalSemiAxis()<sp/>;<sp/>//<sp/>1.0</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> first principal semi-axis </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="296" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="519" bodyend="527"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a87c58137ec69a852e079274838b1f1f5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::object::Ellipsoid::getSecondPrincipalSemiAxis</definition>
+        <argsstring>() const</argsstring>
+        <name>getSecondPrincipalSemiAxis</name>
+        <briefdescription>
+<para>Get ellipsoid second principal semi-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid(Point::Origin(),<sp/>1.0,<sp/>2.0,<sp/>3.0).getSecondPrincipalSemiAxis()<sp/>;<sp/>//<sp/>2.0</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> second principal semi-axis </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="306" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="529" bodyend="537"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aca6b3792410def0bef84025ffd981836" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::geometry::d3::object::Ellipsoid::getThirdPrincipalSemiAxis</definition>
+        <argsstring>() const</argsstring>
+        <name>getThirdPrincipalSemiAxis</name>
+        <briefdescription>
+<para>Get ellipsoid third principal semi-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid(Point::Origin(),<sp/>1.0,<sp/>2.0,<sp/>3.0).getThirdPrincipalSemiAxis()<sp/>;<sp/>//<sp/>3.0</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> third principal semi-axis </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="316" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="539" bodyend="547"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a67ec6b3fcf80a18b0dbb6521c321e003" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector3d</type>
+        <definition>Vector3d ostk::mathematics::geometry::d3::object::Ellipsoid::getFirstAxis</definition>
+        <argsstring>() const</argsstring>
+        <name>getFirstAxis</name>
+        <briefdescription>
+<para>Get ellipsoid first axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> first axis </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="322" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="549" bodyend="557"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a71329b4763d0b8dc247f73167e69308c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector3d</type>
+        <definition>Vector3d ostk::mathematics::geometry::d3::object::Ellipsoid::getSecondAxis</definition>
+        <argsstring>() const</argsstring>
+        <name>getSecondAxis</name>
+        <briefdescription>
+<para>Get ellipsoid second axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> second axis </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="328" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="559" bodyend="567"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a5fe355055f5fdce92375fa04ff1851e9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector3d</type>
+        <definition>Vector3d ostk::mathematics::geometry::d3::object::Ellipsoid::getThirdAxis</definition>
+        <argsstring>() const</argsstring>
+        <name>getThirdAxis</name>
+        <briefdescription>
+<para>Get ellipsoid third axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> third axis </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="334" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="569" bodyend="577"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a68cbd49084f102aa99f9135bd0fce3db" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref></type>
+        <definition>Quaternion ostk::mathematics::geometry::d3::object::Ellipsoid::getOrientation</definition>
+        <argsstring>() const</argsstring>
+        <name>getOrientation</name>
+        <briefdescription>
+<para>Get ellipsoid orientation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid(Point::Origin(),<sp/>1.0,<sp/>2.0,<sp/>3.0,<sp/>Quaternion::XYZS(0.0,<sp/>0.0,</highlight></codeline>
+<codeline><highlight class="normal">0.0,<sp/>1.0)).getOrientation()<sp/>;<sp/>//<sp/>Quaternion::XYZS(0.0,<sp/>0.0,<sp/>0.0,<sp/>1.0)</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> orientation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="345" column="16" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="579" bodyend="587"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ad28f3cc4c201d12054da52ce51bdb6a3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Matrix3d</type>
+        <definition>Matrix3d ostk::mathematics::geometry::d3::object::Ellipsoid::getMatrix</definition>
+        <argsstring>() const</argsstring>
+        <name>getMatrix</name>
+        <briefdescription>
+<para>Get ellipsoid matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid(Point::Origin(),<sp/>1.0,<sp/>2.0,<sp/>3.0,<sp/>Quaternion::XYZS(0.0,<sp/>0.0,<sp/>0.0,<sp/>1.0)).getMatrix()</highlight></codeline>
+<codeline><highlight class="normal">;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> matrix </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="356" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="589" bodyend="614"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a5c3062e7f2f271c470821e3addbd3698" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::object::Ellipsoid::intersectionWith</definition>
+        <argsstring>(const Line &amp;aLine) const</argsstring>
+        <name>intersectionWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line" kindref="compound">Line</ref> &amp;</type>
+          <declname>aLine</declname>
+        </param>
+        <briefdescription>
+<para>Compute intersection of ellipsoid with line. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLine</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A line </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> of ellipsoid with line </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="363" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="616" bodyend="674"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a81a3f44b8b4a26c8c7db2fa5f1ea98c3" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::object::Ellipsoid::intersectionWith</definition>
+        <argsstring>(const Ray &amp;aRay, const bool onlyInSight=false) const</argsstring>
+        <name>intersectionWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray" kindref="compound">Ray</ref> &amp;</type>
+          <declname>aRay</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>onlyInSight</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Compute intersection of ellipsoid with ray. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A ray </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">onlyInSight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(optional) If true, only return intersection points that are in sight </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> of ellipsoid with ray </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="371" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="676" bodyend="764"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ac3f1b3592db2bbfb25890382a2276878" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::object::Ellipsoid::intersectionWith</definition>
+        <argsstring>(const Segment &amp;aSegment) const</argsstring>
+        <name>intersectionWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment" kindref="compound">Segment</ref> &amp;</type>
+          <declname>aSegment</declname>
+        </param>
+        <briefdescription>
+<para>Compute intersection of ellipsoid with segment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aSegment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A segment </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> of ellipsoid with segment </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="378" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="766" bodyend="888"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1abcbc9b4bbcb64628471f7b233639d645" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::object::Ellipsoid::intersectionWith</definition>
+        <argsstring>(const Pyramid &amp;aPyramid, const bool onlyInSight=false) const</argsstring>
+        <name>intersectionWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid" kindref="compound">Pyramid</ref> &amp;</type>
+          <declname>aPyramid</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>onlyInSight</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Compute intersection of ellipsoid with pyramid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPyramid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pyramid </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">onlyInSight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(optional) If true, only return intersection points that are in sight </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> of ellipsoid with pyramid </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="386" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="890" bodyend="893"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a2d6ef8385352f67912edbf2b2db7e3c2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::object::Ellipsoid::intersectionWith</definition>
+        <argsstring>(const Cone &amp;aCone, const bool onlyInSight=false) const</argsstring>
+        <name>intersectionWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone" kindref="compound">Cone</ref> &amp;</type>
+          <declname>aCone</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>onlyInSight</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Compute intersection of ellipsoid with cone. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aCone</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A cone </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">onlyInSight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(optional) If true, only return intersection points that are in sight </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> of ellipsoid with cone </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="394" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="895" bodyend="898"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a7c5c1f79b1c0533073ef48e38dc5e18b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ostk::mathematics::geometry::d3::object::Ellipsoid::print</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</argsstring>
+        <name>print</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a5063e1f902e1b08d36f6b6cecab0bd95">print</reimplements>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>displayDecorators</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Print ellipsoid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>displayDecorators If true, display decorators </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="401" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="900" bodyend="924"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a3e8568dfcf2f261ea99c5a1c4edc2c1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ostk::mathematics::geometry::d3::object::Ellipsoid::applyTransformation</definition>
+        <argsstring>(const Transformation &amp;aTransformation) override</argsstring>
+        <name>applyTransformation</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a925a50c2bb1c31f396e469b74595e42a">applyTransformation</reimplements>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
+          <declname>aTransformation</declname>
+        </param>
+        <briefdescription>
+<para>Apply transformation to ellipsoid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aTransformation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="407" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="926" bodyend="966"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a926b28952c1364fff54b2cf2ace854ff" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref></type>
+        <definition>Ellipsoid ostk::mathematics::geometry::d3::object::Ellipsoid::Undefined</definition>
+        <argsstring>()</argsstring>
+        <name>Undefined</name>
+        <briefdescription>
+<para>Constructs an undefined ellipsoid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>Ellipsoid::Undefined()<sp/>;<sp/>//<sp/>Undefined</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Undefined ellipsoid </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="417" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="968" bodyend="971"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ulink url="https://en.wikipedia.org/wiki/Ellipsoid">https://en.wikipedia.org/wiki/Ellipsoid</ulink> </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ostk::mathematics::geometry::d3::Object</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object"/>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::geometry::d3::object::Ellipsoid</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ostk::mathematics::geometry::d3::Object</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object"/>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::geometry::d3::object::Ellipsoid</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" line="48" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.hpp" bodystart="47" bodyend="427"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a26812a9cf0ec65f244dcfd23ec7904b2" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>a_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a3e8568dfcf2f261ea99c5a1c4edc2c1a" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>applyTransformation</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1acc1ec9fde56128d7fde8b96fa57180c4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>as</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ae642014abfaaaaefe425208d06fcf837" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>b_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ae58ad12e3d5fe3c12f1ddbec7d5b9e63" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>c_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a601664cd2702c1ef80dc8ea4e70fb90b" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>center_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aca293bcf279702b8b59d72fe4dd09217" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>clone</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1acd6265aa0324a0a42782255c6c68fd6c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aa0d3177d1ed9985503ec6055f40768a8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a2f6d64044fbfaa53a018f3f0e62fa2ce" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af60902b6b025fdaf8839c08e532dd2b0" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a770daad95f02aec5ed9e124592548152" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>Ellipsoid</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aaffdeef56c13f84501e5e303c932890a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>getCenter</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a67ec6b3fcf80a18b0dbb6521c321e003" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>getFirstAxis</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aee9a534a5fe0d981f240778a675592f0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>getFirstPrincipalSemiAxis</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ad28f3cc4c201d12054da52ce51bdb6a3" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>getMatrix</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a68cbd49084f102aa99f9135bd0fce3db" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>getOrientation</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a71329b4763d0b8dc247f73167e69308c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>getSecondAxis</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a87c58137ec69a852e079274838b1f1f5" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>getSecondPrincipalSemiAxis</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a5fe355055f5fdce92375fa04ff1851e9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>getThirdAxis</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1aca6b3792410def0bef84025ffd981836" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>getThirdPrincipalSemiAxis</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a5c3062e7f2f271c470821e3addbd3698" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a81a3f44b8b4a26c8c7db2fa5f1ea98c3" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ac3f1b3592db2bbfb25890382a2276878" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1abcbc9b4bbcb64628471f7b233639d645" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a2d6ef8385352f67912edbf2b2db7e3c2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ac1325aba0fa3796c9ddc5d39dfe40aa6" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a9b031c4f2a63121d6b5060dea2fd85dc" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a8a8d5655286857611c174afd3e324d45" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ae3f7633c6157c430980af3832d0a73b9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ae93d460a11c18dcc589501535db52622" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a00bfb5a8d081333b080b586f4b81f8cc" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1ad0c47ee2cbdc18795a00c72a47f83a33" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a1d17071a0fe4ae568bffcbbb3a12aeb8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a376af728b387ddc84152ad2fea9076ad" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a7176ac82c4684066d3656db93673fe8c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a9903921f3b39326751b64198af6e9044" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a0d8ddc7a929bb3b0b1c70ad82742e64e" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ad9e6f5027d14e3c7d7bead94052611ed" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>is</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a3e36099693bccb2d2e68d8673d86e5f6" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>isDefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af003ad733beface98466830078a83875" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>Object</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a6ad34b0e40e0a1b59ba503bbacb15db5" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a550754b8f5576ce2465979657325d5df" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a24d5de8f8d462000ad16f99cb08b6bbe" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aeb99dd25ff1c0683d9c0a058c8200e4d" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a7c5c1f79b1c0533073ef48e38dc5e18b" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>print</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a18ef5e768659a7b9448f8a40ed2df3f5" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>q_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid_1a926b28952c1364fff54b2cf2ace854ff" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>Undefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aae1324c306129cce2e7d42a28c0de181" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d3::object::Ellipsoid</scope><name>~Object</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

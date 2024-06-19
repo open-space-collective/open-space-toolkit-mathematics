@@ -1,0 +1,617 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</compoundname>
+    <includes refid="_rotation_vector_8hpp" local="no">RotationVector.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1aa8a91f139ea79f3fa3d24d13ccec1212" prot="private" static="no" mutable="no">
+        <type>Vector3d</type>
+        <definition>Vector3d ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::axis_</definition>
+        <argsstring></argsstring>
+        <name>axis_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="237" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" bodystart="237" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a0f62c1163664af90b469ef7b4fb0dea9" prot="private" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
+        <definition>Angle ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::angle_</definition>
+        <argsstring></argsstring>
+        <name>angle_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="238" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a85786a4e81f7107c8367ed0ae783c79f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::RotationVector</definition>
+        <argsstring>(const Vector3d &amp;anAxis, const Angle &amp;anAngle)</argsstring>
+        <name>RotationVector</name>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>anAxis</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>anAngle</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector({1.0,<sp/>0.0,<sp/>0.0},<sp/>Angle::Degrees(45.0));</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anAxis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A rotation axis </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A rotation angle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="51" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="24" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1aca6953257290fbef4b31d1ae9ce91c8f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::RotationVector</definition>
+        <argsstring>(const Vector3d &amp;anAxis, const Angle::Unit &amp;anAngleUnit)</argsstring>
+        <name>RotationVector</name>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>anAxis</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371" kindref="member">Angle::Unit</ref> &amp;</type>
+          <declname>anAngleUnit</declname>
+        </param>
+        <briefdescription>
+<para>Construct Rotation Vector from vector and angle unit The norm of the vector defines the rotation angle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector({1.0,<sp/>0.0,<sp/>0.0},<sp/>Angle::Unit::Radian);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngleUnit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angle unit </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="63" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="34" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a951bcc257b60ab3ec2f45e1b4eb0cb70" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::operator==</definition>
+        <argsstring>(const RotationVector &amp;aRotationVector) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref> &amp;</type>
+          <declname>aRotationVector</declname>
+        </param>
+        <briefdescription>
+<para>Equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector::Unit()<sp/>==<sp/>RotationVector::Unit();</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Rotation Vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if Rotation Vectors are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="74" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="44" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a1ab7d9369961e7f7e2bc9c6afb76f234" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::operator!=</definition>
+        <argsstring>(const RotationVector &amp;aRotationVector) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref> &amp;</type>
+          <declname>aRotationVector</declname>
+        </param>
+        <briefdescription>
+<para>Not equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector::Unit()<sp/>!=<sp/>RotationVector::Unit();</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Rotation Vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if Rotation Vectors are not equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="85" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="60" bodyend="63"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a7eb8f0bba73e0e36fa7a6f1bbd88da2d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::isDefined</definition>
+        <argsstring>() const</argsstring>
+        <name>isDefined</name>
+        <briefdescription>
+<para>Check if Rotation Vector is defined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector::Unit().isDefined();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if Rotation Vector is defined </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="107" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="79" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a177b242ce75f1631de02e15e50804958" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector3d</type>
+        <definition>Vector3d ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::getAxis</definition>
+        <argsstring>() const</argsstring>
+        <name>getAxis</name>
+        <briefdescription>
+<para>Get rotation axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector::Unit().getAxis();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Rotation axis </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="117" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="84" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1ac9544a31482220e580b6ad383c888bb5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
+        <definition>Angle ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::getAngle</definition>
+        <argsstring>() const</argsstring>
+        <name>getAngle</name>
+        <briefdescription>
+<para>Get rotation angle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector::Unit().getAngle();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Rotation angle </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="127" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="94" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a9ce94326aaddb6e9e967acc388b39f44" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::toString</definition>
+        <argsstring>(const Integer &amp;aPrecision=Integer::Undefined()) const</argsstring>
+        <name>toString</name>
+        <param>
+          <type>const Integer &amp;</type>
+          <declname>aPrecision</declname>
+          <defval>Integer::Undefined()</defval>
+        </param>
+        <briefdescription>
+<para>Convert Rotation Vector to string representation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector::Unit().toString();</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>aPrecision A precision </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String representation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="138" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="126" bodyend="136"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a02150f4e7ec88996f75eaae63b215cfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref> &amp;</type>
+        <definition>RotationVector &amp; ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::rectify</definition>
+        <argsstring>()</argsstring>
+        <name>rectify</name>
+        <briefdescription>
+<para>Rectify Rotation Vector (enforce positive angle) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector::Unit().rectify();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Rotation Vector reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="148" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="104" bodyend="124"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1aa66ba2fd706a441ee39d06857842ecfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, const RotationVector &amp;aRotationVector)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref> &amp;</type>
+          <declname>aRotationVector</declname>
+        </param>
+        <briefdescription>
+<para>Output stream operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>RotationVector::Unit();</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Rotation Vector </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to output stream </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="97" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="65" bodyend="77"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1ac296ba2d49497a1d7a5b1d1aa1628294" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref></type>
+        <definition>RotationVector ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::Undefined</definition>
+        <argsstring>()</argsstring>
+        <name>Undefined</name>
+        <briefdescription>
+<para>Construct an undefined Rotation Vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector::Undefined();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Undefined Rotation Vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="158" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="138" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a31c276c930ed9d5ff4cb406be6a48f7e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref></type>
+        <definition>RotationVector ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::Unit</definition>
+        <argsstring>()</argsstring>
+        <name>Unit</name>
+        <briefdescription>
+<para>Construct a unitary Rotation Vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector::Unit();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Unitary Rotation Vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="168" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="143" bodyend="146"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1ad5a563a069f6665a086b2ba5fc20ea76" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref></type>
+        <definition>RotationVector ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::X</definition>
+        <argsstring>(const Angle &amp;anAngle)</argsstring>
+        <name>X</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>anAngle</declname>
+        </param>
+        <briefdescription>
+<para>Construct Rotation Vector around X-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector::X(Angle::Degrees(45.0));</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A rotation angle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation Vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="179" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="148" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a30ecbac5afd7470bc9cb68079997fc0c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref></type>
+        <definition>RotationVector ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::Y</definition>
+        <argsstring>(const Angle &amp;anAngle)</argsstring>
+        <name>Y</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>anAngle</declname>
+        </param>
+        <briefdescription>
+<para>Construct Rotation Vector around Y-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector::X(Angle::Degrees(45.0));</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A rotation angle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation Vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="190" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="158" bodyend="166"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a4985f992a53c3d1412a06b2ebedd4bca" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref></type>
+        <definition>RotationVector ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::Z</definition>
+        <argsstring>(const Angle &amp;anAngle)</argsstring>
+        <name>Z</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>anAngle</declname>
+        </param>
+        <briefdescription>
+<para>Construct Rotation Vector around Z-axis. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector::X(Angle::Degrees(45.0));</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A rotation angle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation Vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="201" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="168" bodyend="176"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1ae2257efa00cf6358d7135f4fb67f42c0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref></type>
+        <definition>RotationVector ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::Quaternion</definition>
+        <argsstring>(const rotation::Quaternion &amp;aQuaternion)</argsstring>
+        <name>Quaternion</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">rotation::Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <briefdescription>
+<para>Construct Rotation Vector from <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector::Quaternion(Quaternion::Unit());</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A quaternion </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation Vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="212" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="178" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a11b732b431882d3e29d63b5b350b88bc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref></type>
+        <definition>RotationVector ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::RotationMatrix</definition>
+        <argsstring>(const rotation::RotationMatrix &amp;aRotationMatrix)</argsstring>
+        <name>RotationMatrix</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">rotation::RotationMatrix</ref> &amp;</type>
+          <declname>aRotationMatrix</declname>
+        </param>
+        <briefdescription>
+<para>Construct Rotation Vector from Rotation Matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector::RotationMatrix(RotationMatrix::Unit());</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationMatrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Rotation Matrix </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation Vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="223" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="201" bodyend="223"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1acfff1d3bbd3dc4b5998bed27cca91e7d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref></type>
+        <definition>RotationVector ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::EulerAngle</definition>
+        <argsstring>(const rotation::EulerAngle &amp;aEulerAngle)</argsstring>
+        <name>EulerAngle</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">rotation::EulerAngle</ref> &amp;</type>
+          <declname>aEulerAngle</declname>
+        </param>
+        <briefdescription>
+<para>Construct Rotation Vector from Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">RotationVector::EulerAngle(EulerAngle::Unit());</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aEulerAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Rotation Vector </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="234" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="225" bodyend="228"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a21e269f802d8f91fabad4b9ed82cfd47" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector::RotationVector</definition>
+        <argsstring>()</argsstring>
+        <name>RotationVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="240" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.cpp" bodystart="230" bodyend="234"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Rotation Vector. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>–angle_representation#Rotation_vector </para>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" line="40" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp" bodystart="39" bodyend="241"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a0f62c1163664af90b469ef7b4fb0dea9" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>angle_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1aa8a91f139ea79f3fa3d24d13ccec1212" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>axis_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1acfff1d3bbd3dc4b5998bed27cca91e7d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>EulerAngle</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1ac9544a31482220e580b6ad383c888bb5" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>getAngle</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a177b242ce75f1631de02e15e50804958" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>getAxis</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a7eb8f0bba73e0e36fa7a6f1bbd88da2d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>isDefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a1ab7d9369961e7f7e2bc9c6afb76f234" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1aa66ba2fd706a441ee39d06857842ecfe" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a951bcc257b60ab3ec2f45e1b4eb0cb70" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1ae2257efa00cf6358d7135f4fb67f42c0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>Quaternion</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a02150f4e7ec88996f75eaae63b215cfb" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>rectify</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a11b732b431882d3e29d63b5b350b88bc" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>RotationMatrix</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a85786a4e81f7107c8367ed0ae783c79f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>RotationVector</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1aca6953257290fbef4b31d1ae9ce91c8f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>RotationVector</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a21e269f802d8f91fabad4b9ed82cfd47" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>RotationVector</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a9ce94326aaddb6e9e967acc388b39f44" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>toString</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1ac296ba2d49497a1d7a5b1d1aa1628294" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>Undefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a31c276c930ed9d5ff4cb406be6a48f7e" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>Unit</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1ad5a563a069f6665a086b2ba5fc20ea76" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>X</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a30ecbac5afd7470bc9cb68079997fc0c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>Y</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector_1a4985f992a53c3d1412a06b2ebedd4bca" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</scope><name>Z</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

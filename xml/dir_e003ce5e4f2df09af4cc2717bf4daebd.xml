@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_e003ce5e4f2df09af4cc2717bf4daebd" kind="dir">
+    <compoundname>include/OpenSpaceToolkit/Mathematics/CurveFitting</compoundname>
+    <innerdir refid="dir_63470a2cc504a7aebe94128417d762f9">include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator</innerdir>
+    <innerfile refid="_interpolator_8hpp">Interpolator.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/"/>
+  </compounddef>
+</doxygen>

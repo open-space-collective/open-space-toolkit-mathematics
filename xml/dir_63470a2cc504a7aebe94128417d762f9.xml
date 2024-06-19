@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_63470a2cc504a7aebe94128417d762f9" kind="dir">
+    <compoundname>include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator</compoundname>
+    <innerfile refid="_barycentric_rational_8hpp">BarycentricRational.hpp</innerfile>
+    <innerfile refid="_cubic_spline_8hpp">CubicSpline.hpp</innerfile>
+    <innerfile refid="_linear_8hpp">Linear.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/"/>
+  </compounddef>
+</doxygen>

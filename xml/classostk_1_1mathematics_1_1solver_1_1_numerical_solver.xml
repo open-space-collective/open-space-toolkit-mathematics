@@ -1,0 +1,1038 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::solver::NumericalSolver</compoundname>
+    <includes refid="_numerical_solver_8hpp" local="no">NumericalSolver.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>StepperType</name>
+        <enumvalue id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97a2ad1d4b322353ee07200045be21ffb58" prot="public">
+          <name>RungeKutta4</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97a646d9d3aaac989d6fd4990f308ba3a37" prot="public">
+          <name>RungeKuttaCashKarp54</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97a5002097811f3eb2dd4a34b826b1288e7" prot="public">
+          <name>RungeKuttaFehlberg78</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97a3203013d28f8e40a899ed45ede9ad149" prot="public">
+          <name>RungeKuttaDopri5</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="36" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" bodystart="35" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="enum" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad8a0c981770c8ee40f765cc17cf0c1a5" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>LogType</name>
+        <enumvalue id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad8a0c981770c8ee40f765cc17cf0c1a5ac224e58a49e83bb9b94e2bd594fd5231" prot="public">
+          <name>NoLog</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad8a0c981770c8ee40f765cc17cf0c1a5a40b79e6f53444b0a01aa353abfd9fe91" prot="public">
+          <name>LogConstant</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad8a0c981770c8ee40f765cc17cf0c1a5aa412149ee02d5aaab7f9f710b2e39c5e" prot="public">
+          <name>LogAdaptive</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="44" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" bodystart="43" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" prot="public" static="no">
+        <type>VectorXd</type>
+        <definition>typedef VectorXd ostk::mathematics::solver::NumericalSolver::StateVector</definition>
+        <argsstring></argsstring>
+        <name>StateVector</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="50" column="22" bodyfile="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1aef6d06e4478e44fbe3354dbe8f80b94d" prot="public" static="no">
+        <type>Pair&lt; <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">StateVector</ref>, double &gt;</type>
+        <definition>typedef Pair&lt;StateVector, double&gt; ostk::mathematics::solver::NumericalSolver::Solution</definition>
+        <argsstring></argsstring>
+        <name>Solution</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="52" column="18" bodyfile="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1af087a68c505e3da6f7ebfd0cfb1d2ef5" prot="public" static="no">
+        <type>std::function&lt; void(const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">StateVector</ref> &amp;, <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">StateVector</ref> &amp;, const double)&gt;</type>
+        <definition>typedef std::function&lt;void(const StateVector&amp;, StateVector&amp;, const double)&gt; ostk::mathematics::solver::NumericalSolver::SystemOfEquationsWrapper</definition>
+        <argsstring></argsstring>
+        <name>SystemOfEquationsWrapper</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="54" column="9" bodyfile="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a7e2b0144bf211d31e61aa932ee900ba1" prot="protected" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad8a0c981770c8ee40f765cc17cf0c1a5" kindref="member">NumericalSolver::LogType</ref></type>
+        <definition>NumericalSolver::LogType ostk::mathematics::solver::NumericalSolver::logType_</definition>
+        <argsstring></argsstring>
+        <name>logType_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="297" column="30" bodyfile="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" bodystart="297" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad99c1d09276752b4cf3bb1291c54e138" prot="protected" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97" kindref="member">NumericalSolver::StepperType</ref></type>
+        <definition>NumericalSolver::StepperType ostk::mathematics::solver::NumericalSolver::stepperType_</definition>
+        <argsstring></argsstring>
+        <name>stepperType_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="298" column="34" bodyfile="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" bodystart="298" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a5f05521e24c29047c899ddffa410b614" prot="protected" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::solver::NumericalSolver::timeStep_</definition>
+        <argsstring></argsstring>
+        <name>timeStep_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="299" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" bodystart="299" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a45eb77bb99f110923f802b93556747f0" prot="protected" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::solver::NumericalSolver::relativeTolerance_</definition>
+        <argsstring></argsstring>
+        <name>relativeTolerance_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="300" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" bodystart="300" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ae0fbf398e8fee698ba27d6675cd11217" prot="protected" static="no" mutable="no">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::solver::NumericalSolver::absoluteTolerance_</definition>
+        <argsstring></argsstring>
+        <name>absoluteTolerance_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="301" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" bodystart="301" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a8b8dd7540c90a98910b626ae8a0e9ebf" prot="private" static="no" mutable="no">
+        <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1aef6d06e4478e44fbe3354dbe8f80b94d" kindref="member">Solution</ref> &gt;</type>
+        <definition>Array&lt;Solution&gt; ostk::mathematics::solver::NumericalSolver::observedStateVectors_</definition>
+        <argsstring></argsstring>
+        <name>observedStateVectors_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="306" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" bodystart="306" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a1c5fd12a2d545bf7d090d992ffcbe17e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::solver::NumericalSolver::NumericalSolver</definition>
+        <argsstring>(const NumericalSolver::LogType &amp;aLogType, const NumericalSolver::StepperType &amp;aStepperType, const Real &amp;aTimeStep, const Real &amp;aRelativeTolerance, const Real &amp;anAbsoluteTolerance)</argsstring>
+        <name>NumericalSolver</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad8a0c981770c8ee40f765cc17cf0c1a5" kindref="member">NumericalSolver::LogType</ref> &amp;</type>
+          <declname>aLogType</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97" kindref="member">NumericalSolver::StepperType</ref> &amp;</type>
+          <declname>aStepperType</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aTimeStep</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aRelativeTolerance</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>anAbsoluteTolerance</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">NumericalSolver<sp/>numericalSolver<sp/>=<sp/>{<sp/>aLogType,<sp/>aStepperType,<sp/>aTimeStep,</highlight></codeline>
+<codeline><highlight class="normal">aRelativeTolerance,<sp/>anAbsoluteTolerance<sp/>};</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLogType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An enum indicating the amount of verbosity wanted to be logged during numerical integration </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aStepperType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An enum indicating the type of numerical stepper used to perform integration </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aTimeStep</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A number indicating the initial guess time step the numerical solver will take </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aRelativeTolerance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A number indicating the relative integration tolerance </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anAbsoluteTolerance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A number indicating the absolute integration tolerance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="72" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="27" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ade382b45dc13976a125ee742a7e0e299" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver" kindref="compound">NumericalSolver</ref> *</type>
+        <definition>NumericalSolver* ostk::mathematics::solver::NumericalSolver::clone</definition>
+        <argsstring>() const</argsstring>
+        <name>clone</name>
+        <briefdescription>
+<para>Clone numerical solver. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to cloned numerical solver </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="84" column="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a751982613c3465145a9a0fc268c87467" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::solver::NumericalSolver::operator==</definition>
+        <argsstring>(const NumericalSolver &amp;aNumericalSolver) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver" kindref="compound">NumericalSolver</ref> &amp;</type>
+          <declname>aNumericalSolver</declname>
+        </param>
+        <briefdescription>
+<para>Equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aNumericalSolver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A numerical solver </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if numerical solver are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="91" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="43" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1af8c55a09c0934260c5e61574183aa7af" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::solver::NumericalSolver::operator!=</definition>
+        <argsstring>(const NumericalSolver &amp;aNumericalSolver) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver" kindref="compound">NumericalSolver</ref> &amp;</type>
+          <declname>aNumericalSolver</declname>
+        </param>
+        <briefdescription>
+<para>Not equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aNumericalSolver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A numerical solver </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if numerical solver are not equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="98" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="55" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ae9123dc938fbfdf8497f804adf981f37" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::solver::NumericalSolver::isDefined</definition>
+        <argsstring>() const</argsstring>
+        <name>isDefined</name>
+        <briefdescription>
+<para>Check if numerical solver is defined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if numerical solver is defined </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="112" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="67" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad228bac87a6b39aeecc275e894178722" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ostk::mathematics::solver::NumericalSolver::print</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, bool displayDecorator=true) const</argsstring>
+        <name>print</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>displayDecorator</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Print numerical solver. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>displayDecorators If true, display decorators </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="119" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="72" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad7d60a1c86d369700734a572d6960da0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>const Array&lt; <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1aef6d06e4478e44fbe3354dbe8f80b94d" kindref="member">Solution</ref> &gt; &amp;</type>
+        <definition>const Array&lt; NumericalSolver::Solution &gt; &amp; ostk::mathematics::solver::NumericalSolver::accessObservedStateVectors</definition>
+        <argsstring>() const</argsstring>
+        <name>accessObservedStateVectors</name>
+        <briefdescription>
+<para>Access observed state vectors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Observed state vectors </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="125" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="92" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1acc6274d68e4f0ec5f10089db23354a90" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad8a0c981770c8ee40f765cc17cf0c1a5" kindref="member">NumericalSolver::LogType</ref></type>
+        <definition>NumericalSolver::LogType ostk::mathematics::solver::NumericalSolver::getLogType</definition>
+        <argsstring>() const</argsstring>
+        <name>getLogType</name>
+        <briefdescription>
+<para>Get integration logging enum. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">numericalSolver.getLogType();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>LogType </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="135" column="30" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="102" bodyend="110"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a520c6ba46e8033399d81c0f896fa5539" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97" kindref="member">NumericalSolver::StepperType</ref></type>
+        <definition>NumericalSolver::StepperType ostk::mathematics::solver::NumericalSolver::getStepperType</definition>
+        <argsstring>() const</argsstring>
+        <name>getStepperType</name>
+        <briefdescription>
+<para>Get integration stepper enum. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">numericalSolver.getStepperType();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>StepperType </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="145" column="34" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="112" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1aad43791f97dfc11ac7b4dc3e97a6a786" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::solver::NumericalSolver::getTimeStep</definition>
+        <argsstring>() const</argsstring>
+        <name>getTimeStep</name>
+        <briefdescription>
+<para>Get initial time step guess. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">numericalSolver.getTimeStep();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Real </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="155" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="122" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1af59c4d7855ecc9a757df289df56b6495" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::solver::NumericalSolver::getRelativeTolerance</definition>
+        <argsstring>() const</argsstring>
+        <name>getRelativeTolerance</name>
+        <briefdescription>
+<para>Get relative integration tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">numericalSolver.getRelativeTolerance();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Real </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="165" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="132" bodyend="140"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1acd9c18a1b9dc2ba8bb5605da416638dc" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Real</type>
+        <definition>Real ostk::mathematics::solver::NumericalSolver::getAbsoluteTolerance</definition>
+        <argsstring>() const</argsstring>
+        <name>getAbsoluteTolerance</name>
+        <briefdescription>
+<para>Get absolute integration tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">numericalSolver.getAbsoluteTolerance();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Real </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="175" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="142" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ac1dc63e114e85e2c733349ae7f69ed9d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1aef6d06e4478e44fbe3354dbe8f80b94d" kindref="member">Solution</ref> &gt;</type>
+        <definition>Array&lt; NumericalSolver::Solution &gt; ostk::mathematics::solver::NumericalSolver::getObservedStateVectors</definition>
+        <argsstring>() const</argsstring>
+        <name>getObservedStateVectors</name>
+        <briefdescription>
+<para>Get observed state vectors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">numericalSolver.getObservedStateVectors();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Observed state vectors </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="185" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="152" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a7f9c29b8cbdb29b1e1de907a528f902d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1aef6d06e4478e44fbe3354dbe8f80b94d" kindref="member">Solution</ref> &gt;</type>
+        <definition>Array&lt; NumericalSolver::Solution &gt; ostk::mathematics::solver::NumericalSolver::integrateTime</definition>
+        <argsstring>(const StateVector &amp;anInitialStateVector, const Real &amp;aStartTime, const Array&lt; Real &gt; &amp;aTimeArray, const SystemOfEquationsWrapper &amp;aSystemOfEquations)</argsstring>
+        <name>integrateTime</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">StateVector</ref> &amp;</type>
+          <declname>anInitialStateVector</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aStartTime</declname>
+        </param>
+        <param>
+          <type>const Array&lt; Real &gt; &amp;</type>
+          <declname>aTimeArray</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1af087a68c505e3da6f7ebfd0cfb1d2ef5" kindref="member">SystemOfEquationsWrapper</ref> &amp;</type>
+          <declname>aSystemOfEquations</declname>
+        </param>
+        <briefdescription>
+<para>Perform numerical integration from a start time to an array of times. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Array&lt;Solution&gt;<sp/>solutions<sp/>=</highlight></codeline>
+<codeline><highlight class="normal">numericalSolver.integrateTime(stateVector,<sp/>startTime,<sp/>timeArray,<sp/>systemOfEquations);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anInitialStateVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An initial n-dimensional state vector to begin integrating at </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aStartTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A time to begin integrating from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aTimeArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A array of times to integrate to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSystemOfEquations</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A std::function wrapper with a particular signature that boost::odeint accepts to perform numerical integration </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Array&lt;Solution&gt; </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="201" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="157" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6ca786d30c480052c195cea67f919f05" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1aef6d06e4478e44fbe3354dbe8f80b94d" kindref="member">Solution</ref></type>
+        <definition>NumericalSolver::Solution ostk::mathematics::solver::NumericalSolver::integrateTime</definition>
+        <argsstring>(const StateVector &amp;anInitialStateVector, const Real &amp;aStartTime, const Real &amp;anEndTime, const SystemOfEquationsWrapper &amp;aSystemOfEquations)</argsstring>
+        <name>integrateTime</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">StateVector</ref> &amp;</type>
+          <declname>anInitialStateVector</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aStartTime</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>anEndTime</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1af087a68c505e3da6f7ebfd0cfb1d2ef5" kindref="member">SystemOfEquationsWrapper</ref> &amp;</type>
+          <declname>aSystemOfEquations</declname>
+        </param>
+        <briefdescription>
+<para>Perform numerical integration from a start time to an end time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Solution<sp/>solution<sp/>=<sp/>numericalSolver.integrateTime(stateVector,<sp/>startTime,<sp/>endTime,</highlight></codeline>
+<codeline><highlight class="normal">systemOfEquations);</highlight></codeline>
+</programlisting> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anInitialStateVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An initial n-dimensional state vector to begin integrating at </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aStartTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A time to begin integrating from </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anEndTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An time to integrate to </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSystemOfEquations</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A std::function wrapper with a particular signature that boost::odeint accepts to perform numerical integration </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Solution </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="221" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="423" bodyend="431"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a0b2c17bbe35e2cbb8a352b4736685637" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1aef6d06e4478e44fbe3354dbe8f80b94d" kindref="member">Solution</ref></type>
+        <definition>NumericalSolver::Solution ostk::mathematics::solver::NumericalSolver::integrateDuration</definition>
+        <argsstring>(const StateVector &amp;anInitialStateVector, const Real &amp;aDurationInSeconds, const SystemOfEquationsWrapper &amp;aSystemOfEquations)</argsstring>
+        <name>integrateDuration</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">StateVector</ref> &amp;</type>
+          <declname>anInitialStateVector</declname>
+        </param>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aDurationInSeconds</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1af087a68c505e3da6f7ebfd0cfb1d2ef5" kindref="member">SystemOfEquationsWrapper</ref> &amp;</type>
+          <declname>aSystemOfEquations</declname>
+        </param>
+        <briefdescription>
+<para>Perform numerical integration for a specified duration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Solution<sp/>solution<sp/>=<sp/>numericalsolver.integrateTime(stateVector,<sp/>durationSeconds,</highlight></codeline>
+<codeline><highlight class="normal">SystemofEquations);</highlight></codeline>
+</programlisting> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anInitialStateVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An initial n-dimensional state vector to begin integrating at </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aDurationInSeconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A duration over which to integrate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSystemOfEquations</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A std::function wrapper with a particular signature that boost::odeint accepts to perform numerical integration </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Solution </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="240" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="251" bodyend="421"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ae8581bab9e2de3b4025c966da27a72c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1aef6d06e4478e44fbe3354dbe8f80b94d" kindref="member">Solution</ref> &gt;</type>
+        <definition>Array&lt; NumericalSolver::Solution &gt; ostk::mathematics::solver::NumericalSolver::integrateDuration</definition>
+        <argsstring>(const StateVector &amp;anInitialStateVector, const Array&lt; Real &gt; &amp;aDurationArray, const SystemOfEquationsWrapper &amp;aSystemOfEquations)</argsstring>
+        <name>integrateDuration</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">StateVector</ref> &amp;</type>
+          <declname>anInitialStateVector</declname>
+        </param>
+        <param>
+          <type>const Array&lt; Real &gt; &amp;</type>
+          <declname>aDurationArray</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1af087a68c505e3da6f7ebfd0cfb1d2ef5" kindref="member">SystemOfEquationsWrapper</ref> &amp;</type>
+          <declname>aSystemOfEquations</declname>
+        </param>
+        <briefdescription>
+<para>Perform numerical integration for an array of durations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Array&lt;Solution&gt;<sp/>solutions<sp/>=<sp/>numericalsolver.integrateTime(stateVector,<sp/>durationArray,</highlight></codeline>
+<codeline><highlight class="normal">systemOfEquations);</highlight></codeline>
+</programlisting> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anInitialStateVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An initial n-dimensional state vector to begin integrating at </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aDurationArray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of durations over which to integrate </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSystemOfEquations</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A std::function wrapper with a particular signature that boost::odeint accepts to perform numerical integration </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Array&lt;Solution&gt; </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="258" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="433" bodyend="440"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a28e4d7a66856d0bedb035589eb5e70f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, const NumericalSolver &amp;aNumericalSolver)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver" kindref="compound">NumericalSolver</ref> &amp;</type>
+          <declname>aNumericalSolver</declname>
+        </param>
+        <briefdescription>
+<para>Output stream operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aNumericalSolver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A numerical solver </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Output stream reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="106" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="60" bodyend="65"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a2c4600d661dbfbc01f5cd4c3380440c7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String ostk::mathematics::solver::NumericalSolver::StringFromStepperType</definition>
+        <argsstring>(const NumericalSolver::StepperType &amp;aStepperType)</argsstring>
+        <name>StringFromStepperType</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97" kindref="member">NumericalSolver::StepperType</ref> &amp;</type>
+          <declname>aStepperType</declname>
+        </param>
+        <briefdescription>
+<para>Get string from the integration stepper type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">NumericalSolver::StringFromStepperType(aStepperType);</highlight></codeline>
+</programlisting> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aStepperType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An integration stepper type enum </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>StepperType </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="272" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="460" bodyend="479"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a7cee34ba53141a87ef6b43c8109b3444" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String ostk::mathematics::solver::NumericalSolver::StringFromLogType</definition>
+        <argsstring>(const NumericalSolver::LogType &amp;aLogType)</argsstring>
+        <name>StringFromLogType</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad8a0c981770c8ee40f765cc17cf0c1a5" kindref="member">NumericalSolver::LogType</ref> &amp;</type>
+          <declname>aLogType</declname>
+        </param>
+        <briefdescription>
+<para>Get string from the integration log type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">NumericalSolver::StringFromLogType(aLogType);</highlight></codeline>
+</programlisting> <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLogType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An integration log type enum </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>LogType </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="282" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="442" bodyend="458"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a1e196c06ce05721dd871501fd4df0500" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver" kindref="compound">NumericalSolver</ref></type>
+        <definition>NumericalSolver ostk::mathematics::solver::NumericalSolver::Undefined</definition>
+        <argsstring>()</argsstring>
+        <name>Undefined</name>
+        <briefdescription>
+<para>Undefined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>An undefined numerical solver </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="288" column="28" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="481" bodyend="490"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a1653209d9c0b27cc3299fafaa4df7368" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver" kindref="compound">NumericalSolver</ref></type>
+        <definition>NumericalSolver ostk::mathematics::solver::NumericalSolver::Default</definition>
+        <argsstring>()</argsstring>
+        <name>Default</name>
+        <briefdescription>
+<para>Default. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A default numerical solver </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="294" column="28" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="492" bodyend="501"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a348ac983e497f1185031205dd465c588" prot="protected" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::solver::NumericalSolver::getSignedTimeStep</definition>
+        <argsstring>(const Real &amp;aReal) const</argsstring>
+        <name>getSignedTimeStep</name>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aReal</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="303" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="537" bodyend="541"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a722267157722f475db443c817a9e95d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ostk::mathematics::solver::NumericalSolver::observeNumericalIntegration</definition>
+        <argsstring>(const StateVector &amp;x, const double t)</argsstring>
+        <name>observeNumericalIntegration</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" kindref="member">StateVector</ref> &amp;</type>
+          <declname>x</declname>
+        </param>
+        <param>
+          <type>const double</type>
+          <declname>t</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="308" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.cpp" bodystart="503" bodyend="535"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Defines a numerical ODE solver that use the Boost Odeint libraries. This class will be moved into OSTk-math in the future. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>Real</label>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::solver::NumericalSolver</label>
+        <link refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>absoluteTolerance_</edgelabel>
+          <edgelabel>relativeTolerance_</edgelabel>
+          <edgelabel>timeStep_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" line="33" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp" bodystart="32" bodyend="309"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ae0fbf398e8fee698ba27d6675cd11217" prot="protected" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>absoluteTolerance_</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad7d60a1c86d369700734a572d6960da0" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>accessObservedStateVectors</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ade382b45dc13976a125ee742a7e0e299" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>clone</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a1653209d9c0b27cc3299fafaa4df7368" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>Default</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1acd9c18a1b9dc2ba8bb5605da416638dc" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>getAbsoluteTolerance</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1acc6274d68e4f0ec5f10089db23354a90" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>getLogType</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ac1dc63e114e85e2c733349ae7f69ed9d" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>getObservedStateVectors</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1af59c4d7855ecc9a757df289df56b6495" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>getRelativeTolerance</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a348ac983e497f1185031205dd465c588" prot="protected" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>getSignedTimeStep</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a520c6ba46e8033399d81c0f896fa5539" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>getStepperType</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1aad43791f97dfc11ac7b4dc3e97a6a786" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>getTimeStep</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a0b2c17bbe35e2cbb8a352b4736685637" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>integrateDuration</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ae8581bab9e2de3b4025c966da27a72c2" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>integrateDuration</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a7f9c29b8cbdb29b1e1de907a528f902d" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>integrateTime</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6ca786d30c480052c195cea67f919f05" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>integrateTime</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ae9123dc938fbfdf8497f804adf981f37" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>isDefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad8a0c981770c8ee40f765cc17cf0c1a5" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>LogType</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a7e2b0144bf211d31e61aa932ee900ba1" prot="protected" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>logType_</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a1c5fd12a2d545bf7d090d992ffcbe17e" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>NumericalSolver</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a8b8dd7540c90a98910b626ae8a0e9ebf" prot="private" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>observedStateVectors_</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a722267157722f475db443c817a9e95d9" prot="private" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>observeNumericalIntegration</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1af8c55a09c0934260c5e61574183aa7af" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a28e4d7a66856d0bedb035589eb5e70f7" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a751982613c3465145a9a0fc268c87467" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad228bac87a6b39aeecc275e894178722" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>print</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a45eb77bb99f110923f802b93556747f0" prot="protected" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>relativeTolerance_</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1aef6d06e4478e44fbe3354dbe8f80b94d" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>Solution</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a321c69ab0db9e09939b690580685a4b9" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>StateVector</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a6d9ca28da654c92c6f36878e6a5efd97" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>StepperType</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1ad99c1d09276752b4cf3bb1291c54e138" prot="protected" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>stepperType_</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a7cee34ba53141a87ef6b43c8109b3444" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>StringFromLogType</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a2c4600d661dbfbc01f5cd4c3380440c7" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>StringFromStepperType</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1af087a68c505e3da6f7ebfd0cfb1d2ef5" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>SystemOfEquationsWrapper</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a5f05521e24c29047c899ddffa410b614" prot="protected" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>timeStep_</name></member>
+      <member refid="classostk_1_1mathematics_1_1solver_1_1_numerical_solver_1a1e196c06ce05721dd871501fd4df0500" prot="public" virt="non-virtual"><scope>ostk::mathematics::solver::NumericalSolver</scope><name>Undefined</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

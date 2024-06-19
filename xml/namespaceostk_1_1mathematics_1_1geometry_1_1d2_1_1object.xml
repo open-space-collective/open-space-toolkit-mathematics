@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceostk_1_1mathematics_1_1geometry_1_1d2_1_1object" kind="namespace" language="C++">
+    <compoundname>ostk::mathematics::geometry::d2::object</compoundname>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" prot="public">ostk::mathematics::geometry::d2::object::Composite</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line" prot="public">ostk::mathematics::geometry::d2::object::Line</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_line_string" prot="public">ostk::mathematics::geometry::d2::object::LineString</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_line_string" prot="public">ostk::mathematics::geometry::d2::object::MultiLineString</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_multi_polygon" prot="public">ostk::mathematics::geometry::d2::object::MultiPolygon</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point" prot="public">ostk::mathematics::geometry::d2::object::Point</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_point_set" prot="public">ostk::mathematics::geometry::d2::object::PointSet</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" prot="public">ostk::mathematics::geometry::d2::object::Polygon</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment" prot="public">ostk::mathematics::geometry::d2::object::Segment</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1ac1ef77832033c8e89498cf87b6e0e08e" prot="public" static="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">ostk::mathematics::geometry::d2::object::Polygon</ref></type>
+        <definition>using ostk::mathematics::geometry::d2::object::Polygon2d = typedef ostk::mathematics::geometry::d2::object::Polygon</definition>
+        <argsstring></argsstring>
+        <name>Polygon2d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" line="39" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/MultiPolygon.hpp" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/Composite.hpp" line="23" column="1"/>
+  </compounddef>
+</doxygen>

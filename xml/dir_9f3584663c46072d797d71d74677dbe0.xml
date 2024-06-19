@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_9f3584663c46072d797d71d74677dbe0" kind="dir">
+    <compoundname>include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object</compoundname>
+    <innerfile refid="3_d_2_object_2_composite_8hpp">Composite.hpp</innerfile>
+    <innerfile refid="_cone_8hpp">Cone.hpp</innerfile>
+    <innerfile refid="_cuboid_8hpp">Cuboid.hpp</innerfile>
+    <innerfile refid="_ellipsoid_8hpp">Ellipsoid.hpp</innerfile>
+    <innerfile refid="3_d_2_object_2_line_8hpp">Line.hpp</innerfile>
+    <innerfile refid="3_d_2_object_2_line_string_8hpp">LineString.hpp</innerfile>
+    <innerfile refid="_plane_8hpp">Plane.hpp</innerfile>
+    <innerfile refid="3_d_2_object_2_point_8hpp">Point.hpp</innerfile>
+    <innerfile refid="3_d_2_object_2_point_set_8hpp">PointSet.hpp</innerfile>
+    <innerfile refid="3_d_2_object_2_polygon_8hpp">Polygon.hpp</innerfile>
+    <innerfile refid="_pyramid_8hpp">Pyramid.hpp</innerfile>
+    <innerfile refid="_ray_8hpp">Ray.hpp</innerfile>
+    <innerfile refid="3_d_2_object_2_segment_8hpp">Segment.hpp</innerfile>
+    <innerfile refid="_sphere_8hpp">Sphere.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/"/>
+  </compounddef>
+</doxygen>

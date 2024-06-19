@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceostk_1_1mathematics_1_1geometry_1_1d3" kind="namespace" language="C++">
+    <compoundname>ostk::mathematics::geometry::d3</compoundname>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" prot="public">ostk::mathematics::geometry::d3::Intersection</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" prot="public">ostk::mathematics::geometry::d3::Object</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" prot="public">ostk::mathematics::geometry::d3::Transformation</innerclass>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object">ostk::mathematics::geometry::d3::object</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation">ostk::mathematics::geometry::d3::transformation</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1add09e667e701008cce5578e26853f883" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; ostk::mathematics::geometry::d3::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, const Intersection &amp;anIntersection)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> &amp;</type>
+          <declname>anIntersection</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>Intersection(...)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anIntersection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An intersection </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to output stream </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" line="87" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.cpp" bodystart="87" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1a5315286506c8a28a01474c943c8847c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; ostk::mathematics::geometry::d3::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, const Object &amp;anObject)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" kindref="compound">Object</ref> &amp;</type>
+          <declname>anObject</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anObject</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An object </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A reference to output stream </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.cpp" line="214" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object.cpp" bodystart="214" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1a36a57a233542af3c746ef3b589873e18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; ostk::mathematics::geometry::d3::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, const Transformation &amp;aTransformation)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
+          <declname>aTransformation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" line="164" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="164" bodyend="169"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Intersection.hpp" line="34" column="1"/>
+  </compounddef>
+</doxygen>

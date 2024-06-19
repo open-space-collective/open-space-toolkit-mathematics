@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_0135578efc1637a0e0841daccc698f8a" kind="dir">
+    <compoundname>include/OpenSpaceToolkit</compoundname>
+    <innerdir refid="dir_f3faba878442e5c0a91342498b159f75">include/OpenSpaceToolkit/Mathematics</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/"/>
+  </compounddef>
+</doxygen>

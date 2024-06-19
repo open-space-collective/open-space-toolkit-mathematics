@@ -1,0 +1,1006 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</compoundname>
+    <includes refid="_euler_angle_8hpp" local="no">EulerAngle.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>AxisSequence</name>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168caec0fc0100c4fc1ce4eea230c3dc10360" prot="public">
+          <name>Undefined</name>
+          <briefdescription>
+<para>Undefined sequence. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168cae65075d550f9b5bf9992fa1d71a131be" prot="public">
+          <name>XYZ</name>
+          <briefdescription>
+<para>X -&gt; Y -&gt; Z sequence. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168ca07bb28478030fc8b86da84000c9860d3" prot="public">
+          <name>ZXY</name>
+          <briefdescription>
+<para>Z -&gt; X -&gt; Y sequence. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168ca6811254e01b3550bdb2dc46f204730dc" prot="public">
+          <name>ZYX</name>
+          <briefdescription>
+<para>Z -&gt; Y -&gt; X sequence. </para>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="50" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" bodystart="49" bodyend="57"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a54c61ecb9b23f5dd2d8c6928a0d909a3" prot="private" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
+        <definition>Angle ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::phi_</definition>
+        <argsstring></argsstring>
+        <name>phi_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="364" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" bodystart="364" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a286d380067e5765bd97b6585cb6eadcd" prot="private" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
+        <definition>Angle ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::theta_</definition>
+        <argsstring></argsstring>
+        <name>theta_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="365" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" bodystart="365" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a588b66fa1f72a111aaf711cc3ff1d6e4" prot="private" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
+        <definition>Angle ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::psi_</definition>
+        <argsstring></argsstring>
+        <name>psi_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="366" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" bodystart="366" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a89e0bb9b997ea5eef41b1310c7f8b50e" prot="private" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">EulerAngle::AxisSequence</ref></type>
+        <definition>EulerAngle::AxisSequence ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::axisSequence_</definition>
+        <argsstring></argsstring>
+        <name>axisSequence_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="368" column="30" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" bodystart="368" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a7d88d303ded4e39e598cdf566796cc9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::EulerAngle</definition>
+        <argsstring>(const Angle &amp;aFirstAngle, const Angle &amp;aSecondAngle, const Angle &amp;aThirdAngle, const EulerAngle::AxisSequence &amp;anAxisSequence)</argsstring>
+        <name>EulerAngle</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>aFirstAngle</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>aSecondAngle</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>aThirdAngle</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">EulerAngle::AxisSequence</ref> &amp;</type>
+          <declname>anAxisSequence</declname>
+        </param>
+        <briefdescription>
+<para>Construct Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> from angles and axis sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Angle::Degrees(1.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Angle::Degrees(2.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Angle::Degrees(3.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EulerAngle::AxisSequence::ZYX</highlight></codeline>
+<codeline><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A first angle (phi) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A second angle (theta) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aThirdAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A third angle (psi) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anAxisSequence</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An axis sequence </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="75" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="24" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1aef0ee3faab6cf338e6c3fef716160378" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::EulerAngle</definition>
+        <argsstring>(const Vector3d &amp;aVector, const Angle::Unit &amp;anAngleUnit, const EulerAngle::AxisSequence &amp;anAxisSequence)</argsstring>
+        <name>EulerAngle</name>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aVector</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371" kindref="member">Angle::Unit</ref> &amp;</type>
+          <declname>anAngleUnit</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">EulerAngle::AxisSequence</ref> &amp;</type>
+          <declname>anAxisSequence</declname>
+        </param>
+        <briefdescription>
+<para>Construct Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> from vector of angles and axis sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>{1.0,<sp/>0.0,<sp/>0.0},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Angle::Unit::Degree,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EulerAngle::AxisSequence::ZYX</highlight></codeline>
+<codeline><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of angles </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngleUnit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angle unit </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anAxisSequence</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An axis sequence </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="96" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="37" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a487434e408dd6301e624305f9708a1b2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::operator==</definition>
+        <argsstring>(const EulerAngle &amp;aEulerAngle) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref> &amp;</type>
+          <declname>aEulerAngle</declname>
+        </param>
+        <briefdescription>
+<para>Equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::Unit()<sp/>==<sp/>EulerAngle::Unit();</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aEulerAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if Euler Angles are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="107" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="47" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a5adfa3b7def412a62f25fcb4d154f160" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::operator!=</definition>
+        <argsstring>(const EulerAngle &amp;aEulerAngle) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref> &amp;</type>
+          <declname>aEulerAngle</declname>
+        </param>
+        <briefdescription>
+<para>Not equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::Unit()<sp/>!=<sp/>EulerAngle::Unit();</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aEulerAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if Euler Angles are not equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="118" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a5140298e4d18f9b63fe1791e2785938c" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::isDefined</definition>
+        <argsstring>() const</argsstring>
+        <name>isDefined</name>
+        <briefdescription>
+<para>Check if Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> is defined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::Unit().isDefined();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> is defined </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="140" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="99" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a75a6bd4f088b43ba2f9e7a9a1a963e64" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::isUnitary</definition>
+        <argsstring>() const</argsstring>
+        <name>isUnitary</name>
+        <briefdescription>
+<para>Check if Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> is unitary. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::Unit().isUnitary();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>True if Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> is unitary </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="150" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="105" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ab25e5b93b6cff6716c08d5b9de4ab2c5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::isNear</definition>
+        <argsstring>(const EulerAngle &amp;aEulerAngle, const Angle &amp;anAngularTolerance) const</argsstring>
+        <name>isNear</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref> &amp;</type>
+          <declname>aEulerAngle</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>anAngularTolerance</declname>
+        </param>
+        <briefdescription>
+<para>Check if Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> is equal to another Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> within a given angular tolerance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::Unit().isNear(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EulerAngle::Unit(),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Angle::Degrees(1e-6)</highlight></codeline>
+<codeline><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aEulerAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngularTolerance</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angular tolerance </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if equal within given angular tolerance </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="166" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="110" bodyend="113"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a6a2ec66eea87c4645cc7815c82d09d0e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
+        <definition>Angle ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::getPhi</definition>
+        <argsstring>() const</argsstring>
+        <name>getPhi</name>
+        <briefdescription>
+<para>Get first angle of rotation (phi) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::Unit().getPhi();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>First angle of rotation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="176" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="115" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a13a35f51cad01171184a1feb3910b68b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
+        <definition>Angle ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::getTheta</definition>
+        <argsstring>() const</argsstring>
+        <name>getTheta</name>
+        <briefdescription>
+<para>Get second angle of rotation (theta) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::Unit().getTheta();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Second angle of rotation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="186" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="125" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a21bb162e148332ca5c36fe4ec1d9de58" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
+        <definition>Angle ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::getPsi</definition>
+        <argsstring>() const</argsstring>
+        <name>getPsi</name>
+        <briefdescription>
+<para>Get third angle of rotation (psi) </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::Unit().getPsi();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Third angle of rotation </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="196" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="135" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a959afa9de94bff84008813662da769e0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">AxisSequence</ref></type>
+        <definition>EulerAngle::AxisSequence ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::getAxisSequence</definition>
+        <argsstring>() const</argsstring>
+        <name>getAxisSequence</name>
+        <briefdescription>
+<para>Get axis sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::Unit().getAxisSequence();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Axis sequence (e.g, ZYX) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="206" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="145" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a511d16a1d248592a98f6fd3345bd7547" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector3d</type>
+        <definition>Vector3d ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::toVector</definition>
+        <argsstring>(const Angle::Unit &amp;anAngleUnit) const</argsstring>
+        <name>toVector</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371" kindref="member">Angle::Unit</ref> &amp;</type>
+          <declname>anAngleUnit</declname>
+        </param>
+        <briefdescription>
+<para>Return vector containing the three angles. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::Unit().toVector(Angle::Unit::Degree);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anAngleUnit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An angle unit </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector containing the three angles </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="217" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="155" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a6ef0461c00dd105f6c38fe5a2ee22c94" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::toString</definition>
+        <argsstring>(const Angle::Unit &amp;anAngleUnit=Angle::Unit::Degree) const</argsstring>
+        <name>toString</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371" kindref="member">Angle::Unit</ref> &amp;</type>
+          <declname>anAngleUnit</declname>
+          <defval><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle_1a9c6a3ae1411b75a6c0cac397a6ace371a6669c4dc00cb161446821b3529ca07d8" kindref="member">Angle::Unit::Degree</ref></defval>
+        </param>
+        <briefdescription>
+<para>Return string form of Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> [phi; theta; psi]. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::Unit().toString(Angle::Unit::Degree);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>anAngleUnit An angle unit </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String from of Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="228" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="165" bodyend="179"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a88d18669eb768c7f71a92df68c886202" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, const EulerAngle &amp;aEulerAngle)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref> &amp;</type>
+          <declname>aEulerAngle</declname>
+        </param>
+        <briefdescription>
+<para>Output stream operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">std::cout<sp/>&lt;&lt;<sp/>EulerAngle::Unit();</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aEulerAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Output stream reference </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="130" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="79" bodyend="97"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a65f9ff57748fe200180b4c7ffee03dd5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></type>
+        <definition>EulerAngle ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::Undefined</definition>
+        <argsstring>()</argsstring>
+        <name>Undefined</name>
+        <briefdescription>
+<para>Construct undefined Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::Undefined();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Undefined Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="238" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="181" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a970d830a551e4596701281e2cf0a1899" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></type>
+        <definition>EulerAngle ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::Unit</definition>
+        <argsstring>()</argsstring>
+        <name>Unit</name>
+        <briefdescription>
+<para>Construct unitary Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::Unit();</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Unitary Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="248" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="186" bodyend="189"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ad67a6f747c305d3528a7d9639ce14bf4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></type>
+        <definition>EulerAngle ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::XYZ</definition>
+        <argsstring>(const Angle &amp;aFirstAngle, const Angle &amp;aSecondAngle, const Angle &amp;aThirdAngle)</argsstring>
+        <name>XYZ</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>aFirstAngle</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>aSecondAngle</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>aThirdAngle</declname>
+        </param>
+        <briefdescription>
+<para>Construct Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> from angles following XYZ sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::XYZ(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Angle::Degrees(1.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Angle::Degrees(2.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Angle::Degrees(3.0)</highlight></codeline>
+<codeline><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A first angle (phi) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A second angle (theta) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aThirdAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A third angle (psi) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="265" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="191" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a5c480a99e25a582539a3d23bbc1cfaad" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></type>
+        <definition>EulerAngle ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::ZXY</definition>
+        <argsstring>(const Angle &amp;aFirstAngle, const Angle &amp;aSecondAngle, const Angle &amp;aThirdAngle)</argsstring>
+        <name>ZXY</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>aFirstAngle</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>aSecondAngle</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>aThirdAngle</declname>
+        </param>
+        <briefdescription>
+<para>Construct Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> from angles following ZXY sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::ZXY(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Angle::Degrees(1.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Angle::Degrees(2.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Angle::Degrees(3.0)</highlight></codeline>
+<codeline><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A first angle (phi) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A second angle (theta) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aThirdAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A third angle (psi) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="282" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="196" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a5a32a18b2e11e5cce47df3f651e22fe8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></type>
+        <definition>EulerAngle ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::ZYX</definition>
+        <argsstring>(const Angle &amp;aFirstAngle, const Angle &amp;aSecondAngle, const Angle &amp;aThirdAngle)</argsstring>
+        <name>ZYX</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>aFirstAngle</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>aSecondAngle</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>aThirdAngle</declname>
+        </param>
+        <briefdescription>
+<para>Construct Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> from angles following ZYX sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::ZYX(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Angle::Degrees(1.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Angle::Degrees(2.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Angle::Degrees(3.0)</highlight></codeline>
+<codeline><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aFirstAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A first angle (phi) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aSecondAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A second angle (theta) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aThirdAngle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A third angle (psi) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="299" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="201" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a046912d1e2a21205e51d070b186630f6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></type>
+        <definition>EulerAngle ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::Quaternion</definition>
+        <argsstring>(const rotation::Quaternion &amp;aQuaternion, const EulerAngle::AxisSequence &amp;anAxisSequence)</argsstring>
+        <name>Quaternion</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">rotation::Quaternion</ref> &amp;</type>
+          <declname>aQuaternion</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">EulerAngle::AxisSequence</ref> &amp;</type>
+          <declname>anAxisSequence</declname>
+        </param>
+        <briefdescription>
+<para>Construct Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> from Rotation Matrix. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::RotationMatrix(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>RotationMatrix::Unit(),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EulerAngle::AxisSequence::ZYX</highlight></codeline>
+<codeline><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationMatrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Rotation Matrix </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anAxisSequence</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An axis sequence </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="314" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="206" bodyend="253"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac8579cff213d96389fcb8daa84d81063" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></type>
+        <definition>EulerAngle ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::RotationVector</definition>
+        <argsstring>(const rotation::RotationVector &amp;aRotationVector, const EulerAngle::AxisSequence &amp;anAxisSequence)</argsstring>
+        <name>RotationVector</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">rotation::RotationVector</ref> &amp;</type>
+          <declname>aRotationVector</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">EulerAngle::AxisSequence</ref> &amp;</type>
+          <declname>anAxisSequence</declname>
+        </param>
+        <briefdescription>
+<para>Construct Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> from <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::Quaternion(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Quaternion::Unit(),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EulerAngle::AxisSequence::ZYX</highlight></codeline>
+<codeline><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aQuaternion</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion" kindref="compound">Quaternion</ref> </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anAxisSequence</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An axis sequence </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="331" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="255" bodyend="260"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ad52bbd103ee414308394cd4c9e9848c9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></type>
+        <definition>EulerAngle ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::RotationMatrix</definition>
+        <argsstring>(const rotation::RotationMatrix &amp;aRotationMatrix, const EulerAngle::AxisSequence &amp;anAxisSequence)</argsstring>
+        <name>RotationMatrix</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">rotation::RotationMatrix</ref> &amp;</type>
+          <declname>aRotationMatrix</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">EulerAngle::AxisSequence</ref> &amp;</type>
+          <declname>anAxisSequence</declname>
+        </param>
+        <briefdescription>
+<para>Construct Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> from Rotation Vector. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::RotationVector(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>RotationVector::Unit(),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>EulerAngle::AxisSequence::ZYX</highlight></codeline>
+<codeline><highlight class="normal">);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRotationVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A Rotation Vector </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anAxisSequence</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An axis sequence </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="348" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="262" bodyend="314"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1af8605f8fa6810bdf2043cdb8b4b2f2a2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle::StringFromAxisSequence</definition>
+        <argsstring>(const EulerAngle::AxisSequence &amp;anAxisSequence)</argsstring>
+        <name>StringFromAxisSequence</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">EulerAngle::AxisSequence</ref> &amp;</type>
+          <declname>anAxisSequence</declname>
+        </param>
+        <briefdescription>
+<para>Construct a string representation of an axis sequence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">EulerAngle::StringFromAxisSequence(EulerAngle::AxisSequence::ZYX);</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anAxisSequence</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An axis sequence </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>String representation of axis sequence </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="361" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="316" bodyend="332"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Euler <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> (intrinsic rotation) </para>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>                        Implementation from &quot;Fundamentals of Spacecraft Attitude Determination and Control&quot;,
+                        F. Landis Markley and John L. Crassidis, Springer
+</verbatim></para>
+<para><ulink url="https://en.wikipedia.org/wiki/Euler_angles">https://en.wikipedia.org/wiki/Euler_angles</ulink> <ulink url="https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations">https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations</ulink> </para>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="47" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" bodystart="46" bodyend="369"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>AxisSequence</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a89e0bb9b997ea5eef41b1310c7f8b50e" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>axisSequence_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a7d88d303ded4e39e598cdf566796cc9e" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>EulerAngle</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1aef0ee3faab6cf338e6c3fef716160378" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>EulerAngle</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a959afa9de94bff84008813662da769e0" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>getAxisSequence</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a6a2ec66eea87c4645cc7815c82d09d0e" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>getPhi</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a21bb162e148332ca5c36fe4ec1d9de58" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>getPsi</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a13a35f51cad01171184a1feb3910b68b" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>getTheta</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a5140298e4d18f9b63fe1791e2785938c" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>isDefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ab25e5b93b6cff6716c08d5b9de4ab2c5" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>isNear</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a75a6bd4f088b43ba2f9e7a9a1a963e64" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>isUnitary</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a5adfa3b7def412a62f25fcb4d154f160" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a88d18669eb768c7f71a92df68c886202" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a487434e408dd6301e624305f9708a1b2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a54c61ecb9b23f5dd2d8c6928a0d909a3" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>phi_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a588b66fa1f72a111aaf711cc3ff1d6e4" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>psi_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a046912d1e2a21205e51d070b186630f6" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>Quaternion</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ad52bbd103ee414308394cd4c9e9848c9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>RotationMatrix</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac8579cff213d96389fcb8daa84d81063" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>RotationVector</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1af8605f8fa6810bdf2043cdb8b4b2f2a2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>StringFromAxisSequence</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a286d380067e5765bd97b6585cb6eadcd" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>theta_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a6ef0461c00dd105f6c38fe5a2ee22c94" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>toString</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a511d16a1d248592a98f6fd3345bd7547" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>toVector</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a65f9ff57748fe200180b4c7ffee03dd5" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>Undefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a970d830a551e4596701281e2cf0a1899" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>Unit</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ad67a6f747c305d3528a7d9639ce14bf4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>XYZ</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a5c480a99e25a582539a3d23bbc1cfaad" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>ZXY</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a5a32a18b2e11e5cce47df3f651e22fe8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle</scope><name>ZYX</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

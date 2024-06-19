@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_40bd4699d286888d91bd0e0ee7b647c0" kind="dir">
+    <compoundname>src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object</compoundname>
+    <innerfile refid="2_d_2_object_2_composite_8cpp">Composite.cpp</innerfile>
+    <innerfile refid="2_d_2_object_2_line_8cpp">Line.cpp</innerfile>
+    <innerfile refid="2_d_2_object_2_line_string_8cpp">LineString.cpp</innerfile>
+    <innerfile refid="_multi_polygon_8cpp">MultiPolygon.cpp</innerfile>
+    <innerfile refid="2_d_2_object_2_point_8cpp">Point.cpp</innerfile>
+    <innerfile refid="2_d_2_object_2_point_set_8cpp">PointSet.cpp</innerfile>
+    <innerfile refid="2_d_2_object_2_polygon_8cpp">Polygon.cpp</innerfile>
+    <innerfile refid="2_d_2_object_2_segment_8cpp">Segment.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/OpenSpaceToolkit/Mathematics/Geometry/2D/Object/"/>
+  </compounddef>
+</doxygen>

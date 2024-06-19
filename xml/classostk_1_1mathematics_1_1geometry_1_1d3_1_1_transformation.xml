@@ -1,0 +1,632 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::geometry::d3::Transformation</compoundname>
+    <includes refid="3_d_2_transformation_8hpp" local="no">Transformation.hpp</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdac" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>Type</name>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdacaec0fc0100c4fc1ce4eea230c3dc10360" prot="public">
+          <name>Undefined</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdacac9c5c65fb4af9cf90eb99b3b84424189" prot="public">
+          <name>Identity</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdaca6dd08874f83507e9c7b23f1a46b7fa7c" prot="public">
+          <name>Translation</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdacaf1a42bd417390fc63b030a519624607a" prot="public">
+          <name>Rotation</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdacabc967dc2d57e6eff184a821bf7577a80" prot="public">
+          <name>Scaling</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdacaaea1e492943ccbad7ee270ec1e064758" prot="public">
+          <name>Reflection</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdaca02414922b70cc0f9d7c841b0c70a0f94" prot="public">
+          <name>Shear</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdaca5b525aab6e200981a842101f1bcbafc6" prot="public">
+          <name>Affine</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="42" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" bodystart="41" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1af65fd2d58ab70522aae54571549ebee6" prot="private" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdac" kindref="member">Transformation::Type</ref></type>
+        <definition>Transformation::Type ostk::mathematics::geometry::d3::Transformation::type_</definition>
+        <argsstring></argsstring>
+        <name>type_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="125" column="26" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a74b65c81ca1c59db33affa6f4d5b74e9" prot="private" static="no" mutable="no">
+        <type>Matrix4d</type>
+        <definition>Matrix4d ostk::mathematics::geometry::d3::Transformation::matrix_</definition>
+        <argsstring></argsstring>
+        <name>matrix_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="126" column="14" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1aab6c129d35c9faac9ffdfa119a6c08d3" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Transformation::isRigid_</definition>
+        <argsstring></argsstring>
+        <name>isRigid_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="128" column="10" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a208df471aa963dabb54cfed7a6cbaa09" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::Transformation::Transformation</definition>
+        <argsstring>(const Matrix4d &amp;aMatrix)</argsstring>
+        <name>Transformation</name>
+        <param>
+          <type>const Matrix4d &amp;</type>
+          <declname>aMatrix</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aMatrix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation matrix </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="59" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="20" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a0701af3c93fa91a10f09335d03fe2f44" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Transformation::operator==</definition>
+        <argsstring>(const Transformation &amp;aTransformation) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
+          <declname>aTransformation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="61" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="27" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a156c810c2357c5fe14beef33cde4e8d5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Transformation::operator!=</definition>
+        <argsstring>(const Transformation &amp;aTransformation) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
+          <declname>aTransformation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="63" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="37" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1aa682c5787e78e1f18a29ab6bce2cb6c2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref></type>
+        <definition>Transformation ostk::mathematics::geometry::d3::Transformation::operator*</definition>
+        <argsstring>(const Transformation &amp;aTransformation) const</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
+          <declname>aTransformation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="65" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="42" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a5de58472d18d02a2446597834fe54f40" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector4d</type>
+        <definition>Vector4d ostk::mathematics::geometry::d3::Transformation::operator*</definition>
+        <argsstring>(const Vector4d &amp;aVector) const</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const Vector4d &amp;</type>
+          <declname>aVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="67" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="51" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a5861759a9e0bcdcf453674c90d159566" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
+        <definition>Transformation &amp; ostk::mathematics::geometry::d3::Transformation::operator*=</definition>
+        <argsstring>(const Transformation &amp;aTransformation)</argsstring>
+        <name>operator*=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
+          <declname>aTransformation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="69" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="66" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a94cd6ac661f8a55d599ea9a1eaa291dd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Transformation::isDefined</definition>
+        <argsstring>() const</argsstring>
+        <name>isDefined</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="73" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="171" bodyend="174"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a8ba50a377bd868397be3fa4111dfdf0f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Transformation::isIdentity</definition>
+        <argsstring>() const</argsstring>
+        <name>isIdentity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="75" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="176" bodyend="184"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1ac948a75534e57432e32a747b8340efe1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Transformation::isRigid</definition>
+        <argsstring>() const</argsstring>
+        <name>isRigid</name>
+        <briefdescription>
+<para>Returns true if transformation is rigid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><verbatim>                A rigid transformation preserves the Euclidean distance between every pair of points.
+                The rigid transformation include rotation, translations, reflections, or their
+                combination.
+</verbatim></para>
+<para><ulink url="https://en.wikipedia.org/wiki/Rigid_transformation">https://en.wikipedia.org/wiki/Rigid_transformation</ulink></para>
+<para><simplesect kind="return"><para>True if transformation is rigid </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="87" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="186" bodyend="194"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1ac56b1e2bf4c24a55f55b22d856f5af25" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdac" kindref="member">Transformation::Type</ref></type>
+        <definition>Transformation::Type ostk::mathematics::geometry::d3::Transformation::getType</definition>
+        <argsstring>() const</argsstring>
+        <name>getType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="89" column="26" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="196" bodyend="204"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a6581c0285a996750beb921f7138cbe09" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Matrix4d</type>
+        <definition>Matrix4d ostk::mathematics::geometry::d3::Transformation::getMatrix</definition>
+        <argsstring>() const</argsstring>
+        <name>getMatrix</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="91" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="206" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a4d7e7f02948277935e28e089ba85d6bd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref></type>
+        <definition>Transformation ostk::mathematics::geometry::d3::Transformation::getInverse</definition>
+        <argsstring>() const</argsstring>
+        <name>getInverse</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="93" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="216" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a9ec64a3aedca2bde159fe870833e3e95" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point ostk::mathematics::geometry::d3::Transformation::applyTo</definition>
+        <argsstring>(const Point &amp;aPoint) const</argsstring>
+        <name>applyTo</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="95" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="226" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a7991674520692cab362fdb67e8ce5a00" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Vector3d</type>
+        <definition>Vector3d ostk::mathematics::geometry::d3::Transformation::applyTo</definition>
+        <argsstring>(const Vector3d &amp;aVector) const</argsstring>
+        <name>applyTo</name>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="97" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="231" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a848420f246834b6ee2272144439e5cbf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ostk::mathematics::geometry::d3::Transformation::print</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, bool displayDecorators=true) const</argsstring>
+        <name>print</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>displayDecorators</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Print transformation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>displayDecorators If true, display decorators </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="104" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="236" bodyend="247"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="friend">
+      <memberdef kind="friend" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1afb2829e106dc4aeab1c706d1eaa357e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>friend std::ostream &amp;</type>
+        <definition>std::ostream&amp; operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, const Transformation &amp;aTransformation)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
+          <declname>aTransformation</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="71" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="164" bodyend="169"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1aac3424b240ed5116413462fa5e1f7c8f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref></type>
+        <definition>Transformation ostk::mathematics::geometry::d3::Transformation::Undefined</definition>
+        <argsstring>()</argsstring>
+        <name>Undefined</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="106" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="249" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a5cd654de32139306358aa773bbf8c291" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref></type>
+        <definition>Transformation ostk::mathematics::geometry::d3::Transformation::Identity</definition>
+        <argsstring>()</argsstring>
+        <name>Identity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="108" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="254" bodyend="257"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1af9058de81115d953ab8d9b8922abe692" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref></type>
+        <definition>Transformation ostk::mathematics::geometry::d3::Transformation::Translation</definition>
+        <argsstring>(const Vector3d &amp;aTranslationVector)</argsstring>
+        <name>Translation</name>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aTranslationVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="110" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="259" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1aa12d31e920d91e59080771f26242b0c2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref></type>
+        <definition>Transformation ostk::mathematics::geometry::d3::Transformation::Rotation</definition>
+        <argsstring>(const RotationVector &amp;aRotationVector)</argsstring>
+        <name>Rotation</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref> &amp;</type>
+          <declname>aRotationVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="112" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="274" bodyend="286"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a6302652ab44a2a9d5ee08645e7ed107a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref></type>
+        <definition>Transformation ostk::mathematics::geometry::d3::Transformation::Rotation</definition>
+        <argsstring>(const RotationMatrix &amp;aRotationMatrix)</argsstring>
+        <name>Rotation</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix" kindref="compound">RotationMatrix</ref> &amp;</type>
+          <declname>aRotationMatrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="114" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="288" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a3966d6c0dcf466528932566907b9c7b4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref></type>
+        <definition>Transformation ostk::mathematics::geometry::d3::Transformation::RotationAround</definition>
+        <argsstring>(const Point &amp;aPoint, const RotationVector &amp;aRotationVector)</argsstring>
+        <name>RotationAround</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kindref="compound">RotationVector</ref> &amp;</type>
+          <declname>aRotationVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="116" column="27" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="302" bodyend="306"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1abc82b6b7508d4a3986bb445e6913e610" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>String</type>
+        <definition>String ostk::mathematics::geometry::d3::Transformation::StringFromType</definition>
+        <argsstring>(const Transformation::Type &amp;aType)</argsstring>
+        <name>StringFromType</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdac" kindref="member">Transformation::Type</ref> &amp;</type>
+          <declname>aType</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="118" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="308" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a21a3ef00ead4aad2df9f7685729db7b3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdac" kindref="member">Transformation::Type</ref></type>
+        <definition>Transformation::Type ostk::mathematics::geometry::d3::Transformation::TypeOfMatrix</definition>
+        <argsstring>(const Matrix4d &amp;aMatrix)</argsstring>
+        <name>TypeOfMatrix</name>
+        <param>
+          <type>const Matrix4d &amp;</type>
+          <declname>aMatrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="120" column="33" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="344" bodyend="361"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a2b247dc8cec2489b61e3a6ec943dc12e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::Transformation::IsRigid</definition>
+        <argsstring>(const Matrix4d &amp;aMatrix)</argsstring>
+        <name>IsRigid</name>
+        <param>
+          <type>const Matrix4d &amp;</type>
+          <declname>aMatrix</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="122" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="363" bodyend="380"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1ae7546266c188896b5f77dec40437e21a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::Transformation::Transformation</definition>
+        <argsstring>(const Transformation::Type &amp;aType, const Matrix4d &amp;aMatrix, const bool isRigid)</argsstring>
+        <name>Transformation</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdac" kindref="member">Transformation::Type</ref> &amp;</type>
+          <declname>aType</declname>
+        </param>
+        <param>
+          <type>const Matrix4d &amp;</type>
+          <declname>aMatrix</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isRigid</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="130" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.cpp" bodystart="382" bodyend="387"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" line="39" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp" bodystart="38" bodyend="131"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a9ec64a3aedca2bde159fe870833e3e95" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>applyTo</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a7991674520692cab362fdb67e8ce5a00" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>applyTo</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a4d7e7f02948277935e28e089ba85d6bd" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>getInverse</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a6581c0285a996750beb921f7138cbe09" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>getMatrix</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1ac56b1e2bf4c24a55f55b22d856f5af25" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>getType</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a5cd654de32139306358aa773bbf8c291" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>Identity</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a94cd6ac661f8a55d599ea9a1eaa291dd" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>isDefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a8ba50a377bd868397be3fa4111dfdf0f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>isIdentity</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1ac948a75534e57432e32a747b8340efe1" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>isRigid</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a2b247dc8cec2489b61e3a6ec943dc12e" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>IsRigid</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1aab6c129d35c9faac9ffdfa119a6c08d3" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>isRigid_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a74b65c81ca1c59db33affa6f4d5b74e9" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>matrix_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a156c810c2357c5fe14beef33cde4e8d5" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1aa682c5787e78e1f18a29ab6bce2cb6c2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>operator*</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a5de58472d18d02a2446597834fe54f40" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>operator*</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a5861759a9e0bcdcf453674c90d159566" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>operator*=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1afb2829e106dc4aeab1c706d1eaa357e8" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>operator&lt;&lt;</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a0701af3c93fa91a10f09335d03fe2f44" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a848420f246834b6ee2272144439e5cbf" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>print</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1aa12d31e920d91e59080771f26242b0c2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>Rotation</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a6302652ab44a2a9d5ee08645e7ed107a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>Rotation</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a3966d6c0dcf466528932566907b9c7b4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>RotationAround</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1abc82b6b7508d4a3986bb445e6913e610" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>StringFromType</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a208df471aa963dabb54cfed7a6cbaa09" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>Transformation</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1ae7546266c188896b5f77dec40437e21a" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>Transformation</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1af9058de81115d953ab8d9b8922abe692" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>Translation</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a86fdae5e12b1e722211ade5d0b31cdac" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>Type</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1af65fd2d58ab70522aae54571549ebee6" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>type_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1a21a3ef00ead4aad2df9f7685729db7b3" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>TypeOfMatrix</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation_1aac3424b240ed5116413462fa5e1f7c8f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::Transformation</scope><name>Undefined</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

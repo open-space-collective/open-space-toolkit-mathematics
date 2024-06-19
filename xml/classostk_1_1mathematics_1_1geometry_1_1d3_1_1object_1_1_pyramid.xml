@@ -1,0 +1,834 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid" kind="class" language="C++" prot="public">
+    <compoundname>ostk::mathematics::geometry::d3::object::Pyramid</compoundname>
+    <basecompoundref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object" prot="public" virt="non-virtual">ostk::mathematics::geometry::d3::Object</basecompoundref>
+    <includes refid="_pyramid_8hpp" local="no">Pyramid.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1abab5c99c6365658f4d962af183ebb77e" prot="private" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon" kindref="compound">Polygon</ref></type>
+        <definition>Polygon ostk::mathematics::geometry::d3::object::Pyramid::base_</definition>
+        <argsstring></argsstring>
+        <name>base_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="262" column="13" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a3c70e7ff32b5fab37ccb9c98c901083d" prot="private" static="no" mutable="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point ostk::mathematics::geometry::d3::object::Pyramid::apex_</definition>
+        <argsstring></argsstring>
+        <name>apex_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="263" column="11" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ostk::mathematics::geometry::d3::object::Pyramid::Pyramid</definition>
+        <argsstring>(const Polygon &amp;aBase, const Point &amp;anApex)</argsstring>
+        <name>Pyramid</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon" kindref="compound">Polygon</ref> &amp;</type>
+          <declname>aBase</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>anApex</declname>
+        </param>
+        <briefdescription>
+<para>Constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Polygon<sp/>base<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Point<sp/>apex<sp/>=<sp/>{<sp/>0.0,<sp/>0.0,<sp/>1.0<sp/>}<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>{<sp/>base,<sp/>apex<sp/>}<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aBase</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pyramid base </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">anApex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pyramid apex </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="68" column="5" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="31" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a61cb86ec44359755cc1edc8dec1604c0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid" kindref="compound">Pyramid</ref> *</type>
+        <definition>Pyramid * ostk::mathematics::geometry::d3::object::Pyramid::clone</definition>
+        <argsstring>() const override</argsstring>
+        <name>clone</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a8ea8d4074bfaaa3d996d760d5d5751db">clone</reimplements>
+        <briefdescription>
+<para>Clone pyramid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to cloned pyramid </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="74" column="21" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a77efda8908205d41517ed65ad8a09cf9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Pyramid::operator==</definition>
+        <argsstring>(const Pyramid &amp;aPyramid) const</argsstring>
+        <name>operator==</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid" kindref="compound">Pyramid</ref> &amp;</type>
+          <declname>aPyramid</declname>
+        </param>
+        <briefdescription>
+<para>Equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPyramid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pyramid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if pyramids are equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="81" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="43" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a3fa7abd7265937266cb59f19f63db3bf" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Pyramid::operator!=</definition>
+        <argsstring>(const Pyramid &amp;aPyramid) const</argsstring>
+        <name>operator!=</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid" kindref="compound">Pyramid</ref> &amp;</type>
+          <declname>aPyramid</declname>
+        </param>
+        <briefdescription>
+<para>Not equal to operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPyramid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pyramid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if pyramids are not equal </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="88" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="53" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a8b85f9aa5f4b1cdf0047c8010fdb7645" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Pyramid::isDefined</definition>
+        <argsstring>() const override</argsstring>
+        <name>isDefined</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a1962edbcdde0f851361b60324ab9ce2b">isDefined</reimplements>
+        <briefdescription>
+<para>Check if pyramid is defined. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if pyramid is defined </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="94" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="58" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a4676717f067f8fd710fc9073d0b1709d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Pyramid::intersects</definition>
+        <argsstring>(const Sphere &amp;aSphere, const Size aDiscretizationLevel=DEFAULT_DISCRETIZATION_LEVEL) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere" kindref="compound">Sphere</ref> &amp;</type>
+          <declname>aSphere</declname>
+        </param>
+        <param>
+          <type>const Size</type>
+          <declname>aDiscretizationLevel</declname>
+          <defval><ref refid="_pyramid_8hpp_1a3eb9931e85ba4c9718113211e549e91d" kindref="member">DEFAULT_DISCRETIZATION_LEVEL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Check if pyramid intersects sphere. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Sphere<sp/>sphere<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">pyramid.intersects(sphere)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aSphere</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A sphere </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aDiscretizationLevel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(optional) The polygonal discretization level </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if pyramid intersects sphere </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="108" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="63" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1ae2daf13e58b060a4085944e3c3171910" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Pyramid::intersects</definition>
+        <argsstring>(const Ellipsoid &amp;anEllipsoid, const Size aDiscretizationLevel=DEFAULT_DISCRETIZATION_LEVEL) const</argsstring>
+        <name>intersects</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> &amp;</type>
+          <declname>anEllipsoid</declname>
+        </param>
+        <param>
+          <type>const Size</type>
+          <declname>aDiscretizationLevel</declname>
+          <defval><ref refid="_pyramid_8hpp_1a3eb9931e85ba4c9718113211e549e91d" kindref="member">DEFAULT_DISCRETIZATION_LEVEL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Check if pyramid intersects ellipsoid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">pyramid.intersects(ellipsoid)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anEllipsoid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An ellipsoid </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aDiscretizationLevel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(optional) The polygonal discretization level </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if pyramid intersects ellipsoid </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="122" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="87" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a8b9e0648b92e137af003fa83b0a7d882" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Pyramid::contains</definition>
+        <argsstring>(const Point &amp;aPoint) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+<para>Check if pyramid contains point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Point<sp/>point<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">pyramid.contains(point)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if pyramid contains point </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="135" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="111" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a24f4e1fe595451ef6cb1c3acef15d894" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Pyramid::contains</definition>
+        <argsstring>(const PointSet &amp;aPointSet) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set" kindref="compound">PointSet</ref> &amp;</type>
+          <declname>aPointSet</declname>
+        </param>
+        <briefdescription>
+<para>Check if pyramid contains point set. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">PointSet<sp/>pointSet<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">pyramid.contains(pointSet)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aPointSet</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A point set </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if pyramid contains point set </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="148" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="173" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a4df37b7e74dcdbce1d4485e5531a6f65" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Pyramid::contains</definition>
+        <argsstring>(const Segment &amp;aSegment) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment" kindref="compound">Segment</ref> &amp;</type>
+          <declname>aSegment</declname>
+        </param>
+        <briefdescription>
+<para>Check if pyramid contains segment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Segment<sp/>segment<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">pyramid.contains(segment)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aSegment</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A segment </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if pyramid contains segment </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="161" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="190" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1afb8fc0cc19a2ed253abf288c91d6a769" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::geometry::d3::object::Pyramid::contains</definition>
+        <argsstring>(const Ellipsoid &amp;anEllipsoid) const</argsstring>
+        <name>contains</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> &amp;</type>
+          <declname>anEllipsoid</declname>
+        </param>
+        <briefdescription>
+<para>Check if pyramid contains ellipsoid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Pyramid<sp/>pyramid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">Ellipsoid<sp/>ellipsoid<sp/>=<sp/>...<sp/>;</highlight></codeline>
+<codeline><highlight class="normal">pyramid.contains(ellipsoid)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anEllipsoid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An ellipsoid </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if pyramid contains ellipsoid </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="174" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="195" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a8438922f810553cb5ca34e777ef809bd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon" kindref="compound">Polygon</ref></type>
+        <definition>Polygon ostk::mathematics::geometry::d3::object::Pyramid::getBase</definition>
+        <argsstring>() const</argsstring>
+        <name>getBase</name>
+        <briefdescription>
+<para>Get pyramid base. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid" kindref="compound">Pyramid</ref> base </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="180" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="212" bodyend="220"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a11b0783c46852783670d9d0aa82fc61a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point ostk::mathematics::geometry::d3::object::Pyramid::getApex</definition>
+        <argsstring>() const</argsstring>
+        <name>getApex</name>
+        <briefdescription>
+<para>Get pyramid apex. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid" kindref="compound">Pyramid</ref> apex </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="186" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="222" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aed535ef84d792822dd1105148fb76451" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Size</type>
+        <definition>Size ostk::mathematics::geometry::d3::object::Pyramid::getLateralFaceCount</definition>
+        <argsstring>() const</argsstring>
+        <name>getLateralFaceCount</name>
+        <briefdescription>
+<para>Get number of lateral faces. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Number of lateral faces </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="192" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="232" bodyend="240"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aca6a2bed3e225add46016583f1c3baec" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon" kindref="compound">Polygon</ref></type>
+        <definition>Polygon ostk::mathematics::geometry::d3::object::Pyramid::getLateralFaceAt</definition>
+        <argsstring>(const Index aLateralFaceIndex) const</argsstring>
+        <name>getLateralFaceAt</name>
+        <param>
+          <type>const Index</type>
+          <declname>aLateralFaceIndex</declname>
+        </param>
+        <briefdescription>
+<para>Get lateral face at index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLateralFaceIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A lateral face index </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Lateral face </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="199" column="13" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="242" bodyend="270"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a83e11f308ae9cd0cdfd10a15c4c11335" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray" kindref="compound">Ray</ref> &gt;</type>
+        <definition>Array&lt; Ray &gt; ostk::mathematics::geometry::d3::object::Pyramid::getRaysOfLateralFaceAt</definition>
+        <argsstring>(const Index aLateralFaceIndex, const Size aRayCount=2) const</argsstring>
+        <name>getRaysOfLateralFaceAt</name>
+        <param>
+          <type>const Index</type>
+          <declname>aLateralFaceIndex</declname>
+        </param>
+        <param>
+          <type>const Size</type>
+          <declname>aRayCount</declname>
+          <defval>2</defval>
+        </param>
+        <briefdescription>
+<para>Get rays of lateral face at index. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aLateralFaceIndex</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A lateral face index </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aRayCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A number of rays (at least 2) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Array of rays </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="207" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="272" bodyend="317"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a8674910a0a9b4a158c0a538c646fe971" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray" kindref="compound">Ray</ref> &gt;</type>
+        <definition>Array&lt; Ray &gt; ostk::mathematics::geometry::d3::object::Pyramid::getRaysOfLateralFaces</definition>
+        <argsstring>(const Size aRayCount=0) const</argsstring>
+        <name>getRaysOfLateralFaces</name>
+        <param>
+          <type>const Size</type>
+          <declname>aRayCount</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+<para>Get rays of lateral faces. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aRayCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A number of rays (at least face count) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Array of rays </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="214" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="319" bodyend="342"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a93113d23dee9ac80c7cba6198ce272a2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::object::Pyramid::intersectionWith</definition>
+        <argsstring>(const Sphere &amp;aSphere, const bool onlyInSight=DEFAULT_ONLY_IN_SIGHT, const Size aDiscretizationLevel=DEFAULT_DISCRETIZATION_LEVEL) const</argsstring>
+        <name>intersectionWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere" kindref="compound">Sphere</ref> &amp;</type>
+          <declname>aSphere</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>onlyInSight</declname>
+          <defval><ref refid="_sphere_8hpp_1af424617f7c785f4835e2feba5a5640f2" kindref="member">DEFAULT_ONLY_IN_SIGHT</ref></defval>
+        </param>
+        <param>
+          <type>const Size</type>
+          <declname>aDiscretizationLevel</declname>
+          <defval><ref refid="_pyramid_8hpp_1a3eb9931e85ba4c9718113211e549e91d" kindref="member">DEFAULT_DISCRETIZATION_LEVEL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Compute intersection of pyramid with sphere. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aSphere</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A sphere </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">onlyInSight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(optional) If true, only return intersection points that are in sight </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aDiscretizationLevel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(optional) The polygonal discretization level </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> of pyramid with sphere </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="223" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="344" bodyend="408"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a5ed8e14c5ca36792c887d534d446ce4f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
+        <definition>Intersection ostk::mathematics::geometry::d3::object::Pyramid::intersectionWith</definition>
+        <argsstring>(const Ellipsoid &amp;anEllipsoid, const bool onlyInSight=DEFAULT_ONLY_IN_SIGHT, const Size aDiscretizationLevel=DEFAULT_DISCRETIZATION_LEVEL) const</argsstring>
+        <name>intersectionWith</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" kindref="compound">Ellipsoid</ref> &amp;</type>
+          <declname>anEllipsoid</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>onlyInSight</declname>
+          <defval><ref refid="_sphere_8hpp_1af424617f7c785f4835e2feba5a5640f2" kindref="member">DEFAULT_ONLY_IN_SIGHT</ref></defval>
+        </param>
+        <param>
+          <type>const Size</type>
+          <declname>aDiscretizationLevel</declname>
+          <defval><ref refid="_pyramid_8hpp_1a3eb9931e85ba4c9718113211e549e91d" kindref="member">DEFAULT_DISCRETIZATION_LEVEL</ref></defval>
+        </param>
+        <briefdescription>
+<para>Compute intersection of pyramid with ellipsoid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anEllipsoid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An ellipsoid </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">onlyInSight</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(optional) If true, only return intersection points that are in sight </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">aDiscretizationLevel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>(optional) The polygonal discretization level </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref> of pyramid with ellipsoid </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="236" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="410" bodyend="495"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aba0fd8b256f78bb7bb0725103287f681" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ostk::mathematics::geometry::d3::object::Pyramid::print</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, bool displayDecorators=true) const override</argsstring>
+        <name>print</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a5063e1f902e1b08d36f6b6cecab0bd95">print</reimplements>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>displayDecorators</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Print pyramid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">anOutputStream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An output stream </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">(optional)</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>displayDecorators If true, display decorators </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="247" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="497" bodyend="508"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aec8ebca28ff89fd03a088d399de8e6e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void ostk::mathematics::geometry::d3::object::Pyramid::applyTransformation</definition>
+        <argsstring>(const Transformation &amp;aTransformation) override</argsstring>
+        <name>applyTransformation</name>
+        <reimplements refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a925a50c2bb1c31f396e469b74595e42a">applyTransformation</reimplements>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_transformation" kindref="compound">Transformation</ref> &amp;</type>
+          <declname>aTransformation</declname>
+        </param>
+        <briefdescription>
+<para>Apply transformation to pyramid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">aTransformation</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A transformation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="253" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="510" bodyend="524"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a631ca947390c95b73c78b42c3d840b12" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid" kindref="compound">Pyramid</ref></type>
+        <definition>Pyramid ostk::mathematics::geometry::d3::object::Pyramid::Undefined</definition>
+        <argsstring>()</argsstring>
+        <name>Undefined</name>
+        <briefdescription>
+<para>Constructs an undefined pyramid. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Undefined pyramid </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="259" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="526" bodyend="529"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid" kindref="compound">Pyramid</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><verbatim>                        A pyramid is a polyhedron formed by connecting a polygonal base and a point, called the
+                        apex. Each base edge and apex form a triangle, called a lateral face.
+</verbatim></para>
+<para><ulink url="https://en.wikipedia.org/wiki/Pyramid_">https://en.wikipedia.org/wiki/Pyramid_</ulink>(geometry) </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ostk::mathematics::geometry::d3::Object</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object"/>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::geometry::d3::object::Pyramid</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>ostk::mathematics::geometry::d3::Object</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object"/>
+      </node>
+      <node id="1">
+        <label>ostk::mathematics::geometry::d3::object::Pyramid</label>
+        <link refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="55" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" bodystart="54" bodyend="264"/>
+    <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a3c70e7ff32b5fab37ccb9c98c901083d" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>apex_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aec8ebca28ff89fd03a088d399de8e6e4" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>applyTransformation</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1acc1ec9fde56128d7fde8b96fa57180c4" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>as</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1abab5c99c6365658f4d962af183ebb77e" prot="private" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>base_</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a61cb86ec44359755cc1edc8dec1604c0" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>clone</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a8b9e0648b92e137af003fa83b0a7d882" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a24f4e1fe595451ef6cb1c3acef15d894" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a4df37b7e74dcdbce1d4485e5531a6f65" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1afb8fc0cc19a2ed253abf288c91d6a769" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af60902b6b025fdaf8839c08e532dd2b0" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>contains</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a11b0783c46852783670d9d0aa82fc61a" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>getApex</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a8438922f810553cb5ca34e777ef809bd" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>getBase</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aca6a2bed3e225add46016583f1c3baec" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>getLateralFaceAt</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aed535ef84d792822dd1105148fb76451" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>getLateralFaceCount</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a83e11f308ae9cd0cdfd10a15c4c11335" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>getRaysOfLateralFaceAt</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a8674910a0a9b4a158c0a538c646fe971" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>getRaysOfLateralFaces</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a93113d23dee9ac80c7cba6198ce272a2" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a5ed8e14c5ca36792c887d534d446ce4f" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ac1325aba0fa3796c9ddc5d39dfe40aa6" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>intersectionWith</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a4676717f067f8fd710fc9073d0b1709d" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1ae2daf13e58b060a4085944e3c3171910" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a0d8ddc7a929bb3b0b1c70ad82742e64e" prot="public" virt="virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>intersects</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1ad9e6f5027d14e3c7d7bead94052611ed" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>is</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a8b85f9aa5f4b1cdf0047c8010fdb7645" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>isDefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1af003ad733beface98466830078a83875" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>Object</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a3fa7abd7265937266cb59f19f63db3bf" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1a550754b8f5576ce2465979657325d5df" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>operator!=</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a77efda8908205d41517ed65ad8a09cf9" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aeb99dd25ff1c0683d9c0a058c8200e4d" prot="public" virt="non-virtual" ambiguityscope="ostk::mathematics::geometry::d3::Object::"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>operator==</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aba0fd8b256f78bb7bb0725103287f681" prot="public" virt="virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>print</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1adddec5b182cdca50f62190d899179460" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>Pyramid</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a631ca947390c95b73c78b42c3d840b12" prot="public" virt="non-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>Undefined</name></member>
+      <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_object_1aae1324c306129cce2e7d42a28c0de181" prot="public" virt="pure-virtual"><scope>ostk::mathematics::geometry::d3::object::Pyramid</scope><name>~Object</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

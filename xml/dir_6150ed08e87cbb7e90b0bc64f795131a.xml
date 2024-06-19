@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_6150ed08e87cbb7e90b0bc64f795131a" kind="dir">
+    <compoundname>src/OpenSpaceToolkit/Mathematics/Geometry/3D</compoundname>
+    <innerdir refid="dir_c107e7a335cd9ab91f2bf7a261efa78d">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object</innerdir>
+    <innerdir refid="dir_c05f6b810b5ef60f7dd24996ec1fc97c">src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation</innerdir>
+    <innerfile refid="3_d_2_intersection_8cpp">Intersection.cpp</innerfile>
+    <innerfile refid="3_d_2_object_8cpp">Object.cpp</innerfile>
+    <innerfile refid="3_d_2_transformation_8cpp">Transformation.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/"/>
+  </compounddef>
+</doxygen>

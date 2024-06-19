@@ -1,0 +1,195 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object" kind="namespace" language="C++">
+    <compoundname>ostk::mathematics::geometry::d3::object</compoundname>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_composite" prot="public">ostk::mathematics::geometry::d3::object::Composite</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone" prot="public">ostk::mathematics::geometry::d3::object::Cone</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid" prot="public">ostk::mathematics::geometry::d3::object::Cuboid</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ellipsoid" prot="public">ostk::mathematics::geometry::d3::object::Ellipsoid</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line" prot="public">ostk::mathematics::geometry::d3::object::Line</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string" prot="public">ostk::mathematics::geometry::d3::object::LineString</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane" prot="public">ostk::mathematics::geometry::d3::object::Plane</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" prot="public">ostk::mathematics::geometry::d3::object::Point</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point_set" prot="public">ostk::mathematics::geometry::d3::object::PointSet</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_polygon" prot="public">ostk::mathematics::geometry::d3::object::Polygon</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid" prot="public">ostk::mathematics::geometry::d3::object::Pyramid</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray" prot="public">ostk::mathematics::geometry::d3::object::Ray</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_segment" prot="public">ostk::mathematics::geometry::d3::object::Segment</innerclass>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_sphere" prot="public">ostk::mathematics::geometry::d3::object::Sphere</innerclass>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1ae4c84293a1f85b2e2c0d2e8aa5f281c0" prot="public" static="no">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon" kindref="compound">ostk::mathematics::geometry::d2::object::Polygon</ref></type>
+        <definition>using ostk::mathematics::geometry::d3::object::Polygon2d = typedef ostk::mathematics::geometry::d2::object::Polygon</definition>
+        <argsstring></argsstring>
+        <name>Polygon2d</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.hpp" line="32" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Polygon.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1aacca6849c92edb9524d03ca2a4f37905" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>gte::Vector3&lt; double &gt;</type>
+        <definition>gte::Vector3&lt;double&gt; ostk::mathematics::geometry::d3::object::CuboidGteVectorFromPoint</definition>
+        <argsstring>(const Point &amp;aPoint)</argsstring>
+        <name>CuboidGteVectorFromPoint</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" line="39" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="39" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1a0c088041334cad9e4d7fee2ea9ef573a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>gte::Vector3&lt; double &gt;</type>
+        <definition>gte::Vector3&lt;double&gt; ostk::mathematics::geometry::d3::object::CuboidGteVectorFromVector3d</definition>
+        <argsstring>(const Vector3d &amp;aVector)</argsstring>
+        <name>CuboidGteVectorFromVector3d</name>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" line="44" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="44" bodyend="47"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1a45b420bc462a2d1e530f360e1b071ee1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point ostk::mathematics::geometry::d3::object::CuboidPointFromGteVector</definition>
+        <argsstring>(const gte::Vector3&lt; double &gt; &amp;aVector)</argsstring>
+        <name>CuboidPointFromGteVector</name>
+        <param>
+          <type>const gte::Vector3&lt; double &gt; &amp;</type>
+          <declname>aVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" line="49" column="7" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cuboid.cpp" bodystart="49" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1ac7819bb67f76c012bdc8c2924ccff8c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>gte::Vector3&lt; double &gt;</type>
+        <definition>gte::Vector3&lt;double&gt; ostk::mathematics::geometry::d3::object::EllipsoidGteVectorFromPoint</definition>
+        <argsstring>(const Point &amp;aPoint)</argsstring>
+        <name>EllipsoidGteVectorFromPoint</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" line="51" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="51" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1a0b95578c2aff528cc4d83bd900884c99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>gte::Vector3&lt; double &gt;</type>
+        <definition>gte::Vector3&lt;double&gt; ostk::mathematics::geometry::d3::object::EllipsoidGteVectorFromVector3d</definition>
+        <argsstring>(const Vector3d &amp;aVector)</argsstring>
+        <name>EllipsoidGteVectorFromVector3d</name>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" line="56" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="56" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1a9153855848bb4b44e441d4fd8efc2195" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point ostk::mathematics::geometry::d3::object::EllipsoidPointFromGteVector</definition>
+        <argsstring>(const gte::Vector3&lt; double &gt; &amp;aVector)</argsstring>
+        <name>EllipsoidPointFromGteVector</name>
+        <param>
+          <type>const gte::Vector3&lt; double &gt; &amp;</type>
+          <declname>aVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" line="61" column="7" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Ellipsoid.cpp" bodystart="61" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1a2373bb69e26976644af9d80cc0921e3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>gte::Vector3&lt; double &gt;</type>
+        <definition>gte::Vector3&lt;double&gt; ostk::mathematics::geometry::d3::object::SphereGteVectorFromPoint</definition>
+        <argsstring>(const Point &amp;aPoint)</argsstring>
+        <name>SphereGteVectorFromPoint</name>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref> &amp;</type>
+          <declname>aPoint</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.cpp" line="36" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.cpp" bodystart="36" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1ae919c4084c1540b6b56fc219efdcc30a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>gte::Vector3&lt; double &gt;</type>
+        <definition>gte::Vector3&lt;double&gt; ostk::mathematics::geometry::d3::object::SphereGteVectorFromVector3d</definition>
+        <argsstring>(const Vector3d &amp;aVector)</argsstring>
+        <name>SphereGteVectorFromVector3d</name>
+        <param>
+          <type>const Vector3d &amp;</type>
+          <declname>aVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.cpp" line="41" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.cpp" bodystart="41" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1a31af6093bf793c50cfaa72b62da029e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
+        <definition>Point ostk::mathematics::geometry::d3::object::SpherePointFromGteVector</definition>
+        <argsstring>(const gte::Vector3&lt; double &gt; &amp;aVector)</argsstring>
+        <name>SpherePointFromGteVector</name>
+        <param>
+          <type>const gte::Vector3&lt; double &gt; &amp;</type>
+          <declname>aVector</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.cpp" line="46" column="7" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.cpp" bodystart="46" bodyend="49"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Composite.hpp" line="23" column="1"/>
+  </compounddef>
+</doxygen>

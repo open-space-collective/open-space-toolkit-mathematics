@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="namespaceostk_1_1mathematics_1_1geometry" kind="namespace" language="C++">
+    <compoundname>ostk::mathematics::geometry</compoundname>
+    <innerclass refid="classostk_1_1mathematics_1_1geometry_1_1_angle" prot="public">ostk::mathematics::geometry::Angle</innerclass>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d2">ostk::mathematics::geometry::d2</innernamespace>
+    <innernamespace refid="namespaceostk_1_1mathematics_1_1geometry_1_1d3">ostk::mathematics::geometry::d3</innernamespace>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1a1765aac15a1ece7dc16ce33e062d150b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
+        <definition>Angle ostk::mathematics::geometry::operator*</definition>
+        <argsstring>(const Real &amp;aReal, const Angle &amp;anAngle)</argsstring>
+        <name>operator*</name>
+        <param>
+          <type>const Real &amp;</type>
+          <declname>aReal</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>anAngle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" line="201" column="7" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="201" bodyend="214"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceostk_1_1mathematics_1_1geometry_1a611d50bcfddda6fe651b06d2648e60cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>std::ostream &amp;</type>
+        <definition>std::ostream&amp; ostk::mathematics::geometry::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;anOutputStream, const Angle &amp;anAngle)</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <declname>anOutputStream</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref> &amp;</type>
+          <declname>anAngle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" line="236" column="1" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/Angle.cpp" bodystart="236" bodyend="246"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Geometry/2D/Intersection.hpp" line="26" column="1"/>
+  </compounddef>
+</doxygen>

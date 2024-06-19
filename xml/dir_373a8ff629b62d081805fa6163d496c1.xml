@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.17">
+  <compounddef id="dir_373a8ff629b62d081805fa6163d496c1" kind="dir">
+    <compoundname>include/OpenSpaceToolkit/Mathematics/Object</compoundname>
+    <innerfile refid="_eigen_8hpp">Eigen.hpp</innerfile>
+    <innerfile refid="_interval_8hpp">Interval.hpp</innerfile>
+    <innerfile refid="_matrix_8hpp">Matrix.hpp</innerfile>
+    <innerfile refid="_vector_8hpp">Vector.hpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="include/OpenSpaceToolkit/Mathematics/Object/"/>
+  </compounddef>
+</doxygen>
