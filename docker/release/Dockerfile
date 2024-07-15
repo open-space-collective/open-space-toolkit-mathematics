@@ -49,7 +49,7 @@ FROM python:${PYTHON_TEST_VERSION}-slim as python-release
 
 LABEL maintainer="lucas@loftorbital.com"
 
-RUN pip install ipython "numpy>=1.17.4,<2.0.0"
+RUN pip install ipython "numpy~=2.0"
 
 COPY --from=python-builder /usr/local/lib/python${PYTHON_TEST_VERSION}/site-packages/ostk /usr/local/lib/python${PYTHON_TEST_VERSION}/site-packages/ostk
 
