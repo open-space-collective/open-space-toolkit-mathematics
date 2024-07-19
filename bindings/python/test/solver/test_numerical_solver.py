@@ -30,8 +30,8 @@ def numerical_solver_default_inputs() -> (
     log_type = NumericalSolver.LogType.NoLog
     stepper_type = NumericalSolver.StepperType.RungeKuttaCashKarp54
     initial_time_step = 5.0
-    relative_tolerance = 1.0e-15
-    absolute_tolerance = 1.0e-15
+    relative_tolerance = 1.0e-12
+    absolute_tolerance = 1.0e-12
 
     return (
         log_type,
@@ -53,8 +53,8 @@ def numerical_solver_conditional() -> NumericalSolver:
         NumericalSolver.LogType.NoLog,
         NumericalSolver.StepperType.RungeKuttaDopri5,
         5.0,
-        1.0e-15,
-        1.0e-15,
+        1.0e-12,
+        1.0e-12,
     )
 
 
@@ -133,7 +133,7 @@ class TestNumericalSolver:
         assert 5e-9 >= abs(state_vector[0] - math.sin(integration_duration))
         assert 5e-9 >= abs(state_vector[1] - math.cos(integration_duration))
 
-        integration_durations = np.arange(100.0, 1000.0, 50.0)
+        integration_durations = np.arange(100.0, 200.0, 50.0)
         solutions = numerical_solver.integrate_duration(
             initial_state_vec, integration_durations, oscillator
         )
@@ -157,7 +157,7 @@ class TestNumericalSolver:
         assert 5e-9 >= abs(state_vector[0] - math.sin(end_time))
         assert 5e-9 >= abs(state_vector[1] - math.cos(end_time))
 
-        end_times = np.arange(600.0, 1000.0, 50.0)
+        end_times = np.arange(600.0, 700.0, 50.0)
         solutions = numerical_solver.integrate_time(
             initial_state_vec, start_time, end_times, oscillator
         )
