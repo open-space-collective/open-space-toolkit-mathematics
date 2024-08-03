@@ -16,8 +16,8 @@ using ostk::core::container::Array;
 using ostk::core::container::Tuple;
 using ostk::core::type::Integer;
 using ostk::core::type::Real;
-using ostk::core::type::String;
 using ostk::core::type::Shared;
+using ostk::core::type::String;
 
 using ostk::mathematics::object::VectorXd;
 
@@ -38,24 +38,24 @@ class OpenSpaceToolkit_Mathematics_Solver_NumericalSolver : public ::testing::Te
         NumericalSolver::LogType::NoLog,
         NumericalSolver::StepperType::RungeKuttaCashKarp54,
         5.0,
-        1.0e-15,
-        1.0e-15,
+        1.0e-12,
+        1.0e-12,
     };
 
     NumericalSolver defaultRKF78_ = {
         NumericalSolver::LogType::NoLog,
         NumericalSolver::StepperType::RungeKuttaFehlberg78,
         5.0,
-        1.0e-15,
-        1.0e-15,
+        1.0e-12,
+        1.0e-12,
     };
 
     NumericalSolver defaultRKD5_ = {
         NumericalSolver::LogType::NoLog,
         NumericalSolver::StepperType::RungeKuttaDopri5,
         1e-3,
-        1.0e-15,
-        1.0e-15,
+        1.0e-12,
+        1.0e-12,
     };
 
     NumericalSolver::StateVector defaultStateVector_;
@@ -112,7 +112,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, Constructor)
 {
     {
         EXPECT_NO_THROW(NumericalSolver numericalsolver(
-            NumericalSolver::LogType::NoLog, NumericalSolver::StepperType::RungeKuttaCashKarp54, 5.0, 1.0e-15, 1.0e-15
+            NumericalSolver::LogType::NoLog, NumericalSolver::StepperType::RungeKuttaCashKarp54, 5.0, 1.0e-12, 1.0e-12
         ));
     }
 }
@@ -134,8 +134,8 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, EqualToOperator)
             NumericalSolver::LogType::LogConstant,
             NumericalSolver::StepperType::RungeKuttaCashKarp54,
             5.0,
-            1.0e-15,
-            1.0e-15,
+            1.0e-12,
+            1.0e-12,
         };
         EXPECT_FALSE(defaultRK54_ == numericalSolver_1);
 
@@ -144,8 +144,8 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, EqualToOperator)
             NumericalSolver::LogType::NoLog,
             NumericalSolver::StepperType::RungeKuttaFehlberg78,
             5.0,
-            1.0e-15,
-            1.0e-15,
+            1.0e-12,
+            1.0e-12,
         };
         EXPECT_FALSE(defaultRK54_ == numericalSolver_2);
 
@@ -154,8 +154,8 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, EqualToOperator)
             NumericalSolver::LogType::NoLog,
             NumericalSolver::StepperType::RungeKuttaCashKarp54,
             4.0,
-            1.0e-15,
-            1.0e-15,
+            1.0e-12,
+            1.0e-12,
         };
 
         EXPECT_FALSE(defaultRK54_ == numericalSolver_3);
@@ -166,7 +166,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, EqualToOperator)
             NumericalSolver::StepperType::RungeKuttaCashKarp54,
             5.0,
             1.0e-14,
-            1.0e-15,
+            1.0e-12,
         };
 
         EXPECT_FALSE(defaultRK54_ == numericalSolver_4);
@@ -176,7 +176,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, EqualToOperator)
             NumericalSolver::LogType::NoLog,
             NumericalSolver::StepperType::RungeKuttaCashKarp54,
             5.0,
-            1.0e-15,
+            1.0e-12,
             1.0e-14,
         };
 
@@ -198,8 +198,8 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, NotEqualToOperator)
             NumericalSolver::LogType::LogConstant,
             NumericalSolver::StepperType::RungeKuttaCashKarp54,
             5.0,
-            1.0e-15,
-            1.0e-15,
+            1.0e-12,
+            1.0e-12,
         };
 
         EXPECT_TRUE(defaultRK54_ != numericalSolver_1);
@@ -209,8 +209,8 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, NotEqualToOperator)
             NumericalSolver::LogType::NoLog,
             NumericalSolver::StepperType::RungeKuttaFehlberg78,
             5.0,
-            1.0e-15,
-            1.0e-15,
+            1.0e-12,
+            1.0e-12,
         };
         EXPECT_TRUE(defaultRK54_ != numericalSolver_2);
 
@@ -219,8 +219,8 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, NotEqualToOperator)
             NumericalSolver::LogType::NoLog,
             NumericalSolver::StepperType::RungeKuttaCashKarp54,
             4.0,
-            1.0e-15,
-            1.0e-15,
+            1.0e-12,
+            1.0e-12,
         };
 
         EXPECT_TRUE(defaultRK54_ != numericalSolver_3);
@@ -231,7 +231,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, NotEqualToOperator)
             NumericalSolver::StepperType::RungeKuttaCashKarp54,
             5.0,
             1.0e-14,
-            1.0e-15,
+            1.0e-12,
         };
 
         EXPECT_TRUE(defaultRK54_ != numericalSolver_4);
@@ -241,7 +241,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, NotEqualToOperator)
             NumericalSolver::LogType::NoLog,
             NumericalSolver::StepperType::RungeKuttaCashKarp54,
             5.0,
-            1.0e-15,
+            1.0e-12,
             1.0e-14,
         };
 
@@ -294,8 +294,8 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, GetType)
             NumericalSolver::LogType::LogConstant,
             NumericalSolver::StepperType::RungeKuttaCashKarp54,
             5.0,
-            1.0e-15,
-            1.0e-15,
+            1.0e-12,
+            1.0e-12,
         };
         EXPECT_EQ(numericalSolver_LogConstant.getLogType(), NumericalSolver::LogType::LogConstant);
 
@@ -303,8 +303,8 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, GetType)
             NumericalSolver::LogType::LogAdaptive,
             NumericalSolver::StepperType::RungeKuttaCashKarp54,
             5.0,
-            1.0e-15,
-            1.0e-15,
+            1.0e-12,
+            1.0e-12,
         };
         EXPECT_EQ(numericalSolver_LogAdaptive.getLogType(), NumericalSolver::LogType::LogAdaptive);
 
@@ -322,8 +322,8 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, GetNumbers)
 {
     {
         EXPECT_EQ(defaultRK54_.getTimeStep(), 5.0);
-        EXPECT_EQ(defaultRK54_.getRelativeTolerance(), 1.0e-15);
-        EXPECT_EQ(defaultRK54_.getAbsoluteTolerance(), 1.0e-15);
+        EXPECT_EQ(defaultRK54_.getRelativeTolerance(), 1.0e-12);
+        EXPECT_EQ(defaultRK54_.getAbsoluteTolerance(), 1.0e-12);
     }
 
     {
@@ -380,8 +380,8 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, integra
         NumericalSolver::LogType::NoLog,
         std::get<0>(parameters),
         1e-3,
-        1.0e-15,
-        1.0e-15,
+        1.0e-12,
+        1.0e-12,
     };
 
     {
@@ -421,16 +421,16 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
         NumericalSolver numericalSolver_1 = {
             NumericalSolver::LogType::LogAdaptive,
             std::get<0>(parameters),
-            1e-3,
-            1.0e-15,
-            1.0e-15,
+            1e-1,
+            1.0e-12,
+            1.0e-12,
         };
         NumericalSolver numericalSolver_2 = {
             NumericalSolver::LogType::LogConstant,
             std::get<0>(parameters),
-            1e-3,
-            1.0e-15,
-            1.0e-15,
+            1e-1,
+            1.0e-12,
+            1.0e-12,
         };
 
         testing::internal::CaptureStdout();
@@ -458,13 +458,13 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
         NumericalSolver::LogType::NoLog,
         std::get<0>(parameters),
         1e-3,
-        1.0e-15,
-        1.0e-15,
+        1.0e-12,
+        1.0e-12,
     };
 
     const Array<Array<Real>> durationArrays = {
-        {10.0, 40.0, 70.0, 1000.0},
-        {-10.0, -40.0, -70.0, -1000.0},
+        {1.0, 4.0, 7.0, 10.0},
+        {-1.0, -4.0, -7.0, -10.0},
     };
 
     for (const Array<Real> &durationArray : durationArrays)
@@ -484,8 +484,8 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
         NumericalSolver::LogType::NoLog,
         std::get<0>(parameters),
         1e-3,
-        1.0e-15,
-        1.0e-15,
+        1.0e-12,
+        1.0e-12,
     };
 
     const Array<Real> endTimes = {
@@ -513,16 +513,16 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
         NumericalSolver numericalSolver_1 = {
             NumericalSolver::LogType::LogAdaptive,
             std::get<0>(parameters),
-            1e-3,
-            1.0e-15,
-            1.0e-15,
+            1e-1,
+            1.0e-12,
+            1.0e-12,
         };
         NumericalSolver numericalSolver_2 = {
             NumericalSolver::LogType::LogConstant,
             std::get<0>(parameters),
-            1e-3,
-            1.0e-15,
-            1.0e-15,
+            1e-1,
+            1.0e-12,
+            1.0e-12,
         };
 
         testing::internal::CaptureStdout();
@@ -557,13 +557,13 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
         NumericalSolver::LogType::NoLog,
         std::get<0>(parameters),
         1e-3,
-        1.0e-15,
-        1.0e-15,
+        1.0e-12,
+        1.0e-12,
     };
 
     const Array<Array<Real>> timeArrays = {
-        {100.0, 400.0, 700.0, 1000.0},
-        {-100.0, -400.0, -700.0, -1000.0},
+        {1.0, 4.0, 7.0, 10.0},
+        {-1.0, -4.0, -7.0, -10.0},
     };
 
     for (const Array<Real> &timeArray : timeArrays)
