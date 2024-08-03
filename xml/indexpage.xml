@@ -744,7 +744,7 @@
 </sect1>
 <sect1 id="index_1autotoc_md19">
 <title>Dependencies</title>
-<para><table rows="6" cols="4"><row>
+<para><table rows="5" cols="4"><row>
 <entry thead="yes"><para>Name </para>
 </entry><entry thead="yes"><para>Version </para>
 </entry><entry thead="yes"><para>License </para>
@@ -755,12 +755,6 @@
 </entry><entry thead="no"><para><computeroutput>2.12.0</computeroutput> </para>
 </entry><entry thead="no"><para>BSD-3-Clause </para>
 </entry><entry thead="no"><para><ulink url="https://github.com/pybind/pybind11">github.com/pybind/pybind11</ulink>  </para>
-</entry></row>
-<row>
-<entry thead="no"><para>{fmt} </para>
-</entry><entry thead="no"><para><computeroutput>5.2.0</computeroutput> </para>
-</entry><entry thead="no"><para>BSD-2-Clause </para>
-</entry><entry thead="no"><para><ulink url="https://github.com/fmtlib/fmt">github.com/fmtlib/fmt</ulink>  </para>
 </entry></row>
 <row>
 <entry thead="no"><para>Eigen </para>
