@@ -11,9 +11,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
     using ostk::core::type::Real;
     using ostk::core::type::String;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::object::Matrix3d;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix;
+    using ostk::mathematics::object::Matrix3d;
+    using ostk::mathematics::object::Vector3d;
 
     class_<RotationMatrix>(aModule, "RotationMatrix")
 
@@ -56,6 +56,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
 
         .def("get_row_at", &RotationMatrix::getRowAt, arg("index"))
         .def("get_column_at", &RotationMatrix::getColumnAt, arg("index"))
+        .def("get_matrix", &RotationMatrix::getMatrix)
         .def("to_transposed", &RotationMatrix::toTransposed)
         .def(
             "transpose",
