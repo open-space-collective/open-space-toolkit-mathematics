@@ -21,3 +21,9 @@ class TestRotationMatrix:
 
     def test_euler_angle_success(self, rotation_matrix: RotationMatrix):
         assert RotationMatrix.euler_angle(EulerAngle.unit()) == rotation_matrix
+
+    def test_getters(self, rotation_matrix: RotationMatrix):
+
+        assert rotation_matrix.get_column_at(0) is not None
+        assert rotation_matrix.get_row_at(1) is not None
+        assert rotation_matrix.get_matrix() is not None
