@@ -920,8 +920,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, ConstIterator)
 
         EXPECT_NO_THROW(
 
-            for (const auto& objectUPtr
-                 : composite) { EXPECT_TRUE(objectUPtr->isDefined()); }
+            for (const auto& objectUPtr : composite) { EXPECT_TRUE(objectUPtr->isDefined()); }
 
         );
     }
@@ -951,8 +950,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, ConstIterator)
 
         EXPECT_NO_THROW(
 
-            for (const auto& objectUPtr
-                 : composite) { EXPECT_TRUE(objectUPtr->isDefined()); }
+            for (const auto& objectUPtr : composite) { EXPECT_TRUE(objectUPtr->isDefined()); }
 
         );
     }
@@ -960,8 +958,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Composite, ConstIterator)
     {
         EXPECT_ANY_THROW(
 
-            for (const auto& objectUPtr
-                 : Composite::Undefined()) { (void)objectUPtr; }
+            for (const auto& objectUPtr : Composite::Undefined()) { (void)objectUPtr; }
 
         );
     }
