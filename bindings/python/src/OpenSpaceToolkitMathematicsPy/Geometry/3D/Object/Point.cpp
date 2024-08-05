@@ -15,13 +15,13 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(pybind11::mod
 {
     using namespace pybind11;
 
-    using ostk::core::type::Shared;
     using ostk::core::type::Integer;
     using ostk::core::type::Real;
+    using ostk::core::type::Shared;
 
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::Object;
     using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     class_<Point, Object>(aModule, "Point")
 

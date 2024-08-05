@@ -179,8 +179,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Line)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
@@ -641,8 +641,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Plane)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Plane;
+    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
@@ -685,8 +685,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Plane)
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, Intersects_Pyramid)
 {
     using ostk::mathematics::geometry::d3::object::Point;
-    using ostk::mathematics::geometry::d3::object::Sphere;
     using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Sphere;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid.Intersects_Sphere
@@ -798,11 +798,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere, ApplyTransformation
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Sphere;
     using ostk::mathematics::geometry::d3::Transformation;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
 
     // Translation
 

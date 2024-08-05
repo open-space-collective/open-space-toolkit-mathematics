@@ -17,8 +17,8 @@ namespace curvefitting
 {
 
 using ostk::core::type::Real;
-using ostk::core::type::Size;
 using ostk::core::type::Shared;
+using ostk::core::type::Size;
 
 using ostk::mathematics::object::VectorXd;
 

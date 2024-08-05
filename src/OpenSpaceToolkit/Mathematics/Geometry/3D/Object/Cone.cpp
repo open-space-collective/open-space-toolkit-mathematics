@@ -241,9 +241,9 @@ Angle Cone::getAngle() const
 
 Array<Ray> Cone::getRaysOfLateralSurface(const Size aRayCount) const
 {
-    using ostk::mathematics::object::Interval;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Interval;
 
     if (aRayCount == 0)
     {

@@ -23,9 +23,9 @@ namespace object
 using ostk::core::type::Real;
 
 using ostk::mathematics::geometry::d3::Object;
+using ostk::mathematics::geometry::d3::object::Line;
 using ostk::mathematics::geometry::d3::object::Point;
 using ostk::mathematics::geometry::d3::object::PointSet;
-using ostk::mathematics::geometry::d3::object::Line;
 
 class PointSet;
 class Plane;

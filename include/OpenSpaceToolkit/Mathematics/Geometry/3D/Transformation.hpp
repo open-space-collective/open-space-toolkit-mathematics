@@ -23,17 +23,17 @@ namespace d3
 
 class Transformation;
 
-using ostk::core::type::Unique;
 using ostk::core::type::String;
+using ostk::core::type::Unique;
 
-using ostk::mathematics::object::Vector3d;
-using ostk::mathematics::object::Vector4d;
-using ostk::mathematics::object::Matrix4d;
 using ostk::mathematics::geometry::Angle;
 using ostk::mathematics::geometry::d3::Object;
 using ostk::mathematics::geometry::d3::object::Point;
-using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
 using ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix;
+using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+using ostk::mathematics::object::Matrix4d;
+using ostk::mathematics::object::Vector3d;
+using ostk::mathematics::object::Vector4d;
 
 class Transformation
 {

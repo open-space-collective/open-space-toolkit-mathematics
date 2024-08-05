@@ -6,18 +6,18 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Intersection(pybind11::mod
 {
     using namespace pybind11;
 
-    using ostk::core::type::Unique;
     using ostk::core::container::Array;
+    using ostk::core::type::Unique;
 
+    using ostk::mathematics::geometry::d2::Intersection;
     using ostk::mathematics::geometry::d2::Object;
+    using ostk::mathematics::geometry::d2::object::Composite;
+    using ostk::mathematics::geometry::d2::object::Line;
+    using ostk::mathematics::geometry::d2::object::LineString;
     using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::PointSet;
-    using ostk::mathematics::geometry::d2::object::Line;
-    using ostk::mathematics::geometry::d2::object::Segment;
-    using ostk::mathematics::geometry::d2::object::LineString;
     using ostk::mathematics::geometry::d2::object::Polygon;
-    using ostk::mathematics::geometry::d2::object::Composite;
-    using ostk::mathematics::geometry::d2::Intersection;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     class_<Intersection> intersection(aModule, "Intersection");
 

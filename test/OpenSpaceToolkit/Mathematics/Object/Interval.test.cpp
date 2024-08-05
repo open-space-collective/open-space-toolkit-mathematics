@@ -880,10 +880,10 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUpperBound)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
 {
-    using ostk::core::type::String;
-    using ostk::core::type::Real;
     using ostk::core::container::Array;
     using ostk::core::container::Tuple;
+    using ostk::core::type::Real;
+    using ostk::core::type::String;
 
     using ostk::mathematics::object::Interval;
 
@@ -943,10 +943,10 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUnionWith)
 {
-    using ostk::core::type::String;
-    using ostk::core::type::Real;
     using ostk::core::container::Array;
     using ostk::core::container::Tuple;
+    using ostk::core::type::Real;
+    using ostk::core::type::String;
 
     using ostk::mathematics::object::Interval;
 
@@ -1023,9 +1023,9 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUnionWith)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithSize)
 {
-    using ostk::core::type::Size;
-    using ostk::core::type::Real;
     using ostk::core::container::Array;
+    using ostk::core::type::Real;
+    using ostk::core::type::Size;
 
     using ostk::mathematics::object::Interval;
 

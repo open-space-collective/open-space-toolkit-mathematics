@@ -23,13 +23,13 @@ namespace d3
 namespace object
 {
 
+using ostk::core::container::Array;
 using ostk::core::type::Index;
 using ostk::core::type::Size;
-using ostk::core::container::Array;
 
-using ostk::mathematics::object::Vector3d;
 using ostk::mathematics::geometry::d3::Object;
 using ostk::mathematics::geometry::d3::object::Point;
+using ostk::mathematics::object::Vector3d;
 
 /// @brief                      Point set
 

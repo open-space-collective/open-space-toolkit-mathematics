@@ -133,8 +133,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, Intersects_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, Intersects_Plane)
 {
-    using ostk::mathematics::geometry::d3::object::Ray;
     using ostk::mathematics::geometry::d3::object::Plane;
+    using ostk::mathematics::geometry::d3::object::Ray;
 
     {
         EXPECT_TRUE(Ray({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}).intersects(Plane({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0})));
@@ -183,8 +183,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, Intersects_Sphere)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, Intersects_Ellipsoid)
 {
-    using ostk::mathematics::geometry::d3::object::Ray;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Ray;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid.Intersects_Ray
@@ -270,9 +270,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, GetOrigin)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, GetDirection)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Ray;
+    using ostk::mathematics::object::Vector3d;
 
     {
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Ray({0.0, 0.0, 0.0}, {0.0, 0.0, +2.0}).getDirection());
@@ -314,10 +314,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, IntersectionWith_Plane
 {
     using ostk::core::type::Real;
 
+    using ostk::mathematics::geometry::d3::Intersection;
+    using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Ray;
-    using ostk::mathematics::geometry::d3::object::Plane;
-    using ostk::mathematics::geometry::d3::Intersection;
 
     const auto expectRayIntersection = [](const Ray& aRay, const Plane& aPlane, const Ray& anIntersectionRay) -> void
     {
@@ -406,8 +406,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, IntersectionWith_Plane
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, IntersectionWith_Ellipsoid)
 {
-    using ostk::mathematics::geometry::d3::object::Ray;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Ray;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid.IntersectionWith_Ray
@@ -424,11 +424,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ray, ApplyTransformation)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ray;
     using ostk::mathematics::geometry::d3::Transformation;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
 
     // Translation
 

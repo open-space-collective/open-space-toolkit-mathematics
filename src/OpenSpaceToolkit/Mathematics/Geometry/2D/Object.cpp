@@ -23,9 +23,9 @@ Object::~Object() {}
 
 bool Object::operator==(const Object& anObject) const
 {
+    using ostk::mathematics::geometry::d2::object::MultiPolygon;
     using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::Polygon;
-    using ostk::mathematics::geometry::d2::object::MultiPolygon;
 
     if ((!this->isDefined()) || (!anObject.isDefined()))
     {
@@ -93,11 +93,11 @@ bool Object::intersects(const Object& anObject) const
 
 bool Object::contains(const Object& anObject) const
 {
+    using ostk::mathematics::geometry::d2::object::LineString;
+    using ostk::mathematics::geometry::d2::object::MultiPolygon;
     using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::PointSet;
-    using ostk::mathematics::geometry::d2::object::LineString;
     using ostk::mathematics::geometry::d2::object::Polygon;
-    using ostk::mathematics::geometry::d2::object::MultiPolygon;
 
     if (!anObject.isDefined())
     {

@@ -6,10 +6,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation(pybind11::m
 {
     using namespace pybind11;
 
-    using ostk::mathematics::object::Vector2d;
-    using ostk::mathematics::object::Matrix3d;
-    using ostk::mathematics::geometry::d2::Transformation;
     using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::Transformation;
+    using ostk::mathematics::object::Matrix3d;
+    using ostk::mathematics::object::Vector2d;
 
     class_<Transformation> transf(aModule, "Transformation");
 

@@ -27,16 +27,16 @@ namespace object
 
 class MultiPolygon;
 
-using ostk::core::type::Unique;
+using ostk::core::container::Array;
 using ostk::core::container::Index;
 using ostk::core::container::Size;
-using ostk::core::container::Array;
+using ostk::core::type::Unique;
 
+using ostk::mathematics::geometry::d2::Intersection;
 using ostk::mathematics::geometry::d2::Object;
+using ostk::mathematics::geometry::d2::object::LineString;
 using ostk::mathematics::geometry::d2::object::Point;
 using ostk::mathematics::geometry::d2::object::Segment;
-using ostk::mathematics::geometry::d2::object::LineString;
-using ostk::mathematics::geometry::d2::Intersection;
 
 /// @brief                      Polygon
 ///

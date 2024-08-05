@@ -65,8 +65,8 @@ Vector4d Transformation::operator*(const Vector4d& aVector) const
 
 Transformation& Transformation::operator*=(const Transformation& aTransformation)
 {
-    using ostk::core::container::Pair;
     using ostk::core::container::Map;
+    using ostk::core::container::Pair;
 
     if (!aTransformation.isDefined())
     {

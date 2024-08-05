@@ -23,9 +23,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Point(pybind11::mod
     using ostk::core::type::Integer;
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector2d;
     using ostk::mathematics::geometry::d2::Object;
     using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::object::Vector2d;
 
     class_<Point, Object>(aModule, "Point")
 

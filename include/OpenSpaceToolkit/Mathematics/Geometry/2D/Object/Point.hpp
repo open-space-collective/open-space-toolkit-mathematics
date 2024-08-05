@@ -21,8 +21,8 @@ namespace object
 
 using ostk::core::type::Real;
 
-using ostk::mathematics::object::Vector2d;
 using ostk::mathematics::geometry::d2::Object;
+using ostk::mathematics::object::Vector2d;
 
 /// @brief                      Point
 ///

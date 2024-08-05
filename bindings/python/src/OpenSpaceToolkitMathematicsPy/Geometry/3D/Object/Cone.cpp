@@ -7,24 +7,23 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::modu
 {
     using namespace pybind11;
 
-    using ostk::core::type::Size;
     using ostk::core::type::Real;
+    using ostk::core::type::Size;
 
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Cone;
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
-    using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Ray;
     using ostk::mathematics::geometry::d3::object::Segment;
-    using ostk::mathematics::geometry::d3::object::Ray;
-    using ostk::mathematics::geometry::d3::object::Plane;
-    using ostk::mathematics::geometry::d3::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Sphere;
-    using ostk::mathematics::geometry::d3::object::Ellipsoid;
-    using ostk::mathematics::geometry::d3::object::Cone;
-    using ostk::mathematics::geometry::d3::Intersection;
+    using ostk::mathematics::object::Vector3d;
 
     class_<Cone, Object>(aModule, "Cone")
 

@@ -18,9 +18,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Constructor)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -37,9 +37,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Clone)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -56,9 +56,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, EqualToOperator)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -113,9 +113,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, NotEqualToOperator)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -170,9 +170,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, StreamOperator)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -193,9 +193,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IsDefined)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -216,9 +216,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, IsNear)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -291,9 +291,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Point)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -349,10 +349,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_PointSet
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
-    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -441,11 +441,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Intersects_Line)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Line;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
-    using ostk::mathematics::geometry::d3::object::Line;
-    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -598,9 +598,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Contains_Point)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -656,10 +656,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Contains_PointSet)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
-    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -748,9 +748,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetCenter)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -771,9 +771,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetFirstAxis)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -794,9 +794,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetSecondAxis)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -817,9 +817,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetThirdAxis)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -840,9 +840,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetFirstExtent)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -863,9 +863,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetSecondExtent)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -886,9 +886,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetThirdExtent)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -907,12 +907,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetThirdExtent)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, GetVertices)
 {
-    using ostk::core::type::Real;
     using ostk::core::container::Array;
+    using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Point center = {0.0, 0.0, 0.0};
@@ -1042,13 +1042,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, ApplyTransformation
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::Transformation;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
 
     // Translation
 
@@ -1113,9 +1113,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Undefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cuboid, Cube)
 {
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Cuboid cube = Cuboid::Cube({0.0, 0.0, 0.0}, 1.0);

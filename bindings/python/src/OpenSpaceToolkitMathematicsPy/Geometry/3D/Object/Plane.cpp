@@ -6,15 +6,15 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Plane(pybind11::mod
 {
     using namespace pybind11;
 
-    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
-    using ostk::mathematics::geometry::d3::object::Plane;
-    using ostk::mathematics::geometry::d3::object::Line;
     using ostk::mathematics::geometry::d3::object::Ray;
     using ostk::mathematics::geometry::d3::object::Segment;
-    using ostk::mathematics::geometry::d3::Intersection;
+    using ostk::mathematics::object::Vector3d;
 
     class_<Plane, Object>(aModule, "Plane")
 

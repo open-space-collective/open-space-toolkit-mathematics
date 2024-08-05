@@ -23,8 +23,8 @@ namespace object
 using ostk::core::type::Real;
 
 using ostk::mathematics::geometry::d2::Object;
-using ostk::mathematics::geometry::d2::object::Point;
 using ostk::mathematics::geometry::d2::object::Line;
+using ostk::mathematics::geometry::d2::object::Point;
 
 class PointSet;
 

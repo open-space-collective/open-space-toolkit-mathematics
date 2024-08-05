@@ -19,9 +19,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
     using ostk::core::type::Real;
     using ostk::core::type::String;
 
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
     using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::object::Vector4d;
-    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     class_<Quaternion> quaternion(aModule, "Quaternion");
 

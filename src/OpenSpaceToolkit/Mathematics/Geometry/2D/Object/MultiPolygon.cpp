@@ -29,10 +29,10 @@ namespace object
 {
 
 using boost::geometry::cs::cartesian;
-using boost::geometry::model::point;
-using boost::geometry::model::ring;
-using boost::geometry::model::polygon;
 using boost::geometry::model::multi_polygon;
+using boost::geometry::model::point;
+using boost::geometry::model::polygon;
+using boost::geometry::model::ring;
 
 using ostk::core::type::Index;
 using ostk::core::type::Size;

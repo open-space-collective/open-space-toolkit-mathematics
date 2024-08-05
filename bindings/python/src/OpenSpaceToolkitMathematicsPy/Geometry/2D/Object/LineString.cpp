@@ -6,12 +6,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(pybind11
 {
     using namespace pybind11;
 
-    using ostk::core::type::Integer;
     using ostk::core::container::Array;
+    using ostk::core::type::Integer;
 
     using ostk::mathematics::geometry::d2::Object;
-    using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::LineString;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     class_<LineString, Object>(aModule, "LineString")
 

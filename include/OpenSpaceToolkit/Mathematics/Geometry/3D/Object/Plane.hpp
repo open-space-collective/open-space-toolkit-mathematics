@@ -22,13 +22,13 @@ namespace d3
 namespace object
 {
 
-using ostk::mathematics::object::Vector3d;
 using ostk::mathematics::geometry::d3::Object;
+using ostk::mathematics::geometry::d3::object::Line;
 using ostk::mathematics::geometry::d3::object::Point;
 using ostk::mathematics::geometry::d3::object::PointSet;
-using ostk::mathematics::geometry::d3::object::Line;
 using ostk::mathematics::geometry::d3::object::Ray;
 using ostk::mathematics::geometry::d3::object::Segment;
+using ostk::mathematics::object::Vector3d;
 
 /// @brief                      Plane
 ///

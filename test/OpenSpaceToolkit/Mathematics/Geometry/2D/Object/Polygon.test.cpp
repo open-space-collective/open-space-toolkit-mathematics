@@ -241,8 +241,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IsNear)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectsPolygon)
 {
-    using ostk::core::container::Tuple;
     using ostk::core::container::Array;
+    using ostk::core::container::Tuple;
 
     using ostk::mathematics::geometry::d2::object::Polygon;
 
@@ -321,8 +321,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectsPolygon)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ContainsPoint)
 {
-    using ostk::core::container::Tuple;
     using ostk::core::container::Array;
+    using ostk::core::container::Tuple;
 
     using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::Polygon;
@@ -376,8 +376,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ContainsPoint)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ContainsPointSet)
 {
-    using ostk::core::container::Tuple;
     using ostk::core::container::Array;
+    using ostk::core::container::Tuple;
 
     using ostk::mathematics::geometry::d2::object::PointSet;
     using ostk::mathematics::geometry::d2::object::Polygon;
@@ -727,10 +727,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, GetConvexHull)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
 {
-    using ostk::mathematics::geometry::d2::object::Point;
-    using ostk::mathematics::geometry::d2::object::LineString;
-    using ostk::mathematics::geometry::d2::object::Polygon;
     using ostk::mathematics::geometry::d2::Intersection;
+    using ostk::mathematics::geometry::d2::object::LineString;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::Polygon;
 
     // TBI: Intersection type to be improved
 
@@ -882,10 +882,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, IntersectionWith)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, DifferenceWith)
 {
-    using ostk::mathematics::geometry::d2::object::Point;
-    using ostk::mathematics::geometry::d2::object::LineString;
-    using ostk::mathematics::geometry::d2::object::Polygon;
     using ostk::mathematics::geometry::d2::Intersection;
+    using ostk::mathematics::geometry::d2::object::LineString;
+    using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::object::Polygon;
 
     // Polygon difference between two intersecting simple convex polygons
 
@@ -1081,8 +1081,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ToString)
 {
     using ostk::core::container::Array;
 
-    using ostk::mathematics::object::Vector2d;
     using ostk::mathematics::geometry::d2::object::Polygon;
+    using ostk::mathematics::object::Vector2d;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};
@@ -1137,9 +1137,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon, ApplyTransformatio
 {
     using ostk::core::container::Array;
 
-    using ostk::mathematics::object::Vector2d;
     using ostk::mathematics::geometry::d2::object::Polygon;
     using ostk::mathematics::geometry::d2::Transformation;
+    using ostk::mathematics::object::Vector2d;
 
     // Translation
 
