@@ -6,14 +6,14 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Segment(pybind11::m
 {
     using namespace pybind11;
 
+    using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
     using ostk::mathematics::geometry::d3::object::Segment;
-    using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Sphere;
-    using ostk::mathematics::geometry::d3::object::Ellipsoid;
-    using ostk::mathematics::geometry::d3::Intersection;
 
     class_<Segment, Object>(aModule, "Segment")
 

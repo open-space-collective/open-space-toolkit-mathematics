@@ -9,8 +9,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_LineString(pybind11
     using ostk::core::container::Array;
 
     using ostk::mathematics::geometry::d3::Object;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::LineString;
+    using ostk::mathematics::geometry::d3::object::Point;
 
     class_<LineString, Object>(aModule, "LineString")
 

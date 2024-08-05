@@ -107,8 +107,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, Intersects_Point)
 {
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Point;
 
     {
         EXPECT_TRUE(Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).intersects(Point(0.0, 0.0, 0.0)));
@@ -184,8 +184,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, Intersects_Sphere)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, Intersects_Ellipsoid)
 {
-    using ostk::mathematics::geometry::d3::object::Line;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Line;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid.Intersects_Line
@@ -201,8 +201,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, Intersects_Ellipsoid)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, Contains_Point)
 {
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Point;
 
     {
         EXPECT_TRUE(Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(Point(0.0, 0.0, -2.0)));
@@ -227,8 +227,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, Contains_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, Contains_PointSet)
 {
-    using ostk::mathematics::geometry::d3::object::PointSet;
     using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::PointSet;
 
     {
         EXPECT_TRUE(Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).contains(PointSet({{0.0, 0.0, -2.0}})));
@@ -255,8 +255,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, Contains_PointSet)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, GetOrigin)
 {
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Point;
 
     {
         EXPECT_EQ(Point(0.0, 0.0, 0.0), Line({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).getOrigin());
@@ -272,9 +272,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, GetOrigin)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, GetDirection)
 {
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Line({0.0, 0.0, 0.0}, {0.0, 0.0, +2.0}).getDirection());
@@ -290,8 +290,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, DistanceTo_Point)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Point;
 
     {
         EXPECT_EQ(Line({0.0, 0.0, 0.0}, {0.0, 0.0, +1.0}).distanceTo({0.0, 0.0, 0.0}), 0.0);
@@ -333,10 +333,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, IntersectionWith_Plan
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::object::Line;
     using ostk::mathematics::geometry::d3::object::Plane;
-    using ostk::mathematics::geometry::d3::Intersection;
+    using ostk::mathematics::geometry::d3::object::Point;
 
     const auto expectLineIntersection = [](const Line& aLine, const Plane& aPlane, const Line& anIntersectionLine
                                         ) -> void
@@ -429,11 +429,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, ApplyTransformation)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Line;
     using ostk::mathematics::geometry::d3::Transformation;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
 
     // Translation
 
@@ -477,9 +477,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, Undefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Line, Points)
 {
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Line line = Line::Points(Point(1.0, 2.0, 3.0), Point(2.0, 3.0, 4.0));

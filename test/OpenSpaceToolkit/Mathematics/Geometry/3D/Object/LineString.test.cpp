@@ -8,8 +8,8 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, Constructor)
 {
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::LineString;
+    using ostk::mathematics::geometry::d3::object::Point;
 
     {
         EXPECT_NO_THROW(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}));
@@ -183,8 +183,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, IsNear)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, AccessPointAt)
 {
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::LineString;
+    using ostk::mathematics::geometry::d3::object::Point;
 
     {
         EXPECT_EQ(
@@ -287,12 +287,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, ApplyTransforma
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::LineString;
+    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::Transformation;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
 
     // Translation
 
@@ -328,8 +328,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, Empty)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, Segment)
 {
-    using ostk::mathematics::geometry::d3::object::Segment;
     using ostk::mathematics::geometry::d3::object::LineString;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_EQ(

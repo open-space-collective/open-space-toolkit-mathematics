@@ -155,9 +155,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, GetCenter)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, GetDirection)
 {
-    using ostk::mathematics::object::Vector2d;
     using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::Segment;
+    using ostk::mathematics::object::Vector2d;
 
     {
         EXPECT_EQ(Vector2d(0.0, +1.0), Segment({0.0, 0.0}, {0.0, +2.0}).getDirection());
@@ -284,9 +284,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment, ApplyTransformatio
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector2d;
     using ostk::mathematics::geometry::d2::object::Segment;
     using ostk::mathematics::geometry::d2::Transformation;
+    using ostk::mathematics::object::Vector2d;
 
     // Translation
 

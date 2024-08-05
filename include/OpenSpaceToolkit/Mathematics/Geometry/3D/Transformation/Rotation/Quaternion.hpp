@@ -27,9 +27,9 @@ using ostk::core::type::Integer;
 using ostk::core::type::Real;
 using ostk::core::type::String;
 
+using ostk::mathematics::geometry::Angle;
 using ostk::mathematics::object::Vector3d;
 using ostk::mathematics::object::Vector4d;
-using ostk::mathematics::geometry::Angle;
 
 class RotationVector;
 class RotationMatrix;

@@ -8,8 +8,8 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, Constructor)
 {
-    using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::LineString;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_NO_THROW(LineString({{0.0, 0.0}, {0.0, 1.0}, {1.0, 0.0}}));
@@ -165,8 +165,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, Contains)
 {
     using ostk::core::container::Array;
 
-    using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::LineString;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         const Point point = {1.0, 0.0};
@@ -245,8 +245,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, GetPointArray)
 {
     using ostk::core::container::Array;
 
-    using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::LineString;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         Array<Point> pointArray = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 0.0}, {0.0, 0.0}};
@@ -261,8 +261,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, GetPointArray)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, AccessPointAt)
 {
-    using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::LineString;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_EQ(Point(0.0, 0.0), LineString({{0.0, 0.0}, {0.0, 1.0}, {1.0, 0.0}, {0.0, 0.0}}).accessPointAt(0));
@@ -294,8 +294,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, GetPointCount)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, ToString)
 {
-    using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::LineString;
+    using ostk::mathematics::geometry::d2::object::Point;
 
     {
         EXPECT_EQ(
@@ -351,10 +351,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, ConstIterator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, ApplyTransformation)
 {
-    using ostk::mathematics::object::Vector2d;
-    using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::LineString;
+    using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::Transformation;
+    using ostk::mathematics::object::Vector2d;
 
     // Translation
 
@@ -384,8 +384,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, Empty)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString, Segment)
 {
-    using ostk::mathematics::geometry::d2::object::Segment;
     using ostk::mathematics::geometry::d2::object::LineString;
+    using ostk::mathematics::geometry::d2::object::Segment;
 
     {
         EXPECT_EQ(LineString({{0.0, 0.0}, {0.0, 1.0}}), LineString::Segment(Segment({0.0, 0.0}, {0.0, 1.0})));

@@ -27,10 +27,10 @@ namespace geometry
 namespace d2
 {
 
-using ostk::core::type::Unique;
+using ostk::core::container::Array;
 using ostk::core::type::Index;
 using ostk::core::type::Size;
-using ostk::core::container::Array;
+using ostk::core::type::Unique;
 
 using ostk::mathematics::geometry::d2::Object;
 using ostk::mathematics::geometry::d2::object::Composite;

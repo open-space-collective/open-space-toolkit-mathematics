@@ -33,10 +33,10 @@ namespace geometry
 namespace d3
 {
 
-using ostk::core::type::Unique;
+using ostk::core::container::Array;
 using ostk::core::type::Index;
 using ostk::core::type::Size;
-using ostk::core::container::Array;
+using ostk::core::type::Unique;
 
 using ostk::mathematics::geometry::d3::Object;
 using ostk::mathematics::geometry::d3::object::Composite;

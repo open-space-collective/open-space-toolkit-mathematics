@@ -23,15 +23,15 @@ namespace d3
 namespace object
 {
 
+using ostk::core::container::Array;
 using ostk::core::container::Index;
 using ostk::core::container::Size;
-using ostk::core::container::Array;
 
+using ostk::mathematics::geometry::d3::Intersection;
 using ostk::mathematics::geometry::d3::Object;
 using ostk::mathematics::geometry::d3::object::Point;
-using ostk::mathematics::geometry::d3::object::Ray;
 using ostk::mathematics::geometry::d3::object::Polygon;
-using ostk::mathematics::geometry::d3::Intersection;
+using ostk::mathematics::geometry::d3::object::Ray;
 
 #define DEFAULT_ONLY_IN_SIGHT false
 #define DEFAULT_DISCRETIZATION_LEVEL 40

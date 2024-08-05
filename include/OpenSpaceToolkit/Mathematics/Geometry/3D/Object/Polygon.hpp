@@ -25,16 +25,16 @@ namespace d3
 namespace object
 {
 
+using ostk::core::container::Array;
 using ostk::core::container::Index;
 using ostk::core::container::Size;
-using ostk::core::container::Array;
 
 using Polygon2d = ostk::mathematics::geometry::d2::object::Polygon;
 using ostk::mathematics::geometry::d3::Object;
-using ostk::mathematics::geometry::d3::object::Point;
-using ostk::mathematics::geometry::d3::object::Segment;
 using ostk::mathematics::geometry::d3::object::LineString;
 using ostk::mathematics::geometry::d3::object::Plane;
+using ostk::mathematics::geometry::d3::object::Point;
+using ostk::mathematics::geometry::d3::object::Segment;
 
 /// @brief                      Polygon
 ///

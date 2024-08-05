@@ -8,8 +8,8 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, Constructor)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         EXPECT_NO_THROW(Point(1.0, 2.0, 3.0));
@@ -65,8 +65,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, NotEqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, AdditionOperator)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         EXPECT_EQ(Point(1.0, 2.0, 3.0), Point(1.0, 2.0, 3.0) + Vector3d(0.0, 0.0, 0.0));
@@ -81,8 +81,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, AdditionOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, SubtractionOperator)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         EXPECT_EQ(Point(1.0, 2.0, 3.0), Point(1.0, 2.0, 3.0) - Vector3d(0.0, 0.0, 0.0));
@@ -155,8 +155,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, IsNear)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, AsVector)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         EXPECT_EQ(Vector3d(1.0, 2.0, 3.0), Point(1.0, 2.0, 3.0).asVector());
@@ -223,11 +223,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, ApplyTransformation)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::Transformation;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
 
     // Translation
 
@@ -278,8 +278,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, Origin)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Point, Vector)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::object::Vector3d;
 
     {
         EXPECT_NO_THROW(Point::Vector(Vector3d(1.0, 2.0, 3.0)));

@@ -343,8 +343,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, ApplyTransformatio
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::object::Vector3d;
     using Polygon2d = ostk::mathematics::geometry::d2::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Polygon;

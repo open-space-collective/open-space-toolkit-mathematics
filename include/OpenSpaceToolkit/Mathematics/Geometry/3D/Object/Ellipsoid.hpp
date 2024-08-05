@@ -22,11 +22,11 @@ namespace object
 
 using ostk::core::type::Real;
 
-using ostk::mathematics::object::Matrix3d;
+using ostk::mathematics::geometry::d3::Intersection;
 using ostk::mathematics::geometry::d3::Object;
 using ostk::mathematics::geometry::d3::object::Point;
-using ostk::mathematics::geometry::d3::Intersection;
 using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
+using ostk::mathematics::object::Matrix3d;
 
 #define DEFAULT_ORIENTATION Quaternion::Unit()
 

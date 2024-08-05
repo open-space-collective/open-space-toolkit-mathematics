@@ -10,27 +10,27 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Composite(pybind11:
 {
     using namespace pybind11;
 
-    using ostk::core::type::Shared;
     using ostk::core::type::Real;
+    using ostk::core::type::Shared;
 
-    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Composite;
+    using ostk::mathematics::geometry::d3::object::Cone;
+    using ostk::mathematics::geometry::d3::object::Cuboid;
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::LineString;
+    using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
-    using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
     using ostk::mathematics::geometry::d3::object::Ray;
     using ostk::mathematics::geometry::d3::object::Segment;
-    using ostk::mathematics::geometry::d3::object::LineString;
-    using ostk::mathematics::geometry::d3::object::Polygon;
-    using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Sphere;
-    using ostk::mathematics::geometry::d3::object::Ellipsoid;
-    using ostk::mathematics::geometry::d3::object::Cuboid;
-    using ostk::mathematics::geometry::d3::object::Pyramid;
-    using ostk::mathematics::geometry::d3::object::Cone;
-    using ostk::mathematics::geometry::d3::object::Composite;
-    using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::object::Vector3d;
 
     class_<Composite, Object>(aModule, "Composite")
 

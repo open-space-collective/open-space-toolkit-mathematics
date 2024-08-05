@@ -21,14 +21,14 @@ namespace d3
 namespace object
 {
 
-using ostk::core::type::Real;
 using ostk::core::container::Array;
+using ostk::core::type::Real;
 
-using ostk::mathematics::object::Vector3d;
+using ostk::mathematics::geometry::d3::Intersection;
 using ostk::mathematics::geometry::d3::Object;
 using ostk::mathematics::geometry::d3::object::Point;
 using ostk::mathematics::geometry::d3::object::Segment;
-using ostk::mathematics::geometry::d3::Intersection;
+using ostk::mathematics::object::Vector3d;
 
 class PointSet;
 class Line;

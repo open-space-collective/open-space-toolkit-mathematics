@@ -6,15 +6,15 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ray(pybind11::modul
 {
     using namespace pybind11;
 
-    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
     using ostk::mathematics::geometry::d3::object::Ray;
-    using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Sphere;
-    using ostk::mathematics::geometry::d3::object::Ellipsoid;
-    using ostk::mathematics::geometry::d3::Intersection;
+    using ostk::mathematics::object::Vector3d;
 
     class_<Ray, Object>(aModule, "Ray")
 

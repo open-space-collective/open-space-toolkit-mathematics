@@ -20,15 +20,15 @@ namespace geometry
 namespace d2
 {
 
-using ostk::core::type::Unique;
 using ostk::core::type::String;
+using ostk::core::type::Unique;
 
-using ostk::mathematics::object::Vector2d;
-using ostk::mathematics::object::Vector3d;
-using ostk::mathematics::object::Matrix3d;
 using ostk::mathematics::geometry::Angle;
 using ostk::mathematics::geometry::d2::Object;
 using ostk::mathematics::geometry::d2::object::Point;
+using ostk::mathematics::object::Matrix3d;
+using ostk::mathematics::object::Vector2d;
+using ostk::mathematics::object::Vector3d;
 
 class Transformation
 {

@@ -259,10 +259,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_PointSet, ConstIterator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_PointSet, ApplyTransformation)
 {
-    using ostk::mathematics::object::Vector2d;
     using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::PointSet;
     using ostk::mathematics::geometry::d2::Transformation;
+    using ostk::mathematics::object::Vector2d;
 
     // Translation
 

@@ -116,8 +116,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, IsDegenerate)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Intersects_Plane)
 {
-    using ostk::mathematics::geometry::d3::object::Segment;
     using ostk::mathematics::geometry::d3::object::Plane;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         EXPECT_TRUE(Segment({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}).intersects(Plane({0.0, 0.0, 0.0}, {1.0, 0.0, 0.0})));
@@ -166,8 +166,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Intersects_Sphere)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Intersects_Ellipsoid)
 {
-    using ostk::mathematics::geometry::d3::object::Segment;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Segment;
 
     {
         // See: OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid.Intersects
@@ -226,9 +226,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, GetCenter)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, GetDirection)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Segment;
+    using ostk::mathematics::object::Vector3d;
 
     {
         EXPECT_EQ(Vector3d(0.0, 0.0, +1.0), Segment({0.0, 0.0, 0.0}, {0.0, 0.0, +2.0}).getDirection());
@@ -343,10 +343,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, IntersectionWith_P
 {
     using ostk::core::type::Real;
 
+    using ostk::mathematics::geometry::d3::Intersection;
+    using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Segment;
-    using ostk::mathematics::geometry::d3::object::Plane;
-    using ostk::mathematics::geometry::d3::Intersection;
 
     const auto expectSegmentIntersection =
         [](const Segment& aSegment, const Plane& aPlane, const Segment& anIntersectionSegment) -> void
@@ -466,11 +466,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, ApplyTransformatio
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Segment;
     using ostk::mathematics::geometry::d3::Transformation;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
 
     // Translation
 

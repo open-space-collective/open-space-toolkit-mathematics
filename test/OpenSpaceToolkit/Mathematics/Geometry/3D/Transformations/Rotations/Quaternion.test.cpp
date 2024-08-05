@@ -11,19 +11,19 @@
 
 #include <Global.test.hpp>
 
+using ostk::core::container::Table;
+using ostk::core::filesystem::File;
+using ostk::core::filesystem::Path;
 using ostk::core::type::Real;
 using ostk::core::type::String;
-using ostk::core::filesystem::Path;
-using ostk::core::filesystem::File;
-using ostk::core::container::Table;
 
-using ostk::mathematics::object::Vector3d;
-using ostk::mathematics::object::Vector4d;
 using ostk::mathematics::geometry::Angle;
 using ostk::mathematics::geometry::d3::transformation::rotation::EulerAngle;
 using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 using ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix;
 using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+using ostk::mathematics::object::Vector3d;
+using ostk::mathematics::object::Vector4d;
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Constructor)
 {

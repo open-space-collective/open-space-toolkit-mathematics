@@ -983,8 +983,8 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, GetConvexHull)
 {
-    using ostk::mathematics::geometry::d2::object::Polygon;
     using ostk::mathematics::geometry::d2::object::MultiPolygon;
+    using ostk::mathematics::geometry::d2::object::Polygon;
 
     {
         // Convex hull of convex polygon
@@ -1223,8 +1223,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiPolygon, Polygon)
 {
     using ostk::core::container::Array;
 
-    using ostk::mathematics::geometry::d2::object::Polygon;
     using ostk::mathematics::geometry::d2::object::MultiPolygon;
+    using ostk::mathematics::geometry::d2::object::Polygon;
 
     {
         const Array<Polygon::Vertex> vertices = {{0.0, 0.0}, {0.0, 1.0}, {1.0, 1.0}, {1.0, 0.0}};

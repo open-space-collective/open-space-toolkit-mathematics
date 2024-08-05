@@ -16,8 +16,8 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Constructor)
 {
-    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         ASSERT_NO_THROW(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0));
@@ -159,8 +159,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Point)
 {
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Point;
 
     {
         ASSERT_TRUE(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).intersects(Point(+5.0, +2.0, +3.0)));
@@ -186,9 +186,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Point
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_PointSet)
 {
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
-    using ostk::mathematics::geometry::d3::object::Ellipsoid;
 
     {
         ASSERT_TRUE(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0)
@@ -219,9 +219,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Line)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::geometry::d3::object::Point;
-    using ostk::mathematics::geometry::d3::object::Line;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Line;
+    using ostk::mathematics::geometry::d3::object::Point;
 
     {
         const Ellipsoid ellipsoid = {Point::Origin(), 1.0, 2.0, 3.0};
@@ -365,9 +365,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Ray)
 {
     using ostk::core::type::Real;
 
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Ray;
-    using ostk::mathematics::geometry::d3::object::Ellipsoid;
 
     {
         const Ellipsoid ellipsoid = {Point::Origin(), 1.0, 2.0, 3.0};
@@ -533,9 +533,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Segme
 {
     using ostk::core::type::Real;
 
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Segment;
-    using ostk::mathematics::geometry::d3::object::Ellipsoid;
 
     {
         const Ellipsoid ellipsoid = {Point::Origin(), 1.0, 2.0, 3.0};
@@ -656,9 +656,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Plane
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::geometry::d3::object::Point;
-    using ostk::mathematics::geometry::d3::object::Plane;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Plane;
+    using ostk::mathematics::geometry::d3::object::Point;
 
     {
         const Ellipsoid ellipsoid = {Point::Origin(), 1.0, 2.0, 3.0};
@@ -699,8 +699,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Plane
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Pyramid)
 {
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Pyramid;
 
     {
@@ -717,8 +717,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Intersects_Pyram
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Contains_Point)
 {
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Point;
 
     {
         ASSERT_TRUE(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).contains(Point(+5.0, +2.0, +3.0)));
@@ -744,9 +744,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Contains_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Contains_PointSet)
 {
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
-    using ostk::mathematics::geometry::d3::object::Ellipsoid;
 
     {
         ASSERT_TRUE(Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0)
@@ -784,8 +784,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Contains_PointSe
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetCenter)
 {
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Point;
 
     {
         ASSERT_EQ(Point(1.0, 2.0, 3.0), Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).getCenter());
@@ -839,11 +839,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetFirstAxis)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
 
     {
         ASSERT_EQ(Vector3d(1.0, 0.0, 0.0), Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).getFirstAxis());
@@ -868,11 +868,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetSecondAxis)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
 
     {
         ASSERT_EQ(Vector3d(0.0, 1.0, 0.0), Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).getSecondAxis());
@@ -897,11 +897,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetThirdAxis)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
 
     {
         ASSERT_EQ(Vector3d(0.0, 0.0, 1.0), Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).getThirdAxis());
@@ -924,8 +924,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetThirdAxis)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetOrientation)
 {
-    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
 
     {
         ASSERT_EQ(Quaternion::Unit(), Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).getOrientation());
@@ -947,12 +947,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, GetMatrix)
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Matrix3d;
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
-    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Matrix3d;
 
     {
         Matrix3d referenceEllipsoidMatrix;
@@ -997,11 +997,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 {
     using ostk::core::type::Real;
 
+    using ostk::mathematics::geometry::d3::Intersection;
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Line;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
-    using ostk::mathematics::geometry::d3::object::Line;
-    using ostk::mathematics::geometry::d3::object::Ellipsoid;
-    using ostk::mathematics::geometry::d3::Intersection;
 
     {
         const Line line = {{0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}};
@@ -1107,11 +1107,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 {
     using ostk::core::type::Real;
 
+    using ostk::mathematics::geometry::d3::Intersection;
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
     using ostk::mathematics::geometry::d3::object::Ray;
-    using ostk::mathematics::geometry::d3::object::Ellipsoid;
-    using ostk::mathematics::geometry::d3::Intersection;
 
     // onlyInSight = false
 
@@ -1358,11 +1358,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 {
     using ostk::core::type::Real;
 
+    using ostk::mathematics::geometry::d3::Intersection;
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
     using ostk::mathematics::geometry::d3::object::Segment;
-    using ostk::mathematics::geometry::d3::object::Ellipsoid;
-    using ostk::mathematics::geometry::d3::Intersection;
 
     {
         const Segment segment = {{0.0, 0.0, 0.0}, {1.0, 0.0, 0.0}};
@@ -1537,8 +1537,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, IntersectionWith_Pyramid)
 {
-    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Pyramid;
 
     {
@@ -1557,12 +1557,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, ApplyTransformat
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::Transformation;
     using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
 
     // Translation
 

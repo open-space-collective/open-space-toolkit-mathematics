@@ -6,15 +6,15 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_MultiPolygon(pybind
 {
     using namespace pybind11;
 
-    using ostk::core::type::Integer;
     using ostk::core::container::Array;
+    using ostk::core::type::Integer;
 
-    using ostk::mathematics::object::Vector2d;
     using ostk::mathematics::geometry::d2::Object;
+    using ostk::mathematics::geometry::d2::object::MultiPolygon;
     using ostk::mathematics::geometry::d2::object::Point;
     using ostk::mathematics::geometry::d2::object::PointSet;
     using ostk::mathematics::geometry::d2::object::Polygon;
-    using ostk::mathematics::geometry::d2::object::MultiPolygon;
+    using ostk::mathematics::object::Vector2d;
 
     class_<MultiPolygon, Object>(aModule, "MultiPolygon")
 

@@ -25,8 +25,8 @@ namespace rotation
 using ostk::core::type::Real;
 using ostk::core::type::String;
 
-using ostk::mathematics::object::Vector3d;
 using ostk::mathematics::geometry::Angle;
+using ostk::mathematics::object::Vector3d;
 
 class Quaternion;
 class RotationMatrix;

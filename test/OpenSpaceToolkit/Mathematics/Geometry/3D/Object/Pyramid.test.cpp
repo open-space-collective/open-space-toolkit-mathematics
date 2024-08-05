@@ -10,10 +10,10 @@
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Constructor)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Polygon base = {
@@ -27,10 +27,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Constructor)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Clone)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Polygon base = {
@@ -44,10 +44,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Clone)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, EqualToOperator)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Polygon base = {
@@ -76,10 +76,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, EqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, NotEqualToOperator)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Polygon base = {
@@ -108,10 +108,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, NotEqualToOperator
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, StreamOperator)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::object::Vector3d;
 
     {
         testing::internal::CaptureStdout();
@@ -129,10 +129,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, StreamOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, IsDefined)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Polygon base = {
@@ -150,11 +150,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Intersects_Ellipsoid)
 {
-    using ostk::mathematics::object::Vector3d;
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Polygon;
-    using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Polygon base = {
@@ -179,10 +179,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Intersects_Ellipso
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_Point)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Polygon base = {
@@ -299,11 +299,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_Point)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_PointSet)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
     using ostk::mathematics::geometry::d3::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Polygon base = {
@@ -331,11 +331,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_PointSet)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_Segment)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
-    using ostk::mathematics::geometry::d3::object::Segment;
     using ostk::mathematics::geometry::d3::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::geometry::d3::object::Segment;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Polygon base = {
@@ -363,10 +363,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, Contains_Segment)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, GetBase)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Polygon base = {
@@ -384,10 +384,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, GetBase)
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, GetApex)
 {
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Polygon base = {
@@ -407,13 +407,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, IntersectionWith_E
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
-    using ostk::mathematics::geometry::d3::object::Point;
-    using ostk::mathematics::geometry::d3::object::LineString;
-    using ostk::mathematics::geometry::d3::object::Polygon;
-    using ostk::mathematics::geometry::d3::object::Ellipsoid;
-    using ostk::mathematics::geometry::d3::object::Pyramid;
     using ostk::mathematics::geometry::d3::Intersection;
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::LineString;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Polygon;
+    using ostk::mathematics::geometry::d3::object::Pyramid;
+    using ostk::mathematics::object::Vector3d;
 
     {
         const Polygon base = {
@@ -461,13 +461,13 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Pyramid, ApplyTransformatio
 {
     using ostk::core::type::Real;
 
-    using ostk::mathematics::object::Vector3d;
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::Polygon;
     using ostk::mathematics::geometry::d3::object::Pyramid;
     using ostk::mathematics::geometry::d3::Transformation;
     using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
 
     // Translation
 
