@@ -354,6 +354,10 @@ class Interval : public IntervalBase
     static types::String StringFromType(const Interval::Type& anIntervalType);
 
    private:
+    bool contains(const T& aValue, const bool& isOpen) const;
+    bool checkAgainstLowerBound(const T& aValue, const bool& isOpen, const bool& isUpperBound) const;
+    bool checkAgainstUpperBound(const T& aValue, const bool& isOpen, const bool& isLowerBound) const;
+
     Interval::Type type_;
 
     T lowerBound_;
