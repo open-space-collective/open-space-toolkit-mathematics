@@ -8,11 +8,11 @@
 
 #include <Global.test.hpp>
 
+using ostk::core::type::Real;
+using ostk::mathematics::object::Interval;
+
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Constructor)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         Real lowerBound = 0.0;
         Real upperBound = 1.0;
@@ -33,9 +33,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Constructor)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, EqualToOperator)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         EXPECT_TRUE(
             Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed) ==
@@ -72,9 +69,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, EqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, NotEqualToOperator)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         EXPECT_FALSE(
             Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed) !=
@@ -111,9 +105,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, NotEqualToOperator)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, IsDefined)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).isDefined());
         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).isDefined());
@@ -132,9 +123,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, IsDefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, IsDegenerate)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         EXPECT_TRUE(Interval<Real>(1.0, 1.0, Interval<Real>::Type::Closed).isDegenerate());
         EXPECT_TRUE(Interval<Real>(1.0, 1.0, Interval<Real>::Type::Open).isDegenerate());
@@ -157,569 +145,651 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, IsDegenerate)
     }
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Object_Interval, Intersects)
-// {
-
-//     using ostk::core::type::Real ;
-
-//     using ostk::mathematics::object::Interval ;
-
-//     {
-
-//         FAIL() ;
-
-//     }
-
-// }
-
-// TEST (OpenSpaceToolkit_Mathematics_Object_Interval, Contains)
-// {
-
-//     using ostk::core::type::Real ;
-
-//     using ostk::mathematics::object::Interval ;
-
-//     {
-
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(0.0)) ;
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(0.1)) ;
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(0.5)) ;
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(0.9)) ;
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(1.0)) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(-1.0)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(-0.1)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(+1.1)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(+2.0)) ;
-
-//     }
-
-//     {
-
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(0.1)) ;
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(0.5)) ;
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(0.9)) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(-1.0)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(-0.1)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(0.0)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(1.0)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(+1.1)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(+2.0)) ;
-
-//     }
-
-//     {
-
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).contains(0.1)) ;
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).contains(0.5)) ;
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).contains(0.9)) ;
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).contains(1.0)) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).contains(-1.0)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).contains(-0.1)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).contains(0.0)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).contains(+1.1)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).contains(+2.0)) ;
-
-//     }
-
-//     {
-
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).contains(0.0)) ;
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).contains(0.1)) ;
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).contains(0.5)) ;
-//         EXPECT_TRUE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).contains(0.9)) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).contains(-1.0)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).contains(-0.1)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).contains(1.0)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).contains(+1.1)) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).contains(+2.0)) ;
-
-//     }
-
-//     {
-
-//         EXPECT_ANY_THROW(Interval<Real>::Undefined().contains(1.0)) ;
-//         EXPECT_ANY_THROW(Interval<Real>::Undefined().contains(Real::Undefined())) ;
-
-//         EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Real::Undefined())) ;
-//         EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Real::Undefined())) ;
-//         EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).contains(Real::Undefined())) ;
-//         EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).contains(Real::Undefined())) ;
-
-//     }
-
-//     // Interval(Closed)::contains(Interval)
-
-//     {
-
-//         // Closed
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, -1.0,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, -0.5, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +0.0,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +0.5, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +1.0,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +1.5, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +2.0,
-//         Interval<Real>::Type::Closed))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, -0.5,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +0.0, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +0.5,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +1.0, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +1.5,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +2.0, Interval<Real>::Type::Closed))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +0.0,
-//         Interval<Real>::Type::Closed))) ; EXPECT_TRUE (Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +0.5, Interval<Real>::Type::Closed))) ;
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +1.0,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +1.5, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +2.0,
-//         Interval<Real>::Type::Closed))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +0.5,
-//         Interval<Real>::Type::Closed))) ; EXPECT_TRUE (Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +1.0, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +1.5,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +2.0, Interval<Real>::Type::Closed))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+1.0, +1.0,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+1.0, +1.5, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+1.0, +2.0,
-//         Interval<Real>::Type::Closed))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+1.5, +1.5,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+1.5, +2.0, Interval<Real>::Type::Closed))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+2.0, +2.0,
-//         Interval<Real>::Type::Closed))) ;
-
-//         // Open
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, -1.0,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, -0.5, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +0.0,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +0.5, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +1.0,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +1.5, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +2.0,
-//         Interval<Real>::Type::Open))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, -0.5,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +0.0, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +0.5,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +1.0, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +1.5,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +2.0, Interval<Real>::Type::Open))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +0.0,
-//         Interval<Real>::Type::Open))) ; EXPECT_TRUE (Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +0.5, Interval<Real>::Type::Open))) ; EXPECT_TRUE
-//         (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +1.0,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +1.5, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +2.0,
-//         Interval<Real>::Type::Open))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +0.5,
-//         Interval<Real>::Type::Open))) ; EXPECT_TRUE (Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +1.0, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +1.5,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +2.0, Interval<Real>::Type::Open))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+1.0, +1.0,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+1.0, +1.5, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+1.0, +2.0,
-//         Interval<Real>::Type::Open))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+1.5, +1.5,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+1.5, +2.0, Interval<Real>::Type::Open))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+2.0, +2.0,
-//         Interval<Real>::Type::Open))) ;
-
-//         // HalfOpenLeft
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, -1.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, -0.5, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +0.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +0.5, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +1.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +1.5, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +2.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, -0.5,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +0.0, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +0.5,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +1.0, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +1.5,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +2.0, Interval<Real>::Type::HalfOpenLeft))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +0.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_TRUE (Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +0.5, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +1.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +1.5, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +2.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +0.5,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_TRUE (Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +1.0, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +1.5,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +2.0, Interval<Real>::Type::HalfOpenLeft))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+1.0, +1.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+1.0, +1.5, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+1.0, +2.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+1.5, +1.5,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+1.5, +2.0, Interval<Real>::Type::HalfOpenLeft))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+2.0, +2.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ;
-
-//         // HalfOpenRight
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, -1.0,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, -0.5, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +0.0,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +0.5, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +1.0,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +1.5, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-1.0, +2.0,
-//         Interval<Real>::Type::HalfOpenRight))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, -0.5,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +0.0, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +0.5,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +1.0, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +1.5,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(-0.5, +2.0, Interval<Real>::Type::HalfOpenRight))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +0.0,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_TRUE (Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +0.5, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +1.0,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +1.5, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.0, +2.0,
-//         Interval<Real>::Type::HalfOpenRight))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +0.5,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_TRUE (Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +1.0, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +1.5,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+0.5, +2.0, Interval<Real>::Type::HalfOpenRight))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+1.0, +1.0,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+1.0, +1.5, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+1.0, +2.0,
-//         Interval<Real>::Type::HalfOpenRight))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+1.5, +1.5,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>(+1.5, +2.0, Interval<Real>::Type::HalfOpenRight))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).contains(Interval<Real>(+2.0, +2.0,
-//         Interval<Real>::Type::HalfOpenRight))) ;
-
-//     }
-
-//     // Interval(Open)::contains(Interval)
-
-//     {
-
-//         // Closed
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, -1.0,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, -0.5, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +0.0,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +0.5, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +1.0,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +1.5, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +2.0,
-//         Interval<Real>::Type::Closed))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, -0.5,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +0.0, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +0.5,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +1.0, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +1.5,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +2.0, Interval<Real>::Type::Closed))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +0.0,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +0.5, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +1.0,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +1.5, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +2.0,
-//         Interval<Real>::Type::Closed))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +0.5,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +1.0, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +1.5,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +2.0, Interval<Real>::Type::Closed))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+1.0, +1.0,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+1.0, +1.5, Interval<Real>::Type::Closed))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+1.0, +2.0,
-//         Interval<Real>::Type::Closed))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+1.5, +1.5,
-//         Interval<Real>::Type::Closed))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+1.5, +2.0, Interval<Real>::Type::Closed))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+2.0, +2.0,
-//         Interval<Real>::Type::Closed))) ;
-
-//         // Open
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, -1.0,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, -0.5, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +0.0,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +0.5, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +1.0,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +1.5, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +2.0,
-//         Interval<Real>::Type::Open))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, -0.5,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +0.0, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +0.5,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +1.0, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +1.5,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +2.0, Interval<Real>::Type::Open))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +0.0,
-//         Interval<Real>::Type::Open))) ; EXPECT_TRUE (Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +0.5, Interval<Real>::Type::Open))) ; EXPECT_TRUE
-//         (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +1.0,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +1.5, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +2.0,
-//         Interval<Real>::Type::Open))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +0.5,
-//         Interval<Real>::Type::Open))) ; EXPECT_TRUE (Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +1.0, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +1.5,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +2.0, Interval<Real>::Type::Open))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+1.0, +1.0,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+1.0, +1.5, Interval<Real>::Type::Open))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+1.0, +2.0,
-//         Interval<Real>::Type::Open))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+1.5, +1.5,
-//         Interval<Real>::Type::Open))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+1.5, +2.0, Interval<Real>::Type::Open))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+2.0, +2.0,
-//         Interval<Real>::Type::Open))) ;
-
-//         // HalfOpenLeft
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, -1.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, -0.5, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +0.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +0.5, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +1.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +1.5, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +2.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, -0.5,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +0.0, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +0.5,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +1.0, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +1.5,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +2.0, Interval<Real>::Type::HalfOpenLeft))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +0.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_TRUE (Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +0.5, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +1.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +1.5, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +2.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +0.5,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +1.0, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +1.5,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +2.0, Interval<Real>::Type::HalfOpenLeft))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+1.0, +1.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+1.0, +1.5, Interval<Real>::Type::HalfOpenLeft))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+1.0, +2.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+1.5, +1.5,
-//         Interval<Real>::Type::HalfOpenLeft))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+1.5, +2.0, Interval<Real>::Type::HalfOpenLeft))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+2.0, +2.0,
-//         Interval<Real>::Type::HalfOpenLeft))) ;
-
-//         // HalfOpenRight
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, -1.0,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, -0.5, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +0.0,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +0.5, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +1.0,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +1.5, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-1.0, +2.0,
-//         Interval<Real>::Type::HalfOpenRight))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, -0.5,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +0.0, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +0.5,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +1.0, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +1.5,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(-0.5, +2.0, Interval<Real>::Type::HalfOpenRight))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +0.0,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +0.5, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +1.0,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +1.5, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.0, +2.0,
-//         Interval<Real>::Type::HalfOpenRight))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +0.5,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_TRUE (Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +1.0, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +1.5,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+0.5, +2.0, Interval<Real>::Type::HalfOpenRight))) ;
-
-//         EXPECT_TRUE (Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+1.0, +1.0,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+1.0, +1.5, Interval<Real>::Type::HalfOpenRight))) ;
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+1.0, +2.0,
-//         Interval<Real>::Type::HalfOpenRight))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+1.5, +1.5,
-//         Interval<Real>::Type::HalfOpenRight))) ; EXPECT_FALSE(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Open).contains(Interval<Real>(+1.5, +2.0, Interval<Real>::Type::HalfOpenRight))) ;
-
-//         EXPECT_FALSE(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>(+2.0, +2.0,
-//         Interval<Real>::Type::HalfOpenRight))) ;
-
-//     }
-
-//     // Interval(HalfOpenLeft)::contains(Interval)
-
-//     {
-
-//         FAIL() ;
-
-//     }
-
-//     // Interval(OpHalfOpenRighten)::contains(Interval)
-
-//     {
-
-//         FAIL() ;
-
-//     }
-
-//     {
-
-//         EXPECT_ANY_THROW(Interval<Real>::Undefined().contains(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed))) ;
-//         EXPECT_ANY_THROW(Interval<Real>::Undefined().contains(Interval<Real>::Undefined())) ;
-
-//         EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::Closed).contains(Interval<Real>::Undefined())) ;
-//         EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).contains(Interval<Real>::Undefined()))
-//         ; EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::HalfOpenLeft).contains(Interval<Real>::Undefined())) ;
-//         EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0,
-//         Interval<Real>::Type::HalfOpenRight).contains(Interval<Real>::Undefined())) ;
-
-//     }
-
-// }
+TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Intersects)
+{
+    {
+        EXPECT_ANY_THROW(Interval<Real>::Undefined().intersects(Interval<Real>::Undefined()));
+    }
+
+    {
+        const Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0);
+
+        {
+            EXPECT_ANY_THROW(interval.intersects(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().intersects(interval));
+        }
+
+        {
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Closed(-2.0, -1.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenLeft(-2.0, -1.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenRight(-2.0, -1.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(-2.0, -1.0)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(-1.0, 0.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(-1.0, 0.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenRight(-1.0, 0.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(-1.0, 0.0)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(-1.0, 0.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(-1.0, 0.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(-1.0, 0.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(-1.0, 0.5)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.25, 0.75)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.25, 0.75)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.25, 0.75)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.25, 0.75)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.0, 1.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.0, 1.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.0, 1.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.0, 1.0)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(-1.0, 2.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(-1.0, 2.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(-1.0, 2.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(-1.0, 2.0)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.5, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.5, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.0, 1.5)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(1.0, 2.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenLeft(1.0, 2.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(1.0, 2.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(1.0, 2.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Closed(2.0, 3.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenLeft(2.0, 3.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenRight(2.0, 3.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(2.0, 3.0)));
+        }
+    }
+
+    {
+        const Interval<Real> interval = Interval<Real>::HalfOpenLeft(0.0, 1.0);
+
+        {
+            EXPECT_ANY_THROW(interval.intersects(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().intersects(interval));
+        }
+
+        {
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Closed(-2.0, -1.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenLeft(-2.0, -1.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenRight(-2.0, -1.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(-2.0, -1.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Closed(-1.0, 0.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenLeft(-1.0, 0.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenRight(-1.0, 0.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(-1.0, 0.0)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(-1.0, 0.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(-1.0, 0.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(-1.0, 0.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(-1.0, 0.5)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.25, 0.75)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.25, 0.75)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.25, 0.75)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.25, 0.75)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.0, 1.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.0, 1.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.0, 1.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.0, 1.0)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(-1.0, 2.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(-1.0, 2.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(-1.0, 2.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(-1.0, 2.0)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.5, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.5, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.0, 1.5)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(1.0, 2.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenLeft(1.0, 2.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(1.0, 2.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(1.0, 2.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Closed(2.0, 3.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenLeft(2.0, 3.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenRight(2.0, 3.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(2.0, 3.0)));
+        }
+    }
+
+    {
+        const Interval<Real> interval = Interval<Real>::HalfOpenRight(0.0, 1.0);
+
+        {
+            EXPECT_ANY_THROW(interval.intersects(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().intersects(interval));
+        }
+
+        {
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Closed(-2.0, -1.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenLeft(-2.0, -1.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenRight(-2.0, -1.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(-2.0, -1.0)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(-1.0, 0.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(-1.0, 0.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenRight(-1.0, 0.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(-1.0, 0.0)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(-1.0, 0.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(-1.0, 0.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(-1.0, 0.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(-1.0, 0.5)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.25, 0.75)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.25, 0.75)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.25, 0.75)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.25, 0.75)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.0, 1.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.0, 1.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.0, 1.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.0, 1.0)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(-1.0, 2.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(-1.0, 2.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(-1.0, 2.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(-1.0, 2.0)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.5, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.5, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.0, 1.5)));
+        }
+
+        {
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Closed(1.0, 2.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenLeft(1.0, 2.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenRight(1.0, 2.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(1.0, 2.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Closed(2.0, 3.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenLeft(2.0, 3.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenRight(2.0, 3.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(2.0, 3.0)));
+        }
+    }
+
+    {
+        const Interval<Real> interval = Interval<Real>::Open(0.0, 1.0);
+
+        {
+            EXPECT_ANY_THROW(interval.intersects(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().intersects(interval));
+        }
+
+        {
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Closed(-2.0, -1.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenLeft(-2.0, -1.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenRight(-2.0, -1.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(-2.0, -1.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Closed(-1.0, 0.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenLeft(-1.0, 0.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenRight(-1.0, 0.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(-1.0, 0.0)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(-1.0, 0.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(-1.0, 0.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(-1.0, 0.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(-1.0, 0.5)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.25, 0.75)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.25, 0.75)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.25, 0.75)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.25, 0.75)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.0, 1.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.0, 1.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.0, 1.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.0, 1.0)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(-1.0, 2.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(-1.0, 2.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(-1.0, 2.0)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(-1.0, 2.0)));
+        }
+
+        {
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.5, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.5, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.0, 1.5)));
+        }
+
+        {
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Closed(1.0, 2.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenLeft(1.0, 2.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenRight(1.0, 2.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(1.0, 2.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Closed(2.0, 3.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenLeft(2.0, 3.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::HalfOpenRight(2.0, 3.0)));
+            EXPECT_FALSE(interval.intersects(Interval<Real>::Open(2.0, 3.0)));
+        }
+    }
+}
+
+TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsValue)
+{
+    {
+        EXPECT_ANY_THROW(Interval<Real>::Undefined().contains(0.0));
+        EXPECT_ANY_THROW(Interval<Real>::Undefined().contains(Real::Undefined()));
+    }
+
+    {
+        const Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0);
+
+        EXPECT_ANY_THROW(interval.contains(Real::Undefined()));
+
+        EXPECT_FALSE(interval.contains(-1.0));
+        EXPECT_TRUE(interval.contains(0.0));
+        EXPECT_TRUE(interval.contains(0.5));
+        EXPECT_TRUE(interval.contains(1.0));
+        EXPECT_FALSE(interval.contains(2.0));
+    }
+
+    {
+        const Interval<Real> interval = Interval<Real>::HalfOpenLeft(0.0, 1.0);
+
+        EXPECT_ANY_THROW(interval.contains(Real::Undefined()));
+
+        EXPECT_FALSE(interval.contains(-1.0));
+        EXPECT_FALSE(interval.contains(0.0));
+        EXPECT_TRUE(interval.contains(0.5));
+        EXPECT_TRUE(interval.contains(1.0));
+        EXPECT_FALSE(interval.contains(2.0));
+    }
+
+    {
+        const Interval<Real> interval = Interval<Real>::HalfOpenRight(0.0, 1.0);
+
+        EXPECT_ANY_THROW(interval.contains(Real::Undefined()));
+
+        EXPECT_FALSE(interval.contains(-1.0));
+        EXPECT_TRUE(interval.contains(0.0));
+        EXPECT_TRUE(interval.contains(0.5));
+        EXPECT_FALSE(interval.contains(1.0));
+        EXPECT_FALSE(interval.contains(2.0));
+    }
+
+    {
+        const Interval<Real> interval = Interval<Real>::Open(0.0, 1.0);
+
+        EXPECT_ANY_THROW(interval.contains(Real::Undefined()));
+
+        EXPECT_FALSE(interval.contains(-1.0));
+        EXPECT_FALSE(interval.contains(0.0));
+        EXPECT_TRUE(interval.contains(0.5));
+        EXPECT_FALSE(interval.contains(1.0));
+        EXPECT_FALSE(interval.contains(2.0));
+    }
+}
+
+TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsInterval)
+{
+    {
+        EXPECT_ANY_THROW(Interval<Real>::Undefined().contains(Interval<Real>::Undefined()));
+    }
+
+    {
+        const Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0);
+
+        {
+            EXPECT_ANY_THROW(interval.contains(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().contains(interval));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-2.0, -1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-2.0, -1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-2.0, -1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-2.0, -1.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-1.0, 0.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-1.0, 0.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-1.0, 0.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-1.0, 0.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-1.0, 0.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-1.0, 0.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-1.0, 0.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-1.0, 0.5)));
+        }
+
+        {
+            EXPECT_TRUE(interval.contains(Interval<Real>::Closed(0.25, 0.75)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::HalfOpenLeft(0.25, 0.75)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::HalfOpenRight(0.25, 0.75)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::Open(0.25, 0.75)));
+        }
+
+        {
+            EXPECT_TRUE(interval.contains(Interval<Real>::Closed(0.0, 1.0)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::HalfOpenLeft(0.0, 1.0)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::HalfOpenRight(0.0, 1.0)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::Open(0.0, 1.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-1.0, 2.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(0.5, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(0.5, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(0.0, 1.5)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(1.0, 2.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(2.0, 3.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(2.0, 3.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(2.0, 3.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(2.0, 3.0)));
+        }
+    }
+
+    {
+        const Interval<Real> interval = Interval<Real>::HalfOpenLeft(0.0, 1.0);
+
+        {
+            EXPECT_ANY_THROW(interval.contains(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().contains(interval));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-2.0, -1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-2.0, -1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-2.0, -1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-2.0, -1.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-1.0, 0.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-1.0, 0.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-1.0, 0.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-1.0, 0.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-1.0, 0.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-1.0, 0.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-1.0, 0.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-1.0, 0.5)));
+        }
+
+        {
+            EXPECT_TRUE(interval.contains(Interval<Real>::Closed(0.25, 0.75)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::HalfOpenLeft(0.25, 0.75)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::HalfOpenRight(0.25, 0.75)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::Open(0.25, 0.75)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(0.0, 1.0)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::HalfOpenLeft(0.0, 1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(0.0, 1.0)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::Open(0.0, 1.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-1.0, 2.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(0.5, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(0.5, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(0.0, 1.5)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(1.0, 2.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(2.0, 3.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(2.0, 3.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(2.0, 3.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(2.0, 3.0)));
+        }
+    }
+
+    {
+        const Interval<Real> interval = Interval<Real>::HalfOpenRight(0.0, 1.0);
+
+        {
+            EXPECT_ANY_THROW(interval.contains(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().contains(interval));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-2.0, -1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-2.0, -1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-2.0, -1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-2.0, -1.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-1.0, 0.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-1.0, 0.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-1.0, 0.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-1.0, 0.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-1.0, 0.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-1.0, 0.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-1.0, 0.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-1.0, 0.5)));
+        }
+
+        {
+            EXPECT_TRUE(interval.contains(Interval<Real>::Closed(0.25, 0.75)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::HalfOpenLeft(0.25, 0.75)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::HalfOpenRight(0.25, 0.75)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::Open(0.25, 0.75)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(0.0, 1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(0.0, 1.0)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::HalfOpenRight(0.0, 1.0)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::Open(0.0, 1.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-1.0, 2.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(0.5, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(0.5, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(0.0, 1.5)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(1.0, 2.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(2.0, 3.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(2.0, 3.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(2.0, 3.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(2.0, 3.0)));
+        }
+    }
+
+    {
+        const Interval<Real> interval = Interval<Real>::Open(0.0, 1.0);
+
+        {
+            EXPECT_ANY_THROW(interval.contains(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().contains(interval));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-2.0, -1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-2.0, -1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-2.0, -1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-2.0, -1.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-1.0, 0.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-1.0, 0.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-1.0, 0.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-1.0, 0.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-1.0, 0.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-1.0, 0.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-1.0, 0.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-1.0, 0.5)));
+        }
+
+        {
+            EXPECT_TRUE(interval.contains(Interval<Real>::Closed(0.25, 0.75)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::HalfOpenLeft(0.25, 0.75)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::HalfOpenRight(0.25, 0.75)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::Open(0.25, 0.75)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(0.0, 1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(0.0, 1.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(0.0, 1.0)));
+            EXPECT_TRUE(interval.contains(Interval<Real>::Open(0.0, 1.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(-1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(-1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(-1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(-1.0, 2.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(0.5, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(0.5, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(0.0, 1.5)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(1.0, 2.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(1.0, 2.0)));
+        }
+
+        {
+            EXPECT_FALSE(interval.contains(Interval<Real>::Closed(2.0, 3.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(2.0, 3.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(2.0, 3.0)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(2.0, 3.0)));
+        }
+    }
+}
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, AccessLowerBound)
 {
