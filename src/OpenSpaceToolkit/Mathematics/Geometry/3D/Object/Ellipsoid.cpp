@@ -304,7 +304,7 @@ bool Ellipsoid::intersects(const Segment& aSegment) const
         const Real t0 = (-a1 - discriminantRoot) * a2_inverse;
         const Real t1 = (-a1 + discriminantRoot) * a2_inverse;
 
-        const Interval<Real> resultInterval = Interval<Real>::Open(t0, t1);
+        const Interval<Real> resultInterval = Interval<Real>::Closed(t0, t1);
         const Interval<Real> segmentInterval = Interval<Real>::Closed(-segmentHalfLength, +segmentHalfLength);
 
         if (!resultInterval.contains(segmentInterval))
