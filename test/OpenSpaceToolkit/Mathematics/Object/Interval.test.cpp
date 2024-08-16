@@ -29,6 +29,13 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Constructor)
         EXPECT_ANY_THROW(Interval<Real>(1.0, 0.0, Interval<Real>::Type::HalfOpenLeft));
         EXPECT_ANY_THROW(Interval<Real>(1.0, 0.0, Interval<Real>::Type::HalfOpenRight));
     }
+
+    {
+        EXPECT_NO_THROW(Interval<Real>(0.0, 0.0, Interval<Real>::Type::Closed));
+        EXPECT_ANY_THROW(Interval<Real>(0.0, 0.0, Interval<Real>::Type::Open));
+        EXPECT_ANY_THROW(Interval<Real>(0.0, 0.0, Interval<Real>::Type::HalfOpenLeft));
+        EXPECT_ANY_THROW(Interval<Real>(0.0, 0.0, Interval<Real>::Type::HalfOpenRight));
+    }
 }
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, EqualToOperator)
@@ -57,7 +64,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, EqualToOperator)
             Interval<Real>(1.0, 1.0, Interval<Real>::Type::Closed)
         );
         EXPECT_FALSE(
-            Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open) == Interval<Real>(0.0, 0.0, Interval<Real>::Type::Open)
+            Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open) == Interval<Real>(0.0, 2.0, Interval<Real>::Type::Open)
         );
         EXPECT_FALSE(
             Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft) ==
@@ -93,7 +100,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, NotEqualToOperator)
             Interval<Real>(1.0, 1.0, Interval<Real>::Type::Closed)
         );
         EXPECT_TRUE(
-            Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open) != Interval<Real>(0.0, 0.0, Interval<Real>::Type::Open)
+            Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open) != Interval<Real>(0.0, 2.0, Interval<Real>::Type::Open)
         );
         EXPECT_TRUE(
             Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft) !=
@@ -125,9 +132,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, IsDegenerate)
 {
     {
         EXPECT_TRUE(Interval<Real>(1.0, 1.0, Interval<Real>::Type::Closed).isDegenerate());
-        EXPECT_TRUE(Interval<Real>(1.0, 1.0, Interval<Real>::Type::Open).isDegenerate());
-        EXPECT_TRUE(Interval<Real>(1.0, 1.0, Interval<Real>::Type::HalfOpenLeft).isDegenerate());
-        EXPECT_TRUE(Interval<Real>(1.0, 1.0, Interval<Real>::Type::HalfOpenRight).isDegenerate());
     }
 
     {
@@ -205,7 +209,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Intersects)
             EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.5, 1.5)));
             EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
             EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.5, 1.5)));
-            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.0, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.5, 1.5)));
         }
 
         {
@@ -277,7 +281,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Intersects)
             EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.5, 1.5)));
             EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
             EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.5, 1.5)));
-            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.0, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.5, 1.5)));
         }
 
         {
@@ -349,7 +353,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Intersects)
             EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.5, 1.5)));
             EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
             EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.5, 1.5)));
-            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.0, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.5, 1.5)));
         }
 
         {
@@ -421,7 +425,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Intersects)
             EXPECT_TRUE(interval.intersects(Interval<Real>::Closed(0.5, 1.5)));
             EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
             EXPECT_TRUE(interval.intersects(Interval<Real>::HalfOpenRight(0.5, 1.5)));
-            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.0, 1.5)));
+            EXPECT_TRUE(interval.intersects(Interval<Real>::Open(0.5, 1.5)));
         }
 
         {
@@ -556,7 +560,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsInterval)
             EXPECT_FALSE(interval.contains(Interval<Real>::Closed(0.5, 1.5)));
             EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
             EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(0.5, 1.5)));
-            EXPECT_FALSE(interval.contains(Interval<Real>::Open(0.0, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(0.5, 1.5)));
         }
 
         {
@@ -628,7 +632,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsInterval)
             EXPECT_FALSE(interval.contains(Interval<Real>::Closed(0.5, 1.5)));
             EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
             EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(0.5, 1.5)));
-            EXPECT_FALSE(interval.contains(Interval<Real>::Open(0.0, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(0.5, 1.5)));
         }
 
         {
@@ -700,7 +704,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsInterval)
             EXPECT_FALSE(interval.contains(Interval<Real>::Closed(0.5, 1.5)));
             EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
             EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(0.5, 1.5)));
-            EXPECT_FALSE(interval.contains(Interval<Real>::Open(0.0, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(0.5, 1.5)));
         }
 
         {
@@ -772,7 +776,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsInterval)
             EXPECT_FALSE(interval.contains(Interval<Real>::Closed(0.5, 1.5)));
             EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenLeft(0.5, 1.5)));
             EXPECT_FALSE(interval.contains(Interval<Real>::HalfOpenRight(0.5, 1.5)));
-            EXPECT_FALSE(interval.contains(Interval<Real>::Open(0.0, 1.5)));
+            EXPECT_FALSE(interval.contains(Interval<Real>::Open(0.5, 1.5)));
         }
 
         {
@@ -793,21 +797,12 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ContainsInterval)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, AccessLowerBound)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         EXPECT_EQ(0.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).accessLowerBound());
         EXPECT_EQ(0.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).accessLowerBound());
         EXPECT_EQ(0.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).accessLowerBound());
         EXPECT_EQ(0.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).accessLowerBound());
-    }
-
-    {
         EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::Closed).accessLowerBound());
-        EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::Open).accessLowerBound());
-        EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::HalfOpenLeft).accessLowerBound());
-        EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::HalfOpenRight).accessLowerBound());
     }
 
     {
@@ -830,21 +825,12 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, AccessLowerBound)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, AccessUpperBound)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         EXPECT_EQ(1.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).accessUpperBound());
         EXPECT_EQ(1.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).accessUpperBound());
         EXPECT_EQ(1.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).accessUpperBound());
         EXPECT_EQ(1.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).accessUpperBound());
-    }
-
-    {
         EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::Closed).accessUpperBound());
-        EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::Open).accessUpperBound());
-        EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::HalfOpenLeft).accessUpperBound());
-        EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::HalfOpenRight).accessUpperBound());
     }
 
     {
@@ -867,9 +853,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, AccessUpperBound)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetType)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         EXPECT_EQ(Interval<Real>::Type::Closed, Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).getType());
         EXPECT_EQ(Interval<Real>::Type::Open, Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).getType());
@@ -888,21 +871,12 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetType)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetLowerBound)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         EXPECT_EQ(0.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).getLowerBound());
         EXPECT_EQ(0.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).getLowerBound());
         EXPECT_EQ(0.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).getLowerBound());
         EXPECT_EQ(0.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).getLowerBound());
-    }
-
-    {
         EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::Closed).getLowerBound());
-        EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::Open).getLowerBound());
-        EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::HalfOpenLeft).getLowerBound());
-        EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::HalfOpenRight).getLowerBound());
     }
 
     {
@@ -919,21 +893,12 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetLowerBound)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUpperBound)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         EXPECT_EQ(1.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).getUpperBound());
         EXPECT_EQ(1.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).getUpperBound());
         EXPECT_EQ(1.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).getUpperBound());
         EXPECT_EQ(1.0, Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).getUpperBound());
-    }
-
-    {
         EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::Closed).getUpperBound());
-        EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::Open).getUpperBound());
-        EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::HalfOpenLeft).getUpperBound());
-        EXPECT_EQ(1.0, Interval<Real>(1.0, 1.0, Interval<Real>::Type::HalfOpenRight).getUpperBound());
     }
 
     {
@@ -950,64 +915,454 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUpperBound)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
 {
-    using ostk::core::container::Array;
-    using ostk::core::container::Tuple;
-    using ostk::core::type::Real;
-    using ostk::core::type::String;
-
-    using ostk::mathematics::object::Interval;
+    {
+        EXPECT_ANY_THROW(Interval<Real>::Undefined().getIntersectionWith(Interval<Real>::Undefined()));
+    }
 
     {
-        Array<Tuple<Interval<Real>, Interval<Real>, Interval<Real>>> testCases = {
-            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenLeft),
-             Interval<Real>(5.0, 7.0, Interval<Real>::Type::HalfOpenLeft),
-             Interval<Real>(5.0, 7.0, Interval<Real>::Type::HalfOpenLeft)},
-            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenRight),
-             Interval<Real>(-15.0, 25.0, Interval<Real>::Type::HalfOpenRight),
-             Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenRight)},
-            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Open),
-             Interval<Real>(-5.0, 7.0, Interval<Real>::Type::Open),
-             Interval<Real>(0.0, 7.0, Interval<Real>::Type::Open)},
-            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),
-             Interval<Real>(5.0, 15.0, Interval<Real>::Type::Closed),
-             Interval<Real>(5.0, 10.0, Interval<Real>::Type::Closed)},
-            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),
-             Interval<Real>(10.0, 15.0, Interval<Real>::Type::Closed),
-             Interval<Real>(10.0, 10.0, Interval<Real>::Type::Closed)}
-        };
+        const Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0);
 
-        for (const auto& testCase : testCases)
         {
-            const Interval<Real> anInterval = std::get<0>(testCase);
-            const Interval<Real> anotherInterval = std::get<1>(testCase);
-            const Interval<Real> expectedInterval = std::get<2>(testCase);
+            EXPECT_ANY_THROW(interval.getIntersectionWith(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().getIntersectionWith(interval));
+        }
 
-            EXPECT_EQ(anInterval.getIntersectionWith(anotherInterval), expectedInterval);
+        {
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Closed(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(-2.0, -1.0)).isDefined());
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(-1.0, 0.0)), Interval<Real>::Closed(0.0, 0.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.0)), Interval<Real>::Closed(0.0, 0.0)
+            );
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(-1.0, 0.0)).isDefined());
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(-1.0, 0.5)), Interval<Real>::Closed(0.0, 0.5)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.5)), Interval<Real>::Closed(0.0, 0.5)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-1.0, 0.5)),
+                Interval<Real>::HalfOpenRight(0.0, 0.5)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Open(-1.0, 0.5)), Interval<Real>::HalfOpenRight(0.0, 0.5)
+            );
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(0.25, 0.75)), Interval<Real>::Closed(0.25, 0.75)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(0.25, 0.75)),
+                Interval<Real>::HalfOpenLeft(0.25, 0.75)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(0.25, 0.75)),
+                Interval<Real>::HalfOpenRight(0.25, 0.75)
+            );
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Open(0.25, 0.75)), Interval<Real>::Open(0.25, 0.75));
+        }
+
+        {
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Closed(0.0, 1.0)), Interval<Real>::Closed(0.0, 1.0));
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(0.0, 1.0)),
+                Interval<Real>::HalfOpenLeft(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(0.0, 1.0)),
+                Interval<Real>::HalfOpenRight(0.0, 1.0)
+            );
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Open(0.0, 1.0)), Interval<Real>::Open(0.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(-1.0, 2.0)), Interval<Real>::Closed(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-1.0, 2.0)), Interval<Real>::Closed(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-1.0, 2.0)), Interval<Real>::Closed(0.0, 1.0)
+            );
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Open(-1.0, 2.0)), Interval<Real>::Closed(0.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Closed(0.5, 1.5)), Interval<Real>::Closed(0.5, 1.0));
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(0.5, 1.5)),
+                Interval<Real>::HalfOpenLeft(0.5, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(0.5, 1.5)), Interval<Real>::Closed(0.5, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Open(0.5, 1.5)), Interval<Real>::HalfOpenLeft(0.5, 1.0)
+            );
+        }
+
+        {
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Closed(1.0, 2.0)), Interval<Real>::Closed(1.0, 1.0));
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(1.0, 2.0)).isDefined());
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(1.0, 2.0)), Interval<Real>::Closed(1.0, 1.0)
+            );
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(1.0, 2.0)).isDefined());
+        }
+
+        {
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Closed(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenRight(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(2.0, 3.0)).isDefined());
         }
     }
 
     {
-        Array<Tuple<Interval<Real>, Interval<Real>>> undefinedTestCases = {
-            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),
-             Interval<Real>(15.0, 20.0, Interval<Real>::Type::Closed)},
-            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),
-             Interval<Real>(-10.0, -5.0, Interval<Real>::Type::Closed)},
-        };
+        const Interval<Real> interval = Interval<Real>::HalfOpenLeft(0.0, 1.0);
 
-        for (const auto& testCase : undefinedTestCases)
         {
-            const Interval<Real> anInterval = std::get<0>(testCase);
-            const Interval<Real> anotherInterval = std::get<1>(testCase);
+            EXPECT_ANY_THROW(interval.getIntersectionWith(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().getIntersectionWith(interval));
+        }
 
-            EXPECT_TRUE(!anInterval.getIntersectionWith(anotherInterval).isDefined());
+        {
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Closed(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(-2.0, -1.0)).isDefined());
+        }
+
+        {
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Closed(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(-1.0, 0.0)).isDefined());
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(-1.0, 0.5)), Interval<Real>::HalfOpenLeft(0.0, 0.5)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.5)),
+                Interval<Real>::HalfOpenLeft(0.0, 0.5)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-1.0, 0.5)), Interval<Real>::Open(0.0, 0.5)
+            );
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Open(-1.0, 0.5)), Interval<Real>::Open(0.0, 0.5));
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(0.25, 0.75)), Interval<Real>::Closed(0.25, 0.75)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(0.25, 0.75)),
+                Interval<Real>::HalfOpenLeft(0.25, 0.75)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(0.25, 0.75)),
+                Interval<Real>::HalfOpenRight(0.25, 0.75)
+            );
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Open(0.25, 0.75)), Interval<Real>::Open(0.25, 0.75));
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(0.0, 1.0)), Interval<Real>::HalfOpenLeft(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(0.0, 1.0)),
+                Interval<Real>::HalfOpenLeft(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(0.0, 1.0)), Interval<Real>::Open(0.0, 1.0)
+            );
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Open(0.0, 1.0)), Interval<Real>::Open(0.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(-1.0, 2.0)), Interval<Real>::HalfOpenLeft(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-1.0, 2.0)),
+                Interval<Real>::HalfOpenLeft(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-1.0, 2.0)),
+                Interval<Real>::HalfOpenLeft(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Open(-1.0, 2.0)), Interval<Real>::HalfOpenLeft(0.0, 1.0)
+            );
+        }
+
+        {
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Closed(0.5, 1.5)), Interval<Real>::Closed(0.5, 1.0));
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(0.5, 1.5)),
+                Interval<Real>::HalfOpenLeft(0.5, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(0.5, 1.5)), Interval<Real>::Closed(0.5, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Open(0.5, 1.5)), Interval<Real>::HalfOpenLeft(0.5, 1.0)
+            );
+        }
+
+        {
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Closed(1.0, 2.0)), Interval<Real>::Closed(1.0, 1.0));
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(1.0, 2.0)).isDefined());
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(1.0, 2.0)), Interval<Real>::Closed(1.0, 1.0)
+            );
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(1.0, 2.0)).isDefined());
+        }
+
+        {
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Closed(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenRight(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(2.0, 3.0)).isDefined());
         }
     }
 
     {
-        const Interval<Real> anInterval = Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed);
-        const Interval<Real> anotherInterval = Interval<Real>(0.0, 10.0, Interval<Real>::Type::Open);
+        const Interval<Real> interval = Interval<Real>::HalfOpenRight(0.0, 1.0);
 
-        EXPECT_ANY_THROW(anInterval.getIntersectionWith(anotherInterval));
+        {
+            EXPECT_ANY_THROW(interval.getIntersectionWith(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().getIntersectionWith(interval));
+        }
+
+        {
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Closed(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(-2.0, -1.0)).isDefined());
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(-1.0, 0.0)), Interval<Real>::Closed(0.0, 0.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.0)), Interval<Real>::Closed(0.0, 0.0)
+            );
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(-1.0, 0.0)).isDefined());
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(-1.0, 0.5)), Interval<Real>::Closed(0.0, 0.5)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.5)), Interval<Real>::Closed(0.0, 0.5)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-1.0, 0.5)),
+                Interval<Real>::HalfOpenRight(0.0, 0.5)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Open(-1.0, 0.5)), Interval<Real>::HalfOpenRight(0.0, 0.5)
+            );
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(0.25, 0.75)), Interval<Real>::Closed(0.25, 0.75)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(0.25, 0.75)),
+                Interval<Real>::HalfOpenLeft(0.25, 0.75)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(0.25, 0.75)),
+                Interval<Real>::HalfOpenRight(0.25, 0.75)
+            );
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Open(0.25, 0.75)), Interval<Real>::Open(0.25, 0.75));
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(0.0, 1.0)), Interval<Real>::HalfOpenRight(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(0.0, 1.0)), Interval<Real>::Open(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(0.0, 1.0)),
+                Interval<Real>::HalfOpenRight(0.0, 1.0)
+            );
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Open(0.0, 1.0)), Interval<Real>::Open(0.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(-1.0, 2.0)), Interval<Real>::HalfOpenRight(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-1.0, 2.0)),
+                Interval<Real>::HalfOpenRight(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-1.0, 2.0)),
+                Interval<Real>::HalfOpenRight(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Open(-1.0, 2.0)), Interval<Real>::HalfOpenRight(0.0, 1.0)
+            );
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(0.5, 1.5)), Interval<Real>::HalfOpenRight(0.5, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(0.5, 1.5)), Interval<Real>::Open(0.5, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(0.5, 1.5)),
+                Interval<Real>::HalfOpenRight(0.5, 1.0)
+            );
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Open(0.5, 1.5)), Interval<Real>::Open(0.5, 1.0));
+        }
+
+        {
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Closed(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenRight(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(1.0, 2.0)).isDefined());
+        }
+
+        {
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Closed(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenRight(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(2.0, 3.0)).isDefined());
+        }
+    }
+
+    {
+        const Interval<Real> interval = Interval<Real>::Open(0.0, 1.0);
+
+        {
+            EXPECT_ANY_THROW(interval.getIntersectionWith(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().getIntersectionWith(interval));
+        }
+
+        {
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Closed(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(-2.0, -1.0)).isDefined());
+        }
+
+        {
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Closed(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(-1.0, 0.0)).isDefined());
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(-1.0, 0.5)), Interval<Real>::HalfOpenLeft(0.0, 0.5)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.5)),
+                Interval<Real>::HalfOpenLeft(0.0, 0.5)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-1.0, 0.5)), Interval<Real>::Open(0.0, 0.5)
+            );
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Open(-1.0, 0.5)), Interval<Real>::Open(0.0, 0.5));
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(0.25, 0.75)), Interval<Real>::Closed(0.25, 0.75)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(0.25, 0.75)),
+                Interval<Real>::HalfOpenLeft(0.25, 0.75)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(0.25, 0.75)),
+                Interval<Real>::HalfOpenRight(0.25, 0.75)
+            );
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Open(0.25, 0.75)), Interval<Real>::Open(0.25, 0.75));
+        }
+
+        {
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Closed(0.0, 1.0)), Interval<Real>::Open(0.0, 1.0));
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(0.0, 1.0)), Interval<Real>::Open(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(0.0, 1.0)), Interval<Real>::Open(0.0, 1.0)
+            );
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Open(0.0, 1.0)), Interval<Real>::Open(0.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Closed(-1.0, 2.0)), Interval<Real>::Open(0.0, 1.0));
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(-1.0, 2.0)), Interval<Real>::Open(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(-1.0, 2.0)), Interval<Real>::Open(0.0, 1.0)
+            );
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Open(-1.0, 2.0)), Interval<Real>::Open(0.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::Closed(0.5, 1.5)), Interval<Real>::HalfOpenRight(0.5, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(0.5, 1.5)), Interval<Real>::Open(0.5, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getIntersectionWith(Interval<Real>::HalfOpenRight(0.5, 1.5)),
+                Interval<Real>::HalfOpenRight(0.5, 1.0)
+            );
+            EXPECT_EQ(interval.getIntersectionWith(Interval<Real>::Open(0.5, 1.5)), Interval<Real>::Open(0.5, 1.0));
+        }
+
+        {
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Closed(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenRight(1.0, 2.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(1.0, 2.0)).isDefined());
+        }
+
+        {
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Closed(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenLeft(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::HalfOpenRight(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getIntersectionWith(Interval<Real>::Open(2.0, 3.0)).isDefined());
+        }
     }
 }
 
@@ -1196,20 +1551,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ToString)
         EXPECT_EQ("]0.0, 1.0[", Interval<Real>(0.0, 1.0, Interval<Real>::Type::Open).toString());
         EXPECT_EQ("]0.0, 1.0]", Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenLeft).toString());
         EXPECT_EQ("[0.0, 1.0[", Interval<Real>(0.0, 1.0, Interval<Real>::Type::HalfOpenRight).toString());
-    }
-
-    {
         EXPECT_EQ("[1.0, 1.0]", Interval<Real>(1.0, 1.0, Interval<Real>::Type::Closed).toString());
-        EXPECT_EQ("]1.0, 1.0[", Interval<Real>(1.0, 1.0, Interval<Real>::Type::Open).toString());
-        EXPECT_EQ("]1.0, 1.0]", Interval<Real>(1.0, 1.0, Interval<Real>::Type::HalfOpenLeft).toString());
-        EXPECT_EQ("[1.0, 1.0[", Interval<Real>(1.0, 1.0, Interval<Real>::Type::HalfOpenRight).toString());
-    }
-
-    {
-        EXPECT_EQ("[-1.0, 1.0]", Interval<Real>(-1.0, +1.0, Interval<Real>::Type::Closed).toString());
-        EXPECT_EQ("]-1.0, 1.0[", Interval<Real>(-1.0, +1.0, Interval<Real>::Type::Open).toString());
-        EXPECT_EQ("]-1.0, 1.0]", Interval<Real>(-1.0, +1.0, Interval<Real>::Type::HalfOpenLeft).toString());
-        EXPECT_EQ("[-1.0, 1.0[", Interval<Real>(-1.0, +1.0, Interval<Real>::Type::HalfOpenRight).toString());
     }
 
     {
@@ -1219,9 +1561,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, ToString)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, SetType)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         Interval<Real> interval(0.0, 1.0, Interval<Real>::Type::Closed);
 
@@ -1239,9 +1578,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, SetType)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, SetLowerBound)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         Interval<Real> interval(0.0, 1.0, Interval<Real>::Type::Closed);
 
@@ -1267,9 +1603,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, SetLowerBound)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, SetUpperBound)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         Interval<Real> interval(0.0, 1.0, Interval<Real>::Type::Closed);
 
@@ -1295,9 +1628,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, SetUpperBound)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Undefined)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         EXPECT_NO_THROW(Interval<Real>::Undefined());
 
@@ -1307,9 +1637,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Undefined)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Closed)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         EXPECT_NO_THROW(Interval<Real>::Closed(0.0, 1.0));
 
@@ -1321,9 +1648,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Closed)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Open)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         EXPECT_NO_THROW(Interval<Real>::Open(0.0, 1.0));
 
@@ -1335,9 +1659,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Open)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, HalfOpenLeft)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         EXPECT_NO_THROW(Interval<Real>::HalfOpenLeft(0.0, 1.0));
 
@@ -1349,9 +1670,6 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, HalfOpenLeft)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, HalfOpenRight)
 {
-    using ostk::core::type::Real;
-    using ostk::mathematics::object::Interval;
-
     {
         EXPECT_NO_THROW(Interval<Real>::HalfOpenRight(0.0, 1.0));
 

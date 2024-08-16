@@ -18,9 +18,17 @@ Interval<T>::Interval(const T& aLowerBound, const T& anUpperBound, const Interva
       lowerBound_(aLowerBound),
       upperBound_(anUpperBound)
 {
-    if (lowerBound_.isDefined() && upperBound_.isDefined() && (lowerBound_ > upperBound_))
+    if (lowerBound_.isDefined() && upperBound_.isDefined())
     {
-        throw ostk::core::error::RuntimeError("Lower bound greater than upper bound.");
+        if (lowerBound_ > upperBound_)
+        {
+            throw ostk::core::error::RuntimeError("Lower bound greater than upper bound.");
+        }
+
+        if (lowerBound_ == upperBound_ && type_ != Interval<T>::Type::Closed)
+        {
+            throw ostk::core::error::RuntimeError("Lower bound equal to upper bound in a non-closed Interval.");
+        }
     }
 }
 
@@ -123,7 +131,7 @@ bool Interval<T>::contains(const T& aValue) const
         throw ostk::core::error::runtime::Undefined("Interval");
     }
 
-    return this->contains(aValue, false);
+    return this->checkAgainstLowerBound(aValue, false, false) && this->checkAgainstUpperBound(aValue, false, false);
 }
 
 template <class T>
@@ -219,20 +227,79 @@ Interval<T> Interval<T>::getIntersectionWith(const Interval& anInterval) const
         throw ostk::core::error::runtime::Undefined("Interval");
     }
 
-    if (anInterval.getType() != type_)
-    {
-        throw ostk::core::error::runtime::ToBeImplemented("Intersection between different Interval::Type of interval.");
-    }
-
-    const T lowerBound = std::max(lowerBound_, anInterval.getLowerBound());
-    const T upperBound = std::min(upperBound_, anInterval.getUpperBound());
+    const T lowerBound = std::max(lowerBound_, anInterval.lowerBound_);
+    const T upperBound = std::min(upperBound_, anInterval.upperBound_);
 
     if (lowerBound > upperBound)
     {
         return Interval<T>::Undefined();
     }
 
-    return Interval<T>(lowerBound, upperBound, type_);
+    bool openLowerBound = false;
+    if (lowerBound == lowerBound_)
+    {
+        if (type_ == Interval<T>::Type::Open || type_ == Interval<T>::Type::HalfOpenLeft)
+        {
+            openLowerBound = true;
+        }
+    }
+
+    if (!openLowerBound && lowerBound == anInterval.lowerBound_)
+    {
+        if (anInterval.type_ == Interval<T>::Type::Open || anInterval.type_ == Interval<T>::Type::HalfOpenLeft)
+        {
+            openLowerBound = true;
+        }
+    }
+
+    bool openUpperBound = false;
+    if (upperBound == upperBound_)
+    {
+        if (type_ == Interval<T>::Type::Open || type_ == Interval<T>::Type::HalfOpenRight)
+        {
+            openUpperBound = true;
+        }
+    }
+
+    if (!openUpperBound && upperBound == anInterval.upperBound_)
+    {
+        if (anInterval.type_ == Interval<T>::Type::Open || anInterval.type_ == Interval<T>::Type::HalfOpenRight)
+        {
+            openUpperBound = true;
+        }
+    }
+
+    if (openLowerBound && openUpperBound)
+    {
+        if (lowerBound == upperBound)
+        {
+            return Interval<T>::Undefined();
+        }
+
+        return Interval<T>::Open(lowerBound, upperBound);
+    }
+
+    if (openLowerBound)
+    {
+        if (lowerBound == upperBound)
+        {
+            return Interval<T>::Undefined();
+        }
+
+        return Interval<T>::HalfOpenLeft(lowerBound, upperBound);
+    }
+
+    if (openUpperBound)
+    {
+        if (lowerBound == upperBound)
+        {
+            return Interval<T>::Undefined();
+        }
+
+        return Interval<T>::HalfOpenRight(lowerBound, upperBound);
+    }
+
+    return Interval<T>::Closed(lowerBound, upperBound);
 }
 
 template <class T>
@@ -513,12 +580,6 @@ types::String Interval<T>::StringFromType(const Interval::Type& anIntervalType)
     throw ostk::core::error::runtime::Wrong("Type");
 
     return types::String::Empty();
-}
-
-template <class T>
-bool Interval<T>::contains(const T& aValue, const bool& isOpen) const
-{
-    return this->checkAgainstLowerBound(aValue, isOpen, false) && this->checkAgainstUpperBound(aValue, isOpen, false);
 }
 
 template <class T>
