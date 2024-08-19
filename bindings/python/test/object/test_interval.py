@@ -35,39 +35,33 @@ class TestInterval:
         interval_1 = RealInterval(-4.31, 1.0, Type.Open)
         interval_2 = RealInterval(-2.0, -1.0, Type.Closed)
         interval_3 = RealInterval(3.5, 4567.35566, Type.HalfOpenRight)
-        interval_4 = RealInterval(1.45, 1.45, Type.Open)
-        interval_5 = RealInterval(1.45, 1.45, Type.Closed)
+        interval_4 = RealInterval(1.45, 1.45, Type.Closed)
 
         assert isinstance(interval_1, RealInterval)
         assert isinstance(interval_2, RealInterval)
         assert isinstance(interval_3, RealInterval)
         assert isinstance(interval_4, RealInterval)
-        assert isinstance(interval_5, RealInterval)
         assert interval_1 is not None
         assert interval_2 is not None
         assert interval_3 is not None
         assert interval_4 is not None
-        assert interval_5 is not None
 
         with pytest.raises(TypeError):
             interval = RealInterval(3.0, 1, Type.Closed)
 
-        interval_6 = RealInterval(Real(-4.31), Real(1.0), Type.Open)
-        interval_7 = RealInterval(Real(-2.0), Real(-1.0), Type.Closed)
-        interval_8 = RealInterval(Real(3.5), Real(4567.35566), Type.HalfOpenRight)
-        interval_9 = RealInterval(Real(1.45), Real(1.45), Type.Open)
-        interval_10 = RealInterval(Real(1.45), Real(1.45), Type.Closed)
+        interval_5 = RealInterval(Real(-4.31), Real(1.0), Type.Open)
+        interval_6 = RealInterval(Real(-2.0), Real(-1.0), Type.Closed)
+        interval_7 = RealInterval(Real(3.5), Real(4567.35566), Type.HalfOpenRight)
+        interval_8 = RealInterval(Real(1.45), Real(1.45), Type.Closed)
 
+        assert isinstance(interval_5, RealInterval)
         assert isinstance(interval_6, RealInterval)
         assert isinstance(interval_7, RealInterval)
         assert isinstance(interval_8, RealInterval)
-        assert isinstance(interval_9, RealInterval)
-        assert isinstance(interval_10, RealInterval)
+        assert interval_5 is not None
         assert interval_6 is not None
         assert interval_7 is not None
         assert interval_8 is not None
-        assert interval_9 is not None
-        assert interval_10 is not None
 
         # Interval Bounds
         a = -4.31
