@@ -315,25 +315,70 @@ Interval<T> Interval<T>::getUnionWith(const Interval& anInterval) const
         throw ostk::core::error::runtime::Undefined("Interval");
     }
 
-    if (anInterval.getType() != type_)
+    if ((*this) == anInterval)
     {
-        throw ostk::core::error::runtime::ToBeImplemented("Union between different Interval::Type of interval.");
+        return Interval<T>(lowerBound_, upperBound_, type_);
     }
 
-    if (!this->intersects(anInterval))
+    if (this->contains(anInterval.lowerBound_) || this->contains(anInterval.upperBound_) ||
+        anInterval.contains(lowerBound_) || anInterval.contains(upperBound_))
     {
-        return Interval<T>::Undefined();
+        const T lowerBound = std::min(lowerBound_, anInterval.lowerBound_);
+        const T upperBound = std::max(upperBound_, anInterval.upperBound_);
+
+        bool openLowerBound = true;
+        if (lowerBound == lowerBound_)
+        {
+            if (type_ == Interval<T>::Type::Closed || type_ == Interval<T>::Type::HalfOpenRight)
+            {
+                openLowerBound = false;
+            }
+        }
+
+        if (openLowerBound && lowerBound == anInterval.lowerBound_)
+        {
+            if (anInterval.type_ == Interval<T>::Type::Closed || anInterval.type_ == Interval<T>::Type::HalfOpenRight)
+            {
+                openLowerBound = false;
+            }
+        }
+
+        bool openUpperBound = true;
+        if (upperBound == upperBound_)
+        {
+            if (type_ == Interval<T>::Type::Closed || type_ == Interval<T>::Type::HalfOpenLeft)
+            {
+                openUpperBound = false;
+            }
+        }
+
+        if (openUpperBound && upperBound == anInterval.upperBound_)
+        {
+            if (anInterval.type_ == Interval<T>::Type::Closed || anInterval.type_ == Interval<T>::Type::HalfOpenLeft)
+            {
+                openUpperBound = false;
+            }
+        }
+
+        if (openLowerBound && openUpperBound)
+        {
+            return Interval<T>::Open(lowerBound, upperBound);
+        }
+
+        if (openLowerBound)
+        {
+            return Interval<T>::HalfOpenLeft(lowerBound, upperBound);
+        }
+
+        if (openUpperBound)
+        {
+            return Interval<T>::HalfOpenRight(lowerBound, upperBound);
+        }
+
+        return Interval<T>::Closed(lowerBound, upperBound);
     }
 
-    const T lowerBound = std::min(lowerBound_, anInterval.getLowerBound());
-    const T upperBound = std::max(upperBound_, anInterval.getUpperBound());
-
-    if (lowerBound > upperBound)
-    {
-        return Interval<T>::Undefined();
-    }
-
-    return Interval<T>(lowerBound, upperBound, type_);
+    return Interval<T>::Undefined();
 }
 
 template <class T>
