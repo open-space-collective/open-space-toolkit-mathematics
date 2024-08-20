@@ -1368,66 +1368,386 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetIntersectionWith)
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUnionWith)
 {
-    using ostk::core::container::Array;
-    using ostk::core::container::Tuple;
-    using ostk::core::type::Real;
-    using ostk::core::type::String;
-
-    using ostk::mathematics::object::Interval;
+    {
+        EXPECT_ANY_THROW(Interval<Real>::Undefined().getUnionWith(Interval<Real>::Undefined()));
+    }
 
     {
-        Array<Tuple<Interval<Real>, Interval<Real>, Interval<Real>>> testCases = {
-            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenLeft),
-             Interval<Real>(5.0, 7.0, Interval<Real>::Type::HalfOpenLeft),
-             Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenLeft)},
-            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::HalfOpenRight),
-             Interval<Real>(-15.0, 25.0, Interval<Real>::Type::HalfOpenRight),
-             Interval<Real>(-15.0, 25.0, Interval<Real>::Type::HalfOpenRight)},
-            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Open),
-             Interval<Real>(-5.0, 7.0, Interval<Real>::Type::Open),
-             Interval<Real>(-5.0, 10.0, Interval<Real>::Type::Open)},
-            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),
-             Interval<Real>(5.0, 15.0, Interval<Real>::Type::Closed),
-             Interval<Real>(0.0, 15.0, Interval<Real>::Type::Closed)},
-            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),
-             Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),
-             Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed)}
-        };
+        const Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0);
 
-        for (const auto& testCase : testCases)
         {
-            const Interval<Real> anInterval = std::get<0>(testCase);
-            const Interval<Real> anotherInterval = std::get<1>(testCase);
-            const Interval<Real> expectedInterval = std::get<2>(testCase);
+            EXPECT_ANY_THROW(interval.getUnionWith(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().getUnionWith(interval));
+        }
 
-            EXPECT_EQ(anInterval.getUnionWith(anotherInterval), expectedInterval);
+        {
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Closed(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenLeft(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenRight(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Open(-2.0, -1.0)).isDefined());
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(-1.0, 0.0)), Interval<Real>::Closed(-1.0, 1.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.0)), Interval<Real>::HalfOpenLeft(-1.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(-1.0, 0.0)), Interval<Real>::Closed(-1.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(-1.0, 0.0)), Interval<Real>::HalfOpenLeft(-1.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(-1.0, 0.5)), Interval<Real>::Closed(-1.0, 1.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.5)), Interval<Real>::HalfOpenLeft(-1.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(-1.0, 0.5)), Interval<Real>::Closed(-1.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(-1.0, 0.5)), Interval<Real>::HalfOpenLeft(-1.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(0.25, 0.75)), Interval<Real>::Closed(0.0, 1.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(0.25, 0.75)), Interval<Real>::Closed(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(0.25, 0.75)), Interval<Real>::Closed(0.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(0.25, 0.75)), Interval<Real>::Closed(0.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(0.0, 1.0)), Interval<Real>::Closed(0.0, 1.0));
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenLeft(0.0, 1.0)), Interval<Real>::Closed(0.0, 1.0));
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenRight(0.0, 1.0)), Interval<Real>::Closed(0.0, 1.0));
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(0.0, 1.0)), Interval<Real>::Closed(0.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(-1.0, 2.0)), Interval<Real>::Closed(-1.0, 2.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(-1.0, 2.0)), Interval<Real>::HalfOpenLeft(-1.0, 2.0)
+            );
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(-1.0, 2.0)),
+                Interval<Real>::HalfOpenRight(-1.0, 2.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(-1.0, 2.0)), Interval<Real>::Open(-1.0, 2.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(0.5, 1.5)), Interval<Real>::Closed(0.0, 1.5));
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenLeft(0.5, 1.5)), Interval<Real>::Closed(0.0, 1.5));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(0.5, 1.5)), Interval<Real>::HalfOpenRight(0.0, 1.5)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(0.5, 1.5)), Interval<Real>::HalfOpenRight(0.0, 1.5));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(1.0, 2.0)), Interval<Real>::Closed(0.0, 2.0));
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenLeft(1.0, 2.0)), Interval<Real>::Closed(0.0, 2.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(1.0, 2.0)), Interval<Real>::HalfOpenRight(0.0, 2.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(1.0, 2.0)), Interval<Real>::HalfOpenRight(0.0, 2.0));
+        }
+
+        {
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Closed(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenLeft(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenRight(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Open(2.0, 3.0)).isDefined());
         }
     }
 
     {
-        Array<Tuple<Interval<Real>, Interval<Real>>> testCases = {
+        const Interval<Real> interval = Interval<Real>::HalfOpenLeft(0.0, 1.0);
 
-            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),
-             Interval<Real>(15.0, 20.0, Interval<Real>::Type::Closed)},
-            {Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed),
-             Interval<Real>(-10.0, -5.0, Interval<Real>::Type::Closed)},
-
-        };
-
-        for (const auto& testCase : testCases)
         {
-            const Interval<Real> anInterval = std::get<0>(testCase);
-            const Interval<Real> anotherInterval = std::get<1>(testCase);
+            EXPECT_ANY_THROW(interval.getUnionWith(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().getUnionWith(interval));
+        }
 
-            EXPECT_TRUE(!anInterval.getUnionWith(anotherInterval).isDefined());
+        {
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Closed(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenLeft(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenRight(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Open(-2.0, -1.0)).isDefined());
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(-1.0, 0.0)), Interval<Real>::Closed(-1.0, 1.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.0)), Interval<Real>::HalfOpenLeft(-1.0, 1.0)
+            );
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenRight(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Open(-1.0, 0.0)).isDefined());
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(-1.0, 0.5)), Interval<Real>::Closed(-1.0, 1.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.5)), Interval<Real>::HalfOpenLeft(-1.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(-1.0, 0.5)), Interval<Real>::Closed(-1.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(-1.0, 0.5)), Interval<Real>::HalfOpenLeft(-1.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::Closed(0.25, 0.75)), Interval<Real>::HalfOpenLeft(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(0.25, 0.75)), Interval<Real>::HalfOpenLeft(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(0.25, 0.75)), Interval<Real>::HalfOpenLeft(0.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(0.25, 0.75)), Interval<Real>::HalfOpenLeft(0.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(0.0, 1.0)), Interval<Real>::Closed(0.0, 1.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(0.0, 1.0)), Interval<Real>::HalfOpenLeft(0.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenRight(0.0, 1.0)), Interval<Real>::Closed(0.0, 1.0));
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(0.0, 1.0)), Interval<Real>::HalfOpenLeft(0.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(-1.0, 2.0)), Interval<Real>::Closed(-1.0, 2.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(-1.0, 2.0)), Interval<Real>::HalfOpenLeft(-1.0, 2.0)
+            );
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(-1.0, 2.0)),
+                Interval<Real>::HalfOpenRight(-1.0, 2.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(-1.0, 2.0)), Interval<Real>::Open(-1.0, 2.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(0.5, 1.5)), Interval<Real>::HalfOpenLeft(0.0, 1.5));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(0.5, 1.5)), Interval<Real>::HalfOpenLeft(0.0, 1.5)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenRight(0.5, 1.5)), Interval<Real>::Open(0.0, 1.5));
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(0.5, 1.5)), Interval<Real>::Open(0.0, 1.5));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(1.0, 2.0)), Interval<Real>::HalfOpenLeft(0.0, 2.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(1.0, 2.0)), Interval<Real>::HalfOpenLeft(0.0, 2.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenRight(1.0, 2.0)), Interval<Real>::Open(0.0, 2.0));
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(1.0, 2.0)), Interval<Real>::Open(0.0, 2.0));
+        }
+
+        {
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Closed(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenLeft(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenRight(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Open(2.0, 3.0)).isDefined());
         }
     }
 
     {
-        const Interval<Real> anInterval = Interval<Real>(0.0, 10.0, Interval<Real>::Type::Closed);
-        const Interval<Real> anotherInterval = Interval<Real>(5.0, 15.0, Interval<Real>::Type::Open);
+        const Interval<Real> interval = Interval<Real>::HalfOpenRight(0.0, 1.0);
 
-        EXPECT_ANY_THROW(anInterval.getUnionWith(anotherInterval));
+        {
+            EXPECT_ANY_THROW(interval.getUnionWith(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().getUnionWith(interval));
+        }
+
+        {
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Closed(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenLeft(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenRight(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Open(-2.0, -1.0)).isDefined());
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::Closed(-1.0, 0.0)), Interval<Real>::HalfOpenRight(-1.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.0)), Interval<Real>::Open(-1.0, 1.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(-1.0, 0.0)),
+                Interval<Real>::HalfOpenRight(-1.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(-1.0, 0.0)), Interval<Real>::Open(-1.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::Closed(-1.0, 0.5)), Interval<Real>::HalfOpenRight(-1.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.5)), Interval<Real>::Open(-1.0, 1.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(-1.0, 0.5)),
+                Interval<Real>::HalfOpenRight(-1.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(-1.0, 0.5)), Interval<Real>::Open(-1.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::Closed(0.25, 0.75)), Interval<Real>::HalfOpenRight(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(0.25, 0.75)), Interval<Real>::HalfOpenRight(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(0.25, 0.75)),
+                Interval<Real>::HalfOpenRight(0.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(0.25, 0.75)), Interval<Real>::HalfOpenRight(0.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(0.0, 1.0)), Interval<Real>::Closed(0.0, 1.0));
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenLeft(0.0, 1.0)), Interval<Real>::Closed(0.0, 1.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(0.0, 1.0)), Interval<Real>::HalfOpenRight(0.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(0.0, 1.0)), Interval<Real>::HalfOpenRight(0.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(-1.0, 2.0)), Interval<Real>::Closed(-1.0, 2.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(-1.0, 2.0)), Interval<Real>::HalfOpenLeft(-1.0, 2.0)
+            );
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(-1.0, 2.0)),
+                Interval<Real>::HalfOpenRight(-1.0, 2.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(-1.0, 2.0)), Interval<Real>::Open(-1.0, 2.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(0.5, 1.5)), Interval<Real>::Closed(0.0, 1.5));
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenLeft(0.5, 1.5)), Interval<Real>::Closed(0.0, 1.5));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(0.5, 1.5)), Interval<Real>::HalfOpenRight(0.0, 1.5)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(0.5, 1.5)), Interval<Real>::HalfOpenRight(0.0, 1.5));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(1.0, 2.0)), Interval<Real>::Closed(0.0, 2.0));
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenLeft(1.0, 2.0)).isDefined());
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(1.0, 2.0)), Interval<Real>::HalfOpenRight(0.0, 2.0)
+            );
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Open(1.0, 2.0)).isDefined());
+        }
+
+        {
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Closed(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenLeft(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenRight(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Open(2.0, 3.0)).isDefined());
+        }
+    }
+
+    {
+        const Interval<Real> interval = Interval<Real>::Open(0.0, 1.0);
+
+        {
+            EXPECT_ANY_THROW(interval.getUnionWith(Interval<Real>::Undefined()));
+            EXPECT_ANY_THROW(Interval<Real>::Undefined().getUnionWith(interval));
+        }
+
+        {
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Closed(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenLeft(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenRight(-2.0, -1.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Open(-2.0, -1.0)).isDefined());
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::Closed(-1.0, 0.0)), Interval<Real>::HalfOpenRight(-1.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.0)), Interval<Real>::Open(-1.0, 1.0));
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenRight(-1.0, 0.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Open(-1.0, 0.0)).isDefined());
+        }
+
+        {
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::Closed(-1.0, 0.5)), Interval<Real>::HalfOpenRight(-1.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenLeft(-1.0, 0.5)), Interval<Real>::Open(-1.0, 1.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(-1.0, 0.5)),
+                Interval<Real>::HalfOpenRight(-1.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(-1.0, 0.5)), Interval<Real>::Open(-1.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(0.25, 0.75)), Interval<Real>::Open(0.0, 1.0));
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenLeft(0.25, 0.75)), Interval<Real>::Open(0.0, 1.0));
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenRight(0.25, 0.75)), Interval<Real>::Open(0.0, 1.0));
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(0.25, 0.75)), Interval<Real>::Open(0.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(0.0, 1.0)), Interval<Real>::Closed(0.0, 1.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(0.0, 1.0)), Interval<Real>::HalfOpenLeft(0.0, 1.0)
+            );
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(0.0, 1.0)), Interval<Real>::HalfOpenRight(0.0, 1.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(0.0, 1.0)), Interval<Real>::Open(0.0, 1.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(-1.0, 2.0)), Interval<Real>::Closed(-1.0, 2.0));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(-1.0, 2.0)), Interval<Real>::HalfOpenLeft(-1.0, 2.0)
+            );
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenRight(-1.0, 2.0)),
+                Interval<Real>::HalfOpenRight(-1.0, 2.0)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(-1.0, 2.0)), Interval<Real>::Open(-1.0, 2.0));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(0.5, 1.5)), Interval<Real>::HalfOpenLeft(0.0, 1.5));
+            EXPECT_EQ(
+                interval.getUnionWith(Interval<Real>::HalfOpenLeft(0.5, 1.5)), Interval<Real>::HalfOpenLeft(0.0, 1.5)
+            );
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenRight(0.5, 1.5)), Interval<Real>::Open(0.0, 1.5));
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Open(0.5, 1.5)), Interval<Real>::Open(0.0, 1.5));
+        }
+
+        {
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::Closed(1.0, 2.0)), Interval<Real>::HalfOpenLeft(0.0, 2.0));
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenLeft(1.0, 2.0)).isDefined());
+            EXPECT_EQ(interval.getUnionWith(Interval<Real>::HalfOpenRight(1.0, 2.0)), Interval<Real>::Open(0.0, 2.0));
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Open(1.0, 2.0)).isDefined());
+        }
+
+        {
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Closed(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenLeft(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::HalfOpenRight(2.0, 3.0)).isDefined());
+            EXPECT_FALSE(interval.getUnionWith(Interval<Real>::Open(2.0, 3.0)).isDefined());
+        }
     }
 }
 
