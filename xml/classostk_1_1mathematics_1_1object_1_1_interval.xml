@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="357" column="20" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="357" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="360" column="20" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="360" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1object_1_1_interval_1a7f84e7aef2105110a4e79675f1151892" prot="private" static="no" mutable="no">
         <type>T</type>
@@ -34,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="359" column="7" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="359" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="362" column="7" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="362" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1object_1_1_interval_1a810df853f5b560588d5a82cae03406e1" prot="private" static="no" mutable="no">
         <type>T</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="360" column="7" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="360" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="363" column="7" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="363" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -892,6 +892,58 @@
         <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="354" column="26"/>
       </memberdef>
       </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1aac4f176cc812d094c5dc6ffdf42050d6" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::object::Interval&lt; T &gt;::checkAgainstLowerBound</definition>
+        <argsstring>(const T &amp;aValue, const bool &amp;isOpen, const bool &amp;isUpperBound) const</argsstring>
+        <name>checkAgainstLowerBound</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>aValue</declname>
+        </param>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>isOpen</declname>
+        </param>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>isUpperBound</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="357" column="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ade1571d889e2c59a03681fb26240143c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ostk::mathematics::object::Interval&lt; T &gt;::checkAgainstUpperBound</definition>
+        <argsstring>(const T &amp;aValue, const bool &amp;isOpen, const bool &amp;isLowerBound) const</argsstring>
+        <name>checkAgainstUpperBound</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>aValue</declname>
+        </param>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>isOpen</declname>
+        </param>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>isLowerBound</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="358" column="10"/>
+      </memberdef>
+      </sectiondef>
     <briefdescription>
 <para>Set of numbers with the property that any number that lies between two numbers in the set is also included in the set. </para>
     </briefdescription>
@@ -922,10 +974,12 @@
         <link refid="classostk_1_1mathematics_1_1object_1_1_interval_base"/>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="46" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="45" bodyend="361"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="46" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="45" bodyend="364"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ac2e35a2096405efb9a7ab511a1c2e532" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>accessLowerBound</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a575cb7312386085246bed0ee94aeda56" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>accessUpperBound</name></member>
+      <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1aac4f176cc812d094c5dc6ffdf42050d6" prot="private" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>checkAgainstLowerBound</name></member>
+      <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ade1571d889e2c59a03681fb26240143c" prot="private" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>checkAgainstUpperBound</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a3d13b7bfa9bcfee7dd3a7f9998378c4b" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>Closed</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ac80d99178336fdcddf7406757f0cc27e" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a83de87f899ef154f8364c875a45e89b5" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>contains</name></member>

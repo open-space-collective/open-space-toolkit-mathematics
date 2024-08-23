@@ -490,6 +490,8 @@
     <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ac7c309f97e84496b0520879137fb26a4" kind="function"><name>HalfOpenRight</name></member>
     <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ac57a376cb40367712a31e57b82d4bf96" kind="function"><name>Parse</name></member>
     <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a906c45e8ea21c1d762015a491afa2254" kind="function"><name>StringFromType</name></member>
+    <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1aac4f176cc812d094c5dc6ffdf42050d6" kind="function"><name>checkAgainstLowerBound</name></member>
+    <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ade1571d889e2c59a03681fb26240143c" kind="function"><name>checkAgainstUpperBound</name></member>
   </compound>
   <compound refid="classostk_1_1mathematics_1_1object_1_1_interval_base" kind="class"><name>ostk::mathematics::object::IntervalBase</name>
     <member refid="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201" kind="enum"><name>Type</name></member>
