@@ -360,22 +360,7 @@ Interval<T> Interval<T>::getUnionWith(const Interval& anInterval) const
             }
         }
 
-        if (openLowerBound && openUpperBound)
-        {
-            return Interval<T>::Open(lowerBound, upperBound);
-        }
-
-        if (openLowerBound)
-        {
-            return Interval<T>::HalfOpenLeft(lowerBound, upperBound);
-        }
-
-        if (openUpperBound)
-        {
-            return Interval<T>::HalfOpenRight(lowerBound, upperBound);
-        }
-
-        return Interval<T>::Closed(lowerBound, upperBound);
+        return Interval<T>::buildInterval(lowerBound, openLowerBound, upperBound, openUpperBound);
     }
 
     return Interval<T>::Undefined();
@@ -595,6 +580,191 @@ Interval<T> Interval<T>::HalfOpenRight(const T& aLowerBound, const T& anUpperBou
     return Interval<T>(aLowerBound, anUpperBound, Interval::Type::HalfOpenRight);
 }
 
+template <class T>
+ctnr::Array<Interval<T>> Interval<T>::Clip(const ctnr::Array<Interval<T>>& anArray, const Interval<T>& aSpan)
+{
+    if (!aSpan.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Interval");
+    }
+
+    ctnr::Array<Interval<T>> clipped;
+
+    for (size_t i = 0; i < anArray.size(); ++i)
+    {
+        auto checkIntersection = anArray[i].getIntersectionWith(aSpan);
+        if (checkIntersection.isDefined())
+        {
+            clipped.push_back(checkIntersection);
+        }
+    }
+
+    return clipped;
+}
+
+template <class T>
+ctnr::Array<Interval<T>> Interval<T>::Sort(const ctnr::Array<Interval<T>>& anArray)
+{
+    ctnr::Array<Interval<T>> sorted = anArray;
+
+    std::sort(
+        sorted.begin(),
+        sorted.end(),
+        [](const Interval<T>& anInterval, const Interval<T>& anotherInterval)
+        {
+            if (!anInterval.isDefined())
+            {
+                {
+                    throw ostk::core::error::runtime::Undefined("Interval");
+                }
+
+                if (!anotherInterval.isDefined())
+                {
+                    throw ostk::core::error::runtime::Undefined("Interval");
+                }
+            }
+
+            return anInterval.lowerBound_ < anotherInterval.lowerBound_;
+        }
+    );
+
+    return sorted;
+}
+
+template <class T>
+ctnr::Array<Interval<T>> Interval<T>::Merge(const ctnr::Array<Interval<T>>& anArray)
+{
+    if (anArray.empty())
+    {
+        return {};
+    }
+
+    ctnr::Array<Interval<T>> sorted = Interval<T>::Sort(anArray);
+
+    ctnr::Array<Interval<T>> merged;
+    Interval<T> nextUnion = sorted[0];
+
+    for (size_t i = 1; i < sorted.size(); ++i)
+    {
+        auto checkUnion = nextUnion.getUnionWith(sorted[i]);
+        if (checkUnion.isDefined())
+        {
+            nextUnion = checkUnion;
+        }
+        else
+        {
+            merged.push_back(nextUnion);
+            nextUnion = sorted[i];
+        }
+    }
+
+    merged.push_back(nextUnion);
+
+    return merged;
+}
+
+template <class T>
+ctnr::Array<Interval<T>> Interval<T>::GetGaps(const ctnr::Array<Interval<T>>& anArray, const Interval<T>& aSpan)
+{
+    ctnr::Array<Interval<T>> sanitized = Interval<T>::Merge(anArray);
+    if (aSpan.isDefined())
+    {
+        sanitized = Interval<T>::Clip(sanitized, aSpan);
+    }
+
+    if (sanitized.size() == 0)
+    {
+        if (aSpan.isDefined())
+        {
+            return {aSpan};
+        }
+        return {};
+    }
+
+    ctnr::Array<Interval<T>> gaps;
+
+    // Deal with potential leading gap
+    if (aSpan.isDefined() && sanitized[0].lowerBound_ > aSpan.lowerBound_)
+    {
+        const Interval<T> upperInterval = sanitized[0];
+        const T lowerBound = aSpan.lowerBound_;
+        const T upperBound = upperInterval.lowerBound_;
+
+        bool openLowerBound = false;
+        if (aSpan.type_ == Interval<T>::Type::Closed || aSpan.type_ == Interval<T>::Type::HalfOpenRight)
+        {
+            {
+                openLowerBound = true;
+            }
+        }
+
+        bool openUpperBound = false;
+        if (upperInterval.type_ == Interval<T>::Type::Closed || upperInterval.type_ == Interval<T>::Type::HalfOpenRight)
+        {
+            {
+                openUpperBound = true;
+            }
+        }
+
+        gaps.push_back(Interval<T>::buildInterval(lowerBound, openLowerBound, upperBound, openUpperBound));
+    }
+
+    // Deal with intermediate gaps
+    for (size_t i = 1; i < sanitized.size(); ++i)
+    {
+        const Interval<T> lowerInterval = sanitized[i - 1];
+        const Interval<T> upperInterval = sanitized[i];
+        const T lowerBound = lowerInterval.upperBound_;
+        const T upperBound = upperInterval.lowerBound_;
+
+        bool openLowerBound = false;
+        if (lowerInterval.type_ == Interval<T>::Type::Closed || lowerInterval.type_ == Interval<T>::Type::HalfOpenLeft)
+        {
+            {
+                openLowerBound = true;
+            }
+        }
+
+        bool openUpperBound = false;
+        if (upperInterval.type_ == Interval<T>::Type::Closed || upperInterval.type_ == Interval<T>::Type::HalfOpenRight)
+        {
+            {
+                openUpperBound = true;
+            }
+        }
+
+        gaps.push_back(Interval<T>::buildInterval(lowerBound, openLowerBound, upperBound, openUpperBound));
+    }
+
+    // Deal with potential trailing gap
+    if (aSpan.isDefined() && sanitized[sanitized.size() - 1].upperBound_ < aSpan.upperBound_)
+    {
+        const Interval<T> lowerInterval = sanitized[sanitized.size() - 1];
+        const T lowerBound = lowerInterval.upperBound_;
+        const T upperBound = aSpan.upperBound_;
+
+        bool openLowerBound = false;
+        if (lowerInterval.type_ == Interval<T>::Type::Closed || lowerInterval.type_ == Interval<T>::Type::HalfOpenLeft)
+        {
+            {
+                openLowerBound = true;
+            }
+        }
+
+        bool openUpperBound = false;
+        if (aSpan.type_ == Interval<T>::Type::Closed || aSpan.type_ == Interval<T>::Type::HalfOpenLeft)
+        {
+            {
+                openUpperBound = true;
+            }
+        }
+
+        gaps.push_back(Interval<T>::buildInterval(lowerBound, openLowerBound, upperBound, openUpperBound));
+    }
+
+    return gaps;
+}
+
 //                                 template <class T>
 // Interval<T>                     Interval<T>::Parse                          (   const   types::String& aString )
 // {
@@ -683,6 +853,29 @@ bool Interval<T>::checkAgainstUpperBound(const T& aValue, const bool& isOpen, co
             throw ostk::core::error::runtime::Wrong("Type");
             break;
     }
+}
+
+template <class T>
+Interval<T> Interval<T>::buildInterval(
+    const T& lowerBound, const bool& openLowerBound, const T& upperBound, const bool& openUpperBound
+)
+{
+    if (openLowerBound && openUpperBound)
+    {
+        return Interval<T>::Open(lowerBound, upperBound);
+    }
+
+    if (openLowerBound)
+    {
+        return Interval<T>::HalfOpenLeft(lowerBound, upperBound);
+    }
+
+    if (openUpperBound)
+    {
+        return Interval<T>::HalfOpenRight(lowerBound, upperBound);
+    }
+
+    return Interval<T>::Closed(lowerBound, upperBound);
 }
 
 }  // namespace object

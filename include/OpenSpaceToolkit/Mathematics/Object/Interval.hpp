@@ -331,6 +331,58 @@ class Interval : public IntervalBase
 
     static Interval<T> HalfOpenRight(const T& aLowerBound, const T& anUpperBound);
 
+    /// @brief              Creates a new array based to a given span
+    ///
+    /// @code
+    ///                     Array<Interval<Real>> unclipped = {Interval<Real>::Closed(-1.0, 1.0),
+    ///                     Interval<Real>::Closed(2.0, 4.0)}; Array<Interval<Real>> clipped =
+    ///                     Interval<Real>::Clip(unclipped, Interval<Real>::Closed(0.0, 3.0)); // {[0.0, 1.0],
+    ///                     [2.0, 3.0]}
+    /// @endcode
+    ///
+    /// @return             Clipped array
+
+    static ctnr::Array<Interval<T>> Clip(const ctnr::Array<Interval<T>>& anArray, const Interval<T>& aSpan);
+
+    /// @brief              Creates a new sorted array based on the lower bound
+    ///
+    /// @code
+    ///                     Array<Interval<Real>> unsorted = {Interval<Real>::Closed(-1.0, 1.0),
+    ///                     Interval<Real>::Closed(-3.0, 0.0)}; Array<Interval<Real>> sorted =
+    ///                     Interval<Real>::Sort(unsorted); // {[-3.0, 0.0], [-1.0, 1.0]}
+    /// @endcode
+    ///
+    /// @return             Sorted array
+
+    static ctnr::Array<Interval<T>> Sort(const ctnr::Array<Interval<T>>& anArray);
+
+    /// @brief              Creates a new array without any overlaps and sorted by their lower bound
+    ///
+    /// @code
+    ///                     Array<Interval<Real>> array = {Interval<Real>::Closed(-1.0, 1.0),
+    ///                     Interval<Real>::Closed(-2.0, 0.0), Interval<Real>::Closed(3.0, 4.0)};
+    ///                     Array<Interval<Real>> merged = Interval<Real>::Merge(array); // {[-2.0, 1.0], [3.0, 4.0]}
+    /// @endcode
+    ///
+    /// @return             Merged array
+
+    static ctnr::Array<Interval<T>> Merge(const ctnr::Array<Interval<T>>& anArray);
+
+    /// @brief              Creates a new array that contains the gaps between an array of intervals. If
+    ///                     a span is actually defined, only intervals intersecting with the span are
+    ///                     considered and potential leading and trailing gaps w.r.t. the span boundaries are included.
+    ///                     The intervals are previously merged and sorted.
+    /// @code
+    ///                     Array<Interval<Real>> intervals = {Interval<Real>::Closed(-1.0, 1.0),
+    ///                     Interval<Real>::Closed(2.0, 4.0)}; Array<Interval<Real>> gaps =
+    ///                     Interval<Real>::GetGaps(intervals, Interval<Real>::Closed(1.5, 4.5)); // {[1.5, 2.0],
+    ///                     [4.0, 4.5]}
+    /// @endcode
+    ///
+    /// @return             Gaps array
+
+    static ctnr::Array<Interval<T>> GetGaps(const ctnr::Array<Interval<T>>& anArray, const Interval<T>& aSpan);
+
     /// @brief              Constructs an interval from a given string
     ///
     /// @code
@@ -356,6 +408,9 @@ class Interval : public IntervalBase
    private:
     bool checkAgainstLowerBound(const T& aValue, const bool& isOpen, const bool& isUpperBound) const;
     bool checkAgainstUpperBound(const T& aValue, const bool& isOpen, const bool& isLowerBound) const;
+    static Interval<T> buildInterval(
+        const T& lowerBound, const bool& openLowerBound, const T& upperBound, const bool& openUpperBound
+    );
 
     Interval::Type type_;
 
