@@ -49,6 +49,19 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_PointSet(pybind11::
             },
             keep_alive<0, 1>()
         )  // Keep vector alive while iterator is used
+        .def(
+            "__getitem__",
+            [](const PointSet& aPointSet, size_t index) -> Point
+            {
+                if (index >= aPointSet.getSize())
+                {
+                    throw std::out_of_range("Index out of range");
+                }
+                auto it = aPointSet.begin();
+                std::advance(it, index);
+                return *it;
+            }
+        )
 
         ;
 }

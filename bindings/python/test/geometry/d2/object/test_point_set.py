@@ -93,6 +93,9 @@ class TestPointSet:
         assert isinstance(iter(point_set), Iterator)
         assert isinstance(iter(point_set), Iterable)
 
+    def test_get_item_success(self, point_set: PointSet):
+        assert point_set[0] is not None
+
     # def test_is_near_success(self):
 
     # def test_get_point_closest_to_success(self):
