@@ -2,8 +2,6 @@
 
 from collections.abc import Iterator, Iterable
 
-import pytest
-
 import ostk.mathematics as mathematics
 
 
@@ -92,6 +90,9 @@ class TestPointSet:
         assert iter(point_set) is not None
         assert isinstance(iter(point_set), Iterator)
         assert isinstance(iter(point_set), Iterable)
+
+    def test_get_item_success(self, point_set: PointSet):
+        assert point_set[0] is not None
 
     # def test_is_near_success(self):
 
