@@ -2014,14 +2014,14 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Clip)
     }
 
     {
-        ctnr::Array<Interval<Real>> anArray = {
+        ctnr::Array<Interval<Real>> intervals = {
             Interval<Real>::Open(1.0, 2.0), Interval<Real>::Closed(1.5, 5.0), Interval<Real>::Closed(3.0, 4.0)
         };
         ctnr::Array<Interval<Real>> clippedArray = {
             Interval<Real>::HalfOpenRight(2, 5.0), Interval<Real>::Closed(3.0, 4.0)
         };
 
-        EXPECT_EQ(clippedArray, Interval<Real>::Clip(anArray, Interval<Real>::HalfOpenRight(2.0, 5.0)));
+        EXPECT_EQ(clippedArray, Interval<Real>::Clip(intervals, Interval<Real>::HalfOpenRight(2.0, 5.0)));
     }
 }
 
@@ -2033,18 +2033,35 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Sort)
         EXPECT_EQ(ctnr::Array<Interval<Real>>(), Interval<Real>::Sort({}));
     }
 
+    // defaults
     {
-        ctnr::Array<Interval<Real>> anArray = {Interval<Real>::Closed(0.0, 1.0), Interval<Real>::Closed(2.0, 3.0)};
+        ctnr::Array<Interval<Real>> intervals = {Interval<Real>::Closed(0.0, 1.0), Interval<Real>::Closed(2.0, 3.0)};
         ctnr::Array<Interval<Real>> sortedArray = {Interval<Real>::Closed(0.0, 1.0), Interval<Real>::Closed(2.0, 3.0)};
 
-        EXPECT_EQ(sortedArray, Interval<Real>::Sort(anArray));
+        EXPECT_EQ(sortedArray, Interval<Real>::Sort(intervals));
     }
 
     {
-        ctnr::Array<Interval<Real>> anArray = {Interval<Real>::Closed(2.0, 3.0), Interval<Real>::Open(0.0, 1.0)};
+        ctnr::Array<Interval<Real>> intervals = {Interval<Real>::Closed(2.0, 3.0), Interval<Real>::Open(0.0, 1.0)};
         ctnr::Array<Interval<Real>> sortedArray = {Interval<Real>::Open(0.0, 1.0), Interval<Real>::Closed(2.0, 3.0)};
 
-        EXPECT_EQ(sortedArray, Interval<Real>::Sort(anArray));
+        EXPECT_EQ(sortedArray, Interval<Real>::Sort(intervals));
+    }
+
+    // by upper bound
+    {
+        ctnr::Array<Interval<Real>> intervals = {Interval<Real>::Closed(0.0, 7.0), Interval<Real>::Open(2.0, 3.0)};
+        ctnr::Array<Interval<Real>> sortedArray = {Interval<Real>::Open(2.0, 3.0), Interval<Real>::Closed(0.0, 7.0)};
+
+        EXPECT_EQ(sortedArray, Interval<Real>::Sort(intervals, false));
+    }
+
+    // descending
+    {
+        ctnr::Array<Interval<Real>> intervals = {Interval<Real>::Closed(2.0, 3.0), Interval<Real>::Open(0.0, 1.0)};
+        ctnr::Array<Interval<Real>> sortedArray = {Interval<Real>::Closed(2.0, 3.0), Interval<Real>::Open(0.0, 1.0)};
+
+        EXPECT_EQ(sortedArray, Interval<Real>::Sort(intervals, true, false));
     }
 }
 
@@ -2084,7 +2101,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Gaps)
     }
 
     {
-        ctnr::Array<Interval<Real>> anArray = {
+        ctnr::Array<Interval<Real>> intervals = {
             Interval<Real>::Closed(2.0, 3.0),
             Interval<Real>::Open(0.0, 1.0),
             Interval<Real>::HalfOpenLeft(6.0, 7.0),
@@ -2098,7 +2115,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Gaps)
             Interval<Real>::HalfOpenLeft(7.0, 8.0)
         };
 
-        EXPECT_EQ(gapsArray, Interval<Real>::GetGaps(anArray, Interval<Real>::Undefined()));
+        EXPECT_EQ(gapsArray, Interval<Real>::GetGaps(intervals, Interval<Real>::Undefined()));
     }
 }
 

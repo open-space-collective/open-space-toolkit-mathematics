@@ -1,6 +1,7 @@
 /// Apache License 2.0
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
+#include <OpenSpaceToolkit/Core/Type/Size.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Object/Interval.hpp>
@@ -11,6 +12,8 @@ namespace mathematics
 {
 namespace object
 {
+
+using ostk::core::type::Size;
 
 template <class T>
 Interval<T>::Interval(const T& aLowerBound, const T& anUpperBound, const Interval::Type& anIntervalType)
@@ -581,21 +584,23 @@ Interval<T> Interval<T>::HalfOpenRight(const T& aLowerBound, const T& anUpperBou
 }
 
 template <class T>
-ctnr::Array<Interval<T>> Interval<T>::Clip(const ctnr::Array<Interval<T>>& anArray, const Interval<T>& aSpan)
+ctnr::Array<Interval<T>> Interval<T>::Clip(
+    const ctnr::Array<Interval<T>>& anIntervalArray, const Interval<T>& anInterval
+)
 {
-    if (!aSpan.isDefined())
+    if (!anInterval.isDefined())
     {
         throw ostk::core::error::runtime::Undefined("Interval");
     }
 
     ctnr::Array<Interval<T>> clipped;
 
-    for (size_t i = 0; i < anArray.size(); ++i)
+    for (Size i = 0; i < anIntervalArray.getSize(); ++i)
     {
-        auto checkIntersection = anArray[i].getIntersectionWith(aSpan);
+        const auto checkIntersection = anIntervalArray[i].getIntersectionWith(anInterval);
         if (checkIntersection.isDefined())
         {
-            clipped.push_back(checkIntersection);
+            clipped.add(checkIntersection);
         }
     }
 
@@ -603,48 +608,48 @@ ctnr::Array<Interval<T>> Interval<T>::Clip(const ctnr::Array<Interval<T>>& anArr
 }
 
 template <class T>
-ctnr::Array<Interval<T>> Interval<T>::Sort(const ctnr::Array<Interval<T>>& anArray)
+ctnr::Array<Interval<T>> Interval<T>::Sort(
+    const ctnr::Array<Interval<T>>& anIntervalArray, const bool& byLowerBound, const bool& ascending
+)
 {
-    ctnr::Array<Interval<T>> sorted = anArray;
+    ctnr::Array<Interval<T>> sorted = anIntervalArray;
 
-    std::sort(
-        sorted.begin(),
-        sorted.end(),
-        [](const Interval<T>& anInterval, const Interval<T>& anotherInterval)
+    const auto comparator = [byLowerBound, ascending](const Interval<T>& anInterval, const Interval<T>& anotherInterval)
+    {
+        if (!anInterval.isDefined() || !anotherInterval.isDefined())
         {
-            if (!anInterval.isDefined())
-            {
-                {
-                    throw ostk::core::error::runtime::Undefined("Interval");
-                }
-
-                if (!anotherInterval.isDefined())
-                {
-                    throw ostk::core::error::runtime::Undefined("Interval");
-                }
-            }
-
-            return anInterval.lowerBound_ < anotherInterval.lowerBound_;
+            throw ostk::core::error::runtime::Undefined("Interval");
         }
-    );
+
+        if (byLowerBound)
+        {
+            return ascending ? anInterval.lowerBound_ < anotherInterval.lowerBound_
+                             : anInterval.lowerBound_ > anotherInterval.lowerBound_;
+        }
+
+        return ascending ? anInterval.upperBound_ < anotherInterval.upperBound_
+                         : anInterval.upperBound_ > anotherInterval.upperBound_;
+    };
+
+    std::sort(sorted.begin(), sorted.end(), comparator);
 
     return sorted;
 }
 
 template <class T>
-ctnr::Array<Interval<T>> Interval<T>::Merge(const ctnr::Array<Interval<T>>& anArray)
+ctnr::Array<Interval<T>> Interval<T>::Merge(const ctnr::Array<Interval<T>>& anIntervalArray)
 {
-    if (anArray.empty())
+    if (anIntervalArray.empty())
     {
         return {};
     }
 
-    ctnr::Array<Interval<T>> sorted = Interval<T>::Sort(anArray);
+    ctnr::Array<Interval<T>> sorted = Interval<T>::Sort(anIntervalArray);
 
     ctnr::Array<Interval<T>> merged;
     Interval<T> nextUnion = sorted[0];
 
-    for (size_t i = 1; i < sorted.size(); ++i)
+    for (Size i = 1; i < sorted.size(); ++i)
     {
         auto checkUnion = nextUnion.getUnionWith(sorted[i]);
         if (checkUnion.isDefined())
@@ -653,30 +658,32 @@ ctnr::Array<Interval<T>> Interval<T>::Merge(const ctnr::Array<Interval<T>>& anAr
         }
         else
         {
-            merged.push_back(nextUnion);
+            merged.add(nextUnion);
             nextUnion = sorted[i];
         }
     }
 
-    merged.push_back(nextUnion);
+    merged.add(nextUnion);
 
     return merged;
 }
 
 template <class T>
-ctnr::Array<Interval<T>> Interval<T>::GetGaps(const ctnr::Array<Interval<T>>& anArray, const Interval<T>& aSpan)
+ctnr::Array<Interval<T>> Interval<T>::GetGaps(
+    const ctnr::Array<Interval<T>>& anIntervalArray, const Interval<T>& anInterval
+)
 {
-    ctnr::Array<Interval<T>> sanitized = Interval<T>::Merge(anArray);
-    if (aSpan.isDefined())
+    ctnr::Array<Interval<T>> sanitized = Interval<T>::Merge(anIntervalArray);
+    if (anInterval.isDefined())
     {
-        sanitized = Interval<T>::Clip(sanitized, aSpan);
+        sanitized = Interval<T>::Clip(sanitized, anInterval);
     }
 
     if (sanitized.size() == 0)
     {
-        if (aSpan.isDefined())
+        if (anInterval.isDefined())
         {
-            return {aSpan};
+            return {anInterval};
         }
         return {};
     }
@@ -684,14 +691,14 @@ ctnr::Array<Interval<T>> Interval<T>::GetGaps(const ctnr::Array<Interval<T>>& an
     ctnr::Array<Interval<T>> gaps;
 
     // Deal with potential leading gap
-    if (aSpan.isDefined() && sanitized[0].lowerBound_ > aSpan.lowerBound_)
+    if (anInterval.isDefined() && sanitized[0].lowerBound_ > anInterval.lowerBound_)
     {
         const Interval<T> upperInterval = sanitized[0];
-        const T lowerBound = aSpan.lowerBound_;
+        const T lowerBound = anInterval.lowerBound_;
         const T upperBound = upperInterval.lowerBound_;
 
         bool openLowerBound = false;
-        if (aSpan.type_ == Interval<T>::Type::Closed || aSpan.type_ == Interval<T>::Type::HalfOpenRight)
+        if (anInterval.type_ == Interval<T>::Type::Closed || anInterval.type_ == Interval<T>::Type::HalfOpenRight)
         {
             {
                 openLowerBound = true;
@@ -706,11 +713,11 @@ ctnr::Array<Interval<T>> Interval<T>::GetGaps(const ctnr::Array<Interval<T>>& an
             }
         }
 
-        gaps.push_back(Interval<T>::buildInterval(lowerBound, openLowerBound, upperBound, openUpperBound));
+        gaps.add(Interval<T>::buildInterval(lowerBound, openLowerBound, upperBound, openUpperBound));
     }
 
     // Deal with intermediate gaps
-    for (size_t i = 1; i < sanitized.size(); ++i)
+    for (Size i = 1; i < sanitized.size(); ++i)
     {
         const Interval<T> lowerInterval = sanitized[i - 1];
         const Interval<T> upperInterval = sanitized[i];
@@ -733,15 +740,15 @@ ctnr::Array<Interval<T>> Interval<T>::GetGaps(const ctnr::Array<Interval<T>>& an
             }
         }
 
-        gaps.push_back(Interval<T>::buildInterval(lowerBound, openLowerBound, upperBound, openUpperBound));
+        gaps.add(Interval<T>::buildInterval(lowerBound, openLowerBound, upperBound, openUpperBound));
     }
 
     // Deal with potential trailing gap
-    if (aSpan.isDefined() && sanitized[sanitized.size() - 1].upperBound_ < aSpan.upperBound_)
+    if (anInterval.isDefined() && sanitized[sanitized.size() - 1].upperBound_ < anInterval.upperBound_)
     {
         const Interval<T> lowerInterval = sanitized[sanitized.size() - 1];
         const T lowerBound = lowerInterval.upperBound_;
-        const T upperBound = aSpan.upperBound_;
+        const T upperBound = anInterval.upperBound_;
 
         bool openLowerBound = false;
         if (lowerInterval.type_ == Interval<T>::Type::Closed || lowerInterval.type_ == Interval<T>::Type::HalfOpenLeft)
@@ -752,14 +759,14 @@ ctnr::Array<Interval<T>> Interval<T>::GetGaps(const ctnr::Array<Interval<T>>& an
         }
 
         bool openUpperBound = false;
-        if (aSpan.type_ == Interval<T>::Type::Closed || aSpan.type_ == Interval<T>::Type::HalfOpenLeft)
+        if (anInterval.type_ == Interval<T>::Type::Closed || anInterval.type_ == Interval<T>::Type::HalfOpenLeft)
         {
             {
                 openUpperBound = true;
             }
         }
 
-        gaps.push_back(Interval<T>::buildInterval(lowerBound, openLowerBound, upperBound, openUpperBound));
+        gaps.add(Interval<T>::buildInterval(lowerBound, openLowerBound, upperBound, openUpperBound));
     }
 
     return gaps;
