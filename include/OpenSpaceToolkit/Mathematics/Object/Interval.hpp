@@ -421,6 +421,31 @@ class Interval : public IntervalBase
     ///
     /// @return             Logical 'OR' array
 
+    static ctnr::Array<Interval<T>> LogicalAnd(
+        const ctnr::Array<Interval<T>>& anIntervalArray, const ctnr::Array<Interval<T>>& anotherIntervalArray
+    );
+
+    /// @brief              Creates a new array that contains the intervals representing a logical 'AND' conjunction
+    ///                     between the two arrays.
+    /// @code
+    ///                     Array<Interval<Real>> anIntervalArray = {
+    ///                         Interval<Real>::Closed(-1.0, 1.0),
+    ///                         Interval<Real>::Closed(2.0, 4.0),
+    ///                     };
+    ///
+    ///                     Array<Interval<Real>> anotherIntervalArray = {
+    ///                         Interval<Real>::Open(0.5, 1.5),
+    ///                         Interval<Real>::Open(3.0, 5.0),
+    ///                         Interval<Real>::Open(7.0, 8.0),
+    ///                     };
+    ///
+    ///                     Array<Interval<Real>> logicalAnd = Interval<Real>::LogicalOr(anIntervalArray,
+    ///                     anotherIntervalArray);
+    ///                     // {(0.5, 1.0), [2.0, 4.0]}
+    /// @endcode
+    ///
+    /// @return             Logical 'AND' array
+
     static ctnr::Array<Interval<T>> LogicalOr(
         const ctnr::Array<Interval<T>>& anIntervalArray, const ctnr::Array<Interval<T>>& anotherIntervalArray
     );

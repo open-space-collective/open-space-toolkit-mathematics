@@ -2179,6 +2179,65 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, LogicalOr)
     }
 }
 
+TEST(OpenSpaceToolkit_Mathematics_Object_Interval, LogicalAnd)
+{
+    {
+        EXPECT_ANY_THROW(Interval<Real>::LogicalAnd({Interval<Real>::Undefined()}, {}));
+        EXPECT_ANY_THROW(Interval<Real>::LogicalAnd({}, {Interval<Real>::Undefined()}));
+
+        EXPECT_EQ(ctnr::Array<Interval<Real>>(), Interval<Real>::LogicalAnd({}, {}));
+        EXPECT_EQ(ctnr::Array<Interval<Real>>(), Interval<Real>::LogicalAnd({Interval<Real>::Closed(0.0, 1.0)}, {}));
+        EXPECT_EQ(ctnr::Array<Interval<Real>>(), Interval<Real>::LogicalAnd({}, {Interval<Real>::Closed(0.0, 1.0)}));
+    }
+
+    {
+        ctnr::Array<Interval<Real>> open = {Interval<Real>::Open(0.0, 1.0)};
+        ctnr::Array<Interval<Real>> halfOpenLeft = {Interval<Real>::HalfOpenLeft(0.0, 1.0)};
+        ctnr::Array<Interval<Real>> halfOpenRight = {Interval<Real>::HalfOpenRight(0.0, 1.0)};
+        ctnr::Array<Interval<Real>> closed = {Interval<Real>::Closed(0.0, 1.0)};
+
+        EXPECT_EQ(open, Interval<Real>::LogicalAnd(open, open));
+        EXPECT_EQ(open, Interval<Real>::LogicalAnd(open, halfOpenLeft));
+        EXPECT_EQ(open, Interval<Real>::LogicalAnd(open, halfOpenRight));
+        EXPECT_EQ(open, Interval<Real>::LogicalAnd(open, closed));
+
+        EXPECT_EQ(open, Interval<Real>::LogicalAnd(halfOpenLeft, open));
+        EXPECT_EQ(halfOpenLeft, Interval<Real>::LogicalAnd(halfOpenLeft, halfOpenLeft));
+        EXPECT_EQ(open, Interval<Real>::LogicalAnd(halfOpenLeft, halfOpenRight));
+        EXPECT_EQ(halfOpenLeft, Interval<Real>::LogicalAnd(halfOpenLeft, closed));
+
+        EXPECT_EQ(open, Interval<Real>::LogicalAnd(halfOpenRight, open));
+        EXPECT_EQ(open, Interval<Real>::LogicalAnd(halfOpenRight, halfOpenLeft));
+        EXPECT_EQ(halfOpenRight, Interval<Real>::LogicalAnd(halfOpenRight, halfOpenRight));
+        EXPECT_EQ(halfOpenRight, Interval<Real>::LogicalAnd(halfOpenRight, closed));
+
+        EXPECT_EQ(open, Interval<Real>::LogicalAnd(closed, open));
+        EXPECT_EQ(halfOpenLeft, Interval<Real>::LogicalAnd(closed, halfOpenLeft));
+        EXPECT_EQ(halfOpenRight, Interval<Real>::LogicalAnd(closed, halfOpenRight));
+        EXPECT_EQ(closed, Interval<Real>::LogicalAnd(closed, closed));
+    }
+
+    {
+        ctnr::Array<Interval<Real>> anArray = {
+            Interval<Real>::Closed(2.0, 3.0),
+            Interval<Real>::Open(0.0, 3.0),
+            Interval<Real>::HalfOpenLeft(6.0, 7.0),
+            Interval<Real>::Open(8.0, 9.0),
+            Interval<Real>::HalfOpenLeft(4.0, 5.0)
+        };
+        ctnr::Array<Interval<Real>> anotherArray = {
+            Interval<Real>::HalfOpenLeft(10.0, 11.0),
+            Interval<Real>::HalfOpenRight(-1.0, 2.0),
+            Interval<Real>::Open(5.0, 7.5)
+        };
+        ctnr::Array<Interval<Real>> logicalAndArray = {
+            Interval<Real>::Open(0.0, 2.0), Interval<Real>::HalfOpenLeft(6.0, 7.0)
+        };
+
+        EXPECT_EQ(logicalAndArray, Interval<Real>::LogicalAnd(anArray, anotherArray));
+    }
+}
+
 // TEST (OpenSpaceToolkit_Mathematics_Object_Interval, Parse)
 // {
 
