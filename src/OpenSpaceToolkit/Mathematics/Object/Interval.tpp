@@ -614,6 +614,11 @@ ctnr::Array<Interval<T>> Interval<T>::Sort(
 {
     ctnr::Array<Interval<T>> sorted = anIntervalArray;
 
+    if (anIntervalArray.size() == 1 && !anIntervalArray[0].isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Interval");
+    }
+
     const auto comparator = [byLowerBound, ascending](const Interval<T>& anInterval, const Interval<T>& anotherInterval)
     {
         if (!anInterval.isDefined() || !anotherInterval.isDefined())
@@ -771,6 +776,26 @@ ctnr::Array<Interval<T>> Interval<T>::GetGaps(
     }
 
     return gaps;
+}
+
+template <class T>
+ctnr::Array<Interval<T>> Interval<T>::LogicalOr(
+    const ctnr::Array<Interval<T>>& anIntervalArray, const ctnr::Array<Interval<T>>& anotherIntervalArray
+)
+{
+    ctnr::Array<Interval<T>> array;
+
+    for (Size i = 0; i < anIntervalArray.size(); ++i)
+    {
+        array.add(anIntervalArray[i]);
+    }
+
+    for (Size i = 0; i < anotherIntervalArray.size(); ++i)
+    {
+        array.add(anotherIntervalArray[i]);
+    }
+
+    return Interval<T>::Merge(array);
 }
 
 //                                 template <class T>

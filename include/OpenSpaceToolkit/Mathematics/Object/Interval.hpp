@@ -400,6 +400,31 @@ class Interval : public IntervalBase
         const ctnr::Array<Interval<T>>& anIntervalArray, const Interval<T>& anInterval = Interval::Undefined()
     );
 
+    /// @brief              Creates a new array that contains the intervals representing a logical 'OR' conjunction
+    ///                     between the two arrays.
+    /// @code
+    ///                     Array<Interval<Real>> anIntervalArray = {
+    ///                         Interval<Real>::Closed(-1.0, 1.0),
+    ///                         Interval<Real>::Closed(2.0, 4.0),
+    ///                     };
+    ///
+    ///                     Array<Interval<Real>> anotherIntervalArray = {
+    ///                         Interval<Real>::Open(0.5, 1.5),
+    ///                         Interval<Real>::Open(3.0, 5.0),
+    ///                         Interval<Real>::Open(7.0, 8.0),
+    ///                     };
+    ///
+    ///                     Array<Interval<Real>> logicalOr = Interval<Real>::LogicalOr(anIntervalArray,
+    ///                     anotherIntervalArray);
+    ///                     // {[-1.0, 1.5), [2.0, 5.0), (7.0, 8.0)}
+    /// @endcode
+    ///
+    /// @return             Logical 'OR' array
+
+    static ctnr::Array<Interval<T>> LogicalOr(
+        const ctnr::Array<Interval<T>>& anIntervalArray, const ctnr::Array<Interval<T>>& anotherIntervalArray
+    );
+
     /// @brief              Constructs an interval from a given string
     ///
     /// @code

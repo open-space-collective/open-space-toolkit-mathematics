@@ -2003,6 +2003,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, HalfOpenRight)
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Clip)
 {
     {
+        EXPECT_ANY_THROW(Interval<Real>::Clip({Interval<Real>::Undefined()}, Interval<Real>::Closed(0.0, 1.0)));
         EXPECT_ANY_THROW(Interval<Real>::Clip(
             {Interval<Real>::Closed(0.0, 1.0), Interval<Real>::Closed(0.0, 1.0)}, Interval<Real>::Undefined()
         ));
@@ -2028,6 +2029,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Clip)
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Sort)
 {
     {
+        EXPECT_ANY_THROW(Interval<Real>::Sort({Interval<Real>::Undefined()}));
         EXPECT_ANY_THROW(Interval<Real>::Sort({Interval<Real>::Closed(0.0, 1.0), Interval<Real>::Undefined()}));
 
         EXPECT_EQ(ctnr::Array<Interval<Real>>(), Interval<Real>::Sort({}));
@@ -2068,6 +2070,7 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Sort)
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Merge)
 {
     {
+        EXPECT_ANY_THROW(Interval<Real>::Merge({Interval<Real>::Undefined()}));
         EXPECT_ANY_THROW(Interval<Real>::Merge({Interval<Real>::Closed(0.0, 1.0), Interval<Real>::Undefined()}));
 
         EXPECT_EQ(ctnr::Array<Interval<Real>>(), Interval<Real>::Merge({}));
@@ -2136,6 +2139,43 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Gaps)
         };
 
         EXPECT_EQ(gapsArray, Interval<Real>::GetGaps(intervals, Interval<Real>::HalfOpenLeft(-1.0, 10.0)));
+    }
+}
+
+TEST(OpenSpaceToolkit_Mathematics_Object_Interval, LogicalOr)
+{
+    {
+        EXPECT_ANY_THROW(Interval<Real>::LogicalOr({Interval<Real>::Undefined()}, {}));
+        EXPECT_ANY_THROW(Interval<Real>::LogicalOr({}, {Interval<Real>::Undefined()}));
+
+        EXPECT_EQ(ctnr::Array<Interval<Real>>(), Interval<Real>::LogicalOr({}, {}));
+
+        ctnr::Array<Interval<Real>> logicalOrArray = {Interval<Real>::Closed(0.0, 1.0)};
+        EXPECT_EQ(logicalOrArray, Interval<Real>::LogicalOr({}, logicalOrArray));
+        EXPECT_EQ(logicalOrArray, Interval<Real>::LogicalOr(logicalOrArray, {}));
+    }
+
+    {
+        ctnr::Array<Interval<Real>> anArray = {
+            Interval<Real>::Closed(2.0, 3.0),
+            Interval<Real>::Open(0.0, 3.0),
+            Interval<Real>::HalfOpenLeft(6.0, 7.0),
+            Interval<Real>::Open(8.0, 9.0),
+            Interval<Real>::HalfOpenLeft(4.0, 5.0)
+        };
+        ctnr::Array<Interval<Real>> anotherArray = {
+            Interval<Real>::HalfOpenLeft(10.0, 11.0),
+            Interval<Real>::HalfOpenRight(-1.0, 2.0),
+            Interval<Real>::Open(5.0, 7.5)
+        };
+        ctnr::Array<Interval<Real>> logicalOrArray = {
+            Interval<Real>::Closed(-1.0, 3.0),
+            Interval<Real>::Open(4.0, 7.5),
+            Interval<Real>::Open(8.0, 9.0),
+            Interval<Real>::HalfOpenLeft(10.0, 11.0)
+        };
+
+        EXPECT_EQ(logicalOrArray, Interval<Real>::LogicalOr(anArray, anotherArray));
     }
 }
 
