@@ -485,3 +485,31 @@ class TestInterval:
         assert (
             RealInterval.get_gaps(intervals, RealInterval.closed(-5.0, 25.0)) is not None
         )
+
+    def test_logical_or(self):
+        intervals_1: list[RealInterval] = [
+            RealInterval(8.0, 9.0, RealInterval.Type.Closed),
+            RealInterval(0.0, 1.0, RealInterval.Type.HalfOpenLeft),
+            RealInterval(2.0, 3.0, RealInterval.Type.Open),
+        ]
+
+        intervals_2: list[RealInterval] = [
+            RealInterval(0.5, 3.5, RealInterval.Type.Open),
+            RealInterval(5.0, 7.0, RealInterval.Type.HalfOpenLeft),
+        ]
+
+        assert RealInterval.logical_or(intervals_1, intervals_2) is not None
+
+    def test_logical_and(self):
+        intervals_1: list[RealInterval] = [
+            RealInterval(8.0, 9.0, RealInterval.Type.Closed),
+            RealInterval(0.0, 1.0, RealInterval.Type.HalfOpenLeft),
+            RealInterval(2.0, 3.0, RealInterval.Type.Open),
+        ]
+
+        intervals_2: list[RealInterval] = [
+            RealInterval(0.5, 3.5, RealInterval.Type.Open),
+            RealInterval(5.0, 7.0, RealInterval.Type.HalfOpenLeft),
+        ]
+
+        assert RealInterval.logical_and(intervals_1, intervals_2) is not None

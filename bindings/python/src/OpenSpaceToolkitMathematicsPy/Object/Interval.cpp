@@ -59,6 +59,8 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
             arg("intervals"),
             arg_v("bound", Interval<Real>::Undefined(), "RealInterval.Undefined()")
         )
+        .def_static("logical_or", &Interval<Real>::LogicalOr, arg("intervals_1"), arg("intervals_2"))
+        .def_static("logical_and", &Interval<Real>::LogicalAnd, arg("intervals_1"), arg("intervals_2"))
 
         ;
 

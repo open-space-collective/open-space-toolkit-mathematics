@@ -421,7 +421,7 @@ class Interval : public IntervalBase
     ///
     /// @return             Logical 'OR' array
 
-    static ctnr::Array<Interval<T>> LogicalAnd(
+    static ctnr::Array<Interval<T>> LogicalOr(
         const ctnr::Array<Interval<T>>& anIntervalArray, const ctnr::Array<Interval<T>>& anotherIntervalArray
     );
 
@@ -446,7 +446,7 @@ class Interval : public IntervalBase
     ///
     /// @return             Logical 'AND' array
 
-    static ctnr::Array<Interval<T>> LogicalOr(
+    static ctnr::Array<Interval<T>> LogicalAnd(
         const ctnr::Array<Interval<T>>& anIntervalArray, const ctnr::Array<Interval<T>>& anotherIntervalArray
     );
 
