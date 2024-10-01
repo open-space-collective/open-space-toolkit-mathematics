@@ -623,12 +623,13 @@ ctnr::Array<Interval<T>> Interval<T>::Sort(
 
         if (byLowerBound)
         {
-            return ascending ? anInterval.lowerBound_ < anotherInterval.lowerBound_
-                             : anInterval.lowerBound_ > anotherInterval.lowerBound_;
+            return ascending
+                ? anInterval.lowerBound_<anotherInterval.lowerBound_ : anInterval.lowerBound_> anotherInterval
+                      .lowerBound_;
         }
 
-        return ascending ? anInterval.upperBound_ < anotherInterval.upperBound_
-                         : anInterval.upperBound_ > anotherInterval.upperBound_;
+        return ascending
+            ? anInterval.upperBound_<anotherInterval.upperBound_ : anInterval.upperBound_> anotherInterval.upperBound_;
     };
 
     std::sort(sorted.begin(), sorted.end(), comparator);
@@ -697,11 +698,11 @@ ctnr::Array<Interval<T>> Interval<T>::GetGaps(
         const T lowerBound = anInterval.lowerBound_;
         const T upperBound = upperInterval.lowerBound_;
 
-        bool openLowerBound = false;
+        bool openLowerBound = true;
         if (anInterval.type_ == Interval<T>::Type::Closed || anInterval.type_ == Interval<T>::Type::HalfOpenRight)
         {
             {
-                openLowerBound = true;
+                openLowerBound = false;
             }
         }
 
@@ -758,11 +759,11 @@ ctnr::Array<Interval<T>> Interval<T>::GetGaps(
             }
         }
 
-        bool openUpperBound = false;
+        bool openUpperBound = true;
         if (anInterval.type_ == Interval<T>::Type::Closed || anInterval.type_ == Interval<T>::Type::HalfOpenLeft)
         {
             {
-                openUpperBound = true;
+                openUpperBound = false;
             }
         }
 
