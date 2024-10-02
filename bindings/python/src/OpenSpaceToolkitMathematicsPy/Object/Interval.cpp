@@ -44,7 +44,25 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
 
         // Define static methods
         .def_static("undefined", &Interval<Real>::Undefined)
-        .def_static("closed", &Interval<Real>::Closed, arg("lower_bound"), arg("upper_bound"));
+        .def_static("closed", &Interval<Real>::Closed, arg("lower_bound"), arg("upper_bound"))
+        .def_static("open", &Interval<Real>::Open, arg("lower_bound"), arg("upper_bound"))
+        .def_static("half_open_left", &Interval<Real>::HalfOpenLeft, arg("lower_bound"), arg("upper_bound"))
+        .def_static("half_open_right", &Interval<Real>::HalfOpenRight, arg("lower_bound"), arg("upper_bound"))
+        .def_static("clip", &Interval<Real>::Clip, arg("intervals"), arg("clipping_interval"))
+        .def_static(
+            "sort", &Interval<Real>::Sort, arg("intervals"), arg("by_lower_bound") = true, arg("ascending") = true
+        )
+        .def_static("merge", &Interval<Real>::Merge, arg("intervals"))
+        .def_static(
+            "get_gaps",
+            &Interval<Real>::GetGaps,
+            arg("intervals"),
+            arg_v("bound", Interval<Real>::Undefined(), "RealInterval.Undefined()")
+        )
+        .def_static("logical_or", &Interval<Real>::LogicalOr, arg("intervals_1"), arg("intervals_2"))
+        .def_static("logical_and", &Interval<Real>::LogicalAnd, arg("intervals_1"), arg("intervals_2"))
+
+        ;
 
     // Add other interval types
     // ...

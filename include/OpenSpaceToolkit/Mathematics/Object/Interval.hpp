@@ -331,6 +331,129 @@ class Interval : public IntervalBase
 
     static Interval<T> HalfOpenRight(const T& aLowerBound, const T& anUpperBound);
 
+    /// @brief              Creates a new array of Intervals clipped by the provided Interval
+    ///
+    /// @code
+    ///                     Array<Interval<Real>> unclipped = {
+    ///                         Interval<Real>::Closed(-1.0, 1.0),
+    ///                         Interval<Real>::Closed(2.0, 4.0),
+    ///                     };
+    ///                     const Interval<Real> clipper = Interval<Real>::Closed(0.0, 3.0);
+    ///                     Array<Interval<Real>> clipped = Interval<Real>::Clip(unclipped, clipper);
+    ///                     // {[0.0, 1.0], [2.0, 3.0]}
+    /// @endcode
+    ///
+    /// @return             Clipped array
+
+    static ctnr::Array<Interval<T>> Clip(
+        const ctnr::Array<Interval<T>>& anIntervalArray, const Interval<T>& anInterval
+    );
+
+    /// @brief              Creates a new sorted array, the order based on the inputted parameters
+    ///
+    /// @code
+    ///                     Array<Interval<Real>> unsorted = {
+    ///                         Interval<Real>::Closed(-1.0, 1.0),
+    ///                         Interval<Real>::Closed(-3.0, 0.0),
+    ///                     };
+    ///                     Array<Interval<Real>> sorted = Interval<Real>::Sort(unsorted); // {[-3.0, 0.0], [-1.0, 1.0]}
+    /// @endcode
+    ///
+    /// @return             Sorted array
+
+    static ctnr::Array<Interval<T>> Sort(
+        const ctnr::Array<Interval<T>>& anIntervalArray, const bool& byLowerBound = true, const bool& ascending = true
+    );
+
+    /// @brief              Creates a new array without any overlaps and sorted by their lower bound
+    ///
+    /// @code
+    ///                     Array<Interval<Real>> array = {
+    ///                         Interval<Real>::Closed(-1.0, 1.0),
+    ///                         Interval<Real>::Closed(-2.0, 0.0),
+    ///                         Interval<Real>::Closed(3.0, 4.0),
+    ///                     };
+    ///                     Array<Interval<Real>> merged = Interval<Real>::Merge(array); // {[-2.0, 1.0], [3.0, 4.0]}
+    /// @endcode
+    ///
+    /// @return             Merged array
+
+    static ctnr::Array<Interval<T>> Merge(const ctnr::Array<Interval<T>>& anIntervalArray);
+
+    /// @brief              Creates a new array that contains the gaps between an array of intervals. If
+    ///                     an interval is actually defined, only intervals intersecting with the interval are
+    ///                     considered and potential leading and trailing gaps w.r.t. the interval boundaries are
+    ///                     included. The intervals are previously merged and sorted.
+    /// @code
+    ///                     Array<Interval<Real>> intervals = {
+    ///                         Interval<Real>::Closed(-1.0, 1.0),
+    ///                         Interval<Real>::Closed(2.0, 4.0),
+    ///                     };
+    ///                     const Interval<Real> bounds = Interval<Real>::Closed(1.5, 4.5)
+    ///                     Array<Interval<Real>> gaps = Interval<Real>::GetGaps(intervals, bounds);
+    ///                     // {[1.5, 2.0], [4.0, 4.5]}
+    /// @endcode
+    ///
+    /// @return             Gaps array
+
+    static ctnr::Array<Interval<T>> GetGaps(
+        const ctnr::Array<Interval<T>>& anIntervalArray, const Interval<T>& anInterval = Interval::Undefined()
+    );
+
+    /// @brief              Creates a new array that contains the intervals representing a logical 'OR' conjunction
+    ///                     between the two arrays. The resulting array will contain the union of intervals of the
+    ///                     provided arrays, i.e. intervals that overlap with intervals from one of the arrays OR the
+    ///                     other.
+    /// @code
+    ///                     Array<Interval<Real>> anIntervalArray = {
+    ///                         Interval<Real>::Closed(-1.0, 1.0),
+    ///                         Interval<Real>::Closed(2.0, 4.0),
+    ///                     };
+    ///
+    ///                     Array<Interval<Real>> anotherIntervalArray = {
+    ///                         Interval<Real>::Open(0.5, 1.5),
+    ///                         Interval<Real>::Open(3.0, 5.0),
+    ///                         Interval<Real>::Open(7.0, 8.0),
+    ///                     };
+    ///
+    ///                     Array<Interval<Real>> logicalOr = Interval<Real>::LogicalOr(anIntervalArray,
+    ///                     anotherIntervalArray);
+    ///                     // {[-1.0, 1.5), [2.0, 5.0), (7.0, 8.0)}
+    /// @endcode
+    ///
+    /// @return             Logical 'OR' array
+
+    static ctnr::Array<Interval<T>> LogicalOr(
+        const ctnr::Array<Interval<T>>& anIntervalArray, const ctnr::Array<Interval<T>>& anotherIntervalArray
+    );
+
+    /// @brief              Creates a new array that contains the intervals representing a logical 'AND' conjunction
+    ///                     between the two arrays. The rsulting array will contain the intersection of intervals of the
+    ///                     provided arrays, i.e. intervals that overal with intervals from one of the arrays AND the
+    ///                     other.
+    /// @code
+    ///                     Array<Interval<Real>> anIntervalArray = {
+    ///                         Interval<Real>::Closed(-1.0, 1.0),
+    ///                         Interval<Real>::Closed(2.0, 4.0),
+    ///                     };
+    ///
+    ///                     Array<Interval<Real>> anotherIntervalArray = {
+    ///                         Interval<Real>::Open(0.5, 1.5),
+    ///                         Interval<Real>::Open(3.0, 5.0),
+    ///                         Interval<Real>::Open(7.0, 8.0),
+    ///                     };
+    ///
+    ///                     Array<Interval<Real>> logicalAnd = Interval<Real>::LogicalAnd(anIntervalArray,
+    ///                     anotherIntervalArray);
+    ///                     // {(0.5, 1.0), [2.0, 4.0]}
+    /// @endcode
+    ///
+    /// @return             Logical 'AND' array
+
+    static ctnr::Array<Interval<T>> LogicalAnd(
+        const ctnr::Array<Interval<T>>& anIntervalArray, const ctnr::Array<Interval<T>>& anotherIntervalArray
+    );
+
     /// @brief              Constructs an interval from a given string
     ///
     /// @code
@@ -356,6 +479,9 @@ class Interval : public IntervalBase
    private:
     bool checkAgainstLowerBound(const T& aValue, const bool& isOpen, const bool& isUpperBound) const;
     bool checkAgainstUpperBound(const T& aValue, const bool& isOpen, const bool& isLowerBound) const;
+    static Interval<T> buildInterval(
+        const T& lowerBound, const bool& openLowerBound, const T& upperBound, const bool& openUpperBound
+    );
 
     Interval::Type type_;
 
