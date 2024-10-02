@@ -401,7 +401,9 @@ class Interval : public IntervalBase
     );
 
     /// @brief              Creates a new array that contains the intervals representing a logical 'OR' conjunction
-    ///                     between the two arrays.
+    ///                     between the two arrays. The resulting array will contain the union of intervals of the
+    ///                     provided arrays, i.e. intervals that overlap with intervals from one of the arrays OR the
+    ///                     other.
     /// @code
     ///                     Array<Interval<Real>> anIntervalArray = {
     ///                         Interval<Real>::Closed(-1.0, 1.0),
@@ -426,7 +428,9 @@ class Interval : public IntervalBase
     );
 
     /// @brief              Creates a new array that contains the intervals representing a logical 'AND' conjunction
-    ///                     between the two arrays.
+    ///                     between the two arrays. The rsulting array will contain the intersection of intervals of the
+    ///                     provided arrays, i.e. intervals that overal with intervals from one of the arrays AND the
+    ///                     other.
     /// @code
     ///                     Array<Interval<Real>> anIntervalArray = {
     ///                         Interval<Real>::Closed(-1.0, 1.0),
@@ -439,7 +443,7 @@ class Interval : public IntervalBase
     ///                         Interval<Real>::Open(7.0, 8.0),
     ///                     };
     ///
-    ///                     Array<Interval<Real>> logicalAnd = Interval<Real>::LogicalOr(anIntervalArray,
+    ///                     Array<Interval<Real>> logicalAnd = Interval<Real>::LogicalAnd(anIntervalArray,
     ///                     anotherIntervalArray);
     ///                     // {(0.5, 1.0), [2.0, 4.0]}
     /// @endcode
