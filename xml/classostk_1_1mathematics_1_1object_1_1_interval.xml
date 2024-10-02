@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="360" column="20" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="360" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="486" column="20" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="486" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1object_1_1_interval_1a7f84e7aef2105110a4e79675f1151892" prot="private" static="no" mutable="no">
         <type>T</type>
@@ -34,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="362" column="7" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="362" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="488" column="7" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="488" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classostk_1_1mathematics_1_1object_1_1_interval_1a810df853f5b560588d5a82cae03406e1" prot="private" static="no" mutable="no">
         <type>T</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="363" column="7" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="363" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="489" column="7" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="489" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -827,6 +827,218 @@
         </inbodydescription>
         <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="332" column="21"/>
       </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ad3ed5f62f822cf770b439c1aa6283639" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt; &gt;</type>
+        <definition>static ctnr::Array&lt;Interval&lt;T&gt; &gt; ostk::mathematics::object::Interval&lt; T &gt;::Clip</definition>
+        <argsstring>(const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anIntervalArray, const Interval&lt; T &gt; &amp;anInterval)</argsstring>
+        <name>Clip</name>
+        <param>
+          <type>const ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;&gt; &amp;</type>
+          <declname>anIntervalArray</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt; &amp;</type>
+          <declname>anInterval</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new array of Intervals clipped by the provided <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Array&lt;Interval&lt;Real&gt;&gt;<sp/>unclipped<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Closed(-1.0,<sp/>1.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Closed(2.0,<sp/>4.0),</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal">const<sp/>Interval&lt;Real&gt;<sp/>clipper<sp/>=<sp/>Interval&lt;Real&gt;::Closed(0.0,<sp/>3.0);</highlight></codeline>
+<codeline><highlight class="normal">Array&lt;Interval&lt;Real&gt;&gt;<sp/>clipped<sp/>=<sp/>Interval&lt;Real&gt;::Clip(unclipped,<sp/>clipper);</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>{[0.0,<sp/>1.0],<sp/>[2.0,<sp/>3.0]}</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Clipped array </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="348" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a67fd1bf9afb4a553eda2782c1f1e69d7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt; &gt;</type>
+        <definition>static ctnr::Array&lt;Interval&lt;T&gt; &gt; ostk::mathematics::object::Interval&lt; T &gt;::Sort</definition>
+        <argsstring>(const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anIntervalArray, const bool &amp;byLowerBound=true, const bool &amp;ascending=true)</argsstring>
+        <name>Sort</name>
+        <param>
+          <type>const ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;&gt; &amp;</type>
+          <declname>anIntervalArray</declname>
+        </param>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>byLowerBound</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>ascending</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Creates a new sorted array, the order based on the inputted parameters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Array&lt;Interval&lt;Real&gt;&gt;<sp/>unsorted<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Closed(-1.0,<sp/>1.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Closed(-3.0,<sp/>0.0),</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal">Array&lt;Interval&lt;Real&gt;&gt;<sp/>sorted<sp/>=<sp/>Interval&lt;Real&gt;::Sort(unsorted);<sp/>//<sp/>{[-3.0,<sp/>0.0],<sp/>[-1.0,<sp/>1.0]}</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Sorted array </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="364" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ac896cb95eb898a697f0b8c55f5f16f4b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt; &gt;</type>
+        <definition>static ctnr::Array&lt;Interval&lt;T&gt; &gt; ostk::mathematics::object::Interval&lt; T &gt;::Merge</definition>
+        <argsstring>(const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anIntervalArray)</argsstring>
+        <name>Merge</name>
+        <param>
+          <type>const ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;&gt; &amp;</type>
+          <declname>anIntervalArray</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new array without any overlaps and sorted by their lower bound. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Array&lt;Interval&lt;Real&gt;&gt;<sp/>array<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Closed(-1.0,<sp/>1.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Closed(-2.0,<sp/>0.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Closed(3.0,<sp/>4.0),</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal">Array&lt;Interval&lt;Real&gt;&gt;<sp/>merged<sp/>=<sp/>Interval&lt;Real&gt;::Merge(array);<sp/>//<sp/>{[-2.0,<sp/>1.0],<sp/>[3.0,<sp/>4.0]}</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Merged array </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="381" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a3b1b3713ef5cbc3287bb0591e8deae53" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt; &gt;</type>
+        <definition>static ctnr::Array&lt;Interval&lt;T&gt; &gt; ostk::mathematics::object::Interval&lt; T &gt;::GetGaps</definition>
+        <argsstring>(const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anIntervalArray, const Interval&lt; T &gt; &amp;anInterval=Interval::Undefined())</argsstring>
+        <name>GetGaps</name>
+        <param>
+          <type>const ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;&gt; &amp;</type>
+          <declname>anIntervalArray</declname>
+        </param>
+        <param>
+          <type>const <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt; &amp;</type>
+          <declname>anInterval</declname>
+          <defval><ref refid="classostk_1_1mathematics_1_1object_1_1_interval_1a877844b24a34a2c5c5109ce658cd5551" kindref="member">Interval::Undefined</ref>()</defval>
+        </param>
+        <briefdescription>
+<para>Creates a new array that contains the gaps between an array of intervals. If an interval is actually defined, only intervals intersecting with the interval are considered and potential leading and trailing gaps w.r.t. the interval boundaries are included. The intervals are previously merged and sorted. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Array&lt;Interval&lt;Real&gt;&gt;<sp/>intervals<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Closed(-1.0,<sp/>1.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Closed(2.0,<sp/>4.0),</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal">const<sp/>Interval&lt;Real&gt;<sp/>bounds<sp/>=<sp/>Interval&lt;Real&gt;::Closed(1.5,<sp/>4.5)</highlight></codeline>
+<codeline><highlight class="normal">Array&lt;Interval&lt;Real&gt;&gt;<sp/>gaps<sp/>=<sp/>Interval&lt;Real&gt;::GetGaps(intervals,<sp/>bounds);</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>{[1.5,<sp/>2.0],<sp/>[4.0,<sp/>4.5]}</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Gaps array </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="399" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a4a08b629ac0bd654b51ff0c8210ce217" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt; &gt;</type>
+        <definition>static ctnr::Array&lt;Interval&lt;T&gt; &gt; ostk::mathematics::object::Interval&lt; T &gt;::LogicalOr</definition>
+        <argsstring>(const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anIntervalArray, const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anotherIntervalArray)</argsstring>
+        <name>LogicalOr</name>
+        <param>
+          <type>const ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;&gt; &amp;</type>
+          <declname>anIntervalArray</declname>
+        </param>
+        <param>
+          <type>const ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;&gt; &amp;</type>
+          <declname>anotherIntervalArray</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new array that contains the intervals representing a logical &apos;OR&apos; conjunction between the two arrays. The resulting array will contain the union of intervals of the provided arrays, i.e. intervals that overlap with intervals from one of the arrays OR the other. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Array&lt;Interval&lt;Real&gt;&gt;<sp/>anIntervalArray<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Closed(-1.0,<sp/>1.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Closed(2.0,<sp/>4.0),</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Array&lt;Interval&lt;Real&gt;&gt;<sp/>anotherIntervalArray<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Open(0.5,<sp/>1.5),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Open(3.0,<sp/>5.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Open(7.0,<sp/>8.0),</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Array&lt;Interval&lt;Real&gt;&gt;<sp/>logicalOr<sp/>=<sp/>Interval&lt;Real&gt;::LogicalOr(anIntervalArray,</highlight></codeline>
+<codeline><highlight class="normal">anotherIntervalArray);</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>{[-1.0,<sp/>1.5),<sp/>[2.0,<sp/>5.0),<sp/>(7.0,<sp/>8.0)}</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Logical &apos;OR&apos; array </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="426" column="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a2bf375749b313b2e534b1a42d23b6583" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt; &gt;</type>
+        <definition>static ctnr::Array&lt;Interval&lt;T&gt; &gt; ostk::mathematics::object::Interval&lt; T &gt;::LogicalAnd</definition>
+        <argsstring>(const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anIntervalArray, const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anotherIntervalArray)</argsstring>
+        <name>LogicalAnd</name>
+        <param>
+          <type>const ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;&gt; &amp;</type>
+          <declname>anIntervalArray</declname>
+        </param>
+        <param>
+          <type>const ctnr::Array&lt; <ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;&gt; &amp;</type>
+          <declname>anotherIntervalArray</declname>
+        </param>
+        <briefdescription>
+<para>Creates a new array that contains the intervals representing a logical &apos;AND&apos; conjunction between the two arrays. The rsulting array will contain the intersection of intervals of the provided arrays, i.e. intervals that overal with intervals from one of the arrays AND the other. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><programlisting><codeline><highlight class="normal">Array&lt;Interval&lt;Real&gt;&gt;<sp/>anIntervalArray<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Closed(-1.0,<sp/>1.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Closed(2.0,<sp/>4.0),</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Array&lt;Interval&lt;Real&gt;&gt;<sp/>anotherIntervalArray<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Open(0.5,<sp/>1.5),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Open(3.0,<sp/>5.0),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>Interval&lt;Real&gt;::Open(7.0,<sp/>8.0),</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Array&lt;Interval&lt;Real&gt;&gt;<sp/>logicalAnd<sp/>=<sp/>Interval&lt;Real&gt;::LogicalAnd(anIntervalArray,</highlight></codeline>
+<codeline><highlight class="normal">anotherIntervalArray);</highlight></codeline>
+<codeline><highlight class="normal">//<sp/>{(0.5,<sp/>1.0),<sp/>[2.0,<sp/>4.0]}</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>Logical &apos;AND&apos; array </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="453" column="24"/>
+      </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ac57a376cb40367712a31e57b82d4bf96" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
         <definition>static Interval&lt;T&gt; ostk::mathematics::object::Interval&lt; T &gt;::Parse</definition>
@@ -857,7 +1069,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="343" column="21"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="466" column="21"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1a906c45e8ea21c1d762015a491afa2254" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>types::String</type>
@@ -889,7 +1101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="354" column="26"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="477" column="26"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -916,7 +1128,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="357" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="480" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1ade1571d889e2c59a03681fb26240143c" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -941,7 +1153,38 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="358" column="10"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="481" column="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1object_1_1_interval_1aebbf08bcb1e5e9c1a0944b666abbccd4" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classostk_1_1mathematics_1_1object_1_1_interval" kindref="compound">Interval</ref>&lt; T &gt;</type>
+        <definition>static Interval&lt;T&gt; ostk::mathematics::object::Interval&lt; T &gt;::buildInterval</definition>
+        <argsstring>(const T &amp;lowerBound, const bool &amp;openLowerBound, const T &amp;upperBound, const bool &amp;openUpperBound)</argsstring>
+        <name>buildInterval</name>
+        <param>
+          <type>const T &amp;</type>
+          <declname>lowerBound</declname>
+        </param>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>openLowerBound</declname>
+        </param>
+        <param>
+          <type>const T &amp;</type>
+          <declname>upperBound</declname>
+        </param>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>openUpperBound</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="482" column="21"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -974,17 +1217,20 @@
         <link refid="classostk_1_1mathematics_1_1object_1_1_interval_base"/>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="46" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="45" bodyend="364"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" line="46" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/Object/Interval.hpp" bodystart="45" bodyend="490"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ac2e35a2096405efb9a7ab511a1c2e532" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>accessLowerBound</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a575cb7312386085246bed0ee94aeda56" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>accessUpperBound</name></member>
+      <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1aebbf08bcb1e5e9c1a0944b666abbccd4" prot="private" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>buildInterval</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1aac4f176cc812d094c5dc6ffdf42050d6" prot="private" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>checkAgainstLowerBound</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ade1571d889e2c59a03681fb26240143c" prot="private" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>checkAgainstUpperBound</name></member>
+      <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ad3ed5f62f822cf770b439c1aa6283639" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>Clip</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a3d13b7bfa9bcfee7dd3a7f9998378c4b" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>Closed</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ac80d99178336fdcddf7406757f0cc27e" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a83de87f899ef154f8364c875a45e89b5" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>contains</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ad84a50656e1779837cdf34e8cb8867a2" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>generateArrayWithSize</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ad1636246dd97c94a67d38b5d2a8eb868" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>generateArrayWithStep</name></member>
+      <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a3b1b3713ef5cbc3287bb0591e8deae53" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>GetGaps</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a2d06470c41c25401977c6a1b0da578e1" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>getIntersectionWith</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a79e64fd3c8faa78c8b62859c5b095b60" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>getLowerBound</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1aed3a6e8e931beaa732211ccb44e2c43d" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>getType</name></member>
@@ -996,7 +1242,10 @@
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a625893384a0eea6cedbe88172764a525" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>Interval</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a6dd09d2e325303a5ad0097bed3896708" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>isDefined</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a1f279c73d8c7a5fa69ce52dc301d1f5a" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>isDegenerate</name></member>
+      <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a2bf375749b313b2e534b1a42d23b6583" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>LogicalAnd</name></member>
+      <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a4a08b629ac0bd654b51ff0c8210ce217" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>LogicalOr</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a7f84e7aef2105110a4e79675f1151892" prot="private" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>lowerBound_</name></member>
+      <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ac896cb95eb898a697f0b8c55f5f16f4b" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>Merge</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a0dc8428f4db393e2ae009e2a8730c8c2" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>Open</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a0af7fe64d3e97061f44348b799654619" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>operator!=</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a3aa32afa8cb5d85eeb45540b0bf5657b" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>operator&lt;&lt;</name></member>
@@ -1005,6 +1254,7 @@
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a190b44671c94ecef7725747127bb6060" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>setLowerBound</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ad0010cca002a86b15a2dc9e4f5335201" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>setType</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a42cfebf36ddd48dde7e0673f62716eb3" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>setUpperBound</name></member>
+      <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a67fd1bf9afb4a553eda2782c1f1e69d7" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>Sort</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a906c45e8ea21c1d762015a491afa2254" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>StringFromType</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a2078d591dd42e83abb2851a49e00cddf" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>toString</name></member>
       <member refid="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201" prot="public" virt="non-virtual"><scope>ostk::mathematics::object::Interval</scope><name>Type</name></member>

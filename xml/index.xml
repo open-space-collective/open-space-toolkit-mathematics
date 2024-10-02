@@ -488,10 +488,17 @@
     <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a0dc8428f4db393e2ae009e2a8730c8c2" kind="function"><name>Open</name></member>
     <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ac0553ec6683fa168ae0beb39d1a4377a" kind="function"><name>HalfOpenLeft</name></member>
     <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ac7c309f97e84496b0520879137fb26a4" kind="function"><name>HalfOpenRight</name></member>
+    <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ad3ed5f62f822cf770b439c1aa6283639" kind="function"><name>Clip</name></member>
+    <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a67fd1bf9afb4a553eda2782c1f1e69d7" kind="function"><name>Sort</name></member>
+    <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ac896cb95eb898a697f0b8c55f5f16f4b" kind="function"><name>Merge</name></member>
+    <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a3b1b3713ef5cbc3287bb0591e8deae53" kind="function"><name>GetGaps</name></member>
+    <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a4a08b629ac0bd654b51ff0c8210ce217" kind="function"><name>LogicalOr</name></member>
+    <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a2bf375749b313b2e534b1a42d23b6583" kind="function"><name>LogicalAnd</name></member>
     <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ac57a376cb40367712a31e57b82d4bf96" kind="function"><name>Parse</name></member>
     <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1a906c45e8ea21c1d762015a491afa2254" kind="function"><name>StringFromType</name></member>
     <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1aac4f176cc812d094c5dc6ffdf42050d6" kind="function"><name>checkAgainstLowerBound</name></member>
     <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1ade1571d889e2c59a03681fb26240143c" kind="function"><name>checkAgainstUpperBound</name></member>
+    <member refid="classostk_1_1mathematics_1_1object_1_1_interval_1aebbf08bcb1e5e9c1a0944b666abbccd4" kind="function"><name>buildInterval</name></member>
   </compound>
   <compound refid="classostk_1_1mathematics_1_1object_1_1_interval_base" kind="class"><name>ostk::mathematics::object::IntervalBase</name>
     <member refid="classostk_1_1mathematics_1_1object_1_1_interval_base_1a2ad76e98fc37333faeb21490c7b4f201" kind="enum"><name>Type</name></member>

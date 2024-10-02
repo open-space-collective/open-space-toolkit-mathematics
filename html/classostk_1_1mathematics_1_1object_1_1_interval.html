@@ -188,6 +188,24 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ac7c309f97e84496b0520879137fb26a4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html#ac7c309f97e84496b0520879137fb26a4">HalfOpenRight</a> (const T &amp;aLowerBound, const T &amp;anUpperBound)</td></tr>
 <tr class="memdesc:ac7c309f97e84496b0520879137fb26a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an half-open right interval.  <a href="classostk_1_1mathematics_1_1object_1_1_interval.html#ac7c309f97e84496b0520879137fb26a4">More...</a><br /></td></tr>
 <tr class="separator:ac7c309f97e84496b0520879137fb26a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3ed5f62f822cf770b439c1aa6283639"><td class="memItemLeft" align="right" valign="top">static ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html#ad3ed5f62f822cf770b439c1aa6283639">Clip</a> (const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;anIntervalArray, const <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt; &amp;anInterval)</td></tr>
+<tr class="memdesc:ad3ed5f62f822cf770b439c1aa6283639"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new array of Intervals clipped by the provided <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html" title="Set of numbers with the property that any number that lies between two numbers in the set is also inc...">Interval</a>.  <a href="classostk_1_1mathematics_1_1object_1_1_interval.html#ad3ed5f62f822cf770b439c1aa6283639">More...</a><br /></td></tr>
+<tr class="separator:ad3ed5f62f822cf770b439c1aa6283639"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67fd1bf9afb4a553eda2782c1f1e69d7"><td class="memItemLeft" align="right" valign="top">static ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a67fd1bf9afb4a553eda2782c1f1e69d7">Sort</a> (const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;anIntervalArray, const bool &amp;byLowerBound=true, const bool &amp;ascending=true)</td></tr>
+<tr class="memdesc:a67fd1bf9afb4a553eda2782c1f1e69d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new sorted array, the order based on the inputted parameters.  <a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a67fd1bf9afb4a553eda2782c1f1e69d7">More...</a><br /></td></tr>
+<tr class="separator:a67fd1bf9afb4a553eda2782c1f1e69d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac896cb95eb898a697f0b8c55f5f16f4b"><td class="memItemLeft" align="right" valign="top">static ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html#ac896cb95eb898a697f0b8c55f5f16f4b">Merge</a> (const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;anIntervalArray)</td></tr>
+<tr class="memdesc:ac896cb95eb898a697f0b8c55f5f16f4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new array without any overlaps and sorted by their lower bound.  <a href="classostk_1_1mathematics_1_1object_1_1_interval.html#ac896cb95eb898a697f0b8c55f5f16f4b">More...</a><br /></td></tr>
+<tr class="separator:ac896cb95eb898a697f0b8c55f5f16f4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b1b3713ef5cbc3287bb0591e8deae53"><td class="memItemLeft" align="right" valign="top">static ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3b1b3713ef5cbc3287bb0591e8deae53">GetGaps</a> (const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;anIntervalArray, const <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt; &amp;anInterval=<a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a877844b24a34a2c5c5109ce658cd5551">Interval::Undefined</a>())</td></tr>
+<tr class="memdesc:a3b1b3713ef5cbc3287bb0591e8deae53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new array that contains the gaps between an array of intervals. If an interval is actually defined, only intervals intersecting with the interval are considered and potential leading and trailing gaps w.r.t. the interval boundaries are included. The intervals are previously merged and sorted.  <a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3b1b3713ef5cbc3287bb0591e8deae53">More...</a><br /></td></tr>
+<tr class="separator:a3b1b3713ef5cbc3287bb0591e8deae53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a08b629ac0bd654b51ff0c8210ce217"><td class="memItemLeft" align="right" valign="top">static ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a4a08b629ac0bd654b51ff0c8210ce217">LogicalOr</a> (const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;anIntervalArray, const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;anotherIntervalArray)</td></tr>
+<tr class="memdesc:a4a08b629ac0bd654b51ff0c8210ce217"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new array that contains the intervals representing a logical 'OR' conjunction between the two arrays. The resulting array will contain the union of intervals of the provided arrays, i.e. intervals that overlap with intervals from one of the arrays OR the other.  <a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a4a08b629ac0bd654b51ff0c8210ce217">More...</a><br /></td></tr>
+<tr class="separator:a4a08b629ac0bd654b51ff0c8210ce217"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bf375749b313b2e534b1a42d23b6583"><td class="memItemLeft" align="right" valign="top">static ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a2bf375749b313b2e534b1a42d23b6583">LogicalAnd</a> (const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;anIntervalArray, const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;anotherIntervalArray)</td></tr>
+<tr class="memdesc:a2bf375749b313b2e534b1a42d23b6583"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new array that contains the intervals representing a logical 'AND' conjunction between the two arrays. The rsulting array will contain the intersection of intervals of the provided arrays, i.e. intervals that overal with intervals from one of the arrays AND the other.  <a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a2bf375749b313b2e534b1a42d23b6583">More...</a><br /></td></tr>
+<tr class="separator:a2bf375749b313b2e534b1a42d23b6583"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac57a376cb40367712a31e57b82d4bf96"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html#ac57a376cb40367712a31e57b82d4bf96">Parse</a> (const types::String &amp;aString)</td></tr>
 <tr class="memdesc:ac57a376cb40367712a31e57b82d4bf96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs an interval from a given string.  <a href="classostk_1_1mathematics_1_1object_1_1_interval.html#ac57a376cb40367712a31e57b82d4bf96">More...</a><br /></td></tr>
 <tr class="separator:ac57a376cb40367712a31e57b82d4bf96"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -317,6 +335,54 @@ template&lt;class T &gt; </div>
 <div class="fragment"><div class="line">Interval&lt;Real&gt; interval = <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(0.0, 1.0) ;</div>
 <div class="line">interval.accessUpperBound() ; <span class="comment">// &amp;1.0</span></div>
 </div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Reference to upper bound </dd></dl>
+
+</div>
+</div>
+<a id="ad3ed5f62f822cf770b439c1aa6283639"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3ed5f62f822cf770b439c1aa6283639">&#9670;&nbsp;</a></span>Clip()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static ctnr::Array&lt;<a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt;T&gt; &gt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">ostk::mathematics::object::Interval</a>&lt; T &gt;::Clip </td>
+          <td>(</td>
+          <td class="paramtype">const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>anIntervalArray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>anInterval</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new array of Intervals clipped by the provided <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html" title="Set of numbers with the property that any number that lies between two numbers in the set is also inc...">Interval</a>. </p>
+<div class="fragment"><div class="line">Array&lt;Interval&lt;Real&gt;&gt; unclipped = {</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(-1.0, 1.0),</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(2.0, 4.0),</div>
+<div class="line">};</div>
+<div class="line"><span class="keyword">const</span> Interval&lt;Real&gt; clipper = <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(0.0, 3.0);</div>
+<div class="line">Array&lt;Interval&lt;Real&gt;&gt; clipped = <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#ad3ed5f62f822cf770b439c1aa6283639">Interval&lt;Real&gt;::Clip</a>(unclipped, clipper);</div>
+<div class="line"><span class="comment">// {[0.0, 1.0], [2.0, 3.0]}</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Clipped array </dd></dl>
 
 </div>
 </div>
@@ -483,6 +549,54 @@ template&lt;class U &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Array of values </dd></dl>
+
+</div>
+</div>
+<a id="a3b1b3713ef5cbc3287bb0591e8deae53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b1b3713ef5cbc3287bb0591e8deae53">&#9670;&nbsp;</a></span>GetGaps()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static ctnr::Array&lt;<a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt;T&gt; &gt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">ostk::mathematics::object::Interval</a>&lt; T &gt;::GetGaps </td>
+          <td>(</td>
+          <td class="paramtype">const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>anIntervalArray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>anInterval</em> = <code><a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt;&#160;T&#160;&gt;::<a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a877844b24a34a2c5c5109ce658cd5551">Undefined</a>()</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new array that contains the gaps between an array of intervals. If an interval is actually defined, only intervals intersecting with the interval are considered and potential leading and trailing gaps w.r.t. the interval boundaries are included. The intervals are previously merged and sorted. </p>
+<div class="fragment"><div class="line">Array&lt;Interval&lt;Real&gt;&gt; intervals = {</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(-1.0, 1.0),</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(2.0, 4.0),</div>
+<div class="line">};</div>
+<div class="line"><span class="keyword">const</span> Interval&lt;Real&gt; bounds = <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(1.5, 4.5)</div>
+<div class="line">Array&lt;<a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a625893384a0eea6cedbe88172764a525">Interval</a>&lt;Real&gt;&gt; gaps = <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a625893384a0eea6cedbe88172764a525">Interval</a>&lt;Real&gt;::<a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3b1b3713ef5cbc3287bb0591e8deae53">GetGaps</a>(intervals, bounds);</div>
+<div class="line"><span class="comment">// {[1.5, 2.0], [4.0, 4.5]}</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Gaps array </dd></dl>
 
 </div>
 </div>
@@ -783,6 +897,153 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
+<a id="a2bf375749b313b2e534b1a42d23b6583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bf375749b313b2e534b1a42d23b6583">&#9670;&nbsp;</a></span>LogicalAnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static ctnr::Array&lt;<a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt;T&gt; &gt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">ostk::mathematics::object::Interval</a>&lt; T &gt;::LogicalAnd </td>
+          <td>(</td>
+          <td class="paramtype">const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>anIntervalArray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>anotherIntervalArray</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new array that contains the intervals representing a logical 'AND' conjunction between the two arrays. The rsulting array will contain the intersection of intervals of the provided arrays, i.e. intervals that overal with intervals from one of the arrays AND the other. </p>
+<div class="fragment"><div class="line">Array&lt;Interval&lt;Real&gt;&gt; anIntervalArray = {</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(-1.0, 1.0),</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(2.0, 4.0),</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">Array&lt;Interval&lt;Real&gt;&gt; anotherIntervalArray = {</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a0dc8428f4db393e2ae009e2a8730c8c2">Interval&lt;Real&gt;::Open</a>(0.5, 1.5),</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a0dc8428f4db393e2ae009e2a8730c8c2">Interval&lt;Real&gt;::Open</a>(3.0, 5.0),</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a0dc8428f4db393e2ae009e2a8730c8c2">Interval&lt;Real&gt;::Open</a>(7.0, 8.0),</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">Array&lt;Interval&lt;Real&gt;&gt; logicalAnd = <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a2bf375749b313b2e534b1a42d23b6583">Interval&lt;Real&gt;::LogicalAnd</a>(anIntervalArray,</div>
+<div class="line">anotherIntervalArray);</div>
+<div class="line"><span class="comment">// {(0.5, 1.0), [2.0, 4.0]}</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Logical 'AND' array </dd></dl>
+
+</div>
+</div>
+<a id="a4a08b629ac0bd654b51ff0c8210ce217"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a08b629ac0bd654b51ff0c8210ce217">&#9670;&nbsp;</a></span>LogicalOr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static ctnr::Array&lt;<a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt;T&gt; &gt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">ostk::mathematics::object::Interval</a>&lt; T &gt;::LogicalOr </td>
+          <td>(</td>
+          <td class="paramtype">const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>anIntervalArray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>anotherIntervalArray</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new array that contains the intervals representing a logical 'OR' conjunction between the two arrays. The resulting array will contain the union of intervals of the provided arrays, i.e. intervals that overlap with intervals from one of the arrays OR the other. </p>
+<div class="fragment"><div class="line">Array&lt;Interval&lt;Real&gt;&gt; anIntervalArray = {</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(-1.0, 1.0),</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(2.0, 4.0),</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">Array&lt;Interval&lt;Real&gt;&gt; anotherIntervalArray = {</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a0dc8428f4db393e2ae009e2a8730c8c2">Interval&lt;Real&gt;::Open</a>(0.5, 1.5),</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a0dc8428f4db393e2ae009e2a8730c8c2">Interval&lt;Real&gt;::Open</a>(3.0, 5.0),</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a0dc8428f4db393e2ae009e2a8730c8c2">Interval&lt;Real&gt;::Open</a>(7.0, 8.0),</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line">Array&lt;Interval&lt;Real&gt;&gt; logicalOr = <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a4a08b629ac0bd654b51ff0c8210ce217">Interval&lt;Real&gt;::LogicalOr</a>(anIntervalArray,</div>
+<div class="line">anotherIntervalArray);</div>
+<div class="line"><span class="comment">// {[-1.0, 1.5), [2.0, 5.0), (7.0, 8.0)}</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Logical 'OR' array </dd></dl>
+
+</div>
+</div>
+<a id="ac896cb95eb898a697f0b8c55f5f16f4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac896cb95eb898a697f0b8c55f5f16f4b">&#9670;&nbsp;</a></span>Merge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static ctnr::Array&lt;<a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt;T&gt; &gt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">ostk::mathematics::object::Interval</a>&lt; T &gt;::Merge </td>
+          <td>(</td>
+          <td class="paramtype">const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>anIntervalArray</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new array without any overlaps and sorted by their lower bound. </p>
+<div class="fragment"><div class="line">Array&lt;Interval&lt;Real&gt;&gt; array = {</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(-1.0, 1.0),</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(-2.0, 0.0),</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(3.0, 4.0),</div>
+<div class="line">};</div>
+<div class="line">Array&lt;Interval&lt;Real&gt;&gt; merged = <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#ac896cb95eb898a697f0b8c55f5f16f4b">Interval&lt;Real&gt;::Merge</a>(array); <span class="comment">// {[-2.0, 1.0], [3.0, 4.0]}</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Merged array </dd></dl>
+
+</div>
+</div>
 <a id="a0dc8428f4db393e2ae009e2a8730c8c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0dc8428f4db393e2ae009e2a8730c8c2">&#9670;&nbsp;</a></span>Open()</h2>
 
@@ -1007,6 +1268,58 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
+<a id="a67fd1bf9afb4a553eda2782c1f1e69d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67fd1bf9afb4a553eda2782c1f1e69d7">&#9670;&nbsp;</a></span>Sort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static ctnr::Array&lt;<a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt;T&gt; &gt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">ostk::mathematics::object::Interval</a>&lt; T &gt;::Sort </td>
+          <td>(</td>
+          <td class="paramtype">const ctnr::Array&lt; <a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html">Interval</a>&lt; T &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>anIntervalArray</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>byLowerBound</em> = <code>true</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>ascending</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Creates a new sorted array, the order based on the inputted parameters. </p>
+<div class="fragment"><div class="line">Array&lt;Interval&lt;Real&gt;&gt; unsorted = {</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(-1.0, 1.0),</div>
+<div class="line">    <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(-3.0, 0.0),</div>
+<div class="line">};</div>
+<div class="line">Array&lt;Interval&lt;Real&gt;&gt; sorted = <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a67fd1bf9afb4a553eda2782c1f1e69d7">Interval&lt;Real&gt;::Sort</a>(unsorted); <span class="comment">// {[-3.0, 0.0], [-1.0, 1.0]}</span></div>
+</div><!-- fragment --><dl class="section return"><dt>Returns</dt><dd>Sorted array </dd></dl>
+
+</div>
+</div>
 <a id="a906c45e8ea21c1d762015a491afa2254"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a906c45e8ea21c1d762015a491afa2254">&#9670;&nbsp;</a></span>StringFromType()</h2>
 
@@ -1157,14 +1470,21 @@ template&lt;class U &gt; </div>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_a625893384a0eea6cedbe88172764a525"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a625893384a0eea6cedbe88172764a525">ostk::mathematics::object::Interval::Interval</a></div><div class="ttdeci">Interval(const T &amp;aLowerBound, const T &amp;anUpperBound, const Interval::Type &amp;anIntervalType)</div><div class="ttdoc">Constructor.</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_ac7c309f97e84496b0520879137fb26a4"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#ac7c309f97e84496b0520879137fb26a4">ostk::mathematics::object::Interval::HalfOpenRight</a></div><div class="ttdeci">static Interval&lt; T &gt; HalfOpenRight(const T &amp;aLowerBound, const T &amp;anUpperBound)</div><div class="ttdoc">Constructs an half-open right interval.</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_a3b1b3713ef5cbc3287bb0591e8deae53"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3b1b3713ef5cbc3287bb0591e8deae53">ostk::mathematics::object::Interval::GetGaps</a></div><div class="ttdeci">static ctnr::Array&lt; Interval&lt; T &gt; &gt; GetGaps(const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anIntervalArray, const Interval&lt; T &gt; &amp;anInterval=Interval::Undefined())</div><div class="ttdoc">Creates a new array that contains the gaps between an array of intervals. If an interval is actually ...</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_a0dc8428f4db393e2ae009e2a8730c8c2"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a0dc8428f4db393e2ae009e2a8730c8c2">ostk::mathematics::object::Interval::Open</a></div><div class="ttdeci">static Interval&lt; T &gt; Open(const T &amp;aLowerBound, const T &amp;anUpperBound)</div><div class="ttdoc">Constructs an open interval.</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_a877844b24a34a2c5c5109ce658cd5551"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a877844b24a34a2c5c5109ce658cd5551">ostk::mathematics::object::Interval::Undefined</a></div><div class="ttdeci">static Interval&lt; T &gt; Undefined()</div><div class="ttdoc">Constructs an undefined interval.</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_ac896cb95eb898a697f0b8c55f5f16f4b"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#ac896cb95eb898a697f0b8c55f5f16f4b">ostk::mathematics::object::Interval::Merge</a></div><div class="ttdeci">static ctnr::Array&lt; Interval&lt; T &gt; &gt; Merge(const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anIntervalArray)</div><div class="ttdoc">Creates a new array without any overlaps and sorted by their lower bound.</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_base_html_a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval_base.html#a2ad76e98fc37333faeb21490c7b4f201a03f4a47830f97377a35321051685071e">ostk::mathematics::object::IntervalBase::Type::Closed</a></div><div class="ttdeci">@ Closed</div><div class="ttdoc">Closed interval type [a, b].</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_ad3ed5f62f822cf770b439c1aa6283639"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#ad3ed5f62f822cf770b439c1aa6283639">ostk::mathematics::object::Interval::Clip</a></div><div class="ttdeci">static ctnr::Array&lt; Interval&lt; T &gt; &gt; Clip(const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anIntervalArray, const Interval&lt; T &gt; &amp;anInterval)</div><div class="ttdoc">Creates a new array of Intervals clipped by the provided Interval.</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_a906c45e8ea21c1d762015a491afa2254"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a906c45e8ea21c1d762015a491afa2254">ostk::mathematics::object::Interval::StringFromType</a></div><div class="ttdeci">static types::String StringFromType(const Interval::Type &amp;anIntervalType)</div><div class="ttdoc">Converts interval type to string.</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_a3d13b7bfa9bcfee7dd3a7f9998378c4b"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">ostk::mathematics::object::Interval::Closed</a></div><div class="ttdeci">static Interval&lt; T &gt; Closed(const T &amp;aLowerBound, const T &amp;anUpperBound)</div><div class="ttdoc">Constructs a closed interval.</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_a67fd1bf9afb4a553eda2782c1f1e69d7"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a67fd1bf9afb4a553eda2782c1f1e69d7">ostk::mathematics::object::Interval::Sort</a></div><div class="ttdeci">static ctnr::Array&lt; Interval&lt; T &gt; &gt; Sort(const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anIntervalArray, const bool &amp;byLowerBound=true, const bool &amp;ascending=true)</div><div class="ttdoc">Creates a new sorted array, the order based on the inputted parameters.</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_ac57a376cb40367712a31e57b82d4bf96"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#ac57a376cb40367712a31e57b82d4bf96">ostk::mathematics::object::Interval::Parse</a></div><div class="ttdeci">static Interval&lt; T &gt; Parse(const types::String &amp;aString)</div><div class="ttdoc">Constructs an interval from a given string.</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_ac0553ec6683fa168ae0beb39d1a4377a"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#ac0553ec6683fa168ae0beb39d1a4377a">ostk::mathematics::object::Interval::HalfOpenLeft</a></div><div class="ttdeci">static Interval&lt; T &gt; HalfOpenLeft(const T &amp;aLowerBound, const T &amp;anUpperBound)</div><div class="ttdoc">Constructs an half-open left interval.</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_a2bf375749b313b2e534b1a42d23b6583"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a2bf375749b313b2e534b1a42d23b6583">ostk::mathematics::object::Interval::LogicalAnd</a></div><div class="ttdeci">static ctnr::Array&lt; Interval&lt; T &gt; &gt; LogicalAnd(const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anIntervalArray, const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anotherIntervalArray)</div><div class="ttdoc">Creates a new array that contains the intervals representing a logical 'AND' conjunction between the ...</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1object_1_1_interval_html_a4a08b629ac0bd654b51ff0c8210ce217"><div class="ttname"><a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a4a08b629ac0bd654b51ff0c8210ce217">ostk::mathematics::object::Interval::LogicalOr</a></div><div class="ttdeci">static ctnr::Array&lt; Interval&lt; T &gt; &gt; LogicalOr(const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anIntervalArray, const ctnr::Array&lt; Interval&lt; T &gt;&gt; &amp;anotherIntervalArray)</div><div class="ttdoc">Creates a new array that contains the intervals representing a logical 'OR' conjunction between the t...</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
