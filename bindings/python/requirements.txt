@@ -1,5 +1,5 @@
 # Apache License 2.0
 
-numpy
+numpy>=1.0,<3.0
 
 open-space-toolkit-core~=4.0
