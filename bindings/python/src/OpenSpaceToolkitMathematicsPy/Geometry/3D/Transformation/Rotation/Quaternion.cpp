@@ -70,7 +70,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
         )
 
         .def("is_defined", &Quaternion::isDefined)
-        .def("is_unitary", &Quaternion::isUnitary, arg("norm_tolerance") = Real::Epsilon())
+        .def("is_unitary", &Quaternion::isUnitary, arg_v("norm_tolerance", Real::Epsilon(), "Real.Epislon()"))
         .def("is_near", &Quaternion::isNear, arg("quaternion"), arg("angular_tolerance"))
 
         .def("x", &Quaternion::x)
@@ -89,7 +89,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
         .def("cross_multiply", &Quaternion::crossMultiply, arg("quaternion"))
         .def("dot_multiply", &Quaternion::dotMultiply, arg("quaternion"))
         .def("dot_product", &Quaternion::dotProduct, arg("quaternion"))
-        .def("rotate_vector", &Quaternion::rotateVector, arg("vector"), arg("norm_tolerance") = Real::Epsilon())
+        .def("rotate_vector", &Quaternion::rotateVector, arg("vector"), arg_v("norm_tolerance", Real::Epsilon(), "Real.Epsilon()"))
         .def("to_vector", &Quaternion::toVector, arg("format"))
         .def(
             "to_string",
