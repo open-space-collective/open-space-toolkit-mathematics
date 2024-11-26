@@ -953,7 +953,7 @@
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a4aa0b88ebd82e92d05210c0b9d5b1cc3" kind="function"><name>operator*=</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1aa6ec77b7da4aa05500e6551a4797bbb3" kind="function"><name>operator/=</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a25d3f5bd7307918ea70b3b21f80a3001" kind="function"><name>isDefined</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1aea4706c3cc65b5a8e7250a042cb1edaa" kind="function"><name>isUnitary</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1adcd83016c36473196ae00d9f83253151" kind="function"><name>isUnitary</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1afab79d88d91c8fc0a6b888a91f0e52bd" kind="function"><name>isNear</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1adfdffa7d538271cddf839224bcb4e738" kind="function"><name>x</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a10f6aba9001c60d4e106a7989520c03a" kind="function"><name>y</name></member>
@@ -971,7 +971,7 @@
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a3f4cbf44fdc4f0ef7a054ec12a08e9ca" kind="function"><name>crossMultiply</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a50c95b29f1d658560a0005ee47d40e3a" kind="function"><name>dotMultiply</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1adbc57819c76d4b481fc84bb20667b796" kind="function"><name>dotProduct</name></member>
-    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a2f204333466437f149ebf1ec186b4c40" kind="function"><name>rotateVector</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a3c28c1b821f2ed757481257bb5a3535c" kind="function"><name>rotateVector</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ac23b62bf5637ca0a7a533434641effb3" kind="function"><name>toVector</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a2aa46fa76d7a9fcbad21db53e7061f45" kind="function"><name>toString</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1abcc5bbb2b290710f39d2111f155ea8e3" kind="function"><name>toString</name></member>
