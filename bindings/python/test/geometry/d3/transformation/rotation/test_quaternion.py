@@ -46,6 +46,7 @@ class TestQuaternion:
 
     def test_is_unitary_success(self, quaternion: Quaternion):
         assert quaternion.is_unitary() is True
+        assert quaternion.is_unitary(0.0001) is True
 
     def test_is_near_success(self, quaternion: Quaternion):
         assert quaternion.is_near(quaternion, Angle.zero()) is True

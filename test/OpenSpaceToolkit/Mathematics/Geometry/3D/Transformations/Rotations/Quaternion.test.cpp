@@ -352,7 +352,14 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
     }
 
     {
+        EXPECT_FALSE(Quaternion::XYZS(1.0001, 0.0, 0.0, 0.0).isUnitary(Real(0.0001)));
+        EXPECT_TRUE(Quaternion::XYZS(1.0001, 0.0, 0.0, 0.0).isUnitary(Real(0.0003)));
+    }
+
+    {
         EXPECT_ANY_THROW(Quaternion::Undefined().isUnitary());
+        EXPECT_ANY_THROW(Quaternion::Undefined().isUnitary(Real(0.0001)));
+        EXPECT_ANY_THROW(Quaternion::XYZS(1.0001, 0.0, 0.0, 0.0).isUnitary(Real(-0.0001)));
     }
 }
 
