@@ -275,7 +275,7 @@ class Quaternion
     ///
     /// @return                 True if Quaternion is unitary
 
-    bool isUnitary() const;
+    bool isUnitary(const Real& aNormTolerance = Real::Epsilon()) const;
 
     /// @brief                  Check if Quaternion is near another Quaternion
     ///
@@ -476,7 +476,7 @@ class Quaternion
     /// @param                  [in] aQuaternion A Quaternion
     /// @return                 Vector
 
-    Vector3d rotateVector(const Vector3d& aVector) const;
+    Vector3d rotateVector(const Vector3d& aVector, const Real& aNormTolerance = Real::Epsilon()) const;
 
     /// @brief                  Convert Quaternion to its vector representation
     ///

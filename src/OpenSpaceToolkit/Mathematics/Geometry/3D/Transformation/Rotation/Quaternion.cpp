@@ -166,14 +166,14 @@ bool Quaternion::isDefined() const
     return x_.isDefined() && y_.isDefined() && z_.isDefined() && s_.isDefined();
 }
 
-bool Quaternion::isUnitary() const
+bool Quaternion::isUnitary(const Real& aNormTolerance) const
 {
     if (!this->isDefined())
     {
         throw ostk::core::error::runtime::Undefined("Quaternion");
     }
 
-    return std::abs(((x_ * x_) + (y_ * y_) + (z_ * z_) + (s_ * s_)) - 1.0) <= Real::Epsilon();
+    return std::abs(((x_ * x_) + (y_ * y_) + (z_ * z_) + (s_ * s_)) - 1.0) <= aNormTolerance;
 }
 
 bool Quaternion::isNear(const Quaternion& aQuaternion, const Angle& anAngularTolerance) const
@@ -349,14 +349,14 @@ Real Quaternion::dotProduct(const Quaternion& aQuaternion) const
     return (x_ * aQuaternion.x_) + (y_ * aQuaternion.y_) + (z_ * aQuaternion.z_) + (s_ * aQuaternion.s_);
 }
 
-Vector3d Quaternion::rotateVector(const Vector3d& aVector) const
+Vector3d Quaternion::rotateVector(const Vector3d& aVector, const Real& aNormTolerance) const
 {
     if (!aVector.isDefined())
     {
         throw ostk::core::error::runtime::Undefined("Vector");
     }
 
-    if (!this->isUnitary())
+    if (!this->isUnitary(aNormTolerance))
     {
         throw ostk::core::error::RuntimeError("Quaternion with norm [{}] is not unitary.", this->norm());
     }
