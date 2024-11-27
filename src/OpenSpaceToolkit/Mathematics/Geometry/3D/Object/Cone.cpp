@@ -210,9 +210,62 @@ bool Cone::contains(const Ellipsoid& anEllipsoid) const
         throw ostk::core::error::runtime::Undefined("Cone");
     }
 
-    throw ostk::core::error::runtime::ToBeImplemented("Cone::contains(const Ellipsoid&)");
+    // Check if the cone contains the center of the ellipsoid
+    if (!this->contains(anEllipsoid.getCenter()))
+    {
+        return false;
+    }
 
-    return false;  // TBI
+    // Normalize the cone's axis
+    const Vector3d coneAxis = this->axis_.normalized();
+
+    // Compute the vector from the apex of the cone to the ellipsoid's center
+    const Vector3d apexToCenter = anEllipsoid.getCenter() - this->apex_;
+
+    // Project the vector onto the cone's axis to find the distance along the axis
+    const double distanceAlongAxis = apexToCenter.dot(coneAxis);
+
+    // If the ellipsoid is behind the apex, it's not contained
+    if (distanceAlongAxis < 0.0)
+    {
+        return false;
+    }
+
+    // Calculate the cone's radius at the ellipsoid's center height
+    const double coneRadiusAtCenter = distanceAlongAxis * std::tan(this->angle_.inRadians());
+
+    // Transform the ellipsoid's orientation relative to the cone's axis
+    const Quaternion relativeOrientation = Quaternion::ShortestRotation(coneAxis, Vector3d::Z());
+
+    // Rotate the ellipsoid's axes into the cone's frame
+    const Vector3d ellipsoidFirstAxis =
+        relativeOrientation.rotate(anEllipsoid.getFirstAxis()) * anEllipsoid.getFirstPrincipalSemiAxis();
+    const Vector3d ellipsoidSecondAxis =
+        relativeOrientation.rotate(anEllipsoid.getSecondAxis()) * anEllipsoid.getSecondPrincipalSemiAxis();
+    const Vector3d ellipsoidThirdAxis =
+        relativeOrientation.rotate(anEllipsoid.getThirdAxis()) * anEllipsoid.getThirdPrincipalSemiAxis();
+
+    // Compute the maximum extent of the ellipsoid in the radial direction
+    const double radialExtent = std::max(
+        {Vector2d(ellipsoidFirstAxis.x(), ellipsoidFirstAxis.y()).norm(),
+         Vector2d(ellipsoidSecondAxis.x(), ellipsoidSecondAxis.y()).norm(),
+         Vector2d(ellipsoidThirdAxis.x(), ellipsoidThirdAxis.y()).norm()}
+    );
+
+    // Compute the radial distance from the cone's axis to the ellipsoid's center
+    const Vector3d radialVector = apexToCenter - (distanceAlongAxis * coneAxis);
+    const double radialDistance = radialVector.norm();
+
+    // The total radial distance including the ellipsoid's extent
+    const double totalRadialDistance = radialDistance + radialExtent;
+
+    // Check if the ellipsoid fits within the cone's radius at that height
+    if (totalRadialDistance > coneRadiusAtCenter)
+    {
+        return false;
+    }
+
+    return true;
 }
 
 Point Cone::getApex() const
