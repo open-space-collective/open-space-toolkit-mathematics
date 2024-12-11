@@ -60,7 +60,7 @@ bool Cone::isDefined() const
     return apex_.isDefined() && axis_.isDefined() && angle_.isDefined();
 }
 
-bool Cone::intersects(const Sphere& aSphere, const Size aDiscretizationLevel) const
+bool Cone::intersects(const Sphere& aSphere, [[maybe_unused]] const Size aDiscretizationLevel) const
 {
     if (!aSphere.isDefined())
     {
@@ -72,16 +72,22 @@ bool Cone::intersects(const Sphere& aSphere, const Size aDiscretizationLevel) co
         throw ostk::core::error::runtime::Undefined("Cone");
     }
 
-    for (const auto& ray :
-         this->getRaysOfLateralSurface(aDiscretizationLevel))  // [TBM] Could be improved by calculating rays on the fly
+    const Vector3d apexToCenter = aSphere.getCenter() - apex_;
+    const double distance = apexToCenter.norm();
+
+    if (distance <= aSphere.getRadius())
     {
-        if (ray.intersects(aSphere))
-        {
-            return true;
-        }
+        return true;
     }
 
-    return false;
+    const Vector3d normalizedAxis = axis_.normalized();
+
+    // Angle between cone axis and vector to sphere center
+    const double theta = std::acos(normalizedAxis.dot(apexToCenter.normalized()));
+
+    const double alpha = std::asin(aSphere.getRadius() / distance);
+
+    return theta <= angle_.inRadians() + alpha;
 }
 
 bool Cone::intersects(const Ellipsoid& anEllipsoid, const Size aDiscretizationLevel) const
