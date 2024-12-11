@@ -60,7 +60,7 @@ bool Cone::isDefined() const
     return apex_.isDefined() && axis_.isDefined() && angle_.isDefined();
 }
 
-bool Cone::intersects(const Sphere& aSphere, const Size aDiscretizationLevel) const
+bool Cone::intersects(const Sphere& aSphere, [[maybe_unused]] const Size aDiscretizationLevel) const
 {
     if (!aSphere.isDefined())
     {
