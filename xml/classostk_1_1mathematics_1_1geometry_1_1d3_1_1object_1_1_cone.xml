@@ -244,7 +244,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="109" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="63" bodyend="85"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="109" column="10"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1aa08f535f31cc63cc5675f434b20617e4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -291,7 +291,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="123" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="87" bodyend="109"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="123" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="93" bodyend="115"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a0e66cd58ae5abba7d1c183ec5c9daef7" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -325,7 +325,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="136" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="111" bodyend="136"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="136" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="117" bodyend="142"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1aaa970b79b1e3b9dcd247a4bff7bd9378" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -359,7 +359,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="149" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="138" bodyend="153"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="149" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="144" bodyend="159"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a2f3b44690e2997261115755b7aef8a07" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -393,7 +393,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="162" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="155" bodyend="158"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="162" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="161" bodyend="164"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a81f8bff0944acb412ca59238bb717426" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -427,7 +427,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="175" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="160" bodyend="178"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="175" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="166" bodyend="184"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a3c18746829be63f97a7b50e7c6fa69c4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -461,7 +461,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="188" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="180" bodyend="193"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="188" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="186" bodyend="199"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a589c4383552d6e6dcc23f20dc3d6008d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -495,7 +495,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="201" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="195" bodyend="210"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="201" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="201" bodyend="216"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1af4e2a4ec2ea977f144e7f7e9a0aed779" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_point" kindref="compound">Point</ref></type>
@@ -512,7 +512,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="207" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="212" bodyend="220"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="207" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="218" bodyend="226"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a8089b763c1415d24136cd42b31a95fee" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Vector3d</type>
@@ -529,7 +529,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="213" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="222" bodyend="230"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="213" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="228" bodyend="236"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a9ab023a205fcfdb8b12dae5aae10daad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -546,7 +546,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="219" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="232" bodyend="240"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="219" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="238" bodyend="246"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a4531bad0aa524f19588b4458796b3f78" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Array&lt; <ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_ray" kindref="compound">Ray</ref> &gt;</type>
@@ -577,7 +577,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="226" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="242" bodyend="281"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="226" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="248" bodyend="287"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a7325f4a0c092cb59c505d281d0c064b0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Real</type>
@@ -607,7 +607,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="233" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="283" bodyend="330"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="233" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="289" bodyend="336"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1aff8111459bf4fd52f4890d52ef468c0a" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -663,7 +663,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="242" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="332" bodyend="396"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="242" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="338" bodyend="402"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a4007f417805759277400b050391b77c9" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -719,7 +719,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="255" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="398" bodyend="461"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="255" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="404" bodyend="467"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1a4683504c6cc0933811bf909c96f5ef17" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -761,7 +761,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="266" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="463" bodyend="473"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="266" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="469" bodyend="479"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cone_1ae0eb36a3ddb55789fb3fd382ad5a5b1b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -790,7 +790,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="272" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="475" bodyend="491"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="272" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="481" bodyend="497"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -809,7 +809,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="278" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="493" bodyend="496"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.hpp" line="278" column="17" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Cone.cpp" bodystart="499" bodyend="502"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
