@@ -164,6 +164,95 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, IsDefined)
     }
 }
 
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Intersects_Sphere)
+{
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::object::Cone;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::object::Sphere;
+    using ostk::mathematics::object::Vector3d;
+
+    // Sphere is completely inside the cone
+    {
+        const Point apex = {0.0, 0.0, 0.0};
+        const Vector3d axis = {0.0, 0.0, 1.0};
+        const Angle angle = Angle::Degrees(60.0);
+
+        const Cone cone = {apex, axis, angle};
+
+        const Sphere sphere = {{0.0, 0.0, 5.0}, 1.0};
+
+        EXPECT_TRUE(cone.intersects(sphere));
+    }
+
+    // Sphere is completely outside the cone (no intersection)
+    {
+        const Point apex = {0.0, 0.0, 0.0};
+        const Vector3d axis = {0.0, 0.0, 1.0};
+        const Angle angle = Angle::Degrees(30.0);
+
+        const Cone cone = {apex, axis, angle};
+
+        const Sphere sphere = {{10.0, 10.0, -10.0}, 1.0};
+
+        EXPECT_FALSE(cone.intersects(sphere));
+    }
+
+    // Sphere intersects the cone surface
+    {
+        const Point apex = {0.0, 0.0, 0.0};
+        const Vector3d axis = {0.0, 0.0, 1.0};
+        const Angle angle = Angle::Degrees(45.0);
+
+        const Cone cone = {apex, axis, angle};
+
+        const Sphere sphere = {{1.0, 1.0, 1.0}, std::sqrt(3.0)};
+
+        EXPECT_TRUE(cone.intersects(sphere));
+    }
+
+    // Sphere contains the cone's apex
+    {
+        const Point apex = {0.0, 0.0, 0.0};
+        const Vector3d axis = {1.0, 0.0, 0.0};
+        const Angle angle = Angle::Degrees(15.0);
+
+        const Cone cone = {apex, axis, angle};
+
+        const Sphere sphere = {{0.0, 0.0, 0.0}, 5.0};
+
+        EXPECT_TRUE(cone.intersects(sphere));
+    }
+
+    // Test case from KOZ example
+    {
+        const Point apex = {563726.200583682, -5162285.43178382, 4661267.84065634};
+        const Vector3d axis = {0.433806095125264, -0.861209591598177, 0.264821281568289};
+        const Angle angle = Angle::Degrees(35.27);
+
+        const Cone cone = {apex, axis, angle};
+
+        const Sphere sphere = {{-22602455774.6168, -137633000770.534, 60466979652.754}, 695500000.0};
+
+        EXPECT_TRUE(cone.intersects(sphere));
+    }
+
+    {
+        const Point apex = {0.0, 0.0, 0.0};
+        const Vector3d axis = {1.0, 0.0, 0.0};
+        const Angle angle = Angle::Degrees(15.0);
+
+        const Cone cone = {apex, axis, angle};
+        EXPECT_ANY_THROW(cone.intersects(Sphere::Undefined()));
+    }
+
+    {
+        const Sphere sphere = {{0.0, 0.0, 0.0}, 5.0};
+
+        EXPECT_ANY_THROW(Cone::Undefined().intersects(sphere));
+    }
+}
+
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Intersects_Ellipsoid)
 {
     using ostk::mathematics::geometry::Angle;
