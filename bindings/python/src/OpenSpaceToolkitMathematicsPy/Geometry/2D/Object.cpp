@@ -14,13 +14,11 @@
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Polygon.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D/Object/Segment.cpp>
 
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object(pybind11::module &aModule)
+using ostk::mathematics::geometry::d2::Object;
+
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object(pybind11::module &aModule, pybind11::class_<Object> &ob)
 {
     using namespace pybind11;
-
-    using ostk::mathematics::geometry::d2::Object;
-
-    class_<Object> ob(aModule, "Object");
 
     ob
 
