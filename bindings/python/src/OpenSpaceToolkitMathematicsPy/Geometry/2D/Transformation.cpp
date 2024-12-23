@@ -2,32 +2,19 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/2D/Transformation.hpp>
 
-using ostk::mathematics::geometry::d2::Transformation;
-
-inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation(
-    pybind11::module &aModule, pybind11::class_<Transformation> &transf)
+inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation(pybind11::module& aModule)
 {
     using namespace pybind11;
 
     using ostk::mathematics::geometry::d2::object::Point;
+    using ostk::mathematics::geometry::d2::Transformation;
     using ostk::mathematics::object::Matrix3d;
     using ostk::mathematics::object::Vector2d;
 
-    enum_<Transformation::Type>(transf, "Type")
-
-        .value("Undefined", Transformation::Type::Undefined)
-        .value("Identity", Transformation::Type::Identity)
-        .value("Translation", Transformation::Type::Translation)
-        .value("Rotation", Transformation::Type::Rotation)
-        .value("Scaling", Transformation::Type::Scaling)
-        .value("Reflection", Transformation::Type::Reflection)
-        .value("Shear", Transformation::Type::Shear)
-        .value("Affine", Transformation::Type::Affine)
-
-        ;
+    class_<Transformation> transf(aModule, "Transformation");
 
     transf
-        .def(init<const Matrix3d &>(), arg("matrix"))
+        .def(init<const Matrix3d&>(), arg("matrix"))
 
         .def(self == self)
         .def(self != self)
@@ -41,8 +28,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation(
         .def("get_matrix", &Transformation::getMatrix)
         .def("get_inverse", &Transformation::getInverse)
 
-        .def("apply_to", overload_cast<const Point &>(&Transformation::applyTo, const_), arg("point"))
-        .def("apply_to", overload_cast<const Vector2d &>(&Transformation::applyTo, const_), arg("vector"))
+        .def("apply_to", overload_cast<const Point&>(&Transformation::applyTo, const_), arg("point"))
+        .def("apply_to", overload_cast<const Vector2d&>(&Transformation::applyTo, const_), arg("vector"))
         // .def("apply_to", overload_cast<const Unique<Object>&>(&Transformation::applyTo, const_), arg("object"))
 
         .def_static("undefined", &Transformation::Undefined)
@@ -53,6 +40,19 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Transformation(
 
         .def_static("string_from_type", &Transformation::StringFromType, arg("type"))
         .def_static("type_of_matrix", &Transformation::TypeOfMatrix, arg("matrix"))
+
+        ;
+
+    enum_<Transformation::Type>(transf, "Type")
+
+        .value("Undefined", Transformation::Type::Undefined)
+        .value("Identity", Transformation::Type::Identity)
+        .value("Translation", Transformation::Type::Translation)
+        .value("Rotation", Transformation::Type::Rotation)
+        .value("Scaling", Transformation::Type::Scaling)
+        .value("Reflection", Transformation::Type::Reflection)
+        .value("Shear", Transformation::Type::Shear)
+        .value("Affine", Transformation::Type::Affine)
 
         ;
 }
