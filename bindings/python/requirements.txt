@@ -2,4 +2,4 @@
 
 numpy>=1.0,<3.0
 
-open-space-toolkit-core~=4.1
+open-space-toolkit-core~=5.0
