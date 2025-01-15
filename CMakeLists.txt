@@ -241,7 +241,7 @@ ENDFOREACH ()
 
 ## Dependencies
 
-### Boost [1.82.0]
+### Boost [1.87.0]
 
 IF (BUILD_WITH_BOOST_STATIC)
     SET (Boost_USE_STATIC_LIBS ON)
@@ -251,7 +251,7 @@ ENDIF ()
 
 SET (Boost_USE_MULTITHREADED ON)
 
-FIND_PACKAGE ("Boost" "1.82")
+FIND_PACKAGE ("Boost" "1.87")
 
 IF (BUILD_WITH_BOOST_STACKTRACE)
     ## Stacktrace definitions
