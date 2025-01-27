@@ -51,7 +51,8 @@ TEST(OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, SecondConstructor)
 TEST(OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline, Evaluate)
 {
     const Table referenceData = Table::Load(
-        File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/propagated_states.csv")
+        File::Path(
+            Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/propagated_states.csv")
         ),
         Table::Format::CSV,
         true

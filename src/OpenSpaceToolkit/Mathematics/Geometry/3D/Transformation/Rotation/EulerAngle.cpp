@@ -86,10 +86,11 @@ std::ostream& operator<<(std::ostream& anOutputStream, const EulerAngle& aEulerA
         << "Theta:" << (aEulerAngle.isDefined() ? String::Format("{}", aEulerAngle.theta_.toString()) : "Undefined");
     ostk::core::utils::Print::Line(anOutputStream)
         << "Psi:" << (aEulerAngle.isDefined() ? String::Format("{}", aEulerAngle.psi_.toString()) : "Undefined");
-    ostk::core::utils::Print::Line(anOutputStream
-    ) << "Axis sequence:"
-      << (aEulerAngle.isDefined() ? String::Format("{}", EulerAngle::StringFromAxisSequence(aEulerAngle.axisSequence_))
-                                  : "Undefined");
+    ostk::core::utils::Print::Line(anOutputStream)
+        << "Axis sequence:"
+        << (aEulerAngle.isDefined()
+                ? String::Format("{}", EulerAngle::StringFromAxisSequence(aEulerAngle.axisSequence_))
+                : "Undefined");
 
     ostk::core::utils::Print::Footer(anOutputStream);
 

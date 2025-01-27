@@ -111,9 +111,15 @@ INSTANTIATE_TEST_SUITE_P(
 TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, Constructor)
 {
     {
-        EXPECT_NO_THROW(NumericalSolver numericalsolver(
-            NumericalSolver::LogType::NoLog, NumericalSolver::StepperType::RungeKuttaCashKarp54, 5.0, 1.0e-12, 1.0e-12
-        ));
+        EXPECT_NO_THROW(
+            NumericalSolver numericalsolver(
+                NumericalSolver::LogType::NoLog,
+                NumericalSolver::StepperType::RungeKuttaCashKarp54,
+                5.0,
+                1.0e-12,
+                1.0e-12
+            )
+        );
     }
 }
 

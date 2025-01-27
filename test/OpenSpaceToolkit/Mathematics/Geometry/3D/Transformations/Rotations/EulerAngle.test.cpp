@@ -382,8 +382,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
 
     {
         const Table referenceDataTable = Table::Load(
-            File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
-                                   "EulerAngle/Quaternion-EulerAngle-XYZ.csv")),
+            File::Path(
+                Path::Parse(
+                    "/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
+                    "EulerAngle/Quaternion-EulerAngle-XYZ.csv"
+                )
+            ),
             Table::Format::CSV,
             true
         );
@@ -421,8 +425,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
 
     {
         const Table referenceDataTable = Table::Load(
-            File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
-                                   "EulerAngle/Quaternion-EulerAngle-ZXY.csv")),
+            File::Path(
+                Path::Parse(
+                    "/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
+                    "EulerAngle/Quaternion-EulerAngle-ZXY.csv"
+                )
+            ),
             Table::Format::CSV,
             true
         );
@@ -460,8 +468,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
 
     {
         const Table referenceDataTable = Table::Load(
-            File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
-                                   "EulerAngle/Quaternion-EulerAngle-ZYX.csv")),
+            File::Path(
+                Path::Parse(
+                    "/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
+                    "EulerAngle/Quaternion-EulerAngle-ZYX.csv"
+                )
+            ),
             Table::Format::CSV,
             true
         );
@@ -513,8 +525,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
 
     {
         const Table referenceDataTable = Table::Load(
-            File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
-                                   "EulerAngle/RotationVector-EulerAngle-XYZ.csv")),
+            File::Path(
+                Path::Parse(
+                    "/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
+                    "EulerAngle/RotationVector-EulerAngle-XYZ.csv"
+                )
+            ),
             Table::Format::CSV,
             true
         );
@@ -551,8 +567,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
 
     {
         const Table referenceDataTable = Table::Load(
-            File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
-                                   "EulerAngle/RotationVector-EulerAngle-ZXY.csv")),
+            File::Path(
+                Path::Parse(
+                    "/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
+                    "EulerAngle/RotationVector-EulerAngle-ZXY.csv"
+                )
+            ),
             Table::Format::CSV,
             true
         );
@@ -589,8 +609,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
 
     {
         const Table referenceDataTable = Table::Load(
-            File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
-                                   "EulerAngle/RotationVector-EulerAngle-ZYX.csv")),
+            File::Path(
+                Path::Parse(
+                    "/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
+                    "EulerAngle/RotationVector-EulerAngle-ZYX.csv"
+                )
+            ),
             Table::Format::CSV,
             true
         );
@@ -641,8 +665,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
 
     {
         const Table referenceDataTable = Table::Load(
-            File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
-                                   "EulerAngle/RotationMatrix-EulerAngle-XYZ.csv")),
+            File::Path(
+                Path::Parse(
+                    "/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
+                    "EulerAngle/RotationMatrix-EulerAngle-XYZ.csv"
+                )
+            ),
             Table::Format::CSV,
             true
         );
@@ -691,8 +719,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
 
     {
         const Table referenceDataTable = Table::Load(
-            File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
-                                   "EulerAngle/RotationMatrix-EulerAngle-ZXY.csv")),
+            File::Path(
+                Path::Parse(
+                    "/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
+                    "EulerAngle/RotationMatrix-EulerAngle-ZXY.csv"
+                )
+            ),
             Table::Format::CSV,
             true
         );
@@ -741,8 +773,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle
 
     {
         const Table referenceDataTable = Table::Load(
-            File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
-                                   "EulerAngle/RotationMatrix-EulerAngle-ZYX.csv")),
+            File::Path(
+                Path::Parse(
+                    "/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
+                    "EulerAngle/RotationMatrix-EulerAngle-ZYX.csv"
+                )
+            ),
             Table::Format::CSV,
             true
         );
