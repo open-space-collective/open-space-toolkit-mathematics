@@ -41,7 +41,8 @@ TEST(OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational, Constructor)
 TEST(OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational, Evaluate)
 {
     const Table referenceData = Table::Load(
-        File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/propagated_states.csv")
+        File::Path(
+            Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/propagated_states.csv")
         ),
         Table::Format::CSV,
         true

@@ -371,25 +371,41 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
         EXPECT_TRUE(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0).isNear(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), Angle::Zero()));
         EXPECT_TRUE(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0).isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Zero()));
 
-        EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0)
-                        .isNear(Quaternion::XYZS(1.0 + 1e-6, 0.0, 0.0, 0.0).normalize(), Angle::Radians(1e-6)));
-        EXPECT_TRUE(Quaternion::XYZS(0.0, 1.0, 0.0, 0.0)
-                        .isNear(Quaternion::XYZS(0.0, 1.0 + 1e-6, 0.0, 0.0).normalize(), Angle::Radians(1e-6)));
-        EXPECT_TRUE(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0)
-                        .isNear(Quaternion::XYZS(0.0, 0.0, 1.0 + 1e-6, 0.0).normalize(), Angle::Radians(1e-6)));
-        EXPECT_TRUE(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)
-                        .isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0 + 1e-6).normalize(), Angle::Radians(1e-6)));
+        EXPECT_TRUE(
+            Quaternion::XYZS(1.0, 0.0, 0.0, 0.0)
+                .isNear(Quaternion::XYZS(1.0 + 1e-6, 0.0, 0.0, 0.0).normalize(), Angle::Radians(1e-6))
+        );
+        EXPECT_TRUE(
+            Quaternion::XYZS(0.0, 1.0, 0.0, 0.0)
+                .isNear(Quaternion::XYZS(0.0, 1.0 + 1e-6, 0.0, 0.0).normalize(), Angle::Radians(1e-6))
+        );
+        EXPECT_TRUE(
+            Quaternion::XYZS(0.0, 0.0, 1.0, 0.0)
+                .isNear(Quaternion::XYZS(0.0, 0.0, 1.0 + 1e-6, 0.0).normalize(), Angle::Radians(1e-6))
+        );
+        EXPECT_TRUE(
+            Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)
+                .isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0 + 1e-6).normalize(), Angle::Radians(1e-6))
+        );
     }
 
     {
-        EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0)
-                        .isNear(Quaternion::XYZS(1.0 + 1e-6, 0.0, 0.0, 0.0).normalize(), Angle::Radians(0.0)));
-        EXPECT_TRUE(Quaternion::XYZS(0.0, 1.0, 0.0, 0.0)
-                        .isNear(Quaternion::XYZS(0.0, 1.0 + 1e-6, 0.0, 0.0).normalize(), Angle::Radians(0.0)));
-        EXPECT_TRUE(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0)
-                        .isNear(Quaternion::XYZS(0.0, 0.0, 1.0 + 1e-6, 0.0).normalize(), Angle::Radians(0.0)));
-        EXPECT_TRUE(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)
-                        .isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0 + 1e-6).normalize(), Angle::Radians(0.0)));
+        EXPECT_TRUE(
+            Quaternion::XYZS(1.0, 0.0, 0.0, 0.0)
+                .isNear(Quaternion::XYZS(1.0 + 1e-6, 0.0, 0.0, 0.0).normalize(), Angle::Radians(0.0))
+        );
+        EXPECT_TRUE(
+            Quaternion::XYZS(0.0, 1.0, 0.0, 0.0)
+                .isNear(Quaternion::XYZS(0.0, 1.0 + 1e-6, 0.0, 0.0).normalize(), Angle::Radians(0.0))
+        );
+        EXPECT_TRUE(
+            Quaternion::XYZS(0.0, 0.0, 1.0, 0.0)
+                .isNear(Quaternion::XYZS(0.0, 0.0, 1.0 + 1e-6, 0.0).normalize(), Angle::Radians(0.0))
+        );
+        EXPECT_TRUE(
+            Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)
+                .isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0 + 1e-6).normalize(), Angle::Radians(0.0))
+        );
     }
 
     {
@@ -512,10 +528,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 {
     {
         EXPECT_EQ(Quaternion::Unit(), Quaternion::Unit().exp());
-        EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0)
-                        .exp()
-                        .toNormalized()
-                        .isNear(Quaternion::XYZS(0.841471, 0.0, 0.0, 0.540302).toNormalized(), Angle::Radians(1e-4)));
+        EXPECT_TRUE(
+            Quaternion::XYZS(1.0, 0.0, 0.0, 0.0)
+                .exp()
+                .toNormalized()
+                .isNear(Quaternion::XYZS(0.841471, 0.0, 0.0, 0.540302).toNormalized(), Angle::Radians(1e-4))
+        );
     }
 
     {
@@ -527,10 +545,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 {
     {
         EXPECT_EQ(Quaternion({0.0, 0.0, 0.0}, 0.0), Quaternion::Unit().log());
-        EXPECT_TRUE(Quaternion::XYZS(0.841471, 0.0, 0.0, 0.540302)
-                        .log()
-                        .toNormalized()
-                        .isNear(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0), Angle::Radians(1e-4)));
+        EXPECT_TRUE(
+            Quaternion::XYZS(0.841471, 0.0, 0.0, 0.540302)
+                .log()
+                .toNormalized()
+                .isNear(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0), Angle::Radians(1e-4))
+        );
     }
 
     {
@@ -542,9 +562,11 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 {
     {
         EXPECT_EQ(Quaternion::Unit(), Quaternion::Unit().pow(1.0));
-        EXPECT_TRUE(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0)
-                        .pow(2.0)
-                        .isNear(Quaternion::XYZS(0.0, 0.0, 0.0, -1.0), Angle::Radians(1e-4)));
+        EXPECT_TRUE(
+            Quaternion::XYZS(1.0, 0.0, 0.0, 0.0)
+                .pow(2.0)
+                .isNear(Quaternion::XYZS(0.0, 0.0, 0.0, -1.0), Angle::Radians(1e-4))
+        );
     }
 
     {
@@ -808,8 +830,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
     {
         const Table referenceDataTable = Table::Load(
-            File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
-                                   "EulerAngle/Quaternion-EulerAngle-XYZ.csv")),
+            File::Path(
+                Path::Parse(
+                    "/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
+                    "EulerAngle/Quaternion-EulerAngle-XYZ.csv"
+                )
+            ),
             Table::Format::CSV,
             true
         );
@@ -850,8 +876,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
     {
         const Table referenceDataTable = Table::Load(
-            File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
-                                   "EulerAngle/Quaternion-EulerAngle-ZXY.csv")),
+            File::Path(
+                Path::Parse(
+                    "/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
+                    "EulerAngle/Quaternion-EulerAngle-ZXY.csv"
+                )
+            ),
             Table::Format::CSV,
             true
         );
@@ -892,8 +922,12 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
     {
         const Table referenceDataTable = Table::Load(
-            File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
-                                   "EulerAngle/Quaternion-EulerAngle-ZYX.csv")),
+            File::Path(
+                Path::Parse(
+                    "/app/test/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformations/Rotations/"
+                    "EulerAngle/Quaternion-EulerAngle-ZYX.csv"
+                )
+            ),
             Table::Format::CSV,
             true
         );
@@ -960,13 +994,17 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, ShortestRotation)
 {
     {
-        EXPECT_TRUE(Quaternion::ShortestRotation({1.0, 0.0, 0.0}, {1.0, 0.0, 0.0})
-                        .isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Radians(1e-9)));
-        EXPECT_TRUE(Quaternion::ShortestRotation({1.0, 0.0, 0.0}, {0.0, 1.0, 0.0})
-                        .isNear(
-                            Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(-90.0))),
-                            Angle::Radians(1e-9)
-                        ));
+        EXPECT_TRUE(
+            Quaternion::ShortestRotation({1.0, 0.0, 0.0}, {1.0, 0.0, 0.0})
+                .isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Radians(1e-9))
+        );
+        EXPECT_TRUE(
+            Quaternion::ShortestRotation({1.0, 0.0, 0.0}, {0.0, 1.0, 0.0})
+                .isNear(
+                    Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(-90.0))),
+                    Angle::Radians(1e-9)
+                )
+        );
     }
 
     {
@@ -987,10 +1025,14 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, LERP)
 {
     {
-        EXPECT_TRUE(Quaternion::LERP(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), 0.0)
-                        .isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Radians(1e-9)));
-        EXPECT_TRUE(Quaternion::LERP(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), 1.0)
-                        .isNear(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), Angle::Radians(1e-9)));
+        EXPECT_TRUE(
+            Quaternion::LERP(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), 0.0)
+                .isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Radians(1e-9))
+        );
+        EXPECT_TRUE(
+            Quaternion::LERP(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), 1.0)
+                .isNear(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), Angle::Radians(1e-9))
+        );
     }
 
     {
@@ -1006,20 +1048,26 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, NLERP)
 {
     {
-        EXPECT_TRUE(Quaternion::NLERP(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), 0.0)
-                        .isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Radians(1e-9)));
-        EXPECT_TRUE(Quaternion::NLERP(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), 1.0)
-                        .isNear(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), Angle::Radians(1e-9)));
+        EXPECT_TRUE(
+            Quaternion::NLERP(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), 0.0)
+                .isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Radians(1e-9))
+        );
+        EXPECT_TRUE(
+            Quaternion::NLERP(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), 1.0)
+                .isNear(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), Angle::Radians(1e-9))
+        );
 
-        EXPECT_TRUE(Quaternion::NLERP(
-                        Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(0.0))),
-                        Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(90.0))),
-                        0.5
-        )
-                        .isNear(
-                            Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(45.0))),
-                            Angle::Radians(1e-9)
-                        ));
+        EXPECT_TRUE(
+            Quaternion::NLERP(
+                Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(0.0))),
+                Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(90.0))),
+                0.5
+            )
+                .isNear(
+                    Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(45.0))),
+                    Angle::Radians(1e-9)
+                )
+        );
     }
 
     {
@@ -1035,48 +1083,64 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, SLERP)
 {
     {
-        EXPECT_TRUE(Quaternion::SLERP(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), 0.0)
-                        .isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Radians(1e-9)));
-        EXPECT_TRUE(Quaternion::SLERP(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), 1.0)
-                        .isNear(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), Angle::Radians(1e-9)));
+        EXPECT_TRUE(
+            Quaternion::SLERP(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), 0.0)
+                .isNear(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Angle::Radians(1e-9))
+        );
+        EXPECT_TRUE(
+            Quaternion::SLERP(Quaternion::XYZS(0.0, 0.0, 0.0, 1.0), Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), 1.0)
+                .isNear(Quaternion::XYZS(0.0, 0.0, 1.0, 0.0), Angle::Radians(1e-9))
+        );
 
-        EXPECT_TRUE(Quaternion::SLERP(
-                        Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(0.0))),
-                        Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(90.0))),
-                        0.5
-        )
-                        .isNear(
-                            Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(45.0))),
-                            Angle::Radians(1e-9)
-                        ));
+        EXPECT_TRUE(
+            Quaternion::SLERP(
+                Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(0.0))),
+                Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(90.0))),
+                0.5
+            )
+                .isNear(
+                    Quaternion::RotationVector(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(45.0))),
+                    Angle::Radians(1e-9)
+                )
+        );
     }
 
     {
         const Quaternion q_1 = Quaternion::XYZS(1.0, 0.0, 0.0, 0.0);
         const Quaternion q_2 = Quaternion::XYZS(0.0, 1.0, 0.0, 0.0);
 
-        EXPECT_TRUE(Quaternion::SLERP(q_1, q_2, 0.0)
-                        .isNear(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0).toNormalized(), Angle::Radians(1e-9)));
-        EXPECT_TRUE(Quaternion::SLERP(q_1, q_2, 0.2)
-                        .isNear(
-                            Quaternion::XYZS(0.951056516295154, 0.309016994374947, 0.0, 0.0).toNormalized(),
-                            Angle::Radians(1e-9)
-                        ));
-        EXPECT_TRUE(Quaternion::SLERP(q_1, q_2, 0.4)
-                        .isNear(
-                            Quaternion::XYZS(0.809016994374947, 0.587785252292473, 0.0, 0.0).toNormalized(),
-                            Angle::Radians(1e-9)
-                        ));
-        EXPECT_TRUE(Quaternion::SLERP(q_1, q_2, 0.6)
-                        .isNear(
-                            Quaternion::XYZS(0.587785252292473, 0.809016994374947, 0.0, 0.0).toNormalized(),
-                            Angle::Radians(1e-9)
-                        ));
-        EXPECT_TRUE(Quaternion::SLERP(q_1, q_2, 0.8)
-                        .isNear(
-                            Quaternion::XYZS(0.309016994374947, 0.951056516295154, 0.0, 0.0).toNormalized(),
-                            Angle::Radians(1e-9)
-                        ));
+        EXPECT_TRUE(
+            Quaternion::SLERP(q_1, q_2, 0.0)
+                .isNear(Quaternion::XYZS(1.0, 0.0, 0.0, 0.0).toNormalized(), Angle::Radians(1e-9))
+        );
+        EXPECT_TRUE(
+            Quaternion::SLERP(q_1, q_2, 0.2)
+                .isNear(
+                    Quaternion::XYZS(0.951056516295154, 0.309016994374947, 0.0, 0.0).toNormalized(),
+                    Angle::Radians(1e-9)
+                )
+        );
+        EXPECT_TRUE(
+            Quaternion::SLERP(q_1, q_2, 0.4)
+                .isNear(
+                    Quaternion::XYZS(0.809016994374947, 0.587785252292473, 0.0, 0.0).toNormalized(),
+                    Angle::Radians(1e-9)
+                )
+        );
+        EXPECT_TRUE(
+            Quaternion::SLERP(q_1, q_2, 0.6)
+                .isNear(
+                    Quaternion::XYZS(0.587785252292473, 0.809016994374947, 0.0, 0.0).toNormalized(),
+                    Angle::Radians(1e-9)
+                )
+        );
+        EXPECT_TRUE(
+            Quaternion::SLERP(q_1, q_2, 0.8)
+                .isNear(
+                    Quaternion::XYZS(0.309016994374947, 0.951056516295154, 0.0, 0.0).toNormalized(),
+                    Angle::Radians(1e-9)
+                )
+        );
         EXPECT_TRUE(
             Quaternion::SLERP(q_1, q_2, 1.0)
                 .isNear(Quaternion::XYZS(6.12323399573677e-17, 1.0, 0.0, 0.0).toNormalized(), Angle::Radians(1e-9))

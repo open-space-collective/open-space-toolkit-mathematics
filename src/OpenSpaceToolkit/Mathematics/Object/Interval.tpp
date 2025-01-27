@@ -628,13 +628,12 @@ ctnr::Array<Interval<T>> Interval<T>::Sort(
 
         if (byLowerBound)
         {
-            return ascending
-                ? anInterval.lowerBound_<anotherInterval.lowerBound_ : anInterval.lowerBound_> anotherInterval
-                      .lowerBound_;
+            return ascending ? anInterval.lowerBound_ < anotherInterval.lowerBound_
+                             : anInterval.lowerBound_ > anotherInterval.lowerBound_;
         }
 
-        return ascending
-            ? anInterval.upperBound_<anotherInterval.upperBound_ : anInterval.upperBound_> anotherInterval.upperBound_;
+        return ascending ? anInterval.upperBound_ < anotherInterval.upperBound_
+                         : anInterval.upperBound_ > anotherInterval.upperBound_;
     };
 
     std::sort(sorted.begin(), sorted.end(), comparator);

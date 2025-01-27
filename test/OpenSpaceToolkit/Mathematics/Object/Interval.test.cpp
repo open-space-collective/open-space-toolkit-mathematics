@@ -2004,12 +2004,16 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, Clip)
 {
     {
         EXPECT_ANY_THROW(Interval<Real>::Clip({Interval<Real>::Undefined()}, Interval<Real>::Closed(0.0, 1.0)));
-        EXPECT_ANY_THROW(Interval<Real>::Clip(
-            {Interval<Real>::Closed(0.0, 1.0), Interval<Real>::Closed(0.0, 1.0)}, Interval<Real>::Undefined()
-        ));
-        EXPECT_ANY_THROW(Interval<Real>::Clip(
-            {Interval<Real>::Closed(0.0, 1.0), Interval<Real>::Undefined()}, Interval<Real>::Closed(0.0, 1.0)
-        ));
+        EXPECT_ANY_THROW(
+            Interval<Real>::Clip(
+                {Interval<Real>::Closed(0.0, 1.0), Interval<Real>::Closed(0.0, 1.0)}, Interval<Real>::Undefined()
+            )
+        );
+        EXPECT_ANY_THROW(
+            Interval<Real>::Clip(
+                {Interval<Real>::Closed(0.0, 1.0), Interval<Real>::Undefined()}, Interval<Real>::Closed(0.0, 1.0)
+            )
+        );
 
         EXPECT_EQ(ctnr::Array<Interval<Real>>(), Interval<Real>::Clip({}, Interval<Real>::Closed(0.0, 1.0)));
     }

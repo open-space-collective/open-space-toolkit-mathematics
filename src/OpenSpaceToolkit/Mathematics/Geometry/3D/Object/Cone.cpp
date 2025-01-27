@@ -335,8 +335,9 @@ Real Cone::distanceTo(const Point& aPoint) const
     return Ray(this->apex_, rayDirection).distanceTo(aPoint);
 }
 
-Intersection Cone::intersectionWith(const Sphere& aSphere, const bool onlyInSight, const Size aDiscretizationLevel)
-    const
+Intersection Cone::intersectionWith(
+    const Sphere& aSphere, const bool onlyInSight, const Size aDiscretizationLevel
+) const
 {
     if (!aSphere.isDefined())
     {

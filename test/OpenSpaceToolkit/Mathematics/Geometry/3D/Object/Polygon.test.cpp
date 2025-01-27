@@ -36,7 +36,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon, Clone)
         const Vector3d xAxis = {1.0, 0.0, 0.0};
         const Vector3d yAxis = {0.0, 1.0, 0.0};
 
-        EXPECT_NO_THROW(const Polygon* polygonPtr = Polygon(polygon2d, origin, xAxis, yAxis).clone(); delete polygonPtr;
+        EXPECT_NO_THROW(
+            const Polygon* polygonPtr = Polygon(polygon2d, origin, xAxis, yAxis).clone(); delete polygonPtr;
         );
     }
 }

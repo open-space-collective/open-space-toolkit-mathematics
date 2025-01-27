@@ -24,8 +24,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_PointSet, Clone)
     using ostk::mathematics::geometry::d2::object::PointSet;
 
     {
-        EXPECT_NO_THROW(const PointSet* pointSetPtr = PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}).clone();
-                        delete pointSetPtr;);
+        EXPECT_NO_THROW(
+            const PointSet* pointSetPtr = PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}).clone(); delete pointSetPtr;
+        );
     }
 }
 
@@ -135,18 +136,21 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_2D_Object_PointSet, IsNear)
     using ostk::mathematics::geometry::d2::object::PointSet;
 
     {
-        EXPECT_TRUE(PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}
-        ).isNear(PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}), Real::Epsilon()));
-        EXPECT_TRUE(PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}
-        ).isNear(PointSet({{0.0, 1.0}, {0.0, 0.0}, {0.0, 2.0}}), Real::Epsilon()));
+        EXPECT_TRUE(PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}})
+                        .isNear(PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}), Real::Epsilon()));
+        EXPECT_TRUE(PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}})
+                        .isNear(PointSet({{0.0, 1.0}, {0.0, 0.0}, {0.0, 2.0}}), Real::Epsilon()));
 
-        EXPECT_TRUE(PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}
-        ).isNear(PointSet({{0.0, Real::Epsilon()}, {Real::Epsilon(), 1.0}, {0.0, 2.0}}), Real::Epsilon()));
+        EXPECT_TRUE(PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}})
+                        .isNear(PointSet({{0.0, Real::Epsilon()}, {Real::Epsilon(), 1.0}, {0.0, 2.0}}), Real::Epsilon())
+        );
     }
 
     {
-        EXPECT_FALSE(PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}}
-        ).isNear(PointSet({{0.0, 2.0 * Real::Epsilon()}, {Real::Epsilon(), 1.0}, {0.0, 2.0}}), Real::Epsilon()));
+        EXPECT_FALSE(
+            PointSet({{0.0, 0.0}, {0.0, 1.0}, {0.0, 2.0}})
+                .isNear(PointSet({{0.0, 2.0 * Real::Epsilon()}, {Real::Epsilon(), 1.0}, {0.0, 2.0}}), Real::Epsilon())
+        );
     }
 
     {
