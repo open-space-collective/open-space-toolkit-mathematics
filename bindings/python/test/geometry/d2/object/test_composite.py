@@ -2,13 +2,10 @@
 
 import pytest
 
-import ostk.mathematics as mathematics
-
-
-Object = mathematics.geometry.d2.Object
-Point = mathematics.geometry.d2.object.Point
-Polygon = mathematics.geometry.d2.object.Polygon
-Composite = mathematics.geometry.d2.object.Composite
+from ostk.mathematics.geometry.d2 import Object
+from ostk.mathematics.geometry.d2.object import Point
+from ostk.mathematics.geometry.d2.object import Polygon
+from ostk.mathematics.geometry.d2.object import Composite
 
 
 class TestComposite:

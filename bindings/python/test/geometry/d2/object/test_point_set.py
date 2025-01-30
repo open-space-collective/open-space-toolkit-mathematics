@@ -2,12 +2,9 @@
 
 from collections.abc import Iterator, Iterable
 
-import ostk.mathematics as mathematics
-
-
-Object = mathematics.geometry.d2.Object
-Point = mathematics.geometry.d2.object.Point
-PointSet = mathematics.geometry.d2.object.PointSet
+from ostk.mathematics.geometry.d2 import Object
+from ostk.mathematics.geometry.d2.object import Point
+from ostk.mathematics.geometry.d2.object import PointSet
 
 
 class TestPointSet:

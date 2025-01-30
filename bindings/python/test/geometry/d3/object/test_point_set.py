@@ -4,13 +4,10 @@ from collections.abc import Iterator, Iterable
 
 import pytest
 
-import ostk.mathematics as mathematics
-
-
-Object = mathematics.geometry.d3.Object
-Point = mathematics.geometry.d3.object.Point
-PointSet = mathematics.geometry.d3.object.PointSet
-Transformation = mathematics.geometry.d3.Transformation
+from ostk.mathematics.geometry.d3 import Object
+from ostk.mathematics.geometry.d3 import Transformation
+from ostk.mathematics.geometry.d3.object import Point
+from ostk.mathematics.geometry.d3.object import PointSet
 
 
 @pytest.fixture
@@ -52,7 +49,7 @@ class TestPointSet:
         assert point_set.is_defined()
 
     def test_empty_success(self):
-        point_set: Pointset = PointSet.empty()
+        point_set: PointSet = PointSet.empty()
 
         assert point_set is not None
         assert isinstance(point_set, PointSet)
