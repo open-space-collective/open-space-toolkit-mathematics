@@ -1,17 +1,10 @@
 # Apache License 2.0
 
-import pytest
-
 import numpy as np
 
-import ostk.mathematics as mathematics
-
-from ostk.core.type import String
-
-
-Object = mathematics.geometry.d2.Object
-Polygon = mathematics.geometry.d2.object.Polygon
-MultiPolygon = mathematics.geometry.d2.object.MultiPolygon
+from ostk.mathematics.geometry.d2 import Object
+from ostk.mathematics.geometry.d2.object import Polygon
+from ostk.mathematics.geometry.d2.object import MultiPolygon
 
 
 class TestMultipolygon:
