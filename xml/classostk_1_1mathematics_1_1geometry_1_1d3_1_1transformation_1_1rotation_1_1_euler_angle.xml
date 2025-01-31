@@ -313,7 +313,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="140" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="99" bodyend="103"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="140" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="100" bodyend="104"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a75a6bd4f088b43ba2f9e7a9a1a963e64" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -332,7 +332,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="150" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="105" bodyend="108"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="150" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="106" bodyend="109"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ab25e5b93b6cff6716c08d5b9de4ab2c5" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>bool</type>
@@ -379,7 +379,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="166" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="110" bodyend="113"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="166" column="10" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="111" bodyend="114"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a6a2ec66eea87c4645cc7815c82d09d0e" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -398,7 +398,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="176" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="115" bodyend="123"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="176" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="116" bodyend="124"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a13a35f51cad01171184a1feb3910b68b" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -417,7 +417,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="186" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="125" bodyend="133"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="186" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="126" bodyend="134"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a21bb162e148332ca5c36fe4ec1d9de58" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1_angle" kindref="compound">Angle</ref></type>
@@ -436,7 +436,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="196" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="135" bodyend="143"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="196" column="11" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="136" bodyend="144"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a959afa9de94bff84008813662da769e0" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac0be9aa2bd8691e11c6b2838709c168c" kindref="member">AxisSequence</ref></type>
@@ -455,7 +455,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="206" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="145" bodyend="153"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="206" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="146" bodyend="154"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a511d16a1d248592a98f6fd3345bd7547" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>Vector3d</type>
@@ -487,7 +487,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="217" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="155" bodyend="163"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="217" column="14" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="156" bodyend="164"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a6ef0461c00dd105f6c38fe5a2ee22c94" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type>String</type>
@@ -520,7 +520,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="228" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="165" bodyend="179"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="228" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="166" bodyend="180"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="friend">
@@ -566,7 +566,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="130" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="79" bodyend="97"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="130" column="12" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="79" bodyend="98"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -587,7 +587,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="238" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="181" bodyend="184"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="238" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="182" bodyend="185"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a970d830a551e4596701281e2cf0a1899" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></type>
@@ -606,7 +606,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="248" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="186" bodyend="189"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="248" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="187" bodyend="190"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ad67a6f747c305d3528a7d9639ce14bf4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></type>
@@ -666,7 +666,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="265" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="191" bodyend="194"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="265" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="192" bodyend="195"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a5c480a99e25a582539a3d23bbc1cfaad" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></type>
@@ -726,7 +726,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="282" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="196" bodyend="199"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="282" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="197" bodyend="200"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a5a32a18b2e11e5cce47df3f651e22fe8" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></type>
@@ -786,7 +786,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="299" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="201" bodyend="204"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="299" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="202" bodyend="205"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1a046912d1e2a21205e51d070b186630f6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></type>
@@ -833,7 +833,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="314" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="206" bodyend="253"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="314" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="207" bodyend="254"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ac8579cff213d96389fcb8daa84d81063" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></type>
@@ -880,7 +880,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="331" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="255" bodyend="260"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="331" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="256" bodyend="261"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1ad52bbd103ee414308394cd4c9e9848c9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle" kindref="compound">EulerAngle</ref></type>
@@ -927,7 +927,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="348" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="262" bodyend="314"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="348" column="23" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="263" bodyend="315"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle_1af8605f8fa6810bdf2043cdb8b4b2f2a2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>String</type>
@@ -959,7 +959,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="361" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="316" bodyend="332"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.hpp" line="361" column="19" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/EulerAngle.cpp" bodystart="317" bodyend="333"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
