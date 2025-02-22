@@ -33,9 +33,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid, Clone)
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
 
     {
-        ASSERT_NO_THROW(
-            const Ellipsoid* ellipsoidPtr = Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).clone(); delete ellipsoidPtr;
-        );
+        ASSERT_NO_THROW(const Ellipsoid* ellipsoidPtr = Ellipsoid({1.0, 2.0, 3.0}, 4.0, 5.0, 6.0).clone();
+                        delete ellipsoidPtr;);
     }
 }
 

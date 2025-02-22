@@ -341,9 +341,8 @@ Array<Ray> Pyramid::getRaysOfLateralFaces(const Size aRayCount) const
     return rays;
 }
 
-Intersection Pyramid::intersectionWith(
-    const Sphere& aSphere, const bool onlyInSight, const Size aDiscretizationLevel
-) const
+Intersection Pyramid::intersectionWith(const Sphere& aSphere, const bool onlyInSight, const Size aDiscretizationLevel)
+    const
 {
     if (!aSphere.isDefined())
     {

@@ -23,9 +23,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment, Clone)
     using ostk::mathematics::geometry::d3::object::Segment;
 
     {
-        EXPECT_NO_THROW(
-            const Segment* segmentPtr = Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).clone(); delete segmentPtr;
-        );
+        EXPECT_NO_THROW(const Segment* segmentPtr = Segment({0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}).clone();
+                        delete segmentPtr;);
     }
 }
 
