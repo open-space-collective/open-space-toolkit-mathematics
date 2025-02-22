@@ -41,8 +41,7 @@ TEST(OpenSpaceToolkit_Mathematics_Interpolator_Linear, Constructor)
 TEST(OpenSpaceToolkit_Mathematics_Interpolator_Linear, Evaluate)
 {
     const Table referenceData = Table::Load(
-        File::Path(
-            Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/propagated_states.csv")
+        File::Path(Path::Parse("/app/test/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/propagated_states.csv")
         ),
         Table::Format::CSV,
         true

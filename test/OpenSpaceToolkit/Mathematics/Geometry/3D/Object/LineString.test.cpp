@@ -25,10 +25,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, Clone)
     using ostk::mathematics::geometry::d3::object::LineString;
 
     {
-        EXPECT_NO_THROW(
-            const LineString* lineStringPtr = LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}).clone();
-            delete lineStringPtr;
-        );
+        EXPECT_NO_THROW(const LineString* lineStringPtr =
+                            LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}).clone();
+                        delete lineStringPtr;);
     }
 }
 
@@ -152,8 +151,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, IsNear)
     using ostk::mathematics::geometry::d3::object::LineString;
 
     {
-        EXPECT_TRUE(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}})
-                        .isNear(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}), Real::Epsilon()));
+        EXPECT_TRUE(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}
+        ).isNear(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}), Real::Epsilon()));
 
         EXPECT_TRUE(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}})
                         .isNear(
@@ -174,9 +173,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, IsNear)
 
     {
         EXPECT_FALSE(LineString::Empty().isNear(LineString::Empty(), Real::Epsilon()));
-        EXPECT_FALSE(
-            LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}).isNear(LineString::Empty(), Real::Epsilon())
-        );
+        EXPECT_FALSE(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}
+        ).isNear(LineString::Empty(), Real::Epsilon()));
         EXPECT_FALSE(
             LineString::Empty().isNear(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}), Real::Epsilon())
         );
@@ -206,9 +204,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, AccessPointAt)
             LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}).accessPointAt(3)
         );
 
-        EXPECT_ANY_THROW(
-            LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}).accessPointAt(5)
-        );
+        EXPECT_ANY_THROW(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}
+        ).accessPointAt(5));
     }
 
     {
@@ -314,8 +311,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_LineString, ApplyTransforma
     }
 
     {
-        EXPECT_ANY_THROW(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}})
-                             .applyTransformation(Transformation::Undefined()));
+        EXPECT_ANY_THROW(LineString({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 1.0}}
+        ).applyTransformation(Transformation::Undefined()));
     }
 }
 

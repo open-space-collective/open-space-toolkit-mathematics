@@ -25,10 +25,9 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, Clone)
     using ostk::mathematics::geometry::d3::object::PointSet;
 
     {
-        EXPECT_NO_THROW(
-            const PointSet* pointSetPtr = PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}).clone();
-            delete pointSetPtr;
-        );
+        EXPECT_NO_THROW(const PointSet* pointSetPtr =
+                            PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}).clone();
+                        delete pointSetPtr;);
     }
 }
 
@@ -182,10 +181,10 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, IsNear)
     using ostk::mathematics::geometry::d3::object::PointSet;
 
     {
-        EXPECT_TRUE(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}})
-                        .isNear(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}), Real::Epsilon()));
-        EXPECT_TRUE(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}})
-                        .isNear(PointSet({{0.0, 0.0, 1.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 2.0}}), Real::Epsilon()));
+        EXPECT_TRUE(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}
+        ).isNear(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}), Real::Epsilon()));
+        EXPECT_TRUE(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}
+        ).isNear(PointSet({{0.0, 0.0, 1.0}, {0.0, 0.0, 0.0}, {0.0, 0.0, 2.0}}), Real::Epsilon()));
 
         EXPECT_TRUE(
             PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}})
@@ -210,9 +209,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, IsNear)
 
     {
         EXPECT_FALSE(PointSet::Empty().isNear(PointSet::Empty(), Real::Epsilon()));
-        EXPECT_FALSE(
-            PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}).isNear(PointSet::Empty(), Real::Epsilon())
-        );
+        EXPECT_FALSE(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}
+        ).isNear(PointSet::Empty(), Real::Epsilon()));
         EXPECT_FALSE(
             PointSet::Empty().isNear(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}), Real::Epsilon())
         );
@@ -282,9 +280,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, GetPointClosestTo
     {
         EXPECT_ANY_THROW(PointSet::Empty().getPointClosestTo(Point::Undefined()));
         EXPECT_ANY_THROW(PointSet::Empty().getPointClosestTo(Point::Origin()));
-        EXPECT_ANY_THROW(
-            PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}).getPointClosestTo(Point::Undefined())
-        );
+        EXPECT_ANY_THROW(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}
+        ).getPointClosestTo(Point::Undefined()));
     }
 }
 
@@ -338,8 +335,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_PointSet, ApplyTransformati
     }
 
     {
-        EXPECT_ANY_THROW(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}})
-                             .applyTransformation(Transformation::Undefined()));
+        EXPECT_ANY_THROW(PointSet({{0.0, 0.0, 0.0}, {0.0, 0.0, 1.0}, {0.0, 0.0, 2.0}}
+        ).applyTransformation(Transformation::Undefined()));
     }
 }
 
