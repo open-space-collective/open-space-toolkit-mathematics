@@ -46,14 +46,10 @@ class TestCubicSpline:
 
     def test_compute_derivative(self):
         interpolator = CubicSpline(
-            x=[0.0, 1.0, 2.0, 3.0, 4.0, 5.0], y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0]
+            x=[0.0, 1.0, 2.0, 3.0, 4.0, 5.0],
+            y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0],
         )
 
         assert interpolator.compute_derivative(1.5) is not None
-
-    def test_compute_derivative(self):
-        interpolator = CubicSpline(
-            x=[0.0, 1.0, 2.0, 3.0, 4.0, 5.0], y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0]
-        )
 
         assert interpolator.compute_derivative([1.5]) is not None
