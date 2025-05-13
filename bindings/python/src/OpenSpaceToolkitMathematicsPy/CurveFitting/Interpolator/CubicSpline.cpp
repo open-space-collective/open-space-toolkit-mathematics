@@ -20,5 +20,9 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(
         .def(init<const VectorXd&, const Real&, const Real&>(), arg("y"), arg("x_0"), arg("h"))
 
         .def("evaluate", overload_cast<const VectorXd&>(&CubicSpline::evaluate, const_), arg("x"))
-        .def("evaluate", overload_cast<const double&>(&CubicSpline::evaluate, const_), arg("x"));
+        .def("evaluate", overload_cast<const double&>(&CubicSpline::evaluate, const_), arg("x"))
+        .def("compute_derivative", overload_cast<const double&>(&CubicSpline::computeDerivative, const_), arg("x"))
+        .def("compute_derivative", overload_cast<const VectorXd&>(&CubicSpline::computeDerivative, const_), arg("x"))
+
+        ;
 }

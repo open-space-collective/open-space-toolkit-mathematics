@@ -26,6 +26,8 @@ class MockInterpolator : public Interpolator
 
     MOCK_METHOD(VectorXd, evaluate, (const VectorXd&), (const, override));
     MOCK_METHOD(double, evaluate, (const double&), (const, override));
+    MOCK_METHOD(double, computeDerivative, (const double&), (const, override));
+    MOCK_METHOD(VectorXd, computeDerivative, (const VectorXd&), (const, override));
 };
 
 class OpenSpaceToolkit_Mathematics_Interpolator : public ::testing::Test

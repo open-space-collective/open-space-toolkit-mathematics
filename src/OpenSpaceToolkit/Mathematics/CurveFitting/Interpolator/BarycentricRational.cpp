@@ -42,6 +42,23 @@ double BarycentricRational::evaluate(const double& aQueryValue) const
     return interpolator_(aQueryValue);
 }
 
+double BarycentricRational::computeDerivative(const double& aQueryValue) const
+{
+    return interpolator_.prime(aQueryValue);
+}
+
+VectorXd BarycentricRational::computeDerivative(const VectorXd& aQueryVector) const
+{
+    VectorXd yOutput(aQueryVector.size());
+
+    for (int i = 0; i < aQueryVector.size(); ++i)
+    {
+        yOutput(i) = interpolator_.prime(aQueryVector(i));
+    }
+
+    return yOutput;
+}
+
 }  // namespace interpolator
 }  // namespace curvefitting
 }  // namespace mathematics
