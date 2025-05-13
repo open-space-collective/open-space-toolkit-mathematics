@@ -65,6 +65,8 @@
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a084b79dfcfae56e18cd7c1dd5269e007" kind="function"><name>~BarycentricRational</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a0a440a296a04347ed9b4a9a22f1cf57f" kind="function"><name>evaluate</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a343d5f5f554639ce936706ea75109006" kind="function"><name>evaluate</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a0f9feb9408d8b5510342dc5a54107bef" kind="function"><name>computeDerivative</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a53b32694d5f83bb2570c82e21d8ecaf2" kind="function"><name>computeDerivative</name></member>
   </compound>
   <compound refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite" kind="class"><name>ostk::mathematics::geometry::d2::object::Composite</name>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_composite_1a34efd57a99c61f2e4e63fd6444dae04f" kind="typedef"><name>ConstIterator</name></member>
@@ -170,6 +172,8 @@
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a458bf216be06ad3ef539343e8397ef44" kind="function"><name>~CubicSpline</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a6852a278bdd114175116ae0e875bd258" kind="function"><name>evaluate</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a2f91b443473606d1236a81d24d643368" kind="function"><name>evaluate</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a18dba35307db81b233329af76feb09fa" kind="function"><name>computeDerivative</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a91fa43ce75d45612a45e22af98762dcd" kind="function"><name>computeDerivative</name></member>
   </compound>
   <compound refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid" kind="class"><name>ostk::mathematics::geometry::d3::object::Cuboid</name>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_cuboid_1ad7320e905fa787d1ccdadefd58ceac7b" kind="typedef"><name>Vertex</name></member>
@@ -363,6 +367,8 @@
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a3e596528cd5e416546dabe45e9100e04" kind="function"><name>getInterpolationType</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a2e5f87beae48daf0ebbd4da6c0fdcb77" kind="function"><name>evaluate</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1aae0c8423f11e7aa9f764ee4973070c36" kind="function"><name>evaluate</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ab17940ffe4064348fa33990424cb4983" kind="function"><name>computeDerivative</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1af32075ac2a7f44c83f1a17b43cec78ad" kind="function"><name>computeDerivative</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a41019cdd1cad7b5c5c818ff25a122536" kind="function"><name>GenerateInterpolator</name></member>
   </compound>
   <compound refid="classostk_1_1mathematics_1_1geometry_1_1d2_1_1_intersection" kind="class"><name>ostk::mathematics::geometry::d2::Intersection</name>
@@ -559,6 +565,8 @@
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a6e6d93d0ac658408b32a8bb8dd66d069" kind="function"><name>~Linear</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1ac1332768995f471149cd3852b3ba2782" kind="function"><name>evaluate</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a741b61d24af15b3332721b0751ec3a7a" kind="function"><name>evaluate</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a24f276d8242c407b246d7aed10ce5285" kind="function"><name>computeDerivative</name></member>
+    <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1aa3bad32623ca7a926776fac3c5a7f9e0" kind="function"><name>computeDerivative</name></member>
     <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a00f1e08ef6368bf8806fe290c41ea8e7" kind="function"><name>findIndexRange</name></member>
   </compound>
   <compound refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string" kind="class"><name>ostk::mathematics::geometry::d3::object::LineString</name>

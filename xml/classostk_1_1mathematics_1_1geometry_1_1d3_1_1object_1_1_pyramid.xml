@@ -612,7 +612,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="223" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="344" bodyend="409"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="223" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="344" bodyend="408"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1a5ed8e14c5ca36792c887d534d446ce4f" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1_intersection" kindref="compound">Intersection</ref></type>
@@ -668,7 +668,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="236" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="411" bodyend="496"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="236" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="410" bodyend="495"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aba0fd8b256f78bb7bb0725103287f681" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -710,7 +710,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="247" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="498" bodyend="509"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="247" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="497" bodyend="508"/>
       </memberdef>
       <memberdef kind="function" id="classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_pyramid_1aec8ebca28ff89fd03a088d399de8e6e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type>void</type>
@@ -739,7 +739,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="253" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="511" bodyend="525"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="253" column="18" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="510" bodyend="524"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -758,7 +758,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="259" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="527" bodyend="530"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.hpp" line="259" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Pyramid.cpp" bodystart="526" bodyend="529"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

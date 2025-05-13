@@ -154,10 +154,27 @@
 <codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>interpolator_(aQueryValue);</highlight></codeline>
 <codeline lineno="71"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>interpolator</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>curvefitting</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mathematics</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ostk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>CubicSpline::computeDerivative(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>aQueryValue)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="74"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>interpolator_.prime(aQueryValue);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>CubicSpline::computeDerivative(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref>&amp;<sp/>aQueryVector)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="79"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>yOutput(aQueryVector.size());</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>aQueryVector.size();<sp/>++i)</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>yOutput(i)<sp/>=<sp/>interpolator_.prime(aQueryVector(i));</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>yOutput;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>interpolator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>curvefitting</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mathematics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ostk</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp"/>
   </compounddef>

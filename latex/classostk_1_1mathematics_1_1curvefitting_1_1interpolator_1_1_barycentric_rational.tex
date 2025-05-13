@@ -25,7 +25,11 @@ virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolato
 virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a0a440a296a04347ed9b4a9a22f1cf57f}{evaluate}} (const Vector\+Xd \&a\+Query\+Vector) const override
 \begin{DoxyCompactList}\small\item\em Evaluate the spline. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a343d5f5f554639ce936706ea75109006}{evaluate}} (const double \&a\+Query\+Value) const override
-\begin{DoxyCompactList}\small\item\em Evaluate the spline. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluate the spline. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a0f9feb9408d8b5510342dc5a54107bef}{compute\+Derivative}} (const double \&a\+Query\+Value) const override
+\begin{DoxyCompactList}\small\item\em Compute the derivative at a specific query value. \end{DoxyCompactList}\item 
+virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a53b32694d5f83bb2570c82e21d8ecaf2}{compute\+Derivative}} (const Vector\+Xd \&a\+Query\+Vector) const override
+\begin{DoxyCompactList}\small\item\em Compute the derivatives at multiple query values. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -76,6 +80,62 @@ Destructor.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a0f9feb9408d8b5510342dc5a54107bef}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a0f9feb9408d8b5510342dc5a54107bef}} 
+\index{ostk::mathematics::curvefitting::interpolator::BarycentricRational@{ostk::mathematics::curvefitting::interpolator::BarycentricRational}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::interpolator::BarycentricRational@{ostk::mathematics::curvefitting::interpolator::BarycentricRational}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the derivative at a specific query value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & The x value to compute the derivative at\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} derivative = barycentricRational.computeDerivative(5.0) ;}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+The derivative at the given x value 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_ab17940ffe4064348fa33990424cb4983}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a53b32694d5f83bb2570c82e21d8ecaf2}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a53b32694d5f83bb2570c82e21d8ecaf2}} 
+\index{ostk::mathematics::curvefitting::interpolator::BarycentricRational@{ostk::mathematics::curvefitting::interpolator::BarycentricRational}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::interpolator::BarycentricRational@{ostk::mathematics::curvefitting::interpolator::BarycentricRational}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the derivatives at multiple query values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values to compute the derivatives at\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} derivatives = barycentricRational.computeDerivative(\{1.0, 5.0, 6.0\}) ;}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+A vector of derivatives at the given x values 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_af32075ac2a7f44c83f1a17b43cec78ad}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a343d5f5f554639ce936706ea75109006}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a343d5f5f554639ce936706ea75109006}} 
 \index{ostk::mathematics::curvefitting::interpolator::BarycentricRational@{ostk::mathematics::curvefitting::interpolator::BarycentricRational}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::BarycentricRational@{ostk::mathematics::curvefitting::interpolator::BarycentricRational}}

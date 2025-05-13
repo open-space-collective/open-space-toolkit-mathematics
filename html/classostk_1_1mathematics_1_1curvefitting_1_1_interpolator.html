@@ -131,6 +131,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aae0c8423f11e7aa9f764ee4973070c36"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#aae0c8423f11e7aa9f764ee4973070c36">evaluate</a> (const double &amp;aQueryValue) const =0</td></tr>
 <tr class="memdesc:aae0c8423f11e7aa9f764ee4973070c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the interpolator.  <a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#aae0c8423f11e7aa9f764ee4973070c36">More...</a><br /></td></tr>
 <tr class="separator:aae0c8423f11e7aa9f764ee4973070c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab17940ffe4064348fa33990424cb4983"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#ab17940ffe4064348fa33990424cb4983">computeDerivative</a> (const double &amp;aQueryValue) const =0</td></tr>
+<tr class="memdesc:ab17940ffe4064348fa33990424cb4983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the derivative of the interpolator.  <a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#ab17940ffe4064348fa33990424cb4983">More...</a><br /></td></tr>
+<tr class="separator:ab17940ffe4064348fa33990424cb4983"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af32075ac2a7f44c83f1a17b43cec78ad"><td class="memItemLeft" align="right" valign="top">virtual VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#af32075ac2a7f44c83f1a17b43cec78ad">computeDerivative</a> (const VectorXd &amp;aQueryVector) const =0</td></tr>
+<tr class="memdesc:af32075ac2a7f44c83f1a17b43cec78ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the derivative of the interpolator.  <a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#af32075ac2a7f44c83f1a17b43cec78ad">More...</a><br /></td></tr>
+<tr class="separator:af32075ac2a7f44c83f1a17b43cec78ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -225,6 +231,80 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab17940ffe4064348fa33990424cb4983"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab17940ffe4064348fa33990424cb4983">&#9670;&nbsp;</a></span>computeDerivative() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double ostk::mathematics::curvefitting::Interpolator::computeDerivative </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>aQueryValue</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the derivative of the interpolator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aQueryValue</td><td>An x value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Derivative of the interpolator at the given x value </dd></dl>
+
+<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a18dba35307db81b233329af76feb09fa">ostk::mathematics::curvefitting::interpolator::CubicSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a24f276d8242c407b246d7aed10ce5285">ostk::mathematics::curvefitting::interpolator::Linear</a>, and <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#a0f9feb9408d8b5510342dc5a54107bef">ostk::mathematics::curvefitting::interpolator::BarycentricRational</a>.</p>
+
+</div>
+</div>
+<a id="af32075ac2a7f44c83f1a17b43cec78ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af32075ac2a7f44c83f1a17b43cec78ad">&#9670;&nbsp;</a></span>computeDerivative() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual VectorXd ostk::mathematics::curvefitting::Interpolator::computeDerivative </td>
+          <td>(</td>
+          <td class="paramtype">const VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>aQueryVector</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the derivative of the interpolator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aQueryVector</td><td>A vector of x values </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector of derivatives of the interpolator at the given x values </dd></dl>
+
+<p>Implemented in <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a91fa43ce75d45612a45e22af98762dcd">ostk::mathematics::curvefitting::interpolator::CubicSpline</a>, <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#aa3bad32623ca7a926776fac3c5a7f9e0">ostk::mathematics::curvefitting::interpolator::Linear</a>, and <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational.html#a53b32694d5f83bb2570c82e21d8ecaf2">ostk::mathematics::curvefitting::interpolator::BarycentricRational</a>.</p>
+
+</div>
+</div>
 <a id="aae0c8423f11e7aa9f764ee4973070c36"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aae0c8423f11e7aa9f764ee4973070c36">&#9670;&nbsp;</a></span>evaluate() <span class="overload">[1/2]</span></h2>
 

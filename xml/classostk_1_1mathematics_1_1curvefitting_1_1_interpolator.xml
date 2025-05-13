@@ -52,7 +52,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="76" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" bodystart="76" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="88" column="16" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" bodystart="88" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -181,6 +181,72 @@
         </inbodydescription>
         <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="63" column="20"/>
       </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ab17940ffe4064348fa33990424cb4983" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>double</type>
+        <definition>virtual double ostk::mathematics::curvefitting::Interpolator::computeDerivative</definition>
+        <argsstring>(const double &amp;aQueryValue) const =0</argsstring>
+        <name>computeDerivative</name>
+        <reimplementedby refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a0f9feb9408d8b5510342dc5a54107bef">computeDerivative</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a24f276d8242c407b246d7aed10ce5285">computeDerivative</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a18dba35307db81b233329af76feb09fa">computeDerivative</reimplementedby>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Get the derivative of the interpolator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An x value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Derivative of the interpolator at the given x value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="69" column="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1af32075ac2a7f44c83f1a17b43cec78ad" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>VectorXd</type>
+        <definition>virtual VectorXd ostk::mathematics::curvefitting::Interpolator::computeDerivative</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const =0</argsstring>
+        <name>computeDerivative</name>
+        <reimplementedby refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a53b32694d5f83bb2570c82e21d8ecaf2">computeDerivative</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1aa3bad32623ca7a926776fac3c5a7f9e0">computeDerivative</reimplementedby>
+        <reimplementedby refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a91fa43ce75d45612a45e22af98762dcd">computeDerivative</reimplementedby>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Get the derivative of the interpolator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Vector of derivatives of the interpolator at the given x values </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="75" column="22"/>
+      </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
       <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a41019cdd1cad7b5c5c818ff25a122536" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -235,7 +301,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="71" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.cpp" bodystart="33" bodyend="48"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="83" column="25" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.cpp" bodystart="33" bodyend="48"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -269,8 +335,10 @@
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="32" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" bodystart="31" bodyend="77"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" line="32" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator.hpp" bodystart="31" bodyend="89"/>
     <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ab17940ffe4064348fa33990424cb4983" prot="public" virt="pure-virtual"><scope>ostk::mathematics::curvefitting::Interpolator</scope><name>computeDerivative</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1af32075ac2a7f44c83f1a17b43cec78ad" prot="public" virt="pure-virtual"><scope>ostk::mathematics::curvefitting::Interpolator</scope><name>computeDerivative</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a2e5f87beae48daf0ebbd4da6c0fdcb77" prot="public" virt="pure-virtual"><scope>ostk::mathematics::curvefitting::Interpolator</scope><name>evaluate</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1aae0c8423f11e7aa9f764ee4973070c36" prot="public" virt="pure-virtual"><scope>ostk::mathematics::curvefitting::Interpolator</scope><name>evaluate</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a41019cdd1cad7b5c5c818ff25a122536" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::Interpolator</scope><name>GenerateInterpolator</name></member>

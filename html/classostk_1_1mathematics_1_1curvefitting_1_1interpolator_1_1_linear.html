@@ -116,6 +116,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a741b61d24af15b3332721b0751ec3a7a"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a741b61d24af15b3332721b0751ec3a7a">evaluate</a> (const double &amp;aQueryValue) const override</td></tr>
 <tr class="memdesc:a741b61d24af15b3332721b0751ec3a7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluate the linear interpolator.  <a href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a741b61d24af15b3332721b0751ec3a7a">More...</a><br /></td></tr>
 <tr class="separator:a741b61d24af15b3332721b0751ec3a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24f276d8242c407b246d7aed10ce5285"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a24f276d8242c407b246d7aed10ce5285">computeDerivative</a> (const double &amp;aQueryValue) const override</td></tr>
+<tr class="memdesc:a24f276d8242c407b246d7aed10ce5285"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the derivative of the linear interpolator.  <a href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a24f276d8242c407b246d7aed10ce5285">More...</a><br /></td></tr>
+<tr class="separator:a24f276d8242c407b246d7aed10ce5285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3bad32623ca7a926776fac3c5a7f9e0"><td class="memItemLeft" align="right" valign="top">virtual VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#aa3bad32623ca7a926776fac3c5a7f9e0">computeDerivative</a> (const VectorXd &amp;aQueryVector) const override</td></tr>
+<tr class="memdesc:aa3bad32623ca7a926776fac3c5a7f9e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the derivative of the linear interpolator.  <a href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#aa3bad32623ca7a926776fac3c5a7f9e0">More...</a><br /></td></tr>
+<tr class="separator:aa3bad32623ca7a926776fac3c5a7f9e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classostk_1_1mathematics_1_1curvefitting_1_1_interpolator')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html">ostk::mathematics::curvefitting::Interpolator</a></td></tr>
 <tr class="memitem:a6593f90bb974214f6f2b264bc114b96e inherit pub_methods_classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6593f90bb974214f6f2b264bc114b96e">Interpolator</a> (const <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6318ad43cbddfa9b220213af2ac33557">Type</a> &amp;aType)</td></tr>
 <tr class="memdesc:a6593f90bb974214f6f2b264bc114b96e inherit pub_methods_classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor (can only be called by derived classes since it is pure virtual)  <a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#a6593f90bb974214f6f2b264bc114b96e">More...</a><br /></td></tr>
@@ -214,6 +220,82 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a24f276d8242c407b246d7aed10ce5285"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24f276d8242c407b246d7aed10ce5285">&#9670;&nbsp;</a></span>computeDerivative() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double ostk::mathematics::curvefitting::interpolator::Linear::computeDerivative </td>
+          <td>(</td>
+          <td class="paramtype">const double &amp;&#160;</td>
+          <td class="paramname"><em>aQueryValue</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the derivative of the linear interpolator. </p>
+<div class="fragment"><div class="line"><span class="keywordtype">double</span> derivative = linear.computeDerivative(5.0) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aQueryValue</td><td>An x value </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Derivative of the interpolator at the given x value </dd></dl>
+
+<p>Implements <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#ab17940ffe4064348fa33990424cb4983">ostk::mathematics::curvefitting::Interpolator</a>.</p>
+
+</div>
+</div>
+<a id="aa3bad32623ca7a926776fac3c5a7f9e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3bad32623ca7a926776fac3c5a7f9e0">&#9670;&nbsp;</a></span>computeDerivative() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">VectorXd ostk::mathematics::curvefitting::interpolator::Linear::computeDerivative </td>
+          <td>(</td>
+          <td class="paramtype">const VectorXd &amp;&#160;</td>
+          <td class="paramname"><em>aQueryVector</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the derivative of the linear interpolator. </p>
+<div class="fragment"><div class="line"><a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a> derivatives = linear.computeDerivative({1.0, 5.0, 6.0}) ;</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aQueryVector</td><td>A vector of x values </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector of derivatives of the interpolator at the given x values </dd></dl>
+
+<p>Implements <a class="el" href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html#af32075ac2a7f44c83f1a17b43cec78ad">ostk::mathematics::curvefitting::Interpolator</a>.</p>
+
+</div>
+</div>
 <a id="a741b61d24af15b3332721b0751ec3a7a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a741b61d24af15b3332721b0751ec3a7a">&#9670;&nbsp;</a></span>evaluate() <span class="overload">[1/2]</span></h2>
 
@@ -296,7 +378,7 @@ Additional Inherited Members</h2></td></tr>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_html_a66f13250b306128dacc988a56961eda8"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a66f13250b306128dacc988a56961eda8">ostk::mathematics::curvefitting::interpolator::Linear::Linear</a></div><div class="ttdeci">Linear(const VectorXd &amp;anXVector, const VectorXd &amp;aYVector)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Linear.cpp:16</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_html_a66f13250b306128dacc988a56961eda8"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear.html#a66f13250b306128dacc988a56961eda8">ostk::mathematics::curvefitting::interpolator::Linear::Linear</a></div><div class="ttdeci">Linear(const VectorXd &amp;anXVector, const VectorXd &amp;aYVector)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Linear.cpp:18</div></div>
 <div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a7353155bb00668655919bf5698f74c84"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">ostk::mathematics::object::VectorXd</a></div><div class="ttdeci">Eigen::VectorXd VectorXd</div><div class="ttdef"><b>Definition:</b> Vector.hpp:42</div></div>
 <!-- HTML footer for doxygen 1.8.7-->
 <!-- start footer part -->

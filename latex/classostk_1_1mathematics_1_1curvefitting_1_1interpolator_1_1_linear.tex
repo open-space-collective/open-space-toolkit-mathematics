@@ -25,7 +25,11 @@ virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolato
 virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_ac1332768995f471149cd3852b3ba2782}{evaluate}} (const Vector\+Xd \&a\+Query\+Vector) const override
 \begin{DoxyCompactList}\small\item\em Evaluate the linear interpolator. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a741b61d24af15b3332721b0751ec3a7a}{evaluate}} (const double \&a\+Query\+Value) const override
-\begin{DoxyCompactList}\small\item\em Evaluate the linear interpolator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluate the linear interpolator. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a24f276d8242c407b246d7aed10ce5285}{compute\+Derivative}} (const double \&a\+Query\+Value) const override
+\begin{DoxyCompactList}\small\item\em Get the derivative of the linear interpolator. \end{DoxyCompactList}\item 
+virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_aa3bad32623ca7a926776fac3c5a7f9e0}{compute\+Derivative}} (const Vector\+Xd \&a\+Query\+Vector) const override
+\begin{DoxyCompactList}\small\item\em Get the derivative of the linear interpolator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -80,6 +84,62 @@ Destructor.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a24f276d8242c407b246d7aed10ce5285}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a24f276d8242c407b246d7aed10ce5285}} 
+\index{ostk::mathematics::curvefitting::interpolator::Linear@{ostk::mathematics::curvefitting::interpolator::Linear}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::interpolator::Linear@{ostk::mathematics::curvefitting::interpolator::Linear}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the derivative of the linear interpolator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} derivative = linear.computeDerivative(5.0) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Derivative of the interpolator at the given x value 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_ab17940ffe4064348fa33990424cb4983}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_aa3bad32623ca7a926776fac3c5a7f9e0}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_aa3bad32623ca7a926776fac3c5a7f9e0}} 
+\index{ostk::mathematics::curvefitting::interpolator::Linear@{ostk::mathematics::curvefitting::interpolator::Linear}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::interpolator::Linear@{ostk::mathematics::curvefitting::interpolator::Linear}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the derivative of the linear interpolator. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} derivatives = linear.computeDerivative(\{1.0, 5.0, 6.0\}) ;}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of derivatives of the interpolator at the given x values 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_af32075ac2a7f44c83f1a17b43cec78ad}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a741b61d24af15b3332721b0751ec3a7a}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a741b61d24af15b3332721b0751ec3a7a}} 
 \index{ostk::mathematics::curvefitting::interpolator::Linear@{ostk::mathematics::curvefitting::interpolator::Linear}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::Linear@{ostk::mathematics::curvefitting::interpolator::Linear}}

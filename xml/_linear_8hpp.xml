@@ -143,19 +143,23 @@
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
 <codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1ac1332768995f471149cd3852b3ba2782" kindref="member">evaluate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>aQueryValue)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>x_;</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>y_;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>Pair&lt;Index,<sp/>Index&gt;<sp/>findIndexRange(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>aQueryValue)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>interpolator</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>curvefitting</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mathematics</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ostk</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a24f276d8242c407b246d7aed10ce5285" kindref="member">computeDerivative</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>aQueryValue)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_1a24f276d8242c407b246d7aed10ce5285" kindref="member">computeDerivative</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref>&amp;<sp/>aQueryVector)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>x_;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>y_;</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>Pair&lt;Index,<sp/>Index&gt;<sp/>findIndexRange(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>aQueryValue)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>interpolator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>curvefitting</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mathematics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ostk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp"/>
   </compounddef>

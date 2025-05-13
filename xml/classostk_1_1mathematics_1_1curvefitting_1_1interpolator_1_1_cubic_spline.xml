@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="94" column="29" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" bodystart="94" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="114" column="29" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" bodystart="114" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -204,6 +204,72 @@
         </inbodydescription>
         <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="91" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="68" bodyend="71"/>
       </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a18dba35307db81b233329af76feb09fa" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::curvefitting::interpolator::CubicSpline::computeDerivative</definition>
+        <argsstring>(const double &amp;aQueryValue) const override</argsstring>
+        <name>computeDerivative</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ab17940ffe4064348fa33990424cb4983">computeDerivative</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Compute the derivative at a specific query value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The x value to compute the derivative at</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>derivative<sp/>=<sp/>cubicSpline.computeDerivative(5.0)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The derivative at the given x value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="101" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="73" bodyend="76"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a91fa43ce75d45612a45e22af98762dcd" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>VectorXd</type>
+        <definition>VectorXd ostk::mathematics::curvefitting::interpolator::CubicSpline::computeDerivative</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const override</argsstring>
+        <name>computeDerivative</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1af32075ac2a7f44c83f1a17b43cec78ad">computeDerivative</reimplements>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Compute the derivatives at multiple query values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values to compute the derivatives at</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>derivatives<sp/>=<sp/>cubicSpline.computeDerivative({1.0,<sp/>5.0,<sp/>6.0})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>A vector of derivatives at the given x values </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="111" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.cpp" bodystart="78" bodyend="88"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
 <para><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline" kindref="compound">CubicSpline</ref>. </para>
@@ -236,8 +302,10 @@
         <link refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator"/>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="41" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" bodystart="40" bodyend="95"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" line="41" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp" bodystart="40" bodyend="115"/>
     <listofallmembers>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a18dba35307db81b233329af76feb09fa" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>computeDerivative</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a91fa43ce75d45612a45e22af98762dcd" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>computeDerivative</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1af32918b90ad7b87440323e3b0e4a8d6e" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>CubicSpline</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1aee7259e030e792e73991125e793f0862" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>CubicSpline</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a6852a278bdd114175116ae0e875bd258" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::CubicSpline</scope><name>evaluate</name></member>

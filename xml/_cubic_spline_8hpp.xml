@@ -139,16 +139,20 @@
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
 <codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a6852a278bdd114175116ae0e875bd258" kindref="member">evaluate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>aQueryValue)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>cardinal_cubic_b_spline&lt;double&gt;<sp/>interpolator_;</highlight></codeline>
-<codeline lineno="95"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>interpolator</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>curvefitting</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="99"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mathematics</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ostk</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="101"><highlight class="normal"></highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a18dba35307db81b233329af76feb09fa" kindref="member">computeDerivative</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>aQueryValue)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_1a18dba35307db81b233329af76feb09fa" kindref="member">computeDerivative</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref>&amp;<sp/>aQueryVector)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>cardinal_cubic_b_spline&lt;double&gt;<sp/>interpolator_;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>interpolator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>curvefitting</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mathematics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ostk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp"/>
   </compounddef>

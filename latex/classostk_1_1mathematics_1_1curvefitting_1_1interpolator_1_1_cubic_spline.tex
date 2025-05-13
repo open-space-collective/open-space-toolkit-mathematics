@@ -27,7 +27,11 @@ virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolato
 virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a6852a278bdd114175116ae0e875bd258}{evaluate}} (const Vector\+Xd \&a\+Query\+Vector) const override
 \begin{DoxyCompactList}\small\item\em Evaluate the cubic spline interpolator. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a2f91b443473606d1236a81d24d643368}{evaluate}} (const double \&a\+Query\+Value) const override
-\begin{DoxyCompactList}\small\item\em Evaluate the cubic spline interpolator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluate the cubic spline interpolator. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a18dba35307db81b233329af76feb09fa}{compute\+Derivative}} (const double \&a\+Query\+Value) const override
+\begin{DoxyCompactList}\small\item\em Compute the derivative at a specific query value. \end{DoxyCompactList}\item 
+virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a91fa43ce75d45612a45e22af98762dcd}{compute\+Derivative}} (const Vector\+Xd \&a\+Query\+Vector) const override
+\begin{DoxyCompactList}\small\item\em Compute the derivatives at multiple query values. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
 
 
@@ -110,6 +114,62 @@ Destructor.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a18dba35307db81b233329af76feb09fa}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a18dba35307db81b233329af76feb09fa}} 
+\index{ostk::mathematics::curvefitting::interpolator::CubicSpline@{ostk::mathematics::curvefitting::interpolator::CubicSpline}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::interpolator::CubicSpline@{ostk::mathematics::curvefitting::interpolator::CubicSpline}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily double ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Spline\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the derivative at a specific query value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & The x value to compute the derivative at\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{double} derivative = cubicSpline.computeDerivative(5.0) ;}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+The derivative at the given x value 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_ab17940ffe4064348fa33990424cb4983}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a91fa43ce75d45612a45e22af98762dcd}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a91fa43ce75d45612a45e22af98762dcd}} 
+\index{ostk::mathematics::curvefitting::interpolator::CubicSpline@{ostk::mathematics::curvefitting::interpolator::CubicSpline}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::interpolator::CubicSpline@{ostk::mathematics::curvefitting::interpolator::CubicSpline}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Vector\+Xd ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Spline\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Compute the derivatives at multiple query values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values to compute the derivatives at\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{namespaceostk_1_1mathematics_1_1object_a7353155bb00668655919bf5698f74c84}{VectorXd}} derivatives = cubicSpline.computeDerivative(\{1.0, 5.0, 6.0\}) ;}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+A vector of derivatives at the given x values 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_af32075ac2a7f44c83f1a17b43cec78ad}{ostk\+::mathematics\+::curvefitting\+::\+Interpolator}}.
+
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a2f91b443473606d1236a81d24d643368}\label{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a2f91b443473606d1236a81d24d643368}} 
 \index{ostk::mathematics::curvefitting::interpolator::CubicSpline@{ostk::mathematics::curvefitting::interpolator::CubicSpline}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!ostk::mathematics::curvefitting::interpolator::CubicSpline@{ostk::mathematics::curvefitting::interpolator::CubicSpline}}

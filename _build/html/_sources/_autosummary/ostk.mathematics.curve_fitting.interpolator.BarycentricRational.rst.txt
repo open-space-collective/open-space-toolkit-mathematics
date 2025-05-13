@@ -16,6 +16,7 @@ ostk.mathematics.curve\_fitting.interpolator.BarycentricRational
    .. autosummary::
       :nosignatures:
    
+      ~BarycentricRational.compute_derivative
       ~BarycentricRational.evaluate
       ~BarycentricRational.generate_interpolator
       ~BarycentricRational.get_interpolation_type

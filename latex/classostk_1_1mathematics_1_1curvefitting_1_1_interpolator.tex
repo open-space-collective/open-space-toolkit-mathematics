@@ -35,7 +35,11 @@ virtual \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolat
 virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_a2e5f87beae48daf0ebbd4da6c0fdcb77}{evaluate}} (const Vector\+Xd \&a\+Query\+Vector) const =0
 \begin{DoxyCompactList}\small\item\em Evaluate the interpolator. \end{DoxyCompactList}\item 
 virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_aae0c8423f11e7aa9f764ee4973070c36}{evaluate}} (const double \&a\+Query\+Value) const =0
-\begin{DoxyCompactList}\small\item\em Evaluate the interpolator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Evaluate the interpolator. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_ab17940ffe4064348fa33990424cb4983}{compute\+Derivative}} (const double \&a\+Query\+Value) const =0
+\begin{DoxyCompactList}\small\item\em Get the derivative of the interpolator. \end{DoxyCompactList}\item 
+virtual Vector\+Xd \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_af32075ac2a7f44c83f1a17b43cec78ad}{compute\+Derivative}} (const Vector\+Xd \&a\+Query\+Vector) const =0
+\begin{DoxyCompactList}\small\item\em Get the derivative of the interpolator. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -102,6 +106,50 @@ Destructor (pure virtual)
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_ab17940ffe4064348fa33990424cb4983}\label{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_ab17940ffe4064348fa33990424cb4983}} 
+\index{ostk::mathematics::curvefitting::Interpolator@{ostk::mathematics::curvefitting::Interpolator}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::Interpolator@{ostk::mathematics::curvefitting::Interpolator}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual double ostk\+::mathematics\+::curvefitting\+::\+Interpolator\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const double \&}]{a\+Query\+Value }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the derivative of the interpolator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Value} & An x value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Derivative of the interpolator at the given x value 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a18dba35307db81b233329af76feb09fa}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Spline}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_a24f276d8242c407b246d7aed10ce5285}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear}}, and \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a0f9feb9408d8b5510342dc5a54107bef}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational}}.
+
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_af32075ac2a7f44c83f1a17b43cec78ad}\label{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_af32075ac2a7f44c83f1a17b43cec78ad}} 
+\index{ostk::mathematics::curvefitting::Interpolator@{ostk::mathematics::curvefitting::Interpolator}!computeDerivative@{computeDerivative}}
+\index{computeDerivative@{computeDerivative}!ostk::mathematics::curvefitting::Interpolator@{ostk::mathematics::curvefitting::Interpolator}}
+\doxysubsubsection{\texorpdfstring{computeDerivative()}{computeDerivative()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Vector\+Xd ostk\+::mathematics\+::curvefitting\+::\+Interpolator\+::compute\+Derivative (\begin{DoxyParamCaption}\item[{const Vector\+Xd \&}]{a\+Query\+Vector }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the derivative of the interpolator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a\+Query\+Vector} & A vector of x values \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vector of derivatives of the interpolator at the given x values 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_a91fa43ce75d45612a45e22af98762dcd}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Cubic\+Spline}}, \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_linear_aa3bad32623ca7a926776fac3c5a7f9e0}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Linear}}, and \mbox{\hyperlink{classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_a53b32694d5f83bb2570c82e21d8ecaf2}{ostk\+::mathematics\+::curvefitting\+::interpolator\+::\+Barycentric\+Rational}}.
+
 \mbox{\Hypertarget{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_aae0c8423f11e7aa9f764ee4973070c36}\label{classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_aae0c8423f11e7aa9f764ee4973070c36}} 
 \index{ostk::mathematics::curvefitting::Interpolator@{ostk::mathematics::curvefitting::Interpolator}!evaluate@{evaluate}}
 \index{evaluate@{evaluate}!ostk::mathematics::curvefitting::Interpolator@{ostk::mathematics::curvefitting::Interpolator}}

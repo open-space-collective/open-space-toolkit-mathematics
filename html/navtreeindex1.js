@@ -1,5 +1,13 @@
 var NAVTREEINDEX1 =
 {
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#a9c6a3ae1411b75a6c0cac397a6ace371aec0fc0100c4fc1ce4eea230c3dc10360":[5,0,0,0,1,2,0,0],
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#aa3dc7dc0bc06636a3e3b1d5628344833":[5,0,0,0,1,2,28],
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#aaf5a6fca6315e78ec77c6b4bbc3dd5c9":[5,0,0,0,1,2,2],
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#ac5f8554956c2af987e09227b3f80476b":[5,0,0,0,1,2,20],
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#acfb4ab5bc33ca5bf005bcffae8c02073":[5,0,0,0,1,2,11],
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#ad219f85f3e1821c423afed35cdacfd52":[5,0,0,0,1,2,27],
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#ad99d5ff3a95e93b3599248c72b631ff1":[5,0,0,0,1,2,13],
+"classostk_1_1mathematics_1_1geometry_1_1_angle.html#ad9ceffd9a91e117a415248f8b40429d2":[5,0,0,0,1,2,4],
 "classostk_1_1mathematics_1_1geometry_1_1_angle.html#adf9b2d8e3017045706b1fbebc37dc7f1":[5,0,0,0,1,2,26],
 "classostk_1_1mathematics_1_1geometry_1_1_angle.html#ae07e7bb66c4f60565d19343124ff0cc7":[5,0,0,0,1,2,10],
 "classostk_1_1mathematics_1_1geometry_1_1_angle.html#ae42710386b7e29dc17623d606c2f81bd":[5,0,0,0,1,2,17],
@@ -241,13 +249,5 @@ var NAVTREEINDEX1 =
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#adc2ef152c4cfc2b2842cf9e215116ea4":[5,0,0,0,1,0,0,7,5],
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#addbc0c8111c2f8c5ce1ff347135d54fe":[5,0,0,0,1,0,0,7,32],
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#adf15f8325e848f3c4e310169aa8e0657":[5,0,0,0,1,0,0,7,2],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#ae6ca3b527769f810852bf4c7a05f6b53":[5,0,0,0,1,0,0,7,17],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#aeeedeff734bdf3fceae7d17dc9aa2097":[5,0,0,0,1,0,0,7,23],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#af999d9844abf33d70dae582222582fac":[5,0,0,0,1,0,0,7,28],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#afe8fc2aa12ac96c61c7eb213a1be60b5":[5,0,0,0,1,0,0,7,0],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html":[5,0,0,0,1,0,0,8],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a0417919bc94c59ae23492d591514b6c9":[5,0,0,0,1,0,0,8,11],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a0fa9db689dceda267581043aab6bc8b9":[5,0,0,0,1,0,0,8,5],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a104bbc842576324e46876838e92b18c9":[5,0,0,0,1,0,0,8,16],
-"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a12d65189283e7c180d4046238be766f0":[5,0,0,0,1,0,0,8,17]
+"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#ae6ca3b527769f810852bf4c7a05f6b53":[5,0,0,0,1,0,0,7,17]
 };

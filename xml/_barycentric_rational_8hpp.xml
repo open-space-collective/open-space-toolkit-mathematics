@@ -136,16 +136,20 @@
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a0a440a296a04347ed9b4a9a22f1cf57f" kindref="member">evaluate</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>aQueryValue)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>barycentric_rational&lt;double&gt;<sp/>interpolator_;</highlight></codeline>
-<codeline lineno="78"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>interpolator</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>curvefitting</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mathematics</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ostk</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a0f9feb9408d8b5510342dc5a54107bef" kindref="member">computeDerivative</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">&amp;<sp/>aQueryValue)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a0f9feb9408d8b5510342dc5a54107bef" kindref="member">computeDerivative</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref>&amp;<sp/>aQueryVector)<sp/></highlight><highlight class="keyword">const<sp/>override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>barycentric_rational&lt;double&gt;<sp/>interpolator_;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>interpolator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>curvefitting</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>mathematics</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>ostk</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp"/>
   </compounddef>

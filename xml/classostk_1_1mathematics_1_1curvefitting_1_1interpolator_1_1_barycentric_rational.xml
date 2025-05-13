@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="77" column="26" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" bodystart="77" bodyend="-1"/>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="97" column="26" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" bodystart="97" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -144,6 +144,72 @@
         </inbodydescription>
         <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="74" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.cpp" bodystart="40" bodyend="43"/>
       </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a0f9feb9408d8b5510342dc5a54107bef" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>double</type>
+        <definition>double ostk::mathematics::curvefitting::interpolator::BarycentricRational::computeDerivative</definition>
+        <argsstring>(const double &amp;aQueryValue) const override</argsstring>
+        <name>computeDerivative</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1ab17940ffe4064348fa33990424cb4983">computeDerivative</reimplements>
+        <param>
+          <type>const double &amp;</type>
+          <declname>aQueryValue</declname>
+        </param>
+        <briefdescription>
+<para>Compute the derivative at a specific query value. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The x value to compute the derivative at</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<programlisting filename=".cpp"><codeline><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>derivative<sp/>=<sp/>barycentricRational.computeDerivative(5.0)<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>The derivative at the given x value </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="84" column="20" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.cpp" bodystart="45" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a53b32694d5f83bb2570c82e21d8ecaf2" prot="public" static="no" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>VectorXd</type>
+        <definition>VectorXd ostk::mathematics::curvefitting::interpolator::BarycentricRational::computeDerivative</definition>
+        <argsstring>(const VectorXd &amp;aQueryVector) const override</argsstring>
+        <name>computeDerivative</name>
+        <reimplements refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1af32075ac2a7f44c83f1a17b43cec78ad">computeDerivative</reimplements>
+        <param>
+          <type>const VectorXd &amp;</type>
+          <declname>aQueryVector</declname>
+        </param>
+        <briefdescription>
+<para>Compute the derivatives at multiple query values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>aQueryVector</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A vector of x values to compute the derivatives at</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<programlisting filename=".cpp"><codeline><highlight class="normal"><ref refid="namespaceostk_1_1mathematics_1_1object_1a7353155bb00668655919bf5698f74c84" kindref="member">VectorXd</ref><sp/>derivatives<sp/>=<sp/>barycentricRational.computeDerivative({1.0,<sp/>5.0,<sp/>6.0})<sp/>;</highlight></codeline>
+</programlisting></para>
+<para><simplesect kind="return"><para>A vector of derivatives at the given x values </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="94" column="22" bodyfile="src/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.cpp" bodystart="50" bodyend="60"/>
+      </memberdef>
       </sectiondef>
     <briefdescription>
 <para><ref refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational" kindref="compound">BarycentricRational</ref>. </para>
@@ -176,9 +242,11 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="39" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" bodystart="38" bodyend="78"/>
+    <location file="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" line="39" column="1" bodyfile="include/OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp" bodystart="38" bodyend="98"/>
     <listofallmembers>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a864926f51a4eb2c3566649d0fcf03fd3" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>BarycentricRational</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a0f9feb9408d8b5510342dc5a54107bef" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>computeDerivative</name></member>
+      <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a53b32694d5f83bb2570c82e21d8ecaf2" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>computeDerivative</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a0a440a296a04347ed9b4a9a22f1cf57f" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>evaluate</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_barycentric_rational_1a343d5f5f554639ce936706ea75109006" prot="public" virt="virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>evaluate</name></member>
       <member refid="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator_1a41019cdd1cad7b5c5c818ff25a122536" prot="public" virt="non-virtual"><scope>ostk::mathematics::curvefitting::interpolator::BarycentricRational</scope><name>GenerateInterpolator</name></member>

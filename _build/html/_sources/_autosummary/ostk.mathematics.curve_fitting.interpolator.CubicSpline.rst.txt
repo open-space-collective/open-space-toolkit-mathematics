@@ -16,6 +16,7 @@ ostk.mathematics.curve\_fitting.interpolator.CubicSpline
    .. autosummary::
       :nosignatures:
    
+      ~CubicSpline.compute_derivative
       ~CubicSpline.evaluate
       ~CubicSpline.generate_interpolator
       ~CubicSpline.get_interpolation_type

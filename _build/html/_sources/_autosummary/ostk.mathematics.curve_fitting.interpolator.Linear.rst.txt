@@ -16,6 +16,7 @@ ostk.mathematics.curve\_fitting.interpolator.Linear
    .. autosummary::
       :nosignatures:
    
+      ~Linear.compute_derivative
       ~Linear.evaluate
       ~Linear.generate_interpolator
       ~Linear.get_interpolation_type

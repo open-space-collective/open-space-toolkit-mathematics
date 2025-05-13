@@ -127,16 +127,20 @@ $(document).ready(function(){initNavTree('_cubic_spline_8hpp_source.html',''); i
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a6852a278bdd114175116ae0e875bd258">evaluate</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; aQueryValue) <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;   <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    cardinal_cubic_b_spline&lt;double&gt; interpolator_;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}  <span class="comment">// namespace interpolator</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;}  <span class="comment">// namespace curvefitting</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}  <span class="comment">// namespace mathematics</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}  <span class="comment">// namespace ostk</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a18dba35307db81b233329af76feb09fa">computeDerivative</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; aQueryValue) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a> <a class="code" href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a18dba35307db81b233329af76feb09fa">computeDerivative</a>(<span class="keyword">const</span> <a class="code" href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">VectorXd</a>&amp; aQueryVector) <span class="keyword">const override</span>;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;   <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    cardinal_cubic_b_spline&lt;double&gt; interpolator_;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}  <span class="comment">// namespace interpolator</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}  <span class="comment">// namespace curvefitting</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}  <span class="comment">// namespace mathematics</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}  <span class="comment">// namespace ostk</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_vector_8hpp_html"><div class="ttname"><a href="_vector_8hpp.html">Vector.hpp</a></div></div>
@@ -146,6 +150,7 @@ $(document).ready(function(){initNavTree('_cubic_spline_8hpp_source.html',''); i
 <div class="ttc" id="anamespaceostk_html"><div class="ttname"><a href="namespaceostk.html">ostk</a></div><div class="ttdoc">Apache License 2.0.</div><div class="ttdef"><b>Definition:</b> BarycentricRational.hpp:14</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_html_af32918b90ad7b87440323e3b0e4a8d6e"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#af32918b90ad7b87440323e3b0e4a8d6e">ostk::mathematics::curvefitting::interpolator::CubicSpline::CubicSpline</a></div><div class="ttdeci">CubicSpline(const VectorXd &amp;anXVector, const VectorXd &amp;aYVector)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> CubicSpline.cpp:16</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1_interpolator_html"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1_interpolator.html">ostk::mathematics::curvefitting::Interpolator</a></div><div class="ttdoc">Interpolator (abstract class)</div><div class="ttdef"><b>Definition:</b> Interpolator.hpp:31</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline_html_a18dba35307db81b233329af76feb09fa"><div class="ttname"><a href="classostk_1_1mathematics_1_1curvefitting_1_1interpolator_1_1_cubic_spline.html#a18dba35307db81b233329af76feb09fa">ostk::mathematics::curvefitting::interpolator::CubicSpline::computeDerivative</a></div><div class="ttdeci">virtual double computeDerivative(const double &amp;aQueryValue) const override</div><div class="ttdoc">Compute the derivative at a specific query value.</div><div class="ttdef"><b>Definition:</b> CubicSpline.cpp:73</div></div>
 <div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a7353155bb00668655919bf5698f74c84"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a7353155bb00668655919bf5698f74c84">ostk::mathematics::object::VectorXd</a></div><div class="ttdeci">Eigen::VectorXd VectorXd</div><div class="ttdef"><b>Definition:</b> Vector.hpp:42</div></div>
 <div class="ttc" id="a_interpolator_8hpp_html"><div class="ttname"><a href="_interpolator_8hpp.html">Interpolator.hpp</a></div></div>
 <!-- HTML footer for doxygen 1.8.7-->

@@ -1,5 +1,13 @@
 var NAVTREEINDEX2 =
 {
+"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#aeeedeff734bdf3fceae7d17dc9aa2097":[5,0,0,0,1,0,0,7,23],
+"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#af999d9844abf33d70dae582222582fac":[5,0,0,0,1,0,0,7,28],
+"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_polygon.html#afe8fc2aa12ac96c61c7eb213a1be60b5":[5,0,0,0,1,0,0,7,0],
+"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html":[5,0,0,0,1,0,0,8],
+"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a0417919bc94c59ae23492d591514b6c9":[5,0,0,0,1,0,0,8,11],
+"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a0fa9db689dceda267581043aab6bc8b9":[5,0,0,0,1,0,0,8,5],
+"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a104bbc842576324e46876838e92b18c9":[5,0,0,0,1,0,0,8,16],
+"classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a12d65189283e7c180d4046238be766f0":[5,0,0,0,1,0,0,8,17],
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a1963e9bad746b355e0b340804622b2b9":[5,0,0,0,1,0,0,8,8],
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a23def062fef6c1210fa528ff078930a3":[5,0,0,0,1,0,0,8,4],
 "classostk_1_1mathematics_1_1geometry_1_1d2_1_1object_1_1_segment.html#a336bfa4add0cea6ca7ce52a2e2b5e341":[5,0,0,0,1,0,0,8,18],
@@ -241,13 +249,5 @@ var NAVTREEINDEX2 =
 "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a4e68ff9a60ace16eba53c703828c07e2":[5,0,0,0,1,1,0,5,8],
 "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a5bc4dc999137d0087978e3a1df1d8f7b":[5,0,0,0,1,1,0,5,0],
 "classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a6d27eb6359000685e81a6a5d79fbb807":[5,0,0,0,1,1,0,5,5],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a9910ccb0907ba84696f5895362c8906f":[5,0,0,0,1,1,0,5,12],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#aa57ee802638910c77c4b2dd712614192":[5,0,0,0,1,1,0,5,4],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#ac79b6efa23440fa61690181c6ade42ec":[5,0,0,0,1,1,0,5,9],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#ac80cff5419ed1a8cbeb2b1b6835d15ae":[5,0,0,0,1,1,0,5,11],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#acdf9a6bdfdf5e8b51c3521367d9adf35":[5,0,0,0,1,1,0,5,7],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html":[5,0,0,0,1,1,0,6],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a04c4eacdc8f5d1edd6a1ff0da1d6e0fa":[5,0,0,0,1,1,0,6,19],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a07a393740306e4f8363920a8d82823e7":[5,0,0,0,1,1,0,6,2],
-"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_plane.html#a0a39c2a1bd1e330e8cc15aa4a5e19d47":[5,0,0,0,1,1,0,6,20]
+"classostk_1_1mathematics_1_1geometry_1_1d3_1_1object_1_1_line_string.html#a9910ccb0907ba84696f5895362c8906f":[5,0,0,0,1,1,0,5,12]
 };
