@@ -30,6 +30,16 @@ class PyInterpolator : public Interpolator
     {
         PYBIND11_OVERRIDE_PURE(double, Interpolator, evaluate, aQueryValue);
     }
+
+    double computeDerivative(const double& aQueryValue) const override
+    {
+        PYBIND11_OVERRIDE_PURE(double, Interpolator, computeDerivative, aQueryValue);
+    }
+
+    VectorXd computeDerivative(const VectorXd& aQueryVector) const override
+    {
+        PYBIND11_OVERRIDE_PURE(VectorXd, Interpolator, computeDerivative, aQueryVector);
+    }
 };
 
 inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::module& aModule)
@@ -52,6 +62,8 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
 
         .def("evaluate", overload_cast<const VectorXd&>(&Interpolator::evaluate, const_), arg("x"))
         .def("evaluate", overload_cast<const double&>(&Interpolator::evaluate, const_), arg("x"))
+        .def("compute_derivative", overload_cast<const double&>(&Interpolator::computeDerivative, const_), arg("x"))
+        .def("compute_derivative", overload_cast<const VectorXd&>(&Interpolator::computeDerivative, const_), arg("x"))
 
         .def_static(
             "generate_interpolator", &Interpolator::GenerateInterpolator, arg("interpolation_type"), arg("x"), arg("y")

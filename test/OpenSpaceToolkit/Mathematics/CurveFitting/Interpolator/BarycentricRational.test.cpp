@@ -83,3 +83,39 @@ TEST(OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational, Evaluate)
         }
     }
 }
+
+TEST(OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational, ComputeDerivative)
+{
+    {
+        VectorXd x(6);
+        x << 0.0, 1.0, 2.0, 3.0, 4.0, 5.0;
+
+        VectorXd y(6);
+        y << 0.0, 3.0, 5.0, 6.0, 9.0, 15.0;
+
+        BarycentricRational interpolator(x, y);
+
+        // Values taken from scipy
+        EXPECT_NEAR(interpolator.computeDerivative(1.5), 1.9765624999999993, 1e-1);
+        EXPECT_NEAR(interpolator.computeDerivative(3.5), 2.9348958333333335, 1e-1);
+    }
+
+    {
+        VectorXd x(6);
+        x << 0.0, 1.0, 2.0, 3.0, 4.0, 5.0;
+
+        VectorXd y(6);
+        y << 0.0, 3.0, 5.0, 6.0, 9.0, 15.0;
+
+        BarycentricRational interpolator(x, y);
+
+        VectorXd query(2);
+        query << 1.5, 3.5;
+
+        VectorXd derivatives = interpolator.computeDerivative(query);
+
+        // Values taken from scipy
+        EXPECT_NEAR(derivatives(0), 1.9765624999999993, 1e-1);
+        EXPECT_NEAR(derivatives(1), 2.9348958333333335, 1e-1);
+    }
+}

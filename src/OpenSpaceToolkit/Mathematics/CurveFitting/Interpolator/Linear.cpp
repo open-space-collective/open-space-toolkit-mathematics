@@ -13,6 +13,8 @@ namespace curvefitting
 namespace interpolator
 {
 
+using ostk::core::container::Unpack;
+
 Linear::Linear(const VectorXd& anXVector, const VectorXd& aYVector)
     : Interpolator(Interpolator::Type::Linear),
       x_(anXVector),
@@ -63,6 +65,33 @@ double Linear::evaluate(const double& aQueryValue) const
     const Real Ratio = (aQueryValue - x_(previousIndex)) / (x_(nextIndex) - x_(previousIndex));
 
     return previousY + Ratio * (nextY - previousY);
+}
+
+double Linear::computeDerivative(const double& aQueryValue) const
+{
+    Index previousIndex;
+    Index nextIndex;
+
+    Unpack(previousIndex, nextIndex) = findIndexRange(aQueryValue);
+
+    if (previousIndex == nextIndex)
+    {
+        return 0.0;
+    }
+
+    return (y_(nextIndex) - y_(previousIndex)) / (x_(nextIndex) - x_(previousIndex));
+}
+
+VectorXd Linear::computeDerivative(const VectorXd& aQueryVector) const
+{
+    VectorXd yOutput(aQueryVector.size());
+
+    for (int i = 0; i < aQueryVector.size(); ++i)
+    {
+        yOutput(i) = computeDerivative(aQueryVector(i));
+    }
+
+    return yOutput;
 }
 
 Pair<Index, Index> Linear::findIndexRange(const double& aQueryValue) const

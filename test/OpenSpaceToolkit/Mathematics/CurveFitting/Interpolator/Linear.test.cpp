@@ -83,3 +83,38 @@ TEST(OpenSpaceToolkit_Mathematics_Interpolator_Linear, Evaluate)
         }
     }
 }
+
+TEST(OpenSpaceToolkit_Mathematics_Interpolator_Linear, ComputeDerivative)
+{
+    {
+        VectorXd x(6);
+        x << 0.0, 1.0, 2.0, 3.0, 4.0, 5.0;
+
+        VectorXd y(6);
+        y << 0.0, 3.0, 5.0, 6.0, 9.0, 15.0;
+
+        Linear interpolator(x, y);
+
+        EXPECT_NEAR(interpolator.computeDerivative(1.5), 2.0, 1e-6);
+        EXPECT_NEAR(interpolator.computeDerivative(3.5), 3.0, 1e-6);
+    }
+
+    {
+        VectorXd x(6);
+        x << 0.0, 1.0, 2.0, 3.0, 4.0, 5.0;
+
+        VectorXd y(6);
+        y << 0.0, 3.0, 5.0, 6.0, 9.0, 15.0;
+
+        Linear interpolator(x, y);
+
+        VectorXd query(3);
+        query << 1.5, 2.5, 3.5;
+
+        VectorXd derivatives = interpolator.computeDerivative(query);
+
+        EXPECT_NEAR(derivatives(0), 2.0, 1e-6);
+        EXPECT_NEAR(derivatives(1), 1.0, 1e-6);
+        EXPECT_NEAR(derivatives(2), 3.0, 1e-6);
+    }
+}

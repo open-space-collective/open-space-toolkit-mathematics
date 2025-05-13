@@ -33,3 +33,13 @@ class TestLinear:
             interpolator.evaluate(x=[0.0, 1.0, 2.0, 4.0, 5.0, 6.0])
             == [0.0, 3.0, 6.0, 9.0, 17.0, 5.0]
         ).all()
+
+    def test_compute_derivative(self):
+        interpolator = Linear(
+            x=[0.0, 1.0, 2.0, 4.0, 5.0, 6.0],
+            y=[0.0, 3.0, 6.0, 9.0, 17.0, 5.0],
+        )
+
+        assert interpolator.compute_derivative(1.5) is not None
+
+        assert interpolator.compute_derivative([1.5]) is not None

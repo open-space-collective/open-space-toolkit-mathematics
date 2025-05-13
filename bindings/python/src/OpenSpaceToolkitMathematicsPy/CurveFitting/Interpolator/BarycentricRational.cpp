@@ -18,5 +18,17 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricR
         .def(init<const VectorXd&, const VectorXd&>(), arg("x"), arg("y"))
 
         .def("evaluate", overload_cast<const VectorXd&>(&BarycentricRational::evaluate, const_), arg("x"))
-        .def("evaluate", overload_cast<const double&>(&BarycentricRational::evaluate, const_), arg("x"));
+        .def("evaluate", overload_cast<const double&>(&BarycentricRational::evaluate, const_), arg("x"))
+        .def(
+            "compute_derivative",
+            overload_cast<const double&>(&BarycentricRational::computeDerivative, const_),
+            arg("x")
+        )
+        .def(
+            "compute_derivative",
+            overload_cast<const VectorXd&>(&BarycentricRational::computeDerivative, const_),
+            arg("x")
+        )
+
+        ;
 }

@@ -75,6 +75,26 @@ class Linear : public Interpolator
     /// @return Vector of y values
     virtual double evaluate(const double& aQueryValue) const override;
 
+    /// @brief Get the derivative of the linear interpolator
+    ///
+    /// @code{.cpp}
+    ///                     double derivative = linear.computeDerivative(5.0) ;
+    /// @endcode
+    ///
+    /// @param aQueryValue An x value
+    /// @return Derivative of the interpolator at the given x value
+    virtual double computeDerivative(const double& aQueryValue) const override;
+
+    /// @brief Get the derivative of the linear interpolator
+    ///
+    /// @code{.cpp}
+    ///                     VectorXd derivatives = linear.computeDerivative({1.0, 5.0, 6.0}) ;
+    /// @endcode
+    ///
+    /// @param aQueryVector A vector of x values
+    /// @return Vector of derivatives of the interpolator at the given x values
+    virtual VectorXd computeDerivative(const VectorXd& aQueryVector) const override;
+
    private:
     VectorXd x_;
     VectorXd y_;

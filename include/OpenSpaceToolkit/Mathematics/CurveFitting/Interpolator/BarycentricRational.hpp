@@ -73,6 +73,26 @@ class BarycentricRational : public Interpolator
     /// @return Vector of y values
     virtual double evaluate(const double& aQueryValue) const override;
 
+    /// @brief Compute the derivative at a specific query value
+    /// @param aQueryValue The x value to compute the derivative at
+    ///
+    /// @code{.cpp}
+    ///                     double derivative = barycentricRational.computeDerivative(5.0) ;
+    /// @endcode
+    ///
+    /// @return The derivative at the given x value
+    virtual double computeDerivative(const double& aQueryValue) const override;
+
+    /// @brief Compute the derivatives at multiple query values
+    /// @param aQueryVector A vector of x values to compute the derivatives at
+    ///
+    /// @code{.cpp}
+    ///                     VectorXd derivatives = barycentricRational.computeDerivative({1.0, 5.0, 6.0}) ;
+    /// @endcode
+    ///
+    /// @return A vector of derivatives at the given x values
+    virtual VectorXd computeDerivative(const VectorXd& aQueryVector) const override;
+
    private:
     barycentric_rational<double> interpolator_;
 };

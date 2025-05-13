@@ -62,6 +62,18 @@ class Interpolator
     /// @return Vector of y values
     virtual double evaluate(const double& aQueryValue) const = 0;
 
+    /// @brief Get the derivative of the interpolator
+    ///
+    /// @param aQueryValue An x value
+    /// @return Derivative of the interpolator at the given x value
+    virtual double computeDerivative(const double& aQueryValue) const = 0;
+
+    /// @brief Get the derivative of the interpolator
+    ///
+    /// @param aQueryVector A vector of x values
+    /// @return Vector of derivatives of the interpolator at the given x values
+    virtual VectorXd computeDerivative(const VectorXd& aQueryVector) const = 0;
+
     /// @brief Generate an interpolator
     ///
     /// @param aType Interpolation type
