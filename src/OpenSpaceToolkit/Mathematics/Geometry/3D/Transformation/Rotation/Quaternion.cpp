@@ -178,7 +178,7 @@ bool Quaternion::isUnitary(const Real& aNormTolerance) const
         throw ostk::core::error::runtime::Undefined("Norm tolerance");
     }
 
-    return std::abs(((x_ * x_) + (y_ * y_) + (z_ * z_) + (s_ * s_)) - 1.0) <= aNormTolerance;
+    return std::abs(this->norm() - 1.0) <= aNormTolerance;
 }
 
 bool Quaternion::isNear(const Quaternion& aQuaternion, const Angle& anAngularTolerance) const
