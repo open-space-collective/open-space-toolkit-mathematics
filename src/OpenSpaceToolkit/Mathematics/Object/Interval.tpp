@@ -397,14 +397,19 @@ ctnr::Array<T> Interval<T>::generateArrayWithStep(const U& aStep) const
     {
         T value = this->accessLowerBound();
 
-        while (value <= this->accessUpperBound())
+        if ((type_ == Interval<T>::Type::Open) || (type_ == Interval<T>::Type::HalfOpenLeft))
+        {
+            value += aStep;
+        }
+
+        while (value < this->accessUpperBound())
         {
             grid.add(value);
 
             value += aStep;
         }
 
-        if (grid.accessLast() < this->accessUpperBound())
+        if ((type_ == Interval<T>::Type::Closed) || (type_ == Interval<T>::Type::HalfOpenLeft))
         {
             grid.add(this->accessUpperBound());
         }
@@ -413,14 +418,19 @@ ctnr::Array<T> Interval<T>::generateArrayWithStep(const U& aStep) const
     {
         T value = this->accessUpperBound();
 
-        while (value >= this->accessLowerBound())
+        if ((type_ == Interval<T>::Type::Open) || (type_ == Interval<T>::Type::HalfOpenRight))
+        {
+            value += aStep;
+        }
+
+        while (value > this->accessLowerBound())
         {
             grid.add(value);
 
             value += aStep;
         }
 
-        if (grid.accessLast() > this->accessLowerBound())
+        if ((type_ == Interval<T>::Type::Closed) || (type_ == Interval<T>::Type::HalfOpenRight))
         {
             grid.add(this->accessLowerBound());
         }
