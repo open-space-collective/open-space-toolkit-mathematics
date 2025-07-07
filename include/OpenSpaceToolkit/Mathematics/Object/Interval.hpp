@@ -228,7 +228,7 @@ class Interval : public IntervalBase
 
     Interval<T> getUnionWith(const Interval& anInterval) const;
 
-    /// @brief              Generate array from a given step
+    /// @brief              Generate array from a given step, respecting the openness of the interval.
     ///
     /// @code
     ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ;
@@ -241,7 +241,7 @@ class Interval : public IntervalBase
     template <class U>
     ctnr::Array<T> generateArrayWithStep(const U& aStep) const;
 
-    /// @brief              Generate array with a given size
+    /// @brief              Generate array with a given size, respecting the openness of the interval.
     ///
     /// @code
     ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ;
