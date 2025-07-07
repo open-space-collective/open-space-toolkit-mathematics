@@ -1776,6 +1776,22 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
         EXPECT_TRUE(array.isNear(Array<Real>({1.0, 0.5, 0.0}), Real::Epsilon()));
     }
 
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::Closed};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(2.0));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({0.0, 1.0}), Real::Epsilon()));
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::Closed};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(-2.0));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({1.0, 0.0}), Real::Epsilon()));
+    }
+
     // Open
 
     {
@@ -1792,6 +1808,22 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
         const Array<Real> array = interval.generateArrayWithStep(Real(-0.5));
 
         EXPECT_TRUE(array.isNear(Array<Real>({0.5}), Real::Epsilon()));
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::Open};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(2.0));
+
+        EXPECT_TRUE(array.isEmpty());
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::Open};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(-2.0));
+
+        EXPECT_TRUE(array.isEmpty());
     }
 
     // Half-Open Left
@@ -1812,6 +1844,22 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
         EXPECT_TRUE(array.isNear(Array<Real>({1.0, 0.5}), Real::Epsilon()));
     }
 
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::HalfOpenLeft};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(2.0));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({1.0}), Real::Epsilon()));
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::HalfOpenLeft};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(-2.0));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({1.0}), Real::Epsilon()));
+    }
+
     // Half-Open Right
 
     {
@@ -1828,6 +1876,22 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
         const Array<Real> array = interval.generateArrayWithStep(Real(-0.5));
 
         EXPECT_TRUE(array.isNear(Array<Real>({0.5, 0.0}), Real::Epsilon()));
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::HalfOpenRight};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(2.0));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({0.0}), Real::Epsilon()));
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::HalfOpenRight};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(-2.0));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({0.0}), Real::Epsilon()));
     }
 
     {
