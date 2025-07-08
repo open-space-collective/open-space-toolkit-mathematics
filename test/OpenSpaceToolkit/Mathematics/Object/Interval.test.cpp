@@ -1752,20 +1752,152 @@ TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GetUnionWith)
     }
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
-// {
+TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithStep)
+{
+    using ostk::core::container::Array;
+    using ostk::core::type::Real;
+    using ostk::mathematics::object::Interval;
 
-//     using ostk::core::type::Real ;
+    // Closed
 
-//     using ostk::mathematics::object::Interval ;
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::Closed};
 
-//     {
+        const Array<Real> array = interval.generateArrayWithStep(Real(0.5));
 
-//         FAIL() ;
+        EXPECT_TRUE(array.isNear(Array<Real>({0.0, 0.5, 1.0}), Real::Epsilon()));
+    }
 
-//     }
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::Closed};
 
-// }
+        const Array<Real> array = interval.generateArrayWithStep(Real(-0.5));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({1.0, 0.5, 0.0}), Real::Epsilon()));
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::Closed};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(2.0));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({0.0, 1.0}), Real::Epsilon()));
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::Closed};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(-2.0));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({1.0, 0.0}), Real::Epsilon()));
+    }
+
+    // Open
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::Open};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(0.5));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({0.5}), Real::Epsilon()));
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::Open};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(-0.5));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({0.5}), Real::Epsilon()));
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::Open};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(2.0));
+
+        EXPECT_TRUE(array.isEmpty());
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::Open};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(-2.0));
+
+        EXPECT_TRUE(array.isEmpty());
+    }
+
+    // Half-Open Left
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::HalfOpenLeft};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(0.5));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({0.5, 1.0}), Real::Epsilon()));
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::HalfOpenLeft};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(-0.5));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({1.0, 0.5}), Real::Epsilon()));
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::HalfOpenLeft};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(2.0));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({1.0}), Real::Epsilon()));
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::HalfOpenLeft};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(-2.0));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({1.0}), Real::Epsilon()));
+    }
+
+    // Half-Open Right
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::HalfOpenRight};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(0.5));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({0.0, 0.5}), Real::Epsilon()));
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::HalfOpenRight};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(-0.5));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({0.5, 0.0}), Real::Epsilon()));
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::HalfOpenRight};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(2.0));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({0.0}), Real::Epsilon()));
+    }
+
+    {
+        const Interval<Real> interval = {0.0, 1.0, Interval<Real>::Type::HalfOpenRight};
+
+        const Array<Real> array = interval.generateArrayWithStep(Real(-2.0));
+
+        EXPECT_TRUE(array.isNear(Array<Real>({0.0}), Real::Epsilon()));
+    }
+
+    {
+        EXPECT_ANY_THROW(Interval<Real>(0.0, 1.0, Interval<Real>::Type::Closed).generateArrayWithStep(Real(0.0)));
+    }
+}
 
 TEST(OpenSpaceToolkit_Mathematics_Object_Interval, GenerateArrayWithSize)
 {
