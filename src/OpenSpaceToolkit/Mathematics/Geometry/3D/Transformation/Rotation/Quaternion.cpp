@@ -462,13 +462,10 @@ Quaternion& Quaternion::rectify()
         throw ostk::core::error::runtime::Undefined("Quaternion");
     }
 
-    if (s_ < 0.0)
-    {
-        x_ = -x_;
-        y_ = -y_;
-        z_ = -z_;
-        s_ = -s_;
-    }
+    x_ = -x_;
+    y_ = -y_;
+    z_ = -z_;
+    s_ = -s_;
 
     return *this;
 }
