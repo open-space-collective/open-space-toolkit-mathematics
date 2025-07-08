@@ -487,7 +487,7 @@
           <declname>aStep</declname>
         </param>
         <briefdescription>
-<para>Generate array from a given step. </para>
+<para>Generate array from a given step, respecting the openness of the interval. </para>
         </briefdescription>
         <detaileddescription>
 <para><programlisting><codeline><highlight class="normal">Interval&lt;Real&gt;<sp/>interval<sp/>=<sp/>Interval&lt;Real&gt;::Closed(0.0,<sp/>1.0)<sp/>;</highlight></codeline>
@@ -520,7 +520,7 @@
           <declname>anArraySize</declname>
         </param>
         <briefdescription>
-<para>Generate array with a given size. </para>
+<para>Generate array with a given size, respecting the openness of the interval. </para>
         </briefdescription>
         <detaileddescription>
 <para><programlisting><codeline><highlight class="normal">Interval&lt;Real&gt;<sp/>interval<sp/>=<sp/>Interval&lt;Real&gt;::Closed(0.0,<sp/>1.0)<sp/>;</highlight></codeline>

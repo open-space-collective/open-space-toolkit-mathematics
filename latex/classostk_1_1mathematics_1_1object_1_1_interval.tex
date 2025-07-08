@@ -49,9 +49,9 @@ T \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a17efb397c97e
 \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}}$<$ T $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_af0b873731c1700be9b2a30d87a2aa956}{get\+Union\+With}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval}{Interval}} \&an\+Interval) const
 \begin{DoxyCompactList}\small\item\em Get union interval with another interval. \end{DoxyCompactList}\item 
 {\footnotesize template$<$class U $>$ }\\ctnr\+::\+Array$<$ T $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ad1636246dd97c94a67d38b5d2a8eb868}{generate\+Array\+With\+Step}} (const U \&a\+Step) const
-\begin{DoxyCompactList}\small\item\em Generate array from a given step. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Generate array from a given step, respecting the openness of the interval. \end{DoxyCompactList}\item 
 ctnr\+::\+Array$<$ T $>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ad84a50656e1779837cdf34e8cb8867a2}{generate\+Array\+With\+Size}} (const types\+::\+Size \&an\+Array\+Size) const
-\begin{DoxyCompactList}\small\item\em Generate array with a given size. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Generate array with a given size, respecting the openness of the interval. \end{DoxyCompactList}\item 
 types\+::\+String \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_a2078d591dd42e83abb2851a49e00cddf}{to\+String}} () const
 \begin{DoxyCompactList}\small\item\em Get serialized interval. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_ad0010cca002a86b15a2dc9e4f5335201}{set\+Type}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_interval_base_a2ad76e98fc37333faeb21490c7b4f201}{Interval\+::\+Type}} \&a\+Type)
@@ -282,7 +282,7 @@ ctnr\+::\+Array$<$T$>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_i
 
 
 
-Generate array with a given size. 
+Generate array with a given size, respecting the openness of the interval. 
 
 
 \begin{DoxyCode}{0}
@@ -309,7 +309,7 @@ ctnr\+::\+Array$<$T$>$ \mbox{\hyperlink{classostk_1_1mathematics_1_1object_1_1_i
 
 
 
-Generate array from a given step. 
+Generate array from a given step, respecting the openness of the interval. 
 
 
 \begin{DoxyCode}{0}

@@ -153,10 +153,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af0b873731c1700be9b2a30d87a2aa956"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1636246dd97c94a67d38b5d2a8eb868"><td class="memTemplParams" colspan="2">template&lt;class U &gt; </td></tr>
 <tr class="memitem:ad1636246dd97c94a67d38b5d2a8eb868"><td class="memTemplItemLeft" align="right" valign="top">ctnr::Array&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html#ad1636246dd97c94a67d38b5d2a8eb868">generateArrayWithStep</a> (const U &amp;aStep) const</td></tr>
-<tr class="memdesc:ad1636246dd97c94a67d38b5d2a8eb868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate array from a given step.  <a href="classostk_1_1mathematics_1_1object_1_1_interval.html#ad1636246dd97c94a67d38b5d2a8eb868">More...</a><br /></td></tr>
+<tr class="memdesc:ad1636246dd97c94a67d38b5d2a8eb868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate array from a given step, respecting the openness of the interval.  <a href="classostk_1_1mathematics_1_1object_1_1_interval.html#ad1636246dd97c94a67d38b5d2a8eb868">More...</a><br /></td></tr>
 <tr class="separator:ad1636246dd97c94a67d38b5d2a8eb868"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad84a50656e1779837cdf34e8cb8867a2"><td class="memItemLeft" align="right" valign="top">ctnr::Array&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html#ad84a50656e1779837cdf34e8cb8867a2">generateArrayWithSize</a> (const types::Size &amp;anArraySize) const</td></tr>
-<tr class="memdesc:ad84a50656e1779837cdf34e8cb8867a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate array with a given size.  <a href="classostk_1_1mathematics_1_1object_1_1_interval.html#ad84a50656e1779837cdf34e8cb8867a2">More...</a><br /></td></tr>
+<tr class="memdesc:ad84a50656e1779837cdf34e8cb8867a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate array with a given size, respecting the openness of the interval.  <a href="classostk_1_1mathematics_1_1object_1_1_interval.html#ad84a50656e1779837cdf34e8cb8867a2">More...</a><br /></td></tr>
 <tr class="separator:ad84a50656e1779837cdf34e8cb8867a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2078d591dd42e83abb2851a49e00cddf"><td class="memItemLeft" align="right" valign="top">types::String&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a2078d591dd42e83abb2851a49e00cddf">toString</a> () const</td></tr>
 <tr class="memdesc:a2078d591dd42e83abb2851a49e00cddf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get serialized interval.  <a href="classostk_1_1mathematics_1_1object_1_1_interval.html#a2078d591dd42e83abb2851a49e00cddf">More...</a><br /></td></tr>
@@ -506,7 +506,7 @@ template&lt;class T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Generate array with a given size. </p>
+<p>Generate array with a given size, respecting the openness of the interval. </p>
 <div class="fragment"><div class="line">Interval&lt;Real&gt; interval = <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(0.0, 1.0) ;</div>
 <div class="line">Array&lt;Real&gt; array = interval.generateArrayWithSize(3) ; <span class="comment">// [0.0, 0.5, 1.0]</span></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
@@ -539,7 +539,7 @@ template&lt;class U &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Generate array from a given step. </p>
+<p>Generate array from a given step, respecting the openness of the interval. </p>
 <div class="fragment"><div class="line">Interval&lt;Real&gt; interval = <a class="code" href="classostk_1_1mathematics_1_1object_1_1_interval.html#a3d13b7bfa9bcfee7dd3a7f9998378c4b">Interval&lt;Real&gt;::Closed</a>(0.0, 1.0) ;</div>
 <div class="line">Array&lt;Real&gt; array = interval.generateArrayWithStep(0.5) ; <span class="comment">// [0.0, 0.5, 1.0]</span></div>
 </div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
