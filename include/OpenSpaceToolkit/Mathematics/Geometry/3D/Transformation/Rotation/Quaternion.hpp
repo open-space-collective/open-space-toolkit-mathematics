@@ -37,7 +37,7 @@ class EulerAngle;
 
 /// @brief                      Quaternion
 ///
-///                             Provide  a convenient mathematical notation for representing orientations and rotation
+///                             Provide a convenient mathematical notation for representing orientations and rotation
 ///                             of object in three dimensions. Compared to Euler angles they are simpler to compose and
 ///                             avoid the problem of gimbal lock. Compared to rotation matrices they are more compact,
 ///                             more numerically stable, and more efficient.
