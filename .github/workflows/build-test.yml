@@ -44,7 +44,7 @@ jobs:
     name: Build Development Image
     needs:
       - prepare-environment
-    uses: open-space-collective/open-space-toolkit/.github/workflows/build-image.yml@ed6c4b12cbb72b05049801fc1732ca8281608084
+    uses: open-space-collective/open-space-toolkit/.github/workflows/build-image.yml@373ea999089ee0c1c80b5aab30e59bd2997b9b47
     with:
       project_name: ${{ needs.prepare-environment.outputs.project_name }}
       project_version: ${{ needs.prepare-environment.outputs.project_version }}
@@ -55,7 +55,7 @@ jobs:
     needs:
       - prepare-environment
       - build-development-image
-    uses: open-space-collective/open-space-toolkit/.github/workflows/test.yml@ed6c4b12cbb72b05049801fc1732ca8281608084
+    uses: open-space-collective/open-space-toolkit/.github/workflows/test.yml@373ea999089ee0c1c80b5aab30e59bd2997b9b47
     with:
       project_name: ${{ needs.prepare-environment.outputs.project_name }}
       project_version: ${{ needs.prepare-environment.outputs.project_version }}
@@ -67,7 +67,7 @@ jobs:
       - prepare-environment
       - build-development-image
       - test
-    uses: open-space-collective/open-space-toolkit/.github/workflows/build-packages.yml@ed6c4b12cbb72b05049801fc1732ca8281608084
+    uses: open-space-collective/open-space-toolkit/.github/workflows/build-packages.yml@373ea999089ee0c1c80b5aab30e59bd2997b9b47
     with:
       project_name: ${{ needs.prepare-environment.outputs.project_name }}
       project_version: ${{ needs.prepare-environment.outputs.project_version }}
