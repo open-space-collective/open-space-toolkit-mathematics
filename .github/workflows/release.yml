@@ -38,7 +38,7 @@ jobs:
     name: Build Development Image
     needs:
       - prepare-environment
-    uses: open-space-collective/open-space-toolkit/.github/workflows/build-image.yml@4d791a0acfaff4e79363ff2cb49e10a4db57ab08
+    uses: open-space-collective/open-space-toolkit/.github/workflows/build-image.yml@8502587e879008e04bf61a1f6fef50b1f7316397
     with:
       project_name: ${{ needs.prepare-environment.outputs.project_name }}
       project_version: ${{ needs.prepare-environment.outputs.project_version }}
@@ -49,7 +49,7 @@ jobs:
     needs:
       - prepare-environment
       - build-development-image
-    uses: open-space-collective/open-space-toolkit/.github/workflows/test.yml@4d791a0acfaff4e79363ff2cb49e10a4db57ab08
+    uses: open-space-collective/open-space-toolkit/.github/workflows/test.yml@8502587e879008e04bf61a1f6fef50b1f7316397
     with:
       project_name: ${{ needs.prepare-environment.outputs.project_name }}
       project_version: ${{ needs.prepare-environment.outputs.project_version }}
@@ -61,7 +61,7 @@ jobs:
       - prepare-environment
       - build-development-image
       - test
-    uses: open-space-collective/open-space-toolkit/.github/workflows/build-packages.yml@4d791a0acfaff4e79363ff2cb49e10a4db57ab08
+    uses: open-space-collective/open-space-toolkit/.github/workflows/build-packages.yml@8502587e879008e04bf61a1f6fef50b1f7316397
     with:
       project_name: ${{ needs.prepare-environment.outputs.project_name }}
       project_version: ${{ needs.prepare-environment.outputs.project_version }}
@@ -74,7 +74,7 @@ jobs:
       - build-development-image
       - test
       - package
-    uses: open-space-collective/open-space-toolkit/.github/workflows/release.yml@4d791a0acfaff4e79363ff2cb49e10a4db57ab08
+    uses: open-space-collective/open-space-toolkit/.github/workflows/release.yml@8502587e879008e04bf61a1f6fef50b1f7316397
     with:
       project_name: ${{ needs.prepare-environment.outputs.project_name }}
       project_version: ${{ needs.prepare-environment.outputs.project_version }}
