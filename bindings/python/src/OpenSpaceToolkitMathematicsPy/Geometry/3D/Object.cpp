@@ -22,6 +22,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
     using namespace pybind11;
 
     using ostk::mathematics::geometry::d3::Object;
+    using ostk::mathematics::geometry::d3::object::Cone;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Line;
     using ostk::mathematics::geometry::d3::object::LineString;
@@ -136,6 +137,13 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
                 return anObject.is<Pyramid>();
             }
         )
+        .def(
+            "is_cone",
+            +[](const Object& anObject) -> bool
+            {
+                return anObject.is<Cone>();
+            }
+        )
         .def("intersects", &Object::intersects)
         .def("contains", &Object::contains)
 
@@ -214,6 +222,13 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
             +[](const Object& anObject) -> Pyramid
             {
                 return anObject.as<Pyramid>();
+            }
+        )
+        .def(
+            "as_cone",
+            +[](const Object& anObject) -> Cone
+            {
+                return anObject.as<Cone>();
             }
         )
 

@@ -12,6 +12,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
     using ostk::mathematics::geometry::d3::Intersection;
     using ostk::mathematics::geometry::d3::Object;
     using ostk::mathematics::geometry::d3::object::Composite;
+    using ostk::mathematics::geometry::d3::object::Cone;
     using ostk::mathematics::geometry::d3::object::Cuboid;
     using ostk::mathematics::geometry::d3::object::Ellipsoid;
     using ostk::mathematics::geometry::d3::object::Line;
@@ -142,6 +143,13 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
             }
         )
         .def(
+            "is_cone",
+            +[](const Intersection& anIntersection) -> bool
+            {
+                return anIntersection.is<Cone>();
+            }
+        )
+        .def(
             "is_composite",
             +[](const Intersection& anIntersection) -> bool
             {
@@ -224,6 +232,13 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
             +[](const Intersection& anIntersection) -> Pyramid
             {
                 return anIntersection.as<Pyramid>();
+            }
+        )
+        .def(
+            "as_cone",
+            +[](const Intersection& anIntersection) -> Cone
+            {
+                return anIntersection.as<Cone>();
             }
         )
         .def(
