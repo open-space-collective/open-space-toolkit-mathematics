@@ -18,6 +18,7 @@ ostk.mathematics.geometry.d3.object.LineString
    
       ~LineString.access_point_at
       ~LineString.apply_transformation
+      ~LineString.as_cone
       ~LineString.as_ellipsoid
       ~LineString.as_line
       ~LineString.as_line_string
@@ -34,6 +35,7 @@ ostk.mathematics.geometry.d3.object.LineString
       ~LineString.get_point_closest_to
       ~LineString.get_point_count
       ~LineString.intersects
+      ~LineString.is_cone
       ~LineString.is_defined
       ~LineString.is_ellipsoid
       ~LineString.is_empty

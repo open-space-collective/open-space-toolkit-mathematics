@@ -17,6 +17,7 @@ ostk.mathematics.geometry.d3.object.Plane
       :nosignatures:
    
       ~Plane.apply_transformation
+      ~Plane.as_cone
       ~Plane.as_ellipsoid
       ~Plane.as_line
       ~Plane.as_line_string
@@ -33,6 +34,7 @@ ostk.mathematics.geometry.d3.object.Plane
       ~Plane.get_point
       ~Plane.intersection_with
       ~Plane.intersects
+      ~Plane.is_cone
       ~Plane.is_defined
       ~Plane.is_ellipsoid
       ~Plane.is_line

@@ -17,6 +17,7 @@ ostk.mathematics.geometry.d3.object.Point
       :nosignatures:
    
       ~Point.apply_transformation
+      ~Point.as_cone
       ~Point.as_ellipsoid
       ~Point.as_line
       ~Point.as_line_string
@@ -32,6 +33,7 @@ ostk.mathematics.geometry.d3.object.Point
       ~Point.contains
       ~Point.distance_to
       ~Point.intersects
+      ~Point.is_cone
       ~Point.is_defined
       ~Point.is_ellipsoid
       ~Point.is_line

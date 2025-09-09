@@ -17,6 +17,7 @@ ostk.mathematics.geometry.d3.object.Pyramid
       :nosignatures:
    
       ~Pyramid.apply_transformation
+      ~Pyramid.as_cone
       ~Pyramid.as_ellipsoid
       ~Pyramid.as_line
       ~Pyramid.as_line_string
@@ -37,6 +38,7 @@ ostk.mathematics.geometry.d3.object.Pyramid
       ~Pyramid.get_rays_of_lateral_faces
       ~Pyramid.intersection_with
       ~Pyramid.intersects
+      ~Pyramid.is_cone
       ~Pyramid.is_defined
       ~Pyramid.is_ellipsoid
       ~Pyramid.is_line

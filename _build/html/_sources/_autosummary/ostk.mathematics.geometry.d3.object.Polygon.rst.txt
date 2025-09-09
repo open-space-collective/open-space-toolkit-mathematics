@@ -17,6 +17,7 @@ ostk.mathematics.geometry.d3.object.Polygon
       :nosignatures:
    
       ~Polygon.apply_transformation
+      ~Polygon.as_cone
       ~Polygon.as_ellipsoid
       ~Polygon.as_line
       ~Polygon.as_line_string
@@ -40,6 +41,7 @@ ostk.mathematics.geometry.d3.object.Polygon
       ~Polygon.get_x_axis
       ~Polygon.get_y_axis
       ~Polygon.intersects
+      ~Polygon.is_cone
       ~Polygon.is_defined
       ~Polygon.is_ellipsoid
       ~Polygon.is_line

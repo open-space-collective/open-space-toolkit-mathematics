@@ -17,6 +17,7 @@ ostk.mathematics.geometry.d3.object.Line
       :nosignatures:
    
       ~Line.apply_transformation
+      ~Line.as_cone
       ~Line.as_ellipsoid
       ~Line.as_line
       ~Line.as_line_string
@@ -34,6 +35,7 @@ ostk.mathematics.geometry.d3.object.Line
       ~Line.get_origin
       ~Line.intersection_with
       ~Line.intersects
+      ~Line.is_cone
       ~Line.is_defined
       ~Line.is_ellipsoid
       ~Line.is_line

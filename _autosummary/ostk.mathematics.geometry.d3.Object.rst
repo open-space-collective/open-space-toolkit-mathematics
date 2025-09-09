@@ -17,6 +17,7 @@ ostk.mathematics.geometry.d3.Object
       :nosignatures:
    
       ~Object.apply_transformation
+      ~Object.as_cone
       ~Object.as_ellipsoid
       ~Object.as_line
       ~Object.as_line_string
@@ -30,6 +31,7 @@ ostk.mathematics.geometry.d3.Object
       ~Object.as_sphere
       ~Object.contains
       ~Object.intersects
+      ~Object.is_cone
       ~Object.is_defined
       ~Object.is_ellipsoid
       ~Object.is_line

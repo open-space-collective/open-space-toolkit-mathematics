@@ -17,6 +17,7 @@ ostk.mathematics.geometry.d3.object.Sphere
       :nosignatures:
    
       ~Sphere.apply_transformation
+      ~Sphere.as_cone
       ~Sphere.as_ellipsoid
       ~Sphere.as_line
       ~Sphere.as_line_string
@@ -33,6 +34,7 @@ ostk.mathematics.geometry.d3.object.Sphere
       ~Sphere.get_radius
       ~Sphere.intersection_with
       ~Sphere.intersects
+      ~Sphere.is_cone
       ~Sphere.is_defined
       ~Sphere.is_ellipsoid
       ~Sphere.is_line

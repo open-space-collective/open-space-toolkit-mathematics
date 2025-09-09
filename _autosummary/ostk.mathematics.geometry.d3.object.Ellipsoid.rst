@@ -17,6 +17,7 @@ ostk.mathematics.geometry.d3.object.Ellipsoid
       :nosignatures:
    
       ~Ellipsoid.apply_transformation
+      ~Ellipsoid.as_cone
       ~Ellipsoid.as_ellipsoid
       ~Ellipsoid.as_line
       ~Ellipsoid.as_line_string
@@ -40,6 +41,7 @@ ostk.mathematics.geometry.d3.object.Ellipsoid
       ~Ellipsoid.get_third_principal_semi_axis
       ~Ellipsoid.intersection
       ~Ellipsoid.intersects
+      ~Ellipsoid.is_cone
       ~Ellipsoid.is_defined
       ~Ellipsoid.is_ellipsoid
       ~Ellipsoid.is_line

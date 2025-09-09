@@ -17,6 +17,7 @@ ostk.mathematics.geometry.d3.object.PointSet
       :nosignatures:
    
       ~PointSet.apply_transformation
+      ~PointSet.as_cone
       ~PointSet.as_ellipsoid
       ~PointSet.as_line
       ~PointSet.as_line_string
@@ -34,6 +35,7 @@ ostk.mathematics.geometry.d3.object.PointSet
       ~PointSet.get_point_closest_to
       ~PointSet.get_size
       ~PointSet.intersects
+      ~PointSet.is_cone
       ~PointSet.is_defined
       ~PointSet.is_ellipsoid
       ~PointSet.is_empty

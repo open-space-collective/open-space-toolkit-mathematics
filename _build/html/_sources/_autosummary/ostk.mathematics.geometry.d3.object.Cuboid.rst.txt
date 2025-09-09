@@ -17,6 +17,7 @@ ostk.mathematics.geometry.d3.object.Cuboid
       :nosignatures:
    
       ~Cuboid.apply_transformation
+      ~Cuboid.as_cone
       ~Cuboid.as_ellipsoid
       ~Cuboid.as_line
       ~Cuboid.as_line_string
@@ -39,6 +40,7 @@ ostk.mathematics.geometry.d3.object.Cuboid
       ~Cuboid.get_third_extent
       ~Cuboid.get_vertices
       ~Cuboid.intersects
+      ~Cuboid.is_cone
       ~Cuboid.is_defined
       ~Cuboid.is_ellipsoid
       ~Cuboid.is_line

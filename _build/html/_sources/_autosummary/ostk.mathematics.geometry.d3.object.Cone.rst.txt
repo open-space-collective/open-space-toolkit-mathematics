@@ -17,6 +17,7 @@ ostk.mathematics.geometry.d3.object.Cone
       :nosignatures:
    
       ~Cone.apply_transformation
+      ~Cone.as_cone
       ~Cone.as_ellipsoid
       ~Cone.as_line
       ~Cone.as_line_string
@@ -36,6 +37,7 @@ ostk.mathematics.geometry.d3.object.Cone
       ~Cone.get_rays_of_lateral_surface
       ~Cone.intersection_with
       ~Cone.intersects
+      ~Cone.is_cone
       ~Cone.is_defined
       ~Cone.is_ellipsoid
       ~Cone.is_line

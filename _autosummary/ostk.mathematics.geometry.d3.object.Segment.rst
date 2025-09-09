@@ -17,6 +17,7 @@ ostk.mathematics.geometry.d3.object.Segment
       :nosignatures:
    
       ~Segment.apply_transformation
+      ~Segment.as_cone
       ~Segment.as_ellipsoid
       ~Segment.as_line
       ~Segment.as_line_string
@@ -37,6 +38,7 @@ ostk.mathematics.geometry.d3.object.Segment
       ~Segment.get_second_point
       ~Segment.intersection_with
       ~Segment.intersects
+      ~Segment.is_cone
       ~Segment.is_defined
       ~Segment.is_degenerate
       ~Segment.is_ellipsoid

@@ -17,6 +17,7 @@ ostk.mathematics.geometry.d3.object.Ray
       :nosignatures:
    
       ~Ray.apply_transformation
+      ~Ray.as_cone
       ~Ray.as_ellipsoid
       ~Ray.as_line
       ~Ray.as_line_string
@@ -34,6 +35,7 @@ ostk.mathematics.geometry.d3.object.Ray
       ~Ray.get_origin
       ~Ray.intersection_with
       ~Ray.intersects
+      ~Ray.is_cone
       ~Ray.is_defined
       ~Ray.is_ellipsoid
       ~Ray.is_line
