@@ -12,8 +12,21 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/Quaternion.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationVector.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Interval.hpp>
+
+// Disable Eigen warnings
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wshadow"
+#pragma GCC diagnostic ignored "-Wunused-parameter"
+#pragma GCC diagnostic ignored "-Wint-in-bool-context"
+#include <Eigen/Eigenvalues>
+#pragma GCC diagnostic pop
+
+#include <nlopt.hpp>
+
+using ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix;
 
 namespace ostk
 {
@@ -210,62 +223,144 @@ bool Cone::contains(const Ellipsoid& anEllipsoid) const
         throw ostk::core::error::runtime::Undefined("Cone");
     }
 
-    // Check if the cone contains the center of the ellipsoid
-    if (!this->contains(anEllipsoid.getCenter()))
-    {
-        return false;
-    }
-
     // Normalize the cone's axis
     const Vector3d coneAxis = this->axis_.normalized();
 
     // Compute the vector from the apex of the cone to the ellipsoid's center
     const Vector3d apexToCenter = anEllipsoid.getCenter() - this->apex_;
 
-    // Project the vector onto the cone's axis to find the distance along the axis
-    const double distanceAlongAxis = apexToCenter.dot(coneAxis);
-
-    // If the ellipsoid is behind the apex, it's not contained
-    if (distanceAlongAxis < 0.0)
+    // Check if the ellipsoid center is behind the apex
+    if (apexToCenter.dot(coneAxis) < 0.0)
     {
         return false;
     }
 
-    // Calculate the cone's radius at the ellipsoid's center height
-    const double coneRadiusAtCenter = distanceAlongAxis * std::tan(this->angle_.inRadians());
+    // Construct the cone matrix M = a*a^T - cos^2(θ)*I
+    const double cosTheta = std::cos(this->angle_.inRadians());
+    const double cos2Theta = cosTheta * cosTheta;
 
-    // Transform the ellipsoid's orientation relative to the cone's axis
-    const Quaternion relativeOrientation = Quaternion::ShortestRotation(coneAxis, Vector3d::Z());
+    // Create cone matrix M
+    Matrix3d M = Matrix3d::Zero();
+    for (int i = 0; i < 3; ++i)
+    {
+        for (int j = 0; j < 3; ++j)
+        {
+            M(i, j) = coneAxis[i] * coneAxis[j];
+        }
+    }
+    M -= cos2Theta * Matrix3d::Identity();
 
-    // Rotate the ellipsoid's axes into the cone's frame
-    const Vector3d ellipsoidFirstAxis =
-        relativeOrientation.rotate(anEllipsoid.getFirstAxis()) * anEllipsoid.getFirstPrincipalSemiAxis();
-    const Vector3d ellipsoidSecondAxis =
-        relativeOrientation.rotate(anEllipsoid.getSecondAxis()) * anEllipsoid.getSecondPrincipalSemiAxis();
-    const Vector3d ellipsoidThirdAxis =
-        relativeOrientation.rotate(anEllipsoid.getThirdAxis()) * anEllipsoid.getThirdPrincipalSemiAxis();
+    // Construct the ellipsoid matrix Q = R * D^(-2) * R^T
+    // where R is the rotation matrix and D^(-2) is the diagonal matrix of inverse squared radii
+    const Matrix3d R = RotationMatrix::Quaternion(anEllipsoid.getOrientation()).getMatrix();
 
-    // Compute the maximum extent of the ellipsoid in the radial direction
-    const double radialExtent = std::max(
-        {Vector2d(ellipsoidFirstAxis.x(), ellipsoidFirstAxis.y()).norm(),
-         Vector2d(ellipsoidSecondAxis.x(), ellipsoidSecondAxis.y()).norm(),
-         Vector2d(ellipsoidThirdAxis.x(), ellipsoidThirdAxis.y()).norm()}
-    );
+    Matrix3d D_inv_sq = Matrix3d::Zero();
+    D_inv_sq(0, 0) = 1.0 / (anEllipsoid.getFirstPrincipalSemiAxis() * anEllipsoid.getFirstPrincipalSemiAxis());
+    D_inv_sq(1, 1) = 1.0 / (anEllipsoid.getSecondPrincipalSemiAxis() * anEllipsoid.getSecondPrincipalSemiAxis());
+    D_inv_sq(2, 2) = 1.0 / (anEllipsoid.getThirdPrincipalSemiAxis() * anEllipsoid.getThirdPrincipalSemiAxis());
 
-    // Compute the radial distance from the cone's axis to the ellipsoid's center
-    const Vector3d radialVector = apexToCenter - (distanceAlongAxis * coneAxis);
-    const double radialDistance = radialVector.norm();
+    Matrix3d Q = R * D_inv_sq * R.transpose();
 
-    // The total radial distance including the ellipsoid's extent
-    const double totalRadialDistance = radialDistance + radialExtent;
+    // Convert apexToCenter to Eigen vector
+    Eigen::Vector3d d = Eigen::Vector3d::Zero();
+    d(0) = apexToCenter.x();
+    d(1) = apexToCenter.y();
+    d(2) = apexToCenter.z();
 
-    // Check if the ellipsoid fits within the cone's radius at that height
-    if (totalRadialDistance > coneRadiusAtCenter)
+    // Check if center is outside the cone's angular spread
+    if (d.transpose() * M * d < 0.0)
     {
         return false;
     }
 
-    return true;
+    // Perform the S-lemma check
+    // We need to find if there exists λ ≥ 0 such that K(λ) is positive semidefinite
+    // where K(λ) = [M + λ*Q, M*d; (M*d)^T, d^T*M*d - λ]
+
+    Eigen::Vector3d Md = M * d;
+    double dMd = d.transpose() * Md;
+
+    // Function to compute minimum eigenvalue of K(λ)
+    auto getMinEigenvalue = [&](double lambda) -> double
+    {
+        if (lambda < 0.0)
+        {
+            return -std::numeric_limits<double>::infinity();
+        }
+
+        Eigen::Matrix4d K = Eigen::Matrix4d::Zero();
+        K.block<3, 3>(0, 0) = M + lambda * Q;
+        K.block<3, 1>(0, 3) = Md;
+        K.block<1, 3>(3, 0) = Md.transpose();
+        K(3, 3) = dMd - lambda;
+
+        Eigen::SelfAdjointEigenSolver<Eigen::Matrix4d> solver(K);
+        const auto& eigenvalues = solver.eigenvalues();
+
+        return eigenvalues.minCoeff();
+    };
+
+    // Find the λ that maximizes the minimum eigenvalue using NLopt
+    double maxMinEigenvalue = -std::numeric_limits<double>::infinity();
+
+    // Create NLopt optimizer for maximization
+    nlopt::opt optimizer(nlopt::LN_BOBYQA, 1);  // 1D optimization using BOBYQA algorithm
+
+    // Set bounds: lambda >= 0
+    std::vector<double> lower_bounds = {0.0};
+    std::vector<double> upper_bounds = {1e6};
+    optimizer.set_lower_bounds(lower_bounds);
+    optimizer.set_upper_bounds(upper_bounds);
+
+    // Set tolerance
+    optimizer.set_xtol_rel(1e-8);
+    optimizer.set_ftol_rel(1e-8);
+
+    // Objective function: maximize minimum eigenvalue (minimize negative minimum eigenvalue)
+    struct ObjectiveData
+    {
+        std::function<double(double)> getMinEigenvalue;
+    };
+
+    ObjectiveData objData {getMinEigenvalue};
+
+    auto objective = [](const std::vector<double>& x, std::vector<double>& grad, void* data) -> double
+    {
+        (void)grad;
+
+        ObjectiveData* objDataPtr = static_cast<ObjectiveData*>(data);
+        double lambda = x[0];
+        double minEigenvalue = objDataPtr->getMinEigenvalue(lambda);
+
+        return minEigenvalue;
+    };
+
+    optimizer.set_max_objective(objective, &objData);
+
+    std::vector<double> x = {0.0};
+
+    try
+    {
+        double opt_f;
+        nlopt::result result = optimizer.optimize(x, opt_f);
+
+        if (result == nlopt::SUCCESS || result == nlopt::FTOL_REACHED || result == nlopt::XTOL_REACHED)
+        {
+            bestLambda = x[0];
+            maxMinEigenvalue = opt_f;
+        }
+        else
+        {
+            throw ostk::core::error::RuntimeError("NLopt optimization failed for cone containment check.");
+        }
+    }
+    catch (const std::exception& e)
+    {
+        throw ostk::core::error::RuntimeError("NLopt optimization exception: " + std::string(e.what()));
+    }
+
+    // The ellipsoid is contained if the maximized minimum eigenvalue is non-negative
+    return maxMinEigenvalue >= -1e-12;
 }
 
 Point Cone::getApex() const

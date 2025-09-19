@@ -54,6 +54,19 @@ RUN git clone --branch ${GEOMETRIC_TOOLS_ENGINE_VERSION} --depth 1 https://githu
     && cp -r ./Include /usr/local/include/Gte \
     && rm -rf /tmp/geometric-tools-engine
 
+## NLopt
+
+ARG NLOPT_VERSION="2.9.1"
+
+RUN git clone --branch v${NLOPT_VERSION} --depth 1 https://github.com/stevengj/nlopt.git /tmp/nlopt \
+    && cd /tmp/nlopt \
+    && mkdir build \
+    && cd build \
+    && cmake -DBUILD_SHARED_LIBS=OFF .. \
+    && make \
+    && make install \
+    && rm -rf /tmp/nlopt
+
 ## Open Space Toolkit ▸ Core
 
 ARG TARGETPLATFORM
