@@ -322,34 +322,28 @@ bool Cone::contains(const Ellipsoid& anEllipsoid) const
         std::function<double(double)> getMinEigenvalue;
     };
 
-    ObjectiveData objData {getMinEigenvalue};
+    ObjectiveData objectiveData {getMinEigenvalue};
 
-    auto objective = [](const std::vector<double>& x, std::vector<double>& grad, void* data) -> double
+    auto objective = [](const std::vector<double>& x, std::vector<double>& gradient, void* data) -> double
     {
-        (void)grad;
+        (void)gradient;
 
-        ObjectiveData* objDataPtr = static_cast<ObjectiveData*>(data);
+        ObjectiveData* objectiveDataPtr = static_cast<ObjectiveData*>(data);
         double lambda = x[0];
-        double minEigenvalue = objDataPtr->getMinEigenvalue(lambda);
+        double minEigenvalue = objectiveDataPtr->getMinEigenvalue(lambda);
 
         return minEigenvalue;
     };
 
-    optimizer.set_max_objective(objective, &objData);
+    optimizer.set_max_objective(objective, &objectiveData);
 
     std::vector<double> x = {0.0};
 
     try
     {
-        double opt_f;
-        nlopt::result result = optimizer.optimize(x, opt_f);
+        nlopt::result result = optimizer.optimize(x, maxMinEigenvalue);
 
-        if (result == nlopt::SUCCESS || result == nlopt::FTOL_REACHED || result == nlopt::XTOL_REACHED)
-        {
-            bestLambda = x[0];
-            maxMinEigenvalue = opt_f;
-        }
-        else
+        if (result != nlopt::SUCCESS && result != nlopt::FTOL_REACHED && result != nlopt::XTOL_REACHED)
         {
             throw ostk::core::error::RuntimeError("NLopt optimization failed for cone containment check.");
         }
