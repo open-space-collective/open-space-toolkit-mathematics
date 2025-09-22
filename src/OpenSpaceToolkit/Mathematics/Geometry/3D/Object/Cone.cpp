@@ -261,14 +261,23 @@ bool Cone::contains(const Ellipsoid& anEllipsoid) const
 
     Matrix3d Q = R * D_inv_sq * R.transpose();
 
-    // Convert apexToCenter to Eigen vector
-    Eigen::Vector3d d = Eigen::Vector3d::Zero();
-    d(0) = apexToCenter.x();
-    d(1) = apexToCenter.y();
-    d(2) = apexToCenter.z();
+    // Forward‑nappe (half‑space) constraint: a·x >= 0 for all x in the ellipsoid
+    // Equivalent closed form: aᵀd − sqrt(aᵀ Q⁻¹ a) >= 0, with Q⁻¹ = R D² Rᵀ
+    Matrix3d D_sq = Matrix3d::Zero();
+    D_sq(0, 0) = anEllipsoid.getFirstPrincipalSemiAxis() * anEllipsoid.getFirstPrincipalSemiAxis();
+    D_sq(1, 1) = anEllipsoid.getSecondPrincipalSemiAxis() * anEllipsoid.getSecondPrincipalSemiAxis();
+    D_sq(2, 2) = anEllipsoid.getThirdPrincipalSemiAxis() * anEllipsoid.getThirdPrincipalSemiAxis();
+    const Matrix3d Q_inv = R * D_sq * R.transpose();
+
+    const Eigen::Vector3d a = coneAxis;
+    const double minHalfSpace = a.dot(apexToCenter) - std::sqrt((a.transpose() * Q_inv * a).value());
+    if (minHalfSpace < -1e-12)
+    {
+        return false;
+    }
 
     // Check if center is outside the cone's angular spread
-    if (d.transpose() * M * d < 0.0)
+    if (apexToCenter.transpose() * M * apexToCenter < 0.0)
     {
         return false;
     }
@@ -277,8 +286,8 @@ bool Cone::contains(const Ellipsoid& anEllipsoid) const
     // We need to find if there exists λ ≥ 0 such that K(λ) is positive semidefinite
     // where K(λ) = [M + λ*Q, M*d; (M*d)^T, d^T*M*d - λ]
 
-    Eigen::Vector3d Md = M * d;
-    double dMd = d.transpose() * Md;
+    Eigen::Vector3d Md = M * apexToCenter;
+    double dMd = apexToCenter.transpose() * Md;
 
     // Function to compute minimum eigenvalue of K(λ)
     auto getMinEigenvalue = [&](double lambda) -> double
