@@ -19,7 +19,23 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
     class_<RotationVector>(aModule, "RotationVector")
 
         // Define constructor
-        .def(init<const Vector3d&, const Angle&>(), arg("axis"), arg("angle"))
+        .def(
+            init<const Vector3d&, const Angle&>(),
+            R"doc(
+                Create a rotation vector from axis and angle.
+
+                Args:
+                    axis (Vector3d): The rotation axis (will be normalized).
+                    angle (Angle): The rotation angle around the axis.
+
+                Example:
+                    >>> axis = Vector3d([0.0, 0.0, 1.0])
+                    >>> angle = Angle.degrees(90.0)
+                    >>> rot_vector = RotationVector(axis, angle)
+            )doc",
+            arg("axis"),
+            arg("angle")
+        )
         .def(init<const Vector3d&, const Angle::Unit&>(), arg("vector"), arg("angle_unit"))
 
         // Define methods
@@ -29,10 +45,49 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
         .def("__str__", &(shiftToString<RotationVector>))
         .def("__repr__", &(shiftToString<RotationVector>))
 
-        .def("is_defined", &RotationVector::isDefined)
+        .def(
+            "is_defined",
+            &RotationVector::isDefined,
+            R"doc(
+                Check if the rotation vector is defined.
 
-        .def("get_axis", &RotationVector::getAxis)
-        .def("get_angle", &RotationVector::getAngle)
+                Returns:
+                    bool: True if the rotation vector is defined, False otherwise.
+
+                Example:
+                    >>> rot_vector = RotationVector(axis, angle)
+                    >>> rot_vector.is_defined()  # True
+            )doc"
+        )
+
+        .def(
+            "get_axis",
+            &RotationVector::getAxis,
+            R"doc(
+                Get the rotation axis vector.
+
+                Returns:
+                    Vector3d: The normalized rotation axis.
+
+                Example:
+                    >>> rot_vector = RotationVector(Vector3d([1.0, 0.0, 0.0]), angle)
+                    >>> axis = rot_vector.get_axis()  # [1.0, 0.0, 0.0]
+            )doc"
+        )
+        .def(
+            "get_angle",
+            &RotationVector::getAngle,
+            R"doc(
+                Get the rotation angle.
+
+                Returns:
+                    Angle: The rotation angle around the axis.
+
+                Example:
+                    >>> rot_vector = RotationVector(axis, Angle.degrees(90.0))
+                    >>> angle = rot_vector.get_angle()  # 90 degrees
+            )doc"
+        )
         .def(
             "to_string",
             +[](const RotationVector& aRotationVector) -> String
@@ -57,8 +112,34 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
         )
 
         // Define static methods
-        .def_static("undefined", &RotationVector::Undefined)
-        .def_static("unit", &RotationVector::Unit)
+        .def_static(
+            "undefined",
+            &RotationVector::Undefined,
+            R"doc(
+                Create an undefined rotation vector.
+
+                Returns:
+                    RotationVector: An undefined rotation vector.
+
+                Example:
+                    >>> undefined_vector = RotationVector.undefined()
+                    >>> undefined_vector.is_defined()  # False
+            )doc"
+        )
+        .def_static(
+            "unit",
+            &RotationVector::Unit,
+            R"doc(
+                Create a unit rotation vector (no rotation).
+
+                Returns:
+                    RotationVector: A rotation vector representing no rotation.
+
+                Example:
+                    >>> unit_vector = RotationVector.unit()
+                    >>> angle = unit_vector.get_angle()  # 0 degrees
+            )doc"
+        )
         .def_static("x", &RotationVector::X, arg("angle"))
         .def_static("y", &RotationVector::Y, arg("angle"))
         .def_static("z", &RotationVector::Z, arg("angle"))
