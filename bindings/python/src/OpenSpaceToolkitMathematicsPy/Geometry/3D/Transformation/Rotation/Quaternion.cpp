@@ -28,6 +28,20 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
     quaternion
         .def(
             init<const Real&, const Real&, const Real&, const Real&, const Quaternion::Format&>(),
+            R"doc(
+                Create a quaternion from four components and format.
+
+                Args:
+                    first_component (float): First component (x or w depending on format).
+                    second_component (float): Second component (y or x depending on format).
+                    third_component (float): Third component (z or y depending on format).
+                    fourth_component (float): Fourth component (w or z depending on format).
+                    format (Quaternion.Format): The quaternion format (XYZW or WXYZ).
+
+                Example:
+                    >>> q = Quaternion(0.0, 0.0, 0.0, 1.0, Quaternion.Format.XYZW)
+                    >>> q = Quaternion(1.0, 0.0, 0.0, 0.0, Quaternion.Format.WXYZ)
+            )doc",
             arg("first_component"),
             arg("second_component"),
             arg("third_component"),
@@ -35,8 +49,38 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
             arg("format")
         )
 
-        .def(init<const Vector4d&, const Quaternion::Format&>(), arg("vector"), arg("format"))
-        .def(init<const Vector3d&, const Real&>(), arg("vector_part"), arg("scalar_part"))
+        .def(
+            init<const Vector4d&, const Quaternion::Format&>(),
+            R"doc(
+                Create a quaternion from a 4D vector and format.
+
+                Args:
+                    vector (Vector4d): The 4D vector containing quaternion components.
+                    format (Quaternion.Format): The quaternion format.
+
+                Example:
+                    >>> vector = Vector4d([0.0, 0.0, 0.0, 1.0])
+                    >>> q = Quaternion(vector, Quaternion.Format.XYZW)
+            )doc",
+            arg("vector"),
+            arg("format")
+        )
+        .def(
+            init<const Vector3d&, const Real&>(),
+            R"doc(
+                Create a quaternion from vector and scalar parts.
+
+                Args:
+                    vector_part (Vector3d): The vector part (x, y, z components).
+                    scalar_part (float): The scalar part (w component).
+
+                Example:
+                    >>> vector_part = Vector3d([0.0, 0.0, 0.0])
+                    >>> q = Quaternion(vector_part, 1.0)
+            )doc",
+            arg("vector_part"),
+            arg("scalar_part")
+        )
         .def(init<const Quaternion&>(), arg("quaternion"))
 
         .def(self == self)
