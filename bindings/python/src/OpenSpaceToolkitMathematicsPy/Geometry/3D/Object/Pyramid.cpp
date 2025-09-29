@@ -44,6 +44,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
                 Args:
                     base (Polygon): The polygonal base of the pyramid.
                     apex (Point): The apex point of the pyramid.
+                
+                Example:
+                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> apex = Point(0.0, 0.0, 1.0)
+                    >>> pyramid = Pyramid(base, apex)
             )doc"
         )
 
@@ -61,6 +66,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 
                 Returns:
                     bool: True if the pyramid is defined.
+                
+                Example:
+                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> apex = Point(0.0, 0.0, 1.0)
+                    >>> pyramid = Pyramid(base, apex)
+                    >>> pyramid.is_defined()
             )doc"
         )
         .def(
@@ -91,6 +102,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 
                 Returns:
                     bool: True if the pyramid contains the point.
+                
+                Example:
+                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> apex = Point(0.0, 0.0, 1.0)
+                    >>> pyramid = Pyramid(base, apex)
+                    >>> pyramid.contains(Point(0.5, 0.5, 0.5))
             )doc"
         )
         .def(
@@ -105,6 +122,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 
                 Returns:
                     bool: True if the pyramid contains all points.
+                
+                Example:
+                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> apex = Point(0.0, 0.0, 1.0)
+                    >>> pyramid = Pyramid(base, apex)
+                    >>> pyramid.contains(PointSet([Point(0.5, 0.5, 0.5), Point(0.6, 0.6, 0.6)]))
             )doc"
         )
         .def(
@@ -119,6 +142,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 
                 Returns:
                     bool: True if the pyramid contains the segment.
+                
+                Example:
+                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> apex = Point(0.0, 0.0, 1.0)
+                    >>> pyramid = Pyramid(base, apex)
+                    >>> pyramid.contains(Segment(Point(0.5, 0.5, 0.5), Point(0.6, 0.6, 0.6)))
             )doc"
         )
         .def(
@@ -133,6 +162,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 
                 Returns:
                     bool: True if the pyramid contains the ellipsoid.
+                
+                Example:
+                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> apex = Point(0.0, 0.0, 1.0)
+                    >>> pyramid = Pyramid(base, apex)
+                    >>> pyramid.contains(Ellipsoid(Point(0.0, 0.0, 0.0), 1.0, 1.0, 1.0))
             )doc"
         )
 
@@ -144,6 +179,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 
                 Returns:
                     Polygon: The base polygon.
+                
+                Example:
+                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> apex = Point(0.0, 0.0, 1.0)
+                    >>> pyramid = Pyramid(base, apex)
+                    >>> pyramid.get_base()
             )doc"
         )
         .def(
@@ -154,6 +195,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 
                 Returns:
                     Point: The apex point.
+                
+                Example:
+                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> apex = Point(0.0, 0.0, 1.0)
+                    >>> pyramid = Pyramid(base, apex)
+                    >>> pyramid.get_apex()
             )doc"
         )
         .def(
@@ -164,6 +211,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 
                 Returns:
                     int: The number of lateral faces.
+                
+                Example:
+                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> apex = Point(0.0, 0.0, 1.0)
+                    >>> pyramid = Pyramid(base, apex)
+                    >>> pyramid.get_lateral_face_count()
             )doc"
         )
         .def(
@@ -177,6 +230,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 
                 Returns:
                     Polygon: The lateral face polygon.
+                
+                Example:
+                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> apex = Point(0.0, 0.0, 1.0)
+                    >>> pyramid = Pyramid(base, apex)
+                    >>> pyramid.get_lateral_face_at(0)
             )doc"
         )
         .def(
@@ -193,6 +252,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 
                 Returns:
                     list[Ray]: Array of rays.
+                
+                Example:
+                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> apex = Point(0.0, 0.0, 1.0)
+                    >>> pyramid = Pyramid(base, apex)
+                    >>> pyramid.get_rays_of_lateral_face_at(0)
             )doc"
         )
         .def(
@@ -207,6 +272,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 
                 Returns:
                     list[Ray]: Array of rays.
+                
+                Example:
+                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> apex = Point(0.0, 0.0, 1.0)
+                    >>> pyramid = Pyramid(base, apex)
+                    >>> pyramid.get_rays_of_lateral_faces()
             )doc"
         )
         .def(
@@ -225,6 +296,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 
                 Returns:
                     Intersection: The intersection result.
+                
+                Example:
+                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> apex = Point(0.0, 0.0, 1.0)
+                    >>> pyramid = Pyramid(base, apex)
+                    >>> pyramid.intersection_with(Sphere(Point(0.0, 0.0, 0.0), 1.0))
             )doc"
         )
         .def(
@@ -243,6 +320,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 
                 Returns:
                     Intersection: The intersection result.
+                
+                Example:
+                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> apex = Point(0.0, 0.0, 1.0)
+                    >>> pyramid = Pyramid(base, apex)
+                    >>> pyramid.intersection_with(Ellipsoid(Point(0.0, 0.0, 0.0), 1.0, 1.0, 1.0))
             )doc"
         )
         .def(
@@ -254,6 +337,13 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 
                 Args:
                     transformation (Transformation): The transformation to apply.
+                
+                Example:
+                    >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> apex = Point(0.0, 0.0, 1.0)
+                    >>> pyramid = Pyramid(base, apex)
+                    >>> transformation = Transformation.identity()
+                    >>> pyramid.apply_transformation(transformation)
             )doc"
         )
 
@@ -265,6 +355,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
 
                 Returns:
                     Pyramid: An undefined pyramid.
+                
+                Example:
+                    >>> undefined_pyramid = Pyramid.undefined()
+                    >>> undefined_pyramid.is_defined()  # False
             )doc"
         )
 

@@ -75,6 +75,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     bool: True if the object is defined.
+
+                Example:
+                    >>> object = Object(Point(1.0, 2.0, 3.0))
+                    >>> object.is_defined()  # True
             )doc"
         )
         .def(
@@ -82,84 +86,204 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
             +[](const Object& anObject) -> bool
             {
                 return anObject.is<Point>();
-            }
+            },
+            R"doc(
+                Check if the object is a point.
+
+                Returns:
+                    bool: True if the object is a point.
+
+                Example:
+                    >>> object = Object(Point(1.0, 2.0, 3.0))
+                    >>> object.is_point()  # True
+            )doc"
         )
         .def(
             "is_point_set",
             +[](const Object& anObject) -> bool
             {
                 return anObject.is<PointSet>();
-            }
+            },
+            R"doc(
+                Check if the object is a point set.
+
+                Returns:
+                    bool: True if the object is a point set.
+
+                Example:
+                    >>> object = Object(PointSet([Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)]))
+                    >>> object.is_point_set()  # True
+            )doc"
         )
         .def(
             "is_line",
             +[](const Object& anObject) -> bool
             {
                 return anObject.is<Line>();
-            }
+            },
+            R"doc(
+                Check if the object is a line.
+
+                Returns:
+                    bool: True if the object is a line.
+
+                Example:
+                    >>> object = Object(Line(Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)))
+                    >>> object.is_line()  # True
+            )doc"
         )
         .def(
             "is_ray",
             +[](const Object& anObject) -> bool
             {
                 return anObject.is<Ray>();
-            }
+            },
+            R"doc(
+                Check if the object is a ray.
+
+                Returns:
+                    bool: True if the object is a ray.
+
+                Example:
+                    >>> object = Object(Ray(Point(1.0, 2.0, 3.0), Vector(4.0, 5.0, 6.0)))
+                    >>> object.is_ray()  # True
+            )doc"
         )
         .def(
             "is_segment",
             +[](const Object& anObject) -> bool
             {
                 return anObject.is<Segment>();
-            }
+            },
+            R"doc(
+                Check if the object is a segment.
+
+                Returns:
+                    bool: True if the object is a segment.
+
+                Example:
+                    >>> object = Object(Segment(Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)))
+                    >>> object.is_segment()  # True
+            )doc"
         )
         .def(
             "is_line_string",
             +[](const Object& anObject) -> bool
             {
                 return anObject.is<LineString>();
-            }
+            },
+            R"doc(
+                Check if the object is a line string.
+
+                Returns:
+                    bool: True if the object is a line string.
+
+                Example:
+                    >>> object = Object(LineString([Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)]))
+                    >>> object.is_line_string()  # True
+            )doc"
         )
         .def(
             "is_polygon",
             +[](const Object& anObject) -> bool
             {
                 return anObject.is<Polygon>();
-            }
+            },
+            R"doc(
+                Check if the object is a polygon.
+
+                Returns:
+                    bool: True if the object is a polygon.
+
+                Example:
+                    >>> object = Object(Polygon([Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)]))
+                    >>> object.is_polygon()  # True
+            )doc"
         )
         .def(
             "is_plane",
             +[](const Object& anObject) -> bool
             {
                 return anObject.is<Plane>();
-            }
+            },
+            R"doc(
+                Check if the object is a plane.
+
+                Returns:
+                    bool: True if the object is a plane.
+
+                Example:
+                    >>> object = Object(Plane(Point(1.0, 2.0, 3.0), Vector(4.0, 5.0, 6.0)))
+                    >>> object.is_plane()  # True
+            )doc"
         )
         .def(
             "is_sphere",
             +[](const Object& anObject) -> bool
             {
                 return anObject.is<Sphere>();
-            }
+            },
+            R"doc(
+                Check if the object is a sphere.
+
+                Returns:
+                    bool: True if the object is a sphere.
+
+                Example:
+                    >>> object = Object(Sphere(Point(1.0, 2.0, 3.0), 4.0))
+                    >>> object.is_sphere()  # True
+            )doc"
         )
         .def(
             "is_ellipsoid",
             +[](const Object& anObject) -> bool
             {
                 return anObject.is<Ellipsoid>();
-            }
+            },
+            R"doc(
+                Check if the object is an ellipsoid.
+
+                Returns:
+                    bool: True if the object is an ellipsoid.
+
+                Example:
+                    >>> object = Object(Ellipsoid(Point(1.0, 2.0, 3.0), 4.0, 5.0, 6.0))
+                    >>> object.is_ellipsoid()  # True
+            )doc"
         )
         .def(
             "is_pyramid",
             +[](const Object& anObject) -> bool
             {
                 return anObject.is<Pyramid>();
-            }
+            },
+            R"doc(
+                Check if the object is a pyramid.
+
+                Returns:
+                    bool: True if the object is a pyramid.
+
+                Example:
+                    >>> object = Object(Pyramid(Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)))
+                    >>> object.is_pyramid()  # True
+            )doc"
         )
         .def(
             "is_cone",
             +[](const Object& anObject) -> bool
             {
                 return anObject.is<Cone>();
-            }
+            },
+            R"doc(
+                Check if the object is a cone.
+
+                Returns:
+                    bool: True if the object is a cone.
+
+                Example:
+                    >>> object = Object(Cone(Point(1.0, 2.0, 3.0), [4.0, 5.0, 6.0], Angle.degrees(30.0)))
+                    >>> object.is_cone()  # True
+            )doc"
         )
         .def(
             "intersects",
@@ -172,6 +296,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     bool: True if the objects intersect.
+
+                Example:
+                    >>> object = Object(Point(1.0, 2.0, 3.0))
+                    >>> other_object = Object(Point(4.0, 5.0, 6.0))
+                    >>> object.intersects(other_object)  # True
             )doc"
         )
         .def(
@@ -185,6 +314,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     bool: True if this object contains the other object.
+
+                Example:
+                    >>> object = Object(Point(1.0, 2.0, 3.0))
+                    >>> other_object = Object(Point(4.0, 5.0, 6.0))
+                    >>> object.contains(other_object)  # True
             )doc"
         )
 
@@ -193,84 +327,204 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
             +[](const Object& anObject) -> Point
             {
                 return anObject.as<Point>();
-            }
+            },
+            R"doc(
+                Convert the object to a point.
+
+                Returns:
+                    Point: The point.
+
+                Example:
+                    >>> object = Object(Point(1.0, 2.0, 3.0))
+                    >>> point = object.as_point()
+            )doc"
         )
         .def(
             "as_point_set",
             +[](const Object& anObject) -> PointSet
             {
                 return anObject.as<PointSet>();
-            }
+            },
+            R"doc(
+                Convert the object to a point set.
+
+                Returns:
+                    PointSet: The point set.
+
+                Example:
+                    >>> object = Object(PointSet([Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)]))
+                    >>> point_set = object.as_point_set()
+            )doc"
         )
         .def(
             "as_line",
             +[](const Object& anObject) -> Line
             {
                 return anObject.as<Line>();
-            }
+            },
+            R"doc(
+                Convert the object to a line.
+
+                Returns:
+                    Line: The line.
+
+                Example:
+                    >>> object = Object(Line(Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)))
+                    >>> line = object.as_line()
+            )doc"
         )
         .def(
             "as_ray",
             +[](const Object& anObject) -> Ray
             {
                 return anObject.as<Ray>();
-            }
+            },
+            R"doc(
+                Convert the object to a ray.
+
+                Returns:
+                    Ray: The ray.
+
+                Example:
+                    >>> object = Object(Ray(Point(1.0, 2.0, 3.0), Vector(4.0, 5.0, 6.0)))
+                    >>> ray = object.as_ray()
+            )doc"
         )
         .def(
             "as_segment",
             +[](const Object& anObject) -> Segment
             {
                 return anObject.as<Segment>();
-            }
+            },
+            R"doc(
+                Convert the object to a segment.
+
+                Returns:
+                    Segment: The segment.
+
+                Example:
+                    >>> object = Object(Segment(Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)))
+                    >>> segment = object.as_segment()
+            )doc"
         )
         .def(
             "as_line_string",
             +[](const Object& anObject) -> LineString
             {
                 return anObject.as<LineString>();
-            }
+            },
+            R"doc(
+                Convert the object to a line string.
+
+                Returns:
+                    LineString: The line string.
+
+                Example:
+                    >>> object = Object(LineString([Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)]))
+                    >>> line_string = object.as_line_string()
+            )doc"
         )
         .def(
             "as_polygon",
             +[](const Object& anObject) -> Polygon
             {
                 return anObject.as<Polygon>();
-            }
+            },
+            R"doc(
+                Convert the object to a polygon.
+
+                Returns:
+                    Polygon: The polygon.
+
+                Example:
+                    >>> object = Object(Polygon([Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)]))
+                    >>> polygon = object.as_polygon()
+            )doc"
         )
         .def(
             "as_plane",
             +[](const Object& anObject) -> Plane
             {
                 return anObject.as<Plane>();
-            }
+            },
+            R"doc(
+                Convert the object to a plane.
+
+                Returns:
+                    Plane: The plane.
+
+                Example:
+                    >>> object = Object(Plane(Point(1.0, 2.0, 3.0), Vector(4.0, 5.0, 6.0)))
+                    >>> plane = object.as_plane()
+            )doc"
         )
         .def(
             "as_sphere",
             +[](const Object& anObject) -> Sphere
             {
                 return anObject.as<Sphere>();
-            }
+            },
+            R"doc(
+                Convert the object to a sphere.
+
+                Returns:
+                    Sphere: The sphere.
+
+                Example:
+                    >>> object = Object(Sphere(Point(1.0, 2.0, 3.0), 4.0))
+                    >>> sphere = object.as_sphere()
+            )doc"
         )
         .def(
             "as_ellipsoid",
             +[](const Object& anObject) -> Ellipsoid
             {
                 return anObject.as<Ellipsoid>();
-            }
+            },
+            R"doc(
+                Convert the object to an ellipsoid.
+
+                Returns:
+                    Ellipsoid: The ellipsoid.
+
+                Example:
+                    >>> object = Object(Ellipsoid(Point(1.0, 2.0, 3.0), 4.0, 5.0, 6.0))
+                    >>> ellipsoid = object.as_ellipsoid()
+            )doc"
         )
         .def(
             "as_pyramid",
             +[](const Object& anObject) -> Pyramid
             {
                 return anObject.as<Pyramid>();
-            }
+            },
+            R"doc(
+                Convert the object to a pyramid.
+
+                Returns:
+                    Pyramid: The pyramid.
+
+                Example:
+                    >>> object = Object(Pyramid(Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)))
+                    >>> pyramid = object.as_pyramid()
+            )doc"
         )
         .def(
             "as_cone",
             +[](const Object& anObject) -> Cone
             {
                 return anObject.as<Cone>();
-            }
+            },
+            R"doc(
+                Convert the object to a cone.
+
+                Returns:
+                    Cone: The cone.
+
+                Example:
+                    >>> object = Object(Cone(Point(1.0, 2.0, 3.0), [4.0, 5.0, 6.0], Angle.degrees(30.0)))
+                    >>> cone = object.as_cone()
+            )doc"
         )
 
         // .def("intersection_with", &Object::intersectionWith)

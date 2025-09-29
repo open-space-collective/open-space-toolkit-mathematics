@@ -456,10 +456,15 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(pybind11:
                     Intersection: The intersection of the ellipsoid with the pyramid.
 
                 Example:
-                    >>> ellipsoid = Ellipsoid(center, 2.0, 1.5, 1.0)
-                    >>> pyramid = Pyramid(Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0), Point(0.0, 1.0, 0.0))
+                    >>> origin = Point(0.0, 0.0, 0.0)
+                    >>> ellipsoid = Ellipsoid(origin, 2.0, 1.5, 1.0)
+                    >>> polygon2d = Polygon2d([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> x_axis = np.array([1.0, 0.0, 0.0])
+                    >>> y_axis = np.array([0.0, 1.0, 0.0])
+                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
+                    >>> pyramid = Pyramid(polygon, Point(0.0, 0.0, 1.0))
                     >>> intersection = ellipsoid.intersection_with(pyramid)
-                    >>> intersection.get_point()  # Point(0.0, 0.0, 0.0)
+                    >>> intersection.get_point()
             )doc",
             arg("pyramid"),
             arg("only_in_sight") = false
@@ -479,9 +484,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(pybind11:
 
                 Example:
                     >>> ellipsoid = Ellipsoid(center, 2.0, 1.5, 1.0)
-                    >>> cone = Cone(Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0), Point(0.0, 1.0, 0.0))
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), [1.0, 0.0, 0.0], Angle.degrees(30.0))
                     >>> intersection = ellipsoid.intersection_with(cone)
-                    >>> intersection.get_point()  # Point(0.0, 0.0, 0.0)
+                    >>> intersection.get_point()
             )doc",
             arg("cone"),
             arg("only_in_sight") = false

@@ -6,9 +6,9 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
 {
     using namespace pybind11;
 
+    using ostk::core::type::Integer;
     using ostk::core::type::Real;
     using ostk::core::type::String;
-    using ostk::core::type::Integer;
 
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::object::Vector2d;

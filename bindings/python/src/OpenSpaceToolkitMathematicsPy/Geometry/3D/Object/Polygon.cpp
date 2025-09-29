@@ -36,6 +36,13 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
                     origin (Point): The origin of the polygon in 3D space.
                     x_axis (numpy.ndarray): The x-axis direction of the polygon's local frame.
                     y_axis (numpy.ndarray): The y-axis direction of the polygon's local frame.
+                
+                Example:
+                    >>> polygon2d = Polygon2d([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
+                    >>> origin = Point(0.0, 0.0, 0.0)
+                    >>> x_axis = np.array([1.0, 0.0, 0.0])
+                    >>> y_axis = np.array([0.0, 1.0, 0.0])
+                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
             )doc"
         )
 
@@ -53,6 +60,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
 
                 Returns:
                     bool: True if the polygon is defined.
+                
+                Example:
+                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
+                    >>> polygon.is_defined()
             )doc"
         )
         .def(
@@ -69,6 +80,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
 
                 Returns:
                     bool: True if the polygons are near each other.
+                
+                Example:
+                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
+                    >>> polygon.is_near(polygon, 0.0)
             )doc"
         )
 
@@ -80,6 +95,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
 
                 Returns:
                     Polygon2d: The 2D polygon.
+                
+                Example:
+                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
+                    >>> polygon.get_polygon2d()
             )doc"
         )
         .def(
@@ -90,6 +109,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
 
                 Returns:
                     Point: The origin point.
+                
+                Example:
+                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
+                    >>> polygon.get_origin()
             )doc"
         )
         .def(
@@ -100,6 +123,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
 
                 Returns:
                     numpy.ndarray: The x-axis vector.
+                
+                Example:
+                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
+                    >>> polygon.get_x_axis()
             )doc"
         )
         .def(
@@ -110,6 +137,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
 
                 Returns:
                     numpy.ndarray: The y-axis vector.
+                
+                Example:
+                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
+                    >>> polygon.get_y_axis()
             )doc"
         )
         .def(
@@ -120,6 +151,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
 
                 Returns:
                     numpy.ndarray: The normal vector.
+                
+                Example:
+                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
+                    >>> polygon.get_normal_vector()
             )doc"
         )
         .def(
@@ -130,6 +165,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
 
                 Returns:
                     int: The number of edges.
+                
+                Example:
+                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
+                    >>> polygon.get_edge_count()
             )doc"
         )
         .def(
@@ -140,6 +179,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
 
                 Returns:
                     int: The number of vertices.
+                
+                Example:
+                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
+                    >>> polygon.get_vertex_count()
             )doc"
         )
         .def(
@@ -154,6 +197,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
 
                 Returns:
                     Segment: The edge segment.
+                
+                Example:
+                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
+                    >>> polygon.get_edge_at(0)
             )doc"
         )
         .def(
@@ -168,6 +215,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
 
                 Returns:
                     Point: The vertex point.
+                
+                Example:
+                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
+                    >>> polygon.get_vertex_at(0)
             )doc"
         )
         .def(
@@ -178,6 +229,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
 
                 Returns:
                     list[Point]: Array of vertex points.
+                
+                Example:
+                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
+                    >>> polygon.get_vertices()
             )doc"
         )
         .def(
@@ -185,10 +240,15 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
             &Polygon::applyTransformation,
             arg("transformation"),
             R"doc(
-                Apply a transformation to the polygon.
+                Apply a transformation to the polygon in place.
 
                 Args:
                     transformation (Transformation): The transformation to apply.
+                
+                Example:
+                    >>> polygon = Polygon(polygon2d, origin, x_axis, y_axis)
+                    >>> transformation = Transformation.identity()
+                    >>> polygon.apply_transformation(transformation)
             )doc"
         )
 
@@ -200,6 +260,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Polygon(pybind11::m
 
                 Returns:
                     Polygon: An undefined polygon.
+                
+                Example:
+                    >>> undefined_polygon = Polygon.undefined()
+                    >>> undefined_polygon.is_defined()  # False
             )doc"
         )
 

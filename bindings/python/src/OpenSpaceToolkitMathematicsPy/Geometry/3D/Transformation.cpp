@@ -34,6 +34,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 
             Args:
                 matrix (numpy.ndarray): A 4x4 transformation matrix.
+
+            Example:
+                >>> import numpy as np
+                >>> matrix = np.eye(3)  # 3x3 identity matrix
+                >>> transformation = Transformation(matrix)
         )doc"
     );
 
@@ -52,6 +57,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 
                 Returns:
                     bool: True if the transformation is defined.
+
+                Example:
+                    >>> transformation = Transformation.identity()
+                    >>> transformation.is_defined()  # True
             )doc"
         )
 
@@ -63,6 +72,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 
                 Returns:
                     Transformation.Type: The transformation type.
+
+                Example:
+                    >>> transformation = Transformation.identity()
+                    >>> transformation.get_type()  # Transformation.Type.Identity
             )doc"
         )
         .def(
@@ -73,6 +86,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 
                 Returns:
                     numpy.ndarray: The 4x4 transformation matrix.
+
+                Example:
+                    >>> transformation = Transformation.identity()
+                    >>> matrix = transformation.get_matrix()  # 4x4 identity matrix
             )doc"
         )
         .def(
@@ -83,6 +100,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 
                 Returns:
                     Transformation: The inverse transformation.
+
+                Example:
+                    >>> transformation = Transformation.identity()
+                    >>> inverse = transformation.get_inverse()  # Identity transformation
             )doc"
         )
         .def(
@@ -97,6 +118,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 
                 Returns:
                     Point: The transformed point.
+
+                Example:
+                    >>> transformation = Transformation.identity()
+                    >>> point = Point(1.0, 2.0, 3.0)
+                    >>> transformed_point = transformation.apply_to(point)  # Point(1.0, 2.0, 3.0)
             )doc"
         )
         .def(
@@ -111,6 +137,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 
                 Returns:
                     numpy.ndarray: The transformed vector.
+
+                Example:
+                    >>> transformation = Transformation.identity()
+                    >>> vector = Vector3d(1.0, 2.0, 3.0)
+                    >>> transformed_vector = transformation.apply_to(vector)  # Vector3d(1.0, 2.0, 3.0)
             )doc"
         )
 
@@ -122,6 +153,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 
                 Returns:
                     Transformation: An undefined transformation.
+
+                Example:
+                    >>> transformation = Transformation.undefined()
+                    >>> transformation.is_defined()  # False
             )doc"
         )
         .def_static(
@@ -132,6 +167,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 
                 Returns:
                     Transformation: An identity transformation.
+
+                Example:
+                    >>> transformation = Transformation.identity()
+                    >>> transformation.is_defined()  # True
             )doc"
         )
         .def_static(
@@ -146,6 +185,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 
                 Returns:
                     Transformation: A translation transformation.
+
+                Example:
+                    >>> translation_vector = Vector3d(1.0, 2.0, 3.0)
+                    >>> transformation = Transformation.translation(translation_vector)
+                    >>> transformation.is_defined()  # True
             )doc"
         )
         .def_static(
@@ -160,6 +204,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 
                 Returns:
                     Transformation: A rotation transformation.
+
+                Example:
+                    >>> rotation_vector = RotationVector(1.0, 2.0, 3.0)
+                    >>> transformation = Transformation.rotation(rotation_vector)
+                    >>> transformation.is_defined()  # True
             )doc"
         )
         .def_static(
@@ -174,6 +223,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 
                 Returns:
                     Transformation: A rotation transformation.
+
+                Example:
+                    >>> rotation_matrix = RotationMatrix(1.0, 2.0, 3.0)
+                    >>> transformation = Transformation.rotation(rotation_matrix)
+                    >>> transformation.is_defined()  # True
             )doc"
         )
         .def_static(
@@ -190,6 +244,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 
                 Returns:
                     Transformation: A rotation transformation around the point.
+
+                Example:
+                    >>> point = Point(1.0, 2.0, 3.0)
+                    >>> rotation_vector = RotationVector(1.0, 2.0, 3.0)
+                    >>> transformation = Transformation.rotation_around(point, rotation_vector)
+                    >>> transformation.is_defined()  # True
             )doc"
         )
 
@@ -205,6 +265,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 
                 Returns:
                     str: The string representation of the type.
+
+                Example:
+                    >>> transformation = Transformation.identity()
+                    >>> transformation.string_from_type()  # "Identity"
             )doc"
         )
         .def_static(
@@ -219,6 +283,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
 
                 Returns:
                     Transformation.Type: The type of the transformation.
+
+                Example:
+                    >>> transformation = Transformation.identity()
+                    >>> transformation.type_of_matrix()  # Transformation.Type.Identity
             )doc"
         )
 
