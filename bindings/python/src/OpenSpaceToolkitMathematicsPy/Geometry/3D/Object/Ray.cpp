@@ -153,7 +153,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ray(pybind11::modul
                     Intersection: The intersection of the ray with the plane.
                 
                 Example:
-                    >>> ray = Ray(Point(0.0, 0.0, 0.0), np.array([1.0, 0.0, 0.0]))
+                    >>> ray = Ray(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, -1.0]))
                     >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
                     >>> intersection = ray.intersection_with(plane)
                     >>> intersection.get_point()  # Point(0.0, 0.0, 0.0)

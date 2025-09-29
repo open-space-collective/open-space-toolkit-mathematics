@@ -222,6 +222,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
         .def(
             "get_lateral_face_at",
             &Pyramid::getLateralFaceAt,
+            arg("index"),
             R"doc(
                 Get the lateral face at a given index.
 
@@ -268,7 +269,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
                 Get rays from the apex through all lateral faces.
 
                 Args:
-                    ray_count (int): The number of rays per face (default: 0).
+                    ray_count (int, optional): The number of rays per face. Defaults to 0.
 
                 Returns:
                     list[Ray]: Array of rays.
@@ -277,7 +278,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Pyramid(pybind11::m
                     >>> base = Polygon([Point2d(0.0, 0.0), Point2d(1.0, 0.0), Point2d(1.0, 1.0), Point2d(0.0, 1.0)])
                     >>> apex = Point(0.0, 0.0, 1.0)
                     >>> pyramid = Pyramid(base, apex)
-                    >>> pyramid.get_rays_of_lateral_faces()
+                    >>> pyramid.get_rays_of_lateral_faces(ray_count=1)
             )doc"
         )
         .def(

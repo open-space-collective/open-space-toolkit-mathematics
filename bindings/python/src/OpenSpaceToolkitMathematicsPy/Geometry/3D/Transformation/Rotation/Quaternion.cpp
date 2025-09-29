@@ -140,7 +140,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
         .def(
             "is_unitary",
             &Quaternion::isUnitary,
-            arg_v("norm_tolerance", Real::Epsilon(), "Real.Epislon()"),
+            arg_v("norm_tolerance", Real::Epsilon(), "Real.epsilon()"),
             R"doc(
                 Check if the quaternion is unitary.
 
@@ -403,7 +403,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
                     >>> rotated = q.rotate_vector(vector)
             )doc",
             arg("vector"),
-            arg_v("norm_tolerance", Real::Epsilon(), "Real.Epsilon()")
+            arg_v("norm_tolerance", Real::Epsilon(), "Real.epsilon()")
         )
         .def(
             "to_vector",

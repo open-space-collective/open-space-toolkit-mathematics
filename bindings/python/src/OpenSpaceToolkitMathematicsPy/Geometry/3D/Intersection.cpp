@@ -78,7 +78,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     bool: True if the intersection is defined.
                 
                 Example:
-                    >>> intersection = Intersection.point(Point(1.0, 2.0))
+                    >>> intersection = Intersection.point(Point(1.0, 2.0, 3.0))
                     >>> intersection.is_defined()  # True
             )doc"
         )
@@ -106,7 +106,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     bool: True if the intersection contains multiple objects.
                 
                 Example:
-                    >>> intersection = Intersection.point(Point(1.0, 2.0)) + Intersection.point(Point(3.0, 4.0))
+                    >>> intersection = Intersection.point(Point(1.0, 2.0, 3.0)) + Intersection.point(Point(3.0, 4.0, 5.0))
                     >>> intersection.is_complex()  # True
             )doc"
         )
@@ -124,7 +124,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     bool: True if the intersection contains a single point.
                 
                 Example:
-                    >>> intersection = Intersection.point(Point(1.0, 2.0))
+                    >>> intersection = Intersection.point(Point(1.0, 2.0, 3.0))
                     >>> intersection.is_point()  # True
             )doc"
         )
@@ -141,7 +141,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     bool: True if the intersection contains a point set.
                 
                 Example:
-                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0), Point(3.0, 4.0)]))
+                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)]))
                     >>> intersection.is_point_set()  # True
             )doc"
         )
@@ -158,7 +158,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     bool: True if the intersection contains a line.
                 
                 Example:
-                    >>> intersection = Intersection.line(Line(Point(1.0, 2.0), Point(3.0, 4.0)))
+                    >>> intersection = Intersection.line(Line.points(Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)))
                     >>> intersection.is_line()  # True
             )doc"
         )
@@ -175,7 +175,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     bool: True if the intersection contains a ray.
                 
                 Example:
-                    >>> intersection = Intersection.ray(Ray(Point(1.0, 2.0), Vector(3.0, 4.0)))
+                    >>> intersection = Intersection.ray(Ray(Point(1.0, 2.0, 3.0), np.array([3.0, 4.0, 5.0])))
                     >>> intersection.is_ray()  # True
             )doc"
         )
@@ -192,7 +192,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     bool: True if the intersection contains a segment.
                 
                 Example:
-                    >>> intersection = Intersection.segment(Segment(Point(1.0, 2.0), Point(3.0, 4.0)))
+                    >>> intersection = Intersection.segment(Segment(Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)))
                     >>> intersection.is_segment()  # True
             )doc"
         )
@@ -209,7 +209,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     bool: True if the intersection contains a line string.
                 
                 Example:
-                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0), Point(3.0, 4.0)]))
+                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)]))
                     >>> intersection.is_line_string()  # False
             )doc"
         )
@@ -226,7 +226,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     bool: True if the intersection contains a polygon.
                 
                 Example:
-                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0), Point(3.0, 4.0)]))
+                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)]))
                     >>> intersection.is_polygon()  # False
             )doc"
         )
@@ -243,7 +243,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     bool: True if the intersection contains a plane.
                 
                 Example:
-                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0), Point(3.0, 4.0)]))
+                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)]))
                     >>> intersection.is_plane()  # False
             )doc"
         )
@@ -260,7 +260,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     bool: True if the intersection contains a sphere.
                 
                 Example:
-                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0), Point(3.0, 4.0)]))
+                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)]))
                     >>> intersection.is_sphere()  # False
             )doc"
         )
@@ -277,7 +277,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     bool: True if the intersection contains an ellipsoid.
                 
                 Example:
-                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0), Point(3.0, 4.0)]))
+                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)]))
                     >>> intersection.is_ellipsoid()  # False
             )doc"
         )
@@ -329,7 +329,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     Point: The intersection as a point.
                 
                 Example:
-                    >>> intersection = Intersection.point(Point(1.0, 2.0))
+                    >>> intersection = Intersection.point(Point(1.0, 2.0, 3.0))
                     >>> point = intersection.as_point()
             )doc"
         )
@@ -346,7 +346,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     PointSet: The intersection as a point set.
                 
                 Example:
-                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0), Point(3.0, 4.0)]))
+                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)]))
                     >>> point_set = intersection.as_point_set()
             )doc"
         )
@@ -363,7 +363,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     Line: The intersection as a line.
                 
                 Example:
-                    >>> intersection = Intersection.line(Line(Point(1.0, 2.0), Point(3.0, 4.0)))
+                    >>> intersection = Intersection.line(Line.points(Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)))
                     >>> line = intersection.as_line()
             )doc"
         )
@@ -380,7 +380,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     Ray: The intersection as a ray.
                 
                 Example:
-                    >>> intersection = Intersection.ray(Ray(Point(1.0, 2.0), Vector(3.0, 4.0)))
+                    >>> intersection = Intersection.ray(Ray(Point(1.0, 2.0, 3.0), np.array([3.0, 4.0, 5.0])))
                     >>> ray = intersection.as_ray()
             )doc"
         )
@@ -397,7 +397,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     Segment: The intersection as a segment.
                 
                 Example:
-                    >>> intersection = Intersection.segment(Segment(Point(1.0, 2.0), Point(3.0, 4.0)))
+                    >>> intersection = Intersection.segment(Segment(Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)))
                     >>> segment = intersection.as_segment()
             )doc"
         )
@@ -414,7 +414,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     LineString: The intersection as a line string.
                 
                 Example:
-                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0), Point(3.0, 4.0)]))
+                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)]))
                     >>> line_string = intersection.as_line_string()
             )doc"
         )
@@ -541,7 +541,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     Intersection.Type: The type of the intersection.
                 
                 Example:
-                    >>> intersection = Intersection.point(Point(1.0, 2.0))
+                    >>> intersection = Intersection.point(Point(1.0, 2.0, 3.0))
                     >>> intersection.get_type()  # Intersection.Type.Point
             )doc"
         )
@@ -589,7 +589,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     Intersection: An intersection containing the point.
                 
                 Example:
-                    >>> intersection = Intersection.point(Point(1.0, 2.0))
+                    >>> intersection = Intersection.point(Point(1.0, 2.0, 3.0))
                     >>> intersection.is_defined()  # True
             )doc"
         )
@@ -607,7 +607,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     Intersection: An intersection containing the point set.
                 
                 Example:
-                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0), Point(3.0, 4.0)]))
+                    >>> intersection = Intersection.point_set(PointSet([Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)]))
                     >>> intersection.is_defined()  # True
             )doc"
         )
@@ -625,7 +625,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     Intersection: An intersection containing the line.
                 
                 Example:
-                    >>> intersection = Intersection.line(Line(Point(1.0, 2.0), Point(3.0, 4.0)))
+                    >>> intersection = Intersection.line(Line(Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)))
                     >>> intersection.is_defined()  # True
             )doc"
         )
@@ -643,7 +643,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     Intersection: An intersection containing the ray.
                 
                 Example:
-                    >>> intersection = Intersection.ray(Ray(Point(1.0, 2.0), Vector(3.0, 4.0)))
+                    >>> intersection = Intersection.ray(Ray(Point(1.0, 2.0, 3.0), Vector(3.0, 4.0, 5.0)))
                     >>> intersection.is_defined()  # True
             )doc"
         )
@@ -661,7 +661,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     Intersection: An intersection containing the segment.
                 
                 Example:
-                    >>> intersection = Intersection.segment(Segment(Point(1.0, 2.0), Point(3.0, 4.0)))
+                    >>> intersection = Intersection.segment(Segment(Point(1.0, 2.0, 3.0), Point(3.0, 4.0, 5.0)))
                     >>> intersection.is_defined()  # True
             )doc"
         )
@@ -680,8 +680,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Intersection(pybind11::mod
                     str: The string representation of the type.
                 
                 Example:
-                    >>> intersection = Intersection.point(Point(1.0, 2.0))
-                    >>> intersection.string_from_type()  # "Point"
+                    >>> Intersection.string_from_type(Intersection.Type.Point)  # "Point"
             )doc"
         )
 

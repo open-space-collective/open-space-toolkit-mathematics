@@ -281,7 +281,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
                     bool: True if the object is a cone.
 
                 Example:
-                    >>> object = Object(Cone(Point(1.0, 2.0, 3.0), [4.0, 5.0, 6.0], Angle.degrees(30.0)))
+                    >>> object = Object(Cone(Point(1.0, 2.0, 3.0), [0.0, 0.0, 1.0], Angle.degrees(30.0)))
                     >>> object.is_cone()  # True
             )doc"
         )
@@ -298,8 +298,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
                     bool: True if the objects intersect.
 
                 Example:
-                    >>> object = Object(Point(1.0, 2.0, 3.0))
-                    >>> other_object = Object(Point(4.0, 5.0, 6.0))
+                    >>> object = Object(Cone(Point(1.0, 2.0, 3.0), [0.0, 0.0, 1.0], Angle.degrees(30.0)))
+                    >>> other_object = Object(Point(1.0, 2.0, 3.1))
                     >>> object.intersects(other_object)  # True
             )doc"
         )
@@ -316,8 +316,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
                     bool: True if this object contains the other object.
 
                 Example:
-                    >>> object = Object(Point(1.0, 2.0, 3.0))
-                    >>> other_object = Object(Point(4.0, 5.0, 6.0))
+                    >>> object = Object(Cone(Point(1.0, 2.0, 3.0), [0.0, 0.0, 1.0], Angle.degrees(30.0)))
+                    >>> other_object = Object(Point(1.0, 2.0, 3.1))
                     >>> object.contains(other_object)  # True
             )doc"
         )
