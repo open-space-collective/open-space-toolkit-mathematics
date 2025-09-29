@@ -286,7 +286,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
                     RotationVector: The equivalent rotation vector.
 
                 Example:
-                    >>> ea = EulerAngle(Angle.degrees(30), Angle.degrees(45), Angle.degrees(60))
+                    >>> ea = EulerAngle.zyx(Angle.degrees(30), Angle.degrees(45), Angle.degrees(60))
                     >>> rot_vector = RotationVector.euler_angle(ea)
             )doc",
             arg("euler_angle")

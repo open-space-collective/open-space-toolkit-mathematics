@@ -637,7 +637,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
                     Quaternion: The quaternion representing the rotation.
 
                 Example:
-                    >>> ea = EulerAngle(Angle.radians(0.1), Angle.radians(0.2), Angle.radians(0.3))
+                    >>> ea = EulerAngle.zyx(Angle.radians(0.1), Angle.radians(0.2), Angle.radians(0.3))
                     >>> q = Quaternion.euler_angle(ea)
             )doc",
             arg("euler_angle")

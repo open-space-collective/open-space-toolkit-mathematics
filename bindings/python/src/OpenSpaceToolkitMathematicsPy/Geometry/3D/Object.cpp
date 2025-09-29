@@ -77,7 +77,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
                     bool: True if the object is defined.
 
                 Example:
-                    >>> object = Object(Point(1.0, 2.0, 3.0))
+                    >>> object = Point(1.0, 2.0, 3.0)
                     >>> object.is_defined()  # True
             )doc"
         )
@@ -92,10 +92,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     bool: True if the object is a point.
-
-                Example:
-                    >>> object = Object(Point(1.0, 2.0, 3.0))
-                    >>> object.is_point()  # True
             )doc"
         )
         .def(
@@ -109,10 +105,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     bool: True if the object is a point set.
-
-                Example:
-                    >>> object = Object(PointSet([Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)]))
-                    >>> object.is_point_set()  # True
             )doc"
         )
         .def(
@@ -126,10 +118,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     bool: True if the object is a line.
-
-                Example:
-                    >>> object = Object(Line(Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)))
-                    >>> object.is_line()  # True
             )doc"
         )
         .def(
@@ -143,10 +131,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     bool: True if the object is a ray.
-
-                Example:
-                    >>> object = Object(Ray(Point(1.0, 2.0, 3.0), Vector(4.0, 5.0, 6.0)))
-                    >>> object.is_ray()  # True
             )doc"
         )
         .def(
@@ -160,10 +144,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     bool: True if the object is a segment.
-
-                Example:
-                    >>> object = Object(Segment(Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)))
-                    >>> object.is_segment()  # True
             )doc"
         )
         .def(
@@ -177,10 +157,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     bool: True if the object is a line string.
-
-                Example:
-                    >>> object = Object(LineString([Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)]))
-                    >>> object.is_line_string()  # True
             )doc"
         )
         .def(
@@ -194,10 +170,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     bool: True if the object is a polygon.
-
-                Example:
-                    >>> object = Object(Polygon([Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)]))
-                    >>> object.is_polygon()  # True
             )doc"
         )
         .def(
@@ -211,10 +183,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     bool: True if the object is a plane.
-
-                Example:
-                    >>> object = Object(Plane(Point(1.0, 2.0, 3.0), Vector(4.0, 5.0, 6.0)))
-                    >>> object.is_plane()  # True
             )doc"
         )
         .def(
@@ -228,10 +196,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     bool: True if the object is a sphere.
-
-                Example:
-                    >>> object = Object(Sphere(Point(1.0, 2.0, 3.0), 4.0))
-                    >>> object.is_sphere()  # True
             )doc"
         )
         .def(
@@ -245,10 +209,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     bool: True if the object is an ellipsoid.
-
-                Example:
-                    >>> object = Object(Ellipsoid(Point(1.0, 2.0, 3.0), 4.0, 5.0, 6.0))
-                    >>> object.is_ellipsoid()  # True
             )doc"
         )
         .def(
@@ -262,10 +222,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     bool: True if the object is a pyramid.
-
-                Example:
-                    >>> object = Object(Pyramid(Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)))
-                    >>> object.is_pyramid()  # True
             )doc"
         )
         .def(
@@ -279,10 +235,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     bool: True if the object is a cone.
-
-                Example:
-                    >>> object = Object(Cone(Point(1.0, 2.0, 3.0), [0.0, 0.0, 1.0], Angle.degrees(30.0)))
-                    >>> object.is_cone()  # True
             )doc"
         )
         .def(
@@ -298,8 +250,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
                     bool: True if the objects intersect.
 
                 Example:
-                    >>> object = Object(Cone(Point(1.0, 2.0, 3.0), [0.0, 0.0, 1.0], Angle.degrees(30.0)))
-                    >>> other_object = Object(Point(1.0, 2.0, 3.1))
+                    >>> object = Cone(Point(1.0, 2.0, 3.0), [0.0, 0.0, 1.0], Angle.degrees(30.0))
+                    >>> other_object = Point(1.0, 2.0, 3.1)
                     >>> object.intersects(other_object)  # True
             )doc"
         )
@@ -316,8 +268,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
                     bool: True if this object contains the other object.
 
                 Example:
-                    >>> object = Object(Cone(Point(1.0, 2.0, 3.0), [0.0, 0.0, 1.0], Angle.degrees(30.0)))
-                    >>> other_object = Object(Point(1.0, 2.0, 3.1))
+                    >>> object = Cone(Point(1.0, 2.0, 3.0), [0.0, 0.0, 1.0], Angle.degrees(30.0))
+                    >>> other_object = Point(1.0, 2.0, 3.1)
                     >>> object.contains(other_object)  # True
             )doc"
         )
@@ -333,10 +285,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     Point: The point.
-
-                Example:
-                    >>> object = Object(Point(1.0, 2.0, 3.0))
-                    >>> point = object.as_point()
             )doc"
         )
         .def(
@@ -350,10 +298,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     PointSet: The point set.
-
-                Example:
-                    >>> object = Object(PointSet([Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)]))
-                    >>> point_set = object.as_point_set()
             )doc"
         )
         .def(
@@ -367,10 +311,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     Line: The line.
-
-                Example:
-                    >>> object = Object(Line(Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)))
-                    >>> line = object.as_line()
             )doc"
         )
         .def(
@@ -384,10 +324,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     Ray: The ray.
-
-                Example:
-                    >>> object = Object(Ray(Point(1.0, 2.0, 3.0), Vector(4.0, 5.0, 6.0)))
-                    >>> ray = object.as_ray()
             )doc"
         )
         .def(
@@ -401,10 +337,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     Segment: The segment.
-
-                Example:
-                    >>> object = Object(Segment(Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)))
-                    >>> segment = object.as_segment()
             )doc"
         )
         .def(
@@ -418,10 +350,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     LineString: The line string.
-
-                Example:
-                    >>> object = Object(LineString([Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)]))
-                    >>> line_string = object.as_line_string()
             )doc"
         )
         .def(
@@ -435,10 +363,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     Polygon: The polygon.
-
-                Example:
-                    >>> object = Object(Polygon([Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)]))
-                    >>> polygon = object.as_polygon()
             )doc"
         )
         .def(
@@ -452,10 +376,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     Plane: The plane.
-
-                Example:
-                    >>> object = Object(Plane(Point(1.0, 2.0, 3.0), Vector(4.0, 5.0, 6.0)))
-                    >>> plane = object.as_plane()
             )doc"
         )
         .def(
@@ -469,10 +389,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     Sphere: The sphere.
-
-                Example:
-                    >>> object = Object(Sphere(Point(1.0, 2.0, 3.0), 4.0))
-                    >>> sphere = object.as_sphere()
             )doc"
         )
         .def(
@@ -486,10 +402,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     Ellipsoid: The ellipsoid.
-
-                Example:
-                    >>> object = Object(Ellipsoid(Point(1.0, 2.0, 3.0), 4.0, 5.0, 6.0))
-                    >>> ellipsoid = object.as_ellipsoid()
             )doc"
         )
         .def(
@@ -503,10 +415,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     Pyramid: The pyramid.
-
-                Example:
-                    >>> object = Object(Pyramid(Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)))
-                    >>> pyramid = object.as_pyramid()
             )doc"
         )
         .def(
@@ -520,10 +428,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Returns:
                     Cone: The cone.
-
-                Example:
-                    >>> object = Object(Cone(Point(1.0, 2.0, 3.0), [4.0, 5.0, 6.0], Angle.degrees(30.0)))
-                    >>> cone = object.as_cone()
             )doc"
         )
 
@@ -537,11 +441,6 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
 
                 Args:
                     transformation (Transformation): The transformation to apply.
-
-                Example:
-                    >>> object = Object(Point(1.0, 2.0, 3.0))
-                    >>> transformation = Translation([1.0, 2.0, 3.0])
-                    >>> object.apply_transformation(transformation)
             )doc"
         )
 
