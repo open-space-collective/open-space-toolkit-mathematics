@@ -8,6 +8,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
 
     using ostk::core::type::Real;
     using ostk::core::type::String;
+    using ostk::core::type::Integer;
 
     using ostk::mathematics::geometry::Angle;
     using ostk::mathematics::object::Vector2d;
@@ -341,7 +342,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
                 Convert the angle to a string representation.
 
                 Args:
-                    do_sanitize (bool, optional): Whether to sanitize the output. Defaults to False.
+                    precision (int, optional): The precision for floating point numbers. Defaults to Integer.undefined().
 
                 Returns:
                     str: String representation of the angle.
@@ -350,7 +351,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
                     >>> angle = Angle.degrees(90.0)
                     >>> angle.to_string()  # "90.0 [deg]"
             )doc",
-            arg("do_sanitize") = false
+            arg_v("precision", Integer::Undefined(), "Integer.undefined()")
         )
 
         // Define static methods

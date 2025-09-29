@@ -221,7 +221,7 @@ const Matrix3d& RotationMatrix::accessMatrix() const
 
 Vector3d RotationMatrix::getRowAt(const Index& aRowIndex) const
 {
-    if (aRowIndex > 3)
+    if (aRowIndex >= 3)
     {
         throw ostk::core::error::RuntimeError("Row index out of bounds.");
     }
@@ -236,7 +236,7 @@ Vector3d RotationMatrix::getRowAt(const Index& aRowIndex) const
 
 Vector3d RotationMatrix::getColumnAt(const Index& aColumnIndex) const
 {
-    if (aColumnIndex > 3)
+    if (aColumnIndex >= 3)
     {
         throw ostk::core::error::RuntimeError("Column index out of bounds.");
     }

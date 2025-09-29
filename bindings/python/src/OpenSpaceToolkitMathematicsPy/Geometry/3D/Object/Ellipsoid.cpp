@@ -141,7 +141,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(pybind11:
 
                 Example:
                     >>> ellipsoid = Ellipsoid(Point(0.0, 0.0, 0.0), 2.0, 1.5, 1.0)
-                    >>> ellipsoid.intersects(Line(Point(0.5, 0.5, 0.5), Point(1.0, 1.0, 1.0)))  # True
+                    >>> ellipsoid.intersects(Line.points(Point(0.5, 0.5, 0.5), Point(1.0, 1.0, 1.0)))  # True
             )doc",
             arg("line")
         )
@@ -159,7 +159,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(pybind11:
 
                 Example:
                     >>> ellipsoid = Ellipsoid(Point(0.0, 0.0, 0.0), 2.0, 1.5, 1.0)
-                    >>> ellipsoid.intersects(Ray(Point(0.5, 0.5, 0.5), Point(1.0, 1.0, 1.0)))  # True
+                    >>> ellipsoid.intersects(Ray(Point(0.5, 0.5, 0.5), [1.0, 0.0, 0.0]))  # True
             )doc",
             arg("ray")
         )
@@ -394,7 +394,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(pybind11:
 
                 Example:
                     >>> ellipsoid = Ellipsoid(center, 2.0, 1.5, 1.0)
-                    >>> line = Line(Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0))
+                    >>> line = Line.points(Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0))
                     >>> intersection = ellipsoid.intersection_with(line)
                     >>> intersection.get_point()  # Point(0.0, 0.0, 0.0)
             )doc",

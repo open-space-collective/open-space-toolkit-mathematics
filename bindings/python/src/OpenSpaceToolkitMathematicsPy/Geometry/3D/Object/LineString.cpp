@@ -166,7 +166,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_LineString(pybind11
                 Example:
                     >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
                     >>> line_string = LineString(points)
-                    >>> transformation = Transformation(Transformation.Type.Translation, [1.0, 1.0])
+                    >>> transformation = Transformation.translation([1.0, 0.0])
                     >>> line_string.apply_transformation(transformation)
             )doc",
             arg("transformation")

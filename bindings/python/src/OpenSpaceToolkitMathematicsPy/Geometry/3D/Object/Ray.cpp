@@ -214,7 +214,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ray(pybind11::modul
 
                 Example:
                     >>> ray = Ray(Point(0.0, 0.0, 0.0), np.array([1.0, 0.0, 0.0]))
-                    >>> transformation = Transformation(Transformation.Type.Translation, np.array([1.0, 0.0, 0.0]))
+                    >>> transformation = Transformation.translation([1.0, 0.0])
                     >>> ray.apply_transformation(transformation)
             )doc",
             arg("transformation")

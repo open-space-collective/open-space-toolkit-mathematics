@@ -390,7 +390,7 @@ inline void OpenSpaceToolkitMathematicsPy_Object_Interval(pybind11::module& aMod
                     >>> gaps = RealInterval.get_gaps(intervals)  # Gap from 1.0 to 2.0
             )doc",
             arg("intervals"),
-            arg_v("bound", Interval<Real>::Undefined(), "RealInterval.Undefined()")
+            arg_v("bound", Interval<Real>::Undefined(), "RealInterval.undefined()")
         )
         .def_static(
             "logical_or",
