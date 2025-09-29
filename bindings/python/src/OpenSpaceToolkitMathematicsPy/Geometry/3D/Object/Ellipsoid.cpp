@@ -491,6 +491,29 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(pybind11:
             arg("cone"),
             arg("only_in_sight") = false
         )
+
+        // TBI: Deprecate these in the next major release, just maintained for backward compatibility
+        .def("intersection", overload_cast<const Line&>(&Ellipsoid::intersectionWith, const_), arg("line"))
+        .def(
+            "intersection",
+            overload_cast<const Ray&, const bool>(&Ellipsoid::intersectionWith, const_),
+            arg("ray"),
+            arg("only_in_sight")
+        )
+        .def("intersection", overload_cast<const Segment&>(&Ellipsoid::intersectionWith, const_), arg("segment"))
+        .def(
+            "intersection",
+            overload_cast<const Pyramid&, const bool>(&Ellipsoid::intersectionWith, const_),
+            arg("pyramid"),
+            arg("only_in_sight")
+        )
+        .def(
+            "intersection",
+            overload_cast<const Cone&, const bool>(&Ellipsoid::intersectionWith, const_),
+            arg("cone"),
+            arg("only_in_sight")
+        )
+
         .def(
             "apply_transformation",
             &Ellipsoid::applyTransformation,
