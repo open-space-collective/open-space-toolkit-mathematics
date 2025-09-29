@@ -74,12 +74,114 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Sphere(pybind11::mo
             )doc"
         )
 
-        .def("intersects", overload_cast<const Point&>(&Sphere::intersects, const_), arg("point"))
-        .def("intersects", overload_cast<const PointSet&>(&Sphere::intersects, const_), arg("point_set"))
-        .def("intersects", overload_cast<const Line&>(&Sphere::intersects, const_), arg("line"))
-        .def("intersects", overload_cast<const Ray&>(&Sphere::intersects, const_), arg("ray"))
-        .def("intersects", overload_cast<const Segment&>(&Sphere::intersects, const_), arg("segment"))
-        .def("intersects", overload_cast<const Plane&>(&Sphere::intersects, const_), arg("plane"))
+        .def(
+            "intersects",
+            overload_cast<const Point&>(&Sphere::intersects, const_),
+            R"doc(
+                Check if the sphere intersects a point.
+
+                Args:
+                    point (Point): The point to check intersection with.
+
+                Returns:
+                    bool: True if the sphere intersects the point.
+
+                Example:
+                    >>> sphere = Sphere(Point(0.0, 0.0, 0.0), 1.0)
+                    >>> sphere.intersects(Point(1.0, 0.0, 0.0))  # True
+            )doc",
+            arg("point")
+        )
+        .def(
+            "intersects",
+            overload_cast<const PointSet&>(&Sphere::intersects, const_),
+            R"doc(
+                Check if the sphere intersects a point set.
+
+                Args:
+                    point_set (PointSet): The point set to check intersection with.
+
+                Returns:
+                    bool: True if the sphere intersects the point set.
+
+                Example:
+                    >>> sphere = Sphere(Point(0.0, 0.0, 0.0), 1.0)
+                    >>> sphere.intersects(PointSet([Point(1.0, 0.0, 0.0), Point(0.0, 1.0, 0.0)]))  # True
+            )doc",
+            arg("point_set")
+        )
+        .def(
+            "intersects",
+            overload_cast<const Line&>(&Sphere::intersects, const_),
+            R"doc(
+                Check if the sphere intersects a line.
+
+                Args:
+                    line (Line): The line to check intersection with.
+
+                Returns:
+                    bool: True if the sphere intersects the line.
+
+                Example:
+                    >>> sphere = Sphere(Point(0.0, 0.0, 0.0), 1.0)
+                    >>> sphere.intersects(Line(Point(1.0, 0.0, 0.0), Point(0.0, 1.0, 0.0)))  # True
+            )doc",
+            arg("line")
+        )
+        .def(
+            "intersects",
+            overload_cast<const Ray&>(&Sphere::intersects, const_),
+            R"doc(
+                Check if the sphere intersects a ray.
+
+                Args:
+                    ray (Ray): The ray to check intersection with.
+
+                Returns:
+                    bool: True if the sphere intersects the ray.
+
+                Example:
+                    >>> sphere = Sphere(Point(0.0, 0.0, 0.0), 1.0)
+                    >>> sphere.intersects(Ray(Point(1.0, 0.0, 0.0), Point(0.0, 1.0, 0.0)))  # True
+            )doc",
+            arg("ray")
+        )
+        .def(
+            "intersects",
+            overload_cast<const Segment&>(&Sphere::intersects, const_),
+            R"doc(
+                Check if the sphere intersects a segment.
+
+                Args:
+                    segment (Segment): The segment to check intersection with.
+
+                Returns:
+                    bool: True if the sphere intersects the segment.
+
+                Example:
+                    >>> sphere = Sphere(Point(0.0, 0.0, 0.0), 1.0)
+                    >>> sphere.intersects(Segment(Point(1.0, 0.0, 0.0), Point(0.0, 1.0, 0.0)))  # True
+            )doc",
+            arg("segment")
+        )
+        .def(
+            "intersects",
+            overload_cast<const Plane&>(&Sphere::intersects, const_),
+            R"doc(
+                Check if the sphere intersects a plane.
+
+                Args:
+                    plane (Plane): The plane to check intersection with.
+
+                Returns:
+                    bool: True if the sphere intersects the plane.
+
+                Example:
+                    >>> sphere = Sphere(Point(0.0, 0.0, 0.0), 1.0)
+                    >>> sphere.intersects(Plane(Point(1.0, 0.0, 0.0), Vector3d(0.0, 0.0, 1.0)))  # True
+            )doc",
+            arg("plane")
+        )
         .def(
             "contains",
             overload_cast<const Point&>(&Sphere::contains, const_),
@@ -98,7 +200,24 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Sphere(pybind11::mo
             )doc",
             arg("point")
         )
-        .def("contains", overload_cast<const PointSet&>(&Sphere::contains, const_), arg("point_set"))
+        .def(
+            "contains",
+            overload_cast<const PointSet&>(&Sphere::contains, const_),
+            R"doc(
+                Check if the sphere contains a point set.
+
+                Args:
+                    point_set (PointSet): The point set to check.
+
+                Returns:
+                    bool: True if the sphere contains the point set, False otherwise.
+
+                Example:
+                    >>> sphere = Sphere(Point(0.0, 0.0, 0.0), 1.0)
+                    >>> sphere.contains(PointSet([Point(0.5, 0.5, 0.5), Point(1.0, 1.0, 1.0)]))  # True
+            )doc",
+            arg("point_set")
+        )
 
         .def(
             "get_center",
@@ -129,14 +248,60 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Sphere(pybind11::mo
             )doc"
         )
 
-        .def("intersection_with", overload_cast<const Line&>(&Sphere::intersectionWith, const_), arg("line"))
+        .def(
+            "intersection_with",
+            overload_cast<const Line&>(&Sphere::intersectionWith, const_),
+            R"doc(
+                Check if the sphere intersects a line.
+
+                Args:
+                    line (Line): The line to check intersection with.
+
+                Returns:
+                    bool: True if the sphere intersects the line.
+
+                Example:
+                    >>> sphere = Sphere(Point(0.0, 0.0, 0.0), 1.0)
+                    >>> sphere.intersection_with(Line(Point(1.0, 0.0, 0.0), Point(0.0, 1.0, 0.0)))  # True
+            )doc",
+            arg("line")
+        )
         .def(
             "intersection_with",
             overload_cast<const Ray&, const bool>(&Sphere::intersectionWith, const_),
+            R"doc(
+                Check if the sphere intersects a ray.
+
+                Args:
+                    ray (Ray): The ray to check intersection with.
+                    only_in_sight (bool, optional): If true, only return intersection points that are in sight. Defaults to False.
+
+                Returns:
+                    bool: True if the sphere intersects the ray.
+
+                Example:
+                    >>> sphere = Sphere(Point(0.0, 0.0, 0.0), 1.0)
+                    >>> sphere.intersection_with(Ray(Point(1.0, 0.0, 0.0), Point(0.0, 1.0, 0.0)))  # True
+            )doc",
             arg("ray"),
             arg("only_in_sight") = DEFAULT_ONLY_IN_SIGHT
         )
-        .def("apply_transformation", &Sphere::applyTransformation, arg("transformation"))
+        .def(
+            "apply_transformation",
+            &Sphere::applyTransformation,
+            R"doc(
+                Apply a transformation to the sphere in place.
+
+                Args:
+                    transformation (Transformation): The transformation to apply.
+
+                Example:
+                    >>> sphere = Sphere(Point(0.0, 0.0, 0.0), 1.0)
+                    >>> transformation = Translation([1.0, 0.0, 0.0])
+                    >>> sphere.apply_transformation(transformation)
+            )doc",
+            arg("transformation")
+        )
 
         .def_static(
             "undefined",

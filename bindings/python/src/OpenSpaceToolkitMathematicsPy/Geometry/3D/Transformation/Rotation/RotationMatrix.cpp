@@ -166,7 +166,14 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
             +[](RotationMatrix& aRotationMatrix) -> void
             {
                 aRotationMatrix.transpose();
-            }
+            },
+            R"doc(
+                Transpose the rotation matrix in place.
+
+                Example:
+                    >>> rot_matrix = RotationMatrix.rx(Angle.degrees(90.0))
+                    >>> rot_matrix.transpose()
+            )doc"
         )
 
         // Define static methods
@@ -249,8 +256,48 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
             )doc",
             arg("rotation_angle")
         )
-        .def_static("rows", &RotationMatrix::Rows, arg("first_row"), arg("second_row"), arg("third_row"))
-        .def_static("columns", &RotationMatrix::Columns, arg("first_column"), arg("second_column"), arg("third_column"))
+        .def_static(
+            "rows",
+            &RotationMatrix::Rows,
+            R"doc(
+                Create a rotation matrix from row vectors.
+
+                Args:
+                    first_row (Vector3d): The first row of the rotation matrix.
+                    second_row (Vector3d): The second row of the rotation matrix.
+                    third_row (Vector3d): The third row of the rotation matrix.
+
+                Returns:
+                    RotationMatrix: A rotation matrix from row vectors.
+
+                Example:
+                    >>> rot_matrix = RotationMatrix.rows(Vector3d(1.0, 0.0, 0.0), Vector3d(0.0, 1.0, 0.0), Vector3d(0.0, 0.0, 1.0))
+            )doc",
+            arg("first_row"),
+            arg("second_row"),
+            arg("third_row")
+        )
+        .def_static(
+            "columns",
+            &RotationMatrix::Columns,
+            R"doc(
+                Create a rotation matrix from column vectors.
+
+                Args:
+                    first_column (Vector3d): The first column of the rotation matrix.
+                    second_column (Vector3d): The second column of the rotation matrix.
+                    third_column (Vector3d): The third column of the rotation matrix.
+
+                Returns:
+                    RotationMatrix: A rotation matrix from column vectors.
+
+                Example:
+                    >>> rot_matrix = RotationMatrix.columns(Vector3d(1.0, 0.0, 0.0), Vector3d(0.0, 1.0, 0.0), Vector3d(0.0, 0.0, 1.0))
+            )doc",
+            arg("first_column"),
+            arg("second_column"),
+            arg("third_column")
+        )
         .def_static(
             "quaternion",
             &RotationMatrix::Quaternion,
@@ -269,8 +316,42 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
             )doc",
             arg("quaternion")
         )
-        .def_static("rotation_vector", &RotationMatrix::RotationVector, arg("rotation_vector"))
-        .def_static("euler_angle", &RotationMatrix::EulerAngle, arg("euler_angle"))
+        .def_static(
+            "rotation_vector",
+            &RotationMatrix::RotationVector,
+            R"doc(
+                Create a rotation matrix from a rotation vector.
+
+                Args:
+                    rotation_vector (RotationVector): The rotation vector to convert.
+
+                Returns:
+                    RotationMatrix: The equivalent rotation matrix.
+
+                Example:
+                    >>> rot_vector = RotationVector.unit()
+                    >>> rot_matrix = RotationMatrix.rotation_vector(rot_vector)
+            )doc",
+            arg("rotation_vector")
+        )
+        .def_static(
+            "euler_angle",
+            &RotationMatrix::EulerAngle,
+            R"doc(
+                Create a rotation matrix from Euler angles.
+
+                Args:
+                    euler_angle (EulerAngle): The Euler angles to convert.
+
+                Returns:
+                    RotationMatrix: The equivalent rotation matrix.
+
+                Example:
+                    >>> euler = EulerAngle.unit()
+                    >>> rot_matrix = RotationMatrix.euler_angle(euler)
+            )doc",
+            arg("euler_angle")
+        )
 
         ;
 }

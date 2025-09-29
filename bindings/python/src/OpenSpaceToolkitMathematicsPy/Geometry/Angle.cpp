@@ -521,15 +521,15 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
                 Calculate the angle between two 2D vectors.
 
                 Args:
-                    first_vector (Vector2d): The first vector.
-                    second_vector (Vector2d): The second vector.
+                    first_vector (np.array): The first vector.
+                    second_vector (np.array): The second vector.
 
                 Returns:
                     Angle: The angle between the vectors.
 
                 Example:
-                    >>> v1 = Vector2d([1.0, 0.0])
-                    >>> v2 = Vector2d([0.0, 1.0])
+                    >>> v1 = np.array([1.0, 0.0])
+                    >>> v2 = np.array([0.0, 1.0])
                     >>> angle = Angle.between(v1, v2)
                     >>> angle.in_degrees()  # 90.0
             )doc",
@@ -543,15 +543,15 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Angle(pybind11::module& aModu
                 Calculate the angle between two 3D vectors.
 
                 Args:
-                    first_vector (Vector3d): The first vector.
-                    second_vector (Vector3d): The second vector.
+                    first_vector (np.array): The first vector.
+                    second_vector (np.array): The second vector.
 
                 Returns:
                     Angle: The angle between the vectors.
 
                 Example:
-                    >>> v1 = Vector3d([1.0, 0.0, 0.0])
-                    >>> v2 = Vector3d([0.0, 1.0, 0.0])
+                    >>> v1 = np.array([1.0, 0.0, 0.0])
+                    >>> v2 = np.array([0.0, 1.0, 0.0])
                     >>> angle = Angle.between(v1, v2)
                     >>> angle.in_degrees()  # 90.0
             )doc",

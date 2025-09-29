@@ -23,11 +23,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Line(pybind11::modu
 
                 Args:
                     point (Point): A point on the line.
-                    direction (Vector2d): The direction vector of the line.
+                    direction (np.array): The direction vector of the line.
 
                 Example:
                     >>> point = Point(0.0, 0.0)
-                    >>> direction = Vector2d([1.0, 1.0])
+                    >>> direction = np.array([1.0, 1.0])
                     >>> line = Line(point, direction)
             )doc",
             arg("point"),
@@ -160,18 +160,15 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Line(pybind11::modu
             "apply_transformation",
             &Line::applyTransformation,
             R"doc(
-                Apply a transformation to the line.
+                Apply a transformation to the line in place.
 
                 Args:
                     transformation (Transformation): The transformation to apply.
 
-                Returns:
-                    Line: The transformed line.
-
                 Example:
                     >>> line = Line.points(Point(0.0, 0.0), Point(1.0, 0.0))
                     >>> transformation = Translation([1.0, 1.0])
-                    >>> transformed = line.apply_transformation(transformation)
+                    >>> line.apply_transformation(transformation)
             )doc",
             arg("transformation")
         )

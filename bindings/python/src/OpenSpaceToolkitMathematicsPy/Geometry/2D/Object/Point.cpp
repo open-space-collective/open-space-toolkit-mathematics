@@ -113,7 +113,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Point(pybind11::mod
                     >>> point = Point(1.0, 2.0)
                     >>> point.x()  # 1.0
             )doc",
-            return_value_policy::reference
+            return_value_policy::reference_internal
         )
         .def(
             "y",
@@ -128,7 +128,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Point(pybind11::mod
                     >>> point = Point(1.0, 2.0)
                     >>> point.y()  # 2.0
             )doc",
-            return_value_policy::reference
+            return_value_policy::reference_internal
         )
         .def(
             "as_vector",
@@ -141,7 +141,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Point(pybind11::mod
 
                 Example:
                     >>> point = Point(1.0, 2.0)
-                    >>> vector = point.as_vector()  # Vector2d([1.0, 2.0])
+                    >>> vector = point.as_vector()  # np.array([1.0, 2.0])
             )doc"
         )
         .def(
@@ -187,18 +187,15 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Point(pybind11::mod
             "apply_transformation",
             &Point::applyTransformation,
             R"doc(
-                Apply a transformation to the point.
+                Apply a transformation to the point in place.
 
                 Args:
                     transformation (Transformation): The transformation to apply.
 
-                Returns:
-                    Point: The transformed point.
-
                 Example:
                     >>> point = Point(1.0, 2.0)
                     >>> transformation = Translation([1.0, 1.0])
-                    >>> transformed = point.apply_transformation(transformation)
+                    >>> point.apply_transformation(transformation)
             )doc",
             arg("transformation")
         )
@@ -239,13 +236,13 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_Point(pybind11::mod
                 Create a point from a 2D vector.
 
                 Args:
-                    vector (Vector2d): The vector to convert to a point.
+                    vector (np.array): The vector to convert to a point.
 
                 Returns:
                     Point: A point with coordinates from the vector.
 
                 Example:
-                    >>> vector = Vector2d([1.0, 2.0])
+                    >>> vector = np.array([1.0, 2.0])
                     >>> point = Point.vector(vector)  # Point(1.0, 2.0)
             )doc",
             arg("vector")

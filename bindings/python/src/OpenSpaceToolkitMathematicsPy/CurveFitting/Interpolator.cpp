@@ -92,10 +92,10 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
                 Evaluate the interpolation at multiple points.
 
                 Args:
-                    x (VectorXd): The x-coordinates to evaluate at.
+                    x (np.array): The x-coordinates to evaluate at.
 
                 Returns:
-                    VectorXd: The interpolated y-values.
+                    (np.array): The interpolated y-values.
 
                 Example:
                     >>> interpolator = Interpolator.generate_interpolator(
@@ -152,10 +152,10 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
                 Compute the derivative of the interpolation at multiple points.
 
                 Args:
-                    x (VectorXd): The x-coordinates to compute derivatives at.
+                    x (np.array): The x-coordinates to compute derivatives at.
 
                 Returns:
-                    VectorXd: The derivative values.
+                    (np.array): The derivative values.
 
                 Example:
                     >>> interpolator = Interpolator.generate_interpolator(
@@ -174,15 +174,15 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
 
                 Args:
                     interpolation_type (Interpolator.Type): The type of interpolation.
-                    x (VectorXd): The x-coordinates of data points.
-                    y (VectorXd): The y-coordinates of data points.
+                    x (np.array): The x-coordinates of data points.
+                    y (np.array): The y-coordinates of data points.
 
                 Returns:
-                    Interpolator: A shared pointer to the created interpolator.
+                    Interpolator: The created interpolator.
 
                 Example:
-                    >>> x = VectorXd([0.0, 1.0, 2.0])
-                    >>> y = VectorXd([0.0, 2.0, 4.0])
+                    >>> x = np.array([0.0, 1.0, 2.0])
+                    >>> y = np.array([0.0, 2.0, 4.0])
                     >>> interpolator = Interpolator.generate_interpolator(
                     ...     Interpolator.Type.CubicSpline, x, y
                     ... )

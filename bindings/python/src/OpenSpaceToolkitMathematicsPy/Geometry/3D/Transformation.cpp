@@ -15,10 +15,27 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
     using ostk::mathematics::object::Matrix4d;
     using ostk::mathematics::object::Vector3d;
 
-    class_<Transformation> transformation(aModule, "Transformation");
+    class_<Transformation> transformation(
+        aModule,
+        "Transformation",
+        R"doc(
+            Represents a 3D geometric transformation.
+
+            A Transformation can represent translation, rotation, scaling, reflection, shear, or general affine transformations.
+        )doc"
+    );
 
     // Define constructor
-    transformation.def(init<const Matrix4d&>(), arg("matrix"));
+    transformation.def(
+        init<const Matrix4d&>(),
+        arg("matrix"),
+        R"doc(
+            Construct a transformation from a 4x4 matrix.
+
+            Args:
+                matrix (numpy.ndarray): A 4x4 transformation matrix.
+        )doc"
+    );
 
     // Define methods
     transformation.def(self == self)
@@ -27,23 +44,183 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation(pybind11::m
         .def("__str__", &(shiftToString<Transformation>))
         .def("__repr__", &(shiftToString<Transformation>))
 
-        .def("is_defined", &Transformation::isDefined)
+        .def(
+            "is_defined",
+            &Transformation::isDefined,
+            R"doc(
+                Check if the transformation is defined.
 
-        .def("get_type", &Transformation::getType)
-        .def("get_matrix", &Transformation::getMatrix)
-        .def("get_inverse", &Transformation::getInverse)
-        .def("apply_to", overload_cast<const Point&>(&Transformation::applyTo, const_), arg("point"))
-        .def("apply_to", overload_cast<const Vector3d&>(&Transformation::applyTo, const_), arg("vector"))
+                Returns:
+                    bool: True if the transformation is defined.
+            )doc"
+        )
 
-        .def_static("undefined", &Transformation::Undefined)
-        .def_static("identity", &Transformation::Identity)
-        .def_static("translation", &Transformation::Translation, arg("translation_vector"))
-        .def_static("rotation", overload_cast<const RotationVector&>(&Transformation::Rotation), arg("rotation_vector"))
-        .def_static("rotation", overload_cast<const RotationMatrix&>(&Transformation::Rotation), arg("rotation_matrix"))
-        .def_static("rotation_around", &Transformation::RotationAround, arg("point"), arg("rotation_vector"))
+        .def(
+            "get_type",
+            &Transformation::getType,
+            R"doc(
+                Get the type of the transformation.
 
-        .def_static("string_from_type", &Transformation::StringFromType, arg("type"))
-        .def_static("type_of_matrix", &Transformation::TypeOfMatrix, arg("matrix"))
+                Returns:
+                    Transformation.Type: The transformation type.
+            )doc"
+        )
+        .def(
+            "get_matrix",
+            &Transformation::getMatrix,
+            R"doc(
+                Get the transformation matrix.
+
+                Returns:
+                    numpy.ndarray: The 4x4 transformation matrix.
+            )doc"
+        )
+        .def(
+            "get_inverse",
+            &Transformation::getInverse,
+            R"doc(
+                Get the inverse transformation.
+
+                Returns:
+                    Transformation: The inverse transformation.
+            )doc"
+        )
+        .def(
+            "apply_to",
+            overload_cast<const Point&>(&Transformation::applyTo, const_),
+            arg("point"),
+            R"doc(
+                Apply the transformation to a point.
+
+                Args:
+                    point (Point): The point to transform.
+
+                Returns:
+                    Point: The transformed point.
+            )doc"
+        )
+        .def(
+            "apply_to",
+            overload_cast<const Vector3d&>(&Transformation::applyTo, const_),
+            arg("vector"),
+            R"doc(
+                Apply the transformation to a vector.
+
+                Args:
+                    vector (numpy.ndarray): The vector to transform.
+
+                Returns:
+                    numpy.ndarray: The transformed vector.
+            )doc"
+        )
+
+        .def_static(
+            "undefined",
+            &Transformation::Undefined,
+            R"doc(
+                Create an undefined transformation.
+
+                Returns:
+                    Transformation: An undefined transformation.
+            )doc"
+        )
+        .def_static(
+            "identity",
+            &Transformation::Identity,
+            R"doc(
+                Create an identity transformation.
+
+                Returns:
+                    Transformation: An identity transformation.
+            )doc"
+        )
+        .def_static(
+            "translation",
+            &Transformation::Translation,
+            arg("translation_vector"),
+            R"doc(
+                Create a translation transformation.
+
+                Args:
+                    translation_vector (numpy.ndarray): The translation vector.
+
+                Returns:
+                    Transformation: A translation transformation.
+            )doc"
+        )
+        .def_static(
+            "rotation",
+            overload_cast<const RotationVector&>(&Transformation::Rotation),
+            arg("rotation_vector"),
+            R"doc(
+                Create a rotation transformation from a rotation vector.
+
+                Args:
+                    rotation_vector (RotationVector): The rotation vector.
+
+                Returns:
+                    Transformation: A rotation transformation.
+            )doc"
+        )
+        .def_static(
+            "rotation",
+            overload_cast<const RotationMatrix&>(&Transformation::Rotation),
+            arg("rotation_matrix"),
+            R"doc(
+                Create a rotation transformation from a rotation matrix.
+
+                Args:
+                    rotation_matrix (RotationMatrix): The rotation matrix.
+
+                Returns:
+                    Transformation: A rotation transformation.
+            )doc"
+        )
+        .def_static(
+            "rotation_around",
+            &Transformation::RotationAround,
+            arg("point"),
+            arg("rotation_vector"),
+            R"doc(
+                Create a rotation transformation around a point.
+
+                Args:
+                    point (Point): The point to rotate around.
+                    rotation_vector (RotationVector): The rotation vector.
+
+                Returns:
+                    Transformation: A rotation transformation around the point.
+            )doc"
+        )
+
+        .def_static(
+            "string_from_type",
+            &Transformation::StringFromType,
+            arg("type"),
+            R"doc(
+                Convert a transformation type to a string.
+
+                Args:
+                    type (Transformation.Type): The transformation type.
+
+                Returns:
+                    str: The string representation of the type.
+            )doc"
+        )
+        .def_static(
+            "type_of_matrix",
+            &Transformation::TypeOfMatrix,
+            arg("matrix"),
+            R"doc(
+                Determine the type of a transformation matrix.
+
+                Args:
+                    matrix (numpy.ndarray): The 4x4 transformation matrix.
+
+                Returns:
+                    Transformation.Type: The type of the transformation.
+            )doc"
+        )
 
         ;
 

@@ -34,12 +34,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::modu
 
                 Args:
                     apex (Point): The apex (tip) point of the cone.
-                    axis (Vector3d): The axis direction vector of the cone.
+                    axis (np.array): The axis direction vector of the cone.
                     angle (Angle): The half-angle of the cone opening.
 
                 Example:
                     >>> apex = Point(0.0, 0.0, 0.0)
-                    >>> axis = Vector3d([0.0, 0.0, 1.0])
+                    >>> axis = np.array([0.0, 0.0, 1.0])
                     >>> angle = Angle.degrees(30.0)
                     >>> cone = Cone(apex, axis, angle)
             )doc",
@@ -64,7 +64,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::modu
                     bool: True if the cone is defined, False otherwise.
 
                 Example:
-                    >>> cone = Cone(Point(0.0, 0.0, 0.0), Vector3d([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
                     >>> cone.is_defined()  # True
             )doc"
         )
@@ -82,7 +82,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::modu
                     bool: True if the cone intersects the sphere, False otherwise.
 
                 Example:
-                    >>> cone = Cone(Point(0.0, 0.0, 0.0), Vector3d([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
                     >>> sphere = Sphere(Point(1.0, 0.0, 1.0), 0.5)
                     >>> cone.intersects(sphere)
             )doc",
@@ -103,7 +103,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::modu
                     bool: True if the cone intersects the ellipsoid, False otherwise.
 
                 Example:
-                    >>> cone = Cone(Point(0.0, 0.0, 0.0), Vector3d([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
                     >>> ellipsoid = Ellipsoid(Point(1.0, 0.0, 1.0), 1.0, 0.8, 0.6)
                     >>> cone.intersects(ellipsoid)
             )doc",
@@ -123,16 +123,100 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::modu
                     bool: True if the cone contains the point, False otherwise.
 
                 Example:
-                    >>> cone = Cone(Point(0.0, 0.0, 0.0), Vector3d([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
                     >>> cone.contains(Point(0.1, 0.1, 1.0))  # True for point inside cone
             )doc",
             arg("point")
         )
-        .def("contains", overload_cast<const PointSet&>(&Cone::contains, const_), arg("point_set"))
-        .def("contains", overload_cast<const Segment&>(&Cone::contains, const_), arg("segment"))
-        .def("contains", overload_cast<const Ray&>(&Cone::contains, const_), arg("ray"))
-        .def("contains", overload_cast<const Sphere&>(&Cone::contains, const_), arg("sphere"))
-        .def("contains", overload_cast<const Ellipsoid&>(&Cone::contains, const_), arg("ellipsoid"))
+        .def(
+            "contains",
+            overload_cast<const PointSet&>(&Cone::contains, const_),
+            R"doc(
+                Check if the cone contains a point set.
+
+                Args:
+                    point_set (PointSet): The point set to check.
+
+                Returns:
+                    bool: True if the cone contains the point set, False otherwise.
+
+                Example:
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> cone.contains(PointSet([Point(0.1, 0.1, 1.0), Point(0.2, 0.2, 1.0)]))  # True for points inside cone
+            )doc",
+            arg("point_set")
+        )
+        .def(
+            "contains",
+            overload_cast<const Segment&>(&Cone::contains, const_),
+            R"doc(
+                Check if the cone contains a segment.
+
+                Args:
+                    segment (Segment): The segment to check.
+            
+                Returns:
+                    bool: True if the cone contains the segment, False otherwise.
+
+                Example:
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> cone.contains(Segment(Point(0.1, 0.1, 1.0), Point(0.2, 0.2, 1.0)))  # True for segment inside cone
+            )doc",
+            arg("segment")
+        )
+        .def(
+            "contains",
+            overload_cast<const Ray&>(&Cone::contains, const_),
+            R"doc(
+                Check if the cone contains a ray.
+
+                Args:
+                    ray (Ray): The ray to check.
+
+                Returns:
+                    bool: True if the cone contains the ray, False otherwise.
+
+                Example:
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> cone.contains(Ray(Point(0.1, 0.1, 1.0), np.array([0.0, 0.0, 1.0])))  # True for ray inside cone
+            )doc",
+            arg("ray")
+        )
+        .def(
+            "contains",
+            overload_cast<const Sphere&>(&Cone::contains, const_),
+            R"doc(
+                Check if the cone contains a sphere.
+
+                Args:
+                    sphere (Sphere): The sphere to check.
+
+                Returns:
+                    bool: True if the cone contains the sphere, False otherwise.
+
+                Example:
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> cone.contains(Sphere(Point(0.1, 0.1, 1.0), 0.1))  # True for sphere inside cone
+            )doc",
+            arg("sphere")
+        )
+        .def(
+            "contains",
+            overload_cast<const Ellipsoid&>(&Cone::contains, const_),
+            R"doc(
+                Check if the cone contains an ellipsoid.
+                Args:
+                    ellipsoid (Ellipsoid): The ellipsoid to check.
+
+                Returns:
+                    bool: True if the cone contains the ellipsoid, False otherwise.
+                
+                Example:
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> cone.contains(Ellipsoid(Point(0.1, 0.1, 1.0), 0.1, 0.1, 0.1))  # True for ellipsoid inside cone
+            )doc",
+            arg("ellipsoid")
+        )
 
         .def(
             "get_apex",
@@ -144,7 +228,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::modu
                     Point: The apex point of the cone.
 
                 Example:
-                    >>> cone = Cone(Point(1.0, 2.0, 3.0), Vector3d([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> cone = Cone(Point(1.0, 2.0, 3.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
                     >>> apex = cone.get_apex()  # Point(1.0, 2.0, 3.0)
             )doc"
         )
@@ -155,10 +239,10 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::modu
                 Get the axis direction vector of the cone.
 
                 Returns:
-                    Vector3d: The normalized axis direction vector.
+                    Vector3d: The axis direction vector.
 
                 Example:
-                    >>> cone = Cone(Point(0.0, 0.0, 0.0), Vector3d([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
                     >>> axis = cone.get_axis()  # [0.0, 0.0, 1.0]
             )doc"
         )
@@ -172,7 +256,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::modu
                     Angle: The half-angle of the cone.
 
                 Example:
-                    >>> cone = Cone(Point(0.0, 0.0, 0.0), Vector3d([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
                     >>> angle = cone.get_angle()  # 30 degrees
             )doc"
         )
@@ -189,7 +273,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::modu
                     list: Array of Ray objects representing the lateral surface.
 
                 Example:
-                    >>> cone = Cone(Point(0.0, 0.0, 0.0), Vector3d([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
                     >>> rays = cone.get_rays_of_lateral_surface(8)
             )doc",
             arg("ray_count") = DEFAULT_RAY_COUNT
@@ -207,7 +291,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::modu
                     float: The minimum distance from the cone surface to the point.
 
                 Example:
-                    >>> cone = Cone(Point(0.0, 0.0, 0.0), Vector3d([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
                     >>> distance = cone.distance_to(Point(2.0, 0.0, 0.0))
             )doc",
             arg("point")
@@ -215,6 +299,23 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::modu
         .def(
             "intersection_with",
             overload_cast<const Sphere&, const bool, const Size>(&Cone::intersectionWith, const_),
+            R"doc(
+                Compute intersection of cone with sphere.
+
+                Args:
+                    sphere (Sphere): The sphere to intersect with.
+                    only_in_sight (bool): If true, only return intersection points that are in sight.
+                    discretization_level (int): The discretization level for the intersection.
+
+                Returns:
+                    Intersection: The intersection of the cone with the sphere.
+
+                Example:
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> sphere = Sphere(Point(2.0, 0.0, 0.0), 1.0)
+                    >>> intersection = cone.intersection_with(sphere)
+                    >>> intersection.get_point()  # Point(2.0, 0.0, 0.0)
+            )doc",
             arg("sphere"),
             arg("only_in_sight") = false,
             arg("discretization_level") = DEFAULT_DISCRETIZATION_LEVEL
@@ -222,11 +323,43 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cone(pybind11::modu
         .def(
             "intersection_with",
             overload_cast<const Ellipsoid&, const bool, const Size>(&Cone::intersectionWith, const_),
+            R"doc(
+                Compute intersection of cone with ellipsoid.
+
+                Args:
+                    ellipsoid (Ellipsoid): The ellipsoid to intersect with.
+                    only_in_sight (bool): If true, only return intersection points that are in sight.
+                    discretization_level (int): The discretization level for the intersection.
+
+                Returns:
+                    Intersection: The intersection of the cone with the ellipsoid.
+
+                Example:
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> ellipsoid = Ellipsoid(Point(2.0, 0.0, 0.0), 1.0, 1.0, 1.0)
+                    >>> intersection = cone.intersection_with(ellipsoid)
+                    >>> intersection.get_point()  # Point(2.0, 0.0, 0.0)
+            )doc",
             arg("ellipsoid"),
             arg("only_in_sight") = false,
             arg("discretization_level") = DEFAULT_DISCRETIZATION_LEVEL
         )
-        .def("apply_transformation", &Cone::applyTransformation, arg("transformation"))
+        .def(
+            "apply_transformation",
+            &Cone::applyTransformation,
+            R"doc(
+                Apply a transformation to the cone in place.
+
+                Args:
+                    transformation (Transformation): The transformation to apply.
+
+                Example:
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]), Angle.degrees(30.0))
+                    >>> transformation = Translation([1.0, 2.0, 3.0])
+                    >>> cone.apply_transformation(transformation)
+            )doc",
+            arg("transformation")
+        )
 
         .def_static(
             "undefined",

@@ -48,12 +48,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Eu
                 Create Euler angles from a 3D vector with specified angle unit and axis sequence.
 
                 Args:
-                    vector (Vector3d): Vector containing the three angle values.
+                    vector (np.array): Vector containing the three angle values.
                     angle_unit (Angle.Unit): The unit of the angles in the vector.
                     axis_sequence (EulerAngle.AxisSequence): The axis sequence.
 
                 Example:
-                    >>> vector = Vector3d([30.0, 45.0, 60.0])
+                    >>> vector = np.array([30.0, 45.0, 60.0])
                     >>> euler = EulerAngle(vector, Angle.Unit.Degree, EulerAngle.AxisSequence.XYZ)
             )doc",
             arg("vector"),

@@ -57,7 +57,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(pybind11::mo
 
                 Example:
                     >>> center = Point(0.0, 0.0, 0.0)
-                    >>> axes = [Vector3d([1.0, 0.0, 0.0]), Vector3d([0.0, 1.0, 0.0]), Vector3d([0.0, 0.0, 1.0])]
+                    >>> axes = [np.array([1.0, 0.0, 0.0]), np.array([0.0, 1.0, 0.0]), np.array([0.0, 0.0, 1.0])]
                     >>> extent = [1.0, 2.0, 3.0]
                     >>> cuboid = Cuboid(center, axes, extent)
             )doc",
@@ -106,10 +106,74 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(pybind11::mo
             )doc"
         )
 
-        .def("intersects", overload_cast<const Point&>(&Cuboid::intersects, const_), arg("point"))
-        .def("intersects", overload_cast<const PointSet&>(&Cuboid::intersects, const_), arg("point_set"))
-        .def("intersects", overload_cast<const Line&>(&Cuboid::intersects, const_), arg("line"))
-        .def("intersects", overload_cast<const Cuboid&>(&Cuboid::intersects, const_), arg("cuboid"))
+        .def(
+            "intersects",
+            overload_cast<const Point&>(&Cuboid::intersects, const_),
+            R"doc(
+                Check if the cuboid intersects a point.
+
+                Args:
+                    point (Point): The point to check.
+
+                Returns:
+                    bool: True if the cuboid intersects the point, False otherwise.
+
+                Example:
+                    >>> cuboid = Cuboid(Point(0.0, 0.0, 0.0), axes, extent)
+                    >>> cuboid.intersects(Point(1.0, 2.0, 3.0))  # True
+            )doc",
+            arg("point")
+        )
+        .def(
+            "intersects",
+            overload_cast<const PointSet&>(&Cuboid::intersects, const_),
+            R"doc(
+                Check if the cuboid intersects a point set.
+
+                Args:
+                    point_set (PointSet): The point set to check.
+
+                Returns:
+                    bool: True if the cuboid intersects the point set, False otherwise.
+
+                Example:
+                    >>> cuboid = Cuboid(Point(0.0, 0.0, 0.0), axes, extent)
+                    >>> cuboid.intersects(PointSet([Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)]))  # True
+            )doc",
+            arg("point_set")
+        )
+        .def(
+            "intersects",
+            overload_cast<const Line&>(&Cuboid::intersects, const_),
+            R"doc(
+                Check if the cuboid intersects a line.
+
+                Args:
+                    line (Line): The line to check.
+
+                Returns:
+                    bool: True if the cuboid intersects the line, False otherwise.
+
+                Example:
+                    >>> cuboid = Cuboid(Point(0.0, 0.0, 0.0), axes, extent)
+                    >>> cuboid.intersects(Line(Point(1.0, 2.0, 3.0), Point(4.0, 5.0, 6.0)))  # True
+            )doc",
+            arg("line")
+        )
+        .def(
+            "intersects",
+            overload_cast<const Cuboid&>(&Cuboid::intersects, const_),
+            R"doc(
+                Check if the cuboid intersects a cuboid.
+
+                Args:
+                    cuboid (Cuboid): The cuboid to check.
+
+                Returns:
+                    bool: True if the cuboid intersects the cuboid, False otherwise.
+            )doc",
+            arg("cuboid")
+        )
 
         .def(
             "get_center",
@@ -223,7 +287,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Cuboid(pybind11::mo
                     >>> vertices = cuboid.get_vertices()  # 8 corner points
             )doc"
         )
-        .def("apply_transformation", &Cuboid::applyTransformation, arg("transformation"))
+        .def(
+            "apply_transformation",
+            &Cuboid::applyTransformation,
+            R"doc(
+                Apply a transformation to the cuboid in place.
+
+                Args:
+                    transformation (Transformation): The transformation to apply.
+
+                Example:
+                    >>> cuboid = Cuboid(center, axes, extent)
+                    >>> transformation = Translation([1.0, 2.0, 3.0])
+                    >>> cuboid.apply_transformation(transformation)
+            )doc",
+            arg("transformation")
+        )
 
         .def_static(
             "undefined",

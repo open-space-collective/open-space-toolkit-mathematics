@@ -65,7 +65,26 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(pybind11
                     >>> empty_line.is_empty()  # True
             )doc"
         )
-        .def("is_near", &LineString::isNear, arg("line_string"), arg("tolerance"))
+        .def(
+            "is_near",
+            &LineString::isNear,
+            R"doc(
+                Check if the line string is near another line string.
+
+                Args:
+                    line_string (LineString): The line string to check.
+                    tolerance (float): The tolerance.
+
+                Returns:
+                    bool: True if the line string is near another line string, False otherwise.
+
+                Example:
+                    >>> line_string = LineString(points)
+                    >>> line_string.is_near(LineString(points), 0.1)  # True
+            )doc",
+            arg("line_string"),
+            arg("tolerance")
+        )
 
         .def(
             "get_point_count",
@@ -104,11 +123,41 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(pybind11
         .def(
             "to_string",
             &LineString::toString,
+            R"doc(
+                Convert the line string to a string representation.
+
+                Args:
+                    format (Object.Format, optional): The output format. Defaults to Standard.
+                    precision (int, optional): The precision for floating point numbers. Defaults to undefined.
+
+                Returns:
+                    str: String representation of the line string.
+
+                Example:
+                    >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
+                    >>> line_string = LineString(points)
+                    >>> line_string.to_string()
+            )doc",
             arg("format") = Object::Format::Standard,
             arg("precision") = Integer::Undefined()
         )
 
-        .def("apply_transformation", &LineString::applyTransformation, arg("transformation"))
+        .def(
+            "apply_transformation",
+            &LineString::applyTransformation,
+            R"doc(
+                Apply a transformation to the line string in place.
+
+                Args:
+                    transformation (Transformation): The transformation to apply.
+
+                Example:
+                    >>> line_string = LineString(points)
+                    >>> transformation = Transformation(Transformation.Type.Translation, [1.0, 1.0])
+                    >>> line_string.apply_transformation(transformation)
+            )doc",
+            arg("transformation")
+        )
 
         .def_static(
             "empty",
@@ -125,13 +174,44 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(pybind11
             )doc"
         )
 
-        .def("__len__", &LineString::getPointCount)
+        .def(
+            "__len__",
+            &LineString::getPointCount,
+            R"doc(
+                Get the number of points in the line string (Python len() function).
+
+                Returns:
+                    int: The number of points.
+
+                Example:
+                    >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
+                    >>> line_string = LineString(points)
+                    >>> len(line_string)  # 2
+            )doc"
+        )
         .def(
             "__getitem__",
             +[](const LineString& aLineString, const size_t anIndex) -> const Point&
             {
                 return aLineString.accessPointAt(anIndex);
             },
+            R"doc(
+                Access a point by index (Python indexing support).
+
+                Args:
+                    index (int): The index of the point to access.
+
+                Returns:
+                    Point: The point at the specified index.
+
+                Raises:
+                    IndexError: If the index is out of range.
+
+                Example:
+                    >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
+                    >>> line_string = LineString(points)
+                    >>> first_point = line_string[0]  # Point(0.0, 0.0)
+            )doc",
             return_value_policy::reference_internal,
             arg("index")
         )
@@ -141,6 +221,18 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_2D_Object_LineString(pybind11
             {
                 return make_iterator(aLineString.begin(), aLineString.end());
             },
+            R"doc(
+                Make the line string iterable (Python for loop support).
+
+                Returns:
+                    iterator: An iterator over the points in the line string.
+
+                Example:
+                    >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
+                    >>> line_string = LineString(points)
+                    >>> for point in line_string:
+                    ...     print(point)
+            )doc",
             keep_alive<0, 1>()
         )  // Keep vector alive while iterator is used
 

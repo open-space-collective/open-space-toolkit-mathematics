@@ -91,12 +91,114 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(pybind11:
             )doc"
         )
 
-        .def("intersects", overload_cast<const Point&>(&Ellipsoid::intersects, const_), arg("point"))
-        .def("intersects", overload_cast<const PointSet&>(&Ellipsoid::intersects, const_), arg("point_set"))
-        .def("intersects", overload_cast<const Line&>(&Ellipsoid::intersects, const_), arg("line"))
-        .def("intersects", overload_cast<const Ray&>(&Ellipsoid::intersects, const_), arg("ray"))
-        .def("intersects", overload_cast<const Segment&>(&Ellipsoid::intersects, const_), arg("segment"))
-        .def("intersects", overload_cast<const Plane&>(&Ellipsoid::intersects, const_), arg("plane"))
+        .def(
+            "intersects",
+            overload_cast<const Point&>(&Ellipsoid::intersects, const_),
+            R"doc(
+                Check if the ellipsoid intersects a point.
+
+                Args:
+                    point (Point): The point to check.
+
+                Returns:
+                    bool: True if the ellipsoid intersects the point, False otherwise.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(Point(0.0, 0.0, 0.0), 2.0, 1.5, 1.0)
+                    >>> ellipsoid.intersects(Point(0.5, 0.5, 0.5))  # True
+            )doc",
+            arg("point")
+        )
+        .def(
+            "intersects",
+            overload_cast<const PointSet&>(&Ellipsoid::intersects, const_),
+            R"doc(
+                Check if the ellipsoid intersects a point set.
+
+                Args:
+                    point_set (PointSet): The point set to check.
+
+                Returns:
+                    bool: True if the ellipsoid intersects the point set, False otherwise.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(Point(0.0, 0.0, 0.0), 2.0, 1.5, 1.0)
+                    >>> ellipsoid.intersects(PointSet([Point(0.5, 0.5, 0.5), Point(1.0, 1.0, 1.0)]))  # True
+            )doc",
+            arg("point_set")
+        )
+        .def(
+            "intersects",
+            overload_cast<const Line&>(&Ellipsoid::intersects, const_),
+            R"doc(
+                Check if the ellipsoid intersects a line.
+
+                Args:
+                    line (Line): The line to check.
+
+                Returns:
+                    bool: True if the ellipsoid intersects the line, False otherwise.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(Point(0.0, 0.0, 0.0), 2.0, 1.5, 1.0)
+                    >>> ellipsoid.intersects(Line(Point(0.5, 0.5, 0.5), Point(1.0, 1.0, 1.0)))  # True
+            )doc",
+            arg("line")
+        )
+        .def(
+            "intersects",
+            overload_cast<const Ray&>(&Ellipsoid::intersects, const_),
+            R"doc(
+                Check if the ellipsoid intersects a ray.
+
+                Args:
+                    ray (Ray): The ray to check.
+
+                Returns:
+                    bool: True if the ellipsoid intersects the ray, False otherwise.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(Point(0.0, 0.0, 0.0), 2.0, 1.5, 1.0)
+                    >>> ellipsoid.intersects(Ray(Point(0.5, 0.5, 0.5), Point(1.0, 1.0, 1.0)))  # True
+            )doc",
+            arg("ray")
+        )
+        .def(
+            "intersects",
+            overload_cast<const Segment&>(&Ellipsoid::intersects, const_),
+            R"doc(
+                Check if the ellipsoid intersects a segment.
+
+                Args:
+                    segment (Segment): The segment to check.
+
+                Returns:
+                    bool: True if the ellipsoid intersects the segment, False otherwise.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(Point(0.0, 0.0, 0.0), 2.0, 1.5, 1.0)
+                    >>> ellipsoid.intersects(Segment(Point(0.5, 0.5, 0.5), Point(1.0, 1.0, 1.0)))  # True
+            )doc",
+            arg("segment")
+        )
+        .def(
+            "intersects",
+            overload_cast<const Plane&>(&Ellipsoid::intersects, const_),
+            R"doc(
+                Check if the ellipsoid intersects a plane.
+
+                Args:
+                    plane (Plane): The plane to check.
+
+                Returns:
+                    bool: True if the ellipsoid intersects the plane, False otherwise.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(Point(0.0, 0.0, 0.0), 2.0, 1.5, 1.0)
+                    >>> ellipsoid.intersects(Plane(Point(0.5, 0.5, 0.5), Vector3d(1.0, 1.0, 1.0)))  # True
+            )doc",
+            arg("plane")
+        )
         .def(
             "contains",
             overload_cast<const Point&>(&Ellipsoid::contains, const_),
@@ -115,8 +217,42 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(pybind11:
             )doc",
             arg("point")
         )
-        .def("contains", overload_cast<const PointSet&>(&Ellipsoid::contains, const_), arg("point_set"))
-        .def("contains", overload_cast<const Segment&>(&Ellipsoid::contains, const_), arg("segment"))
+        .def(
+            "contains",
+            overload_cast<const PointSet&>(&Ellipsoid::contains, const_),
+            R"doc(
+                Check if the ellipsoid contains a point set.
+
+                Args:
+                    point_set (PointSet): The point set to check.
+
+                Returns:
+                    bool: True if the ellipsoid contains the point set, False otherwise.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(Point(0.0, 0.0, 0.0), 2.0, 1.5, 1.0)
+                    >>> ellipsoid.contains(PointSet([Point(0.5, 0.5, 0.5), Point(1.0, 1.0, 1.0)]))  # True if inside
+            )doc",
+            arg("point_set")
+        )
+        .def(
+            "contains",
+            overload_cast<const Segment&>(&Ellipsoid::contains, const_),
+            R"doc(
+                Check if the ellipsoid contains a segment.
+
+                Args:
+                    segment (Segment): The segment to check.
+
+                Returns:
+                    bool: True if the ellipsoid contains the segment, False otherwise.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(Point(0.0, 0.0, 0.0), 2.0, 1.5, 1.0)
+                    >>> ellipsoid.contains(Segment(Point(0.5, 0.5, 0.5), Point(1.0, 1.0, 1.0)))  # True if inside
+            )doc",
+            arg("segment")
+        )
 
         .def(
             "get_center",
@@ -174,9 +310,48 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(pybind11:
                     >>> third_axis = ellipsoid.get_third_principal_semi_axis()  # 1.0
             )doc"
         )
-        .def("get_first_axis", &Ellipsoid::getFirstAxis)
-        .def("get_second_axis", &Ellipsoid::getSecondAxis)
-        .def("get_third_axis", &Ellipsoid::getThirdAxis)
+        .def(
+            "get_first_axis",
+            &Ellipsoid::getFirstAxis,
+            R"doc(
+                Get the first axis of the ellipsoid.
+
+                Returns:
+                    np.array: The first axis of the ellipsoid.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(center, 2.0, 1.5, 1.0)
+                    >>> first_axis = ellipsoid.get_first_axis()  # np.array([1.0, 0.0, 0.0])
+            )doc"
+        )
+        .def(
+            "get_second_axis",
+            &Ellipsoid::getSecondAxis,
+            R"doc(
+                Get the second axis of the ellipsoid.
+
+                Returns:
+                    np.array: The second axis of the ellipsoid.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(center, 2.0, 1.5, 1.0)
+                    >>> second_axis = ellipsoid.get_second_axis()  # np.array([0.0, 1.0, 0.0])
+            )doc"
+        )
+        .def(
+            "get_third_axis",
+            &Ellipsoid::getThirdAxis,
+            R"doc(
+                Get the third axis of the ellipsoid.
+
+                Returns:
+                    np.array: The third axis of the ellipsoid.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(center, 2.0, 1.5, 1.0)
+                    >>> third_axis = ellipsoid.get_third_axis()  # np.array([0.0, 0.0, 1.0])
+            )doc"
+        )
         .def(
             "get_orientation",
             &Ellipsoid::getOrientation,
@@ -191,28 +366,142 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Ellipsoid(pybind11:
                     >>> quat = ellipsoid.get_orientation()
             )doc"
         )
-        .def("get_matrix", &Ellipsoid::getMatrix)
-        .def("intersection", overload_cast<const Line&>(&Ellipsoid::intersectionWith, const_), arg("line"))
         .def(
-            "intersection",
+            "get_matrix",
+            &Ellipsoid::getMatrix,
+            R"doc(
+                Get the matrix of the ellipsoid.
+
+                Returns:
+                    np.array: The matrix of the ellipsoid.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(center, 2.0, 1.5, 1.0)
+                    >>> matrix = ellipsoid.get_matrix()  # np.array([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]])
+            )doc"
+        )
+        .def(
+            "intersection_with",
+            overload_cast<const Line&>(&Ellipsoid::intersectionWith, const_),
+            R"doc(
+                Get the intersection of the ellipsoid with a line.
+
+                Args:
+                    line (Line): The line to intersect with.
+
+                Returns:
+                    Intersection: The intersection of the ellipsoid with the line.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(center, 2.0, 1.5, 1.0)
+                    >>> line = Line(Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0))
+                    >>> intersection = ellipsoid.intersection_with(line)
+                    >>> intersection.get_point()  # Point(0.0, 0.0, 0.0)
+            )doc",
+            arg("line")
+        )
+        .def(
+            "intersection_with",
             overload_cast<const Ray&, const bool>(&Ellipsoid::intersectionWith, const_),
+            R"doc(
+                Get the intersection of the ellipsoid with a ray.
+
+                Args:
+                    ray (Ray): The ray to intersect with.
+                    only_in_sight (bool, optional): If true, only return intersection points that are in sight. Defaults to False.
+
+                Returns:
+                    Intersection: The intersection of the ellipsoid with the ray.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(center, 2.0, 1.5, 1.0)
+                    >>> ray = Ray(Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0))
+                    >>> intersection = ellipsoid.intersection_with(ray)
+                    >>> intersection.get_point()  # Point(0.0, 0.0, 0.0)
+            )doc",
             arg("ray"),
-            arg("only_in_sight")
+            arg("only_in_sight") = false
         )
-        .def("intersection", overload_cast<const Segment&>(&Ellipsoid::intersectionWith, const_), arg("segment"))
         .def(
-            "intersection",
+            "intersection_with",
+            overload_cast<const Segment&>(&Ellipsoid::intersectionWith, const_),
+            R"doc(
+                Get the intersection of the ellipsoid with a segment.
+
+                Args:
+                    segment (Segment): The segment to intersect with.
+
+                Returns:
+                    Intersection: The intersection of the ellipsoid with the segment.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(center, 2.0, 1.5, 1.0)
+                    >>> segment = Segment(Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0))
+                    >>> intersection = ellipsoid.intersection_with(segment)
+                    >>> intersection.get_point()  # Point(0.0, 0.0, 0.0)
+            )doc",
+            arg("segment")
+        )
+        .def(
+            "intersection_with",
             overload_cast<const Pyramid&, const bool>(&Ellipsoid::intersectionWith, const_),
+            R"doc(
+                Get the intersection of the ellipsoid with a pyramid.
+
+                Args:
+                    pyramid (Pyramid): The pyramid to intersect with.
+                    only_in_sight (bool, optional): If true, only return intersection points that are in sight. Defaults to False.
+
+                Returns:
+                    Intersection: The intersection of the ellipsoid with the pyramid.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(center, 2.0, 1.5, 1.0)
+                    >>> pyramid = Pyramid(Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0), Point(0.0, 1.0, 0.0))
+                    >>> intersection = ellipsoid.intersection_with(pyramid)
+                    >>> intersection.get_point()  # Point(0.0, 0.0, 0.0)
+            )doc",
             arg("pyramid"),
-            arg("only_in_sight")
+            arg("only_in_sight") = false
         )
         .def(
-            "intersection",
+            "intersection_with",
             overload_cast<const Cone&, const bool>(&Ellipsoid::intersectionWith, const_),
+            R"doc(
+                Get the intersection of the ellipsoid with a cone.
+
+                Args:
+                    cone (Cone): The cone to intersect with.
+                    only_in_sight (bool, optional): If true, only return intersection points that are in sight. Defaults to False.
+
+                Returns:
+                    Intersection: The intersection of the ellipsoid with the cone.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(center, 2.0, 1.5, 1.0)
+                    >>> cone = Cone(Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0), Point(0.0, 1.0, 0.0))
+                    >>> intersection = ellipsoid.intersection_with(cone)
+                    >>> intersection.get_point()  # Point(0.0, 0.0, 0.0)
+            )doc",
             arg("cone"),
-            arg("only_in_sight")
+            arg("only_in_sight") = false
         )
-        .def("apply_transformation", &Ellipsoid::applyTransformation, arg("transformation"))
+        .def(
+            "apply_transformation",
+            &Ellipsoid::applyTransformation,
+            R"doc(
+                Apply a transformation to the ellipsoid in place.
+
+                Args:
+                    transformation (Transformation): The transformation to apply.
+
+                Example:
+                    >>> ellipsoid = Ellipsoid(center, 2.0, 1.5, 1.0)
+                    >>> transformation = Translation([1.0, 2.0, 3.0])
+                    >>> ellipsoid.apply_transformation(transformation)
+            )doc",
+            arg("transformation")
+        )
 
         .def_static(
             "undefined",

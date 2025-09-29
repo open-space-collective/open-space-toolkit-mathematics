@@ -25,11 +25,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Plane(pybind11::mod
 
                 Args:
                     point (Point): A point on the plane.
-                    normal_vector (Vector3d): The normal vector to the plane.
+                    normal_vector (np.array): The normal vector to the plane.
 
                 Example:
                     >>> point = Point(0.0, 0.0, 0.0)
-                    >>> normal = Vector3d([0.0, 0.0, 1.0])
+                    >>> normal = np.array([0.0, 0.0, 1.0])
                     >>> plane = Plane(point, normal)
             )doc",
             arg("point"),
@@ -52,16 +52,105 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Plane(pybind11::mod
                     bool: True if the plane is defined, False otherwise.
 
                 Example:
-                    >>> plane = Plane(Point(0.0, 0.0, 0.0), Vector3d([0.0, 0.0, 1.0]))
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
                     >>> plane.is_defined()  # True
             )doc"
         )
 
-        .def("intersects", overload_cast<const Point&>(&Plane::intersects, const_), arg("point"))
-        .def("intersects", overload_cast<const PointSet&>(&Plane::intersects, const_), arg("point_set"))
-        .def("intersects", overload_cast<const Line&>(&Plane::intersects, const_), arg("line"))
-        .def("intersects", overload_cast<const Ray&>(&Plane::intersects, const_), arg("ray"))
-        .def("intersects", overload_cast<const Segment&>(&Plane::intersects, const_), arg("segment"))
+        .def(
+            "intersects",
+            overload_cast<const Point&>(&Plane::intersects, const_),
+            R"doc(
+                Check if the plane intersects with a point.
+
+                Args:
+                    point (Point): The point to check.
+
+                Returns:
+                    bool: True if the plane intersects the point, False otherwise.
+
+                Example:
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
+                    >>> plane.intersects(Point(1.0, 1.0, 0.0))  # True
+            )doc",
+            arg("point")
+        )
+        .def(
+            "intersects",
+            overload_cast<const PointSet&>(&Plane::intersects, const_),
+            R"doc(
+                Check if the plane intersects with a point set.
+
+                Args:
+                    point_set (PointSet): The point set to check.
+
+                Returns:
+                    bool: True if the plane intersects the point set, False otherwise.
+
+                Example:
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
+                    >>> points = PointSet([Point(1.0, 1.0, 0.0), Point(2.0, 2.0, 0.0)])
+                    >>> plane.intersects(points)  # True
+            )doc",
+            arg("point_set")
+        )
+        .def(
+            "intersects",
+            overload_cast<const Line&>(&Plane::intersects, const_),
+            R"doc(
+                Check if the plane intersects with a line.
+
+                Args:
+                    line (Line): The line to check.
+
+                Returns:
+                    bool: True if the plane intersects the line, False otherwise.
+
+                Example:
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
+                    >>> line = Line(Point(0.0, 0.0, -1.0), np.array([0.0, 0.0, 1.0]))
+                    >>> plane.intersects(line)  # True
+            )doc",
+            arg("line")
+        )
+        .def(
+            "intersects",
+            overload_cast<const Ray&>(&Plane::intersects, const_),
+            R"doc(
+                Check if the plane intersects with a ray.
+
+                Args:
+                    ray (Ray): The ray to check.
+
+                Returns:
+                    bool: True if the plane intersects the ray, False otherwise.
+
+                Example:
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
+                    >>> ray = Ray(Point(0.0, 0.0, -1.0), np.array([0.0, 0.0, 1.0]))
+                    >>> plane.intersects(ray)  # True
+            )doc",
+            arg("ray")
+        )
+        .def(
+            "intersects",
+            overload_cast<const Segment&>(&Plane::intersects, const_),
+            R"doc(
+                Check if the plane intersects with a segment.
+
+                Args:
+                    segment (Segment): The segment to check.
+
+                Returns:
+                    bool: True if the plane intersects the segment, False otherwise.
+
+                Example:
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
+                    >>> segment = Segment(Point(0.0, 0.0, -1.0), Point(0.0, 0.0, 1.0))
+                    >>> plane.intersects(segment)  # True
+            )doc",
+            arg("segment")
+        )
         .def(
             "contains",
             overload_cast<const Point&>(&Plane::contains, const_),
@@ -75,15 +164,87 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Plane(pybind11::mod
                     bool: True if the plane contains the point, False otherwise.
 
                 Example:
-                    >>> plane = Plane(Point(0.0, 0.0, 0.0), Vector3d([0.0, 0.0, 1.0]))
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
                     >>> plane.contains(Point(1.0, 1.0, 0.0))  # True (z=0 plane)
             )doc",
             arg("point")
         )
-        .def("contains", overload_cast<const PointSet&>(&Plane::contains, const_), arg("point_set"))
-        .def("contains", overload_cast<const Line&>(&Plane::contains, const_), arg("line"))
-        .def("contains", overload_cast<const Ray&>(&Plane::contains, const_), arg("ray"))
-        .def("contains", overload_cast<const Segment&>(&Plane::contains, const_), arg("segment"))
+        .def(
+            "contains",
+            overload_cast<const PointSet&>(&Plane::contains, const_),
+            R"doc(
+                Check if the plane contains a point set.
+
+                Args:
+                    point_set (PointSet): The point set to check.
+
+                Returns:
+                    bool: True if the plane contains all points in the set, False otherwise.
+
+                Example:
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
+                    >>> points = PointSet([Point(1.0, 1.0, 0.0), Point(2.0, 2.0, 0.0)])
+                    >>> plane.contains(points)  # True
+            )doc",
+            arg("point_set")
+        )
+        .def(
+            "contains",
+            overload_cast<const Line&>(&Plane::contains, const_),
+            R"doc(
+                Check if the plane contains a line.
+
+                Args:
+                    line (Line): The line to check.
+
+                Returns:
+                    bool: True if the plane contains the entire line, False otherwise.
+
+                Example:
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
+                    >>> line = Line(Point(0.0, 0.0, 0.0), np.array([1.0, 0.0, 0.0]))
+                    >>> plane.contains(line)  # True (line lies in z=0 plane)
+            )doc",
+            arg("line")
+        )
+        .def(
+            "contains",
+            overload_cast<const Ray&>(&Plane::contains, const_),
+            R"doc(
+                Check if the plane contains a ray.
+
+                Args:
+                    ray (Ray): The ray to check.
+
+                Returns:
+                    bool: True if the plane contains the entire ray, False otherwise.
+
+                Example:
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
+                    >>> ray = Ray(Point(0.0, 0.0, 0.0), np.array([1.0, 0.0, 0.0]))
+                    >>> plane.contains(ray)  # True
+            )doc",
+            arg("ray")
+        )
+        .def(
+            "contains",
+            overload_cast<const Segment&>(&Plane::contains, const_),
+            R"doc(
+                Check if the plane contains a segment.
+
+                Args:
+                    segment (Segment): The segment to check.
+
+                Returns:
+                    bool: True if the plane contains the entire segment, False otherwise.
+
+                Example:
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
+                    >>> segment = Segment(Point(0.0, 0.0, 0.0), Point(1.0, 0.0, 0.0))
+                    >>> plane.contains(segment)  # True
+            )doc",
+            arg("segment")
+        )
 
         .def(
             "get_point",
@@ -95,7 +256,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Plane(pybind11::mod
                     Point: A point on the plane.
 
                 Example:
-                    >>> plane = Plane(Point(1.0, 2.0, 3.0), Vector3d([0.0, 0.0, 1.0]))
+                    >>> plane = Plane(Point(1.0, 2.0, 3.0), np.array([0.0, 0.0, 1.0]))
                     >>> point = plane.get_point()
             )doc"
         )
@@ -109,16 +270,123 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Plane(pybind11::mod
                     Vector3d: The normal vector to the plane.
 
                 Example:
-                    >>> plane = Plane(Point(0.0, 0.0, 0.0), Vector3d([0.0, 0.0, 1.0]))
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
                     >>> normal = plane.get_normal_vector()  # [0.0, 0.0, 1.0]
             )doc"
         )
-        .def("intersection_with", overload_cast<const Point&>(&Plane::intersectionWith, const_), arg("point"))
-        .def("intersection_with", overload_cast<const PointSet&>(&Plane::intersectionWith, const_), arg("point_set"))
-        .def("intersection_with", overload_cast<const Line&>(&Plane::intersectionWith, const_), arg("line"))
-        .def("intersection_with", overload_cast<const Ray&>(&Plane::intersectionWith, const_), arg("ray"))
-        .def("intersection_with", overload_cast<const Segment&>(&Plane::intersectionWith, const_), arg("segment"))
-        .def("apply_transformation", &Plane::applyTransformation, arg("transformation"))
+        .def(
+            "intersection_with",
+            overload_cast<const Point&>(&Plane::intersectionWith, const_),
+            R"doc(
+                Compute the intersection of the plane with a point.
+
+                Args:
+                    point (Point): The point to intersect with.
+
+                Returns:
+                    Intersection: The intersection result.
+
+                Example:
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
+                    >>> intersection = plane.intersection_with(Point(1.0, 1.0, 0.0))
+            )doc",
+            arg("point")
+        )
+        .def(
+            "intersection_with",
+            overload_cast<const PointSet&>(&Plane::intersectionWith, const_),
+            R"doc(
+                Compute the intersection of the plane with a point set.
+
+                Args:
+                    point_set (PointSet): The point set to intersect with.
+
+                Returns:
+                    Intersection: The intersection result.
+
+                Example:
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
+                    >>> points = PointSet([Point(1.0, 1.0, 0.0), Point(2.0, 2.0, 1.0)])
+                    >>> intersection = plane.intersection_with(points)
+            )doc",
+            arg("point_set")
+        )
+        .def(
+            "intersection_with",
+            overload_cast<const Line&>(&Plane::intersectionWith, const_),
+            R"doc(
+                Compute the intersection of the plane with a line.
+
+                Args:
+                    line (Line): The line to intersect with.
+
+                Returns:
+                    Intersection: The intersection result (point or line if coplanar).
+
+                Example:
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
+                    >>> line = Line(Point(0.0, 0.0, -1.0), np.array([0.0, 0.0, 1.0]))
+                    >>> intersection = plane.intersection_with(line)
+            )doc",
+            arg("line")
+        )
+        .def(
+            "intersection_with",
+            overload_cast<const Ray&>(&Plane::intersectionWith, const_),
+            R"doc(
+                Compute the intersection of the plane with a ray.
+
+                Args:
+                    ray (Ray): The ray to intersect with.
+
+                Returns:
+                    Intersection: The intersection result.
+
+                Example:
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
+                    >>> ray = Ray(Point(0.0, 0.0, -1.0), np.array([0.0, 0.0, 1.0]))
+                    >>> intersection = plane.intersection_with(ray)
+            )doc",
+            arg("ray")
+        )
+        .def(
+            "intersection_with",
+            overload_cast<const Segment&>(&Plane::intersectionWith, const_),
+            R"doc(
+                Compute the intersection of the plane with a segment.
+
+                Args:
+                    segment (Segment): The segment to intersect with.
+
+                Returns:
+                    Intersection: The intersection result.
+
+                Example:
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
+                    >>> segment = Segment(Point(0.0, 0.0, -1.0), Point(0.0, 0.0, 1.0))
+                    >>> intersection = plane.intersection_with(segment)
+            )doc",
+            arg("segment")
+        )
+        .def(
+            "apply_transformation",
+            &Plane::applyTransformation,
+            R"doc(
+                Apply a transformation to the plane.
+
+                Args:
+                    transformation (Transformation): The transformation to apply.
+
+                Returns:
+                    Plane: The transformed plane.
+
+                Example:
+                    >>> plane = Plane(Point(0.0, 0.0, 0.0), np.array([0.0, 0.0, 1.0]))
+                    >>> transformation = Transformation.identity()
+                    >>> transformed = plane.apply_transformation(transformation)
+            )doc",
+            arg("transformation")
+        )
 
         .def_static(
             "undefined",

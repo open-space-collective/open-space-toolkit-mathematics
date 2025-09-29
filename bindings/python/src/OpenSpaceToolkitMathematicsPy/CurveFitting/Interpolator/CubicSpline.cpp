@@ -22,12 +22,12 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(
                 Create a cubic spline interpolator with data points.
 
                 Args:
-                    x (VectorXd): The x-coordinates of data points.
-                    y (VectorXd): The y-coordinates of data points.
+                    x (np.array): The x-coordinates of data points.
+                    y (np.array): The y-coordinates of data points.
 
                 Example:
-                    >>> x = VectorXd([0.0, 1.0, 2.0, 3.0])
-                    >>> y = VectorXd([0.0, 1.0, 4.0, 9.0])
+                    >>> x = np.array([0.0, 1.0, 2.0, 3.0])
+                    >>> y = np.array([0.0, 1.0, 4.0, 9.0])
                     >>> interpolator = CubicSpline(x, y)
             )doc",
             arg("x"),
@@ -39,12 +39,12 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(
                 Create a cubic spline interpolator with uniform spacing.
 
                 Args:
-                    y (VectorXd): The y-coordinates of data points.
+                    y (np.array): The y-coordinates of data points.
                     x_0 (float): The starting x-coordinate.
                     h (float): The uniform spacing between x-coordinates.
 
                 Example:
-                    >>> y = VectorXd([0.0, 1.0, 4.0, 9.0])
+                    >>> y = np.array([0.0, 1.0, 4.0, 9.0])
                     >>> interpolator = CubicSpline(y, 0.0, 1.0)  # x = [0, 1, 2, 3]
             )doc",
             arg("y"),
@@ -59,10 +59,10 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(
                 Evaluate the cubic spline interpolation at multiple points.
 
                 Args:
-                    x (VectorXd): The x-coordinates to evaluate at.
+                    x (np.array): The x-coordinates to evaluate at.
 
                 Returns:
-                    VectorXd: The interpolated y-values.
+                    (np.array): The interpolated y-values.
 
                 Example:
                     >>> interpolator = CubicSpline([0.0, 1.0, 2.0], [0.0, 1.0, 4.0])
@@ -113,10 +113,10 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(
                 Compute the derivative of the cubic spline at multiple points.
 
                 Args:
-                    x (VectorXd): The x-coordinates to compute derivatives at.
+                    x (np.array): The x-coordinates to compute derivatives at.
 
                 Returns:
-                    VectorXd: The derivative values.
+                    (np.array): The derivative values.
 
                 Example:
                     >>> interpolator = CubicSpline([0.0, 1.0, 2.0], [0.0, 1.0, 4.0])

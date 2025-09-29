@@ -36,7 +36,15 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
     using ostk::mathematics::geometry::d3::object::Sphere;
 
     // class_<Object, boost::noncopyable>("Object", no_init)
-    class_<Object>(aModule, "Object")
+    class_<Object>(
+        aModule,
+        "Object",
+        R"doc(
+                Base class for 3D geometric objects.
+
+                Object is the abstract base class for all 3D geometric primitives and shapes.
+            )doc"
+    )
 
         // no init
 
@@ -59,7 +67,16 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
         .def("__str__", &(shiftToString<Object>))
         .def("__repr__", &(shiftToString<Object>))
 
-        .def("is_defined", &Object::isDefined)
+        .def(
+            "is_defined",
+            &Object::isDefined,
+            R"doc(
+                Check if the object is defined.
+
+                Returns:
+                    bool: True if the object is defined.
+            )doc"
+        )
         .def(
             "is_point",
             +[](const Object& anObject) -> bool
@@ -144,8 +161,32 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
                 return anObject.is<Cone>();
             }
         )
-        .def("intersects", &Object::intersects)
-        .def("contains", &Object::contains)
+        .def(
+            "intersects",
+            &Object::intersects,
+            R"doc(
+                Check if this object intersects another object.
+
+                Args:
+                    object (Object): The object to check intersection with.
+
+                Returns:
+                    bool: True if the objects intersect.
+            )doc"
+        )
+        .def(
+            "contains",
+            &Object::contains,
+            R"doc(
+                Check if this object contains another object.
+
+                Args:
+                    object (Object): The object to check containment of.
+
+                Returns:
+                    bool: True if this object contains the other object.
+            )doc"
+        )
 
         .def(
             "as_point",
@@ -233,7 +274,22 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object(pybind11::module& a
         )
 
         // .def("intersection_with", &Object::intersectionWith)
-        .def("apply_transformation", &Object::applyTransformation, arg("transformation"))
+        .def(
+            "apply_transformation",
+            &Object::applyTransformation,
+            arg("transformation"),
+            R"doc(
+                Apply a transformation to the object in place
+
+                Args:
+                    transformation (Transformation): The transformation to apply.
+
+                Example:
+                    >>> object = Object(Point(1.0, 2.0, 3.0))
+                    >>> transformation = Translation([1.0, 2.0, 3.0])
+                    >>> object.apply_transformation(transformation)
+            )doc"
+        )
 
         ;
 

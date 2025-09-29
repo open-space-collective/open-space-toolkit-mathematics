@@ -149,7 +149,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(pybind11::mod
 
                 Example:
                     >>> point = Point(1.0, 2.0, 3.0)
-                    >>> vector = point.as_vector()  # Vector3d([1.0, 2.0, 3.0])
+                    >>> vector = point.as_vector()  # np.array([1.0, 2.0, 3.0])
             )doc"
         )
         .def(
@@ -171,8 +171,43 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(pybind11::mod
             )doc",
             arg("point")
         )
-        .def("to_string", &Point::toString, arg("precision") = DEFAULT_PRECISION)
-        .def("apply_transformation", &Point::applyTransformation, arg("transformation"))
+        .def(
+            "to_string",
+            &Point::toString,
+            R"doc(
+                Convert the point to a string representation.
+
+                Args:
+                    precision (int, optional): Number of decimal places. Defaults to DEFAULT_PRECISION.
+
+                Returns:
+                    str: String representation of the point.
+
+                Example:
+                    >>> point = Point(1.123456, 2.345678, 3.567890)
+                    >>> point.to_string(3)  # "[1.123, 2.346, 3.568]"
+            )doc",
+            arg("precision") = DEFAULT_PRECISION
+        )
+        .def(
+            "apply_transformation",
+            &Point::applyTransformation,
+            R"doc(
+                Apply a transformation to the point.
+
+                Args:
+                    transformation (Transformation): The transformation to apply.
+
+                Returns:
+                    Point: The transformed point.
+
+                Example:
+                    >>> point = Point(1.0, 2.0, 3.0)
+                    >>> transformation = Transformation.identity()
+                    >>> transformed = point.apply_transformation(transformation)
+            )doc",
+            arg("transformation")
+        )
 
         .def_static(
             "undefined",
@@ -211,13 +246,13 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_Point(pybind11::mod
                 Create a point from a 3D vector.
 
                 Args:
-                    vector (Vector3d): The vector to convert to a point.
+                    vector (np.array): The vector to convert to a point.
 
                 Returns:
                     Point: A point with coordinates from the vector.
 
                 Example:
-                    >>> vector = Vector3d([1.0, 2.0, 3.0])
+                    >>> vector = np.array([1.0, 2.0, 3.0])
                     >>> point = Point.vector(vector)  # Point(1.0, 2.0, 3.0)
             )doc",
             arg("vector")

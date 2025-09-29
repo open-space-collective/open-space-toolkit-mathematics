@@ -21,12 +21,12 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricR
                 Create a barycentric rational interpolator with data points.
 
                 Args:
-                    x (VectorXd): The x-coordinates of data points.
-                    y (VectorXd): The y-coordinates of data points.
+                    x (np.array): The x-coordinates of data points.
+                    y (np.array): The y-coordinates of data points.
 
                 Example:
-                    >>> x = VectorXd([0.0, 1.0, 2.0, 3.0])
-                    >>> y = VectorXd([1.0, 2.0, 0.5, 3.0])
+                    >>> x = np.array([0.0, 1.0, 2.0, 3.0])
+                    >>> y = np.array([1.0, 2.0, 0.5, 3.0])
                     >>> interpolator = BarycentricRational(x, y)
             )doc",
             arg("x"),
@@ -40,10 +40,10 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricR
                 Evaluate the barycentric rational interpolation at multiple points.
 
                 Args:
-                    x (VectorXd): The x-coordinates to evaluate at.
+                    x (np.array): The x-coordinates to evaluate at.
 
                 Returns:
-                    VectorXd: The interpolated y-values.
+                    (np.array): The interpolated y-values.
 
                 Example:
                     >>> interpolator = BarycentricRational([0.0, 1.0, 2.0], [1.0, 2.0, 0.5])
@@ -94,10 +94,10 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricR
                 Compute the derivative of the barycentric rational interpolation at multiple points.
 
                 Args:
-                    x (VectorXd): The x-coordinates to compute derivatives at.
+                    x (np.array): The x-coordinates to compute derivatives at.
 
                 Returns:
-                    VectorXd: The derivative values.
+                    (np.array): The derivative values.
 
                 Example:
                     >>> interpolator = BarycentricRational([0.0, 1.0, 2.0], [1.0, 2.0, 0.5])
