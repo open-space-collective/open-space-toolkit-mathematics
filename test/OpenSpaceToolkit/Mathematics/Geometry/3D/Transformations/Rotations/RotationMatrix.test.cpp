@@ -103,6 +103,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         EXPECT_EQ(Vector3d(1.0, 0.0, 0.0), RotationMatrix::Unit().getRowAt(0));
         EXPECT_EQ(Vector3d(0.0, 1.0, 0.0), RotationMatrix::Unit().getRowAt(1));
         EXPECT_EQ(Vector3d(0.0, 0.0, 1.0), RotationMatrix::Unit().getRowAt(2));
+        EXPECT_THROW(RotationMatrix::Unit().getRowAt(3), ostk::core::error::RuntimeError);
     }
 
     {
@@ -118,6 +119,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         EXPECT_EQ(Vector3d(1.0, 0.0, 0.0), RotationMatrix::Unit().getColumnAt(0));
         EXPECT_EQ(Vector3d(0.0, 1.0, 0.0), RotationMatrix::Unit().getColumnAt(1));
         EXPECT_EQ(Vector3d(0.0, 0.0, 1.0), RotationMatrix::Unit().getColumnAt(2));
+        EXPECT_THROW(RotationMatrix::Unit().getColumnAt(3), ostk::core::error::RuntimeError);
     }
 
     {

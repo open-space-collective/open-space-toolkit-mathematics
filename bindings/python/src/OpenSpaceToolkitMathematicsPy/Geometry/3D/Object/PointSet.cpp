@@ -12,9 +12,31 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_PointSet(pybind11::
     using ostk::mathematics::geometry::d3::object::Point;
     using ostk::mathematics::geometry::d3::object::PointSet;
 
-    class_<PointSet, Object>(aModule, "PointSet")
+    class_<PointSet, Object>(
+        aModule,
+        "PointSet",
+        R"doc(
+                A collection of 3D points.
 
-        .def(init<const Array<Point>&>(), arg("points"))
+                A PointSet is an unordered collection of unique points in 3D space.
+            )doc"
+    )
+
+        .def(
+            init<const Array<Point>&>(),
+            R"doc(
+                Construct a point set from an array of points.
+
+                Args:
+                    points (list[Point]): Array of 3D points.
+
+                Example:
+                    >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
+                    >>> point_set = PointSet(points)
+                    >>> point_set.is_defined()  # True
+            )doc",
+            arg("points")
+        )
 
         .def(self == self)
         .def(self != self)
@@ -22,16 +44,139 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Object_PointSet(pybind11::
         .def("__str__", &(shiftToString<PointSet>))
         .def("__repr__", &(shiftToString<PointSet>))
 
-        .def("is_defined", &PointSet::isDefined)
-        .def("is_empty", &PointSet::isEmpty)
-        .def("is_near", &PointSet::isNear, arg("point_set"), arg("tolerance"))
+        .def(
+            "is_defined",
+            &PointSet::isDefined,
+            R"doc(
+                Check if the point set is defined.
 
-        .def("get_size", &PointSet::getSize)
-        .def("distance_to", overload_cast<const Point&>(&PointSet::distanceTo, const_), arg("point"))
-        .def("get_point_closest_to", &PointSet::getPointClosestTo, arg("point"))
-        .def("apply_transformation", &PointSet::applyTransformation, arg("transformation"))
+                Returns:
+                    bool: True if the point set is defined.
 
-        .def_static("empty", &PointSet::Empty)
+                Example:
+                    >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
+                    >>> point_set = PointSet(points)
+                    >>> point_set.is_defined()  # True
+            )doc"
+        )
+        .def(
+            "is_empty",
+            &PointSet::isEmpty,
+            R"doc(
+                Check if the point set is empty.
+
+                Returns:
+                    bool: True if the point set contains no points.
+            )doc"
+        )
+        .def(
+            "is_near",
+            &PointSet::isNear,
+            R"doc(
+                Check if another point set is near this one within a tolerance.
+
+                Args:
+                    point_set (PointSet): The point set to compare against.
+                    tolerance (float): The maximum distance for points to be considered near.
+
+                Returns:
+                    bool: True if the point sets are near each other.
+
+                Example:
+                    >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
+                    >>> point_set = PointSet(points)
+                    >>> point_set.is_near(PointSet(points), 0.1)  # True
+            )doc",
+            arg("point_set"),
+            arg("tolerance")
+        )
+
+        .def(
+            "get_size",
+            &PointSet::getSize,
+            R"doc(
+                Get the number of points in the set.
+
+                Returns:
+                    int: The number of points.
+
+                Example:
+                    >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
+                    >>> point_set = PointSet(points)
+                    >>> point_set.get_size()  # 2
+            )doc"
+        )
+        .def(
+            "distance_to",
+            overload_cast<const Point&>(&PointSet::distanceTo, const_),
+            R"doc(
+                Calculate the minimum distance from the point set to a point.
+
+                Args:
+                    point (Point): The point to measure distance to.
+
+                Returns:
+                    float: The minimum distance to any point in the set.
+
+                Example:
+                    >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
+                    >>> point_set = PointSet(points)
+                    >>> point_set.distance_to(Point(0.5, 0.5))  # 0.5
+            )doc",
+            arg("point")
+        )
+        .def(
+            "get_point_closest_to",
+            &PointSet::getPointClosestTo,
+            R"doc(
+                Get the point in the set closest to a given point.
+
+                Args:
+                    point (Point): The reference point.
+
+                Returns:
+                    Point: The closest point in the set.
+
+                Example:
+                    >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
+                    >>> point_set = PointSet(points)
+                    >>> point_set.get_point_closest_to(Point(0.5, 0.5))  # Point(0.5, 0.5)
+            )doc",
+            arg("point")
+        )
+        .def(
+            "apply_transformation",
+            &PointSet::applyTransformation,
+            R"doc(
+                Apply a transformation to all points in the set.
+                
+                Args:
+                    transformation (Transformation): The transformation to apply.
+                
+                Example:
+                    >>> points = [Point(0.0, 0.0), Point(1.0, 1.0)]
+                    >>> point_set = PointSet(points)
+                    >>> transformation = Transformation.translation([1.0, 0.0])
+                    >>> point_set.apply_transformation(transformation)
+            )doc",
+            arg("transformation")
+        )
+
+        .def_static(
+            "empty",
+            &PointSet::Empty,
+            R"doc(
+                Create an empty point set.
+
+                Returns:
+                    PointSet: An empty point set.
+
+                Example:
+                    >>> empty_set = PointSet.empty()
+                    >>> empty_set.is_empty()  # True
+                    >>> empty_set.get_size()  # 0
+            )doc"
+        )
 
         .def("__len__", &PointSet::getSize)
         .def(
