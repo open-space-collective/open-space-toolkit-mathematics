@@ -40,6 +40,7 @@ ostk.mathematics.geometry.d3.object.Ellipsoid
       ~Ellipsoid.get_third_axis
       ~Ellipsoid.get_third_principal_semi_axis
       ~Ellipsoid.intersection
+      ~Ellipsoid.intersection_with
       ~Ellipsoid.intersects
       ~Ellipsoid.is_cone
       ~Ellipsoid.is_defined
