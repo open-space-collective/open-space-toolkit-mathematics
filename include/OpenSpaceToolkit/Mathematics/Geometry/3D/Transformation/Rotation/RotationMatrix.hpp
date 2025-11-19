@@ -326,6 +326,20 @@ class RotationMatrix
 
     static RotationMatrix EulerAngle(const rotation::EulerAngle& aEulerAngle);
 
+    /// @brief                  Construct Rotation Matrix from two pairs of vectors. The first pair is the source vectors, the second pair is the destination vectors.
+    /// Basis vectors are constructed from the source vectors by taking the cross product of the first and second vectors and normalizing the result.
+    ///
+    /// @code
+    ///                         RotationMatrix::VectorBasis({1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0});
+    /// @endcode
+    ///
+    /// @param                  [in] aFirstSourceVector A first source vector
+    /// @param                  [in] aSecondSourceVector A second source vector
+    /// @param                  [in] aFirstDestinationVector A first destination vector
+    /// @param                  [in] aSecondDestinationVector A second destination vector
+
+    static RotationMatrix VectorBasis(const Vector3d& aFirstSourceVector, const Vector3d& aSecondSourceVector, const Vector3d& aFirstDestinationVector, const Vector3d& aSecondDestinationVector);
+
    private:
     Matrix3d matrix_;
 

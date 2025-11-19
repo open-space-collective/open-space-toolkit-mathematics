@@ -562,6 +562,43 @@ RotationMatrix RotationMatrix::EulerAngle(const rotation::EulerAngle& aEulerAngl
     }
 }
 
+RotationMatrix RotationMatrix::VectorBasis(const Vector3d& aFirstSourceVector, const Vector3d& aSecondSourceVector, const Vector3d& aFirstDestinationVector, const Vector3d& aSecondDestinationVector)
+{
+    if (!aFirstSourceVector.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("First source vector");
+    }
+
+    if (!aSecondSourceVector.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Second source vector");
+    }
+
+    if (!aFirstDestinationVector.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("First destination vector");
+    }
+
+    if (!aSecondDestinationVector.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Second destination vector");
+    }
+
+    Matrix3d sourceMatrix;
+
+    sourceMatrix.row(0) = aFirstSourceVector.normalized();
+    sourceMatrix.row(2) = sourceMatrix.row(0).cross(aSecondSourceVector.normalized()).normalized();
+    sourceMatrix.row(1) = sourceMatrix.row(2).cross(sourceMatrix.row(0)).normalized();
+
+    Matrix3d destinationMatrix;
+
+    destinationMatrix.row(0) = aFirstDestinationVector.normalized();
+    destinationMatrix.row(2) = destinationMatrix.row(0).cross(aSecondDestinationVector.normalized()).normalized();
+    destinationMatrix.row(1) = destinationMatrix.row(2).cross(destinationMatrix.row(0)).normalized();
+
+    return RotationMatrix(destinationMatrix.transpose() * sourceMatrix);
+}
+
 RotationMatrix::RotationMatrix()
     : matrix_(Matrix3d::Undefined())
 {

@@ -292,6 +292,79 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
     }
 }
 
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, VectorBasis)
+{
+    {
+        // Identity rotation: source and destination frames are the same
+        const Vector3d firstVector = {1.0, 0.0, 0.0};
+        const Vector3d secondVector = {0.0, 1.0, 0.0};
+
+        const RotationMatrix rotationMatrix =
+            RotationMatrix::VectorBasis(firstVector, secondVector, firstVector, secondVector);
+
+        EXPECT_TRUE(rotationMatrix == RotationMatrix::Unit());
+    }
+
+    {
+        // 90-degree rotation around Z-axis
+        const Vector3d sourceFirst = {1.0, 0.0, 0.0};
+        const Vector3d sourceSecond = {0.0, 1.0, 0.0};
+        const Vector3d destFirst = {0.0, 1.0, 0.0};
+        const Vector3d destSecond = {-1.0, 0.0, 0.0};
+
+        const RotationMatrix rotationMatrix =
+            RotationMatrix::VectorBasis(sourceFirst, sourceSecond, destFirst, destSecond);
+
+        EXPECT_TRUE(rotationMatrix.isDefined());
+
+        const Vector3d transformed = rotationMatrix * sourceFirst;
+        EXPECT_NEAR(destFirst.x(), transformed.x(), 1e-10);
+        EXPECT_NEAR(destFirst.y(), transformed.y(), 1e-10);
+        EXPECT_NEAR(destFirst.z(), transformed.z(), 1e-10);
+    }
+
+    {
+        // Test with non-orthogonal input vectors (should be orthogonalized)
+        const Vector3d sourceFirst = {1.0, 0.0, 0.0};
+        const Vector3d sourceSecond = {1.0, 1.0, 0.0};  // Not orthogonal to sourceFirst
+        const Vector3d destFirst = {0.0, 0.0, 1.0};
+        const Vector3d destSecond = {0.0, 1.0, 1.0};  // Not orthogonal to destFirst
+
+        const RotationMatrix rotationMatrix =
+            RotationMatrix::VectorBasis(sourceFirst, sourceSecond, destFirst, destSecond);
+
+        EXPECT_TRUE(rotationMatrix.isDefined());
+
+        const Vector3d col0 = rotationMatrix.getColumnAt(0);
+        const Vector3d col1 = rotationMatrix.getColumnAt(1);
+        const Vector3d col2 = rotationMatrix.getColumnAt(2);
+
+        EXPECT_NEAR(1.0, col0.norm(), 1e-10);
+        EXPECT_NEAR(1.0, col1.norm(), 1e-10);
+        EXPECT_NEAR(1.0, col2.norm(), 1e-10);
+
+        EXPECT_NEAR(0.0, col0.dot(col1), 1e-10);
+        EXPECT_NEAR(0.0, col1.dot(col2), 1e-10);
+        EXPECT_NEAR(0.0, col2.dot(col0), 1e-10);
+    }
+
+    {
+        // Test error cases
+        EXPECT_ANY_THROW(RotationMatrix::VectorBasis(
+            Vector3d::Undefined(), {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        ));
+        EXPECT_ANY_THROW(RotationMatrix::VectorBasis(
+            {1.0, 0.0, 0.0}, Vector3d::Undefined(), {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
+        ));
+        EXPECT_ANY_THROW(RotationMatrix::VectorBasis(
+            {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, Vector3d::Undefined(), {0.0, 1.0, 0.0}
+        ));
+        EXPECT_ANY_THROW(RotationMatrix::VectorBasis(
+            {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, Vector3d::Undefined()
+        ));
+    }
+}
+
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix, Quaternion)
 {
     {

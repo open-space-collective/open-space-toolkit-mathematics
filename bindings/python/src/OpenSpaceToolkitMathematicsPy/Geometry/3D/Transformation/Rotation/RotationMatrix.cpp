@@ -352,6 +352,42 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
             )doc",
             arg("euler_angle")
         )
+        .def_static(
+            "vector_basis",
+            &RotationMatrix::VectorBasis,
+            R"doc(
+                Create a rotation matrix from two pairs of vectors (source and destination).
+
+                Constructs orthonormal basis frames from each pair of vectors and returns
+                the rotation matrix that transforms from the source basis to the destination basis.
+                The first vector defines the primary direction, and the second vector is used
+                to determine the orientation of the basis (via cross product).
+
+                Args:
+                    first_source_vector (Vector3d): First source vector (primary direction).
+                    second_source_vector (Vector3d): Second source vector (determines orientation).
+                    first_destination_vector (Vector3d): First destination vector (primary direction).
+                    second_destination_vector (Vector3d): Second destination vector (determines orientation).
+
+                Returns:
+                    RotationMatrix: Rotation matrix transforming from source to destination basis.
+
+                Example:
+                    >>> # Identity rotation
+                    >>> source1 = np.array([1.0, 0.0, 0.0])
+                    >>> source2 = np.array([0.0, 1.0, 0.0])
+                    >>> rot = RotationMatrix.vector_basis(source1, source2, source1, source2)
+
+                    >>> # 90-degree rotation around Z-axis
+                    >>> dest1 = np.array([0.0, 1.0, 0.0])
+                    >>> dest2 = np.array([-1.0, 0.0, 0.0])
+                    >>> rot = RotationMatrix.vector_basis(source1, source2, dest1, dest2)
+            )doc",
+            arg("first_source_vector"),
+            arg("second_source_vector"),
+            arg("first_destination_vector"),
+            arg("second_destination_vector")
+        )
 
         ;
 }
