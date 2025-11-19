@@ -268,6 +268,20 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
             )doc"
         )
         .def(
+            "to_rectify",
+            &Quaternion::toRectify,
+            R"doc(
+                Get a rectified copy of the quaternion (with positive scalar part).
+
+                Returns:
+                    Quaternion: The rectified quaternion.
+
+                Example:
+                    >>> q = Quaternion(0.0, 0.0, 0.0, -1.0, Quaternion.Format.XYZS)
+                    >>> rectified = q.to_rectify()
+            )doc"
+        )
+        .def(
             "exp",
             &Quaternion::exp,
             R"doc(

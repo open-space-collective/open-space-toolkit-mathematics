@@ -98,7 +98,8 @@ class TestQuaternion:
 
     def test_rotate_vector_success(self, quaternion: Quaternion):
         assert np.array_equal(
-            quaternion.rotate_vector(np.array((0.0, 0.0, 1.0))), np.array((0.0, 0.0, 1.0))
+            quaternion.rotate_vector(np.array((0.0, 0.0, 1.0))),
+            np.array((0.0, 0.0, 1.0)),
         )
 
     def test_to_vector_success(self, quaternion: Quaternion):
@@ -130,6 +131,9 @@ class TestQuaternion:
         quaternion_2 = Quaternion(quaternion)
         quaternion_2.inverse()
         assert quaternion_2 == quaternion
+
+    def test_to_rectify_success(self, quaternion: Quaternion):
+        assert quaternion.to_rectify() == quaternion
 
     def test_rectify_success(self, quaternion: Quaternion):
         quaternion_2 = Quaternion(quaternion)
@@ -164,7 +168,8 @@ class TestQuaternion:
 
     def test_parse_success(self, quaternion: Quaternion):
         assert (
-            Quaternion.parse("[0.0, 0.0, 0.0, 1.0]", Quaternion.Format.XYZS) == quaternion
+            Quaternion.parse("[0.0, 0.0, 0.0, 1.0]", Quaternion.Format.XYZS)
+            == quaternion
         )
 
     def test_shortest_rotation_success(self, quaternion: Quaternion):
