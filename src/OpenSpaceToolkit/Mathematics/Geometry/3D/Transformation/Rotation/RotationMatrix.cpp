@@ -589,17 +589,33 @@ RotationMatrix RotationMatrix::VectorBasis(
         throw ostk::core::error::runtime::Undefined("Second destination vector");
     }
 
+    // Check that source vectors are not parallel
+    const Vector3d normalizedFirstSource = aFirstSourceVector.normalized();
+    const Vector3d normalizedSecondSource = aSecondSourceVector.normalized();
+    if (std::abs(std::abs(normalizedFirstSource.dot(normalizedSecondSource)) - 1.0) < Real::Epsilon())
+    {
+        throw ostk::core::error::RuntimeError("Source vectors are parallel or anti-parallel.");
+    }
+
+    // Check that destination vectors are not parallel
+    const Vector3d normalizedFirstDestination = aFirstDestinationVector.normalized();
+    const Vector3d normalizedSecondDestination = aSecondDestinationVector.normalized();
+    if (std::abs(std::abs(normalizedFirstDestination.dot(normalizedSecondDestination)) - 1.0) < Real::Epsilon())
+    {
+        throw ostk::core::error::RuntimeError("Destination vectors are parallel or anti-parallel.");
+    }
+
     Matrix3d sourceMatrix;
 
-    sourceMatrix.row(0) = aFirstSourceVector.normalized();
-    sourceMatrix.row(2) = sourceMatrix.row(0).cross(aSecondSourceVector.normalized()).normalized();
-    sourceMatrix.row(1) = sourceMatrix.row(2).cross(sourceMatrix.row(0)).normalized();
+    sourceMatrix.row(0) = normalizedFirstSource;
+    sourceMatrix.row(2) = normalizedFirstSource.cross(normalizedSecondSource).normalized();
+    sourceMatrix.row(1) = sourceMatrix.row(2).cross(normalizedFirstSource);
 
     Matrix3d destinationMatrix;
 
-    destinationMatrix.row(0) = aFirstDestinationVector.normalized();
-    destinationMatrix.row(2) = destinationMatrix.row(0).cross(aSecondDestinationVector.normalized()).normalized();
-    destinationMatrix.row(1) = destinationMatrix.row(2).cross(destinationMatrix.row(0)).normalized();
+    destinationMatrix.row(0) = normalizedFirstDestination;
+    destinationMatrix.row(2) = normalizedFirstDestination.cross(normalizedSecondDestination).normalized();
+    destinationMatrix.row(1) = destinationMatrix.row(2).cross(normalizedFirstDestination);
 
     return RotationMatrix(destinationMatrix.transpose() * sourceMatrix);
 }
