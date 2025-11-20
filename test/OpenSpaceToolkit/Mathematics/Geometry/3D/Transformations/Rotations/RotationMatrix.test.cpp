@@ -350,18 +350,18 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
 
     {
         // Test error cases
-        EXPECT_ANY_THROW(RotationMatrix::VectorBasis(
-            Vector3d::Undefined(), {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
-        ));
-        EXPECT_ANY_THROW(RotationMatrix::VectorBasis(
-            {1.0, 0.0, 0.0}, Vector3d::Undefined(), {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}
-        ));
-        EXPECT_ANY_THROW(RotationMatrix::VectorBasis(
-            {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, Vector3d::Undefined(), {0.0, 1.0, 0.0}
-        ));
-        EXPECT_ANY_THROW(RotationMatrix::VectorBasis(
-            {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, Vector3d::Undefined()
-        ));
+        EXPECT_ANY_THROW(
+            RotationMatrix::VectorBasis(Vector3d::Undefined(), {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0})
+        );
+        EXPECT_ANY_THROW(
+            RotationMatrix::VectorBasis({1.0, 0.0, 0.0}, Vector3d::Undefined(), {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0})
+        );
+        EXPECT_ANY_THROW(
+            RotationMatrix::VectorBasis({1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, Vector3d::Undefined(), {0.0, 1.0, 0.0})
+        );
+        EXPECT_ANY_THROW(
+            RotationMatrix::VectorBasis({1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, Vector3d::Undefined())
+        );
     }
 }
 

@@ -562,7 +562,12 @@ RotationMatrix RotationMatrix::EulerAngle(const rotation::EulerAngle& aEulerAngl
     }
 }
 
-RotationMatrix RotationMatrix::VectorBasis(const Vector3d& aFirstSourceVector, const Vector3d& aSecondSourceVector, const Vector3d& aFirstDestinationVector, const Vector3d& aSecondDestinationVector)
+RotationMatrix RotationMatrix::VectorBasis(
+    const Vector3d& aFirstSourceVector,
+    const Vector3d& aSecondSourceVector,
+    const Vector3d& aFirstDestinationVector,
+    const Vector3d& aSecondDestinationVector
+)
 {
     if (!aFirstSourceVector.isDefined())
     {
