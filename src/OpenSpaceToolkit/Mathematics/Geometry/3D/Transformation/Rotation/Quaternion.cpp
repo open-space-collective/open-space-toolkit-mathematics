@@ -267,6 +267,11 @@ Quaternion Quaternion::toInverse() const
     return Quaternion(*this).inverse();
 }
 
+Quaternion Quaternion::toRectify() const
+{
+    return Quaternion(*this).rectify();
+}
+
 Quaternion Quaternion::exp() const
 {
     // Ref.: http://www.neil.dantam.name/note/dantam-quaternion.pdf, II-F

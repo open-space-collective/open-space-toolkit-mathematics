@@ -508,6 +508,30 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion
 
 // }
 
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, ToRectify)
+{
+    {
+        // Quaternion with positive scalar part should remain unchanged
+        EXPECT_EQ(Quaternion::XYZS(+1.0, +2.0, +3.0, +4.0), Quaternion::XYZS(+1.0, +2.0, +3.0, +4.0).toRectify());
+
+        // Quaternion with negative scalar part should flip all components
+        EXPECT_EQ(Quaternion::XYZS(+1.0, +2.0, +3.0, +4.0), Quaternion::XYZS(-1.0, -2.0, -3.0, -4.0).toRectify());
+
+        // Unit quaternion with negative scalar
+        EXPECT_EQ(Quaternion::XYZS(0.0, 0.0, 0.0, +1.0), Quaternion::XYZS(0.0, 0.0, 0.0, -1.0).toRectify());
+
+        // Check that toRectify doesn't modify the original
+        Quaternion original = Quaternion::XYZS(-1.0, -2.0, -3.0, -4.0);
+        Quaternion rectified = original.toRectify();
+        EXPECT_EQ(Quaternion::XYZS(-1.0, -2.0, -3.0, -4.0), original);
+        EXPECT_EQ(Quaternion::XYZS(+1.0, +2.0, +3.0, +4.0), rectified);
+    }
+
+    {
+        EXPECT_ANY_THROW(Quaternion::Undefined().toRectify());
+    }
+}
+
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_Quaternion, Exp)
 {
     {

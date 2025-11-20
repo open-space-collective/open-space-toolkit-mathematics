@@ -382,6 +382,16 @@ class Quaternion
 
     Quaternion toInverse() const;
 
+    /// @brief                  Calculate rectified Quaternion (with positive scalar part)
+    ///
+    /// @code
+    ///                         Quaternion::XYZS(0.0, 0.0, -0.70710678118, -0.70710678118).toRectify();
+    /// @endcode
+    ///
+    /// @return                 Quaternion
+
+    Quaternion toRectify() const;
+
     /// @brief                  Calculate exponential of Quaternion
     ///
     /// @code
