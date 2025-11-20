@@ -168,8 +168,7 @@ class TestQuaternion:
 
     def test_parse_success(self, quaternion: Quaternion):
         assert (
-            Quaternion.parse("[0.0, 0.0, 0.0, 1.0]", Quaternion.Format.XYZS)
-            == quaternion
+            Quaternion.parse("[0.0, 0.0, 0.0, 1.0]", Quaternion.Format.XYZS) == quaternion
         )
 
     def test_shortest_rotation_success(self, quaternion: Quaternion):
