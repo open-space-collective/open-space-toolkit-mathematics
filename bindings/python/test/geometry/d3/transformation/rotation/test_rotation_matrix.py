@@ -33,10 +33,8 @@ class TestRotationMatrix:
         second_vector = np.array([0.0, 1.0, 0.0])
 
         rotation_matrix = RotationMatrix.vector_basis(
-            first_source_vector=first_vector,
-            second_source_vector=second_vector,
-            first_destination_vector=first_vector,
-            second_destination_vector=second_vector,
+            source_vectors=(first_vector, second_vector),
+            destination_vectors=(first_vector, second_vector),
         )
 
         assert rotation_matrix is not None

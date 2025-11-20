@@ -8,6 +8,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
 {
     using namespace pybind11;
 
+    using ostk::core::container::Pair;
     using ostk::core::type::Real;
     using ostk::core::type::String;
 
@@ -356,7 +357,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
             "vector_basis",
             &RotationMatrix::VectorBasis,
             R"doc(
-                Create a rotation matrix from two pairs of vectors (source and destination).
+                Create a rotation matrix from two pairs of vectors.
 
                 Constructs orthonormal basis frames from each pair of vectors and returns
                 the rotation matrix that transforms from the source basis to the destination basis.
@@ -364,10 +365,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
                 to determine the orientation of the basis (via cross product).
 
                 Args:
-                    first_source_vector (Vector3d): First source vector (primary direction).
-                    second_source_vector (Vector3d): Second source vector (determines orientation).
-                    first_destination_vector (Vector3d): First destination vector (primary direction).
-                    second_destination_vector (Vector3d): Second destination vector (determines orientation).
+                    source_vectors (tuple[np.array, np.array]): A pair of 3-dimensional source vectors.
+                    destination_vectors (tuple[np.array, np.array]): A pair of 3-dimensional destination vectors.
 
                 Returns:
                     RotationMatrix: Rotation matrix transforming from source to destination basis.
@@ -376,17 +375,15 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
                     >>> # Identity rotation
                     >>> source1 = np.array([1.0, 0.0, 0.0])
                     >>> source2 = np.array([0.0, 1.0, 0.0])
-                    >>> rot = RotationMatrix.vector_basis(source1, source2, source1, source2)
+                    >>> rot = RotationMatrix.vector_basis((source1, source2), (source1, source2))
 
                     >>> # 90-degree rotation around Z-axis
                     >>> dest1 = np.array([0.0, 1.0, 0.0])
                     >>> dest2 = np.array([-1.0, 0.0, 0.0])
-                    >>> rot = RotationMatrix.vector_basis(source1, source2, dest1, dest2)
+                    >>> rot = RotationMatrix.vector_basis((source1, source2), (dest1, dest2))
             )doc",
-            arg("first_source_vector"),
-            arg("second_source_vector"),
-            arg("first_destination_vector"),
-            arg("second_destination_vector")
+            arg("source_vectors"),
+            arg("destination_vectors")
         )
 
         ;

@@ -300,7 +300,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         const Vector3d secondVector = {0.0, 1.0, 0.0};
 
         const RotationMatrix rotationMatrix =
-            RotationMatrix::VectorBasis(firstVector, secondVector, firstVector, secondVector);
+            RotationMatrix::VectorBasis({firstVector, secondVector}, {firstVector, secondVector});
 
         EXPECT_TRUE(rotationMatrix == RotationMatrix::Unit());
     }
@@ -313,7 +313,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         const Vector3d destSecond = {-1.0, 0.0, 0.0};
 
         const RotationMatrix rotationMatrix =
-            RotationMatrix::VectorBasis(sourceFirst, sourceSecond, destFirst, destSecond);
+            RotationMatrix::VectorBasis({sourceFirst, sourceSecond}, {destFirst, destSecond});
 
         EXPECT_TRUE(rotationMatrix.isDefined());
 
@@ -331,7 +331,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         const Vector3d destSecond = {0.0, 1.0, 1.0};  // Not orthogonal to destFirst
 
         const RotationMatrix rotationMatrix =
-            RotationMatrix::VectorBasis(sourceFirst, sourceSecond, destFirst, destSecond);
+            RotationMatrix::VectorBasis({sourceFirst, sourceSecond}, {destFirst, destSecond});
 
         EXPECT_TRUE(rotationMatrix.isDefined());
 
@@ -351,23 +351,29 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
     {
         // Test error cases
         EXPECT_THROW(
-            RotationMatrix::VectorBasis(Vector3d::Undefined(), {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}), ostk::core::error::RuntimeError
+            RotationMatrix::VectorBasis({Vector3d::Undefined(), {0.0, 1.0, 0.0}}, {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}),
+            ostk::core::error::RuntimeError
         );
         EXPECT_THROW(
-            RotationMatrix::VectorBasis({1.0, 0.0, 0.0}, Vector3d::Undefined(), {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}), ostk::core::error::RuntimeError
+            RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, Vector3d::Undefined()}, {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}),
+            ostk::core::error::RuntimeError
         );
         EXPECT_THROW(
-            RotationMatrix::VectorBasis({1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, Vector3d::Undefined(), {0.0, 1.0, 0.0}), ostk::core::error::RuntimeError
+            RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}, {Vector3d::Undefined(), {0.0, 1.0, 0.0}}),
+            ostk::core::error::RuntimeError
         );
         EXPECT_THROW(
-            RotationMatrix::VectorBasis({1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0}, Vector3d::Undefined()), ostk::core::error::RuntimeError
+            RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}, {{1.0, 0.0, 0.0}, Vector3d::Undefined()}),
+            ostk::core::error::RuntimeError
         );
 
         EXPECT_THROW(
-            RotationMatrix::VectorBasis({1.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}), ostk::core::error::RuntimeError
+            RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, {1.0, 0.0, 0.0}}, {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}),
+            ostk::core::error::RuntimeError
         );
         EXPECT_THROW(
-            RotationMatrix::VectorBasis({1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {0.0, 1.0, 0.0}, {0.0, 1.0, 0.0}), ostk::core::error::RuntimeError
+            RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}, {{0.0, 1.0, 0.0}, {0.0, 1.0, 0.0}}),
+            ostk::core::error::RuntimeError
         );
     }
 }

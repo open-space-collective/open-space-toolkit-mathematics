@@ -3,6 +3,7 @@
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix__
 
+#include <OpenSpaceToolkit/Core/Container/Pair.hpp>
 #include <OpenSpaceToolkit/Core/Type/Integer.hpp>
 #include <OpenSpaceToolkit/Core/Type/Real.hpp>
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
@@ -23,9 +24,11 @@ namespace transformation
 namespace rotation
 {
 
+using ostk::core::container::Pair;
 using ostk::core::type::Index;
 using ostk::core::type::Real;
 using ostk::core::type::String;
+
 using ostk::mathematics::geometry::Angle;
 using ostk::mathematics::object::Matrix3d;
 
@@ -331,20 +334,15 @@ class RotationMatrix
     /// taking the cross product of the first and second vectors and normalizing the result.
     ///
     /// @code
-    ///                         RotationMatrix::VectorBasis({1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {1.0, 0.0, 0.0},
-    ///                         {0.0, 1.0, 0.0});
+    ///                         RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}, {{1.0, 0.0, 0.0},
+    ///                         {0.0, 1.0, 0.0}});
     /// @endcode
     ///
-    /// @param                  [in] aFirstSourceVector A first source vector
-    /// @param                  [in] aSecondSourceVector A second source vector
-    /// @param                  [in] aFirstDestinationVector A first destination vector
-    /// @param                  [in] aSecondDestinationVector A second destination vector
+    /// @param                  [in] aSourcePair A pair of source vectors (first, second)
+    /// @param                  [in] aDestinationPair A pair of destination vectors (first, second)
 
     static RotationMatrix VectorBasis(
-        const Vector3d& aFirstSourceVector,
-        const Vector3d& aSecondSourceVector,
-        const Vector3d& aFirstDestinationVector,
-        const Vector3d& aSecondDestinationVector
+        const Pair<Vector3d, Vector3d>& aSourcePair, const Pair<Vector3d, Vector3d>& aDestinationPair
     );
 
    private:

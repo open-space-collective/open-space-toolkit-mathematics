@@ -563,12 +563,14 @@ RotationMatrix RotationMatrix::EulerAngle(const rotation::EulerAngle& aEulerAngl
 }
 
 RotationMatrix RotationMatrix::VectorBasis(
-    const Vector3d& aFirstSourceVector,
-    const Vector3d& aSecondSourceVector,
-    const Vector3d& aFirstDestinationVector,
-    const Vector3d& aSecondDestinationVector
+    const Pair<Vector3d, Vector3d>& aSourcePair, const Pair<Vector3d, Vector3d>& aDestinationPair
 )
 {
+    const Vector3d& aFirstSourceVector = aSourcePair.first;
+    const Vector3d& aSecondSourceVector = aSourcePair.second;
+    const Vector3d& aFirstDestinationVector = aDestinationPair.first;
+    const Vector3d& aSecondDestinationVector = aDestinationPair.second;
+
     if (!aFirstSourceVector.isDefined())
     {
         throw ostk::core::error::runtime::Undefined("First source vector");
