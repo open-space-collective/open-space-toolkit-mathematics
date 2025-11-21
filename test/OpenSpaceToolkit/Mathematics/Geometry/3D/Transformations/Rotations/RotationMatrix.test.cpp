@@ -388,7 +388,7 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
             ostk::core::error::RuntimeError
         );
         EXPECT_THROW(
-            RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}, {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}),
+            RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}, {{0.0, 0.0, 1.0}, {0.0, 0.0, 0.0}}),
             ostk::core::error::RuntimeError
         );
     }
