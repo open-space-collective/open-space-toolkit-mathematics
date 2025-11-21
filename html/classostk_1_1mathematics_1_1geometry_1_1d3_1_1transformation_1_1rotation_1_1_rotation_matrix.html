@@ -175,6 +175,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a17e0c181b02dd8857a0414331ac54bac"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html">RotationMatrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a17e0c181b02dd8857a0414331ac54bac">EulerAngle</a> (const <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle.html">rotation::EulerAngle</a> &amp;aEulerAngle)</td></tr>
 <tr class="memdesc:a17e0c181b02dd8857a0414331ac54bac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct Rotation Matrix from Euler <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1_angle.html" title="Angle.">Angle</a>.  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a17e0c181b02dd8857a0414331ac54bac">More...</a><br /></td></tr>
 <tr class="separator:a17e0c181b02dd8857a0414331ac54bac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe06734b238aa42b334c23eeee8cd50b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html">RotationMatrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#abe06734b238aa42b334c23eeee8cd50b">VectorBasis</a> (const Pair&lt; Vector3d, Vector3d &gt; &amp;aSourcePair, const Pair&lt; Vector3d, Vector3d &gt; &amp;aDestinationPair)</td></tr>
+<tr class="memdesc:abe06734b238aa42b334c23eeee8cd50b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct Rotation Matrix from two pairs of vectors. The first pair is the source vectors, the second pair is the destination vectors. Basis vectors are constructed from the source vectors by taking the cross product of the first and second vectors and normalizing the result.  <a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#abe06734b238aa42b334c23eeee8cd50b">More...</a><br /></td></tr>
+<tr class="separator:abe06734b238aa42b334c23eeee8cd50b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -1034,6 +1037,53 @@ Friends</h2></td></tr>
 
 </div>
 </div>
+<a id="abe06734b238aa42b334c23eeee8cd50b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe06734b238aa42b334c23eeee8cd50b">&#9670;&nbsp;</a></span>VectorBasis()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html">RotationMatrix</a> ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::VectorBasis </td>
+          <td>(</td>
+          <td class="paramtype">const Pair&lt; Vector3d, Vector3d &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aSourcePair</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const Pair&lt; Vector3d, Vector3d &gt; &amp;&#160;</td>
+          <td class="paramname"><em>aDestinationPair</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct Rotation Matrix from two pairs of vectors. The first pair is the source vectors, the second pair is the destination vectors. Basis vectors are constructed from the source vectors by taking the cross product of the first and second vectors and normalizing the result. </p>
+<div class="fragment"><div class="line"><a class="code" href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#abe06734b238aa42b334c23eeee8cd50b">RotationMatrix::VectorBasis</a>({{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}, {{1.0, 0.0, 0.0},</div>
+<div class="line">{0.0, 1.0, 0.0}});</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">aSourcePair</td><td>A pair of source vectors (first, second) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">aDestinationPair</td><td>A pair of destination vectors (first, second) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Friends And Related Function Documentation</h2>
 <a id="aa9ed0897a6219331deeb7750017a0df9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9ed0897a6219331deeb7750017a0df9">&#9670;&nbsp;</a></span>operator&lt;&lt;</h2>
@@ -1098,10 +1148,11 @@ Friends</h2></td></tr>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a4056e0c5112b76e58df8afbf359cefa6"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a4056e0c5112b76e58df8afbf359cefa6">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RZ</a></div><div class="ttdeci">static RotationMatrix RZ(const Angle &amp;aRotationAngle)</div><div class="ttdoc">Construct Rotation Matrix representing a rotation around the Z-axis.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:329</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_af11a91008ad9a5e8682437777efcfb0d"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#af11a91008ad9a5e8682437777efcfb0d">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RotationVector</a></div><div class="ttdeci">static RotationMatrix RotationVector(const rotation::RotationVector &amp;aRotationVector)</div><div class="ttdoc">Construct Rotation Matrix from Rotation Vector.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:499</div></div>
 <div class="ttc" id="anamespaceostk_1_1mathematics_1_1object_html_a69d9a055814e9440af219eff448c6c23"><div class="ttname"><a href="namespaceostk_1_1mathematics_1_1object.html#a69d9a055814e9440af219eff448c6c23">ostk::mathematics::object::Vector3d</a></div><div class="ttdeci">Eigen::Vector3d Vector3d</div><div class="ttdef"><b>Definition:</b> Vector.hpp:38</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_abe06734b238aa42b334c23eeee8cd50b"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#abe06734b238aa42b334c23eeee8cd50b">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::VectorBasis</a></div><div class="ttdeci">static RotationMatrix VectorBasis(const Pair&lt; Vector3d, Vector3d &gt; &amp;aSourcePair, const Pair&lt; Vector3d, Vector3d &gt; &amp;aDestinationPair)</div><div class="ttdoc">Construct Rotation Matrix from two pairs of vectors. The first pair is the source vectors,...</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:565</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a74d44755a8c72da68f52106af2bcfdea"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a74d44755a8c72da68f52106af2bcfdea">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RotationMatrix</a></div><div class="ttdeci">RotationMatrix(const Matrix3d &amp;aMatrix)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:24</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_ad6019cbe46a2b47ad26470f996214bb0"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#ad6019cbe46a2b47ad26470f996214bb0">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::RX</a></div><div class="ttdeci">static RotationMatrix RX(const Angle &amp;aRotationAngle)</div><div class="ttdoc">Construct Rotation Matrix representing a rotation around the X-axis.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:295</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a255df0da5d9ec95a9842ed312a67beb2"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a255df0da5d9ec95a9842ed312a67beb2">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::Columns</a></div><div class="ttdeci">static RotationMatrix Columns(const Vector3d &amp;aFirstColumn, const Vector3d &amp;aSecondColumn, const Vector3d &amp;aThirdColumn)</div><div class="ttdoc">Construct Rotation Matrix from column vectors.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:401</div></div>
-<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_html_affb9e0b77d6b66dfcfdccb17ec10d1bf"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#affb9e0b77d6b66dfcfdccb17ec10d1bf">ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::Unit</a></div><div class="ttdeci">static Quaternion Unit()</div><div class="ttdoc">Construct unitary Quaternion.</div><div class="ttdef"><b>Definition:</b> Quaternion.cpp:493</div></div>
+<div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_html_affb9e0b77d6b66dfcfdccb17ec10d1bf"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#affb9e0b77d6b66dfcfdccb17ec10d1bf">ostk::mathematics::geometry::d3::transformation::rotation::Quaternion::Unit</a></div><div class="ttdeci">static Quaternion Unit()</div><div class="ttdoc">Construct unitary Quaternion.</div><div class="ttdef"><b>Definition:</b> Quaternion.cpp:498</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a17e0c181b02dd8857a0414331ac54bac"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a17e0c181b02dd8857a0414331ac54bac">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::EulerAngle</a></div><div class="ttdeci">static RotationMatrix EulerAngle(const rotation::EulerAngle &amp;aEulerAngle)</div><div class="ttdoc">Construct Rotation Matrix from Euler Angle.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:533</div></div>
 <div class="ttc" id="aclassostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_html_a08706245c522cf0a4b101efdc66ab802"><div class="ttname"><a href="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix.html#a08706245c522cf0a4b101efdc66ab802">ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix::Quaternion</a></div><div class="ttdeci">static RotationMatrix Quaternion(const rotation::Quaternion &amp;aQuaternion)</div><div class="ttdoc">Construct Rotation Matrix from Quaternion.</div><div class="ttdef"><b>Definition:</b> RotationMatrix.cpp:458</div></div>
 <!-- HTML footer for doxygen 1.8.7-->

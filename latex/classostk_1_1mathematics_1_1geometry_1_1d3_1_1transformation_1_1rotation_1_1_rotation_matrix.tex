@@ -64,7 +64,9 @@ static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transforma
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix}{Rotation\+Matrix}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_af11a91008ad9a5e8682437777efcfb0d}{Rotation\+Vector}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector}{rotation\+::\+Rotation\+Vector}} \&a\+Rotation\+Vector)
 \begin{DoxyCompactList}\small\item\em Construct Rotation Matrix from Rotation Vector. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix}{Rotation\+Matrix}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_a17e0c181b02dd8857a0414331ac54bac}{Euler\+Angle}} (const \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_euler_angle}{rotation\+::\+Euler\+Angle}} \&a\+Euler\+Angle)
-\begin{DoxyCompactList}\small\item\em Construct Rotation Matrix from Euler \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Construct Rotation Matrix from Euler \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1_angle}{Angle}}. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix}{Rotation\+Matrix}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_abe06734b238aa42b334c23eeee8cd50b}{Vector\+Basis}} (const Pair$<$ Vector3d, Vector3d $>$ \&a\+Source\+Pair, const Pair$<$ Vector3d, Vector3d $>$ \&a\+Destination\+Pair)
+\begin{DoxyCompactList}\small\item\em Construct Rotation Matrix from two pairs of vectors. The first pair is the source vectors, the second pair is the destination vectors. Basis vectors are constructed from the source vectors by taking the cross product of the first and second vectors and normalizing the result. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
@@ -638,6 +640,30 @@ Construct unitary Rotation Matrix.
 \begin{DoxyReturn}{Returns}
 Rotation Matrix 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_abe06734b238aa42b334c23eeee8cd50b}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_abe06734b238aa42b334c23eeee8cd50b}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix@{ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix}!VectorBasis@{VectorBasis}}
+\index{VectorBasis@{VectorBasis}!ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix@{ostk::mathematics::geometry::d3::transformation::rotation::RotationMatrix}}
+\doxysubsubsection{\texorpdfstring{VectorBasis()}{VectorBasis()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix}{Rotation\+Matrix}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Rotation\+Matrix\+::\+Vector\+Basis (\begin{DoxyParamCaption}\item[{const Pair$<$ Vector3d, Vector3d $>$ \&}]{a\+Source\+Pair,  }\item[{const Pair$<$ Vector3d, Vector3d $>$ \&}]{a\+Destination\+Pair }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Construct Rotation Matrix from two pairs of vectors. The first pair is the source vectors, the second pair is the destination vectors. Basis vectors are constructed from the source vectors by taking the cross product of the first and second vectors and normalizing the result. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_abe06734b238aa42b334c23eeee8cd50b}{RotationMatrix::VectorBasis}}(\{\{1.0, 0.0, 0.0\}, \{0.0, 1.0, 0.0\}\}, \{\{1.0, 0.0, 0.0\},}
+\DoxyCodeLine{\{0.0, 1.0, 0.0\}\});}
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a\+Source\+Pair} & A pair of source vectors (first, second) \\
+\hline
+\mbox{\texttt{ in}}  & {\em a\+Destination\+Pair} & A pair of destination vectors (first, second) \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Friends And Related Function Documentation}

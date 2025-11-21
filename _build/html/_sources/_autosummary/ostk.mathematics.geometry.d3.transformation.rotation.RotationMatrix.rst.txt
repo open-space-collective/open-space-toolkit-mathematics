@@ -32,6 +32,7 @@ ostk.mathematics.geometry.d3.transformation.rotation.RotationMatrix
       ~RotationMatrix.transpose
       ~RotationMatrix.undefined
       ~RotationMatrix.unit
+      ~RotationMatrix.vector_basis
    
    
 

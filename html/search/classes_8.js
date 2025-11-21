@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['numericalsolver_433',['NumericalSolver',['../classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html',1,'ostk::mathematics::solver']]]
+  ['numericalsolver_435',['NumericalSolver',['../classostk_1_1mathematics_1_1solver_1_1_numerical_solver.html',1,'ostk::mathematics::solver']]]
 ];

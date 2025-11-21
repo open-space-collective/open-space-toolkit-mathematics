@@ -53,7 +53,7 @@
       <node id="13">
         <label>OpenSpaceToolkit/Core/Type/Real.hpp</label>
       </node>
-      <node id="49">
+      <node id="50">
         <label>Gte/Mathematics/GteIntrSegment3Ellipsoid3.h</label>
       </node>
       <node id="19">
@@ -99,7 +99,7 @@
       <node id="2">
         <label>Gte/Mathematics/GteIntrEllipsoid3Ellipsoid3.h</label>
       </node>
-      <node id="48">
+      <node id="49">
         <label>Gte/Mathematics/GteIntrRay3Ellipsoid3.h</label>
       </node>
       <node id="26">
@@ -177,10 +177,10 @@
         <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="50">
+      <node id="51">
         <label>Eigen/Eigenvalues</label>
       </node>
-      <node id="46">
+      <node id="47">
         <label>Gte/Mathematics/GteIntrLine3Ellipsoid3.h</label>
       </node>
       <node id="32">
@@ -243,9 +243,14 @@
         <childnode refid="14" relation="include">
         </childnode>
       </node>
+      <node id="44">
+        <label>OpenSpaceToolkit/Core/Container/Pair.hpp</label>
+      </node>
       <node id="43">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp</label>
         <link refid="_rotation_matrix_8hpp"/>
+        <childnode refid="44" relation="include">
+        </childnode>
         <childnode refid="15" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
@@ -317,7 +322,7 @@
         <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="47">
+      <node id="48">
         <label>Gte/Mathematics/GteIntrPlane3Ellipsoid3.h</label>
       </node>
       <node id="3">
@@ -348,7 +353,7 @@
       <node id="15">
         <label>OpenSpaceToolkit/Core/Type/Integer.hpp</label>
       </node>
-      <node id="51">
+      <node id="52">
         <label>math.h</label>
       </node>
       <node id="42">
@@ -432,7 +437,7 @@
         <childnode refid="14" relation="include">
         </childnode>
       </node>
-      <node id="44">
+      <node id="45">
         <label>OpenSpaceToolkit/Mathematics/Object/Interval.hpp</label>
         <link refid="_interval_8hpp"/>
         <childnode refid="6" relation="include">
@@ -441,7 +446,7 @@
         </childnode>
         <childnode refid="16" relation="include">
         </childnode>
-        <childnode refid="45" relation="include">
+        <childnode refid="46" relation="include">
         </childnode>
       </node>
       <node id="6">
@@ -484,9 +489,7 @@
         </childnode>
         <childnode refid="43" relation="include">
         </childnode>
-        <childnode refid="44" relation="include">
-        </childnode>
-        <childnode refid="46" relation="include">
+        <childnode refid="45" relation="include">
         </childnode>
         <childnode refid="47" relation="include">
         </childnode>
@@ -497,6 +500,8 @@
         <childnode refid="50" relation="include">
         </childnode>
         <childnode refid="51" relation="include">
+        </childnode>
+        <childnode refid="52" relation="include">
         </childnode>
       </node>
       <node id="40">
@@ -525,7 +530,7 @@
         <childnode refid="14" relation="include">
         </childnode>
       </node>
-      <node id="45">
+      <node id="46">
         <label>OpenSpaceToolkit/Mathematics/Object/Interval.tpp</label>
         <link refid="_interval_8tpp"/>
       </node>

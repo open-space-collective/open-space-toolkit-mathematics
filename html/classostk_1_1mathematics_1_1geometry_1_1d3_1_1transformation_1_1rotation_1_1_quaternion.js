@@ -40,6 +40,7 @@ var classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1
     [ "toConjugate", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#abd6b6809b6be6bff26bf99a4c2afbcdb", null ],
     [ "toInverse", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#a57e55414171904bd5126707ec5b1cb1b", null ],
     [ "toNormalized", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#a76d45236d97aca97432d5e6604cf6acf", null ],
+    [ "toRectify", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#a387bdb75bfb540a30e2ae9e1e80142d8", null ],
     [ "toString", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#abcc5bbb2b290710f39d2111f155ea8e3", null ],
     [ "toString", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#a2aa46fa76d7a9fcbad21db53e7061f45", null ],
     [ "toVector", "classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion.html#ac23b62bf5637ca0a7a533434641effb3", null ],

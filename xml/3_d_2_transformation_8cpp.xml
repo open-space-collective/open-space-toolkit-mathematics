@@ -56,6 +56,8 @@
       <node id="18">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp</label>
         <link refid="_rotation_matrix_8hpp"/>
+        <childnode refid="3" relation="include">
+        </childnode>
         <childnode refid="11" relation="include">
         </childnode>
         <childnode refid="12" relation="include">

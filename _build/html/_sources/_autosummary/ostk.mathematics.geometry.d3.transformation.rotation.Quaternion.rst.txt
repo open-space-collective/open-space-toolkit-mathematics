@@ -46,6 +46,7 @@ ostk.mathematics.geometry.d3.transformation.rotation.Quaternion
       ~Quaternion.to_conjugate
       ~Quaternion.to_inverse
       ~Quaternion.to_normalized
+      ~Quaternion.to_rectify
       ~Quaternion.to_string
       ~Quaternion.to_vector
       ~Quaternion.undefined

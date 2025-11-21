@@ -972,6 +972,7 @@
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a76d45236d97aca97432d5e6604cf6acf" kind="function"><name>toNormalized</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1abd6b6809b6be6bff26bf99a4c2afbcdb" kind="function"><name>toConjugate</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a57e55414171904bd5126707ec5b1cb1b" kind="function"><name>toInverse</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a387bdb75bfb540a30e2ae9e1e80142d8" kind="function"><name>toRectify</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a1e858e5dbaf5ac0b3385e76320cc449f" kind="function"><name>exp</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1ad0889624c3960610d94c44c2675fe2d7" kind="function"><name>log</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_1a8cc3e9ff6728b4857648cf8ffdcc1bc1" kind="function"><name>pow</name></member>
@@ -1054,6 +1055,7 @@
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a08706245c522cf0a4b101efdc66ab802" kind="function"><name>Quaternion</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1af11a91008ad9a5e8682437777efcfb0d" kind="function"><name>RotationVector</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a17e0c181b02dd8857a0414331ac54bac" kind="function"><name>EulerAngle</name></member>
+    <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1abe06734b238aa42b334c23eeee8cd50b" kind="function"><name>VectorBasis</name></member>
     <member refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_matrix_1a5edaa28cfdd0fcaf95024f5469c09fd8" kind="function"><name>RotationMatrix</name></member>
   </compound>
   <compound refid="classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_rotation_vector" kind="class"><name>ostk::mathematics::geometry::d3::transformation::rotation::RotationVector</name>

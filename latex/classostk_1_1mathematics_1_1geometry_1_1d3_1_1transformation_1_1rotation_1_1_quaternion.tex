@@ -71,6 +71,8 @@ Real \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformati
 \begin{DoxyCompactList}\small\item\em Calculate conjugate of \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a57e55414171904bd5126707ec5b1cb1b}{to\+Inverse}} () const
 \begin{DoxyCompactList}\small\item\em Calculate inverse of \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a387bdb75bfb540a30e2ae9e1e80142d8}{to\+Rectify}} () const
+\begin{DoxyCompactList}\small\item\em Calculate rectified \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} (with positive scalar part) \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a1e858e5dbaf5ac0b3385e76320cc449f}{exp}} () const
 \begin{DoxyCompactList}\small\item\em Calculate exponential of \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ad0889624c3960610d94c44c2675fe2d7}{log}} () const
@@ -1202,6 +1204,25 @@ Calculate normalized \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3
 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab065862f2a77807e42f6feaadc0637e2}{Quaternion::XYZS}}(0.0, 0.0, 0.0, 1.000000000000001).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a76d45236d97aca97432d5e6604cf6acf}{toNormalized}}();}
+\end{DoxyCode}
+
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a387bdb75bfb540a30e2ae9e1e80142d8}\label{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a387bdb75bfb540a30e2ae9e1e80142d8}} 
+\index{ostk::mathematics::geometry::d3::transformation::rotation::Quaternion@{ostk::mathematics::geometry::d3::transformation::rotation::Quaternion}!toRectify@{toRectify}}
+\index{toRectify@{toRectify}!ostk::mathematics::geometry::d3::transformation::rotation::Quaternion@{ostk::mathematics::geometry::d3::transformation::rotation::Quaternion}}
+\doxysubsubsection{\texorpdfstring{toRectify()}{toRectify()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} ostk\+::mathematics\+::geometry\+::d3\+::transformation\+::rotation\+::\+Quaternion\+::to\+Rectify (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Calculate rectified \mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion}{Quaternion}} (with positive scalar part) 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_ab065862f2a77807e42f6feaadc0637e2}{Quaternion::XYZS}}(0.0, 0.0, -\/0.70710678118, -\/0.70710678118).\mbox{\hyperlink{classostk_1_1mathematics_1_1geometry_1_1d3_1_1transformation_1_1rotation_1_1_quaternion_a387bdb75bfb540a30e2ae9e1e80142d8}{toRectify}}();}
 \end{DoxyCode}
 
 

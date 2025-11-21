@@ -222,9 +222,14 @@
         <childnode refid="26" relation="include">
         </childnode>
       </node>
+      <node id="42">
+        <label>OpenSpaceToolkit/Core/Container/Pair.hpp</label>
+      </node>
       <node id="41">
         <label>OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp</label>
         <link refid="_rotation_matrix_8hpp"/>
+        <childnode refid="42" relation="include">
+        </childnode>
         <childnode refid="7" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
@@ -426,7 +431,7 @@
         </childnode>
         <childnode refid="40" relation="include">
         </childnode>
-        <childnode refid="42" relation="include">
+        <childnode refid="43" relation="include">
         </childnode>
       </node>
       <node id="28">
@@ -439,7 +444,7 @@
         <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="42">
+      <node id="43">
         <label>OpenSpaceToolkit/Mathematics/Object/Interval.hpp</label>
         <link refid="_interval_8hpp"/>
         <childnode refid="13" relation="include">
@@ -448,7 +453,7 @@
         </childnode>
         <childnode refid="8" relation="include">
         </childnode>
-        <childnode refid="43" relation="include">
+        <childnode refid="44" relation="include">
         </childnode>
       </node>
       <node id="13">
@@ -470,7 +475,7 @@
         <childnode refid="26" relation="include">
         </childnode>
       </node>
-      <node id="43">
+      <node id="44">
         <label>OpenSpaceToolkit/Mathematics/Object/Interval.tpp</label>
         <link refid="_interval_8tpp"/>
       </node>
