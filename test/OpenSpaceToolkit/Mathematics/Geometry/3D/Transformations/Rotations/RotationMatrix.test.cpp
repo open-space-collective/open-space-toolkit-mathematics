@@ -348,8 +348,8 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         EXPECT_NEAR(0.0, col2.dot(col0), 1e-10);
     }
 
+    // Test error cases
     {
-        // Test error cases
         EXPECT_THROW(
             RotationMatrix::VectorBasis({Vector3d::Undefined(), {0.0, 1.0, 0.0}}, {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}),
             ostk::core::error::RuntimeError
@@ -373,6 +373,22 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMa
         );
         EXPECT_THROW(
             RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}, {{0.0, 1.0, 0.0}, {0.0, 1.0, 0.0}}),
+            ostk::core::error::RuntimeError
+        );
+        EXPECT_THROW(
+            RotationMatrix::VectorBasis({{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}, {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}),
+            ostk::core::error::RuntimeError
+        );
+        EXPECT_THROW(
+            RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}, {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}),
+            ostk::core::error::RuntimeError
+        );
+        EXPECT_THROW(
+            RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}, {{0.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}),
+            ostk::core::error::RuntimeError
+        );
+        EXPECT_THROW(
+            RotationMatrix::VectorBasis({{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}}, {{0.0, 0.0, 0.0}, {0.0, 0.0, 0.0}}),
             ostk::core::error::RuntimeError
         );
     }

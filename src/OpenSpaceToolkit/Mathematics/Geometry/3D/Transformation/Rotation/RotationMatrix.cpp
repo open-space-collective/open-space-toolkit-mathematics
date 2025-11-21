@@ -591,6 +591,26 @@ RotationMatrix RotationMatrix::VectorBasis(
         throw ostk::core::error::runtime::Undefined("Second destination vector");
     }
 
+    if (aFirstSourceVector.norm() < Real::Epsilon())
+    {
+        throw ostk::core::error::RuntimeError("First source vector is zero.");
+    }
+
+    if (aSecondSourceVector.norm() < Real::Epsilon())
+    {
+        throw ostk::core::error::RuntimeError("Second source vector is zero.");
+    }
+
+    if (aFirstDestinationVector.norm() < Real::Epsilon())
+    {
+        throw ostk::core::error::RuntimeError("First destination vector is zero.");
+    }
+
+    if (aSecondDestinationVector.norm() < Real::Epsilon())
+    {
+        throw ostk::core::error::RuntimeError("Second destination vector is zero.");
+    }
+
     // Check that source vectors are not parallel
     const Vector3d normalizedFirstSource = aFirstSourceVector.normalized();
     const Vector3d normalizedSecondSource = aSecondSourceVector.normalized();
