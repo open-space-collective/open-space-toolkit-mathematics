@@ -562,6 +562,86 @@ RotationMatrix RotationMatrix::EulerAngle(const rotation::EulerAngle& aEulerAngl
     }
 }
 
+RotationMatrix RotationMatrix::VectorBasis(
+    const Pair<Vector3d, Vector3d>& aSourcePair, const Pair<Vector3d, Vector3d>& aDestinationPair
+)
+{
+    const Vector3d& aFirstSourceVector = aSourcePair.first;
+    const Vector3d& aSecondSourceVector = aSourcePair.second;
+    const Vector3d& aFirstDestinationVector = aDestinationPair.first;
+    const Vector3d& aSecondDestinationVector = aDestinationPair.second;
+
+    if (!aFirstSourceVector.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("First source vector");
+    }
+
+    if (!aSecondSourceVector.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Second source vector");
+    }
+
+    if (!aFirstDestinationVector.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("First destination vector");
+    }
+
+    if (!aSecondDestinationVector.isDefined())
+    {
+        throw ostk::core::error::runtime::Undefined("Second destination vector");
+    }
+
+    if (aFirstSourceVector.norm() < Real::Epsilon())
+    {
+        throw ostk::core::error::RuntimeError("First source vector is zero.");
+    }
+
+    if (aSecondSourceVector.norm() < Real::Epsilon())
+    {
+        throw ostk::core::error::RuntimeError("Second source vector is zero.");
+    }
+
+    if (aFirstDestinationVector.norm() < Real::Epsilon())
+    {
+        throw ostk::core::error::RuntimeError("First destination vector is zero.");
+    }
+
+    if (aSecondDestinationVector.norm() < Real::Epsilon())
+    {
+        throw ostk::core::error::RuntimeError("Second destination vector is zero.");
+    }
+
+    // Check that source vectors are not parallel
+    const Vector3d normalizedFirstSource = aFirstSourceVector.normalized();
+    const Vector3d normalizedSecondSource = aSecondSourceVector.normalized();
+    if (std::abs(std::abs(normalizedFirstSource.dot(normalizedSecondSource)) - 1.0) < Real::Epsilon())
+    {
+        throw ostk::core::error::RuntimeError("Source vectors are parallel or anti-parallel.");
+    }
+
+    // Check that destination vectors are not parallel
+    const Vector3d normalizedFirstDestination = aFirstDestinationVector.normalized();
+    const Vector3d normalizedSecondDestination = aSecondDestinationVector.normalized();
+    if (std::abs(std::abs(normalizedFirstDestination.dot(normalizedSecondDestination)) - 1.0) < Real::Epsilon())
+    {
+        throw ostk::core::error::RuntimeError("Destination vectors are parallel or anti-parallel.");
+    }
+
+    Matrix3d sourceMatrix;
+
+    sourceMatrix.row(0) = normalizedFirstSource;
+    sourceMatrix.row(2) = normalizedFirstSource.cross(normalizedSecondSource).normalized();
+    sourceMatrix.row(1) = sourceMatrix.row(2).cross(normalizedFirstSource);
+
+    Matrix3d destinationMatrix;
+
+    destinationMatrix.row(0) = normalizedFirstDestination;
+    destinationMatrix.row(2) = normalizedFirstDestination.cross(normalizedSecondDestination).normalized();
+    destinationMatrix.row(1) = destinationMatrix.row(2).cross(normalizedFirstDestination);
+
+    return RotationMatrix(destinationMatrix.transpose() * sourceMatrix);
+}
+
 RotationMatrix::RotationMatrix()
     : matrix_(Matrix3d::Undefined())
 {

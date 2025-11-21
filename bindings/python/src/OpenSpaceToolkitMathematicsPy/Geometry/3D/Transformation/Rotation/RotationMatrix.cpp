@@ -8,6 +8,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
 {
     using namespace pybind11;
 
+    using ostk::core::container::Pair;
     using ostk::core::type::Real;
     using ostk::core::type::String;
 
@@ -351,6 +352,38 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Ro
                     >>> rot_matrix = RotationMatrix.euler_angle(euler)
             )doc",
             arg("euler_angle")
+        )
+        .def_static(
+            "vector_basis",
+            &RotationMatrix::VectorBasis,
+            R"doc(
+                Create a rotation matrix from two pairs of vectors.
+
+                Constructs orthonormal basis frames from each pair of vectors and returns
+                the rotation matrix that transforms from the source basis to the destination basis.
+                The first vector defines the primary direction, and the second vector is used
+                to determine the orientation of the basis (via cross product).
+
+                Args:
+                    source_vectors (tuple[np.array, np.array]): A pair of 3-dimensional source vectors.
+                    destination_vectors (tuple[np.array, np.array]): A pair of 3-dimensional destination vectors.
+
+                Returns:
+                    RotationMatrix: Rotation matrix transforming from source to destination basis.
+
+                Example:
+                    >>> # Identity rotation
+                    >>> source1 = np.array([1.0, 0.0, 0.0])
+                    >>> source2 = np.array([0.0, 1.0, 0.0])
+                    >>> rot = RotationMatrix.vector_basis((source1, source2), (source1, source2))
+
+                    >>> # 90-degree rotation around Z-axis
+                    >>> dest1 = np.array([0.0, 1.0, 0.0])
+                    >>> dest2 = np.array([-1.0, 0.0, 0.0])
+                    >>> rot = RotationMatrix.vector_basis((source1, source2), (dest1, dest2))
+            )doc",
+            arg("source_vectors"),
+            arg("destination_vectors")
         )
 
         ;
