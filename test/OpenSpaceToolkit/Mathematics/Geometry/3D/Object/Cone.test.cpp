@@ -406,7 +406,126 @@ TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Contains_Sphere)
     }
 }
 
-// TEST (OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Contains_Ellipsoid)
+TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, Contains_Ellipsoid)
+{
+    using ostk::core::type::Real;
+
+    using ostk::mathematics::geometry::Angle;
+    using ostk::mathematics::geometry::d3::object::Cone;
+    using ostk::mathematics::geometry::d3::object::Ellipsoid;
+    using ostk::mathematics::geometry::d3::object::Point;
+    using ostk::mathematics::geometry::d3::transformation::rotation::Quaternion;
+    using ostk::mathematics::geometry::d3::transformation::rotation::RotationVector;
+    using ostk::mathematics::object::Vector3d;
+
+    // Cases that should evaluate to true
+    {
+        const Point apex = {0.0, 0.0, 0.0};
+        const Vector3d axis = Vector3d::Z();
+        const Angle angle = Angle::Degrees(30.0);
+
+        const Cone cone = {apex, axis, angle};
+        // Ellipsoid inside the cone, centered and aligned
+        {
+            const Ellipsoid ellipsoid = {{0.0, 0.0, 10.0}, 1.0, 1.0, 2.0};
+
+            EXPECT_TRUE(cone.contains(ellipsoid));
+        }
+
+        // Ellipsoid inside the cone, shifted along X-axis
+        {
+            const Ellipsoid ellipsoid = {{1.0, 0.0, 10.0}, 1.0, 1.0, 2.0};
+
+            EXPECT_TRUE(cone.contains(ellipsoid));
+        }
+
+        // Ellipsoid inside the cone, rotated
+        {
+            const Quaternion rotation = Quaternion::RotationVector(RotationVector(Vector3d::Y(), Angle::Degrees(45.0)));
+            const Ellipsoid ellipsoid = {{0.0, 0.0, 10.0}, 0.5, 0.5, 4.0, rotation};
+
+            EXPECT_TRUE(cone.contains(ellipsoid));
+        }
+    }
+
+    // Test cases that should definitely return false (ellipsoid outside cone)
+    {
+        const Point apex = {0.0, 0.0, 0.0};
+        const Vector3d axis = Vector3d::Z();
+        const Angle angle = Angle::Degrees(30.0);
+
+        const Cone cone = {apex, axis, angle};
+
+        // Ellipsoid behind the apex
+        {
+            const Ellipsoid ellipsoid = {{0.0, 0.0, -5.0}, 1.0, 1.0, 1.0};
+            EXPECT_FALSE(cone.contains(ellipsoid));
+        }
+
+        // Ellipsoid far from the cone axis
+        {
+            const Ellipsoid ellipsoid = {{10.0, 0.0, 5.0}, 1.0, 1.0, 1.0};
+            EXPECT_FALSE(cone.contains(ellipsoid));
+        }
+
+        // Large ellipsoid that extends beyond cone, intersects the cone
+        {
+            const Ellipsoid ellipsoid = {{0.0, 0.0, 5.0}, 5.0, 5.0, 5.0};
+            EXPECT_FALSE(cone.contains(ellipsoid));
+        }
+    }
+
+    // Test cases where ellipsoid is a sphere, taken from Contains_Sphere test
+    {
+        const Point apex = {-10.0, 0.0, 10.0};
+        const Vector3d axis = Vector3d::X();
+        const Angle angle = Angle::Degrees(45.0);
+
+        const Cone cone = {apex, axis, angle};
+
+        EXPECT_FALSE(cone.contains(Ellipsoid {apex, 1.0, 1.0, 1.0}));
+        EXPECT_FALSE(cone.contains(Ellipsoid {apex + Vector3d {1.0, 0.0, 0.0}, 1.0, 1.0, 1.0}));
+        EXPECT_FALSE(cone.contains(Ellipsoid {apex + Vector3d {std::sqrt(2.0) - 1e-11, 0.0, 0.0}, 1.0, 1.0, 1.0}));
+
+        EXPECT_TRUE(cone.contains(Ellipsoid {apex + Vector3d {std::sqrt(2.0) + 1e-11, 0.0, 0.0}, 1.0, 1.0, 1.0}));
+        EXPECT_TRUE(cone.contains(Ellipsoid {apex + Vector3d {2.0, 0.0, 0.0}, 1.0, 1.0, 1.0}));
+
+        EXPECT_FALSE(cone.contains(Ellipsoid {(apex - Vector3d {0.5, 0.0, 0.0}), 1.0, 1.0, 1.0}));
+        EXPECT_FALSE(cone.contains(Ellipsoid {(apex - Vector3d {1.0, 0.0, 0.0}), 1.0, 1.0, 1.0}));
+    }
+
+    // Degenerate cases where ellipsoid touches the boundary
+    {
+        const Point apex = {0.0, 0.0, 0.0};
+        const Vector3d axis = Vector3d::Z();
+        const Angle angle = Angle::Degrees(90.0);
+        const Cone cone = {apex, axis, angle};
+
+        {
+            const Ellipsoid ellipsoid = {{0.0, 0.0, -1.0}, 1.0, 1.0, 1.0};
+
+            EXPECT_FALSE(cone.contains(ellipsoid));
+        }
+
+        {
+            const Ellipsoid ellipsoid = {{0.0, 0.0, 1.0}, 1.0, 1.0, 1.0};
+
+            EXPECT_TRUE(cone.contains(ellipsoid));
+        }
+    }
+
+    // Error cases
+    {
+        const Point apex = {0.0, 0.0, 0.0};
+        const Vector3d axis = Vector3d::Z();
+        const Angle angle = Angle::Degrees(45.0);
+
+        const Cone cone = {apex, axis, angle};
+
+        EXPECT_ANY_THROW(Cone::Undefined().contains(Ellipsoid({0.0, 0.0, 0.0}, 1.0, 1.0, 1.0)));
+        EXPECT_ANY_THROW(cone.contains(Ellipsoid::Undefined()));
+    }
+}
 
 TEST(OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Cone, GetApex)
 {
