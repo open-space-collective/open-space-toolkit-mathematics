@@ -3,6 +3,7 @@
 #include <OpenSpaceToolkitMathematicsPy/Geometry/2D.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/3D.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/Angle.cpp>
+#include <OpenSpaceToolkitMathematicsPy/Geometry/Planetodetic.cpp>
 
 inline void OpenSpaceToolkitMathematicsPy_Geometry(pybind11::module& aModule)
 {
@@ -13,4 +14,5 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry(pybind11::module& aModule)
     OpenSpaceToolkitMathematicsPy_Geometry_2D(geometry);
     OpenSpaceToolkitMathematicsPy_Geometry_3D(geometry);
     OpenSpaceToolkitMathematicsPy_Geometry_Angle(geometry);
+    OpenSpaceToolkitMathematicsPy_Geometry_Planetodetic(geometry);
 }
