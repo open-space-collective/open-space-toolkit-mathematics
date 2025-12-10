@@ -46,10 +46,10 @@ class TestPoint:
         self,
         longitude_1: Angle,
     ):
-        with pytest.raises(Exception):
+        with pytest.raises(RuntimeError):
             Point(Angle.degrees(91.0), longitude_1)
 
-        with pytest.raises(Exception):
+        with pytest.raises(RuntimeError):
             Point(Angle.degrees(-91.0), longitude_1)
 
     def test_undefined_constructor_success(self):

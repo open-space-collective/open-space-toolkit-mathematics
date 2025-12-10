@@ -76,7 +76,7 @@ class TestEllipsoid:
         assert ellipsoid.get_polar_radius() == equatorial_radius_a
 
     def test_sphere_failure(self):
-        with pytest.raises(Exception):
+        with pytest.raises(RuntimeError):
             Ellipsoid.sphere(0.0)
 
     def test_spheroid_from_equatorial_radius_and_flattening_success(

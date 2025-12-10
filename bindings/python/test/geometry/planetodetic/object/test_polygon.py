@@ -89,7 +89,7 @@ class TestPolygon:
         self,
         ellipsoid: Ellipsoid,
     ):
-        with pytest.raises(Exception):
+        with pytest.raises(RuntimeError):
             Polygon.simple(
                 ellipsoid,
                 [
@@ -102,7 +102,7 @@ class TestPolygon:
         self,
         ellipsoid: Ellipsoid,
     ):
-        with pytest.raises(Exception):
+        with pytest.raises(RuntimeError):
             Polygon.simple(
                 ellipsoid,
                 [
@@ -116,7 +116,7 @@ class TestPolygon:
         self,
         ellipsoid: Ellipsoid,
     ):
-        with pytest.raises(Exception):
+        with pytest.raises(RuntimeError):
             Polygon.simple(
                 ellipsoid,
                 [
@@ -130,7 +130,7 @@ class TestPolygon:
         self,
         ellipsoid: Ellipsoid,
     ):
-        with pytest.raises(Exception):
+        with pytest.raises(RuntimeError):
             Polygon.simple(
                 ellipsoid,
                 [
