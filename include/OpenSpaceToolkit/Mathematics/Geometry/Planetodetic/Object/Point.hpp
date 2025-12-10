@@ -32,7 +32,7 @@ using ostk::mathematics::object::Vector3d;
 
 /// @brief                      Planetodetic Point
 ///
-///                             A point on a reference spheroid defined by geodetic coordinates
+///                             A point on a reference ellipsoid defined by planetodetic coordinates
 ///                             (latitude and longitude)
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Geodetic_coordinates
@@ -133,7 +133,7 @@ class Point : public Object
 
     virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
-    /// @brief              Constructs an undefined point
+    /// @brief              Construct an undefined point
     ///
     /// @code
     ///                     Point point = Point::Undefined() ; // Undefined
@@ -143,7 +143,7 @@ class Point : public Object
 
     static Point Undefined();
 
-    /// @brief              Constructs a point at origin (0°, 0°)
+    /// @brief              Construct a point at origin (0°, 0°)
     ///
     /// @code
     ///                     Point point = Point::Origin() ; // (0°, 0°)
@@ -153,7 +153,7 @@ class Point : public Object
 
     static Point Origin();
 
-    /// @brief              Constructs the North Pole (90°N, 0°)
+    /// @brief              Construct the North Pole (90°N, 0°)
     ///
     /// @code
     ///                     Point point = Point::NorthPole() ; // (90°N, 0°)
@@ -163,7 +163,7 @@ class Point : public Object
 
     static Point NorthPole();
 
-    /// @brief              Constructs the South Pole (90°S, 0°)
+    /// @brief              Construct the South Pole (90°S, 0°)
     ///
     /// @code
     ///                     Point point = Point::SouthPole() ; // (90°S, 0°)

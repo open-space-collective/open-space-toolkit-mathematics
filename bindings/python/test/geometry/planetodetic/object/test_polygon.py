@@ -7,19 +7,19 @@ import ostk.mathematics as mathematics
 
 Object = mathematics.geometry.planetodetic.Object
 Angle = mathematics.geometry.Angle
+Ellipsoid = mathematics.geometry.planetodetic.object.Ellipsoid
 Point = mathematics.geometry.planetodetic.object.Point
-Spheroid = mathematics.geometry.planetodetic.object.Spheroid
 Polygon = mathematics.geometry.planetodetic.object.Polygon
 
 
 @pytest.fixture
-def spheroid() -> Spheroid:
-    return Spheroid.from_equatorial_radius_and_flattening(1.0, 0.01)
+def ellipsoid() -> Ellipsoid:
+    return Ellipsoid.spheroid(1.0, 0.01)
 
 
 @pytest.fixture
-def another_spheroid() -> Spheroid:
-    return Spheroid.sphere(1.5)
+def another_ellipsoid() -> Ellipsoid:
+    return Ellipsoid.sphere(1.5)
 
 
 @pytest.fixture
@@ -44,20 +44,20 @@ def another_outer_ring() -> list[Point]:
 
 @pytest.fixture
 def polygon(
-    spheroid: Spheroid,
+    ellipsoid: Ellipsoid,
     outer_ring: list[Point],
 ) -> Polygon:
-    return Polygon.simple(spheroid, outer_ring)
+    return Polygon.simple(ellipsoid, outer_ring)
 
 
 class TestPolygon:
     def test_simple_constructor_success_list(
         self,
-        spheroid: Spheroid,
+        ellipsoid: Ellipsoid,
         outer_ring: list[Point],
     ):
         polygon: Polygon = Polygon.simple(
-            spheroid,
+            ellipsoid,
             outer_ring,
         )
 
@@ -67,7 +67,7 @@ class TestPolygon:
 
     def test_simple_constructor_with_tuple_success(
         self,
-        spheroid: Spheroid,
+        ellipsoid: Ellipsoid,
     ):
         outer_ring = (
             Point(Angle.degrees(-1.0), Angle.degrees(-1.0)),
@@ -77,7 +77,7 @@ class TestPolygon:
         )
 
         polygon: Polygon = Polygon.simple(
-            spheroid,
+            ellipsoid,
             outer_ring,
         )
 
@@ -87,11 +87,11 @@ class TestPolygon:
 
     def test_simple_constructor_failure_too_few_vertices(
         self,
-        spheroid: Spheroid,
+        ellipsoid: Ellipsoid,
     ):
         with pytest.raises(Exception):
             Polygon.simple(
-                spheroid,
+                ellipsoid,
                 [
                     Point(Angle.degrees(-10.0), Angle.degrees(-10.0)),
                     Point(Angle.degrees(-10.0), Angle.degrees(10.0)),
@@ -100,11 +100,11 @@ class TestPolygon:
 
     def test_simple_constructor_failure_collinear_vertices(
         self,
-        spheroid: Spheroid,
+        ellipsoid: Ellipsoid,
     ):
         with pytest.raises(Exception):
             Polygon.simple(
-                spheroid,
+                ellipsoid,
                 [
                     Point(Angle.degrees(0.0), Angle.degrees(0.0)),
                     Point(Angle.degrees(0.0), Angle.degrees(120.0)),
@@ -114,11 +114,11 @@ class TestPolygon:
 
     def test_simple_constructor_failure_undefined_vertex(
         self,
-        spheroid: Spheroid,
+        ellipsoid: Ellipsoid,
     ):
         with pytest.raises(Exception):
             Polygon.simple(
-                spheroid,
+                ellipsoid,
                 [
                     Point.undefined(),
                     Point(Angle.degrees(0.0), Angle.degrees(1.0)),
@@ -128,11 +128,11 @@ class TestPolygon:
 
     def test_simple_constructor_failure_intersecting_vertices(
         self,
-        spheroid: Spheroid,
+        ellipsoid: Ellipsoid,
     ):
         with pytest.raises(Exception):
             Polygon.simple(
-                spheroid,
+                ellipsoid,
                 [
                     Point(Angle.degrees(-1.0), Angle.degrees(-1.0)),
                     Point(Angle.degrees(1.0), Angle.degrees(1.0)),
@@ -150,16 +150,16 @@ class TestPolygon:
 
     def test_comparators_success(
         self,
-        spheroid: Spheroid,
+        ellipsoid: Ellipsoid,
         outer_ring: list[Point],
-        another_spheroid: Spheroid,
+        another_ellipsoid: Ellipsoid,
         another_outer_ring: list[Point],
     ):
-        polygon_1: Polygon = Polygon.simple(spheroid, outer_ring)
-        polygon_2: Polygon = Polygon.simple(spheroid, outer_ring)
-        polygon_3: Polygon = Polygon.simple(another_spheroid, outer_ring)
-        polygon_4: Polygon = Polygon.simple(spheroid, another_outer_ring)
-        polygon_5: Polygon = Polygon.simple(another_spheroid, another_outer_ring)
+        polygon_1: Polygon = Polygon.simple(ellipsoid, outer_ring)
+        polygon_2: Polygon = Polygon.simple(ellipsoid, outer_ring)
+        polygon_3: Polygon = Polygon.simple(another_ellipsoid, outer_ring)
+        polygon_4: Polygon = Polygon.simple(ellipsoid, another_outer_ring)
+        polygon_5: Polygon = Polygon.simple(another_ellipsoid, another_outer_ring)
         polygon_6: Polygon = Polygon.undefined()
 
         assert polygon_1 == polygon_1
@@ -169,29 +169,29 @@ class TestPolygon:
         assert polygon_1 != polygon_5
         assert polygon_1 != polygon_6
 
-    def test_get_spheroid_success(
+    def test_get_ellipsoid_success(
         self,
-        spheroid: Spheroid,
+        ellipsoid: Ellipsoid,
         outer_ring: list[Point],
     ):
-        polygon: Polygon = Polygon.simple(spheroid, outer_ring)
+        polygon: Polygon = Polygon.simple(ellipsoid, outer_ring)
 
-        assert polygon.get_spheroid() == spheroid
+        assert polygon.get_ellipsoid() == ellipsoid
 
     def test_get_vertex_count_success(
         self,
-        spheroid: Spheroid,
+        ellipsoid: Ellipsoid,
         outer_ring: list[Point],
     ):
-        polygon: Polygon = Polygon.simple(spheroid, outer_ring)
+        polygon: Polygon = Polygon.simple(ellipsoid, outer_ring)
         assert polygon.get_vertex_count() == len(outer_ring)
 
     def test_get_vertices_success(
         self,
-        spheroid: Spheroid,
+        ellipsoid: Ellipsoid,
         outer_ring: list[Point],
     ):
-        polygon: Polygon = Polygon.simple(spheroid, outer_ring)
+        polygon: Polygon = Polygon.simple(ellipsoid, outer_ring)
 
         assert len(polygon.get_vertices()) == len(outer_ring)
         for input_vertex, output_vertex in zip(polygon.get_vertices(), outer_ring):
@@ -199,22 +199,22 @@ class TestPolygon:
 
     def test_contains_point_success(
         self,
-        spheroid: Spheroid,
+        ellipsoid: Ellipsoid,
         outer_ring: list[Point],
     ):
-        polygon: Polygon = Polygon.simple(spheroid, outer_ring)
+        polygon: Polygon = Polygon.simple(ellipsoid, outer_ring)
 
         assert polygon.contains(Point(Angle.degrees(0.0), Angle.degrees(0.0)))
         assert not polygon.contains(Point(Angle.degrees(20.0), Angle.degrees(20.0)))
 
     def test_str_repr(self):
-        spheroid: Spheroid = Spheroid.sphere(6378137.0)
+        ellipsoid: Ellipsoid = Ellipsoid.sphere(6378137.0)
         outer_ring = [
             Point(Angle.degrees(0.0), Angle.degrees(0.0)),
             Point(Angle.degrees(0.0), Angle.degrees(1.0)),
             Point(Angle.degrees(1.0), Angle.degrees(0.0)),
         ]
-        polygon: Polygon = Polygon.simple(spheroid, outer_ring)
+        polygon: Polygon = Polygon.simple(ellipsoid, outer_ring)
 
         assert len(str(polygon)) > 0
         assert len(repr(polygon)) > 0

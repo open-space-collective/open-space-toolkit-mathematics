@@ -3,9 +3,9 @@
 #include <tuple>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/Angle.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/Planetodetic/Object/Ellipsoid.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/Planetodetic/Object/Point.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/Planetodetic/Object/Polygon.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/Planetodetic/Object/Spheroid.hpp>
 
 #include <Global.test.hpp>
 
@@ -13,15 +13,15 @@ using ostk::core::container::Array;
 using ostk::core::type::String;
 
 using ostk::mathematics::geometry::Angle;
+using ostk::mathematics::geometry::planetodetic::object::Ellipsoid;
 using ostk::mathematics::geometry::planetodetic::object::Point;
 using ostk::mathematics::geometry::planetodetic::object::Polygon;
-using ostk::mathematics::geometry::planetodetic::object::Spheroid;
 
 class OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon : public ::testing::Test
 {
    protected:
-    const Spheroid spheroid_ = Spheroid::Sphere(6378137.0);
-    const Spheroid differentSpheroid_ = Spheroid::Sphere(1.0);
+    const Ellipsoid ellipsoid_ = Ellipsoid::Spheroid(1000.0, 0.01);
+    const Ellipsoid differentEllipsoid_ = Ellipsoid::Spheroid(2000.0, 0.02);
 
     const Array<Point> vertices_ = {
         Point(Angle::Degrees(-1.0), Angle::Degrees(-1.0)),
@@ -37,8 +37,8 @@ class OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon : public
         Point(Angle::Degrees(-10.0), Angle::Degrees(10.0))
     };
 
-    const Polygon polygon_ = Polygon::Simple(spheroid_, vertices_);
-    const Polygon differentPolygon_ = Polygon::Simple(spheroid_, differentVertices_);
+    const Polygon polygon_ = Polygon::Simple(ellipsoid_, vertices_);
+    const Polygon differentPolygon_ = Polygon::Simple(ellipsoid_, differentVertices_);
 };
 
 TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon, Clone)
@@ -55,7 +55,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon, EqualT
     }
 
     {
-        EXPECT_FALSE(polygon_ == Polygon::Simple(differentSpheroid_, vertices_));
+        EXPECT_FALSE(polygon_ == Polygon::Simple(differentEllipsoid_, vertices_));
     }
 
     {
@@ -76,7 +76,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon, NotEqu
     }
 
     {
-        EXPECT_TRUE(polygon_ != Polygon::Simple(differentSpheroid_, vertices_));
+        EXPECT_TRUE(polygon_ != Polygon::Simple(differentEllipsoid_, vertices_));
     }
 
     {
@@ -112,23 +112,38 @@ TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon, IsDefi
     }
 
     {
-        EXPECT_FALSE(Polygon::Simple(Spheroid::Undefined(), vertices_).isDefined());
+        EXPECT_FALSE(Polygon::Simple(Ellipsoid::Undefined(), vertices_).isDefined());
     }
 
     {
-        EXPECT_FALSE(Polygon::Simple(spheroid_, Array<Point>::Empty()).isDefined());
+        EXPECT_FALSE(Polygon::Simple(ellipsoid_, Array<Point>::Empty()).isDefined());
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon, ContainsOnProlateSpheroidNotSupported)
+TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon, ContainsNotSupported)
 {
     {
-        const Spheroid prolateSpheroid = Spheroid::FromEquatorialRadiusAndFlattening(6378137.0, -0.1);
-        const Polygon prolatePolygon = Polygon::Simple(prolateSpheroid, vertices_);
+        const Ellipsoid nonAxisymmetricEllipsoid = Ellipsoid(1000.0, 1100.0, 900.0);
+        const Polygon polygon = Polygon::Simple(nonAxisymmetricEllipsoid, vertices_);
 
         EXPECT_THROW(
             try {
-                prolatePolygon.contains(Point(Angle::Degrees(0.0), Angle::Degrees(0.0)));
+                polygon.contains(Point(Angle::Degrees(0.0), Angle::Degrees(0.0)));
+            } catch (const ostk::core::error::RuntimeError& e) {
+                EXPECT_TRUE(std::string(e.getMessage()).find("axisymmetric") != std::string::npos);
+                throw;
+            },
+            ostk::core::error::RuntimeError
+        );
+    }
+
+    {
+        const Ellipsoid prolateSpheroid = Ellipsoid(1000.0, 1000.0, 1100.0);
+        const Polygon polygon = Polygon::Simple(prolateSpheroid, vertices_);
+
+        EXPECT_THROW(
+            try {
+                polygon.contains(Point(Angle::Degrees(0.0), Angle::Degrees(0.0)));
             } catch (const ostk::core::error::RuntimeError& e) {
                 EXPECT_TRUE(std::string(e.getMessage()).find("prolate") != std::string::npos);
                 throw;
@@ -138,17 +153,17 @@ TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon, Contai
     }
 }
 
-TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon, GetSpheroid)
+TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon, GetEllipsoid)
 {
     {
         const Polygon& polygon = polygon_;
 
-        EXPECT_EQ(spheroid_, polygon.getSpheroid());
+        EXPECT_EQ(ellipsoid_, polygon.getEllipsoid());
     }
 
     {
         EXPECT_THROW(
-            try { Polygon::Undefined().getSpheroid(); } catch (const ostk::core::error::runtime::Undefined& e) {
+            try { Polygon::Undefined().getEllipsoid(); } catch (const ostk::core::error::runtime::Undefined& e) {
                 EXPECT_TRUE(std::string(e.getMessage()).find("undefined") != std::string::npos);
                 throw;
             },
@@ -241,7 +256,7 @@ class OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon_Contains
     : public ::testing::TestWithParam<ContainsTestParams>
 {
    protected:
-    const Spheroid spheroid_ = Spheroid::Sphere(6378137.0);
+    const Ellipsoid ellipsoid_ = Ellipsoid::WGS84();
 };
 
 INSTANTIATE_TEST_SUITE_P(
@@ -389,7 +404,7 @@ TEST_P(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon_Contain
         vertices.add(Point(Angle::Degrees(latitude), Angle::Degrees(longitude)));
     }
 
-    const Polygon polygon = Polygon::Simple(Spheroid::Sphere(10000000.0), vertices);
+    const Polygon polygon = Polygon::Simple(ellipsoid_, vertices);
 
     for (const auto& testPoint : params.testPoints)
     {
@@ -407,11 +422,11 @@ TEST_P(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon_Contain
 TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon, Simple)
 {
     {
-        EXPECT_NO_THROW(Polygon::Simple(spheroid_, vertices_););
+        EXPECT_NO_THROW(Polygon::Simple(ellipsoid_, vertices_););
     }
 
     {
-        EXPECT_NO_THROW(Polygon::Simple(spheroid_, Array<Point>::Empty()););
+        EXPECT_NO_THROW(Polygon::Simple(ellipsoid_, Array<Point>::Empty()););
     }
 
     {
@@ -425,7 +440,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon, Simple
 
             EXPECT_THROW(
                 try {
-                    Polygon::Simple(spheroid_, verticesWithUndefined);
+                    Polygon::Simple(ellipsoid_, verticesWithUndefined);
                 } catch (const ostk::core::error::RuntimeError& e) {
                     EXPECT_TRUE(std::string(e.getMessage()).find("ill-defined") != std::string::npos);
                     throw;
@@ -441,7 +456,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon, Simple
         };
 
         EXPECT_THROW(
-            try { Polygon::Simple(spheroid_, twoVertices); } catch (const ostk::core::error::RuntimeError& e) {
+            try { Polygon::Simple(ellipsoid_, twoVertices); } catch (const ostk::core::error::RuntimeError& e) {
                 EXPECT_TRUE(std::string(e.getMessage()).find("ill-defined") != std::string::npos);
                 throw;
             },
@@ -457,7 +472,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon, Simple
         };
 
         EXPECT_THROW(
-            try { Polygon::Simple(spheroid_, collinearVertices); } catch (const ostk::core::error::RuntimeError& e) {
+            try { Polygon::Simple(ellipsoid_, collinearVertices); } catch (const ostk::core::error::RuntimeError& e) {
                 EXPECT_TRUE(std::string(e.getMessage()).find("ill-defined") != std::string::npos);
                 throw;
             },
@@ -474,7 +489,9 @@ TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Polygon, Simple
         };
 
         EXPECT_THROW(
-            try { Polygon::Simple(spheroid_, intersectingVertices); } catch (const ostk::core::error::RuntimeError& e) {
+            try {
+                Polygon::Simple(ellipsoid_, intersectingVertices);
+            } catch (const ostk::core::error::RuntimeError& e) {
                 EXPECT_TRUE(std::string(e.getMessage()).find("ill-defined") != std::string::npos);
                 throw;
             },

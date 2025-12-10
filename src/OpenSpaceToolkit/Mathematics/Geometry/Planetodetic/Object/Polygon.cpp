@@ -26,18 +26,22 @@ using BoostSpheroid = boost::geometry::srs::spheroid<double>;
 class Polygon::Impl
 {
    public:
-    Impl(const Spheroid& aSpheroid, const Array<Point>& anOuterRing);
+    Impl(const Ellipsoid& anEllipsoid, const Array<Point>& anOuterRing);
 
     bool contains(const Point& aPoint) const;
 
    private:
     BoostSpheroid boostSpheroid_;
     BoostPolygon boostPolygon_;
+    bool isAxisymmetricAroundPolarAxis_;
+    bool isProlate_;
 };
 
-Polygon::Impl::Impl(const Spheroid& aSpheroid, const Array<Point>& anOuterRing)
-    : boostSpheroid_(aSpheroid.getEquatorialRadius(), aSpheroid.getPolarRadius()),
-      boostPolygon_()
+Polygon::Impl::Impl(const Ellipsoid& anEllipsoid, const Array<Point>& anOuterRing)
+    : boostSpheroid_(anEllipsoid.getEquatorialRadiusA(), anEllipsoid.getPolarRadius()),
+      boostPolygon_(),
+      isAxisymmetricAroundPolarAxis_(anEllipsoid.getEquatorialRadiusA() == anEllipsoid.getEquatorialRadiusB()),
+      isProlate_(anEllipsoid.getPolarRadius() > anEllipsoid.getEquatorialRadiusA())
 {
     // Build the internal Boost polygon
     for (const auto& vertex : anOuterRing)
@@ -61,15 +65,31 @@ Polygon::Impl::Impl(const Spheroid& aSpheroid, const Array<Point>& anOuterRing)
 
 bool Polygon::Impl::contains(const Point& aPoint) const
 {
+    if (!isAxisymmetricAroundPolarAxis_)
+    {
+        throw ostk::core::error::RuntimeError(
+            "Contains operation is not supported for ellipsoids that are not axisymmetric around the polar axis. Try "
+            "using a spheroid where equatorial radius A equals equatorial radius B."
+        );
+    }
+
+    if (isProlate_)
+    {
+        throw ostk::core::error::RuntimeError(
+            "Contains operation is not supported for prolate spheroids. Try using a sphere or an oblate spheroid "
+            "(equatorial radius >= polar radius)."
+        );
+    }
+
     const BoostPoint boostPoint(aPoint.getLongitude().inDegrees(), aPoint.getLatitude().inDegrees());
 
     const auto strategy = boost::geometry::strategies::relate::geographic<>(boostSpheroid_);
     return boost::geometry::covered_by(boostPoint, boostPolygon_, strategy);
 }
 
-Polygon::Polygon(const Spheroid& aSpheroid, const Array<Point>& anOuterRing)
+Polygon::Polygon(const Ellipsoid& anEllipsoid, const Array<Point>& anOuterRing)
     : Object(),
-      spheroid_(aSpheroid),
+      ellipsoid_(anEllipsoid),
       outerRing_(anOuterRing),
       implUPtr_(nullptr)
 {
@@ -114,7 +134,7 @@ Polygon::Polygon(const Spheroid& aSpheroid, const Array<Point>& anOuterRing)
 
 Polygon::Polygon(const Polygon& aPolygon)
     : Object(aPolygon),
-      spheroid_(aPolygon.spheroid_),
+      ellipsoid_(aPolygon.ellipsoid_),
       outerRing_(aPolygon.outerRing_),
       implUPtr_(nullptr)
 {
@@ -129,7 +149,7 @@ Polygon& Polygon::operator=(const Polygon& aPolygon)
     {
         Object::operator=(aPolygon);
 
-        spheroid_ = aPolygon.spheroid_;
+        ellipsoid_ = aPolygon.ellipsoid_;
         outerRing_ = aPolygon.outerRing_;
 
         this->initializeBoostGeometry();
@@ -150,7 +170,7 @@ bool Polygon::operator==(const Polygon& aPolygon) const
         return false;
     }
 
-    if (spheroid_ != aPolygon.spheroid_)
+    if (ellipsoid_ != aPolygon.ellipsoid_)
     {
         return false;
     }
@@ -178,7 +198,7 @@ bool Polygon::operator!=(const Polygon& aPolygon) const
 
 bool Polygon::isDefined() const
 {
-    if (!spheroid_.isDefined())
+    if (!ellipsoid_.isDefined())
     {
         return false;
     }
@@ -208,11 +228,6 @@ bool Polygon::contains(const Point& aPoint) const
         throw ostk::core::error::runtime::Undefined("Internal implementation");
     }
 
-    if (spheroid_.isProlate())
-    {
-        throw ostk::core::error::RuntimeError("Internal implementation does not support prolate spheroids.");
-    }
-
     try
     {
         return implUPtr_->contains(aPoint);
@@ -225,14 +240,14 @@ bool Polygon::contains(const Point& aPoint) const
     }
 }
 
-Spheroid Polygon::getSpheroid() const
+Ellipsoid Polygon::getEllipsoid() const
 {
     if (!this->isDefined())
     {
         throw ostk::core::error::runtime::Undefined("Polygon");
     }
 
-    return spheroid_;
+    return ellipsoid_;
 }
 
 Size Polygon::getVertexCount() const
@@ -290,11 +305,11 @@ String Polygon::toString(const Object::Format& aFormat, const Integer& aPrecisio
             if (aPrecision.isDefined())
             {
                 return String::Format(
-                    "[Spheroid: {}, Vertices: {}]", spheroid_.toString(aFormat, aPrecision), verticesString
+                    "[Ellipsoid: {}, Vertices: {}]", ellipsoid_.toString(aFormat, aPrecision), verticesString
                 );
             }
 
-            return String::Format("[Spheroid: {}, Vertices: {}]", spheroid_.toString(aFormat), verticesString);
+            return String::Format("[Ellipsoid: {}, Vertices: {}]", ellipsoid_.toString(aFormat), verticesString);
         }
 
         default:
@@ -307,7 +322,7 @@ void Polygon::print(std::ostream& anOutputStream, bool displayDecorators) const
     displayDecorators ? ostk::core::utils::Print::Header(anOutputStream, "Planetodetic Polygon") : void();
 
     ostk::core::utils::Print::Line(anOutputStream)
-        << "Spheroid:" << (spheroid_.isDefined() ? spheroid_.toString() : "Undefined");
+        << "Ellipsoid:" << (ellipsoid_.isDefined() ? ellipsoid_.toString() : "Undefined");
     ostk::core::utils::Print::Line(anOutputStream) << "Vertex count:" << outerRing_.getSize();
 
     if (!outerRing_.isEmpty())
@@ -324,21 +339,21 @@ void Polygon::print(std::ostream& anOutputStream, bool displayDecorators) const
     displayDecorators ? ostk::core::utils::Print::Footer(anOutputStream) : void();
 }
 
-Polygon Polygon::Simple(const Spheroid& aSpheroid, const Array<Point>& anOuterRing)
+Polygon Polygon::Simple(const Ellipsoid& anEllipsoid, const Array<Point>& anOuterRing)
 {
-    return {aSpheroid, anOuterRing};
+    return {anEllipsoid, anOuterRing};
 }
 
 Polygon Polygon::Undefined()
 {
-    return {Spheroid::Undefined(), Array<Point>::Empty()};
+    return {Ellipsoid::Undefined(), Array<Point>::Empty()};
 }
 
 void Polygon::initializeBoostGeometry()
 {
     if (this->isDefined())
     {
-        implUPtr_ = std::make_unique<Polygon::Impl>(spheroid_, outerRing_);
+        implUPtr_ = std::make_unique<Polygon::Impl>(ellipsoid_, outerRing_);
     }
 }
 

@@ -7,8 +7,8 @@ import ostk.mathematics as mathematics
 
 Object = mathematics.geometry.planetodetic.Object
 Angle = mathematics.geometry.Angle
+Ellipsoid = mathematics.geometry.planetodetic.object.Ellipsoid
 Point = mathematics.geometry.planetodetic.object.Point
-Spheroid = mathematics.geometry.planetodetic.object.Spheroid
 Polygon = mathematics.geometry.planetodetic.object.Polygon
 
 
@@ -18,16 +18,16 @@ def point() -> Point:
 
 
 @pytest.fixture
-def spheroid() -> Spheroid:
-    return Spheroid.from_equatorial_radius_and_flattening(1.0, 0.01)
+def ellipsoid() -> Ellipsoid:
+    return Ellipsoid.spheroid(equatorial_radius=1.0, flattening=0.01)
 
 
 @pytest.fixture
 def polygon(
-    spheroid: Spheroid,
+    ellipsoid: Ellipsoid,
 ) -> Polygon:
     return Polygon.simple(
-        spheroid,
+        ellipsoid,
         [
             Point(Angle.degrees(-1.0), Angle.degrees(-1.0)),
             Point(Angle.degrees(-1.0), Angle.degrees(1.0)),
@@ -46,69 +46,69 @@ class TestObject:
         self,
         point: Point,
         polygon: Polygon,
-        spheroid: Spheroid,
+        ellipsoid: Ellipsoid,
     ):
         assert point == point
         assert point != polygon
-        assert point != spheroid
+        assert point != ellipsoid
 
         assert polygon != point
         assert polygon == polygon
-        assert polygon != spheroid
+        assert polygon != ellipsoid
 
-        assert spheroid != point
-        assert spheroid != polygon
-        assert spheroid == spheroid
+        assert ellipsoid != point
+        assert ellipsoid != polygon
+        assert ellipsoid == ellipsoid
 
     def test_contains(
         self,
         point: Point,
         polygon: Polygon,
-        spheroid: Spheroid,
+        ellipsoid: Ellipsoid,
     ):
         with pytest.raises(Exception):
             point.contains(point)
         with pytest.raises(Exception):
             point.contains(polygon)
         with pytest.raises(Exception):
-            point.contains(spheroid)
+            point.contains(ellipsoid)
 
         polygon.contains(point)
         with pytest.raises(Exception):
             polygon.contains(polygon)
         with pytest.raises(Exception):
-            polygon.contains(spheroid)
+            polygon.contains(ellipsoid)
 
         with pytest.raises(Exception):
-            spheroid.contains(point)
+            ellipsoid.contains(point)
         with pytest.raises(Exception):
-            spheroid.contains(polygon)
+            ellipsoid.contains(polygon)
         with pytest.raises(Exception):
-            spheroid.contains(spheroid)
+            ellipsoid.contains(ellipsoid)
 
     def test_intersects(
         self,
         point: Point,
         polygon: Polygon,
-        spheroid: Spheroid,
+        ellipsoid: Ellipsoid,
     ):
         with pytest.raises(Exception):
             point.intersects(point)
         with pytest.raises(Exception):
             point.intersects(polygon)
         with pytest.raises(Exception):
-            point.intersects(spheroid)
+            point.intersects(ellipsoid)
 
         with pytest.raises(Exception):
             polygon.intersects(point)
         with pytest.raises(Exception):
             polygon.intersects(polygon)
         with pytest.raises(Exception):
-            polygon.intersects(spheroid)
+            polygon.intersects(ellipsoid)
 
         with pytest.raises(Exception):
-            spheroid.intersects(point)
+            ellipsoid.intersects(point)
         with pytest.raises(Exception):
-            spheroid.intersects(polygon)
+            ellipsoid.intersects(polygon)
         with pytest.raises(Exception):
-            spheroid.intersects(spheroid)
+            ellipsoid.intersects(ellipsoid)

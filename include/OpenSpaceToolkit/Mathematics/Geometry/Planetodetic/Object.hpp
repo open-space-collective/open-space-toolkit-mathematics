@@ -21,8 +21,9 @@ using ostk::core::type::String;
 
 /// @brief                      Planetodetic object
 ///
-///                             Base class for objects in planetodetic coordinate systems
-///                             (latitude/longitude on reference spheroids)
+///                             Base class for objects in planetodetic coordinate systems.
+///
+/// @ref                        https://en.wikipedia.org/wiki/Planetary_coordinate_system
 
 class Object
 {

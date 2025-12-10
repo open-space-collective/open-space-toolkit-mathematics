@@ -11,8 +11,8 @@
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/Planetodetic/Object.hpp>
+#include <OpenSpaceToolkit/Mathematics/Geometry/Planetodetic/Object/Ellipsoid.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/Planetodetic/Object/Point.hpp>
-#include <OpenSpaceToolkit/Mathematics/Geometry/Planetodetic/Object/Spheroid.hpp>
 
 namespace ostk
 {
@@ -31,15 +31,15 @@ using ostk::core::type::Size;
 using ostk::core::type::String;
 
 using ostk::mathematics::geometry::planetodetic::Object;
+using ostk::mathematics::geometry::planetodetic::object::Ellipsoid;
 using ostk::mathematics::geometry::planetodetic::object::Point;
-using ostk::mathematics::geometry::planetodetic::object::Spheroid;
 
 #define DEFAULT_PRECISION Integer::Undefined()
 
-/// @brief                      Polygon defined on a reference spheroid.
+/// @brief                      Polygon defined on a reference ellipsoid.
 ///
 ///                             The segments connecting both outer ring (and inner rings vertices if any)
-///                             are geodesics on the reference spheroid. The "inside" of the polygon is defined
+///                             are geodesics on the reference ellipsoid. The "inside" of the polygon is defined
 ///                             as the area to the left when traversing the vertices in a counter-clockwise direction.
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Polygon
@@ -110,16 +110,16 @@ class Polygon : public Object
 
     bool contains(const Point& aPoint) const;
 
-    /// @brief              Get reference spheroid
+    /// @brief              Get reference ellipsoid
     ///
     /// @code
     ///                     Polygon polygon = ... ;
-    ///                     Spheroid spheroid = polygon.getSpheroid() ;
+    ///                     Ellipsoid ellipsoid = polygon.getEllipsoid() ;
     /// @endcode
     ///
-    /// @return             Reference spheroid
+    /// @return             Reference ellipsoid
 
-    Spheroid getSpheroid() const;
+    Ellipsoid getEllipsoid() const;
 
     /// @brief              Get number of vertices
     ///
@@ -160,31 +160,31 @@ class Polygon : public Object
 
     virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
-    /// @brief              Constructs a simple polygon from its outer ring vertices
+    /// @brief              Construct a simple polygon from its outer ring vertices
     ///
     /// @ref                https://en.wikipedia.org/wiki/Simple_polygon
     ///
     /// @code
-    ///                     Spheroid spheroid = Spheroid::Sphere(6378137.0);
+    ///                     Ellipsoid ellipsoid = Ellipsoid::Sphere(6378137.0);
     ///                     Array<Point> outerRing = {
     ///                         Point(Angle::Degrees(-1.0), Angle::Degrees(-1.0)),
     ///                         Point(Angle::Degrees(-1.0), Angle::Degrees(1.0)),
     ///                         Point(Angle::Degrees(1.0), Angle::Degrees(1.0)),
     ///                         Point(Angle::Degrees(1.0), Angle::Degrees(-1.0))
     ///                     };
-    ///                     Polygon polygon = Polygon::Simple(spheroid, outerRing);
+    ///                     Polygon polygon = Polygon::Simple(ellipsoid, outerRing);
     /// @endcode
     ///
-    /// @param              [in] aSpheroid A reference spheroid
+    /// @param              [in] anEllipsoid A reference ellipsoid
     /// @param              [in] anOuterRing An array of vertices (planetodetic points). The "inside" of the polygon is
     ///                     defined as the area to the left when traversing the outer ring vertices in a
     ///                     counter-clockwise direction.
     ///
     /// @return             Polygon
 
-    static Polygon Simple(const Spheroid& aSpheroid, const Array<Point>& anOuterRing);
+    static Polygon Simple(const Ellipsoid& anEllipsoid, const Array<Point>& anOuterRing);
 
-    /// @brief              Constructs an undefined polygon
+    /// @brief              Construct an undefined polygon
     ///
     /// @code
     ///                     Polygon polygon = Polygon::Undefined() ; // Undefined
@@ -197,14 +197,14 @@ class Polygon : public Object
    private:
     /// @brief              Constructor
     ///
-    /// @param              [in] aSpheroid A reference spheroid
+    /// @param              [in] anEllipsoid A reference ellipsoid
     /// @param              [in] anOuterRing An array of vertices (planetodetic points)
 
-    Polygon(const Spheroid& aSpheroid, const Array<Point>& anOuterRing);
+    Polygon(const Ellipsoid& anEllipsoid, const Array<Point>& anOuterRing);
 
     class Impl;
 
-    Spheroid spheroid_;
+    Ellipsoid ellipsoid_;
     Array<Point> outerRing_;
     std::unique_ptr<Impl> implUPtr_;
 

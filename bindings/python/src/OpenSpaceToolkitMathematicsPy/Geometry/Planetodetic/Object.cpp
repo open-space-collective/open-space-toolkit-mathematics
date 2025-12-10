@@ -5,9 +5,9 @@
 
 #include <OpenSpaceToolkit/Mathematics/Geometry/Planetodetic/Object.hpp>
 
+#include <OpenSpaceToolkitMathematicsPy/Geometry/Planetodetic/Object/Ellipsoid.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/Planetodetic/Object/Point.cpp>
 #include <OpenSpaceToolkitMathematicsPy/Geometry/Planetodetic/Object/Polygon.cpp>
-#include <OpenSpaceToolkitMathematicsPy/Geometry/Planetodetic/Object/Spheroid.cpp>
 
 inline void OpenSpaceToolkitMathematicsPy_Geometry_Planetodetic_Object(pybind11::module& aModule)
 {
@@ -106,8 +106,8 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Planetodetic_Object(pybind11:
                     bool: True if this object contains the other, False otherwise.
 
                 Example:
-                    >>> spheroid = Spheroid.sphere(6378137.0)
-                    >>> polygon = Polygon.simple(spheroid, [
+                    >>> ellipsoid = Ellipsoid.sphere(6378137.0)
+                    >>> polygon = Polygon.simple(ellipsoid, [
                     ...     Point(Angle.degrees(-10.0), Angle.degrees(-10.0)),
                     ...     Point(Angle.degrees(-10.0), Angle.degrees(10.0)),
                     ...     Point(Angle.degrees(10.0), Angle.degrees(10.0)),
@@ -132,7 +132,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Planetodetic_Object(pybind11:
     auto object = aModule.def_submodule("object");
 
     // Add object to python "object" submodules
+    OpenSpaceToolkitMathematicsPy_Geometry_Planetodetic_Object_Ellipsoid(object);
     OpenSpaceToolkitMathematicsPy_Geometry_Planetodetic_Object_Point(object);
-    OpenSpaceToolkitMathematicsPy_Geometry_Planetodetic_Object_Spheroid(object);
     OpenSpaceToolkitMathematicsPy_Geometry_Planetodetic_Object_Polygon(object);
 }
