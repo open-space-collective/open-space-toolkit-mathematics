@@ -121,8 +121,6 @@ bool Point::isCollinear(const Point& aPoint1, const Point& aPoint2) const
 
 String Point::toString(const Object::Format& aFormat, const Integer& aPrecision) const
 {
-    using ostk::core::type::String;
-
     switch (aFormat)
     {
         case Object::Format::Standard:
@@ -138,8 +136,6 @@ String Point::toString(const Object::Format& aFormat, const Integer& aPrecision)
         default:
             throw ostk::core::error::runtime::Wrong("Format");
     }
-
-    return String::Empty();
 }
 
 void Point::print(std::ostream& anOutputStream, bool displayDecorators) const

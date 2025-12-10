@@ -197,6 +197,16 @@ class Spheroid : public Object
 
     static Spheroid Sphere(const Real& aRadius);
 
+    /// @brief              Constructs a WGS84 spheroid (in meters)
+    ///
+    /// @code
+    ///                     Spheroid spheroid = Spheroid::WGS84() ; // WGS84
+    /// @endcode
+    ///
+    /// @return             WGS84 spheroid
+
+    static Spheroid WGS84();
+
     /// @brief              Constructs a spheroid from equatorial radius and flattening
     ///
     /// @code

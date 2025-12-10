@@ -207,5 +207,21 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Planetodetic_Object_Spheroid(
             arg("radius")
         )
 
+        .def_static(
+            "wgs84",
+            &Spheroid::WGS84,
+            R"doc(
+                Create a WGS84 spheroid.
+
+                Returns:
+                    Spheroid: The WGS84 spheroid (a = 6378137.0 m, f = 1/298.257223563).
+
+                Example:
+                    >>> spheroid = Spheroid.wgs84()
+                    >>> spheroid.get_equatorial_radius()  # 6378137.0
+                    >>> spheroid.get_flattening()  # ~0.00335281
+            )doc"
+        )
+
         ;
 }

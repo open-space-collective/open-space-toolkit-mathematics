@@ -131,8 +131,6 @@ bool Spheroid::isSphere() const
 
 String Spheroid::toString(const Object::Format& aFormat, const Integer& aPrecision) const
 {
-    using ostk::core::type::String;
-
     switch (aFormat)
     {
         case Object::Format::Standard:
@@ -150,8 +148,6 @@ String Spheroid::toString(const Object::Format& aFormat, const Integer& aPrecisi
         default:
             throw ostk::core::error::runtime::Wrong("Format");
     }
-
-    return String::Empty();
 }
 
 void Spheroid::print(std::ostream& anOutputStream, bool displayDecorators) const
@@ -181,6 +177,11 @@ Spheroid Spheroid::Undefined()
 Spheroid Spheroid::Sphere(const Real& aRadius)
 {
     return {aRadius, 0.0};
+}
+
+Spheroid Spheroid::WGS84()
+{
+    return {6378137.0, 1.0 / 298.257223563};
 }
 
 }  // namespace object

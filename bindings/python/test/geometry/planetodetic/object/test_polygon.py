@@ -193,9 +193,8 @@ class TestPolygon:
     ):
         polygon: Polygon = Polygon.simple(spheroid, outer_ring)
 
-        for input_vertex, output_vertex in zip(
-            polygon.get_vertices(), outer_ring, strict=True
-        ):
+        assert len(polygon.get_vertices()) == len(outer_ring)
+        for input_vertex, output_vertex in zip(polygon.get_vertices(), outer_ring):
             assert input_vertex == output_vertex
 
     def test_contains_point_success(

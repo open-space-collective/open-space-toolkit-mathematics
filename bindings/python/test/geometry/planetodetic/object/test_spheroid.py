@@ -78,6 +78,14 @@ class TestSpheroid:
         with pytest.raises(Exception):
             Spheroid.sphere(-1.0)
 
+    def test_wgs84_constructor_success(self):
+        spheroid: Spheroid = Spheroid.wgs84()
+
+        assert isinstance(spheroid, Spheroid)
+        assert isinstance(spheroid, Object)
+        assert spheroid.get_equatorial_radius() == 6378137.0
+        assert abs(float(spheroid.get_flattening()) - 1.0 / 298.257223563) < 1e-15
+
     def test_undefined_constructor_success(self):
         spheroid: Spheroid = Spheroid.undefined()
 

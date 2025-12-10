@@ -402,6 +402,21 @@ TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Spheroid, Spher
     }
 }
 
+TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Spheroid, WGS84)
+{
+    {
+        const Spheroid wgs84 = Spheroid::WGS84();
+
+        EXPECT_TRUE(wgs84.isDefined());
+        EXPECT_EQ(6378137.0, wgs84.getEquatorialRadius());
+        EXPECT_EQ(1.0 / 298.257223563, wgs84.getFlattening());
+        EXPECT_NEAR(6356752.314245, wgs84.getPolarRadius(), 1e-6);
+        EXPECT_FALSE(wgs84.isSphere());
+        EXPECT_TRUE(wgs84.isOblate());
+        EXPECT_FALSE(wgs84.isProlate());
+    }
+}
+
 TEST_F(OpenSpaceToolkit_Mathematics_Geometry_Planetodetic_Object_Spheroid, FromEquatorialRadiusAndFlattening)
 {
     {

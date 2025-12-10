@@ -61,9 +61,10 @@ Polygon::Impl::Impl(const Spheroid& aSpheroid, const Array<Point>& anOuterRing)
 
 bool Polygon::Impl::contains(const Point& aPoint) const
 {
-    BoostPoint boostPoint(aPoint.getLongitude().inDegrees(), aPoint.getLatitude().inDegrees());
+    const BoostPoint boostPoint(aPoint.getLongitude().inDegrees(), aPoint.getLatitude().inDegrees());
 
-    return boost::geometry::covered_by(boostPoint, boostPolygon_);
+    const auto strategy = boost::geometry::strategies::relate::geographic<>(boostSpheroid_);
+    return boost::geometry::covered_by(boostPoint, boostPolygon_, strategy);
 }
 
 Polygon::Polygon(const Spheroid& aSpheroid, const Array<Point>& anOuterRing)
@@ -222,8 +223,6 @@ bool Polygon::contains(const Point& aPoint) const
             "Error when checking if polygon contains point: [{}]", anException.what()
         );
     }
-
-    return false;
 }
 
 Spheroid Polygon::getSpheroid() const
@@ -301,8 +300,6 @@ String Polygon::toString(const Object::Format& aFormat, const Integer& aPrecisio
         default:
             throw ostk::core::error::runtime::Wrong("Format");
     }
-
-    return String::Empty();
 }
 
 void Polygon::print(std::ostream& anOutputStream, bool displayDecorators) const

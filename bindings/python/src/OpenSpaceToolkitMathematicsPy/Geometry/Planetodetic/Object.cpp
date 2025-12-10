@@ -85,21 +85,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_Planetodetic_Object(pybind11:
             R"doc(
                 Check if this planetodetic object intersects with another object.
 
-                Args:
-                    object (Object): The object to check intersection with.
+                Note:
+                    This method is not implemented yet.
 
                 Returns:
                     bool: True if objects intersect, False otherwise.
-
-                Example:
-                    >>> spheroid = Spheroid.sphere(6378137.0)
-                    >>> polygon = Polygon.simple(spheroid, [
-                    ...     Point(Angle.degrees(-10.0), Angle.degrees(-10.0)),
-                    ...     Point(Angle.degrees(-10.0), Angle.degrees(10.0)),
-                    ...     Point(Angle.degrees(10.0), Angle.degrees(10.0))
-                    ... ])
-                    >>> point = Point(Angle.degrees(0.0), Angle.degrees(0.0))
-                    >>> polygon.intersects(point)  # True
             )doc",
             arg("object")
         )
