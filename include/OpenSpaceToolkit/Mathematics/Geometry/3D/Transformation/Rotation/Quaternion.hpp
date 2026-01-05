@@ -439,6 +439,11 @@ class Quaternion
 
     /// @brief                  Multiply Quaternion using cross multiplication
     ///
+    /// @details                Multiply quaternions using the Hamiltonian convention
+    ///
+    /// @ref                    https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
+    /// @ref                    Markley F. L. — Fundamentals of Spacecraft Attitude Determination and Control, p.37
+    ///
     /// @code
     ///                         Quaternion q_1 = ...
     ///                         Quaternion q_2 = ...
