@@ -365,7 +365,7 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
             &Quaternion::dotMultiply,
             R"doc(
                 Perform multiplication with another quaternion using the Shuster/JPL convention, such that
-                q1.dot_multiply(q2) == q2.cross_multiply(q11).
+                q1.dot_multiply(q2) == q2.cross_multiply(q1).
 
                 See also:
                     - https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Alternative_conventions
