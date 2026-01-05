@@ -439,6 +439,12 @@ class Quaternion
 
     /// @brief                  Multiply Quaternion using cross multiplication
     ///
+    /// @details                Multiply quaternions using the Shuster/JPL convention, such that
+    ///                         q_1.crossMultiply(q_2) == q_2.dotMultiply(q_1)
+    ///
+    /// @ref                    https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Alternative_conventions
+    /// @ref                    Markley F. L. — Fundamentals of Spacecraft Attitude Determination and Control, p.37
+    ///
     /// @code
     ///                         Quaternion q_1 = ...
     ///                         Quaternion q_2 = ...
@@ -451,6 +457,11 @@ class Quaternion
     Quaternion crossMultiply(const Quaternion& aQuaternion) const;
 
     /// @brief                  Multiply Quaternion using dot multiplication
+    ///
+    /// @details                Multiply quaternions using the Hamiltonian convention
+    ///
+    /// @ref                    https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
+    /// @ref                    Markley F. L. — Fundamentals of Spacecraft Attitude Determination and Control, p.37
     ///
     /// @code
     ///                         Quaternion q_1 = ...

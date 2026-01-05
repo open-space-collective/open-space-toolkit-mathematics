@@ -102,7 +102,24 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
 
         .def(self + self)
         .def(self += self)
-        .def(self * self)
+        .def(
+            self * self,
+            R"doc(
+                Multiplication operator (Quaternion).
+
+                This operator uses cross multiplication (Shuster/JPL convention).
+
+                See also:
+                    - https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Alternative_conventions
+                    - Markley F. L. — Fundamentals of Spacecraft Attitude Determination and Control, p.37
+
+                Args:
+                    other (Quaternion): A Quaternion to multiply with.
+
+                Returns:
+                    Quaternion: The result of cross multiplication.
+            )doc"
+        )
         .def(self * Vector3d())
         .def(self * double())
         .def(double() * self)
@@ -345,7 +362,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
             "cross_multiply",
             &Quaternion::crossMultiply,
             R"doc(
-                Perform cross multiplication with another quaternion.
+                Perform multiplication with another quaternion using the Shuster/JPL convention, such that
+                q1.cross_multiply(q2) == q2.dot_multiply(q1).
+
+                See also:
+                    - https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Alternative_conventions
+                    - Markley F. L. — Fundamentals of Spacecraft Attitude Determination and Control, p.37
 
                 Args:
                     quaternion (Quaternion): The quaternion to multiply with.
@@ -364,7 +386,11 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
             "dot_multiply",
             &Quaternion::dotMultiply,
             R"doc(
-                Perform dot multiplication with another quaternion.
+                Perform multiplication with another quaternion using the Hamiltonian convention.
+
+                See also:
+                    - https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation
+                    - Markley F. L. — Fundamentals of Spacecraft Attitude Determination and Control, p.37
 
                 Args:
                     quaternion (Quaternion): The quaternion to multiply with.
