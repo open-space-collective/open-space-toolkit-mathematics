@@ -364,7 +364,12 @@ inline void OpenSpaceToolkitMathematicsPy_Geometry_3D_Transformation_Rotation_Qu
             "dot_multiply",
             &Quaternion::dotMultiply,
             R"doc(
-                Perform dot multiplication with another quaternion.
+                Perform multiplication with another quaternion using the Shuster/JPL convention, such that
+                q1.dot_multiply(q2) == q2.cross_multiply(q11).
+
+                See also:
+                    - https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Alternative_conventions
+                    - Markley F. L. — Fundamentals of Spacecraft Attitude Determination and Control, p.37
 
                 Args:
                     quaternion (Quaternion): The quaternion to multiply with.

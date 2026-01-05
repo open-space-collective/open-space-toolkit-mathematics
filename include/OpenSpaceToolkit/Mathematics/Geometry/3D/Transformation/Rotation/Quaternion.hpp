@@ -452,6 +452,12 @@ class Quaternion
 
     /// @brief                  Multiply Quaternion using dot multiplication
     ///
+    /// @details                Multiply quaternions using the Shuster/JPL convention, such that
+    ///                         q_1.dotMultiply(q_2) == q_2.crossMultiply(q_1)
+    ///
+    /// @ref                    https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation#Alternative_conventions
+    /// @ref                    Markley F. L. — Fundamentals of Spacecraft Attitude Determination and Control, p.37
+    ///
     /// @code
     ///                         Quaternion q_1 = ...
     ///                         Quaternion q_2 = ...
