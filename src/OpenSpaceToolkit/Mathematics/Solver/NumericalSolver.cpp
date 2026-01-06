@@ -23,6 +23,8 @@ typedef runge_kutta4<NumericalSolver::StateVector> stepper_type_4;
 typedef runge_kutta_cash_karp54<NumericalSolver::StateVector> error_stepper_type_54;
 typedef runge_kutta_fehlberg78<NumericalSolver::StateVector> error_stepper_type_78;
 typedef runge_kutta_dopri5<NumericalSolver::StateVector> dense_stepper_type_5;
+typedef adams_bashforth_moulton<5, NumericalSolver::StateVector> adams_bashforth_moulton_stepper_type;
+typedef bulirsch_stoer<NumericalSolver::StateVector> bulirsch_stoer_stepper_type;
 
 NumericalSolver::NumericalSolver(
     const NumericalSolver::LogType& aLogType,
@@ -240,6 +242,32 @@ Array<NumericalSolver::Solution> NumericalSolver::integrateTime(
             break;
         }
 
+        case NumericalSolver::StepperType::AdamsBashforthMoulton:
+        {
+            integrate_times(
+                adams_bashforth_moulton_stepper_type(),
+                aSystemOfEquations,
+                aStateVector,
+                durationArray,
+                adjustedTimeStep,
+                observer
+            );
+            break;
+        }
+
+        case NumericalSolver::StepperType::BulirschStoer:
+        {
+            integrate_times(
+                bulirsch_stoer_stepper_type(absoluteTolerance_, relativeTolerance_),
+                aSystemOfEquations,
+                aStateVector,
+                durationArray,
+                adjustedTimeStep,
+                observer
+            );
+            break;
+        }
+
         default:
             throw ostk::core::error::runtime::Wrong("Stepper type");
     }
@@ -411,6 +439,69 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
             }
         }
 
+        case NumericalSolver::StepperType::AdamsBashforthMoulton:
+        {
+            // Adams-Bashforth-Moulton is a multistep stepper without error control
+            // Similar to RK4, it uses constant step size
+            switch (logType_)
+            {
+                case NumericalSolver::LogType::NoLog:
+                case NumericalSolver::LogType::LogAdaptive:
+                case NumericalSolver::LogType::LogConstant:
+                {
+                    integrate_const(
+                        adams_bashforth_moulton_stepper_type(),
+                        aSystemOfEquations,
+                        aStateVector,
+                        (0.0),
+                        (double)aDurationInSeconds,
+                        adjustedTimeStep,
+                        observer
+                    );
+                    return {aStateVector, aDurationInSeconds};
+                }
+                default:
+                    throw ostk::core::error::runtime::Wrong("Log type");
+            }
+        }
+
+        case NumericalSolver::StepperType::BulirschStoer:
+        {
+            switch (logType_)
+            {
+                case NumericalSolver::LogType::NoLog:
+                case NumericalSolver::LogType::LogAdaptive:
+                {
+                    integrate_adaptive(
+                        bulirsch_stoer_stepper_type(absoluteTolerance_, relativeTolerance_),
+                        aSystemOfEquations,
+                        aStateVector,
+                        (0.0),
+                        (double)aDurationInSeconds,
+                        adjustedTimeStep,
+                        observer
+                    );
+                    return {aStateVector, aDurationInSeconds};
+                }
+
+                case NumericalSolver::LogType::LogConstant:
+                {
+                    integrate_const(
+                        bulirsch_stoer_stepper_type(absoluteTolerance_, relativeTolerance_),
+                        aSystemOfEquations,
+                        aStateVector,
+                        (0.0),
+                        (double)aDurationInSeconds,
+                        adjustedTimeStep,
+                        observer
+                    );
+                    return {aStateVector, aDurationInSeconds};
+                }
+                default:
+                    throw ostk::core::error::runtime::Wrong("Log type");
+            }
+        }
+
         default:
             throw ostk::core::error::runtime::Wrong("Stepper type");
     }
@@ -472,6 +563,12 @@ String NumericalSolver::StringFromStepperType(const NumericalSolver::StepperType
 
         case NumericalSolver::StepperType::RungeKuttaDopri5:
             return "RungeKuttaDopri5";
+
+        case NumericalSolver::StepperType::AdamsBashforthMoulton:
+            return "AdamsBashforthMoulton";
+
+        case NumericalSolver::StepperType::BulirschStoer:
+            return "BulirschStoer";
 
         default:
             throw ostk::core::error::runtime::Wrong("Stepper Type");

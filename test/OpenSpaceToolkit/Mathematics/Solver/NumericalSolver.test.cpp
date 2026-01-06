@@ -104,7 +104,9 @@ INSTANTIATE_TEST_SUITE_P(
         std::make_tuple(NumericalSolver::StepperType::RungeKutta4),
         std::make_tuple(NumericalSolver::StepperType::RungeKuttaCashKarp54),
         std::make_tuple(NumericalSolver::StepperType::RungeKuttaFehlberg78),
-        std::make_tuple(NumericalSolver::StepperType::RungeKuttaDopri5)
+        std::make_tuple(NumericalSolver::StepperType::RungeKuttaDopri5),
+        std::make_tuple(NumericalSolver::StepperType::AdamsBashforthMoulton),
+        std::make_tuple(NumericalSolver::StepperType::BulirschStoer)
     )
 );
 
@@ -363,6 +365,13 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, StringFromType)
         EXPECT_TRUE(
             NumericalSolver::StringFromStepperType(NumericalSolver::StepperType::RungeKuttaDopri5) == "RungeKuttaDopri5"
         );
+        EXPECT_TRUE(
+            NumericalSolver::StringFromStepperType(NumericalSolver::StepperType::AdamsBashforthMoulton) ==
+            "AdamsBashforthMoulton"
+        );
+        EXPECT_TRUE(
+            NumericalSolver::StringFromStepperType(NumericalSolver::StepperType::BulirschStoer) == "BulirschStoer"
+        );
     }
 
     {
@@ -467,12 +476,17 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
         {-1.0, -4.0, -7.0, -10.0},
     };
 
+    // Adams-Bashforth-Moulton is a multistep method without error control,
+    // so we use a more lenient tolerance for array tests
+    const double tolerance =
+        (std::get<0>(parameters) == NumericalSolver::StepperType::AdamsBashforthMoulton) ? 2e-7 : 2e-8;
+
     for (const Array<Real> &durationArray : durationArrays)
     {
         const Array<NumericalSolver::Solution> propagatedStateVectorArray =
             numericalSolver.integrateDuration(defaultStateVector_, durationArray, systemOfEquations_);
 
-        validatePropagatedStates(durationArray, propagatedStateVectorArray, 2e-8);
+        validatePropagatedStates(durationArray, propagatedStateVectorArray, tolerance);
     }
 }
 
@@ -566,12 +580,17 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
         {-1.0, -4.0, -7.0, -10.0},
     };
 
+    // Adams-Bashforth-Moulton is a multistep method without error control,
+    // so we use a more lenient tolerance for array tests
+    const double tolerance =
+        (std::get<0>(parameters) == NumericalSolver::StepperType::AdamsBashforthMoulton) ? 2e-7 : 2e-8;
+
     for (const Array<Real> &timeArray : timeArrays)
     {
         const Array<NumericalSolver::Solution> propagatedStateVectorArray =
             numericalSolver.integrateTime(defaultStateVector_, defaultStartTime_, timeArray, systemOfEquations_);
 
-        validatePropagatedStates(timeArray, propagatedStateVectorArray, 2e-8);
+        validatePropagatedStates(timeArray, propagatedStateVectorArray, tolerance);
     }
 
     {

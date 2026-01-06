@@ -406,6 +406,8 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::modul
             .value("RungeKuttaCashKarp54", NumericalSolver::StepperType::RungeKuttaCashKarp54)
             .value("RungeKuttaFehlberg78", NumericalSolver::StepperType::RungeKuttaFehlberg78)
             .value("RungeKuttaDopri5", NumericalSolver::StepperType::RungeKuttaDopri5)
+            .value("AdamsBashforthMoulton", NumericalSolver::StepperType::AdamsBashforthMoulton)
+            .value("BulirschStoer", NumericalSolver::StepperType::BulirschStoer)
 
             ;
 

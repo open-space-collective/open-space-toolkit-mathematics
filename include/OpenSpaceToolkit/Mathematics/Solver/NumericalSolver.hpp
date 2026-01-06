@@ -37,7 +37,9 @@ class NumericalSolver
         RungeKutta4,
         RungeKuttaCashKarp54,
         RungeKuttaFehlberg78,
-        RungeKuttaDopri5
+        RungeKuttaDopri5,
+        AdamsBashforthMoulton,
+        BulirschStoer
     };
 
     enum class LogType
