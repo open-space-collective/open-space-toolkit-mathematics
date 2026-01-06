@@ -402,12 +402,33 @@ inline void OpenSpaceToolkitMathematicsPy_Solver_NumericalSolver(pybind11::modul
 
         enum_<NumericalSolver::StepperType>(numericalSolver, "StepperType")
 
-            .value("RungeKutta4", NumericalSolver::StepperType::RungeKutta4)
-            .value("RungeKuttaCashKarp54", NumericalSolver::StepperType::RungeKuttaCashKarp54)
-            .value("RungeKuttaFehlberg78", NumericalSolver::StepperType::RungeKuttaFehlberg78)
-            .value("RungeKuttaDopri5", NumericalSolver::StepperType::RungeKuttaDopri5)
-            .value("AdamsBashforthMoulton", NumericalSolver::StepperType::AdamsBashforthMoulton)
-            .value("BulirschStoer", NumericalSolver::StepperType::BulirschStoer)
+            .value("RungeKutta4", NumericalSolver::StepperType::RungeKutta4, "Runge-Kutta 4th order")
+            .value(
+                "RungeKuttaCashKarp54",
+                NumericalSolver::StepperType::RungeKuttaCashKarp54,
+                "Runge-Kutta Cash-Karp 5th order"
+            )
+            .value(
+                "RungeKuttaFehlberg78",
+                NumericalSolver::StepperType::RungeKuttaFehlberg78,
+                "Runge-Kutta Fehlberg 7th order"
+            )
+            .value(
+                "RungeKuttaDopri5",
+                NumericalSolver::StepperType::RungeKuttaDopri5,
+                "Runge-Kutta Dormand-Prince 5th order"
+            )
+            .value(
+                "AdamsBashforthMoulton5",
+                NumericalSolver::StepperType::AdamsBashforthMoulton5,
+                "Adams-Bashforth-Moulton 5th order"
+            )
+            .value(
+                "AdamsBashforthMoulton8",
+                NumericalSolver::StepperType::AdamsBashforthMoulton8,
+                "Adams-Bashforth-Moulton 8th order"
+            )
+            .value("BulirschStoer", NumericalSolver::StepperType::BulirschStoer, "Bulirsch-Stoer")
 
             ;
 

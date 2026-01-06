@@ -38,7 +38,8 @@ class NumericalSolver
         RungeKuttaCashKarp54,
         RungeKuttaFehlberg78,
         RungeKuttaDopri5,
-        AdamsBashforthMoulton,
+        AdamsBashforthMoulton5,
+        AdamsBashforthMoulton8,
         BulirschStoer
     };
 

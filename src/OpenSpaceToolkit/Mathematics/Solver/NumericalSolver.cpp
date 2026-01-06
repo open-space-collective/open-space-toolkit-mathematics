@@ -23,7 +23,8 @@ typedef runge_kutta4<NumericalSolver::StateVector> stepper_type_4;
 typedef runge_kutta_cash_karp54<NumericalSolver::StateVector> error_stepper_type_54;
 typedef runge_kutta_fehlberg78<NumericalSolver::StateVector> error_stepper_type_78;
 typedef runge_kutta_dopri5<NumericalSolver::StateVector> dense_stepper_type_5;
-typedef adams_bashforth_moulton<5, NumericalSolver::StateVector> adams_bashforth_moulton_stepper_type;
+typedef adams_bashforth_moulton<5, NumericalSolver::StateVector> adams_bashforth_moulton_stepper_type_5;
+typedef adams_bashforth_moulton<8, NumericalSolver::StateVector> adams_bashforth_moulton_stepper_type_8;
 typedef bulirsch_stoer<NumericalSolver::StateVector> bulirsch_stoer_stepper_type;
 
 NumericalSolver::NumericalSolver(
@@ -242,10 +243,23 @@ Array<NumericalSolver::Solution> NumericalSolver::integrateTime(
             break;
         }
 
-        case NumericalSolver::StepperType::AdamsBashforthMoulton:
+        case NumericalSolver::StepperType::AdamsBashforthMoulton5:
         {
             integrate_times(
-                adams_bashforth_moulton_stepper_type(),
+                adams_bashforth_moulton_stepper_type_5(),
+                aSystemOfEquations,
+                aStateVector,
+                durationArray,
+                adjustedTimeStep,
+                observer
+            );
+            break;
+        }
+
+        case NumericalSolver::StepperType::AdamsBashforthMoulton8:
+        {
+            integrate_times(
+                adams_bashforth_moulton_stepper_type_8(),
                 aSystemOfEquations,
                 aStateVector,
                 durationArray,
@@ -439,7 +453,7 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
             }
         }
 
-        case NumericalSolver::StepperType::AdamsBashforthMoulton:
+        case NumericalSolver::StepperType::AdamsBashforthMoulton5:
         {
             // Adams-Bashforth-Moulton is a multistep stepper without error control
             // Similar to RK4, it uses constant step size
@@ -450,7 +464,7 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
                 case NumericalSolver::LogType::LogConstant:
                 {
                     integrate_const(
-                        adams_bashforth_moulton_stepper_type(),
+                        adams_bashforth_moulton_stepper_type_5(),
                         aSystemOfEquations,
                         aStateVector,
                         (0.0),
@@ -465,6 +479,29 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
             }
         }
 
+        case NumericalSolver::StepperType::AdamsBashforthMoulton8:
+        {
+            switch (logType_)
+            {
+                case NumericalSolver::LogType::NoLog:
+                case NumericalSolver::LogType::LogAdaptive:
+                case NumericalSolver::LogType::LogConstant:
+                {
+                    integrate_const(
+                        adams_bashforth_moulton_stepper_type_8(),
+                        aSystemOfEquations,
+                        aStateVector,
+                        (0.0),
+                        (double)aDurationInSeconds,
+                        adjustedTimeStep,
+                        observer
+                    );
+                    return {aStateVector, aDurationInSeconds};
+                }
+                default:
+                    throw ostk::core::error::runtime::Wrong("Log type");
+            }
+        }
         case NumericalSolver::StepperType::BulirschStoer:
         {
             switch (logType_)
@@ -564,8 +601,11 @@ String NumericalSolver::StringFromStepperType(const NumericalSolver::StepperType
         case NumericalSolver::StepperType::RungeKuttaDopri5:
             return "RungeKuttaDopri5";
 
-        case NumericalSolver::StepperType::AdamsBashforthMoulton:
-            return "AdamsBashforthMoulton";
+        case NumericalSolver::StepperType::AdamsBashforthMoulton8:
+            return "AdamsBashforthMoulton8";
+
+        case NumericalSolver::StepperType::AdamsBashforthMoulton5:
+            return "AdamsBashforthMoulton5";
 
         case NumericalSolver::StepperType::BulirschStoer:
             return "BulirschStoer";

@@ -93,7 +93,7 @@ class OpenSpaceToolkit_Mathematics_Solver_NumericalSolver : public ::testing::Te
 
 class OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized
     : public OpenSpaceToolkit_Mathematics_Solver_NumericalSolver,
-      public ::testing::WithParamInterface<Tuple<NumericalSolver::StepperType>>
+      public ::testing::WithParamInterface<Tuple<NumericalSolver::StepperType, double>>
 {
 };
 
@@ -101,12 +101,13 @@ INSTANTIATE_TEST_SUITE_P(
     Integration,
     OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized,
     ::testing::Values(
-        std::make_tuple(NumericalSolver::StepperType::RungeKutta4),
-        std::make_tuple(NumericalSolver::StepperType::RungeKuttaCashKarp54),
-        std::make_tuple(NumericalSolver::StepperType::RungeKuttaFehlberg78),
-        std::make_tuple(NumericalSolver::StepperType::RungeKuttaDopri5),
-        std::make_tuple(NumericalSolver::StepperType::AdamsBashforthMoulton),
-        std::make_tuple(NumericalSolver::StepperType::BulirschStoer)
+        std::make_tuple(NumericalSolver::StepperType::RungeKutta4, 1e-3),
+        std::make_tuple(NumericalSolver::StepperType::RungeKuttaCashKarp54, 1e-3),
+        std::make_tuple(NumericalSolver::StepperType::RungeKuttaFehlberg78, 1e-3),
+        std::make_tuple(NumericalSolver::StepperType::RungeKuttaDopri5, 1e-3),
+        std::make_tuple(NumericalSolver::StepperType::AdamsBashforthMoulton5, 2e-4),
+        std::make_tuple(NumericalSolver::StepperType::AdamsBashforthMoulton8, 2e-4),
+        std::make_tuple(NumericalSolver::StepperType::BulirschStoer, 1e-3)
     )
 );
 
@@ -366,8 +367,12 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, StringFromType)
             NumericalSolver::StringFromStepperType(NumericalSolver::StepperType::RungeKuttaDopri5) == "RungeKuttaDopri5"
         );
         EXPECT_TRUE(
-            NumericalSolver::StringFromStepperType(NumericalSolver::StepperType::AdamsBashforthMoulton) ==
-            "AdamsBashforthMoulton"
+            NumericalSolver::StringFromStepperType(NumericalSolver::StepperType::AdamsBashforthMoulton5) ==
+            "AdamsBashforthMoulton5"
+        );
+        EXPECT_TRUE(
+            NumericalSolver::StringFromStepperType(NumericalSolver::StepperType::AdamsBashforthMoulton8) ==
+            "AdamsBashforthMoulton8"
         );
         EXPECT_TRUE(
             NumericalSolver::StringFromStepperType(NumericalSolver::StepperType::BulirschStoer) == "BulirschStoer"
@@ -466,7 +471,7 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
     NumericalSolver numericalSolver = {
         NumericalSolver::LogType::NoLog,
         std::get<0>(parameters),
-        1e-3,
+        std::get<1>(parameters),
         1.0e-12,
         1.0e-12,
     };
@@ -476,10 +481,7 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
         {-1.0, -4.0, -7.0, -10.0},
     };
 
-    // Adams-Bashforth-Moulton is a multistep method without error control,
-    // so we use a more lenient tolerance for array tests
-    const double tolerance =
-        (std::get<0>(parameters) == NumericalSolver::StepperType::AdamsBashforthMoulton) ? 2e-7 : 2e-8;
+    const double tolerance = 2e-8;
 
     for (const Array<Real> &durationArray : durationArrays)
     {
@@ -570,7 +572,7 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
     NumericalSolver numericalSolver = {
         NumericalSolver::LogType::NoLog,
         std::get<0>(parameters),
-        1e-3,
+        std::get<1>(parameters),
         1.0e-12,
         1.0e-12,
     };
@@ -580,10 +582,7 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
         {-1.0, -4.0, -7.0, -10.0},
     };
 
-    // Adams-Bashforth-Moulton is a multistep method without error control,
-    // so we use a more lenient tolerance for array tests
-    const double tolerance =
-        (std::get<0>(parameters) == NumericalSolver::StepperType::AdamsBashforthMoulton) ? 2e-7 : 2e-8;
+    const double tolerance = 2e-8;
 
     for (const Array<Real> &timeArray : timeArrays)
     {
