@@ -1,12 +1,46 @@
 /// Apache License 2.0
 
 #include <boost/numeric/odeint.hpp>
+#include <boost/numeric/odeint/algebra/vector_space_algebra.hpp>
 #include <boost/numeric/odeint/external/eigen/eigen.hpp>
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
 
 #include <OpenSpaceToolkit/Mathematics/Solver/NumericalSolver.hpp>
+
+#include <Eigen/Core>
+
+namespace boost
+{
+namespace numeric
+{
+namespace odeint
+{
+
+// We create a specialized algebra that forces Eigen to use .array()
+// for the element-wise operations the PID controller needs.
+struct eigen_pid_algebra : public vector_space_algebra
+{
+    template <class S1, class S2, class Op>
+    static void for_each2(S1& s1, S2& s2, Op op)
+    {
+        // Force Eigen into array mode for element-wise operations
+        for (int i = 0; i < s1.size(); ++i)
+            op(s1[i], s2[i]);
+    }
+
+    template <class S1, class S2, class S3, class S4, class Op>
+    static void for_each4(S1& s1, S2& s2, S3& s3, S4& s4, Op op)
+    {
+        for (int i = 0; i < s1.size(); ++i)
+            op(s1[i], s2[i], s3[i], s4[i]);
+    }
+};
+
+}  // namespace odeint
+}  // namespace numeric
+}  // namespace boost
 
 namespace ostk
 {
@@ -23,9 +57,29 @@ typedef runge_kutta4<NumericalSolver::StateVector> stepper_type_4;
 typedef runge_kutta_cash_karp54<NumericalSolver::StateVector> error_stepper_type_54;
 typedef runge_kutta_fehlberg78<NumericalSolver::StateVector> error_stepper_type_78;
 typedef runge_kutta_dopri5<NumericalSolver::StateVector> dense_stepper_type_5;
-typedef adams_bashforth_moulton<5, NumericalSolver::StateVector> adams_bashforth_moulton_stepper_type_5;
-typedef adams_bashforth_moulton<8, NumericalSolver::StateVector> adams_bashforth_moulton_stepper_type_8;
 typedef bulirsch_stoer<NumericalSolver::StateVector> bulirsch_stoer_stepper_type;
+
+template <size_t Order>
+auto make_controlled_abm(double abs_tol, double rel_tol)
+{
+    // Define the underlying adaptive ABM (using default template parameters)
+    typedef adaptive_adams_bashforth_moulton<Order, NumericalSolver::StateVector> adaptive_stepper_type;
+
+    // Define the Adjuster (where tolerances live)
+    typedef detail::pid_step_adjuster<
+        NumericalSolver::StateVector,
+        double,
+        NumericalSolver::StateVector,
+        double,
+        boost::numeric::odeint::eigen_pid_algebra>
+        step_adjuster_type;
+
+    // Define the controlled stepper
+    typedef controlled_adams_bashforth_moulton<adaptive_stepper_type, step_adjuster_type> controlled_stepper_type;
+
+    // Return the fully constructed controlled stepper
+    return controlled_stepper_type(step_adjuster_type(abs_tol, rel_tol));
+}
 
 NumericalSolver::NumericalSolver(
     const NumericalSolver::LogType& aLogType,
@@ -246,7 +300,7 @@ Array<NumericalSolver::Solution> NumericalSolver::integrateTime(
         case NumericalSolver::StepperType::AdamsBashforthMoulton5:
         {
             integrate_times(
-                adams_bashforth_moulton_stepper_type_5(),
+                make_controlled_abm<5>(absoluteTolerance_, relativeTolerance_),
                 aSystemOfEquations,
                 aStateVector,
                 durationArray,
@@ -259,7 +313,7 @@ Array<NumericalSolver::Solution> NumericalSolver::integrateTime(
         case NumericalSolver::StepperType::AdamsBashforthMoulton8:
         {
             integrate_times(
-                adams_bashforth_moulton_stepper_type_8(),
+                make_controlled_abm<8>(absoluteTolerance_, relativeTolerance_),
                 aSystemOfEquations,
                 aStateVector,
                 durationArray,
@@ -319,14 +373,14 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
         {
             // Integrate_adaptive uses constant step size under the hood
             // for a stepper without error control like RK4.
-            // Therefore, just use integrate_const for simplicity.
+            // Using integrate_adaptive ensures that the last step is exactly at the end time.
             switch (logType_)
             {
                 case NumericalSolver::LogType::NoLog:
                 case NumericalSolver::LogType::LogAdaptive:
                 case NumericalSolver::LogType::LogConstant:
                 {
-                    integrate_const(
+                    integrate_adaptive(
                         stepper_type_4(),
                         aSystemOfEquations,
                         aStateVector,
@@ -455,16 +509,27 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
 
         case NumericalSolver::StepperType::AdamsBashforthMoulton5:
         {
-            // Adams-Bashforth-Moulton is a multistep stepper without error control
-            // Similar to RK4, it uses constant step size
             switch (logType_)
             {
                 case NumericalSolver::LogType::NoLog:
                 case NumericalSolver::LogType::LogAdaptive:
+                {
+                    integrate_adaptive(
+                        make_controlled_abm<5>(absoluteTolerance_, relativeTolerance_),
+                        aSystemOfEquations,
+                        aStateVector,
+                        (0.0),
+                        (double)aDurationInSeconds,
+                        adjustedTimeStep,
+                        observer
+                    );
+                    return {aStateVector, aDurationInSeconds};
+                }
+
                 case NumericalSolver::LogType::LogConstant:
                 {
                     integrate_const(
-                        adams_bashforth_moulton_stepper_type_5(),
+                        make_controlled_abm<5>(absoluteTolerance_, relativeTolerance_),
                         aSystemOfEquations,
                         aStateVector,
                         (0.0),
@@ -485,10 +550,23 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
             {
                 case NumericalSolver::LogType::NoLog:
                 case NumericalSolver::LogType::LogAdaptive:
+                {
+                    integrate_adaptive(
+                        make_controlled_abm<8>(absoluteTolerance_, relativeTolerance_),
+                        aSystemOfEquations,
+                        aStateVector,
+                        (0.0),
+                        (double)aDurationInSeconds,
+                        adjustedTimeStep,
+                        observer
+                    );
+                    return {aStateVector, aDurationInSeconds};
+                }
+
                 case NumericalSolver::LogType::LogConstant:
                 {
                     integrate_const(
-                        adams_bashforth_moulton_stepper_type_8(),
+                        make_controlled_abm<8>(absoluteTolerance_, relativeTolerance_),
                         aSystemOfEquations,
                         aStateVector,
                         (0.0),
@@ -651,7 +729,7 @@ void NumericalSolver::observeNumericalIntegration(const NumericalSolver::StateVe
 
             std::cout << std::left << std::setw(15) << t;
 
-            std::cout.precision(10);
+            std::cout.precision(15);
             std::cout.setf(std::ios::scientific, std::ios::floatfield);
             for (Size i = 0; i < (Size)x.size(); i++)
             {
