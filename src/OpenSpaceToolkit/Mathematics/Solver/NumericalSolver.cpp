@@ -18,8 +18,10 @@ namespace numeric
 namespace odeint
 {
 
-// We create a specialized algebra that forces Eigen to use .array()
-// for the element-wise operations the PID controller needs.
+// We create a specialized algebra that does element-wise operations required by the step-size PID controller
+// used by multi-step adaptive steppers. This is because eigen *, / operations are matrix operations, not element-wise operations.
+// https://www.boost.org/doc/libs/1_82_0/boost/numeric/odeint/algebra/vector_space_algebra.hpp
+
 struct eigen_pid_algebra : public vector_space_algebra
 {
     template <class S1, class S2, class Op>
@@ -60,9 +62,9 @@ typedef runge_kutta_dopri5<NumericalSolver::StateVector> dense_stepper_type_5;
 typedef bulirsch_stoer<NumericalSolver::StateVector> bulirsch_stoer_stepper_type;
 
 template <size_t Order>
-auto make_controlled_abm(double abs_tol, double rel_tol)
+auto make_controlled_adam_bashforth_moulton(double abs_tol, double rel_tol)
 {
-    // Define the underlying adaptive ABM (using default template parameters)
+    // Define the underlying adaptive AdamsBashforthMoulton (using default template parameters)
     typedef adaptive_adams_bashforth_moulton<Order, NumericalSolver::StateVector> adaptive_stepper_type;
 
     // Define the Adjuster (where tolerances live)
@@ -300,7 +302,7 @@ Array<NumericalSolver::Solution> NumericalSolver::integrateTime(
         case NumericalSolver::StepperType::AdamsBashforthMoulton5:
         {
             integrate_times(
-                make_controlled_abm<5>(absoluteTolerance_, relativeTolerance_),
+                make_controlled_adam_bashforth_moulton<5>(absoluteTolerance_, relativeTolerance_),
                 aSystemOfEquations,
                 aStateVector,
                 durationArray,
@@ -313,7 +315,7 @@ Array<NumericalSolver::Solution> NumericalSolver::integrateTime(
         case NumericalSolver::StepperType::AdamsBashforthMoulton8:
         {
             integrate_times(
-                make_controlled_abm<8>(absoluteTolerance_, relativeTolerance_),
+                make_controlled_adam_bashforth_moulton<8>(absoluteTolerance_, relativeTolerance_),
                 aSystemOfEquations,
                 aStateVector,
                 durationArray,
@@ -515,7 +517,7 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
                 case NumericalSolver::LogType::LogAdaptive:
                 {
                     integrate_adaptive(
-                        make_controlled_abm<5>(absoluteTolerance_, relativeTolerance_),
+                        make_controlled_adam_bashforth_moulton<5>(absoluteTolerance_, relativeTolerance_),
                         aSystemOfEquations,
                         aStateVector,
                         (0.0),
@@ -529,7 +531,7 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
                 case NumericalSolver::LogType::LogConstant:
                 {
                     integrate_const(
-                        make_controlled_abm<5>(absoluteTolerance_, relativeTolerance_),
+                        make_controlled_adam_bashforth_moulton<5>(absoluteTolerance_, relativeTolerance_),
                         aSystemOfEquations,
                         aStateVector,
                         (0.0),
@@ -552,7 +554,7 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
                 case NumericalSolver::LogType::LogAdaptive:
                 {
                     integrate_adaptive(
-                        make_controlled_abm<8>(absoluteTolerance_, relativeTolerance_),
+                        make_controlled_adam_bashforth_moulton<8>(absoluteTolerance_, relativeTolerance_),
                         aSystemOfEquations,
                         aStateVector,
                         (0.0),
@@ -566,7 +568,7 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
                 case NumericalSolver::LogType::LogConstant:
                 {
                     integrate_const(
-                        make_controlled_abm<8>(absoluteTolerance_, relativeTolerance_),
+                        make_controlled_adam_bashforth_moulton<8>(absoluteTolerance_, relativeTolerance_),
                         aSystemOfEquations,
                         aStateVector,
                         (0.0),
