@@ -1,5 +1,7 @@
 /// Apache License 2.0
 
+#include <utility>
+
 #include <boost/numeric/odeint.hpp>
 #include <boost/numeric/odeint/algebra/vector_space_algebra.hpp>
 #include <boost/numeric/odeint/external/eigen/eigen.hpp>
@@ -210,7 +212,7 @@ Real NumericalSolver::getAbsoluteTolerance() const
 
 Array<NumericalSolver::Solution> NumericalSolver::getObservedStateVectors() const
 {
-    return this->accessObservedStateVectors();
+    return Array<NumericalSolver::Solution>(this->accessObservedStateVectors());
 }
 
 Array<NumericalSolver::Solution> NumericalSolver::integrateTime(
@@ -343,7 +345,10 @@ Array<NumericalSolver::Solution> NumericalSolver::integrateTime(
     }
 
     // Return array of StateVectors excluding first element which is a repeat of the startState
-    return Array<NumericalSolver::Solution>(observedStateVectors_.begin() + 1, observedStateVectors_.end());
+    Array<NumericalSolver::Solution> solutions = std::move(observedStateVectors_);
+    solutions.erase(solutions.begin());
+
+    return solutions;
 }
 
 NumericalSolver::Solution NumericalSolver::integrateDuration(
