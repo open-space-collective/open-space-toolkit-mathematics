@@ -47,7 +47,8 @@ class NumericalSolver
     {
         NoLog,
         LogConstant,
-        LogAdaptive
+        LogAdaptive,
+        NoLogNoObserve
     };
 
     typedef VectorXd StateVector;  // Container used to hold the state vector

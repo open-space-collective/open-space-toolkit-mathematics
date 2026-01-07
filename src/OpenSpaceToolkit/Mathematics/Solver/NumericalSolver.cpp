@@ -398,6 +398,18 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
                     );
                     return {aStateVector, aDurationInSeconds};
                 }
+                case NumericalSolver::LogType::NoLogNoObserve:
+                {
+                    integrate_const(
+                        stepper_type_4(),
+                        aSystemOfEquations,
+                        aStateVector,
+                        (0.0),
+                        (double)aDurationInSeconds,
+                        adjustedTimeStep
+                    );
+                    return {aStateVector, aDurationInSeconds};
+                }
                 default:
                     throw ostk::core::error::runtime::Wrong("Log type");
             }
@@ -432,6 +444,19 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
                         (double)aDurationInSeconds,
                         adjustedTimeStep,
                         observer
+                    );
+                    return {aStateVector, aDurationInSeconds};
+                }
+
+                case NumericalSolver::LogType::NoLogNoObserve:
+                {
+                    integrate_adaptive(
+                        make_controlled(absoluteTolerance_, relativeTolerance_, error_stepper_type_54()),
+                        aSystemOfEquations,
+                        aStateVector,
+                        (0.0),
+                        (double)aDurationInSeconds,
+                        adjustedTimeStep
                     );
                     return {aStateVector, aDurationInSeconds};
                 }
@@ -472,6 +497,19 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
                     );
                     return {aStateVector, aDurationInSeconds};
                 }
+
+                case NumericalSolver::LogType::NoLogNoObserve:
+                {
+                    integrate_adaptive(
+                        make_controlled(absoluteTolerance_, relativeTolerance_, error_stepper_type_78()),
+                        aSystemOfEquations,
+                        aStateVector,
+                        (0.0),
+                        (double)aDurationInSeconds,
+                        adjustedTimeStep
+                    );
+                    return {aStateVector, aDurationInSeconds};
+                }
                 default:
                     throw ostk::core::error::runtime::Wrong("Log type");
             }
@@ -506,6 +544,19 @@ NumericalSolver::Solution NumericalSolver::integrateDuration(
                         (double)aDurationInSeconds,
                         adjustedTimeStep,
                         observer
+                    );
+                    return {aStateVector, aDurationInSeconds};
+                }
+
+                case NumericalSolver::LogType::NoLogNoObserve:
+                {
+                    integrate_adaptive(
+                        make_controlled(absoluteTolerance_, relativeTolerance_, dense_stepper_type_5()),
+                        aSystemOfEquations,
+                        aStateVector,
+                        (0.0),
+                        (double)aDurationInSeconds,
+                        adjustedTimeStep
                     );
                     return {aStateVector, aDurationInSeconds};
                 }
@@ -664,6 +715,9 @@ String NumericalSolver::StringFromLogType(const NumericalSolver::LogType& aLogTy
 
         case NumericalSolver::LogType::LogAdaptive:
             return "LogAdaptive";
+
+        case NumericalSolver::LogType::NoLogNoObserve:
+            return "NoLogNoObserve";
 
         default:
             throw ostk::core::error::runtime::Wrong("Log Type");
