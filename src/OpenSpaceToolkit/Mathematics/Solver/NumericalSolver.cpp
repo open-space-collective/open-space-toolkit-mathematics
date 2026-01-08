@@ -19,8 +19,8 @@ namespace odeint
 {
 
 // We create a specialized algebra that does element-wise operations required by the step-size PID controller
-// used by multi-step adaptive steppers. This is because eigen *, / operations are matrix operations, not element-wise operations.
-// https://www.boost.org/doc/libs/1_82_0/boost/numeric/odeint/algebra/vector_space_algebra.hpp
+// used by multi-step adaptive steppers. This is because eigen *, / operations are matrix operations, not element-wise
+// operations. https://www.boost.org/doc/libs/1_82_0/boost/numeric/odeint/algebra/vector_space_algebra.hpp
 
 struct eigen_pid_algebra : public vector_space_algebra
 {
