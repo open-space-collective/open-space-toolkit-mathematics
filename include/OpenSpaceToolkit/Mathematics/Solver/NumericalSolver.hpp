@@ -47,7 +47,8 @@ class NumericalSolver
     {
         NoLog,
         LogConstant,
-        LogAdaptive
+        LogAdaptive,
+        NoLogNoObserve
     };
 
     typedef VectorXd StateVector;  // Container used to hold the state vector
@@ -187,7 +188,8 @@ class NumericalSolver
 
     Array<Solution> getObservedStateVectors() const;
 
-    /// @brief                  Perform numerical integration from a start time to an array of times
+    /// @brief                  Perform numerical integration from a start time to an array of times. Note: the
+    /// observesStateVectors are moved to the return value.
     ///
     /// @code
     ///                         Array<Solution> solutions =
@@ -246,7 +248,8 @@ class NumericalSolver
         const SystemOfEquationsWrapper& aSystemOfEquations
     );
 
-    /// @brief                  Perform numerical integration for an array of durations
+    /// @brief                  Perform numerical integration for an array of durations. Note: the observesStateVectors
+    /// are moved to the return value.
     ///
     /// @code
     ///                         Array<Solution> solutions = numericalsolver.integrateTime(stateVector, durationArray,
