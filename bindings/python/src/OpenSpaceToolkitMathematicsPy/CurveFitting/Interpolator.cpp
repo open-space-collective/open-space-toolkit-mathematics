@@ -5,6 +5,7 @@
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/BarycentricRational.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/CubicSpline.cpp>
 #include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/Linear.cpp>
+#include <OpenSpaceToolkitMathematicsPy/CurveFitting/Interpolator/ZeroOrder.cpp>
 
 using namespace pybind11;
 
@@ -51,6 +52,7 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
         .value("BarycentricRational", Interpolator::Type::BarycentricRational)
         .value("CubicSpline", Interpolator::Type::CubicSpline)
         .value("Linear", Interpolator::Type::Linear)
+        .value("ZeroOrder", Interpolator::Type::ZeroOrder)
 
         ;
 
@@ -201,4 +203,5 @@ inline void OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator(pybind11::mo
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_BarycentricRational(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_CubicSpline(interpolator);
     OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_Linear(interpolator);
+    OpenSpaceToolkitMathematicsPy_CurveFitting_Interpolator_ZeroOrder(interpolator);
 }
