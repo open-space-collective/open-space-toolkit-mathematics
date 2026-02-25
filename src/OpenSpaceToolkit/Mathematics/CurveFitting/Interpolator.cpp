@@ -6,7 +6,6 @@
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/BarycentricRational.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/CubicSpline.hpp>
 #include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/Linear.hpp>
-#include <OpenSpaceToolkit/Mathematics/CurveFitting/Interpolator/ZeroOrder.hpp>
 
 namespace ostk
 {
@@ -18,7 +17,6 @@ namespace curvefitting
 using ostk::mathematics::curvefitting::interpolator::BarycentricRational;
 using ostk::mathematics::curvefitting::interpolator::CubicSpline;
 using ostk::mathematics::curvefitting::interpolator::Linear;
-using ostk::mathematics::curvefitting::interpolator::ZeroOrder;
 
 Interpolator::Interpolator(const Type& aType)
     : type_(aType)
@@ -44,8 +42,6 @@ const Shared<const Interpolator> Interpolator::GenerateInterpolator(
             return std::make_shared<CubicSpline>(anXVector, aYVector);
         case Type::Linear:
             return std::make_shared<Linear>(anXVector, aYVector);
-        case Type::ZeroOrder:
-            return std::make_shared<ZeroOrder>(anXVector, aYVector);
         default:
             throw ostk::core::error::runtime::Wrong("Invalid interpolation type.");
     }

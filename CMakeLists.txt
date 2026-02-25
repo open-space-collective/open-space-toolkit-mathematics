@@ -30,7 +30,7 @@ OPTION (BUILD_WITHOUT_DEPRECATED_DECLARATION_WARNINGS "Build without deprecated 
 
 ### Compatibility Check
 
-CMAKE_MINIMUM_REQUIRED (VERSION "2.8.12" FATAL_ERROR)
+CMAKE_MINIMUM_REQUIRED (VERSION "3.5" FATAL_ERROR)
 
 ### Paths
 
@@ -151,9 +151,19 @@ IF (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 
     SET (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -Wshadow -Wno-deprecated")
 
-ELSE ()
+ELSEIF (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
 
     SET (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic -Wshadow")
+
+ELSEIF (MSVC)
+
+    # MSVC warning flags
+    SET (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /W4 /utf-8 /FS")
+    # Windows compatibility
+    ADD_DEFINITIONS(-D_CRT_SECURE_NO_WARNINGS -DNOMINMAX -DWIN32_LEAN_AND_MEAN -D_USE_MATH_DEFINES)
+    SET (CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+    # Force include RealFormatter to add fmt support for Real type
+    ADD_COMPILE_OPTIONS(/FI"${PROJECT_SOURCE_DIR}/include/OpenSpaceToolkit/Mathematics/RealFormatter.hpp")
 
 ENDIF ()
 
@@ -164,7 +174,9 @@ SET (CMAKE_CXX_EXTENSIONS OFF)
 
 IF (BUILD_WITH_DEBUG_SYMBOLS)
 
-    SET (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+    IF (NOT MSVC)
+        SET (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
+    ENDIF ()
 
 ENDIF ()
 
@@ -200,7 +212,7 @@ IF (WIN32)
     SET (INSTALL_DATA "bin")                            # C:\Programme\<project>
     SET (INSTALL_BIN "bin")                             # C:\Programme\<project>
     SET (INSTALL_LIB "lib")                             # C:\Programme\<project>\lib
-    SET (INSTALL_INCLUDE "include")                     # C:\Programme\<project>\include
+    SET (INSTALL_INCLUDE "include/${PROJECT_PATH}")     # C:\Programme\<project>\include\<project>
     SET (INSTALL_DOC "doc")                             # C:\Programme\<project>\doc
     SET (INSTALL_SHORTCUTS ".")                         # Not available under Windows
     SET (INSTALL_ICONS ".")                             # Not available under Windows
@@ -264,19 +276,25 @@ FIND_PACKAGE ("Boost" "1.82")
 IF (BUILD_WITH_BOOST_STACKTRACE)
     ## Stacktrace definitions
     # Detect system architecture
-    if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64")
-        # Architecture-specific include for x86_64
-        set(BACKTRACE_INCLUDE "/usr/lib/gcc/x86_64-linux-gnu/9/include/backtrace.h")
+    if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64" OR CMAKE_SYSTEM_PROCESSOR MATCHES "AMD64")
+        # Architecture-specific include for x86_64/AMD64
+        if(WIN32)
+            # Windows doesn't use backtrace.h, skip this definition
+            message(STATUS "Windows AMD64 detected, skipping backtrace include")
+        else()
+            set(BACKTRACE_INCLUDE "/usr/lib/gcc/x86_64-linux-gnu/9/include/backtrace.h")
+            ADD_DEFINITIONS(-DBOOST_STACKTRACE_BACKTRACE_INCLUDE_FILE=<${BACKTRACE_INCLUDE}>)
+        endif()
     elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "aarch64")
         # Example path adjustment for aarch64, adjust the path as needed
         set(BACKTRACE_INCLUDE "/usr/lib/gcc/aarch64-linux-gnu/9/include/backtrace.h")
+        ADD_DEFINITIONS(-DBOOST_STACKTRACE_BACKTRACE_INCLUDE_FILE=<${BACKTRACE_INCLUDE}>)
     else()
         message(FATAL_ERROR "Unsupported architecture: ${CMAKE_SYSTEM_PROCESSOR}")
     endif()
 
-    # Add definitions with architecture-specific path
+    # Add definitions
     ADD_DEFINITIONS(-DBOOST_STACKTRACE_USE_BACKTRACE)
-    ADD_DEFINITIONS(-DBOOST_STACKTRACE_BACKTRACE_INCLUDE_FILE=<${BACKTRACE_INCLUDE}>)
 ENDIF()
 
 IF (NOT Boost_FOUND)
@@ -287,8 +305,14 @@ ENDIF ()
 
 FIND_PACKAGE ("Eigen3" REQUIRED)
 
-IF (EIGEN3_FOUND)
-    INCLUDE_DIRECTORIES (${EIGEN3_INCLUDE_DIR})
+IF (Eigen3_FOUND OR EIGEN3_FOUND)
+    IF (Eigen3_FOUND)
+        # Modern Eigen3 package
+        INCLUDE_DIRECTORIES (${EIGEN3_INCLUDE_DIR})
+    ELSE ()
+        # Legacy Eigen3 package
+        INCLUDE_DIRECTORIES (${EIGEN3_INCLUDE_DIR})
+    ENDIF ()
 ELSE ()
     MESSAGE (SEND_ERROR "[Eigen 3] not found.")
 ENDIF ()
@@ -305,9 +329,13 @@ ENDIF ()
 
 # INCLUDE_DIRECTORIES ("/usr/local/include/Gte")  # This thing was already commented out
 
+### fmt
+
+FIND_PACKAGE ("fmt" CONFIG REQUIRED)
+
 ### Open Space Toolkit ▸ Core [5.x.y]
 
-FIND_PACKAGE ("OpenSpaceToolkitCore" "5" REQUIRED)
+FIND_PACKAGE ("OpenSpaceToolkitCore" REQUIRED)
 
 IF (NOT OpenSpaceToolkitCore_FOUND)
 
@@ -342,12 +370,25 @@ IF (BUILD_SHARED_LIBRARY)
 
     ADD_LIBRARY (${SHARED_LIBRARY_TARGET} SHARED ${SHARED_LIBRARY_SRCS})
 
+    IF (MSVC)
+        TARGET_COMPILE_OPTIONS (${SHARED_LIBRARY_TARGET} PRIVATE /bigobj $<$<CONFIG:Release>:/Od /Ob0>)
+    ENDIF ()
+
     TARGET_INCLUDE_DIRECTORIES (${SHARED_LIBRARY_TARGET} PUBLIC "${PROJECT_SOURCE_DIR}/include/")
     TARGET_INCLUDE_DIRECTORIES (${SHARED_LIBRARY_TARGET} PUBLIC "${PROJECT_SOURCE_DIR}/src/")
+    TARGET_INCLUDE_DIRECTORIES (${SHARED_LIBRARY_TARGET} PUBLIC ${OpenSpaceToolkitCore_INCLUDE_DIRS})
+    TARGET_INCLUDE_DIRECTORIES (${SHARED_LIBRARY_TARGET} PUBLIC ${OpenSpaceToolkitIO_INCLUDE_DIRS})
+    # Add vcpkg include directories for fmt and other dependencies
+    IF (DEFINED VCPKG_INSTALLED_DIR)
+        TARGET_INCLUDE_DIRECTORIES (${SHARED_LIBRARY_TARGET} PUBLIC "${VCPKG_INSTALLED_DIR}/${VCPKG_TARGET_TRIPLET}/include")
+    ENDIF ()
 
-    TARGET_LINK_LIBRARIES (${SHARED_LIBRARY_TARGET} "pthread")
-    TARGET_LINK_LIBRARIES (${SHARED_LIBRARY_TARGET} "dl")
+    IF (NOT WIN32)
+        TARGET_LINK_LIBRARIES (${SHARED_LIBRARY_TARGET} "pthread")
+        TARGET_LINK_LIBRARIES (${SHARED_LIBRARY_TARGET} "dl")
+    ENDIF ()
     TARGET_LINK_LIBRARIES (${SHARED_LIBRARY_TARGET} ${OpenSpaceToolkitCore_LIBRARIES})
+    TARGET_LINK_LIBRARIES (${SHARED_LIBRARY_TARGET} fmt::fmt)
 
     SET_TARGET_PROPERTIES (${SHARED_LIBRARY_TARGET} PROPERTIES VERSION ${PROJECT_VERSION_STRING} SOVERSION ${PROJECT_VERSION_MAJOR} OUTPUT_NAME ${SHARED_LIBRARY_NAME} CLEAN_DIRECT_OUTPUT 1 INSTALL_RPATH "$ORIGIN/../lib:$ORIGIN/")
 

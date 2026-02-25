@@ -148,13 +148,13 @@ std::ostream& operator<<(std::ostream& anOutputStream, const Quaternion& aQuater
     ostk::core::utils::Print::Header(anOutputStream, "Quaternion");
 
     ostk::core::utils::Print::Line(anOutputStream)
-        << "X:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.x_) : "Undefined");
+        << "X:" << (aQuaternion.isDefined() ? String::Format("{:15f}", static_cast<double>(aQuaternion.x_)) : "Undefined");
     ostk::core::utils::Print::Line(anOutputStream)
-        << "Y:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.y_) : "Undefined");
+        << "Y:" << (aQuaternion.isDefined() ? String::Format("{:15f}", static_cast<double>(aQuaternion.y_)) : "Undefined");
     ostk::core::utils::Print::Line(anOutputStream)
-        << "Z:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.z_) : "Undefined");
+        << "Z:" << (aQuaternion.isDefined() ? String::Format("{:15f}", static_cast<double>(aQuaternion.z_)) : "Undefined");
     ostk::core::utils::Print::Line(anOutputStream)
-        << "S:" << (aQuaternion.isDefined() ? String::Format("{:15f}", aQuaternion.s_) : "Undefined");
+        << "S:" << (aQuaternion.isDefined() ? String::Format("{:15f}", static_cast<double>(aQuaternion.s_)) : "Undefined");
 
     ostk::core::utils::Print::Footer(anOutputStream);
 

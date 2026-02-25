@@ -35,8 +35,7 @@ class Interpolator
     {
         BarycentricRational,
         CubicSpline,
-        Linear,
-        ZeroOrder
+        Linear
     };
 
     /// @brief Constructor (can only be called by derived classes since it is pure virtual)

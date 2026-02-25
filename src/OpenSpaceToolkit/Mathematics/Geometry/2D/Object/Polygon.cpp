@@ -411,12 +411,12 @@ Intersection Polygon::Impl::intersectionWith(const Polygon& aPolygon) const
 
     if (!polygon1IsValid)
     {
-        throw ostk::core::error::RuntimeError("Polygon 1 is not valid: [{}]", failurePolygon1);
+        throw ostk::core::error::RuntimeError("Polygon 1 is not valid: [{}]", static_cast<int>(failurePolygon1));
     }
 
     if (!polygon2IsValid)
     {
-        throw ostk::core::error::RuntimeError("Polygon 2 is not valid: [{}]", failurePolygon2);
+        throw ostk::core::error::RuntimeError("Polygon 2 is not valid: [{}]", static_cast<int>(failurePolygon2));
     }
 
     // Obtain the polygon intersection output if any
@@ -544,12 +544,12 @@ Intersection Polygon::Impl::differenceWith(const Polygon& aPolygon) const
 
     if (!polygon1IsValid)
     {
-        throw ostk::core::error::RuntimeError("Polygon 1 is not valid: [{}]", failurePolygon1);
+        throw ostk::core::error::RuntimeError("Polygon 1 is not valid: [{}]", static_cast<int>(failurePolygon1));
     }
 
     if (!polygon2IsValid)
     {
-        throw ostk::core::error::RuntimeError("Polygon 2 is not valid: [{}]", failurePolygon2);
+        throw ostk::core::error::RuntimeError("Polygon 2 is not valid: [{}]", static_cast<int>(failurePolygon2));
     }
 
     // Obtain the polygon difference output if any
