@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Interpolator_ZeroOrder__
 #define __OpenSpaceToolkit_Mathematics_Interpolator_ZeroOrder__
 
@@ -32,8 +31,14 @@ using ostk::mathematics::object::VectorXd;
 ///                             For any query value x, it returns the y value of the largest data point
 ///                             x_i where x_i <= x. Also known as "zero-order hold" or "step" interpolation.
 ///
+/// @code{.cpp}
+///                             VectorXd x = {{0.0, 1.0, 2.0, 3.0}};
+///                             VectorXd y = {{0.0, 1.0, 4.0, 9.0}};
+///                             ZeroOrder interpolator(x, y);
+///                             double value = interpolator.evaluate(1.5);  // 1.0
+/// @endcode
+///
 /// @ref                        https://en.wikipedia.org/wiki/Zero-order_hold
-
 class ZeroOrder : public Interpolator
 {
    public:
@@ -50,6 +55,10 @@ class ZeroOrder : public Interpolator
     ZeroOrder(const VectorXd& anXVector, const VectorXd& aYVector);
 
     /// @brief Destructor
+    ///
+    /// @code{.cpp}
+    ///                     // Called automatically when the ZeroOrder interpolator goes out of scope
+    /// @endcode
     virtual ~ZeroOrder() override;
 
     /// @brief Evaluate the zero-order hold interpolator

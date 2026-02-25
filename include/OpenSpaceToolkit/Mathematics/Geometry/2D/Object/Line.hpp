@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Line__
 
@@ -30,8 +29,11 @@ class PointSet;
 
 /// @brief                      Line
 ///
+/// @code{.cpp}
+///                             Line line({ 0.0, 0.0 }, { 0.0, 1.0 }) ;
+/// @endcode
+///
 /// @ref                        https://en.wikipedia.org/wiki/Line_(geometry)
-
 class Line : public Object
 {
    public:
@@ -43,13 +45,15 @@ class Line : public Object
     ///
     /// @param              [in] anOrigin A line origin
     /// @param              [in] aDirection A line direction
-
     Line(const Point& anOrigin, const Vector2d& aDirection);
 
     /// @brief              Clone line
     ///
+    /// @code{.cpp}
+    ///                     Line* clonePtr = Line({ 0.0, 0.0 }, { 0.0, 1.0 }).clone() ;
+    /// @endcode
+    ///
     /// @return             Pointer to cloned line
-
     virtual Line* clone() const override;
 
     /// @brief              Equal to operator
@@ -60,7 +64,6 @@ class Line : public Object
     ///
     /// @param              [in] aLine A line
     /// @return             True if lines are equal
-
     bool operator==(const Line& aLine) const;
 
     /// @brief              Not equal to operator
@@ -71,7 +74,6 @@ class Line : public Object
     ///
     /// @param              [in] aLine A line
     /// @return             True if lines are not equal
-
     bool operator!=(const Line& aLine) const;
 
     /// @brief              Check if line is defined
@@ -81,7 +83,6 @@ class Line : public Object
     /// @endcode
     ///
     /// @return             True if line is defined
-
     virtual bool isDefined() const override;
 
     /// @brief              Check if line intersects point
@@ -94,7 +95,6 @@ class Line : public Object
     ///
     /// @param              [in] anPoint A point
     /// @return             True if line intersects point
-
     bool intersects(const Point& aPoint) const;
 
     /// @brief              Check if line intersects line
@@ -107,7 +107,6 @@ class Line : public Object
     ///
     /// @param              [in] aLine A line
     /// @return             True if line intersects kine
-
     bool intersects(const Line& aLine) const;
 
     /// @brief              Check if line contains point
@@ -120,7 +119,6 @@ class Line : public Object
     ///
     /// @param              [in] aPoint A point
     /// @return             True if line contains point
-
     bool contains(const Point& aPoint) const;
 
     /// @brief              Check if line contains point set
@@ -133,7 +131,6 @@ class Line : public Object
     ///
     /// @param              [in] aPointSet A point set
     /// @return             True if line contains point set
-
     bool contains(const PointSet& aPointSet) const;
 
     /// @brief              Get line origin
@@ -143,7 +140,6 @@ class Line : public Object
     /// @endcode
     ///
     /// @return             Line origin
-
     Point getOrigin() const;
 
     /// @brief              Get line direction
@@ -153,36 +149,48 @@ class Line : public Object
     /// @endcode
     ///
     /// @return             Line direction
-
     Vector2d getDirection() const;
 
     /// @brief              Get distance to point
     ///
+    /// @code{.cpp}
+    ///                     Real distance = Line({ 0.0, 0.0 }, { 0.0, 1.0 }).distanceTo(Point(1.0, 0.0)) ;
+    /// @endcode
+    ///
     /// @param              [in] aPoint A point
     /// @return             Distance to point
-
     Real distanceTo(const Point& aPoint) const;
 
     /// @brief              Get string representation
     ///
+    /// @code{.cpp}
+    ///                     String str = Line({ 0.0, 0.0 }, { 0.0, 1.0 }).toString() ;
+    /// @endcode
+    ///
     /// @param              [in] aFormat A format
     /// @return             String representation
-
     virtual String toString(
         const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
     ) const override;
 
     /// @brief              Print line
     ///
+    /// @code{.cpp}
+    ///                     Line({ 0.0, 0.0 }, { 0.0, 1.0 }).print(std::cout, true) ;
+    /// @endcode
+    ///
     /// @param              [in] anOutputStream An output stream
     /// @param              [in] (optional) displayDecorators If true, display decorators
-
     virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
     /// @brief              Apply transformation to line
     ///
+    /// @code{.cpp}
+    ///                     Line line({ 0.0, 0.0 }, { 0.0, 1.0 }) ;
+    ///                     line.applyTransformation(aTransformation) ;
+    /// @endcode
+    ///
     /// @param              [in] aTransformation A transformation
-
     virtual void applyTransformation(const Transformation& aTransformation) override;
 
     /// @brief              Constructs an undefined line
@@ -192,7 +200,6 @@ class Line : public Object
     /// @endcode
     ///
     /// @return             Undefined line
-
     static Line Undefined();
 
     /// @brief              Constructs a line using two points
@@ -204,7 +211,6 @@ class Line : public Object
     /// @endcode
     ///
     /// @return             Line
-
     static Line Points(const Point& aFirstPoint, const Point& aSecondPoint);
 
    private:

@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline__
 #define __OpenSpaceToolkit_Mathematics_Interpolator_CubicSpline__
 
@@ -34,9 +33,15 @@ using boost::math::interpolators::cardinal_cubic_b_spline;
 /// specified in Spline form, that is by its values and first derivatives at the end points
 /// of the corresponding domain interval.
 ///
+/// @code{.cpp}
+///     VectorXd x = {{0.0, 1.0, 2.0, 3.0}};
+///     VectorXd y = {{0.0, 1.0, 4.0, 9.0}};
+///     CubicSpline interpolator(x, y);
+///     double value = interpolator.evaluate(1.5);
+/// @endcode
+///
 /// @ref
 /// https://en.wikipedia.org/wiki/Cubic_Spline_spline#:~:text=In%20numerical%20analysis%2C%20a%20cubic,of%20the%20corresponding%20domain%20interval.
-
 class CubicSpline : public Interpolator
 {
    public:
@@ -68,6 +73,10 @@ class CubicSpline : public Interpolator
     CubicSpline(const VectorXd& aYVector, const Real& x0, const Real& h);
 
     /// @brief Destructor
+    ///
+    /// @code{.cpp}
+    ///                     // Called automatically when the CubicSpline goes out of scope
+    /// @endcode
     virtual ~CubicSpline() override;
 
     /// @brief Evaluate the cubic spline interpolator

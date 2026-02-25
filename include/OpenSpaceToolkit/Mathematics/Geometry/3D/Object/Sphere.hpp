@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Sphere__
 
@@ -41,8 +40,11 @@ class Cone;
 ///                             A sphere is a perfectly round geometrical object in three-dimensional space that is the
 ///                             surface of a completely round ball.
 ///
+/// @code{.cpp}
+///                             Sphere sphere(Point::Origin(), 1.0) ;
+/// @endcode
+///
 /// @ref                        https://en.wikipedia.org/wiki/Sphere
-
 class Sphere : public Object
 {
    public:
@@ -54,13 +56,15 @@ class Sphere : public Object
     ///
     /// @param              [in] aCenter A sphere center
     /// @param              [in] aRadius A sphere radius
-
     Sphere(const Point& aCenter, const Real& aRadius);
 
     /// @brief              Clone sphere
     ///
+    /// @code{.cpp}
+    ///                     Sphere* spherePtr = Sphere(Point::Origin(), 1.0).clone() ;
+    /// @endcode
+    ///
     /// @return             Pointer to cloned sphere
-
     virtual Sphere* clone() const override;
 
     /// @brief              Equal to operator
@@ -71,7 +75,6 @@ class Sphere : public Object
     ///
     /// @param              [in] aSphere A sphere
     /// @return             True if spheres are equal
-
     bool operator==(const Sphere& aSphere) const;
 
     /// @brief              Not equal to operator
@@ -82,7 +85,6 @@ class Sphere : public Object
     ///
     /// @param              [in] aSphere A sphere
     /// @return             True if spheres are not equal
-
     bool operator!=(const Sphere& aSphere) const;
 
     /// @brief              Check if sphere is defined
@@ -92,7 +94,6 @@ class Sphere : public Object
     /// @endcode
     ///
     /// @return             True if sphere is defined
-
     virtual bool isDefined() const override;
 
     /// @brief              Check if sphere is unitary, i.e. its radius is equal to 1.0
@@ -102,7 +103,6 @@ class Sphere : public Object
     /// @endcode
     ///
     /// @return             True if sphere is unitary
-
     bool isUnitary() const;
 
     /// @brief              Check if sphere intersects point
@@ -115,7 +115,6 @@ class Sphere : public Object
     ///
     /// @param              [in] aPoint A point
     /// @return             True if sphere intersects point
-
     bool intersects(const Point& aPoint) const;
 
     /// @brief              Check if sphere intersects point set
@@ -128,7 +127,6 @@ class Sphere : public Object
     ///
     /// @param              [in] aPointSet A point set
     /// @return             True if sphere intersects point set
-
     bool intersects(const PointSet& aPointSet) const;
 
     /// @brief              Check if sphere intersects line
@@ -141,7 +139,6 @@ class Sphere : public Object
     ///
     /// @param              [in] aLine A line
     /// @return             True if sphere intersects line
-
     bool intersects(const Line& aLine) const;
 
     /// @brief              Check if sphere intersects ray
@@ -154,7 +151,6 @@ class Sphere : public Object
     ///
     /// @param              [in] aRay A ray
     /// @return             True if sphere intersects ray
-
     bool intersects(const Ray& aRay) const;
 
     /// @brief              Check if sphere intersects segment
@@ -167,7 +163,6 @@ class Sphere : public Object
     ///
     /// @param              [in] aSegment A segment
     /// @return             True if sphere intersects segment
-
     bool intersects(const Segment& aSegment) const;
 
     /// @brief              Check if sphere intersects plane
@@ -180,7 +175,6 @@ class Sphere : public Object
     ///
     /// @param              [in] aPlane A plane
     /// @return             True if sphere intersects plane
-
     bool intersects(const Plane& aPlane) const;
 
     /// @brief              Check if sphere intersects ellipsoid
@@ -193,7 +187,6 @@ class Sphere : public Object
     ///
     /// @param              [in] anEllipsoid An ellipsoid
     /// @return             True if sphere intersects ellipsoid
-
     bool intersects(const Ellipsoid& anEllipsoid) const;
 
     /// @brief              Check if sphere intersects pyramid
@@ -206,7 +199,6 @@ class Sphere : public Object
     ///
     /// @param              [in] aPyramid A pyramid
     /// @return             True if sphere intersects pyramid
-
     bool intersects(const Pyramid& aPyramid) const;
 
     /// @brief              Check if sphere intersects cone
@@ -219,7 +211,6 @@ class Sphere : public Object
     ///
     /// @param              [in] aCone A cone
     /// @return             True if sphere intersects cone
-
     bool intersects(const Cone& aCone) const;
 
     /// @brief              Check if sphere contains point
@@ -232,7 +223,6 @@ class Sphere : public Object
     ///
     /// @param              [in] aPoint A point
     /// @return             True if sphere contains point
-
     bool contains(const Point& aPoint) const;
 
     /// @brief              Check if sphere contains point set
@@ -245,7 +235,6 @@ class Sphere : public Object
     ///
     /// @param              [in] aPointSet A point set
     /// @return             True if sphere contains point set
-
     bool contains(const PointSet& aPointSet) const;
 
     /// @brief              Get sphere center
@@ -255,7 +244,6 @@ class Sphere : public Object
     /// @endcode
     ///
     /// @return             Sphere center
-
     Point getCenter() const;
 
     /// @brief              Get sphere radius
@@ -265,58 +253,89 @@ class Sphere : public Object
     /// @endcode
     ///
     /// @return             Sphere radius
-
     Real getRadius() const;
 
     /// @brief              Compute intersection of sphere with line
     ///
+    /// @code{.cpp}
+    ///                     Sphere sphere = Sphere(Point::Origin(), 1.0) ;
+    ///                     Line line = Line({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
+    ///                     Intersection intersection = sphere.intersectionWith(line) ;
+    /// @endcode
+    ///
     /// @param              [in] aLine A line
     /// @return             Intersection of sphere with line
-
     Intersection intersectionWith(const Line& aLine) const;
 
     /// @brief              Compute intersection of sphere with ray
     ///
+    /// @code{.cpp}
+    ///                     Sphere sphere = Sphere(Point::Origin(), 1.0) ;
+    ///                     Ray ray = Ray({ 0.0, 0.0, -2.0 }, { 0.0, 0.0, 1.0 }) ;
+    ///                     Intersection intersection = sphere.intersectionWith(ray) ;
+    /// @endcode
+    ///
     /// @param              [in] aRay A ray
     /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
     /// @return             Intersection of sphere with ray
-
     Intersection intersectionWith(const Ray& aRay, const bool onlyInSight = DEFAULT_ONLY_IN_SIGHT) const;
 
     /// @brief              Compute intersection of sphere with segment
     ///
+    /// @code{.cpp}
+    ///                     Sphere sphere = Sphere(Point::Origin(), 1.0) ;
+    ///                     Segment segment = Segment({ 0.0, 0.0, -2.0 }, { 0.0, 0.0, 2.0 }) ;
+    ///                     Intersection intersection = sphere.intersectionWith(segment) ;
+    /// @endcode
+    ///
     /// @param              [in] aSegment A segment
     /// @return             Intersection of sphere with segment
-
     Intersection intersectionWith(const Segment& aSegment) const;
 
     /// @brief              Compute intersection of sphere with pyramid
     ///
+    /// @code{.cpp}
+    ///                     Sphere sphere = Sphere(Point::Origin(), 1.0) ;
+    ///                     Pyramid pyramid = ... ;
+    ///                     Intersection intersection = sphere.intersectionWith(pyramid) ;
+    /// @endcode
+    ///
     /// @param              [in] aPyramid A pyramid
     /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
     /// @return             Intersection of sphere with pyramid
-
     Intersection intersectionWith(const Pyramid& aPyramid, const bool onlyInSight = DEFAULT_ONLY_IN_SIGHT) const;
 
     /// @brief              Compute intersection of sphere with cone
     ///
+    /// @code{.cpp}
+    ///                     Sphere sphere = Sphere(Point::Origin(), 1.0) ;
+    ///                     Cone cone = ... ;
+    ///                     Intersection intersection = sphere.intersectionWith(cone) ;
+    /// @endcode
+    ///
     /// @param              [in] aCone A cone
     /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
     /// @return             Intersection of sphere with cone
-
     Intersection intersectionWith(const Cone& aCone, const bool onlyInSight = DEFAULT_ONLY_IN_SIGHT) const;
 
     /// @brief              Print sphere
     ///
+    /// @code{.cpp}
+    ///                     Sphere(Point::Origin(), 1.0).print(std::cout, true) ;
+    /// @endcode
+    ///
     /// @param              [in] anOutputStream An output stream
     /// @param              [in] (optional) displayDecorators If true, display decorators
-
     virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
     /// @brief              Apply transformation to sphere
     ///
+    /// @code{.cpp}
+    ///                     Sphere sphere = Sphere(Point::Origin(), 1.0) ;
+    ///                     sphere.applyTransformation(Transformation::Identity()) ;
+    /// @endcode
+    ///
     /// @param              [in] aTransformation A transformation
-
     virtual void applyTransformation(const Transformation& aTransformation) override;
 
     /// @brief              Constructs an undefined sphere
@@ -326,7 +345,6 @@ class Sphere : public Object
     /// @endcode
     ///
     /// @return             Undefined sphere
-
     static Sphere Undefined();
 
     /// @brief              Constructs a unit sphere
@@ -338,7 +356,6 @@ class Sphere : public Object
     /// @endcode
     ///
     /// @return             Unit sphere
-
     static Sphere Unit(const Point& aCenter);
 
    private:

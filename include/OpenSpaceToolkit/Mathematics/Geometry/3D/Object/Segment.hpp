@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Segment__
 
@@ -37,8 +36,11 @@ class Ellipsoid;
 ///                             A segment is a part of a line that is bounded by two distinct end points,
 ///                             and contains every point on the line between its endpoints.
 ///
+/// @code{.cpp}
+///                             Segment segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
+/// @endcode
+///
 /// @ref                        https://en.wikipedia.org/wiki/Line_segment
-
 class Segment : public Object
 {
    public:
@@ -50,13 +52,15 @@ class Segment : public Object
     ///
     /// @param              [in] aFirstPoint A first point
     /// @param              [in] aSecondPoint A second point
-
     Segment(const Point& aFirstPoint, const Point& aSecondPoint);
 
     /// @brief              Clone segment
     ///
+    /// @code{.cpp}
+    ///                     Segment* segmentPtr = Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).clone() ;
+    /// @endcode
+    ///
     /// @return             Pointer to cloned segment
-
     virtual Segment* clone() const override;
 
     /// @brief              Equal to operator
@@ -68,7 +72,6 @@ class Segment : public Object
     ///
     /// @param              [in] aSegment A segment
     /// @return             True if segments are equal
-
     bool operator==(const Segment& aSegment) const;
 
     /// @brief              Not equal to operator
@@ -80,7 +83,6 @@ class Segment : public Object
     ///
     /// @param              [in] aSegment A segment
     /// @return             True if segments are not equal
-
     bool operator!=(const Segment& aSegment) const;
 
     /// @brief              Check if segment is defined
@@ -90,7 +92,6 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             True if segment is defined
-
     virtual bool isDefined() const override;
 
     /// @brief              Check if segment is degenerate, i.e. its length is zero
@@ -100,7 +101,6 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             True if segment is degenerate
-
     bool isDegenerate() const;
 
     /// @brief              Check if segment intersects plane
@@ -113,7 +113,6 @@ class Segment : public Object
     ///
     /// @param              [in] aPlane A plane
     /// @return             True if segment intersects plane
-
     bool intersects(const Plane& aPlane) const;
 
     /// @brief              Check if segment intersects sphere
@@ -126,7 +125,6 @@ class Segment : public Object
     ///
     /// @param              [in] aSphere A sphere
     /// @return             True if segment intersects sphere
-
     bool intersects(const Sphere& aSphere) const;
 
     /// @brief              Check if segment intersects ellipsoid
@@ -139,7 +137,6 @@ class Segment : public Object
     ///
     /// @param              [in] anEllipsoid An ellipsoid
     /// @return             True if segment intersects ellipsoid
-
     bool intersects(const Ellipsoid& anEllipsoid) const;
 
     /// @brief              Check if segment contains point
@@ -152,7 +149,6 @@ class Segment : public Object
     ///
     /// @param              [in] aPoint A point
     /// @return             True if segment contains point
-
     bool contains(const Point& aPoint) const;
 
     /// @brief              Get segment first point
@@ -162,7 +158,6 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment first point
-
     Point getFirstPoint() const;
 
     /// @brief              Get segment second point
@@ -172,7 +167,6 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment second point
-
     Point getSecondPoint() const;
 
     /// @brief              Get segment center
@@ -182,7 +176,6 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment center
-
     Point getCenter() const;
 
     /// @brief              Get segment direction
@@ -192,7 +185,6 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment direction
-
     Vector3d getDirection() const;
 
     /// @brief              Get segment length
@@ -202,47 +194,71 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment length
-
     Real getLength() const;
 
     /// @brief              Get distance to point
     ///
+    /// @code{.cpp}
+    ///                     Segment segment = Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
+    ///                     Real distance = segment.distanceTo(Point(1.0, 0.0, 0.0)) ;
+    /// @endcode
+    ///
     /// @param              [in] aPoint A point
     /// @return             Distance to point
-
     Real distanceTo(const Point& aPoint) const;
 
     /// @brief              Get distance to point set
     ///
+    /// @code{.cpp}
+    ///                     Segment segment = Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
+    ///                     PointSet pointSet = PointSet({ { 1.0, 0.0, 0.0 }, { 2.0, 0.0, 0.0 } }) ;
+    ///                     Real distance = segment.distanceTo(pointSet) ;
+    /// @endcode
+    ///
     /// @param              [in] aPointSet A point set
     /// @return             Distance to point set
-
     Real distanceTo(const PointSet& aPointSet) const;
 
     /// @brief              Compute intersection of segment with plane
     ///
+    /// @code{.cpp}
+    ///                     Segment segment = Segment({ 0.0, 0.0, -1.0 }, { 0.0, 0.0, 1.0 }) ;
+    ///                     Plane plane = Plane({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
+    ///                     Intersection intersection = segment.intersectionWith(plane) ;
+    /// @endcode
+    ///
     /// @param              [in] aPlane A plane
     /// @return             Intersection of segment with plane
-
     Intersection intersectionWith(const Plane& aPlane) const;
 
     /// @brief              Get line from segment
     ///
+    /// @code{.cpp}
+    ///                     Segment segment = Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
+    ///                     Line line = segment.toLine() ;
+    /// @endcode
+    ///
     /// @return             Line
-
     Line toLine() const;
 
     /// @brief              Print segment
     ///
+    /// @code{.cpp}
+    ///                     Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }).print(std::cout, true) ;
+    /// @endcode
+    ///
     /// @param              [in] anOutputStream An output stream
     /// @param              [in] (optional) displayDecorators If true, display decorators
-
     virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
     /// @brief              Apply transformation to segment
     ///
+    /// @code{.cpp}
+    ///                     Segment segment = Segment({ 0.0, 0.0, 0.0 }, { 0.0, 0.0, 1.0 }) ;
+    ///                     segment.applyTransformation(Transformation::Identity()) ;
+    /// @endcode
+    ///
     /// @param              [in] aTransformation A transformation
-
     virtual void applyTransformation(const Transformation& aTransformation) override;
 
     /// @brief              Constructs an undefined segment
@@ -252,7 +268,6 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Undefined segment
-
     static Segment Undefined();
 
    private:

@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Solver_NumericalSolver__
 #define __OpenSpaceToolkit_Mathematics_Solver_NumericalSolver__
 
@@ -29,6 +28,10 @@ using ostk::mathematics::object::VectorXd;
 
 /// @brief                      Defines a numerical ODE solver that use the Boost Odeint libraries. This class will be
 /// moved into OSTk-math in the future.
+///
+/// @code{.cpp}
+///                             NumericalSolver solver = NumericalSolver::Default();
+/// @endcode
 class NumericalSolver
 {
    public:
@@ -71,7 +74,6 @@ class NumericalSolver
     ///                         take
     /// @param                  [in] aRelativeTolerance A number indicating the relative integration tolerance
     /// @param                  [in] anAbsoluteTolerance A number indicating the absolute integration tolerance
-
     NumericalSolver(
         const NumericalSolver::LogType& aLogType,
         const NumericalSolver::StepperType& aStepperType,
@@ -82,49 +84,70 @@ class NumericalSolver
 
     /// @brief                  Clone numerical solver
     ///
+    /// @code{.cpp}
+    ///                         NumericalSolver* clone = NumericalSolver::Default().clone();
+    /// @endcode
+    ///
     /// @return                 Pointer to cloned numerical solver
-
     NumericalSolver* clone() const;
 
     /// @brief                  Equal to operator
     ///
+    /// @code{.cpp}
+    ///                         NumericalSolver::Default() == NumericalSolver::Default();
+    /// @endcode
+    ///
     /// @param                  [in] aNumericalSolver A numerical solver
     /// @return                 True if numerical solver are equal
-
     bool operator==(const NumericalSolver& aNumericalSolver) const;
 
     /// @brief                  Not equal to operator
     ///
+    /// @code{.cpp}
+    ///                         NumericalSolver::Default() != NumericalSolver::Undefined();
+    /// @endcode
+    ///
     /// @param                  [in] aNumericalSolver A numerical solver
     /// @return                 True if numerical solver are not equal
-
     bool operator!=(const NumericalSolver& aNumericalSolver) const;
 
     /// @brief                  Output stream operator
     ///
+    /// @code{.cpp}
+    ///                         std::cout << NumericalSolver::Default();
+    /// @endcode
+    ///
     /// @param                  [in] anOutputStream An output stream
     /// @param                  [in] aNumericalSolver A numerical solver
     /// @return                 Output stream reference
-
     friend std::ostream& operator<<(std::ostream& anOutputStream, const NumericalSolver& aNumericalSolver);
 
     /// @brief                  Check if numerical solver is defined
     ///
+    /// @code{.cpp}
+    ///                         NumericalSolver::Default().isDefined();
+    /// @endcode
+    ///
     /// @return                 True if numerical solver is defined
-
     bool isDefined() const;
 
     /// @brief                  Print numerical solver
     ///
+    /// @code{.cpp}
+    ///                         NumericalSolver::Default().print(std::cout);
+    /// @endcode
+    ///
     /// @param                  [in] anOutputStream An output stream
     /// @param                  [in] (optional) displayDecorators If true, display decorators
-
     void print(std::ostream& anOutputStream, bool displayDecorator = true) const;
 
     /// @brief                  Access observed state vectors
     ///
+    /// @code{.cpp}
+    ///                         const Array<Solution>& states = numericalSolver.accessObservedStateVectors();
+    /// @endcode
+    ///
     /// @return                 Observed state vectors
-
     const Array<Solution>& accessObservedStateVectors() const;
 
     /// @brief                  Get integration logging enum
@@ -134,7 +157,6 @@ class NumericalSolver
     /// @endcode
     ///
     /// @return                 LogType
-
     NumericalSolver::LogType getLogType() const;
 
     /// @brief                  Get integration stepper enum
@@ -144,7 +166,6 @@ class NumericalSolver
     /// @endcode
     ///
     /// @return                 StepperType
-
     NumericalSolver::StepperType getStepperType() const;
 
     /// @brief                  Get initial time step guess
@@ -154,7 +175,6 @@ class NumericalSolver
     /// @endcode
     ///
     /// @return                 Real
-
     Real getTimeStep() const;
 
     /// @brief                  Get relative integration tolerance
@@ -164,7 +184,6 @@ class NumericalSolver
     /// @endcode
     ///
     /// @return                 Real
-
     Real getRelativeTolerance() const;
 
     /// @brief                  Get absolute integration tolerance
@@ -174,7 +193,6 @@ class NumericalSolver
     /// @endcode
     ///
     /// @return                 Real
-
     Real getAbsoluteTolerance() const;
 
     /// @brief                  Get observed state vectors
@@ -184,7 +202,6 @@ class NumericalSolver
     /// @endcode
     ///
     /// @return                 Observed state vectors
-
     Array<Solution> getObservedStateVectors() const;
 
     /// @brief                  Perform numerical integration from a start time to an array of times
@@ -200,7 +217,6 @@ class NumericalSolver
     /// @param                  [in] aSystemOfEquations A std::function wrapper with a particular signature that
     ///                         boost::odeint accepts to perform numerical integration
     /// @return                 Array<Solution>
-
     Array<Solution> integrateTime(
         const StateVector& anInitialStateVector,
         const Real& aStartTime,
@@ -220,7 +236,6 @@ class NumericalSolver
     /// @param                  [in] aSystemOfEquations A std::function wrapper with a particular signature that
     ///                         boost::odeint accepts to perform numerical integration
     /// @return                 Solution
-
     Solution integrateTime(
         const StateVector& anInitialStateVector,
         const Real& aStartTime,
@@ -239,7 +254,6 @@ class NumericalSolver
     /// @param                  [in] aSystemOfEquations A std::function wrapper with a particular signature that
     ///                         boost::odeint accepts to perform numerical integration
     /// @return                 Solution
-
     Solution integrateDuration(
         const StateVector& anInitialStateVector,
         const Real& aDurationInSeconds,
@@ -257,7 +271,6 @@ class NumericalSolver
     /// @param                  [in] aSystemOfEquations A std::function wrapper with a particular signature that
     ///                         boost::odeint accepts to perform numerical integration
     /// @return                 Array<Solution>
-
     Array<Solution> integrateDuration(
         const StateVector& anInitialStateVector,
         const Array<Real>& aDurationArray,
@@ -271,7 +284,6 @@ class NumericalSolver
     /// @endcode
     /// @param                  [in] aStepperType An integration stepper type enum
     /// @return                 StepperType
-
     static String StringFromStepperType(const NumericalSolver::StepperType& aStepperType);
 
     /// @brief                  Get string from the integration log type
@@ -281,19 +293,24 @@ class NumericalSolver
     /// @endcode
     /// @param                  [in] aLogType An integration log type enum
     /// @return                 LogType
-
     static String StringFromLogType(const NumericalSolver::LogType& aLogType);
 
     /// @brief                  Undefined
     ///
+    /// @code{.cpp}
+    ///                         NumericalSolver solver = NumericalSolver::Undefined();
+    /// @endcode
+    ///
     /// @return                 An undefined numerical solver
-
     static NumericalSolver Undefined();
 
     /// @brief                  Default
     ///
+    /// @code{.cpp}
+    ///                         NumericalSolver solver = NumericalSolver::Default();
+    /// @endcode
+    ///
     /// @return                 A default numerical solver
-
     static NumericalSolver Default();
 
    protected:

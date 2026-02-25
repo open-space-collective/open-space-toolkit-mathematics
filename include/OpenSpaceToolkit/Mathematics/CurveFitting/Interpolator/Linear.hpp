@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Interpolator_Linear__
 #define __OpenSpaceToolkit_Mathematics_Interpolator_Linear__
 
@@ -34,9 +33,15 @@ using ostk::mathematics::object::VectorXd;
 ///                             polynomials to construct new data points within the range of a discrete set of known
 ///                             data points.
 ///
+/// @code{.cpp}
+///                             VectorXd x = {{0.0, 1.0, 2.0, 3.0}};
+///                             VectorXd y = {{0.0, 1.0, 4.0, 9.0}};
+///                             Linear interpolator(x, y);
+///                             double value = interpolator.evaluate(1.5);
+/// @endcode
+///
 /// @ref
 /// https://en.wikipedia.org/wiki/Linear_interpolator#:~:text=In%20mathematics%2C%20linear%20interpolator%20is,set%20of%20known%20data%20points.
-
 class Linear : public Interpolator
 {
    public:
@@ -53,6 +58,10 @@ class Linear : public Interpolator
     Linear(const VectorXd& anXVector, const VectorXd& aYVector);
 
     /// @brief Destructor
+    ///
+    /// @code{.cpp}
+    ///                     // Called automatically when the Linear interpolator goes out of scope
+    /// @endcode
     virtual ~Linear() override;
 
     /// @brief Evaluate the linear interpolator

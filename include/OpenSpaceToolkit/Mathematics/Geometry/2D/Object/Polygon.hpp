@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Polygon__
 
@@ -40,12 +39,15 @@ using ostk::mathematics::geometry::d2::object::Segment;
 
 /// @brief                      Polygon
 ///
+/// @code{.cpp}
+///                             Polygon polygon({ { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } }) ;
+/// @endcode
+///
 ///                             A plane figure that is bounded by a finite chain of straight line segments closing in a
 ///                             loop to form a closed polygonal chain or circuit. These segments are called its edges,
 ///                             and the points where two edges meet are the polygon's vertices.
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Polygon
-
 class Polygon : public Object
 {
    public:
@@ -55,71 +57,102 @@ class Polygon : public Object
 
     /// @brief              Constructor
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon({ { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } }) ;
+    /// @endcode
+    ///
     /// @param              [in] anOuterRing An outer ring
     /// @param              [in] anInnerRingArray An array of inner rings
-
     Polygon(
         const Array<Point>& anOuterRing, const Array<Array<Point>>& anInnerRingArray = Array<Array<Point>>::Empty()
     );
 
     /// @brief              Constructor
     ///
+    /// @code{.cpp}
+    ///                     Polygon::Ring outerRing = ... ;
+    ///                     Polygon polygon(outerRing) ;
+    /// @endcode
+    ///
     /// @param              [in] anOuterRing An outer ring
     /// @param              [in] anInnerRingArray An array of inner rings
-
     Polygon(
         const Polygon::Ring& anOuterRing, const Array<Polygon::Ring>& anInnerRingArray = Array<Polygon::Ring>::Empty()
     );
 
     /// @brief              Copy constructor
     ///
+    /// @code{.cpp}
+    ///                     Polygon copiedPolygon(polygon) ;
+    /// @endcode
+    ///
     /// @param              [in] aPolygon A polygon
-
     Polygon(const Polygon& aPolygon);
 
     /// @brief              Destructor (virtual)
-
+    ///
+    /// @code{.cpp}
+    ///                     // Destructor is called automatically when polygon goes out of scope.
+    /// @endcode
     virtual ~Polygon() override;
 
     /// @brief              Copy assignment operator
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygonB = polygonA ;
+    /// @endcode
+    ///
     /// @param              [in] aPolygon A polygon
     /// @return             Reference to polygon
-
     Polygon& operator=(const Polygon& aPolygon);
 
     /// @brief              Clone polygon
     ///
+    /// @code{.cpp}
+    ///                     Polygon* clonePtr = polygon.clone() ;
+    /// @endcode
+    ///
     /// @return             Pointer to cloned polygon
-
     virtual Polygon* clone() const override;
 
     /// @brief              Equal to operator
     ///
+    /// @code{.cpp}
+    ///                     polygonA == polygonB ; // True
+    /// @endcode
+    ///
     /// @param              [in] aPolygon A polygon
     /// @return             True if polygons are equal
-
     bool operator==(const Polygon& aPolygon) const;
 
     /// @brief              Not equal to operator
     ///
+    /// @code{.cpp}
+    ///                     polygonA != polygonB ; // True
+    /// @endcode
+    ///
     /// @param              [in] aPolygon A polygon
     /// @return             True if polygons are not equal
-
     bool operator!=(const Polygon& aPolygon) const;
 
     /// @brief              Check if polygon is defined
     ///
+    /// @code{.cpp}
+    ///                     Polygon({ { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } }).isDefined() ; // True
+    /// @endcode
+    ///
     /// @return             True if polygon is defined
-
     virtual bool isDefined() const override;
 
     /// @brief              Check if polygon is near another polygon
     ///
+    /// @code{.cpp}
+    ///                     polygon.isNear(anotherPolygon, 1e-15) ; // True
+    /// @endcode
+    ///
     /// @param              [in] aPolygon A polygon
     /// @param              [in] aTolerance A tolerance
     /// @return             True if polygon is near another polygon
-
     bool isNear(const Polygon& aPolygon, const Real& aTolerance) const;
 
     /// @brief              Check if polygon intersects polygon
@@ -132,7 +165,6 @@ class Polygon : public Object
     ///
     /// @param              [in] aPolygon A polygon
     /// @return             True if polygon intersects polygon
-
     bool intersects(const Polygon& aPolygon) const;
 
     /// @brief              Check if polygon contains point
@@ -145,7 +177,6 @@ class Polygon : public Object
     ///
     /// @param              [in] aPoint A point
     /// @return             True if polygon contains point
-
     bool contains(const Point& aPoint) const;
 
     /// @brief              Check if polygon contains point set
@@ -158,7 +189,6 @@ class Polygon : public Object
     ///
     /// @param              [in] aPointSet A point set
     /// @return             True if polygon contains point set
-
     bool contains(const PointSet& aPointSet) const;
 
     /// @brief              Check if polygon contains line string
@@ -171,114 +201,161 @@ class Polygon : public Object
     ///
     /// @param              [in] aLineSeting A line string
     /// @return             True if polygon contains line string
-
     bool contains(const LineString& aLineString) const;
 
     /// @brief              Get number of inner rings
     ///
+    /// @code{.cpp}
+    ///                     Size count = polygon.getInnerRingCount() ;
+    /// @endcode
+    ///
     /// @return             Number of inner rings
-
     Size getInnerRingCount() const;
 
     /// @brief              Get edge count
     ///
+    /// @code{.cpp}
+    ///                     Size count = polygon.getEdgeCount() ;
+    /// @endcode
+    ///
     /// @return             Edge count
-
     Size getEdgeCount() const;
 
     /// @brief              Get vertex count
     ///
+    /// @code{.cpp}
+    ///                     Size count = polygon.getVertexCount() ;
+    /// @endcode
+    ///
     /// @return             Vertex count
-
     Size getVertexCount() const;
 
     /// @brief              Get outer ring
     ///
+    /// @code{.cpp}
+    ///                     Polygon::Ring outerRing = polygon.getOuterRing() ;
+    /// @endcode
+    ///
     /// @return             Outer ring
-
     Polygon::Ring getOuterRing() const;
 
     /// @brief              Get inner ring at index
     ///
+    /// @code{.cpp}
+    ///                     Polygon::Ring innerRing = polygon.getInnerRingAt(0) ;
+    /// @endcode
+    ///
     /// @return             Inner ring at index
-
     Polygon::Ring getInnerRingAt(const Index& anInnerRingIndex) const;
 
     /// @brief              Get edge at index
     ///
+    /// @code{.cpp}
+    ///                     Polygon::Edge edge = polygon.getEdgeAt(0) ;
+    /// @endcode
+    ///
     /// @param              [in] anEdgeIndex An edge index
     /// @return             Edge (segment)
-
     Polygon::Edge getEdgeAt(const Index anEdgeIndex) const;
 
     /// @brief              Get vertex at index
     ///
+    /// @code{.cpp}
+    ///                     Polygon::Vertex vertex = polygon.getVertexAt(0) ;
+    /// @endcode
+    ///
     /// @param              [in] aVertexIndex A vertex index
     /// @return             Vertex
-
     Polygon::Vertex getVertexAt(const Index aVertexIndex) const;
 
     /// @brief              Get polygon edges
     ///
+    /// @code{.cpp}
+    ///                     Array<Polygon::Edge> edges = polygon.getEdges() ;
+    /// @endcode
+    ///
     /// @return             Polygon edges
-
     Array<Polygon::Edge> getEdges() const;
 
     /// @brief              Get polygon vertices
     ///
+    /// @code{.cpp}
+    ///                     Array<Polygon::Vertex> vertices = polygon.getVertices() ;
+    /// @endcode
+    ///
     /// @return             Polygon vertices
-
     Array<Polygon::Vertex> getVertices() const;
 
     /// @brief              Get polygon convex hull
     ///
+    /// @code{.cpp}
+    ///                     Polygon convexHull = polygon.getConvexHull() ;
+    /// @endcode
+    ///
     ///                     https://en.wikipedia.org/wiki/Convex_hull
     ///
     /// @return             Polygon convex hull
-
     Polygon getConvexHull() const;
 
     /// @brief              Compute intersection of polygon with polygon
     ///
+    /// @code{.cpp}
+    ///                     Intersection intersection = polygonA.intersectionWith(polygonB) ;
+    /// @endcode
+    ///
     /// @param              [in] aPolygon A polygon
     /// @return             Intersection of polygon with polygon
-
     Intersection intersectionWith(const Polygon& aPolygon) const;
 
     /// @brief              Compute difference of polygon with polygon
     ///
+    /// @code{.cpp}
+    ///                     Intersection difference = polygonA.differenceWith(polygonB) ;
+    /// @endcode
+    ///
     /// @param              [in] aPolygon A polygon
     /// @return             Difference (leveraging Intersection class) of polygon with polygon
-
     Intersection differenceWith(const Polygon& aPolygon) const;
 
     /// @brief              Compute union of polygon with polygon
     ///
+    /// @code{.cpp}
+    ///                     MultiPolygon unionResult = polygonA.unionWith(polygonB) ;
+    /// @endcode
+    ///
     /// @param              [in] aPolygon A polygon
     /// @return             A multi-polygon
-
     MultiPolygon unionWith(const Polygon& aPolygon) const;
 
     /// @brief              Get string representation
     ///
+    /// @code{.cpp}
+    ///                     String str = polygon.toString() ;
+    /// @endcode
+    ///
     /// @param              [in] aFormat A format
     /// @return             String representation
-
     virtual String toString(
         const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
     ) const override;
 
     /// @brief              Print polygon
     ///
+    /// @code{.cpp}
+    ///                     polygon.print(std::cout, true) ;
+    /// @endcode
+    ///
     /// @param              [in] anOutputStream An output stream
     /// @param              [in] (optional) displayDecorators If true, display decorators
-
     virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
     /// @brief              Apply transformation to polygon
     ///
+    /// @code{.cpp}
+    ///                     polygon.applyTransformation(aTransformation) ;
+    /// @endcode
+    ///
     /// @param              [in] aTransformation A transformation
-
     virtual void applyTransformation(const Transformation& aTransformation) override;
 
     /// @brief              Constructs an undefined polygon
@@ -288,7 +365,6 @@ class Polygon : public Object
     /// @endcode
     ///
     /// @return             Undefined polygon
-
     static Polygon Undefined();
 
    private:

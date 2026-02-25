@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiLineString__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_MultiLineString__
 
@@ -34,7 +33,10 @@ using ostk::mathematics::geometry::d2::object::Point;
 using ostk::mathematics::object::Vector2d;
 
 /// @brief                      Multi Line string
-
+///
+/// @code{.cpp}
+///                             MultiLineString multiLineString({ lineStringA, lineStringB }) ;
+/// @endcode
 class MultiLineString : public Object
 {
    public:
@@ -47,27 +49,35 @@ class MultiLineString : public Object
     /// @endcode
     ///
     /// @param              [in] aPointArray A point array
-
     MultiLineString(const Array<LineString>& aLineStringArray);
 
     /// @brief              Clone multi line string
     ///
+    /// @code{.cpp}
+    ///                     MultiLineString* clonePtr = multiLineString.clone() ;
+    /// @endcode
+    ///
     /// @return             Pointer to cloned multi line string
-
     virtual MultiLineString* clone() const override;
 
     /// @brief              Equal to operator
     ///
+    /// @code{.cpp}
+    ///                     multiLineStringA == multiLineStringB ; // True
+    /// @endcode
+    ///
     /// @param              [in] aMultiLineString A multi multi line string
     /// @return             True if multi multi line strings are equal
-
     bool operator==(const MultiLineString& aMultiLineString) const;
 
     /// @brief              Not equal to operator
     ///
+    /// @code{.cpp}
+    ///                     multiLineStringA != multiLineStringB ; // True
+    /// @endcode
+    ///
     /// @param              [in] aMultiLineString A multi multi line string
     /// @return             True if multi multi line strings are not equal
-
     bool operator!=(const MultiLineString& aMultiLineString) const;
 
     /// @brief              Check if multi multi line string is defined
@@ -77,7 +87,6 @@ class MultiLineString : public Object
     /// @endcode
     ///
     /// @return             True if multi multi line string is defined
-
     virtual bool isDefined() const override;
 
     /// @brief              Check if multi multi line string is empty
@@ -87,60 +96,83 @@ class MultiLineString : public Object
     /// @endcode
     ///
     /// @return             True if multi multi line string is empty
-
     bool isEmpty() const;
 
     /// @brief              Get multi line string count
     ///
+    /// @code{.cpp}
+    ///                     Size count = multiLineString.getLineStringCount() ;
+    /// @endcode
+    ///
     /// @return             multi Line string count
-
     Size getLineStringCount() const;
 
     /// @brief              Get point count
     ///
+    /// @code{.cpp}
+    ///                     Size count = multiLineString.getPointCount() ;
+    /// @endcode
+    ///
     /// @return             Point count
-
     Size getPointCount() const;
 
     /// @brief              Get point closest to another point
     ///
+    /// @code{.cpp}
+    ///                     Point closest = multiLineString.getPointClosestTo(Point(0.0, 0.0)) ;
+    /// @endcode
+    ///
     /// @param              [in] aPoint A point
     /// @return             Closest point
-
     Point getPointClosestTo(const Point& aPoint) const;
 
     /// @brief              Get string representation
     ///
+    /// @code{.cpp}
+    ///                     String str = multiLineString.toString() ;
+    /// @endcode
+    ///
     /// @param              [in] aFormat A format
     /// @return             String representation
-
     virtual String toString(
         const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
     ) const override;
 
     /// @brief              Print point
     ///
+    /// @code{.cpp}
+    ///                     multiLineString.print(std::cout, true) ;
+    /// @endcode
+    ///
     /// @param              [in] anOutputStream An output stream
     /// @param              [in] (optional) displayDecorators If true, display decorators
-
     virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
     /// @brief              Get begin const iterator
     ///
+    /// @code{.cpp}
+    ///                     auto it = multiLineString.begin() ;
+    /// @endcode
+    ///
     /// @return             Begin const iterator
-
     MultiLineString::ConstIterator begin() const;
 
     /// @brief              Get end const iterator
     ///
+    /// @code{.cpp}
+    ///                     auto it = multiLineString.end() ;
+    /// @endcode
+    ///
     /// @return             End const iterator
-
     MultiLineString::ConstIterator end() const;
 
     /// @brief              Apply transformation to multi line string
     ///
+    /// @code{.cpp}
+    ///                     multiLineString.applyTransformation(aTransformation) ;
+    /// @endcode
+    ///
     /// @param              [in] aTransformation A transformation
-
     virtual void applyTransformation(const Transformation& aTransformation) override;
 
     /// @brief              Constructs an empty multi line string
@@ -150,7 +182,6 @@ class MultiLineString : public Object
     /// @endcode
     ///
     /// @return             Empty multi line string
-
     static MultiLineString Empty();
 
    private:

@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Object_Eigen__
 #define __OpenSpaceToolkit_Mathematics_Object_Eigen__
 
@@ -8,11 +7,27 @@
 
 #include <OpenSpaceToolkit/Core/Type/String.hpp>
 
+/// @brief                      Check if the matrix/vector is defined (not NaN and not Inf)
+///
+/// @code{.cpp}
+///     Vector3d v(1.0, 2.0, 3.0);
+///     v.isDefined();  // true
+/// @endcode
+///
+/// @return                     True if all elements are finite and not NaN
 bool isDefined() const
 {
     return (!this->isNaN()) && (!this->isInf());
 }
 
+/// @brief                      Check if any element of the matrix/vector is NaN
+///
+/// @code{.cpp}
+///     Vector3d v(1.0, std::numeric_limits<double>::quiet_NaN(), 3.0);
+///     v.isNaN();  // true
+/// @endcode
+///
+/// @return                     True if any element is NaN
 bool isNaN() const
 {
     for (auto rowIdx = 0; rowIdx < this->rows(); ++rowIdx)
@@ -29,6 +44,14 @@ bool isNaN() const
     return false;
 }
 
+/// @brief                      Check if any element of the matrix/vector is infinite
+///
+/// @code{.cpp}
+///     Vector3d v(1.0, std::numeric_limits<double>::infinity(), 3.0);
+///     v.isInf();  // true
+/// @endcode
+///
+/// @return                     True if any element is infinite
 bool isInf() const
 {
     for (auto rowIdx = 0; rowIdx < this->rows(); ++rowIdx)
@@ -45,6 +68,17 @@ bool isInf() const
     return false;
 }
 
+/// @brief                      Check if the matrix/vector is near another within a tolerance
+///
+/// @code{.cpp}
+///     Vector3d v1(1.0, 2.0, 3.0);
+///     Vector3d v2(1.0, 2.0, 3.0 + 1e-10);
+///     v1.isNear(v2, 1e-9);  // true
+/// @endcode
+///
+/// @param                      [in] aMatrix A matrix/vector to compare against
+/// @param                      [in] aTolerance A numerical tolerance on the norm of the difference
+/// @return                     True if the norm of the difference is within the tolerance
 bool isNear(const Derived& aMatrix, const RealScalar aTolerance) const
 {
     if (!this->isDefined() || (!aMatrix.isDefined()))
@@ -68,6 +102,15 @@ bool isNear(const Derived& aMatrix, const RealScalar aTolerance) const
 //     return (this->derived() - aMatrix).norm() <= (aTolerance * aTolerance) ;
 // }
 
+/// @brief                      Convert an integer scalar to a string
+///
+/// @code{.cpp}
+///     std::string str = ScalarToString(42, -1);  // "42"
+/// @endcode
+///
+/// @param                      [in] aScalar An integer scalar value
+/// @param                      [in] aPrecision A precision (unused for integers)
+/// @return                     String representation of the scalar
 static std::string ScalarToString(int aScalar, int aPrecision)
 {
     (void)aPrecision;
@@ -75,6 +118,15 @@ static std::string ScalarToString(int aScalar, int aPrecision)
     return std::to_string(aScalar);
 }
 
+/// @brief                      Convert a double scalar to a string
+///
+/// @code{.cpp}
+///     std::string str = ScalarToString(3.14, 2);  // "3.14"
+/// @endcode
+///
+/// @param                      [in] aScalar A double scalar value
+/// @param                      [in] aPrecision A precision (number of decimal places, or -1 for automatic)
+/// @return                     String representation of the scalar
 static std::string ScalarToString(double aScalar, int aPrecision)
 {
     std::string scalarString;
@@ -117,6 +169,15 @@ static std::string ScalarToString(double aScalar, int aPrecision)
     return scalarString;
 }
 
+/// @brief                      Convert the matrix/vector to a string representation
+///
+/// @code{.cpp}
+///     Vector3d v(1.0, 2.0, 3.0);
+///     v.toString();  // "[1.0, 2.0, 3.0]"
+/// @endcode
+///
+/// @param                      [in] aPrecision A precision (number of decimal places, or -1 for automatic)
+/// @return                     String representation of the matrix/vector
 std::string toString(int aPrecision = -1) const
 {
     std::string string;
@@ -169,41 +230,101 @@ std::string toString(int aPrecision = -1) const
     return string;
 }
 
+/// @brief                      Construct a unit vector along the X axis
+///
+/// @code{.cpp}
+///     Vector3d x = Vector3d::X();  // (1.0, 0.0, 0.0)
+/// @endcode
+///
+/// @return                     (1.0, 0.0, 0.0) vector
 static Matrix<Scalar, 3, 1> X()
 {
     return Matrix<Scalar, 3, 1>(1.0, 0.0, 0.0);
 }
 
+/// @brief                      Construct a unit vector along the Y axis
+///
+/// @code{.cpp}
+///     Vector3d y = Vector3d::Y();  // (0.0, 1.0, 0.0)
+/// @endcode
+///
+/// @return                     (0.0, 1.0, 0.0) vector
 static Matrix<Scalar, 3, 1> Y()
 {
     return Matrix<Scalar, 3, 1>(0.0, 1.0, 0.0);
 }
 
+/// @brief                      Construct a unit vector along the Z axis
+///
+/// @code{.cpp}
+///     Vector3d z = Vector3d::Z();  // (0.0, 0.0, 1.0)
+/// @endcode
+///
+/// @return                     (0.0, 0.0, 1.0) vector
 static Matrix<Scalar, 3, 1> Z()
 {
     return Matrix<Scalar, 3, 1>(0.0, 0.0, 1.0);
 }
 
+/// @brief                      Construct an undefined fixed-size matrix/vector (all NaN)
+///
+/// @code{.cpp}
+///     Vector3d v = Vector3d::Undefined();
+/// @endcode
+///
+/// @return                     Undefined matrix/vector
 static Derived Undefined()
 {
     return Derived::NaN();
 }
 
+/// @brief                      Construct an undefined dynamic-size vector of given size (all NaN)
+///
+/// @code{.cpp}
+///     VectorXd v = VectorXd::Undefined(5);
+/// @endcode
+///
+/// @param                      [in] aSize The vector size
+/// @return                     Undefined vector
 static Matrix<Scalar, Dynamic, 1> Undefined(Index aSize)
 {
     return Matrix<Scalar, Dynamic, 1>::NaN(aSize);
 }
 
+/// @brief                      Construct an undefined dynamic-size matrix of given dimensions (all NaN)
+///
+/// @code{.cpp}
+///     MatrixXd m = MatrixXd::Undefined(3, 3);
+/// @endcode
+///
+/// @param                      [in] aRowCount The number of rows
+/// @param                      [in] aColumnCount The number of columns
+/// @return                     Undefined matrix
 static Matrix<Scalar, Dynamic, Dynamic> Undefined(Index aRowCount, Index aColumnCount)
 {
     return Matrix<Scalar, Dynamic, Dynamic>::NaN(aRowCount, aColumnCount);
 }
 
+/// @brief                      Construct a fixed-size matrix/vector filled with NaN values
+///
+/// @code{.cpp}
+///     Vector3d v = Vector3d::NaN();
+/// @endcode
+///
+/// @return                     NaN matrix/vector
 static Derived NaN()
 {
     return std::numeric_limits<double>::quiet_NaN() * Derived::Ones();
 }
 
+/// @brief                      Construct a dynamic-size vector filled with NaN values
+///
+/// @code{.cpp}
+///     VectorXd v = VectorXd::NaN(5);
+/// @endcode
+///
+/// @param                      [in] aSize The vector size
+/// @return                     NaN vector
 static Matrix<Scalar, Dynamic, 1> NaN(Index aSize)
 {
     Matrix<Scalar, Dynamic, 1> matrix(aSize);
@@ -216,6 +337,15 @@ static Matrix<Scalar, Dynamic, 1> NaN(Index aSize)
     return matrix;
 }
 
+/// @brief                      Construct a dynamic-size matrix filled with NaN values
+///
+/// @code{.cpp}
+///     MatrixXd m = MatrixXd::NaN(3, 3);
+/// @endcode
+///
+/// @param                      [in] aRowCount The number of rows
+/// @param                      [in] aColumnCount The number of columns
+/// @return                     NaN matrix
 static Matrix<Scalar, Dynamic, Dynamic> NaN(Index aRowCount, Index aColumnCount)
 {
     Matrix<Scalar, Dynamic, Dynamic> matrix(aRowCount, aColumnCount);
@@ -231,11 +361,26 @@ static Matrix<Scalar, Dynamic, Dynamic> NaN(Index aRowCount, Index aColumnCount)
     return matrix;
 }
 
+/// @brief                      Construct a fixed-size matrix/vector filled with infinity values
+///
+/// @code{.cpp}
+///     Vector3d v = Vector3d::Inf();
+/// @endcode
+///
+/// @return                     Infinity matrix/vector
 static Derived Inf()
 {
     return std::numeric_limits<double>::infinity() * Derived::Ones();
 }
 
+/// @brief                      Construct a dynamic-size vector filled with infinity values
+///
+/// @code{.cpp}
+///     VectorXd v = VectorXd::Inf(5);
+/// @endcode
+///
+/// @param                      [in] aSize The vector size
+/// @return                     Infinity vector
 static Matrix<Scalar, Dynamic, 1> Inf(Index aSize)
 {
     Matrix<Scalar, Dynamic, 1> matrix(aSize);
@@ -248,6 +393,15 @@ static Matrix<Scalar, Dynamic, 1> Inf(Index aSize)
     return matrix;
 }
 
+/// @brief                      Construct a dynamic-size matrix filled with infinity values
+///
+/// @code{.cpp}
+///     MatrixXd m = MatrixXd::Inf(3, 3);
+/// @endcode
+///
+/// @param                      [in] aRowCount The number of rows
+/// @param                      [in] aColumnCount The number of columns
+/// @return                     Infinity matrix
 static Matrix<Scalar, Dynamic, Dynamic> Inf(Index aRowCount, Index aColumnCount)
 {
     Matrix<Scalar, Dynamic, Dynamic> matrix(aRowCount, aColumnCount);
@@ -263,6 +417,14 @@ static Matrix<Scalar, Dynamic, Dynamic> Inf(Index aRowCount, Index aColumnCount)
     return matrix;
 }
 
+/// @brief                      Parse a string representation into a dynamic-size vector
+///
+/// @code{.cpp}
+///     auto vector = VectorXd::Parse("[1.0, 2.0, 3.0]");
+/// @endcode
+///
+/// @param                      [in] aString A string in the format "[x, y, z, ...]"
+/// @return                     Parsed vector
 static Matrix<Scalar, Dynamic, 1> Parse(const std::string& aString)
 {
     if ((aString.length() < 3) || ((aString.at(0) != '[') || (aString.at(aString.length() - 1) != ']')))

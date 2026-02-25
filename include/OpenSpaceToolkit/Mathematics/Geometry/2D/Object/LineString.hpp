@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_LineString__
 
@@ -33,10 +32,13 @@ class Segment;
 
 /// @brief                      Line string
 ///
+/// @code{.cpp}
+///                             LineString lineString({ { 0.0, 0.0 }, { 0.0, 1.0 }, { 1.0, 0.0 } }) ;
+/// @endcode
+///
 ///                             A line string is a connected series of line segments.
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Polygonal_chain
-
 class LineString : public Object
 {
    public:
@@ -49,27 +51,35 @@ class LineString : public Object
     /// @endcode
     ///
     /// @param              [in] aPointArray A point array
-
     LineString(const Array<Point>& aPointArray);
 
     /// @brief              Clone line string
     ///
+    /// @code{.cpp}
+    ///                     LineString* clonePtr = LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }).clone() ;
+    /// @endcode
+    ///
     /// @return             Pointer to cloned line string
-
     virtual LineString* clone() const override;
 
     /// @brief              Equal to operator
     ///
+    /// @code{.cpp}
+    ///                     LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }) == LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }) ; // True
+    /// @endcode
+    ///
     /// @param              [in] aLineString A line string
     /// @return             True if line strings are equal
-
     bool operator==(const LineString& aLineString) const;
 
     /// @brief              Not equal to operator
     ///
+    /// @code{.cpp}
+    ///                     LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }) != LineString({ { 0.0, 0.0 }, { 2.0, 0.0 } }) ; // True
+    /// @endcode
+    ///
     /// @param              [in] aLineString A line string
     /// @return             True if line strings are not equal
-
     bool operator!=(const LineString& aLineString) const;
 
     /// @brief              Check if line string is defined
@@ -79,7 +89,6 @@ class LineString : public Object
     /// @endcode
     ///
     /// @return             True if line string is defined
-
     virtual bool isDefined() const override;
 
     /// @brief              Check if line string is empty
@@ -89,7 +98,6 @@ class LineString : public Object
     /// @endcode
     ///
     /// @return             True if line string is empty
-
     bool isEmpty() const;
 
     /// @brief              Check if line string contains a point
@@ -99,7 +107,6 @@ class LineString : public Object
     /// @endcode
     ///
     /// @return             True if line string contains a point
-
     bool contains(const Point& aPoint) const;
 
     /// @brief              Check if line string is near another line string
@@ -112,67 +119,96 @@ class LineString : public Object
     /// @param              [in] aLineString A line string
     /// @param              [in] aTolerance A tolerance
     /// @return             True if line string is near another line string
-
     bool isNear(const LineString& aLineString, const Real& aTolerance) const;
 
     /// @brief              Get point array
     ///
+    /// @code{.cpp}
+    ///                     const Array<Point>& points = LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }).getPointArray() ;
+    /// @endcode
+    ///
     /// @return             Point array
-
     const Array<Point>& getPointArray() const;
 
     /// @brief              Access point at index
     ///
+    /// @code{.cpp}
+    ///                     const Point& point = LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }).accessPointAt(0) ;
+    /// @endcode
+    ///
     /// @brief              [in] anIndex A point index
     /// @return             Reference to point at index
-
     const Point& accessPointAt(const Index& anIndex) const;
 
     /// @brief              Get point count
     ///
+    /// @code{.cpp}
+    ///                     Size count = LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }).getPointCount() ; // 2
+    /// @endcode
+    ///
     /// @return             Point count
-
     Size getPointCount() const;
 
     /// @brief              Get point closest to another point
     ///
+    /// @code{.cpp}
+    ///                     Point closest = LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }).getPointClosestTo(Point(0.1, 0.0)) ;
+    /// @endcode
+    ///
     /// @param              [in] aPoint A point
     /// @return             Closest point
-
     Point getPointClosestTo(const Point& aPoint) const;
 
     /// @brief              Get string representation
     ///
+    /// @code{.cpp}
+    ///                     String str = LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }).toString() ;
+    /// @endcode
+    ///
     /// @param              [in] aFormat A format
     /// @return             String representation
-
     virtual String toString(
         const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
     ) const override;
 
     /// @brief              Print point
     ///
+    /// @code{.cpp}
+    ///                     LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }).print(std::cout, true) ;
+    /// @endcode
+    ///
     /// @param              [in] anOutputStream An output stream
     /// @param              [in] (optional) displayDecorators If true, display decorators
-
     virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
     /// @brief              Get begin const iterator
     ///
+    /// @code{.cpp}
+    ///                     LineString lineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }) ;
+    ///                     auto it = lineString.begin() ;
+    /// @endcode
+    ///
     /// @return             Begin const iterator
-
     LineString::ConstIterator begin() const;
 
     /// @brief              Get end const iterator
     ///
+    /// @code{.cpp}
+    ///                     LineString lineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }) ;
+    ///                     auto it = lineString.end() ;
+    /// @endcode
+    ///
     /// @return             End const iterator
-
     LineString::ConstIterator end() const;
 
     /// @brief              Apply transformation to line string
     ///
+    /// @code{.cpp}
+    ///                     LineString lineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }) ;
+    ///                     lineString.applyTransformation(aTransformation) ;
+    /// @endcode
+    ///
     /// @param              [in] aTransformation A transformation
-
     virtual void applyTransformation(const Transformation& aTransformation) override;
 
     /// @brief              Constructs an empty line string
@@ -182,7 +218,6 @@ class LineString : public Object
     /// @endcode
     ///
     /// @return             Empty line string
-
     static LineString Empty();
 
     /// @brief              Constructs a line string from a segment
@@ -193,7 +228,6 @@ class LineString : public Object
     /// @endcode
     ///
     /// @return             Line string
-
     static LineString Segment(const object::Segment& aSegment);
 
    private:

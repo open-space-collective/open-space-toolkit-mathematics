@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Object__
 #define __OpenSpaceToolkit_Mathematics_Object__
 

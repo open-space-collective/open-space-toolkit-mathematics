@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Interpolator__
 #define __OpenSpaceToolkit_Mathematics_Interpolator__
 
@@ -27,6 +26,11 @@ using ostk::mathematics::object::VectorXd;
 /// In mathematics, an interpolator is a type of estimator allowing to construct new data
 /// points based on a range of a discrete set of known data points.
 ///
+/// @code{.cpp}
+///     auto interpolator = Interpolator::GenerateInterpolator(Interpolator::Type::Linear, x, y);
+///     double value = interpolator->evaluate(1.5);
+/// @endcode
+///
 /// @ref https://en.wikipedia.org/wiki/Interpolator.
 class Interpolator
 {
@@ -41,17 +45,34 @@ class Interpolator
 
     /// @brief Constructor (can only be called by derived classes since it is pure virtual)
     ///
+    /// @code{.cpp}
+    ///                     Interpolator interpolator(Interpolator::Type::Linear);
+    /// @endcode
+    ///
     /// @param aType Interpolation type
     Interpolator(const Type& aType);
 
     /// @brief Destructor (pure virtual)
+    ///
+    /// @code{.cpp}
+    ///                     // Called automatically when the interpolator goes out of scope
+    /// @endcode
     virtual ~Interpolator() = 0;
 
     /// @brief Get the interpolation type
+    ///
+    /// @code{.cpp}
+    ///                     Interpolator::Type type = interpolator.getInterpolationType();
+    /// @endcode
+    ///
     /// @return Interpolation type
     Type getInterpolationType() const;
 
     /// @brief Evaluate the interpolator
+    ///
+    /// @code{.cpp}
+    ///                     VectorXd values = interpolator.evaluate(queryVector);
+    /// @endcode
     ///
     /// @param aQueryVector A vector of x values
     /// @return Vector of y values
@@ -59,11 +80,19 @@ class Interpolator
 
     /// @brief Evaluate the interpolator
     ///
+    /// @code{.cpp}
+    ///                     double value = interpolator.evaluate(5.0);
+    /// @endcode
+    ///
     /// @param aQueryValue An x value
     /// @return Vector of y values
     virtual double evaluate(const double& aQueryValue) const = 0;
 
     /// @brief Get the derivative of the interpolator
+    ///
+    /// @code{.cpp}
+    ///                     double derivative = interpolator.computeDerivative(5.0);
+    /// @endcode
     ///
     /// @param aQueryValue An x value
     /// @return Derivative of the interpolator at the given x value
@@ -71,11 +100,19 @@ class Interpolator
 
     /// @brief Get the derivative of the interpolator
     ///
+    /// @code{.cpp}
+    ///                     VectorXd derivatives = interpolator.computeDerivative(queryVector);
+    /// @endcode
+    ///
     /// @param aQueryVector A vector of x values
     /// @return Vector of derivatives of the interpolator at the given x values
     virtual VectorXd computeDerivative(const VectorXd& aQueryVector) const = 0;
 
     /// @brief Generate an interpolator
+    ///
+    /// @code{.cpp}
+    ///                     auto interpolator = Interpolator::GenerateInterpolator(Interpolator::Type::Linear, x, y);
+    /// @endcode
     ///
     /// @param aType Interpolation type
     /// @param anXVector A vector of x values

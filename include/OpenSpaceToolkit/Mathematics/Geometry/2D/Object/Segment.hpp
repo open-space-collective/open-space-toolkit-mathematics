@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Segment__
 
@@ -30,11 +29,14 @@ class PointSet;
 
 /// @brief                      Segment
 ///
+/// @code{.cpp}
+///                             Segment segment({ 0.0, 0.0 }, { 0.0, 1.0 }) ;
+/// @endcode
+///
 ///                             A segment is a part of a line that is bounded by two distinct end points,
 ///                             and contains every point on the line between its endpoints.
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Line_segment
-
 class Segment : public Object
 {
    public:
@@ -46,13 +48,15 @@ class Segment : public Object
     ///
     /// @param              [in] aFirstPoint A first point
     /// @param              [in] aSecondPoint A second point
-
     Segment(const Point& aFirstPoint, const Point& aSecondPoint);
 
     /// @brief              Clone segment
     ///
+    /// @code{.cpp}
+    ///                     Segment* clonePtr = Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).clone() ;
+    /// @endcode
+    ///
     /// @return             Pointer to cloned segment
-
     virtual Segment* clone() const override;
 
     /// @brief              Equal to operator
@@ -63,7 +67,6 @@ class Segment : public Object
     ///
     /// @param              [in] aSegment A segment
     /// @return             True if segments are equal
-
     bool operator==(const Segment& aSegment) const;
 
     /// @brief              Not equal to operator
@@ -74,7 +77,6 @@ class Segment : public Object
     ///
     /// @param              [in] aSegment A segment
     /// @return             True if segments are not equal
-
     bool operator!=(const Segment& aSegment) const;
 
     /// @brief              Check if segment is defined
@@ -84,7 +86,6 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             True if segment is defined
-
     virtual bool isDefined() const override;
 
     /// @brief              Check if segment is degenerate, i.e. its length is zero
@@ -94,7 +95,6 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             True if segment is degenerate
-
     bool isDegenerate() const;
 
     /// @brief              Check if segment contains point
@@ -107,7 +107,6 @@ class Segment : public Object
     ///
     /// @param              [in] aPoint A point
     /// @return             True if segment contains point
-
     bool contains(const Point& aPoint) const;
 
     /// @brief              Check if segment contains point set
@@ -120,7 +119,6 @@ class Segment : public Object
     ///
     /// @param              [in] aPointSet A point set
     /// @return             True if segment contains point set
-
     bool contains(const PointSet& aPointSet) const;
 
     /// @brief              Get segment first point
@@ -130,7 +128,6 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment first point
-
     Point getFirstPoint() const;
 
     /// @brief              Get segment second point
@@ -140,7 +137,6 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment second point
-
     Point getSecondPoint() const;
 
     /// @brief              Get segment center
@@ -150,7 +146,6 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment center
-
     Point getCenter() const;
 
     /// @brief              Get segment direction
@@ -160,7 +155,6 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment direction
-
     Vector2d getDirection() const;
 
     /// @brief              Get segment length
@@ -170,49 +164,67 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Segment length
-
     Real getLength() const;
 
     /// @brief              Get distance to point
     ///
+    /// @code{.cpp}
+    ///                     Real distance = Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).distanceTo(Point(1.0, 0.0)) ;
+    /// @endcode
+    ///
     /// @param              [in] aPoint A point
     /// @return             Distance to point
-
     Real distanceTo(const Point& aPoint) const;
 
     /// @brief              Get distance to point set
     ///
+    /// @code{.cpp}
+    ///                     Real distance = Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).distanceTo(pointSet) ;
+    /// @endcode
+    ///
     /// @param              [in] aPointSet A point set
     /// @return             Distance to point set
-
     Real distanceTo(const PointSet& aPointSet) const;
 
     /// @brief              Get line from segment
     ///
+    /// @code{.cpp}
+    ///                     Line line = Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).toLine() ;
+    /// @endcode
+    ///
     /// @return             Line
-
     Line toLine() const;
 
     /// @brief              Get string representation
     ///
+    /// @code{.cpp}
+    ///                     String str = Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).toString() ;
+    /// @endcode
+    ///
     /// @param              [in] aFormat A format
     /// @return             String representation
-
     virtual String toString(
         const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
     ) const override;
 
     /// @brief              Print segment
     ///
+    /// @code{.cpp}
+    ///                     Segment({ 0.0, 0.0 }, { 0.0, 1.0 }).print(std::cout, true) ;
+    /// @endcode
+    ///
     /// @param              [in] anOutputStream An output stream
     /// @param              [in] (optional) displayDecorators If true, display decorators
-
     virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
     /// @brief              Apply transformation to segment
     ///
+    /// @code{.cpp}
+    ///                     Segment segment({ 0.0, 0.0 }, { 0.0, 1.0 }) ;
+    ///                     segment.applyTransformation(aTransformation) ;
+    /// @endcode
+    ///
     /// @param              [in] aTransformation A transformation
-
     virtual void applyTransformation(const Transformation& aTransformation) override;
 
     /// @brief              Constructs an undefined segment
@@ -222,7 +234,6 @@ class Segment : public Object
     /// @endcode
     ///
     /// @return             Undefined segment
-
     static Segment Undefined();
 
    private:
