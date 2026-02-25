@@ -156,7 +156,8 @@ class PointSet : public Object
     /// @brief              Get point closest to another point
     ///
     /// @code{.cpp}
-    ///                     Point closest = PointSet({ { 0.0, 0.0 }, { 1.0, 0.0 } }).getPointClosestTo(Point(0.1, 0.0)) ;
+    ///                     Point closest = PointSet({ { 0.0, 0.0 }, { 1.0, 0.0 } }).getPointClosestTo(Point(0.1, 0.0))
+    ///                     ;
     /// @endcode
     ///
     /// @param              [in] aPoint A point

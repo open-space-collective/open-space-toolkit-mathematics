@@ -40,7 +40,8 @@ class RotationVector;
 ///                             F. Landis Markley and John L. Crassidis, Springer
 ///
 /// @code{.cpp}
-///                             EulerAngle eulerAngle(Angle::Degrees(30.0), Angle::Degrees(45.0), Angle::Degrees(60.0), EulerAngle::AxisSequence::ZYX);
+///                             EulerAngle eulerAngle(Angle::Degrees(30.0), Angle::Degrees(45.0), Angle::Degrees(60.0),
+///                             EulerAngle::AxisSequence::ZYX);
 /// @endcode
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Euler_angles

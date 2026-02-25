@@ -45,14 +45,14 @@ class Transformation
     enum class Type
     {
 
-        Undefined,   ///< Undefined transformation
-        Identity,    ///< Identity transformation
-        Translation, ///< Translation transformation
-        Rotation,    ///< Rotation transformation
-        Scaling,     ///< Scaling transformation
-        Reflection,  ///< Reflection transformation
-        Shear,       ///< Shear transformation
-        Affine       ///< General affine transformation
+        Undefined,    ///< Undefined transformation
+        Identity,     ///< Identity transformation
+        Translation,  ///< Translation transformation
+        Rotation,     ///< Rotation transformation
+        Scaling,      ///< Scaling transformation
+        Reflection,   ///< Reflection transformation
+        Shear,        ///< Shear transformation
+        Affine        ///< General affine transformation
 
     };
 

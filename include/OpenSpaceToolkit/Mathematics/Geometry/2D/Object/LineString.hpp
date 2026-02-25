@@ -65,7 +65,8 @@ class LineString : public Object
     /// @brief              Equal to operator
     ///
     /// @code{.cpp}
-    ///                     LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }) == LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }) ; // True
+    ///                     LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }) == LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }) ;
+    ///                     // True
     /// @endcode
     ///
     /// @param              [in] aLineString A line string
@@ -75,7 +76,8 @@ class LineString : public Object
     /// @brief              Not equal to operator
     ///
     /// @code{.cpp}
-    ///                     LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }) != LineString({ { 0.0, 0.0 }, { 2.0, 0.0 } }) ; // True
+    ///                     LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }) != LineString({ { 0.0, 0.0 }, { 2.0, 0.0 } }) ;
+    ///                     // True
     /// @endcode
     ///
     /// @param              [in] aLineString A line string
@@ -152,7 +154,8 @@ class LineString : public Object
     /// @brief              Get point closest to another point
     ///
     /// @code{.cpp}
-    ///                     Point closest = LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }).getPointClosestTo(Point(0.1, 0.0)) ;
+    ///                     Point closest = LineString({ { 0.0, 0.0 }, { 1.0, 0.0 } }).getPointClosestTo(Point(0.1,
+    ///                     0.0)) ;
     /// @endcode
     ///
     /// @param              [in] aPoint A point

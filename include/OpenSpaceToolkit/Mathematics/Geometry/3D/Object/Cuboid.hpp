@@ -41,7 +41,8 @@ class Pyramid;
 /// @brief                      Cuboid
 ///
 /// @code{.cpp}
-///                             Cuboid cuboid(Point(0.0, 0.0, 0.0), {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {0.0, 0.0, 1.0}}, {1.0, 2.0, 3.0});
+///                             Cuboid cuboid(Point(0.0, 0.0, 0.0), {{1.0, 0.0, 0.0}, {0.0, 1.0, 0.0}, {0.0, 0.0, 1.0}},
+///                             {1.0, 2.0, 3.0});
 /// @endcode
 ///
 /// @ref                        https://en.wikipedia.org/wiki/Cuboid

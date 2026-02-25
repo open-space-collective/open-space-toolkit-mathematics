@@ -41,8 +41,8 @@ using ostk::mathematics::object::Vector4d;
 ///
 /// @code{.cpp}
 ///                             Transformation t = Transformation::Identity();
-///                             Transformation rotation = Transformation::Rotation(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(45.0)));
-///                             Point p = rotation.applyTo(Point(1.0, 0.0, 0.0));
+///                             Transformation rotation = Transformation::Rotation(RotationVector({0.0, 0.0, 1.0},
+///                             Angle::Degrees(45.0))); Point p = rotation.applyTo(Point(1.0, 0.0, 0.0));
 /// @endcode
 class Transformation
 {
@@ -50,14 +50,14 @@ class Transformation
     enum class Type
     {
 
-        Undefined,   ///< Undefined transformation
-        Identity,    ///< Identity transformation
-        Translation, ///< Translation transformation
-        Rotation,    ///< Rotation transformation
-        Scaling,     ///< Scaling transformation
-        Reflection,  ///< Reflection transformation
-        Shear,       ///< Shear transformation
-        Affine       ///< General affine transformation
+        Undefined,    ///< Undefined transformation
+        Identity,     ///< Identity transformation
+        Translation,  ///< Translation transformation
+        Rotation,     ///< Rotation transformation
+        Scaling,      ///< Scaling transformation
+        Reflection,   ///< Reflection transformation
+        Shear,        ///< Shear transformation
+        Affine        ///< General affine transformation
 
     };
 
@@ -93,7 +93,8 @@ class Transformation
     /// @brief              Composition operator (multiply two transformations)
     ///
     /// @code{.cpp}
-    ///                     Transformation t = Transformation::Translation({1.0, 0.0, 0.0}) * Transformation::Identity();
+    ///                     Transformation t = Transformation::Translation({1.0, 0.0, 0.0}) *
+    ///                     Transformation::Identity();
     /// @endcode
     ///
     /// @param              [in] aTransformation A transformation to compose with
@@ -254,7 +255,8 @@ class Transformation
     /// @brief              Construct a rotation transformation from a rotation vector
     ///
     /// @code{.cpp}
-    ///                     Transformation t = Transformation::Rotation(RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(45.0)));
+    ///                     Transformation t = Transformation::Rotation(RotationVector({0.0, 0.0, 1.0},
+    ///                     Angle::Degrees(45.0)));
     /// @endcode
     ///
     /// @param              [in] aRotationVector A rotation vector
@@ -274,7 +276,8 @@ class Transformation
     /// @brief              Construct a rotation transformation around a given point
     ///
     /// @code{.cpp}
-    ///                     Transformation t = Transformation::RotationAround(Point(1.0, 0.0, 0.0), RotationVector({0.0, 0.0, 1.0}, Angle::Degrees(90.0)));
+    ///                     Transformation t = Transformation::RotationAround(Point(1.0, 0.0, 0.0), RotationVector({0.0,
+    ///                     0.0, 1.0}, Angle::Degrees(90.0)));
     /// @endcode
     ///
     /// @param              [in] aPoint A center point of rotation
