@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationVector__
 
@@ -34,8 +33,11 @@ class EulerAngle;
 
 /// @brief                      Rotation Vector
 ///
+/// @code{.cpp}
+///                             RotationVector rotationVector({0.0, 0.0, 1.0}, Angle::Degrees(45.0));
+/// @endcode
+///
 /// @ref                        https://en.wikipedia.org/wiki/Axis–angle_representation#Rotation_vector
-
 class RotationVector
 {
    public:
@@ -47,7 +49,6 @@ class RotationVector
     ///
     /// @param                  [in] anAxis A rotation axis
     /// @param                  [in] anAngle A rotation angle
-
     RotationVector(const Vector3d& anAxis, const Angle& anAngle);
 
     /// @brief                  Construct Rotation Vector from vector and angle unit
@@ -59,7 +60,6 @@ class RotationVector
     ///
     /// @param                  [in] aVector A vector
     /// @param                  [in] anAngleUnit An angle unit
-
     RotationVector(const Vector3d& anAxis, const Angle::Unit& anAngleUnit);
 
     /// @brief                  Equal to operator
@@ -70,7 +70,6 @@ class RotationVector
     ///
     /// @param                  [in] aRotationVector A Rotation Vector
     /// @return                 True if Rotation Vectors are equal
-
     bool operator==(const RotationVector& aRotationVector) const;
 
     /// @brief                  Not equal to operator
@@ -81,7 +80,6 @@ class RotationVector
     ///
     /// @param                  [in] aRotationVector A Rotation Vector
     /// @return                 True if Rotation Vectors are not equal
-
     bool operator!=(const RotationVector& aRotationVector) const;
 
     /// @brief                  Output stream operator
@@ -93,7 +91,6 @@ class RotationVector
     /// @param                  [in] anOutputStream An output stream
     /// @param                  [in] aRotationVector A Rotation Vector
     /// @return                 Reference to output stream
-
     friend std::ostream& operator<<(std::ostream& anOutputStream, const RotationVector& aRotationVector);
 
     /// @brief                  Check if Rotation Vector is defined
@@ -103,7 +100,6 @@ class RotationVector
     /// @endcode
     ///
     /// @return                 True if Rotation Vector is defined
-
     bool isDefined() const;
 
     /// @brief                  Get rotation axis
@@ -113,7 +109,6 @@ class RotationVector
     /// @endcode
     ///
     /// @return                 Rotation axis
-
     Vector3d getAxis() const;
 
     /// @brief                  Get rotation angle
@@ -123,7 +118,6 @@ class RotationVector
     /// @endcode
     ///
     /// @return                 Rotation angle
-
     Angle getAngle() const;
 
     /// @brief                  Convert Rotation Vector to string representation
@@ -134,7 +128,6 @@ class RotationVector
     ///
     /// @param                  [in] (optional) aPrecision A precision
     /// @return                 String representation
-
     String toString(const Integer& aPrecision = Integer::Undefined()) const;
 
     /// @brief                  Rectify Rotation Vector (enforce positive angle)
@@ -144,7 +137,6 @@ class RotationVector
     /// @endcode
     ///
     /// @return                 Rotation Vector reference
-
     RotationVector& rectify();
 
     /// @brief                  Construct an undefined Rotation Vector
@@ -154,7 +146,6 @@ class RotationVector
     /// @endcode
     ///
     /// @return                 Undefined Rotation Vector
-
     static RotationVector Undefined();
 
     /// @brief                  Construct a unitary Rotation Vector
@@ -164,7 +155,6 @@ class RotationVector
     /// @endcode
     ///
     /// @return                 Unitary Rotation Vector
-
     static RotationVector Unit();
 
     /// @brief                  Construct Rotation Vector around X-axis
@@ -175,7 +165,6 @@ class RotationVector
     ///
     /// @param                  [in] anAngle A rotation angle
     /// @return                 Rotation Vector
-
     static RotationVector X(const Angle& anAngle);
 
     /// @brief                  Construct Rotation Vector around Y-axis
@@ -186,7 +175,6 @@ class RotationVector
     ///
     /// @param                  [in] anAngle A rotation angle
     /// @return                 Rotation Vector
-
     static RotationVector Y(const Angle& anAngle);
 
     /// @brief                  Construct Rotation Vector around Z-axis
@@ -197,7 +185,6 @@ class RotationVector
     ///
     /// @param                  [in] anAngle A rotation angle
     /// @return                 Rotation Vector
-
     static RotationVector Z(const Angle& anAngle);
 
     /// @brief                  Construct Rotation Vector from Quaternion
@@ -208,7 +195,6 @@ class RotationVector
     ///
     /// @param                  [in] aQuaternion A quaternion
     /// @return                 Rotation Vector
-
     static RotationVector Quaternion(const rotation::Quaternion& aQuaternion);
 
     /// @brief                  Construct Rotation Vector from Rotation Matrix
@@ -219,7 +205,6 @@ class RotationVector
     ///
     /// @param                  [in] aRotationMatrix A Rotation Matrix
     /// @return                 Rotation Vector
-
     static RotationVector RotationMatrix(const rotation::RotationMatrix& aRotationMatrix);
 
     /// @brief                  Construct Rotation Vector from Euler Angle
@@ -230,7 +215,6 @@ class RotationVector
     ///
     /// @param                  [in] aEulerAngle A Euler Angle
     /// @return                 Rotation Vector
-
     static RotationVector EulerAngle(const rotation::EulerAngle& aEulerAngle);
 
    private:

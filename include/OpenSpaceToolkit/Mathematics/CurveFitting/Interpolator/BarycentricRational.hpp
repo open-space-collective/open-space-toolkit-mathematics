@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational__
 #define __OpenSpaceToolkit_Mathematics_Interpolator_BarycentricRational__
 
@@ -34,6 +33,13 @@ using boost::math::interpolators::barycentric_rational;
 /// non-uniformly spaced samples. It requires 𝑶(N) time for construction, and 𝑶(N) time for
 /// each evaluation.
 ///
+/// @code{.cpp}
+///     VectorXd x = {{0.0, 1.0, 2.0, 3.0}};
+///     VectorXd y = {{0.0, 1.0, 4.0, 9.0}};
+///     BarycentricRational interpolator(x, y);
+///     double value = interpolator.evaluate(1.5);
+/// @endcode
+///
 /// @ref https://www.boost.org/doc/libs/1_81_0/libs/math/doc/html/math_toolkit/barycentric.html
 class BarycentricRational : public Interpolator
 {
@@ -51,6 +57,10 @@ class BarycentricRational : public Interpolator
     BarycentricRational(const VectorXd& anXVector, const VectorXd& aYVector);
 
     /// @brief Destructor
+    ///
+    /// @code{.cpp}
+    ///                     // Called automatically when the BarycentricRational goes out of scope
+    /// @endcode
     virtual ~BarycentricRational() override;
 
     /// @brief Evaluate the spline

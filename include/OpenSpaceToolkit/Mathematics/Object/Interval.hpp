@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Object_Interval__
 #define __OpenSpaceToolkit_Mathematics_Object_Interval__
 
@@ -18,12 +17,18 @@ namespace types = ostk::core::type;
 namespace ctnr = ostk::core::container;
 
 /// @brief                      Interval base (used to avoid having a templated enum)
-
+///
+/// @code{.cpp}
+///                             IntervalBase::Type type = IntervalBase::Type::Closed;
+/// @endcode
 class IntervalBase
 {
    public:
     /// @brief              Interval type
-
+    ///
+    /// @code{.cpp}
+    ///                     IntervalBase::Type type = IntervalBase::Type::Closed;
+    /// @endcode
     enum class Type
     {
 
@@ -39,8 +44,11 @@ class IntervalBase
 /// @brief                      Set of numbers with the property that any number that lies between two numbers in the
 /// set is also included in the set
 ///
+/// @code{.cpp}
+///                             Interval<Real> interval(0.0, 1.0, Interval<Real>::Type::Closed);
+/// @endcode
+///
 /// @ref                        https://en.wikipedia.org/wiki/Interval_(mathematics)
-
 template <class T>
 class Interval : public IntervalBase
 {
@@ -54,7 +62,6 @@ class Interval : public IntervalBase
     /// @param              [in] aLowerBound A lower bound
     /// @param              [in] anUpperBound An upper bound
     /// @param              [in] anIntervalType An interval type
-
     Interval(const T& aLowerBound, const T& anUpperBound, const Interval::Type& anIntervalType);
 
     /// @brief              Equal to operator
@@ -65,7 +72,6 @@ class Interval : public IntervalBase
     ///
     /// @param              [in] anInterval An interval
     /// @return             True if intervals are equal
-
     bool operator==(const Interval& anInterval) const;
 
     /// @brief              Not equal to operator
@@ -76,7 +82,6 @@ class Interval : public IntervalBase
     ///
     /// @param              [in] anInterval An interval
     /// @return             True if intervals are not equal
-
     bool operator!=(const Interval& anInterval) const;
 
     /// @brief              Output stream operator
@@ -89,7 +94,6 @@ class Interval : public IntervalBase
     /// @param              [in] anOutputStream An output stream
     /// @param              [in] anInterval An interval
     /// @return             A reference to output stream
-
     template <class U>
     friend std::ostream& operator<<(std::ostream& anOutputStream, const Interval<U>& anInterval);
 
@@ -100,7 +104,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             True if interval is defined
-
     bool isDefined() const;
 
     /// @brief              Check if interval is degenerate, i.e. its lower and upper bounds are the equal
@@ -110,7 +113,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             True if interval is degenerate
-
     bool isDegenerate() const;
 
     /// @brief              Check if interval is intersecting with another interval
@@ -121,7 +123,6 @@ class Interval : public IntervalBase
     ///
     /// @param              [in] anInterval An interval
     /// @return             True if intervals are intersecting
-
     bool intersects(const Interval& anInterval) const;
 
     /// @brief              Check if interval contains value
@@ -132,7 +133,6 @@ class Interval : public IntervalBase
     ///
     /// @param              [in] aValue A value
     /// @return             True if interval contains value
-
     bool contains(const T& aValue) const;
 
     /// @brief              Check if interval contains another interval
@@ -143,7 +143,6 @@ class Interval : public IntervalBase
     ///
     /// @param              [in] anInterval An interval
     /// @return             True if interval contains another interval
-
     bool contains(const Interval& anInterval) const;
 
     /// @brief              Get reference to lower bound
@@ -154,7 +153,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Reference to lower bound
-
     const T& accessLowerBound() const;
 
     /// @brief              Get reference to upper bound
@@ -165,7 +163,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Reference to upper bound
-
     const T& accessUpperBound() const;
 
     /// @brief              Get interval type
@@ -176,7 +173,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Interval type
-
     Interval::Type getType() const;
 
     /// @brief              Get lower bound
@@ -187,7 +183,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Lower bound
-
     T getLowerBound() const;
 
     /// @brief              Get upper bound
@@ -198,7 +193,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Upper bound
-
     T getUpperBound() const;
 
     /// @brief              Get intersecting interval with another interval
@@ -212,7 +206,6 @@ class Interval : public IntervalBase
     ///
     /// @param              [in] anInterval An interval
     /// @return             Intersecting interval
-
     Interval<T> getIntersectionWith(const Interval& anInterval) const;
 
     /// @brief              Get union interval with another interval
@@ -225,7 +218,6 @@ class Interval : public IntervalBase
     ///
     /// @param              [in] anInterval An interval
     /// @return             Union interval
-
     Interval<T> getUnionWith(const Interval& anInterval) const;
 
     /// @brief              Generate array from a given step, respecting the openness of the interval.
@@ -237,7 +229,6 @@ class Interval : public IntervalBase
     ///
     /// @param              [in] aStep A step
     /// @return             Array of values
-
     template <class U>
     ctnr::Array<T> generateArrayWithStep(const U& aStep) const;
 
@@ -250,7 +241,6 @@ class Interval : public IntervalBase
     ///
     /// @param              [in] anArraySize An array size
     /// @return             Array of values
-
     ctnr::Array<T> generateArrayWithSize(const types::Size& anArraySize) const;
 
     /// @brief              Get serialized interval
@@ -260,25 +250,36 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Serialized interval
-
     types::String toString() const;
 
     /// @brief              Interval type setter
     ///
+    /// @code
+    ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ;
+    ///                     interval.setType(Interval<Real>::Type::Open) ;
+    /// @endcode
+    ///
     /// @param              [in] aType An interval type
-
     void setType(const Interval::Type& aType);
 
     /// @brief              Interval lower bound setter
     ///
+    /// @code
+    ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ;
+    ///                     interval.setLowerBound(-1.0) ;
+    /// @endcode
+    ///
     /// @param              [in] aLowerBound A lower bound
-
     void setLowerBound(const T& aLowerBound);
 
     /// @brief              Interval upper bound setter
     ///
+    /// @code
+    ///                     Interval<Real> interval = Interval<Real>::Closed(0.0, 1.0) ;
+    ///                     interval.setUpperBound(2.0) ;
+    /// @endcode
+    ///
     /// @param              [in] anUpperBound An upper bound
-
     void setUpperBound(const T& anUpperBound);
 
     /// @brief              Constructs an undefined interval
@@ -288,7 +289,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Undefined interval
-
     static Interval<T> Undefined();
 
     /// @brief              Constructs a closed interval
@@ -298,7 +298,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Closed interval
-
     static Interval<T> Closed(const T& aLowerBound, const T& anUpperBound);
 
     /// @brief              Constructs an open interval
@@ -308,7 +307,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Open interval
-
     static Interval<T> Open(const T& aLowerBound, const T& anUpperBound);
 
     /// @brief              Constructs an half-open left interval
@@ -318,7 +316,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Half-open left interval
-
     static Interval<T> HalfOpenLeft(const T& aLowerBound, const T& anUpperBound);
 
     /// @brief              Constructs an half-open right interval
@@ -328,7 +325,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Half-open right interval
-
     static Interval<T> HalfOpenRight(const T& aLowerBound, const T& anUpperBound);
 
     /// @brief              Creates a new array of Intervals clipped by the provided Interval
@@ -344,7 +340,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Clipped array
-
     static ctnr::Array<Interval<T>> Clip(
         const ctnr::Array<Interval<T>>& anIntervalArray, const Interval<T>& anInterval
     );
@@ -360,7 +355,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Sorted array
-
     static ctnr::Array<Interval<T>> Sort(
         const ctnr::Array<Interval<T>>& anIntervalArray, const bool& byLowerBound = true, const bool& ascending = true
     );
@@ -377,7 +371,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Merged array
-
     static ctnr::Array<Interval<T>> Merge(const ctnr::Array<Interval<T>>& anIntervalArray);
 
     /// @brief              Creates a new array that contains the gaps between an array of intervals. If
@@ -395,7 +388,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Gaps array
-
     static ctnr::Array<Interval<T>> GetGaps(
         const ctnr::Array<Interval<T>>& anIntervalArray, const Interval<T>& anInterval = Interval::Undefined()
     );
@@ -422,7 +414,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Logical 'OR' array
-
     static ctnr::Array<Interval<T>> LogicalOr(
         const ctnr::Array<Interval<T>>& anIntervalArray, const ctnr::Array<Interval<T>>& anotherIntervalArray
     );
@@ -449,7 +440,6 @@ class Interval : public IntervalBase
     /// @endcode
     ///
     /// @return             Logical 'AND' array
-
     static ctnr::Array<Interval<T>> LogicalAnd(
         const ctnr::Array<Interval<T>>& anIntervalArray, const ctnr::Array<Interval<T>>& anotherIntervalArray
     );
@@ -462,7 +452,6 @@ class Interval : public IntervalBase
     ///
     /// @param              [in] aString A string
     /// @return             Interval
-
     static Interval<T> Parse(const types::String& aString);
 
     /// @brief              Converts interval type to string
@@ -473,7 +462,6 @@ class Interval : public IntervalBase
     ///
     /// @param              [in] anIntervalType An interval type
     /// @return             String
-
     static types::String StringFromType(const Interval::Type& anIntervalType);
 
    private:

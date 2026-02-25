@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_RotationMatrix__
 
@@ -38,18 +37,29 @@ class EulerAngle;
 
 /// @brief                      Rotation matrix
 ///
+/// @code{.cpp}
+///                             RotationMatrix rotationMatrix = RotationMatrix::Unit();
+/// @endcode
+///
 /// @ref                        https://en.wikipedia.org/wiki/Rotation_matrix
-
 class RotationMatrix
 {
    public:
     /// @brief                  Constructor
     ///
+    /// @code{.cpp}
+    ///                         Matrix3d matrix = Matrix3d::Identity();
+    ///                         RotationMatrix rotationMatrix(matrix);
+    /// @endcode
+    ///
     /// @param                  [in] aMatrix A matrix
-
     RotationMatrix(const Matrix3d& aMatrix);
 
     /// @brief                  Constructor
+    ///
+    /// @code{.cpp}
+    ///                         RotationMatrix rotationMatrix(1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0);
+    /// @endcode
     ///
     /// @param                  [in] aFirstCoefficient A first coefficient
     /// @param                  [in] aSecondCoefficient A second coefficient
@@ -60,7 +70,6 @@ class RotationMatrix
     /// @param                  [in] aSeventhCoefficient A seventh coefficient
     /// @param                  [in] aEighthCoefficient A eighth coefficient
     /// @param                  [in] aNinthCoefficient A ninth coefficient
-
     RotationMatrix(
         const Real& aFirstCoefficient,
         const Real& aSecondCoefficient,
@@ -81,7 +90,6 @@ class RotationMatrix
     ///
     /// @param                  [in] aRotationMatrix A Rotation Matrix
     /// @return                 True if rotation matrices are equal
-
     bool operator==(const RotationMatrix& aRotationMatrix) const;
 
     /// @brief                  Not equal to operator
@@ -92,7 +100,6 @@ class RotationMatrix
     ///
     /// @param                  [in] aRotationMatrix A Rotation Matrix
     /// @return                 True if rotation matrices are not equal
-
     bool operator!=(const RotationMatrix& aRotationMatrix) const;
 
     /// @brief                  Matrix multiplication operator
@@ -105,7 +112,6 @@ class RotationMatrix
     ///
     /// @param                  [in] aRotationMatrix A Rotation Matrix
     /// @return                 Rotation matrix
-
     RotationMatrix operator*(const RotationMatrix& aRotationMatrix) const;
 
     /// @brief                  Vector multiplication operator
@@ -118,7 +124,6 @@ class RotationMatrix
     ///
     /// @param                  [in] aVector A vector
     /// @return                 Vector
-
     Vector3d operator*(const Vector3d& aVector) const;
 
     /// @brief                  Index function operator
@@ -131,7 +136,6 @@ class RotationMatrix
     /// @param                  [in] aRowIndex A row index
     /// @param                  [in] aColumnIndex A column index
     /// @return                 Value at index
-
     double operator()(const Index& aRowIndex, const Index& aColumnIndex) const;
 
     /// @brief                  Index function operator
@@ -144,7 +148,6 @@ class RotationMatrix
     /// @param                  [in] aRowIndex A row index
     /// @param                  [in] aColumnIndex A column index
     /// @return                 Reference of value at index
-
     double& operator()(const Index& aRowIndex, const Index& aColumnIndex);
 
     /// @brief                  Output stream operator
@@ -156,7 +159,6 @@ class RotationMatrix
     /// @param                  [in] anOutputStream An output stream
     /// @param                  [in] aRotationMatrix A Rotation Matrix
     /// @return                 Output stream reference
-
     friend std::ostream& operator<<(std::ostream& anOutputStream, const RotationMatrix& aRotationMatrix);
 
     /// @brief                  Check if Rotation Matrix is defined
@@ -166,33 +168,44 @@ class RotationMatrix
     /// @endcode
     ///
     /// @return                 True if Rotation Matrix is defined
-
     bool isDefined() const;
 
     /// @brief                  Access underlying 3D Matrix
     ///
+    /// @code{.cpp}
+    ///                         const Matrix3d& matrix = RotationMatrix::Unit().accessMatrix();
+    /// @endcode
+    ///
     /// @return                 Matrix reference
-
     const Matrix3d& accessMatrix() const;
 
     /// @brief                  Get row at index
     ///
+    /// @code{.cpp}
+    ///                         Vector3d row = RotationMatrix::Unit().getRowAt(0);
+    /// @endcode
+    ///
     /// @param                  [in] aRowIndex Index of row
     /// @return                 Vector
-
     Vector3d getRowAt(const Index& aRowIndex) const;
 
     /// @brief                  Get column at index
     ///
+    /// @code{.cpp}
+    ///                         Vector3d column = RotationMatrix::Unit().getColumnAt(0);
+    /// @endcode
+    ///
     /// @param                  [in] aColumnIndex Index of column
     /// @return                 Vector
-
     Vector3d getColumnAt(const Index& aColumnIndex) const;
 
     /// @brief                  Get underlying 3D Matrix
     ///
+    /// @code{.cpp}
+    ///                         Matrix3d matrix = RotationMatrix::Unit().getMatrix();
+    /// @endcode
+    ///
     /// @return                 Matrix
-
     Matrix3d getMatrix() const;
 
     /// @brief                  Calculate transposed Rotation Matrix
@@ -202,7 +215,6 @@ class RotationMatrix
     /// @endcode
     ///
     /// @return                 Rotation Matrix
-
     RotationMatrix toTransposed() const;
 
     /// @brief                  Transpose Rotation Matrix
@@ -212,7 +224,6 @@ class RotationMatrix
     /// @endcode
     ///
     /// @return                 Rotation Matrix reference
-
     RotationMatrix& transpose();
 
     /// @brief                  Construct an undefined Rotation Matrix
@@ -222,7 +233,6 @@ class RotationMatrix
     /// @endcode
     ///
     /// @return                 Rotation Matrix
-
     static RotationMatrix Undefined();
 
     /// @brief                  Construct unitary Rotation Matrix
@@ -232,7 +242,6 @@ class RotationMatrix
     /// @endcode
     ///
     /// @return                 Rotation Matrix
-
     static RotationMatrix Unit();
 
     /// @brief                  Construct Rotation Matrix representing a rotation around the X-axis
@@ -243,7 +252,6 @@ class RotationMatrix
     ///
     /// @param                  [in] aRotationAngle A rotation angle
     /// @return                 Rotation matrix
-
     static RotationMatrix RX(const Angle& aRotationAngle);
 
     /// @brief                  Construct Rotation Matrix representing a rotation around the Y-axis
@@ -254,7 +262,6 @@ class RotationMatrix
     ///
     /// @param                  [in] aRotationAngle A rotation angle
     /// @return                 Rotation matrix
-
     static RotationMatrix RY(const Angle& aRotationAngle);
 
     /// @brief                  Construct Rotation Matrix representing a rotation around the Z-axis
@@ -265,7 +272,6 @@ class RotationMatrix
     ///
     /// @param                  [in] aRotationAngle A rotation angle
     /// @return                 Rotation matrix
-
     static RotationMatrix RZ(const Angle& aRotationAngle);
 
     /// @brief                  Construct Rotation Matrix from row vectors
@@ -278,7 +284,6 @@ class RotationMatrix
     /// @param                  [in] aSecondRow A second row
     /// @param                  [in] aThirdRow A third row
     /// @return                 Rotation matrix
-
     static RotationMatrix Rows(const Vector3d& aFirstRow, const Vector3d& aSecondRow, const Vector3d& aThirdRow);
 
     /// @brief                  Construct Rotation Matrix from column vectors
@@ -291,7 +296,6 @@ class RotationMatrix
     /// @param                  [in] aSecondColumn A second column
     /// @param                  [in] aThirdColumn A third column
     /// @return                 Rotation matrix
-
     static RotationMatrix Columns(
         const Vector3d& aFirstColumn, const Vector3d& aSecondColumn, const Vector3d& aThirdColumn
     );
@@ -304,7 +308,6 @@ class RotationMatrix
     ///
     /// @param                  [in] aQuaternion A Quaternion
     /// @return                 Rotation matrix
-
     static RotationMatrix Quaternion(const rotation::Quaternion& aQuaternion);
 
     /// @brief                  Construct Rotation Matrix from Rotation Vector
@@ -315,7 +318,6 @@ class RotationMatrix
     ///
     /// @param                  [in] aRotationVector A Rotation Vector
     /// @return                 Rotation matrix
-
     static RotationMatrix RotationVector(const rotation::RotationVector& aRotationVector);
 
     /// @brief                  Construct Rotation Matrix from Euler Angle
@@ -326,7 +328,6 @@ class RotationMatrix
     ///
     /// @param                  [in] aEulerAngle A Euler Angle
     /// @return                 Rotation matrix
-
     static RotationMatrix EulerAngle(const rotation::EulerAngle& aEulerAngle);
 
     /// @brief                  Construct Rotation Matrix from two pairs of vectors. The first pair is the source
@@ -340,7 +341,6 @@ class RotationMatrix
     ///
     /// @param                  [in] aSourcePair A pair of source vectors (first, second)
     /// @param                  [in] aDestinationPair A pair of destination vectors (first, second)
-
     static RotationMatrix VectorBasis(
         const Pair<Vector3d, Vector3d>& aSourcePair, const Pair<Vector3d, Vector3d>& aDestinationPair
     );

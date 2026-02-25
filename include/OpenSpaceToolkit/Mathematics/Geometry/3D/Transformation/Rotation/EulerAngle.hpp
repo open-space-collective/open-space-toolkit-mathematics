@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Transformation_Rotation_EulerAngle__
 
@@ -40,9 +39,13 @@ class RotationVector;
 ///                             Implementation from "Fundamentals of Spacecraft Attitude Determination and Control",
 ///                             F. Landis Markley and John L. Crassidis, Springer
 ///
+/// @code{.cpp}
+///                             EulerAngle eulerAngle(Angle::Degrees(30.0), Angle::Degrees(45.0), Angle::Degrees(60.0),
+///                             EulerAngle::AxisSequence::ZYX);
+/// @endcode
+///
 /// @ref                        https://en.wikipedia.org/wiki/Euler_angles
 /// @ref                        https://en.wikipedia.org/wiki/Euler_angles#Conventions_by_intrinsic_rotations
-
 class EulerAngle
 {
    public:
@@ -71,7 +74,6 @@ class EulerAngle
     /// @param                  [in] aSecondAngle A second angle (theta)
     /// @param                  [in] aThirdAngle A third angle (psi)
     /// @param                  [in] anAxisSequence An axis sequence
-
     EulerAngle(
         const Angle& aFirstAngle,
         const Angle& aSecondAngle,
@@ -92,7 +94,6 @@ class EulerAngle
     /// @param                  [in] aVector A vector of angles
     /// @param                  [in] anAngleUnit An angle unit
     /// @param                  [in] anAxisSequence An axis sequence
-
     EulerAngle(const Vector3d& aVector, const Angle::Unit& anAngleUnit, const EulerAngle::AxisSequence& anAxisSequence);
 
     /// @brief                  Equal to operator
@@ -103,7 +104,6 @@ class EulerAngle
     ///
     /// @param                  [in] aEulerAngle A Euler Angle
     /// @return                 True if Euler Angles are equal
-
     bool operator==(const EulerAngle& aEulerAngle) const;
 
     /// @brief                  Not equal to operator
@@ -114,7 +114,6 @@ class EulerAngle
     ///
     /// @param                  [in] aEulerAngle A Euler Angle
     /// @return                 True if Euler Angles are not equal
-
     bool operator!=(const EulerAngle& aEulerAngle) const;
 
     /// @brief                  Output stream operator
@@ -126,7 +125,6 @@ class EulerAngle
     /// @param                  [in] anOutputStream An output stream
     /// @param                  [in] aEulerAngle A Euler Angle
     /// @return                 Output stream reference
-
     friend std::ostream& operator<<(std::ostream& anOutputStream, const EulerAngle& aEulerAngle);
 
     /// @brief                  Check if Euler Angle is defined
@@ -136,7 +134,6 @@ class EulerAngle
     /// @endcode
     ///
     /// @return                 True if Euler Angle is defined
-
     bool isDefined() const;
 
     /// @brief                  Check if Euler Angle is unitary
@@ -146,7 +143,6 @@ class EulerAngle
     /// @endcode
     ///
     /// @return                 True if Euler Angle is unitary
-
     bool isUnitary() const;
 
     /// @brief                  Check if Euler Angle is equal to another Euler Angle
@@ -162,7 +158,6 @@ class EulerAngle
     /// @param                  [in] aEulerAngle A Euler Angle
     /// @param                  [in] anAngularTolerance An angular tolerance
     /// @return                 True if equal within given angular tolerance
-
     bool isNear(const EulerAngle& aEulerAngle, const Angle& anAngularTolerance) const;
 
     /// @brief                  Get first angle of rotation (phi)
@@ -172,7 +167,6 @@ class EulerAngle
     /// @endcode
     ///
     /// @return                 First angle of rotation
-
     Angle getPhi() const;
 
     /// @brief                  Get second angle of rotation (theta)
@@ -182,7 +176,6 @@ class EulerAngle
     /// @endcode
     ///
     /// @return                 Second angle of rotation
-
     Angle getTheta() const;
 
     /// @brief                  Get third angle of rotation (psi)
@@ -192,7 +185,6 @@ class EulerAngle
     /// @endcode
     ///
     /// @return                 Third angle of rotation
-
     Angle getPsi() const;
 
     /// @brief                  Get axis sequence
@@ -202,7 +194,6 @@ class EulerAngle
     /// @endcode
     ///
     /// @return                 Axis sequence (e.g, ZYX)
-
     AxisSequence getAxisSequence() const;
 
     /// @brief                  Return vector containing the three angles
@@ -213,7 +204,6 @@ class EulerAngle
     ///
     /// @param                  [in] anAngleUnit An angle unit
     /// @return                 Vector containing the three angles
-
     Vector3d toVector(const Angle::Unit& anAngleUnit) const;
 
     /// @brief                  Return string form of Euler Angle [phi; theta; psi]
@@ -224,7 +214,6 @@ class EulerAngle
     ///
     /// @param                  [in] (optional) anAngleUnit An angle unit
     /// @return                 String from of Euler Angle
-
     String toString(const Angle::Unit& anAngleUnit = Angle::Unit::Degree) const;
 
     /// @brief                  Construct undefined Euler Angle
@@ -234,7 +223,6 @@ class EulerAngle
     /// @endcode
     ///
     /// @return                 Undefined Euler Angle
-
     static EulerAngle Undefined();
 
     /// @brief                  Construct unitary Euler Angle
@@ -244,7 +232,6 @@ class EulerAngle
     /// @endcode
     ///
     /// @return                 Unitary Euler Angle
-
     static EulerAngle Unit();
 
     /// @brief                  Construct Euler Angle from angles following XYZ sequence
@@ -261,7 +248,6 @@ class EulerAngle
     /// @param                  [in] aSecondAngle A second angle (theta)
     /// @param                  [in] aThirdAngle A third angle (psi)
     /// @return                 Euler Angle
-
     static EulerAngle XYZ(const Angle& aFirstAngle, const Angle& aSecondAngle, const Angle& aThirdAngle);
 
     /// @brief                  Construct Euler Angle from angles following ZXY sequence
@@ -278,7 +264,6 @@ class EulerAngle
     /// @param                  [in] aSecondAngle A second angle (theta)
     /// @param                  [in] aThirdAngle A third angle (psi)
     /// @return                 Euler Angle
-
     static EulerAngle ZXY(const Angle& aFirstAngle, const Angle& aSecondAngle, const Angle& aThirdAngle);
 
     /// @brief                  Construct Euler Angle from angles following ZYX sequence
@@ -295,7 +280,6 @@ class EulerAngle
     /// @param                  [in] aSecondAngle A second angle (theta)
     /// @param                  [in] aThirdAngle A third angle (psi)
     /// @return                 Euler Angle
-
     static EulerAngle ZYX(const Angle& aFirstAngle, const Angle& aSecondAngle, const Angle& aThirdAngle);
 
     /// @brief                  Construct Euler Angle from Rotation Matrix
@@ -310,7 +294,6 @@ class EulerAngle
     /// @param                  [in] aRotationMatrix A Rotation Matrix
     /// @param                  [in] anAxisSequence An axis sequence
     /// @return                 Euler Angle
-
     static EulerAngle Quaternion(
         const rotation::Quaternion& aQuaternion, const EulerAngle::AxisSequence& anAxisSequence
     );
@@ -327,7 +310,6 @@ class EulerAngle
     /// @param                  [in] aQuaternion A Quaternion
     /// @param                  [in] anAxisSequence An axis sequence
     /// @return                 Euler Angle
-
     static EulerAngle RotationVector(
         const rotation::RotationVector& aRotationVector, const EulerAngle::AxisSequence& anAxisSequence
     );
@@ -344,7 +326,6 @@ class EulerAngle
     /// @param                  [in] aRotationVector A Rotation Vector
     /// @param                  [in] anAxisSequence An axis sequence
     /// @return                 Euler Angle
-
     static EulerAngle RotationMatrix(
         const rotation::RotationMatrix& aRotationMatrix, const EulerAngle::AxisSequence& anAxisSequence
     );
@@ -357,7 +338,6 @@ class EulerAngle
     ///
     /// @param                  [in] anAxisSequence An axis sequence
     /// @return                 String representation of axis sequence
-
     static String StringFromAxisSequence(const EulerAngle::AxisSequence& anAxisSequence);
 
    private:

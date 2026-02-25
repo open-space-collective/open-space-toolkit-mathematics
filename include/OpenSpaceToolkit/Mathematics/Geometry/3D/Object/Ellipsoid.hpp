@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Ellipsoid__
 
@@ -42,14 +41,17 @@ class Cone;
 
 /// @brief                      Ellipsoid
 ///
+/// @code{.cpp}
+///                             Ellipsoid ellipsoid(Point(0.0, 0.0, 0.0), 1.0, 2.0, 3.0);
+/// @endcode
+///
 /// @ref                        https://en.wikipedia.org/wiki/Ellipsoid
-
 class Ellipsoid : public Object
 {
    public:
     /// @brief              Constructor
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid ellipsoid({ 0.0, 0.0, 0.0 }, 1.0, 2.0, 3.0) ;
     /// @endcode
     ///
@@ -58,7 +60,6 @@ class Ellipsoid : public Object
     /// @param              [in] aSecondPrincipalSemiAxis An ellipsoid second principal semi-axis
     /// @param              [in] aThirdPrincipalSemiAxis An ellipsoid third principal semi-axis
     /// @param              [in] (optional) anOrientation An ellipsoid orientation
-
     Ellipsoid(
         const Point& aCenter,
         const Real& aFirstPrincipalSemiAxis,
@@ -69,46 +70,46 @@ class Ellipsoid : public Object
 
     /// @brief              Clone ellipsoid
     ///
+    /// @code{.cpp}
+    ///                     Ellipsoid* clonePtr = ellipsoid.clone() ;
+    /// @endcode
+    ///
     /// @return             Pointer to cloned ellipsoid
-
     virtual Ellipsoid* clone() const override;
 
     /// @brief              Equal to operator
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) == Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) ; //
     ///                     True
     /// @endcode
     ///
     /// @param              [in] anEllipsoid An ellipsoid
     /// @return             True if ellipsoids are equal
-
     bool operator==(const Ellipsoid& anEllipsoid) const;
 
     /// @brief              Not equal to operator
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) != Ellipsoid(2.0, 1.0, 3.0) ; // True
     /// @endcode
     ///
     /// @param              [in] anEllipsoid An ellipsoid
     /// @return             True if ellipsoids are not equal
-
     bool operator!=(const Ellipsoid& anEllipsoid) const;
 
     /// @brief              Check if ellipsoid is defined
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).isDefined() ; // True
     /// @endcode
     ///
     /// @return             True if ellipsoid is defined
-
     virtual bool isDefined() const override;
 
     /// @brief              Check if ellipsoid intersects point
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid ellipsoid = ... ;
     ///                     Point point = ... ;
     ///                     ellipsoid.intersects(point) ;
@@ -116,12 +117,11 @@ class Ellipsoid : public Object
     ///
     /// @param              [in] aPoint A point
     /// @return             True if ellipsoid intersects point
-
     bool intersects(const Point& aPoint) const;
 
     /// @brief              Check if ellipsoid intersects point set
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid ellipsoid = ... ;
     ///                     PointSet pointSet = ... ;
     ///                     ellipsoid.intersects(pointSet) ;
@@ -129,12 +129,11 @@ class Ellipsoid : public Object
     ///
     /// @param              [in] aPointSet A point set
     /// @return             True if ellipsoid intersects point set
-
     bool intersects(const PointSet& aPointSet) const;
 
     /// @brief              Check if ellipsoid intersects line
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid ellipsoid = ... ;
     ///                     Line line = ... ;
     ///                     ellipsoid.intersects(line) ;
@@ -142,12 +141,11 @@ class Ellipsoid : public Object
     ///
     /// @param              [in] aLine A line
     /// @return             True if ellipsoid intersects line
-
     bool intersects(const Line& aLine) const;
 
     /// @brief              Check if ellipsoid intersects ray
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid ellipsoid = ... ;
     ///                     Ray ray = ... ;
     ///                     ellipsoid.intersects(ray) ;
@@ -155,12 +153,11 @@ class Ellipsoid : public Object
     ///
     /// @param              [in] aRay A ray
     /// @return             True if ellipsoid intersects ray
-
     bool intersects(const Ray& aRay) const;
 
     /// @brief              Check if ellipsoid intersects segment
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid ellipsoid = ... ;
     ///                     Segment segment = ... ;
     ///                     ellipsoid.intersects(segment) ;
@@ -168,12 +165,11 @@ class Ellipsoid : public Object
     ///
     /// @param              [in] aSegment A segment
     /// @return             True if ellipsoid intersects segment
-
     bool intersects(const Segment& aSegment) const;
 
     /// @brief              Check if ellipsoid intersects plane
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid ellipsoid = ... ;
     ///                     Plane plane = ... ;
     ///                     ellipsoid.intersects(plane) ;
@@ -181,12 +177,11 @@ class Ellipsoid : public Object
     ///
     /// @param              [in] aPlane A plane
     /// @return             True if ellipsoid intersects plane
-
     bool intersects(const Plane& aPlane) const;
 
     /// @brief              Check if ellipsoid intersects sphere
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid ellipsoid = ... ;
     ///                     Sphere sphere = ... ;
     ///                     ellipsoid.intersects(sphere) ;
@@ -194,12 +189,11 @@ class Ellipsoid : public Object
     ///
     /// @param              [in] aSphere A sphere
     /// @return             True if ellipsoid intersects sphere
-
     bool intersects(const Sphere& aSphere) const;
 
     /// @brief              Check if ellipsoid intersects ellipsoid
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid ellipsoid = ... ;
     ///                     Ellipsoid anotherEllipsoid = ... ;
     ///                     ellipsoid.intersects(anotherEllipsoid) ;
@@ -207,12 +201,11 @@ class Ellipsoid : public Object
     ///
     /// @param              [in] anEllipsoid An ellipsoid
     /// @return             True if ellipsoid intersects ellipsoid
-
     bool intersects(const Ellipsoid& anEllipsoid) const;
 
     /// @brief              Check if ellipsoid intersects pyramid
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid ellipsoid = ... ;
     ///                     Pyramid pyramid = ... ;
     ///                     ellipsoid.intersects(pyramid) ;
@@ -220,12 +213,11 @@ class Ellipsoid : public Object
     ///
     /// @param              [in] aPyramid A pyramid
     /// @return             True if ellipsoid intersects pyramid
-
     bool intersects(const Pyramid& aPyramid) const;
 
     /// @brief              Check if ellipsoid intersects cone
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid ellipsoid = ... ;
     ///                     Cone cone = ... ;
     ///                     ellipsoid.intersects(cone) ;
@@ -233,12 +225,11 @@ class Ellipsoid : public Object
     ///
     /// @param              [in] aCone A cone
     /// @return             True if ellipsoid intersects cone
-
     bool intersects(const Cone& aCone) const;
 
     /// @brief              Check if ellipsoid contains point
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid ellipsoid = ... ;
     ///                     Point point = ... ;
     ///                     ellipsoid.contains(point) ;
@@ -246,12 +237,11 @@ class Ellipsoid : public Object
     ///
     /// @param              [in] aPoint A point
     /// @return             True if ellipsoid contains point
-
     bool contains(const Point& aPoint) const;
 
     /// @brief              Check if ellipsoid contains point set
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid ellipsoid = ... ;
     ///                     PointSet pointSet = ... ;
     ///                     ellipsoid.contains(pointSet) ;
@@ -259,12 +249,11 @@ class Ellipsoid : public Object
     ///
     /// @param              [in] aPointSet A point set
     /// @return             True if ellipsoid contains point set
-
     bool contains(const PointSet& aPointSet) const;
 
     /// @brief              Check if ellipsoid contains segment
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid ellipsoid = ... ;
     ///                     Segment segment = ... ;
     ///                     ellipsoid.contains(segment) ;
@@ -272,148 +261,185 @@ class Ellipsoid : public Object
     ///
     /// @param              [in] aSegment A segment
     /// @return             True if ellipsoid contains segment
-
     bool contains(const Segment& aSegment) const;
 
     /// @brief              Get ellipsoid center
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).getCenter() ; // [0.0, 0.0, 0.0]
     /// @endcode
     ///
     /// @return             Ellipsoid center
-
     Point getCenter() const;
 
     /// @brief              Get ellipsoid first principal semi-axis
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).getFirstPrincipalSemiAxis() ; // 1.0
     /// @endcode
     ///
     /// @return             Ellipsoid first principal semi-axis
-
     Real getFirstPrincipalSemiAxis() const;
 
     /// @brief              Get ellipsoid second principal semi-axis
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).getSecondPrincipalSemiAxis() ; // 2.0
     /// @endcode
     ///
     /// @return             Ellipsoid second principal semi-axis
-
     Real getSecondPrincipalSemiAxis() const;
 
     /// @brief              Get ellipsoid third principal semi-axis
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0).getThirdPrincipalSemiAxis() ; // 3.0
     /// @endcode
     ///
     /// @return             Ellipsoid third principal semi-axis
-
     Real getThirdPrincipalSemiAxis() const;
 
     /// @brief              Get ellipsoid first axis
     ///
+    /// @code{.cpp}
+    ///                     Ellipsoid ellipsoid = Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) ;
+    ///                     Vector3d firstAxis = ellipsoid.getFirstAxis() ;
+    /// @endcode
+    ///
     /// @return             Ellipsoid first axis
-
     Vector3d getFirstAxis() const;
 
     /// @brief              Get ellipsoid second axis
     ///
+    /// @code{.cpp}
+    ///                     Ellipsoid ellipsoid = Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) ;
+    ///                     Vector3d secondAxis = ellipsoid.getSecondAxis() ;
+    /// @endcode
+    ///
     /// @return             Ellipsoid second axis
-
     Vector3d getSecondAxis() const;
 
     /// @brief              Get ellipsoid third axis
     ///
+    /// @code{.cpp}
+    ///                     Ellipsoid ellipsoid = Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) ;
+    ///                     Vector3d thirdAxis = ellipsoid.getThirdAxis() ;
+    /// @endcode
+    ///
     /// @return             Ellipsoid third axis
-
     Vector3d getThirdAxis() const;
 
     /// @brief              Get ellipsoid orientation
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0, Quaternion::XYZS(0.0, 0.0,
     ///                     0.0, 1.0)).getOrientation() ; // Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)
     /// @endcode
     ///
     /// @return             Ellipsoid orientation
-
     Quaternion getOrientation() const;
 
     /// @brief              Get ellipsoid matrix
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0, Quaternion::XYZS(0.0, 0.0, 0.0, 1.0)).getMatrix()
     ///                     ;
     /// @endcode
     ///
     /// @return             Ellipsoid matrix
-
     Matrix3d getMatrix() const;
 
     /// @brief              Compute intersection of ellipsoid with line
     ///
+    /// @code{.cpp}
+    ///                     Ellipsoid ellipsoid = Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) ;
+    ///                     Line line = Line({ 0.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }) ;
+    ///                     Intersection intersection = ellipsoid.intersectionWith(line) ;
+    /// @endcode
+    ///
     /// @param              [in] aLine A line
     /// @return             Intersection of ellipsoid with line
-
     Intersection intersectionWith(const Line& aLine) const;
 
     /// @brief              Compute intersection of ellipsoid with ray
     ///
+    /// @code{.cpp}
+    ///                     Ellipsoid ellipsoid = Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) ;
+    ///                     Ray ray = Ray({ -2.0, 0.0, 0.0 }, { 1.0, 0.0, 0.0 }) ;
+    ///                     Intersection intersection = ellipsoid.intersectionWith(ray) ;
+    /// @endcode
+    ///
     /// @param              [in] aRay A ray
     /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
     /// @return             Intersection of ellipsoid with ray
-
     Intersection intersectionWith(const Ray& aRay, const bool onlyInSight = false) const;
 
     /// @brief              Compute intersection of ellipsoid with segment
     ///
+    /// @code{.cpp}
+    ///                     Ellipsoid ellipsoid = Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) ;
+    ///                     Segment segment = Segment({ -2.0, 0.0, 0.0 }, { 2.0, 0.0, 0.0 }) ;
+    ///                     Intersection intersection = ellipsoid.intersectionWith(segment) ;
+    /// @endcode
+    ///
     /// @param              [in] aSegment A segment
     /// @return             Intersection of ellipsoid with segment
-
     Intersection intersectionWith(const Segment& aSegment) const;
 
     /// @brief              Compute intersection of ellipsoid with pyramid
     ///
+    /// @code{.cpp}
+    ///                     Ellipsoid ellipsoid = Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) ;
+    ///                     Pyramid pyramid = ... ;
+    ///                     Intersection intersection = ellipsoid.intersectionWith(pyramid) ;
+    /// @endcode
+    ///
     /// @param              [in] aPyramid A pyramid
     /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
     /// @return             Intersection of ellipsoid with pyramid
-
     Intersection intersectionWith(const Pyramid& aPyramid, const bool onlyInSight = false) const;
 
     /// @brief              Compute intersection of ellipsoid with cone
     ///
+    /// @code{.cpp}
+    ///                     Ellipsoid ellipsoid = Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) ;
+    ///                     Cone cone = Cone({ 0.0, 0.0, 5.0 }, { 0.0, 0.0, -1.0 }, Angle::Degrees(15.0)) ;
+    ///                     Intersection intersection = ellipsoid.intersectionWith(cone) ;
+    /// @endcode
+    ///
     /// @param              [in] aCone A cone
     /// @param              [in] onlyInSight (optional) If true, only return intersection points that are in sight
     /// @return             Intersection of ellipsoid with cone
-
     Intersection intersectionWith(const Cone& aCone, const bool onlyInSight = false) const;
 
     /// @brief              Print ellipsoid
     ///
+    /// @code{.cpp}
+    ///                     Ellipsoid ellipsoid = Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) ;
+    ///                     ellipsoid.print(std::cout, true) ;
+    /// @endcode
+    ///
     /// @param              [in] anOutputStream An output stream
     /// @param              [in] (optional) displayDecorators If true, display decorators
-
     virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
     /// @brief              Apply transformation to ellipsoid
     ///
+    /// @code{.cpp}
+    ///                     Ellipsoid ellipsoid = Ellipsoid(Point::Origin(), 1.0, 2.0, 3.0) ;
+    ///                     ellipsoid.applyTransformation(Transformation::Translation({ 1.0, 0.0, 0.0 })) ;
+    /// @endcode
+    ///
     /// @param              [in] aTransformation A transformation
-
     virtual void applyTransformation(const Transformation& aTransformation) override;
 
     /// @brief              Constructs an undefined ellipsoid
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Ellipsoid ellipsoid = Ellipsoid::Undefined() ; // Undefined
     /// @endcode
     ///
     /// @return             Undefined ellipsoid
-
     static Ellipsoid Undefined();
 
    private:

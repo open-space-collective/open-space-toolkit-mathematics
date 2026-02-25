@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Intersection__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Intersection__
 
@@ -36,7 +35,10 @@ using ostk::mathematics::geometry::d2::Object;
 using ostk::mathematics::geometry::d2::object::Composite;
 
 /// @brief                      2D intersection
-
+///
+/// @code{.cpp}
+///                             Intersection intersection = Intersection::Point(object::Point(0.0, 0.0)) ;
+/// @endcode
 class Intersection
 {
    public:
@@ -57,57 +59,83 @@ class Intersection
 
     /// @brief              Constructor
     ///
+    /// @code{.cpp}
+    ///                     Array<Unique<Object>> objects ;
+    ///                     objects.add(std::make_unique<object::Point>(0.0, 0.0)) ;
+    ///                     Intersection intersection(std::move(objects)) ;
+    /// @endcode
+    ///
     /// @param              [in] anObjectArray An array of objects
-
     Intersection(Array<Unique<Object>>&& anObjectArray);
 
     /// @brief              Copy constructor
     ///
+    /// @code{.cpp}
+    ///                     Intersection copiedIntersection(intersection) ;
+    /// @endcode
+    ///
     /// @param              [in] anIntersection An intersection
-
     Intersection(const Intersection& anIntersection);
 
     /// @brief              Destructor
-
+    ///
+    /// @code{.cpp}
+    ///                     // Destructor is called automatically when intersection goes out of scope.
+    /// @endcode
     ~Intersection();
 
     /// @brief              Copy assignment operator
     ///
+    /// @code{.cpp}
+    ///                     Intersection intersectionB = intersectionA ;
+    /// @endcode
+    ///
     /// @param              [in] anIntersection An intersection
     /// @return             Reference to intersection
-
     Intersection& operator=(const Intersection& anIntersection);
 
     /// @brief              Equal to operator
     ///
+    /// @code{.cpp}
+    ///                     intersectionA == intersectionB ; // True
+    /// @endcode
+    ///
     /// @param              [in] anIntersection An intersection
     /// @return             True if intersections are equal
-
     bool operator==(const Intersection& anIntersection) const;
 
     /// @brief              Not equal to operator
     ///
+    /// @code{.cpp}
+    ///                     intersectionA != intersectionB ; // True
+    /// @endcode
+    ///
     /// @param              [in] anIntersection An intersection
     /// @return             True if intersections are not equal
-
     bool operator!=(const Intersection& anIntersection) const;
 
     /// @brief              Addition operator (intersection concatenation)
+    ///
+    /// @code{.cpp}
+    ///                     Intersection intersectionC = intersectionA + intersectionB ;
+    /// @endcode
     ///
     ///                     Concatenate (merge) intersection with another intersection.
     ///
     /// @param              [in] anIntersection An intersection
     /// @return             Concatenated intersection
-
     Intersection operator+(const Intersection& anIntersection) const;
 
     /// @brief              Addition assignment operator (intersection concatenation)
+    ///
+    /// @code{.cpp}
+    ///                     intersectionA += intersectionB ;
+    /// @endcode
     ///
     ///                     Concatenate (merge) intersection with another intersection.
     ///
     /// @param              [in] anIntersection An intersection
     /// @return             Reference to concatenated intersection
-
     Intersection& operator+=(const Intersection& anIntersection);
 
     /// @brief              Output stream operator
@@ -119,35 +147,47 @@ class Intersection
     /// @param              [in] anOutputStream An output stream
     /// @param              [in] anIntersection An intersection
     /// @return             A reference to output stream
-
     friend std::ostream& operator<<(std::ostream& anOutputStream, const Intersection& anIntersection);
 
     /// @brief              Check if intersection is defined
     ///
+    /// @code{.cpp}
+    ///                     Intersection::Empty().isDefined() ; // True
+    /// @endcode
+    ///
     /// @return             True if intersection is defined
-
     bool isDefined() const;
 
     /// @brief              Check if intersection is empty
     ///
+    /// @code{.cpp}
+    ///                     Intersection::Empty().isEmpty() ; // True
+    /// @endcode
+    ///
     /// @return             True if intersection is empty
-
     bool isEmpty() const;
 
     /// @brief              Check if intersection is complex
     ///
+    /// @code{.cpp}
+    ///                     intersection.isComplex() ; // False
+    /// @endcode
+    ///
     ///                     A complex intersection contains more than one object.
     ///
     /// @return             True if intersection is complex
-
     bool isComplex() const;
 
     /// @brief              Returns true if intersection can be converted to underlying object
     ///
+    /// @code{.cpp}
+    ///                     Intersection intersection = Intersection::Point(object::Point(0.0, 0.0)) ;
+    ///                     bool isPoint = intersection.is<object::Point>() ; // True
+    /// @endcode
+    ///
     ///                     Only valid if the intersection only contains one object.
     ///
     /// @return             True if intersection can be converted to underlying object
-
     template <class Type>
     bool is() const
     {
@@ -161,10 +201,14 @@ class Intersection
 
     /// @brief              Access intersection as its underlying object
     ///
+    /// @code{.cpp}
+    ///                     Intersection intersection = Intersection::Point(object::Point(0.0, 0.0)) ;
+    ///                     const object::Point& point = intersection.as<object::Point>() ;
+    /// @endcode
+    ///
     ///                     Only valid if the intersection only contains one object.
     ///
     /// @return             Reference to underlying object
-
     template <class Type>
     const Type& as() const
     {
@@ -178,14 +222,20 @@ class Intersection
 
     /// @brief              Access composite object
     ///
+    /// @code{.cpp}
+    ///                     const Composite& composite = intersection.accessComposite() ;
+    /// @endcode
+    ///
     /// @return             Reference to composite object
-
     const Composite& accessComposite() const;
 
     /// @brief              Get intersection type
     ///
+    /// @code{.cpp}
+    ///                     Intersection::Type type = intersection.getType() ;
+    /// @endcode
+    ///
     /// @return             Intersection type
-
     Intersection::Type getType() const;
 
     /// @brief              Constructs an undefined intersection
@@ -195,7 +245,6 @@ class Intersection
     /// @endcode
     ///
     /// @return             Undefined intersection
-
     static Intersection Undefined();
 
     /// @brief              Constructs an empty intersection
@@ -205,7 +254,6 @@ class Intersection
     /// @endcode
     ///
     /// @return             Empty intersection
-
     static Intersection Empty();
 
     /// @brief              Constructs a point intersection
@@ -215,7 +263,6 @@ class Intersection
     /// @endcode
     ///
     /// @return             Point intersection
-
     static Intersection Point(const object::Point& aPoint);
 
     /// @brief              Constructs a point set intersection
@@ -225,7 +272,6 @@ class Intersection
     /// @endcode
     ///
     /// @return             Point set intersection
-
     static Intersection PointSet(const object::PointSet& aPointSet);
 
     /// @brief              Constructs a line string intersection
@@ -236,7 +282,6 @@ class Intersection
     /// @endcode
     ///
     /// @return             Line string intersection
-
     static Intersection LineString(const object::LineString& aLineString);
 
     /// @brief              Constructs a line intersection
@@ -246,7 +291,6 @@ class Intersection
     /// @endcode
     ///
     /// @return             Line intersection
-
     static Intersection Line(const object::Line& aLine);
 
     /// @brief              Constructs a segment intersection
@@ -256,7 +300,6 @@ class Intersection
     /// @endcode
     ///
     /// @return             Segment intersection
-
     static Intersection Segment(const object::Segment& aSegment);
 
     /// @brief              Constructs a polygon intersection
@@ -266,13 +309,15 @@ class Intersection
     /// @endcode
     ///
     /// @return             Polygon intersection
-
     static Intersection Polygon(const object::Polygon& aPolygon);
 
     /// @brief              Converts intersection type to string
     ///
+    /// @code{.cpp}
+    ///                     String str = Intersection::StringFromType(Intersection::Type::Point) ;
+    /// @endcode
+    ///
     /// @return             String
-
     static String StringFromType(const Intersection::Type& aType);
 
    private:

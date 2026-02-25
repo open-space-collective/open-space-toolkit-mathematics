@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon__
 #define __OpenSpaceToolkit_Mathematics_Geometry_3D_Object_Polygon__
 
@@ -42,8 +41,11 @@ using ostk::mathematics::geometry::d3::object::Segment;
 ///                             closing in a loop to form a closed polygonal chain or circuit. These segments are called
 ///                             its edges, and the points where two edges meet are the polygon's vertices.
 ///
+/// @code{.cpp}
+///                             Polygon polygon(polygon2d, origin, xAxis, yAxis);
+/// @endcode
+///
 /// @ref                        https://en.wikipedia.org/wiki/Polygon
-
 class Polygon : public Object
 {
    public:
@@ -53,7 +55,7 @@ class Polygon : public Object
 
     /// @brief              Constructor
     ///
-    /// @code
+    /// @code{.cpp}
     ///                     Polygon2d polygon2d = { { { 0.0, 0.0 }, { 1.0, 0.0 }, { 1.0, 1.0 }, { 0.0, 1.0 } } } ;
     ///                     Point origin = { 1.0, 2.0, 3.0 } ;
     ///                     Vector3d xAxis = { 1.0, 0.0, 0.0 } ;
@@ -65,135 +67,209 @@ class Polygon : public Object
     /// @param              [in] anOrigin An origin
     /// @param              [in] aXAxis A X axis
     /// @param              [in] aYAxis A Y axis
-
     Polygon(const Polygon2d& aPolygon, const Point& anOrigin, const Vector3d& aXAxis, const Vector3d& aYAxis);
 
     /// @brief              Clone polygon
     ///
+    /// @code{.cpp}
+    ///                     Polygon* clonePtr = polygon.clone() ;
+    /// @endcode
+    ///
     /// @return             Pointer to cloned polygon
-
     virtual Polygon* clone() const override;
 
     /// @brief              Equal to operator
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     polygon == polygon ; // True
+    /// @endcode
+    ///
     /// @param              [in] aPolygon A polygon
     /// @return             True if polygons are equal
-
     bool operator==(const Polygon& aPolygon) const;
 
     /// @brief              Not equal to operator
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygonA = ... ;
+    ///                     Polygon polygonB = ... ;
+    ///                     polygonA != polygonB ; // True
+    /// @endcode
+    ///
     /// @param              [in] aPolygon A polygon
     /// @return             True if polygons are not equal
-
     bool operator!=(const Polygon& aPolygon) const;
 
     /// @brief              Check if polygon is defined
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     polygon.isDefined() ; // True
+    /// @endcode
+    ///
     /// @return             True if polygon is defined
-
     virtual bool isDefined() const override;
 
     /// @brief              Check if polygon is near another polygon
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     Polygon anotherPolygon = ... ;
+    ///                     polygon.isNear(anotherPolygon, 1e-15) ;
+    /// @endcode
+    ///
     /// @param              [in] aPolygon A polygon
     /// @param              [in] aTolerance A tolerance
     /// @return             True if polygon is near another polygon
-
     bool isNear(const Polygon& aPolygon, const Real& aTolerance) const;
 
     /// @brief              Get polygon 2D polygon
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     Polygon2d polygon2d = polygon.getPolygon2d() ;
+    /// @endcode
+    ///
     /// @return             Polygon 2D polygon
-
     Polygon2d getPolygon2d() const;
 
     /// @brief              Get polygon origin
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     Point origin = polygon.getOrigin() ;
+    /// @endcode
+    ///
     /// @return             Polygon origin
-
     Point getOrigin() const;
 
     /// @brief              Get polygon X axis
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     Vector3d xAxis = polygon.getXAxis() ;
+    /// @endcode
+    ///
     /// @return             Polygon X axis
-
     Vector3d getXAxis() const;
 
     /// @brief              Get polygon Y axis
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     Vector3d yAxis = polygon.getYAxis() ;
+    /// @endcode
+    ///
     /// @return             Polygon Y axis
-
     Vector3d getYAxis() const;
 
     /// @brief              Get polygon normal vector
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     Vector3d normal = polygon.getNormalVector() ;
+    /// @endcode
+    ///
     /// @return             Polygon normal vector
-
     Vector3d getNormalVector() const;
 
     /// @brief              Get edge count
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     Size edgeCount = polygon.getEdgeCount() ;
+    /// @endcode
+    ///
     /// @return             Edge count
-
     Size getEdgeCount() const;
 
     /// @brief              Get vertex count
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     Size vertexCount = polygon.getVertexCount() ;
+    /// @endcode
+    ///
     /// @return             Vertex count
-
     Size getVertexCount() const;
 
     /// @brief              Get edge at index
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     Polygon::Edge edge = polygon.getEdgeAt(0) ;
+    /// @endcode
+    ///
     /// @param              [in] anEdgeIndex An edge index
     /// @return             Edge (segment)
-
     Polygon::Edge getEdgeAt(const Index anEdgeIndex) const;
 
     /// @brief              Get vertex at index
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     Polygon::Vertex vertex = polygon.getVertexAt(0) ;
+    /// @endcode
+    ///
     /// @param              [in] aVertexIndex A vertex index
     /// @return             Vertex
-
     Polygon::Vertex getVertexAt(const Index aVertexIndex) const;
 
     /// @brief              Get polygon edges
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     Array<Polygon::Edge> edges = polygon.getEdges() ;
+    /// @endcode
+    ///
     /// @return             Polygon edges
-
     Array<Polygon::Edge> getEdges() const;
 
     /// @brief              Get polygon vertices
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     Array<Polygon::Vertex> vertices = polygon.getVertices() ;
+    /// @endcode
+    ///
     /// @return             Polygon vertices
-
     Array<Polygon::Vertex> getVertices() const;
 
     /// @brief              Compute intersection of polygon with another polygon
     ///
     /// @param              [in] aPolygon A polygon
     /// @return             Intersection
-
     // Intersection            intersectionWith                            (   const   Polygon& aPolygon ) const ;
 
     /// @brief              Print polygon
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     polygon.print(std::cout, true) ;
+    /// @endcode
+    ///
     /// @param              [in] anOutputStream An output stream
     /// @param              [in] (optional) displayDecorators If true, display decorators
-
     virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
     /// @brief              Apply transformation to polygon
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = ... ;
+    ///                     polygon.applyTransformation(Transformation::Translation({ 1.0, 0.0, 0.0 })) ;
+    /// @endcode
+    ///
     /// @param              [in] aTransformation A transformation
-
     virtual void applyTransformation(const Transformation& aTransformation) override;
 
     /// @brief              Constructs an undefined polygon
     ///
+    /// @code{.cpp}
+    ///                     Polygon polygon = Polygon::Undefined() ;
+    /// @endcode
+    ///
     /// @return             Undefined polygon
-
     static Polygon Undefined();
 
    private:

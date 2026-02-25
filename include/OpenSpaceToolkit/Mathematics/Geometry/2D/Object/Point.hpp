@@ -1,5 +1,4 @@
 /// Apache License 2.0
-
 #ifndef __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point__
 #define __OpenSpaceToolkit_Mathematics_Geometry_2D_Object_Point__
 
@@ -26,8 +25,11 @@ using ostk::mathematics::object::Vector2d;
 
 /// @brief                      Point
 ///
+/// @code{.cpp}
+///                             Point point(1.0, 2.0) ;
+/// @endcode
+///
 /// @ref                        https://en.wikipedia.org/wiki/Point_(geometry)
-
 class Point : public Object
 {
    public:
@@ -39,27 +41,35 @@ class Point : public Object
     ///
     /// @param              [in] aFirstCoordinate A first coordinate
     /// @param              [in] aSecondCoordinate A second coordinate
-
     Point(const Real& aFirstCoordinate, const Real& aSecondCoordinate);
 
     /// @brief              Clone point
     ///
+    /// @code{.cpp}
+    ///                     Point* clonePtr = Point(0.0, 0.0).clone() ;
+    /// @endcode
+    ///
     /// @return             Pointer to cloned point
-
     virtual Point* clone() const override;
 
     /// @brief              Equal to operator
     ///
+    /// @code{.cpp}
+    ///                     Point(0.0, 0.0) == Point(0.0, 0.0) ; // True
+    /// @endcode
+    ///
     /// @param              [in] aPoint A point
     /// @return             True if points are equal
-
     bool operator==(const Point& aPoint) const;
 
     /// @brief              Not equal to operator
     ///
+    /// @code{.cpp}
+    ///                     Point(0.0, 0.0) != Point(1.0, 0.0) ; // True
+    /// @endcode
+    ///
     /// @param              [in] aPoint A point
     /// @return             True if points are not equal
-
     bool operator!=(const Point& aPoint) const;
 
     /// @brief              Addition operator: translate point along vector
@@ -70,7 +80,6 @@ class Point : public Object
     ///
     /// @param              [in] aVector A translation vector
     /// @return             A point
-
     Point operator+(const Vector2d& aVector) const;
 
     /// @brief              Subtraction operator: translate point along opposite vector
@@ -81,7 +90,6 @@ class Point : public Object
     ///
     /// @param              [in] aVector A translation vector
     /// @return             A point
-
     Point operator-(const Vector2d& aVector) const;
 
     /// @brief              Subtraction operator: get translation vector between two points
@@ -92,7 +100,6 @@ class Point : public Object
     ///
     /// @param              [in] aPoint A point
     /// @return             A translation vector
-
     Vector2d operator-(const Point& aPoint) const;
 
     /// @brief              Check if point is defined
@@ -102,7 +109,6 @@ class Point : public Object
     /// @endcode
     ///
     /// @return             True if point is defined
-
     virtual bool isDefined() const override;
 
     /// @brief              Check if point is near another point
@@ -114,7 +120,6 @@ class Point : public Object
     /// @param              [in] aPoint A point
     /// @param              [in] aTolerance A tolerance
     /// @return             True if point is near another point
-
     bool isNear(const Point& aPoint, const Real& aTolerance) const;
 
     /// @brief              Get reference to first coordinate
@@ -124,7 +129,6 @@ class Point : public Object
     /// @endcode
     ///
     /// @return             Reference to first coordinate
-
     const Real& x() const;
 
     /// @brief              Get reference to second coordinate
@@ -134,43 +138,58 @@ class Point : public Object
     /// @endcode
     ///
     /// @return             Reference to second coordinate
-
     const Real& y() const;
 
     /// @brief              Get vector representation of point
     ///
+    /// @code{.cpp}
+    ///                     Vector2d vector = Point(1.0, 2.0).asVector() ; // [1.0, 2.0]
+    /// @endcode
+    ///
     /// @return             Vector representation of point
-
     Vector2d asVector() const;
 
     /// @brief              Get distance to another point
     ///
+    /// @code{.cpp}
+    ///                     Real distance = Point(0.0, 0.0).distanceTo(Point(1.0, 0.0)) ; // 1.0
+    /// @endcode
+    ///
     /// @param              [in] aPoint A point
     /// @return             Distance to point
-
     Real distanceTo(const Point& aPoint) const;
 
     /// @brief              Get string representation
     ///
+    /// @code{.cpp}
+    ///                     String str = Point(0.0, 0.0).toString() ;
+    /// @endcode
+    ///
     /// @param              [in] aFormat A format
     /// @param              [in] (optional) aPrecision A precision
     /// @return             String representation
-
     virtual String toString(
         const Object::Format& aFormat = Object::Format::Standard, const Integer& aPrecision = Integer::Undefined()
     ) const override;
 
     /// @brief              Print point
     ///
+    /// @code{.cpp}
+    ///                     Point(0.0, 0.0).print(std::cout, true) ;
+    /// @endcode
+    ///
     /// @param              [in] anOutputStream An output stream
     /// @param              [in] (optional) displayDecorators If true, display decorators
-
     virtual void print(std::ostream& anOutputStream, bool displayDecorators = true) const override;
 
     /// @brief              Apply transformation to point
     ///
+    /// @code{.cpp}
+    ///                     Point point(0.0, 0.0) ;
+    ///                     point.applyTransformation(aTransformation) ;
+    /// @endcode
+    ///
     /// @param              [in] aTransformation A transformation
-
     virtual void applyTransformation(const Transformation& aTransformation) override;
 
     /// @brief              Constructs an undefined point
@@ -180,7 +199,6 @@ class Point : public Object
     /// @endcode
     ///
     /// @return             Undefined point
-
     static Point Undefined();
 
     /// @brief              Constructs a point at origin
@@ -190,7 +208,6 @@ class Point : public Object
     /// @endcode
     ///
     /// @return             Point at origin
-
     static Point Origin();
 
     /// @brief              Constructs a point from a vector
@@ -200,7 +217,6 @@ class Point : public Object
     /// @endcode
     ///
     /// @return             Point
-
     static Point Vector(const Vector2d& aVector);
 
    private:
