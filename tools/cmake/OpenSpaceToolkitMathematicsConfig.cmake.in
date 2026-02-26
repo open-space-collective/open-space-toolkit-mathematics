@@ -6,12 +6,10 @@ FIND_PATH (
     OpenSpaceToolkitMathematics_INCLUDE_DIR
     NAMES
         "OpenSpaceToolkit/Mathematics/Object.hpp"
-        "Object.hpp"
     PATHS
         ${OpenSpaceToolkitMathematics_ROOT_DIR}
     PATH_SUFFIXES
         "include"
-        "include/OpenSpaceToolkit/Mathematics"
     NO_DEFAULT_PATH
 )
 
@@ -75,7 +73,9 @@ IF (OpenSpaceToolkitMathematics_INCLUDE_DIR)
     ENDIF ()
 
     SET (OpenSpaceToolkitMathematics_LIBRARIES ${OpenSpaceToolkitMathematics_LIBRARY})
-    SET (OpenSpaceToolkitMathematics_RUNTIME_LIBRARIES ${OpenSpaceToolkitMathematics_RUNTIME_LIBRARY})
+    IF (WIN32 AND OpenSpaceToolkitMathematics_RUNTIME_LIBRARY)
+        SET (OpenSpaceToolkitMathematics_RUNTIME_LIBRARIES ${OpenSpaceToolkitMathematics_RUNTIME_LIBRARY})
+    ENDIF ()
 
     SET (OpenSpaceToolkitMathematics_FOUND TRUE)
 
