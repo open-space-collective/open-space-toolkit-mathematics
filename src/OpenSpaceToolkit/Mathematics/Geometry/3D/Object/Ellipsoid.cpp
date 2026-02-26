@@ -1,6 +1,6 @@
 /// Apache License 2.0
 
-#include <Gte/Mathematics/GteIntrEllipsoid3Ellipsoid3.h>
+#include <Gte/Mathematics/IntrEllipsoid3Ellipsoid3.h>
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
@@ -17,11 +17,11 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation/Rotation/RotationMatrix.hpp>
 #include <OpenSpaceToolkit/Mathematics/Object/Interval.hpp>
-// #include <Gte/Mathematics/GteIntrHalfspace3Ellipsoid3.h>
-#include <Gte/Mathematics/GteIntrLine3Ellipsoid3.h>
-#include <Gte/Mathematics/GteIntrPlane3Ellipsoid3.h>
-#include <Gte/Mathematics/GteIntrRay3Ellipsoid3.h>
-#include <Gte/Mathematics/GteIntrSegment3Ellipsoid3.h>
+// #include <Gte/Mathematics/IntrHalfspace3Ellipsoid3.h>
+#include <Gte/Mathematics/IntrLine3Ellipsoid3.h>
+#include <Gte/Mathematics/IntrPlane3Ellipsoid3.h>
+#include <Gte/Mathematics/IntrRay3Ellipsoid3.h>
+#include <Gte/Mathematics/IntrSegment3Ellipsoid3.h>
 
 // Disable Eigen warnings
 

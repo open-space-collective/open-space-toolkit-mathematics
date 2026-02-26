@@ -1,6 +1,6 @@
 /// Apache License 2.0
 
-#include <Gte/Mathematics/GteIntrSphere3Sphere3.h>
+#include <Gte/Mathematics/IntrSphere3Sphere3.h>
 
 #include <OpenSpaceToolkit/Core/Error.hpp>
 #include <OpenSpaceToolkit/Core/Utility.hpp>
@@ -16,11 +16,11 @@
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Segment.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Object/Sphere.hpp>
 #include <OpenSpaceToolkit/Mathematics/Geometry/3D/Transformation.hpp>
-// #include <Gte/Mathematics/GteIntrHalfspace3Sphere3.h>
-#include <Gte/Mathematics/GteIntrLine3Sphere3.h>
-#include <Gte/Mathematics/GteIntrPlane3Sphere3.h>
-#include <Gte/Mathematics/GteIntrRay3Sphere3.h>
-#include <Gte/Mathematics/GteIntrSegment3Sphere3.h>
+// #include <Gte/Mathematics/IntrHalfspace3Sphere3.h>
+#include <Gte/Mathematics/IntrLine3Sphere3.h>
+#include <Gte/Mathematics/IntrPlane3Sphere3.h>
+#include <Gte/Mathematics/IntrRay3Sphere3.h>
+#include <Gte/Mathematics/IntrSegment3Sphere3.h>
 
 namespace ostk
 {

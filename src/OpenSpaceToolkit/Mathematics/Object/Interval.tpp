@@ -803,7 +803,7 @@ ctnr::Array<Interval<T>> Interval<T>::LogicalAnd(
     const ctnr::Array<Interval<T>> aSanitizedArray = Interval<T>::Merge(anIntervalArray);
     const ctnr::Array<Interval<T>> anotherSanitizedArray = Interval<T>::Merge(anotherIntervalArray);
 
-    if (aSanitizedArray.size() == 0 or anotherSanitizedArray.size() == 0)
+    if ((aSanitizedArray.size() == 0) || (anotherSanitizedArray.size() == 0))
     {
         return {};
     }

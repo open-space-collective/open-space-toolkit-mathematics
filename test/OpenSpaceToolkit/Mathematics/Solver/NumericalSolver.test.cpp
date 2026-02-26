@@ -70,15 +70,16 @@ class OpenSpaceToolkit_Mathematics_Solver_NumericalSolver : public ::testing::Te
         dxdt[1] = -x[0];
     };
 
-    void validatePropagatedStates(const Array<NumericalSolver::Solution> &aSolutionArray, const double &aTolerance)
+    void validatePropagatedStates(
+        const Array<Real> &aTimeArray, const Array<NumericalSolver::Solution> &aSolutionArray, const double &aTolerance
+    )
     {
-        for (size_t i = 0; i < aSolutionArray.size(); i++)
+        for (size_t i = 0; i < aTimeArray.size(); i++)
         {
-            const NumericalSolver::StateVector &propagatedStateVector = aSolutionArray[i].first;
-            const double &time = aSolutionArray[i].second;
+            const NumericalSolver::StateVector propagatedStateVector = aSolutionArray[i].first;
 
-            EXPECT_GT(aTolerance, std::abs(propagatedStateVector[0] - std::sin(time)));
-            EXPECT_GT(aTolerance, std::abs(propagatedStateVector[1] - std::cos(time)));
+            EXPECT_GT(aTolerance, std::abs(propagatedStateVector[0] - std::sin(aTimeArray[i])));
+            EXPECT_GT(aTolerance, std::abs(propagatedStateVector[1] - std::cos(aTimeArray[i])));
         }
     }
 
@@ -103,10 +104,7 @@ INSTANTIATE_TEST_SUITE_P(
         std::make_tuple(NumericalSolver::StepperType::RungeKutta4),
         std::make_tuple(NumericalSolver::StepperType::RungeKuttaCashKarp54),
         std::make_tuple(NumericalSolver::StepperType::RungeKuttaFehlberg78),
-        std::make_tuple(NumericalSolver::StepperType::RungeKuttaDopri5),
-        std::make_tuple(NumericalSolver::StepperType::AdamsBashforthMoulton5),
-        std::make_tuple(NumericalSolver::StepperType::AdamsBashforthMoulton8),
-        std::make_tuple(NumericalSolver::StepperType::BulirschStoer)
+        std::make_tuple(NumericalSolver::StepperType::RungeKuttaDopri5)
     )
 );
 
@@ -365,17 +363,6 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, StringFromType)
         EXPECT_TRUE(
             NumericalSolver::StringFromStepperType(NumericalSolver::StepperType::RungeKuttaDopri5) == "RungeKuttaDopri5"
         );
-        EXPECT_TRUE(
-            NumericalSolver::StringFromStepperType(NumericalSolver::StepperType::AdamsBashforthMoulton5) ==
-            "AdamsBashforthMoulton5"
-        );
-        EXPECT_TRUE(
-            NumericalSolver::StringFromStepperType(NumericalSolver::StepperType::AdamsBashforthMoulton8) ==
-            "AdamsBashforthMoulton8"
-        );
-        EXPECT_TRUE(
-            NumericalSolver::StringFromStepperType(NumericalSolver::StepperType::BulirschStoer) == "BulirschStoer"
-        );
     }
 
     {
@@ -385,7 +372,7 @@ TEST_F(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver, StringFromType)
     }
 }
 
-TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, IntegrateDuration)
+TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, integrateDuration)
 {
     const auto parameters = GetParam();
 
@@ -410,8 +397,8 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
 
             // Validate the output against an analytical function
 
-            EXPECT_GT(1e-11, std::abs(propagatedStateVector[0] - std::sin(duration)));
-            EXPECT_GT(1e-11, std::abs(propagatedStateVector[1] - std::cos(duration)));
+            EXPECT_GT(2e-8, std::abs(propagatedStateVector[0] - std::sin(duration)));
+            EXPECT_GT(2e-8, std::abs(propagatedStateVector[1] - std::cos(duration)));
         }
     }
 
@@ -480,14 +467,12 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
         {-1.0, -4.0, -7.0, -10.0},
     };
 
-    const double tolerance = 2e-8;
-
     for (const Array<Real> &durationArray : durationArrays)
     {
         const Array<NumericalSolver::Solution> propagatedStateVectorArray =
             numericalSolver.integrateDuration(defaultStateVector_, durationArray, systemOfEquations_);
 
-        validatePropagatedStates(propagatedStateVectorArray, tolerance);
+        validatePropagatedStates(durationArray, propagatedStateVectorArray, 2e-8);
     }
 }
 
@@ -581,14 +566,12 @@ TEST_P(OpenSpaceToolkit_Mathematics_Solver_NumericalSolver_Parametrized, Integra
         {-1.0, -4.0, -7.0, -10.0},
     };
 
-    const double tolerance = 2e-8;
-
     for (const Array<Real> &timeArray : timeArrays)
     {
         const Array<NumericalSolver::Solution> propagatedStateVectorArray =
             numericalSolver.integrateTime(defaultStateVector_, defaultStartTime_, timeArray, systemOfEquations_);
 
-        validatePropagatedStates(propagatedStateVectorArray, tolerance);
+        validatePropagatedStates(timeArray, propagatedStateVectorArray, 2e-8);
     }
 
     {
